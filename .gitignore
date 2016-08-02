@@ -1,3 +1,5 @@
+*.sublime-*
+
 ## CMake
 CMakeCache.txt
 CMakeFiles
