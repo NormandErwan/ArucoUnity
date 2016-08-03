@@ -37,12 +37,16 @@ install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib
         RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin
 )
-
-set(UNITY_PROJECT "" CACHE PATH "The Unity project directory where the compiled plugin will be installed.")
-if (EXISTS ${UNITY_PROJECT})
-  install(TARGETS ${PROJECT_NAME}
-          RUNTIME DESTINATION ${UNITY_PROJECT}/Assets/Plugins/x86_64
-  )
+if (WIN32)
+  set(UNITY_PROJECT "" CACHE PATH "The Unity project directory where the compiled plugin will be installed.")
+  if (EXISTS ${UNITY_PROJECT})
+    set(UNITY_PLUGINS ${UNITY_PROJECT}/Assets/Plugins/x86_64)
+    install(TARGETS ${PROJECT_NAME}
+            RUNTIME DESTINATION ${UNITY_PLUGINS}
+    )
+    install(DIRECTORY ${aruco_LIB_DIR}/../bin/ ${OpenCV_LIB_DIR}/../bin/ 
+            DESTINATION ${UNITY_PLUGINS}
+            FILES_MATCHING PATTERN "*.dll"
+    )
+  endif()
 endif()
-
-# TODO: also copy the dll of the deps
