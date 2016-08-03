@@ -1,10 +1,15 @@
-#include "../include/aruco_unity.hpp"
+#include "aruco_unity.hpp"
 
 extern "C" {
 
 int testMult(int a, int b) 
 {
   return a * b;
+}
+
+int opencvAbs(int n)
+{
+  return cv::abs(n);
 }
 
 void detectMarkers(char* filename)

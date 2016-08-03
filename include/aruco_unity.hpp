@@ -15,5 +15,6 @@
 
 extern "C" {
   ARUCO_UNITY_API int testMult(int a, int b);
+  ARUCO_UNITY_API int opencvAbs(int n);
   ARUCO_UNITY_API void detectMarkers(char* filename);
 }

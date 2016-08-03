@@ -1,7 +1,23 @@
+## Unity
+
+**/Temp/
+**/Library/
+**/Builds/
+**/Assets/Plugins/ # Don't commit our plugin
+
+
+## OS and IDEs
+
 *.sublime-*
-build/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
 
 ## CMake
+
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
@@ -9,9 +25,11 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 CTestTestfile.cmake
+build/
 
 
 ## C++
+
 # Prerequisites
 *.d
 
