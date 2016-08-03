@@ -27,16 +27,22 @@ set(LIBRARY_OUTPUT_DIRECTORY lib)
 set(ARCHIVE_OUTPUT_DIRECTORY lib)
 
 add_library(${PROJECT_NAME} SHARED ${headers} ${sources})
+
 target_link_libraries(${PROJECT_NAME} ${aruco_LIBS})
 
 
 # Installation (to the Unity folder)
-set(UNITY_PROJECT ${PROJECT_SOURCE_DIR}/CopyToUnityProject CACHE PATH "The Unity project directory where the compiled plugin will be installed.")
 install(TARGETS ${PROJECT_NAME}
         ARCHIVE DESTINATION ${PROJECT_SOURCE_DIR}/lib
         LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib
         RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin
 )
-install(TARGETS ${PROJECT_NAME}
-        RUNTIME DESTINATION ${UNITY_PROJECT}/Assets/Plugins/x86_64
-)
+
+set(UNITY_PROJECT "" CACHE PATH "The Unity project directory where the compiled plugin will be installed.")
+if (EXISTS ${UNITY_PROJECT})
+  install(TARGETS ${PROJECT_NAME}
+          RUNTIME DESTINATION ${UNITY_PROJECT}/Assets/Plugins/x86_64
+  )
+endif()
+
+# TODO: also copy the dll of the deps
