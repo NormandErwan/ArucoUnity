@@ -12,33 +12,22 @@ int opencvAbs(int n)
   return cv::abs(n);
 }
 
-void detectMarkers(char* filename)
+int createMarkers()
 {
-  try
-  {
-    aruco::MarkerDetector MDetector;
-    std::vector<aruco::Marker> Markers;
+  int dictionaryId = cv::aruco::DICT_4X4_50;
+  int markerId = 0;
+  int borderBits = 1;
+  int markerSize = 400;
+  cv::String out = "dict_4x4_50_0.png";
 
-    //read the input image
-    cv::Mat InImage;
-    InImage = cv::imread(filename);
+  cv::Ptr<cv::aruco::Dictionary> dictionary =
+    cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME(dictionaryId));
 
-    //Ok, let's detect
-    MDetector.detect(InImage,Markers);
+  cv::Mat markerImg;
+  cv::aruco::drawMarker(dictionary, markerId, markerSize, markerImg, borderBits);
 
-    //for each marker, draw info and its boundaries in the image
-    for (unsigned int i = 0; i < Markers.size(); i++) {
-      std::cout << Markers[i] << std::endl;
-      Markers[i].draw(InImage, cv::Scalar(0,0,255), 2);
-    }
-    
-    cv::imshow("in", InImage);
-    cv::waitKey(0); //wait for key to be pressed
-  } 
-  catch (std::exception &exception)
-  {
-    std::cout << "Exception: " << exception.what() << std::endl;
-  }
+  return 0;
+  //cv::imwrite(out, markerImg);
 }
 
 }

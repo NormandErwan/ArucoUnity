@@ -1,7 +1,5 @@
-#include <iostream>
-#include <aruco/aruco.h>
-#include <aruco/cvdrawingutils.h>
-#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/aruco.hpp>
 
 #ifdef WIN32
   #ifdef aruco_unity_EXPORTS
@@ -16,5 +14,5 @@
 extern "C" {
   ARUCO_UNITY_API int testMult(int a, int b);
   ARUCO_UNITY_API int opencvAbs(int n);
-  ARUCO_UNITY_API void detectMarkers(char* filename);
+  ARUCO_UNITY_API int createMarkers();
 }

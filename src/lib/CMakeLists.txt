@@ -4,10 +4,7 @@ project(aruco_unity_lib)
 
 
 # Dependencies
-find_package(OpenCV REQUIRED)
-
-set(aruco_DIR ${CMAKE_INSTALL_PREFIX}/../aruco/lib/cmake/ CACHE PATH "The directory containing a CMake configuration file for Aruco.")
-find_package(aruco REQUIRED)
+find_package(OpenCV REQUIRED aruco)
 
 
 # Inputs
@@ -25,7 +22,7 @@ set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the libra
 
 add_library(${PROJECT_NAME} SHARED ${aruco_unity_lib_headers} ${aruco_unity_lib_sources})
 
-target_link_libraries(${PROJECT_NAME} ${aruco_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
 
 # Installation

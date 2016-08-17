@@ -4,6 +4,8 @@
 **/Library/
 **/Builds/
 **/Assets/Plugins/ # Don't commit our plugin
+**/*.sln
+**/*.csproj
 
 
 ## OS and IDEs
