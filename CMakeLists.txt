@@ -15,4 +15,4 @@ set(UNITY_PLUGINS_DIR ${UNITY_PROJECT}/Assets/Plugins/x86_64)
 
 
 # Add subdirectories
-add_subdirectory(${PROJECT_SOURCE_DIR}/src/lib)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/aruco_unity_lib)
