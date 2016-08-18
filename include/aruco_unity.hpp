@@ -4,7 +4,7 @@
 #include <opencv2/aruco.hpp>
 
 #ifdef WIN32
-  #ifdef aruco_unity_EXPORTS
+  #ifdef aruco_unity_lib_EXPORTS
     #define ARUCO_UNITY_API __declspec(dllexport)
   #else
     #define ARUCO_UNITY_API __declspec(dllimport)
@@ -14,9 +14,9 @@
 #endif
 
 extern "C" {
-  ARUCO_UNITY_API void* createMat(int i);
-  ARUCO_UNITY_API void destroyMat(void* mat);
-  ARUCO_UNITY_API int displayMat(void* mat);
+  ARUCO_UNITY_API void* getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
+  ARUCO_UNITY_API void destroyDictionary(void* dictionary);
+  ARUCO_UNITY_API int getDictionaryMarkerSize(void* dictionary);
 }
 
 #endif

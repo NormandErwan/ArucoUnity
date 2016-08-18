@@ -1,45 +1,36 @@
 ﻿using UnityEngine;
 using System.Runtime.InteropServices;
 
-class Mat {
+public partial class ArucoUnity : MonoBehaviour
+{
+  public partial class Dictionary { }
+
+  public enum PREDEFINED_DICTIONARY_NAME
+  {
+    DICT_4X4_50 = 0,
+    DICT_4X4_100,
+    DICT_4X4_250,
+    DICT_4X4_1000,
+    DICT_5X5_50,
+    DICT_5X5_100,
+    DICT_5X5_250,
+    DICT_5X5_1000,
+    DICT_6X6_50,
+    DICT_6X6_100,
+    DICT_6X6_250,
+    DICT_6X6_1000,
+    DICT_7X7_50,
+    DICT_7X7_100,
+    DICT_7X7_250,
+    DICT_7X7_1000,
+    DICT_ARUCO_ORIGINAL
+  }
+
   [DllImport("aruco_unity_lib")]
-  static extern System.IntPtr createMat(int i);
+  static extern System.IntPtr getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
 
-  [DllImport("aruco_unity_lib")]
-  static extern void destroyMat(System.IntPtr mat);
-
-  [DllImport("aruco_unity_lib")]
-  static extern int displayMat(System.IntPtr mat);
-
-  HandleRef handle;
-
-  public Mat(int i) {
-    System.IntPtr mat = createMat(i);
-    handle = new HandleRef(this, mat);
-  }
-
-  ~Mat() {
-    destroyMat(handle.Handle);
-  }
-
-  public int display() {
-    return displayMat(handle.Handle);
-  }
-}
-
-public class ArucoManager : MonoBehaviour {
-
-  Mat mat, mat1;
-
-  void Start() {
-    mat = new Mat(0);
-    mat1 = new Mat(1);
-  }
-
-  void Update() {
-    if (Input.GetButton("Fire1")) {
-      print(mat.display());
-      print(mat1.display());
-    }
+  public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
+  {
+    return new Dictionary(getPredefinedDictionary(name));
   }
 }

@@ -1,19 +1,16 @@
 #include "aruco_unity.hpp"
 
 extern "C" {
-
-  void* createMat(int i) {
-    cv::Mat* mat = new cv::Mat(2, 2, CV_32SC1, cv::Scalar(i));
-    return mat;
+  void* getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name) {
+    cv::aruco::Dictionary* dictionary = cv::aruco::getPredefinedDictionary(name);
+    return static_cast<void*>(dictionary);
   }
 
-  void destroyMat(void* mat) {
-    delete mat;
+  void destroyDictionary(void* dictionary) {
+    delete dictionary;
   }
 
-  int displayMat(void* mat) {
-    cv::Mat* _mat = static_cast<cv::Mat*>(mat);
-    return _mat->at<int>(0,0);
+  int getDictionaryMarkerSize(void* dictionary) {
+    return static_cast<cv::aruco::Dictionary*>(dictionary)->markerSize;
   }
-
 }
