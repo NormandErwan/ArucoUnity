@@ -14,8 +14,4 @@ extern "C" {
   void destroyDictionary(void* dictionary) {
     dictionaries.erase(dictionary);
   }
-
-  int getDictionaryMarkerSize(void* dictionary) {
-    return static_cast<cv::aruco::Dictionary*>(dictionary)->markerSize;
-  }
 }
