@@ -14,6 +14,5 @@ public class ArucoUnityManager : MonoBehaviour {
 	
 	void Update()
   {
-	
 	}
 }

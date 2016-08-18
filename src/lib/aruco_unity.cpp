@@ -1,13 +1,18 @@
 #include "aruco_unity.hpp"
+#include <unordered_map>
+
+std::unordered_map<void*, cv::Ptr<cv::aruco::Dictionary>> dictionaries;
 
 extern "C" {
   void* getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name) {
-    cv::aruco::Dictionary* dictionary = cv::aruco::getPredefinedDictionary(name);
-    return static_cast<void*>(dictionary);
+    cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(name);
+    void* dictionary_ptr = static_cast<void*>(dictionary);
+    dictionaries[dictionary_ptr] = dictionary;
+    return dictionary_ptr;
   }
 
   void destroyDictionary(void* dictionary) {
-    delete dictionary;
+    dictionaries.erase(dictionary);
   }
 
   int getDictionaryMarkerSize(void* dictionary) {

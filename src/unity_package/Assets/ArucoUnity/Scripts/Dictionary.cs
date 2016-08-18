@@ -20,7 +20,7 @@ public partial class ArucoUnity
 
     ~Dictionary()
     {
-      //destroyDictionary(ptr); // TODO: fix the crash that occurs when invoked
+      destroyDictionary(ptr);
     }
 
     public System.IntPtr ptr
