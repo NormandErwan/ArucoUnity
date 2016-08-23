@@ -10,9 +10,9 @@ find_package(OpenCV REQUIRED aruco)
 # Inputs
 set(aruco_unity_lib_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
 include_directories(${aruco_unity_lib_INCLUDE_DIRS})
-file(GLOB aruco_unity_lib_headers ${aruco_unity_lib_INCLUDE_DIRS}/*)
+file(GLOB_RECURSE aruco_unity_lib_HEADERS ${aruco_unity_lib_INCLUDE_DIRS}/*.hpp)
 
-file(GLOB aruco_unity_lib_sources ${PROJECT_SOURCE_DIR}/*)
+file(GLOB_RECURSE aruco_unity_lib_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
 
 
 # Outputs
@@ -20,7 +20,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) # Destination of the dll f
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the corresponding import libraries of the dlls for dll platform
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the librairies for non-dll platform
 
-add_library(${PROJECT_NAME} SHARED ${aruco_unity_lib_headers} ${aruco_unity_lib_sources})
+add_library(${PROJECT_NAME} SHARED ${aruco_unity_lib_HEADERS} ${aruco_unity_lib_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
