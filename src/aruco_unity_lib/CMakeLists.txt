@@ -4,19 +4,13 @@ project(ArucoUnityLib)
 
 
 # Inputs
-set(ArucoUnityLib_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
-
-include_directories(${ArucoUnityLib_INCLUDE_DIRS})
+include_directories(${ArucoUnity_INCLUDE_DIRS})
 
 file(GLOB_RECURSE ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS}/*.hpp)
 file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
 
 
 # Outputs
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) # Destination of the dll for dll platform
-set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the corresponding import libraries of the dlls for dll platform
-set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the librairies for non-dll platform
-
 add_library(${CMAKE_PROJECT_NAME} SHARED ${ArucoUnityLib_HEADERS} ${ArucoUnityLib_SOURCES})
 
 
