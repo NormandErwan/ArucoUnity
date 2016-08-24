@@ -1,18 +1,15 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(aruco_unity_lib)
-
-
-# Dependencies
-find_package(OpenCV REQUIRED aruco)
+project(ArucoUnityLib)
 
 
 # Inputs
-set(aruco_unity_lib_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
-include_directories(${aruco_unity_lib_INCLUDE_DIRS})
-file(GLOB_RECURSE aruco_unity_lib_HEADERS ${aruco_unity_lib_INCLUDE_DIRS}/*.hpp)
+set(ArucoUnityLib_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
 
-file(GLOB_RECURSE aruco_unity_lib_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
+include_directories(${ArucoUnityLib_INCLUDE_DIRS})
+
+file(GLOB_RECURSE ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS}/*.hpp)
+file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
 
 
 # Outputs
@@ -20,20 +17,23 @@ set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) # Destination of the dll f
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the corresponding import libraries of the dlls for dll platform
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # Destination of the librairies for non-dll platform
 
-add_library(${PROJECT_NAME} SHARED ${aruco_unity_lib_HEADERS} ${aruco_unity_lib_SOURCES})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${ArucoUnityLib_HEADERS} ${ArucoUnityLib_SOURCES})
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+
+# Dependencies
+find_package(OpenCV REQUIRED aruco)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 
 
 # Installation
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${CMAKE_PROJECT_NAME}
         RUNTIME DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
         ARCHIVE DESTINATION ${ARCHIVE_OUTPUT_DIRECTORY}
         LIBRARY DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}
 )
 
 # Installation of the library in the Unity project folder
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${CMAKE_PROJECT_NAME}
         RUNTIME DESTINATION ${UNITY_PLUGINS_DIR}
         LIBRARY DESTINATION ${UNITY_PLUGINS_DIR}
 )
@@ -45,3 +45,9 @@ if (WIN32)
           FILES_MATCHING PATTERN "*.dll"
   )
 endif()
+
+
+# Package
+configure_file("${CMAKE_SOURCE_DIR}/cmake/${CMAKE_PROJECT_NAME}Config.cmake" "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}Config.cmake" @ONLY)
+install(FILES "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}Config.cmake" 
+        DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}/cmake/)

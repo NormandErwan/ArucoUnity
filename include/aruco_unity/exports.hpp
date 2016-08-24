@@ -2,7 +2,7 @@
 #define _ARUCO_UNITY_EXPORTS_HPP_
 
 #ifdef WIN32
-  #ifdef aruco_unity_lib_EXPORTS
+  #ifdef ArucoUnity_EXPORTS
     #define ARUCO_UNITY_API __declspec(dllexport)
   #else
     #define ARUCO_UNITY_API __declspec(dllimport)

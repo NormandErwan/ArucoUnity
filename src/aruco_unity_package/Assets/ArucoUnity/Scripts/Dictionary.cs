@@ -5,10 +5,10 @@ public partial class ArucoUnity
 {
   public partial class Dictionary
   {
-    [DllImport("aruco_unity_lib")]
+    [DllImport("ArucoUnity")]
     static extern void destroyDictionary(System.IntPtr dictionary);
 
-    [DllImport("aruco_unity_lib")]
+    [DllImport("ArucoUnity")]
     static extern int getDictionaryMarkerSize(System.IntPtr dictionary);
 
     HandleRef handle;

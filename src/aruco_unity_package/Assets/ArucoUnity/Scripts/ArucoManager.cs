@@ -26,7 +26,7 @@ public partial class ArucoUnity : MonoBehaviour
     DICT_ARUCO_ORIGINAL
   }
 
-  [DllImport("aruco_unity_lib")]
+  [DllImport("ArucoUnity")]
   static extern System.IntPtr getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
 
   public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
