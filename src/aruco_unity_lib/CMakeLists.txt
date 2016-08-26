@@ -3,15 +3,14 @@ cmake_minimum_required(VERSION 2.8)
 project(ArucoUnityLib)
 
 
-# Inputs
-include_directories(${ArucoUnity_INCLUDE_DIRS})
+# Target
+set(ArucoUnity_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
 
-file(GLOB_RECURSE ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS}/*.hpp)
-file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS} *.hpp)
+file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR} *.cpp)
 
-
-# Outputs
 add_library(${CMAKE_PROJECT_NAME} SHARED ${ArucoUnityLib_HEADERS} ${ArucoUnityLib_SOURCES})
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${ArucoUnity_INCLUDE_DIRS})
 
 
 # Dependencies
@@ -42,6 +41,6 @@ endif()
 
 
 # Package
-configure_file("${CMAKE_SOURCE_DIR}/cmake/${CMAKE_PROJECT_NAME}Config.cmake" "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}Config.cmake" @ONLY)
-install(FILES "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}Config.cmake" 
+configure_file("${CMAKE_SOURCE_DIR}/cmake/${CMAKE_PROJECT_NAME}Config.cmake" "${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}Config.cmake" @ONLY)
+install(FILES "${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}Config.cmake" 
         DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}/cmake/)
