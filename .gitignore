@@ -29,6 +29,8 @@ install_manifest.txt
 CTestTestfile.cmake
 build/
 ArucoUnityConfig.cmake
+lib/
+bin/
 
 
 ## C++
