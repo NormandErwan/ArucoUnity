@@ -3,12 +3,8 @@ cmake_minimum_required(VERSION 2.8)
 project(ArucoUnityLibTests)
 
 
-# Inputs
+# Target
 file(GLOB_RECURSE ArucoUnityLibTests_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
-
-
-# Outputs
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 add_executable(${PROJECT_NAME} ${ArucoUnityLibTests_SOURCES})
 
@@ -17,12 +13,21 @@ add_executable(${PROJECT_NAME} ${ArucoUnityLibTests_SOURCES})
 find_package(OpenCV REQUIRED aruco)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
-include_directories(${ArucoUnity_INCLUDE_DIRS})
-link_directories(${LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(${PROJECT_NAME} ${ArucoUnity_LIBS})
+link_directories(${RUNTIME_OUTPUT_DIRECTORY})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_PROJECT_NAME})
 
 
 # Installation
+set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 install(TARGETS ${PROJECT_NAME}
-        RUNTIME DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}/test
+        RUNTIME DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
 )
+
+# Installation of the dll dependencies on Windows
+if (WIN32)
+  install(DIRECTORY ${OpenCV_LIB_DIR}/../bin/
+          DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
+          FILES_MATCHING PATTERN "*.dll"
+  )
+endif()

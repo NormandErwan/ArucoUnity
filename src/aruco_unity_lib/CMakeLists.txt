@@ -4,9 +4,9 @@ project(ArucoUnityLib)
 
 
 # Target
-set(ArucoUnity_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include)
+set(ArucoUnity_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include INTERNAL)
 
-file(GLOB_RECURSE ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS} *.hpp)
+file(GLOB ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS} *.hpp)
 file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR} *.cpp)
 
 add_library(${CMAKE_PROJECT_NAME} SHARED ${ArucoUnityLib_HEADERS} ${ArucoUnityLib_SOURCES})
@@ -26,14 +26,13 @@ install(TARGETS ${CMAKE_PROJECT_NAME}
 )
 
 # Installation of the library in the Unity project folder
+# and installation of the dll dependencies on Windows
 install(TARGETS ${CMAKE_PROJECT_NAME}
         RUNTIME DESTINATION ${UNITY_PLUGINS_DIR}
         LIBRARY DESTINATION ${UNITY_PLUGINS_DIR}
 )
-
-# Installation of the dll dependencies on Windows
 if (WIN32)
-  install(DIRECTORY ${aruco_LIB_DIR}/../bin/ ${OpenCV_LIB_DIR}/../bin/ 
+  install(DIRECTORY ${OpenCV_LIB_DIR}/../bin/ 
           DESTINATION ${UNITY_PLUGINS_DIR}
           FILES_MATCHING PATTERN "*.dll"
   )
