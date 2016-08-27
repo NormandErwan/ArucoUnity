@@ -5,7 +5,7 @@
 #include "aruco_unity/exports.hpp"
 
 extern "C" {
-  ARUCO_UNITY_API int getDictionaryMarkerSize(void* dictionary);
+  ARUCO_UNITY_API int auGetDictionaryMarkerSize(void* dictionary);
 }
 
 #endif

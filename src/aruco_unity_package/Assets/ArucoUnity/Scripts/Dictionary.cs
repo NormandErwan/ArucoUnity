@@ -6,10 +6,10 @@ public partial class ArucoUnity
   public partial class Dictionary
   {
     [DllImport("ArucoUnity")]
-    static extern void destroyDictionary(System.IntPtr dictionary);
+    static extern void auDestroyDictionary(System.IntPtr dictionary);
 
     [DllImport("ArucoUnity")]
-    static extern int getDictionaryMarkerSize(System.IntPtr dictionary);
+    static extern int auGetDictionaryMarkerSize(System.IntPtr dictionary);
 
     HandleRef handle;
 
@@ -20,7 +20,7 @@ public partial class ArucoUnity
 
     ~Dictionary()
     {
-      destroyDictionary(ptr);
+      auDestroyDictionary(ptr);
     }
 
     public System.IntPtr ptr
@@ -30,7 +30,7 @@ public partial class ArucoUnity
 
     public int markerSize
     {
-      get { return getDictionaryMarkerSize(ptr); }
+      get { return auGetDictionaryMarkerSize(ptr); }
     }
   }
 }
