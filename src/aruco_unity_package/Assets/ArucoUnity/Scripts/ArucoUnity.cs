@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 
 public partial class ArucoUnity : MonoBehaviour
 {
+  public abstract partial class HandleDllObject { }
+
   public partial class DetectorParameters { }
   public partial class Dictionary { }
 

@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 public partial class ArucoUnity
 {
-  public partial class DetectorParameters
+  public partial class DetectorParameters : HandleDllObject
   {
     [DllImport("ArucoUnity")]
     static extern void auDestroyDetectorParameters(System.IntPtr parameters);
@@ -108,21 +107,13 @@ public partial class ArucoUnity
     [DllImport("ArucoUnity")]
     static extern void auSetDetectorParametersErrorCorrectionRate(System.IntPtr parameters, double errorCorrectionRate);
 
-    HandleRef _handle;
-
-    public DetectorParameters(System.IntPtr parameters)
+    public DetectorParameters(System.IntPtr parameters) : base(parameters)
     {
-      _handle = new HandleRef(this, parameters);
     }
 
     ~DetectorParameters()
     {
       auDestroyDetectorParameters(ptr);
-    }
-
-    public System.IntPtr ptr
-    {
-      get { return _handle.Handle; }
     }
 
     public int AdaptiveThreshWinSizeMin {

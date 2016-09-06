@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 public partial class ArucoUnity
 {
-  public partial class Dictionary
+  public partial class Dictionary : HandleDllObject
   {
     [DllImport("ArucoUnity")]
     static extern void auDestroyDictionary(System.IntPtr dictionary);
@@ -11,21 +10,13 @@ public partial class ArucoUnity
     [DllImport("ArucoUnity")]
     static extern int auGetDictionaryMarkerSize(System.IntPtr dictionary);
 
-    HandleRef _handle;
-
-    public Dictionary(System.IntPtr dictionary)
+    public Dictionary(System.IntPtr dictionary) : base(dictionary)
     {
-      _handle = new HandleRef(this, dictionary);
     }
 
     ~Dictionary()
     {
       auDestroyDictionary(ptr);
-    }
-
-    public System.IntPtr ptr
-    {
-      get { return _handle.Handle; }
     }
 
     public int markerSize
