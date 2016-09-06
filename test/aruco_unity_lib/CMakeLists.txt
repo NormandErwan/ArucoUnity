@@ -4,9 +4,9 @@ project(ArucoUnityLibTests)
 
 
 # Target
-file(GLOB_RECURSE ArucoUnityLibTests_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE PROJECT_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
 
-add_executable(${PROJECT_NAME} ${ArucoUnityLibTests_SOURCES})
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 
 # Dependencies

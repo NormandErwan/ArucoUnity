@@ -4,13 +4,19 @@ project(ArucoUnityLib)
 
 
 # Target
-set(ArucoUnity_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include INTERNAL)
+set(PROJECT_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include CACHE INTERNAL "The ArUco Unity include directories.")
+set(PROJECT_HEADERS
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
+)
+set(PROJECT_SOURCES
+    ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
+    ${PROJECT_SOURCE_DIR}/dictionary.cpp
+)
 
-file(GLOB ArucoUnityLib_HEADERS ${ArucoUnityLib_INCLUDE_DIRS} *.hpp)
-file(GLOB_RECURSE ArucoUnityLib_SOURCES ${PROJECT_SOURCE_DIR} *.cpp)
-
-add_library(${CMAKE_PROJECT_NAME} SHARED ${ArucoUnityLib_HEADERS} ${ArucoUnityLib_SOURCES})
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${ArucoUnity_INCLUDE_DIRS})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_INCLUDE_DIRS})
 
 
 # Dependencies
