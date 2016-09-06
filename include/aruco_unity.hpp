@@ -5,6 +5,9 @@
 #include "aruco_unity/exports.hpp"
 
 extern "C" {
+  ARUCO_UNITY_API void* auCreateDetectorParameters();
+  ARUCO_UNITY_API void auDestroyDetectorParameters(void* detectorParameters);
+
   ARUCO_UNITY_API void* auGetPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
   ARUCO_UNITY_API void auDestroyDictionary(void* dictionary);
 }

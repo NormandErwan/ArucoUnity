@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 public partial class ArucoUnity : MonoBehaviour
 {
+  public partial class DetectorParameters { }
   public partial class Dictionary { }
 
   public enum PREDEFINED_DICTIONARY_NAME
@@ -27,7 +28,15 @@ public partial class ArucoUnity : MonoBehaviour
   }
 
   [DllImport("ArucoUnity")]
+  static extern System.IntPtr auCreateDetectorParameters();
+
+  [DllImport("ArucoUnity")]
   static extern System.IntPtr auGetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
+
+  public static DetectorParameters CreateDetectorParameters()
+  {
+    return new DetectorParameters(auCreateDetectorParameters());
+  }
 
   public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
   {

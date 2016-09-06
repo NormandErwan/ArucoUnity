@@ -11,11 +11,11 @@ public partial class ArucoUnity
     [DllImport("ArucoUnity")]
     static extern int auGetDictionaryMarkerSize(System.IntPtr dictionary);
 
-    HandleRef handle;
+    HandleRef _handle;
 
     public Dictionary(System.IntPtr dictionary)
     {
-      handle = new HandleRef(this, dictionary);
+      _handle = new HandleRef(this, dictionary);
     }
 
     ~Dictionary()
@@ -25,7 +25,7 @@ public partial class ArucoUnity
 
     public System.IntPtr ptr
     {
-      get { return handle.Handle; }
+      get { return _handle.Handle; }
     }
 
     public int markerSize
