@@ -6,12 +6,12 @@ public partial class ArucoUnity
   {
     HandleRef _handle;
 
-    public HandleDllObject(System.IntPtr ptr)
+    public HandleDllObject(System.IntPtr dllPtr)
     {
-      _handle = new HandleRef(this, ptr);
+      _handle = new HandleRef(this, dllPtr);
     }
 
-    public System.IntPtr ptr
+    public System.IntPtr dllPtr
     {
       get { return _handle.Handle; }
     }

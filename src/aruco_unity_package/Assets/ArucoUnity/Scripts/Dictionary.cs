@@ -5,7 +5,7 @@ public partial class ArucoUnity
   public partial class Dictionary : HandleDllObject
   {
     [DllImport("ArucoUnity")]
-    static extern void auDestroyDictionary(System.IntPtr dictionary);
+    static extern void auDeleteDictionary(System.IntPtr dictionary);
 
     [DllImport("ArucoUnity")]
     static extern int auGetDictionaryMarkerSize(System.IntPtr dictionary);
@@ -16,12 +16,12 @@ public partial class ArucoUnity
 
     ~Dictionary()
     {
-      auDestroyDictionary(ptr);
+      auDeleteDictionary(dllPtr);
     }
 
     public int markerSize
     {
-      get { return auGetDictionaryMarkerSize(ptr); }
+      get { return auGetDictionaryMarkerSize(dllPtr); }
     }
   }
 }

@@ -6,12 +6,12 @@
 
 extern "C" {
   // Detector parameters
-  ARUCO_UNITY_API void* auCreateDetectorParameters();
-  ARUCO_UNITY_API void auDestroyDetectorParameters(void* parameters);
+  ARUCO_UNITY_API cv::aruco::DetectorParameters* auCreateDetectorParameters();
+  ARUCO_UNITY_API void auDeleteDetectorParameters(cv::aruco::DetectorParameters* parameters);
 
-  // Dictionnary
-  ARUCO_UNITY_API void* auGetPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
-  ARUCO_UNITY_API void auDestroyDictionary(void* dictionary);
+  // Dictionary
+  ARUCO_UNITY_API cv::aruco::Dictionary* auGetPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
+  ARUCO_UNITY_API void auDeleteDictionary(cv::aruco::Dictionary* dictionary);
 }
 
 #endif
