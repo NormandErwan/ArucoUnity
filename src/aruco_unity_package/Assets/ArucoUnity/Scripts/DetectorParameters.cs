@@ -2,7 +2,7 @@
 
 public partial class ArucoUnity
 {
-  public partial class DetectorParameters : HandleDllObject
+  public partial class DetectorParameters : HandleCvPtr
   {
     [DllImport("ArucoUnity")]
     static extern void auDeleteDetectorParameters(System.IntPtr parameters);
@@ -106,114 +106,114 @@ public partial class ArucoUnity
     static extern double auGetDetectorParametersErrorCorrectionRate(System.IntPtr parameters);
     [DllImport("ArucoUnity")]
     static extern void auSetDetectorParametersErrorCorrectionRate(System.IntPtr parameters, double errorCorrectionRate);
-
+    
     public DetectorParameters(System.IntPtr parameters) : base(parameters)
     {
     }
 
     ~DetectorParameters()
     {
-      auDeleteDetectorParameters(dllPtr);
+      auDeleteDetectorParameters(cvPtr);
     }
 
     public int AdaptiveThreshWinSizeMin {
-      get { return auGetDetectorParametersAdaptiveThreshWinSizeMin(dllPtr); }
-      set { auSetDetectorParametersAdaptiveThreshWinSizeMin(dllPtr, value); }
+      get { return auGetDetectorParametersAdaptiveThreshWinSizeMin(cvPtr); }
+      set { auSetDetectorParametersAdaptiveThreshWinSizeMin(cvPtr, value); }
     }
 
     public int AdaptiveThreshWinSizeMax {
-      get { return auGetDetectorParametersAdaptiveThreshWinSizeMax(dllPtr); }
-      set { auSetDetectorParametersAdaptiveThreshWinSizeMax(dllPtr, value); }
+      get { return auGetDetectorParametersAdaptiveThreshWinSizeMax(cvPtr); }
+      set { auSetDetectorParametersAdaptiveThreshWinSizeMax(cvPtr, value); }
     }
 
     public int AdaptiveThreshWinSizeStep {
-      get { return auGetDetectorParametersAdaptiveThreshWinSizeStep(dllPtr); }
-      set { auSetDetectorParametersAdaptiveThreshWinSizeStep(dllPtr, value); }
+      get { return auGetDetectorParametersAdaptiveThreshWinSizeStep(cvPtr); }
+      set { auSetDetectorParametersAdaptiveThreshWinSizeStep(cvPtr, value); }
     }
 
     public double AdaptiveThreshConstant {
-      get { return auGetDetectorParametersAdaptiveThreshConstant(dllPtr); }
-      set { auSetDetectorParametersAdaptiveThreshConstant(dllPtr, value); }
+      get { return auGetDetectorParametersAdaptiveThreshConstant(cvPtr); }
+      set { auSetDetectorParametersAdaptiveThreshConstant(cvPtr, value); }
     }
 
     public double MinMarkerPerimeterRate {
-      get { return auGetDetectorParametersMinMarkerPerimeterRate(dllPtr); }
-      set { auSetDetectorParametersMinMarkerPerimeterRate(dllPtr, value); }
+      get { return auGetDetectorParametersMinMarkerPerimeterRate(cvPtr); }
+      set { auSetDetectorParametersMinMarkerPerimeterRate(cvPtr, value); }
     }
 
     public double MaxMarkerPerimeterRate {
-      get { return auGetDetectorParametersMaxMarkerPerimeterRate(dllPtr); }
-      set { auSetDetectorParametersMaxMarkerPerimeterRate(dllPtr, value); }
+      get { return auGetDetectorParametersMaxMarkerPerimeterRate(cvPtr); }
+      set { auSetDetectorParametersMaxMarkerPerimeterRate(cvPtr, value); }
     }
 
     public double PolygonalApproxAccuracyRate {
-      get { return auGetDetectorParametersPolygonalApproxAccuracyRate(dllPtr); }
-      set { auSetDetectorParametersPolygonalApproxAccuracyRate(dllPtr, value); }
+      get { return auGetDetectorParametersPolygonalApproxAccuracyRate(cvPtr); }
+      set { auSetDetectorParametersPolygonalApproxAccuracyRate(cvPtr, value); }
     }
 
     public double MinCornerDistanceRate {
-      get { return auGetDetectorParametersMinCornerDistanceRate(dllPtr); }
-      set { auSetDetectorParametersMinCornerDistanceRate(dllPtr, value); }
+      get { return auGetDetectorParametersMinCornerDistanceRate(cvPtr); }
+      set { auSetDetectorParametersMinCornerDistanceRate(cvPtr, value); }
     }
 
     public int MinDistanceToBorder {
-      get { return auGetDetectorParametersMinDistanceToBorder(dllPtr); }
-      set { auSetDetectorParametersMinDistanceToBorder(dllPtr, value); }
+      get { return auGetDetectorParametersMinDistanceToBorder(cvPtr); }
+      set { auSetDetectorParametersMinDistanceToBorder(cvPtr, value); }
     }
 
     public double MinMarkerDistanceRate {
-      get { return auGetDetectorParametersMinMarkerDistanceRate(dllPtr); }
-      set { auSetDetectorParametersMinMarkerDistanceRate(dllPtr, value); }
+      get { return auGetDetectorParametersMinMarkerDistanceRate(cvPtr); }
+      set { auSetDetectorParametersMinMarkerDistanceRate(cvPtr, value); }
     }
 
     public bool DoCornerRefinement {
-      get { return auGetDetectorParametersDoCornerRefinement(dllPtr); }
-      set { auSetDetectorParametersDoCornerRefinement(dllPtr, value); }
+      get { return auGetDetectorParametersDoCornerRefinement(cvPtr); }
+      set { auSetDetectorParametersDoCornerRefinement(cvPtr, value); }
     }
 
     public int CornerRefinementWinSize {
-      get { return auGetDetectorParametersCornerRefinementWinSize(dllPtr); }
-      set { auSetDetectorParametersCornerRefinementWinSize(dllPtr, value); }
+      get { return auGetDetectorParametersCornerRefinementWinSize(cvPtr); }
+      set { auSetDetectorParametersCornerRefinementWinSize(cvPtr, value); }
     }
 
     public int CornerRefinementMaxIterations {
-      get { return auGetDetectorParametersCornerRefinementMaxIterations(dllPtr); }
-      set { auSetDetectorParametersCornerRefinementMaxIterations(dllPtr, value); }
+      get { return auGetDetectorParametersCornerRefinementMaxIterations(cvPtr); }
+      set { auSetDetectorParametersCornerRefinementMaxIterations(cvPtr, value); }
     }
 
     public double CornerRefinementMinAccuracy {
-      get { return auGetDetectorParametersCornerRefinementMinAccuracy(dllPtr); }
-      set { auSetDetectorParametersCornerRefinementMinAccuracy(dllPtr, value); }
+      get { return auGetDetectorParametersCornerRefinementMinAccuracy(cvPtr); }
+      set { auSetDetectorParametersCornerRefinementMinAccuracy(cvPtr, value); }
     }
 
     public int MarkerBorderBits {
-      get { return auGetDetectorParametersMarkerBorderBits(dllPtr); }
-      set { auSetDetectorParametersMarkerBorderBits(dllPtr, value); }
+      get { return auGetDetectorParametersMarkerBorderBits(cvPtr); }
+      set { auSetDetectorParametersMarkerBorderBits(cvPtr, value); }
     }
 
     public int PerspectiveRemovePixelPerCell {
-      get { return auGetDetectorParametersPerspectiveRemovePixelPerCell(dllPtr); }
-      set { auSetDetectorParametersPerspectiveRemovePixelPerCell(dllPtr, value); }
+      get { return auGetDetectorParametersPerspectiveRemovePixelPerCell(cvPtr); }
+      set { auSetDetectorParametersPerspectiveRemovePixelPerCell(cvPtr, value); }
     }
 
     public double PerspectiveRemoveIgnoredMarginPerCell {
-      get { return auGetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(dllPtr); }
-      set { auSetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(dllPtr, value); }
+      get { return auGetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(cvPtr); }
+      set { auSetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(cvPtr, value); }
     }
 
     public double MaxErroneousBitsInBorderRate {
-      get { return auGetDetectorParametersMaxErroneousBitsInBorderRate(dllPtr); }
-      set { auSetDetectorParametersMaxErroneousBitsInBorderRate(dllPtr, value); }
+      get { return auGetDetectorParametersMaxErroneousBitsInBorderRate(cvPtr); }
+      set { auSetDetectorParametersMaxErroneousBitsInBorderRate(cvPtr, value); }
     }
 
     public double MinOtsuStdDev {
-      get { return auGetDetectorParametersMinOtsuStdDev(dllPtr); }
-      set { auSetDetectorParametersMinOtsuStdDev(dllPtr, value); }
+      get { return auGetDetectorParametersMinOtsuStdDev(cvPtr); }
+      set { auSetDetectorParametersMinOtsuStdDev(cvPtr, value); }
     }
 
     public double ErrorCorrectionRate {
-      get { return auGetDetectorParametersErrorCorrectionRate(dllPtr); }
-      set { auSetDetectorParametersErrorCorrectionRate(dllPtr, value); }
+      get { return auGetDetectorParametersErrorCorrectionRate(cvPtr); }
+      set { auSetDetectorParametersErrorCorrectionRate(cvPtr, value); }
     }
   }
 }

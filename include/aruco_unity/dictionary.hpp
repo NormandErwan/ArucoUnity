@@ -5,7 +5,7 @@
 #include "aruco_unity/exports.hpp"
 
 extern "C" {
-  ARUCO_UNITY_API int auGetDictionaryMarkerSize(cv::aruco::Dictionary* dictionary);
+  ARUCO_UNITY_API int auGetDictionaryMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary);
 }
 
 #endif
