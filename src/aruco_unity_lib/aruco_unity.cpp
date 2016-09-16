@@ -1,5 +1,4 @@
 #include "aruco_unity.hpp"
-#include <unordered_map>
 
 extern "C" {
   // Detector parameters

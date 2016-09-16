@@ -6,6 +6,7 @@
 
 extern "C" {
   ARUCO_UNITY_API int auGetDictionaryMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary);
+  ARUCO_UNITY_API void auDictionaryDrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits);
 }
 
 #endif
