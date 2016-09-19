@@ -5,6 +5,13 @@
 #include "aruco_unity/exports.hpp"
 
 extern "C" {
+  // Constructors
+  ARUCO_UNITY_API cv::Ptr<cv::aruco::DetectorParameters>* auCreateDetectorParameters();
+
+  // Destructor
+  ARUCO_UNITY_API void auDeleteDetectorParameters(cv::Ptr<cv::aruco::DetectorParameters>* parameters);
+
+  // Variables
   ARUCO_UNITY_API int auGetDetectorParametersAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters);
   ARUCO_UNITY_API void auSetDetectorParametersAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeMin);
 
