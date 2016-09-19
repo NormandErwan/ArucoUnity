@@ -4,7 +4,6 @@ project(ArucoUnityLib)
 
 
 # Target
-set(PROJECT_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include CACHE INTERNAL "The ArUco Unity include directories.")
 set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp

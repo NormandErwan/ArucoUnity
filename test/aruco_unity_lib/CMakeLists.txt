@@ -15,16 +15,6 @@ target_link_libraries(${PROJECT_NAME} ${CMAKE_PROJECT_NAME})
 
 
 # Installation
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
 )
-
-# Installation of the dll dependencies on Windows
-if (WIN32)
-  install(DIRECTORY ${OpenCV_LIB_DIR}/../bin/
-          DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
-          FILES_MATCHING PATTERN "*.dll"
-  )
-endif()
