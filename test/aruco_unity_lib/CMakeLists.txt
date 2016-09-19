@@ -10,9 +10,6 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 
 # Dependencies
-find_package(OpenCV REQUIRED aruco)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
-
 link_directories(${RUNTIME_OUTPUT_DIRECTORY})
 target_link_libraries(${PROJECT_NAME} ${CMAKE_PROJECT_NAME})
 

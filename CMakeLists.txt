@@ -21,7 +21,8 @@ set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/bin) # Destination of the d
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the corresponding import libraries of the dlls for dll platform
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the librairies for non-dll platform
 
-set(BUILD_TESTS TRUE CACHE BOOL "Build unitary tests or not.")
+option(BUILD_TESTS "Build the unitary tests." ON)
+
 
 # Add subdirectories
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/aruco_unity_lib)
