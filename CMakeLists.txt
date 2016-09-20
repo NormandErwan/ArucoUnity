@@ -17,7 +17,7 @@ endif()
 
 set(PROJECT_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include CACHE INTERNAL "The ArUco Unity include directories.")
 
-set(UNITY_PROJECT ${PROJECT_SOURCE_DIR}/src/aruco_unity_package) # The Unity project directory where the compiled plugin will be installed.
+set(UNITY_PROJECT ${CMAKE_SOURCE_DIR}/src/aruco_unity_package) # The Unity project directory where the compiled plugin will be installed.
 set(UNITY_PLUGINS_DIR ${UNITY_PROJECT}/Assets/Plugins/x86_64)
 
 set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/bin) # Destination of the dll for dll platform
@@ -29,12 +29,12 @@ option(BUILD_DOC "Build the doc." ON)
 
 
 # Add subdirectories
-add_subdirectory(${PROJECT_SOURCE_DIR}/src/aruco_unity_lib)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/aruco_unity_lib)
 
 if (BUILD_TESTS)
-  add_subdirectory(${PROJECT_SOURCE_DIR}/test/aruco_unity_lib)
+  add_subdirectory(${CMAKE_SOURCE_DIR}/test/aruco_unity_lib)
 endif()
 
 if (BUILD_DOC)
-  add_subdirectory(${PROJECT_SOURCE_DIR}/doc)
+  add_subdirectory(${CMAKE_SOURCE_DIR}/doc)
 endif()
