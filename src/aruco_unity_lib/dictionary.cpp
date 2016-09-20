@@ -2,13 +2,12 @@
 #include <opencv2/imgproc.hpp>
 
 extern "C" {
-  // Constructors
+  // Constructors & Destructors
   cv::Ptr<cv::aruco::Dictionary>* auGetPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name) {
     cv::Ptr<cv::aruco::Dictionary> ptr = cv::aruco::getPredefinedDictionary(name);
     return new cv::Ptr<cv::aruco::Dictionary>(ptr);
   }
-
-  // Destructor
+  
   void auDeleteDictionary(cv::Ptr<cv::aruco::Dictionary>* dictionary) {
     delete dictionary;
   }

@@ -9,6 +9,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/detector_parameters.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
 )
 set(PROJECT_SOURCES

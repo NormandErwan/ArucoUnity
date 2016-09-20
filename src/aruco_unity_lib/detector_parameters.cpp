@@ -1,13 +1,12 @@
 #include "aruco_unity/detector_parameters.hpp"
 
 extern "C" {
-  // Constructors
+  // Constructors & Destructors
   cv::Ptr<cv::aruco::DetectorParameters>* auCreateDetectorParameters() {
     cv::Ptr<cv::aruco::DetectorParameters> ptr = cv::aruco::DetectorParameters::create();
     return new cv::Ptr<cv::aruco::DetectorParameters>(ptr);
   }
 
-  // Destructor
   void auDeleteDetectorParameters(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     delete parameters;
   }

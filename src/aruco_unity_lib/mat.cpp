@@ -1,12 +1,11 @@
 #include "aruco_unity/utility/mat.hpp"
 
 extern "C" {
-  // Constructors
+  // Constructors & Destructors
   cv::Mat* auNewMat() {
     return new cv::Mat();
   }
-
-  // Destructor
+  
   void auDeleteMat(cv::Mat* mat) {
     delete mat;
   }
