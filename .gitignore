@@ -31,7 +31,6 @@ build/
 ArucoUnityConfig.cmake
 lib/
 bin/
-docs/
 
 
 ## C++
