@@ -30,3 +30,8 @@ $ ./ArucoUnityLibTests
 - Retrieve the ArucoUnity Unity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy the generated library and the `<aruco_unity_source_directory>/src/aruco_unity_package/Assets/ArucoUnity` folder in your Unity project.
 
 - Open your Unity project and use the prefabs of the ArucoUnity package.
+
+
+## Documentation
+
+The documentation is available online: https://enormand.github.io/aruco-unity/modules.html
