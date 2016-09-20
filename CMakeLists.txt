@@ -25,7 +25,7 @@ set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the c
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the librairies for non-dll platform
 
 option(BUILD_TESTS "Build the unitary tests." ON)
-option(BUILD_DOC "Build the doc." ON)
+option(BUILD_DOCS "Build the docs." ON)
 
 
 # Add subdirectories
@@ -35,6 +35,6 @@ if (BUILD_TESTS)
   add_subdirectory(${CMAKE_SOURCE_DIR}/test/aruco_unity_lib)
 endif()
 
-if (BUILD_DOC)
-  add_subdirectory(${CMAKE_SOURCE_DIR}/doc)
+if (BUILD_DOCS)
+  add_subdirectory(${CMAKE_SOURCE_DIR}/docs)
 endif()
