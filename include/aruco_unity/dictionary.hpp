@@ -18,7 +18,7 @@ extern "C" {
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* auGetPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
 
   //! \brief Deletes any Dictionary.
-  //! \param parameters The Dictionary used.
+  //! \param dictionary The Dictionary used.
   ARUCO_UNITY_API void auDeleteDictionary(cv::Ptr<cv::aruco::Dictionary>* dictionary);
   
   //! @} Constructors & Destructors
@@ -27,7 +27,11 @@ extern "C" {
   //! @{
 
   //! \brief Draw a canonical marker image.
-  //! \param parameters The Dictionary used.
+  //! \param dictionary The Dictionary used.
+  //! \param id The marker id. 
+  //! \param sidePixels The number of pixel per side of the marker. 
+  //! \param img The marker's pixels returned.
+  //! \param borderBits The number of bits forming the marker border.
   ARUCO_UNITY_API void auDictionaryDrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits);
   
   //! @} Functions
@@ -36,7 +40,7 @@ extern "C" {
   //! @{
 
   //! \brief Returns the marker size.
-  //! \param parameters The Dictionary used.
+  //! \param dictionary The Dictionary used.
   ARUCO_UNITY_API int auGetDictionaryMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary);
 
   //! @} Variables
