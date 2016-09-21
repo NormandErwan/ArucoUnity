@@ -11,7 +11,7 @@ set(DOXYGEN_OUTPUT_DIRECTORY "docs")
 # Target
 configure_file(Doxyfile.in ${DOXYFILE} @ONLY)
 
-add_custom_target(${PROJECT_NAME}
+add_custom_target(${PROJECT_NAME} ALL
                   COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
 )
 
