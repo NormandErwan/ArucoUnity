@@ -39,9 +39,17 @@ extern "C" {
   //! \name Variables
   //! @{
 
+  //! \brief Returns the number of columns.
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API int auGetMatCols(cv::Mat* mat);
+
   //! \brief Returns a pointer to the data.
   //! \param mat The Mat used.
   ARUCO_UNITY_API uchar* auGetMatData(cv::Mat* mat);
+
+  //! \brief Returns the number of rows.
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API int auGetMatRows(cv::Mat* mat);
 
   //! @} Variables
 }

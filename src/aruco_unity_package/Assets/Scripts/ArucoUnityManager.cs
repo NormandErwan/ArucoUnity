@@ -2,11 +2,8 @@
 
 public class ArucoUnityManager : MonoBehaviour {
 
-  public GameObject markerPlane;
-  
   ArucoUnity.Dictionary dictionary;
   ArucoUnity.DetectorParameters detectorParameters;
-  ArucoUnity.Mat marker;
 
   void Start()
   {
@@ -15,24 +12,6 @@ public class ArucoUnityManager : MonoBehaviour {
 
     detectorParameters = ArucoUnity.CreateDetectorParameters();
     testDetectorParameters(detectorParameters);
-
-    marker = new ArucoUnity.Mat();
-    testMarker();
-  }
-
-  void testMarker()
-  {
-    int markerId = 1,
-        markerSize = 100,
-        markerBorderBits = 1;
-    dictionary.DrawMarker(markerId, markerSize, ref marker, markerBorderBits);
-
-    Texture2D markerPlaneTexture = new Texture2D(markerSize, markerSize, TextureFormat.RGB24, false);
-    markerPlane.GetComponent<Renderer>().material.mainTexture = markerPlaneTexture;
-
-    int markerDataSize = (int)(marker.ElemSize() * marker.Total());
-    markerPlaneTexture.LoadRawTextureData(marker.data, markerDataSize);
-    markerPlaneTexture.Apply();
   }
 
   void testDictionary(ArucoUnity.Dictionary dictionary) {

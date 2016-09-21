@@ -20,7 +20,15 @@ extern "C" {
   }
 
   // Variables
+  int auGetMatCols(cv::Mat* mat) {
+    return mat->cols;
+  }
+
   uchar* auGetMatData(cv::Mat* mat) {
     return mat->data;
+  }
+
+  int auGetMatRows(cv::Mat* mat) {
+    return mat->rows;
   }
 }
