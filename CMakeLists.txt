@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(ArucoUnity)
 
@@ -28,7 +28,7 @@ set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the c
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the librairies for non-dll platform
 
 
-# Add subdirectories
+# Add subprojects
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/aruco_unity_lib)
 
 if (BUILD_DOCS)

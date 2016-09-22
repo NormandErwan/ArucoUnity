@@ -1,17 +1,13 @@
-cmake_minimum_required(VERSION 2.8.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(ArucoUnityLib)
 
 
+# Dependencies
+find_package(OpenCV REQUIRED aruco)
+
+
 # Target
-set(PROJECT_HEADERS
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/detector_parameters.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
-)
 set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
@@ -19,12 +15,9 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/mat.cpp
 )
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${PROJECT_SOURCES})
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_INCLUDE_DIRS})
 
-
-# Dependencies
-find_package(OpenCV REQUIRED aruco)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 
 
