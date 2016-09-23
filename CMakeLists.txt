@@ -36,5 +36,7 @@ if (BUILD_DOCS)
 endif()
 
 if (BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/googletest)
   add_subdirectory(${CMAKE_SOURCE_DIR}/test/aruco_unity_lib)
 endif()
