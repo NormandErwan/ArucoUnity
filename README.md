@@ -63,4 +63,4 @@ The documentation is available online: https://enormand.github.io/aruco-unity/mo
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (3-clause BSD license).
 
-See the [3rdparty folder](3rdparty) for licenses of the third-party dependencies.
+See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies.
