@@ -32,7 +32,7 @@ extern "C" {
   ARUCO_UNITY_API cv::Exception* au_Exception_New();
 
   //! \brief Deletes any Exception.
-  //! \param e The Exception used.
+  //! \param exception The Exception used.
   ARUCO_UNITY_API void au_Exception_Delete(cv::Exception* exception);
 
   //! @} Constructors & Destructors
@@ -40,7 +40,8 @@ extern "C" {
   //! \name Functions
   //! @{
 
-  //! \param mat The Exception used.
+  //! \param exception The Exception used.
+  //! \param what The error description.
   //! \return The error description and the context as a text string.
   ARUCO_UNITY_API void au_Exception_What(cv::Exception* exception, char* what);
 
@@ -49,7 +50,7 @@ extern "C" {
   //! \name Variables
   //! @{
 
-  //! \param mat The Exception used.
+  //! \param exception The Exception used.
   //! \return The error code.
   ARUCO_UNITY_API int au_Exception_GetCode(cv::Exception* exception);
 

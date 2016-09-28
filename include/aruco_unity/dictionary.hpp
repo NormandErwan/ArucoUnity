@@ -32,6 +32,7 @@ extern "C" {
   //! \param sidePixels The number of pixel per side of the marker. 
   //! \param img The marker's pixels returned.
   //! \param borderBits The number of bits forming the marker border.
+  //! \param exception The exception threw by the CV_ASSERT if it has been trigerred.
   ARUCO_UNITY_API void au_Dictionary_DrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, 
     cv::Exception* exception);
   
