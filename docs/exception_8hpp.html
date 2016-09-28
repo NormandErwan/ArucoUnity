@@ -75,8 +75,8 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a949de7da977f6853cd77a1003d27dcdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exception_8hpp.html#a949de7da977f6853cd77a1003d27dcdc">ARUCO_UNITY_TRY_CATCH</a>(exceptionObject,  trySection)</td></tr>
-<tr class="separator:a949de7da977f6853cd77a1003d27dcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a830cdae02bb7c5c0df9b2517fa2e63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exception_8hpp.html#a0a830cdae02bb7c5c0df9b2517fa2e63">ARUCO_UNITY_COPY_EXCEPTION</a>(exceptionDestination,  exceptionSource)</td></tr>
+<tr class="separator:a0a830cdae02bb7c5c0df9b2517fa2e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -95,23 +95,23 @@ Functions</h2></td></tr>
 <tr class="separator:ga533c1e464774ba660de3c3c4e04d54c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a949de7da977f6853cd77a1003d27dcdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a949de7da977f6853cd77a1003d27dcdc">&sect;&nbsp;</a></span>ARUCO_UNITY_TRY_CATCH</h2>
+<a id="a0a830cdae02bb7c5c0df9b2517fa2e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a830cdae02bb7c5c0df9b2517fa2e63">&sect;&nbsp;</a></span>ARUCO_UNITY_COPY_EXCEPTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARUCO_UNITY_TRY_CATCH</td>
+          <td class="memname">#define ARUCO_UNITY_COPY_EXCEPTION</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">exceptionObject, </td>
+          <td class="paramname">exceptionDestination, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">trySection&#160;</td>
+          <td class="paramname">exceptionSource&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -120,13 +120,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">try</span> {                                                      \</div><div class="line">  trySection                                               \</div><div class="line">}                                                          \</div><div class="line">catch (<span class="keyword">const</span> cv::Exception&amp; e) {                           \</div><div class="line">  exception-&gt;code = e.code;                                \</div><div class="line">  exception-&gt;err = e.err;                                  \</div><div class="line">  exception-&gt;file = e.file;                                \</div><div class="line">  exception-&gt;func = e.func;                                \</div><div class="line">  exception-&gt;line = e.line;                                \</div><div class="line">  exception-&gt;msg = e.msg;                                  \</div><div class="line">  return;                                                  \</div><div class="line">}                                                          \</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">exception-&gt;code = e.code;                                               \</div><div class="line">  exception-&gt;err = e.err;                                                 \</div><div class="line">  exception-&gt;file = e.file;                                               \</div><div class="line">  exception-&gt;func = e.func;                                               \</div><div class="line">  exception-&gt;line = e.line;                                               \</div><div class="line">  exception-&gt;msg = e.msg;                                                 \</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 28 2016 02:50:52 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 28 2016 17:43:48 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

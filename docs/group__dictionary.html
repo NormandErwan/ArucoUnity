@@ -70,37 +70,78 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Constructors &amp; Destructors</h2></td></tr>
-<tr class="memitem:ga57daa89e315dfb6a763fb29f90c35d5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga57daa89e315dfb6a763fb29f90c35d5a">au_GetPredefinedDictionary</a> (cv::aruco::PREDEFINED_DICTIONARY_NAME name)</td></tr>
-<tr class="memdesc:ga57daa89e315dfb6a763fb29f90c35d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one of the predefined dictionaries defined in PREDEFINED_DICTIONARY_NAME.  <a href="#ga57daa89e315dfb6a763fb29f90c35d5a">More...</a><br /></td></tr>
-<tr class="separator:ga57daa89e315dfb6a763fb29f90c35d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad715bd0b91718ba0b84e5cee03c08c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gad715bd0b91718ba0b84e5cee03c08c9b">au_Dictionary_Delete</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
-<tr class="memdesc:gad715bd0b91718ba0b84e5cee03c08c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes any Dictionary.  <a href="#gad715bd0b91718ba0b84e5cee03c08c9b">More...</a><br /></td></tr>
-<tr class="separator:gad715bd0b91718ba0b84e5cee03c08c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca57a6f2bb4cd770785b681341e98f58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gaca57a6f2bb4cd770785b681341e98f58">au_Dictionary_new1</a> (const cv::Mat *bytesList, int markerSize, int maxCorrectionBits)</td></tr>
+<tr class="memdesc:gaca57a6f2bb4cd770785b681341e98f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Dictionary.  <a href="#gaca57a6f2bb4cd770785b681341e98f58">More...</a><br /></td></tr>
+<tr class="separator:gaca57a6f2bb4cd770785b681341e98f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ecd49fe342a42fb08f680940c162c59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga5ecd49fe342a42fb08f680940c162c59">au_Dictionary_new2</a> (const cv::Mat *bytesList, int markerSize)</td></tr>
+<tr class="separator:ga5ecd49fe342a42fb08f680940c162c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46e08df9aae29b8c3addb975a9911df2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga46e08df9aae29b8c3addb975a9911df2">au_Dictionary_new3</a> (const cv::Mat *bytesList)</td></tr>
+<tr class="separator:ga46e08df9aae29b8c3addb975a9911df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6773a10b6f5acfaf2fbd88a7133fcb50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga6773a10b6f5acfaf2fbd88a7133fcb50">au_Dictionary_new4</a> ()</td></tr>
+<tr class="separator:ga6773a10b6f5acfaf2fbd88a7133fcb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab941779f0b7f56f6d951155416f4eb20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gab941779f0b7f56f6d951155416f4eb20">au_Dictionary_new5</a> (const cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
+<tr class="memdesc:gab941779f0b7f56f6d951155416f4eb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a Dictionary.  <a href="#gab941779f0b7f56f6d951155416f4eb20">More...</a><br /></td></tr>
+<tr class="separator:gab941779f0b7f56f6d951155416f4eb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee64bac16a1b8fa33e6a05a096763db8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gaee64bac16a1b8fa33e6a05a096763db8">au_getPredefinedDictionary</a> (cv::aruco::PREDEFINED_DICTIONARY_NAME name)</td></tr>
+<tr class="memdesc:gaee64bac16a1b8fa33e6a05a096763db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one of the predefined dictionaries defined in PREDEFINED_DICTIONARY_NAME.  <a href="#gaee64bac16a1b8fa33e6a05a096763db8">More...</a><br /></td></tr>
+<tr class="separator:gaee64bac16a1b8fa33e6a05a096763db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf82e37b922819ff123dce8c7d52df709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gaf82e37b922819ff123dce8c7d52df709">au_generateCustomDictionary1</a> (int nMarkers, int markerSize, cv::Exception *exception)</td></tr>
+<tr class="memdesc:gaf82e37b922819ff123dce8c7d52df709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new customizable marker Dictionary.  <a href="#gaf82e37b922819ff123dce8c7d52df709">More...</a><br /></td></tr>
+<tr class="separator:gaf82e37b922819ff123dce8c7d52df709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac03d00c72d7c6dc1a28842d9ff6684f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gac03d00c72d7c6dc1a28842d9ff6684f1">au_generateCustomDictionary2</a> (int nMarkers, int markerSize, cv::Ptr&lt; cv::aruco::Dictionary &gt; *baseDictionary, cv::Exception *exception)</td></tr>
+<tr class="memdesc:gac03d00c72d7c6dc1a28842d9ff6684f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new customizable marker Dictionary.  <a href="#gac03d00c72d7c6dc1a28842d9ff6684f1">More...</a><br /></td></tr>
+<tr class="separator:gac03d00c72d7c6dc1a28842d9ff6684f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d9e291e9c8ef7072611bd5b55da3b5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga6d9e291e9c8ef7072611bd5b55da3b5e">au_Dictionary_delete</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
+<tr class="memdesc:ga6d9e291e9c8ef7072611bd5b55da3b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes any Dictionary.  <a href="#ga6d9e291e9c8ef7072611bd5b55da3b5e">More...</a><br /></td></tr>
+<tr class="separator:ga6d9e291e9c8ef7072611bd5b55da3b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gac6ad33cefd655cbe2db14d85e1c452bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gac6ad33cefd655cbe2db14d85e1c452bd">au_Dictionary_DrawMarker</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, int id, int sidePixels, cv::Mat *img, int borderBits, cv::Exception *exception)</td></tr>
-<tr class="memdesc:gac6ad33cefd655cbe2db14d85e1c452bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a canonical marker image.  <a href="#gac6ad33cefd655cbe2db14d85e1c452bd">More...</a><br /></td></tr>
-<tr class="separator:gac6ad33cefd655cbe2db14d85e1c452bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Member Functions</h2></td></tr>
+<tr class="memitem:ga3eda602ba0a3e071e4c8709386a4a24e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga3eda602ba0a3e071e4c8709386a4a24e">au_Dictionary_drawMarker</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, int id, int sidePixels, cv::Mat *img, int borderBits, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga3eda602ba0a3e071e4c8709386a4a24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a canonical marker image.  <a href="#ga3eda602ba0a3e071e4c8709386a4a24e">More...</a><br /></td></tr>
+<tr class="separator:ga3eda602ba0a3e071e4c8709386a4a24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf1b39152be717c1d61c313ffa2f6ca7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gacf1b39152be717c1d61c313ffa2f6ca7">au_Dictionary_getDistanceToId1</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, cv::Mat *bits, int id, bool allRotations, cv::Exception *exception)</td></tr>
+<tr class="memdesc:gacf1b39152be717c1d61c313ffa2f6ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the distance of the input bits to the specific id. If allRotations is true, the four posible bits rotation are considered.  <a href="#gacf1b39152be717c1d61c313ffa2f6ca7">More...</a><br /></td></tr>
+<tr class="separator:gacf1b39152be717c1d61c313ffa2f6ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56e33992339510eb79ff2f3625e86804"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga56e33992339510eb79ff2f3625e86804">au_Dictionary_getDistanceToId2</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, cv::Mat *bits, int id, cv::Exception *exception)</td></tr>
+<tr class="separator:ga56e33992339510eb79ff2f3625e86804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga055380337cf745cc19abceeeeed63635"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga055380337cf745cc19abceeeeed63635">au_Dictionary_identify</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, const cv::Mat *onlyBits, int *idx, int *rotation, double maxCorrectionRate, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga055380337cf745cc19abceeeeed63635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a matrix of bits. Returns whether if marker is identified or not. It returns by reference the correct id (if any) and the correct rotation.  <a href="#ga055380337cf745cc19abceeeeed63635">More...</a><br /></td></tr>
+<tr class="separator:ga055380337cf745cc19abceeeeed63635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-Variables</h2></td></tr>
-<tr class="memitem:gaf07989f0d521de1e78491b8f92ea064f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#gaf07989f0d521de1e78491b8f92ea064f">au_Dictionary_GetMarkerSize</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
-<tr class="memdesc:gaf07989f0d521de1e78491b8f92ea064f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the marker size.  <a href="#gaf07989f0d521de1e78491b8f92ea064f">More...</a><br /></td></tr>
-<tr class="separator:gaf07989f0d521de1e78491b8f92ea064f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Static Member Functions</h2></td></tr>
+<tr class="memitem:ga95732fb6046cd4f7e7790c41ea24f1a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga95732fb6046cd4f7e7790c41ea24f1a8">au_Dictionary_getBitsFromByteList</a> (const cv::Mat *byteList, int markerSize, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga95732fb6046cd4f7e7790c41ea24f1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform list of bytes to matrix of bits.  <a href="#ga95732fb6046cd4f7e7790c41ea24f1a8">More...</a><br /></td></tr>
+<tr class="separator:ga95732fb6046cd4f7e7790c41ea24f1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ed88338d01b74c5e0d3d54226c2e8bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga2ed88338d01b74c5e0d3d54226c2e8bf">au_Dictionary_getByteListFromBits</a> (const cv::Mat *bits)</td></tr>
+<tr class="memdesc:ga2ed88338d01b74c5e0d3d54226c2e8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform matrix of bits to list of bytes in the 4 rotations.  <a href="#ga2ed88338d01b74c5e0d3d54226c2e8bf">More...</a><br /></td></tr>
+<tr class="separator:ga2ed88338d01b74c5e0d3d54226c2e8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Attributes</h2></td></tr>
+<tr class="memitem:ga0e9905ff1e7fc33f20a05b14db0f04e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga0e9905ff1e7fc33f20a05b14db0f04e9">au_Dictionary_getBytesList</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
+<tr class="memdesc:ga0e9905ff1e7fc33f20a05b14db0f04e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the marker code information.  <a href="#ga0e9905ff1e7fc33f20a05b14db0f04e9">More...</a><br /></td></tr>
+<tr class="separator:ga0e9905ff1e7fc33f20a05b14db0f04e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2427dc5524aead3b58ee699166fc4630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga2427dc5524aead3b58ee699166fc4630">au_Dictionary_getMarkerSize</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
+<tr class="memdesc:ga2427dc5524aead3b58ee699166fc4630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bits per dimension.  <a href="#ga2427dc5524aead3b58ee699166fc4630">More...</a><br /></td></tr>
+<tr class="separator:ga2427dc5524aead3b58ee699166fc4630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30425cb8163346c74830eb62117aedf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dictionary.html#ga30425cb8163346c74830eb62117aedf7">au_Dictionary_getMaxCorrectionBits</a> (cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary)</td></tr>
+<tr class="memdesc:ga30425cb8163346c74830eb62117aedf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of bits that can be corrected.  <a href="#ga30425cb8163346c74830eb62117aedf7">More...</a><br /></td></tr>
+<tr class="separator:ga30425cb8163346c74830eb62117aedf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Set of markers. </p>
 <p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/d5/d0b/classcv_1_1aruco_1_1Dictionary.html">http://docs.opencv.org/3.1.0/d5/d0b/classcv_1_1aruco_1_1Dictionary.html</a>. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gad715bd0b91718ba0b84e5cee03c08c9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad715bd0b91718ba0b84e5cee03c08c9b">&sect;&nbsp;</a></span>au_Dictionary_Delete()</h2>
+<a id="ga6d9e291e9c8ef7072611bd5b55da3b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d9e291e9c8ef7072611bd5b55da3b5e">&sect;&nbsp;</a></span>au_Dictionary_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Dictionary_Delete </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Dictionary_delete </td>
           <td>(</td>
           <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
           <td class="paramname"><em>dictionary</em></td><td>)</td>
@@ -119,14 +160,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gac6ad33cefd655cbe2db14d85e1c452bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac6ad33cefd655cbe2db14d85e1c452bd">&sect;&nbsp;</a></span>au_Dictionary_DrawMarker()</h2>
+<a id="ga3eda602ba0a3e071e4c8709386a4a24e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3eda602ba0a3e071e4c8709386a4a24e">&sect;&nbsp;</a></span>au_Dictionary_drawMarker()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Dictionary_DrawMarker </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Dictionary_drawMarker </td>
           <td>(</td>
           <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
           <td class="paramname"><em>dictionary</em>, </td>
@@ -177,20 +218,93 @@ Variables</h2></td></tr>
     <tr><td class="paramname">sidePixels</td><td>The number of pixel per side of the marker. </td></tr>
     <tr><td class="paramname">img</td><td>The marker's pixels returned. </td></tr>
     <tr><td class="paramname">borderBits</td><td>The number of bits forming the marker border. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="gaf07989f0d521de1e78491b8f92ea064f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf07989f0d521de1e78491b8f92ea064f">&sect;&nbsp;</a></span>au_Dictionary_GetMarkerSize()</h2>
+<a id="ga95732fb6046cd4f7e7790c41ea24f1a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95732fb6046cd4f7e7790c41ea24f1a8">&sect;&nbsp;</a></span>au_Dictionary_getBitsFromByteList()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Dictionary_GetMarkerSize </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Dictionary_getBitsFromByteList </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>byteList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>markerSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transform list of bytes to matrix of bits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byteList</td><td>The list of bytes. </td></tr>
+    <tr><td class="paramname">markerSize</td><td>The size of a side of the matrix of bits. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The matrix of bits. </dd></dl>
+
+</div>
+</div>
+<a id="ga2ed88338d01b74c5e0d3d54226c2e8bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ed88338d01b74c5e0d3d54226c2e8bf">&sect;&nbsp;</a></span>au_Dictionary_getByteListFromBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Dictionary_getByteListFromBits </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>bits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transform matrix of bits to list of bytes in the 4 rotations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bits</td><td>The matrix of bits. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The list of bytes. </dd></dl>
+
+</div>
+</div>
+<a id="ga0e9905ff1e7fc33f20a05b14db0f04e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e9905ff1e7fc33f20a05b14db0f04e9">&sect;&nbsp;</a></span>au_Dictionary_getBytesList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Dictionary_getBytesList </td>
           <td>(</td>
           <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
           <td class="paramname"><em>dictionary</em></td><td>)</td>
@@ -199,7 +313,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the marker size. </p>
+<p>Returns the marker code information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dictionary</td><td>The Dictionary used. </td></tr>
@@ -209,14 +323,466 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga57daa89e315dfb6a763fb29f90c35d5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga57daa89e315dfb6a763fb29f90c35d5a">&sect;&nbsp;</a></span>au_GetPredefinedDictionary()</h2>
+<a id="gacf1b39152be717c1d61c313ffa2f6ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf1b39152be717c1d61c313ffa2f6ca7">&sect;&nbsp;</a></span>au_Dictionary_getDistanceToId1()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_GetPredefinedDictionary </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Dictionary_getDistanceToId1 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allRotations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the distance of the input bits to the specific id. If allRotations is true, the four posible bits rotation are considered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The Dictionary used. </td></tr>
+    <tr><td class="paramname">bits</td><td></td></tr>
+    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">allRotations</td><td></td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga56e33992339510eb79ff2f3625e86804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56e33992339510eb79ff2f3625e86804">&sect;&nbsp;</a></span>au_Dictionary_getDistanceToId2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Dictionary_getDistanceToId2 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>au_Dictionary_GetDistanceToId1. </dd></dl>
+
+</div>
+</div>
+<a id="ga2427dc5524aead3b58ee699166fc4630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2427dc5524aead3b58ee699166fc4630">&sect;&nbsp;</a></span>au_Dictionary_getMarkerSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Dictionary_getMarkerSize </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of bits per dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The Dictionary used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga30425cb8163346c74830eb62117aedf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30425cb8163346c74830eb62117aedf7">&sect;&nbsp;</a></span>au_Dictionary_getMaxCorrectionBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Dictionary_getMaxCorrectionBits </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the maximum number of bits that can be corrected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The Dictionary used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga055380337cf745cc19abceeeeed63635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga055380337cf745cc19abceeeeed63635">&sect;&nbsp;</a></span>au_Dictionary_identify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> bool au_Dictionary_identify </td>
+          <td>(</td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>onlyBits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>rotation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxCorrectionRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given a matrix of bits. Returns whether if marker is identified or not. It returns by reference the correct id (if any) and the correct rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The Dictionary used. </td></tr>
+    <tr><td class="paramname">onlyBits</td><td>The matrix of bits. </td></tr>
+    <tr><td class="paramname">idx</td><td>The id of the identified marker. </td></tr>
+    <tr><td class="paramname">rotation</td><td>The rotation of the identified marker. </td></tr>
+    <tr><td class="paramname">maxCorrectionRate</td><td></td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Is the marker identified. </dd></dl>
+
+</div>
+</div>
+<a id="gaca57a6f2bb4cd770785b681341e98f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca57a6f2bb4cd770785b681341e98f58">&sect;&nbsp;</a></span>au_Dictionary_new1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_Dictionary_new1 </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>bytesList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>markerSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxCorrectionBits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a Dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bytesList</td><td>Marker code information. </td></tr>
+    <tr><td class="paramname">markerSize</td><td>Number of bits per dimension. </td></tr>
+    <tr><td class="paramname">maxCorrectionBits</td><td>Maximum number of bits that can be reached. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new Dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="ga5ecd49fe342a42fb08f680940c162c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ecd49fe342a42fb08f680940c162c59">&sect;&nbsp;</a></span>au_Dictionary_new2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_Dictionary_new2 </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>bytesList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>markerSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>au_Dictionary_New1. </dd></dl>
+
+</div>
+</div>
+<a id="ga46e08df9aae29b8c3addb975a9911df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46e08df9aae29b8c3addb975a9911df2">&sect;&nbsp;</a></span>au_Dictionary_new3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_Dictionary_new3 </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat *&#160;</td>
+          <td class="paramname"><em>bytesList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>au_Dictionary_New1. </dd></dl>
+
+</div>
+</div>
+<a id="ga6773a10b6f5acfaf2fbd88a7133fcb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6773a10b6f5acfaf2fbd88a7133fcb50">&sect;&nbsp;</a></span>au_Dictionary_new4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_Dictionary_new4 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>au_Dictionary_New1. </dd></dl>
+
+</div>
+</div>
+<a id="gab941779f0b7f56f6d951155416f4eb20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab941779f0b7f56f6d951155416f4eb20">&sect;&nbsp;</a></span>au_Dictionary_new5()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_Dictionary_new5 </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a Dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The Dictionary copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new Dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="gaf82e37b922819ff123dce8c7d52df709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf82e37b922819ff123dce8c7d52df709">&sect;&nbsp;</a></span>au_generateCustomDictionary1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_generateCustomDictionary1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nMarkers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>markerSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a new customizable marker Dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nMarkers</td><td>number of markers in the Dictionary. </td></tr>
+    <tr><td class="paramname">markerSize</td><td>number of bits per dimension of each markers. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The generated Dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="gac03d00c72d7c6dc1a28842d9ff6684f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac03d00c72d7c6dc1a28842d9ff6684f1">&sect;&nbsp;</a></span>au_generateCustomDictionary2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_generateCustomDictionary2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nMarkers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>markerSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>baseDictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a new customizable marker Dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nMarkers</td><td>number of markers in the Dictionary. </td></tr>
+    <tr><td class="paramname">markerSize</td><td>number of bits per dimension of each markers. </td></tr>
+    <tr><td class="paramname">baseDictionary</td><td>Include the markers in this Dictionary at the beginning (optional). </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The generated Dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="gaee64bac16a1b8fa33e6a05a096763db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee64bac16a1b8fa33e6a05a096763db8">&sect;&nbsp;</a></span>au_getPredefinedDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Ptr&lt;cv::aruco::Dictionary&gt;* au_getPredefinedDictionary </td>
           <td>(</td>
           <td class="paramtype">cv::aruco::PREDEFINED_DICTIONARY_NAME&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -226,13 +792,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns one of the predefined dictionaries defined in PREDEFINED_DICTIONARY_NAME. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Dictionary. </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 28 2016 02:50:53 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 28 2016 17:43:48 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>
