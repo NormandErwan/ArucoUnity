@@ -4,17 +4,13 @@
 #include <opencv2/core.hpp>
 #include "aruco_unity/exports.hpp"
 
-#define ARUCO_UNITY_TRY_CATCH(exceptionObject, trySection) \
-try trySection                                             \
-catch (const cv::Exception& e) {                           \
-  exception->code = e.code;                                \
-  exception->err = e.err;                                  \
-  exception->file = e.file;                                \
-  exception->func = e.func;                                \
-  exception->line = e.line;                                \
-  exception->msg = e.msg;                                  \
-  return;                                                  \
-}                                                          \
+#define ARUCO_UNITY_COPY_EXCEPTION(exceptionDestination, exceptionSource) \
+  exception->code = e.code;                                               \
+  exception->err = e.err;                                                 \
+  exception->file = e.file;                                               \
+  exception->func = e.func;                                               \
+  exception->line = e.line;                                               \
+  exception->msg = e.msg;                                                 \
 
 //! @addtogroup utility_exception
 //! \brief Class passed to an error. 

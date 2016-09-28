@@ -30,10 +30,10 @@ public partial class ArucoUnity : MonoBehaviour
   }
 
   [DllImport("ArucoUnity")]
-  static extern System.IntPtr au_GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
+  static extern System.IntPtr au_getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
 
   public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
   {
-    return new Dictionary(au_GetPredefinedDictionary(name));
+    return new Dictionary(au_getPredefinedDictionary(name));
   }
 }
