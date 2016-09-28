@@ -1,4 +1,5 @@
 #include "aruco_unity/dictionary.hpp"
+#include "aruco_unity/utility/exception.hpp"
 #include <opencv2/imgproc.hpp>
 
 extern "C" {
@@ -13,9 +14,10 @@ extern "C" {
   }
 
   // Functions
-  void auDictionaryDrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits) {
-    dictionary->get()->drawMarker(id, sidePixels, *img, borderBits);
-    cv::cvtColor(*img, *img, CV_GRAY2RGB);
+  void auDictionaryDrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, cv::Exception* exception) {
+    ARUCO_UNITY_TRY_CATCH(exception,
+      dictionary->get()->drawMarker(id, sidePixels, *img, borderBits);
+    )
   }
 
   // Variables

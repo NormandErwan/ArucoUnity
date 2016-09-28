@@ -4,16 +4,17 @@ public partial class ArucoUnity
 {
   public abstract partial class HandleCvPtr
   {
-    HandleRef _handle;
+    HandleRef handle;
 
     public HandleCvPtr(System.IntPtr cvPtr)
     {
-      _handle = new HandleRef(this, cvPtr);
+      this.cvPtr = cvPtr;
     }
 
     public System.IntPtr cvPtr
     {
-      get { return _handle.Handle; }
+      get { return handle.Handle; }
+      set { handle = new HandleRef(this, value); }
     }
   }
 }

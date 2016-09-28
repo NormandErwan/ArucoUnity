@@ -3,6 +3,7 @@
 
 //! @defgroup utility Utility and OpenCV main modules
 //! @{
+//!   @defgroup utility_exception Exception
 //!   @defgroup utility_mat Mat
 //! @}
 

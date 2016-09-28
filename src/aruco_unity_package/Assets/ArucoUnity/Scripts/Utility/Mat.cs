@@ -11,7 +11,7 @@ public partial class ArucoUnity
     [DllImport("ArucoUnity")]
     static extern void auDeleteMat(System.IntPtr mat);
 
-    /// Functions
+    // Functions
     [DllImport("ArucoUnity")]
     static extern uint auMatTotal(System.IntPtr mat);
     

@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
-public class ArucoUnityManager : MonoBehaviour {
-
+public class ArucoUnityManager : MonoBehaviour
+{
   ArucoUnity.Dictionary dictionary;
   ArucoUnity.DetectorParameters detectorParameters;
 
   void Start()
   {
     dictionary = ArucoUnity.GetPredefinedDictionary(ArucoUnity.PREDEFINED_DICTIONARY_NAME.DICT_4X4_100);
-    testDictionary(dictionary);
+    //testDictionary(dictionary);
 
     detectorParameters = ArucoUnity.CreateDetectorParameters();
-    testDetectorParameters(detectorParameters);
+    //testDetectorParameters(detectorParameters);
   }
 
   void testDictionary(ArucoUnity.Dictionary dictionary) {

@@ -1,7 +1,7 @@
 #ifndef __ARUCO_UNITY_MAT_HPP__
 #define __ARUCO_UNITY_MAT_HPP__
 
-#include <opencv2/aruco.hpp>
+#include <opencv2/core.hpp>
 #include "aruco_unity/exports.hpp"
 
 //! @addtogroup utility_mat
