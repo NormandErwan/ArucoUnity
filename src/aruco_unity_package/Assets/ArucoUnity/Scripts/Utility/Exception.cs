@@ -38,6 +38,14 @@ public partial class ArucoUnity
       return sb.ToString();
     }
 
+    public void Try()
+    {
+      if (code != 0)
+      {
+        throw new System.Exception(What());
+      }
+    }
+
     public int code
     {
       get { return au_Exception_GetCode(cvPtr); }

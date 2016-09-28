@@ -32,11 +32,7 @@ public partial class ArucoUnity
     {
       ArucoUnity.Exception exception = new ArucoUnity.Exception();
       au_Dictionary_DrawMarker(cvPtr, id, sidePixels, img.cvPtr, borderBits, exception.cvPtr);
-
-      if (exception.code != 0)
-      {
-        throw new System.Exception(exception.What());
-      }
+      exception.Try();
     }
   }
 }
