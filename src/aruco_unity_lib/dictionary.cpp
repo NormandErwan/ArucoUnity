@@ -15,9 +15,10 @@ extern "C" {
 
   // Functions
   void au_Dictionary_DrawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, cv::Exception* exception) {
-    ARUCO_UNITY_TRY_CATCH(exception,
+    ARUCO_UNITY_TRY_CATCH(exception, {
       dictionary->get()->drawMarker(id, sidePixels, *img, borderBits);
-    )
+      cv::cvtColor(*img, *img, CV_GRAY2RGB);
+    })
   }
 
   // Variables

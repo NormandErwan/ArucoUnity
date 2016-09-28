@@ -5,9 +5,7 @@
 #include "aruco_unity/exports.hpp"
 
 #define ARUCO_UNITY_TRY_CATCH(exceptionObject, trySection) \
-try {                                                      \
-  trySection                                               \
-}                                                          \
+try trySection                                             \
 catch (const cv::Exception& e) {                           \
   exception->code = e.code;                                \
   exception->err = e.err;                                  \
