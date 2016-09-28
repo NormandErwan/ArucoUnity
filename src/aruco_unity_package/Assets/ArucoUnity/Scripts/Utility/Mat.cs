@@ -6,61 +6,61 @@ public partial class ArucoUnity
   {
     // Constructor & Destructor
     [DllImport("ArucoUnity")]
-    static extern System.IntPtr auNewMat();
+    static extern System.IntPtr au_Mat_New();
 
     [DllImport("ArucoUnity")]
-    static extern void auDeleteMat(System.IntPtr mat);
+    static extern void au_Mat_Delete(System.IntPtr mat);
 
     // Functions
     [DllImport("ArucoUnity")]
-    static extern uint auMatTotal(System.IntPtr mat);
+    static extern uint au_Mat_Total(System.IntPtr mat);
     
     [DllImport("ArucoUnity")]
-    static extern uint auMatElemSize(System.IntPtr mat);
+    static extern uint au_Mat_ElemSize(System.IntPtr mat);
 
     // Variables
     [DllImport("ArucoUnity")]
-    static extern int auGetMatCols(System.IntPtr mat);
+    static extern int au_Mat_GetCols(System.IntPtr mat);
 
     [DllImport("ArucoUnity")]
-    static extern System.IntPtr auGetMatData(System.IntPtr mat);
+    static extern System.IntPtr au_Mat_GetData(System.IntPtr mat);
 
     [DllImport("ArucoUnity")]
-    static extern int auGetMatRows(System.IntPtr mat);
+    static extern int au_Mat_GetRows(System.IntPtr mat);
 
 
-    public Mat() : base(auNewMat())
+    public Mat() : base(au_Mat_New())
     {
     }
 
     ~Mat()
     {
-      auDeleteMat(cvPtr);
+      au_Mat_Delete(cvPtr);
     }
 
     public uint ElemSize()
     {
-      return auMatElemSize(cvPtr);
+      return au_Mat_ElemSize(cvPtr);
     }
 
     public uint Total()
     {
-      return auMatTotal(cvPtr);
+      return au_Mat_Total(cvPtr);
     }
 
     public int cols 
     {
-      get { return auGetMatCols(cvPtr); }
+      get { return au_Mat_GetCols(cvPtr); }
     }
 
     public System.IntPtr data
     {
-      get { return auGetMatData(cvPtr); }
+      get { return au_Mat_GetData(cvPtr); }
     }
 
     public int rows
     {
-      get { return auGetMatRows(cvPtr); }
+      get { return au_Mat_GetRows(cvPtr); }
     }
   }
 }

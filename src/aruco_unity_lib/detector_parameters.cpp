@@ -2,173 +2,173 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::Ptr<cv::aruco::DetectorParameters>* auCreateDetectorParameters() {
+  cv::Ptr<cv::aruco::DetectorParameters>* au_DetectorParameters_Create() {
     cv::Ptr<cv::aruco::DetectorParameters> ptr = cv::aruco::DetectorParameters::create();
     return new cv::Ptr<cv::aruco::DetectorParameters>(ptr);
   }
 
-  void auDeleteDetectorParameters(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  void au_DetectorParameters_Delete(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     delete parameters;
   }
 
   // Variables
-  int auGetDetectorParametersAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->adaptiveThreshWinSizeMin;
   }
 
-  void auSetDetectorParametersAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeMin) {
+  void au_DetectorParameters_SetAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeMin) {
     parameters->get()->adaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
   }
 
-  int auGetDetectorParametersAdaptiveThreshWinSizeMax(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetAdaptiveThreshWinSizeMax(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->adaptiveThreshWinSizeMax;
   }
 
-  void auSetDetectorParametersAdaptiveThreshWinSizeMax(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeMax) {
+  void au_DetectorParameters_SetAdaptiveThreshWinSizeMax(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeMax) {
     parameters->get()->adaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
   }
 
-  int auGetDetectorParametersAdaptiveThreshWinSizeStep(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetAdaptiveThreshWinSizeStep(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->adaptiveThreshWinSizeStep;
   }
 
-  void auSetDetectorParametersAdaptiveThreshWinSizeStep(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeStep) {
+  void au_DetectorParameters_SetAdaptiveThreshWinSizeStep(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int adaptiveThreshWinSizeStep) {
     parameters->get()->adaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
   }
 
-  double auGetDetectorParametersAdaptiveThreshConstant(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetAdaptiveThreshConstant(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->adaptiveThreshConstant;
   }
 
-  void auSetDetectorParametersAdaptiveThreshConstant(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double adaptiveThreshConstant) {
+  void au_DetectorParameters_SetAdaptiveThreshConstant(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double adaptiveThreshConstant) {
     parameters->get()->adaptiveThreshConstant = adaptiveThreshConstant;
   }
 
-  double auGetDetectorParametersMinMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMinMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->minMarkerPerimeterRate;
   }
 
-  void auSetDetectorParametersMinMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minMarkerPerimeterRate) {
+  void au_DetectorParameters_SetMinMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minMarkerPerimeterRate) {
     parameters->get()->minMarkerPerimeterRate = minMarkerPerimeterRate;
   }
 
-  double auGetDetectorParametersMaxMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMaxMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->maxMarkerPerimeterRate;
   }
 
-  void auSetDetectorParametersMaxMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double maxMarkerPerimeterRate) {
+  void au_DetectorParameters_SetMaxMarkerPerimeterRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double maxMarkerPerimeterRate) {
     parameters->get()->maxMarkerPerimeterRate = maxMarkerPerimeterRate;
   }
 
-  double auGetDetectorParametersPolygonalApproxAccuracyRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetPolygonalApproxAccuracyRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->polygonalApproxAccuracyRate;
   }
 
-  void auSetDetectorParametersPolygonalApproxAccuracyRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double polygonalApproxAccuracyRate) {
+  void au_DetectorParameters_SetPolygonalApproxAccuracyRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double polygonalApproxAccuracyRate) {
     parameters->get()->polygonalApproxAccuracyRate = polygonalApproxAccuracyRate;
   }
 
-  double auGetDetectorParametersMinCornerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMinCornerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->minCornerDistanceRate;
   }
 
-  void auSetDetectorParametersMinCornerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minCornerDistanceRate) {
+  void au_DetectorParameters_SetMinCornerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minCornerDistanceRate) {
     parameters->get()->minCornerDistanceRate = minCornerDistanceRate;
   }
 
-  int auGetDetectorParametersMinDistanceToBorder(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetMinDistanceToBorder(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->minDistanceToBorder;
   }
 
-  void auSetDetectorParametersMinDistanceToBorder(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int minDistanceToBorder) {
+  void au_DetectorParameters_SetMinDistanceToBorder(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int minDistanceToBorder) {
     parameters->get()->minDistanceToBorder = minDistanceToBorder;
   }
 
-  double auGetDetectorParametersMinMarkerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMinMarkerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->minMarkerDistanceRate;
   }
 
-  void auSetDetectorParametersMinMarkerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minMarkerDistanceRate) {
+  void au_DetectorParameters_SetMinMarkerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minMarkerDistanceRate) {
     parameters->get()->minMarkerDistanceRate = minMarkerDistanceRate;
   }
 
-  bool auGetDetectorParametersDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  bool au_DetectorParameters_GetDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->doCornerRefinement;
   }
 
-  void auSetDetectorParametersDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters, bool doCornerRefinement) {
+  void au_DetectorParameters_SetDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters, bool doCornerRefinement) {
     parameters->get()->doCornerRefinement = doCornerRefinement;
   }
 
-  int auGetDetectorParametersCornerRefinementWinSize(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetCornerRefinementWinSize(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->cornerRefinementWinSize;
   }
 
-  void auSetDetectorParametersCornerRefinementWinSize(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementWinSize) {
+  void au_DetectorParameters_SetCornerRefinementWinSize(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementWinSize) {
     parameters->get()->cornerRefinementWinSize = cornerRefinementWinSize;
   }
 
-  int auGetDetectorParametersCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->cornerRefinementMaxIterations;
   }
 
-  void auSetDetectorParametersCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementMaxIterations) {
+  void au_DetectorParameters_SetCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementMaxIterations) {
     parameters->get()->cornerRefinementMaxIterations = cornerRefinementMaxIterations;
   }
 
-  double auGetDetectorParametersCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->cornerRefinementMinAccuracy;
   }
 
-  void auSetDetectorParametersCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double cornerRefinementMinAccuracy) {
+  void au_DetectorParameters_SetCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double cornerRefinementMinAccuracy) {
     parameters->get()->cornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
   }
 
-  int auGetDetectorParametersMarkerBorderBits(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetMarkerBorderBits(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->markerBorderBits;
   }
 
-  void auSetDetectorParametersMarkerBorderBits(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int markerBorderBits) {
+  void au_DetectorParameters_SetMarkerBorderBits(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int markerBorderBits) {
     parameters->get()->markerBorderBits = markerBorderBits;
   }
 
-  int auGetDetectorParametersPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  int au_DetectorParameters_GetPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->perspectiveRemovePixelPerCell;
   }
 
-  void auSetDetectorParametersPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int perspectiveRemovePixelPerCell) {
+  void au_DetectorParameters_SetPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int perspectiveRemovePixelPerCell) {
     parameters->get()->perspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
   }
 
-  double auGetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->perspectiveRemoveIgnoredMarginPerCell;
   }
 
-  void auSetDetectorParametersPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double perspectiveRemoveIgnoredMarginPerCell) {
+  void au_DetectorParameters_SetPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double perspectiveRemoveIgnoredMarginPerCell) {
     parameters->get()->perspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
   }
 
-  double auGetDetectorParametersMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->maxErroneousBitsInBorderRate;
   }
 
-  void auSetDetectorParametersMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double maxErroneousBitsInBorderRate) {
+  void au_DetectorParameters_SetMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double maxErroneousBitsInBorderRate) {
     parameters->get()->maxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
   }
 
-  double auGetDetectorParametersMinOtsuStdDev(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetMinOtsuStdDev(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->minOtsuStdDev;
   }
 
-  void auSetDetectorParametersMinOtsuStdDev(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minOtsuStdDev) {
+  void au_DetectorParameters_SetMinOtsuStdDev(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double minOtsuStdDev) {
     parameters->get()->minOtsuStdDev = minOtsuStdDev;
   }
 
-  double auGetDetectorParametersErrorCorrectionRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+  double au_DetectorParameters_GetErrorCorrectionRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->errorCorrectionRate;
   }
 
-  void auSetDetectorParametersErrorCorrectionRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double errorCorrectionRate) {
+  void au_DetectorParameters_SetErrorCorrectionRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double errorCorrectionRate) {
     parameters->get()->errorCorrectionRate = errorCorrectionRate;
   }
 }

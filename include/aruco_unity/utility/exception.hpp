@@ -29,11 +29,11 @@ extern "C" {
   //! @{
 
   //! \brief Creates empty Exception.
-  ARUCO_UNITY_API cv::Exception* auNewException();
+  ARUCO_UNITY_API cv::Exception* au_Exception_New();
 
   //! \brief Deletes any Exception.
   //! \param e The Exception used.
-  ARUCO_UNITY_API void auDeleteException(cv::Exception* exception);
+  ARUCO_UNITY_API void au_Exception_Delete(cv::Exception* exception);
 
   //! @} Constructors & Destructors
 
@@ -42,7 +42,7 @@ extern "C" {
 
   //! \param mat The Exception used.
   //! \return The error description and the context as a text string.
-  ARUCO_UNITY_API void auExceptionWhat(cv::Exception* exception, char* what);
+  ARUCO_UNITY_API void au_Exception_What(cv::Exception* exception, char* what);
 
   //! @} Functions
 
@@ -51,7 +51,7 @@ extern "C" {
 
   //! \param mat The Exception used.
   //! \return The error code.
-  ARUCO_UNITY_API int auGetExceptionCode(cv::Exception* exception);
+  ARUCO_UNITY_API int au_Exception_GetCode(cv::Exception* exception);
 
   //! @} Variables
 }

@@ -30,18 +30,10 @@ public partial class ArucoUnity : MonoBehaviour
   }
 
   [DllImport("ArucoUnity")]
-  static extern System.IntPtr auCreateDetectorParameters();
-
-  [DllImport("ArucoUnity")]
-  static extern System.IntPtr auGetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
-
-  public static DetectorParameters CreateDetectorParameters()
-  {
-    return new DetectorParameters(auCreateDetectorParameters());
-  }
+  static extern System.IntPtr au_GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
 
   public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
   {
-    return new Dictionary(auGetPredefinedDictionary(name));
+    return new Dictionary(au_GetPredefinedDictionary(name));
   }
 }

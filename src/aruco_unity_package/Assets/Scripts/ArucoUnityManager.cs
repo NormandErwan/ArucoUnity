@@ -10,7 +10,7 @@ public class ArucoUnityManager : MonoBehaviour
     dictionary = ArucoUnity.GetPredefinedDictionary(ArucoUnity.PREDEFINED_DICTIONARY_NAME.DICT_4X4_100);
     //testDictionary(dictionary);
 
-    detectorParameters = ArucoUnity.CreateDetectorParameters();
+    detectorParameters = new ArucoUnity.DetectorParameters();
     //testDetectorParameters(detectorParameters);
   }
 

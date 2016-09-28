@@ -7,40 +7,40 @@ public partial class ArucoUnity
   {
     // Constructor & Destructor
     [DllImport("ArucoUnity")]
-    static extern System.IntPtr auNewException();
+    static extern System.IntPtr au_Exception_New();
 
     [DllImport("ArucoUnity")]
-    static extern void auDeleteException(System.IntPtr exception);
+    static extern void au_Exception_Delete(System.IntPtr exception);
 
     // Functions
     [DllImport("ArucoUnity")]
-    static extern void auExceptionWhat(System.IntPtr exception, StringBuilder sb);
+    static extern void au_Exception_What(System.IntPtr exception, StringBuilder sb);
 
     // Variables
     [DllImport("ArucoUnity")]
-    static extern int auGetExceptionCode(System.IntPtr exception);
+    static extern int au_Exception_GetCode(System.IntPtr exception);
 
     StringBuilder sb;
 
-    public Exception() : base(auNewException())
+    public Exception() : base(au_Exception_New())
     {
       sb = new StringBuilder(1024);
     }
 
     ~Exception()
     {
-      //auDeleteException(cvPtr); // TODO: fix the crash that occur when calling this function
+      //au_Exception_Delete(cvPtr); // TODO: fix the crash that occur when calling this function
     }
 
     public string What()
     {
-      auExceptionWhat(cvPtr, sb);
+      au_Exception_What(cvPtr, sb);
       return sb.ToString();
     }
 
     public int code
     {
-      get { return auGetExceptionCode(cvPtr); }
+      get { return au_Exception_GetCode(cvPtr); }
     }
   }
 }
