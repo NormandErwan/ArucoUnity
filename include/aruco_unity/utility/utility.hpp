@@ -4,7 +4,8 @@
 //! @defgroup utility Utility and OpenCV main modules
 //! @{
 //!   @defgroup utility_exception Exception
-//!   @defgroup utility_mat Mat
+//!   @defgroup utility_mat OpenCV Mat
+//!   @defgroup utility_point2f Opencv Point2f
 //! @}
 
 #endif
