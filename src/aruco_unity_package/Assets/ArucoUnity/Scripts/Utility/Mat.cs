@@ -33,7 +33,7 @@ public partial class ArucoUnity
     {
     }
 
-    public Mat(System.IntPtr matPtr) : base(matPtr)
+    internal Mat(System.IntPtr matPtr) : base(matPtr)
     {
     }
 

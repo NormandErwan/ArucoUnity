@@ -69,7 +69,7 @@ public partial class ArucoUnity
     {
     }
 
-    public Dictionary(System.IntPtr dictionaryPtr) : base(dictionaryPtr)
+    internal Dictionary(System.IntPtr dictionaryPtr) : base(dictionaryPtr)
     {
     }
 
