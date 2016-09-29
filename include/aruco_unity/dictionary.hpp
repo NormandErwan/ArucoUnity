@@ -21,13 +21,13 @@ extern "C" {
   //! \return The new Dictionary.
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new1(const cv::Mat* bytesList, int markerSize, int maxCorrectionBits);
 
-  //! \see au_Dictionary_New1.
+  //! \see au_Dictionary_new1().
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new2(const cv::Mat* bytesList, int markerSize);
 
-  //! \see au_Dictionary_New1.
+  //! \see au_Dictionary_new1().
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new3(const cv::Mat* bytesList);
 
-  //! \see au_Dictionary_New1.
+  //! \see au_Dictionary_new1().
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new4();
 
   //! \brief Copy a Dictionary.
@@ -52,7 +52,8 @@ extern "C" {
   //! \param baseDictionary Include the markers in this Dictionary at the beginning (optional).
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \return The generated Dictionary.
-  ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary2(int nMarkers, int markerSize, cv::Ptr<cv::aruco::Dictionary>* baseDictionary, cv::Exception* exception);
+  ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary2(int nMarkers, int markerSize, 
+    cv::Ptr<cv::aruco::Dictionary>* baseDictionary, cv::Exception* exception);
 
   //! \brief Deletes any Dictionary.
   //! \param dictionary The Dictionary used.
@@ -70,7 +71,8 @@ extern "C" {
   //! \param img The marker's pixels returned.
   //! \param borderBits The number of bits forming the marker border.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, cv::Exception* exception);
+  ARUCO_UNITY_API void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, 
+    cv::Exception* exception);
 
   //! \brief Returns the distance of the input bits to the specific id. If allRotations is true, the four posible bits rotation are considered.
   //! \param dictionary The Dictionary used.
@@ -78,9 +80,10 @@ extern "C" {
   //! \param id
   //! \param allRotations
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API int au_Dictionary_getDistanceToId1(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, bool allRotations, cv::Exception* exception);
+  ARUCO_UNITY_API int au_Dictionary_getDistanceToId1(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, bool allRotations, 
+    cv::Exception* exception);
 
-  //! \see au_Dictionary_GetDistanceToId1.
+  //! \see au_Dictionary_getDistanceToId1().
   ARUCO_UNITY_API int au_Dictionary_getDistanceToId2(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, cv::Exception* exception);
   
   //! \brief Given a matrix of bits. Returns whether if marker is identified or not. It returns by reference the correct id (if any) and the correct rotation.
@@ -91,7 +94,8 @@ extern "C" {
   //! \param maxCorrectionRate
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \return Is the marker identified.
-  ARUCO_UNITY_API bool au_Dictionary_identify(cv::Ptr<cv::aruco::Dictionary>* dictionary, const cv::Mat* onlyBits, int* idx, int* rotation, double maxCorrectionRate, cv::Exception* exception);
+  ARUCO_UNITY_API bool au_Dictionary_identify(cv::Ptr<cv::aruco::Dictionary>* dictionary, const cv::Mat* onlyBits, int* idx, int* rotation, 
+    double maxCorrectionRate, cv::Exception* exception);
 
   //! @} Member Functions
   

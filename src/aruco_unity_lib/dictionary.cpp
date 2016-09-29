@@ -44,7 +44,8 @@ extern "C" {
     return new cv::Ptr<cv::aruco::Dictionary>(ptr);
   }
 
-  cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary2(int nMarkers, int markerSize, cv::Ptr<cv::aruco::Dictionary>* baseDictionary, cv::Exception* exception) {
+  cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary2(int nMarkers, int markerSize, cv::Ptr<cv::aruco::Dictionary>* baseDictionary, 
+    cv::Exception* exception) {
     cv::Ptr<cv::aruco::Dictionary> ptr;
     try {
       ptr = cv::aruco::generateCustomDictionary(nMarkers, markerSize, *baseDictionary);
@@ -60,7 +61,8 @@ extern "C" {
   }
 
   // Member Functions
-  void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, cv::Exception* exception) {
+  void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, 
+    cv::Exception* exception) {
     try {
       dictionary->get()->drawMarker(id, sidePixels, *img, borderBits);
     } catch (const cv::Exception& e) {
@@ -85,7 +87,8 @@ extern "C" {
     return au_Dictionary_getDistanceToId1(dictionary, bits, id, true, exception);
   }
 
-  bool au_Dictionary_identify(cv::Ptr<cv::aruco::Dictionary>* dictionary, const cv::Mat* onlyBits, int* idx, int* rotation, double maxCorrectionRate, cv::Exception* exception) {
+  bool au_Dictionary_identify(cv::Ptr<cv::aruco::Dictionary>* dictionary, const cv::Mat* onlyBits, int* idx, int* rotation, 
+    double maxCorrectionRate, cv::Exception* exception) {
     return dictionary->get()->identify(*onlyBits, *idx, *rotation, maxCorrectionRate);
   }
 
