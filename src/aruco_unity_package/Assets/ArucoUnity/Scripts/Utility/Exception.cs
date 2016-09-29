@@ -38,7 +38,7 @@ public partial class ArucoUnity
       return sb.ToString();
     }
 
-    public void Try()
+    public void Check()
     {
       if (code != 0)
       {

@@ -33,6 +33,10 @@ public partial class ArucoUnity
     {
     }
 
+    public Mat(System.IntPtr matPtr) : base(matPtr)
+    {
+    }
+
     ~Mat()
     {
       au_Mat_delete(cvPtr);

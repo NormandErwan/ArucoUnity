@@ -30,7 +30,29 @@ public partial class ArucoUnity : MonoBehaviour
   }
 
   [DllImport("ArucoUnity")]
+  static extern System.IntPtr au_generateCustomDictionary1(int nMarkers, int markerSize, System.IntPtr exception);
+
+  [DllImport("ArucoUnity")]
+  static extern System.IntPtr au_generateCustomDictionary2(int nMarkers, int markerSize, System.IntPtr baseDictionary, System.IntPtr exception);
+
+  [DllImport("ArucoUnity")]
   static extern System.IntPtr au_getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
+
+  public static Dictionary GenerateCustomDictionary(int nMarkers, int markerSize)
+  {
+    ArucoUnity.Exception exception = new ArucoUnity.Exception();
+    System.IntPtr dictionaryPtr = au_generateCustomDictionary1(nMarkers, markerSize, exception.cvPtr);
+    exception.Check();
+    return new Dictionary(dictionaryPtr);
+  }
+
+  public static Dictionary GenerateCustomDictionary(int nMarkers, int markerSize, Dictionary baseDictionary)
+  {
+    ArucoUnity.Exception exception = new ArucoUnity.Exception();
+    System.IntPtr dictionaryPtr = au_generateCustomDictionary2(nMarkers, markerSize, baseDictionary.cvPtr, exception.cvPtr);
+    exception.Check();
+    return new Dictionary(dictionaryPtr);
+  }
 
   public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
   {

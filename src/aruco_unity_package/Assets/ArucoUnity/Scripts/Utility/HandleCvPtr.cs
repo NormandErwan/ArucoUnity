@@ -6,6 +6,11 @@ public partial class ArucoUnity
   {
     HandleRef handle;
 
+    public HandleCvPtr()
+    {
+      cvPtr = System.IntPtr.Zero;
+    }
+
     public HandleCvPtr(System.IntPtr cvPtr)
     {
       this.cvPtr = cvPtr;
