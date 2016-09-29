@@ -11,15 +11,21 @@ extern "C" {
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new2(const cv::Mat* bytesList, int markerSize) {
-    return au_Dictionary_new1(bytesList, markerSize, 0);
+    cv::aruco::Dictionary dictionary = cv::aruco::Dictionary(*bytesList, markerSize);
+    cv::Ptr<cv::aruco::Dictionary> ptr = cv::makePtr<cv::aruco::Dictionary>(dictionary);
+    return new cv::Ptr<cv::aruco::Dictionary>(ptr);
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new3(const cv::Mat* bytesList) {
-    return au_Dictionary_new1(bytesList, 0, 0);
+    cv::aruco::Dictionary dictionary = cv::aruco::Dictionary(*bytesList);
+    cv::Ptr<cv::aruco::Dictionary> ptr = cv::makePtr<cv::aruco::Dictionary>(dictionary);
+    return new cv::Ptr<cv::aruco::Dictionary>(ptr);
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new4() {
-    return au_Dictionary_new1(new cv::Mat(), 0, 0);
+    cv::aruco::Dictionary dictionary = cv::aruco::Dictionary();
+    cv::Ptr<cv::aruco::Dictionary> ptr = cv::makePtr<cv::aruco::Dictionary>(dictionary);
+    return new cv::Ptr<cv::aruco::Dictionary>(ptr);
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new5(const cv::Ptr<cv::aruco::Dictionary>* dictionary) {
@@ -84,7 +90,15 @@ extern "C" {
   }
 
   int au_Dictionary_getDistanceToId2(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, cv::Exception* exception) {
-    return au_Dictionary_getDistanceToId1(dictionary, bits, id, true, exception);
+    int currentMinDistance = 0;
+    try {
+      currentMinDistance = dictionary->get()->getDistanceToId(*bits, id);
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return currentMinDistance;
+    };
+    return currentMinDistance;
   }
 
   bool au_Dictionary_identify(cv::Ptr<cv::aruco::Dictionary>* dictionary, const cv::Mat* onlyBits, int* idx, int* rotation, 
