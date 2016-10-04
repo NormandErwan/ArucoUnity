@@ -8,6 +8,8 @@ public partial class ArucoUnity : MonoBehaviour
   public partial class DetectorParameters { }
   public partial class Dictionary { }
 
+  public partial class VectorInt { }
+
   public enum PREDEFINED_DICTIONARY_NAME
   {
     DICT_4X4_50 = 0,

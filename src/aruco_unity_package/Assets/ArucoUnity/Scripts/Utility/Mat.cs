@@ -28,7 +28,6 @@ public partial class ArucoUnity
     [DllImport("ArucoUnity")]
     static extern int au_Mat_getRows(System.IntPtr mat);
 
-
     public Mat() : base(au_Mat_new())
     {
     }
