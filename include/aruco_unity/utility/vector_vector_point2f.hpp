@@ -31,6 +31,6 @@ extern "C" {
   //! @} Functions
 }
 
-//! @} utility_vector
+//! @} utility_vector_vector_point2f
 
 #endif
