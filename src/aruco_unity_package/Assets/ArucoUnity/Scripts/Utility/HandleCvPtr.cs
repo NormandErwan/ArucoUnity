@@ -1,25 +1,28 @@
 ﻿using System.Runtime.InteropServices;
 
-public partial class ArucoUnity
+namespace ArucoUnity
 {
-  public abstract partial class HandleCvPtr
+  namespace Utility
   {
-    HandleRef handle;
-
-    public HandleCvPtr()
+    public abstract partial class HandleCvPtr
     {
-      cvPtr = System.IntPtr.Zero;
-    }
+      HandleRef handle;
 
-    public HandleCvPtr(System.IntPtr cvPtr)
-    {
-      this.cvPtr = cvPtr;
-    }
+      public HandleCvPtr()
+      {
+        cvPtr = System.IntPtr.Zero;
+      }
 
-    public System.IntPtr cvPtr
-    {
-      get { return handle.Handle; }
-      set { handle = new HandleRef(this, value); }
+      public HandleCvPtr(System.IntPtr cvPtr)
+      {
+        this.cvPtr = cvPtr;
+      }
+
+      public System.IntPtr cvPtr
+      {
+        get { return handle.Handle; }
+        set { handle = new HandleRef(this, value); }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
+using ArucoUnity.Utility;
 
-public partial class ArucoUnity
+namespace ArucoUnity
 {
   public partial class Dictionary : HandleCvPtr
   {
@@ -80,14 +81,14 @@ public partial class ArucoUnity
     
     public void DrawMarker(int id, int sidePixels, ref Mat img, int borderBits)
     {
-      ArucoUnity.Exception exception = new ArucoUnity.Exception();
+      Exception exception = new Exception();
       au_Dictionary_drawMarker(cvPtr, id, sidePixels, img.cvPtr, borderBits, exception.cvPtr);
       exception.Check();
     }
 
     public int getDistanceToId1(Dictionary dictionary, Mat bits, int id, bool allRotations)
     {
-      ArucoUnity.Exception exception = new ArucoUnity.Exception();
+      Exception exception = new Exception();
       int distanceToId = au_Dictionary_getDistanceToId1(cvPtr, bits.cvPtr, id, allRotations, exception.cvPtr);
       exception.Check();
       return distanceToId;
@@ -95,7 +96,7 @@ public partial class ArucoUnity
 
     public int getDistanceToId2(Dictionary dictionary, Mat bits, int id)
     {
-      ArucoUnity.Exception exception = new ArucoUnity.Exception();
+      Exception exception = new Exception();
       int distanceToId = au_Dictionary_getDistanceToId2(cvPtr, bits.cvPtr, id, exception.cvPtr);
       exception.Check();
       return distanceToId;
@@ -103,7 +104,7 @@ public partial class ArucoUnity
 
     public bool identify(Dictionary dictionary, Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
     {
-      ArucoUnity.Exception exception = new ArucoUnity.Exception();
+      Exception exception = new Exception();
       bool result = au_Dictionary_identify(cvPtr, onlyBits.cvPtr, out idx, out rotation, maxCorrectionRate, exception.cvPtr);
       exception.Check();
       return result;
@@ -111,7 +112,7 @@ public partial class ArucoUnity
 
     static public Mat getBitsFromByteList(Mat byteList, int markerSiz)
     {
-      ArucoUnity.Exception exception = new ArucoUnity.Exception();
+      Exception exception = new Exception();
       Mat bits = new Mat(au_Dictionary_getBitsFromByteList(byteList.cvPtr, markerSiz, exception.cvPtr));
       exception.Check();
       return bits;

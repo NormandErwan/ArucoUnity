@@ -1,8 +1,8 @@
 ﻿using System.Runtime.InteropServices;
 
-public partial class ArucoUnity
+namespace ArucoUnity
 {
-  public partial class DetectorParameters : HandleCvPtr
+  public partial class DetectorParameters : Utility.HandleCvPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_DetectorParameters_create();
