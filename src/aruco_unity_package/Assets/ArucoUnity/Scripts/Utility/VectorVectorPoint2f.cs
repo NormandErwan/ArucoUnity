@@ -32,19 +32,19 @@ namespace ArucoUnity
         au_vectorVectorPoint2f_delete(cvPtr);
       }
 
-      public unsafe ArucoUnity.Point2f[][] Data()
+      public unsafe Point2f[][] Data()
       {
         int dataSize1 = au_vectorVectorPoint2f_size1(cvPtr);
         int dataSize2 = au_vectorVectorPoint2f_size2(cvPtr);
         System.IntPtr* dataPtr = au_vectorVectorPoint2f_data(cvPtr);
 
-        ArucoUnity.Point2f[][] data = new ArucoUnity.Point2f[dataSize1][];
+        Point2f[][] data = new Point2f[dataSize1][];
         for (var i = 0; i < dataSize1; i++)
         {
-          ArucoUnity.Point2f[] data2 = new ArucoUnity.Point2f[dataSize2];
+          Point2f[] data2 = new Point2f[dataSize2];
           for (var j = 0; j < dataSize2; j++)
           {
-            data2[j] = new ArucoUnity.Point2f(dataPtr[i * dataSize2 + j]);
+            data2[j] = new Point2f(dataPtr[i * dataSize2 + j]);
           }
           data[i] = data2;
         }

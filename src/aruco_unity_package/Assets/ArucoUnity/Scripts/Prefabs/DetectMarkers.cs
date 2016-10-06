@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class DetectDrawMarkers : MonoBehaviour
+    public class DetectMarkers : MonoBehaviour
     {
       public Dictionary dictionary;
 
