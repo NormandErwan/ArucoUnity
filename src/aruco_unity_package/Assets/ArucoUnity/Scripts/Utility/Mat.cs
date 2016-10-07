@@ -8,7 +8,10 @@ namespace ArucoUnity
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_Mat_new();
+      static extern System.IntPtr au_Mat_new1();
+
+      [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_Mat_new2(int rows, int cols, byte[] data);
 
       [DllImport("ArucoUnity")]
       static extern void au_Mat_delete(System.IntPtr mat);
@@ -30,7 +33,11 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern int au_Mat_getRows(System.IntPtr mat);
 
-      public Mat() : base(au_Mat_new())
+      public Mat() : base(au_Mat_new1())
+      {
+      }
+
+      public Mat(int rows, int cols, byte[] data) : base(au_Mat_new2(rows, cols, data))
       {
       }
 

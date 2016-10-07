@@ -2,8 +2,12 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::Mat* au_Mat_new() {
+  cv::Mat* au_Mat_new1() {
     return new cv::Mat();
+  }
+
+  cv::Mat* au_Mat_new2(int rows, int cols, uchar* data) {
+    return new cv::Mat(rows, cols, CV_8UC3, data);
   }
   
   void au_Mat_delete(cv::Mat* mat) {

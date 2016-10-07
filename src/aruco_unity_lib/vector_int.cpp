@@ -2,10 +2,6 @@
 
 extern "C" {
   // Constructors & Destructors
-  std::vector<int>* au_vectorInt_new() {
-    return new std::vector<int>();
-  }
-
   void au_vectorInt_delete(std::vector<int>* vector) {
     delete vector;
   }
@@ -15,7 +11,7 @@ extern "C" {
     return vector->data();
   }
 
-  int au_vectorInt_size(std::vector<int>* vector) {
-    return (int)vector->size();
+  size_t au_vectorInt_size(std::vector<int>* vector) {
+    return vector->size();
   }
 }

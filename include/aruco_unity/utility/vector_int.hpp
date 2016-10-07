@@ -13,8 +13,6 @@ extern "C" {
   //! \name Constructors & Destructors
   //! @{
 
-  ARUCO_UNITY_API std::vector<int>* au_vectorInt_new();
-
   ARUCO_UNITY_API void au_vectorInt_delete(std::vector<int>* vector);
 
   //! @} Constructors & Destructors
@@ -24,7 +22,7 @@ extern "C" {
 
   ARUCO_UNITY_API int* au_vectorInt_data(std::vector<int>* vector);
 
-  ARUCO_UNITY_API int au_vectorInt_size(std::vector<int>* vector);
+  ARUCO_UNITY_API size_t au_vectorInt_size(std::vector<int>* vector);
 
   //! @} Functions
 }

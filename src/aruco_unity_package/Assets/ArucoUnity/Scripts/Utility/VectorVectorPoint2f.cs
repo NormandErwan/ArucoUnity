@@ -54,7 +54,7 @@ namespace ArucoUnity
         return data;
       }
 
-      public int Size1()
+      public int Size()
       {
         return au_vectorVectorPoint2f_size1(cvPtr);
       }

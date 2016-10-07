@@ -1,10 +1,11 @@
 ﻿//
-// From http://answers.unity3d.com/answers/1155328/view.html
+// Based on: http://answers.unity3d.com/answers/1155328/view.html
 //
 
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 namespace ArucoUnity
 {
@@ -12,9 +13,23 @@ namespace ArucoUnity
   {
     public class DeviceCameraController : MonoBehaviour
     {
-      public RawImage image;
-      public RectTransform imageParent;
-      public AspectRatioFitter imageFitter;
+      [SerializeField]
+      private RawImage image;
+
+      [SerializeField]
+      private RectTransform imageParent;
+
+      [SerializeField]
+      private AspectRatioFitter imageFitter;
+
+      [NonSerialized]
+      public bool cameraStarted;
+      
+      [NonSerialized]
+      public WebCamTexture activeCameraTexture;
+
+      public delegate void CameraStartedAction();
+      public static event CameraStartedAction OnCameraStarted; 
 
       // Device cameras
       WebCamDevice frontCameraDevice;
@@ -23,7 +38,6 @@ namespace ArucoUnity
 
       WebCamTexture frontCameraTexture;
       WebCamTexture backCameraTexture;
-      WebCamTexture activeCameraTexture;
 
       // Image rotation
       Vector3 rotationVector = new Vector3(0f, 0f, 0f);
@@ -39,6 +53,8 @@ namespace ArucoUnity
 
       void Start()
       {
+        cameraStarted = false;
+
         // Check for device cameras
         if (WebCamTexture.devices.Length == 0)
         {
@@ -62,6 +78,12 @@ namespace ArucoUnity
       }
 
       // Set the device camera to use and start it
+      public void SetActiveTexture(Texture textureToUse)
+      {
+        image.texture = textureToUse;
+        image.material.mainTexture = textureToUse;
+      }
+
       public void SetActiveCamera(WebCamTexture cameraToUse)
       {
         if (activeCameraTexture != null)
@@ -73,8 +95,7 @@ namespace ArucoUnity
         activeCameraDevice = WebCamTexture.devices.FirstOrDefault(device =>
             device.name == cameraToUse.deviceName);
 
-        image.texture = activeCameraTexture;
-        image.material.mainTexture = activeCameraTexture;
+        SetActiveTexture(activeCameraTexture);
 
         activeCameraTexture.Play();
       }
@@ -95,6 +116,14 @@ namespace ArucoUnity
         {
           Debug.Log("Still waiting another frame for correct info...");
           return;
+        }
+        else
+        {
+          if (OnCameraStarted != null && !cameraStarted)
+          {
+            OnCameraStarted();
+          }
+          cameraStarted = true;
         }
 
         // Rotate image to show correct orientation 

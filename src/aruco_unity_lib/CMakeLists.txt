@@ -17,6 +17,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exception.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point2f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/scalar.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_int.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point2f.hpp
 )
@@ -27,6 +28,7 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
     ${PROJECT_SOURCE_DIR}/mat.cpp
     ${PROJECT_SOURCE_DIR}/point2f.cpp
+    ${PROJECT_SOURCE_DIR}/scalar.cpp
     ${PROJECT_SOURCE_DIR}/vector_int.cpp
     ${PROJECT_SOURCE_DIR}/vector_vector_point2f.cpp
 )

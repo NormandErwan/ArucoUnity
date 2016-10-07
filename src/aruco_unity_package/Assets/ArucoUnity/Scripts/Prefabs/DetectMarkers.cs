@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace ArucoUnity
 {
@@ -8,13 +7,12 @@ namespace ArucoUnity
     public class DetectMarkers : MonoBehaviour
     {
       public Dictionary dictionary;
-
       public DetectorParameters detectorParameters;
 
       public Utility.VectorVectorPoint2f corners;
       public Utility.VectorInt ids;
       public Utility.VectorVectorPoint2f rejectedImgPoints;
-
+      
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
@@ -22,37 +20,75 @@ namespace ArucoUnity
       private bool showRejectedCandidates;
 
       [SerializeField]
-      private RawImage image;
+      private DeviceCameraController deviceCameraController;
 
       // TODO : detector parameters manager
 
-      void Start()
+      private Texture2D imageTexture;
+
+      void OnEnable()
       {
-        Configurate(dictionaryName);
+        DeviceCameraController.OnCameraStarted += Configurate;
+      }
+      
+      void OnDisable()
+      {
+        DeviceCameraController.OnCameraStarted -= Configurate;
       }
 
       void LateUpdate()
       {
-        Detect(ref image, showRejectedCandidates);
+        if (deviceCameraController.cameraStarted)
+        {
+          Detect(deviceCameraController.activeCameraTexture, showRejectedCandidates);
+        }
       }
 
-      public void Configurate(PREDEFINED_DICTIONARY_NAME dictionaryName)
+      private void Configurate()
+      {
+        ConfigurateDetection(dictionaryName);
+        ConfigurateImageTexture(deviceCameraController);
+      }
+
+      public void ConfigurateDetection(PREDEFINED_DICTIONARY_NAME dictionaryName)
       {
         dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         detectorParameters = new DetectorParameters();
       }
 
-      public void Detect(ref RawImage image, bool showRejectedCandidates)
+      private void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
       {
-        Texture2D imageTexture = (Texture2D)image.texture;
+        imageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height, 
+          TextureFormat.RGB24, false);
+        deviceCameraController.SetActiveTexture(imageTexture);
+      }
+
+      public Texture2D Detect(WebCamTexture camTexture, bool showRejectedCandidates)
+      {
+        imageTexture.SetPixels32(camTexture.GetPixels32());
         Detect(ref imageTexture, showRejectedCandidates);
+        return imageTexture;
       }
 
       public void Detect(ref Texture2D imageTexture, bool showRejectedCandidates)
       {
         byte[] imageData = imageTexture.GetRawTextureData();
-        print(imageData[0]);
-        //DetectMarkers(ArucoUnity.Mat image, dictionary, out corners, out ids, detectorParameters, out rejectedImgPoints)
+        Utility.Mat image = new Utility.Mat(imageTexture.height, imageTexture.width, imageData);
+        Methods.DetectMarkers(image, dictionary, out corners, out ids, detectorParameters, out rejectedImgPoints);
+
+        if (ids.Size() > 0)
+        {
+          Methods.DrawDetectedMarkers(image, corners, ids);
+        }
+
+        if (showRejectedCandidates && rejectedImgPoints.Size() > 0)
+        {
+          Methods.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
+        }
+
+        int imageDataSize = (int)(image.ElemSize() * image.Total());
+        imageTexture.LoadRawTextureData(image.data, imageDataSize);
+        imageTexture.Apply(false);
       }
     }
   }

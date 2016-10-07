@@ -15,7 +15,14 @@ extern "C" {
   //! @{
 
   //! \brief Creates an empty Mat.
-  ARUCO_UNITY_API cv::Mat* au_Mat_new();
+  ARUCO_UNITY_API cv::Mat* au_Mat_new1();
+
+  //! \brief Creates a Mat.
+  //! \param cols
+  //! \param rows
+  //! TODO: choose the type
+  //! \param data
+  ARUCO_UNITY_API cv::Mat* au_Mat_new2(int cols, int rows, uchar* data);
 
   //! \brief Deletes any Mat.
   //! \param mat The Mat used.
