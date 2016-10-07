@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.12"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ArucoUnity: Mat</title>
+<title>ArucoUnity: OpenCV Mat</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,55 +61,58 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Mat<div class="ingroups"><a class="el" href="group__utility.html">Utility and OpenCV main modules</a></div></div>  </div>
+<div class="title">OpenCV Mat<div class="ingroups"><a class="el" href="group__utility.html">Utility and OpenCV main modules</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>n-dimensional dense array class  
+<p>n-dimensional dense array class.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Constructors &amp; Destructors</h2></td></tr>
-<tr class="memitem:ga4e9801202fb26e14b8d798074fba2b7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga4e9801202fb26e14b8d798074fba2b7b">au_Mat_New</a> ()</td></tr>
-<tr class="memdesc:ga4e9801202fb26e14b8d798074fba2b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty Mat.  <a href="#ga4e9801202fb26e14b8d798074fba2b7b">More...</a><br /></td></tr>
-<tr class="separator:ga4e9801202fb26e14b8d798074fba2b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6db94e1d56f6b9c94c58779946b50d0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga6db94e1d56f6b9c94c58779946b50d0d">au_Mat_Delete</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:ga6db94e1d56f6b9c94c58779946b50d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes any Mat.  <a href="#ga6db94e1d56f6b9c94c58779946b50d0d">More...</a><br /></td></tr>
-<tr class="separator:ga6db94e1d56f6b9c94c58779946b50d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd1e88cc183278663b535a94d455f053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#gafd1e88cc183278663b535a94d455f053">au_Mat_new1</a> ()</td></tr>
+<tr class="memdesc:gafd1e88cc183278663b535a94d455f053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty Mat.  <a href="#gafd1e88cc183278663b535a94d455f053">More...</a><br /></td></tr>
+<tr class="separator:gafd1e88cc183278663b535a94d455f053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a7859914218044b5c2106cb5f277727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga2a7859914218044b5c2106cb5f277727">au_Mat_new2</a> (int cols, int rows, uchar *data)</td></tr>
+<tr class="memdesc:ga2a7859914218044b5c2106cb5f277727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Mat.  <a href="#ga2a7859914218044b5c2106cb5f277727">More...</a><br /></td></tr>
+<tr class="separator:ga2a7859914218044b5c2106cb5f277727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83fb68a5fd1217558ffee6680c804961"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga83fb68a5fd1217558ffee6680c804961">au_Mat_delete</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:ga83fb68a5fd1217558ffee6680c804961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes any Mat.  <a href="#ga83fb68a5fd1217558ffee6680c804961">More...</a><br /></td></tr>
+<tr class="separator:ga83fb68a5fd1217558ffee6680c804961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga58a0bcd0b59a43f0636937a80846c69d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga58a0bcd0b59a43f0636937a80846c69d">au_Mat_ElemSize</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:ga58a0bcd0b59a43f0636937a80846c69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the matrix element size in bytes.  <a href="#ga58a0bcd0b59a43f0636937a80846c69d">More...</a><br /></td></tr>
-<tr class="separator:ga58a0bcd0b59a43f0636937a80846c69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacce6bbae361212fb0020c4206bf85b81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#gacce6bbae361212fb0020c4206bf85b81">au_Mat_Total</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:gacce6bbae361212fb0020c4206bf85b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of array elements.  <a href="#gacce6bbae361212fb0020c4206bf85b81">More...</a><br /></td></tr>
-<tr class="separator:gacce6bbae361212fb0020c4206bf85b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab20c5c62a11afed3db9fcb819bc6e33d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#gab20c5c62a11afed3db9fcb819bc6e33d">au_Mat_elemSize</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:gab20c5c62a11afed3db9fcb819bc6e33d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the matrix element size in bytes.  <a href="#gab20c5c62a11afed3db9fcb819bc6e33d">More...</a><br /></td></tr>
+<tr class="separator:gab20c5c62a11afed3db9fcb819bc6e33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47915d8a4e65a8aa6fc457317c463d1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga47915d8a4e65a8aa6fc457317c463d1b">au_Mat_total</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:ga47915d8a4e65a8aa6fc457317c463d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of array elements.  <a href="#ga47915d8a4e65a8aa6fc457317c463d1b">More...</a><br /></td></tr>
+<tr class="separator:ga47915d8a4e65a8aa6fc457317c463d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga03fd790677dbfdab9bdb4692d976ac53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga03fd790677dbfdab9bdb4692d976ac53">au_Mat_GetCols</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:ga03fd790677dbfdab9bdb4692d976ac53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns.  <a href="#ga03fd790677dbfdab9bdb4692d976ac53">More...</a><br /></td></tr>
-<tr class="separator:ga03fd790677dbfdab9bdb4692d976ac53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f2a8f52b0812eed0fdaa6b0bcd1c786"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> uchar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga0f2a8f52b0812eed0fdaa6b0bcd1c786">au_Mat_GetData</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:ga0f2a8f52b0812eed0fdaa6b0bcd1c786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the data.  <a href="#ga0f2a8f52b0812eed0fdaa6b0bcd1c786">More...</a><br /></td></tr>
-<tr class="separator:ga0f2a8f52b0812eed0fdaa6b0bcd1c786"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad86073a7345a9d7034a1cef35b68aa7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#gad86073a7345a9d7034a1cef35b68aa7a">au_Mat_GetRows</a> (cv::Mat *mat)</td></tr>
-<tr class="memdesc:gad86073a7345a9d7034a1cef35b68aa7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of rows.  <a href="#gad86073a7345a9d7034a1cef35b68aa7a">More...</a><br /></td></tr>
-<tr class="separator:gad86073a7345a9d7034a1cef35b68aa7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4d5b372f0dc50f7f5d964e794e7371e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#gac4d5b372f0dc50f7f5d964e794e7371e">au_Mat_getCols</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:gac4d5b372f0dc50f7f5d964e794e7371e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns.  <a href="#gac4d5b372f0dc50f7f5d964e794e7371e">More...</a><br /></td></tr>
+<tr class="separator:gac4d5b372f0dc50f7f5d964e794e7371e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0be479a0cdbb8e2f1deca91463ea0cf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> uchar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga0be479a0cdbb8e2f1deca91463ea0cf9">au_Mat_getData</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:ga0be479a0cdbb8e2f1deca91463ea0cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the data.  <a href="#ga0be479a0cdbb8e2f1deca91463ea0cf9">More...</a><br /></td></tr>
+<tr class="separator:ga0be479a0cdbb8e2f1deca91463ea0cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bc495fc068374ce6f96277b8bd1cecc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__mat.html#ga1bc495fc068374ce6f96277b8bd1cecc">au_Mat_getRows</a> (cv::Mat *mat)</td></tr>
+<tr class="memdesc:ga1bc495fc068374ce6f96277b8bd1cecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of rows.  <a href="#ga1bc495fc068374ce6f96277b8bd1cecc">More...</a><br /></td></tr>
+<tr class="separator:ga1bc495fc068374ce6f96277b8bd1cecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>n-dimensional dense array class </p>
+<p>n-dimensional dense array class. </p>
 <p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html">http://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html</a> </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga6db94e1d56f6b9c94c58779946b50d0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6db94e1d56f6b9c94c58779946b50d0d">&sect;&nbsp;</a></span>au_Mat_Delete()</h2>
+<a id="ga83fb68a5fd1217558ffee6680c804961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83fb68a5fd1217558ffee6680c804961">&sect;&nbsp;</a></span>au_Mat_delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Mat_Delete </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_Mat_delete </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -128,14 +131,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga58a0bcd0b59a43f0636937a80846c69d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga58a0bcd0b59a43f0636937a80846c69d">&sect;&nbsp;</a></span>au_Mat_ElemSize()</h2>
+<a id="gab20c5c62a11afed3db9fcb819bc6e33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab20c5c62a11afed3db9fcb819bc6e33d">&sect;&nbsp;</a></span>au_Mat_elemSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t au_Mat_ElemSize </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t au_Mat_elemSize </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -154,14 +157,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga03fd790677dbfdab9bdb4692d976ac53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga03fd790677dbfdab9bdb4692d976ac53">&sect;&nbsp;</a></span>au_Mat_GetCols()</h2>
+<a id="gac4d5b372f0dc50f7f5d964e794e7371e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4d5b372f0dc50f7f5d964e794e7371e">&sect;&nbsp;</a></span>au_Mat_getCols()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Mat_GetCols </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Mat_getCols </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -180,14 +183,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0f2a8f52b0812eed0fdaa6b0bcd1c786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f2a8f52b0812eed0fdaa6b0bcd1c786">&sect;&nbsp;</a></span>au_Mat_GetData()</h2>
+<a id="ga0be479a0cdbb8e2f1deca91463ea0cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0be479a0cdbb8e2f1deca91463ea0cf9">&sect;&nbsp;</a></span>au_Mat_getData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> uchar* au_Mat_GetData </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> uchar* au_Mat_getData </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -206,14 +209,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gad86073a7345a9d7034a1cef35b68aa7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad86073a7345a9d7034a1cef35b68aa7a">&sect;&nbsp;</a></span>au_Mat_GetRows()</h2>
+<a id="ga1bc495fc068374ce6f96277b8bd1cecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bc495fc068374ce6f96277b8bd1cecc">&sect;&nbsp;</a></span>au_Mat_getRows()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Mat_GetRows </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> int au_Mat_getRows </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -232,14 +235,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga4e9801202fb26e14b8d798074fba2b7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4e9801202fb26e14b8d798074fba2b7b">&sect;&nbsp;</a></span>au_Mat_New()</h2>
+<a id="gafd1e88cc183278663b535a94d455f053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafd1e88cc183278663b535a94d455f053">&sect;&nbsp;</a></span>au_Mat_new1()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Mat_New </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Mat_new1 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -251,14 +254,58 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gacce6bbae361212fb0020c4206bf85b81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacce6bbae361212fb0020c4206bf85b81">&sect;&nbsp;</a></span>au_Mat_Total()</h2>
+<a id="ga2a7859914218044b5c2106cb5f277727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a7859914218044b5c2106cb5f277727">&sect;&nbsp;</a></span>au_Mat_new2()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t au_Mat_Total </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> cv::Mat* au_Mat_new2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a Mat. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cols</td><td></td></tr>
+    <tr><td class="paramname">rows</td><td>TODO: choose the type </td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga47915d8a4e65a8aa6fc457317c463d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47915d8a4e65a8aa6fc457317c463d1b">&sect;&nbsp;</a></span>au_Mat_total()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> size_t au_Mat_total </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -280,7 +327,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 28 2016 17:43:48 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 10 2016 19:21:00 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

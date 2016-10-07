@@ -5,14 +5,17 @@
 #include "aruco_unity/exports.hpp"
 
 //! @addtogroup utility_vector_int
-//! \brief TODO
+//! \brief Wrapper for std::vector<int>.
 //!
+//! See the std documentation for more information: http://en.cppreference.com/w/cpp/container/vector
 //! @{
 
 extern "C" {
   //! \name Constructors & Destructors
   //! @{
 
+  //! \brief Deletes any std::vector<int>.
+  //! \param vector The vector used.
   ARUCO_UNITY_API void au_vectorInt_delete(std::vector<int>* vector);
 
   //! @} Constructors & Destructors
@@ -20,8 +23,12 @@ extern "C" {
   //! \name Functions
   //! @{
 
+  //! \brief Direct access to the underlying array.
+  //! \param vector The vector used.
   ARUCO_UNITY_API int* au_vectorInt_data(std::vector<int>* vector);
 
+  //! \brief Returns the number of elements.
+  //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_vectorInt_size(std::vector<int>* vector);
 
   //! @} Functions

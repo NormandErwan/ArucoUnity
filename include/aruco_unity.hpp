@@ -18,6 +18,7 @@ extern "C" {
   //! \param parameters Marker detection parameters.
   //! \param rejectedImgPoints Contains the imgPoints of those squares whose inner code has not a
   //! correct codification. Useful for debugging purposes.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga306791ee1aab1513bc2c2b40d774f370.
@@ -39,6 +40,7 @@ extern "C" {
   //! For N detected markers, the dimensions of this array should be Nx4. The order of the corners should be clockwise.
   //! \param ids Vector of identifiers for markers in markersCorners. Optional, if not provided, ids are not painted.
   //! \param borderColor Color of marker borders. Rest of colors(text color and first corner color) are calculated based on this one to improve visualization.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   ARUCO_UNITY_API void au_drawDetectedMarkers1(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, 
     cv::Scalar* borderColor, cv::Exception* exception);
 

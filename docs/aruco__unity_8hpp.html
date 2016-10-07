@@ -64,16 +64,387 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">aruco_unity.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;opencv2/aruco.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="exports_8hpp.html">aruco_unity/exports.hpp</a>&quot;</code><br />
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae7467342531e7074ad8c4cff3a12cfc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#ae7467342531e7074ad8c4cff3a12cfc2">au_detectMarkers1</a> (cv::Mat *image, cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **corners, std::vector&lt; int &gt; **ids, const cv::Ptr&lt; cv::aruco::DetectorParameters &gt; *parameters, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **rejectedImgPoints, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ae7467342531e7074ad8c4cff3a12cfc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic marker detection.  <a href="#ae7467342531e7074ad8c4cff3a12cfc2">More...</a><br /></td></tr>
+<tr class="separator:ae7467342531e7074ad8c4cff3a12cfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a7398a9dd5aad1ad5fb22e60018761"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#ab4a7398a9dd5aad1ad5fb22e60018761">au_detectMarkers2</a> (cv::Mat *image, cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **corners, std::vector&lt; int &gt; **ids, const cv::Ptr&lt; cv::aruco::DetectorParameters &gt; *parameters, cv::Exception *exception)</td></tr>
+<tr class="separator:ab4a7398a9dd5aad1ad5fb22e60018761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8835772f6f93c035ec2690eed97c07a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#a8835772f6f93c035ec2690eed97c07a4">au_detectMarkers3</a> (cv::Mat *image, cv::Ptr&lt; cv::aruco::Dictionary &gt; *dictionary, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **corners, std::vector&lt; int &gt; **ids, cv::Exception *exception)</td></tr>
+<tr class="separator:a8835772f6f93c035ec2690eed97c07a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee76ace7fa4f2d840ccbd81ebc826b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#acee76ace7fa4f2d840ccbd81ebc826b6">au_drawDetectedMarkers1</a> (cv::Mat *image, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *corners, std::vector&lt; int &gt; *ids, cv::Scalar *borderColor, cv::Exception *exception)</td></tr>
+<tr class="memdesc:acee76ace7fa4f2d840ccbd81ebc826b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw detected markers in image.  <a href="#acee76ace7fa4f2d840ccbd81ebc826b6">More...</a><br /></td></tr>
+<tr class="separator:acee76ace7fa4f2d840ccbd81ebc826b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70ef56bde6963b5a56e156d2632f0aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#ae70ef56bde6963b5a56e156d2632f0aa">au_drawDetectedMarkers2</a> (cv::Mat *image, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *corners, std::vector&lt; int &gt; *ids, cv::Exception *exception)</td></tr>
+<tr class="separator:ae70ef56bde6963b5a56e156d2632f0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94aee6cbd79c2030be7a7605329d059e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#a94aee6cbd79c2030be7a7605329d059e">au_drawDetectedMarkers3</a> (cv::Mat *image, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *corners, cv::Exception *exception)</td></tr>
+<tr class="separator:a94aee6cbd79c2030be7a7605329d059e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0514ac0977b7a55c3801d2addaa1ab70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aruco__unity_8hpp.html#a0514ac0977b7a55c3801d2addaa1ab70">au_drawDetectedMarkers4</a> (cv::Mat *image, std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *corners, cv::Scalar *borderColor, cv::Exception *exception)</td></tr>
+<tr class="separator:a0514ac0977b7a55c3801d2addaa1ab70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae7467342531e7074ad8c4cff3a12cfc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7467342531e7074ad8c4cff3a12cfc2">&sect;&nbsp;</a></span>au_detectMarkers1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_detectMarkers1 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; **&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Ptr&lt; cv::aruco::DetectorParameters &gt; *&#160;</td>
+          <td class="paramname"><em>parameters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **&#160;</td>
+          <td class="paramname"><em>rejectedImgPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Basic marker detection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Input image. </td></tr>
+    <tr><td class="paramname">dictionary</td><td>Indicates the type of markers that will be searched. </td></tr>
+    <tr><td class="paramname">corners</td><td>Vector of detected marker corners. For each marker, its four corners are provided, (e.g std::vector&lt;std::vector&lt;cv::Point2f&gt; &gt; ). For N detected markers, the dimensions of this array is Nx4. The order of the corners is clockwise. </td></tr>
+    <tr><td class="paramname">ids</td><td>Vector of identifiers of the detected markers. The identifier is of type int (e.g. std::vector&lt;int&gt;). For N detected markers, the size of ids is also N. The identifiers have the same order than the markers in the imgPoints array. </td></tr>
+    <tr><td class="paramname">parameters</td><td>Marker detection parameters. </td></tr>
+    <tr><td class="paramname">rejectedImgPoints</td><td>Contains the imgPoints of those squares whose inner code has not a correct codification. Useful for debugging purposes. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga306791ee1aab1513bc2c2b40d774f370">http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga306791ee1aab1513bc2c2b40d774f370</a>. </p>
+
+</div>
+</div>
+<a id="ab4a7398a9dd5aad1ad5fb22e60018761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4a7398a9dd5aad1ad5fb22e60018761">&sect;&nbsp;</a></span>au_detectMarkers2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_detectMarkers2 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; **&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Ptr&lt; cv::aruco::DetectorParameters &gt; *&#160;</td>
+          <td class="paramname"><em>parameters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco__unity_8hpp.html#ae7467342531e7074ad8c4cff3a12cfc2" title="Basic marker detection. ">au_detectMarkers1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a8835772f6f93c035ec2690eed97c07a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8835772f6f93c035ec2690eed97c07a4">&sect;&nbsp;</a></span>au_detectMarkers3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_detectMarkers3 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Ptr&lt; cv::aruco::Dictionary &gt; *&#160;</td>
+          <td class="paramname"><em>dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; **&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; **&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco__unity_8hpp.html#ae7467342531e7074ad8c4cff3a12cfc2" title="Basic marker detection. ">au_detectMarkers1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="acee76ace7fa4f2d840ccbd81ebc826b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee76ace7fa4f2d840ccbd81ebc826b6">&sect;&nbsp;</a></span>au_drawDetectedMarkers1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_drawDetectedMarkers1 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Scalar *&#160;</td>
+          <td class="paramname"><em>borderColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw detected markers in image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Input/output image. It must have 1 or 3 channels.The number of channels is not altered. </td></tr>
+    <tr><td class="paramname">corners</td><td>Positions of marker corners on input image (e.g std::vector&lt;std::vector&lt;cv::Point2f&gt;&gt;). For N detected markers, the dimensions of this array should be Nx4. The order of the corners should be clockwise. </td></tr>
+    <tr><td class="paramname">ids</td><td>Vector of identifiers for markers in markersCorners. Optional, if not provided, ids are not painted. </td></tr>
+    <tr><td class="paramname">borderColor</td><td>Color of marker borders. Rest of colors(text color and first corner color) are calculated based on this one to improve visualization. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae70ef56bde6963b5a56e156d2632f0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70ef56bde6963b5a56e156d2632f0aa">&sect;&nbsp;</a></span>au_drawDetectedMarkers2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_drawDetectedMarkers2 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco__unity_8hpp.html#acee76ace7fa4f2d840ccbd81ebc826b6" title="Draw detected markers in image. ">au_drawDetectedMarkers1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a94aee6cbd79c2030be7a7605329d059e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94aee6cbd79c2030be7a7605329d059e">&sect;&nbsp;</a></span>au_drawDetectedMarkers3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_drawDetectedMarkers3 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco__unity_8hpp.html#acee76ace7fa4f2d840ccbd81ebc826b6" title="Draw detected markers in image. ">au_drawDetectedMarkers1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a0514ac0977b7a55c3801d2addaa1ab70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0514ac0977b7a55c3801d2addaa1ab70">&sect;&nbsp;</a></span>au_drawDetectedMarkers4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void au_drawDetectedMarkers4 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; cv::Point2f &gt;&gt; *&#160;</td>
+          <td class="paramname"><em>corners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Scalar *&#160;</td>
+          <td class="paramname"><em>borderColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco__unity_8hpp.html#acee76ace7fa4f2d840ccbd81ebc826b6" title="Draw detected markers in image. ">au_drawDetectedMarkers1()</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 28 2016 17:43:48 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 10 2016 19:20:59 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mat',['Mat',['../group__utility__mat.html',1,'']]]
+  ['exception',['Exception',['../group__utility__exception.html',1,'']]]
 ];
