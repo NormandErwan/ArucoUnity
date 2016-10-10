@@ -123,13 +123,28 @@ extern "C" {
   //! \param dictionary The Dictionary used.
   ARUCO_UNITY_API cv::Mat* au_Dictionary_getBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary);
 
+  //! \brief Sets the marker code information.
+  //! \param dictionary The Dictionary used.
+  //! \param bytesList The new value.
+  ARUCO_UNITY_API void au_Dictionary_setBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bytesList);
+
   //! \brief Returns the number of bits per dimension.
   //! \param dictionary The Dictionary used.
   ARUCO_UNITY_API int au_Dictionary_getMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary);
 
+  //! \brief Sets the number of bits per dimension.
+  //! \param dictionary The Dictionary used.
+  //! \param markerSize The new value.
+  ARUCO_UNITY_API void au_Dictionary_setMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary, int markerSize);
+
   //! \brief Returns the maximum number of bits that can be corrected.
   //! \param dictionary The Dictionary used.
   ARUCO_UNITY_API int au_Dictionary_getMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary);
+
+  //! \brief Sets the maximum number of bits that can be corrected.
+  //! \param dictionary The Dictionary used.
+  //! \param maxCorrectionBits The new value.
+  ARUCO_UNITY_API void au_Dictionary_setMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary, int maxCorrectionBits);
 
   //! @} Attributes
 }

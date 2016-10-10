@@ -129,11 +129,23 @@ extern "C" {
     return new cv::Mat(bytesList);
   }
 
+  void au_Dictionary_getBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bytesList) {
+    dictionary->get()->bytesList = *bytesList;
+  }
+
   int au_Dictionary_getMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary) {
     return dictionary->get()->markerSize;
   }
 
+  void au_Dictionary_setMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary, int markerSize) {
+    dictionary->get()->markerSize = markerSize;
+  }
+
   int au_Dictionary_getMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary) {
     return dictionary->get()->maxCorrectionBits;
+  }
+
+  void au_Dictionary_getMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary, int maxCorrectionBits) {
+    dictionary->get()->maxCorrectionBits = maxCorrectionBits;
   }
 }

@@ -45,10 +45,19 @@ namespace ArucoUnity
     static extern System.IntPtr au_Dictionary_getBytesList(System.IntPtr dictionary);
 
     [DllImport("ArucoUnity")]
+    static extern void au_Dictionary_setBytesList(System.IntPtr dictionary, System.IntPtr bytesList);
+
+    [DllImport("ArucoUnity")]
     static extern int au_Dictionary_getMarkerSize(System.IntPtr dictionary);
 
     [DllImport("ArucoUnity")]
+    static extern void au_Dictionary_setMarkerSize(System.IntPtr dictionary, int markerSize);
+
+    [DllImport("ArucoUnity")]
     static extern int au_Dictionary_getMaxCorrectionBits(System.IntPtr dictionary);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_Dictionary_setMaxCorrectionBits(System.IntPtr dictionary, int maxCorrectionBits);
 
     public Dictionary(Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cvPtr, markerSize, maxCorrectionBits))
     {
@@ -126,17 +135,19 @@ namespace ArucoUnity
     public Mat bytesList
     {
       get { return new Mat(au_Dictionary_getBytesList(cvPtr)); }
+      set { au_Dictionary_setBytesList(cvPtr, value.cvPtr); }
     }
 
     public int markerSize
     {
       get { return au_Dictionary_getMarkerSize(cvPtr); }
+      set { au_Dictionary_setMarkerSize(cvPtr, value); }
     }
 
     public int maxCorrectionBits
     {
       get { return au_Dictionary_getMaxCorrectionBits(cvPtr); }
+      set { au_Dictionary_setMaxCorrectionBits(cvPtr, value); }
     }
-
   }
 }
