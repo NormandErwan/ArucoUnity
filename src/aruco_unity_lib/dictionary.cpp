@@ -125,11 +125,10 @@ extern "C" {
 
   // Attributes
   cv::Mat* au_Dictionary_getBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary) {
-    cv::Mat bytesList = dictionary->get()->bytesList;
-    return new cv::Mat(bytesList);
+    return &(dictionary->get()->bytesList);
   }
 
-  void au_Dictionary_getBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bytesList) {
+  void au_Dictionary_setBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bytesList) {
     dictionary->get()->bytesList = *bytesList;
   }
 
@@ -145,7 +144,7 @@ extern "C" {
     return dictionary->get()->maxCorrectionBits;
   }
 
-  void au_Dictionary_getMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary, int maxCorrectionBits) {
+  void au_Dictionary_setMaxCorrectionBits(cv::Ptr<cv::aruco::Dictionary>* dictionary, int maxCorrectionBits) {
     dictionary->get()->maxCorrectionBits = maxCorrectionBits;
   }
 }

@@ -21,7 +21,7 @@ namespace ArucoUnity
       {
       }
 
-      ~VectorInt()
+      protected override void DeleteCvPtr()
       {
         au_vectorInt_delete(cvPtr);
       }

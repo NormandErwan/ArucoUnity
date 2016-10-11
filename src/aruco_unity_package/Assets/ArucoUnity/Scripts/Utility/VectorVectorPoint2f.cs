@@ -27,15 +27,15 @@ namespace ArucoUnity
       {
       }
 
-      ~VectorVectorPoint2f()
+      protected override void DeleteCvPtr()
       {
         au_vectorVectorPoint2f_delete(cvPtr);
       }
 
       public unsafe Point2f[][] Data()
       {
-        int dataSize1 = au_vectorVectorPoint2f_size1(cvPtr);
-        int dataSize2 = au_vectorVectorPoint2f_size2(cvPtr);
+        int dataSize1 = Size(),
+            dataSize2 = Size2();
         System.IntPtr* dataPtr = au_vectorVectorPoint2f_data(cvPtr);
 
         Point2f[][] data = new Point2f[dataSize1][];

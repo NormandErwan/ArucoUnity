@@ -23,7 +23,7 @@ namespace ArucoUnity
         return new Scalar(color.r, color.g, color.b);
       }
 
-      ~Scalar()
+      protected override void DeleteCvPtr()
       {
         au_Scalar_delete(cvPtr);
       }

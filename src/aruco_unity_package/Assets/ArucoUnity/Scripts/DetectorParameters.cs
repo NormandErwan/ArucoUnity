@@ -114,7 +114,7 @@ namespace ArucoUnity
     {
     }
 
-    ~DetectorParameters()
+    protected override void DeleteCvPtr()
     {
       au_DetectorParameters_delete(cvPtr);
     }

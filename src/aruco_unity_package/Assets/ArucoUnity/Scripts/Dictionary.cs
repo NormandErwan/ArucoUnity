@@ -83,7 +83,7 @@ namespace ArucoUnity
     {
     }
 
-    ~Dictionary()
+    protected override void DeleteCvPtr()
     {
       au_Dictionary_delete(cvPtr);
     }
@@ -95,7 +95,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public int getDistanceToId1(Dictionary dictionary, Mat bits, int id, bool allRotations)
+    public int GetDistanceToId(Dictionary dictionary, Mat bits, int id, bool allRotations)
     {
       Exception exception = new Exception();
       int distanceToId = au_Dictionary_getDistanceToId1(cvPtr, bits.cvPtr, id, allRotations, exception.cvPtr);
@@ -103,7 +103,7 @@ namespace ArucoUnity
       return distanceToId;
     }
 
-    public int getDistanceToId2(Dictionary dictionary, Mat bits, int id)
+    public int GetDistanceToId(Dictionary dictionary, Mat bits, int id)
     {
       Exception exception = new Exception();
       int distanceToId = au_Dictionary_getDistanceToId2(cvPtr, bits.cvPtr, id, exception.cvPtr);
@@ -111,7 +111,7 @@ namespace ArucoUnity
       return distanceToId;
     }
 
-    public bool identify(Dictionary dictionary, Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
+    public bool Identify(Dictionary dictionary, Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
     {
       Exception exception = new Exception();
       bool result = au_Dictionary_identify(cvPtr, onlyBits.cvPtr, out idx, out rotation, maxCorrectionRate, exception.cvPtr);
@@ -119,7 +119,7 @@ namespace ArucoUnity
       return result;
     }
 
-    static public Mat getBitsFromByteList(Mat byteList, int markerSiz)
+    static public Mat GetBitsFromByteList(Mat byteList, int markerSiz)
     {
       Exception exception = new Exception();
       Mat bits = new Mat(au_Dictionary_getBitsFromByteList(byteList.cvPtr, markerSiz, exception.cvPtr));
@@ -127,14 +127,14 @@ namespace ArucoUnity
       return bits;
     }
 
-    static public Mat getByteListFromBits(System.IntPtr bits)
+    static public Mat GetByteListFromBits(System.IntPtr bits)
     {
       return new Mat(au_Dictionary_getByteListFromBits(bits));
     }
 
     public Mat bytesList
     {
-      get { return new Mat(au_Dictionary_getBytesList(cvPtr)); }
+      get { return new Mat(au_Dictionary_getBytesList(cvPtr), DeleteResponsibility.False); }
       set { au_Dictionary_setBytesList(cvPtr, value.cvPtr); }
     }
 

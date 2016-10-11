@@ -29,7 +29,7 @@ namespace ArucoUnity
         sb = new StringBuilder(1024);
       }
 
-      ~Exception()
+      protected override void DeleteCvPtr()
       {
         //au_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
       }

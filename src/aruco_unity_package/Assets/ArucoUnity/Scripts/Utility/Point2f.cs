@@ -35,7 +35,7 @@ namespace ArucoUnity
       {
       }
 
-      ~Point2f()
+      protected override void DeleteCvPtr()
       {
         au_Point2f_delete(cvPtr);
       }

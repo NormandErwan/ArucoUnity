@@ -41,11 +41,12 @@ namespace ArucoUnity
       {
       }
 
-      internal Mat(System.IntPtr matPtr) : base(matPtr)
+      internal Mat(System.IntPtr matPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+        : base(matPtr, deleteResponsibility)
       {
       }
 
-      ~Mat()
+      protected override void DeleteCvPtr()
       {
         au_Mat_delete(cvPtr);
       }
