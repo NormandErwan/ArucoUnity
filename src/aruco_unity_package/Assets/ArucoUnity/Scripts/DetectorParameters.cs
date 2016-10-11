@@ -2,7 +2,7 @@
 
 namespace ArucoUnity
 {
-  public partial class DetectorParameters : Utility.HandleCvPtr
+  public class DetectorParameters : Utility.HandleCvPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_DetectorParameters_create();

@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class Scalar : HandleCvPtr
+    public class Scalar : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]

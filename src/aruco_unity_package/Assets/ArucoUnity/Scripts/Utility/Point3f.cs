@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class Point3f : HandleCvPtr
+    public class Point3f : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]
@@ -37,7 +37,8 @@ namespace ArucoUnity
       {
       }
 
-      internal Point3f(System.IntPtr point3fPtr) : base(point3fPtr)
+      internal Point3f(System.IntPtr point3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+        : base(point3fPtr, deleteResponsibility)
       {
       }
 

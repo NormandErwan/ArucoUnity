@@ -4,7 +4,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class VectorInt : HandleCvPtr
+    public class VectorInt : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]
@@ -17,7 +17,8 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern int au_vectorInt_size(System.IntPtr vector);
 
-      public VectorInt(System.IntPtr vectorIntPtr) : base(vectorIntPtr)
+      public VectorInt(System.IntPtr vectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+        : base(vectorIntPtr, deleteResponsibility)
       {
       }
 

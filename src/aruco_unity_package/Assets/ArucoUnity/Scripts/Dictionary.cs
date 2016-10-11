@@ -3,7 +3,7 @@ using ArucoUnity.Utility;
 
 namespace ArucoUnity
 {
-  public partial class Dictionary : HandleCvPtr
+  public class Dictionary : HandleCvPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_Dictionary_new1(System.IntPtr bytesList, int markerSize, int maxCorrectionBits);
@@ -79,7 +79,8 @@ namespace ArucoUnity
     {
     }
 
-    internal Dictionary(System.IntPtr dictionaryPtr) : base(dictionaryPtr)
+    internal Dictionary(System.IntPtr dictionaryPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+      : base(dictionaryPtr, deleteResponsibility)
     {
     }
 

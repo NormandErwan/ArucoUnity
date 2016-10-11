@@ -3,7 +3,7 @@ using ArucoUnity.Utility;
 
 namespace ArucoUnity
 {
-  public abstract partial class Board : HandleCvPtr
+  public abstract class Board : HandleCvPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
@@ -25,19 +25,19 @@ namespace ArucoUnity
 
     public Dictionary dictionary
     {
-      get { return new Dictionary(au_Board_getDictionary(cvPtr)); }
+      get { return new Dictionary(au_Board_getDictionary(cvPtr), DeleteResponsibility.False); }
       set { au_Board_setDictionary(cvPtr, value.cvPtr); }
     }
 
     public VectorInt ids
     {
-      get { return new VectorInt(au_Board_getIds(cvPtr)); }
+      get { return new VectorInt(au_Board_getIds(cvPtr), DeleteResponsibility.False); }
       set { au_Board_setIds(cvPtr, value.cvPtr); }
     }
 
     public VectorVectorPoint3f objPoints
     {
-      get { return new VectorVectorPoint3f(au_Board_getObjPoints(cvPtr)); }
+      get { return new VectorVectorPoint3f(au_Board_getObjPoints(cvPtr), DeleteResponsibility.False); }
       set { au_Board_setObjPoints(cvPtr, value.cvPtr); }
     }
   }

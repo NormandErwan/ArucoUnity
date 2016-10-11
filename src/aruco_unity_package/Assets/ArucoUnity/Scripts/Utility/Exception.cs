@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class Exception : HandleCvPtr
+    public class Exception : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]

@@ -4,7 +4,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class Mat : HandleCvPtr
+    public class Mat : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]

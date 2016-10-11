@@ -4,7 +4,7 @@ namespace ArucoUnity
 {
   namespace Utility
   {
-    public partial class VectorVectorPoint3f : HandleCvPtr
+    public class VectorVectorPoint3f : HandleCvPtr
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]
@@ -23,7 +23,8 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern int au_vectorVectorPoint3f_size2(System.IntPtr vector);
 
-      internal VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr) : base(vectorVectorPoint3fPtr)
+      internal VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+        : base(vectorVectorPoint3fPtr, deleteResponsibility)
       {
       }
 

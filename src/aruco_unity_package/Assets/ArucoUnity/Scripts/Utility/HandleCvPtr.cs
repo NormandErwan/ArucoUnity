@@ -10,7 +10,7 @@ namespace ArucoUnity
       False
     }
 
-    public abstract partial class HandleCvPtr
+    public abstract class HandleCvPtr
     {
       public DeleteResponsibility deleteResponsibility;
       
