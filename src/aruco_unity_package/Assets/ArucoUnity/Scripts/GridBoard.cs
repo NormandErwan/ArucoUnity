@@ -70,18 +70,18 @@ namespace ArucoUnity
     static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary, int firstMarker)
     {
       Exception exception = new Exception();
-      GridBoard gridBoard = new GridBoard(au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, firstMarker, 
-        exception.cvPtr));
+      System.IntPtr gridBoardPtr = au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, firstMarker, 
+        exception.cvPtr);
       exception.Check();
-      return gridBoard;
+      return new GridBoard(gridBoardPtr);
     }
 
     static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary)
     {
       Exception exception = new Exception();
-      GridBoard gridBoard = new GridBoard(au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, exception.cvPtr));
+      System.IntPtr gridBoardPtr = au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, exception.cvPtr);
       exception.Check();
-      return gridBoard;
+      return new GridBoard(gridBoardPtr);
     }
 
     public Size GetGridSize()

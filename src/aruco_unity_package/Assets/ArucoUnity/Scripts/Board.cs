@@ -23,6 +23,11 @@ namespace ArucoUnity
     [DllImport("ArucoUnity")]
     static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
 
+    internal Board(System.IntPtr boardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+        : base(boardPtr, deleteResponsibility)
+    {
+    }
+
     public Dictionary dictionary
     {
       get { return new Dictionary(au_Board_getDictionary(cvPtr), DeleteResponsibility.False); }

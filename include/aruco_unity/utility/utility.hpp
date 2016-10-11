@@ -8,6 +8,7 @@
 //!   @defgroup utility_point2f OpenCV Point2f
 //!   @defgroup utility_point3f OpenCV Point3f
 //!   @defgroup utility_scalar OpenCV Scalar
+//!   @defgroup utility_size OpenCV Size
 //!   @defgroup utility_vector std::vector
 //!   @{
 //!     @defgroup utility_vector_int std::vector<int>

@@ -44,6 +44,6 @@ extern "C" {
   //! @} Attributes
 }
 
-//! @} dictionary
+//! @} board
 
 #endif

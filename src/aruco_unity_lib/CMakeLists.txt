@@ -14,12 +14,14 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/detector_parameters.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/grid_board.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exception.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point2f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point3f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/scalar.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/size.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_int.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point2f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point3f.hpp
@@ -27,13 +29,15 @@ set(PROJECT_HEADERS
 set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
     ${PROJECT_SOURCE_DIR}/board.cpp
+    ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
     ${PROJECT_SOURCE_DIR}/exception.cpp
-    ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
+    ${PROJECT_SOURCE_DIR}/grid_board.cpp
     ${PROJECT_SOURCE_DIR}/mat.cpp
     ${PROJECT_SOURCE_DIR}/point2f.cpp
     ${PROJECT_SOURCE_DIR}/point3f.cpp
     ${PROJECT_SOURCE_DIR}/scalar.cpp
+    ${PROJECT_SOURCE_DIR}/size.cpp
     ${PROJECT_SOURCE_DIR}/vector_int.cpp
     ${PROJECT_SOURCE_DIR}/vector_vector_point2f.cpp
     ${PROJECT_SOURCE_DIR}/vector_vector_point3f.cpp
