@@ -60,6 +60,42 @@ namespace ArucoUnity
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
 
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers1(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate, 
+      bool checkAllOrders, System.IntPtr recoveredIdxs, System.IntPtr parameters, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers2(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate, 
+      bool checkAllOrders, System.IntPtr recoveredIdxs, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers3(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate, 
+      bool checkAllOrders, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers4(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate, 
+      System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers5(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers6(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers7(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds, 
+      System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern void au_refineDetectedMarkers8(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
+      System.IntPtr rejectedCorners, System.IntPtr exception);
+
     public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners,
       out VectorInt ids, DetectorParameters parameters, out VectorVectorPoint2f rejectedImgPoints)
     {
@@ -149,6 +185,77 @@ namespace ArucoUnity
     public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
     {
       return new Dictionary(au_getPredefinedDictionary(name));
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, ref Mat recoveredIdxs, 
+      DetectorParameters parameters) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers1(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, minRepDistance, errorCorrectionRate, checkAllOrders, recoveredIdxs.cvPtr, parameters.cvPtr, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, ref Mat recoveredIdxs) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers2(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        distCoeffs.cvPtr, minRepDistance, errorCorrectionRate, checkAllOrders, recoveredIdxs.cvPtr, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers3(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        distCoeffs.cvPtr, minRepDistance, errorCorrectionRate, checkAllOrders, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers4(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        distCoeffs.cvPtr, minRepDistance, errorCorrectionRate, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs, float minRepDistance) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers5(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        distCoeffs.cvPtr, minRepDistance, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix, Mat distCoeffs) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers6(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        distCoeffs.cvPtr, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners,
+      Mat cameraMatrix) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers7(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
+        exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void RefineDetectedMarkers(Mat image, Board board, ref Mat detectedCorners, ref Mat detectedIds, ref Mat rejectedCorners) 
+    {
+      Exception exception = new Exception();
+      au_refineDetectedMarkers8(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, exception.cvPtr);
+      exception.Check();
     }
   }
 }
