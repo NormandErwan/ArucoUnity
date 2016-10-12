@@ -27,6 +27,10 @@ extern "C" {
   //! \param vector The vector used.
   ARUCO_UNITY_API cv::Mat* au_vectorMat_data(std::vector<cv::Mat>* vector);
 
+  //! \brief Adds an element to the end.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API void au_vectorMat_push_back(std::vector<cv::Mat>* vector, cv::Mat* value);
+
   //! \brief Returns the number of elements.
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_vectorMat_size(std::vector<cv::Mat>* vector);

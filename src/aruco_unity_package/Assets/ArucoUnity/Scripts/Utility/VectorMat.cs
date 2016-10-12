@@ -15,6 +15,9 @@ namespace ArucoUnity
       static extern unsafe System.IntPtr* au_vectorMat_data(System.IntPtr vector);
 
       [DllImport("ArucoUnity")]
+      static extern void au_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
+
+      [DllImport("ArucoUnity")]
       static extern int au_vectorMat_size(System.IntPtr vector);
 
       public VectorMat(System.IntPtr vectorMatPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
@@ -39,6 +42,11 @@ namespace ArucoUnity
         }
 
         return data;
+      }
+
+      public void PushBack(Mat value)
+      {
+        au_vectorMat_push_back(cvPtr, value.cvPtr);
       }
 
       public int Size()

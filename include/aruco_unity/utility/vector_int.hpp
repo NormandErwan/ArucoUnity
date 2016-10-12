@@ -27,6 +27,14 @@ extern "C" {
   //! \param vector The vector used.
   ARUCO_UNITY_API int* au_vectorInt_data(std::vector<int>* vector);
 
+  //! \brief Adds an element to the end.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API void au_vectorInt_push_back(std::vector<int>* vector, int value);
+
+  //! \brief Reserves storage.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API void au_vectorInt_reserve(std::vector<int>* vector, size_t new_cap);
+
   //! \brief Returns the number of elements.
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_vectorInt_size(std::vector<int>* vector);

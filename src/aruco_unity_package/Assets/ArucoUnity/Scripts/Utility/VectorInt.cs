@@ -15,6 +15,9 @@ namespace ArucoUnity
       static extern unsafe int* au_vectorInt_data(System.IntPtr vector);
 
       [DllImport("ArucoUnity")]
+      static extern void au_vectorInt_push_back(System.IntPtr vector, int value);
+
+      [DllImport("ArucoUnity")]
       static extern int au_vectorInt_size(System.IntPtr vector);
 
       public VectorInt(System.IntPtr vectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
@@ -39,6 +42,11 @@ namespace ArucoUnity
         }
 
         return data;
+      }
+
+      public void PushBack(int value)
+      {
+        au_vectorInt_push_back(cvPtr, value);
       }
 
       public int Size()
