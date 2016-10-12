@@ -1,35 +1,36 @@
 #include "aruco_unity/utility/vector_vector_point2f.hpp"
+#include "aruco_unity/utility/exception.hpp"
 
 extern "C" {
   // Constructors & Destructors
+  std::vector<std::vector<cv::Point2f>>* au_vectorVectorPoint2f_new() {
+    return new std::vector<std::vector<cv::Point2f>>();
+  }
+
   void au_vectorVectorPoint2f_delete(std::vector<std::vector<cv::Point2f>>* vector) {
     delete vector;
   }
 
   // Functions
-  cv::Point2f** au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector) {
-    size_t size1 = au_vectorVectorPoint2f_size1(vector),
-           size2 = au_vectorVectorPoint2f_size2(vector);
-    cv::Point2f** data = new cv::Point2f*[size1];
-
-    for (int i = 0; i < size1; i++) {
-      for (int j = 0; j < size2; j++) {
-        data[i * size2 + j] = new cv::Point2f(vector->at(i).at(j));
-      }
+  std::vector<cv::Point2f>* au_vectorVectorPoint2f_at(std::vector<std::vector<cv::Point2f>>* vector, size_t pos, cv::Exception* exception) {
+    std::vector<cv::Point2f>* element = NULL;
+    try {
+      element = &(vector->at(pos));
+    } catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return element;
     }
-
-    return data;
+    return element;
   }
 
-  void au_vectorVectorPoint2f_data_delete(cv::Point2f** vector_data) {
-    delete vector_data;
+  std::vector<cv::Point2f>* au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector, cv::Exception* exception) {
+    return vector->data();
+  }
+  void au_vectorVectorPoint2f_push_back(std::vector<std::vector<cv::Point2f>>* vector, std::vector<cv::Point2f>* value) {
+    vector->push_back(std::vector<cv::Point2f>(*value));
   }
 
-  size_t au_vectorVectorPoint2f_size1(std::vector<std::vector<cv::Point2f>>* vector) {
+  size_t au_vectorVectorPoint2f_size(std::vector<std::vector<cv::Point2f>>* vector) {
     return vector->size();
-  }
-
-  size_t au_vectorVectorPoint2f_size2(std::vector<std::vector<cv::Point2f>>* vector) {
-    return vector->at(0).size();
   }
 }

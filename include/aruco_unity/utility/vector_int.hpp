@@ -14,6 +14,10 @@ extern "C" {
   //! \name Constructors & Destructors
   //! @{
 
+  //! \brief Create a new std::vector<int>.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API std::vector<int>* au_vectorInt_new();
+
   //! \brief Deletes any std::vector<int>.
   //! \param vector The vector used.
   ARUCO_UNITY_API void au_vectorInt_delete(std::vector<int>* vector);
@@ -22,6 +26,12 @@ extern "C" {
 
   //! \name Functions
   //! @{
+  
+  //! \brief Access specified element with bounds checking. 
+  //! \param vector The vector used.
+  //! \param pos Position of the element to return.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  ARUCO_UNITY_API int au_vectorInt_at(std::vector<int>* vector, size_t pos, cv::Exception* exception);
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
@@ -33,7 +43,9 @@ extern "C" {
 
   //! \brief Reserves storage.
   //! \param vector The vector used.
-  ARUCO_UNITY_API void au_vectorInt_reserve(std::vector<int>* vector, size_t new_cap);
+  //! \param new_cap New capacity of the container.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  ARUCO_UNITY_API void au_vectorInt_reserve(std::vector<int>* vector, size_t new_cap, cv::Exception* exception);
 
   //! \brief Returns the number of elements.
   //! \param vector The vector used.

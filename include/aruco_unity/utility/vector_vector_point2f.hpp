@@ -1,7 +1,6 @@
 #ifndef __ARUCO_UNITY_VECTOR_VECTOR_POINT2F_HPP__
 #define __ARUCO_UNITY_VECTOR_VECTOR_POINT2F_HPP__
 
-#include <unordered_map>
 #include <opencv2/core.hpp>
 #include "aruco_unity/exports.hpp"
 
@@ -15,6 +14,10 @@ extern "C" {
   //! \name Constructors & Destructors
   //! @{
 
+  //! \brief Create a new std::vector<std::vector<cv::Point2f>>.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_vectorVectorPoint2f_new();
+
   //! \brief Deletes any std::vector<std::vector<cv::Point2f>>.
   //! \param vector The vector used.
   ARUCO_UNITY_API void au_vectorVectorPoint2f_delete(std::vector<std::vector<cv::Point2f>>* vector);
@@ -24,21 +27,24 @@ extern "C" {
   //! \name Functions
   //! @{
 
+  //! \brief Access specified element with bounds checking. 
+  //! \param vector The vector used.
+  //! \param pos Position of the element to return.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  ARUCO_UNITY_API std::vector<cv::Point2f>* au_vectorVectorPoint2f_at(std::vector<std::vector<cv::Point2f>>* vector, size_t pos, cv::Exception* exception);
+
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  ARUCO_UNITY_API cv::Point2f** au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector);
-
-  //! \brief Deletes returned data.
-  //! \param vector_data The vector data used.
-  ARUCO_UNITY_API void au_vectorVectorPoint2f_data_delete(cv::Point2f** vector_data);
+  //ARUCO_UNITY_API cv::Point2f** au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector);
+  ARUCO_UNITY_API std::vector<cv::Point2f>* au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector, cv::Exception* exception);
+  
+  //! \brief Adds an element to the end.
+  //! \param vector The vector used.
+  ARUCO_UNITY_API void au_vectorVectorPoint2f_push_back(std::vector<std::vector<cv::Point2f>>* vector, std::vector<cv::Point2f>* value);
   
   //! \brief Returns the number of vector elements.
   //! \param vector The vector used.
-  ARUCO_UNITY_API size_t au_vectorVectorPoint2f_size1(std::vector<std::vector<cv::Point2f>>* vector);
-
-  //! \brief Returns the number of Point2f in a vector element.
-  //! \param vector The vector used.
-  ARUCO_UNITY_API size_t au_vectorVectorPoint2f_size2(std::vector<std::vector<cv::Point2f>>* vector);
+  ARUCO_UNITY_API size_t au_vectorVectorPoint2f_size(std::vector<std::vector<cv::Point2f>>* vector);
 
   //! @} Functions
 }

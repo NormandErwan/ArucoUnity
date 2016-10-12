@@ -31,7 +31,7 @@ namespace ArucoUnity
       {
       }
 
-      internal Point2f(System.IntPtr point2fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+      public Point2f(System.IntPtr point2fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
         : base(point2fPtr, deleteResponsibility)
       {
       }

@@ -14,8 +14,12 @@
 //!   @{
 //!     @defgroup utility_vector_int std::vector<int>
 //!     @defgroup utility_vector_mat std::vector<cv::Mat>
+//!     @defgroup utility_vector_point2f std::vector<cv::Point2f>
+//!     @defgroup utility_vector_point3f std::vector<cv::Point3f>
+//!     @defgroup utility_vector_vector_int std::vector<std::vector<int>>
 //!     @defgroup utility_vector_vector_point2f std::vector<std::vector<cv::Point2f>>
 //!     @defgroup utility_vector_vector_point3f std::vector<std::vector<cv::Point3f>>
+//!     @defgroup utility_vector_vector_vector_point2f std::vector<std::vector<std::vector<cv::Point3f>>>
 //!   @}
 //! @}
 

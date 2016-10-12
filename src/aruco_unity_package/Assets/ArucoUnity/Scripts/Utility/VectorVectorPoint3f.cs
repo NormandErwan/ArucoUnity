@@ -8,22 +8,29 @@ namespace ArucoUnity
     {
       // Constructor & Destructor
       [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_vectorVectorPoint3f_new();
+
+      [DllImport("ArucoUnity")]
       static extern void au_vectorVectorPoint3f_delete(System.IntPtr vector);
 
       // Functions
       [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_vectorVectorPoint3f_at(System.IntPtr vector, int pos, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
       static extern unsafe System.IntPtr* au_vectorVectorPoint3f_data(System.IntPtr vector);
 
       [DllImport("ArucoUnity")]
-      static extern unsafe void au_vectorVectorPoint3f_data_delete(System.IntPtr* vector);
+      static extern void au_vectorVectorPoint3f_push_back(System.IntPtr vector, System.IntPtr value);
 
       [DllImport("ArucoUnity")]
-      static extern int au_vectorVectorPoint3f_size1(System.IntPtr vector);
+      static extern int au_vectorVectorPoint3f_size(System.IntPtr vector);
 
-      [DllImport("ArucoUnity")]
-      static extern int au_vectorVectorPoint3f_size2(System.IntPtr vector);
+      public VectorVectorPoint3f() : base(au_vectorVectorPoint3f_new())
+      {
+      }
 
-      internal VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
+      public VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
         : base(vectorVectorPoint3fPtr, deleteResponsibility)
       {
       }
@@ -33,36 +40,36 @@ namespace ArucoUnity
         au_vectorVectorPoint3f_delete(cvPtr);
       }
 
-      public unsafe Point3f[][] Data()
+      public VectorPoint3f At(int pos) 
       {
-        int dataSize1 = Size(),
-            dataSize2 = Size2();
+        Exception exception = new Exception();
+        VectorPoint3f element = new VectorPoint3f(au_vectorVectorPoint3f_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+        exception.Check();
+        return element;
+      }
+
+      public unsafe VectorPoint3f[] Data()
+      {
         System.IntPtr* dataPtr = au_vectorVectorPoint3f_data(cvPtr);
+        int size = Size();
 
-        Point3f[][] data = new Point3f[dataSize1][];
-        for (var i = 0; i < dataSize1; i++)
+        VectorPoint3f[] data = new VectorPoint3f[size];
+        for (int i = 0; i < size; i++)
         {
-          Point3f[] data2 = new Point3f[dataSize2];
-          for (var j = 0; j < dataSize2; j++)
-          {
-            data2[j] = new Point3f(dataPtr[i * dataSize2 + j], DeleteResponsibility.False);
-          }
-          data[i] = data2;
+          data[i] = new VectorPoint3f(dataPtr[i], DeleteResponsibility.False);
         }
-
-        au_vectorVectorPoint3f_data_delete(dataPtr);
 
         return data;
       }
 
-      public int Size()
+      public void PushBack(VectorPoint3f value)
       {
-        return au_vectorVectorPoint3f_size1(cvPtr);
+        au_vectorVectorPoint3f_push_back(cvPtr, value.cvPtr);
       }
 
-      public int Size2()
+      public int Size()
       {
-        return au_vectorVectorPoint3f_size2(cvPtr);
+        return au_vectorVectorPoint3f_size(cvPtr);
       }
     }
   }
