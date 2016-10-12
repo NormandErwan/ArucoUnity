@@ -23,6 +23,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/scalar.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/size.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_int.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point2f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point3f.hpp
 )
@@ -39,6 +40,7 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/scalar.cpp
     ${PROJECT_SOURCE_DIR}/size.cpp
     ${PROJECT_SOURCE_DIR}/vector_int.cpp
+    ${PROJECT_SOURCE_DIR}/vector_mat.cpp
     ${PROJECT_SOURCE_DIR}/vector_vector_point2f.cpp
     ${PROJECT_SOURCE_DIR}/vector_vector_point3f.cpp
 )
