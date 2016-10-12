@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -47,6 +48,15 @@ namespace ArucoUnity
       [SerializeField]
       private GameObject boardPlane;
 
+      [Header("Save the board")]
+      [SerializeField]
+      [Tooltip("Save the generated image")]
+      private bool saveBoard;
+
+      [SerializeField]
+      [Tooltip("Output image")]
+      private string outputImage = "ArucoUnity/board.png";
+
       void Start()
       {
         board = Create(dictionaryName, markersX, markersY, markerLength, markerSeparation, margins, markerBorderBits, out boardImage, out boardSize);
@@ -55,6 +65,11 @@ namespace ArucoUnity
         {
           Texture2D boardTexture = CreateTexture(boardImage);
           Draw(boardImage, boardPlane, boardTexture);
+
+          if (saveBoard && outputImage.Length > 0)
+          {
+            Save(boardTexture, outputImage);
+          }
         }
       }
 
@@ -86,6 +101,12 @@ namespace ArucoUnity
         boardTexture.Apply();
 
         boardPlane.GetComponent<Renderer>().material.mainTexture = boardTexture;
+      }
+
+      public void Save(Texture2D boardTexture, string outputImage)
+      {
+        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
+        File.WriteAllBytes(imageFilePath, boardTexture.EncodeToPNG());
       }
     }
   }

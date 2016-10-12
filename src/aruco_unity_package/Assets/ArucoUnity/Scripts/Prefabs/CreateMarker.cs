@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -33,6 +34,15 @@ namespace ArucoUnity
       [Tooltip("The plane where to display the generated image")]
       private GameObject markerPlane;
 
+      [Header("Save the marker")]
+      [SerializeField]
+      [Tooltip("Save the generated image")]
+      private bool saveMarker;
+
+      [SerializeField]
+      [Tooltip("Output image")]
+      private string outputImage = "ArucoUnity/marker.png";
+
       void Start()
       {
         markerImage = Create(dictionaryName, markerId, markerSize, markerBorderBits);
@@ -41,6 +51,11 @@ namespace ArucoUnity
         {
           Texture2D markerTexture = CreateTexture(markerImage);
           Draw(markerImage, markerPlane, markerTexture);
+
+          if (saveMarker && outputImage.Length > 0)
+          {
+            Save(markerTexture, outputImage);
+          }
         }
       }
 
@@ -66,6 +81,12 @@ namespace ArucoUnity
         markerTexture.Apply();
 
         markerPlane.GetComponent<Renderer>().material.mainTexture = markerTexture;
+      }
+
+      public void Save(Texture2D markerTexture, string outputImage)
+      {
+        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
+        File.WriteAllBytes(imageFilePath, markerTexture.EncodeToPNG());
       }
     }
   }
