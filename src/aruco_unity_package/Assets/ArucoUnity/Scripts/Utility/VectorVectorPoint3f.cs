@@ -45,7 +45,7 @@ namespace ArucoUnity
           Point3f[] data2 = new Point3f[dataSize2];
           for (var j = 0; j < dataSize2; j++)
           {
-            data2[j] = new Point3f(dataPtr[i * dataSize2 + j]);
+            data2[j] = new Point3f(dataPtr[i * dataSize2 + j], DeleteResponsibility.False);
           }
           data[i] = data2;
         }
