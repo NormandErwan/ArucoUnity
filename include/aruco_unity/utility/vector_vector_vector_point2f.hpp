@@ -15,7 +15,6 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<std::vector<std::vector<cv::Point2f>>>.
-  //! \param vector The vector used.
   ARUCO_UNITY_API std::vector<std::vector<std::vector<cv::Point2f>>>* au_vectorVectorVectorPoint2f_new();
 
   //! \brief Deletes any std::vector<std::vector<std::vector<cv::Point2f>>>.
@@ -36,11 +35,11 @@ extern "C" {
   
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  //ARUCO_UNITY_API cv::Point2f** au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector);
-  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_vectorVectorVectorPoint2f_data(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, cv::Exception* exception);
+  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_vectorVectorVectorPoint2f_data(std::vector<std::vector<std::vector<cv::Point2f>>>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
+  //! \param value The value of the element to append.
   ARUCO_UNITY_API void au_vectorVectorInt_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, std::vector<std::vector<cv::Point2f>>* value);
   
   //! \brief Returns the number of vector elements.

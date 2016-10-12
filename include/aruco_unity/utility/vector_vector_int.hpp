@@ -15,7 +15,6 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<std::vector<int>>.
-  //! \param vector The vector used.
   ARUCO_UNITY_API std::vector<std::vector<int>>* au_vectorVectorInt_new();
 
   //! \brief Deletes any std::vector<std::vector<int>>.
@@ -35,11 +34,11 @@ extern "C" {
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  //ARUCO_UNITY_API int** au_vectorVectorInt_data(std::vector<std::vector<int>>* vector);
   ARUCO_UNITY_API std::vector<int>* au_vectorVectorInt_data(std::vector<std::vector<int>>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
+  //! \param value The value of the element to append.
   ARUCO_UNITY_API void au_vectorVectorInt_push_back(std::vector<std::vector<int>>* vector, std::vector<int>* value);
   
   //! \brief Returns the number of vector elements.

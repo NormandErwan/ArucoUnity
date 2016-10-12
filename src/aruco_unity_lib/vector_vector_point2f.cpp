@@ -23,7 +23,7 @@ extern "C" {
     return element;
   }
 
-  std::vector<cv::Point2f>* au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector, cv::Exception* exception) {
+  std::vector<cv::Point2f>* au_vectorVectorPoint2f_data(std::vector<std::vector<cv::Point2f>>* vector) {
     return vector->data();
   }
   void au_vectorVectorPoint2f_push_back(std::vector<std::vector<cv::Point2f>>* vector, std::vector<cv::Point2f>* value) {

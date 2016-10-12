@@ -50,7 +50,7 @@ extern "C" {
 
   //! \brief Sets the y value.
   //! \param point3f The Point3f used.
-  //! \param y The new value.
+  //! \param z The new value.
   ARUCO_UNITY_API void au_Point3f_setZ(cv::Point3f* point3f, float z);
 
   //! @} Variables

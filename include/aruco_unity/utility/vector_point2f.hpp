@@ -15,7 +15,6 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<cv::Point2f>.
-  //! \param vector The vector used.
   ARUCO_UNITY_API std::vector<cv::Point2f>* au_vectorPoint2f_new();
 
   //! \brief Deletes any std::vector<cv::Point2f>.
@@ -39,6 +38,7 @@ extern "C" {
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
+  //! \param value The value of the element to append.
   ARUCO_UNITY_API void au_vectorPoint2f_push_back(std::vector<cv::Point2f>* vector, cv::Point2f* value);
 
   //! \brief Returns the number of elements.

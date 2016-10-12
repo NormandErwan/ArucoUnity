@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['utility_20and_20opencv_20main_20modules',['Utility and OpenCV main modules',['../group__utility.html',1,'']]],
-  ['utility_2ehpp',['utility.hpp',['../utility_8hpp.html',1,'']]]
+  ['term_5fcriteria_2ehpp',['term_criteria.hpp',['../term__criteria_8hpp.html',1,'']]]
 ];

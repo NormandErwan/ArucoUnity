@@ -15,7 +15,6 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<int>.
-  //! \param vector The vector used.
   ARUCO_UNITY_API std::vector<int>* au_vectorInt_new();
 
   //! \brief Deletes any std::vector<int>.
@@ -39,6 +38,7 @@ extern "C" {
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
+  //! \param value The value of the element to append.
   ARUCO_UNITY_API void au_vectorInt_push_back(std::vector<int>* vector, int value);
 
   //! \brief Reserves storage.

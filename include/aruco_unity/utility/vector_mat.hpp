@@ -15,7 +15,6 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<cv::Mat>.
-  //! \param vector The vector used.
   ARUCO_UNITY_API std::vector<cv::Mat>* au_vectorMat_new();
 
   //! \brief Deletes any std::vector<cv::Mat>.
@@ -39,6 +38,7 @@ extern "C" {
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
+  //! \param value The value of the element to append.
   ARUCO_UNITY_API void au_vectorMat_push_back(std::vector<cv::Mat>* vector, cv::Mat* value);
 
   //! \brief Returns the number of elements.

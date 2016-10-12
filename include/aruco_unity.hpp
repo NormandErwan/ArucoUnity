@@ -115,7 +115,7 @@ extern "C" {
   //! \param recoveredIdxs Optional array to returns the indexes of the recovered candidates in the
   //! original rejectedCorners array.
   //! \param parameters Marker detection parameters.
-  //!
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
   ARUCO_UNITY_API void au_refineDetectedMarkers1(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners,
