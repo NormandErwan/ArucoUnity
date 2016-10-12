@@ -22,7 +22,8 @@ namespace ArucoUnity
       [SerializeField]
       private DeviceCameraController deviceCameraController;
 
-      // TODO : detector parameters manager
+      [SerializeField]
+      private DetectorParametersManager detectorParametersManager;
 
       private Texture2D imageTexture;
 
@@ -46,14 +47,14 @@ namespace ArucoUnity
 
       private void Configurate()
       {
-        ConfigurateDetection(dictionaryName);
+        ConfigurateDetection(dictionaryName, detectorParametersManager.detectorParameters);
         ConfigurateImageTexture(deviceCameraController);
       }
 
-      public void ConfigurateDetection(PREDEFINED_DICTIONARY_NAME dictionaryName)
+      public void ConfigurateDetection(PREDEFINED_DICTIONARY_NAME dictionaryName, DetectorParameters detectorParameters)
       {
-        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        detectorParameters = new DetectorParameters();
+        this.dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        this.detectorParameters = detectorParameters;
       }
 
       private void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
