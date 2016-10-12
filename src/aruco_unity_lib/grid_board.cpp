@@ -57,26 +57,26 @@ extern "C" {
   // Static Member Functions
   cv::Ptr<cv::aruco::GridBoard>* au_GridBoard_create1(int markersX, int markersY, float markerLength, float markerSeparation, 
     cv::Ptr<cv::aruco::Dictionary>* dictionary, int firstMarker, cv::Exception* exception) {
-    cv::Ptr<cv::aruco::GridBoard> gridBoardPtr;
+    cv::Ptr<cv::aruco::GridBoard> gridBoard;
     try {
-      gridBoardPtr = cv::aruco::GridBoard::create(markersX, markersY, markerLength, markerSeparation, *dictionary, firstMarker);
+      gridBoard = cv::aruco::GridBoard::create(markersX, markersY, markerLength, markerSeparation, *dictionary, firstMarker);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return NULL;
     };
-    return new cv::Ptr<cv::aruco::GridBoard>(gridBoardPtr);
+    return new cv::Ptr<cv::aruco::GridBoard>(gridBoard);
   }
 
   cv::Ptr<cv::aruco::GridBoard>* au_GridBoard_create2(int markersX, int markersY, float markerLength, float markerSeparation, 
     cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Exception* exception) {
-    cv::Ptr<cv::aruco::GridBoard> gridBoardPtr;
+    cv::Ptr<cv::aruco::GridBoard> gridBoard;
     try {
-      gridBoardPtr = cv::aruco::GridBoard::create(markersX, markersY, markerLength, markerSeparation, *dictionary);
+      gridBoard = cv::aruco::GridBoard::create(markersX, markersY, markerLength, markerSeparation, *dictionary);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return NULL;
     };
-    return new cv::Ptr<cv::aruco::GridBoard>(gridBoardPtr);
+    return new cv::Ptr<cv::aruco::GridBoard>(gridBoard);
   }
 }

@@ -40,26 +40,26 @@ extern "C" {
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary1(int nMarkers, int markerSize, cv::Exception* exception) {
-    cv::Ptr<cv::aruco::Dictionary> ptr;
+    cv::Ptr<cv::aruco::Dictionary> dictionary;
     try {
-      ptr = cv::aruco::generateCustomDictionary(nMarkers, markerSize);
+      dictionary = cv::aruco::generateCustomDictionary(nMarkers, markerSize);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return NULL;
     };
-    return new cv::Ptr<cv::aruco::Dictionary>(ptr);
+    return new cv::Ptr<cv::aruco::Dictionary>(dictionary);
   }
 
   cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary2(int nMarkers, int markerSize, cv::Ptr<cv::aruco::Dictionary>* baseDictionary, 
     cv::Exception* exception) {
-    cv::Ptr<cv::aruco::Dictionary> ptr;
+    cv::Ptr<cv::aruco::Dictionary> dictionary;
     try {
-      ptr = cv::aruco::generateCustomDictionary(nMarkers, markerSize, *baseDictionary);
+      dictionary = cv::aruco::generateCustomDictionary(nMarkers, markerSize, *baseDictionary);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return NULL;
     }
-    return new cv::Ptr<cv::aruco::Dictionary>(ptr);
+    return new cv::Ptr<cv::aruco::Dictionary>(dictionary);
   }
   
   void au_Dictionary_delete(cv::Ptr<cv::aruco::Dictionary>* dictionary) {

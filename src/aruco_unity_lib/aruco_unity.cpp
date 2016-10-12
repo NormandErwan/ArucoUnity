@@ -5,70 +5,80 @@ extern "C" {
   double au_calibrateCameraAruco1(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
     cv::TermCriteria* criteria, cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
       *tvecs = new std::vector<cv::Mat>();
 
-      return cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
+      error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return 0;
+      return error;
     }
+    return error;
   }
 
   double au_calibrateCameraAruco2(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
     cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
       *tvecs = new std::vector<cv::Mat>();
 
-      return cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags);
+      error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return 0;
+      return error;
     }
+    return error;
   }
 
   double au_calibrateCameraAruco3(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, 
     cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
       *tvecs = new std::vector<cv::Mat>();
 
-      return cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs);
+      error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return 0;
+      return error;
     }
+    return error;
   }
 
   double au_calibrateCameraAruco4(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
 
-      return cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs);
+      error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs, **rvecs);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return 0;
+      return error;
     }
+    return error;
   }
 
   double au_calibrateCameraAruco5(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
+    double error = 0;
     try {
-      return cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs);
+      error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return 0;
+      return error;
     }
+    return error;
   }
 
   void au_detectMarkers1(cv::Mat* image, cv::Ptr<cv::aruco::Dictionary>* dictionary, std::vector<std::vector<cv::Point2f>>** corners,
