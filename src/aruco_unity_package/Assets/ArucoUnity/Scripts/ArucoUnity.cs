@@ -28,6 +28,29 @@ namespace ArucoUnity
   public class Methods
   {
     [DllImport("ArucoUnity")]
+    static extern double au_calibrateCameraAruco1(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
+    System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags, 
+    System.IntPtr criteria, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern double au_calibrateCameraAruco2(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
+    System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags, 
+    System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern double au_calibrateCameraAruco3(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
+    System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, 
+    System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern double au_calibrateCameraAruco4(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
+    System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
+    static extern double au_calibrateCameraAruco5(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
+    System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
     static extern void au_detectMarkers1(System.IntPtr image, System.IntPtr dictionary, out System.IntPtr corners, out System.IntPtr ids,
       System.IntPtr parameters, out System.IntPtr rejectedImgPoints, System.IntPtr exception);
 
@@ -40,7 +63,8 @@ namespace ArucoUnity
       System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
-    static extern void au_drawDetectedMarkers1(System.IntPtr image, System.IntPtr corners, System.IntPtr ids, System.IntPtr borderColor, System.IntPtr exception);
+    static extern void au_drawDetectedMarkers1(System.IntPtr image, System.IntPtr corners, System.IntPtr ids, System.IntPtr borderColor, 
+      System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
     static extern void au_drawDetectedMarkers2(System.IntPtr image, System.IntPtr corners, System.IntPtr ids, System.IntPtr exception);
@@ -95,6 +119,76 @@ namespace ArucoUnity
     [DllImport("ArucoUnity")]
     static extern void au_refineDetectedMarkers8(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
       System.IntPtr rejectedCorners, System.IntPtr exception);
+
+    public static double CalibrateCameraAruco(Mat corners, Mat ids, Mat counter, Board board, Size imageSize, Mat cameraMatrix, Mat distCoeffs, 
+      out VectorMat rvecs, out VectorMat tvecs, int flags, TermCriteria criteria) 
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecsPtr, tvecsPtr;
+
+      double reProjectionError = au_calibrateCameraAruco1(corners.cvPtr, ids.cvPtr, counter.cvPtr, board.cvPtr, imageSize.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, out rvecsPtr, out tvecsPtr, flags, criteria.cvPtr, exception.cvPtr);
+      rvecs = new VectorMat(rvecsPtr);
+      tvecs = new VectorMat(tvecsPtr);
+
+      exception.Check();
+      return reProjectionError;
+    }
+
+    public static double CalibrateCameraAruco(Mat corners, Mat ids, Mat counter, Board board, Size imageSize, Mat cameraMatrix, Mat distCoeffs, 
+      out VectorMat rvecs, out VectorMat tvecs, int flags) 
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecsPtr, tvecsPtr;
+
+      double reProjectionError = au_calibrateCameraAruco2(corners.cvPtr, ids.cvPtr, counter.cvPtr, board.cvPtr, imageSize.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, out rvecsPtr, out tvecsPtr, flags, exception.cvPtr);
+      rvecs = new VectorMat(rvecsPtr);
+      tvecs = new VectorMat(tvecsPtr);
+
+      exception.Check();
+      return reProjectionError;
+    }
+
+    public static double CalibrateCameraAruco(Mat corners, Mat ids, Mat counter, Board board, Size imageSize, Mat cameraMatrix, Mat distCoeffs, 
+      out VectorMat rvecs, out VectorMat tvecs) 
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecsPtr, tvecsPtr;
+
+      double reProjectionError = au_calibrateCameraAruco3(corners.cvPtr, ids.cvPtr, counter.cvPtr, board.cvPtr, imageSize.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, out rvecsPtr, out tvecsPtr, exception.cvPtr);
+      rvecs = new VectorMat(rvecsPtr);
+      tvecs = new VectorMat(tvecsPtr);
+
+      exception.Check();
+      return reProjectionError;
+    }
+
+    public static double CalibrateCameraAruco(Mat corners, Mat ids, Mat counter, Board board, Size imageSize, Mat cameraMatrix, Mat distCoeffs, 
+      out VectorMat rvecs) 
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecsPtr;
+
+      double reProjectionError = au_calibrateCameraAruco4(corners.cvPtr, ids.cvPtr, counter.cvPtr, board.cvPtr, imageSize.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, out rvecsPtr, exception.cvPtr);
+      rvecs = new VectorMat(rvecsPtr);
+      
+      exception.Check();
+      return reProjectionError;
+    }
+
+    public static double CalibrateCameraAruco(Mat corners, Mat ids, Mat counter, Board board, Size imageSize, Mat cameraMatrix, Mat distCoeffs) 
+    {
+      Exception exception = new Exception();
+      
+      double reProjectionError = au_calibrateCameraAruco5(corners.cvPtr, ids.cvPtr, counter.cvPtr, board.cvPtr, imageSize.cvPtr, cameraMatrix.cvPtr, 
+        distCoeffs.cvPtr, exception.cvPtr);
+      
+      exception.Check();
+      return reProjectionError;
+    }
 
     public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners,
       out VectorInt ids, DetectorParameters parameters, out VectorVectorPoint2f rejectedImgPoints)

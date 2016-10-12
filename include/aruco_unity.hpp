@@ -5,6 +5,45 @@
 #include "aruco_unity/exports.hpp"
 
 extern "C" {
+  //! \brief Calibrate a camera using aruco markers
+  //!
+  //! \param corners Vector of detected marker corners in all frames. The corners should have the same format returned by detectMarkers (\see au_detectMarkers1).
+  //! \param ids List of identifiers for each marker in corners.
+  //! \param counter Number of markers in each frame so that corners and ids can be split.
+  //! \param board Marker board layout.
+  //! \param imageSize Size of the image used only to initialize the intrinsic camera matrix.
+  //! \param cameraMatrix Output 3x3 floating-point camera matrix.
+  //! \param distCoeffs Output Vector of distortion coefficients.
+  //! \param rvecs Output Vector of rotation vectors (see Rodrigues) estimated for each board view (e.g. std::vector<cv::Mat>>).
+  //! \param tvecs Output Vector of translation vectors estimated for each pattern view.
+  //! \param flags Different flags for the calibration process (See http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga687a1ab946686f0d85ae0363b5af1d7b)
+  //! \param criteria Termination criteria for the iterative optimization algorithm.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  //!
+  //! See the OpenCV documentation for more information: 
+  //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gaee8294f02fb752562096aadb2e62a00f.
+  ARUCO_UNITY_API double au_calibrateCameraAruco1(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
+    cv::TermCriteria* criteria, cv::Exception* exception);
+
+  //! \see au_calibrateCameraAruco1().
+  ARUCO_UNITY_API double au_calibrateCameraAruco2(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
+    cv::Exception* exception);
+
+  //! \see au_calibrateCameraAruco1().
+  ARUCO_UNITY_API double au_calibrateCameraAruco3(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, 
+    cv::Exception* exception);
+
+  //! \see au_calibrateCameraAruco1().
+  ARUCO_UNITY_API double au_calibrateCameraAruco4(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, cv::Exception* exception);
+
+  //! \see au_calibrateCameraAruco1().
+  ARUCO_UNITY_API double au_calibrateCameraAruco5(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
+
   //! \brief Basic marker detection.
   //!
   //! \param image Input image.
