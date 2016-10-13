@@ -35,4 +35,8 @@ extern "C" {
   int au_Mat_getRows(cv::Mat* mat) {
     return mat->rows;
   }
+
+  cv::Size* au_Mat_getSize(cv::Mat* mat) {
+    return new cv::Size(mat->size());
+  }
 }

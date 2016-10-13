@@ -58,6 +58,10 @@ extern "C" {
   //! \param mat The Mat used.
   ARUCO_UNITY_API int au_Mat_getRows(cv::Mat* mat);
 
+  //! \brief TODO
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API cv::Size* au_Mat_getSize(cv::Mat* mat);
+
   //! @} Variables
 }
 

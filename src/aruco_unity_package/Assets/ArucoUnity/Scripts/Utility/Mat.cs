@@ -33,6 +33,9 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern int au_Mat_getRows(System.IntPtr mat);
 
+      [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_Mat_getSize(System.IntPtr mat);
+
       public Mat() : base(au_Mat_new1())
       {
       }
@@ -74,6 +77,11 @@ namespace ArucoUnity
       public int rows
       {
         get { return au_Mat_getRows(cvPtr); }
+      }
+      
+      public Size size
+      {
+        get { return new Size(au_Mat_getSize(cvPtr)); }
       }
     }
   }
