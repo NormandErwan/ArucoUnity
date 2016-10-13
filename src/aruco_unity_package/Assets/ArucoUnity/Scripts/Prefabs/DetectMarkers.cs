@@ -9,72 +9,75 @@ namespace ArucoUnity
       public Dictionary dictionary;
       public DetectorParameters detectorParameters;
 
-      public Utility.VectorVectorPoint2f corners;
-      public Utility.VectorInt ids;
-      public Utility.VectorVectorPoint2f rejectedImgPoints;
-      
+      [HideInInspector]
+      public Texture2D imageTexture;
+
+      [Header("Detection configuration")]
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
-      private bool showRejectedCandidates;
-
-      [SerializeField]
-      private DeviceCameraController deviceCameraController;
+      public bool showRejectedCandidates;
 
       [SerializeField]
       private DetectorParametersManager detectorParametersManager;
 
-      private Texture2D imageTexture;
+      [Header("Camera configuration")]
+      [SerializeField]
+      private DeviceCameraController deviceCameraController;
 
       void OnEnable()
       {
-        DeviceCameraController.OnCameraStarted += Configurate;
+        DeviceCameraController.OnCameraStarted += ConfigurateFromEditorValues;
       }
-      
+
       void OnDisable()
       {
-        DeviceCameraController.OnCameraStarted -= Configurate;
+        DeviceCameraController.OnCameraStarted -= ConfigurateFromEditorValues;
       }
 
       void LateUpdate()
       {
         if (deviceCameraController.cameraStarted)
         {
-          Detect(deviceCameraController.activeCameraTexture, showRejectedCandidates);
+          Utility.VectorVectorPoint2f corners;
+          Utility.VectorInt ids;
+          Utility.VectorVectorPoint2f rejectedImgPoints;
+          Utility.Mat image;
+
+          imageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
+          Detect(out corners, out ids, out rejectedImgPoints, out image);
         }
       }
 
-      private void Configurate()
+      // Call it first if you're using the Script alone, not with the Prefab.
+      public void Configurate(Dictionary dictionary, DetectorParameters detectorParameters, Texture2D imageTexture)
       {
-        ConfigurateDetection(dictionaryName, detectorParametersManager.detectorParameters);
+        this.dictionary = dictionary;
+        this.detectorParameters = detectorParameters;
+        this.imageTexture = imageTexture;
+      }
+
+      void ConfigurateFromEditorValues()
+      {
+        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        detectorParameters = detectorParametersManager.detectorParameters;
+
         ConfigurateImageTexture(deviceCameraController);
       }
 
-      public void ConfigurateDetection(PREDEFINED_DICTIONARY_NAME dictionaryName, DetectorParameters detectorParameters)
+      public void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
       {
-        this.dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        this.detectorParameters = detectorParameters;
-      }
-
-      private void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
-      {
-        imageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height, 
+        imageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height,
           TextureFormat.RGB24, false);
         deviceCameraController.SetActiveTexture(imageTexture);
       }
 
-      public Texture2D Detect(WebCamTexture camTexture, bool showRejectedCandidates)
-      {
-        imageTexture.SetPixels32(camTexture.GetPixels32());
-        Detect(ref imageTexture, showRejectedCandidates);
-        return imageTexture;
-      }
-
-      public void Detect(ref Texture2D imageTexture, bool showRejectedCandidates)
+      public void Detect(out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, out Utility.VectorVectorPoint2f rejectedImgPoints, 
+        out Utility.Mat image)
       {
         byte[] imageData = imageTexture.GetRawTextureData();
-        Utility.Mat image = new Utility.Mat(imageTexture.height, imageTexture.width, imageData);
+        image = new Utility.Mat(imageTexture.height, imageTexture.width, imageData);
         Methods.DetectMarkers(image, dictionary, out corners, out ids, detectorParameters, out rejectedImgPoints);
 
         if (ids.Size() > 0)

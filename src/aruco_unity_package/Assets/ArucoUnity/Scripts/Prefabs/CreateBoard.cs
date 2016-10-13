@@ -7,39 +7,42 @@ namespace ArucoUnity
   {
     public class CreateBoard : MonoBehaviour
     {
+      public Dictionary dictionary;
+
       public GridBoard board;
+      public Utility.Mat image;
+      public Utility.Size size;
 
-      public Utility.Mat boardImage;
-
-      public Utility.Size boardSize;
+      [HideInInspector]
+      public Texture2D imageTexture;
 
       [Header("Board configuration")]
+      [SerializeField]
+      [Tooltip("Number of markers in X direction")]
+      public int markersNumberX;
+
+      [SerializeField]
+      [Tooltip("Number of markers in Y direction")]
+      public int markersNumberY;
+
+      [SerializeField]
+      [Tooltip("Marker side length (in pixels)")]
+      public int markerLength;
+
+      [SerializeField]
+      [Tooltip("Separation between two consecutive markers in the grid (in pixels)")]
+      public int markerSeparation;
+
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
-      [Tooltip("Number of markers in X direction")]
-      private int markersX;
-
-      [SerializeField]
-      [Tooltip("Number of markers in Y direction")]
-      private int markersY;
-
-      [SerializeField]
-      [Tooltip("Marker side length (in pixels)")]
-      private int markerLength;
-
-      [SerializeField]
-      [Tooltip("Separation between two consecutive markers in the grid (in pixels)")]
-      private int markerSeparation;
-
-      [SerializeField]
       [Tooltip("Margins size (in pixels). Default is marker separation")]
-      private int margins;
+      public int marginsSize;
 
       [SerializeField]
       [Tooltip("Number of bits in marker borders")]
-      private int markerBorderBits;
+      public int markerBorderBits;
 
       [Header("Draw the board")]
       [SerializeField]
@@ -59,54 +62,59 @@ namespace ArucoUnity
 
       void Start()
       {
-        board = Create(dictionaryName, markersX, markersY, markerLength, markerSeparation, margins, markerBorderBits, out boardImage, out boardSize);
+        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Create();
 
         if (drawBoard)
         {
-          Texture2D boardTexture = CreateTexture(boardImage);
-          Draw(boardImage, boardPlane, boardTexture);
+          Draw(boardPlane);
 
           if (saveBoard && outputImage.Length > 0)
           {
-            Save(boardTexture, outputImage);
+            Save(outputImage);
           }
         }
       }
 
-      public GridBoard Create(PREDEFINED_DICTIONARY_NAME dictionaryName, int markersX, int markersY, int markerLength, int markerSeparation, 
-        int margins, int markerBorderBits, out Utility.Mat boardImage, out Utility.Size boardSize)
+      // Call it first if you're using the Script alone, not with the Prefab.
+      public void Configurate(Dictionary dictionary, int markersNumberX, int markersNumberY, int markerLength, int markerSeparation, int marginsSize, int markerBorderBits)
       {
-        boardSize = new Utility.Size();
-        boardSize.width = markersX * (markerLength + markerSeparation) - markerSeparation + 2 * margins;
-        boardSize.height = markersY * (markerLength + markerSeparation) - markerSeparation + 2 * margins;
-
-        Dictionary dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        GridBoard board = GridBoard.Create(markersX, markersY, markerLength, markerSeparation, dictionary);
-
-        boardImage = new Utility.Mat();
-        board.Draw(boardSize, ref boardImage, margins, markerBorderBits);
-
-        return board;
+        this.dictionary = dictionary;
+        this.markersNumberX = markersNumberX;
+        this.markersNumberY = markersNumberY;
+        this.markerLength = markerLength;
+        this.markerSeparation = markerSeparation;
+        this.marginsSize = marginsSize;
+        this.markerBorderBits = markerBorderBits;
       }
 
-      public Texture2D CreateTexture(Utility.Mat boardImage)
+      public void Create()
       {
-        return new Texture2D(boardImage.cols, boardImage.rows, TextureFormat.RGB24, false);
+        size = new Utility.Size();
+        size.width = markersNumberX * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        size.height = markersNumberY * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+
+        GridBoard board = GridBoard.Create(markersNumberX, markersNumberY, markerLength, markerSeparation, dictionary);
+
+        image = new Utility.Mat();
+        board.Draw(size, ref image, marginsSize, markerBorderBits);
+
+        imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
       }
 
-      public void Draw(Utility.Mat boardImage, GameObject boardPlane, Texture2D boardTexture)
+      public void Draw(GameObject boardPlane)
       {
-        int boardDataSize = (int)(boardImage.ElemSize() * boardImage.Total());
-        boardTexture.LoadRawTextureData(boardImage.data, boardDataSize);
-        boardTexture.Apply();
+        int boardDataSize = (int)(image.ElemSize() * image.Total());
+        imageTexture.LoadRawTextureData(image.data, boardDataSize);
+        imageTexture.Apply();
 
-        boardPlane.GetComponent<Renderer>().material.mainTexture = boardTexture;
+        boardPlane.GetComponent<Renderer>().material.mainTexture = imageTexture;
       }
 
-      public void Save(Texture2D boardTexture, string outputImage)
+      public void Save(string outputImage)
       {
         string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, boardTexture.EncodeToPNG());
+        File.WriteAllBytes(imageFilePath, imageTexture.EncodeToPNG());
       }
     }
   }
