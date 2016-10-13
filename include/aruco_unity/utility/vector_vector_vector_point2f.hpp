@@ -40,7 +40,7 @@ extern "C" {
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
   //! \param value The value of the element to append.
-  ARUCO_UNITY_API void au_vectorVectorInt_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, std::vector<std::vector<cv::Point2f>>* value);
+  ARUCO_UNITY_API void au_vectorVectorVectorPoint2f_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, std::vector<std::vector<cv::Point2f>>* value);
   
   //! \brief Returns the number of vector elements.
   //! \param vector The vector used.
