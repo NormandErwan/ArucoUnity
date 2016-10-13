@@ -15,7 +15,7 @@ namespace ArucoUnity
 
       // Functions
       [DllImport("ArucoUnity")]
-      static extern int au_vectorInt_at(System.IntPtr vector, int pos, System.IntPtr exception);
+      static extern int au_vectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern unsafe int* au_vectorInt_data(System.IntPtr vector);
@@ -24,10 +24,10 @@ namespace ArucoUnity
       static extern void au_vectorInt_push_back(System.IntPtr vector, int value);
 
       [DllImport("ArucoUnity")]
-      static extern void au_vectorInt_reserve(System.IntPtr vector, int new_cap, System.IntPtr exception);
+      static extern void au_vectorInt_reserve(System.IntPtr vector, uint new_cap, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern int au_vectorInt_size(System.IntPtr vector);
+      static extern uint au_vectorInt_size(System.IntPtr vector);
 
       public VectorInt() : base(au_vectorInt_new())
       {
@@ -43,7 +43,7 @@ namespace ArucoUnity
         au_vectorInt_delete(cvPtr);
       }
 
-      public int At(int pos) 
+      public int At(uint pos) 
       {
         Exception exception = new Exception();
         int element = au_vectorInt_at(cvPtr, pos, exception.cvPtr);
@@ -54,7 +54,7 @@ namespace ArucoUnity
       public unsafe int[] Data()
       {
         int* dataPtr = au_vectorInt_data(cvPtr);
-        int size = Size();
+        uint size = Size();
 
         int[] data = new int[size];
         for (int i = 0; i < size; i++)
@@ -70,14 +70,14 @@ namespace ArucoUnity
         au_vectorInt_push_back(cvPtr, value);
       }
 
-      public void Reserve(int newCap)
+      public void Reserve(uint newCap)
       {
         Exception exception = new Exception();
         au_vectorInt_reserve(cvPtr, newCap, exception.cvPtr);
         exception.Check();
       }
 
-      public int Size()
+      public uint Size()
       {
         return au_vectorInt_size(cvPtr);
       }

@@ -15,7 +15,7 @@ namespace ArucoUnity
 
       // Functions
       [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_vectorMat_at(System.IntPtr vector, int pos, System.IntPtr exception);
+      static extern System.IntPtr au_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern unsafe System.IntPtr* au_vectorMat_data(System.IntPtr vector);
@@ -24,7 +24,7 @@ namespace ArucoUnity
       static extern void au_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
 
       [DllImport("ArucoUnity")]
-      static extern int au_vectorMat_size(System.IntPtr vector);
+      static extern uint au_vectorMat_size(System.IntPtr vector);
 
       public VectorMat() : base(au_vectorMat_new())
       {
@@ -40,7 +40,7 @@ namespace ArucoUnity
         au_vectorMat_delete(cvPtr);
       }
 
-      public Mat At(int pos) 
+      public Mat At(uint pos) 
       {
         Exception exception = new Exception();
         Mat element = new Mat(au_vectorMat_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
@@ -51,7 +51,7 @@ namespace ArucoUnity
       public unsafe Mat[] Data()
       {
         System.IntPtr* dataPtr = au_vectorMat_data(cvPtr);
-        int size = Size();
+        uint size = Size();
 
         Mat[] data = new Mat[size];
         for (int i = 0; i < size; i++)
@@ -67,7 +67,7 @@ namespace ArucoUnity
         au_vectorMat_push_back(cvPtr, value.cvPtr);
       }
 
-      public int Size()
+      public uint Size()
       {
         return au_vectorMat_size(cvPtr);
       }

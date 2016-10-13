@@ -15,7 +15,7 @@ namespace ArucoUnity
 
       // Functions
       [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_vectorPoint2f_at(System.IntPtr vector, int pos, System.IntPtr exception);
+      static extern System.IntPtr au_vectorPoint2f_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern unsafe System.IntPtr* au_vectorPoint2f_data(System.IntPtr vector);
@@ -24,7 +24,7 @@ namespace ArucoUnity
       static extern void au_vectorPoint2f_push_back(System.IntPtr vector, System.IntPtr value);
 
       [DllImport("ArucoUnity")]
-      static extern int au_vectorPoint2f_size(System.IntPtr vector);
+      static extern uint au_vectorPoint2f_size(System.IntPtr vector);
 
       public VectorPoint2f() : base(au_vectorPoint2f_new())
       {
@@ -40,7 +40,7 @@ namespace ArucoUnity
         au_vectorPoint2f_delete(cvPtr);
       }
 
-      public Point2f At(int pos) 
+      public Point2f At(uint pos) 
       {
         Exception exception = new Exception();
         Point2f element = new Point2f(au_vectorPoint2f_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
@@ -51,7 +51,7 @@ namespace ArucoUnity
       public unsafe Point2f[] Data()
       {
         System.IntPtr* dataPtr = au_vectorPoint2f_data(cvPtr);
-        int size = Size();
+        uint size = Size();
 
         Point2f[] data = new Point2f[size];
         for (int i = 0; i < size; i++)
@@ -67,7 +67,7 @@ namespace ArucoUnity
         au_vectorPoint2f_push_back(cvPtr, value.cvPtr);
       }
 
-      public int Size()
+      public uint Size()
       {
         return au_vectorPoint2f_size(cvPtr);
       }

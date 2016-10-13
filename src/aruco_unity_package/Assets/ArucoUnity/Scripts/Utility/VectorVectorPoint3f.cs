@@ -15,7 +15,7 @@ namespace ArucoUnity
 
       // Functions
       [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_vectorVectorPoint3f_at(System.IntPtr vector, int pos, System.IntPtr exception);
+      static extern System.IntPtr au_vectorVectorPoint3f_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern unsafe System.IntPtr* au_vectorVectorPoint3f_data(System.IntPtr vector);
@@ -24,7 +24,7 @@ namespace ArucoUnity
       static extern void au_vectorVectorPoint3f_push_back(System.IntPtr vector, System.IntPtr value);
 
       [DllImport("ArucoUnity")]
-      static extern int au_vectorVectorPoint3f_size(System.IntPtr vector);
+      static extern uint au_vectorVectorPoint3f_size(System.IntPtr vector);
 
       public VectorVectorPoint3f() : base(au_vectorVectorPoint3f_new())
       {
@@ -40,7 +40,7 @@ namespace ArucoUnity
         au_vectorVectorPoint3f_delete(cvPtr);
       }
 
-      public VectorPoint3f At(int pos) 
+      public VectorPoint3f At(uint pos) 
       {
         Exception exception = new Exception();
         VectorPoint3f element = new VectorPoint3f(au_vectorVectorPoint3f_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
@@ -51,7 +51,7 @@ namespace ArucoUnity
       public unsafe VectorPoint3f[] Data()
       {
         System.IntPtr* dataPtr = au_vectorVectorPoint3f_data(cvPtr);
-        int size = Size();
+        uint size = Size();
 
         VectorPoint3f[] data = new VectorPoint3f[size];
         for (int i = 0; i < size; i++)
@@ -67,7 +67,7 @@ namespace ArucoUnity
         au_vectorVectorPoint3f_push_back(cvPtr, value.cvPtr);
       }
 
-      public int Size()
+      public uint Size()
       {
         return au_vectorVectorPoint3f_size(cvPtr);
       }
