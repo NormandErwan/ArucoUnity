@@ -129,7 +129,7 @@ extern "C" {
   }
 
   void au_Dictionary_setBytesList(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bytesList) {
-    dictionary->get()->bytesList = *bytesList;
+    dictionary->get()->bytesList = cv::Mat(*bytesList);
   }
 
   int au_Dictionary_getMarkerSize(cv::Ptr<cv::aruco::Dictionary>* dictionary) {
