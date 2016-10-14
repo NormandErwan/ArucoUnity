@@ -168,6 +168,22 @@ extern "C" {
     }
   }
 
+  int au_estimatePoseBoard(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, cv::Ptr<cv::aruco::Board>* board,
+    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception) {
+    int valid = 0;
+    try {
+      *rvec = new cv::Mat();
+      *tvec = new cv::Mat();
+
+      valid = cv::aruco::estimatePoseBoard(*corners, *ids, *board, *cameraMatrix, *distCoeffs, **rvec, **tvec);
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return valid;
+    }
+    return valid;
+  }
+
   void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, std::vector<cv::Mat>* cameraMatrix, 
     std::vector<cv::Mat>* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
     try {

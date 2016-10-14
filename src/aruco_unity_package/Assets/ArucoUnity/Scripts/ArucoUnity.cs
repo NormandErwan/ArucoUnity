@@ -101,6 +101,10 @@ namespace ArucoUnity
     static extern void au_drawDetectedMarkers4(System.IntPtr image, System.IntPtr corners, System.IntPtr borderColor, System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
+    static extern int au_estimatePoseBoard(System.IntPtr corners, System.IntPtr ids, System.IntPtr board, System.IntPtr cameraMatrix,
+      System.IntPtr distCoeffs, out System.IntPtr rvec, out System.IntPtr tvec, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
     static extern void au_estimatePoseSingleMarkers(System.IntPtr corners, float markerLength, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, 
       out System.IntPtr rvecs, out System.IntPtr tvecs, System.IntPtr exception);
 
@@ -288,6 +292,21 @@ namespace ArucoUnity
       Scalar borderColorScalar = borderColor;
       au_drawDetectedMarkers4(image.cvPtr, corners.cvPtr, borderColorScalar.cvPtr, exception.cvPtr);
       exception.Check();
+    }
+
+    public static int EstimatePoseBoard(VectorVectorPoint2f corners, VectorInt ids, Board board, VectorMat cameraMatrix, VectorMat distCoeffs,
+      out Mat rvec, out Mat tvec)
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecPtr, tvecPtr;
+
+      int valid = au_estimatePoseBoard(corners.cvPtr, ids.cvPtr, board.cvPtr, cameraMatrix.cvPtr, distCoeffs.cvPtr, out rvecPtr, out tvecPtr, 
+        exception.cvPtr);
+      rvec = new Mat(rvecPtr);
+      tvec = new Mat(tvecPtr);
+
+      exception.Check();
+      return valid;
     }
 
     public static void EstimatePoseSingleMarkers(VectorVectorPoint2f corners, float markerLength, VectorMat cameraMatrix, VectorMat distCoeffs,
