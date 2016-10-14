@@ -168,6 +168,20 @@ extern "C" {
     }
   }
 
+  void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, std::vector<cv::Mat>* cameraMatrix, 
+    std::vector<cv::Mat>* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
+    try {
+      *rvecs = new std::vector<cv::Mat>();
+      *tvecs = new std::vector<cv::Mat>();
+
+      cv::aruco::estimatePoseSingleMarkers(*corners, markerLength, *cameraMatrix, *distCoeffs, **rvecs, **tvecs);
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return;
+    }
+  }
+
   void au_refineDetectedMarkers1(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners, 
     std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, 
     float minRepDistance, float errorCorrectionRate, bool checkAllOrders, std::vector<int>* recoveredIdxs, 

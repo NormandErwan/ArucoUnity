@@ -98,6 +98,21 @@ extern "C" {
   ARUCO_UNITY_API void au_drawDetectedMarkers4(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* corners, cv::Scalar* borderColor, 
     cv::Exception* exception);
 
+  //! \brief Pose estimation for single markers.
+  //!
+  //! \param corners Vector of already detected markers corners.
+  //! \param markerLength The length of the markers' side.
+  //! \param cameraMatrix Input 3x3 floating-point camera matrix.
+  //! \param distCoeffs Vector of distortion coefficients.
+  //! \param rvecs Array of output rotation vectors (see Rodrigues) (e.g. std::vector<cv::Vec3d>).
+  //! \param tvecs Array of output translation vectors (e.g. std::vector<cv::Vec3d>).
+  //!
+  //! See the OpenCV documentation for more information: 
+  //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gafdd609e5c251dc7b8197323657a874c3
+  ARUCO_UNITY_API void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, 
+    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, 
+    cv::Exception* exception);
+
   //! \brief Refind not detected markers based on the already detected and the board layout.
   //!
   //! \param image Input image.

@@ -101,6 +101,10 @@ namespace ArucoUnity
     static extern void au_drawDetectedMarkers4(System.IntPtr image, System.IntPtr corners, System.IntPtr borderColor, System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
+    static extern void au_estimatePoseSingleMarkers(System.IntPtr corners, float markerLength, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, 
+      out System.IntPtr rvecs, out System.IntPtr tvecs, System.IntPtr exception);
+
+    [DllImport("ArucoUnity")]
     static extern System.IntPtr au_generateCustomDictionary1(int nMarkers, int markerSize, System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
@@ -283,6 +287,19 @@ namespace ArucoUnity
       Exception exception = new Exception();
       Scalar borderColorScalar = borderColor;
       au_drawDetectedMarkers4(image.cvPtr, corners.cvPtr, borderColorScalar.cvPtr, exception.cvPtr);
+      exception.Check();
+    }
+
+    public static void EstimatePoseSingleMarkers(VectorVectorPoint2f corners, float markerLength, VectorMat cameraMatrix, VectorMat distCoeffs,
+      out VectorMat rvecs, out VectorMat tvecs)
+    {
+      Exception exception = new Exception();
+      System.IntPtr rvecsPtr, tvecsPtr;
+      
+      au_estimatePoseSingleMarkers(corners.cvPtr, markerLength, cameraMatrix.cvPtr, distCoeffs.cvPtr, out rvecsPtr, out tvecsPtr, exception.cvPtr);
+      rvecs = new VectorMat(rvecsPtr);
+      tvecs = new VectorMat(tvecsPtr);
+
       exception.Check();
     }
 
