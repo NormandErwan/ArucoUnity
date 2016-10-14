@@ -2,9 +2,9 @@
 #include "aruco_unity/utility/exception.hpp"
 
 extern "C" {
-  double au_calibrateCameraAruco1(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
-    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
-    cv::TermCriteria* criteria, cv::Exception* exception) {
+  double au_calibrateCameraAruco1(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, std::vector<int>* counter,
+    cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
+    std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
@@ -19,9 +19,9 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraAruco2(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
-    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, 
-    cv::Exception* exception) {
+  double au_calibrateCameraAruco2(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, std::vector<int>* counter,
+    cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
+    std::vector<cv::Mat>** tvecs, int flags, cv::Exception* exception) {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
@@ -36,9 +36,9 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraAruco3(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
-    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, 
-    cv::Exception* exception) {
+  double au_calibrateCameraAruco3(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, std::vector<int>* counter,
+    cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
+    std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
@@ -53,8 +53,9 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraAruco4(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
-    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, cv::Exception* exception) {
+  double au_calibrateCameraAruco4(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, std::vector<int>* counter,
+    cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
+    cv::Exception* exception) {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>();
@@ -68,8 +69,8 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraAruco5(cv::Mat* corners, cv::Mat* ids, cv::Mat* counter, cv::Ptr<cv::aruco::Board>* board, 
-    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
+  double au_calibrateCameraAruco5(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, std::vector<int>* counter,
+    cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
     double error = 0;
     try {
       error = cv::aruco::calibrateCameraAruco(*corners, *ids, *counter, *board, *imageSize, *cameraMatrix, *distCoeffs);
@@ -167,9 +168,10 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers1(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, 
-    cv::Mat* recoveredIdxs, const cv::Ptr<cv::aruco::DetectorParameters>* parameters, cv::Exception* exception) {
+  void au_refineDetectedMarkers1(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners, 
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, 
+    float minRepDistance, float errorCorrectionRate, bool checkAllOrders, std::vector<int>* recoveredIdxs, 
+    const cv::Ptr<cv::aruco::DetectorParameters>* parameters, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs, minRepDistance, errorCorrectionRate, checkAllOrders, *recoveredIdxs, *parameters);
@@ -180,9 +182,9 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers2(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, 
-    cv::Mat* recoveredIdxs, cv::Exception* exception) {
+  void au_refineDetectedMarkers2(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    float minRepDistance, float errorCorrectionRate, bool checkAllOrders, std::vector<int>* recoveredIdxs, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs, minRepDistance, errorCorrectionRate, checkAllOrders, *recoveredIdxs);
@@ -193,9 +195,9 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers3(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, 
-    cv::Exception* exception) {
+  void au_refineDetectedMarkers3(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    float minRepDistance, float errorCorrectionRate, bool checkAllOrders, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs, minRepDistance, errorCorrectionRate, checkAllOrders);
@@ -206,9 +208,9 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers4(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, float minRepDistance, float errorCorrectionRate, 
-    cv::Exception* exception) {
+  void au_refineDetectedMarkers4(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    float minRepDistance, float errorCorrectionRate, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs, minRepDistance, errorCorrectionRate);
@@ -219,8 +221,9 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers5(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, float minRepDistance, cv::Exception* exception) {
+  void au_refineDetectedMarkers5(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    float minRepDistance, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs, minRepDistance);
@@ -231,8 +234,9 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers6(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
+  void au_refineDetectedMarkers6(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix,
         *distCoeffs);
@@ -243,8 +247,8 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers7(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Mat* cameraMatrix, cv::Exception* exception) {
+  void au_refineDetectedMarkers7(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Mat* cameraMatrix, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners, *cameraMatrix);
     }
@@ -254,8 +258,8 @@ extern "C" {
     }
   }
 
-  void au_refineDetectedMarkers8(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, cv::Mat* detectedCorners, cv::Mat* detectedIds, 
-    cv::Mat* rejectedCorners, cv::Exception* exception) {
+  void au_refineDetectedMarkers8(cv::Mat* image, cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners, cv::Exception* exception) {
     try {
       cv::aruco::refineDetectedMarkers(*image, *board, *detectedCorners, *detectedIds, *rejectedCorners);
     }
