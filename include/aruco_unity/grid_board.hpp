@@ -31,15 +31,15 @@ extern "C" {
   //! \param marginSize Minimum margins (in pixels) of the board in the output image.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \param borderBits Width of the marker borders.
-  ARUCO_UNITY_API void au_GridBoard_draw1(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, int marginSize, int borderBits,
+  ARUCO_UNITY_API void au_GridBoard_draw1(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, int borderBits,
     cv::Exception* exception);
 
   //! \see au_GridBoard_draw1().
-  ARUCO_UNITY_API void au_GridBoard_draw2(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, int marginSize, 
+  ARUCO_UNITY_API void au_GridBoard_draw2(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
     cv::Exception* exception);
 
   //! \see au_GridBoard_draw1().
-  ARUCO_UNITY_API void au_GridBoard_draw3(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, cv::Exception* exception);
+  ARUCO_UNITY_API void au_GridBoard_draw3(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception);
 
   //! \brief Returns the size of the GridBoard.
   //! \param gridBoard The GridBoard used.

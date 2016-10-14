@@ -9,15 +9,15 @@ namespace ArucoUnity
     static extern void au_GridBoard_delete(System.IntPtr gridBoard);
 
     [DllImport("ArucoUnity")]
-    static extern void au_GridBoard_draw1(System.IntPtr gridBoard, System.IntPtr outSize, System.IntPtr img, int marginSize, int borderBits,
+    static extern void au_GridBoard_draw1(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize, int borderBits,
       System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
-    static extern void au_GridBoard_draw2(System.IntPtr gridBoard, System.IntPtr outSize, System.IntPtr img, int marginSize,
+    static extern void au_GridBoard_draw2(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize,
       System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
-    static extern void au_GridBoard_draw3(System.IntPtr gridBoard, System.IntPtr outSize, System.IntPtr img, System.IntPtr exception);
+    static extern void au_GridBoard_draw3(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, System.IntPtr exception);
 
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_GridBoard_getGridSize(System.IntPtr gridBoard);
@@ -46,24 +46,36 @@ namespace ArucoUnity
     {
     }
 
-    public void Draw(Size outSize, ref Mat img, int marginSize, int borderBits)
+    public void Draw(Size outSize, out Mat img, int marginSize, int borderBits)
     {
       Exception exception = new Exception();
-      au_GridBoard_draw1(cvPtr, outSize.cvPtr, img.cvPtr, marginSize, borderBits, exception.cvPtr);
+      System.IntPtr imgPtr;
+
+      au_GridBoard_draw1(cvPtr, outSize.cvPtr, out imgPtr, marginSize, borderBits, exception.cvPtr);
+      img = new Mat(imgPtr);
+
       exception.Check();
     }
 
-    public void Draw(Size outSize, ref Mat img, int marginSize)
+    public void Draw(Size outSize, out Mat img, int marginSize)
     {
       Exception exception = new Exception();
-      au_GridBoard_draw2(cvPtr, outSize.cvPtr, img.cvPtr, marginSize, exception.cvPtr);
+      System.IntPtr imgPtr;
+
+      au_GridBoard_draw2(cvPtr, outSize.cvPtr, out imgPtr, marginSize, exception.cvPtr);
+      img = new Mat(imgPtr);
+
       exception.Check();
     }
 
-    public void Draw(Size outSize, ref Mat img)
+    public void Draw(Size outSize, out Mat img)
     {
       Exception exception = new Exception();
-      au_GridBoard_draw3(cvPtr, outSize.cvPtr, img.cvPtr, exception.cvPtr);
+      System.IntPtr imgPtr;
+
+      au_GridBoard_draw3(cvPtr, outSize.cvPtr, out imgPtr, exception.cvPtr);
+      img = new Mat(imgPtr);
+
       exception.Check();
     }
 

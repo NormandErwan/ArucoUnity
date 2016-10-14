@@ -9,37 +9,43 @@ extern "C" {
   }
 
   // Member Functions
-  void au_GridBoard_draw1(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, int marginSize, int borderBits,
+  void au_GridBoard_draw1(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, int borderBits,
     cv::Exception* exception) {
     try {
-      gridBoard->get()->draw(*outSize, *img, marginSize, borderBits);
+      *img = new cv::Mat();
+
+      gridBoard->get()->draw(*outSize, **img, marginSize, borderBits);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(*img, *img, CV_GRAY2RGB);
+    cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
-  void au_GridBoard_draw2(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, int marginSize, cv::Exception* exception) {
+  void au_GridBoard_draw2(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, cv::Exception* exception) {
     try {
-      gridBoard->get()->draw(*outSize, *img, marginSize);
+      *img = new cv::Mat();
+
+      gridBoard->get()->draw(*outSize, **img, marginSize);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(*img, *img, CV_GRAY2RGB);
+    cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
-  void au_GridBoard_draw3(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat* img, cv::Exception* exception) {
+  void au_GridBoard_draw3(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception) {
     try {
-      gridBoard->get()->draw(*outSize, *img);
+      *img = new cv::Mat();
+
+      gridBoard->get()->draw(*outSize, **img);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(*img, *img, CV_GRAY2RGB);
+    cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
   cv::Size* au_GridBoard_getGridSize(cv::Ptr<cv::aruco::GridBoard>* gridBoard) {
