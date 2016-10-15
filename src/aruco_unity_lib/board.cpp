@@ -7,7 +7,7 @@ extern "C" {
   }
 
   void au_Board_setDictionary(cv::Ptr<cv::aruco::Board>* board, cv::Ptr<cv::aruco::Dictionary>* dictionary) {
-    board->get()->dictionary = new cv::Ptr<cv::aruco::Dictionary>(dictionary);
+    board->get()->dictionary = cv::Ptr<cv::aruco::Dictionary>(*dictionary);
   }
 
   std::vector<int>* au_Board_getIds(cv::Ptr<cv::aruco::Board>* board) {
