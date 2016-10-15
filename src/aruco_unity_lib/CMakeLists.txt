@@ -11,6 +11,7 @@ find_package(OpenCV REQUIRED aruco)
 set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/board.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/charuco_board.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/detector_parameters.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
@@ -35,6 +36,7 @@ set(PROJECT_HEADERS
 set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
     ${PROJECT_SOURCE_DIR}/board.cpp
+    ${PROJECT_SOURCE_DIR}/charuco_board.cpp
     ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
     ${PROJECT_SOURCE_DIR}/exception.cpp
