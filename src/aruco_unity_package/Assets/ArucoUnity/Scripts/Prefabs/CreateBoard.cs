@@ -96,8 +96,7 @@ namespace ArucoUnity
 
         GridBoard board = GridBoard.Create(markersNumberX, markersNumberY, markerLength, markerSeparation, dictionary);
 
-        image = new Utility.Mat();
-        board.Draw(size, ref image, marginsSize, markerBorderBits);
+        board.Draw(size, out image, marginsSize, markerBorderBits);
 
         imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
       }
