@@ -10,6 +10,8 @@
 //!   @defgroup utility_scalar OpenCV Scalar
 //!   @defgroup utility_size OpenCV Size
 //!   @defgroup utility_term_criteria OpenCV TermCriteria
+//!   @defgroup utility_vec3d OpenCV Vec3d
+//!   @defgroup utility_vec4i OpenCV Vec4i
 //!   @defgroup utility_vector std::vector
 //!   @{
 //!     @defgroup utility_vector_int std::vector<int>
