@@ -29,13 +29,13 @@ extern "C" {
   //! \brief Returns the value of the element i.
   //! \param vec3d The Vec3d used.
   //! \param i The element number.
-  ARUCO_UNITY_API double au_Vec3d_get(cv::Vec3d* vec3d, int i);
+  ARUCO_UNITY_API double au_Vec3d_get(cv::Vec3d* vec3d, int i, cv::Exception* exception);
 
   //! \brief Sets the value of the element i.
   //! \param vec3d The Vec3d used.
   //! \param i The element number.
   //! \param value The new value.
-  ARUCO_UNITY_API void au_Vec3d_set(cv::Vec3d* vec3d, int i, double value);
+  ARUCO_UNITY_API void au_Vec3d_set(cv::Vec3d* vec3d, int i, double value, cv::Exception* exception);
 
   //! @} Member Functions
 }

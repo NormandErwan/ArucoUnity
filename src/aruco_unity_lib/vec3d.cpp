@@ -1,4 +1,5 @@
 #include "aruco_unity/utility/vec3d.hpp"
+#include "aruco_unity/utility/exception.hpp"
 
 extern "C" {
   // Constructors & Destructors
