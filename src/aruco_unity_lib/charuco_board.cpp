@@ -22,7 +22,8 @@ extern "C" {
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
-  void au_CharucoBoard_draw2(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, cv::Exception* exception) {
+  void au_CharucoBoard_draw2(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
+    cv::Exception* exception) {
     try {
       *img = new cv::Mat();
 

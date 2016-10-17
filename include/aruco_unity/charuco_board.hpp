@@ -31,15 +31,16 @@ extern "C" {
   //! \param marginSize Minimum margins (in pixels) of the board in the output image.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \param borderBits Width of the marker borders.
-  ARUCO_UNITY_API void au_CharucoBoard_draw1(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, int borderBits,
-    cv::Exception* exception);
+  ARUCO_UNITY_API void au_CharucoBoard_draw1(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
+    int borderBits, cv::Exception* exception);
 
   //! \see au_CharucoBoard_draw1().
   ARUCO_UNITY_API void au_CharucoBoard_draw2(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
     cv::Exception* exception);
 
   //! \see au_CharucoBoard_draw1().
-  ARUCO_UNITY_API void au_CharucoBoard_draw3(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception);
+  ARUCO_UNITY_API void au_CharucoBoard_draw3(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, 
+    cv::Exception* exception);
 
   //! \brief Returns the size chessboard of the CharucoBoard.
   //! \param charucoBoard The CharucoBoard used.
@@ -82,7 +83,8 @@ extern "C" {
   //! \brief Sets the chessboard corners.
   //! \param charucoBoard The CharucoBoard used.
   //! \param chessboardCorners The new value.
-  ARUCO_UNITY_API void au_CharucoBoard_setChessboardCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, std::vector<cv::Point3f>* chessboardCorners);
+  ARUCO_UNITY_API void au_CharucoBoard_setChessboardCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, 
+    std::vector<cv::Point3f>* chessboardCorners);
 
   //! \brief Returns the nearest marker corners.
   //! \param charucoBoard The CharucoBoard used.
@@ -91,7 +93,8 @@ extern "C" {
   //! \brief Sets the nearest marker corners.
   //! \param charucoBoard The CharucoBoard used.
   //! \param nearestMarkerCorners The new value.
-  ARUCO_UNITY_API void au_CharucoBoard_setNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, std::vector<std::vector<int>>* nearestMarkerCorners);
+  ARUCO_UNITY_API void au_CharucoBoard_setNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, 
+    std::vector<std::vector<int>>* nearestMarkerCorners);
 
   //! \brief Returns the nearest marker idx.
   //! \param charucoBoard The CharucoBoard used.
@@ -100,7 +103,8 @@ extern "C" {
   //! \brief Sets the nearest marker idx.
   //! \param charucoBoard The CharucoBoard used.
   //! \param nearestMarkerIdx The new value.
-  ARUCO_UNITY_API void au_CharucoBoard_setNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, std::vector<std::vector<int>>* nearestMarkerIdx);
+  ARUCO_UNITY_API void au_CharucoBoard_setNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, 
+    std::vector<std::vector<int>>* nearestMarkerIdx);
 
   //! @} Attributes
 }

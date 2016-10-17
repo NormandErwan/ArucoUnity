@@ -35,6 +35,7 @@ extern "C" {
   //! \return The new Dictionary.
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_Dictionary_new5(const cv::Ptr<cv::aruco::Dictionary>* dictionary);
 
+// TODO: move it to aruco_unity.hpp?
   //! \brief Returns one of the predefined dictionaries defined in PREDEFINED_DICTIONARY_NAME.
   //! \return The Dictionary.
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
