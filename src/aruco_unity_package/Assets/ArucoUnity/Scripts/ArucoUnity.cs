@@ -407,8 +407,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners,
-      out VectorInt ids, DetectorParameters parameters, out VectorVectorPoint2f rejectedImgPoints)
+    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners, out VectorInt ids, 
+      DetectorParameters parameters, out VectorVectorPoint2f rejectedImgPoints)
     {
       Exception exception = new Exception();
       System.IntPtr cornersPtr, idsPtr, rejectedPtr;
@@ -421,8 +421,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners,
-      out VectorInt ids, DetectorParameters parameters)
+    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners, out VectorInt ids, 
+      DetectorParameters parameters)
     {
       Exception exception = new Exception();
       System.IntPtr cornersPtr, idsPtr;
@@ -434,8 +434,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners,
-      out VectorInt ids)
+    public static void DetectMarkers(Mat image, Dictionary dictionary, out VectorVectorPoint2f corners, out VectorInt ids)
     {
       Exception exception = new Exception();
       System.IntPtr cornersPtr, idsPtr;
