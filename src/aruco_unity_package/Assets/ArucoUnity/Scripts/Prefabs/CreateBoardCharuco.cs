@@ -5,43 +5,43 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CreateBoard : MonoBehaviour
+    public class CreateBoardCharuco : MonoBehaviour
     {
       public Dictionary dictionary;
 
-      public GridBoard board;
+      public CharucoBoard board;
       public Utility.Mat image;
       public Utility.Size size;
 
       [HideInInspector]
       public Texture2D imageTexture;
 
-      [Header("Board configuration")]
+      [Header("ChArUco Board configuration")]
       [SerializeField]
       [Tooltip("Number of markers in X direction")]
-      public int markersNumberX;
+      public int squaresNumberX;
 
       [SerializeField]
       [Tooltip("Number of markers in Y direction")]
-      public int markersNumberY;
+      public int squaresNumberY;
 
       [SerializeField]
       [Tooltip("Marker side length (in pixels)")]
-      public int markerLength;
+      public int squareSideLength;
 
       [SerializeField]
-      [Tooltip("Separation between two consecutive markers in the grid (in pixels)")]
-      public int markerSeparation;
+      [Tooltip("Marker side length (in pixels)")]
+      public int markerSideLength;
 
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
-      [Tooltip("Margins size (in pixels). Default is marker separation")]
+      [Tooltip("Margins size (in pixels). Default is: Square Side Length - Marker Side Length")]
       public int marginsSize;
 
       [SerializeField]
-      [Tooltip("Number of bits in marker borders")]
+      [Tooltip("Number of bits in marker border. Default is: 1")]
       public int markerBorderBits;
 
       [Header("Draw the board")]
@@ -58,7 +58,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Output image")]
-      private string outputImage = "ArucoUnity/board.png";
+      private string outputImage = "ArucoUnity/charuco-board.png";
 
       void Start()
       {
@@ -77,14 +77,14 @@ namespace ArucoUnity
       }
 
       // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(Dictionary dictionary, int markersNumberX, int markersNumberY, int markerLength, int markerSeparation, 
+      public void Configurate(int squaresNumberX, int squaresNumberY, int squareSideLength, int markerSideLength, Dictionary dictionary, 
         int marginsSize, int markerBorderBits)
       {
+        this.squaresNumberX = squaresNumberX;
+        this.squaresNumberY = squaresNumberY;
+        this.squareSideLength = squareSideLength;
+        this.markerSideLength = markerSideLength;
         this.dictionary = dictionary;
-        this.markersNumberX = markersNumberX;
-        this.markersNumberY = markersNumberY;
-        this.markerLength = markerLength;
-        this.markerSeparation = markerSeparation;
         this.marginsSize = marginsSize;
         this.markerBorderBits = markerBorderBits;
       }
@@ -92,10 +92,10 @@ namespace ArucoUnity
       public void Create()
       {
         size = new Utility.Size();
-        size.width = markersNumberX * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
-        size.height = markersNumberY * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        size.width = squaresNumberX * squareSideLength + 2 * marginsSize;
+        size.height = squaresNumberY * squareSideLength + 2 * marginsSize;
 
-        board = GridBoard.Create(markersNumberX, markersNumberY, markerLength, markerSeparation, dictionary);
+        board = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, dictionary);
 
         board.Draw(size, out image, marginsSize, markerBorderBits);
         imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
