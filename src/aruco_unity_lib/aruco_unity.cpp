@@ -412,8 +412,8 @@ extern "C" {
     }
     return valid;
   }
-
-  bool estimatePoseCharucoBoard(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, cv::Ptr<cv::aruco::CharucoBoard>* board, 
+  
+  bool au_estimatePoseCharucoBoard(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, cv::Ptr<cv::aruco::CharucoBoard>* board, 
     cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception) {
     bool validPose = 0;
     try {
