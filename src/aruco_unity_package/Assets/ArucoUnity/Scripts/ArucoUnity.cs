@@ -679,9 +679,9 @@ namespace ArucoUnity
       return interpolateCorners;
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds, 
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, 
-      bool checkAllOrders, ref VectorInt recoveredIdxs, DetectorParameters parameters) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds, 
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, 
+      bool checkAllOrders, VectorInt recoveredIdxs, DetectorParameters parameters) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers1(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr, 
@@ -689,9 +689,9 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
-      bool checkAllOrders, ref VectorInt recoveredIdxs) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
+      bool checkAllOrders, VectorInt recoveredIdxs) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers2(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
@@ -699,8 +699,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
       bool checkAllOrders) 
     {
       Exception exception = new Exception();
@@ -709,8 +709,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers4(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
@@ -718,8 +718,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers5(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
@@ -727,8 +727,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers6(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
@@ -736,8 +736,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners, Mat cameraMatrix) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners, Mat cameraMatrix) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers7(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, cameraMatrix.cvPtr,
@@ -745,8 +745,8 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, ref VectorVectorPoint2f detectedCorners, ref VectorInt detectedIds,
-      ref VectorVectorPoint2f rejectedCorners) 
+    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+      VectorVectorPoint2f rejectedCorners) 
     {
       Exception exception = new Exception();
       au_refineDetectedMarkers8(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, exception.cvPtr);
