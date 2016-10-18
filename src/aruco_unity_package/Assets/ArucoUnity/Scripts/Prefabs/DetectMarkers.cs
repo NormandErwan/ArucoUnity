@@ -77,7 +77,7 @@ namespace ArucoUnity
         out Utility.Mat image)
       {
         byte[] imageData = imageTexture.GetRawTextureData();
-        image = new Utility.Mat(imageTexture.height, imageTexture.width, imageData);
+        image = new Utility.Mat(imageTexture.height, imageTexture.width, TYPE.CV_8UC3, imageData);
         Methods.DetectMarkers(image, dictionary, out corners, out ids, detectorParameters, out rejectedImgPoints);
 
         if (ids.Size() > 0)

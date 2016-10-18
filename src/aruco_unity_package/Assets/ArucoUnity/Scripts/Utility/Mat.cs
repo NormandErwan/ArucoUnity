@@ -11,12 +11,33 @@ namespace ArucoUnity
       static extern System.IntPtr au_Mat_new1();
 
       [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_Mat_new2(int rows, int cols, byte[] data);
+      static extern System.IntPtr au_Mat_new2(int rows, int cols, int type);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_Mat_create(System.IntPtr mat, int rows, int cols, int type);
+
+      [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_Mat_new2_uchar(int rows, int cols, int type, byte[] data);
+
+      [DllImport("ArucoUnity")]
+      static extern System.IntPtr au_Mat_new2_double(int rows, int cols, int type, double[] data);
 
       [DllImport("ArucoUnity")]
       static extern void au_Mat_delete(System.IntPtr mat);
 
-      // Functions
+      // Member Functions
+      [DllImport("ArucoUnity")]
+      static extern int au_Mat_at_int_get(System.IntPtr mat, int i0, int i1, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_Mat_at_int_set(System.IntPtr mat, int i0, int i1, int value, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern double au_Mat_at_double_get(System.IntPtr mat, int i0, int i1, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_Mat_at_double_set(System.IntPtr mat, int i0, int i1, double value, System.IntPtr exception);
+
       [DllImport("ArucoUnity")]
       static extern uint au_Mat_total(System.IntPtr mat);
 
@@ -40,7 +61,15 @@ namespace ArucoUnity
       {
       }
 
-      public Mat(int rows, int cols, byte[] data) : base(au_Mat_new2(rows, cols, data))
+      public Mat(int rows, int cols, TYPE type) : base(au_Mat_new2(rows, cols, (int)type))
+      {
+      }
+
+      public Mat(int rows, int cols, TYPE type, byte[] data) : base(au_Mat_new2_uchar(rows, cols, (int)type, data))
+      {
+      }
+
+      public Mat(int rows, int cols, TYPE type, double[] data) : base(au_Mat_new2_double(rows, cols, (int)type, data))
       {
       }
 
@@ -52,6 +81,41 @@ namespace ArucoUnity
       protected override void DeleteCvPtr()
       {
         au_Mat_delete(cvPtr);
+      }
+
+      public void Create(int rows, int cols, TYPE type)
+      {
+        au_Mat_create(cvPtr, rows, cols, (int)type);
+      }
+
+      public int AtInt(int i0, int i1)
+      {
+        Exception exception = new Exception();
+        int value = au_Mat_at_int_get(cvPtr, i0, i1, exception.cvPtr);
+        exception.Check();
+        return value;
+      }
+
+      public void AtInt(int i0, int i1, int value)
+      {
+        Exception exception = new Exception();
+        au_Mat_at_int_set(cvPtr, i0, i1, value, exception.cvPtr);
+        exception.Check();
+      }
+
+      public double AtDouble(int i0, int i1)
+      {
+        Exception exception = new Exception();
+        double value = au_Mat_at_double_get(cvPtr, i0, i1, exception.cvPtr);
+        exception.Check();
+        return value;
+      }
+
+      public void AtDouble(int i0, int i1, double value)
+      {
+        Exception exception = new Exception();
+        au_Mat_at_double_set(cvPtr, i0, i1, value, exception.cvPtr);
+        exception.Check();
       }
 
       public uint ElemSize()

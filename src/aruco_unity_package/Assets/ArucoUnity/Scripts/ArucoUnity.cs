@@ -49,6 +49,24 @@ namespace ArucoUnity
     USE_LU = (1 << 17)
   };
 
+  public enum CV 
+  {
+    CN_SHIFT = 3
+  };
+
+  public enum TYPE
+  {
+    CV_8U = 0,
+    CV_8UC1 = (CV_8U + 0) << CV.CN_SHIFT,
+    CV_8UC2 = (CV_8U + 1) << CV.CN_SHIFT,
+    CV_8UC3 = (CV_8U + 2) << CV.CN_SHIFT,
+    CV_8UC4 = (CV_8U + 3) << CV.CN_SHIFT,
+    CV_64F = 6,
+    CV_64F1 = (CV_64F + 0) << CV.CN_SHIFT,
+    CV_64F2 = (CV_64F + 1) << CV.CN_SHIFT,
+    CV_64F3 = (CV_64F + 2) << CV.CN_SHIFT,
+    CV_64F4 = (CV_64F + 3) << CV.CN_SHIFT,
+  };
 
   public class Methods
   {
