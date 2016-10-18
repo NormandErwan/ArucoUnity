@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['detector_5fparameters_2ehpp',['detector_parameters.hpp',['../detector__parameters_8hpp.html',1,'']]],
-  ['dictionary_2ehpp',['dictionary.hpp',['../dictionary_8hpp.html',1,'']]]
+  ['charuco_5fboard_2ehpp',['charuco_board.hpp',['../charuco__board_8hpp.html',1,'']]]
 ];

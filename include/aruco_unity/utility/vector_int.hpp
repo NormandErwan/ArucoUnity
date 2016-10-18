@@ -27,6 +27,7 @@ extern "C" {
   //! @{
   
   //! \brief Access specified element with bounds checking. 
+  //!
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
@@ -42,6 +43,7 @@ extern "C" {
   ARUCO_UNITY_API void au_vectorInt_push_back(std::vector<int>* vector, int value);
 
   //! \brief Reserves storage.
+  //!
   //! \param vector The vector used.
   //! \param new_cap New capacity of the container.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.

@@ -27,6 +27,7 @@ extern "C" {
   //! @{
   
   //! \brief Access specified element with bounds checking. 
+  //!
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.

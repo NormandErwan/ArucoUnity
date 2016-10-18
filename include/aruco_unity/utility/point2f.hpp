@@ -5,7 +5,7 @@
 #include "aruco_unity/exports.hpp"
 
 //! @addtogroup utility_point2f
-//! \brief Class for 2D float points specified by its coordinates x and y.
+//! \brief 2D float points specified by its coordinates x and y.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/db/d4e/classcv_1_1Point__.html
 //! @{

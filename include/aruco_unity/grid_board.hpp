@@ -24,6 +24,7 @@ extern "C" {
   //! @{
 
   //! \brief Draw a GridBoard.
+  //!
   //! \param gridBoard The GridBoard used.
   //! \param outSize Size of the output image in pixels.
   //! \param img Output image with the board. The size of this image will be outSize 

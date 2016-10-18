@@ -58,6 +58,7 @@ extern "C" {
   //! \param tvecs Output vector of translation vectors estimated for each pattern view.
   //! \param flags Flags Different flags for the calibration process (see calibrateCamera).
   //! \param criteria Termination criteria for the iterative optimization algorithm.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -94,6 +95,7 @@ extern "C" {
   //! \param diamondIds Ids of the diamonds in diamondCorners.
   //! \param cameraMatrix Optional camera calibration matrix.
   //! \param distCoeffs Optional camera distortion coefficients.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -149,6 +151,7 @@ extern "C" {
   //! \param img Output Image with the marker.
   //! \param marginSize Minimum margins (in pixels) of the marker in the output image.
   //! \param borderBits Width of the marker borders.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -168,6 +171,7 @@ extern "C" {
   //! \param charucoCorners Vector of detected charuco corners
   //! \param charucoIds List of identifiers for each corner in charucoCorners
   //! \param cornerColor Color of the square surrounding each corner
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -187,6 +191,7 @@ extern "C" {
   //! \param diamondCorners Positions of diamond corners in the same format returned by detectCharucoDiamond().
   //! \param diamondIds Vector of identifiers for diamonds in diamondCorners, in the same format returned by detectCharucoDiamond() (e.g. std::vector<Vec4i>).
   //! \param borderColor Color of marker borders.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -234,6 +239,7 @@ extern "C" {
   //! \param distCoeffs Vector of distortion coefficients.
   //! \param rvec Output vector (e.g. cv::Mat) corresponding to the rotation vector of the board (see Rodrigues).
   //! \param tvec Output vector (e.g. cv::Mat) corresponding to the translation vector of the board.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gae89235944f3bdbaad69d8dbac5340f1c
@@ -249,6 +255,7 @@ extern "C" {
   //! \param distCoeffs Vector of distortion coefficients.
   //! \param rvec Output vector (e.g. cv::Mat) corresponding to the rotation vector of the board (see Rodrigues).
   //! \param tvec Output vector (e.g. cv::Mat) corresponding to the translation vector of the board.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
@@ -263,6 +270,7 @@ extern "C" {
   //! \param distCoeffs Vector of distortion coefficients.
   //! \param rvecs Array of output rotation vectors (see Rodrigues) (e.g. std::vector<cv::Vec3d>).
   //! \param tvecs Array of output translation vectors (e.g. std::vector<cv::Vec3d>).
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gafdd609e5c251dc7b8197323657a874c3
@@ -280,6 +288,7 @@ extern "C" {
   //! \param charucoIds Interpolated chessboard corners identifiers.
   //! \param cameraMatrix Optional 3x3 floating-point camera matrix.
   //! \param distCoeffs Optional vector of distortion coefficients.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463

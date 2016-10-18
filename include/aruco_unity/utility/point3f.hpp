@@ -5,7 +5,7 @@
 #include "aruco_unity/exports.hpp"
 
 //! @addtogroup utility_point3f
-//! \brief Template class for 3D float points specified by its coordinates x, y and z.
+//! \brief 3D float points specified by its coordinates x, y and z.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/df/d6c/classcv_1_1Point3__.html
 //! @{

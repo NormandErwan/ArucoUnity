@@ -18,6 +18,7 @@ extern "C" {
   ARUCO_UNITY_API cv::TermCriteria* au_TermCriteria_new1();
 
   //! \brief Creates an new TermCriteria.
+  //!
   //! \param type The type of termination criteria, one of TermCriteria::Type.
   //! \param maxCount The maximum number of iterations or elements to compute.
   //! \param epsilon The desired accuracy or change in parameters at which the iterative algorithm stops. 

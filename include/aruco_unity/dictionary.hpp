@@ -15,6 +15,7 @@ extern "C" {
   //! @{
 
   //! \brief Creates a Dictionary.
+  //!
   //! \param bytesList Marker code information.
   //! \param markerSize Number of bits per dimension.
   //! \param maxCorrectionBits Maximum number of bits that can be reached.
@@ -41,6 +42,7 @@ extern "C" {
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
 
   //! \brief Generates a new customizable marker Dictionary.
+  //!
   //! \param nMarkers number of markers in the Dictionary.
   //! \param markerSize number of bits per dimension of each markers.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
@@ -48,6 +50,7 @@ extern "C" {
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_generateCustomDictionary1(int nMarkers, int markerSize, cv::Exception* exception);
 
   //! \brief Generates a new customizable marker Dictionary.
+  //!
   //! \param nMarkers number of markers in the Dictionary.
   //! \param markerSize number of bits per dimension of each markers.
   //! \param baseDictionary Include the markers in this Dictionary at the beginning (optional).
@@ -66,6 +69,7 @@ extern "C" {
   //! @{
 
   //! \brief Draw a canonical marker image.
+  //!
   //! \param dictionary The Dictionary used.
   //! \param id The marker id. 
   //! \param sidePixels The number of pixel per side of the marker. 
@@ -76,6 +80,7 @@ extern "C" {
     cv::Exception* exception);
 
   //! \brief Returns the distance of the input bits to the specific id. If allRotations is true, the four posible bits rotation are considered.
+  //!
   //! \param dictionary The Dictionary used.
   //! \param bits
   //! \param id
@@ -88,6 +93,7 @@ extern "C" {
   ARUCO_UNITY_API int au_Dictionary_getDistanceToId2(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, cv::Exception* exception);
   
   //! \brief Given a matrix of bits. Returns whether if marker is identified or not. It returns by reference the correct id (if any) and the correct rotation.
+  //!
   //! \param dictionary The Dictionary used.
   //! \param onlyBits The matrix of bits.
   //! \param idx The id of the identified marker.
@@ -104,6 +110,7 @@ extern "C" {
   //! @{
 
   //! \brief Transform list of bytes to matrix of bits.
+  //!
   //! \param byteList The list of bytes.
   //! \param markerSize The size of a side of the matrix of bits.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.

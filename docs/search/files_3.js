@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['exception_2ehpp',['exception.hpp',['../exception_8hpp.html',1,'']]],
-  ['exports_2ehpp',['exports.hpp',['../exports_8hpp.html',1,'']]]
+  ['detector_5fparameters_2ehpp',['detector_parameters.hpp',['../detector__parameters_8hpp.html',1,'']]],
+  ['dictionary_2ehpp',['dictionary.hpp',['../dictionary_8hpp.html',1,'']]]
 ];

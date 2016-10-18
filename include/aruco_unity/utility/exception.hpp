@@ -34,9 +34,9 @@ extern "C" {
   //! \name Functions
   //! @{
 
+  //! \return Returns the error description and the context as a text string.
   //! \param exception The Exception used.
   //! \param what The error description.
-  //! \return The error description and the context as a text string.
   ARUCO_UNITY_API void au_Exception_what(cv::Exception* exception, char* what);
 
   //! @} Functions
@@ -44,8 +44,8 @@ extern "C" {
   //! \name Variables
   //! @{
 
+  //! \return Returns the error code.
   //! \param exception The Exception used.
-  //! \return The error code.
   ARUCO_UNITY_API int au_Exception_getCode(cv::Exception* exception);
 
   //! @} Variables
