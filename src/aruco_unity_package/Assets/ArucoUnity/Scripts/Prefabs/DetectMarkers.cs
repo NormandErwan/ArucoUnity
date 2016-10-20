@@ -6,18 +6,12 @@ namespace ArucoUnity
   {
     public class DetectMarkers : MonoBehaviour
     {
-      public Dictionary dictionary;
-      public DetectorParameters detectorParameters;
-
-      [HideInInspector]
-      public Texture2D imageTexture;
-
       [Header("Detection configuration")]
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
-      public bool showRejectedCandidates;
+      private bool showRejectedCandidates;
 
       [SerializeField]
       private DetectorParametersManager detectorParametersManager;
@@ -26,14 +20,19 @@ namespace ArucoUnity
       [SerializeField]
       private DeviceCameraController deviceCameraController;
 
+      public Dictionary Dictionary { get; set; }
+      public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
+      public DetectorParameters DetectorParameters { get; set; }
+      public Texture2D ImageTexture { get; set; }
+
       void OnEnable()
       {
-        DeviceCameraController.OnCameraStarted += ConfigurateFromEditorValues;
+        DeviceCameraController.OnCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        DeviceCameraController.OnCameraStarted -= ConfigurateFromEditorValues;
+        DeviceCameraController.OnCameraStarted -= Configurate;
       }
 
       void LateUpdate()
@@ -45,40 +44,31 @@ namespace ArucoUnity
           Utility.VectorVectorPoint2f rejectedImgPoints;
           Utility.Mat image;
 
-          imageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
+          ImageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
           Detect(out corners, out ids, out rejectedImgPoints, out image);
         }
       }
 
-      // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(Dictionary dictionary, DetectorParameters detectorParameters, Texture2D imageTexture)
+      void Configurate()
       {
-        this.dictionary = dictionary;
-        this.detectorParameters = detectorParameters;
-        this.imageTexture = imageTexture;
-      }
-
-      void ConfigurateFromEditorValues()
-      {
-        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        detectorParameters = detectorParametersManager.detectorParameters;
-
+        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        DetectorParameters = detectorParametersManager.detectorParameters;
         ConfigurateImageTexture(deviceCameraController);
       }
 
       public void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
       {
-        imageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height,
+        ImageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height,
           TextureFormat.RGB24, false);
-        deviceCameraController.SetActiveTexture(imageTexture);
+        deviceCameraController.SetActiveTexture(ImageTexture);
       }
 
       public void Detect(out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, out Utility.VectorVectorPoint2f rejectedImgPoints, 
         out Utility.Mat image)
       {
-        byte[] imageData = imageTexture.GetRawTextureData();
-        image = new Utility.Mat(imageTexture.height, imageTexture.width, TYPE.CV_8UC3, imageData);
-        Methods.DetectMarkers(image, dictionary, out corners, out ids, detectorParameters, out rejectedImgPoints);
+        byte[] imageData = ImageTexture.GetRawTextureData();
+        image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+        Methods.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         if (ids.Size() > 0)
         {
@@ -91,8 +81,8 @@ namespace ArucoUnity
         }
 
         int imageDataSize = (int)(image.ElemSize() * image.Total());
-        imageTexture.LoadRawTextureData(image.data, imageDataSize);
-        imageTexture.Apply(false);
+        ImageTexture.LoadRawTextureData(image.data, imageDataSize);
+        ImageTexture.Apply(false);
       }
     }
   }
