@@ -601,14 +601,14 @@ namespace ArucoUnity
     }
 
     public static void EstimatePoseSingleMarkers(VectorVectorPoint2f corners, float markerLength, Mat cameraMatrix, Mat distCoeffs,
-      out VectorMat rvecs, out VectorMat tvecs)
+      out VectorVec3d rvecs, out VectorVec3d tvecs)
     {
       Exception exception = new Exception();
       System.IntPtr rvecsPtr, tvecsPtr;
       
       au_estimatePoseSingleMarkers(corners.cvPtr, markerLength, cameraMatrix.cvPtr, distCoeffs.cvPtr, out rvecsPtr, out tvecsPtr, exception.cvPtr);
-      rvecs = new VectorMat(rvecsPtr);
-      tvecs = new VectorMat(tvecsPtr);
+      rvecs = new VectorVec3d(rvecsPtr);
+      tvecs = new VectorVec3d(tvecsPtr);
 
       exception.Check();
     }

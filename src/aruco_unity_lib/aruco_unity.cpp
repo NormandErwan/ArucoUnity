@@ -430,10 +430,10 @@ extern "C" {
   }
 
   void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, cv::Mat* cameraMatrix, 
-    cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
+    cv::Mat* distCoeffs, std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, cv::Exception* exception) {
     try {
-      *rvecs = new std::vector<cv::Mat>();
-      *tvecs = new std::vector<cv::Mat>();
+      *rvecs = new std::vector<cv::Vec3d>();
+      *tvecs = new std::vector<cv::Vec3d>();
 
       cv::aruco::estimatePoseSingleMarkers(*corners, markerLength, *cameraMatrix, *distCoeffs, **rvecs, **tvecs);
     }
