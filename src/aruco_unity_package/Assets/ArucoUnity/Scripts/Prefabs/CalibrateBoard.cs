@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CalibrateCamera : MonoBehaviour
+    public class CalibrateBoard : MonoBehaviour
     {
       [Header("Board configuration")]
       [SerializeField]
@@ -19,7 +18,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Marker side length (in meters)")]
-      private float markerLength;
+      private float markerSideLength;
 
       [SerializeField]
       [Tooltip("Separation between two consecutive markers in the grid (in meters)")]
@@ -69,17 +68,15 @@ namespace ArucoUnity
       public DetectorParameters DetectorParameters { get; set; }
 
       public bool ApplyRefindStrategy { get { return applyRefindStrategy; } set { applyRefindStrategy = value; } }
-      public bool AssumeZeroTangentialDistorsion { get { return assumeZeroTangentialDistorsion; } set { assumeZeroTangentialDistorsion = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
-      public bool FixPrincipalPointAtCenter { get { return fixPrincipalPointAtCenter; } set { fixPrincipalPointAtCenter = value; } }
       public CALIB CalibrationFlags { get; set; }
       public string OutputFilePath { get { return outputFilePath; } set { outputFilePath = value; } }
 
-      public Utility.VectorVectorVectorPoint2f AllCorners { get; set; }
-      public Utility.VectorVectorInt AllIds { get; set; }
-      public Utility.Size ImageSize { get; set; }
-      public Texture2D ImageTexture { get; set; }
-      public double CalibrationReprojectionError { get; set; }
+      public Utility.VectorVectorVectorPoint2f AllCorners { get; private set; }
+      public Utility.VectorVectorInt AllIds { get; private set; }
+      public Utility.Size ImageSize { get; private set; }
+      public Texture2D ImageTexture { get; private set; }
+      public double CalibrationReprojectionError { get; private set; }
 
       private CameraParameters cameraParameters;
       private bool addNextFrame;
@@ -99,10 +96,9 @@ namespace ArucoUnity
       {
         if (deviceCameraController.cameraStarted)
         {
-          Utility.VectorVectorPoint2f corners;
-          Utility.VectorInt ids;
-          Utility.VectorVectorPoint2f rejectedImgPoints;
           Utility.Mat image;
+          Utility.VectorInt ids;
+          Utility.VectorVectorPoint2f corners, rejectedImgPoints;
 
           // Detect and draw markers
           ImageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
@@ -122,14 +118,14 @@ namespace ArucoUnity
       {
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
-        Board = GridBoard.Create(markersNumberX, markersNumberY, markerLength, markerSeparation, Dictionary);
+        Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
 
         ConfigurateCalibrationFlags();
         ConfigurateImageTexture(deviceCameraController);
         ResetCalibration();
       }
 
-      public void ConfigurateCalibrationFlags()
+      void ConfigurateCalibrationFlags()
       {
         CalibrationFlags = 0;
         if (assumeZeroTangentialDistorsion)
