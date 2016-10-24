@@ -7,10 +7,6 @@ extern "C" {
     return new cv::Mat();
   }
 
-  cv::Mat* au_Mat_new2(int rows, int cols, int type) {
-    return new cv::Mat(rows, cols, type);
-  }
-
   cv::Mat* au_Mat_new2_uchar(int rows, int cols, int type, uchar* data) {
     return new cv::Mat(rows, cols, type, data);
   }
@@ -60,6 +56,15 @@ extern "C" {
   void au_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception) {
     try {
       mat->at<double>(i0, i1) = value;
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+    };
+  }
+
+  void au_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
+    try {
+      mat->create(rows, cols, type);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);

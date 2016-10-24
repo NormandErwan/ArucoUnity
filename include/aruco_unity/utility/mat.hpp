@@ -17,13 +17,6 @@ extern "C" {
   //! \brief Creates an empty Mat.
   ARUCO_UNITY_API cv::Mat* au_Mat_new1();
 
-  //! \brief Creates an empty Mat.
-  //!
-  //! \param rows Number of rows. 
-  //! \param cols Number of columns. 
-  //! \param type Array type. 
-  ARUCO_UNITY_API cv::Mat* au_Mat_new2(int rows, int cols, int type);
-
   //! \brief Creates a Mat.
   //!
   //! \param rows Number of rows. 
@@ -82,6 +75,15 @@ extern "C" {
   //! \param value The new value.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   ARUCO_UNITY_API void au_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception);
+
+  //! \brief Allocates new array data if needed.
+  //!
+  //! \param mat The Mat used.
+  //! \param rows Number of rows.
+  //! \param cols Number of columns.
+  //! \param type Array type.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  ARUCO_UNITY_API void au_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception);
 
   //! \brief Returns the matrix element size in bytes.
   //! \param mat The Mat used.
