@@ -429,8 +429,8 @@ extern "C" {
     return validPose;
   }
 
-  void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, std::vector<cv::Mat>* cameraMatrix, 
-    std::vector<cv::Mat>* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
+  void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, cv::Mat* cameraMatrix, 
+    cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
     try {
       *rvecs = new std::vector<cv::Mat>();
       *tvecs = new std::vector<cv::Mat>();

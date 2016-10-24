@@ -600,7 +600,7 @@ namespace ArucoUnity
       return valid;
     }
 
-    public static void EstimatePoseSingleMarkers(VectorVectorPoint2f corners, float markerLength, VectorMat cameraMatrix, VectorMat distCoeffs,
+    public static void EstimatePoseSingleMarkers(VectorVectorPoint2f corners, float markerLength, Mat cameraMatrix, Mat distCoeffs,
       out VectorMat rvecs, out VectorMat tvecs)
     {
       Exception exception = new Exception();
