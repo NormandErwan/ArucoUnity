@@ -327,7 +327,7 @@ namespace ArucoUnity
       return reProjectionError;
     }
 
-    public static double CalibrateCameraCharuco(VectorMat charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
+    public static double CalibrateCameraCharuco(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
       Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags, TermCriteria criteria)
     {
       Exception exception = new Exception();
@@ -342,7 +342,7 @@ namespace ArucoUnity
       return reProjectionError;
     }
 
-    public static double CalibrateCameraCharuco(VectorMat charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
+    public static double CalibrateCameraCharuco(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
       Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags)
     {
       Exception exception = new Exception();
@@ -357,7 +357,7 @@ namespace ArucoUnity
       return reProjectionError;
     }             
     
-    public static double CalibrateCameraCharuco(VectorMat charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
+    public static double CalibrateCameraCharuco(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
       Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs)
     {
       Exception exception = new Exception();
@@ -372,7 +372,7 @@ namespace ArucoUnity
       return reProjectionError;
     }       
     
-    public static double CalibrateCameraCharuco(VectorMat charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
+    public static double CalibrateCameraCharuco(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
       Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs)
     {
       Exception exception = new Exception();
@@ -386,7 +386,7 @@ namespace ArucoUnity
       return reProjectionError;
     }       
     
-    public static double CalibrateCameraCharuco(VectorMat charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
+    public static double CalibrateCameraCharuco(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Size imageSize, 
       Mat cameraMatrix, Mat distCoeffs)
     {
       Exception exception = new Exception();
@@ -679,7 +679,7 @@ namespace ArucoUnity
       return interpolateCorners;
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds, 
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds, 
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate, 
       bool checkAllOrders, VectorInt recoveredIdxs, DetectorParameters parameters) 
     {
@@ -689,7 +689,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
       bool checkAllOrders, VectorInt recoveredIdxs) 
     {
@@ -699,7 +699,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
       bool checkAllOrders) 
     {
@@ -709,7 +709,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance, float errorCorrectionRate) 
     {
       Exception exception = new Exception();
@@ -718,7 +718,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs, float minRepDistance) 
     {
       Exception exception = new Exception();
@@ -727,7 +727,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix, Mat distCoeffs) 
     {
       Exception exception = new Exception();
@@ -736,7 +736,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners, Mat cameraMatrix) 
     {
       Exception exception = new Exception();
@@ -745,7 +745,7 @@ namespace ArucoUnity
       exception.Check();
     }
 
-    public static void RefineDetectedMarkers(Mat image, GridBoard board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
+    public static void RefineDetectedMarkers(Mat image, Board board, VectorVectorPoint2f detectedCorners, VectorInt detectedIds,
       VectorVectorPoint2f rejectedCorners) 
     {
       Exception exception = new Exception();
