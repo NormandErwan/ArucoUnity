@@ -42,6 +42,9 @@ namespace ArucoUnity
       static extern uint au_Mat_total(System.IntPtr mat);
 
       [DllImport("ArucoUnity")]
+      static extern int au_Mat_type(System.IntPtr mat);
+
+      [DllImport("ArucoUnity")]
       static extern uint au_Mat_elemSize(System.IntPtr mat);
 
       // Variables
@@ -126,6 +129,11 @@ namespace ArucoUnity
       public uint Total()
       {
         return au_Mat_total(cvPtr);
+      }
+
+      public TYPE Type()
+      {
+        return (TYPE)au_Mat_type(cvPtr);
       }
 
       public int cols

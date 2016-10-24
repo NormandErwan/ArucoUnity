@@ -74,6 +74,10 @@ extern "C" {
     return mat->total();
   }
 
+  int au_Mat_type(cv::Mat* mat) {
+    return mat->type();
+  }
+
   // Variables
   int au_Mat_getCols(cv::Mat* mat) {
     return mat->cols;

@@ -91,6 +91,10 @@ extern "C" {
   //! \param mat The Mat used.
   ARUCO_UNITY_API size_t au_Mat_total(cv::Mat* mat);
 
+  //! \brief Returns the type of a matrix element.
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API int au_Mat_type(cv::Mat* mat);
+
   //! @} Member Functions
   
   //! \name Variables
