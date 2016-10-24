@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -15,10 +16,10 @@ namespace ArucoUnity
 
       // Variables
       [DllImport("ArucoUnity")]
-      static extern int au_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
+      static extern double au_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern void au_Vec3d_set(System.IntPtr vec3d, int i, int value, System.IntPtr exception);
+      static extern void au_Vec3d_set(System.IntPtr vec3d, int i, double value, System.IntPtr exception);
 
       public Vec3d() : base(au_Vec3d_new())
       {
@@ -34,17 +35,22 @@ namespace ArucoUnity
         au_Vec3d_delete(cvPtr);
       }
 
-      public int Get(int i) {
+      public double Get(int i) {
         Exception exception = new Exception();
-        int value = au_Vec3d_get(cvPtr, i, exception.cvPtr);
+        double value = au_Vec3d_get(cvPtr, i, exception.cvPtr);
         exception.Check();
         return value;
       }
 
-      public void Set(int i, int value) {
+      public void Set(int i, double value) {
         Exception exception = new Exception();
         au_Vec3d_set(cvPtr, i, value, exception.cvPtr);
         exception.Check();
+      }
+
+      public static implicit operator Vector3(Vec3d vec3d)
+      {
+        return new Vector3((float)vec3d.Get(0), (float)vec3d.Get(1), (float)vec3d.Get(2));
       }
     }
   }
