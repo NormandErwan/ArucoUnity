@@ -11,19 +11,39 @@ namespace ArucoUnity
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
-      private bool showRejectedCandidates;
+      private DetectorParametersManager detectorParametersManager;
 
       [SerializeField]
-      private DetectorParametersManager detectorParametersManager;
+      [Tooltip("Marker side length (in meters)")]
+      private float markerSideLength = 0.1f;
+
+      [SerializeField]
+      private bool showRejectedCandidates;
 
       [Header("Camera configuration")]
       [SerializeField]
       private DeviceCameraController deviceCameraController;
 
+      [Header("Camera parameters")]
+      [SerializeField]
+      private bool estimatePose;
+
+      [SerializeField]
+      private string cameraParametersFilePath;
+
+      // Detection configuration
       public Dictionary Dictionary { get; set; }
-      public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
       public DetectorParameters DetectorParameters { get; set; }
+      public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+      public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
+
+      // Camera configuration
       public Texture2D ImageTexture { get; set; }
+
+      // Camera parameters
+      public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
+      public Utility.Mat CameraMatrix { get; set; }
+      public Utility.Mat DistCoeffs { get; set; }
 
       void OnEnable()
       {
@@ -39,21 +59,28 @@ namespace ArucoUnity
       {
         if (deviceCameraController.cameraStarted)
         {
+          Utility.Mat image;
           Utility.VectorVectorPoint2f corners;
           Utility.VectorInt ids;
           Utility.VectorVectorPoint2f rejectedImgPoints;
-          Utility.Mat image;
+          Utility.VectorVec3d rvecs, tvecs;
 
           ImageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
-          Detect(out corners, out ids, out rejectedImgPoints, out image);
+          Detect(out image, out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
         }
       }
 
       void Configurate()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
+        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+
         ConfigurateImageTexture(deviceCameraController);
+
+        if (estimatePose)
+        {
+          ConfigurateCameraParameters(cameraParametersFilePath);
+        }
       }
 
       public void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
@@ -63,13 +90,38 @@ namespace ArucoUnity
         deviceCameraController.SetActiveTexture(ImageTexture);
       }
 
-      public void Detect(out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, out Utility.VectorVectorPoint2f rejectedImgPoints, 
-        out Utility.Mat image)
+      public void ConfigurateCameraParameters(string cameraParametersFilePath)
       {
+        CameraParameters cameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+
+        Utility.Mat cameraMatrix, distCoeffs;
+        cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
+        CameraMatrix = cameraMatrix;
+        DistCoeffs = distCoeffs;
+      }
+
+      public void Detect(out Utility.Mat image, out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, 
+        out Utility.VectorVectorPoint2f rejectedImgPoints, out Utility.VectorVec3d rvecs, out Utility.VectorVec3d tvecs)
+      {
+        // Copy the bytes of the texture to the image
         byte[] imageData = ImageTexture.GetRawTextureData();
+
+        // Detect markers
         image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
         Methods.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
+        // Estimate board pose
+        if (estimatePose && ids.Size() > 0)
+        {
+          Methods.EstimatePoseSingleMarkers(corners, markerSideLength, CameraMatrix, DistCoeffs, out rvecs, out tvecs);
+        }
+        else
+        {
+          rvecs = null;
+          tvecs = null;
+        }
+
+        // Draw results
         if (ids.Size() > 0)
         {
           Methods.DrawDetectedMarkers(image, corners, ids);
@@ -80,6 +132,7 @@ namespace ArucoUnity
           Methods.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
+        // Copy the bytes of the image to the texture
         int imageDataSize = (int)(image.ElemSize() * image.Total());
         ImageTexture.LoadRawTextureData(image.data, imageDataSize);
         ImageTexture.Apply(false);
