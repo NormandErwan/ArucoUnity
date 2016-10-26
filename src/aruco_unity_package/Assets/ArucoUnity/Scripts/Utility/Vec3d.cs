@@ -14,7 +14,7 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern void au_Vec3d_delete(System.IntPtr vec3d);
 
-      // Variables
+      // Member Functions
       [DllImport("ArucoUnity")]
       static extern double au_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
 
@@ -48,9 +48,27 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static implicit operator Vector3(Vec3d vec3d)
+      public Vector3 ToPosition()
       {
-        return new Vector3((float)vec3d.Get(0), (float)vec3d.Get(1), (float)vec3d.Get(2));
+        Vector3 position = new Vector3();
+        position.x = -(float)Get(0);
+        position.y = -(float)Get(1);
+        position.z =  (float)Get(2);
+        return position;
+      }
+
+      public Quaternion ToRotation()
+      {
+        Mat rotationMatrix;
+        Calib3d.Rodrigues(this, out rotationMatrix);
+
+        Quaternion rotation = new Quaternion();
+        rotation.x = -(float)rotationMatrix.AtDouble(0, 0);
+        rotation.y = -(float)rotationMatrix.AtDouble(1, 0);
+        rotation.z =  (float)rotationMatrix.AtDouble(2, 0);
+        rotation.w =  (float)rotationMatrix.AtDouble(3, 0);
+
+        return rotation;
       }
     }
   }
