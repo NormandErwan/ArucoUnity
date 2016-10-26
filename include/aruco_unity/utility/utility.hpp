@@ -3,6 +3,7 @@
 
 //! @defgroup utility Utility and OpenCV main modules
 //! @{
+//!   @defgroup utility_calib3d OpenCV calib3d module
 //!   @defgroup utility_exception Exception
 //!   @defgroup utility_mat OpenCV Mat
 //!   @defgroup utility_point2f OpenCV Point2f

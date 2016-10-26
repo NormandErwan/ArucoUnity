@@ -17,6 +17,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/grid_board.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/calib3d.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exception.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point2f.hpp
@@ -40,6 +41,7 @@ set(PROJECT_HEADERS
 set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
     ${PROJECT_SOURCE_DIR}/board.cpp
+    ${PROJECT_SOURCE_DIR}/calib3d.cpp
     ${PROJECT_SOURCE_DIR}/charuco_board.cpp
     ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
