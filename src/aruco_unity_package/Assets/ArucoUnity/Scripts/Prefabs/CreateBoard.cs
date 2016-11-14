@@ -27,7 +27,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Marker side length (in pixels)")]
-      public int markerLength;
+      public int markerSideLength;
 
       [SerializeField]
       [Tooltip("Separation between two consecutive markers in the grid (in pixels)")]
@@ -77,13 +77,13 @@ namespace ArucoUnity
       }
 
       // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(Dictionary dictionary, int markersNumberX, int markersNumberY, int markerLength, int markerSeparation, 
+      public void Configurate(Dictionary dictionary, int markersNumberX, int markersNumberY, int markerSideLength, int markerSeparation, 
         int marginsSize, int markerBorderBits)
       {
         this.dictionary = dictionary;
         this.markersNumberX = markersNumberX;
         this.markersNumberY = markersNumberY;
-        this.markerLength = markerLength;
+        this.markerSideLength = markerSideLength;
         this.markerSeparation = markerSeparation;
         this.marginsSize = marginsSize;
         this.markerBorderBits = markerBorderBits;
@@ -92,10 +92,10 @@ namespace ArucoUnity
       public void Create()
       {
         size = new Utility.Size();
-        size.width = markersNumberX * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
-        size.height = markersNumberY * (markerLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        size.width = markersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        size.height = markersNumberY * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
 
-        board = GridBoard.Create(markersNumberX, markersNumberY, markerLength, markerSeparation, dictionary);
+        board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, dictionary);
 
         board.Draw(size, out image, marginsSize, markerBorderBits);
         imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);

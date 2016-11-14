@@ -16,7 +16,7 @@ namespace ArucoUnity
       [HideInInspector]
       public Texture2D imageTexture;
 
-      [Header("ChArUco Board configuration")]
+      [Header("ChArUco board configuration")]
       [SerializeField]
       [Tooltip("Number of markers in X direction")]
       public int squaresNumberX;
@@ -26,7 +26,7 @@ namespace ArucoUnity
       public int squaresNumberY;
 
       [SerializeField]
-      [Tooltip("Marker side length (in pixels)")]
+      [Tooltip("Square side length (in pixels)")]
       public int squareSideLength;
 
       [SerializeField]
