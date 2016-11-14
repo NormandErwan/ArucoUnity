@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -31,6 +32,9 @@ namespace ArucoUnity
       [SerializeField]
       private string cameraParametersFilePath;
 
+      [SerializeField]
+      private GameObject detectedMarkersObject;
+
       // Detection configuration
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
@@ -44,6 +48,9 @@ namespace ArucoUnity
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
       public Utility.Mat CameraMatrix { get; set; }
       public Utility.Mat DistCoeffs { get; set; }
+      public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
+
+      private Dictionary<int, GameObject> markerObjects;
 
       void OnEnable()
       {
@@ -122,9 +129,19 @@ namespace ArucoUnity
         }
 
         // Draw results
+        if (estimatePose && DetectedMarkersObject)
+        {
+          DeactivateMarkerObjects();
+        }
+
         if (ids.Size() > 0)
         {
           Methods.DrawDetectedMarkers(image, corners, ids);
+
+          if (estimatePose && DetectedMarkersObject)
+          {
+            DisplayMarkerObjects(ids, rvecs, tvecs);
+          }
         }
 
         if (showRejectedCandidates && rejectedImgPoints.Size() > 0)
@@ -136,6 +153,42 @@ namespace ArucoUnity
         int imageDataSize = (int)(image.ElemSize() * image.Total());
         ImageTexture.LoadRawTextureData(image.data, imageDataSize);
         ImageTexture.Apply(false);
+      }
+
+      void DeactivateMarkerObjects()
+      {
+        if (markerObjects != null)
+        {
+          foreach (var markerObject in markerObjects)
+          {
+            markerObject.Value.SetActive(false);
+          }
+        }
+      }
+
+      void DisplayMarkerObjects(Utility.VectorInt ids, Utility.VectorVec3d rvecs, Utility.VectorVec3d tvecs)
+      {
+        if (markerObjects == null)
+        {
+          markerObjects = new Dictionary<int, GameObject>();
+        }
+
+        for (uint i = 0; i < ids.Size(); i++)
+        {
+          GameObject markerObject;
+          if (!markerObjects.TryGetValue(ids.At(i), out markerObject))
+          {
+            markerObject = Instantiate(DetectedMarkersObject);
+            markerObject.name = ids.At(i).ToString();
+            markerObject.transform.SetParent(this.transform);
+            markerObjects.Add(ids.At(i), markerObject);
+          }
+
+          markerObject.transform.position = tvecs.At(i).ToPosition();
+          markerObject.transform.rotation = rvecs.At(i).ToRotation();
+          markerObject.SetActive(true);
+          print(i + ": " + rvecs.At(i).ToRotation() + " " + tvecs.At(i).ToPosition());
+        }
       }
     }
   }
