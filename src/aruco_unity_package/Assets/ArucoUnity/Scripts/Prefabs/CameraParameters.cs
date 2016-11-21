@@ -109,6 +109,9 @@ namespace ArucoUnity
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           serializer.Serialize(writer, this);
         }
+        catch
+        {
+        }
         finally
         {
           if (writer != null)
