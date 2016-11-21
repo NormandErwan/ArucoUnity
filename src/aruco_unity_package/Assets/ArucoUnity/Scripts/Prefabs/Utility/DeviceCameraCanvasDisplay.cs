@@ -22,17 +22,6 @@ namespace ArucoUnity
 
       private DeviceCameraController deviceCameraController;
 
-      // Image rotation
-      Vector3 rotationVector = new Vector3(0f, 0f, 0f);
-
-      // Image uvRect
-      Rect defaultRect = new Rect(0f, 0f, 1f, 1f);
-      Rect fixedRect = new Rect(0f, 1f, 1f, -1f);
-
-      // Image parent's scale
-      Vector3 defaultScale = new Vector3(1f, 1f, 1f);
-      Vector3 fixedScale = new Vector3(-1f, 1f, 1f);
-
       void Awake()
       {
         deviceCameraController = DeviceCameraController.Instance;
@@ -40,12 +29,16 @@ namespace ArucoUnity
 
       void OnEnable()
       {
+        image.gameObject.SetActive(true);
+
         deviceCameraController.OnActiveCameraChanged += DeviceCameraController_OnActiveCameraChanged;
         deviceCameraController.OnCameraStarted += DeviceCameraController_OnCameraStarted;
       }
 
       void OnDisable()
       {
+        image.gameObject.SetActive(false);
+
         deviceCameraController.OnActiveCameraChanged -= DeviceCameraController_OnActiveCameraChanged;
         deviceCameraController.OnCameraStarted -= DeviceCameraController_OnCameraStarted;
       }
@@ -66,19 +59,10 @@ namespace ArucoUnity
       // Configure the image display when the camera is started
       private void DeviceCameraController_OnCameraStarted()
       {
-        // Rotate image to show correct orientation 
-        rotationVector.z = -deviceCameraController.activeCameraTexture.videoRotationAngle;
-        image.rectTransform.localEulerAngles = rotationVector;
-
-        // Set AspectRatioFitter's ratio
-        float videoRatio = deviceCameraController.activeCameraTexture.width / (float)deviceCameraController.activeCameraTexture.height;
-        imageFitter.aspectRatio = videoRatio;
-
-        // Unflip if vertically flipped
-        image.uvRect = deviceCameraController.activeCameraTexture.videoVerticallyMirrored ? fixedRect : defaultRect;
-
-        // Mirror front-facing camera's image horizontally to look more natural
-        imageParent.localScale = deviceCameraController.activeCameraDevice.isFrontFacing ? fixedScale : defaultScale;
+        image.rectTransform.localRotation = deviceCameraController.ImageRotation;
+        imageFitter.aspectRatio = deviceCameraController.ImageRatio;
+        image.uvRect = deviceCameraController.ImageUvRectFlip;
+        imageParent.localScale = deviceCameraController.ImageScaleFrontFacing;
       }
     }
   }

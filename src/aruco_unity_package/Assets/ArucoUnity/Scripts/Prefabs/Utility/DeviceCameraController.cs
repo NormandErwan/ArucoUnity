@@ -33,6 +33,50 @@ namespace ArucoUnity
       private WebCamDevice frontCameraDevice;
       private WebCamDevice backCameraDevice;
 
+      // The correct image orientation 
+      public Quaternion ImageRotation
+      {
+        get
+        {
+          return Quaternion.Euler(0f, 0f, -activeCameraTexture.videoRotationAngle);
+        }
+        private set { }
+      }
+      
+      // The image ratio
+      public float ImageRatio
+      {
+        get
+        {
+          return activeCameraTexture.width / (float)activeCameraTexture.height;
+        }
+        private set { }
+      }
+
+      // Allow to unflip the image if vertically flipped
+      public Rect ImageUvRectFlip
+      {
+        get
+        {
+          Rect defaultRect = new Rect(0f, 0f, 1f, 1f),
+               verticallyMirroredRect = new Rect(0f, 1f, 1f, -1f);
+          return activeCameraTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect;
+        }
+        private set { }
+      }
+
+      // Mirror front-facing camera's image horizontally to look more natural
+      public Vector3 ImageScaleFrontFacing
+      {
+        get
+        {
+          Vector3 defaultScale = new Vector3(1f, 1f, 1f),
+                  frontFacingScale = new Vector3(-1f, 1f, 1f);
+          return activeCameraDevice.isFrontFacing ? frontFacingScale : defaultScale;
+        }
+        private set { }
+      }
+      
       void Start()
       {
         cameraStarted = false;
