@@ -128,6 +128,9 @@ namespace ArucoUnity
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           cameraParameters = (CameraParameters)serializer.Deserialize(reader);
         }
+        catch
+        {
+        }
         finally
         {
           if (reader != null)
