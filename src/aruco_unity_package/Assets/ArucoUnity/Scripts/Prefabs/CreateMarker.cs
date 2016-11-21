@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using ArucoUnity.Utility;
+using System.IO;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -7,28 +8,21 @@ namespace ArucoUnity
   {
     public class CreateMarker : MonoBehaviour
     {
-      public Dictionary dictionary;
-
-      public Utility.Mat image;
-
-      [HideInInspector]
-      public Texture2D imageTexture;
-
       [Header("Marker configuration")]
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
       [Tooltip("Marker id in the dictionary")]
-      public int markerId;
+      private int markerId;
 
       [SerializeField]
       [Tooltip("Marker size in pixels (default: 200)")]
-      public int markerSize;
+      private int markerSize;
 
       [SerializeField]
       [Tooltip("Number of bits in marker borders (default: 1)")]
-      public int markerBorderBits;
+      private int markerBorderBits;
 
       [Header("Draw the marker")]
       [SerializeField]
@@ -48,9 +42,21 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/marker.png";
 
+      public Dictionary Dictionary { get; set; }
+      public int MarkerId { get; set; }
+      public int MarkerSize { get; set; }
+      public int MarkerBorderBits { get; set; }
+
+      public Mat Image { get; private set; }
+      public Texture2D ImageTexture { get; private set; }
+
       void Start()
       {
-        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        MarkerId = markerId;
+        MarkerSize = markerSize;
+        MarkerBorderBits = markerBorderBits;
+
         Create();
 
         if (drawMarker)
@@ -64,36 +70,28 @@ namespace ArucoUnity
         }
       }
 
-      // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(Dictionary dictionary, int markerId, int markerSize, int markerBorderBits)
-      {
-        this.dictionary = dictionary;
-        this.markerId = markerId;
-        this.markerSize = markerSize;
-        this.markerBorderBits = markerBorderBits;
-      }
-
       public void Create()
       {
-        image = new Utility.Mat();
-        dictionary.DrawMarker(markerId, markerSize, ref image, markerBorderBits);
+        Mat image = new Mat();
+        Dictionary.DrawMarker(MarkerId, MarkerSize, ref image, MarkerBorderBits);
+        Image = image;
 
-        imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
+        ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
       }
 
       public void Draw(GameObject markerPlane)
       {
-        int markerDataSize = (int)(image.ElemSize() * image.Total());
-        imageTexture.LoadRawTextureData(image.data, markerDataSize);
-        imageTexture.Apply();
+        int markerDataSize = (int)(Image.ElemSize() * Image.Total());
+        ImageTexture.LoadRawTextureData(Image.data, markerDataSize);
+        ImageTexture.Apply();
 
-        markerPlane.GetComponent<Renderer>().material.mainTexture = imageTexture;
+        markerPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
       }
 
       public void Save(string outputImage)
       {
         string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, imageTexture.EncodeToPNG());
+        File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
   }
