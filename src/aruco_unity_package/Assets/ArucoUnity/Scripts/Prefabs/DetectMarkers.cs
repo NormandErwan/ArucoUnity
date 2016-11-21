@@ -60,6 +60,7 @@ namespace ArucoUnity
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
       public Utility.Mat CameraMatrix { get; set; }
       public Utility.Mat DistCoeffs { get; set; }
+      public Vector3 PositionShift { get; private set; }
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
       private Dictionary<int, GameObject> markerObjects;
@@ -116,10 +117,12 @@ namespace ArucoUnity
 
       public bool ConfigurateCameraPlane(string cameraParametersFilePath)
       {
-        // Camera parameters
+        // Retrieve camera parameters
         CameraParameters cameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
         if (cameraParameters == null)
         {
+          Debug.LogError(gameObject.name + ": Unable to load the camera parameters from the '" + cameraParametersFilePath + "' file."
+            + " Can't estimate pose of the detected markers.");
           return false;
         }
 
@@ -128,22 +131,32 @@ namespace ArucoUnity
         CameraMatrix = cameraMatrix;
         DistCoeffs = distCoeffs;
 
-        // Camera configuration
-        float cameraFy = (float)cameraMatrix.AtDouble(1, 1);
-        float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / cameraFy) * Mathf.Rad2Deg;
+        // Calculate the position shift; based on: http://stackoverflow.com/a/36580522
+        float cameraCx = (float)cameraMatrix.AtDouble(0, 2),
+              cameraCy = (float)cameraMatrix.AtDouble(1, 2),
+              cameraFy = (float)cameraMatrix.AtDouble(1, 1);
+        float resolutionX = ImageTexture.width,
+              resolutionY = ImageTexture.height;
+
+        Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
+        Vector3 opticalCenter = new Vector3(0.5f + cameraCx / resolutionX, 0.5f + cameraCy / resolutionY, cameraFy);
+        PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
+        print("cx: " + cameraCx + "; cx: " + cameraCy + "; imageCenter: " + imageCenter + "; opticalCenter: " + opticalCenter 
+          + "; positionShift: " + PositionShift);
+
+        // Configurate the camera according to the camera parameters
+        float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
-        camera.aspect = ImageTexture.width / (float)ImageTexture.height;
+        camera.aspect = deviceCameraController.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
         camera.farClipPlane = cameraFy;
 
-        // Plane configuration
-        float cameraPlaneDistance = 0.5f * ImageTexture.height / Mathf.Tan(0.5f * vFov * Mathf.Deg2Rad);
-        print(cameraPlaneDistance + " " + cameraFy);
-
+        // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, cameraFy);
-        cameraPlane.transform.rotation = Quaternion.identity;
-        cameraPlane.transform.localScale = new Vector3(ImageTexture.width, ImageTexture.height, 1);
+        cameraPlane.transform.rotation = deviceCameraController.ImageRotation;
+        cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, deviceCameraController.ImageScaleFrontFacing);
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
 
         return true;
@@ -220,6 +233,7 @@ namespace ArucoUnity
 
         for (uint i = 0; i < ids.Size(); i++)
         {
+          // Retrieve the associated object for this marker or create it
           GameObject markerObject;
           if (!markerObjects.TryGetValue(ids.At(i), out markerObject))
           {
@@ -229,11 +243,11 @@ namespace ArucoUnity
             markerObjects.Add(ids.At(i), markerObject);
           }
 
-          // TODO: shift the position withe the optical center values from the camera parameters
-          markerObject.transform.position = tvecs.At(i).ToPosition();
+          // Place and orient the object to match the marker
+          markerObject.transform.position = tvecs.At(i).ToPosition() + PositionShift;
           markerObject.transform.rotation = rvecs.At(i).ToRotation();
+          markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength); 
           markerObject.SetActive(true);
-          print(i + ": " + rvecs.At(i).ToRotation().eulerAngles + " " + tvecs.At(i).ToPosition());
         }
       }
     }
