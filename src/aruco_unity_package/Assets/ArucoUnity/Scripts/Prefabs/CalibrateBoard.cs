@@ -48,7 +48,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private DeviceCameraController deviceCameraController;
+      private DeviceCameraCanvasDisplay deviceCameraCanvasDisplay;
 
       [Header("UI")]
       [SerializeField]
@@ -63,15 +63,16 @@ namespace ArucoUnity
       [SerializeField]
       private Text calibrationReprojectionError;
 
+      // Configuration properties
       public GridBoard Board { get; set; }
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
-
       public bool ApplyRefindStrategy { get { return applyRefindStrategy; } set { applyRefindStrategy = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
       public CALIB CalibrationFlags { get; set; }
       public string OutputFilePath { get { return outputFilePath; } set { outputFilePath = value; } }
 
+      // Calibration properties
       public Utility.VectorVectorVectorPoint2f AllCorners { get; private set; }
       public Utility.VectorVectorInt AllIds { get; private set; }
       public Utility.Size ImageSize { get; private set; }
@@ -81,15 +82,18 @@ namespace ArucoUnity
       private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
+      private DeviceCameraController deviceCameraController;
 
       void OnEnable()
       {
-        //DeviceCameraController.OnCameraStarted += Configurate; // TODO: fix
+        deviceCameraController = DeviceCameraController.Instance;
+
+        deviceCameraController.OnCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        //DeviceCameraController.OnCameraStarted -= Configurate; // TODO: fix
+        deviceCameraController.OnCameraStarted -= Configurate;
       }
 
       void LateUpdate()
@@ -101,7 +105,6 @@ namespace ArucoUnity
           Utility.VectorVectorPoint2f corners, rejectedImgPoints;
 
           // Detect and draw markers
-          ImageTexture.SetPixels32(deviceCameraController.ActiveCameraTexture.GetPixels32());
           Detect(out corners, out ids, out rejectedImgPoints, out image);
 
           // Add frame to calibration frame list
@@ -119,9 +122,9 @@ namespace ArucoUnity
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
+        ImageTexture = deviceCameraController.ActiveCameraTexture2D;
 
         ConfigurateCalibrationFlags();
-        ConfigurateImageTexture(deviceCameraController);
         ResetCalibration();
       }
 
@@ -142,13 +145,6 @@ namespace ArucoUnity
         }
       }
 
-      public void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
-      {
-        ImageTexture = new Texture2D(deviceCameraController.ActiveCameraTexture.width, deviceCameraController.ActiveCameraTexture.height,
-          TextureFormat.RGB24, false);
-        //deviceCameraController.SetActiveTexture(ImageTexture);  // TODO: fix
-      }
-
       public void ResetCalibration()
       {
         calibrate = false;
@@ -163,6 +159,7 @@ namespace ArucoUnity
         calibrateButton.enabled = false;
 
         ResetCalibration();
+
         UpdateImagesForCalibrationText();
         calibrationReprojectionError.text = "Calibration reprojection error: 0";
       }
@@ -264,6 +261,8 @@ namespace ArucoUnity
           ReprojectionError = CalibrationReprojectionError
         };
         cameraParameters.SaveToXmlFile(calibrationFilePath);
+
+        Debug.Log(gameObject.name + ": Camera parameters successfully saved to '" + calibrationFilePath + "'.");
       }
 
       public void CalibrateFromEditor()
