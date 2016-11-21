@@ -52,14 +52,16 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/board.png";
 
-      public Dictionary Dictionary { get; set; }
+      // Configuration properties
       public int MarkersNumberX { get; set; }
       public int MarkersNumberY { get; set; }
       public int MarkerSideLength { get; set; }
       public int MarkerSeparation { get; set; }
+      public Dictionary Dictionary { get; set; }
       public int MarginsSize { get; set; }
       public int MarkerBorderBits { get; set; }
 
+      // Board properties
       public GridBoard Board { get; private set; }
       public Mat Image { get; private set; }
       public Size Size { get; private set; }

@@ -42,11 +42,13 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/marker.png";
 
+      // Configuration properties
       public Dictionary Dictionary { get; set; }
       public int MarkerId { get; set; }
       public int MarkerSize { get; set; }
       public int MarkerBorderBits { get; set; }
 
+      // Marker properties
       public Mat Image { get; private set; }
       public Texture2D ImageTexture { get; private set; }
 
