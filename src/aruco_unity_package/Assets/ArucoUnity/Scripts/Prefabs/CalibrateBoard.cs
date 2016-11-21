@@ -48,7 +48,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private DeviceCameraCanvasDisplay deviceCameraCanvasDisplay;
+      private CameraCanvasDisplay cameraCanvasDisplay;
 
       [Header("UI")]
       [SerializeField]
@@ -82,23 +82,23 @@ namespace ArucoUnity
       private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
-      private DeviceCameraController deviceCameraController;
+      private CameraController cameraController;
 
       void OnEnable()
       {
-        deviceCameraController = DeviceCameraController.Instance;
+        cameraController = CameraController.Instance;
 
-        deviceCameraController.OnCameraStarted += Configurate;
+        cameraController.OnCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        deviceCameraController.OnCameraStarted -= Configurate;
+        cameraController.OnCameraStarted -= Configurate;
       }
 
       void LateUpdate()
       {
-        if (deviceCameraController.CameraStarted)
+        if (cameraController.CameraStarted)
         {
           Utility.Mat image;
           Utility.VectorInt ids;
@@ -122,7 +122,7 @@ namespace ArucoUnity
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
-        ImageTexture = deviceCameraController.ActiveCameraTexture2D;
+        ImageTexture = cameraController.ActiveCameraTexture2D;
 
         ConfigurateCalibrationFlags();
         ResetCalibration();

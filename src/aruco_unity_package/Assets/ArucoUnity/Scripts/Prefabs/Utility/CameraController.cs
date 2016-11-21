@@ -9,7 +9,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class DeviceCameraController : Singleton<DeviceCameraController>
+    public class CameraController : Singleton<CameraController>
     {
       // Properties
       public bool CameraStarted { get; private set; }

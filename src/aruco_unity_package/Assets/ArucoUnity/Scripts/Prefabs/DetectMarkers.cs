@@ -26,7 +26,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private DeviceCameraCanvasDisplay deviceCameraCanvasDisplay;
+      private CameraCanvasDisplay cameraCanvasDisplay;
 
       [SerializeField]
       private new Camera camera;
@@ -65,24 +65,24 @@ namespace ArucoUnity
 
       private Dictionary<int, GameObject> markerObjects;
       private bool configurated;
-      private DeviceCameraController deviceCameraController;
+      private CameraController cameraController;
 
       void OnEnable()
       {
-        deviceCameraController = DeviceCameraController.Instance;
+        cameraController = CameraController.Instance;
 
         configurated = false;
-        deviceCameraController.OnCameraStarted += Configurate;
+        cameraController.OnCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        deviceCameraController.OnCameraStarted -= Configurate;
+        cameraController.OnCameraStarted -= Configurate;
       }
 
       void LateUpdate()
       {
-        if (deviceCameraController.CameraStarted && configurated)
+        if (cameraController.CameraStarted && configurated)
         {
           Utility.Mat image;
           Utility.VectorVectorPoint2f corners;
@@ -98,7 +98,7 @@ namespace ArucoUnity
       {
         DetectorParameters = detectorParametersManager.detectorParameters;
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        ImageTexture = deviceCameraController.ActiveCameraTexture2D;
+        ImageTexture = cameraController.ActiveCameraTexture2D;
 
         // Configurate the camera-plane group or the canvas
         bool configurateCameraPlaneSuccess = false;
@@ -109,7 +109,7 @@ namespace ArucoUnity
 
         // Activate the camera-plane group or the canvas
         bool useCanvas = !estimatePose || !configurateCameraPlaneSuccess;
-        deviceCameraCanvasDisplay.gameObject.SetActive(useCanvas);
+        cameraCanvasDisplay.gameObject.SetActive(useCanvas);
         cameraPlane.gameObject.SetActive(!useCanvas);
 
         configurated = true;
@@ -147,16 +147,16 @@ namespace ArucoUnity
         // Configurate the camera according to the camera parameters
         float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
-        camera.aspect = deviceCameraController.ImageRatio;
+        camera.aspect = cameraController.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
         camera.farClipPlane = cameraFy;
 
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, cameraFy);
-        cameraPlane.transform.rotation = deviceCameraController.ImageRotation;
+        cameraPlane.transform.rotation = cameraController.ImageRotation;
         cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
-        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, deviceCameraController.ImageScaleFrontFacing);
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, cameraController.ImageScaleFrontFacing);
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
 
         return true;

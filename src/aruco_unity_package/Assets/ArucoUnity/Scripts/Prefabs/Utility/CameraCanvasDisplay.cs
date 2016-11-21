@@ -9,7 +9,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class DeviceCameraCanvasDisplay : MonoBehaviour
+    public class CameraCanvasDisplay : MonoBehaviour
     {
       [SerializeField]
       private RawImage image;
@@ -20,11 +20,11 @@ namespace ArucoUnity
       [SerializeField]
       private AspectRatioFitter imageFitter;
 
-      private DeviceCameraController deviceCameraController;
+      private CameraController deviceCameraController;
 
       void Awake()
       {
-        deviceCameraController = DeviceCameraController.Instance;
+        deviceCameraController = CameraController.Instance;
       }
 
       void OnEnable()
