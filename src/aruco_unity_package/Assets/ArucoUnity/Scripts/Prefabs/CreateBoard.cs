@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using ArucoUnity.Utility;
+using System.IO;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -7,15 +8,6 @@ namespace ArucoUnity
   {
     public class CreateBoard : MonoBehaviour
     {
-      public Dictionary dictionary;
-
-      public GridBoard board;
-      public Utility.Mat image;
-      public Utility.Size size;
-
-      [HideInInspector]
-      public Texture2D imageTexture;
-
       [Header("Board configuration")]
       [SerializeField]
       [Tooltip("Number of markers in X direction")]
@@ -60,9 +52,29 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/board.png";
 
+      public Dictionary Dictionary { get; set; }
+      public int MarkersNumberX { get; set; }
+      public int MarkersNumberY { get; set; }
+      public int MarkerSideLength { get; set; }
+      public int MarkerSeparation { get; set; }
+      public int MarginsSize { get; set; }
+      public int MarkerBorderBits { get; set; }
+
+      public GridBoard Board { get; private set; }
+      public Mat Image { get; private set; }
+      public Size Size { get; private set; }
+      public Texture2D ImageTexture { get; private set; }
+
       void Start()
       {
-        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        MarkersNumberX = markersNumberX;
+        MarkersNumberY = markersNumberY;
+        MarkerSideLength = markerSideLength;
+        MarkerSeparation = markerSeparation;
+        MarginsSize = marginsSize;
+        MarkerBorderBits = markerBorderBits;
+
         Create();
 
         if (drawBoard)
@@ -76,44 +88,34 @@ namespace ArucoUnity
         }
       }
 
-      // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(Dictionary dictionary, int markersNumberX, int markersNumberY, int markerSideLength, int markerSeparation, 
-        int marginsSize, int markerBorderBits)
-      {
-        this.dictionary = dictionary;
-        this.markersNumberX = markersNumberX;
-        this.markersNumberY = markersNumberY;
-        this.markerSideLength = markerSideLength;
-        this.markerSeparation = markerSeparation;
-        this.marginsSize = marginsSize;
-        this.markerBorderBits = markerBorderBits;
-      }
-
       public void Create()
       {
-        size = new Utility.Size();
-        size.width = markersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
-        size.height = markersNumberY * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        Size = new Size();
+        Size.width = markersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        Size.height = markersNumberY * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
 
-        board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, dictionary);
+        Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
 
-        board.Draw(size, out image, marginsSize, markerBorderBits);
-        imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
+        Mat image;
+        Board.Draw(Size, out image, marginsSize, markerBorderBits);
+        Image = image;
+
+        ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
       }
 
       public void Draw(GameObject boardPlane)
       {
-        int boardDataSize = (int)(image.ElemSize() * image.Total());
-        imageTexture.LoadRawTextureData(image.data, boardDataSize);
-        imageTexture.Apply();
+        int boardDataSize = (int)(Image.ElemSize() * Image.Total());
+        ImageTexture.LoadRawTextureData(Image.data, boardDataSize);
+        ImageTexture.Apply();
 
-        boardPlane.GetComponent<Renderer>().material.mainTexture = imageTexture;
+        boardPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
       }
 
       public void Save(string outputImage)
       {
         string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, imageTexture.EncodeToPNG());
+        File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
   }
