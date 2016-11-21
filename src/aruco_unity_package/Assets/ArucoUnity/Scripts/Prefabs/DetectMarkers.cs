@@ -82,7 +82,7 @@ namespace ArucoUnity
 
       void LateUpdate()
       {
-        if (deviceCameraController.cameraStarted && configurated)
+        if (deviceCameraController.CameraStarted && configurated)
         {
           Utility.Mat image;
           Utility.VectorVectorPoint2f corners;
@@ -98,7 +98,7 @@ namespace ArucoUnity
       {
         DetectorParameters = detectorParametersManager.detectorParameters;
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        ImageTexture = deviceCameraController.activeCameraTexture2D;
+        ImageTexture = deviceCameraController.ActiveCameraTexture2D;
 
         // Configurate the camera-plane group or the canvas
         bool configurateCameraPlaneSuccess = false;

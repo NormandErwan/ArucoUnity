@@ -84,24 +84,24 @@ namespace ArucoUnity
 
       void OnEnable()
       {
-        DeviceCameraController.OnCameraStarted += Configurate;
+        //DeviceCameraController.OnCameraStarted += Configurate; // TODO: fix
       }
 
       void OnDisable()
       {
-        DeviceCameraController.OnCameraStarted -= Configurate;
+        //DeviceCameraController.OnCameraStarted -= Configurate; // TODO: fix
       }
 
       void LateUpdate()
       {
-        if (deviceCameraController.cameraStarted)
+        if (deviceCameraController.CameraStarted)
         {
           Utility.Mat image;
           Utility.VectorInt ids;
           Utility.VectorVectorPoint2f corners, rejectedImgPoints;
 
           // Detect and draw markers
-          ImageTexture.SetPixels32(deviceCameraController.activeCameraTexture.GetPixels32());
+          ImageTexture.SetPixels32(deviceCameraController.ActiveCameraTexture.GetPixels32());
           Detect(out corners, out ids, out rejectedImgPoints, out image);
 
           // Add frame to calibration frame list
@@ -144,9 +144,9 @@ namespace ArucoUnity
 
       public void ConfigurateImageTexture(DeviceCameraController deviceCameraController)
       {
-        ImageTexture = new Texture2D(deviceCameraController.activeCameraTexture.width, deviceCameraController.activeCameraTexture.height,
+        ImageTexture = new Texture2D(deviceCameraController.ActiveCameraTexture.width, deviceCameraController.ActiveCameraTexture.height,
           TextureFormat.RGB24, false);
-        deviceCameraController.SetActiveTexture(ImageTexture);
+        //deviceCameraController.SetActiveTexture(ImageTexture);  // TODO: fix
       }
 
       public void ResetCalibration()

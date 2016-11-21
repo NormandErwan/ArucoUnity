@@ -46,7 +46,7 @@ namespace ArucoUnity
       // Set the image texture of the active camera
       private void DeviceCameraController_OnActiveCameraChanged()
       {
-        SetActiveTexture(deviceCameraController.activeCameraTexture2D);
+        SetActiveTexture(deviceCameraController.ActiveCameraTexture2D);
       }
 
       // If the texture is modified outside the class, use this new texture to display

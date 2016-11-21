@@ -4,7 +4,6 @@
 
 using UnityEngine;
 using System.Linq;
-using System;
 
 namespace ArucoUnity
 {
@@ -12,24 +11,18 @@ namespace ArucoUnity
   {
     public class DeviceCameraController : Singleton<DeviceCameraController>
     {
-      // Active camera info
-      [NonSerialized]
-      public bool cameraStarted;
-
-      [NonSerialized]
-      public WebCamTexture activeCameraTexture;
-
-      [NonSerialized]
-      public Texture2D activeCameraTexture2D;
+      // Properties
+      public bool CameraStarted { get; private set; }
+      public WebCamDevice ActiveCameraDevice { get; private set; }
+      public WebCamTexture ActiveCameraTexture { get; private set; }
+      public Texture2D ActiveCameraTexture2D { get; private set; }
 
       // Events
       public delegate void CameraAction();
       public event CameraAction OnCameraStarted;
       public event CameraAction OnActiveCameraChanged;
-      public event CameraAction OnActiveTextureChanged;
 
       // Device cameras
-      public WebCamDevice activeCameraDevice;
       private WebCamDevice frontCameraDevice;
       private WebCamDevice backCameraDevice;
 
@@ -38,7 +31,7 @@ namespace ArucoUnity
       {
         get
         {
-          return Quaternion.Euler(0f, 0f, -activeCameraTexture.videoRotationAngle);
+          return Quaternion.Euler(0f, 0f, -ActiveCameraTexture.videoRotationAngle);
         }
         private set { }
       }
@@ -48,7 +41,7 @@ namespace ArucoUnity
       {
         get
         {
-          return activeCameraTexture.width / (float)activeCameraTexture.height;
+          return ActiveCameraTexture.width / (float)ActiveCameraTexture.height;
         }
         private set { }
       }
@@ -60,7 +53,7 @@ namespace ArucoUnity
         {
           Rect defaultRect = new Rect(0f, 0f, 1f, 1f),
                verticallyMirroredRect = new Rect(0f, 1f, 1f, -1f);
-          return activeCameraTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect;
+          return ActiveCameraTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect;
         }
         private set { }
       }
@@ -72,14 +65,14 @@ namespace ArucoUnity
         {
           Vector3 defaultScale = new Vector3(1f, 1f, 1f),
                   frontFacingScale = new Vector3(-1f, 1f, 1f);
-          return activeCameraDevice.isFrontFacing ? frontFacingScale : defaultScale;
+          return ActiveCameraDevice.isFrontFacing ? frontFacingScale : defaultScale;
         }
         private set { }
       }
       
       void Start()
       {
-        cameraStarted = false;
+        CameraStarted = false;
 
         // Check for device cameras
         if (WebCamTexture.devices.Length == 0)
@@ -99,19 +92,19 @@ namespace ArucoUnity
       public void SetActiveCamera(WebCamDevice cameraToUse)
       {
         // Switch the activeCameraTexture
-        if (activeCameraTexture != null)
+        if (ActiveCameraTexture != null)
         {
-          activeCameraTexture.Stop();
+          ActiveCameraTexture.Stop();
         }
 
-        activeCameraDevice = cameraToUse;
-        activeCameraTexture = new WebCamTexture(cameraToUse.name);
-        activeCameraTexture.filterMode = FilterMode.Trilinear;
+        ActiveCameraDevice = cameraToUse;
+        ActiveCameraTexture = new WebCamTexture(cameraToUse.name);
+        ActiveCameraTexture.filterMode = FilterMode.Trilinear;
 
-        activeCameraTexture.Play();
+        ActiveCameraTexture.Play();
 
         // Reset the Texture2D
-        activeCameraTexture2D = new Texture2D(activeCameraTexture.width, activeCameraTexture.height,
+        ActiveCameraTexture2D = new Texture2D(ActiveCameraTexture.width, ActiveCameraTexture.height,
           TextureFormat.RGB24, false);
 
         // Call the event
@@ -124,7 +117,7 @@ namespace ArucoUnity
       // Switch between the device's front and back camera
       public void SwitchCamera()
       {
-        SetActiveCamera(activeCameraDevice.Equals(frontCameraDevice) ? backCameraDevice : frontCameraDevice);
+        SetActiveCamera(ActiveCameraDevice.Equals(frontCameraDevice) ? backCameraDevice : frontCameraDevice);
       }
 
       // Make adjustments to image every frame to be safe, since Unity isn't 
@@ -132,22 +125,22 @@ namespace ArucoUnity
       void Update()
       {
         // Skip making adjustment for incorrect camera data
-        if (activeCameraTexture.width < 100)
+        if (ActiveCameraTexture.width < 100)
         {
           Debug.Log("Still waiting another frame for correct info...");
           return;
         }
         else
         {
-          if (OnCameraStarted != null && !cameraStarted)
+          if (OnCameraStarted != null && !CameraStarted)
           {
             OnCameraStarted();
           }
-          cameraStarted = true;
+          CameraStarted = true;
         }
 
         // Update the Texture2D content
-        activeCameraTexture2D.SetPixels32(activeCameraTexture.GetPixels32());
+        ActiveCameraTexture2D.SetPixels32(ActiveCameraTexture.GetPixels32());
       }
     }
   }
