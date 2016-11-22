@@ -126,37 +126,50 @@ namespace ArucoUnity
           return false;
         }
 
-        Utility.Mat cameraMatrix, distCoeffs;
-        cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
-        CameraMatrix = cameraMatrix;
-        DistCoeffs = distCoeffs;
+        float resolutionX = ImageTexture.width,
+              resolutionY = ImageTexture.height,
+              cameraCx = 0.5f, cameraCy = 0.5f,
+              cameraFy = camera.farClipPlane;
+        if (cameraParameters != null)
+        {
+          Utility.Mat cameraMatrix, distCoeffs;
+          cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
+          CameraMatrix = cameraMatrix;
+          DistCoeffs = distCoeffs;
+
+          cameraCx = (float)CameraMatrix.AtDouble(0, 2);
+          cameraCy = (float)CameraMatrix.AtDouble(1, 2);
+          cameraFy = (float)CameraMatrix.AtDouble(1, 1);
+        }
+        
 
         // Calculate the position shift; based on: http://stackoverflow.com/a/36580522
-        float cameraCx = (float)cameraMatrix.AtDouble(0, 2),
-              cameraCy = (float)cameraMatrix.AtDouble(1, 2),
-              cameraFy = (float)cameraMatrix.AtDouble(1, 1);
-        float resolutionX = ImageTexture.width,
-              resolutionY = ImageTexture.height;
-
-        Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
-        Vector3 opticalCenter = new Vector3(0.5f + cameraCx / resolutionX, 0.5f + cameraCy / resolutionY, cameraFy);
-        PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
-        print("cx: " + cameraCx + "; cx: " + cameraCy + "; imageCenter: " + imageCenter + "; opticalCenter: " + opticalCenter 
-          + "; positionShift: " + PositionShift);
+        if (cameraParameters != null)
+        {
+          Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
+          Vector3 opticalCenter = new Vector3(0.5f + cameraCx / resolutionX, 0.5f + cameraCy / resolutionY, cameraFy);
+          PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
+          print("cx: " + cameraCx + "; cy: " + cameraCy + "; imageCenter: " + imageCenter + "; opticalCenter: " + opticalCenter
+            + "; positionShift: " + PositionShift);
+        }
 
         // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
-        camera.fieldOfView = vFov;
+        if (cameraParameters != null)
+        {
+          float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
+          camera.fieldOfView = vFov;
+          camera.farClipPlane = cameraFy;
+        }
         camera.aspect = cameraController.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
-        camera.farClipPlane = cameraFy;
 
         // Configurate the plane facing the camera that display the texture
-        cameraPlane.transform.position = new Vector3(0, 0, cameraFy);
+        cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
         cameraPlane.transform.rotation = cameraController.ImageRotation;
         cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, cameraController.ImageScaleFrontFacing);
+        cameraPlane.GetComponent<MeshFilter>().mesh = cameraController.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
 
         return true;
@@ -244,9 +257,10 @@ namespace ArucoUnity
           }
 
           // Place and orient the object to match the marker
-          markerObject.transform.position = tvecs.At(i).ToPosition() + PositionShift;
-          markerObject.transform.rotation = rvecs.At(i).ToRotation();
           markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength); 
+          markerObject.transform.position = tvecs.At(i).ToPosition();
+          //markerObject.transform.position += PositionShift; // TODO: fix
+          markerObject.transform.rotation = rvecs.At(i).ToRotation();
           markerObject.SetActive(true);
         }
       }

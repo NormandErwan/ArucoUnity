@@ -46,7 +46,46 @@ namespace ArucoUnity
         private set { }
       }
 
-      // Allow to unflip the image if vertically flipped
+      // Allow to unflip the image if vertically flipped (use for image plane)
+      public Mesh ImageMesh
+      {
+        get
+        {
+          Mesh mesh = new Mesh();
+
+          mesh.vertices = new Vector3[]
+          {
+            new Vector3(-0.5f, -0.5f, 0.0f),
+            new Vector3(0.5f, 0.5f, 0.0f),
+            new Vector3(0.5f, -0.5f, 0.0f),
+            new Vector3(-0.5f, 0.5f, 0.0f),
+          };
+          mesh.triangles = new int[] { 0, 1, 2, 1, 0, 3 };
+          
+          Vector2[] defaultUv = new Vector2[]
+          {
+            new Vector2(0.0f, 0.0f),
+            new Vector2(1.0f, 1.0f),
+            new Vector2(1.0f, 0.0f),
+            new Vector2(0.0f, 1.0f)
+          };
+          Vector2[] verticallyMirroredUv = new Vector2[]
+          {
+            new Vector2(0.0f, 1.0f),
+            new Vector2(1.0f, 0.0f),
+            new Vector2(1.0f, 1.0f),
+            new Vector2(0.0f, 0.0f)
+          };
+          mesh.uv = ActiveCameraTexture.videoVerticallyMirrored ? verticallyMirroredUv : defaultUv;
+
+          mesh.RecalculateNormals();
+
+          return mesh;
+        }
+        private set { }
+      }
+
+      // Allow to unflip the image if vertically flipped (use for canvas)
       public Rect ImageUvRectFlip
       {
         get
