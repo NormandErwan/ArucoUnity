@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CalibrateBoard : MonoBehaviour
+    public class CalibrateCameraBoard : MonoBehaviour
     {
       [Header("Board configuration")]
       [SerializeField]
