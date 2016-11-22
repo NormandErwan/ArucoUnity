@@ -50,23 +50,27 @@ namespace ArucoUnity
 
       public Vector3 ToPosition()
       {
+        // Convert from OpenCV's right-handed coordinates system to Unity's left-handed coordinates system
         Vector3 position = new Vector3();
         position.x = -(float)Get(0);
-        position.y = -(float)Get(1);
+        position.y =  (float)Get(1);
         position.z =  (float)Get(2);
         return position;
       }
 
       public Quaternion ToRotation()
       {
-        Mat rotationMatrix;
-        Calib3d.Rodrigues(this, out rotationMatrix);
+        // Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
+        Vector3 angleAxis = new Vector3((float)Get(0), -(float)Get(1), -(float)Get(2));
+        Vector3 angleAxisNormalized = angleAxis.normalized;
+        float angle = angleAxis.magnitude;
+        float s = Mathf.Sin(angle / 2);
 
-        Quaternion rotation = new Quaternion();
-        rotation.x = -(float)rotationMatrix.AtDouble(0, 0);
-        rotation.y = -(float)rotationMatrix.AtDouble(1, 0);
-        rotation.z =  (float)rotationMatrix.AtDouble(2, 0);
-        rotation.w =  (float)rotationMatrix.AtDouble(3, 0);
+        Quaternion rotation;
+        rotation.x = angleAxisNormalized.x * s;
+        rotation.y = angleAxisNormalized.y * s;
+        rotation.z = angleAxisNormalized.z * s;
+        rotation.w = Mathf.Cos(angle / 2);
 
         return rotation;
       }
