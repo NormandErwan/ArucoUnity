@@ -11,13 +11,13 @@ namespace ArucoUnity
       static extern System.IntPtr au_Mat_new1();
 
       [DllImport("ArucoUnity")]
-      static extern void au_Mat_create(System.IntPtr mat, int rows, int cols, int type);
-
-      [DllImport("ArucoUnity")]
       static extern System.IntPtr au_Mat_new2_uchar(int rows, int cols, int type, byte[] data);
 
       [DllImport("ArucoUnity")]
       static extern System.IntPtr au_Mat_new2_double(int rows, int cols, int type, double[] data);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_Mat_create(System.IntPtr mat, int rows, int cols, int type);
 
       [DllImport("ArucoUnity")]
       static extern void au_Mat_delete(System.IntPtr mat);
@@ -77,6 +77,13 @@ namespace ArucoUnity
       {
       }
 
+      public void Create(int rows, int cols, TYPE type)
+      {
+        Exception exception = new Exception();
+        au_Mat_create(cvPtr, rows, cols, (int)type, exception.cvPtr);
+        exception.Check();
+      }
+
       protected override void DeleteCvPtr()
       {
         au_Mat_delete(cvPtr);
@@ -109,13 +116,6 @@ namespace ArucoUnity
       {
         Exception exception = new Exception();
         au_Mat_at_double_set(cvPtr, i0, i1, value, exception.cvPtr);
-        exception.Check();
-      }
-
-      public void Create(int rows, int cols, TYPE type)
-      {
-        Exception exception = new Exception();
-        au_Mat_create(cvPtr, rows, cols, (int)type, exception.cvPtr);
         exception.Check();
       }
 
