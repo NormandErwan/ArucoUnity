@@ -84,7 +84,7 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraCharuco1(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  double au_calibrateCameraCharuco1(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
     double error = 0;
@@ -101,7 +101,7 @@ extern "C" {
     return error;
   }
 
-  double au_calibrateCameraCharuco2(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  double au_calibrateCameraCharuco2(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, int flags, cv::Exception* exception) {
     double error = 0;
@@ -118,7 +118,7 @@ extern "C" {
     return error;
   }
   
-  double au_calibrateCameraCharuco3(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  double au_calibrateCameraCharuco3(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, cv::Exception* exception) {
     double error = 0;
@@ -134,7 +134,7 @@ extern "C" {
     return error;
   }
   
-  double au_calibrateCameraCharuco4(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  double au_calibrateCameraCharuco4(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     cv::Exception* exception) {
     double error = 0;
@@ -149,7 +149,7 @@ extern "C" {
     return error;
   }
   
-  double au_calibrateCameraCharuco5(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  double au_calibrateCameraCharuco5(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
     double error = 0;
     try {
@@ -291,7 +291,7 @@ extern "C" {
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
-  void au_drawDetectedCornersCharuco1(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds,
+  void au_drawDetectedCornersCharuco1(cv::Mat* image, cv::Mat* charucoCorners, cv::Mat* charucoIds,
     cv::Scalar* cornerColor, cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedCornersCharuco(*image, *charucoCorners, *charucoIds, *cornerColor);
@@ -302,7 +302,7 @@ extern "C" {
     }
   }
 
-  void au_drawDetectedCornersCharuco2(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
+  void au_drawDetectedCornersCharuco2(cv::Mat* image, cv::Mat* charucoCorners, cv::Mat* charucoIds, 
     cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedCornersCharuco(*image, *charucoCorners, *charucoIds);
@@ -313,7 +313,7 @@ extern "C" {
     }
   }
 
-  void au_drawDetectedCornersCharuco3(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, cv::Exception* exception) {
+  void au_drawDetectedCornersCharuco3(cv::Mat* image, cv::Mat* charucoCorners, cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedCornersCharuco(*image, *charucoCorners);
     }
@@ -444,12 +444,12 @@ extern "C" {
   }
 
   int au_interpolateCornersCharuco1(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, cv::Mat* image, 
-    cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds, cv::Mat* cameraMatrix, 
+    cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, cv::Mat* cameraMatrix, 
     cv::Mat* distCoeffs, cv::Exception* exception) {
     int interpolatedCorners = 0;
     try {
-      *charucoCorners = new std::vector<cv::Point2f>();
-      *charucoIds = new std::vector<int>();
+      *charucoCorners = new cv::Mat();
+      *charucoIds = new cv::Mat();
 
       interpolatedCorners = cv::aruco::interpolateCornersCharuco(*markerCorners, *markerIds, *image, *board, **charucoCorners, **charucoIds, *cameraMatrix, 
         *distCoeffs);
@@ -462,12 +462,12 @@ extern "C" {
   }
 
   int au_interpolateCornersCharuco2(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, cv::Mat* image, 
-    cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds, cv::Mat* cameraMatrix, 
+    cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, cv::Mat* cameraMatrix, 
     cv::Exception* exception) {
     int interpolatedCorners = 0;
     try {
-      *charucoCorners = new std::vector<cv::Point2f>();
-      *charucoIds = new std::vector<int>();
+      *charucoCorners = new cv::Mat();
+      *charucoIds = new cv::Mat();
 
       interpolatedCorners = cv::aruco::interpolateCornersCharuco(*markerCorners, *markerIds, *image, *board, **charucoCorners, **charucoIds, *cameraMatrix);
     }
@@ -479,11 +479,11 @@ extern "C" {
   }
 
   int au_interpolateCornersCharuco3(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, cv::Mat* image, 
-    cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds, cv::Exception* exception) {
+    cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, cv::Exception* exception) {
     int interpolatedCorners = 0;
     try {
-      *charucoCorners = new std::vector<cv::Point2f>();
-      *charucoIds = new std::vector<int>();
+      *charucoCorners = new cv::Mat();
+      *charucoIds = new cv::Mat();
 
       interpolatedCorners = cv::aruco::interpolateCornersCharuco(*markerCorners, *markerIds, *image, *board, **charucoCorners, **charucoIds);
     }
