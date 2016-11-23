@@ -105,9 +105,9 @@ namespace ArucoUnity
       {
         cameraController = CameraController.Instance;
 
-        resetButton.onClick.AddListener(ResetCalibrationFromEditor);
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);
+        resetButton.onClick.AddListener(ResetCalibrationFromEditor);
       }
 
       void OnEnable()
@@ -189,6 +189,7 @@ namespace ArucoUnity
           }
         }
 
+        // Copy back the image
         int imageDataSize = (int)(image.ElemSize() * image.Total());
         ImageTexture.LoadRawTextureData(image.data, imageDataSize);
         ImageTexture.Apply(false);
@@ -293,18 +294,6 @@ namespace ArucoUnity
       }
 
       // Editor button onclick listeners
-      private void ResetCalibrationFromEditor()
-      {
-        addFrameButton.interactable = true;
-        calibrateButton.interactable = false;
-
-        ArucoCalibrationReprojectionError = CharucoCalibrationReprojectionError = 0f;
-
-        ResetCalibration();
-        UpdateImagesForCalibrationText();
-        UpdateCalibrationReprojectionErrorTexts();
-      }
-
       private void AddNextFrameForCalibration()
       {
         addNextFrame = true;
@@ -318,6 +307,18 @@ namespace ArucoUnity
         {
           UpdateCalibrationReprojectionErrorTexts();
         }
+      }
+
+      private void ResetCalibrationFromEditor()
+      {
+        addFrameButton.interactable = true;
+        calibrateButton.interactable = false;
+
+        ArucoCalibrationReprojectionError = CharucoCalibrationReprojectionError = 0f;
+
+        ResetCalibration();
+        UpdateImagesForCalibrationText();
+        UpdateCalibrationReprojectionErrorTexts();
       }
 
       // Utilities
