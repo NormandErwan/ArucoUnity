@@ -5,7 +5,8 @@
 **/Temp/
 **/Library/
 **/Builds/
-**/Assets/Plugins/ # Don't commit our plugin
+**/Assets/Plugins/
+**/Assets/Plugins.meta
 **/*.sln
 **/*.csproj
 
