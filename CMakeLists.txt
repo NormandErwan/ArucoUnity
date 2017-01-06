@@ -25,13 +25,18 @@ set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/bin) # Destination of the d
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the corresponding import libraries of the dlls for dll platform
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib) # Destination of the librairies for non-dll platform
 
-# Subprojects
+# Build OpenCV's Aruco module
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/opencv_contrib)
+
+# Build the ArucoUnity lib
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/aruco_unity_lib)
 
+# Build docs
 if (BUILD_DOCS)
   add_subdirectory(${CMAKE_SOURCE_DIR}/docs)
 endif()
 
+# Build tests
 if (BUILD_TESTS)
   enable_testing()
   add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/googletest)
