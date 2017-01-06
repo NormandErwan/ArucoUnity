@@ -9,10 +9,9 @@ option(GTEST_DISABLE_PTHREADS "Disable uses of pthreads in gtest." OFF)
 
 # Dependencies
 find_package(Threads REQUIRED)
-
-# Target
 include(ExternalProject)
 
+# Target
 ExternalProject_Add(${PROJECT_NAME}
   GIT_REPOSITORY https://github.com/google/googletest.git
   CMAKE_ARGS
@@ -33,7 +32,7 @@ set(GTEST_LIB_DIR ${install_dir}/lib PARENT_SCOPE)
 
 set(GTEST_LIBRARIES gtest)
 add_library(${GTEST_LIBRARIES} IMPORTED STATIC GLOBAL)
-add_dependencies(${GTEST_LIBRARIES} googletest)
+add_dependencies(${GTEST_LIBRARIES} ${PROJECT_NAME})
 set_target_properties(${GTEST_LIBRARIES} 
     PROPERTIES
     IMPORTED_LOCATION ${install_dir}/lib/${CMAKE_FIND_LIBRARY_PREFIXES}${GTEST_LIBRARIES}${CMAKE_FIND_LIBRARY_SUFFIXES}
@@ -42,7 +41,7 @@ set_target_properties(${GTEST_LIBRARIES}
 
 set(GTEST_MAIN_LIBRARIES gtest_main)
 add_library(${GTEST_MAIN_LIBRARIES} IMPORTED STATIC GLOBAL)
-add_dependencies(${GTEST_MAIN_LIBRARIES} googletest)
+add_dependencies(${GTEST_MAIN_LIBRARIES} ${PROJECT_NAME})
 set_target_properties(${GTEST_MAIN_LIBRARIES} 
     PROPERTIES
     IMPORTED_LOCATION ${install_dir}/lib/${CMAKE_FIND_LIBRARY_PREFIXES}${GTEST_MAIN_LIBRARIES}${CMAKE_FIND_LIBRARY_SUFFIXES}
