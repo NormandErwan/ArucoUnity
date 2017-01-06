@@ -1,17 +1,14 @@
-cmake_minimum_required(VERSION 2.8.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(googletest)
-
 
 # Configuration
 option(GTEST_BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)
 option(GTEST_FORCE_SHARED_CRT "Use shared (DLL) run-time lib even when Google Test is built as static lib." ON)
 option(GTEST_DISABLE_PTHREADS "Disable uses of pthreads in gtest." OFF)
 
-
 # Dependencies
 find_package(Threads REQUIRED)
-
 
 # Target
 include(ExternalProject)
@@ -28,7 +25,6 @@ ExternalProject_Add(${PROJECT_NAME}
   PREFIX ${PROJECT_BINARY_DIR}
   INSTALL_DIR ${PROJECT_BINARY_DIR}
 )
-
 
 # Package
 ExternalProject_Get_Property(${PROJECT_NAME} install_dir)
