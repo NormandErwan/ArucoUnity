@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(ArucoUnity)
+set(ArucoUnity_PROJECT_NAME "${CMAKE_PROJECT_NAME}")
 
 # Version
 set(VERSION_MAJOR 0)

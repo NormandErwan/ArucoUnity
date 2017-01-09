@@ -67,17 +67,17 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/vector_vector_vector_point2f.cpp
 )
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_INCLUDE_DIRS})
-target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
+add_library(${ArucoUnity_PROJECT_NAME} SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+target_include_directories(${ArucoUnity_PROJECT_NAME} PUBLIC ${PROJECT_INCLUDE_DIRS})
+target_link_libraries(${ArucoUnity_PROJECT_NAME} ${OpenCV_LIBS})
 
 # Installation
-install(TARGETS ${CMAKE_PROJECT_NAME}
+install(TARGETS ${ArucoUnity_PROJECT_NAME}
         RUNTIME DESTINATION ${RUNTIME_OUTPUT_DIRECTORY}
         ARCHIVE DESTINATION ${ARCHIVE_OUTPUT_DIRECTORY}
         LIBRARY DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}
 )
-install(TARGETS ${CMAKE_PROJECT_NAME} # Installation of the library in the Unity project folder
+install(TARGETS ${ArucoUnity_PROJECT_NAME} # Installation of the library in the Unity project folder
         RUNTIME DESTINATION ${Unity_PLUGINS_DIR}
         LIBRARY DESTINATION ${Unity_PLUGINS_DIR}
 )
@@ -89,6 +89,6 @@ if (WIN32)
 endif()
 
 # Package
-configure_file("${CMAKE_SOURCE_DIR}/cmake/${CMAKE_PROJECT_NAME}Config.cmake" "${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}Config.cmake" @ONLY)
-install(FILES "${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}Config.cmake" 
+configure_file("${CMAKE_SOURCE_DIR}/cmake/${ArucoUnity_PROJECT_NAME}Config.cmake" "${CMAKE_INSTALL_PREFIX}/${ArucoUnity_PROJECT_NAME}Config.cmake" @ONLY)
+install(FILES "${CMAKE_INSTALL_PREFIX}/${ArucoUnity_PROJECT_NAME}Config.cmake" 
         DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}/cmake/)
