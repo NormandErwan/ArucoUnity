@@ -1,11 +1,9 @@
-cmake_minimum_required(VERSION 2.8.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(ArucoUnityTests)
 
-
 # Dependencies
 find_package(Threads REQUIRED)
-
 
 # Target
 file(GLOB_RECURSE PROJECT_SOURCES ${PROJECT_SOURCE_DIR}/*.cpp)
