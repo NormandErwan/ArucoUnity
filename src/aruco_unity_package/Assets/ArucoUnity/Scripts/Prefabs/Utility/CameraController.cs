@@ -3,7 +3,6 @@
 //
 
 using UnityEngine;
-using System.Linq;
 
 namespace ArucoUnity
 {
@@ -23,8 +22,7 @@ namespace ArucoUnity
       public event CameraAction OnActiveCameraChanged;
 
       // Device cameras
-      private WebCamDevice frontCameraDevice;
-      private WebCamDevice backCameraDevice;
+      private int activeCameraDeviceIndex;
 
       // The correct image orientation 
       public Quaternion ImageRotation
@@ -111,21 +109,8 @@ namespace ArucoUnity
       
       void Start()
       {
-        CameraStarted = false;
-
-        // Check for device cameras
-        if (WebCamTexture.devices.Length == 0)
-        {
-          Debug.Log("No devices cameras found");
-          return;
-        }
-
-        // Get the device's cameras
-        frontCameraDevice = WebCamTexture.devices.Last();
-        backCameraDevice = WebCamTexture.devices.First();
-
-        // Set the camera to use by default
-        SetActiveCamera(frontCameraDevice);
+        activeCameraDeviceIndex = -1;
+        SwitchCamera(); // Activate the first camera
       }
 
       public void SetActiveCamera(WebCamDevice cameraToUse)
@@ -151,12 +136,28 @@ namespace ArucoUnity
         {
           OnActiveCameraChanged();
         }
+        CameraStarted = false;
       }
 
-      // Switch between the device's front and back camera
+      // Switch between cameras
       public void SwitchCamera()
       {
-        SetActiveCamera(ActiveCameraDevice.Equals(frontCameraDevice) ? backCameraDevice : frontCameraDevice);
+        WebCamDevice[] cameraDevices = WebCamTexture.devices;
+
+        // Check for device cameras
+        if (cameraDevices.Length == 0)
+        {
+          Debug.Log("No devices cameras found");
+          return;
+        }
+
+        // Switch to the next camera
+        activeCameraDeviceIndex++;
+        activeCameraDeviceIndex %= cameraDevices.Length;
+        print(activeCameraDeviceIndex);
+
+        ActiveCameraDevice = cameraDevices[activeCameraDeviceIndex];
+        SetActiveCamera(ActiveCameraDevice);
       }
 
       // Make adjustments to image every frame to be safe, since Unity isn't 
