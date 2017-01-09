@@ -1,22 +1,23 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(opencv_aruco)
+project(OpenCVAruco)
 
 # Dependencies
 include(ExternalProject)
 
-ExternalProject_Add(opencv_contrib
+set(OPENCV_CONTRIB_PROJECT OpenCVContribDownload)
+ExternalProject_Add(${OPENCV_CONTRIB_PROJECT}
   GIT_REPOSITORY https://github.com/opencv/opencv_contrib.git
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
 )
-ExternalProject_Get_Property(opencv_contrib SOURCE_DIR)
+ExternalProject_Get_Property(${OPENCV_CONTRIB_PROJECT} SOURCE_DIR)
 set(OPENCV_CONTRIB_PATH ${SOURCE_DIR})
 
 # Target
 ExternalProject_Add(${PROJECT_NAME}
-  DEPENDS opencv_contrib
+  DEPENDS ${OPENCV_CONTRIB_PROJECT}
   GIT_REPOSITORY https://github.com/opencv/opencv.git
   CMAKE_ARGS
     -DOPENCV_EXTRA_MODULES_PATH=${OPENCV_CONTRIB_PATH}/modules
@@ -66,5 +67,3 @@ ExternalProject_Add(${PROJECT_NAME}
     -DBUILD_opencv_xobjdetect=OFF
     -DBUILD_opencv_xphoto=OFF
 )
-
-# Package

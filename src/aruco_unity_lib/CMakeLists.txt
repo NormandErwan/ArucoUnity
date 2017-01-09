@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.0)
 project(ArucoUnityLib)
 
 # Dependencies
-find_package(OpenCV REQUIRED aruco)
+find_package(OpenCV REQUIRED
+             COMPONENTS aruco
+             PATHS ${OpenCVAruco_INSTALL_DIR})
 
 # Target
 set(PROJECT_HEADERS
@@ -67,7 +69,6 @@ set(PROJECT_SOURCES
 
 add_library(${CMAKE_PROJECT_NAME} SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_INCLUDE_DIRS})
-
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 
 # Installation
@@ -77,13 +78,13 @@ install(TARGETS ${CMAKE_PROJECT_NAME}
         LIBRARY DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}
 )
 install(TARGETS ${CMAKE_PROJECT_NAME} # Installation of the library in the Unity project folder
-        RUNTIME DESTINATION ${UNITY_PLUGINS_DIR}
-        LIBRARY DESTINATION ${UNITY_PLUGINS_DIR}
+        RUNTIME DESTINATION ${Unity_PLUGINS_DIR}
+        LIBRARY DESTINATION ${Unity_PLUGINS_DIR}
 )
-if (WIN32)
-  install(DIRECTORY ${OpenCV_LIB_DIR}/../bin/ # Installation of the dll dependencies on Windows
-          DESTINATION ${UNITY_PLUGINS_DIR}
-          FILES_MATCHING PATTERN "*.dll"
+if (WIN32) 
+  file(GLOB_RECURSE OpenCVAruco_RUNTIME_LIBS ${OpenCVAruco_INSTALL_DIR}/*.dll)
+  install(FILES ${OpenCVAruco_RUNTIME_LIBS} # Installation of the dll dependencies on Windows
+          DESTINATION ${Unity_PLUGINS_DIR}
   )
 endif()
 
