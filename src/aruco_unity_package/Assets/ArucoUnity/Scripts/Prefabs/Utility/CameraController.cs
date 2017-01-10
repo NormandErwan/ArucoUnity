@@ -10,6 +10,10 @@ namespace ArucoUnity
   {
     public class CameraController : Singleton<CameraController>
     {
+      // Configuration
+      [SerializeField]
+      private int activeCameraDeviceIndex;
+
       // Properties
       public bool CameraStarted { get; private set; }
       public WebCamDevice ActiveCameraDevice { get; private set; }
@@ -20,9 +24,6 @@ namespace ArucoUnity
       public delegate void CameraAction();
       public event CameraAction OnCameraStarted;
       public event CameraAction OnActiveCameraChanged;
-
-      // Device cameras
-      private int activeCameraDeviceIndex;
 
       // The correct image orientation 
       public Quaternion ImageRotation
@@ -109,8 +110,7 @@ namespace ArucoUnity
       
       void Start()
       {
-        activeCameraDeviceIndex = -1;
-        SwitchCamera(); // Activate the first camera
+        SwitchCamera(activeCameraDeviceIndex);
       }
 
       public void SetActiveCamera(WebCamDevice cameraToUse)
@@ -140,7 +140,7 @@ namespace ArucoUnity
       }
 
       // Switch between cameras
-      public void SwitchCamera()
+      public void SwitchCamera(int? cameraIndex = null)
       {
         WebCamDevice[] cameraDevices = WebCamTexture.devices;
 
@@ -152,9 +152,8 @@ namespace ArucoUnity
         }
 
         // Switch to the next camera
-        activeCameraDeviceIndex++;
+        activeCameraDeviceIndex = (cameraIndex != null) ? (int)cameraIndex : activeCameraDeviceIndex+1;
         activeCameraDeviceIndex %= cameraDevices.Length;
-        print(activeCameraDeviceIndex);
 
         ActiveCameraDevice = cameraDevices[activeCameraDeviceIndex];
         SetActiveCamera(ActiveCameraDevice);
