@@ -1,21 +1,18 @@
-﻿//
-// Based on: http://answers.unity3d.com/answers/1155328/view.html
-//
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace ArucoUnity
 {
   namespace Examples
   {
+    /// <summary>
+    /// Display the texture of the active camera on a canvas.
+    /// Based on: http://answers.unity3d.com/answers/1155328/view.html.
+    /// </summary>
     public class CameraCanvasDisplay : MonoBehaviour
     {
       [SerializeField]
       private RawImage image;
-
-      [SerializeField]
-      private RectTransform imageParent;
 
       [SerializeField]
       private AspectRatioFitter imageFitter;
@@ -27,42 +24,54 @@ namespace ArucoUnity
         deviceCameraController = CameraDeviceController.Instance;
       }
 
+      /// <summary>
+      /// Enable the image and subscribe to active camera events.
+      /// </summary>
       void OnEnable()
       {
-        image.gameObject.SetActive(true);
+        image.enabled = true;
 
         deviceCameraController.OnActiveCameraChanged += DeviceCameraController_OnActiveCameraChanged;
         deviceCameraController.OnCameraStarted += DeviceCameraController_OnCameraStarted;
       }
 
+      /// <summary>
+      /// Disable the image and unsubscribe to active camera events.
+      /// </summary>
       void OnDisable()
       {
-        image.gameObject.SetActive(false);
+        image.enabled = false;
 
         deviceCameraController.OnActiveCameraChanged -= DeviceCameraController_OnActiveCameraChanged;
         deviceCameraController.OnCameraStarted -= DeviceCameraController_OnCameraStarted;
       }
 
-      // Set the image texture of the active camera
+      /// <summary>
+      /// When the active camera changes, set its texture to display.
+      /// </summary>
       private void DeviceCameraController_OnActiveCameraChanged()
       {
         SetActiveTexture(deviceCameraController.ActiveCameraTexture2D);
       }
 
-      // If the texture is modified outside the class, use this new texture to display
+      /// <summary>
+      /// Set the new texture to display.
+      /// </summary>
       public void SetActiveTexture(Texture textureToUse)
       {
         image.texture = textureToUse;
         image.material.mainTexture = textureToUse;
       }
 
-      // Configure the image display when the camera is started
+      /// <summary>
+      /// Configure the image display when the camera is started.
+      /// </summary>
       private void DeviceCameraController_OnCameraStarted()
       {
+        image.rectTransform.localScale = deviceCameraController.ImageScaleFrontFacing;
         image.rectTransform.localRotation = deviceCameraController.ImageRotation;
         imageFitter.aspectRatio = deviceCameraController.ImageRatio;
         image.uvRect = deviceCameraController.ImageUvRectFlip;
-        imageParent.localScale = deviceCameraController.ImageScaleFrontFacing;
       }
     }
   }
