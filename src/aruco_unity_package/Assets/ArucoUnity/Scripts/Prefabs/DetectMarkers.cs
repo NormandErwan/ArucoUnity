@@ -101,16 +101,15 @@ namespace ArucoUnity
         ImageTexture = cameraController.ActiveCameraTexture2D;
 
         // Configurate the camera-plane group or the canvas
-        bool configurateCameraPlaneSuccess = false;
         if (estimatePose)
         {
-          configurateCameraPlaneSuccess = ConfigurateCameraPlane(cameraParametersFilePath);
+          bool configurateCameraPlaneSuccess = ConfigurateCameraPlane(cameraParametersFilePath);
+          estimatePose &= configurateCameraPlaneSuccess;
         }
 
         // Activate the camera-plane group or the canvas
-        bool useCanvas = !estimatePose || !configurateCameraPlaneSuccess;
-        cameraCanvasDisplay.gameObject.SetActive(useCanvas);
-        cameraPlane.gameObject.SetActive(!useCanvas);
+        cameraCanvasDisplay.gameObject.SetActive(!estimatePose);
+        cameraPlane.gameObject.SetActive(estimatePose);
 
         configurated = true;
       }
@@ -142,7 +141,6 @@ namespace ArucoUnity
           cameraFy = (float)CameraMatrix.AtDouble(1, 1);
         }
         
-
         // Calculate the position shift; based on: http://stackoverflow.com/a/36580522
         if (cameraParameters != null)
         {
