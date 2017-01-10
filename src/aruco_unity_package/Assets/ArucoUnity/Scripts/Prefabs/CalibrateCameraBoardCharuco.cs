@@ -99,11 +99,11 @@ namespace ArucoUnity
       private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
-      private CameraController cameraController;
+      private CameraDeviceController cameraController;
 
       void Awake()
       {
-        cameraController = CameraController.Instance;
+        cameraController = CameraDeviceController.Instance;
 
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);

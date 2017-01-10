@@ -8,7 +8,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CameraController : Singleton<CameraController>
+    public class CameraDeviceController : Singleton<CameraDeviceController>
     {
       // Configuration
       [SerializeField]

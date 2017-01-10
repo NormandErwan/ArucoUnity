@@ -65,11 +65,11 @@ namespace ArucoUnity
 
       private Dictionary<int, GameObject> markerObjects;
       private bool configurated;
-      private CameraController cameraController;
+      private CameraDeviceController cameraController;
 
       void OnEnable()
       {
-        cameraController = CameraController.Instance;
+        cameraController = CameraDeviceController.Instance;
 
         configurated = false;
         cameraController.OnCameraStarted += Configurate;

@@ -20,11 +20,11 @@ namespace ArucoUnity
       [SerializeField]
       private AspectRatioFitter imageFitter;
 
-      private CameraController deviceCameraController;
+      private CameraDeviceController deviceCameraController;
 
       void Awake()
       {
-        deviceCameraController = CameraController.Instance;
+        deviceCameraController = CameraDeviceController.Instance;
       }
 
       void OnEnable()
