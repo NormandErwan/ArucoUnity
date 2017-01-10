@@ -26,7 +26,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private CameraCanvasDisplay cameraCanvasDisplay;
+      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
       [SerializeField]
       private new Camera camera;
@@ -108,7 +108,7 @@ namespace ArucoUnity
         }
 
         // Activate the camera-plane group or the canvas
-        cameraCanvasDisplay.gameObject.SetActive(!estimatePose);
+        cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose);
         cameraPlane.gameObject.SetActive(estimatePose);
 
         configurated = true;

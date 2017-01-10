@@ -9,7 +9,7 @@ namespace ArucoUnity
     /// Display the texture of the active camera on a canvas.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html.
     /// </summary>
-    public class CameraCanvasDisplay : MonoBehaviour
+    public class CameraDeviceCanvasDisplay : MonoBehaviour
     {
       [SerializeField]
       private RawImage image;

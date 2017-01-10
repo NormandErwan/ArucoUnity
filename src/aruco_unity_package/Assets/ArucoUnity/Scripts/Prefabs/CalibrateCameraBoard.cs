@@ -48,7 +48,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private CameraCanvasDisplay cameraCanvasDisplay;
+      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
       [Header("UI")]
       [SerializeField]
