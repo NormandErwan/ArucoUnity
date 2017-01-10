@@ -47,6 +47,8 @@ namespace ArucoUnity
       [SerializeField]
       private GameObject detectedMarkersObject;
 
+      public Vector3 positionShift;
+
       // Detection properties
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
@@ -251,11 +253,14 @@ namespace ArucoUnity
           }
 
           // Place and orient the object to match the marker
-          markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength); 
-          markerObject.transform.position = tvecs.At(i).ToPosition();
-          markerObject.transform.position += markerObject.transform.up * markerSideLength / 2; // Move up the object to coincide with the marker
-          //markerObject.transform.position += PositionShift; // TODO: fix
+          markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength);
           markerObject.transform.rotation = rvecs.At(i).ToRotation();
+
+          markerObject.transform.position = tvecs.At(i).ToPosition();
+          markerObject.transform.localPosition += markerObject.transform.forward * markerSideLength / 2; // Move up the object to coincide with the marker
+          //markerObject.transform.position += PositionShift; // TODO: fix
+          markerObject.transform.localPosition += (markerObject.transform.rotation * positionShift); // TODO: remove
+
           markerObject.SetActive(true);
         }
       }
