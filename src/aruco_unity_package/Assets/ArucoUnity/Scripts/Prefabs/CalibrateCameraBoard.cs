@@ -102,12 +102,12 @@ namespace ArucoUnity
 
       void OnEnable()
       {
-        cameraController.OnCameraStarted += Configurate;
+        cameraController.OnActiveCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        cameraController.OnCameraStarted -= Configurate;
+        cameraController.OnActiveCameraStarted -= Configurate;
       }
 
       private void Configurate()

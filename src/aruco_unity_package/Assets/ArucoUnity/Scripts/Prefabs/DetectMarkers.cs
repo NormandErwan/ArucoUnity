@@ -72,12 +72,12 @@ namespace ArucoUnity
         cameraController = CameraDeviceController.Instance;
 
         configurated = false;
-        cameraController.OnCameraStarted += Configurate;
+        cameraController.OnActiveCameraStarted += Configurate;
       }
 
       void OnDisable()
       {
-        cameraController.OnCameraStarted -= Configurate;
+        cameraController.OnActiveCameraStarted -= Configurate;
       }
 
       void LateUpdate()

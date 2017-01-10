@@ -1,13 +1,13 @@
-﻿//
-// Based on: http://answers.unity3d.com/answers/1155328/view.html
-//
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ArucoUnity
 {
   namespace Examples
   {
+    // TODO: doc
+    /// <summary>
+    /// Based on: http://answers.unity3d.com/answers/1155328/view.html
+    /// </summary>
     public class CameraDeviceController : Singleton<CameraDeviceController>
     {
       // Configuration
@@ -22,7 +22,8 @@ namespace ArucoUnity
 
       // Events
       public delegate void CameraAction();
-      public event CameraAction OnCameraStarted;
+      public event CameraAction OnActiveCameraStarted;
+      public event CameraAction OnActiveCameraStopped;
       public event CameraAction OnActiveCameraChanged;
 
       // The correct image orientation 
@@ -115,23 +116,27 @@ namespace ArucoUnity
 
       public void SetActiveCamera(WebCamDevice cameraToUse)
       {
-        // Switch the activeCameraTexture
-        if (ActiveCameraTexture != null)
+        if (CameraStarted)
         {
           ActiveCameraTexture.Stop();
+
+          if (OnActiveCameraStopped != null)
+          {
+            OnActiveCameraStopped();
+          }
         }
 
+        // Switch the activeCameraTexture
         ActiveCameraDevice = cameraToUse;
         ActiveCameraTexture = new WebCamTexture(cameraToUse.name);
         ActiveCameraTexture.filterMode = FilterMode.Trilinear;
-
         ActiveCameraTexture.Play();
 
-        // Reset the Texture2D
+        // Reset the ActiveCameraTexture2D
         ActiveCameraTexture2D = new Texture2D(ActiveCameraTexture.width, ActiveCameraTexture.height,
           TextureFormat.RGB24, false);
 
-        // Call the event
+        // Update the state
         if (OnActiveCameraChanged != null)
         {
           OnActiveCameraChanged();
@@ -147,7 +152,7 @@ namespace ArucoUnity
         // Check for device cameras
         if (cameraDevices.Length == 0)
         {
-          Debug.Log("No devices cameras found");
+          Debug.LogError(gameObject.name + ": No devices cameras found.");
           return;
         }
 
@@ -166,14 +171,14 @@ namespace ArucoUnity
         // Skip making adjustment for incorrect camera data
         if (ActiveCameraTexture.width < 100)
         {
-          Debug.Log("Still waiting another frame for correct info...");
+          Debug.Log(gameObject.name + ": Still waiting another frame for correct info...");
           return;
         }
         else
         {
-          if (OnCameraStarted != null && !CameraStarted)
+          if (OnActiveCameraStarted != null && !CameraStarted)
           {
-            OnCameraStarted();
+            OnActiveCameraStarted();
           }
           CameraStarted = true;
         }

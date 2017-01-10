@@ -32,7 +32,7 @@ namespace ArucoUnity
         image.enabled = true;
 
         deviceCameraController.OnActiveCameraChanged += DeviceCameraController_OnActiveCameraChanged;
-        deviceCameraController.OnCameraStarted += DeviceCameraController_OnCameraStarted;
+        deviceCameraController.OnActiveCameraStarted += DeviceCameraController_OnCameraStarted;
       }
 
       /// <summary>
@@ -43,7 +43,7 @@ namespace ArucoUnity
         image.enabled = false;
 
         deviceCameraController.OnActiveCameraChanged -= DeviceCameraController_OnActiveCameraChanged;
-        deviceCameraController.OnCameraStarted -= DeviceCameraController_OnCameraStarted;
+        deviceCameraController.OnActiveCameraStarted -= DeviceCameraController_OnCameraStarted;
       }
 
       /// <summary>
