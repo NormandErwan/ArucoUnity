@@ -8,7 +8,7 @@ namespace ArucoUnity
     /// <summary>
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
-    public class CameraDeviceController : Singleton<CameraDeviceController>
+    public class CameraDeviceController : MonoBehaviour
     {
       // Configuration
       [SerializeField]
@@ -21,10 +21,10 @@ namespace ArucoUnity
       public Texture2D ActiveCameraTexture2D { get; private set; }
 
       // Events
-      public delegate void CameraAction();
-      public event CameraAction OnActiveCameraStarted;
-      public event CameraAction OnActiveCameraStopped;
-      public event CameraAction OnActiveCameraChanged;
+      public delegate void CameraDeviceControllerAction();
+      public event CameraDeviceControllerAction OnActiveCameraStarted;
+      public event CameraDeviceControllerAction OnActiveCameraStopped;
+      public event CameraDeviceControllerAction OnActiveCameraChanged;
 
       // The correct image orientation 
       public Quaternion ImageRotation
@@ -116,6 +116,7 @@ namespace ArucoUnity
 
       public void SetActiveCamera(WebCamDevice cameraToUse)
       {
+        // Stop the previous camera
         if (CameraStarted)
         {
           ActiveCameraTexture.Stop();

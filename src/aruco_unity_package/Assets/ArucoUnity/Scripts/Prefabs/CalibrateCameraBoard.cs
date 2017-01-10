@@ -5,7 +5,8 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CalibrateCameraBoard : MonoBehaviour
+    // TODO: doc
+    public class CalibrateCameraBoard : CameraDeviceMarkersDetector
     {
       [Header("Board configuration")]
       [SerializeField]
@@ -48,7 +49,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
+      private CameraDeviceController cameraDeviceController;
 
       [Header("UI")]
       [SerializeField]
@@ -79,43 +80,36 @@ namespace ArucoUnity
       public Utility.VectorVectorVectorPoint2f AllCorners { get; private set; }
       public Utility.VectorVectorInt AllIds { get; private set; }
       public Utility.Size ImageSize { get; private set; }
-      public Texture2D ImageTexture { get; private set; }
       public Utility.Mat CameraMatrix { get; private set; }
       public Utility.Mat DistCoeffs { get; private set; }
       public Utility.VectorMat Rvecs { get; private set; }
       public Utility.VectorMat Tvecs { get; private set; }
       public double CalibrationReprojectionError { get; private set; }
 
+      // Internal
       private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
-      private CameraDeviceController cameraController;
+
+      public CalibrateCameraBoard(CameraDeviceController cameraDeviceController) 
+        : base(cameraDeviceController)
+      {
+      }
 
       void Awake()
       {
-        cameraController = CameraDeviceController.Instance;
+        CameraDeviceController = cameraDeviceController;
 
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);
         resetButton.onClick.AddListener(ResetCalibrationFromEditor);
       }
 
-      void OnEnable()
-      {
-        cameraController.OnActiveCameraStarted += Configurate;
-      }
-
-      void OnDisable()
-      {
-        cameraController.OnActiveCameraStarted -= Configurate;
-      }
-
-      private void Configurate()
+      protected override void Configurate()
       {
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
-        ImageTexture = cameraController.ActiveCameraTexture2D;
 
         ConfigurateCalibrationFlags();
         ResetCalibration();
@@ -123,7 +117,7 @@ namespace ArucoUnity
 
       void LateUpdate()
       {
-        if (cameraController.CameraStarted)
+        if (Configurated)
         {
           Utility.Mat image;
           Utility.VectorInt ids;

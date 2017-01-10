@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class CalibrateCameraBoardCharuco : MonoBehaviour
+    public class CalibrateCameraBoardCharuco : CameraDeviceMarkersDetector
     {
       [Header("ChArUco board configuration")]
       [SerializeField]
@@ -48,7 +48,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
+      private CameraDeviceController cameraDeviceController;
 
       [Header("UI")]
       [SerializeField]
@@ -92,40 +92,35 @@ namespace ArucoUnity
       public Utility.VectorMat Tvecs { get; private set; }
       public Utility.VectorMat AllCharucoCorners { get; private set; }
       public Utility.VectorMat AllCharucoIds { get; private set; }
-      public Texture2D ImageTexture { get; private set; }
       public double ArucoCalibrationReprojectionError { get; private set; }
       public double CharucoCalibrationReprojectionError { get; private set; }
 
       private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
-      private CameraDeviceController cameraController;
 
+      public CalibrateCameraBoardCharuco(CameraDeviceController cameraDeviceController) 
+        : base(cameraDeviceController)
+      {
+      }
+
+      /// <summary>
+      /// Add onClick functions to UI buttons.
+      /// </summary>
       void Awake()
       {
-        cameraController = CameraDeviceController.Instance;
+        CameraDeviceController = cameraDeviceController;
 
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);
         resetButton.onClick.AddListener(ResetCalibrationFromEditor);
       }
 
-      void OnEnable()
-      {
-        cameraController.OnActiveCameraStarted += Configurate;
-      }
-
-      void OnDisable()
-      {
-        cameraController.OnActiveCameraStarted -= Configurate;
-      }
-
-      private void Configurate()
+      protected override void Configurate()
       {
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
-        ImageTexture = cameraController.ActiveCameraTexture2D;
 
         ConfigurateCalibrationFlags();
         ResetCalibrationFromEditor();
@@ -133,7 +128,7 @@ namespace ArucoUnity
 
       void LateUpdate()
       {
-        if (cameraController.CameraStarted)
+        if (Configurated)
         {
           Utility.Mat image;
           Utility.VectorInt ids;

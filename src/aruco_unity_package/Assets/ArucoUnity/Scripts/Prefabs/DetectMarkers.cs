@@ -5,7 +5,7 @@ namespace ArucoUnity
 {
   namespace Examples
   {
-    public class DetectMarkers : MonoBehaviour
+    public class DetectMarkers : CameraDeviceMarkersDetector
     {
       [Header("Detection configuration")]
       [SerializeField]
@@ -44,19 +44,18 @@ namespace ArucoUnity
       [SerializeField]
       private GameObject detectedMarkersObject;
 
-      // Detection configuration
+      // Detection properties
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
       public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
       public bool ShowDetectedMarkers { get { return showDetectedMarkers; } set { showDetectedMarkers = value; } }
       public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
-      // Camera configuration
-      public Texture2D ImageTexture { get; set; }
+      // Camera properties
       public Camera Camera { get { return camera; } set { camera = value; } }
       public GameObject CameraPlane { get { return cameraPlane; } set { cameraPlane = value; } }
 
-      // Estimation configuration
+      // Estimation properties
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
       public Utility.Mat CameraMatrix { get; set; }
       public Utility.Mat DistCoeffs { get; set; }
@@ -64,25 +63,15 @@ namespace ArucoUnity
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
       private Dictionary<int, GameObject> markerObjects;
-      private bool configurated;
-      private CameraDeviceController cameraController;
 
-      void OnEnable()
+      public DetectMarkers(CameraDeviceController cameraDeviceController) 
+        : base(cameraDeviceController)
       {
-        cameraController = CameraDeviceController.Instance;
-
-        configurated = false;
-        cameraController.OnActiveCameraStarted += Configurate;
-      }
-
-      void OnDisable()
-      {
-        cameraController.OnActiveCameraStarted -= Configurate;
       }
 
       void LateUpdate()
       {
-        if (cameraController.CameraStarted && configurated)
+        if (Configurated)
         {
           Utility.Mat image;
           Utility.VectorVectorPoint2f corners;
@@ -94,11 +83,10 @@ namespace ArucoUnity
         }
       }
 
-      private void Configurate()
+      protected override void Configurate()
       {
         DetectorParameters = detectorParametersManager.detectorParameters;
         Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
-        ImageTexture = cameraController.ActiveCameraTexture2D;
 
         // Configurate the camera-plane group or the canvas
         if (estimatePose)
@@ -111,7 +99,7 @@ namespace ArucoUnity
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose);
         cameraPlane.gameObject.SetActive(estimatePose);
 
-        configurated = true;
+        Configurated = true;
       }
 
       public bool ConfigurateCameraPlane(string cameraParametersFilePath)
@@ -158,16 +146,16 @@ namespace ArucoUnity
           camera.fieldOfView = vFov;
           camera.farClipPlane = cameraFy;
         }
-        camera.aspect = cameraController.ImageRatio;
+        camera.aspect = CameraDeviceController.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
 
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
-        cameraPlane.transform.rotation = cameraController.ImageRotation;
+        cameraPlane.transform.rotation = CameraDeviceController.ImageRotation;
         cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
-        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, cameraController.ImageScaleFrontFacing);
-        cameraPlane.GetComponent<MeshFilter>().mesh = cameraController.ImageMesh;
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ImageScaleFrontFacing);
+        cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
 
         return true;

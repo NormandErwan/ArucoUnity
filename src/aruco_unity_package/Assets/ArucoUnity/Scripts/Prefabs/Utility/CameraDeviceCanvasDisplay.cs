@@ -17,41 +17,23 @@ namespace ArucoUnity
       [SerializeField]
       private AspectRatioFitter imageFitter;
 
-      private CameraDeviceController deviceCameraController;
+      [SerializeField]
+      private CameraDeviceMarkersDetector markersDetector;
 
-      void Awake()
+      /// <summary>
+      /// Enable the image and subscribe to markers detector events.
+      /// </summary>
+      private void Awake()
       {
-        deviceCameraController = CameraDeviceController.Instance;
+        markersDetector.OnConfigurated += CameraDeviceMarkersDetector_OnConfigurated;
       }
 
       /// <summary>
-      /// Enable the image and subscribe to active camera events.
+      /// Disable the image and unsubscribe to markers detector events.
       /// </summary>
-      void OnEnable()
+      private void OnDestroy()
       {
-        image.enabled = true;
-
-        deviceCameraController.OnActiveCameraChanged += DeviceCameraController_OnActiveCameraChanged;
-        deviceCameraController.OnActiveCameraStarted += DeviceCameraController_OnCameraStarted;
-      }
-
-      /// <summary>
-      /// Disable the image and unsubscribe to active camera events.
-      /// </summary>
-      void OnDisable()
-      {
-        image.enabled = false;
-
-        deviceCameraController.OnActiveCameraChanged -= DeviceCameraController_OnActiveCameraChanged;
-        deviceCameraController.OnActiveCameraStarted -= DeviceCameraController_OnCameraStarted;
-      }
-
-      /// <summary>
-      /// When the active camera changes, set its texture to display.
-      /// </summary>
-      private void DeviceCameraController_OnActiveCameraChanged()
-      {
-        SetActiveTexture(deviceCameraController.ActiveCameraTexture2D);
+        markersDetector.OnConfigurated -= CameraDeviceMarkersDetector_OnConfigurated;
       }
 
       /// <summary>
@@ -66,12 +48,16 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the image display when the camera is started.
       /// </summary>
-      private void DeviceCameraController_OnCameraStarted()
+      private void CameraDeviceMarkersDetector_OnConfigurated()
       {
-        image.rectTransform.localScale = deviceCameraController.ImageScaleFrontFacing;
-        image.rectTransform.localRotation = deviceCameraController.ImageRotation;
-        imageFitter.aspectRatio = deviceCameraController.ImageRatio;
-        image.uvRect = deviceCameraController.ImageUvRectFlip;
+        CameraDeviceController cameraDeviceController = markersDetector.CameraDeviceController;
+
+        SetActiveTexture(cameraDeviceController.ActiveCameraTexture2D);
+
+        image.rectTransform.localScale = cameraDeviceController.ImageScaleFrontFacing;
+        image.rectTransform.localRotation = cameraDeviceController.ImageRotation;
+        imageFitter.aspectRatio = cameraDeviceController.ImageRatio;
+        image.uvRect = cameraDeviceController.ImageUvRectFlip;
       }
     }
   }
