@@ -50,14 +50,14 @@ namespace ArucoUnity
       /// </summary>
       private void CameraDeviceMarkersDetector_OnConfigurated()
       {
-        CameraDeviceController cameraDeviceController = markersDetector.CameraDeviceController;
+        CameraDevice activeCameraDevice = markersDetector.CameraDeviceController.ActiveCameraDevice;
 
-        SetActiveTexture(cameraDeviceController.ActiveCameraTexture2D);
+        SetActiveTexture(activeCameraDevice.Texture2D);
 
-        image.rectTransform.localScale = cameraDeviceController.ImageScaleFrontFacing;
-        image.rectTransform.localRotation = cameraDeviceController.ImageRotation;
-        imageFitter.aspectRatio = cameraDeviceController.ImageRatio;
-        image.uvRect = cameraDeviceController.ImageUvRectFlip;
+        image.rectTransform.localScale = activeCameraDevice.ImageScaleFrontFacing;
+        image.rectTransform.localRotation = activeCameraDevice.ImageRotation;
+        imageFitter.aspectRatio = activeCameraDevice.ImageRatio;
+        image.uvRect = activeCameraDevice.ImageUvRectFlip;
       }
     }
   }

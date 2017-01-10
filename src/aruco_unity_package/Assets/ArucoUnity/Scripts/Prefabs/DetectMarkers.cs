@@ -26,6 +26,9 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
+      private CameraDeviceController cameraDeviceController;
+
+      [SerializeField]
       private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
       [SerializeField]
@@ -67,6 +70,11 @@ namespace ArucoUnity
       public DetectMarkers(CameraDeviceController cameraDeviceController) 
         : base(cameraDeviceController)
       {
+      }
+
+      private void Awake()
+      {
+        CameraDeviceController = cameraDeviceController;
       }
 
       void LateUpdate()
@@ -146,16 +154,16 @@ namespace ArucoUnity
           camera.fieldOfView = vFov;
           camera.farClipPlane = cameraFy;
         }
-        camera.aspect = CameraDeviceController.ImageRatio;
+        camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
 
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
-        cameraPlane.transform.rotation = CameraDeviceController.ImageRotation;
+        cameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
         cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
-        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ImageScaleFrontFacing);
-        cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ImageMesh;
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
+        cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
 
         return true;
