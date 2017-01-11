@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['opencv_20calib3d_20module',['OpenCV calib3d module',['../group__utility__calib3d.html',1,'']]],
+  ['opencv_20imgproc_20module',['OpenCV imgproc module',['../group__utility__imgproc.html',1,'']]],
   ['opencv_20mat',['OpenCV Mat',['../group__utility__mat.html',1,'']]],
   ['opencv_20point2f',['OpenCV Point2f',['../group__utility__point2f.html',1,'']]],
   ['opencv_20point3f',['OpenCV Point3f',['../group__utility__point3f.html',1,'']]],
