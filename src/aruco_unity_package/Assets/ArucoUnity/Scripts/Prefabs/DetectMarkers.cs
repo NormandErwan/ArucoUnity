@@ -47,7 +47,7 @@ namespace ArucoUnity
       [SerializeField]
       private GameObject detectedMarkersObject;
 
-      public Vector3 positionShift;
+      public Vector3 userPositionShift; // TODO: remove
 
       // Detection properties
       public Dictionary Dictionary { get; set; }
@@ -64,7 +64,7 @@ namespace ArucoUnity
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
       public Utility.Mat CameraMatrix { get; set; }
       public Utility.Mat DistCoeffs { get; set; }
-      public Vector3 PositionShift { get; private set; }
+      public Vector3 OpticalCenter { get; private set; }
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
       private Dictionary<int, GameObject> markerObjects;
@@ -136,12 +136,8 @@ namespace ArucoUnity
         float resolutionX = ImageTexture.width;
         float resolutionY = ImageTexture.height;
 
-        // Calculate the position shift; based on: http://stackoverflow.com/a/36580522
-        Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
-        Vector3 opticalCenter = new Vector3(cameraCx / resolutionX, cameraCy / resolutionY, cameraFy);
-        PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
-        print("cx: " + cameraCx + "; cy: " + cameraCy + "; imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
-          + "; positionShift: " + PositionShift);
+        // Calculate the optical center; based on: http://stackoverflow.com/a/36580522
+        OpticalCenter = new Vector3(cameraCx / resolutionX, cameraCy / resolutionY, cameraFy);
 
         // Configurate the camera according to the camera parameters
         float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
@@ -250,11 +246,18 @@ namespace ArucoUnity
           // Place and orient the object to match the marker
           markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength);
           markerObject.transform.rotation = rvecs.At(i).ToRotation();
-
           markerObject.transform.position = tvecs.At(i).ToPosition();
+
+          // Adjust the position of the object
+          Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
+          Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
+          Vector3 positionShift = camera.ViewportToWorldPoint(imageCenterMarkerObject) - camera.ViewportToWorldPoint(opticalCenterMarkerObject);
+          print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
+            + "; positionShift: " + positionShift);
+          //markerObject.transform.position += (markerObject.transform.rotation * positionShift); // TODO: fix
+          markerObject.transform.localPosition += (markerObject.transform.rotation * userPositionShift); // TODO: remove
+
           markerObject.transform.localPosition += markerObject.transform.forward * markerSideLength / 2; // Move up the object to coincide with the marker
-          //markerObject.transform.position += (markerObject.transform.rotation * PositionShift); // TODO: fix
-          markerObject.transform.localPosition += (markerObject.transform.rotation * positionShift); // TODO: remove
 
           markerObject.SetActive(true);
         }
