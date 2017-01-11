@@ -19,6 +19,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/calib3d.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exception.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/imgproc.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point2f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point3f.hpp
@@ -47,6 +48,7 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
     ${PROJECT_SOURCE_DIR}/exception.cpp
     ${PROJECT_SOURCE_DIR}/grid_board.cpp
+    ${PROJECT_SOURCE_DIR}/imgproc.cpp
     ${PROJECT_SOURCE_DIR}/mat.cpp
     ${PROJECT_SOURCE_DIR}/point2f.cpp
     ${PROJECT_SOURCE_DIR}/point3f.cpp
