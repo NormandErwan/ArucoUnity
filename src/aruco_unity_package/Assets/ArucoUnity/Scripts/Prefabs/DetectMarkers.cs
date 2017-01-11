@@ -123,39 +123,30 @@ namespace ArucoUnity
           return false;
         }
 
-        float resolutionX = ImageTexture.width,
-              resolutionY = ImageTexture.height,
-              cameraCx = 0.5f, cameraCy = 0.5f,
-              cameraFy = camera.farClipPlane;
-        if (cameraParameters != null)
-        {
-          Utility.Mat cameraMatrix, distCoeffs;
-          cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
-          CameraMatrix = cameraMatrix;
-          DistCoeffs = distCoeffs;
+        // Prepare the camera parameters
+        Utility.Mat cameraMatrix, distCoeffs;
+        cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
+        CameraMatrix = cameraMatrix;
+        DistCoeffs = distCoeffs;
 
-          cameraCx = (float)CameraMatrix.AtDouble(0, 2);
-          cameraCy = (float)CameraMatrix.AtDouble(1, 2);
-          cameraFy = (float)CameraMatrix.AtDouble(1, 1);
-        }
-        
+        float cameraCx = (float)CameraMatrix.AtDouble(0, 2);
+        float cameraCy = (float)CameraMatrix.AtDouble(1, 2);
+        float cameraFy = (float)CameraMatrix.AtDouble(1, 1);
+
+        float resolutionX = ImageTexture.width;
+        float resolutionY = ImageTexture.height;
+
         // Calculate the position shift; based on: http://stackoverflow.com/a/36580522
-        if (cameraParameters != null)
-        {
-          Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
-          Vector3 opticalCenter = new Vector3(0.5f + cameraCx / resolutionX, 0.5f + cameraCy / resolutionY, cameraFy);
-          PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
-          print("cx: " + cameraCx + "; cy: " + cameraCy + "; imageCenter: " + imageCenter + "; opticalCenter: " + opticalCenter
-            + "; positionShift: " + PositionShift);
-        }
+        Vector3 imageCenter = new Vector3(0.5f, 0.5f, cameraFy);
+        Vector3 opticalCenter = new Vector3(cameraCx / resolutionX, cameraCy / resolutionY, cameraFy);
+        PositionShift = camera.ViewportToWorldPoint(imageCenter) - camera.ViewportToWorldPoint(opticalCenter);
+        print("cx: " + cameraCx + "; cy: " + cameraCy + "; imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
+          + "; positionShift: " + PositionShift);
 
         // Configurate the camera according to the camera parameters
-        if (cameraParameters != null)
-        {
-          float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
-          camera.fieldOfView = vFov;
-          camera.farClipPlane = cameraFy;
-        }
+        float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
+        camera.fieldOfView = vFov;
+        camera.farClipPlane = cameraFy;
         camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
@@ -258,7 +249,7 @@ namespace ArucoUnity
 
           markerObject.transform.position = tvecs.At(i).ToPosition();
           markerObject.transform.localPosition += markerObject.transform.forward * markerSideLength / 2; // Move up the object to coincide with the marker
-          //markerObject.transform.position += PositionShift; // TODO: fix
+          //markerObject.transform.position += (markerObject.transform.rotation * PositionShift); // TODO: fix
           markerObject.transform.localPosition += (markerObject.transform.rotation * positionShift); // TODO: remove
 
           markerObject.SetActive(true);
