@@ -237,14 +237,19 @@ namespace ArucoUnity
           GameObject markerObject;
           if (!markerObjects.TryGetValue(ids.At(i), out markerObject))
           {
-            markerObject = Instantiate(DetectedMarkersObject);
+            // Create an empty parent to the marker object to facilitate rescaling
+            markerObject = new GameObject("");
             markerObject.name = ids.At(i).ToString();
             markerObject.transform.SetParent(this.transform);
+
+            GameObject detectedMarkerObjet = Instantiate(DetectedMarkersObject);
+            detectedMarkerObjet.transform.SetParent(markerObject.transform);
+
             markerObjects.Add(ids.At(i), markerObject);
           }
 
           // Place and orient the object to match the marker
-          markerObject.transform.localScale = new Vector3(markerSideLength, markerSideLength, markerSideLength);
+          markerObject.transform.localScale = Vector3.one * markerSideLength;
           markerObject.transform.rotation = rvecs.At(i).ToRotation();
           markerObject.transform.position = tvecs.At(i).ToPosition();
 
