@@ -2,7 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::TermCriteria* au_TermCriteria_new() {
+  cv::TermCriteria* au_TermCriteria_new1() {
     return new cv::TermCriteria();
   }
 
