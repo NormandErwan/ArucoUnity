@@ -14,9 +14,9 @@ extern "C" {
   //! \param board Marker board layout.
   //! \param imageSize Size of the image used only to initialize the intrinsic camera matrix.
   //! \param cameraMatrix Output 3x3 floating-point camera matrix.
-  //! \param distCoeffs Output Vector of distortion coefficients.
-  //! \param rvecs Output Vector of rotation vectors (see Rodrigues) estimated for each board view (e.g. std::vector<cv::Mat>>).
-  //! \param tvecs Output Vector of translation vectors estimated for each pattern view.
+  //! \param distCoeffs Output vector of distortion coefficients.
+  //! \param rvecs Output vector of rotation vectors (see Rodrigues) estimated for each board view (e.g. std::vector<cv::Mat>>).
+  //! \param tvecs Output vector of translation vectors estimated for each pattern view.
   //! \param flags Different flags for the calibration process (See http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga687a1ab946686f0d85ae0363b5af1d7b)
   //! \param criteria Termination criteria for the iterative optimization algorithm.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
@@ -56,7 +56,7 @@ extern "C" {
   //! \param distCoeffs Output vector of distortion coefficients.
   //! \param rvecs Output vector of rotation vectors (see Rodrigues) estimated for each board view (e.g. std::vector<cv::Mat>>).
   //! \param tvecs Output vector of translation vectors estimated for each pattern view.
-  //! \param flags Flags Different flags for the calibration process (see calibrateCamera).
+  //! \param flags Different flags for the calibration process (see calibrateCamera).
   //! \param criteria Termination criteria for the iterative optimization algorithm.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!

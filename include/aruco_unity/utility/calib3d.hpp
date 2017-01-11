@@ -1,7 +1,7 @@
 #ifndef __ARUCO_UNITY_CALIB3D_HPP__
 #define __ARUCO_UNITY_CALIB3D_HPP__
 
-#include <opencv2\calib3d.hpp>
+#include <opencv2/calib3d.hpp>
 #include "aruco_unity/exports.hpp"
 
 //! @addtogroup utility_calib3d
