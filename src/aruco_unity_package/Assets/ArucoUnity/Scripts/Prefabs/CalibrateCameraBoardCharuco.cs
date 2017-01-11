@@ -175,7 +175,7 @@ namespace ArucoUnity
           Utility.Mat currentCharucoCorners, currentCharucoIds;
           Methods.InterpolateCornersCharuco(corners, ids, image, CharucoBoard, out currentCharucoCorners, out currentCharucoIds);
 
-          // Draw results
+          // Draw the markers on the image
           Methods.DrawDetectedMarkers(image, corners, ids);
 
           if (currentCharucoIds.Total() > 0)
@@ -184,9 +184,21 @@ namespace ArucoUnity
           }
         }
 
-        // Copy back the image
-        int imageDataSize = (int)(image.ElemSize() * image.Total());
-        ImageTexture.LoadRawTextureData(image.data, imageDataSize);
+        // Undistord the image if calibrated
+        Utility.Mat undistordedImage, imageToDisplay;
+        if (calibrate)
+        {
+          Utility.Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          imageToDisplay = undistordedImage;
+        }
+        else
+        {
+          imageToDisplay = image;
+        }
+
+        // Copy the bytes of the image to the texture
+        int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
+        ImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
         ImageTexture.Apply(false);
       }
 

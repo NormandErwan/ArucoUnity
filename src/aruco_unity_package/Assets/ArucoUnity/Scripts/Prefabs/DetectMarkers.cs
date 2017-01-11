@@ -207,9 +207,13 @@ namespace ArucoUnity
           Methods.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
+        // Undistord the image
+        Utility.Mat undistordedImage;
+        Utility.Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+
         // Copy the bytes of the image to the texture
-        int imageDataSize = (int)(image.ElemSize() * image.Total());
-        ImageTexture.LoadRawTextureData(image.data, imageDataSize);
+        int undistordedImageDataSize = (int)(undistordedImage.ElemSize() * undistordedImage.Total());
+        ImageTexture.LoadRawTextureData(undistordedImage.data, undistordedImageDataSize);
         ImageTexture.Apply(false);
       }
 

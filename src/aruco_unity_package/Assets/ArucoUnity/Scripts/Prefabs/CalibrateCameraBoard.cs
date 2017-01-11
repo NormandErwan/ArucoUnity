@@ -157,15 +157,27 @@ namespace ArucoUnity
           Methods.RefineDetectedMarkers(image, Board, corners, ids, rejectedImgPoints);
         }
 
-        // Draw results
+        // Draw the markers on the image
         if (ids.Size() > 0)
         {
           Methods.DrawDetectedMarkers(image, corners, ids);
         }
 
-        // Copy back the image
-        int imageDataSize = (int)(image.ElemSize() * image.Total());
-        ImageTexture.LoadRawTextureData(image.data, imageDataSize);
+        // Undistord the image if calibrated
+        Utility.Mat undistordedImage, imageToDisplay;
+        if (calibrate)
+        {
+          Utility.Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          imageToDisplay = undistordedImage;
+        }
+        else
+        {
+          imageToDisplay = image;
+        }
+
+        // Copy the bytes of the image to the texture
+        int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
+        ImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
         ImageTexture.Apply(false);
       }
 
