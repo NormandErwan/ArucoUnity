@@ -237,32 +237,28 @@ namespace ArucoUnity
           GameObject markerObject;
           if (!markerObjects.TryGetValue(ids.At(i), out markerObject))
           {
-            // Create an empty parent to the marker object to facilitate rescaling
-            markerObject = new GameObject("");
+            markerObject = Instantiate(DetectedMarkersObject);
             markerObject.name = ids.At(i).ToString();
             markerObject.transform.SetParent(this.transform);
 
-            GameObject detectedMarkerObjet = Instantiate(DetectedMarkersObject);
-            detectedMarkerObjet.transform.SetParent(markerObject.transform);
+            markerObject.transform.localScale = markerObject.transform.localScale * markerSideLength; // Rescale to the marker size
 
             markerObjects.Add(ids.At(i), markerObject);
           }
 
-          // Place and orient the object to match the marker
-          markerObject.transform.localScale = Vector3.one * markerSideLength;
-          markerObject.transform.rotation = rvecs.At(i).ToRotation();
-          markerObject.transform.position = tvecs.At(i).ToPosition();
-
-          // Adjust the position of the object
+          // Calculate the position shift of the object
           Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
           Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
           Vector3 positionShift = camera.ViewportToWorldPoint(imageCenterMarkerObject) - camera.ViewportToWorldPoint(opticalCenterMarkerObject);
           print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
-            + "; positionShift: " + positionShift);
-          //markerObject.transform.position += (markerObject.transform.rotation * positionShift); // TODO: fix
-          markerObject.transform.localPosition += (markerObject.transform.rotation * userPositionShift); // TODO: remove
+            + "; positionShift: " + positionShift.ToString("F3"));
 
-          markerObject.transform.localPosition += markerObject.transform.up * markerSideLength / 2; // Move up the object to coincide with the marker
+          // Place and orient the object to match the marker
+          markerObject.transform.rotation = rvecs.At(i).ToRotation();
+          markerObject.transform.position = tvecs.At(i).ToPosition();
+          //markerObject.transform.localPosition += markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
+          //markerObject.transform.localPosition -= markerObject.transform.rotation * positionShift; // Adjust the position taking account the optical center
+          markerObject.transform.localPosition += markerObject.transform.rotation * userPositionShift; // TODO: remove
 
           markerObject.SetActive(true);
         }
