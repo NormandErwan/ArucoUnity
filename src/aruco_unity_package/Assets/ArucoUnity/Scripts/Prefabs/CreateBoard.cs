@@ -69,7 +69,7 @@ namespace ArucoUnity
 
       void Start()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         MarkersNumberX = markersNumberX;
         MarkersNumberY = markersNumberY;
         MarkerSideLength = markerSideLength;

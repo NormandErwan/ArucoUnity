@@ -107,7 +107,7 @@ namespace ArucoUnity
 
       protected override void Configurate()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
 
@@ -150,17 +150,17 @@ namespace ArucoUnity
         // Detect markers
         byte[] imageData = ImageTexture.GetRawTextureData();
         image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
-        Methods.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
+        Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         if (applyRefindStrategy)
         {
-          Methods.RefineDetectedMarkers(image, Board, corners, ids, rejectedImgPoints);
+          Functions.RefineDetectedMarkers(image, Board, corners, ids, rejectedImgPoints);
         }
 
         // Draw the markers on the image
         if (ids.Size() > 0)
         {
-          Methods.DrawDetectedMarkers(image, corners, ids);
+          Functions.DrawDetectedMarkers(image, corners, ids);
         }
 
         // Undistord the image if calibrated
@@ -237,7 +237,7 @@ namespace ArucoUnity
 
         // Calibrate camera
         Utility.VectorMat rvecs, tvecs;
-        CalibrationReprojectionError = Methods.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, Board, ImageSize, 
+        CalibrationReprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, Board, ImageSize, 
           CameraMatrix, DistCoeffs, out rvecs, out tvecs, (int)CalibrationFlags);
         Rvecs = rvecs;
         Tvecs = tvecs;

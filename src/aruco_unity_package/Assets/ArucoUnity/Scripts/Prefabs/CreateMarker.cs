@@ -54,7 +54,7 @@ namespace ArucoUnity
 
       void Start()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         MarkerId = markerId;
         MarkerSize = markerSize;
         MarkerBorderBits = markerBorderBits;

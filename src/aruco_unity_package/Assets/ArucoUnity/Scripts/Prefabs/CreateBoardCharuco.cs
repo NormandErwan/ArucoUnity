@@ -62,7 +62,7 @@ namespace ArucoUnity
 
       void Start()
       {
-        dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         Create();
 
         if (drawBoard)

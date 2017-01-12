@@ -118,7 +118,7 @@ namespace ArucoUnity
 
       protected override void Configurate()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         DetectorParameters = detectorParametersManager.detectorParameters;
         CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
 
@@ -162,25 +162,25 @@ namespace ArucoUnity
         // Detect markers
         byte[] imageData = ImageTexture.GetRawTextureData();
         image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
-        Methods.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
+        Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         if (applyRefindStrategy)
         {
-          Methods.RefineDetectedMarkers(image, CharucoBoard, corners, ids, rejectedImgPoints);
+          Functions.RefineDetectedMarkers(image, CharucoBoard, corners, ids, rejectedImgPoints);
         }
 
         if (ids.Size() > 0)
         {
           // Interpolate charuco corners
           Utility.Mat currentCharucoCorners, currentCharucoIds;
-          Methods.InterpolateCornersCharuco(corners, ids, image, CharucoBoard, out currentCharucoCorners, out currentCharucoIds);
+          Functions.InterpolateCornersCharuco(corners, ids, image, CharucoBoard, out currentCharucoCorners, out currentCharucoIds);
 
           // Draw the markers on the image
-          Methods.DrawDetectedMarkers(image, corners, ids);
+          Functions.DrawDetectedMarkers(image, corners, ids);
 
           if (currentCharucoIds.Total() > 0)
           {
-            Methods.DrawDetectedCornersCharuco(image, currentCharucoCorners, currentCharucoIds);
+            Functions.DrawDetectedCornersCharuco(image, currentCharucoCorners, currentCharucoIds);
           }
         }
 
@@ -259,7 +259,7 @@ namespace ArucoUnity
 
         // Calibrate camera using aruco markers
         Utility.VectorMat rvecsAruco, tvecsAruco;
-        ArucoCalibrationReprojectionError = Methods.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, 
+        ArucoCalibrationReprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, 
           CharucoBoard, ImageSize, CameraMatrix, DistCoeffs, out rvecsAruco, out tvecsAruco, (int)CalibrationFlags);
 
         // Interpolate charuco corners using camera parameters
@@ -269,7 +269,7 @@ namespace ArucoUnity
         for (uint i = 0; i < AllIds.Size(); i++)
         {
           Utility.Mat charucoCorners, charucoIds;
-          Methods.InterpolateCornersCharuco(AllCorners.At(i), AllIds.At(i), AllImages.At(i), CharucoBoard, out charucoCorners, out charucoIds);
+          Functions.InterpolateCornersCharuco(AllCorners.At(i), AllIds.At(i), AllImages.At(i), CharucoBoard, out charucoCorners, out charucoIds);
 
           AllCharucoCorners.PushBack(charucoCorners);
           AllCharucoIds.PushBack(charucoIds);
@@ -283,7 +283,7 @@ namespace ArucoUnity
         }
 
         // Calibrate camera using charuco
-        CharucoCalibrationReprojectionError = Methods.CalibrateCameraCharuco(AllCharucoCorners, AllCharucoIds, CharucoBoard, ImageSize,
+        CharucoCalibrationReprojectionError = Functions.CalibrateCameraCharuco(AllCharucoCorners, AllCharucoIds, CharucoBoard, ImageSize,
           CameraMatrix, DistCoeffs);
 
         calibrate = true;

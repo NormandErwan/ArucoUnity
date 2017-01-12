@@ -68,7 +68,7 @@ namespace ArucoUnity
     CV_64F4 = (CV_64F + 3) << CV.CN_SHIFT,
   };
 
-  public class Methods
+  public class Functions
   {
     [DllImport("ArucoUnity")]
     static extern double au_calibrateCameraAruco1(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 

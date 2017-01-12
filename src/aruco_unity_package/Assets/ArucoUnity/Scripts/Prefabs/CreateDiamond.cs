@@ -62,7 +62,7 @@ namespace ArucoUnity
 
       void Start()
       {
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
         SquareSideLength = squareSideLength;
         MarkerSideLength = markerSideLength;
         Ids = ids;
@@ -91,7 +91,7 @@ namespace ArucoUnity
         }
 
         Mat image;
-        Methods.DrawCharucoDiamond(Dictionary, ids_vec4i, SquareSideLength, MarkerSideLength, out image, MarginsSize, MarkerBorderBits);
+        Functions.DrawCharucoDiamond(Dictionary, ids_vec4i, SquareSideLength, MarkerSideLength, out image, MarginsSize, MarkerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);

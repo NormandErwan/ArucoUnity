@@ -96,7 +96,7 @@ namespace ArucoUnity
       protected override void Configurate()
       {
         DetectorParameters = detectorParametersManager.detectorParameters;
-        Dictionary = Methods.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
         // Configurate the camera-plane group or the canvas
         if (estimatePose)
@@ -166,12 +166,12 @@ namespace ArucoUnity
 
         // Detect markers
         image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
-        Methods.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
+        Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
         if (estimatePose && ids.Size() > 0)
         {
-          Methods.EstimatePoseSingleMarkers(corners, markerSideLength, CameraMatrix, DistCoeffs, out rvecs, out tvecs);
+          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, CameraMatrix, DistCoeffs, out rvecs, out tvecs);
         }
         else
         {
@@ -189,7 +189,7 @@ namespace ArucoUnity
         {
           if (showDetectedMarkers)
           {
-            Methods.DrawDetectedMarkers(image, corners, ids);
+            Functions.DrawDetectedMarkers(image, corners, ids);
           }
 
           if (estimatePose && DetectedMarkersObject)
@@ -200,7 +200,7 @@ namespace ArucoUnity
 
         if (showRejectedCandidates && rejectedImgPoints.Size() > 0)
         {
-          Methods.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
+          Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
         // Undistord the image
