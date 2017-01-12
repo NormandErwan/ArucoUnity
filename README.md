@@ -1,13 +1,16 @@
 # ArUco Unity
 
-OpenCV ArUco module for Unity 5.
+OpenCV's ArUco Marker Detection module adapted for Unity 5.
+
+This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)
+ and was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
 
 ## Usage
 
-1. Retrieve the ArucoUnity Unity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy `<aruco_unity_source_directory>/src/aruco_unity_package/Assets` folder into your Unity project.
+1. Retrieve the ArucoUnity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy `<aruco_unity_source_directory>/src/aruco_unity_package/Assets` folder into your Unity project.
 2. Open your Unity project and use the prefabs of the ArucoUnity package.
 
-## How to build
+## Build
 
 ### Configuration
 
@@ -62,8 +65,12 @@ All tests should pass.
 The documentation of the library is available online:
 [https://enormand.github.io/aruco-unity/modules.html](https://enormand.github.io/aruco-unity/modules.html)
 
-## License
+## Licenses
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (3-clause BSD license).
 
-See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies.
+See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. ArUco Unity makes use of the
+following projects:
+
+- [OpenCV](http://opencv.org/) and its [ArUco Marker Detection](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco) extra module.
+- [Google Test](https://github.com/google/googletest)
