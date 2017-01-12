@@ -2,7 +2,7 @@
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     /// <summary>
     /// Manage a webcam device and its associated textures updated each frame.

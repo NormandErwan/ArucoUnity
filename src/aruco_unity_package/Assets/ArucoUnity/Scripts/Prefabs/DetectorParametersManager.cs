@@ -2,7 +2,7 @@
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     public class DetectorParametersManager : MonoBehaviour
     {

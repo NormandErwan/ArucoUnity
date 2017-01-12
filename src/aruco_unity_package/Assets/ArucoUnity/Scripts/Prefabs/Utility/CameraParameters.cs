@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     [Serializable]
     public class CameraParameters

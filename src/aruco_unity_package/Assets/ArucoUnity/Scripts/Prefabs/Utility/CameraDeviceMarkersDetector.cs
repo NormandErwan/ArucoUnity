@@ -2,7 +2,7 @@
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     public abstract class CameraDeviceMarkersDetector : MonoBehaviour
     {

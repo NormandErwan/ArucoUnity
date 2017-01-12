@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     // TODO: doc
     public class CalibrateCameraBoard : CameraDeviceMarkersDetector

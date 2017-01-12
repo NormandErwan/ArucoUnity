@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     public class DetectMarkers : CameraDeviceMarkersDetector
     {
@@ -69,7 +69,7 @@ namespace ArucoUnity
 
       private Dictionary<int, GameObject> markerObjects;
 
-      public DetectMarkers(CameraDeviceController cameraDeviceController) 
+      public DetectMarkers(CameraDeviceController cameraDeviceController)
         : base(cameraDeviceController)
       {
       }
@@ -88,7 +88,7 @@ namespace ArucoUnity
           Utility.VectorInt ids;
           Utility.VectorVectorPoint2f rejectedImgPoints;
           Utility.VectorVec3d rvecs, tvecs;
-          
+
           Detect(out image, out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
         }
       }
@@ -150,7 +150,7 @@ namespace ArucoUnity
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
         cameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
-        cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1); 
+        cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1);
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
         cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
@@ -158,7 +158,7 @@ namespace ArucoUnity
         return true;
       }
 
-      public void Detect(out Utility.Mat image, out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, 
+      public void Detect(out Utility.Mat image, out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids,
         out Utility.VectorVectorPoint2f rejectedImgPoints, out Utility.VectorVec3d rvecs, out Utility.VectorVec3d tvecs)
       {
         // Copy the bytes of the texture to the image
@@ -246,19 +246,24 @@ namespace ArucoUnity
             markerObjects.Add(ids.At(i), markerObject);
           }
 
-          // Calculate the position shift of the object
-          Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
-          Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
-          Vector3 positionShift = camera.ViewportToWorldPoint(imageCenterMarkerObject) - camera.ViewportToWorldPoint(opticalCenterMarkerObject);
-          print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
-            + "; positionShift: " + positionShift.ToString("F3"));
-
           // Place and orient the object to match the marker
           markerObject.transform.rotation = rvecs.At(i).ToRotation();
           markerObject.transform.position = tvecs.At(i).ToPosition();
-          //markerObject.transform.localPosition += markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
-          //markerObject.transform.localPosition -= markerObject.transform.rotation * positionShift; // Adjust the position taking account the optical center
-          markerObject.transform.localPosition += markerObject.transform.rotation * userPositionShift; // TODO: remove
+
+          // Adjust the object position
+          Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
+          Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
+          Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
+
+          Vector3 positionShift = markerObject.transform.rotation * userPositionShift // Take account of the optical center not in the image center
+            + markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
+          //  + userPositionShift;  // TODO: remove
+
+          markerObject.transform.localPosition += positionShift;
+          //userPositionShift = positionShift;
+
+          print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
+            + "; positionShift: " + (markerObject.transform.rotation * opticalShift).ToString("F4"));
 
           markerObject.SetActive(true);
         }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     /// <summary>
     /// Display the texture of the active camera on a canvas.

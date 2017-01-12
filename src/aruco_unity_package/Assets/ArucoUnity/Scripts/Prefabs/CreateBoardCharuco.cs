@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ArucoUnity
 {
-  namespace Examples
+  namespace Samples
   {
     public class CreateBoardCharuco : MonoBehaviour
     {
