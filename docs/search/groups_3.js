@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['exception',['Exception',['../group__utility__exception.html',1,'']]]
+  ['detectorparameters',['DetectorParameters',['../group__detector__parameters.html',1,'']]],
+  ['dictionary',['Dictionary',['../group__dictionary.html',1,'']]]
 ];

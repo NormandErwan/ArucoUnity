@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ArucoUnity: ArUco Unity</title>
+<title>ArUco Unity: ArUco Unity</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ArucoUnity
+   <div id="projectname">ArUco Unity
    &#160;<span id="projectnumber">0.1.0</span>
    </div>
-   <div id="projectbrief">OpenCV ArUco module for Unity 5.</div>
+   <div id="projectbrief">OpenCV&#39;s ArUco Marker Detection module adapted for Unity 5.</div>
   </td>
  </tr>
  </tbody>
@@ -64,13 +64,14 @@ $(function() {
 <div class="title">ArUco Unity </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>OpenCV ArUco module for Unity 5.</p>
+<div class="textblock"><p>OpenCV's ArUco Marker Detection module adapted for Unity 5.</p>
+<p>This project has been developed as part of the master thesis of <a href="https://ca.linkedin.com/in/normanderwan">Erwan Normand</a> and was supported by the <a href="https://www.etsmtl.ca/">ÉTS - École de Technologie Supérieure</a>.</p>
 <h2>Usage</h2>
 <ol type="1">
-<li>Retrieve the ArucoUnity Unity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy <code>&lt;aruco_unity_source_directory&gt;/src/aruco_unity_package/Assets</code> folder into your Unity project.</li>
+<li>Retrieve the ArucoUnity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy <code>&lt;aruco_unity_source_directory&gt;/src/aruco_unity_package/Assets</code> folder into your Unity project.</li>
 <li>Open your Unity project and use the prefabs of the ArucoUnity package.</li>
 </ol>
-<h2>How to build</h2>
+<h2>Build</h2>
 <h3>Configuration</h3>
 <p>Use <a href="https://cmake.org/">CMake</a> to configurate the ArUco Unity library. By default, it will retrieve and build OpenCV with the <a href="https://github.com/opencv/opencv_contrib/tree/master/modules/aruco">ArUco module</a>. Run the following commands, it will take several minutes:</p>
 <div class="fragment"><div class="line">$ cd &lt;aruco_unity_build_directory&gt;</div><div class="line">$ cmake &lt;aruco_unity_source_directory&gt;</div></div><!-- fragment --><p>If you want to provide your own version of OpenCV, add the following options to the cmake configuration command: <code>-DAUTO_BUILD_OPENCV=OFF -DOpenCV_DIR=&lt;opencv_install_dir&gt;</code>. You need to build the ArUco module. Follow this instructions: <a href="https://github.com/opencv/opencv_contrib">https://github.com/opencv/opencv_contrib</a></p>
@@ -84,13 +85,17 @@ $(function() {
 <div class="fragment"><div class="line">$ cd &lt;aruco_unity_build_directory&gt;</div><div class="line">$ cmake -DBUILD_TESTS=ON &lt;aruco_unity_source_directory&gt;</div><div class="line">$ ctest</div></div><!-- fragment --><p>All tests should pass.</p>
 <h2>Documentation</h2>
 <p>The documentation of the library is available online: <a href="https://enormand.github.io/aruco-unity/modules.html">https://enormand.github.io/aruco-unity/modules.html</a></p>
-<h2>License</h2>
+<h2>Licenses</h2>
 <p>See the LICENSE file for license rights and limitations (3-clause BSD license).</p>
-<p>See the <a href="3rdparty/">3rdparty folder</a> for licenses of the third-party dependencies. </p>
+<p>See the <a href="3rdparty/">3rdparty folder</a> for licenses of the third-party dependencies. ArUco Unity makes use of the following projects:</p>
+<ul>
+<li><a href="http://opencv.org/">OpenCV</a> and its <a href="https://github.com/opencv/opencv_contrib/tree/master/modules/aruco">ArUco Marker Detection</a> extra module.</li>
+<li><a href="https://github.com/google/googletest">Google Test</a> </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 11 2017 18:40:52 for ArucoUnity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 12 2017 16:07:44 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
