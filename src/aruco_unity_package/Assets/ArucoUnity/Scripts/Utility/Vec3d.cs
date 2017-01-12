@@ -72,6 +72,8 @@ namespace ArucoUnity
         rotation.z = angleAxisNormalized.z * s;
         rotation.w = Mathf.Cos(angle / 2);
 
+        rotation = rotation * Quaternion.Euler(0f, 90f, 90f); // Re-orient to put the y axis up, and the the x and z axis each side of the first corner of the marker
+
         return rotation;
       }
     }

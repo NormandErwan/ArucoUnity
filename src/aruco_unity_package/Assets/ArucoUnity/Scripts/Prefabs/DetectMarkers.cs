@@ -262,7 +262,7 @@ namespace ArucoUnity
           //markerObject.transform.position += (markerObject.transform.rotation * positionShift); // TODO: fix
           markerObject.transform.localPosition += (markerObject.transform.rotation * userPositionShift); // TODO: remove
 
-          markerObject.transform.localPosition += markerObject.transform.forward * markerSideLength / 2; // Move up the object to coincide with the marker
+          markerObject.transform.localPosition += markerObject.transform.up * markerSideLength / 2; // Move up the object to coincide with the marker
 
           markerObject.SetActive(true);
         }
