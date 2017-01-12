@@ -4,6 +4,9 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup dictionary Dictionary
 //! \brief Set of markers. 
 //!
@@ -158,5 +161,7 @@ extern "C" {
 }
 
 //! @} dictionary
+
+//! @} aruco_unity_lib
 
 #endif

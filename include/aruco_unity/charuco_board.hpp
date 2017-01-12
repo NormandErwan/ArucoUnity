@@ -4,6 +4,9 @@
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup charuco_board CharucoBoard
 //! \brief A ChArUco board is a planar board where the markers are placed inside the white squares of a chessboard.
 //!
@@ -111,5 +114,7 @@ extern "C" {
 }
 
 //! @} charuco_board
+
+//! @} aruco_unity_lib
 
 #endif

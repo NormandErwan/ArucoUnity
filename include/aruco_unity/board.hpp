@@ -4,6 +4,9 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup board Board
 //! \brief Board of markers.
 //!
@@ -45,5 +48,7 @@ extern "C" {
 }
 
 //! @} board
+
+//! @} aruco_unity_lib
 
 #endif

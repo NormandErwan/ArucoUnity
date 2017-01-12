@@ -4,6 +4,9 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup detector_parameters DetectorParameters
 //! \brief Parameters for the detectMarker process
 //!
@@ -210,5 +213,7 @@ extern "C" {
 }
 
 //! @} detector_parameters
+
+//! @} aruco_unity_lib
 
 #endif

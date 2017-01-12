@@ -1,6 +1,9 @@
 #ifndef __ARUCO_UNITY_UTILITY_HPP__
 #define __ARUCO_UNITY_UTILITY_HPP__
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup utility Utility and OpenCV main modules
 //! @{
 //!   @defgroup utility_calib3d OpenCV calib3d module
@@ -26,7 +29,9 @@
 //!     @defgroup utility_vector_vector_point2f std::vector<std::vector<cv::Point2f>>
 //!     @defgroup utility_vector_vector_point3f std::vector<std::vector<cv::Point3f>>
 //!     @defgroup utility_vector_vector_vector_point2f std::vector<std::vector<std::vector<cv::Point3f>>>
-//!   @}
-//! @}
+//!   @} utility_vector
+//! @} utility
+
+//! @} aruco_unity_lib
 
 #endif

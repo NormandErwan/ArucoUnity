@@ -4,6 +4,9 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @addtogroup aruco_unity_lib
+//! @{
+
 //! @defgroup grid_board GridBoard
 //! \brief Planar board with grid arrangement of markers.
 //!
@@ -80,5 +83,7 @@ extern "C" {
 }
 
 //! @} grid_board
+
+//! @} aruco_unity_lib
 
 #endif

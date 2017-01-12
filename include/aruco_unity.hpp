@@ -5,6 +5,12 @@
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/exports.hpp"
 
+//! @defgroup aruco_unity_lib ArUco Unity's library
+//! \brief C interface for the OpenCV's ArUco Marker Detection extra module.
+//!
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html
+//! @{
+
 extern "C" {
   //! \brief Calibrate a camera using aruco markers
   //!
@@ -368,5 +374,7 @@ extern "C" {
     std::vector<std::vector<cv::Point2f>>* detectedCorners, std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners,
     cv::Exception* exception);
 }
+
+//! @} aruco_unity_lib
 
 #endif

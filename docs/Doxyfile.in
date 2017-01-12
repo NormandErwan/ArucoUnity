@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = @CMAKE_PROJECT_NAME@
+PROJECT_NAME           = "ArUco Unity"
 PROJECT_NUMBER         = @VERSION@
 PROJECT_BRIEF          = "OpenCV's ArUco Marker Detection module adapted for Unity 5."
 PROJECT_LOGO           =
