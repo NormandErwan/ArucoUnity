@@ -10,7 +10,7 @@ namespace ArucoUnity
   {
     namespace std
     {
-      public class VectorPoint2f : HandleCvPtr
+      public class VectorPoint2f : HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

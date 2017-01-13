@@ -10,7 +10,7 @@ namespace ArucoUnity
   {
     namespace cv
     {
-      public class Scalar : HandleCvPtr
+      public class Scalar : HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

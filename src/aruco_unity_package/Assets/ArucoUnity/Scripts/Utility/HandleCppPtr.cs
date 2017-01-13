@@ -7,31 +7,31 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public enum DeleteResponsibility
+    public abstract class HandleCppPtr
     {
-      True,
-      False
-    }
+      public enum DeleteResponsibility
+      {
+        True,
+        False
+      }
 
-    public abstract class HandleCvPtr // TODO: rename to HanddleCppPtr, and put the enum DeleteResponsibility into the class
-    {
       public DeleteResponsibility deleteResponsibility;
       
       HandleRef handle;
 
-      public HandleCvPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+      public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
         this.cvPtr = System.IntPtr.Zero;
         this.deleteResponsibility = deleteResponsibility;
       }
 
-      public HandleCvPtr(System.IntPtr cvPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+      public HandleCppPtr(System.IntPtr cvPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
         this.cvPtr = cvPtr;
         this.deleteResponsibility = deleteResponsibility;
       }
 
-      ~HandleCvPtr()
+      ~HandleCppPtr()
       {
         if (deleteResponsibility == DeleteResponsibility.True)
         {

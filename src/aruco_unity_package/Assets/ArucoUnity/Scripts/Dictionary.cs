@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  public class Dictionary : HandleCvPtr
+  public class Dictionary : HandleCppPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_Dictionary_new1(System.IntPtr bytesList, int markerSize, int maxCorrectionBits);

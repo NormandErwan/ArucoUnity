@@ -10,7 +10,7 @@ namespace ArucoUnity
   {
     namespace cv
     {
-      public class Point2f : HandleCvPtr
+      public class Point2f : HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

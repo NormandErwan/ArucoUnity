@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
   
-  public abstract class Board : HandleCvPtr
+  public abstract class Board : HandleCppPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);

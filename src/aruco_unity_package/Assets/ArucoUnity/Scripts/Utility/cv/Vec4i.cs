@@ -9,7 +9,7 @@ namespace ArucoUnity
   {
     namespace cv
     {
-      public class Vec4i : HandleCvPtr
+      public class Vec4i : HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

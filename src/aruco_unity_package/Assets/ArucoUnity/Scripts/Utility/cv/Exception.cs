@@ -10,7 +10,7 @@ namespace ArucoUnity
   {
     namespace cv
     {
-      public class Exception : HandleCvPtr
+      public class Exception : HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

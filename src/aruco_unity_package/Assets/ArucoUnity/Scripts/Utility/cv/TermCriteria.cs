@@ -9,7 +9,7 @@ namespace ArucoUnity
   {
     namespace cv
     {
-      public class TermCriteria : HandleCvPtr
+      public class TermCriteria : HandleCppPtr
       {
         public enum Type
         {

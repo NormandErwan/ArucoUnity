@@ -5,7 +5,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  public class DetectorParameters : Utility.HandleCvPtr
+  public class DetectorParameters : Utility.HandleCppPtr
   {
     [DllImport("ArucoUnity")]
     static extern System.IntPtr au_DetectorParameters_create();
