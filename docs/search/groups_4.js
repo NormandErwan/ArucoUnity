@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exception',['Exception',['../group__utility__exception.html',1,'']]]
+  ['exception_20class',['Exception class',['../group__exception.html',1,'']]]
 ];

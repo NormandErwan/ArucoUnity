@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['opencv_20calib3d_20module',['OpenCV calib3d module',['../group__utility__calib3d.html',1,'']]],
-  ['opencv_20imgproc_20module',['OpenCV imgproc module',['../group__utility__imgproc.html',1,'']]],
-  ['opencv_20mat',['OpenCV Mat',['../group__utility__mat.html',1,'']]],
-  ['opencv_20point2f',['OpenCV Point2f',['../group__utility__point2f.html',1,'']]],
-  ['opencv_20point3f',['OpenCV Point3f',['../group__utility__point3f.html',1,'']]],
-  ['opencv_20scalar',['OpenCV Scalar',['../group__utility__scalar.html',1,'']]],
-  ['opencv_20size',['OpenCV Size',['../group__utility__size.html',1,'']]],
-  ['opencv_20termcriteria',['OpenCV TermCriteria',['../group__utility__term__criteria.html',1,'']]],
-  ['opencv_20vec3d',['OpenCV Vec3d',['../group__utility__vec3d.html',1,'']]],
-  ['opencv_20vec4i',['OpenCV Vec4i',['../group__utility__vec4i.html',1,'']]]
+  ['identify',['Identify',['../class_aruco_unity_1_1_dictionary.html#a1bd966a286158373aa94e2f7c9c86b50',1,'ArucoUnity::Dictionary']]],
+  ['ids',['Ids',['../class_aruco_unity_1_1_samples_1_1_create_diamond.html#a07fca64e0d52be0a4b327ef6204f877d',1,'ArucoUnity.Samples.CreateDiamond.Ids()'],['../class_aruco_unity_1_1_board.html#aa66b8433c8562059a1cfb670d812f494',1,'ArucoUnity.Board.ids()'],['../class_aruco_unity_1_1_samples_1_1_create_diamond.html#a71b5db93c02816e0f0046cd7296a7af5',1,'ArucoUnity.Samples.CreateDiamond.ids()']]],
+  ['image',['Image',['../class_aruco_unity_1_1_samples_1_1_create_board.html#a619312e94b978c5ee19b93f32bf341ee',1,'ArucoUnity.Samples.CreateBoard.Image()'],['../class_aruco_unity_1_1_samples_1_1_create_diamond.html#a9a5d78ea1cdc7c545eed13d26a3b99dc',1,'ArucoUnity.Samples.CreateDiamond.Image()'],['../class_aruco_unity_1_1_samples_1_1_create_marker.html#a7daa3887cac2746fc71a3fe1a9e4216f',1,'ArucoUnity.Samples.CreateMarker.Image()'],['../class_aruco_unity_1_1_samples_1_1_create_board_charuco.html#a18c8523c940e3a37854bf6350483d27c',1,'ArucoUnity.Samples.CreateBoardCharuco.image()']]],
+  ['imageheight',['ImageHeight',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#a97ff920caa737a26c80e6a66c3c9569b',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['imagemesh',['ImageMesh',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#a640ea91320e999a653b80f72bf71efe1',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['imageratio',['ImageRatio',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#af75f9f67e6a73e8bd93bbad3884bf11c',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['imagerotation',['ImageRotation',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#a46d9070f9eb8e00515622d7e28d2007e',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['imagescalefrontfacing',['ImageScaleFrontFacing',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#a15a17fba43b80b23003a971c7dcc89ff',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['imagesize',['ImageSize',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board.html#a3860b6ca1c03c89b63c11b921f3bf7e0',1,'ArucoUnity.Samples.CalibrateCameraBoard.ImageSize()'],['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#a1a09617731b77528e26d4c631601266a',1,'ArucoUnity.Samples.CalibrateCameraBoardCharuco.ImageSize()']]],
+  ['imagetexture',['ImageTexture',['../class_aruco_unity_1_1_samples_1_1_create_board.html#a302853e3bc348e78bfcbd9308f1c106e',1,'ArucoUnity.Samples.CreateBoard.ImageTexture()'],['../class_aruco_unity_1_1_samples_1_1_create_diamond.html#ad5d563e6a2ca9f6569efacd454295bf0',1,'ArucoUnity.Samples.CreateDiamond.ImageTexture()'],['../class_aruco_unity_1_1_samples_1_1_create_marker.html#accbd398631587af83a43c3d7ffd6f9ba',1,'ArucoUnity.Samples.CreateMarker.ImageTexture()'],['../class_aruco_unity_1_1_samples_1_1_camera_device_markers_detector.html#a5f3545fdc18ac8132495da07bdb44492',1,'ArucoUnity.Samples.CameraDeviceMarkersDetector.ImageTexture()'],['../class_aruco_unity_1_1_samples_1_1_create_board_charuco.html#a047761b45dc4d3b16c0e927af30a1bf4',1,'ArucoUnity.Samples.CreateBoardCharuco.imageTexture()']]],
+  ['imageuvrectflip',['ImageUvRectFlip',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#a5b8f84ed56b5d67ef0e37a4344d4b881',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['imagewidth',['ImageWidth',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#aacc6c75159710779ad25f68832892be6',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['imgproc',['Imgproc',['../class_aruco_unity_1_1_utility_1_1cv_1_1_imgproc.html',1,'ArucoUnity.Utility.cv.Imgproc'],['../group__imgproc.html',1,'(Global Namespace)']]],
+  ['imgproc_2ecs',['Imgproc.cs',['../_imgproc_8cs.html',1,'']]],
+  ['imgproc_2ehpp',['imgproc.hpp',['../imgproc_8hpp.html',1,'']]],
+  ['importarrays',['ImportArrays',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#a186e0022e46595259a136af605dec530',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['interpolatecornerscharuco',['InterpolateCornersCharuco',['../group__aruco__unity__package.html#ga7fcf7d644fbec80960197136780f2345',1,'ArucoUnity.Functions.InterpolateCornersCharuco(VectorVectorPoint2f markerCorners, VectorInt markerIds, Mat image, CharucoBoard board, out Mat charucoCorners, out Mat charucoIds, Mat cameraMatrix, Mat distCoeffs)'],['../group__aruco__unity__package.html#gaa828cd35abee0edb49309e54d5eb7ed1',1,'ArucoUnity.Functions.InterpolateCornersCharuco(VectorVectorPoint2f markerCorners, VectorInt markerIds, Mat image, CharucoBoard board, out Mat charucoCorners, out Mat charucoIds, Mat cameraMatrix)'],['../group__aruco__unity__package.html#ga50619ebdc97da0d8729dd6ed313261d5',1,'ArucoUnity.Functions.InterpolateCornersCharuco(VectorVectorPoint2f markerCorners, VectorInt markerIds, Mat image, CharucoBoard board, out Mat charucoCorners, out Mat charucoIds)']]]
 ];

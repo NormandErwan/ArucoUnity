@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['utility_20and_20opencv_20main_20modules',['Utility and OpenCV main modules',['../group__utility.html',1,'']]]
+  ['point2f_20class',['Point2f class',['../group__point2f.html',1,'']]],
+  ['point3f_20class',['Point3f class',['../group__point3f.html',1,'']]]
 ];
