@@ -3,16 +3,16 @@
 
 extern "C" {
   // Constructors & Destructors
-  std::vector<cv::Point3f>* au_vectorPoint3f_new() {
+  std::vector<cv::Point3f>* au_std_vectorPoint3f_new() {
     return new std::vector<cv::Point3f>();
   }
 
-  void au_vectorPoint3f_delete(std::vector<cv::Point3f>* vector) {
+  void au_std_vectorPoint3f_delete(std::vector<cv::Point3f>* vector) {
     delete vector;
   }
 
   // Functions
-  cv::Point3f* au_vectorPoint3f_at(std::vector<cv::Point3f>* vector, size_t pos, cv::Exception* exception) {
+  cv::Point3f* au_std_vectorPoint3f_at(std::vector<cv::Point3f>* vector, size_t pos, cv::Exception* exception) {
     cv::Point3f* element = NULL;
     try {
       element = &(vector->at(pos));
@@ -23,15 +23,15 @@ extern "C" {
     return element;
   }
   
-  cv::Point3f* au_vectorPoint3f_data(std::vector<cv::Point3f>* vector) {
+  cv::Point3f* au_std_vectorPoint3f_data(std::vector<cv::Point3f>* vector) {
     return vector->data();
   }
 
-  void au_vectorPoint3f_push_back(std::vector<cv::Point3f>* vector, cv::Point3f* value) {
+  void au_std_vectorPoint3f_push_back(std::vector<cv::Point3f>* vector, cv::Point3f* value) {
     vector->push_back(cv::Point3f(*value));
   }
 
-  size_t au_vectorPoint3f_size(std::vector<cv::Point3f>* vector) {
+  size_t au_std_vectorPoint3f_size(std::vector<cv::Point3f>* vector) {
     return vector->size();
   }
 }

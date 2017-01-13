@@ -15,11 +15,11 @@ extern "C" {
   //! @{
 
   //! \brief Creates an empty Point2f.
-  ARUCO_UNITY_API cv::Point2f* au_Point2f_new();
+  ARUCO_UNITY_API cv::Point2f* au_cv_Point2f_new();
 
   //! \brief Deletes any Point2f.
   //! \param point2f The Point2f used.
-  ARUCO_UNITY_API void au_Point2f_delete(cv::Point2f* point2f);
+  ARUCO_UNITY_API void au_cv_Point2f_delete(cv::Point2f* point2f);
 
   //! @} Constructors & Destructors
 
@@ -28,21 +28,21 @@ extern "C" {
 
   //! \brief Returns the x value.
   //! \param point2f The Point2f used.
-  ARUCO_UNITY_API float au_Point2f_getX(cv::Point2f* point2f);
+  ARUCO_UNITY_API float au_cv_Point2f_getX(cv::Point2f* point2f);
 
   //! \brief Sets the x value.
   //! \param point2f The Point2f used.
   //! \param x The new value.
-  ARUCO_UNITY_API void au_Point2f_setX(cv::Point2f* point2f, float x);
+  ARUCO_UNITY_API void au_cv_Point2f_setX(cv::Point2f* point2f, float x);
 
   //! \brief Returns the y value.
   //! \param point2f The Point2f used.
-  ARUCO_UNITY_API float au_Point2f_getY(cv::Point2f* point2f);
+  ARUCO_UNITY_API float au_cv_Point2f_getY(cv::Point2f* point2f);
 
   //! \brief Sets the y value.
   //! \param point2f The Point2f used.
   //! \param y The new value.
-  ARUCO_UNITY_API void au_Point2f_setY(cv::Point2f* point2f, float y);
+  ARUCO_UNITY_API void au_cv_Point2f_setY(cv::Point2f* point2f, float y);
 
   //! @} Variables
 }

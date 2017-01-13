@@ -15,11 +15,11 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<cv::Point3f>.
-  ARUCO_UNITY_API std::vector<cv::Point3f>* au_vectorPoint3f_new();
+  ARUCO_UNITY_API std::vector<cv::Point3f>* au_std_vectorPoint3f_new();
 
   //! \brief Deletes any std::vector<cv::Point3f>.
   //! \param vector The vector used.
-  ARUCO_UNITY_API void au_vectorPoint3f_delete(std::vector<cv::Point3f>* vector);
+  ARUCO_UNITY_API void au_std_vectorPoint3f_delete(std::vector<cv::Point3f>* vector);
 
   //! @} Constructors & Destructors
 
@@ -31,20 +31,20 @@ extern "C" {
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API cv::Point3f* au_vectorPoint3f_at(std::vector<cv::Point3f>* vector, size_t pos, cv::Exception* exception);
+  ARUCO_UNITY_API cv::Point3f* au_std_vectorPoint3f_at(std::vector<cv::Point3f>* vector, size_t pos, cv::Exception* exception);
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  ARUCO_UNITY_API cv::Point3f* au_vectorPoint3f_data(std::vector<cv::Point3f>* vector);
+  ARUCO_UNITY_API cv::Point3f* au_std_vectorPoint3f_data(std::vector<cv::Point3f>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
   //! \param value The value of the element to append.
-  ARUCO_UNITY_API void au_vectorPoint3f_push_back(std::vector<cv::Point3f>* vector, cv::Point3f* value);
+  ARUCO_UNITY_API void au_std_vectorPoint3f_push_back(std::vector<cv::Point3f>* vector, cv::Point3f* value);
 
   //! \brief Returns the number of elements.
   //! \param vector The vector used.
-  ARUCO_UNITY_API size_t au_vectorPoint3f_size(std::vector<cv::Point3f>* vector);
+  ARUCO_UNITY_API size_t au_std_vectorPoint3f_size(std::vector<cv::Point3f>* vector);
 
   //! @} Functions
 }

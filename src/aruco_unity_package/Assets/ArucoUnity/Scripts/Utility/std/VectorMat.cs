@@ -14,25 +14,25 @@ namespace ArucoUnity
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_vectorMat_new();
+        static extern System.IntPtr au_std_vectorMat_new();
 
         [DllImport("ArucoUnity")]
-        static extern void au_vectorMat_delete(System.IntPtr vector);
+        static extern void au_std_vectorMat_delete(System.IntPtr vector);
 
         // Functions
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+        static extern System.IntPtr au_std_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern unsafe System.IntPtr* au_vectorMat_data(System.IntPtr vector);
+        static extern unsafe System.IntPtr* au_std_vectorMat_data(System.IntPtr vector);
 
         [DllImport("ArucoUnity")]
-        static extern void au_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
+        static extern void au_std_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
 
         [DllImport("ArucoUnity")]
-        static extern uint au_vectorMat_size(System.IntPtr vector);
+        static extern uint au_std_vectorMat_size(System.IntPtr vector);
 
-        public VectorMat() : base(au_vectorMat_new())
+        public VectorMat() : base(au_std_vectorMat_new())
         {
         }
 
@@ -43,20 +43,20 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_vectorMat_delete(cvPtr);
+          au_std_vectorMat_delete(cvPtr);
         }
 
         public Mat At(uint pos)
         {
           Exception exception = new Exception();
-          Mat element = new Mat(au_vectorMat_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+          Mat element = new Mat(au_std_vectorMat_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Mat[] Data()
         {
-          System.IntPtr* dataPtr = au_vectorMat_data(cvPtr);
+          System.IntPtr* dataPtr = au_std_vectorMat_data(cvPtr);
           uint size = Size();
 
           Mat[] data = new Mat[size];
@@ -70,12 +70,12 @@ namespace ArucoUnity
 
         public void PushBack(Mat value)
         {
-          au_vectorMat_push_back(cvPtr, value.cvPtr);
+          au_std_vectorMat_push_back(cvPtr, value.cvPtr);
         }
 
         public uint Size()
         {
-          return au_vectorMat_size(cvPtr);
+          return au_std_vectorMat_size(cvPtr);
         }
       }
     }

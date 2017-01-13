@@ -14,25 +14,25 @@ namespace ArucoUnity
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Point2f_new();
+        static extern System.IntPtr au_cv_Point2f_new();
 
         [DllImport("ArucoUnity")]
-        static extern void au_Point2f_delete(System.IntPtr point2f);
+        static extern void au_cv_Point2f_delete(System.IntPtr point2f);
 
         // Variables
         [DllImport("ArucoUnity")]
-        static extern float au_Point2f_getX(System.IntPtr point2f);
+        static extern float au_cv_Point2f_getX(System.IntPtr point2f);
 
         [DllImport("ArucoUnity")]
-        static extern void au_Point2f_setX(System.IntPtr point2f, float x);
+        static extern void au_cv_Point2f_setX(System.IntPtr point2f, float x);
 
         [DllImport("ArucoUnity")]
-        static extern float au_Point2f_getY(System.IntPtr point2f);
+        static extern float au_cv_Point2f_getY(System.IntPtr point2f);
 
         [DllImport("ArucoUnity")]
-        static extern void au_Point2f_setY(System.IntPtr point2f, float y);
+        static extern void au_cv_Point2f_setY(System.IntPtr point2f, float y);
 
-        public Point2f() : base(au_Point2f_new())
+        public Point2f() : base(au_cv_Point2f_new())
         {
         }
 
@@ -43,19 +43,19 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_Point2f_delete(cvPtr);
+          au_cv_Point2f_delete(cvPtr);
         }
 
         public float x
         {
-          get { return au_Point2f_getX(cvPtr); }
-          set { au_Point2f_setX(cvPtr, value); }
+          get { return au_cv_Point2f_getX(cvPtr); }
+          set { au_cv_Point2f_setX(cvPtr, value); }
         }
 
         public float y
         {
-          get { return au_Point2f_getY(cvPtr); }
-          set { au_Point2f_setY(cvPtr, value); }
+          get { return au_cv_Point2f_getY(cvPtr); }
+          set { au_cv_Point2f_setY(cvPtr, value); }
         }
 
         public static implicit operator Vector2(Point2f point2f)

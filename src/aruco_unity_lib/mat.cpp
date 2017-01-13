@@ -3,24 +3,24 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::Mat* au_Mat_new1() {
+  cv::Mat* au_cv_Mat_new1() {
     return new cv::Mat();
   }
 
-  cv::Mat* au_Mat_new2_uchar(int rows, int cols, int type, uchar* data) {
+  cv::Mat* au_cv_Mat_new2_uchar(int rows, int cols, int type, uchar* data) {
     return new cv::Mat(rows, cols, type, data);
   }
 
-  cv::Mat* au_Mat_new2_double(int rows, int cols, int type, double* data) {
+  cv::Mat* au_cv_Mat_new2_double(int rows, int cols, int type, double* data) {
     return new cv::Mat(rows, cols, type, data);
   }
   
-  void au_Mat_delete(cv::Mat* mat) {
+  void au_cv_Mat_delete(cv::Mat* mat) {
     delete mat;
   }
 
   // Member Functions
-  int au_Mat_at_int_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
+  int au_cv_Mat_at_int_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
     int value = 0;
     try {
       value = mat->at<int>(i0, i1);
@@ -32,7 +32,7 @@ extern "C" {
     return value;
   }
 
-  void au_Mat_at_int_set(cv::Mat* mat, int i0, int i1, int value, cv::Exception* exception) {
+  void au_cv_Mat_at_int_set(cv::Mat* mat, int i0, int i1, int value, cv::Exception* exception) {
     try {
       mat->at<int>(i0, i1) = value;
     }
@@ -41,7 +41,7 @@ extern "C" {
     };
   }
 
-  double au_Mat_at_double_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
+  double au_cv_Mat_at_double_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
     double value = 0;
     try {
       value = mat->at<double>(i0, i1);
@@ -53,7 +53,7 @@ extern "C" {
     return value;
   }
 
-  void au_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception) {
+  void au_cv_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception) {
     try {
       mat->at<double>(i0, i1) = value;
     }
@@ -62,7 +62,7 @@ extern "C" {
     };
   }
 
-  void au_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
+  void au_cv_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
     try {
       mat->create(rows, cols, type);
     }
@@ -71,32 +71,32 @@ extern "C" {
     };
   }
 
-  size_t au_Mat_elemSize(cv::Mat* mat) {
+  size_t au_cv_Mat_elemSize(cv::Mat* mat) {
     return mat->elemSize();
   }
 
-  size_t au_Mat_total(cv::Mat* mat) {
+  size_t au_cv_Mat_total(cv::Mat* mat) {
     return mat->total();
   }
 
-  int au_Mat_type(cv::Mat* mat) {
+  int au_cv_Mat_type(cv::Mat* mat) {
     return mat->type();
   }
 
   // Variables
-  int au_Mat_getCols(cv::Mat* mat) {
+  int au_cv_Mat_getCols(cv::Mat* mat) {
     return mat->cols;
   }
 
-  uchar* au_Mat_getData(cv::Mat* mat) {
+  uchar* au_cv_Mat_getData(cv::Mat* mat) {
     return mat->data;
   }
 
-  int au_Mat_getRows(cv::Mat* mat) {
+  int au_cv_Mat_getRows(cv::Mat* mat) {
     return mat->rows;
   }
 
-  cv::Size* au_Mat_getSize(cv::Mat* mat) {
+  cv::Size* au_cv_Mat_getSize(cv::Mat* mat) {
     return new cv::Size(mat->size());
   }
 }

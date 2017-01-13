@@ -21,7 +21,7 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga61585db663d9da06b68e70cfbf6a1eac
-  ARUCO_UNITY_API void au_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception);
 
   //! @} Static Member Functions
 }

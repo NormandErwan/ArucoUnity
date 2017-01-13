@@ -15,7 +15,7 @@ extern "C" {
   //! @{
 
   //! \brief Creates an empty Mat.
-  ARUCO_UNITY_API cv::Mat* au_Mat_new1();
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new1();
 
   //! \brief Creates a Mat.
   //!
@@ -23,7 +23,7 @@ extern "C" {
   //! \param cols Number of columns. 
   //! \param type Array type. 
   //! \param data Pointer to the data. The external data is not automatically deallocated, so you should take care of it. 
-  ARUCO_UNITY_API cv::Mat* au_Mat_new2_uchar(int rows, int cols, int type, uchar* data);
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new2_uchar(int rows, int cols, int type, uchar* data);
 
   //! \brief Creates a Mat.
   //!
@@ -31,11 +31,11 @@ extern "C" {
   //! \param cols Number of columns. 
   //! \param type Array type. 
   //! \param data Pointer to the data. The external data is not automatically deallocated, so you should take care of it. 
-  ARUCO_UNITY_API cv::Mat* au_Mat_new2_double(int rows, int cols, int type, double* data);
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new2_double(int rows, int cols, int type, double* data);
 
   //! \brief Deletes any Mat.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API void au_Mat_delete(cv::Mat* mat);
+  ARUCO_UNITY_API void au_cv_Mat_delete(cv::Mat* mat);
 
   //! @} Constructors & Destructors
 
@@ -48,7 +48,7 @@ extern "C" {
   //! \param i0 Index along the dimension 0.
   //! \param i1 Index along the dimension 1.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API int au_Mat_at_int_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception);
+  ARUCO_UNITY_API int au_cv_Mat_at_int_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception);
 
   //! \brief Sets the specified array element as an int.
   //!
@@ -57,7 +57,7 @@ extern "C" {
   //! \param i1 Index along the dimension 1.
   //! \param value The new value.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API void au_Mat_at_int_set(cv::Mat* mat, int i0, int i1, int value, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_Mat_at_int_set(cv::Mat* mat, int i0, int i1, int value, cv::Exception* exception);
 
   //! \brief Returns the specified array element as a double.
   //!
@@ -65,7 +65,7 @@ extern "C" {
   //! \param i0 Index along the dimension 0.
   //! \param i1 Index along the dimension 1.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API double au_Mat_at_double_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception);
+  ARUCO_UNITY_API double au_cv_Mat_at_double_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception);
 
   //! \brief Sets the specified array element as a double.
   //!
@@ -74,7 +74,7 @@ extern "C" {
   //! \param i1 Index along the dimension 1.
   //! \param value The new value.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API void au_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception);
 
   //! \brief Allocates new array data if needed.
   //!
@@ -83,19 +83,19 @@ extern "C" {
   //! \param cols Number of columns.
   //! \param type Array type.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API void au_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception);
 
   //! \brief Returns the matrix element size in bytes.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API size_t au_Mat_elemSize(cv::Mat* mat);
+  ARUCO_UNITY_API size_t au_cv_Mat_elemSize(cv::Mat* mat);
 
   //! \brief Returns the total number of array elements.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API size_t au_Mat_total(cv::Mat* mat);
+  ARUCO_UNITY_API size_t au_cv_Mat_total(cv::Mat* mat);
 
   //! \brief Returns the type of a matrix element.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API int au_Mat_type(cv::Mat* mat);
+  ARUCO_UNITY_API int au_cv_Mat_type(cv::Mat* mat);
 
   //! @} Member Functions
   
@@ -104,19 +104,19 @@ extern "C" {
 
   //! \brief Returns the number of columns.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API int au_Mat_getCols(cv::Mat* mat);
+  ARUCO_UNITY_API int au_cv_Mat_getCols(cv::Mat* mat);
 
   //! \brief Returns a pointer to the data.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API uchar* au_Mat_getData(cv::Mat* mat);
+  ARUCO_UNITY_API uchar* au_cv_Mat_getData(cv::Mat* mat);
 
   //! \brief Returns the number of rows.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API int au_Mat_getRows(cv::Mat* mat);
+  ARUCO_UNITY_API int au_cv_Mat_getRows(cv::Mat* mat);
 
   //! \brief TODO
   //! \param mat The Mat used.
-  ARUCO_UNITY_API cv::Size* au_Mat_getSize(cv::Mat* mat);
+  ARUCO_UNITY_API cv::Size* au_cv_Mat_getSize(cv::Mat* mat);
 
   //! @} Variables
 }

@@ -15,11 +15,11 @@ extern "C" {
   //! @{
 
   //! \brief Creates a Scalar.
-  ARUCO_UNITY_API cv::Scalar* au_Scalar_new(double v0, double v1, double v2);
+  ARUCO_UNITY_API cv::Scalar* au_cv_Scalar_new(double v0, double v1, double v2);
 
   //! \brief Deletes any Scalar.
   //! \param scalar The Scalar used.
-  ARUCO_UNITY_API void au_Scalar_delete(cv::Scalar* scalar);
+  ARUCO_UNITY_API void au_cv_Scalar_delete(cv::Scalar* scalar);
 
   //! @} Constructors & Destructors
 }

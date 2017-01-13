@@ -14,19 +14,19 @@ namespace ArucoUnity
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Vec3d_new();
+        static extern System.IntPtr au_cv_Vec3d_new();
 
         [DllImport("ArucoUnity")]
-        static extern void au_Vec3d_delete(System.IntPtr vec3d);
+        static extern void au_cv_Vec3d_delete(System.IntPtr vec3d);
 
         // Member Functions
         [DllImport("ArucoUnity")]
-        static extern double au_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
+        static extern double au_cv_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern void au_Vec3d_set(System.IntPtr vec3d, int i, double value, System.IntPtr exception);
+        static extern void au_cv_Vec3d_set(System.IntPtr vec3d, int i, double value, System.IntPtr exception);
 
-        public Vec3d() : base(au_Vec3d_new())
+        public Vec3d() : base(au_cv_Vec3d_new())
         {
         }
 
@@ -37,13 +37,13 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_Vec3d_delete(cvPtr);
+          au_cv_Vec3d_delete(cvPtr);
         }
 
         public double Get(int i)
         {
           Exception exception = new Exception();
-          double value = au_Vec3d_get(cvPtr, i, exception.cvPtr);
+          double value = au_cv_Vec3d_get(cvPtr, i, exception.cvPtr);
           exception.Check();
           return value;
         }
@@ -51,7 +51,7 @@ namespace ArucoUnity
         public void Set(int i, double value)
         {
           Exception exception = new Exception();
-          au_Vec3d_set(cvPtr, i, value, exception.cvPtr);
+          au_cv_Vec3d_set(cvPtr, i, value, exception.cvPtr);
           exception.Check();
         }
 

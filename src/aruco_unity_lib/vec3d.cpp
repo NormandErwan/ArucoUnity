@@ -3,16 +3,16 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::Vec3d* au_Vec3d_new() {
+  cv::Vec3d* au_cv_Vec3d_new() {
     return new cv::Vec3d();
   }
   
-  void au_Vec3d_delete(cv::Vec3d* vec3d) {
+  void au_cv_Vec3d_delete(cv::Vec3d* vec3d) {
     delete vec3d;
   }
 
   // Variables
-  double au_Vec3d_get(cv::Vec3d* vec3d, int i, cv::Exception* exception) {
+  double au_cv_Vec3d_get(cv::Vec3d* vec3d, int i, cv::Exception* exception) {
     double value = 0;
     try {
       value = (*vec3d)[i];
@@ -23,7 +23,7 @@ extern "C" {
     return value;
   }
 
-  void au_Vec3d_set(cv::Vec3d* vec3d, int i, double value, cv::Exception* exception) {
+  void au_cv_Vec3d_set(cv::Vec3d* vec3d, int i, double value, cv::Exception* exception) {
     try {
       (*vec3d)[i] = value;
     } catch (const cv::Exception& e) {

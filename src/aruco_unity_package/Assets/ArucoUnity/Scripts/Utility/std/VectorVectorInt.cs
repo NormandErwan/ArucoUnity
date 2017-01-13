@@ -14,25 +14,25 @@ namespace ArucoUnity
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_vectorVectorInt_new();
+        static extern System.IntPtr au_std_vectorVectorInt_new();
 
         [DllImport("ArucoUnity")]
-        static extern void au_vectorVectorInt_delete(System.IntPtr vector);
+        static extern void au_std_vectorVectorInt_delete(System.IntPtr vector);
 
         // Functions
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_vectorVectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+        static extern System.IntPtr au_std_vectorVectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern unsafe System.IntPtr* au_vectorVectorInt_data(System.IntPtr vector);
+        static extern unsafe System.IntPtr* au_std_vectorVectorInt_data(System.IntPtr vector);
 
         [DllImport("ArucoUnity")]
-        static extern void au_vectorVectorInt_push_back(System.IntPtr vector, System.IntPtr value);
+        static extern void au_std_vectorVectorInt_push_back(System.IntPtr vector, System.IntPtr value);
 
         [DllImport("ArucoUnity")]
-        static extern uint au_vectorVectorInt_size(System.IntPtr vector);
+        static extern uint au_std_vectorVectorInt_size(System.IntPtr vector);
 
-        public VectorVectorInt() : base(au_vectorVectorInt_new())
+        public VectorVectorInt() : base(au_std_vectorVectorInt_new())
         {
         }
 
@@ -43,20 +43,20 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_vectorVectorInt_delete(cvPtr);
+          au_std_vectorVectorInt_delete(cvPtr);
         }
 
         public VectorInt At(uint pos)
         {
           Exception exception = new Exception();
-          VectorInt element = new VectorInt(au_vectorVectorInt_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+          VectorInt element = new VectorInt(au_std_vectorVectorInt_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe VectorInt[] Data()
         {
-          System.IntPtr* dataPtr = au_vectorVectorInt_data(cvPtr);
+          System.IntPtr* dataPtr = au_std_vectorVectorInt_data(cvPtr);
           uint size = Size();
 
           VectorInt[] data = new VectorInt[size];
@@ -70,12 +70,12 @@ namespace ArucoUnity
 
         public void PushBack(VectorInt value)
         {
-          au_vectorVectorInt_push_back(cvPtr, value.cvPtr);
+          au_std_vectorVectorInt_push_back(cvPtr, value.cvPtr);
         }
 
         public uint Size()
         {
-          return au_vectorVectorInt_size(cvPtr);
+          return au_std_vectorVectorInt_size(cvPtr);
         }
       }
     }

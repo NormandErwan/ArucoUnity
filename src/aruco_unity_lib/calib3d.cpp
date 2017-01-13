@@ -3,7 +3,7 @@
 
 extern "C" {
   // Static member functions
-  void au_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception) {
+  void au_cv_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception) {
     try {
       *dst = new cv::Mat();
       cv::Rodrigues(*src, **dst);
