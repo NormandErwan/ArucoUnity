@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     /// <summary>
@@ -61,4 +64,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

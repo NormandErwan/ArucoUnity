@@ -2,6 +2,9 @@
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Utility
   {
     public enum DeleteResponsibility
@@ -10,7 +13,7 @@ namespace ArucoUnity
       False
     }
 
-    public abstract class HandleCvPtr
+    public abstract class HandleCvPtr // TODO: rename to HanddleCppPtr, and put the enum DeleteResponsibility into the class
     {
       public DeleteResponsibility deleteResponsibility;
       
@@ -45,4 +48,6 @@ namespace ArucoUnity
       protected abstract void DeleteCvPtr();
     }
   }
+
+  /// \} aruco_unity_package
 }

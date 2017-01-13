@@ -1,10 +1,12 @@
 ﻿using System.Runtime.InteropServices;
 using ArucoUnity.Utility;
 using ArucoUnity.Utility.cv;
-using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   public class Dictionary : HandleCvPtr
   {
     [DllImport("ArucoUnity")]
@@ -153,4 +155,7 @@ namespace ArucoUnity
       set { au_Dictionary_setMaxCorrectionBits(cvPtr, value); }
     }
   }
+
+  /// \} aruco_unity_package
+
 }

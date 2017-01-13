@@ -4,6 +4,9 @@ using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+  
   public abstract class Board : HandleCvPtr
   {
     [DllImport("ArucoUnity")]
@@ -47,4 +50,7 @@ namespace ArucoUnity
       set { au_Board_setObjPoints(cvPtr, value.cvPtr); }
     }
   }
+
+  /// \} aruco_unity_package
+
 }

@@ -5,6 +5,9 @@ using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     public class DetectMarkers : CameraDeviceMarkersDetector
@@ -272,4 +275,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

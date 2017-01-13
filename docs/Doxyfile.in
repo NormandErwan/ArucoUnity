@@ -119,9 +119,9 @@ WARN_LOGFILE           =
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = @PROJECT_INCLUDE_DIRS@ @CMAKE_SOURCE_DIR@/README.md
+INPUT                  = @PROJECT_INCLUDE_DIRS@ @Unity_PROJECT_SCRIPT_DIRS@ @CMAKE_SOURCE_DIR@/README.md
 INPUT_ENCODING         = UTF-8
-FILE_PATTERNS          = *.hpp *.md
+FILE_PATTERNS          = *.hpp *.cs *.md
 RECURSIVE              = YES
 EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO

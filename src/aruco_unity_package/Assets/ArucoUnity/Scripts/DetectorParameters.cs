@@ -2,6 +2,9 @@
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   public class DetectorParameters : Utility.HandleCvPtr
   {
     [DllImport("ArucoUnity")]
@@ -219,4 +222,7 @@ namespace ArucoUnity
       set { au_DetectorParameters_setErrorCorrectionRate(cvPtr, value); }
     }
   }
+
+  /// \} aruco_unity_package
+
 }

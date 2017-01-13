@@ -18,10 +18,11 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}" CACHE PATH "Install path prefix" FORCE)
 endif()
 
-set(PROJECT_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include" CACHE INTERNAL "The ArUco Unity include directories.")
+set(PROJECT_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include" CACHE INTERNAL "The ArUco Unity library include directories.")
 
 set(Unity_PROJECT_DIR "${CMAKE_SOURCE_DIR}/src/aruco_unity_package") # The Unity project directory where the compiled plugin will be installed.
 set(Unity_PLUGINS_DIR "${Unity_PROJECT_DIR}/Assets/Plugins/x86_64")
+set(Unity_PROJECT_SCRIPT_DIRS "${Unity_PROJECT_DIR}/Assets/ArucoUnity/Scripts" CACHE INTERNAL "The ArUco Unity package scripts.")
 
 set(RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/bin") # Destination of the dll for dll platform
 set(ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib") # Destination of the corresponding import libraries of the dlls for dll platform

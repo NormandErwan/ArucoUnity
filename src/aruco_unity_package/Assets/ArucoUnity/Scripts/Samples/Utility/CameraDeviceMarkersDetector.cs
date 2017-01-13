@@ -2,6 +2,9 @@
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     public abstract class CameraDeviceMarkersDetector : MonoBehaviour
@@ -60,4 +63,6 @@ namespace ArucoUnity
       protected abstract void Configurate();
     }
   }
+
+  /// \} aruco_unity_package
 }

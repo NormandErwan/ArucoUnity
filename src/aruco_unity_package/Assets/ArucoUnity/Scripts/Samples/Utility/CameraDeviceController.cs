@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     // TODO: doc
@@ -60,4 +62,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

@@ -2,6 +2,9 @@
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     public class DetectorParametersManager : MonoBehaviour
@@ -115,4 +118,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

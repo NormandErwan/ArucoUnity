@@ -4,6 +4,9 @@ using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     public class CreateBoard : MonoBehaviour
@@ -121,4 +124,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

@@ -4,6 +4,9 @@ using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   public class GridBoard : Board
   {
     [DllImport("ArucoUnity")]
@@ -112,4 +115,7 @@ namespace ArucoUnity
       return au_GridBoard_getMarkerSeparation(cvPtr);
     }
   }
+
+  /// \} aruco_unity_package
+
 }

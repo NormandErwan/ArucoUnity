@@ -5,10 +5,10 @@
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/exports.hpp"
 
-//! @defgroup aruco_unity_lib ArUco Unity's library
+//! @defgroup aruco_unity_lib ArUco Unity library
 //! \brief C interface for the OpenCV's ArUco Marker Detection extra module.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html
+//! See the OpenCV documentation for more information about its ArUco Marker Detection extra module: http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html
 //! @{
 
 extern "C" {

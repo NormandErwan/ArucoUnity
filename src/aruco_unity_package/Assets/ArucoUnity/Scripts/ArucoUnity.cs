@@ -5,6 +5,12 @@ using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \defgroup aruco_unity_package ArUco Unity package
+  /// \brief Unity 5 package that provide the OpenCV's ArUco Marker Detection extra module features using the ArUco Unity library.
+  ///
+  /// See the OpenCV documentation for more information about its ArUco Marker Detection extra module: http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html
+  /// \{
+  
   public enum PREDEFINED_DICTIONARY_NAME
   {
     DICT_4X4_50 = 0,
@@ -71,6 +77,9 @@ namespace ArucoUnity
 
   public class Functions
   {
+    /// \addtogroup aruco_unity_package
+    /// \{
+    
     [DllImport("ArucoUnity")]
     static extern double au_calibrateCameraAruco1(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board, 
     System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags, 
@@ -753,5 +762,10 @@ namespace ArucoUnity
       au_refineDetectedMarkers8(image.cvPtr, board.cvPtr, detectedCorners.cvPtr, detectedIds.cvPtr, rejectedCorners.cvPtr, exception.cvPtr);
       exception.Check();
     }
+
+    /// \} aruco_unity_package functions
+
   }
+
+  /// \} aruco_unity_package
 }

@@ -5,6 +5,9 @@ using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   public class CharucoBoard : Board
   {
     [DllImport("ArucoUnity")]
@@ -51,7 +54,6 @@ namespace ArucoUnity
 
     [DllImport("ArucoUnity")]
     static extern void au_CharucoBoard_setNearestMarkerIdx(System.IntPtr charucoBoard, System.IntPtr nearestMarkerIdx);
-
 
     protected override void DeleteCvPtr()
     {
@@ -138,4 +140,7 @@ namespace ArucoUnity
       set { au_CharucoBoard_setNearestMarkerIdx(cvPtr, value.cvPtr); }
     }
   }
+
+  /// \} aruco_unity_package
+
 }

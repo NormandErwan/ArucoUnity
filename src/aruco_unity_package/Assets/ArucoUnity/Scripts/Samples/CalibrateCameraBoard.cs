@@ -5,6 +5,9 @@ using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Samples
   {
     // TODO: doc
@@ -313,4 +316,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }
