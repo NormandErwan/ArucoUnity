@@ -62,8 +62,10 @@ All tests should pass.
 
 ## Documentation
 
-The documentation of the library is available online:
-[https://enormand.github.io/aruco-unity/modules.html](https://enormand.github.io/aruco-unity/modules.html)
+The documentation of available online:
+
+- The library: [https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html](https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html)
+- The Unity package: [https://enormand.github.io/aruco-unity/group__aruco__unity__package.html](https://enormand.github.io/aruco-unity/group__aruco__unity__package.html)
 
 ## Licenses
 
