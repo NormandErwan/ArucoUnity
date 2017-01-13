@@ -4,7 +4,7 @@ var searchData=
   ['term_5fcriteria_2ehpp',['term_criteria.hpp',['../term__criteria_8hpp.html',1,'']]],
   ['termcriteria',['TermCriteria',['../class_aruco_unity_1_1_utility_1_1cv_1_1_term_criteria.html',1,'ArucoUnity.Utility.cv.TermCriteria'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_term_criteria.html#af16eb3866aa99ccb5091e98cc2747a59',1,'ArucoUnity.Utility.cv.TermCriteria.TermCriteria()'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_term_criteria.html#aca5c5850f1a4f5536ab8b89be0e524cb',1,'ArucoUnity.Utility.cv.TermCriteria.TermCriteria(int type, int maxCount, double epsilon)']]],
   ['termcriteria_2ecs',['TermCriteria.cs',['../_term_criteria_8cs.html',1,'']]],
-  ['texture2d',['Texture2D',['../class_aruco_unity_1_1_samples_1_1_camera_device.html#aaf9bc532511ab86e00e7dbee226e4fcd',1,'ArucoUnity::Samples::CameraDevice']]],
+  ['texture2d',['Texture2D',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device.html#af09d7e06378fa99ad2062486cb341380',1,'ArucoUnity::Samples::Utility::CameraDevice']]],
   ['thin_5fprism_5fmodel',['THIN_PRISM_MODEL',['../group__aruco__unity__package.html#gga4d794e2096effa5370879aaaab6b6b85a0df9506e4d19c7a08cb0af12e20ef71d',1,'ArucoUnity']]],
   ['tilted_5fmodel',['TILTED_MODEL',['../group__aruco__unity__package.html#gga4d794e2096effa5370879aaaab6b6b85a4b18b459bd68e36c21586a6b69f2d59b',1,'ArucoUnity']]],
   ['toposition',['ToPosition',['../class_aruco_unity_1_1_utility_1_1cv_1_1_vec3d.html#aa7ff6dfe50574c823163c5d109e3fdf9',1,'ArucoUnity::Utility::cv::Vec3d']]],

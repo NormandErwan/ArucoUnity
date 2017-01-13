@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['activecameradevice',['ActiveCameraDevice',['../class_aruco_unity_1_1_samples_1_1_camera_device_controller.html#adec1a75679d4b4df919b573378fe7283',1,'ArucoUnity::Samples::CameraDeviceController']]],
+  ['activecameradevice',['ActiveCameraDevice',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_controller.html#abf714ac64f9c519dffb29b61c37c4813',1,'ArucoUnity::Samples::Utility::CameraDeviceController']]],
   ['adaptivethreshconstant',['AdaptiveThreshConstant',['../class_aruco_unity_1_1_detector_parameters.html#a506d65d4fc37e27fc9baaee62b931cc8',1,'ArucoUnity::DetectorParameters']]],
   ['adaptivethreshwinsizemax',['AdaptiveThreshWinSizeMax',['../class_aruco_unity_1_1_detector_parameters.html#afd2cac77d0066cb261d37b5cdc7e5c87',1,'ArucoUnity::DetectorParameters']]],
   ['adaptivethreshwinsizemin',['AdaptiveThreshWinSizeMin',['../class_aruco_unity_1_1_detector_parameters.html#a1b01ef4ca28f43e3183d7aade789f61e',1,'ArucoUnity::DetectorParameters']]],
@@ -12,6 +12,6 @@ var searchData=
   ['allimages',['AllImages',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#a3cf367cda66d837f876d2fea4f3df1d8',1,'ArucoUnity::Samples::CalibrateCameraBoardCharuco']]],
   ['applyrefindstrategy',['ApplyRefindStrategy',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board.html#aac48f2f8deb12f906481832ce17af46c',1,'ArucoUnity.Samples.CalibrateCameraBoard.ApplyRefindStrategy()'],['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#adcef97ab051538ea12c028de6b2e0fb2',1,'ArucoUnity.Samples.CalibrateCameraBoardCharuco.ApplyRefindStrategy()']]],
   ['arucocalibrationreprojectionerror',['ArucoCalibrationReprojectionError',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#a30183ee805427120f1cfd8cb46a27a80',1,'ArucoUnity::Samples::CalibrateCameraBoardCharuco']]],
-  ['aspectratio',['AspectRatio',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#a0af49e862cea5befe96f6dbdcc481aba',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['aspectratio',['AspectRatio',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a450e22903c319439fa47418ef6e7502f',1,'ArucoUnity::Samples::Utility::CameraParameters']]],
   ['assumezerotangentialdistorsion',['AssumeZeroTangentialDistorsion',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#afd7c967b680e285df76b67ee64e38894',1,'ArucoUnity::Samples::CalibrateCameraBoardCharuco']]]
 ];

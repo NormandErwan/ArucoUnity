@@ -11,6 +11,6 @@ var searchData=
   ['exception',['Exception',['../class_aruco_unity_1_1_utility_1_1cv_1_1_exception.html',1,'ArucoUnity.Utility.cv.Exception'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_exception.html#aed2b24e1961d4c4fc0e8df8cd9d098de',1,'ArucoUnity.Utility.cv.Exception.Exception()'],['../group__exception.html',1,'(Global Namespace)']]],
   ['exception_2ecs',['Exception.cs',['../_exception_8cs.html',1,'']]],
   ['exception_2ehpp',['exception.hpp',['../exception_8hpp.html',1,'']]],
-  ['exportarrays',['ExportArrays',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#a97bcd55e4a1fef40a24b4fb6df743536',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['exportarrays',['ExportArrays',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a01fb19db56ae6f18a67a27298ee9ea4d',1,'ArucoUnity::Samples::Utility::CameraParameters']]],
   ['exports_2ehpp',['exports.hpp',['../exports_8hpp.html',1,'']]]
 ];

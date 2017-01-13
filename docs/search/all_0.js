@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['activecameradevice',['ActiveCameraDevice',['../class_aruco_unity_1_1_samples_1_1_camera_device_controller.html#adec1a75679d4b4df919b573378fe7283',1,'ArucoUnity::Samples::CameraDeviceController']]],
+  ['activecameradevice',['ActiveCameraDevice',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_controller.html#abf714ac64f9c519dffb29b61c37c4813',1,'ArucoUnity::Samples::Utility::CameraDeviceController']]],
   ['adaptivethreshconstant',['AdaptiveThreshConstant',['../class_aruco_unity_1_1_detector_parameters.html#a506d65d4fc37e27fc9baaee62b931cc8',1,'ArucoUnity::DetectorParameters']]],
   ['adaptivethreshwinsizemax',['AdaptiveThreshWinSizeMax',['../class_aruco_unity_1_1_detector_parameters.html#afd2cac77d0066cb261d37b5cdc7e5c87',1,'ArucoUnity::DetectorParameters']]],
   ['adaptivethreshwinsizemin',['AdaptiveThreshWinSizeMin',['../class_aruco_unity_1_1_detector_parameters.html#a1b01ef4ca28f43e3183d7aade789f61e',1,'ArucoUnity::DetectorParameters']]],
@@ -21,7 +21,7 @@ var searchData=
   ['arucocalibrationreprojectionerror',['ArucoCalibrationReprojectionError',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#a30183ee805427120f1cfd8cb46a27a80',1,'ArucoUnity::Samples::CalibrateCameraBoardCharuco']]],
   ['arucounity',['ArucoUnity',['../namespace_aruco_unity.html',1,'']]],
   ['arucounity_2ecs',['ArucoUnity.cs',['../_aruco_unity_8cs.html',1,'']]],
-  ['aspectratio',['AspectRatio',['../class_aruco_unity_1_1_samples_1_1_camera_parameters.html#a0af49e862cea5befe96f6dbdcc481aba',1,'ArucoUnity::Samples::CameraParameters']]],
+  ['aspectratio',['AspectRatio',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a450e22903c319439fa47418ef6e7502f',1,'ArucoUnity::Samples::Utility::CameraParameters']]],
   ['assumezerotangentialdistorsion',['AssumeZeroTangentialDistorsion',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#afd7c967b680e285df76b67ee64e38894',1,'ArucoUnity::Samples::CalibrateCameraBoardCharuco']]],
   ['at',['At',['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_int.html#a9f300cd5606857922733565e5f5a199a',1,'ArucoUnity.Utility.std.VectorInt.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_mat.html#aa671651369b0a231d9b386b80e1f5992',1,'ArucoUnity.Utility.std.VectorMat.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_point2f.html#adfd27254a52681ed0c3192216bf45527',1,'ArucoUnity.Utility.std.VectorPoint2f.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_point3f.html#a04099764abcc8013d8313b4be6bed474',1,'ArucoUnity.Utility.std.VectorPoint3f.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vec3d.html#a2e22a81ad2379e16e048831958d87b05',1,'ArucoUnity.Utility.std.VectorVec3d.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vec4i.html#ac6e59aa171a3f2ea90b613c2295e973d',1,'ArucoUnity.Utility.std.VectorVec4i.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vector_int.html#aaa8da771792d82bbb913358fb0b3597e',1,'ArucoUnity.Utility.std.VectorVectorInt.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vector_point2f.html#acdc1cb236c9a37a10ac7353ad98feab5',1,'ArucoUnity.Utility.std.VectorVectorPoint2f.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vector_point3f.html#a7eb491f3e6adb45acdc4f0be2e6cb201',1,'ArucoUnity.Utility.std.VectorVectorPoint3f.At()'],['../class_aruco_unity_1_1_utility_1_1std_1_1_vector_vector_vector_point2f.html#afa21c896eee4db88ae8be95a9f8a4b86',1,'ArucoUnity.Utility.std.VectorVectorVectorPoint2f.At()']]],
   ['atdouble',['AtDouble',['../class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html#a8cb0c2d42e27d786c10d31c317ed2e37',1,'ArucoUnity.Utility.cv.Mat.AtDouble(int i0, int i1)'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html#a9a2361fab17515fe7eb9dcdae0b49167',1,'ArucoUnity.Utility.cv.Mat.AtDouble(int i0, int i1, double value)']]],
@@ -288,5 +288,5 @@ var searchData=
   ['aruco_20unity',['ArUco Unity',['../index.html',1,'']]],
   ['samples',['Samples',['../namespace_aruco_unity_1_1_samples.html',1,'ArucoUnity']]],
   ['std',['std',['../namespace_aruco_unity_1_1_utility_1_1std.html',1,'ArucoUnity::Utility']]],
-  ['utility',['Utility',['../namespace_aruco_unity_1_1_utility.html',1,'ArucoUnity']]]
+  ['utility',['Utility',['../namespace_aruco_unity_1_1_samples_1_1_utility.html',1,'ArucoUnity.Samples.Utility'],['../namespace_aruco_unity_1_1_utility.html',1,'ArucoUnity.Utility']]]
 ];
