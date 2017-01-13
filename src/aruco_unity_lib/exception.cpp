@@ -2,21 +2,21 @@
 
 extern "C" {
   // Constructors & Destructors
-  cv::Exception* au_Exception_new() {
+  cv::Exception* au_cv_Exception_new() {
     return new cv::Exception();
   }
 
-  void au_Exception_delete(cv::Exception* exception) {
+  void au_cv_Exception_delete(cv::Exception* exception) {
     delete exception;
   }
 
   // Functions
-  void au_Exception_what(cv::Exception* exception, char* what) {
+  void au_cv_Exception_what(cv::Exception* exception, char* what) {
     std::strcpy(what, exception->what());
   }
 
   // Variables
-  int au_Exception_getCode(cv::Exception* exception) {
+  int au_cv_Exception_getCode(cv::Exception* exception) {
     return exception->code;
   }
 }
