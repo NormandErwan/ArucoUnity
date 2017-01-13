@@ -1,5 +1,5 @@
-#include "aruco_unity/utility/calib3d.hpp"
-#include "aruco_unity/utility/exception.hpp"
+#include "aruco_unity/utility/cv/calib3d.hpp"
+#include "aruco_unity/utility/cv/exception.hpp"
 
 extern "C" {
   // Static member functions

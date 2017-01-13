@@ -2,7 +2,7 @@
 #define __ARUCO_UNITY_CHARUCO_BOARD_HPP__
 
 #include <opencv2/aruco/charuco.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
 //! @addtogroup aruco_unity_lib
 //! @{

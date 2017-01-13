@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_MAT_HPP__
 
 #include <opencv2/core.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_mat
+//! @addtogroup mat
 //! \brief n-dimensional dense array class.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html
@@ -121,6 +121,6 @@ extern "C" {
   //! @} Variables
 }
 
-//! @} utility_mat
+//! @} mat
 
 #endif

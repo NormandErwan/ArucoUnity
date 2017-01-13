@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_VECTOR_POINT3F_HPP__
 
 #include <opencv2/core.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_vector_point3f
+//! @addtogroup vector_point3f
 //! \brief Wrapper for std::vector<cv::Point3f>.
 //!
 //! See the std documentation for more information: http://en.cppreference.com/w/cpp/container/vector
@@ -49,6 +49,6 @@ extern "C" {
   //! @} Functions
 }
 
-//! @} utility_vector_point3f
+//! @} vector_point3f
 
 #endif

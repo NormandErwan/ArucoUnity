@@ -3,7 +3,7 @@
 
 #include <opencv2/aruco.hpp>
 #include <opencv2/aruco/charuco.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
 //! @defgroup aruco_unity_lib ArUco Unity library
 //! \brief C interface for the OpenCV's ArUco Marker Detection extra module.

@@ -4,32 +4,35 @@
 //! @addtogroup aruco_unity_lib
 //! @{
 
-//! @defgroup utility Utility and OpenCV main modules
+//! @defgroup utility C interfaces for classes used by ArUco
 //! @{
-//!   @defgroup utility_calib3d OpenCV calib3d module
-//!   @defgroup utility_exception Exception
-//!   @defgroup utility_imgproc OpenCV imgproc module
-//!   @defgroup utility_mat OpenCV Mat
-//!   @defgroup utility_point2f OpenCV Point2f
-//!   @defgroup utility_point3f OpenCV Point3f
-//!   @defgroup utility_scalar OpenCV Scalar
-//!   @defgroup utility_size OpenCV Size
-//!   @defgroup utility_term_criteria OpenCV TermCriteria
-//!   @defgroup utility_vec3d OpenCV Vec3d
-//!   @defgroup utility_vec4i OpenCV Vec4i
-//!   @defgroup utility_vector std::vector
+//!   @defgroup cv C interfaces for classes and modules of the OpenCV library
 //!   @{
-//!     @defgroup utility_vector_int std::vector<int>
-//!     @defgroup utility_vector_mat std::vector<cv::Mat>
-//!     @defgroup utility_vector_point2f std::vector<cv::Point2f>
-//!     @defgroup utility_vector_point3f std::vector<cv::Point3f>
-//!     @defgroup utility_vector_vec3d std::vector<cv::Vec3d>
-//!     @defgroup utility_vector_vec4i std::vector<cv::Vec4i>
-//!     @defgroup utility_vector_vector_int std::vector<std::vector<int>>
-//!     @defgroup utility_vector_vector_point2f std::vector<std::vector<cv::Point2f>>
-//!     @defgroup utility_vector_vector_point3f std::vector<std::vector<cv::Point3f>>
-//!     @defgroup utility_vector_vector_vector_point2f std::vector<std::vector<std::vector<cv::Point3f>>>
-//!   @} utility_vector
+//!     @defgroup calib3d calib3d module
+//!     @defgroup exception Exception class
+//!     @defgroup imgproc imgproc module
+//!     @defgroup mat Mat class
+//!     @defgroup point2f Point2f class
+//!     @defgroup point3f Point3f class
+//!     @defgroup scalar Scalar class
+//!     @defgroup size Size class
+//!     @defgroup term_criteria TermCriteria class
+//!     @defgroup vec3d Vec3d class
+//!     @defgroup vec4i Vec4i class
+//!   @} cv
+//!   @defgroup std C interfaces for classes of the C++ Standard Library
+//!   @{
+//!     @defgroup vector_int std::vector<int>
+//!     @defgroup vector_mat std::vector<cv::Mat>
+//!     @defgroup vector_point2f std::vector<cv::Point2f>
+//!     @defgroup vector_point3f std::vector<cv::Point3f>
+//!     @defgroup vector_vec3d std::vector<cv::Vec3d>
+//!     @defgroup vector_vec4i std::vector<cv::Vec4i>
+//!     @defgroup vector_vector_int std::vector<std::vector<int>>
+//!     @defgroup vector_vector_point2f std::vector<std::vector<cv::Point2f>>
+//!     @defgroup vector_vector_point3f std::vector<std::vector<cv::Point3f>>
+//!     @defgroup vector_vector_vector_point2f std::vector<std::vector<std::vector<cv::Point3f>>>
+//!   @} std
 //! @} utility
 
 //! @} aruco_unity_lib

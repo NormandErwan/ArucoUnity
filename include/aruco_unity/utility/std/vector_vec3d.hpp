@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_VECTOR_VEC3D_HPP__
 
 #include <opencv2/core.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_vector_vec3d
+//! @addtogroup vector_vec3d
 //! \brief Wrapper for std::vector<cv::Vec3d>.
 //!
 //! See the std documentation for more information: http://en.cppreference.com/w/cpp/container/vector
@@ -49,6 +49,6 @@ extern "C" {
   //! @} Functions
 }
 
-//! @} utility_vector_vec3d
+//! @} vector_vec3d
 
 #endif

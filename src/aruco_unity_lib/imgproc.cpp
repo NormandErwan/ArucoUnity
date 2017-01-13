@@ -1,5 +1,5 @@
-#include "aruco_unity/utility/imgproc.hpp"
-#include "aruco_unity/utility/exception.hpp"
+#include "aruco_unity/utility/cv/imgproc.hpp"
+#include "aruco_unity/utility/cv/exception.hpp"
 
 extern "C" {
   // Static member functions

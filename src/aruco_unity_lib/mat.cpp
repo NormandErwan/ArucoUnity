@@ -1,5 +1,5 @@
-#include "aruco_unity/utility/mat.hpp"
-#include "aruco_unity/utility/exception.hpp"
+#include "aruco_unity/utility/cv/mat.hpp"
+#include "aruco_unity/utility/cv/exception.hpp"
 
 extern "C" {
   // Constructors & Destructors

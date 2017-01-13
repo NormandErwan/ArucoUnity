@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_IMGPROC_HPP__
 
 #include <opencv2/imgproc.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_imgproc
+//! @addtogroup imgproc
 //! \brief Image processing module.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d7/dbd/group__imgproc.html
@@ -29,6 +29,6 @@ extern "C" {
   //! @} Static Member Functions
 }
 
-//! @} utility_imgproc
+//! @} imgproc
 
 #endif

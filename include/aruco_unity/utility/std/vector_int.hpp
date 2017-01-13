@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_VECTOR_INT_HPP__
 
 #include <opencv2/core.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_vector_int
+//! @addtogroup vector_int
 //! \brief Wrapper for std::vector<int>.
 //!
 //! See the std documentation for more information: http://en.cppreference.com/w/cpp/container/vector
@@ -56,6 +56,6 @@ extern "C" {
   //! @} Functions
 }
 
-//! @} utility_vector_int
+//! @} vector_int
 
 #endif

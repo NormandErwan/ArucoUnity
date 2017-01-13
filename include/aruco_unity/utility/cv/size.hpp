@@ -1,10 +1,10 @@
 #ifndef __ARUCO_UNITY_SIZE_HPP__
 #define __ARUCO_UNITY_SIZE_HPP__
 
-#include <opencv2\core.hpp>
-#include "aruco_unity/exports.hpp"
+#include <opencv2/core.hpp>
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_size
+//! @addtogroup size
 //! \brief Class for specifying the size of an image or rectangle.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d6/d50/classcv_1_1Size__.html
@@ -56,6 +56,6 @@ extern "C" {
   //! @} Variables
 }
 
-//! @} utility_size
+//! @} size
 
 #endif

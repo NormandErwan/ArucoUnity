@@ -1,10 +1,10 @@
 #ifndef __ARUCO_UNITY_POINT2F_HPP__
 #define __ARUCO_UNITY_POINT2F_HPP__
 
-#include <opencv2\core.hpp>
-#include "aruco_unity/exports.hpp"
+#include <opencv2/core.hpp>
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_scalar
+//! @addtogroup scalar
 //! \brief Template class for a 4-element vector derived from Vec.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d1/da0/classcv_1_1Scalar__.html
@@ -24,6 +24,6 @@ extern "C" {
   //! @} Constructors & Destructors
 }
 
-//! @} utility_scalar
+//! @} scalar
 
 #endif

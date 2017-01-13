@@ -14,30 +14,30 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/charuco_board.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/dictionary.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/detector_parameters.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/grid_board.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/calib3d.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exception.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/imgproc.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/mat.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point2f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/point3f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/scalar.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/size.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/term_criteria.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vec3d.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vec4i.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_int.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_mat.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_point2f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_point3f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vec3d.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vec4i.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_int.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point2f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_point3f.hpp
-    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/vector_vector_vector_point2f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/calib3d.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/exception.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/imgproc.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/mat.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/point2f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/point3f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/scalar.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/size.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/term_criteria.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/vec3d.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/vec4i.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_int.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_mat.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_point2f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_point3f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vec3d.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vec4i.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vector_int.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vector_point2f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vector_point3f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/std/vector_vector_vector_point2f.hpp
 )
 set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp

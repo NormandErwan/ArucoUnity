@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_CALIB3D_HPP__
 
 #include <opencv2/calib3d.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_calib3d
+//! @addtogroup calib3d
 //! \brief Camera Calibration and 3D Reconstruction module.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html
@@ -26,6 +26,6 @@ extern "C" {
   //! @} Static Member Functions
 }
 
-//! @} utility_calib3d
+//! @} calib3d
 
 #endif

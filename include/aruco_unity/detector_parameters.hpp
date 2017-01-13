@@ -2,7 +2,7 @@
 #define __ARUCO_UNITY_DETECTOR_PARAMETERS_HPP__
 
 #include <opencv2/aruco.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
 //! @addtogroup aruco_unity_lib
 //! @{

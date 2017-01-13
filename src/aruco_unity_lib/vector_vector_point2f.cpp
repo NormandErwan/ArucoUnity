@@ -1,5 +1,5 @@
-#include "aruco_unity/utility/vector_vector_point2f.hpp"
-#include "aruco_unity/utility/exception.hpp"
+#include "aruco_unity/utility/std/vector_vector_point2f.hpp"
+#include "aruco_unity/utility/cv/exception.hpp"
 
 extern "C" {
   // Constructors & Destructors

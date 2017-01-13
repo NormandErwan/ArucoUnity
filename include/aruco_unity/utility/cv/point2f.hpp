@@ -2,9 +2,9 @@
 #define __ARUCO_UNITY_POINT2F_HPP__
 
 #include <opencv2/core.hpp>
-#include "aruco_unity/exports.hpp"
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_point2f
+//! @addtogroup point2f
 //! \brief 2D float points specified by its coordinates x and y.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/db/d4e/classcv_1_1Point__.html
@@ -47,6 +47,6 @@ extern "C" {
   //! @} Variables
 }
 
-//! @} utility_point2f
+//! @} point2f
 
 #endif

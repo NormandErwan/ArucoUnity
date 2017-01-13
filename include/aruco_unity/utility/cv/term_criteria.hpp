@@ -1,10 +1,10 @@
 #ifndef __ARUCO_UNITY_TERM_CRITERIA_HPP__
 #define __ARUCO_UNITY_TERM_CRITERIA_HPP__
 
-#include <opencv2\core.hpp>
-#include "aruco_unity/exports.hpp"
+#include <opencv2/core.hpp>
+#include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_term_criteria
+//! @addtogroup term_criteria
 //! \brief The class defining termination criteria for iterative algorithms.
 //!
 //! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d5d/classcv_1_1TermCriteria.html
@@ -63,6 +63,6 @@ extern "C" {
   //! @} Variables
 }
 
-//! @} utility_term_criteria
+//! @} term_criteria
 
 #endif
