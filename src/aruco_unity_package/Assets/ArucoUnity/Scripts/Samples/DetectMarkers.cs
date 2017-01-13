@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using ArucoUnity.Utility.cv;
+using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
@@ -62,8 +64,8 @@ namespace ArucoUnity
 
       // Estimation properties
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
-      public Utility.Mat CameraMatrix { get; set; }
-      public Utility.Mat DistCoeffs { get; set; }
+      public Mat CameraMatrix { get; set; }
+      public Mat DistCoeffs { get; set; }
       public Vector3 OpticalCenter { get; private set; }
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
@@ -83,11 +85,11 @@ namespace ArucoUnity
       {
         if (Configurated)
         {
-          Utility.Mat image;
-          Utility.VectorVectorPoint2f corners;
-          Utility.VectorInt ids;
-          Utility.VectorVectorPoint2f rejectedImgPoints;
-          Utility.VectorVec3d rvecs, tvecs;
+          Mat image;
+          VectorVectorPoint2f corners;
+          VectorInt ids;
+          VectorVectorPoint2f rejectedImgPoints;
+          VectorVec3d rvecs, tvecs;
 
           Detect(out image, out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
         }
@@ -124,7 +126,7 @@ namespace ArucoUnity
         }
 
         // Prepare the camera parameters
-        Utility.Mat cameraMatrix, distCoeffs;
+        Mat cameraMatrix, distCoeffs;
         cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
         CameraMatrix = cameraMatrix;
         DistCoeffs = distCoeffs;
@@ -158,14 +160,14 @@ namespace ArucoUnity
         return true;
       }
 
-      public void Detect(out Utility.Mat image, out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids,
-        out Utility.VectorVectorPoint2f rejectedImgPoints, out Utility.VectorVec3d rvecs, out Utility.VectorVec3d tvecs)
+      public void Detect(out Mat image, out VectorVectorPoint2f corners, out VectorInt ids,
+        out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs, out VectorVec3d tvecs)
       {
         // Copy the bytes of the texture to the image
         byte[] imageData = ImageTexture.GetRawTextureData();
 
         // Detect markers
-        image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+        image = new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
@@ -204,8 +206,8 @@ namespace ArucoUnity
         }
 
         // Undistord the image
-        Utility.Mat undistordedImage;
-        Utility.Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+        Mat undistordedImage;
+        Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
 
         // Copy the bytes of the image to the texture
         int undistordedImageDataSize = (int)(undistordedImage.ElemSize() * undistordedImage.Total());
@@ -224,7 +226,7 @@ namespace ArucoUnity
         }
       }
 
-      private void DisplayMarkerObjects(Utility.VectorInt ids, Utility.VectorVec3d rvecs, Utility.VectorVec3d tvecs)
+      private void DisplayMarkerObjects(VectorInt ids, VectorVec3d rvecs, VectorVec3d tvecs)
       {
         if (markerObjects == null)
         {

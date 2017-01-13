@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
-using ArucoUnity.Utility;
 using UnityEngine;
+using ArucoUnity.Utility.cv;
+using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {

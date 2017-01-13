@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using UnityEngine;
+using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {
@@ -10,8 +11,8 @@ namespace ArucoUnity
       public Dictionary dictionary;
 
       public CharucoBoard board;
-      public Utility.Mat image;
-      public Utility.Size size;
+      public Mat image;
+      public Size size;
 
       [HideInInspector]
       public Texture2D imageTexture;
@@ -91,7 +92,7 @@ namespace ArucoUnity
 
       public void Create()
       {
-        size = new Utility.Size();
+        size = new Size();
         size.width = squaresNumberX * squareSideLength + 2 * marginsSize;
         size.height = squaresNumberY * squareSideLength + 2 * marginsSize;
 

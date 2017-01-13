@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using ArucoUnity.Utility;
+using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {

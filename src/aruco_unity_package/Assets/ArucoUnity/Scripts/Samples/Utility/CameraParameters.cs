@@ -1,7 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
 using System.Xml.Serialization;
+using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {
@@ -34,13 +34,13 @@ namespace ArucoUnity
       {
       }
 
-      public CameraParameters(Utility.Mat cameraMatrix, Utility.Mat distCoeffs)
+      public CameraParameters(Mat cameraMatrix, Mat distCoeffs)
       {
         CalibrationDateTime = DateTime.Now;
         ImportArrays(cameraMatrix, distCoeffs);
       }
 
-      public void ImportArrays(Utility.Mat cameraMatrix, Utility.Mat distCoeffs)
+      public void ImportArrays(Mat cameraMatrix, Mat distCoeffs)
       {
         CameraMatrixType = cameraMatrix.Type();
         int cameraMatrixRows = cameraMatrix.rows,
@@ -71,12 +71,12 @@ namespace ArucoUnity
         }
       }
 
-      public void ExportArrays(out Utility.Mat cameraMatrix, out Utility.Mat distCoeffs)
+      public void ExportArrays(out Mat cameraMatrix, out Mat distCoeffs)
       {
         int cameraMatrixRows = CameraMatrix.Length,
             cameraMatrixCols = CameraMatrix[0].Length;
 
-        cameraMatrix = new Utility.Mat();
+        cameraMatrix = new Mat();
         cameraMatrix.Create(cameraMatrixRows, cameraMatrixCols, CameraMatrixType);
         for (int i = 0; i < cameraMatrixRows; i++)
         {
@@ -89,7 +89,7 @@ namespace ArucoUnity
         int distCoeffsRows = DistCoeffs.Length,
             distCoeffsCols = DistCoeffs[0].Length;
 
-        distCoeffs = new Utility.Mat();
+        distCoeffs = new Mat();
         distCoeffs.Create(distCoeffsRows, distCoeffsCols, DistCoeffsType);
         for (int i = 0; i < distCoeffsRows; i++)
         {

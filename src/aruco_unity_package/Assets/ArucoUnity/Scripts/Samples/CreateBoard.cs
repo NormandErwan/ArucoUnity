@@ -1,6 +1,6 @@
-﻿using ArucoUnity.Utility;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
+using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {

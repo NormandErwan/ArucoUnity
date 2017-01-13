@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using ArucoUnity.Utility.cv;
+using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
@@ -77,13 +79,13 @@ namespace ArucoUnity
       public string OutputFilePath { get { return outputFilePath; } set { outputFilePath = value; } }
 
       // Calibration properties
-      public Utility.VectorVectorVectorPoint2f AllCorners { get; private set; }
-      public Utility.VectorVectorInt AllIds { get; private set; }
-      public Utility.Size ImageSize { get; private set; }
-      public Utility.Mat CameraMatrix { get; private set; }
-      public Utility.Mat DistCoeffs { get; private set; }
-      public Utility.VectorMat Rvecs { get; private set; }
-      public Utility.VectorMat Tvecs { get; private set; }
+      public VectorVectorVectorPoint2f AllCorners { get; private set; }
+      public VectorVectorInt AllIds { get; private set; }
+      public Size ImageSize { get; private set; }
+      public Mat CameraMatrix { get; private set; }
+      public Mat DistCoeffs { get; private set; }
+      public VectorMat Rvecs { get; private set; }
+      public VectorMat Tvecs { get; private set; }
       public double CalibrationReprojectionError { get; private set; }
 
       // Internal
@@ -119,9 +121,9 @@ namespace ArucoUnity
       {
         if (Configurated)
         {
-          Utility.Mat image;
-          Utility.VectorInt ids;
-          Utility.VectorVectorPoint2f corners, rejectedImgPoints;
+          Mat image;
+          VectorInt ids;
+          VectorVectorPoint2f corners, rejectedImgPoints;
 
           // Detect and draw markers
           Detect(out corners, out ids, out rejectedImgPoints, out image);
@@ -139,17 +141,17 @@ namespace ArucoUnity
       public void ResetCalibration()
       {
         calibrate = false;
-        AllCorners = new Utility.VectorVectorVectorPoint2f();
-        AllIds = new Utility.VectorVectorInt();
-        ImageSize = new Utility.Size();
+        AllCorners = new VectorVectorVectorPoint2f();
+        AllIds = new VectorVectorInt();
+        ImageSize = new Size();
       }
 
-      public void Detect(out Utility.VectorVectorPoint2f corners, out Utility.VectorInt ids, out Utility.VectorVectorPoint2f rejectedImgPoints, 
-        out Utility.Mat image)
+      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, 
+        out Mat image)
       {
         // Detect markers
         byte[] imageData = ImageTexture.GetRawTextureData();
-        image = new Utility.Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+        image = new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         if (applyRefindStrategy)
@@ -164,10 +166,10 @@ namespace ArucoUnity
         }
 
         // Undistord the image if calibrated
-        Utility.Mat undistordedImage, imageToDisplay;
+        Mat undistordedImage, imageToDisplay;
         if (calibrate)
         {
-          Utility.Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
           imageToDisplay = undistordedImage;
         }
         else
@@ -181,7 +183,7 @@ namespace ArucoUnity
         ImageTexture.Apply(false);
       }
 
-      public void AddFrameForCalibration(Utility.VectorVectorPoint2f corners, Utility.VectorInt ids, Utility.Mat image)
+      public void AddFrameForCalibration(VectorVectorPoint2f corners, VectorInt ids, Mat image)
       {
         if (!calibrate)
         {
@@ -208,24 +210,24 @@ namespace ArucoUnity
         }
         calibrate = true;
 
-        CameraMatrix = new Utility.Mat();
-        DistCoeffs = new Utility.Mat();
+        CameraMatrix = new Mat();
+        DistCoeffs = new Mat();
 
         if ((CalibrationFlags & CALIB.FIX_ASPECT_RATIO) == CALIB.FIX_ASPECT_RATIO)
         {
-          CameraMatrix = new Utility.Mat(3, 3, TYPE.CV_64F, new double[9] { fixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+          CameraMatrix = new Mat(3, 3, TYPE.CV_64F, new double[9] { fixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
         }
 
         // Prepare data for calibration
-        Utility.VectorVectorPoint2f allCornersContenated = new Utility.VectorVectorPoint2f();
-        Utility.VectorInt allIdsContanated = new Utility.VectorInt();
-        Utility.VectorInt markerCounterPerFrame = new Utility.VectorInt();
+        VectorVectorPoint2f allCornersContenated = new VectorVectorPoint2f();
+        VectorInt allIdsContanated = new VectorInt();
+        VectorInt markerCounterPerFrame = new VectorInt();
 
         uint allCornersSize = AllCorners.Size();
         markerCounterPerFrame.Reserve(allCornersSize);
         for (uint i = 0; i < allCornersSize; i++)
         {
-          Utility.VectorVectorPoint2f allCornersI = AllCorners.At(i);
+          VectorVectorPoint2f allCornersI = AllCorners.At(i);
           uint allCornersISize = allCornersI.Size();
           markerCounterPerFrame.PushBack((int)allCornersISize);
           for (uint j = 0; j < allCornersISize; j++)
@@ -236,7 +238,7 @@ namespace ArucoUnity
         }
 
         // Calibrate camera
-        Utility.VectorMat rvecs, tvecs;
+        VectorMat rvecs, tvecs;
         CalibrationReprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, Board, ImageSize, 
           CameraMatrix, DistCoeffs, out rvecs, out tvecs, (int)CalibrationFlags);
         Rvecs = rvecs;

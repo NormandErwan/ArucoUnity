@@ -1,86 +1,95 @@
 ﻿using System.Runtime.InteropServices;
+using ArucoUnity.Utility.cv;
 
 namespace ArucoUnity
 {
+  /// \addtogroup aruco_unity_package
+  /// \{
+
   namespace Utility
   {
-    public class VectorInt : HandleCvPtr
+    namespace std
     {
-      // Constructor & Destructor
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_vectorInt_new();
-
-      [DllImport("ArucoUnity")]
-      static extern void au_vectorInt_delete(System.IntPtr vector);
-
-      // Functions
-      [DllImport("ArucoUnity")]
-      static extern int au_vectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
-
-      [DllImport("ArucoUnity")]
-      static extern unsafe int* au_vectorInt_data(System.IntPtr vector);
-
-      [DllImport("ArucoUnity")]
-      static extern void au_vectorInt_push_back(System.IntPtr vector, int value);
-
-      [DllImport("ArucoUnity")]
-      static extern void au_vectorInt_reserve(System.IntPtr vector, uint new_cap, System.IntPtr exception);
-
-      [DllImport("ArucoUnity")]
-      static extern uint au_vectorInt_size(System.IntPtr vector);
-
-      public VectorInt() : base(au_vectorInt_new())
+      public class VectorInt : HandleCvPtr
       {
-      }
+        // Constructor & Destructor
+        [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_vectorInt_new();
 
-      public VectorInt(System.IntPtr vectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True) 
-        : base(vectorIntPtr, deleteResponsibility)
-      {
-      }
+        [DllImport("ArucoUnity")]
+        static extern void au_vectorInt_delete(System.IntPtr vector);
 
-      protected override void DeleteCvPtr()
-      {
-        au_vectorInt_delete(cvPtr);
-      }
+        // Functions
+        [DllImport("ArucoUnity")]
+        static extern int au_vectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
-      public int At(uint pos) 
-      {
-        Exception exception = new Exception();
-        int element = au_vectorInt_at(cvPtr, pos, exception.cvPtr);
-        exception.Check();
-        return element;
-      }
+        [DllImport("ArucoUnity")]
+        static extern unsafe int* au_vectorInt_data(System.IntPtr vector);
 
-      public unsafe int[] Data()
-      {
-        int* dataPtr = au_vectorInt_data(cvPtr);
-        uint size = Size();
+        [DllImport("ArucoUnity")]
+        static extern void au_vectorInt_push_back(System.IntPtr vector, int value);
 
-        int[] data = new int[size];
-        for (int i = 0; i < size; i++)
+        [DllImport("ArucoUnity")]
+        static extern void au_vectorInt_reserve(System.IntPtr vector, uint new_cap, System.IntPtr exception);
+
+        [DllImport("ArucoUnity")]
+        static extern uint au_vectorInt_size(System.IntPtr vector);
+
+        public VectorInt() : base(au_vectorInt_new())
         {
-          data[i] = dataPtr[i];
         }
 
-        return data;
-      }
+        public VectorInt(System.IntPtr vectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          : base(vectorIntPtr, deleteResponsibility)
+        {
+        }
 
-      public void PushBack(int value)
-      {
-        au_vectorInt_push_back(cvPtr, value);
-      }
+        protected override void DeleteCvPtr()
+        {
+          au_vectorInt_delete(cvPtr);
+        }
 
-      public void Reserve(uint newCap)
-      {
-        Exception exception = new Exception();
-        au_vectorInt_reserve(cvPtr, newCap, exception.cvPtr);
-        exception.Check();
-      }
+        public int At(uint pos)
+        {
+          Exception exception = new Exception();
+          int element = au_vectorInt_at(cvPtr, pos, exception.cvPtr);
+          exception.Check();
+          return element;
+        }
 
-      public uint Size()
-      {
-        return au_vectorInt_size(cvPtr);
+        public unsafe int[] Data()
+        {
+          int* dataPtr = au_vectorInt_data(cvPtr);
+          uint size = Size();
+
+          int[] data = new int[size];
+          for (int i = 0; i < size; i++)
+          {
+            data[i] = dataPtr[i];
+          }
+
+          return data;
+        }
+
+        public void PushBack(int value)
+        {
+          au_vectorInt_push_back(cvPtr, value);
+        }
+
+        public void Reserve(uint newCap)
+        {
+          Exception exception = new Exception();
+          au_vectorInt_reserve(cvPtr, newCap, exception.cvPtr);
+          exception.Check();
+        }
+
+        public uint Size()
+        {
+          return au_vectorInt_size(cvPtr);
+        }
       }
     }
   }
+
+  /// \} aruco_unity_package
 }
