@@ -4,7 +4,7 @@
 #include <opencv2/core.hpp>
 #include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup utility_vector_mat
+//! @addtogroup vector_mat
 //! \brief Wrapper for std::vector<cv::Mat>.
 //!
 //! See the std documentation for more information: http://en.cppreference.com/w/cpp/container/vector
@@ -49,6 +49,6 @@ extern "C" {
   //! @} Functions
 }
 
-//! @} utility_vector_mat
+//! @} vector_mat
 
 #endif
