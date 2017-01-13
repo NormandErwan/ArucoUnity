@@ -7,60 +7,63 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public abstract class CameraDeviceMarkersDetector : MonoBehaviour
+    namespace Utility
     {
-      // Properties
-      public CameraDeviceController CameraDeviceController { get; set; }
-      public Texture2D ImageTexture { get; private set; }
-      public bool Configurated { get; protected set; }
-
-      // Events
-      public delegate void CameraDeviceMakersDetectorAction();
-      public event CameraDeviceMakersDetectorAction OnConfigurated;
-
-      public CameraDeviceMarkersDetector(CameraDeviceController cameraDeviceController)
+      public abstract class CameraDeviceMarkersDetector : MonoBehaviour
       {
-        CameraDeviceController = cameraDeviceController;
-      }
+        // Properties
+        public CameraDeviceController CameraDeviceController { get; set; }
+        public Texture2D ImageTexture { get; private set; }
+        public bool Configurated { get; protected set; }
 
-      protected virtual void OnEnable()
-      {
-        Configurated = false;
-        CameraDeviceController.OnActiveCameraDeviceChanged += CameraDeviceController_OnActiveCameraChanged;
-      }
+        // Events
+        public delegate void CameraDeviceMakersDetectorAction();
+        public event CameraDeviceMakersDetectorAction OnConfigurated;
 
-      protected virtual void OnDisable()
-      {
-        CameraDeviceController.OnActiveCameraDeviceChanged -= CameraDeviceController_OnActiveCameraChanged;
-        CameraDeviceController.ActiveCameraDevice.OnStarted -= CompleteConfigurate;
-      }
-
-      private void CameraDeviceController_OnActiveCameraChanged(CameraDevice previousCameraDevice)
-      {
-        if (previousCameraDevice != null)
+        public CameraDeviceMarkersDetector(CameraDeviceController cameraDeviceController)
         {
-          previousCameraDevice.OnStarted -= CompleteConfigurate;
+          CameraDeviceController = cameraDeviceController;
         }
-        CameraDeviceController.ActiveCameraDevice.OnStarted += CompleteConfigurate;
-      }
 
-      private void CompleteConfigurate()
-      {
-        // Configurate start
-        Configurated = false;
-        ImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
-
-        Configurate();
-
-        // Configurate end
-        if (OnConfigurated != null)
+        protected virtual void OnEnable()
         {
-          OnConfigurated();
+          Configurated = false;
+          CameraDeviceController.OnActiveCameraDeviceChanged += CameraDeviceController_OnActiveCameraChanged;
         }
-        Configurated = true;
-      }
 
-      protected abstract void Configurate();
+        protected virtual void OnDisable()
+        {
+          CameraDeviceController.OnActiveCameraDeviceChanged -= CameraDeviceController_OnActiveCameraChanged;
+          CameraDeviceController.ActiveCameraDevice.OnStarted -= CompleteConfigurate;
+        }
+
+        private void CameraDeviceController_OnActiveCameraChanged(CameraDevice previousCameraDevice)
+        {
+          if (previousCameraDevice != null)
+          {
+            previousCameraDevice.OnStarted -= CompleteConfigurate;
+          }
+          CameraDeviceController.ActiveCameraDevice.OnStarted += CompleteConfigurate;
+        }
+
+        private void CompleteConfigurate()
+        {
+          // Configurate start
+          Configurated = false;
+          ImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
+
+          Configurate();
+
+          // Configurate end
+          if (OnConfigurated != null)
+          {
+            OnConfigurated();
+          }
+          Configurated = true;
+        }
+
+        protected abstract void Configurate();
+      }
     }
   }
 

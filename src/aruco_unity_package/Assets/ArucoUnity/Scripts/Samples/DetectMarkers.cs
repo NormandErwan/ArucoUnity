@@ -2,6 +2,7 @@
 using UnityEngine;
 using ArucoUnity.Utility.cv;
 using ArucoUnity.Utility.std;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
@@ -10,7 +11,7 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public class DetectMarkers : CameraDeviceMarkersDetector
+    public class DetectMarkers : Utility.CameraDeviceMarkersDetector
     {
       [Header("Detection configuration")]
       [SerializeField]
@@ -31,7 +32,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private CameraDeviceController cameraDeviceController;
+      private Utility.CameraDeviceController cameraDeviceController;
 
       [SerializeField]
       private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;

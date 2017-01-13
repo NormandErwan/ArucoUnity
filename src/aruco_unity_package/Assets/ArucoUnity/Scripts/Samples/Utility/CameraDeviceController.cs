@@ -7,57 +7,60 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    // TODO: doc
-    /// <summary>
-    /// Based on: http://answers.unity3d.com/answers/1155328/view.html
-    /// </summary>
-    public class CameraDeviceController : MonoBehaviour
+    namespace Utility
     {
-      // Configuration
-      [SerializeField]
-      private int defaultCameraDeviceIndex;
-
-      // Properties
-      public CameraDevice ActiveCameraDevice { get; private set; }
-
-      // Events
-      public delegate void CameraDeviceControllerAction(CameraDevice previousCameraDevice);
-      public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
-
-      void Start()
+      // TODO: doc
+      /// <summary>
+      /// Based on: http://answers.unity3d.com/answers/1155328/view.html
+      /// </summary>
+      public class CameraDeviceController : MonoBehaviour
       {
-        ActiveCameraDevice = gameObject.AddComponent<CameraDevice>();
-        SwitchCamera(defaultCameraDeviceIndex);
-      }
+        // Configuration
+        [SerializeField]
+        private int defaultCameraDeviceIndex;
 
-      // Switch between cameras devices
-      public void SwitchCamera(int? cameraIndex = null)
-      {
-        // Check for camera devices
-        WebCamDevice[] webcamDevices = WebCamTexture.devices;
-        if (webcamDevices.Length == 0)
+        // Properties
+        public CameraDevice ActiveCameraDevice { get; private set; }
+
+        // Events
+        public delegate void CameraDeviceControllerAction(CameraDevice previousCameraDevice);
+        public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
+
+        void Start()
         {
-          Debug.LogError(gameObject.name + ": No devices cameras found.");
+          ActiveCameraDevice = gameObject.AddComponent<CameraDevice>();
+          SwitchCamera(defaultCameraDeviceIndex);
         }
 
-        // Stop the previous camera device
-        CameraDevice previousCameraDevice = ActiveCameraDevice;
-        if (previousCameraDevice != null)
+        // Switch between cameras devices
+        public void SwitchCamera(int? cameraIndex = null)
         {
-          previousCameraDevice.StopCamera();
-        }
+          // Check for camera devices
+          WebCamDevice[] webcamDevices = WebCamTexture.devices;
+          if (webcamDevices.Length == 0)
+          {
+            Debug.LogError(gameObject.name + ": No devices cameras found.");
+          }
 
-        // Switch to the next camera device
-        defaultCameraDeviceIndex = (cameraIndex != null) ? (int)cameraIndex : defaultCameraDeviceIndex + 1;
-        defaultCameraDeviceIndex %= WebCamTexture.devices.Length;
+          // Stop the previous camera device
+          CameraDevice previousCameraDevice = ActiveCameraDevice;
+          if (previousCameraDevice != null)
+          {
+            previousCameraDevice.StopCamera();
+          }
 
-        ActiveCameraDevice.ResetCamera(webcamDevices[defaultCameraDeviceIndex]);
-        ActiveCameraDevice.StartCamera();
+          // Switch to the next camera device
+          defaultCameraDeviceIndex = (cameraIndex != null) ? (int)cameraIndex : defaultCameraDeviceIndex + 1;
+          defaultCameraDeviceIndex %= WebCamTexture.devices.Length;
 
-        // Update the state
-        if (OnActiveCameraDeviceChanged != null)
-        {
-          OnActiveCameraDeviceChanged(previousCameraDevice);
+          ActiveCameraDevice.ResetCamera(webcamDevices[defaultCameraDeviceIndex]);
+          ActiveCameraDevice.StartCamera();
+
+          // Update the state
+          if (OnActiveCameraDeviceChanged != null)
+          {
+            OnActiveCameraDeviceChanged(previousCameraDevice);
+          }
         }
       }
     }

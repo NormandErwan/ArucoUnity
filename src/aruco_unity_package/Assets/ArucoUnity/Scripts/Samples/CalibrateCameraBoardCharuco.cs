@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using ArucoUnity.Utility.cv;
 using ArucoUnity.Utility.std;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
