@@ -55,7 +55,7 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/board.png";
 
-      // Configuration properties
+      // Board configuration properties
       public int MarkersNumberX { get; set; }
       public int MarkersNumberY { get; set; }
       public int MarkerSideLength { get; set; }

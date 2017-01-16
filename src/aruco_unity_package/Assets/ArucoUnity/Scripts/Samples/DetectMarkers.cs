@@ -11,6 +11,9 @@ namespace ArucoUnity
 
   namespace Samples
   {
+    /// <summary>
+    /// Basic marker detection.
+    /// </summary>
     public class DetectMarkers : Utility.CameraDeviceMarkersDetector
     {
       [Header("Detection configuration")]
@@ -32,7 +35,7 @@ namespace ArucoUnity
 
       [Header("Camera configuration")]
       [SerializeField]
-      private Utility.CameraDeviceController cameraDeviceController;
+      private CameraDeviceController cameraDeviceController;
 
       [SerializeField]
       private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
@@ -73,10 +76,14 @@ namespace ArucoUnity
       public Vector3 OpticalCenter { get; private set; }
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
+      // Internals
       private Dictionary<int, GameObject> markerObjects;
+      private bool displayMarkerObjects = false;
+      private float cameraCx;
+      private float cameraCy;
+      private float cameraFy;
 
-      public DetectMarkers(CameraDeviceController cameraDeviceController)
-        : base(cameraDeviceController)
+      public DetectMarkers(CameraDeviceController cameraDeviceController) : base(cameraDeviceController)
       {
       }
 
@@ -101,26 +108,31 @@ namespace ArucoUnity
 
       protected override void Configurate()
       {
+        // Set the detector parameters and the dictionary
         DetectorParameters = detectorParametersManager.detectorParameters;
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
-        // Configurate the camera-plane group or the canvas
+        // Try to load the camera parameters
         if (estimatePose)
         {
-          bool configurateCameraPlaneSuccess = ConfigurateCameraPlane(cameraParametersFilePath);
-          estimatePose &= configurateCameraPlaneSuccess;
+          bool cameraParametersLoaded = LoadCameraParameters(cameraParametersFilePath);
+          estimatePose &= cameraParametersLoaded;
         }
 
-        // Activate the camera-plane group or the canvas
-        cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose);
-        cameraPlane.gameObject.SetActive(estimatePose);
+        // Configurate the camera-plane group xor the canvas
+        if (estimatePose)
+        {
+          displayMarkerObjects = ConfigurateCameraPlane();
+        }
+        cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
+        cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
 
         Configurated = true;
       }
 
-      public bool ConfigurateCameraPlane(string cameraParametersFilePath)
+      public bool LoadCameraParameters(string cameraParametersFilePath)
       {
-        // Retrieve camera parameters
+        // Retrieve camera device parameters
         CameraParameters cameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
         if (cameraParameters == null)
         {
@@ -129,24 +141,31 @@ namespace ArucoUnity
           return false;
         }
 
-        // Prepare the camera parameters
+        // Prepare the camera device parameters
         Mat cameraMatrix, distCoeffs;
         cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
         CameraMatrix = cameraMatrix;
         DistCoeffs = distCoeffs;
 
-        float cameraCx = (float)CameraMatrix.AtDouble(0, 2);
-        float cameraCy = (float)CameraMatrix.AtDouble(1, 2);
-        float cameraFy = (float)CameraMatrix.AtDouble(1, 1);
+        cameraCx = (float)CameraMatrix.AtDouble(0, 2);
+        cameraCy = (float)CameraMatrix.AtDouble(1, 2);
+        cameraFy = (float)CameraMatrix.AtDouble(1, 1);
 
-        float resolutionX = CameraImageTexture.width;
-        float resolutionY = CameraImageTexture.height;
+        // Calculate the optical center of the camera device; based on: http://stackoverflow.com/a/36580522
+        OpticalCenter = new Vector3(cameraCx / cameraImageResolutionX, cameraCy / cameraImageResolutionY, cameraFy);
 
-        // Calculate the optical center; based on: http://stackoverflow.com/a/36580522
-        OpticalCenter = new Vector3(cameraCx / resolutionX, cameraCy / resolutionY, cameraFy);
+        return true;
+      }
+
+      public bool ConfigurateCameraPlane()
+      {
+        if (Camera == null || CameraPlane == null || CameraMatrix == null || DistCoeffs == null || detectedMarkersObject == null)
+        {
+          return false;
+        }
 
         // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * resolutionY / cameraFy) * Mathf.Rad2Deg;
+        float vFov = 2f * Mathf.Atan(0.5f * cameraImageResolutionY / cameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
         camera.farClipPlane = cameraFy;
         camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
@@ -156,7 +175,7 @@ namespace ArucoUnity
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
         cameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
-        cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1);
+        cameraPlane.transform.localScale = new Vector3(cameraImageResolutionX, cameraImageResolutionY, 1);
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
         cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
@@ -164,14 +183,14 @@ namespace ArucoUnity
         return true;
       }
 
-      public void Detect(out Mat image, out VectorVectorPoint2f corners, out VectorInt ids,
-        out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs, out VectorVec3d tvecs)
+      public void Detect(out Mat image, out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, 
+        out VectorVec3d rvecs, out VectorVec3d tvecs)
       {
         // Copy the bytes of the texture to the image
         byte[] imageData = CameraImageTexture.GetRawTextureData();
 
         // Detect markers
-        image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
+        image = new Mat(cameraImageResolutionY, cameraImageResolutionX, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
@@ -185,8 +204,8 @@ namespace ArucoUnity
           tvecs = null;
         }
 
-        // Draw results
-        if (estimatePose && DetectedMarkersObject)
+        // Draw the results
+        if (estimatePose && displayMarkerObjects)
         {
           DeactivateMarkerObjects();
         }
@@ -198,7 +217,7 @@ namespace ArucoUnity
             Functions.DrawDetectedMarkers(image, corners, ids);
           }
 
-          if (estimatePose && DetectedMarkersObject)
+          if (estimatePose && displayMarkerObjects)
           {
             DisplayMarkerObjects(ids, rvecs, tvecs);
           }
@@ -209,13 +228,21 @@ namespace ArucoUnity
           Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
-        // Undistord the image
-        Mat undistordedImage;
-        Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+        // Undistord the image if calibrated
+        Mat undistordedImage, imageToDisplay;
+        if (estimatePose)
+        {
+          Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          imageToDisplay = undistordedImage;
+        }
+        else
+        {
+          imageToDisplay = image;
+        }
 
         // Copy the bytes of the image to the texture
-        int undistordedImageDataSize = (int)(undistordedImage.ElemSize() * undistordedImage.Total());
-        CameraImageTexture.LoadRawTextureData(undistordedImage.data, undistordedImageDataSize);
+        int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
+        CameraImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
         CameraImageTexture.Apply(false);
       }
 

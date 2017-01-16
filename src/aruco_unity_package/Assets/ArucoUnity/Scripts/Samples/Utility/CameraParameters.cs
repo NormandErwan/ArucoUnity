@@ -12,6 +12,7 @@ namespace ArucoUnity
   {
     namespace Utility
     {
+      // TODO: doc
       [Serializable]
       public class CameraParameters
       {

@@ -9,6 +9,7 @@ namespace ArucoUnity
   {
     namespace Utility
     {
+      // TODO: doc
       public abstract class CameraDeviceMarkersDetector : MonoBehaviour
       {
         // Properties
@@ -20,6 +21,11 @@ namespace ArucoUnity
         public delegate void CameraDeviceMakersDetectorAction();
         public event CameraDeviceMakersDetectorAction OnConfigurated;
 
+        // Internals
+        protected int cameraImageResolutionX;
+        protected int cameraImageResolutionY;
+
+        // TODO: allow to add a CameraDeviceController after objet creation
         public CameraDeviceMarkersDetector(CameraDeviceController cameraDeviceController)
         {
           CameraDeviceController = cameraDeviceController;
@@ -51,6 +57,9 @@ namespace ArucoUnity
           // Configurate start
           Configurated = false;
           CameraImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
+
+          cameraImageResolutionX = CameraImageTexture.width;
+          cameraImageResolutionY = CameraImageTexture.height;
 
           Configurate();
 
