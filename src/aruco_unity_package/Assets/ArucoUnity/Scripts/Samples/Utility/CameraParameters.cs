@@ -12,10 +12,33 @@ namespace ArucoUnity
   {
     namespace Utility
     {
-      // TODO: doc
+      /// <summary>
+      /// Manage OpenCV's camera parameters from a calibration.
+      /// </summary>
       [Serializable]
       public class CameraParameters
       {
+        // Constructors
+
+        /// <summary>
+        /// Create an empty CameraParameters. Populate it manually or using the <see cref="ImportArrays(Mat, Mat)"/> method.
+        /// </summary>
+        public CameraParameters()
+        {
+        }
+
+        /// <summary>
+        /// Create a CameraParameters from a OpenCV calibration.
+        /// </summary>
+        /// <param name="cameraMatrix">The camera matrix of the OpenCV calibration.</param>
+        /// <param name="distCoeffs">The distorsition coefficients of the OpenCV calibration.</param>
+        public CameraParameters(Mat cameraMatrix, Mat distCoeffs)
+        {
+          ImportArrays(cameraMatrix, distCoeffs);
+        }
+
+        // Properties
+
         public DateTime CalibrationDateTime { get; set; }
 
         public int ImageHeight { get; set; }
@@ -36,18 +59,17 @@ namespace ArucoUnity
 
         public double ReprojectionError { get; set; }
 
-        public CameraParameters()
-        {
-        }
+        // Methods
 
-        public CameraParameters(Mat cameraMatrix, Mat distCoeffs)
-        {
-          CalibrationDateTime = DateTime.Now;
-          ImportArrays(cameraMatrix, distCoeffs);
-        }
-
+        /// <summary>
+        /// Populate the camera parameters from a OpenCV calibration.
+        /// </summary>
+        /// <param name="cameraMatrix">The camera matrix of the OpenCV calibration.</param>
+        /// <param name="distCoeffs">The distorsition coefficients of the OpenCV calibration.</param>
         public void ImportArrays(Mat cameraMatrix, Mat distCoeffs)
         {
+          CalibrationDateTime = DateTime.Now;
+
           CameraMatrixType = cameraMatrix.Type();
           int cameraMatrixRows = cameraMatrix.rows,
               cameraMatrixCols = cameraMatrix.cols;
@@ -77,6 +99,11 @@ namespace ArucoUnity
           }
         }
 
+        /// <summary>
+        /// Return the camera matrix and the distorsion coefficients from the camera parameters.
+        /// </summary>
+        /// <param name="cameraMatrix"></param>
+        /// <param name="distCoeffs"></param>
         public void ExportArrays(out Mat cameraMatrix, out Mat distCoeffs)
         {
           int cameraMatrixRows = CameraMatrix.Length,
@@ -106,6 +133,10 @@ namespace ArucoUnity
           }
         }
 
+        /// <summary>
+        /// Save the object to a XML file.
+        /// </summary>
+        /// <param name="filePath">The file path where to save the object.</param>
         public void SaveToXmlFile(string filePath)
         {
           StreamWriter writer = null;
@@ -127,6 +158,11 @@ namespace ArucoUnity
           }
         }
 
+        /// <summary>
+        /// Create a new CameraParameters object from a previously saved XML file.
+        /// </summary>
+        /// <param name="filePath">The file path to load.</param>
+        /// <returns>The new CameraParameters created from the XML file.</returns>
         public static CameraParameters LoadFromXmlFile(string filePath)
         {
           CameraParameters cameraParameters = null;
