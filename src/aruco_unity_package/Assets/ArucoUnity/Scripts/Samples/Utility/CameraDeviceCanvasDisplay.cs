@@ -35,7 +35,7 @@ namespace ArucoUnity
         /// <summary>
         /// Enable the image and subscribe to markers detector events.
         /// </summary>
-        private void Awake()
+        private void OnEnable()
         {
           cameraDeviceController.OnActiveCameraDeviceStarted += CameraDeviceController_OnActiveCameraStarted;
         }
@@ -43,7 +43,7 @@ namespace ArucoUnity
         /// <summary>
         /// Disable the image and unsubscribe to markers detector events.
         /// </summary>
-        private void OnDestroy()
+        private void OnDisable()
         {
           cameraDeviceController.OnActiveCameraDeviceStarted -= CameraDeviceController_OnActiveCameraStarted;
         }
