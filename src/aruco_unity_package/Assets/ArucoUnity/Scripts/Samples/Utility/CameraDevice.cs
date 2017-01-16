@@ -146,7 +146,7 @@ namespace ArucoUnity
         }
 
         /// <summary>
-        /// Stop the camera and the associated webcam device.
+        /// Stop the camera and the associated webcam device, and notify of the stopping.
         /// </summary>
         public void StopCamera()
         {
@@ -177,7 +177,10 @@ namespace ArucoUnity
             }
             else
             {
+              // Initialize the Texture2D
               Texture2D = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+
+              // Notify that the camera has started
               Started = true;
               if (OnStarted != null)
               {
