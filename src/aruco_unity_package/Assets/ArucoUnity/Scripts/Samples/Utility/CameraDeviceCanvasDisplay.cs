@@ -16,14 +16,21 @@ namespace ArucoUnity
       /// </summary>
       public class CameraDeviceCanvasDisplay : MonoBehaviour
       {
+        // Editor fields
+
         [SerializeField]
+        [Tooltip("The raw image that will display the camera device image.")]
         private RawImage image;
 
         [SerializeField]
+        [Tooltip("The aspect ratio fitter associated with the raw image.")]
         private AspectRatioFitter imageFitter;
 
         [SerializeField]
+        [Tooltip("The camera device controller from which its active camera device will be displayed.")]
         private CameraDeviceController cameraDeviceController;
+
+        // MonoBehaviour methods
 
         /// <summary>
         /// Enable the image and subscribe to markers detector events.
@@ -40,6 +47,8 @@ namespace ArucoUnity
         {
           cameraDeviceController.OnActiveCameraDeviceStarted -= CameraDeviceController_OnActiveCameraStarted;
         }
+
+        // Methods
 
         /// <summary>
         /// Set the new texture to display.
