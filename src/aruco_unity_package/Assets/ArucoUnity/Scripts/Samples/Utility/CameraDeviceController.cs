@@ -17,7 +17,7 @@ namespace ArucoUnity
       {
         // Configuration
         [SerializeField]
-        private int defaultCameraDeviceIndex;
+        private int cameraId;
 
         // Properties
         public CameraDevice ActiveCameraDevice { get; private set; }
@@ -29,7 +29,7 @@ namespace ArucoUnity
         void Start()
         {
           ActiveCameraDevice = gameObject.AddComponent<CameraDevice>();
-          SwitchCamera(defaultCameraDeviceIndex);
+          SwitchCamera(cameraId);
         }
 
         // Switch between cameras devices
@@ -50,10 +50,10 @@ namespace ArucoUnity
           }
 
           // Switch to the next camera device
-          defaultCameraDeviceIndex = (cameraIndex != null) ? (int)cameraIndex : defaultCameraDeviceIndex + 1;
-          defaultCameraDeviceIndex %= WebCamTexture.devices.Length;
+          cameraId = (cameraIndex != null) ? (int)cameraIndex : cameraId + 1;
+          cameraId %= WebCamTexture.devices.Length;
 
-          ActiveCameraDevice.ResetCamera(webcamDevices[defaultCameraDeviceIndex]);
+          ActiveCameraDevice.ResetCamera(webcamDevices[cameraId]);
           ActiveCameraDevice.StartCamera();
 
           // Update the state
