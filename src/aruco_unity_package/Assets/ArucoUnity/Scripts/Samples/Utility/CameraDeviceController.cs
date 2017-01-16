@@ -9,31 +9,41 @@ namespace ArucoUnity
   {
     namespace Utility
     {
-      // TODO: doc
       /// <summary>
+      /// Manage the available camera devices.
       /// Based on: http://answers.unity3d.com/answers/1155328/view.html
       /// </summary>
       public class CameraDeviceController : MonoBehaviour
       {
         // Configuration
         [SerializeField]
-        private int cameraId;
+        [Tooltip("The id of the camera device to use.")]
+        private int cameraId = 0;
 
         // Properties
+        /// <summary>
+        /// The current active camera device.
+        /// </summary>
         public CameraDevice ActiveCameraDevice { get; private set; }
 
         // Events
         public delegate void CameraDeviceControllerAction(CameraDevice previousCameraDevice);
         public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
 
+        /// <summary>
+        /// Initialize the camera device with the index cameraId.
+        /// </summary>
         void Start()
         {
           ActiveCameraDevice = gameObject.AddComponent<CameraDevice>();
           SwitchCamera(cameraId);
         }
 
-        // Switch between cameras devices
-        public void SwitchCamera(int? cameraIndex = null)
+        /// <summary>
+        /// Switch between the different cameras devices.
+        /// </summary>
+        /// <param name="cameraId">The id of the camera device to use. Set to null to switch to the next camera.</param>
+        public void SwitchCamera(int? cameraId = null)
         {
           // Check for camera devices
           WebCamDevice[] webcamDevices = WebCamTexture.devices;
@@ -50,10 +60,10 @@ namespace ArucoUnity
           }
 
           // Switch to the next camera device
-          cameraId = (cameraIndex != null) ? (int)cameraIndex : cameraId + 1;
-          cameraId %= WebCamTexture.devices.Length;
+          this.cameraId = (cameraId != null) ? (int)cameraId : this.cameraId + 1;
+          this.cameraId %= WebCamTexture.devices.Length;
 
-          ActiveCameraDevice.ResetCamera(webcamDevices[cameraId]);
+          ActiveCameraDevice.ResetCamera(webcamDevices[this.cameraId]);
           ActiveCameraDevice.StartCamera();
 
           // Update the state
