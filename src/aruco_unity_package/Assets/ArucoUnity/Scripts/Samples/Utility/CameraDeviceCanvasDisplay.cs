@@ -23,14 +23,14 @@ namespace ArucoUnity
         private AspectRatioFitter imageFitter;
 
         [SerializeField]
-        private CameraDeviceMarkersDetector markersDetector;
+        private CameraDeviceController cameraDeviceController;
 
         /// <summary>
         /// Enable the image and subscribe to markers detector events.
         /// </summary>
         private void Awake()
         {
-          markersDetector.OnConfigurated += CameraDeviceMarkersDetector_OnConfigurated;
+          cameraDeviceController.OnActiveCameraStarted += CameraDeviceController_OnActiveCameraStarted;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace ArucoUnity
         /// </summary>
         private void OnDestroy()
         {
-          markersDetector.OnConfigurated -= CameraDeviceMarkersDetector_OnConfigurated;
+          cameraDeviceController.OnActiveCameraStarted -= CameraDeviceController_OnActiveCameraStarted;
         }
 
         /// <summary>
@@ -51,12 +51,10 @@ namespace ArucoUnity
         }
 
         /// <summary>
-        /// Configure the image display when the camera is started.
+        /// Configure the display of the active camera device when it's started.
         /// </summary>
-        private void CameraDeviceMarkersDetector_OnConfigurated()
+        private void CameraDeviceController_OnActiveCameraStarted(CameraDevice activeCameraDevice)
         {
-          CameraDevice activeCameraDevice = markersDetector.CameraDeviceController.ActiveCameraDevice;
-
           SetActiveTexture(activeCameraDevice.Texture2D);
 
           image.rectTransform.localScale = activeCameraDevice.ImageScaleFrontFacing;
