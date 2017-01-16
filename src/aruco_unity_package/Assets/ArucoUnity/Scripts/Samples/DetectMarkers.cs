@@ -139,8 +139,8 @@ namespace ArucoUnity
         float cameraCy = (float)CameraMatrix.AtDouble(1, 2);
         float cameraFy = (float)CameraMatrix.AtDouble(1, 1);
 
-        float resolutionX = ImageTexture.width;
-        float resolutionY = ImageTexture.height;
+        float resolutionX = CameraImageTexture.width;
+        float resolutionY = CameraImageTexture.height;
 
         // Calculate the optical center; based on: http://stackoverflow.com/a/36580522
         OpticalCenter = new Vector3(cameraCx / resolutionX, cameraCy / resolutionY, cameraFy);
@@ -159,7 +159,7 @@ namespace ArucoUnity
         cameraPlane.transform.localScale = new Vector3(resolutionX, resolutionY, 1);
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
         cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
-        cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
+        cameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
 
         return true;
       }
@@ -168,10 +168,10 @@ namespace ArucoUnity
         out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs, out VectorVec3d tvecs)
       {
         // Copy the bytes of the texture to the image
-        byte[] imageData = ImageTexture.GetRawTextureData();
+        byte[] imageData = CameraImageTexture.GetRawTextureData();
 
         // Detect markers
-        image = new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+        image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
@@ -215,8 +215,8 @@ namespace ArucoUnity
 
         // Copy the bytes of the image to the texture
         int undistordedImageDataSize = (int)(undistordedImage.ElemSize() * undistordedImage.Total());
-        ImageTexture.LoadRawTextureData(undistordedImage.data, undistordedImageDataSize);
-        ImageTexture.Apply(false);
+        CameraImageTexture.LoadRawTextureData(undistordedImage.data, undistordedImageDataSize);
+        CameraImageTexture.Apply(false);
       }
 
       private void DeactivateMarkerObjects()

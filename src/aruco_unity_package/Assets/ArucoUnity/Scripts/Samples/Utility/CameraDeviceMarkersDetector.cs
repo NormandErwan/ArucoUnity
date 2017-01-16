@@ -13,7 +13,7 @@ namespace ArucoUnity
       {
         // Properties
         public CameraDeviceController CameraDeviceController { get; set; }
-        public Texture2D ImageTexture { get; private set; }
+        public Texture2D CameraImageTexture { get; private set; }
         public bool Configurated { get; protected set; }
 
         // Events
@@ -50,7 +50,7 @@ namespace ArucoUnity
         {
           // Configurate start
           Configurated = false;
-          ImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
+          CameraImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
 
           Configurate();
 
