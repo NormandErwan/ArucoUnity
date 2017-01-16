@@ -31,8 +31,8 @@ namespace ArucoUnity
         public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
 
         public delegate void ActiveCameraDeviceAction(CameraDevice activeCameraDevice);
-        public event ActiveCameraDeviceAction OnActiveCameraStarted;
-        public event ActiveCameraDeviceAction OnActiveCameraStopped;
+        public event ActiveCameraDeviceAction OnActiveCameraDeviceStarted;
+        public event ActiveCameraDeviceAction OnActiveCameraDeviceStopped;
 
         /// <summary>
         /// Initialize the camera device with the index cameraId.
@@ -91,9 +91,9 @@ namespace ArucoUnity
         /// </summary>
         private void ActiveCameraDevice_OnStarted()
         {
-          if (OnActiveCameraStarted != null)
+          if (OnActiveCameraDeviceStarted != null)
           {
-            OnActiveCameraStarted(ActiveCameraDevice);
+            OnActiveCameraDeviceStarted(ActiveCameraDevice);
           }
         }
 
@@ -102,9 +102,9 @@ namespace ArucoUnity
         /// </summary>
         private void ActiveCameraDevice_OnStopped()
         {
-          if (OnActiveCameraStopped != null)
+          if (OnActiveCameraDeviceStopped != null)
           {
-            OnActiveCameraStopped(ActiveCameraDevice);
+            OnActiveCameraDeviceStopped(ActiveCameraDevice);
           }
         }
       }

@@ -34,12 +34,12 @@ namespace ArucoUnity
         protected virtual void OnEnable()
         {
           Configurated = false;
-          CameraDeviceController.OnActiveCameraStarted += CompleteConfigurate;
+          CameraDeviceController.OnActiveCameraDeviceStarted += CompleteConfigurate;
         }
 
         protected virtual void OnDisable()
         {
-          CameraDeviceController.OnActiveCameraStarted -= CompleteConfigurate;
+          CameraDeviceController.OnActiveCameraDeviceStarted -= CompleteConfigurate;
         }
 
         private void CompleteConfigurate(CameraDevice activeCameraDevice)

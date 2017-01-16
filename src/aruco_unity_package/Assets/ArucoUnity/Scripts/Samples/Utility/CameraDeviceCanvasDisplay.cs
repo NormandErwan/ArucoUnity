@@ -30,7 +30,7 @@ namespace ArucoUnity
         /// </summary>
         private void Awake()
         {
-          cameraDeviceController.OnActiveCameraStarted += CameraDeviceController_OnActiveCameraStarted;
+          cameraDeviceController.OnActiveCameraDeviceStarted += CameraDeviceController_OnActiveCameraStarted;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace ArucoUnity
         /// </summary>
         private void OnDestroy()
         {
-          cameraDeviceController.OnActiveCameraStarted -= CameraDeviceController_OnActiveCameraStarted;
+          cameraDeviceController.OnActiveCameraDeviceStarted -= CameraDeviceController_OnActiveCameraStarted;
         }
 
         /// <summary>
