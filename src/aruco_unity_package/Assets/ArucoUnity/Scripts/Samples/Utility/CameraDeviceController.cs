@@ -30,6 +30,10 @@ namespace ArucoUnity
         public delegate void CameraDeviceControllerAction(CameraDevice previousCameraDevice);
         public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
 
+        public delegate void ActiveCameraDeviceAction(CameraDevice activeCameraDevice);
+        public event ActiveCameraDeviceAction OnActiveCameraStarted;
+        public event ActiveCameraDeviceAction OnActiveCameraStopped;
+
         /// <summary>
         /// Initialize the camera device with the index cameraId.
         /// </summary>
@@ -66,10 +70,41 @@ namespace ArucoUnity
           ActiveCameraDevice.ResetCamera(webcamDevices[this.cameraId]);
           ActiveCameraDevice.StartCamera();
 
-          // Update the state
+          // Subscribe to the active camera device
+          if (previousCameraDevice != null)
+          {
+            previousCameraDevice.OnStarted -= ActiveCameraDevice_OnStarted;
+            previousCameraDevice.OnStopped -= ActiveCameraDevice_OnStopped;
+          }
+          ActiveCameraDevice.OnStarted += ActiveCameraDevice_OnStarted;
+          ActiveCameraDevice.OnStopped += ActiveCameraDevice_OnStopped;
+
+          // Notify about the camera device change
           if (OnActiveCameraDeviceChanged != null)
           {
             OnActiveCameraDeviceChanged(previousCameraDevice);
+          }
+        }
+
+        /// <summary>
+        /// Notify that the active camera has started.
+        /// </summary>
+        private void ActiveCameraDevice_OnStarted()
+        {
+          if (OnActiveCameraStarted != null)
+          {
+            OnActiveCameraStarted(ActiveCameraDevice);
+          }
+        }
+
+        /// <summary>
+        /// Notify that the active camera has stopped.
+        /// </summary>
+        private void ActiveCameraDevice_OnStopped()
+        {
+          if (OnActiveCameraStopped != null)
+          {
+            OnActiveCameraStopped(ActiveCameraDevice);
           }
         }
       }
