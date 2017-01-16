@@ -12,35 +12,61 @@ namespace ArucoUnity
       // TODO: doc
       public abstract class CameraDeviceMarkersDetector : MonoBehaviour
       {
-        // Properties
-        public CameraDeviceController CameraDeviceController { get; set; }
-        public Texture2D CameraImageTexture { get; private set; }
-        public bool Configurated { get; protected set; }
-
         // Events
         public delegate void CameraDeviceMakersDetectorAction();
+
         public event CameraDeviceMakersDetectorAction OnConfigurated;
+
+        // Properties
+        public Texture2D CameraImageTexture { get; private set; }
+
+        public bool Configurated { get; protected set; }
+
+        public CameraDeviceController CameraDeviceController {
+          get { return cameraDeviceControllerValue; }
+          set
+          {
+            // Reset configuration
+            Configurated = false;
+
+            // Unsubscribe from the previous cameraDeviceController
+            if (cameraDeviceControllerValue != null)
+            {
+              cameraDeviceControllerValue.OnActiveCameraDeviceStarted -= CompleteConfigurate;
+            }
+
+            // Subscribe to the new cameraDeviceController
+            cameraDeviceControllerValue = value;
+            cameraDeviceControllerValue.OnActiveCameraDeviceStarted += CompleteConfigurate;
+
+            ConfigurateIfActiveCameraDeviceStarted();
+          }
+        }
 
         // Internals
         protected int cameraImageResolutionX;
         protected int cameraImageResolutionY;
 
-        // TODO: allow to add a CameraDeviceController after objet creation
-        public CameraDeviceMarkersDetector(CameraDeviceController cameraDeviceController)
-        {
-          CameraDeviceController = cameraDeviceController;
-        }
+        private CameraDeviceController cameraDeviceControllerValue = null;
 
         protected virtual void OnEnable()
         {
-          Configurated = false;
-          CameraDeviceController.OnActiveCameraDeviceStarted += CompleteConfigurate;
+          if (cameraDeviceControllerValue != null)
+          {
+            cameraDeviceControllerValue.OnActiveCameraDeviceStarted += CompleteConfigurate;
+            ConfigurateIfActiveCameraDeviceStarted();
+          }
         }
 
         protected virtual void OnDisable()
         {
-          CameraDeviceController.OnActiveCameraDeviceStarted -= CompleteConfigurate;
+          if (cameraDeviceControllerValue != null)
+          {
+            cameraDeviceControllerValue.OnActiveCameraDeviceStarted -= CompleteConfigurate;
+          }
         }
+
+        protected abstract void Configurate();
 
         private void CompleteConfigurate(CameraDevice activeCameraDevice)
         {
@@ -62,7 +88,20 @@ namespace ArucoUnity
           Configurated = true;
         }
 
-        protected abstract void Configurate();
+        /// <summary>
+        /// If the camera is already started, start the configuration.
+        /// </summary>
+        private void ConfigurateIfActiveCameraDeviceStarted()
+        {
+          if (cameraDeviceControllerValue != null)
+          {
+            CameraDevice activeCameraDevice = cameraDeviceControllerValue.ActiveCameraDevice;
+            if (activeCameraDevice != null && activeCameraDevice.Started)
+            {
+              CompleteConfigurate(activeCameraDevice);
+            }
+          }
+        }
       }
     }
   }

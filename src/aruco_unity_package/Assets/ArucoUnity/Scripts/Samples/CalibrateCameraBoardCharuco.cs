@@ -105,11 +105,6 @@ namespace ArucoUnity
       private bool addNextFrame;
       private bool calibrate;
 
-      public CalibrateCameraBoardCharuco(CameraDeviceController cameraDeviceController) 
-        : base(cameraDeviceController)
-      {
-      }
-
       /// <summary>
       /// Add onClick functions to UI buttons.
       /// </summary>

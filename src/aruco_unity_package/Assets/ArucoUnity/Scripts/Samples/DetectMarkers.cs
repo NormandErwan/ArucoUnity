@@ -14,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Basic marker detection.
     /// </summary>
-    public class DetectMarkers : Utility.CameraDeviceMarkersDetector
+    public class DetectMarkers : CameraDeviceMarkersDetector
     {
       [Header("Detection configuration")]
       [SerializeField]
@@ -83,10 +83,9 @@ namespace ArucoUnity
       private float cameraCy;
       private float cameraFy;
 
-      public DetectMarkers(CameraDeviceController cameraDeviceController) : base(cameraDeviceController)
-      {
-      }
-
+      /// <summary>
+      /// Populate the CameraDeviceMarkersDetector base class properties.
+      /// </summary>
       private void Awake()
       {
         CameraDeviceController = cameraDeviceController;

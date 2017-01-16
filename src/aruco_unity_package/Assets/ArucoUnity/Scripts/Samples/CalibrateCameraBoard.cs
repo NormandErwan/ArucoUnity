@@ -97,11 +97,6 @@ namespace ArucoUnity
       private bool addNextFrame;
       private bool calibrate;
 
-      public CalibrateCameraBoard(CameraDeviceController cameraDeviceController) 
-        : base(cameraDeviceController)
-      {
-      }
-
       void Awake()
       {
         CameraDeviceController = cameraDeviceController;
