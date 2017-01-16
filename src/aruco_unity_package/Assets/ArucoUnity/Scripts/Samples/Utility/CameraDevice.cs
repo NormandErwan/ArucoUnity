@@ -15,16 +15,41 @@ namespace ArucoUnity
       /// </summary>
       public class CameraDevice : MonoBehaviour
       {
-        // Properties
-        public bool Started { get; private set; }
-        public WebCamDevice WebCamDevice { get; private set; }
-        public WebCamTexture WebCamTexture { get; private set; }
-        public Texture2D Texture2D { get; private set; }
-
         // Events
+
         public delegate void CameraDeviceAction();
+
+        /// <summary>
+        /// Executed when the camera has started.
+        /// </summary>
         public event CameraDeviceAction OnStarted;
+
+        /// <summary>
+        /// Executed when the camera has stopped.
+        /// </summary>
         public event CameraDeviceAction OnStopped;
+
+        // Properties
+
+        /// <summary>
+        /// True when the camera has started.
+        /// </summary>
+        public bool Started { get; private set; }
+
+        /// <summary>
+        /// The associated webcam device.
+        /// </summary>
+        public WebCamDevice WebCamDevice { get; private set; }
+
+        /// <summary>
+        /// The texture of the associated webcam device.
+        /// </summary>
+        public WebCamTexture WebCamTexture { get; private set; }
+
+        /// <summary>
+        /// Equivalent of the <see cref="WebCamTexture">WebCamTexture</see>, updated each frame.
+        /// </summary>
+        public Texture2D Texture2D { get; private set; }
 
         /// <summary>
         /// The correct image orientation.
@@ -118,6 +143,8 @@ namespace ArucoUnity
           }
           private set { }
         }
+
+        // Methods
 
         /// <summary>
         /// Initialize the camera device and its textures.
