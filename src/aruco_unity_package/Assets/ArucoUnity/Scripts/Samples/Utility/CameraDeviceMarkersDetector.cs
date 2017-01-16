@@ -34,33 +34,24 @@ namespace ArucoUnity
         protected virtual void OnEnable()
         {
           Configurated = false;
-          CameraDeviceController.OnActiveCameraDeviceChanged += CameraDeviceController_OnActiveCameraChanged;
+          CameraDeviceController.OnActiveCameraStarted += CompleteConfigurate;
         }
 
         protected virtual void OnDisable()
         {
-          CameraDeviceController.OnActiveCameraDeviceChanged -= CameraDeviceController_OnActiveCameraChanged;
-          CameraDeviceController.ActiveCameraDevice.OnStarted -= CompleteConfigurate;
+          CameraDeviceController.OnActiveCameraStarted -= CompleteConfigurate;
         }
 
-        private void CameraDeviceController_OnActiveCameraChanged(CameraDevice previousCameraDevice)
-        {
-          if (previousCameraDevice != null)
-          {
-            previousCameraDevice.OnStarted -= CompleteConfigurate;
-          }
-          CameraDeviceController.ActiveCameraDevice.OnStarted += CompleteConfigurate;
-        }
-
-        private void CompleteConfigurate()
+        private void CompleteConfigurate(CameraDevice activeCameraDevice)
         {
           // Configurate start
           Configurated = false;
-          CameraImageTexture = CameraDeviceController.ActiveCameraDevice.Texture2D;
+          CameraImageTexture = activeCameraDevice.Texture2D;
 
           cameraImageResolutionX = CameraImageTexture.width;
           cameraImageResolutionY = CameraImageTexture.height;
 
+          // Configurate main
           Configurate();
 
           // Configurate end

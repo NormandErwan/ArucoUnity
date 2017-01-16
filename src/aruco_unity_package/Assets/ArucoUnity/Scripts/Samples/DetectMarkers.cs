@@ -126,8 +126,6 @@ namespace ArucoUnity
         }
         cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
-
-        Configurated = true;
       }
 
       public bool LoadCameraParameters(string cameraParametersFilePath)
