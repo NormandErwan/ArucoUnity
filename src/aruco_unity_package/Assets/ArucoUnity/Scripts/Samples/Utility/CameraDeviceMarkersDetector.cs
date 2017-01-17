@@ -9,19 +9,34 @@ namespace ArucoUnity
   {
     namespace Utility
     {
-      // TODO: doc
+      /// <summary>
+      /// Base for any markers detection class that use a <see cref="CameraDevice"/>.
+      /// </summary>
       public abstract class CameraDeviceMarkersDetector : MonoBehaviour
       {
         // Events
         public delegate void CameraDeviceMakersDetectorAction();
-
+        
+        /// <summary>
+        /// Executed when the markers detector is ready and configurated.
+        /// </summary>
         public event CameraDeviceMakersDetectorAction OnConfigurated;
 
         // Properties
+        /// <summary>
+        /// The manipulated camera image texture by the marker detection class.
+        /// </summary>
         public Texture2D CameraImageTexture { get; private set; }
 
+        /// <summary>
+        /// True when the markers detection class is ready and configurated.
+        /// </summary>
         public bool Configurated { get; protected set; }
 
+        /// <summary>
+        /// The <see cref="CameraDeviceController"/> to use. When its active camera device has started, execute the configuration of the marker 
+        /// detection class.
+        /// </summary>
         public CameraDeviceController CameraDeviceController {
           get { return cameraDeviceControllerValue; }
           set
@@ -43,14 +58,29 @@ namespace ArucoUnity
           }
         }
 
-        // Internals
+        // Variables
+
+        /// <summary>
+        /// The <see cref="CameraImageTexture"/>'s width.
+        /// </summary>
         protected int cameraImageResolutionX;
+
+        /// <summary>
+        /// The <see cref="CameraImageTexture"/>'s height.
+        /// </summary>
         protected int cameraImageResolutionY;
 
         private CameraDeviceController cameraDeviceControllerValue = null;
 
+        // MonoBehaviour methods
+
+        /// <summary>
+        /// Subscribe to <see cref="CameraDeviceController"/> and execute the configuration if the active camera device has already started.
+        /// </summary>
         protected virtual void OnEnable()
         {
+          Configurated = false;
+
           if (cameraDeviceControllerValue != null)
           {
             cameraDeviceControllerValue.OnActiveCameraDeviceStarted += CompleteConfigurate;
@@ -58,6 +88,9 @@ namespace ArucoUnity
           }
         }
 
+        /// <summary>
+        /// Unsubscribe from <see cref="CameraDeviceController"/>.
+        /// </summary>
         protected virtual void OnDisable()
         {
           if (cameraDeviceControllerValue != null)
@@ -66,21 +99,29 @@ namespace ArucoUnity
           }
         }
 
+        // Methods
+
+        /// <summary>
+        /// The configuration content of the marker detection class.
+        /// </summary>
         protected abstract void Configurate();
 
+        /// <summary>
+        /// Configuration the the marker detection class.
+        /// </summary>
+        /// <param name="activeCameraDevice">The current active camera device.</param>
         private void CompleteConfigurate(CameraDevice activeCameraDevice)
         {
-          // Configurate start
+          // Configurate the CameraImageTexture
           Configurated = false;
           CameraImageTexture = activeCameraDevice.Texture2D;
-
           cameraImageResolutionX = CameraImageTexture.width;
           cameraImageResolutionY = CameraImageTexture.height;
 
-          // Configurate main
+          // Configurate content
           Configurate();
 
-          // Configurate end
+          // Update the state and notify
           if (OnConfigurated != null)
           {
             OnConfigurated();
@@ -89,7 +130,7 @@ namespace ArucoUnity
         }
 
         /// <summary>
-        /// If the camera is already started, start the configuration.
+        /// If the camera is already started, execute the configuration.
         /// </summary>
         private void ConfigurateIfActiveCameraDeviceStarted()
         {

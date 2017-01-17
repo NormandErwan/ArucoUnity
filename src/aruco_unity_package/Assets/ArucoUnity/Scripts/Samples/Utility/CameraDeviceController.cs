@@ -10,7 +10,7 @@ namespace ArucoUnity
     namespace Utility
     {
       /// <summary>
-      /// Manage the available camera devices.
+      /// Manage the available <see cref="CameraDevice">camera devices</see>.
       /// Based on: http://answers.unity3d.com/answers/1155328/view.html
       /// </summary>
       public class CameraDeviceController : MonoBehaviour
@@ -35,7 +35,7 @@ namespace ArucoUnity
         public event ActiveCameraDeviceAction OnActiveCameraDeviceStopped;
 
         /// <summary>
-        /// Initialize the camera device with the index cameraId.
+        /// Initialize the camera device with the index <see cref="cameraId"/>.
         /// </summary>
         void Start()
         {

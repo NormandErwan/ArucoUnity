@@ -47,7 +47,7 @@ namespace ArucoUnity
         public WebCamTexture WebCamTexture { get; private set; }
 
         /// <summary>
-        /// Equivalent of the <see cref="WebCamTexture">WebCamTexture</see>, updated each frame.
+        /// Equivalent of the <see cref="WebCamTexture"/>, updated each frame.
         /// </summary>
         public Texture2D Texture2D { get; private set; }
 
