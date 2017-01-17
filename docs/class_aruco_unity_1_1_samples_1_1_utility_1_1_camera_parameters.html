@@ -73,23 +73,32 @@ $(function() {
 <div class="title">ArucoUnity.Samples.Utility.CameraParameters Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manage OpenCV's camera parameters from a calibration.  
+ <a href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abd5eb0c675c93233b48550f71e0dc03d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#abd5eb0c675c93233b48550f71e0dc03d">CameraParameters</a> ()</td></tr>
+<tr class="memdesc:abd5eb0c675c93233b48550f71e0dc03d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an empty <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a>. Populate it manually or using the <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a29e2ea71711d84d40211bccdd5ee25e0" title="Populate the camera parameters from a OpenCV calibration. ">ImportArrays(Mat, Mat)</a> method.  <a href="#abd5eb0c675c93233b48550f71e0dc03d">More...</a><br /></td></tr>
 <tr class="separator:abd5eb0c675c93233b48550f71e0dc03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d0b8e2d9d6060fe005bc32b6d21a166"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a5d0b8e2d9d6060fe005bc32b6d21a166">CameraParameters</a> (<a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> cameraMatrix, <a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> distCoeffs)</td></tr>
+<tr class="memdesc:a5d0b8e2d9d6060fe005bc32b6d21a166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a> from a OpenCV calibration.  <a href="#a5d0b8e2d9d6060fe005bc32b6d21a166">More...</a><br /></td></tr>
 <tr class="separator:a5d0b8e2d9d6060fe005bc32b6d21a166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e2ea71711d84d40211bccdd5ee25e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a29e2ea71711d84d40211bccdd5ee25e0">ImportArrays</a> (<a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> cameraMatrix, <a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> distCoeffs)</td></tr>
+<tr class="memdesc:a29e2ea71711d84d40211bccdd5ee25e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the camera parameters from a OpenCV calibration.  <a href="#a29e2ea71711d84d40211bccdd5ee25e0">More...</a><br /></td></tr>
 <tr class="separator:a29e2ea71711d84d40211bccdd5ee25e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01fb19db56ae6f18a67a27298ee9ea4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a01fb19db56ae6f18a67a27298ee9ea4d">ExportArrays</a> (out <a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> cameraMatrix, out <a class="el" href="class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html">Mat</a> distCoeffs)</td></tr>
+<tr class="memdesc:a01fb19db56ae6f18a67a27298ee9ea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the camera matrix and the distorsion coefficients from the camera parameters.  <a href="#a01fb19db56ae6f18a67a27298ee9ea4d">More...</a><br /></td></tr>
 <tr class="separator:a01fb19db56ae6f18a67a27298ee9ea4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c68f5a44f3b18c00b58931eb7c071d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a0c68f5a44f3b18c00b58931eb7c071d1">SaveToXmlFile</a> (string filePath)</td></tr>
+<tr class="memdesc:a0c68f5a44f3b18c00b58931eb7c071d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the object to a XML file.  <a href="#a0c68f5a44f3b18c00b58931eb7c071d1">More...</a><br /></td></tr>
 <tr class="separator:a0c68f5a44f3b18c00b58931eb7c071d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b41a7d069e57a98376b4289ceb85239"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html">CameraParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a9b41a7d069e57a98376b4289ceb85239">LoadFromXmlFile</a> (string filePath)</td></tr>
+<tr class="memdesc:a9b41a7d069e57a98376b4289ceb85239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a> object from a previously saved XML file.  <a href="#a9b41a7d069e57a98376b4289ceb85239">More...</a><br /></td></tr>
 <tr class="separator:a9b41a7d069e57a98376b4289ceb85239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -115,7 +124,9 @@ Properties</h2></td></tr>
 <tr class="memitem:aa48893345e5ae054aea98e452cf02810"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#aa48893345e5ae054aea98e452cf02810">ReprojectionError</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa48893345e5ae054aea98e452cf02810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manage OpenCV's camera parameters from a calibration. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd5eb0c675c93233b48550f71e0dc03d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd5eb0c675c93233b48550f71e0dc03d">&#9670;&nbsp;</a></span>CameraParameters() <span class="overload">[1/2]</span></h2>
 
@@ -138,6 +149,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create an empty <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a>. Populate it manually or using the <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a29e2ea71711d84d40211bccdd5ee25e0" title="Populate the camera parameters from a OpenCV calibration. ">ImportArrays(Mat, Mat)</a> method. </p>
 
 </div>
 </div>
@@ -174,6 +187,15 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a> from a OpenCV calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraMatrix</td><td>The camera matrix of the OpenCV calibration.</td></tr>
+    <tr><td class="paramname">distCoeffs</td><td>The distorsition coefficients of the OpenCV calibration.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -212,6 +234,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the camera matrix and the distorsion coefficients from the camera parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraMatrix</td><td></td></tr>
+    <tr><td class="paramname">distCoeffs</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a29e2ea71711d84d40211bccdd5ee25e0"></a>
@@ -248,6 +279,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Populate the camera parameters from a OpenCV calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraMatrix</td><td>The camera matrix of the OpenCV calibration.</td></tr>
+    <tr><td class="paramname">distCoeffs</td><td>The distorsition coefficients of the OpenCV calibration.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9b41a7d069e57a98376b4289ceb85239"></a>
@@ -274,6 +314,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Create a new <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a> object from a previously saved XML file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The file path to load.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new <a class="el" href="class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html" title="Manage OpenCV&#39;s camera parameters from a calibration. ">CameraParameters</a> created from the XML file.</dd></dl>
+
 </div>
 </div>
 <a id="a0c68f5a44f3b18c00b58931eb7c071d1"></a>
@@ -299,6 +348,14 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Save the object to a XML file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The file path where to save the object.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -529,7 +586,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 13 2017 18:57:49 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 16 2017 19:35:55 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
