@@ -15,11 +15,11 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<cv::Vec4i>.
-  ARUCO_UNITY_API std::vector<cv::Vec4i>* au_vectorVec4i_new();
+  ARUCO_UNITY_API std::vector<cv::Vec4i>* au_std_vectorVec4i_new();
 
   //! \brief Deletes any std::vector<cv::Vec4i>.
   //! \param vector The vector used.
-  ARUCO_UNITY_API void au_vectorVec4i_delete(std::vector<cv::Vec4i>* vector);
+  ARUCO_UNITY_API void au_std_vectorVec4i_delete(std::vector<cv::Vec4i>* vector);
 
   //! @} Constructors & Destructors
 
@@ -31,20 +31,20 @@ extern "C" {
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API cv::Vec4i* au_vectorVec4i_at(std::vector<cv::Vec4i>* vector, size_t pos, cv::Exception* exception);
+  ARUCO_UNITY_API cv::Vec4i* au_std_vectorVec4i_at(std::vector<cv::Vec4i>* vector, size_t pos, cv::Exception* exception);
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  ARUCO_UNITY_API cv::Vec4i* au_vectorVec4i_data(std::vector<cv::Vec4i>* vector);
+  ARUCO_UNITY_API cv::Vec4i* au_std_vectorVec4i_data(std::vector<cv::Vec4i>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
   //! \param value The value of the element to append.
-  ARUCO_UNITY_API void au_vectorVec4i_push_back(std::vector<cv::Vec4i>* vector, cv::Vec4i* value);
+  ARUCO_UNITY_API void au_std_vectorVec4i_push_back(std::vector<cv::Vec4i>* vector, cv::Vec4i* value);
 
   //! \brief Returns the number of elements.
   //! \param vector The vector used.
-  ARUCO_UNITY_API size_t au_vectorVec4i_size(std::vector<cv::Vec4i>* vector);
+  ARUCO_UNITY_API size_t au_std_vectorVec4i_size(std::vector<cv::Vec4i>* vector);
 
   //! @} Functions
 }
