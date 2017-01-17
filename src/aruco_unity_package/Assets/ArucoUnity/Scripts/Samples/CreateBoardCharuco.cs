@@ -1,6 +1,6 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using ArucoUnity.Utility.cv;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
@@ -9,24 +9,20 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public class CreateBoardCharuco : MonoBehaviour
+    /// <summary>
+    /// Create an ChArUco grid board image and a texture of the board.
+    /// </summary>
+    public class CreateBoardCharuco : MarkerCreator
     {
-      public Dictionary dictionary;
-
-      public CharucoBoard board;
-      public Mat image;
-      public Size size;
-
-      [HideInInspector]
-      public Texture2D imageTexture;
+      // Editor fields
 
       [Header("ChArUco board configuration")]
       [SerializeField]
-      [Tooltip("Number of markers in X direction")]
+      [Tooltip("Number of squares in the X direction")]
       public int squaresNumberX;
 
       [SerializeField]
-      [Tooltip("Number of markers in Y direction")]
+      [Tooltip("Number of squares in the Y direction")]
       public int squaresNumberY;
 
       [SerializeField]
@@ -64,9 +60,55 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/charuco-board.png";
 
+      // Properties
+
+      /// <summary>
+      /// Number of markers in the X direction.
+      /// </summary>
+      public int SquaresNumberX { get { return squaresNumberX; } set { squaresNumberX = value; } }
+
+      /// <summary>
+      /// Number of markers in the Y direction.
+      /// </summary>
+      public int SquaresNumberY { get { return squaresNumberY; } set { squaresNumberY = value; } }
+
+      /// <summary>
+      /// Square side length (in pixels).
+      /// </summary>
+      public int SquareSideLength { get { return squareSideLength; } set { squareSideLength = value; } }
+
+      /// <summary>
+      /// Marker side length (in pixels).
+      /// </summary>
+      public int MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+
+      /// <summary>
+      /// Margins size (in pixels). Default is: <see cref="SquareSideLength"/> - <see cref="MarkerSideLength"/>.
+      /// </summary>
+      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
+
+      /// <summary>
+      /// Number of bits in marker borders.
+      /// </summary>
+      public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
+
+      /// <summary>
+      /// The generated grid board.
+      /// </summary>
+      public CharucoBoard Board { get; private set; }
+
+      /// <summary>
+      /// The size of the <see cref="Board"/>.
+      /// </summary>
+      public Size Size { get; private set; }
+
+      /// <summary>
+      /// Set the dictionary, create the grid board image and the texture and, if needed, draw the texture and save it to a image file.
+      /// </summary>
       void Start()
       {
-        dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+
         Create();
 
         if (drawBoard)
@@ -80,44 +122,24 @@ namespace ArucoUnity
         }
       }
 
-      // Call it first if you're using the Script alone, not with the Prefab.
-      public void Configurate(int squaresNumberX, int squaresNumberY, int squareSideLength, int markerSideLength, Dictionary dictionary, 
-        int marginsSize, int markerBorderBits)
+      // Methods
+
+      /// <summary>
+      /// Create the <see cref="Board"/>, the grid board image and the <see cref="ImageTexture"/> of the grid board.
+      /// </summary>
+      public override void Create()
       {
-        this.squaresNumberX = squaresNumberX;
-        this.squaresNumberY = squaresNumberY;
-        this.squareSideLength = squareSideLength;
-        this.markerSideLength = markerSideLength;
-        this.dictionary = dictionary;
-        this.marginsSize = marginsSize;
-        this.markerBorderBits = markerBorderBits;
-      }
+        Size = new Size();
+        Size.width = squaresNumberX * squareSideLength + 2 * marginsSize;
+        Size.height = squaresNumberY * squareSideLength + 2 * marginsSize;
 
-      public void Create()
-      {
-        size = new Size();
-        size.width = squaresNumberX * squareSideLength + 2 * marginsSize;
-        size.height = squaresNumberY * squareSideLength + 2 * marginsSize;
+        Board = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
 
-        board = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, dictionary);
+        Mat image;
+        Board.Draw(Size, out image, marginsSize, markerBorderBits);
+        Image = image;
 
-        board.Draw(size, out image, marginsSize, markerBorderBits);
-        imageTexture = new Texture2D(image.cols, image.rows, TextureFormat.RGB24, false);
-      }
-
-      public void Draw(GameObject boardPlane)
-      {
-        int boardDataSize = (int)(image.ElemSize() * image.Total());
-        imageTexture.LoadRawTextureData(image.data, boardDataSize);
-        imageTexture.Apply();
-
-        boardPlane.GetComponent<Renderer>().material.mainTexture = imageTexture;
-      }
-
-      public void Save(string outputImage)
-      {
-        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, imageTexture.EncodeToPNG());
+        ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
       }
     }
   }

@@ -1,6 +1,6 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using ArucoUnity.Utility.cv;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
@@ -9,15 +9,20 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public class CreateBoard : MonoBehaviour
+    /// <summary>
+    /// Create an ArUco grid board image and a texture of the board.
+    /// </summary>
+    public class CreateBoard : MarkerCreator
     {
+      // Editor fields
+
       [Header("Board configuration")]
       [SerializeField]
-      [Tooltip("Number of markers in X direction")]
+      [Tooltip("Number of markers in the X direction")]
       public int markersNumberX;
 
       [SerializeField]
-      [Tooltip("Number of markers in Y direction")]
+      [Tooltip("Number of markers in the Y direction")]
       public int markersNumberY;
 
       [SerializeField]
@@ -55,30 +60,56 @@ namespace ArucoUnity
       [Tooltip("Output image")]
       private string outputImage = "ArucoUnity/board.png";
 
-      // Board configuration properties
-      public int MarkersNumberX { get; set; }
-      public int MarkersNumberY { get; set; }
-      public int MarkerSideLength { get; set; }
-      public int MarkerSeparation { get; set; }
-      public Dictionary Dictionary { get; set; }
-      public int MarginsSize { get; set; }
-      public int MarkerBorderBits { get; set; }
+      // Properties
 
-      // Board properties
+      /// <summary>
+      /// Number of markers in the X direction.
+      /// </summary>
+      public int MarkersNumberX { get { return markersNumberX; } set { markersNumberX = value; } }
+
+      /// <summary>
+      /// Number of markers in the Y direction.
+      /// </summary>
+      public int MarkersNumberY { get { return markersNumberY; } set { markersNumberY = value; } }
+
+      /// <summary>
+      /// Marker side length (in pixels).
+      /// </summary>
+      public int MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+
+      /// <summary>
+      /// Separation between two consecutive markers in the grid (in pixels).
+      /// </summary>
+      public int MarkerSeparation { get { return markerSeparation; } set { markerSeparation = value; } }
+
+      /// <summary>
+      /// Margins size (in pixels). Default is equal to <see cref="MarkerSeparation"/>".
+      /// </summary>
+      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
+
+      /// <summary>
+      /// Number of bits in marker borders.
+      /// </summary>
+      public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
+
+      /// <summary>
+      /// The generated grid board.
+      /// </summary>
       public GridBoard Board { get; private set; }
-      public Mat Image { get; private set; }
-      public Size Size { get; private set; }
-      public Texture2D ImageTexture { get; private set; }
 
+      /// <summary>
+      /// The size of the <see cref="Board"/>.
+      /// </summary>
+      public Size Size { get; private set; }
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Set the dictionary, create the grid board image and the texture and, if needed, draw the texture and save it to a image file.
+      /// </summary>
       void Start()
       {
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-        MarkersNumberX = markersNumberX;
-        MarkersNumberY = markersNumberY;
-        MarkerSideLength = markerSideLength;
-        MarkerSeparation = markerSeparation;
-        MarginsSize = marginsSize;
-        MarkerBorderBits = markerBorderBits;
 
         Create();
 
@@ -93,7 +124,12 @@ namespace ArucoUnity
         }
       }
 
-      public void Create()
+      // Methods
+
+      /// <summary>
+      /// Create the <see cref="Board"/>, the grid board image and the <see cref="ImageTexture"/> of the grid board.
+      /// </summary>
+      public override void Create()
       {
         Size = new Size();
         Size.width = markersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
@@ -106,21 +142,6 @@ namespace ArucoUnity
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
-      }
-
-      public void Draw(GameObject boardPlane)
-      {
-        int boardDataSize = (int)(Image.ElemSize() * Image.Total());
-        ImageTexture.LoadRawTextureData(Image.data, boardDataSize);
-        ImageTexture.Apply();
-
-        boardPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
-      }
-
-      public void Save(string outputImage)
-      {
-        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
   }
