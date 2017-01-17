@@ -15,11 +15,11 @@ extern "C" {
   //! @{
 
   //! \brief Create a new std::vector<cv::Mat>.
-  ARUCO_UNITY_API std::vector<cv::Mat>* au_cv_std_vectorMat_new();
+  ARUCO_UNITY_API std::vector<cv::Mat>* au_std_vectorMat_new();
 
   //! \brief Deletes any std::vector<cv::Mat>.
   //! \param vector The vector used.
-  ARUCO_UNITY_API void au_cv_std_vectorMat_delete(std::vector<cv::Mat>* vector);
+  ARUCO_UNITY_API void au_std_vectorMat_delete(std::vector<cv::Mat>* vector);
 
   //! @} Constructors & Destructors
 
@@ -31,20 +31,20 @@ extern "C" {
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API cv::Mat* au_cv_std_vectorMat_at(std::vector<cv::Mat>* vector, size_t pos, cv::Exception* exception);
+  ARUCO_UNITY_API cv::Mat* au_std_vectorMat_at(std::vector<cv::Mat>* vector, size_t pos, cv::Exception* exception);
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  ARUCO_UNITY_API cv::Mat* au_cv_std_vectorMat_data(std::vector<cv::Mat>* vector);
+  ARUCO_UNITY_API cv::Mat* au_std_vectorMat_data(std::vector<cv::Mat>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
   //! \param value The value of the element to append.
-  ARUCO_UNITY_API void au_cv_std_vectorMat_push_back(std::vector<cv::Mat>* vector, cv::Mat* value);
+  ARUCO_UNITY_API void au_std_vectorMat_push_back(std::vector<cv::Mat>* vector, cv::Mat* value);
 
   //! \brief Returns the number of elements.
   //! \param vector The vector used.
-  ARUCO_UNITY_API size_t au_cv_std_vectorMat_size(std::vector<cv::Mat>* vector);
+  ARUCO_UNITY_API size_t au_std_vectorMat_size(std::vector<cv::Mat>* vector);
 
   //! @} Functions
 }
