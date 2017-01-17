@@ -15,6 +15,7 @@ namespace ArucoUnity
       public abstract class CameraDeviceMarkersDetector : MonoBehaviour
       {
         // Events
+
         public delegate void CameraDeviceMakersDetectorAction();
         
         /// <summary>
@@ -23,6 +24,7 @@ namespace ArucoUnity
         public event CameraDeviceMakersDetectorAction OnConfigurated;
 
         // Properties
+
         /// <summary>
         /// The manipulated camera image texture by the marker detection class.
         /// </summary>

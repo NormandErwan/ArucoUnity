@@ -15,24 +15,29 @@ namespace ArucoUnity
       /// </summary>
       public class CameraDeviceController : MonoBehaviour
       {
-        // Configuration
+        // Editor fields
+
         [SerializeField]
         [Tooltip("The id of the camera device to use.")]
         private int cameraId = 0;
 
         // Properties
+
         /// <summary>
         /// The current active camera device.
         /// </summary>
         public CameraDevice ActiveCameraDevice { get; private set; }
 
         // Events
+
         public delegate void CameraDeviceControllerAction(CameraDevice previousCameraDevice);
         public event CameraDeviceControllerAction OnActiveCameraDeviceChanged;
 
         public delegate void ActiveCameraDeviceAction(CameraDevice activeCameraDevice);
         public event ActiveCameraDeviceAction OnActiveCameraDeviceStarted;
         public event ActiveCameraDeviceAction OnActiveCameraDeviceStopped;
+
+        // MonoBehaviour methods
 
         /// <summary>
         /// Initialize the camera device with the index <see cref="cameraId"/>.
@@ -42,6 +47,8 @@ namespace ArucoUnity
           ActiveCameraDevice = gameObject.AddComponent<CameraDevice>();
           SwitchCamera(cameraId);
         }
+
+        // Methods
 
         /// <summary>
         /// Switch between the different cameras devices.

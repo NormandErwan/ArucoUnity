@@ -7,9 +7,12 @@ namespace ArucoUnity
 
   namespace Samples
   {
+    /// <summary>
+    /// Editor manager for the <see cref="DetectorParameters"/>.
+    /// </summary>
     public class DetectorParametersManager : MonoBehaviour
     {
-      public DetectorParameters detectorParameters;
+      // Editor fields
 
       [SerializeField]
       [Tooltip("The minimum window size for adaptive thresholding before finding contours (default 3).")]
@@ -91,6 +94,18 @@ namespace ArucoUnity
       [Tooltip("The maximun error correction capability for each dictionary (default 0.6).")]
       private double ErrorCorrectionRate = 0.6;
 
+      // Variables
+
+      /// <summary>
+      /// The managed DetectorParameters.
+      /// </summary>
+      public DetectorParameters detectorParameters;
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Set the value of the <see cref="detectorParameters"/> from the editor fields.
+      /// </summary>
       void Start()
       {
         detectorParameters = new DetectorParameters();
