@@ -38,7 +38,7 @@ namespace ArucoUnity
       private DetectorParametersManager detectorParametersManager;
 
       [SerializeField]
-      private bool applyRefindStrategy = false;
+      private bool applyRefineStrategy = false;
 
       [SerializeField]
       private bool assumeZeroTangentialDistorsion = false;
@@ -80,7 +80,7 @@ namespace ArucoUnity
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
 
-      public bool ApplyRefindStrategy { get { return applyRefindStrategy; } set { applyRefindStrategy = value; } }
+      public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
       public bool AssumeZeroTangentialDistorsion { get { return assumeZeroTangentialDistorsion; } set { assumeZeroTangentialDistorsion = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
       public bool FixPrincipalPointAtCenter { get { return fixPrincipalPointAtCenter; } set { fixPrincipalPointAtCenter = value; } }
@@ -165,7 +165,7 @@ namespace ArucoUnity
         image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
-        if (applyRefindStrategy)
+        if (applyRefineStrategy)
         {
           Functions.RefineDetectedMarkers(image, CharucoBoard, corners, ids, rejectedImgPoints);
         }

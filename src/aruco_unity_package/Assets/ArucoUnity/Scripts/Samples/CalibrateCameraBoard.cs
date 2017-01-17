@@ -39,7 +39,7 @@ namespace ArucoUnity
       private DetectorParametersManager detectorParametersManager;
 
       [SerializeField]
-      private bool applyRefindStrategy = false;
+      private bool applyRefineStrategy = false;
 
       [SerializeField]
       private bool assumeZeroTangentialDistorsion = false;
@@ -77,7 +77,7 @@ namespace ArucoUnity
       public GridBoard Board { get; set; }
       public Dictionary Dictionary { get; set; }
       public DetectorParameters DetectorParameters { get; set; }
-      public bool ApplyRefindStrategy { get { return applyRefindStrategy; } set { applyRefindStrategy = value; } }
+      public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
       public CALIB CalibrationFlags { get; set; }
       public string OutputFilePath { get { return outputFilePath; } set { outputFilePath = value; } }
@@ -153,7 +153,7 @@ namespace ArucoUnity
         image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
-        if (applyRefindStrategy)
+        if (applyRefineStrategy)
         {
           Functions.RefineDetectedMarkers(image, Board, corners, ids, rejectedImgPoints);
         }
