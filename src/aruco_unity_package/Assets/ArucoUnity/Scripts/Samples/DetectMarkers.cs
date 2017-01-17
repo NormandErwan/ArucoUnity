@@ -12,7 +12,7 @@ namespace ArucoUnity
   namespace Samples
   {
     /// <summary>
-    /// Basic marker detection.
+    /// Detect markers, display results and place game objects on the detected markers transform.
     /// </summary>
     public class DetectMarkers : CameraDeviceMarkersDetector
     {
@@ -20,62 +20,118 @@ namespace ArucoUnity
 
       [Header("Detection configuration")]
       [SerializeField]
+      [Tooltip("The dictionary to use for the marker detection")]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
+      [Tooltip("The parameters to use for the marker detection")]
       private DetectorParametersManager detectorParametersManager;
 
       [SerializeField]
-      [Tooltip("Marker side length (in meters)")]
+      [Tooltip("The side length of the markers that will be detected (in meters). This also is the scale factor of the DetectedMarkersObject")]
       private float markerSideLength = 0.1f;
 
       [SerializeField]
+      [Tooltip("Display the detected markers in the CameraImageTexture")]
       private bool showDetectedMarkers = true;
 
       [SerializeField]
+      [Tooltip("Display the rejected markers candidates.")]
       private bool showRejectedCandidates = false;
 
       [Header("Camera configuration")]
       [SerializeField]
+      [Tooltip("The parameters to use for the marker detection")]
       private CameraDeviceController cameraDeviceController;
 
       [SerializeField]
+      [Tooltip("If estimatePose is false, the CameraImageTexture will be displayed on this canvas")]
       private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
       [SerializeField]
+      [Tooltip("The Unity camera that will capture the CameraPlane display")]
       private new Camera camera;
 
       [SerializeField]
+      [Tooltip("The plane facing the camera that display the CameraImageTexture")]
       private GameObject cameraPlane;
 
       [Header("Estimation configuration")]
       [SerializeField]
+      [Tooltip("Estimate the detecte markers pose (position, rotation)")]
       private bool estimatePose;
 
       [SerializeField]
+      [Tooltip("The file path to load the camera parameters.")]
       private string cameraParametersFilePath;
 
       [SerializeField]
+      [Tooltip("The object to place above the detected markers")]
       private GameObject detectedMarkersObject;
 
       // Properties
 
       // Detection properties
+      /// <summary>
+      /// The dictionary to use for the marker detection.
+      /// </summary>
       public Dictionary Dictionary { get; set; }
+
+      /// <summary>
+      /// The parameters to use for the marker detection.
+      /// </summary>
       public DetectorParameters DetectorParameters { get; set; }
+
+      /// <summary>
+      /// The side length of the markers that will be detected (in meters). This also is the scale factor of the <see cref="DetectedMarkersObject"/>.
+      /// </summary>
       public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+
+      /// <summary>
+      /// Display the detected markers in the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
+      /// </summary>
       public bool ShowDetectedMarkers { get { return showDetectedMarkers; } set { showDetectedMarkers = value; } }
+
+      /// <summary>
+      /// Display the rejected markers candidates.
+      /// </summary>
       public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
       // Camera properties
+      /// <summary>
+      /// The Unity camera that will capture the <see cref="CameraPlane"/> display.
+      /// </summary>
       public Camera Camera { get { return camera; } set { camera = value; } }
+
+      /// <summary>
+      /// The plane facing the camera that display the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
+      /// </summary>
       public GameObject CameraPlane { get { return cameraPlane; } set { cameraPlane = value; } }
 
       // Estimation properties
+      /// <summary>
+      /// Estimate the detected markers pose (position, rotation).
+      /// </summary>
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
+      
+      /// <summary>
+      /// The camera matrix of the camera parameters used.
+      /// </summary>
       public Mat CameraMatrix { get; set; }
+
+      /// <summary>
+      /// The distorsition coefficients of the camera parameters used.
+      /// </summary>
       public Mat DistCoeffs { get; set; }
+
+      /// <summary>
+      /// The camera device's optical center.
+      /// </summary>
       public Vector3 OpticalCenter { get; private set; }
+
+      /// <summary>
+      /// The object to place above the detected markers.
+      /// </summary>
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
       // Variables
@@ -174,7 +230,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Configurate from the camera parameters the <see cref="camera"/> and a the <see cref="cameraPlane"/> that display the 
-      /// <see cref="CameraImageTexture"/> facing the camera.
+      /// <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/> facing the camera.
       /// </summary>
       /// <returns>If the configuration has been successful.</returns>
       public bool ConfigurateCameraPlane()
@@ -204,7 +260,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect the markers on the <see cref="CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
+      /// Detect the markers on the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
       /// after the update of the CameraImageTexture.
       /// </summary>
       /// <param name="corners">Vector of the detected marker corners.</param>
