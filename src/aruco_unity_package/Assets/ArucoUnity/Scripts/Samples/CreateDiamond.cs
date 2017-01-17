@@ -1,6 +1,6 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using ArucoUnity.Utility.cv;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
@@ -9,7 +9,10 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public class CreateDiamond : MonoBehaviour
+    /// <summary>
+    /// Create a ChArUco marker image and a texture of the marker.
+    /// </summary>
+    public class CreateDiamond : MarkerCreator
     {
       [Header("ChArUco marker configuration")]
       [SerializeField]
@@ -48,29 +51,29 @@ namespace ArucoUnity
       private bool saveDiamond;
 
       [SerializeField]
-      [Tooltip("Output image")]
+      [Tooltip("The image file path, relative to the project file path")]
       private string outputImage = "ArucoUnity/diamond-marker.png";
 
+      // Properties
+
       // Configuration properties
-      public Dictionary Dictionary { get; set; }
-      public int SquareSideLength { get; set; }
-      public int MarkerSideLength { get; set; }
-      public int[] Ids { get; set; }
-      public int MarginsSize { get; set; }
-      public int MarkerBorderBits { get; set; }
+      /// <summary>
+      /// The dictionnary to use.
+      /// </summary>
+      public int SquareSideLength { get { return squareSideLength; } set { squareSideLength = value; } }
+      public int MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+      public int[] Ids { get { return ids; } set { ids = value; } }
+      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
+      public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
 
-      // Diamond properties
-      public Mat Image { get; private set; }
-      public Texture2D ImageTexture { get; private set; }
+      // MonoBehaviour methods
 
+      /// <summary>
+      /// Set the dictionary, create the marker image and the texture and, if needed, draw the texture and save it to a image file.
+      /// </summary>
       void Start()
       {
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-        SquareSideLength = squareSideLength;
-        MarkerSideLength = markerSideLength;
-        Ids = ids;
-        MarginsSize = marginsSize;
-        MarkerBorderBits = markerBorderBits;
 
         Create();
 
@@ -85,34 +88,24 @@ namespace ArucoUnity
         }
       }
 
-      public void Create()
+      // Methods
+
+      /// <summary>
+      /// Create the marker and the <see cref="ImageTexture"/> of the marker.
+      /// </summary>
+      public override void Create()
       {
         Vec4i ids_vec4i = new Vec4i();
-        for (int i = 0; i < Ids.Length; ++i)
+        for (int i = 0; i < ids.Length; ++i)
         {
           ids_vec4i.Set(i, ids[i]);
         }
 
         Mat image;
-        Functions.DrawCharucoDiamond(Dictionary, ids_vec4i, SquareSideLength, MarkerSideLength, out image, MarginsSize, MarkerBorderBits);
+        Functions.DrawCharucoDiamond(Dictionary, ids_vec4i, squareSideLength, markerSideLength, out image, marginsSize, markerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
-      }
-
-      public void Draw(GameObject boardPlane)
-      {
-        int boardDataSize = (int)(Image.ElemSize() * Image.Total());
-        ImageTexture.LoadRawTextureData(Image.data, boardDataSize);
-        ImageTexture.Apply();
-
-        boardPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
-      }
-
-      public void Save(string outputImage)
-      {
-        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
   }

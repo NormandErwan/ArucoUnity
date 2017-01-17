@@ -1,6 +1,6 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using ArucoUnity.Utility.cv;
+using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity
 {
@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Create an ArUco marker image and a texture of the marker.
     /// </summary>
-    public class CreateMarker : MonoBehaviour
+    public class CreateMarker : MarkerCreator
     {
       // Editor fields
 
@@ -52,12 +52,6 @@ namespace ArucoUnity
 
       // Properties
 
-      // Configuration properties
-      /// <summary>
-      /// The dictionnary to use.
-      /// </summary>
-      public Dictionary Dictionary { get; set; }
-
       /// <summary>
       /// The marker id in the <see cref="Dictionary"/>.
       /// </summary>
@@ -73,23 +67,12 @@ namespace ArucoUnity
       /// </summary>
       public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
 
-      // Marker properties
-      /// <summary>
-      /// The generated image of the marker.
-      /// </summary>
-      public Mat Image { get; private set; }
-
-      /// <summary>
-      /// The generated texture of the marker.
-      /// </summary>
-      public Texture2D ImageTexture { get; private set; }
-
       // MonoBehaviour methods
 
       /// <summary>
       /// Set the dictionary, create the marker image and the texture and, if needed, draw the texture and save it to a image file.
       /// </summary>
-      void Start()
+      protected virtual void Start()
       {
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
@@ -109,38 +92,15 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Create the marker and the <see cref="ImageTexture"/> of the marker.
+      /// Create the marker image and the <see cref="ImageTexture"/> of the marker.
       /// </summary>
-      public void Create()
+      public override void Create()
       {
         Mat image = new Mat();
         Dictionary.DrawMarker(markerId, markerSize, ref image, markerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
-      }
-
-      /// <summary>
-      /// Draw the <see cref="ImageTexture"/> of the marker on the markerPlane.
-      /// </summary>
-      /// <param name="markerPlane">The object where the <see cref="ImageTexture"/> is drawn.</param>
-      public void Draw(GameObject markerPlane)
-      {
-        int markerDataSize = (int)(Image.ElemSize() * Image.Total());
-        ImageTexture.LoadRawTextureData(Image.data, markerDataSize);
-        ImageTexture.Apply();
-
-        markerPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
-      }
-
-      /// <summary>
-      /// Save the <see cref="ImageTexture"/> on a image file.
-      /// </summary>
-      /// <param name="outputImage">The image file path, relative to the project file path.</param>
-      public void Save(string outputImage)
-      {
-        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
-        File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
   }
