@@ -16,6 +16,8 @@ namespace ArucoUnity
     /// </summary>
     public class DetectMarkers : CameraDeviceMarkersDetector
     {
+      // Editor fields
+
       [Header("Detection configuration")]
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
@@ -56,7 +58,7 @@ namespace ArucoUnity
       [SerializeField]
       private GameObject detectedMarkersObject;
 
-      public Vector3 userPositionShift; // TODO: remove
+      // Properties
 
       // Detection properties
       public Dictionary Dictionary { get; set; }
@@ -76,12 +78,15 @@ namespace ArucoUnity
       public Vector3 OpticalCenter { get; private set; }
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
 
-      // Internals
+      // Variables
+
       private Dictionary<int, GameObject> markerObjects;
       private bool displayMarkerObjects = false;
       private float cameraCx;
       private float cameraCy;
       private float cameraFy;
+
+      // MonoBehaviour methods
 
       /// <summary>
       /// Populate the CameraDeviceMarkersDetector base class properties.
@@ -91,20 +96,27 @@ namespace ArucoUnity
         CameraDeviceController = cameraDeviceController;
       }
 
+      /// <summary>
+      /// When configurated, detect markers and show results each frame.
+      /// </summary>
       void LateUpdate()
       {
         if (Configurated)
         {
-          Mat image;
           VectorVectorPoint2f corners;
           VectorInt ids;
           VectorVectorPoint2f rejectedImgPoints;
           VectorVec3d rvecs, tvecs;
 
-          Detect(out image, out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
+          Detect(out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
         }
       }
 
+      // Methods
+
+      /// <summary>
+      /// Set up the detection and the results display.
+      /// </summary>
       protected override void Configurate()
       {
         // Set the detector parameters and the dictionary
@@ -127,6 +139,12 @@ namespace ArucoUnity
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
       }
 
+      /// <summary>
+      /// Load the <see cref="CameraParameters"/> from a file and populate <see cref="CameraMatrix"/>, <see cref="DistCoeffs"/> and 
+      /// <see cref="OpticalCenter"/>.
+      /// </summary>
+      /// <param name="cameraParametersFilePath">The file path to load.</param>
+      /// <returns>If the camera parameters has been successfully loaded from the file.</returns>
       public bool LoadCameraParameters(string cameraParametersFilePath)
       {
         // Retrieve camera device parameters
@@ -154,6 +172,11 @@ namespace ArucoUnity
         return true;
       }
 
+      /// <summary>
+      /// Configurate from the camera parameters the <see cref="camera"/> and a the <see cref="cameraPlane"/> that display the 
+      /// <see cref="CameraImageTexture"/> facing the camera.
+      /// </summary>
+      /// <returns>If the configuration has been successful.</returns>
       public bool ConfigurateCameraPlane()
       {
         if (Camera == null || CameraPlane == null || CameraMatrix == null || DistCoeffs == null || detectedMarkersObject == null)
@@ -180,14 +203,23 @@ namespace ArucoUnity
         return true;
       }
 
-      public void Detect(out Mat image, out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, 
-        out VectorVec3d rvecs, out VectorVec3d tvecs)
+      /// <summary>
+      /// Detect the markers on the <see cref="CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
+      /// after the update of the CameraImageTexture.
+      /// </summary>
+      /// <param name="corners">Vector of the detected marker corners.</param>
+      /// <param name="ids">Vector of identifiers of the detected markers.</param>
+      /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification.</param>
+      /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
+      /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
+      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs, 
+        out VectorVec3d tvecs)
       {
         // Copy the bytes of the texture to the image
         byte[] imageData = CameraImageTexture.GetRawTextureData();
 
         // Detect markers
-        image = new Mat(cameraImageResolutionY, cameraImageResolutionX, TYPE.CV_8UC3, imageData);
+        Mat image = new Mat(cameraImageResolutionY, cameraImageResolutionX, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
@@ -201,12 +233,13 @@ namespace ArucoUnity
           tvecs = null;
         }
 
-        // Draw the results
+        // Hide the marker objects
         if (estimatePose && displayMarkerObjects)
         {
           DeactivateMarkerObjects();
         }
 
+        // Draw the detected markers and display the marker objects
         if (ids.Size() > 0)
         {
           if (showDetectedMarkers)
@@ -220,29 +253,33 @@ namespace ArucoUnity
           }
         }
 
+        // Draw rejected marker candidates
         if (showRejectedCandidates && rejectedImgPoints.Size() > 0)
         {
           Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
         // Undistord the image if calibrated
-        Mat undistordedImage, imageToDisplay;
+        Mat undistordedImage, finalImage;
         if (estimatePose)
         {
           Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
-          imageToDisplay = undistordedImage;
+          finalImage = undistordedImage;
         }
         else
         {
-          imageToDisplay = image;
+          finalImage = image;
         }
 
-        // Copy the bytes of the image to the texture
-        int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
-        CameraImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
+        // Copy the bytes of the final image to the texture
+        int imageDataSize = (int)(finalImage.ElemSize() * finalImage.Total());
+        CameraImageTexture.LoadRawTextureData(finalImage.data, imageDataSize);
         CameraImageTexture.Apply(false);
       }
 
+      /// <summary>
+      /// Hide all the marker objects.
+      /// </summary>
       private void DeactivateMarkerObjects()
       {
         if (markerObjects != null)
@@ -254,6 +291,12 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Place and orient the object to match the marker.
+      /// </summary>
+      /// <param name="ids">Vector of identifiers of the detected markers.</param>
+      /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
+      /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
       private void DisplayMarkerObjects(VectorInt ids, VectorVec3d rvecs, VectorVec3d tvecs)
       {
         if (markerObjects == null)
@@ -285,12 +328,9 @@ namespace ArucoUnity
           Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
           Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
 
-          Vector3 positionShift = markerObject.transform.rotation * userPositionShift // Take account of the optical center not in the image center
+          Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
             + markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
-          //  + userPositionShift;  // TODO: remove
-
           markerObject.transform.localPosition += positionShift;
-          //userPositionShift = positionShift;
 
           print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
             + "; positionShift: " + (markerObject.transform.rotation * opticalShift).ToString("F4"));
