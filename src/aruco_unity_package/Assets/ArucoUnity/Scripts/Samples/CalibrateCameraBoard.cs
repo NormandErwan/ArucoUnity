@@ -51,7 +51,7 @@ namespace ArucoUnity
       private bool fixPrincipalPointAtCenter = false;
 
       [SerializeField]
-      private string outputFilePath;
+      private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
 
       [Header("Camera configuration")]
       [SerializeField]
@@ -80,20 +80,17 @@ namespace ArucoUnity
       public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
       public CALIB CalibrationFlags { get; set; }
-      public string OutputFilePath { get { return outputFilePath; } set { outputFilePath = value; } }
+      public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
       // Calibration properties
       public VectorVectorVectorPoint2f AllCorners { get; private set; }
       public VectorVectorInt AllIds { get; private set; }
       public Size ImageSize { get; private set; }
-      public Mat CameraMatrix { get; private set; }
-      public Mat DistCoeffs { get; private set; }
       public VectorMat Rvecs { get; private set; }
       public VectorMat Tvecs { get; private set; }
-      public double CalibrationReprojectionError { get; private set; }
+      public CameraParameters CameraParameters { get; private set; }
 
       // Internal
-      private CameraParameters cameraParameters;
       private bool addNextFrame;
       private bool calibrate;
 
@@ -113,7 +110,7 @@ namespace ArucoUnity
         Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
 
         ConfigurateCalibrationFlags();
-        ResetCalibration();
+        ResetCalibrationFromEditor();
       }
 
       void LateUpdate()
@@ -145,8 +142,7 @@ namespace ArucoUnity
         ImageSize = new Size();
       }
 
-      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, 
-        out Mat image)
+      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out Mat image)
       {
         // Detect markers
         byte[] imageData = CameraImageTexture.GetRawTextureData();
@@ -168,7 +164,7 @@ namespace ArucoUnity
         Mat undistordedImage, imageToDisplay;
         if (calibrate)
         {
-          Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          Imgproc.Undistord(image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
           imageToDisplay = undistordedImage;
         }
         else
@@ -188,7 +184,7 @@ namespace ArucoUnity
         {
           if (ids.Size() < 1)
           {
-            Debug.LogError("Not enough markers detected to add the frame for calibration.");
+            Debug.LogError(gameObject.name + ": Not enough markers detected to add the frame for calibration.");
             return;
           }
 
@@ -200,21 +196,22 @@ namespace ArucoUnity
         }
       }
 
-      public void Calibrate(string calibrationFilePath)
+      public void Calibrate(string cameraParametersFilePath)
       {
         if (AllIds.Size() < 1)
         {
-          Debug.LogError("Not enough captures for calibration.");
+          Debug.LogError(gameObject.name + ": Not enough captures for the calibration.");
           return;
         }
         calibrate = true;
 
-        CameraMatrix = new Mat();
-        DistCoeffs = new Mat();
+        // Prepare camera parameters
+        Mat cameraMatrix = new Mat();
+        Mat distCoeffs = new Mat();
 
         if ((CalibrationFlags & CALIB.FIX_ASPECT_RATIO) == CALIB.FIX_ASPECT_RATIO)
         {
-          CameraMatrix = new Mat(3, 3, TYPE.CV_64F, new double[9] { fixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+          cameraMatrix = new Mat(3, 3, TYPE.CV_64F, new double[9] { fixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
         }
 
         // Prepare data for calibration
@@ -238,23 +235,23 @@ namespace ArucoUnity
 
         // Calibrate camera
         VectorMat rvecs, tvecs;
-        CalibrationReprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, Board, ImageSize, 
-          CameraMatrix, DistCoeffs, out rvecs, out tvecs, (int)CalibrationFlags);
+        double reprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, Board, ImageSize, 
+          cameraMatrix, distCoeffs, out rvecs, out tvecs, (int)CalibrationFlags);
         Rvecs = rvecs;
         Tvecs = tvecs;
 
         // Save camera parameters
-        cameraParameters = new CameraParameters(CameraMatrix, DistCoeffs)
+        CameraParameters = new CameraParameters()
         {
           ImageHeight = ImageSize.height,
           ImageWidth = ImageSize.width,
           CalibrationFlags = (int)CalibrationFlags,
-          AspectRatio = fixAspectRatio,
-          ReprojectionError = CalibrationReprojectionError
+          FixAspectRatio = fixAspectRatio,
+          ReprojectionError = reprojectionError,
+          CameraMatrix = cameraMatrix,
+          DistCoeffs = distCoeffs
         };
-        cameraParameters.SaveToXmlFile(calibrationFilePath);
-
-        Debug.Log(gameObject.name + ": Camera parameters successfully saved to '" + calibrationFilePath + "'.");
+        CameraParameters.SaveToXmlFile(cameraParametersFilePath);
       }
 
       // Editor button onclick listeners
@@ -267,7 +264,7 @@ namespace ArucoUnity
       {
         addFrameButton.enabled = false;
         calibrateButton.enabled = false;
-        Calibrate(outputFilePath);
+        Calibrate(cameraParametersFilePath);
         UpdateCalibrationReprojectionErrorTexts();
       }
 
@@ -275,8 +272,6 @@ namespace ArucoUnity
       {
         addFrameButton.enabled = true;
         calibrateButton.enabled = false;
-
-        CalibrationReprojectionError = 0;
 
         ResetCalibration();
         UpdateImagesForCalibrationText();
@@ -291,7 +286,8 @@ namespace ArucoUnity
 
       private void UpdateCalibrationReprojectionErrorTexts()
       {
-        calibrationReprojectionErrorText.text = "Calibration reprojection error: " + CalibrationReprojectionError.ToString("F3");
+        calibrationReprojectionErrorText.text = "Calibration reprojection error: "
+         + ((CameraParameters != null) ? CameraParameters.ReprojectionError.ToString("F3") : "");
       }
 
       void ConfigurateCalibrationFlags()

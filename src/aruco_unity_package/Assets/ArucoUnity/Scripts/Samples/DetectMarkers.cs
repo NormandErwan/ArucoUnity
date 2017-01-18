@@ -63,7 +63,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The file path to load the camera parameters.")]
-      private string cameraParametersFilePath;
+      private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
 
       [SerializeField]
       [Tooltip("The object to place above the detected markers")]
@@ -115,14 +115,9 @@ namespace ArucoUnity
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
       
       /// <summary>
-      /// The camera matrix of the camera parameters used.
+      /// The camera parameters used.
       /// </summary>
-      public Mat CameraMatrix { get; set; }
-
-      /// <summary>
-      /// The distorsition coefficients of the camera parameters used.
-      /// </summary>
-      public Mat DistCoeffs { get; set; }
+      public CameraParameters CameraParameters { get; set; }
 
       /// <summary>
       /// The camera device's optical center.
@@ -204,8 +199,8 @@ namespace ArucoUnity
       public bool LoadCameraParameters(string cameraParametersFilePath)
       {
         // Retrieve camera device parameters
-        CameraParameters cameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
-        if (cameraParameters == null)
+        CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+        if (CameraParameters == null)
         {
           Debug.LogError(gameObject.name + ": Unable to load the camera parameters from the '" + cameraParametersFilePath + "' file."
             + " Can't estimate pose of the detected markers.");
@@ -213,14 +208,9 @@ namespace ArucoUnity
         }
 
         // Prepare the camera device parameters
-        Mat cameraMatrix, distCoeffs;
-        cameraParameters.ExportArrays(out cameraMatrix, out distCoeffs);
-        CameraMatrix = cameraMatrix;
-        DistCoeffs = distCoeffs;
-
-        cameraCx = (float)CameraMatrix.AtDouble(0, 2);
-        cameraCy = (float)CameraMatrix.AtDouble(1, 2);
-        cameraFy = (float)CameraMatrix.AtDouble(1, 1);
+        cameraCx = (float)CameraParameters.CameraMatrix.AtDouble(0, 2);
+        cameraCy = (float)CameraParameters.CameraMatrix.AtDouble(1, 2);
+        cameraFy = (float)CameraParameters.CameraMatrix.AtDouble(1, 1);
 
         // Calculate the optical center of the camera device; based on: http://stackoverflow.com/a/36580522
         OpticalCenter = new Vector3(cameraCx / CameraImageTexture.width, cameraCy / CameraImageTexture.height, cameraFy);
@@ -235,7 +225,7 @@ namespace ArucoUnity
       /// <returns>If the configuration has been successful.</returns>
       public bool ConfigurateCameraPlane()
       {
-        if (Camera == null || CameraPlane == null || CameraMatrix == null || DistCoeffs == null || detectedMarkersObject == null)
+        if (Camera == null || CameraPlane == null || CameraParameters == null || detectedMarkersObject == null)
         {
           return false;
         }
@@ -281,7 +271,7 @@ namespace ArucoUnity
         // Estimate board pose
         if (estimatePose && ids.Size() > 0)
         {
-          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, CameraMatrix, DistCoeffs, out rvecs, out tvecs);
+          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs, out rvecs, out tvecs);
         }
         else
         {
@@ -319,7 +309,7 @@ namespace ArucoUnity
         Mat undistordedImage, finalImage;
         if (estimatePose)
         {
-          Imgproc.Undistord(image, out undistordedImage, CameraMatrix, DistCoeffs);
+          Imgproc.Undistord(image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
           finalImage = undistordedImage;
         }
         else

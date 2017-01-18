@@ -14,149 +14,99 @@ namespace ArucoUnity
     {
       /// <summary>
       /// Manage OpenCV's camera parameters from a calibration.
+      /// 
+      /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.1.0/da/d13/tutorial_aruco_calibration.html
       /// </summary>
       [Serializable]
       public class CameraParameters
       {
         // Constructors
-
         /// <summary>
         /// Create an empty CameraParameters. Populate it manually or using the <see cref="ImportArrays(Mat, Mat)"/> method.
         /// </summary>
+        /// <remarks>The constructor if needed for the serialization.</remarks>
         public CameraParameters()
         {
-        }
-
-        /// <summary>
-        /// Create a CameraParameters from a OpenCV calibration.
-        /// </summary>
-        /// <param name="cameraMatrix">The camera matrix of the OpenCV calibration.</param>
-        /// <param name="distCoeffs">The distorsition coefficients of the OpenCV calibration.</param>
-        public CameraParameters(Mat cameraMatrix, Mat distCoeffs)
-        {
-          ImportArrays(cameraMatrix, distCoeffs);
+          CalibrationDateTime = DateTime.Now;
         }
 
         // Properties
 
+        /// <summary>
+        /// The calibration date and time.
+        /// </summary>
         public DateTime CalibrationDateTime { get; set; }
 
+        /// <summary>
+        /// The image height during the calibration.
+        /// </summary>
         public int ImageHeight { get; set; }
 
+        /// <summary>
+        /// The image width during the calibration.
+        /// </summary>
         public int ImageWidth { get; set; }
 
+        /// <summary>
+        /// The calibration flags used.
+        /// </summary>
         public int CalibrationFlags { get; set; }
 
-        public float AspectRatio { get; set; }
+        /// <summary>
+        /// Non null if there is a fix image aspect ratio.
+        /// </summary>
+        public float FixAspectRatio { get; set; }
 
-        public TYPE CameraMatrixType { get; set; }
-
-        public double[][] CameraMatrix { get; set; }
-
-        public TYPE DistCoeffsType { get; set; }
-
-        public double[][] DistCoeffs { get; set; }
-
+        /// <summary>
+        /// The average re-projection error of the calibration.
+        /// </summary>
         public double ReprojectionError { get; set; }
 
+        /// <summary>
+        /// The camera matrix of the calibration.
+        /// </summary>
+        /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatrixType"/> and 
+        /// <see cref="CameraMatrixValues"/> properties.</remarks>
+        [XmlIgnore]
+        public Mat CameraMatrix { get; set; }
+
+        /// <summary>
+        /// The camera matrix type of the calibration. Equal to <see cref="CameraMatrix.Type()"/> and automatically written when 
+        /// <see cref="SaveToXmlFile(string)"/> is called.
+        /// </summary>
+        /// <remarks>This property is be public for the serialization.</remarks>
+        public TYPE CameraMatrixType { get; set; }
+
+        /// <summary>
+        /// The camera matrix values of the calibration. Equal to the <see cref="CameraMatrix"/> content and automatically written when 
+        /// <see cref="SaveToXmlFile(string)"/> is called.
+        /// </summary>
+        /// <remarks>This property is be public for the serialization.</remarks>
+        public double[][] CameraMatrixValues { get; set; }
+
+        /// <summary>
+        /// The distorsition coefficients of the calibration.
+        /// </summary>
+        /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="DistCoeffsType"/> and 
+        /// <see cref="DistCoeffsValues"/> properties.</remarks>
+        [XmlIgnore]
+        public Mat DistCoeffs { get; set; }
+
+        /// <summary>
+        /// The distorsition coefficients type of the calibration. Equal to <see cref="DistCoeffs.Type()"/> and automatically written when 
+        /// <see cref="SaveToXmlFile(string)"/> is called.
+        /// </summary>
+        /// <remarks>This property is be public for the serialization.</remarks>
+        public TYPE DistCoeffsType { get; set; }
+
+        /// <summary>
+        /// The distorsition coefficients values of the calibration. Equal to the <see cref="DistCoeffs"/> content and automatically written when 
+        /// <see cref="SaveToXmlFile(string)"/> is called.
+        /// </summary>
+        /// <remarks>This property is be public for the serialization.</remarks>
+        public double[][] DistCoeffsValues { get; set; }
+
         // Methods
-
-        /// <summary>
-        /// Populate the camera parameters from a OpenCV calibration.
-        /// </summary>
-        /// <param name="cameraMatrix">The camera matrix of the OpenCV calibration.</param>
-        /// <param name="distCoeffs">The distorsition coefficients of the OpenCV calibration.</param>
-        public void ImportArrays(Mat cameraMatrix, Mat distCoeffs)
-        {
-          CalibrationDateTime = DateTime.Now;
-
-          CameraMatrixType = cameraMatrix.Type();
-          int cameraMatrixRows = cameraMatrix.rows,
-              cameraMatrixCols = cameraMatrix.cols;
-
-          CameraMatrix = new double[cameraMatrixRows][];
-          for (int i = 0; i < cameraMatrixRows; i++)
-          {
-            CameraMatrix[i] = new double[cameraMatrixCols];
-            for (int j = 0; j < cameraMatrixCols; j++)
-            {
-              CameraMatrix[i][j] = cameraMatrix.AtDouble(i, j);
-            }
-          }
-
-          DistCoeffsType = distCoeffs.Type();
-          int distCoeffsRows = distCoeffs.rows,
-              distCoeffsCols = distCoeffs.cols;
-
-          DistCoeffs = new double[distCoeffsRows][];
-          for (int i = 0; i < distCoeffsRows; i++)
-          {
-            DistCoeffs[i] = new double[distCoeffsCols];
-            for (int j = 0; j < distCoeffsCols; j++)
-            {
-              DistCoeffs[i][j] = distCoeffs.AtDouble(i, j);
-            }
-          }
-        }
-
-        /// <summary>
-        /// Return the camera matrix and the distorsion coefficients from the camera parameters.
-        /// </summary>
-        /// <param name="cameraMatrix"></param>
-        /// <param name="distCoeffs"></param>
-        public void ExportArrays(out Mat cameraMatrix, out Mat distCoeffs)
-        {
-          int cameraMatrixRows = CameraMatrix.Length,
-              cameraMatrixCols = CameraMatrix[0].Length;
-
-          cameraMatrix = new Mat();
-          cameraMatrix.Create(cameraMatrixRows, cameraMatrixCols, CameraMatrixType);
-          for (int i = 0; i < cameraMatrixRows; i++)
-          {
-            for (int j = 0; j < cameraMatrixCols; j++)
-            {
-              cameraMatrix.AtDouble(i, j, CameraMatrix[i][j]);
-            }
-          }
-
-          int distCoeffsRows = DistCoeffs.Length,
-              distCoeffsCols = DistCoeffs[0].Length;
-
-          distCoeffs = new Mat();
-          distCoeffs.Create(distCoeffsRows, distCoeffsCols, DistCoeffsType);
-          for (int i = 0; i < distCoeffsRows; i++)
-          {
-            for (int j = 0; j < distCoeffsCols; j++)
-            {
-              distCoeffs.AtDouble(i, j, DistCoeffs[i][j]);
-            }
-          }
-        }
-
-        /// <summary>
-        /// Save the object to a XML file.
-        /// </summary>
-        /// <param name="filePath">The file path where to save the object.</param>
-        public void SaveToXmlFile(string filePath)
-        {
-          StreamWriter writer = null;
-          try
-          {
-            writer = new StreamWriter(filePath);
-            XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
-            serializer.Serialize(writer, this);
-          }
-          catch
-          {
-          }
-          finally
-          {
-            if (writer != null)
-            {
-              writer.Close();
-            }
-          }
-        }
 
         /// <summary>
         /// Create a new CameraParameters object from a previously saved XML file.
@@ -166,24 +116,90 @@ namespace ArucoUnity
         public static CameraParameters LoadFromXmlFile(string filePath)
         {
           CameraParameters cameraParameters = null;
-          StreamReader reader = null;
-          try
+
+          // Load the file and deserialize it
+          using (StreamReader reader = new StreamReader(filePath))
           {
-            reader = new StreamReader(filePath);
             XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
-            cameraParameters = (CameraParameters)serializer.Deserialize(reader);
+            cameraParameters = serializer.Deserialize(reader) as CameraParameters;
           }
-          catch
+
+          if (cameraParameters == null)
           {
-          }
-          finally
-          {
-            if (reader != null)
+            // Update CameraMatrix
+            int cameraMatrixRows = cameraParameters.CameraMatrixValues.Length,
+                cameraMatrixCols = cameraParameters.CameraMatrixValues[0].Length;
+
+            cameraParameters.CameraMatrix = new Mat();
+            cameraParameters.CameraMatrix.Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatrixType);
+            for (int i = 0; i < cameraMatrixRows; i++)
             {
-              reader.Close();
+              for (int j = 0; j < cameraMatrixCols; j++)
+              {
+                cameraParameters.CameraMatrix.AtDouble(i, j, cameraParameters.CameraMatrixValues[i][j]);
+              }
+            }
+
+            // Update DistCoeffs
+            int distCoeffsRows = cameraParameters.DistCoeffsValues.Length,
+                distCoeffsCols = cameraParameters.DistCoeffsValues[0].Length;
+
+            cameraParameters.DistCoeffs = new Mat();
+            cameraParameters.DistCoeffs.Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
+            for (int i = 0; i < distCoeffsRows; i++)
+            {
+              for (int j = 0; j < distCoeffsCols; j++)
+              {
+                cameraParameters.DistCoeffs.AtDouble(i, j, cameraParameters.DistCoeffsValues[i][j]);
+              }
             }
           }
+
           return cameraParameters;
+        }
+
+        /// <summary>
+        /// Save the object to a XML file.
+        /// </summary>
+        /// <param name="filePath">The file path where to save the object.</param>
+        public void SaveToXmlFile(string filePath)
+        {
+          // Update CameraMatrixValues and CameraMatrixType
+          CameraMatrixType = CameraMatrix.Type();
+          int cameraMatrixRows = CameraMatrix.rows,
+              cameraMatrixCols = CameraMatrix.cols;
+
+          CameraMatrixValues = new double[cameraMatrixRows][];
+          for (int i = 0; i < cameraMatrixRows; i++)
+          {
+            CameraMatrixValues[i] = new double[cameraMatrixCols];
+            for (int j = 0; j < cameraMatrixCols; j++)
+            {
+              CameraMatrixValues[i][j] = CameraMatrix.AtDouble(i, j);
+            }
+          }
+
+          // Update DistCoeffsValues and DistCoeffsType
+          DistCoeffsType = DistCoeffs.Type();
+          int distCoeffsRows = DistCoeffs.rows,
+              distCoeffsCols = DistCoeffs.cols;
+
+          DistCoeffsValues = new double[distCoeffsRows][];
+          for (int i = 0; i < distCoeffsRows; i++)
+          {
+            DistCoeffsValues[i] = new double[distCoeffsCols];
+            for (int j = 0; j < distCoeffsCols; j++)
+            {
+              DistCoeffsValues[i][j] = DistCoeffs.AtDouble(i, j);
+            }
+          }
+
+          // Serialize the object and save it to the file
+          using (StreamWriter writer = new StreamWriter(filePath))
+          {
+            XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
+            serializer.Serialize(writer, this);
+          }
         }
       }
     }
