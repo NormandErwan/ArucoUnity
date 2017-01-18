@@ -62,16 +62,6 @@ namespace ArucoUnity
 
         // Variables
 
-        /// <summary>
-        /// The <see cref="CameraImageTexture"/>'s width.
-        /// </summary>
-        protected int cameraImageResolutionX;
-
-        /// <summary>
-        /// The <see cref="CameraImageTexture"/>'s height.
-        /// </summary>
-        protected int cameraImageResolutionY;
-
         private CameraDeviceController cameraDeviceControllerValue = null;
 
         // MonoBehaviour methods
@@ -117,8 +107,6 @@ namespace ArucoUnity
           // Configurate the CameraImageTexture
           Configurated = false;
           CameraImageTexture = activeCameraDevice.Texture2D;
-          cameraImageResolutionX = CameraImageTexture.width;
-          cameraImageResolutionY = CameraImageTexture.height;
 
           // Configurate content
           Configurate();

@@ -223,7 +223,7 @@ namespace ArucoUnity
         cameraFy = (float)CameraMatrix.AtDouble(1, 1);
 
         // Calculate the optical center of the camera device; based on: http://stackoverflow.com/a/36580522
-        OpticalCenter = new Vector3(cameraCx / cameraImageResolutionX, cameraCy / cameraImageResolutionY, cameraFy);
+        OpticalCenter = new Vector3(cameraCx / CameraImageTexture.width, cameraCy / CameraImageTexture.height, cameraFy);
 
         return true;
       }
@@ -241,7 +241,7 @@ namespace ArucoUnity
         }
 
         // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * cameraImageResolutionY / cameraFy) * Mathf.Rad2Deg;
+        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / cameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
         camera.farClipPlane = cameraFy;
         camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
@@ -251,7 +251,7 @@ namespace ArucoUnity
         // Configurate the plane facing the camera that display the texture
         cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
         cameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
-        cameraPlane.transform.localScale = new Vector3(cameraImageResolutionX, cameraImageResolutionY, 1);
+        cameraPlane.transform.localScale = new Vector3(CameraImageTexture.width, CameraImageTexture.height, 1);
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
         cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
@@ -275,7 +275,7 @@ namespace ArucoUnity
         byte[] imageData = CameraImageTexture.GetRawTextureData();
 
         // Detect markers
-        Mat image = new Mat(cameraImageResolutionY, cameraImageResolutionX, TYPE.CV_8UC3, imageData);
+        Mat image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
