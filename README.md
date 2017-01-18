@@ -23,9 +23,8 @@ $ cd <aruco_unity_build_directory>
 $ cmake <aruco_unity_source_directory>
 ```
 
-If you want to provide your own version of OpenCV, add the following options to the cmake configuration command:
-`-DAUTO_BUILD_OPENCV=OFF -DOpenCV_DIR=<opencv_install_dir>`. You need to build the ArUco module. Follow this
-instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib)
+If you want to provide your own version of OpenCV, add the following options to the above cmake configuration command:
+`-DAUTO_BUILD_OPENCV=OFF -DOpenCV_DIR=<opencv_install_dir>`. Your OpenCV version must be built with the ArUco module. Follow these instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib)
 
 ### Building
 
