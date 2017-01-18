@@ -45,6 +45,10 @@ namespace ArucoUnity
       private CameraDeviceController cameraDeviceController;
 
       [SerializeField]
+      [Tooltip("The file path to load the camera parameters.")]
+      private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
+
+      [SerializeField]
       [Tooltip("If estimatePose is false, the CameraImageTexture will be displayed on this canvas")]
       private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
@@ -56,18 +60,16 @@ namespace ArucoUnity
       [Tooltip("The plane facing the camera that display the CameraImageTexture")]
       private GameObject cameraPlane;
 
-      [Header("Estimation configuration")]
+      [Header("Pose estimation configuration")]
       [SerializeField]
-      [Tooltip("Estimate the detecte markers pose (position, rotation)")]
+      [Tooltip("Estimate the detected markers pose (position, rotation)")]
       private bool estimatePose;
 
       [SerializeField]
-      [Tooltip("The file path to load the camera parameters.")]
-      private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
+      private MarkerObjectsController markerObjectsController;
 
-      [SerializeField]
-      [Tooltip("The object to place above the detected markers")]
-      private GameObject detectedMarkersObject;
+      // Events
+      // TODO: OnMarkerDetected, OnMarkerTracked, OnMarkerLost 
 
       // Properties
 
@@ -97,21 +99,17 @@ namespace ArucoUnity
       /// </summary>
       public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
-      // Estimation properties
+      // Pose estimation properties
       /// <summary>
       /// Estimate the detected markers pose (position, rotation).
       /// </summary>
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
 
-      /// <summary>
-      /// The object to place above the detected markers.
-      /// </summary>
-      public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
+      public MarkerObjectsController MarkerObjectsController { get { return markerObjectsController; } set { markerObjectsController = value; } }
 
       // Variables
 
       protected CameraParameters cameraParameters;
-      protected Dictionary<int, GameObject> markerObjects;
       protected bool displayMarkerObjects = false;
 
       // MonoBehaviour methods
@@ -119,7 +117,7 @@ namespace ArucoUnity
       /// <summary>
       /// Populate the CameraDeviceMarkersDetector base class properties.
       /// </summary>
-      private void Awake()
+      protected void Awake()
       {
         CameraDeviceController = cameraDeviceController;
         Camera = camera;
@@ -129,7 +127,7 @@ namespace ArucoUnity
       /// <summary>
       /// When configurated, detect markers and show results each frame.
       /// </summary>
-      void LateUpdate()
+      protected void LateUpdate()
       {
         if (Configurated)
         {
@@ -165,6 +163,7 @@ namespace ArucoUnity
         if (estimatePose)
         {
           displayMarkerObjects = ConfigurateCameraPlane();
+          MarkerObjectsController.SetCamera(Camera, cameraParameters);
         }
         cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
@@ -200,24 +199,17 @@ namespace ArucoUnity
           tvecs = null;
         }
 
-        // Hide the marker objects
-        if (estimatePose && displayMarkerObjects)
+        // Draw the detected markers
+        if (ids.Size() > 0 && showDetectedMarkers)
         {
-          DeactivateMarkerObjects();
+          Functions.DrawDetectedMarkers(image, corners, ids);
         }
 
-        // Draw the detected markers and display the marker objects
-        if (ids.Size() > 0)
+        // Show the marker objects
+        MarkerObjectsController.DeactivateMarkerObjects();
+        if (estimatePose && displayMarkerObjects)
         {
-          if (showDetectedMarkers)
-          {
-            Functions.DrawDetectedMarkers(image, corners, ids);
-          }
-
-          if (estimatePose && displayMarkerObjects)
-          {
-            DisplayMarkerObjects(ids, rvecs, tvecs);
-          }
+          MarkerObjectsController.UpdateTransforms(ids, markerSideLength, rvecs, tvecs);
         }
 
         // Draw rejected marker candidates
@@ -242,68 +234,6 @@ namespace ArucoUnity
         int imageDataSize = (int)(finalImage.ElemSize() * finalImage.Total());
         CameraImageTexture.LoadRawTextureData(finalImage.data, imageDataSize);
         CameraImageTexture.Apply(false);
-      }
-
-      /// <summary>
-      /// Hide all the marker objects.
-      /// </summary>
-      private void DeactivateMarkerObjects()
-      {
-        if (markerObjects != null)
-        {
-          foreach (var markerObject in markerObjects)
-          {
-            markerObject.Value.SetActive(false);
-          }
-        }
-      }
-
-      /// <summary>
-      /// Place and orient the object to match the marker.
-      /// </summary>
-      /// <param name="ids">Vector of identifiers of the detected markers.</param>
-      /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
-      /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
-      private void DisplayMarkerObjects(VectorInt ids, VectorVec3d rvecs, VectorVec3d tvecs)
-      {
-        if (markerObjects == null)
-        {
-          markerObjects = new Dictionary<int, GameObject>();
-        }
-
-        for (uint i = 0; i < ids.Size(); i++)
-        {
-          // Retrieve the associated object for this marker or create it
-          GameObject markerObject;
-          if (!markerObjects.TryGetValue(ids.At(i), out markerObject))
-          {
-            markerObject = Instantiate(DetectedMarkersObject);
-            markerObject.name = ids.At(i).ToString();
-            markerObject.transform.SetParent(this.transform);
-
-            markerObject.transform.localScale = markerObject.transform.localScale * markerSideLength; // Rescale to the marker size
-
-            markerObjects.Add(ids.At(i), markerObject);
-          }
-
-          // Place and orient the object to match the marker
-          markerObject.transform.rotation = rvecs.At(i).ToRotation();
-          markerObject.transform.position = tvecs.At(i).ToPosition();
-
-          // Adjust the object position
-          Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
-          Vector3 opticalCenterMarkerObject = new Vector3(cameraParameters.OpticalCenter.x, cameraParameters.OpticalCenter.y, markerObject.transform.position.z);
-          Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
-
-          Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
-            + markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
-          markerObject.transform.localPosition += positionShift;
-
-          print(markerObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
-            + "; positionShift: " + (markerObject.transform.rotation * opticalShift).ToString("F4"));
-
-          markerObject.SetActive(true);
-        }
       }
     }
   }
