@@ -26,14 +26,15 @@ namespace ArucoUnity
         // Properties
 
         /// <summary>
-        /// The manipulated camera image texture by the marker detection class.
-        /// </summary>
-        public Texture2D CameraImageTexture { get; private set; }
-
-        /// <summary>
         /// True when the markers detection class is ready and configurated.
         /// </summary>
         public bool Configurated { get; protected set; }
+
+        // CameraDeviceController related properties
+        /// <summary>
+        /// The manipulated camera image texture by the marker detection class.
+        /// </summary>
+        public Texture2D CameraImageTexture { get; protected set; }
 
         /// <summary>
         /// The <see cref="CameraDeviceController"/> to use. When its active camera device has started, execute the configuration of the marker 
@@ -59,6 +60,17 @@ namespace ArucoUnity
             ConfigurateIfActiveCameraDeviceStarted();
           }
         }
+
+        // Camera properties
+        /// <summary>
+        /// The Unity camera that will capture the <see cref="CameraPlane"/> display.
+        /// </summary>
+        public Camera Camera { get; protected set; }
+
+        /// <summary>
+        /// The plane facing the camera that display the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
+        /// </summary>
+        public GameObject CameraPlane { get; protected set; }
 
         // Variables
 
@@ -132,6 +144,41 @@ namespace ArucoUnity
               CompleteConfigurate(activeCameraDevice);
             }
           }
+        }
+
+        /// <summary>
+        /// Configurate from the camera parameters the <see cref="Camera"/> and a the <see cref="CameraPlane"/> that display the 
+        /// <see cref="CameraImageTexture"/> facing the camera.
+        /// </summary>
+        /// <returns>If the configuration has been successful.</returns>
+        public bool ConfigurateCameraPlane()
+        {
+          CameraParameters cameraParameters = CameraDeviceController.ActiveCameraDevice.CameraParameters;
+
+          if (Camera == null || CameraPlane == null || cameraParameters == null)
+          {
+            Debug.LogError(gameObject.name + ": unable to configurate the camera and the facing plane. The following properties must be set: Camera"
+              + " and CameraPlane.");
+            return false;
+          }
+
+          // Configurate the camera according to the camera parameters
+          float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / cameraParameters.CameraFy) * Mathf.Rad2Deg;
+          Camera.fieldOfView = vFov;
+          Camera.farClipPlane = cameraParameters.CameraFy;
+          Camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
+          Camera.transform.position = Vector3.zero;
+          Camera.transform.rotation = Quaternion.identity;
+
+          // Configurate the plane facing the camera that display the texture
+          CameraPlane.transform.position = new Vector3(0, 0, Camera.farClipPlane);
+          CameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
+          CameraPlane.transform.localScale = new Vector3(CameraImageTexture.width, CameraImageTexture.height, 1);
+          CameraPlane.transform.localScale = Vector3.Scale(CameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
+          CameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
+          CameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
+
+          return true;
         }
       }
     }

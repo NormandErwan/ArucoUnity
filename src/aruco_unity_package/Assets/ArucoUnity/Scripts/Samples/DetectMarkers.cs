@@ -97,17 +97,6 @@ namespace ArucoUnity
       /// </summary>
       public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
-      // Camera properties
-      /// <summary>
-      /// The Unity camera that will capture the <see cref="CameraPlane"/> display.
-      /// </summary>
-      public Camera Camera { get { return camera; } set { camera = value; } }
-
-      /// <summary>
-      /// The plane facing the camera that display the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
-      /// </summary>
-      public GameObject CameraPlane { get { return cameraPlane; } set { cameraPlane = value; } }
-
       // Estimation properties
       /// <summary>
       /// Estimate the detected markers pose (position, rotation).
@@ -133,6 +122,8 @@ namespace ArucoUnity
       private void Awake()
       {
         CameraDeviceController = cameraDeviceController;
+        Camera = camera;
+        CameraPlane = cameraPlane;
       }
 
       /// <summary>
@@ -177,39 +168,6 @@ namespace ArucoUnity
         }
         cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
-      }
-
-      /// <summary>
-      /// Configurate from the camera parameters the <see cref="camera"/> and a the <see cref="cameraPlane"/> that display the 
-      /// <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/> facing the camera.
-      /// </summary>
-      /// <returns>If the configuration has been successful.</returns>
-      public bool ConfigurateCameraPlane()
-      {
-        if (Camera == null || CameraPlane == null || DetectedMarkersObject == null)
-        {
-          Debug.LogError(gameObject.name + ": unable to configurate the camera and the facing plane. The following properties must be set: Camera,"
-            + " CameraPlane, DetectedMarkersObject.");
-          return false;
-        }
-
-        // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / cameraParameters.CameraFy) * Mathf.Rad2Deg;
-        camera.fieldOfView = vFov;
-        camera.farClipPlane = cameraParameters.CameraFy;
-        camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
-        camera.transform.position = Vector3.zero;
-        camera.transform.rotation = Quaternion.identity;
-
-        // Configurate the plane facing the camera that display the texture
-        cameraPlane.transform.position = new Vector3(0, 0, camera.farClipPlane);
-        cameraPlane.transform.rotation = CameraDeviceController.ActiveCameraDevice.ImageRotation;
-        cameraPlane.transform.localScale = new Vector3(CameraImageTexture.width, CameraImageTexture.height, 1);
-        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, CameraDeviceController.ActiveCameraDevice.ImageScaleFrontFacing);
-        cameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
-        cameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
-
-        return true;
       }
 
       /// <summary>
