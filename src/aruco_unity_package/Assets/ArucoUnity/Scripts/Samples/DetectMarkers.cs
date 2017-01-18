@@ -113,11 +113,6 @@ namespace ArucoUnity
       /// Estimate the detected markers pose (position, rotation).
       /// </summary>
       public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
-      
-      /// <summary>
-      /// The camera parameters used.
-      /// </summary>
-      public CameraParameters CameraParameters { get; set; }
 
       /// <summary>
       /// The object to place above the detected markers.
@@ -126,8 +121,9 @@ namespace ArucoUnity
 
       // Variables
 
-      private Dictionary<int, GameObject> markerObjects;
-      private bool displayMarkerObjects = false;
+      protected CameraParameters cameraParameters;
+      protected Dictionary<int, GameObject> markerObjects;
+      protected bool displayMarkerObjects = false;
 
       // MonoBehaviour methods
 
@@ -169,11 +165,9 @@ namespace ArucoUnity
         // Try to load the camera parameters
         if (estimatePose)
         {
-          CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
-          if (CameraParameters == null)
-          {
-            estimatePose = false;
-          }
+          bool cameraParametersLoaded = CameraDeviceController.ActiveCameraDevice.LoadCameraParameters(cameraParametersFilePath);
+          cameraParameters = CameraDeviceController.ActiveCameraDevice.CameraParameters;
+          estimatePose &= cameraParametersLoaded;
         }
 
         // Configurate the camera-plane group xor the canvas
@@ -192,15 +186,17 @@ namespace ArucoUnity
       /// <returns>If the configuration has been successful.</returns>
       public bool ConfigurateCameraPlane()
       {
-        if (Camera == null || CameraPlane == null || CameraParameters == null || detectedMarkersObject == null)
+        if (Camera == null || CameraPlane == null || DetectedMarkersObject == null)
         {
+          Debug.LogError(gameObject.name + ": unable to configurate the camera and the facing plane. The following properties must be set: Camera,"
+            + " CameraPlane, DetectedMarkersObject.");
           return false;
         }
 
         // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / CameraParameters.CameraFy) * Mathf.Rad2Deg;
+        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / cameraParameters.CameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
-        camera.farClipPlane = CameraParameters.CameraFy;
+        camera.farClipPlane = cameraParameters.CameraFy;
         camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
@@ -238,7 +234,7 @@ namespace ArucoUnity
         // Estimate board pose
         if (estimatePose && ids.Size() > 0)
         {
-          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs, out rvecs, out tvecs);
+          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
         }
         else
         {
@@ -276,7 +272,7 @@ namespace ArucoUnity
         Mat undistordedImage, finalImage;
         if (estimatePose)
         {
-          Imgproc.Undistord(image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
+          Imgproc.Undistord(image, out undistordedImage, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs);
           finalImage = undistordedImage;
         }
         else
@@ -338,7 +334,7 @@ namespace ArucoUnity
 
           // Adjust the object position
           Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
-          Vector3 opticalCenterMarkerObject = new Vector3(CameraParameters.OpticalCenter.x, CameraParameters.OpticalCenter.y, markerObject.transform.position.z);
+          Vector3 opticalCenterMarkerObject = new Vector3(cameraParameters.OpticalCenter.x, cameraParameters.OpticalCenter.y, markerObject.transform.position.z);
           Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
 
           Vector3 positionShift = opticalShift // Take account of the optical center not in the image center

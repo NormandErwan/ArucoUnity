@@ -169,16 +169,16 @@ namespace ArucoUnity
         // Methods
 
         /// <summary>
-        /// Create a new CameraParameters object from a previously saved XML file.
+        /// Create a new CameraParameters object from a previously saved camera parameters XML file.
         /// </summary>
-        /// <param name="filePath">The file path to load.</param>
+        /// <param name="cameraParametersFilePath">The file path to load.</param>
         /// <returns>The new CameraParameters created from the XML file.</returns>
-        public static CameraParameters LoadFromXmlFile(string filePath)
+        public static CameraParameters LoadFromXmlFile(string cameraParametersFilePath)
         {
           CameraParameters cameraParameters = null;
 
           // Load the file and deserialize it
-          using (StreamReader reader = new StreamReader(filePath))
+          using (StreamReader reader = new StreamReader(cameraParametersFilePath))
           {
             XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
             cameraParameters = serializer.Deserialize(reader) as CameraParameters;
@@ -186,7 +186,7 @@ namespace ArucoUnity
 
           if (cameraParameters == null)
           {
-            Debug.LogError("Unable to load the camera parameters from the '" + filePath + "' file path. Can't estimate pose of the detected"
+            Debug.LogError("Unable to load the camera parameters from the '" + cameraParametersFilePath + "' file path. Can't estimate pose of the detected"
               + " markers.");
             return null;
           }
@@ -224,10 +224,10 @@ namespace ArucoUnity
         }
 
         /// <summary>
-        /// Save the object to a XML file.
+        /// Save the camera parameters to a XML file.
         /// </summary>
-        /// <param name="filePath">The file path where to save the object.</param>
-        public void SaveToXmlFile(string filePath)
+        /// <param name="cameraParametersFilePath">The file path where to save the object.</param>
+        public void SaveToXmlFile(string cameraParametersFilePath)
         {
           // Update CameraMatrixValues and CameraMatrixType
           CameraMatrixType = CameraMatrix.Type();
@@ -260,7 +260,7 @@ namespace ArucoUnity
           }
 
           // Serialize the object and save it to the file
-          using (StreamWriter writer = new StreamWriter(filePath))
+          using (StreamWriter writer = new StreamWriter(cameraParametersFilePath))
           {
             XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
             serializer.Serialize(writer, this);

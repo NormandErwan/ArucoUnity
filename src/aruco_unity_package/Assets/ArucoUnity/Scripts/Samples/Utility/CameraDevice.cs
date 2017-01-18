@@ -34,22 +34,27 @@ namespace ArucoUnity
         /// <summary>
         /// True when the camera has started.
         /// </summary>
-        public bool Started { get; private set; }
+        public bool Started { get; protected set; }
 
         /// <summary>
         /// The associated webcam device.
         /// </summary>
-        public WebCamDevice WebCamDevice { get; private set; }
+        public WebCamDevice WebCamDevice { get; protected set; }
 
         /// <summary>
         /// The texture of the associated webcam device.
         /// </summary>
-        public WebCamTexture WebCamTexture { get; private set; }
+        public WebCamTexture WebCamTexture { get; protected set; }
 
         /// <summary>
         /// Equivalent of the <see cref="WebCamTexture"/>, updated each frame.
         /// </summary>
-        public Texture2D Texture2D { get; private set; }
+        public Texture2D Texture2D { get; protected set; }
+
+        /// <summary>
+        /// The parameters of the camera.
+        /// </summary>
+        public CameraParameters CameraParameters { get; protected set; }
 
         /// <summary>
         /// The correct image orientation.
@@ -186,6 +191,17 @@ namespace ArucoUnity
               OnStopped();
             }
           }
+        }
+
+        /// <summary>
+        /// Populate <see cref="CameraParameters"/> from a previously saved camera parameters XML file.
+        /// </summary>
+        /// <param name="cameraParametersFilePath">The file path to load.</param>
+        /// <returns>If the camera parameters has been successfully loaded.</returns>
+        public bool LoadCameraParameters(string cameraParametersFilePath)
+        {
+          CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+          return CameraParameters != null;
         }
 
         /// <summary>
