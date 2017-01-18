@@ -120,11 +120,6 @@ namespace ArucoUnity
       public CameraParameters CameraParameters { get; set; }
 
       /// <summary>
-      /// The camera device's optical center.
-      /// </summary>
-      public Vector3 OpticalCenter { get; private set; }
-
-      /// <summary>
       /// The object to place above the detected markers.
       /// </summary>
       public GameObject DetectedMarkersObject { get { return detectedMarkersObject; } set { detectedMarkersObject = value; } }
@@ -133,9 +128,6 @@ namespace ArucoUnity
 
       private Dictionary<int, GameObject> markerObjects;
       private bool displayMarkerObjects = false;
-      private float cameraCx;
-      private float cameraCy;
-      private float cameraFy;
 
       // MonoBehaviour methods
 
@@ -177,8 +169,11 @@ namespace ArucoUnity
         // Try to load the camera parameters
         if (estimatePose)
         {
-          bool cameraParametersLoaded = LoadCameraParameters(cameraParametersFilePath);
-          estimatePose &= cameraParametersLoaded;
+          CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+          if (CameraParameters == null)
+          {
+            estimatePose = false;
+          }
         }
 
         // Configurate the camera-plane group xor the canvas
@@ -188,34 +183,6 @@ namespace ArucoUnity
         }
         cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
-      }
-
-      /// <summary>
-      /// Load the <see cref="CameraParameters"/> from a file and populate <see cref="CameraMatrix"/>, <see cref="DistCoeffs"/> and 
-      /// <see cref="OpticalCenter"/>.
-      /// </summary>
-      /// <param name="cameraParametersFilePath">The file path to load.</param>
-      /// <returns>If the camera parameters has been successfully loaded from the file.</returns>
-      public bool LoadCameraParameters(string cameraParametersFilePath)
-      {
-        // Retrieve camera device parameters
-        CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
-        if (CameraParameters == null)
-        {
-          Debug.LogError(gameObject.name + ": Unable to load the camera parameters from the '" + cameraParametersFilePath + "' file."
-            + " Can't estimate pose of the detected markers.");
-          return false;
-        }
-
-        // Prepare the camera device parameters
-        cameraCx = (float)CameraParameters.CameraMatrix.AtDouble(0, 2);
-        cameraCy = (float)CameraParameters.CameraMatrix.AtDouble(1, 2);
-        cameraFy = (float)CameraParameters.CameraMatrix.AtDouble(1, 1);
-
-        // Calculate the optical center of the camera device; based on: http://stackoverflow.com/a/36580522
-        OpticalCenter = new Vector3(cameraCx / CameraImageTexture.width, cameraCy / CameraImageTexture.height, cameraFy);
-
-        return true;
       }
 
       /// <summary>
@@ -231,9 +198,9 @@ namespace ArucoUnity
         }
 
         // Configurate the camera according to the camera parameters
-        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / cameraFy) * Mathf.Rad2Deg;
+        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / CameraParameters.CameraFy) * Mathf.Rad2Deg;
         camera.fieldOfView = vFov;
-        camera.farClipPlane = cameraFy;
+        camera.farClipPlane = CameraParameters.CameraFy;
         camera.aspect = CameraDeviceController.ActiveCameraDevice.ImageRatio;
         camera.transform.position = Vector3.zero;
         camera.transform.rotation = Quaternion.identity;
@@ -371,7 +338,7 @@ namespace ArucoUnity
 
           // Adjust the object position
           Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
-          Vector3 opticalCenterMarkerObject = new Vector3(OpticalCenter.x, OpticalCenter.y, markerObject.transform.position.z);
+          Vector3 opticalCenterMarkerObject = new Vector3(CameraParameters.OpticalCenter.x, CameraParameters.OpticalCenter.y, markerObject.transform.position.z);
           Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
 
           Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
