@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Create an ChArUco grid board image and a texture of the board.
     /// </summary>
-    public class CreateBoardCharuco : MarkerCreator
+    public class CreateBoardCharuco : ArucoCreator
     {
       // Editor fields
 

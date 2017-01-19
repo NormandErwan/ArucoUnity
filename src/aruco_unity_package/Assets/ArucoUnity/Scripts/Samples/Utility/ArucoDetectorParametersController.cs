@@ -10,7 +10,7 @@ namespace ArucoUnity
     /// <summary>
     /// Editor manager for the <see cref="DetectorParameters"/>.
     /// </summary>
-    public class DetectorParametersController : MonoBehaviour
+    public class ArucoDetectorParametersController : MonoBehaviour
     {
       // Editor fields
 

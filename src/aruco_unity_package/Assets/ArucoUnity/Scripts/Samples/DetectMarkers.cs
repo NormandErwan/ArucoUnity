@@ -14,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Detect markers, display results and place game objects on the detected markers transform.
     /// </summary>
-    public class DetectMarkers : CameraDeviceMarkersDetector
+    public class DetectMarkers : ArucoDetector
     {
       // Editor fields
 
@@ -25,7 +25,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The parameters to use for the marker detection")]
-      private DetectorParametersController detectorParametersManager;
+      private ArucoDetectorParametersController detectorParametersManager;
 
       [SerializeField]
       [Tooltip("The side length of the markers that will be detected (in meters). This also is the scale factor of the DetectedMarkersObject")]

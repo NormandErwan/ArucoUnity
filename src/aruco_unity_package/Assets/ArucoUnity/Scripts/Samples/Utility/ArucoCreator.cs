@@ -11,7 +11,7 @@ namespace ArucoUnity
   {
     namespace Utility
     {
-      public abstract class MarkerCreator : MonoBehaviour
+      public abstract class ArucoCreator : MonoBehaviour
       {
         // Properties
 

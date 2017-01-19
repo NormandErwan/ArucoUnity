@@ -12,7 +12,7 @@ namespace ArucoUnity
       /// <summary>
       /// Base for any markers detection class that use a <see cref="CameraDevice"/>.
       /// </summary>
-      public abstract class CameraDeviceMarkersDetector : MonoBehaviour
+      public abstract class ArucoDetector : MonoBehaviour
       {
         // Events
 
@@ -68,7 +68,7 @@ namespace ArucoUnity
         public Camera Camera { get; protected set; }
 
         /// <summary>
-        /// The plane facing the camera that display the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
+        /// The plane facing the camera that display the <see cref="ArucoDetector.CameraImageTexture"/>.
         /// </summary>
         public GameObject CameraPlane { get; protected set; }
 

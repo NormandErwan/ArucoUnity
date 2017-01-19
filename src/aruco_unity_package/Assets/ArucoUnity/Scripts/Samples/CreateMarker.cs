@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Create an ArUco marker image and a texture of the marker.
     /// </summary>
-    public class CreateMarker : MarkerCreator
+    public class CreateMarker : ArucoCreator
     {
       // Editor fields
 

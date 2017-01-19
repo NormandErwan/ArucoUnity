@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Create a ChArUco marker image and a texture of the marker.
     /// </summary>
-    public class CreateDiamond : MarkerCreator
+    public class CreateDiamond : ArucoCreator
     {
       [Header("ChArUco marker configuration")]
       [SerializeField]

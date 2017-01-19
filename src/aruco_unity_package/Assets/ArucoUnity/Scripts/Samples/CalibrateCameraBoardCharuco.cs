@@ -11,7 +11,7 @@ namespace ArucoUnity
 
   namespace Samples
   {
-    public class CalibrateCameraBoardCharuco : CameraDeviceMarkersDetector
+    public class CalibrateCameraBoardCharuco : ArucoDetector
     {
       [Header("ChArUco board configuration")]
       [SerializeField]
@@ -35,7 +35,7 @@ namespace ArucoUnity
 
       [Header("Calibration configuration")]
       [SerializeField]
-      private DetectorParametersController detectorParametersManager;
+      private ArucoDetectorParametersController detectorParametersManager;
 
       [SerializeField]
       private bool applyRefineStrategy = false;
