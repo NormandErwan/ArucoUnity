@@ -19,6 +19,9 @@ namespace ArucoUnity
         [Tooltip("The default game object to place above the detected markers")]
         private GameObject defaultTrackedGameObject;
 
+        // Events
+        // TODO: OnMarkerDetected, OnMarkerTracked, OnMarkerLost 
+
         // Properties
 
         /// <summary>

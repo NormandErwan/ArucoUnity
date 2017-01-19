@@ -14,6 +14,8 @@ namespace ArucoUnity
     // TODO: doc
     public class CalibrateCameraBoard : ArucoDetector
     {
+      // Editor fields
+
       [Header("Board configuration")]
       [SerializeField]
       [Tooltip("Number of markers in X direction")]
@@ -73,16 +75,15 @@ namespace ArucoUnity
       [SerializeField]
       private Text calibrationReprojectionErrorText;
 
-      // Configuration properties
-      public GridBoard Board { get; set; }
-      public Dictionary Dictionary { get; set; }
-      public DetectorParameters DetectorParameters { get; set; }
-      public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
-      public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
-      public CALIB CalibrationFlags { get; set; }
-      public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
+      // Properties
 
-      // Calibration properties
+      // Calibration configuration properties
+      public GridBoard Board { get; set; }
+      public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } } // TODO: to factor
+      public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } } // TODO: to factor
+      public CALIB CalibrationFlags { get; set; } // TODO: to factor
+
+      // Calibration results properties // TODO: to factor
       public VectorVectorVectorPoint2f AllCorners { get; private set; }
       public VectorVectorInt AllIds { get; private set; }
       public Size ImageSize { get; private set; }
@@ -90,30 +91,29 @@ namespace ArucoUnity
       public VectorMat Tvecs { get; private set; }
       public CameraParameters CameraParameters { get; private set; }
 
-      // Internal
-      private bool addNextFrame;
-      private bool calibrate;
+      // Variables
 
-      void Awake()
+      private bool addNextFrame; // TODO: to factor
+      private bool calibrate; // TODO: to factor
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Set up <see cref="ArucoDetector.CameraDeviceController"/> and the UI. 
+      /// </summary>
+      protected override void OnEnable() // TODO: to factor
       {
+        // Set up the parent class
         CameraDeviceController = cameraDeviceController;
+        base.OnEnable();
 
+        // Set up onClick functions to UI buttons
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);
         resetButton.onClick.AddListener(ResetCalibrationFromEditor);
       }
 
-      protected override void Configurate()
-      {
-        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-        DetectorParameters = detectorParametersManager.detectorParameters;
-        Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
-
-        ConfigurateCalibrationFlags();
-        ResetCalibrationFromEditor();
-      }
-
-      void LateUpdate()
+      void LateUpdate() // TODO: to factor
       {
         if (Configurated)
         {
@@ -134,7 +134,33 @@ namespace ArucoUnity
         }
       }
 
-      public void ResetCalibration()
+      // ArucoDetector Methods
+
+      /// <summary>
+      /// Set up the <see cref="ArucoDetector"/> parent class properties.
+      /// </summary>
+      protected override void PreConfigurate()
+      {
+        // Configurate detection properties
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        DetectorParameters = detectorParametersManager.detectorParameters;
+        MarkerSideLength = markerSideLength;
+
+        // Configurate camera properties
+        CameraParametersFilePath = cameraParametersFilePath;
+
+        // Configurate pose estimation properties
+        EstimatePose = false;
+
+        // Configurate the board calibration
+        Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
+        ConfigurateCalibrationFlags(); // TODO: to factor
+        ResetCalibrationFromEditor(); // TODO: to factor
+      }
+
+      // Methods
+
+      public void ResetCalibration() // TODO: to factor
       {
         calibrate = false;
         AllCorners = new VectorVectorVectorPoint2f();
@@ -178,7 +204,7 @@ namespace ArucoUnity
         CameraImageTexture.Apply(false);
       }
 
-      public void AddFrameForCalibration(VectorVectorPoint2f corners, VectorInt ids, Mat image)
+      public void AddFrameForCalibration(VectorVectorPoint2f corners, VectorInt ids, Mat image) // TODO: to factor
       {
         if (!calibrate)
         {
@@ -255,12 +281,12 @@ namespace ArucoUnity
       }
 
       // Editor button onclick listeners
-      private void AddNextFrameForCalibration()
+      private void AddNextFrameForCalibration() // TODO: to factor
       {
         addNextFrame = true;
       }
 
-      private void CalibrateFromEditor()
+      private void CalibrateFromEditor() // TODO: to factor
       {
         addFrameButton.enabled = false;
         calibrateButton.enabled = false;
@@ -268,7 +294,7 @@ namespace ArucoUnity
         UpdateCalibrationReprojectionErrorTexts();
       }
 
-      private void ResetCalibrationFromEditor()
+      private void ResetCalibrationFromEditor() // TODO: to factor
       {
         addFrameButton.enabled = true;
         calibrateButton.enabled = false;
@@ -279,7 +305,7 @@ namespace ArucoUnity
       }
 
       // Utilities
-      void UpdateImagesForCalibrationText()
+      void UpdateImagesForCalibrationText() // TODO: to factor
       {
         imagesForCalibrationText.text = "Images for calibration: " + AllIds.Size();
       }
@@ -290,7 +316,7 @@ namespace ArucoUnity
          + ((CameraParameters != null) ? CameraParameters.ReprojectionError.ToString("F3") : "");
       }
 
-      void ConfigurateCalibrationFlags()
+      void ConfigurateCalibrationFlags() // TODO: to factor
       {
         CalibrationFlags = 0;
         if (assumeZeroTangentialDistorsion)

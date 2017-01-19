@@ -13,6 +13,8 @@ namespace ArucoUnity
   {
     public class CalibrateCameraBoardCharuco : ArucoDetector
     {
+      // Editor fields
+
       [Header("ChArUco board configuration")]
       [SerializeField]
       [Tooltip("Number of markers in X direction")]
@@ -78,11 +80,10 @@ namespace ArucoUnity
       [SerializeField]
       private Text charucoCalibrationReprojectionError;
 
-      // Configuration properties
-      public CharucoBoard CharucoBoard { get; set; }
-      public Dictionary Dictionary { get; set; }
-      public DetectorParameters DetectorParameters { get; set; }
+      // Properties
 
+      // Calibration configuration properties
+      public CharucoBoard CharucoBoard { get; set; }
       public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
       public bool AssumeZeroTangentialDistorsion { get { return assumeZeroTangentialDistorsion; } set { assumeZeroTangentialDistorsion = value; } }
       public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
@@ -91,7 +92,7 @@ namespace ArucoUnity
       public string ArucoCameraParametersFilePath { get { return arucoCameraParametersFilePath; } set { arucoCameraParametersFilePath = value; } }
       public string CharucoCameraParametersFilePath { get { return charucoCameraParametersFilePath; } set { charucoCameraParametersFilePath = value; } }
 
-      // Calibration properties
+      // Calibration results properties
       public VectorVectorVectorPoint2f AllCorners { get; private set; }
       public VectorVectorInt AllIds { get; private set; }
       public VectorMat AllImages { get; private set; }
@@ -103,38 +104,35 @@ namespace ArucoUnity
       public CameraParameters ArucoCameraParameters { get; private set; }
       public CameraParameters CharucoCameraParameters { get; private set; }
 
-      private bool addNextFrame;
-      private bool calibrate;
+      // Variables
+
+      protected bool addNextFrame;
+      protected bool calibrate;
+
+      // MonoBehaviour methods
 
       /// <summary>
-      /// Add onClick functions to UI buttons.
+      /// Set up <see cref="ArucoDetector.CameraDeviceController"/> and the UI. 
       /// </summary>
-      void Awake()
+      protected override void OnEnable()
       {
+        // Set up the parent class
         CameraDeviceController = cameraDeviceController;
+        base.OnEnable();
 
+        // Set up onClick functions to UI buttons
         addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
         calibrateButton.onClick.AddListener(CalibrateFromEditor);
         resetButton.onClick.AddListener(ResetCalibrationFromEditor);
-      }
-
-      protected override void Configurate()
-      {
-        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-        DetectorParameters = detectorParametersManager.detectorParameters;
-        CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
-
-        ConfigurateCalibrationFlags();
-        ResetCalibrationFromEditor();
       }
 
       void LateUpdate()
       {
         if (Configurated)
         {
-          Mat image;
           VectorInt ids;
           VectorVectorPoint2f corners, rejectedImgPoints;
+          Mat image;
 
           // Detect and draw markers
           Detect(out corners, out ids, out rejectedImgPoints, out image);
@@ -148,6 +146,29 @@ namespace ArucoUnity
           }
         }
       }
+
+      // ArucoDetector Methods
+
+      /// <summary>
+      /// Set up the <see cref="ArucoDetector"/> parent class properties.
+      /// </summary>
+      protected override void PreConfigurate()
+      {
+        // Configurate detection properties
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        DetectorParameters = detectorParametersManager.detectorParameters;
+        MarkerSideLength = markerSideLength;
+
+        // Configurate pose estimation properties
+        EstimatePose = false;
+
+        // Configurate the board calibration
+        CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
+        ConfigurateCalibrationFlags();
+        ResetCalibrationFromEditor();
+      }
+
+      // Methods
 
       public void ResetCalibration()
       {

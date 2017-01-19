@@ -45,12 +45,8 @@ namespace ArucoUnity
       private CameraDeviceController cameraDeviceController;
 
       [SerializeField]
-      [Tooltip("The file path to load the camera parameters.")]
+      [Tooltip("The file path to load the camera parameters")]
       private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
-
-      [SerializeField]
-      [Tooltip("If estimatePose is false, the CameraImageTexture will be displayed on this canvas")]
-      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
 
       [SerializeField]
       [Tooltip("The Unity camera that will capture the CameraPlane display")]
@@ -60,6 +56,10 @@ namespace ArucoUnity
       [Tooltip("The plane facing the camera that display the CameraImageTexture")]
       private GameObject cameraPlane;
 
+      [SerializeField]
+      [Tooltip("If EstimatePose is false, the CameraImageTexture will be displayed on this canvas")]
+      private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
+
       [Header("Pose estimation configuration")]
       [SerializeField]
       [Tooltip("Estimate the detected markers pose (position, rotation)")]
@@ -68,27 +68,9 @@ namespace ArucoUnity
       [SerializeField]
       private MarkerObjectsController markerObjectsController;
 
-      // Events
-      // TODO: OnMarkerDetected, OnMarkerTracked, OnMarkerLost 
-
       // Properties
 
       // Detection configuration properties
-      /// <summary>
-      /// The dictionary to use for the marker detection.
-      /// </summary>
-      public Dictionary Dictionary { get; set; }
-
-      /// <summary>
-      /// The parameters to use for the marker detection.
-      /// </summary>
-      public DetectorParameters DetectorParameters { get; set; }
-
-      /// <summary>
-      /// The side length of the markers that will be detected (in meters). This also is the scale factor of the <see cref="DetectedMarkersObject"/>.
-      /// </summary>
-      public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
-
       /// <summary>
       /// Display the detected markers in the <see cref="ArucoDetector.CameraImageTexture"/>.
       /// </summary>
@@ -99,29 +81,15 @@ namespace ArucoUnity
       /// </summary>
       public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
-      // Pose estimation properties
-      /// <summary>
-      /// Estimate the detected markers pose (position, rotation).
-      /// </summary>
-      public bool EstimatePose { get { return estimatePose; } set { EstimatePose = value; } }
-
-      public MarkerObjectsController MarkerObjectsController { get { return markerObjectsController; } set { markerObjectsController = value; } }
-
-      // Variables
-
-      protected CameraParameters cameraParameters;
-      protected bool displayMarkerObjects = false;
-
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populate the <see cref="ArucoDetector"/> parent class properties.
+      /// Set up <see cref="ArucoDetector.CameraDeviceController"/>. 
       /// </summary>
-      protected void Awake()
+      protected override void OnEnable()
       {
         CameraDeviceController = cameraDeviceController;
-        Camera = camera;
-        CameraPlane = cameraPlane;
+        base.OnEnable();
       }
 
       /// <summary>
@@ -131,9 +99,8 @@ namespace ArucoUnity
       {
         if (Configurated)
         {
-          VectorVectorPoint2f corners;
           VectorInt ids;
-          VectorVectorPoint2f rejectedImgPoints;
+          VectorVectorPoint2f corners, rejectedImgPoints;
           VectorVec3d rvecs, tvecs;
           Mat image;
 
@@ -142,38 +109,30 @@ namespace ArucoUnity
         }
       }
 
-      // Methods
+      // ArucoDetector Methods
 
       /// <summary>
-      /// Set up the detection and the results display.
+      /// Set up the <see cref="ArucoDetector"/> parent class properties.
       /// </summary>
-      protected override void Configurate()
+      protected override void PreConfigurate()
       {
-        // Set the detector parameters and the dictionary
-        DetectorParameters = detectorParametersManager.detectorParameters;
+        // Configurate detection properties
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        DetectorParameters = detectorParametersManager.detectorParameters;
+        MarkerSideLength = markerSideLength;
 
-        // Try to load the camera parameters
-        if (EstimatePose)
-        {
-          bool cameraParametersLoaded = CameraDeviceController.ActiveCameraDevice.LoadCameraParameters(cameraParametersFilePath);
-          cameraParameters = CameraDeviceController.ActiveCameraDevice.CameraParameters;
-          EstimatePose &= cameraParametersLoaded;
-        }
+        // Configurate camera properties
+        Camera = camera;
+        CameraPlane = cameraPlane;
+        CameraDeviceCanvasDisplay = cameraDeviceCanvasDisplay;
+        CameraParametersFilePath = cameraParametersFilePath;
 
-        // Configurate the camera-plane group xor the canvas
-        if (EstimatePose)
-        {
-          ConfigurateCameraPlane();
-          if (CameraPlaneConfigurated)
-          {
-            MarkerObjectsController.SetCamera(Camera, cameraParameters);
-            MarkerObjectsController.MarkerSideLength = MarkerSideLength;
-          }
-        }
-        cameraPlane.gameObject.SetActive(EstimatePose && CameraPlaneConfigurated);
-        cameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !CameraPlaneConfigurated);
+        // Configurate pose estimation properties
+        EstimatePose = estimatePose;
+        MarkerObjectsController = markerObjectsController;
       }
+
+      // Methods
 
       /// <summary>
       /// Detect the markers on the <see cref="ArucoDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
