@@ -164,6 +164,7 @@ namespace ArucoUnity
         {
           displayMarkerObjects = ConfigurateCameraPlane();
           MarkerObjectsController.SetCamera(Camera, cameraParameters);
+          MarkerObjectsController.MarkerSideLength = MarkerSideLength;
         }
         cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
         cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
@@ -209,7 +210,7 @@ namespace ArucoUnity
         MarkerObjectsController.DeactivateMarkerObjects();
         if (estimatePose && displayMarkerObjects)
         {
-          MarkerObjectsController.UpdateTransforms(ids, markerSideLength, rvecs, tvecs);
+          MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
         }
 
         // Draw rejected marker candidates

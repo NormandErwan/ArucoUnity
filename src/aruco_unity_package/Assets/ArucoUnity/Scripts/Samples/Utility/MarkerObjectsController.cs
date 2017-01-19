@@ -16,21 +16,55 @@ namespace ArucoUnity
         // Editor fields
 
         [SerializeField]
-        [Tooltip("The default object to place above the detected markers")]
-        private GameObject defaultMarkerObject;
+        [Tooltip("The default game object to place above the detected markers")]
+        private GameObject defaultTrackedGameObject;
 
         // Properties
 
         /// <summary>
-        /// The object to place above the detected markers.
+        /// The default game object to place above the detected markers.
         /// </summary>
-        public GameObject DefaultMarkerObject { get { return defaultMarkerObject; } set { defaultMarkerObject = value; } }
+        public GameObject DefaultTrackedGameObject { get { return defaultTrackedGameObject; } set { defaultTrackedGameObject = value; } }
+
+        public float MarkerSideLength
+        {
+          get { return markerSideLength; }
+          set
+          {
+            // Update value
+            float oldMarkerSideLength = markerSideLength;
+            markerSideLength = value;
+
+            // Resize all the marker objects
+            foreach (var markerObject in trackedMarkers)
+            {
+              UpdateLocalScales(markerSideLength, markerObject.Value.gameObject.transform, oldMarkerSideLength);
+            }
+            foreach (var markerObject in defaultTrackedMarkerObjects)
+            {
+              UpdateLocalScales(markerSideLength, markerObject.Value.gameObject.transform, oldMarkerSideLength);
+            }
+          }
+        }
 
         // Variables
 
-        protected Dictionary<int, GameObject> activeMarkerObjects;
+        protected Dictionary<int, TrackedMarker> trackedMarkers;
+        protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
         protected new Camera camera;
         protected CameraParameters cameraParameters;
+        private float markerSideLength;
+
+        // MonoBehaviour methods
+
+        /// <summary>
+        /// Initialize the variables.
+        /// </summary>
+        protected void Awake()
+        {
+          trackedMarkers = new Dictionary<int, TrackedMarker>();
+          defaultTrackedMarkerObjects = new Dictionary<int, GameObject>();
+        }
 
         // Methods
 
@@ -40,17 +74,35 @@ namespace ArucoUnity
           this.cameraParameters = cameraParameters;
         }
 
+        public void AddTrackedMarker(TrackedMarker newTrackedMarker)
+        {
+          // Return if already added
+          foreach(var trackedMarker in trackedMarkers)
+          {
+            if (trackedMarker.Value == newTrackedMarker)
+            {
+              return;
+            }
+          }
+
+          // Add the new tracked marker, rescale to the marker size and hide it
+          trackedMarkers.Add(newTrackedMarker.MarkerId, newTrackedMarker);
+          UpdateLocalScales(MarkerSideLength, newTrackedMarker.gameObject.transform);
+          newTrackedMarker.gameObject.SetActive(false);
+        }
+
         /// <summary>
         /// Hide all the marker objects.
         /// </summary>
         public void DeactivateMarkerObjects()
         {
-          if (activeMarkerObjects != null)
+          foreach (var markerObject in trackedMarkers)
           {
-            foreach (var markerObject in activeMarkerObjects)
-            {
-              markerObject.Value.SetActive(false);
-            }
+            markerObject.Value.gameObject.SetActive(false);
+          }
+          foreach (var markerObject in defaultTrackedMarkerObjects)
+          {
+            markerObject.Value.gameObject.SetActive(false);
           }
         }
 
@@ -60,28 +112,34 @@ namespace ArucoUnity
         /// <param name="ids">Vector of identifiers of the detected markers.</param>
         /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
         /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
-        public void UpdateTransforms(VectorInt ids, float markerSideLength, VectorVec3d rvecs, VectorVec3d tvecs)
+        public void UpdateTransforms(VectorInt ids, VectorVec3d rvecs, VectorVec3d tvecs)
         {
-          // Create the marker objects table
-          if (activeMarkerObjects == null)
-          {
-            activeMarkerObjects = new Dictionary<int, GameObject>();
-          }
-
-          // Show the active marker objects
           for (uint i = 0; i < ids.Size(); i++)
           {
-            // Retrieve the associated object for this marker or create it
-            GameObject markerObject;
-            if (!activeMarkerObjects.TryGetValue(ids.At(i), out markerObject))
+            int markerId = ids.At(i);
+            GameObject markerObject = null;
+
+            // Try to retrieve the associated tracked marker
+            TrackedMarker trackedMarker;
+            if (trackedMarkers.TryGetValue(markerId, out trackedMarker))
             {
-              markerObject = Instantiate(DefaultMarkerObject);
-              markerObject.name = ids.At(i).ToString();
-              markerObject.transform.SetParent(this.transform);
+              markerObject = trackedMarker.gameObject;
+            }
 
-              markerObject.transform.localScale = markerObject.transform.localScale * markerSideLength; // Rescale to the marker size
+            if (markerObject == null)
+            {
+              // Instantiate the default tracked game object for the current tracked marker
+              if (!defaultTrackedMarkerObjects.TryGetValue(markerId, out markerObject))
+              {
+                // If not found, instantiate it
+                markerObject = Instantiate(DefaultTrackedGameObject);
+                markerObject.name = markerId.ToString();
+                markerObject.transform.SetParent(this.transform);
 
-              activeMarkerObjects.Add(ids.At(i), markerObject);
+                UpdateLocalScales(MarkerSideLength, markerObject.transform);
+
+                defaultTrackedMarkerObjects.Add(markerId, markerObject);
+              }
             }
 
             // Place and orient the object to match the marker
@@ -101,6 +159,19 @@ namespace ArucoUnity
               + "; positionShift: " + (markerObject.transform.rotation * opticalShift).ToString("F4"));
 
             markerObject.SetActive(true);
+          }
+        }
+
+        private void UpdateLocalScales(float markerSideLength, Transform markerObjectTransform, float oldMarkerSideLength = 1f)
+        {
+          if (oldMarkerSideLength != 0)
+          {
+            markerObjectTransform.localScale /= oldMarkerSideLength;
+          }
+
+          if (markerSideLength != 0)
+          {
+            markerObjectTransform.localScale *= markerSideLength;
           }
         }
       }
