@@ -36,7 +36,7 @@ namespace ArucoUnity
       private bool showDetectedMarkers = true;
 
       [SerializeField]
-      [Tooltip("Display the rejected markers candidates.")]
+      [Tooltip("Display the rejected markers candidates")]
       private bool showRejectedCandidates = false;
 
       [Header("Camera configuration")]
@@ -73,7 +73,7 @@ namespace ArucoUnity
 
       // Properties
 
-      // Detection properties
+      // Detection configuration properties
       /// <summary>
       /// The dictionary to use for the marker detection.
       /// </summary>
@@ -90,7 +90,7 @@ namespace ArucoUnity
       public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
 
       /// <summary>
-      /// Display the detected markers in the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>.
+      /// Display the detected markers in the <see cref="ArucoDetector.CameraImageTexture"/>.
       /// </summary>
       public bool ShowDetectedMarkers { get { return showDetectedMarkers; } set { showDetectedMarkers = value; } }
 
@@ -115,7 +115,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populate the CameraDeviceMarkersDetector base class properties.
+      /// Populate the <see cref="ArucoDetector"/> parent class properties.
       /// </summary>
       protected void Awake()
       {
@@ -135,8 +135,10 @@ namespace ArucoUnity
           VectorInt ids;
           VectorVectorPoint2f rejectedImgPoints;
           VectorVec3d rvecs, tvecs;
+          Mat image;
 
-          Detect(out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs);
+          Detect(out corners, out ids, out rejectedImgPoints, out rvecs, out tvecs, out image);
+          ShowResults(corners, ids, rejectedImgPoints, rvecs, tvecs, image);
         }
       }
 
@@ -171,7 +173,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect the markers on the <see cref="CameraDeviceMarkersDetector.CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
+      /// Detect the markers on the <see cref="ArucoDetector.CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
       /// after the update of the CameraImageTexture.
       /// </summary>
       /// <param name="corners">Vector of the detected marker corners.</param>
@@ -179,17 +181,17 @@ namespace ArucoUnity
       /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification.</param>
       /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
       /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
-      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs, 
-        out VectorVec3d tvecs)
+      public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs,
+        out VectorVec3d tvecs, out Mat image)
       {
         // Copy the bytes of the texture to the image
         byte[] imageData = CameraImageTexture.GetRawTextureData();
 
         // Detect markers
-        Mat image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
+        image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
-        // Estimate board pose
+        // Estimate markers pose
         if (EstimatePose && ids.Size() > 0)
         {
           Functions.EstimatePoseSingleMarkers(corners, MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
@@ -199,11 +201,21 @@ namespace ArucoUnity
           rvecs = null;
           tvecs = null;
         }
+      }
 
-        // Draw the detected markers
-        if (ids.Size() > 0 && ShowDetectedMarkers)
+      public void ShowResults(VectorVectorPoint2f corners, VectorInt ids, VectorVectorPoint2f rejectedImgPoints, VectorVec3d rvecs,
+        VectorVec3d tvecs, Mat image)
+      {
+        // Draw the detected markers and the rejected marker candidates
+        if (ShowDetectedMarkers && ids.Size() > 0)
         {
           Functions.DrawDetectedMarkers(image, corners, ids);
+        }
+
+        // Draw rejected marker candidates
+        if (ShowRejectedCandidates && rejectedImgPoints.Size() > 0)
+        {
+          Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
         // Show the marker objects
@@ -211,12 +223,6 @@ namespace ArucoUnity
         if (EstimatePose && displayMarkerObjects)
         {
           MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
-        }
-
-        // Draw rejected marker candidates
-        if (ShowRejectedCandidates && rejectedImgPoints.Size() > 0)
-        {
-          Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
         // Undistord the image if calibrated
