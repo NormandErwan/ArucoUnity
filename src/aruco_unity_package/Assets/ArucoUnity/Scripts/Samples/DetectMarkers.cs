@@ -176,7 +176,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect the markers on the <see cref="ArucoDetector.CameraImageTexture"/>, estimate their poses, and show results. Should be called during LateUpdate(),
+      /// Detect the markers on the <see cref="ArucoDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
       /// after the update of the CameraImageTexture.
       /// </summary>
       /// <param name="corners">Vector of the detected marker corners.</param>
@@ -184,6 +184,7 @@ namespace ArucoUnity
       /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification.</param>
       /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
       /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
+      /// <param name="image">The OpenCV's Mat image used for the detection, created from <see cref="ArucoDetector.CameraImageTexture"/>.</param>
       public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs,
         out VectorVec3d tvecs, out Mat image)
       {
@@ -206,6 +207,16 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Show the results of the detected markers 
+      /// from <see cref="Detect(out VectorVectorPoint2f, out VectorInt, out VectorVectorPoint2f, out VectorVec3d, out VectorVec3d, out Mat)"/>.
+      /// </summary>
+      /// <param name="corners">Vector of the detected marker corners by Detect().</param>
+      /// <param name="ids">Vector of identifiers of the detected markers by Detect().</param>
+      /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification by Detect().</param>
+      /// <param name="rvecs">Vector of rotation vectors of the detected markers by Detect().</param>
+      /// <param name="tvecs">Vector of translation vectors of the detected markers by Detect().</param>
+      /// <param name="image">The image used for the detection returned by Detect().</param>
       public void ShowResults(VectorVectorPoint2f corners, VectorInt ids, VectorVectorPoint2f rejectedImgPoints, VectorVec3d rvecs, 
         VectorVec3d tvecs, Mat image)
       {
