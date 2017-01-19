@@ -72,6 +72,11 @@ namespace ArucoUnity
         /// </summary>
         public GameObject CameraPlane { get; protected set; }
 
+        /// <summary>
+        /// The result of the last <see cref="CameraPlaneConfigurated"/> call.
+        /// </summary>
+        public bool CameraPlaneConfigurated { get; protected set; }
+
         // Variables
 
         private CameraDeviceController cameraDeviceControllerValue = null;
@@ -84,6 +89,7 @@ namespace ArucoUnity
         protected virtual void OnEnable()
         {
           Configurated = false;
+          CameraPlaneConfigurated = false;
 
           if (cameraDeviceControllerValue != null)
           {
@@ -118,6 +124,7 @@ namespace ArucoUnity
         {
           // Configurate the CameraImageTexture
           Configurated = false;
+          CameraPlaneConfigurated = false;
           CameraImageTexture = activeCameraDevice.Texture2D;
 
           // Configurate content
@@ -159,7 +166,7 @@ namespace ArucoUnity
           {
             Debug.LogError(gameObject.name + ": unable to configurate the camera and the facing plane. The following properties must be set: Camera"
               + " and CameraPlane.");
-            return false;
+            return CameraPlaneConfigurated = false;
           }
 
           // Configurate the camera according to the camera parameters
@@ -178,7 +185,7 @@ namespace ArucoUnity
           CameraPlane.GetComponent<MeshFilter>().mesh = CameraDeviceController.ActiveCameraDevice.ImageMesh;
           CameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
 
-          return true;
+          return CameraPlaneConfigurated = true;
         }
       }
     }

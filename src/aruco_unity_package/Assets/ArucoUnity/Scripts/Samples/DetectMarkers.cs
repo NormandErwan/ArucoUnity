@@ -164,12 +164,15 @@ namespace ArucoUnity
         // Configurate the camera-plane group xor the canvas
         if (EstimatePose)
         {
-          displayMarkerObjects = ConfigurateCameraPlane();
-          MarkerObjectsController.SetCamera(Camera, cameraParameters);
-          MarkerObjectsController.MarkerSideLength = MarkerSideLength;
+          ConfigurateCameraPlane();
+          if (CameraPlaneConfigurated)
+          {
+            MarkerObjectsController.SetCamera(Camera, cameraParameters);
+            MarkerObjectsController.MarkerSideLength = MarkerSideLength;
+          }
         }
-        cameraPlane.gameObject.SetActive(EstimatePose && displayMarkerObjects);
-        cameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !displayMarkerObjects);
+        cameraPlane.gameObject.SetActive(EstimatePose && CameraPlaneConfigurated);
+        cameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !CameraPlaneConfigurated);
       }
 
       /// <summary>
@@ -203,7 +206,7 @@ namespace ArucoUnity
         }
       }
 
-      public void ShowResults(VectorVectorPoint2f corners, VectorInt ids, VectorVectorPoint2f rejectedImgPoints, VectorVec3d rvecs,
+      public void ShowResults(VectorVectorPoint2f corners, VectorInt ids, VectorVectorPoint2f rejectedImgPoints, VectorVec3d rvecs, 
         VectorVec3d tvecs, Mat image)
       {
         // Draw the detected markers and the rejected marker candidates
@@ -220,7 +223,7 @@ namespace ArucoUnity
 
         // Show the marker objects
         MarkerObjectsController.DeactivateMarkerObjects();
-        if (EstimatePose && displayMarkerObjects)
+        if (EstimatePose && CameraPlaneConfigurated)
         {
           MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
         }
