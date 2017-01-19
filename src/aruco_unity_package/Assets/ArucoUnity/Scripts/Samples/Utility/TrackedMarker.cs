@@ -25,11 +25,13 @@ namespace ArucoUnity
 
         public int MarkerId { get { return markerId; } set { markerId = value; } }
 
+        public MarkerObjectsController MarkerObjectsController { get { return markerObjectsController; } set { markerObjectsController = value; } }
+
         // MonoBehaviour methods
 
         protected void Start()
         {
-          markerObjectsController.AddTrackedMarker(this);
+          MarkerObjectsController.AddTrackedMarker(this);
         }
       }
     }

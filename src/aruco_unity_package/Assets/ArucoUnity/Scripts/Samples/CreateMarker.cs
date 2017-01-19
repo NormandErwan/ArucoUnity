@@ -97,7 +97,7 @@ namespace ArucoUnity
       public override void Create()
       {
         Mat image = new Mat();
-        Dictionary.DrawMarker(markerId, markerSize, ref image, markerBorderBits);
+        Dictionary.DrawMarker(MarkerId, MarkerSize, ref image, MarkerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);

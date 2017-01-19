@@ -132,13 +132,13 @@ namespace ArucoUnity
       public override void Create()
       {
         Size = new Size();
-        Size.width = markersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
-        Size.height = markersNumberY * (markerSideLength + markerSeparation) - markerSeparation + 2 * marginsSize;
+        Size.width = MarkersNumberX * (MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
+        Size.height = MarkersNumberY * (MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
 
-        Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
+        Board = GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
 
         Mat image;
-        Board.Draw(Size, out image, marginsSize, markerBorderBits);
+        Board.Draw(Size, out image, MarginsSize, MarkerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);

@@ -130,13 +130,13 @@ namespace ArucoUnity
       public override void Create()
       {
         Size = new Size();
-        Size.width = squaresNumberX * squareSideLength + 2 * marginsSize;
-        Size.height = squaresNumberY * squareSideLength + 2 * marginsSize;
+        Size.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;
+        Size.height = SquaresNumberY * SquareSideLength + 2 * MarginsSize;
 
-        Board = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
+        Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
 
         Mat image;
-        Board.Draw(Size, out image, marginsSize, markerBorderBits);
+        Board.Draw(Size, out image, MarginsSize, MarkerBorderBits);
         Image = image;
 
         ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);

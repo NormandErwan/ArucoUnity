@@ -165,7 +165,7 @@ namespace ArucoUnity
         image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
-        if (applyRefineStrategy)
+        if (ApplyRefineStrategy)
         {
           Functions.RefineDetectedMarkers(image, CharucoBoard, corners, ids, rejectedImgPoints);
         }
@@ -222,7 +222,7 @@ namespace ArucoUnity
         }
       }
 
-      public void Calibrate(string arucoCameraParametersFilePath, string charucoCameraParametersFilePath)
+      public void Calibrate()
       {
         if (AllIds.Size() < 1)
         {
@@ -237,7 +237,7 @@ namespace ArucoUnity
 
         if ((CalibrationFlags & CALIB.FIX_ASPECT_RATIO) == CALIB.FIX_ASPECT_RATIO)
         {
-          cameraMatrix = new Mat(3, 3, TYPE.CV_64F, new double[9] { fixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+          cameraMatrix = new Mat(3, 3, TYPE.CV_64F, new double[9] { FixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
         }
 
         // Prepare data for calibration
@@ -270,12 +270,12 @@ namespace ArucoUnity
           ImageHeight = ImageSize.height,
           ImageWidth = ImageSize.width,
           CalibrationFlags = (int)CalibrationFlags,
-          FixAspectRatio = fixAspectRatio,
+          FixAspectRatio = FixAspectRatio,
           ReprojectionError = arucoCalibrationReprojectionError,
           CameraMatrix = cameraMatrix,
           DistCoeffs = distCoeffs
         };
-        ArucoCameraParameters.SaveToXmlFile(charucoCameraParametersFilePath);
+        ArucoCameraParameters.SaveToXmlFile(ArucoCameraParametersFilePath);
 
         // Interpolate charuco corners using camera parameters
         AllCharucoCorners = new VectorMat();
@@ -307,12 +307,12 @@ namespace ArucoUnity
           ImageHeight = ImageSize.height,
           ImageWidth = ImageSize.width,
           CalibrationFlags = (int)CalibrationFlags,
-          FixAspectRatio = fixAspectRatio,
+          FixAspectRatio = FixAspectRatio,
           ReprojectionError = charucoCalibrationReprojectionError,
           CameraMatrix = cameraMatrix,
           DistCoeffs = distCoeffs
         };
-        CharucoCameraParameters.SaveToXmlFile(charucoCameraParametersFilePath);
+        CharucoCameraParameters.SaveToXmlFile(CharucoCameraParametersFilePath);
       }
 
       // Editor button onclick listeners
@@ -323,7 +323,7 @@ namespace ArucoUnity
 
       private void CalibrateFromEditor()
       {
-        Calibrate(arucoCameraParametersFilePath, charucoCameraParametersFilePath);
+        Calibrate();
 
         if (calibrate == true)
         {
@@ -359,15 +359,15 @@ namespace ArucoUnity
       private void ConfigurateCalibrationFlags()
       {
         CalibrationFlags = 0;
-        if (assumeZeroTangentialDistorsion)
+        if (AssumeZeroTangentialDistorsion)
         {
           CalibrationFlags |= CALIB.ZERO_TANGENT_DIST;
         }
-        if (fixAspectRatio > 0)
+        if (FixAspectRatio > 0)
         {
           CalibrationFlags |= CALIB.FIX_ASPECT_RATIO;
         }
-        if (fixPrincipalPointAtCenter)
+        if (FixPrincipalPointAtCenter)
         {
           CalibrationFlags |= CALIB.FIX_PRINCIPAL_POINT;
         }

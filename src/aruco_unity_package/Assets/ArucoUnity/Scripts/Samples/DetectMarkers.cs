@@ -103,7 +103,7 @@ namespace ArucoUnity
       /// <summary>
       /// Estimate the detected markers pose (position, rotation).
       /// </summary>
-      public bool EstimatePose { get { return estimatePose; } set { estimatePose = value; } }
+      public bool EstimatePose { get { return estimatePose; } set { EstimatePose = value; } }
 
       public MarkerObjectsController MarkerObjectsController { get { return markerObjectsController; } set { markerObjectsController = value; } }
 
@@ -152,22 +152,22 @@ namespace ArucoUnity
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
         // Try to load the camera parameters
-        if (estimatePose)
+        if (EstimatePose)
         {
           bool cameraParametersLoaded = CameraDeviceController.ActiveCameraDevice.LoadCameraParameters(cameraParametersFilePath);
           cameraParameters = CameraDeviceController.ActiveCameraDevice.CameraParameters;
-          estimatePose &= cameraParametersLoaded;
+          EstimatePose &= cameraParametersLoaded;
         }
 
         // Configurate the camera-plane group xor the canvas
-        if (estimatePose)
+        if (EstimatePose)
         {
           displayMarkerObjects = ConfigurateCameraPlane();
           MarkerObjectsController.SetCamera(Camera, cameraParameters);
           MarkerObjectsController.MarkerSideLength = MarkerSideLength;
         }
-        cameraPlane.gameObject.SetActive(estimatePose && displayMarkerObjects);
-        cameraDeviceCanvasDisplay.gameObject.SetActive(!estimatePose || !displayMarkerObjects);
+        cameraPlane.gameObject.SetActive(EstimatePose && displayMarkerObjects);
+        cameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !displayMarkerObjects);
       }
 
       /// <summary>
@@ -190,9 +190,9 @@ namespace ArucoUnity
         Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
         // Estimate board pose
-        if (estimatePose && ids.Size() > 0)
+        if (EstimatePose && ids.Size() > 0)
         {
-          Functions.EstimatePoseSingleMarkers(corners, markerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+          Functions.EstimatePoseSingleMarkers(corners, MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
         }
         else
         {
@@ -201,27 +201,27 @@ namespace ArucoUnity
         }
 
         // Draw the detected markers
-        if (ids.Size() > 0 && showDetectedMarkers)
+        if (ids.Size() > 0 && ShowDetectedMarkers)
         {
           Functions.DrawDetectedMarkers(image, corners, ids);
         }
 
         // Show the marker objects
         MarkerObjectsController.DeactivateMarkerObjects();
-        if (estimatePose && displayMarkerObjects)
+        if (EstimatePose && displayMarkerObjects)
         {
           MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
         }
 
         // Draw rejected marker candidates
-        if (showRejectedCandidates && rejectedImgPoints.Size() > 0)
+        if (ShowRejectedCandidates && rejectedImgPoints.Size() > 0)
         {
           Functions.DrawDetectedMarkers(image, rejectedImgPoints, new Color(100, 0, 255));
         }
 
         // Undistord the image if calibrated
         Mat undistordedImage, finalImage;
-        if (estimatePose)
+        if (EstimatePose)
         {
           Imgproc.Undistord(image, out undistordedImage, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs);
           finalImage = undistordedImage;
