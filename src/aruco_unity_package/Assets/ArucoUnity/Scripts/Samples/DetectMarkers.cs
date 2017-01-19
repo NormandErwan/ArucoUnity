@@ -25,7 +25,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The parameters to use for the marker detection")]
-      private DetectorParametersManager detectorParametersManager;
+      private DetectorParametersController detectorParametersManager;
 
       [SerializeField]
       [Tooltip("The side length of the markers that will be detected (in meters). This also is the scale factor of the DetectedMarkersObject")]

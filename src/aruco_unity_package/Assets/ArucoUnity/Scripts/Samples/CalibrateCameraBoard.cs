@@ -36,7 +36,7 @@ namespace ArucoUnity
 
       [Header("Calibration configuration")]
       [SerializeField]
-      private DetectorParametersManager detectorParametersManager;
+      private DetectorParametersController detectorParametersManager;
 
       [SerializeField]
       private bool applyRefineStrategy = false;
