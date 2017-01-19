@@ -31,7 +31,11 @@ namespace ArucoUnity
 
         protected void Start()
         {
-          MarkerObjectsController.AddTrackedMarker(this);
+          // TODO: update when MarkerId and MarkerObjectsController are changed
+          if (MarkerObjectsController.isActiveAndEnabled)
+          {
+            MarkerObjectsController.AddTrackedMarker(this);
+          }
         }
       }
     }
