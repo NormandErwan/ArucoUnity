@@ -56,7 +56,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("If EstimatePose is false, the CameraImageTexture will be displayed on this canvas")]
-    private CameraDeviceCanvasDisplay cameraDeviceCanvasDisplay;
+    private ArucoCameraCanvasDisplay arucoCameraCanvasDisplay;
 
     [Header("Pose estimation configuration")]
     [SerializeField]
@@ -122,7 +122,7 @@ namespace ArucoUnity
       // Configurate camera properties
       Camera = camera;
       CameraPlane = cameraPlane;
-      CameraDeviceCanvasDisplay = cameraDeviceCanvasDisplay;
+      ArucoCameraCanvasDisplay = arucoCameraCanvasDisplay;
       CameraParametersFilePath = cameraParametersFilePath;
 
       // Configurate pose estimation properties
