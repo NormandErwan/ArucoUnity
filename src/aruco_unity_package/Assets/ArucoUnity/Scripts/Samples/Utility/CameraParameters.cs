@@ -1,8 +1,9 @@
-﻿using System;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
+using UnityEngine;
+using System;
 using System.IO;
 using System.Xml.Serialization;
-using ArucoUnity.Utility.cv;
-using UnityEngine;
 
 namespace ArucoUnity
 {

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
-using ArucoUnity.Utility.cv;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
 using ArucoUnity.Samples.Utility;
+using UnityEngine;
 
 namespace ArucoUnity
 {

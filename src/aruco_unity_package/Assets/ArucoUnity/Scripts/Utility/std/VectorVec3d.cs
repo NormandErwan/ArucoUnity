@@ -1,12 +1,12 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Utility.cv;
+using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  namespace Plugin
   {
     namespace std
     {

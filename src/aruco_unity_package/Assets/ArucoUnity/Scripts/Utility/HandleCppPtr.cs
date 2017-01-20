@@ -5,7 +5,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  namespace Plugin
   {
     public abstract class HandleCppPtr
     {

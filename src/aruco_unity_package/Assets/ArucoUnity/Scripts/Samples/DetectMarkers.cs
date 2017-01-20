@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using ArucoUnity.Utility.cv;
-using ArucoUnity.Utility.std;
+﻿using UnityEngine;
+using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
+using ArucoUnity.Plugin.std;
 using ArucoUnity.Samples.Utility;
 
 namespace ArucoUnity

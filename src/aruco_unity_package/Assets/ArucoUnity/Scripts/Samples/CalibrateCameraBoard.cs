@@ -1,8 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using ArucoUnity.Utility.cv;
-using ArucoUnity.Utility.std;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
+using ArucoUnity.Plugin.std;
 using ArucoUnity.Samples.Utility;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace ArucoUnity
 {

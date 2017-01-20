@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin.std;
+using UnityEngine;
 using System.Collections.Generic;
-using ArucoUnity.Utility.std;
 
 namespace ArucoUnity
 {
