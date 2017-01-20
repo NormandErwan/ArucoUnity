@@ -19,6 +19,10 @@ namespace ArucoUnity
       [Tooltip("The id of the camera device to use.")]
       private int deviceId = 0;
 
+      [SerializeField]
+      [Tooltip("Start the camera automatically after configured it.")]
+      private bool autoStart = true;
+
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -121,9 +125,28 @@ namespace ArucoUnity
       /// </summary>
       public WebCamTexture WebCamTexture { get; protected set; }
 
+      /// <summary>
+      /// The id of the camera device to use.
+      /// </summary>
       public int DeviceId { get { return deviceId; } set { deviceId = value; } }
 
+      /// <summary>
+      /// Start the camera automatically after configured it.
+      /// </summary>
+      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
+
       // MonoBehaviour methods
+
+      /// <summary>
+      /// Configure the selected camera device if <see cref="AutoStart"/> is true.
+      /// </summary>
+      protected void Start()
+      {
+        if (AutoStart)
+        {
+          Configure();
+        }
+      }
 
       /// <summary>
       /// Make adjustments to image every frame to be safe, since Unity isn't 
@@ -170,14 +193,14 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configurate the camera device and its textures.
+      /// Configure the camera device with the id <see cref="DeviceId"/> and its properties.
       /// </summary>
       /// <returns>If the operation has been successfull.</returns>
-      public override bool Configurate()
+      public override bool Configure()
       {
         if (Started)
         {
-          Debug.LogError(gameObject.name + ": Stop the camera to configurate it.");
+          Debug.LogError(gameObject.name + ": Stop the camera to configure it.");
           return false;
         }
 
@@ -192,6 +215,11 @@ namespace ArucoUnity
         // Switch the camera device
         WebCamDevice = webcamDevices[DeviceId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
+
+        if (AutoStart)
+        {
+          StartCamera();
+        }
 
         return true;
       }

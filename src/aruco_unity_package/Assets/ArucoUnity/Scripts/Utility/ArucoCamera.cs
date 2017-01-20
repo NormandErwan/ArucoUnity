@@ -75,10 +75,10 @@ namespace ArucoUnity
       public abstract bool LoadCameraParameters(string cameraParametersFilePath);
 
       /// <summary>
-      /// Configurate the camera and its texture.
+      /// Configure the camera and its properties.
       /// </summary>
       /// <returns>If the operation has been successfull.</returns>
-      public abstract bool Configurate();
+      public abstract bool Configure();
 
       /// <summary>
       /// Start the camera.
