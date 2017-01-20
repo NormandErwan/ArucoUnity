@@ -114,7 +114,7 @@ namespace ArucoUnity
 
     void LateUpdate() // TODO: to factor
     {
-      if (Configurated)
+      if (Configured)
       {
         Mat image;
         VectorInt ids;

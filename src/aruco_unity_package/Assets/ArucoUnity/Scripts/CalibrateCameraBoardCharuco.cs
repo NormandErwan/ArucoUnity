@@ -127,7 +127,7 @@ namespace ArucoUnity
 
     void LateUpdate()
     {
-      if (Configurated)
+      if (Configured)
       {
         VectorInt ids;
         VectorVectorPoint2f corners, rejectedImgPoints;

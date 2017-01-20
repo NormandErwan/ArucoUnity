@@ -18,7 +18,7 @@ namespace ArucoUnity
       public delegate void CameraDeviceMakersDetectorAction();
 
       /// <summary>
-      /// Executed when the detector is ready and configurated.
+      /// Executed when the detector is ready and configured.
       /// </summary>
       public event CameraDeviceMakersDetectorAction OnConfigurated;
 
@@ -26,14 +26,14 @@ namespace ArucoUnity
 
       // State properties
       /// <summary>
-      /// True when the detector is ready and configurated.
+      /// True when the detector is ready and configured.
       /// </summary>
-      public bool Configurated { get; protected set; }
+      public bool Configured { get; protected set; }
 
       /// <summary>
-      /// The result of the last <see cref="CameraPlaneConfigurated"/> call.
+      /// The result of the last <see cref="ConfigureCameraPlane"/> call.
       /// </summary>
-      public bool CameraPlaneConfigurated { get; protected set; }
+      public bool CameraPlaneConfigured { get; protected set; }
 
       // Detection configuration properties
       /// <summary>
@@ -66,21 +66,21 @@ namespace ArucoUnity
         set
         {
           // Reset configuration
-          Configurated = false;
-          CameraPlaneConfigurated = false;
+          Configured = false;
+          CameraPlaneConfigured = false;
 
           // Unsubscribe from the previous ArucoCamera
           if (arucoCameraValue != null)
           {
-            arucoCameraValue.OnStarted -= Configurate;
+            arucoCameraValue.OnStarted -= Configure;
           }
 
           // Subscribe to the new ArucoCamera
           arucoCameraValue = value;
-          arucoCameraValue.OnStarted += Configurate;
+          arucoCameraValue.OnStarted += Configure;
           if (ArucoCamera != null && ArucoCamera.Started)
           {
-            Configurate();
+            Configure();
           }
         }
       }
@@ -102,7 +102,7 @@ namespace ArucoUnity
       public GameObject CameraPlane { get; set; }
 
       /// <summary>
-      /// If <see cref="EstimatePose "/> or <see cref="CameraPlaneConfigurated"/> is false, the CameraImageTexture will be displayed on this canvas.
+      /// If <see cref="EstimatePose "/> or <see cref="CameraPlaneConfigured"/> is false, the CameraImageTexture will be displayed on this canvas.
       /// </summary>
       public CameraDeviceCanvasDisplay CameraDeviceCanvasDisplay { get; set; }
 
@@ -127,10 +127,10 @@ namespace ArucoUnity
       {
         if (ArucoCamera != null)
         {
-          ArucoCamera.OnStarted += Configurate;
+          ArucoCamera.OnStarted += Configure;
           if (ArucoCamera != null && ArucoCamera.Started)
           {
-            Configurate();
+            Configure();
           }
         }
       }
@@ -140,13 +140,13 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnDisable()
       {
-        Configurated = false;
-        CameraPlaneConfigurated = false;
+        Configured = false;
+        CameraPlaneConfigured = false;
         CameraImageTexture = null;
 
         if (ArucoCamera != null)
         {
-          ArucoCamera.OnStarted -= Configurate;
+          ArucoCamera.OnStarted -= Configure;
         }
       }
 
@@ -161,11 +161,11 @@ namespace ArucoUnity
       /// Configure the detection and the results display.
       /// </summary>
       /// <param name="activeCameraDevice">The current active camera device.</param>
-      private void Configurate()
+      private void Configure()
       {
         // Set properties
-        Configurated = false;
-        CameraPlaneConfigurated = false;
+        Configured = false;
+        CameraPlaneConfigured = false;
         CameraImageTexture = ArucoCamera.Texture2D;
 
         // Execute the derived classes' configuration
@@ -181,8 +181,8 @@ namespace ArucoUnity
         // Configurate the camera-plane group xor the canvas
         if (EstimatePose)
         {
-          ConfigurateCameraPlane();
-          if (CameraPlaneConfigurated)
+          ConfigureCameraPlane();
+          if (CameraPlaneConfigured)
           {
             MarkerObjectsController.SetCamera(Camera, ArucoCamera.CameraParameters);
             MarkerObjectsController.MarkerSideLength = MarkerSideLength;
@@ -190,11 +190,11 @@ namespace ArucoUnity
         }
         if (CameraPlane != null)
         {
-          CameraPlane.gameObject.SetActive(EstimatePose && CameraPlaneConfigurated);
+          CameraPlane.gameObject.SetActive(EstimatePose && CameraPlaneConfigured);
         }
         if (CameraDeviceCanvasDisplay != null)
         {
-          CameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !CameraPlaneConfigurated);
+          CameraDeviceCanvasDisplay.gameObject.SetActive(!EstimatePose || !CameraPlaneConfigured);
         }
 
         // Update the state and notify
@@ -202,7 +202,7 @@ namespace ArucoUnity
         {
           OnConfigurated();
         }
-        Configurated = true;
+        Configured = true;
       }
 
       /// <summary>
@@ -210,13 +210,13 @@ namespace ArucoUnity
       /// <see cref="CameraImageTexture"/> facing the camera.
       /// </summary>
       /// <returns>If the configuration has been successful.</returns>
-      public bool ConfigurateCameraPlane()
+      public bool ConfigureCameraPlane()
       {
         if (Camera == null || CameraPlane == null || ArucoCamera.CameraParameters == null)
         {
-          Debug.LogError(gameObject.name + ": unable to configurate the camera and the facing plane. The following properties must be set: Camera"
+          Debug.LogError(gameObject.name + ": unable to configure the camera and the facing plane. The following properties must be set: Camera"
             + " and CameraPlane.");
-          return CameraPlaneConfigurated = false;
+          return CameraPlaneConfigured = false;
         }
 
         // Configurate the camera according to the camera parameters
@@ -236,7 +236,7 @@ namespace ArucoUnity
         CameraPlane.GetComponent<MeshFilter>().mesh = ArucoCamera.ImageMesh;
         CameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
 
-        return CameraPlaneConfigurated = true;
+        return CameraPlaneConfigured = true;
       }
     }
   }

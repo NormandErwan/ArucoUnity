@@ -91,11 +91,11 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// When configurated, detect markers and show results each frame.
+    /// When configured, detect markers and show results each frame.
     /// </summary>
     protected void LateUpdate()
     {
-      if (Configurated)
+      if (Configured)
       {
         VectorInt ids;
         VectorVectorPoint2f corners, rejectedImgPoints;
@@ -191,7 +191,7 @@ namespace ArucoUnity
 
       // Show the marker objects
       MarkerObjectsController.DeactivateMarkerObjects();
-      if (EstimatePose && CameraPlaneConfigurated)
+      if (EstimatePose && CameraPlaneConfigured)
       {
         MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
       }
