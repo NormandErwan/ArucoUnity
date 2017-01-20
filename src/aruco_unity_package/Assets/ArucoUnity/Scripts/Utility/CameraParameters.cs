@@ -22,7 +22,7 @@ namespace ArucoUnity
     {
       // Constructors
       /// <summary>
-      /// Create an empty CameraParameters. Populate it manually or using the <see cref="ImportArrays(Mat, Mat)"/> method.
+      /// Create an empty CameraParameters and set <see cref="CalibrationDateTime"/> to now.
       /// </summary>
       /// <remarks>The constructor if needed for the serialization.</remarks>
       public CameraParameters()
