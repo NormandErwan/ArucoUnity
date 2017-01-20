@@ -112,20 +112,20 @@ namespace ArucoUnity
     /// <summary>
     /// Set up the <see cref="ArucoDetector"/> parent class properties.
     /// </summary>
-    protected override void PreConfigurate()
+    protected override void PreConfigure()
     {
-      // Configurate detection properties
+      // Configure detection properties
       Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       DetectorParameters = detectorParametersManager.detectorParameters;
       MarkerSideLength = markerSideLength;
 
-      // Configurate camera properties
+      // Configure camera properties
       Camera = camera;
       CameraPlane = cameraPlane;
       ArucoCameraCanvasDisplay = arucoCameraCanvasDisplay;
       CameraParametersFilePath = cameraParametersFilePath;
 
-      // Configurate pose estimation properties
+      // Configure pose estimation properties
       EstimatePose = estimatePose;
       MarkerObjectsController = markerObjectsController;
     }

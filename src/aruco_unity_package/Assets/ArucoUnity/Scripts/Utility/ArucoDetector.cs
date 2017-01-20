@@ -20,7 +20,7 @@ namespace ArucoUnity
       /// <summary>
       /// Executed when the detector is ready and configured.
       /// </summary>
-      public event CameraDeviceMakersDetectorAction OnConfigurated;
+      public event CameraDeviceMakersDetectorAction OnConfigured;
 
       // Properties
 
@@ -51,9 +51,9 @@ namespace ArucoUnity
       /// </summary>
       public float MarkerSideLength { get; set; }
 
-      // CameraDeviceController related properties
+      // Camera related properties
       /// <summary>
-      /// The manipulated camera image texture for the detection. You can set your own during Update(), or use a CameraDeviceController.
+      /// The manipulated camera image texture for the detection. You can set your own during Update(), or use a ArucoCamera.
       /// </summary>
       public Texture2D CameraImageTexture { get; set; }
 
@@ -155,7 +155,7 @@ namespace ArucoUnity
       /// <summary>
       /// The configuration content of derived classes.
       /// </summary>
-      protected abstract void PreConfigurate();
+      protected abstract void PreConfigure();
 
       /// <summary>
       /// Configure the detection and the results display.
@@ -169,7 +169,7 @@ namespace ArucoUnity
         CameraImageTexture = ArucoCamera.Texture2D;
 
         // Execute the derived classes' configuration
-        PreConfigurate();
+        PreConfigure();
 
         // Try to load the camera parameters
         if (EstimatePose)
@@ -178,7 +178,7 @@ namespace ArucoUnity
           EstimatePose &= cameraParametersLoaded;
         }
 
-        // Configurate the camera-plane group xor the canvas
+        // Configure the camera-plane group xor the canvas
         if (EstimatePose)
         {
           ConfigureCameraPlane();
@@ -198,15 +198,15 @@ namespace ArucoUnity
         }
 
         // Update the state and notify
-        if (OnConfigurated != null)
+        if (OnConfigured != null)
         {
-          OnConfigurated();
+          OnConfigured();
         }
         Configured = true;
       }
 
       /// <summary>
-      /// Configurate from the camera parameters the <see cref="Camera"/> and a the <see cref="CameraPlane"/> that display the 
+      /// Configure from the camera parameters the <see cref="Camera"/> and a the <see cref="CameraPlane"/> that display the 
       /// <see cref="CameraImageTexture"/> facing the camera.
       /// </summary>
       /// <returns>If the configuration has been successful.</returns>
@@ -219,7 +219,7 @@ namespace ArucoUnity
           return CameraPlaneConfigured = false;
         }
 
-        // Configurate the camera according to the camera parameters
+        // Configure the camera according to the camera parameters
         float farClipPlaneNewValueFactor = 1.01f;
         float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / ArucoCamera.CameraParameters.CameraFy) * Mathf.Rad2Deg;
         Camera.fieldOfView = vFov;
@@ -228,7 +228,7 @@ namespace ArucoUnity
         Camera.transform.position = Vector3.zero;
         Camera.transform.rotation = Quaternion.identity;
 
-        // Configurate the plane facing the camera that display the texture
+        // Configure the plane facing the camera that display the texture
         CameraPlane.transform.position = new Vector3(0, 0, Camera.farClipPlane);
         CameraPlane.transform.rotation = ArucoCamera.ImageRotation;
         CameraPlane.transform.localScale = new Vector3(CameraImageTexture.width, CameraImageTexture.height, 1);

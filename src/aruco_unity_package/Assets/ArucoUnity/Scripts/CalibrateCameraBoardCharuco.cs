@@ -151,19 +151,19 @@ namespace ArucoUnity
     /// <summary>
     /// Set up the <see cref="ArucoDetector"/> parent class properties.
     /// </summary>
-    protected override void PreConfigurate()
+    protected override void PreConfigure()
     {
-      // Configurate detection properties
+      // Configure detection properties
       Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       DetectorParameters = detectorParametersManager.detectorParameters;
       MarkerSideLength = markerSideLength;
 
-      // Configurate pose estimation properties
+      // Configure pose estimation properties
       EstimatePose = false;
 
-      // Configurate the board calibration
+      // Configure the board calibration
       CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
-      ConfigurateCalibrationFlags();
+      ConfigureCalibrationFlags();
       ResetCalibrationFromEditor();
     }
 
@@ -376,7 +376,7 @@ namespace ArucoUnity
         + ((CharucoCameraParameters != null) ? CharucoCameraParameters.ReprojectionError.ToString("F3") : "");
     }
 
-    private void ConfigurateCalibrationFlags()
+    private void ConfigureCalibrationFlags()
     {
       CalibrationFlags = 0;
       if (AssumeZeroTangentialDistorsion)

@@ -138,22 +138,22 @@ namespace ArucoUnity
     /// <summary>
     /// Set up the <see cref="ArucoDetector"/> parent class properties.
     /// </summary>
-    protected override void PreConfigurate()
+    protected override void PreConfigure()
     {
-      // Configurate detection properties
+      // Configure detection properties
       Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       DetectorParameters = detectorParametersManager.detectorParameters;
       MarkerSideLength = markerSideLength;
 
-      // Configurate camera properties
+      // Configure camera properties
       CameraParametersFilePath = cameraParametersFilePath;
 
-      // Configurate pose estimation properties
+      // Configure pose estimation properties
       EstimatePose = false;
 
-      // Configurate the board calibration
+      // Configure the board calibration
       Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
-      ConfigurateCalibrationFlags(); // TODO: to factor
+      ConfigureCalibrationFlags(); // TODO: to factor
       ResetCalibrationFromEditor(); // TODO: to factor
     }
 
@@ -315,7 +315,7 @@ namespace ArucoUnity
        + ((CameraParameters != null) ? CameraParameters.ReprojectionError.ToString("F3") : "");
     }
 
-    void ConfigurateCalibrationFlags() // TODO: to factor
+    void ConfigureCalibrationFlags() // TODO: to factor
     {
       CalibrationFlags = 0;
       if (assumeZeroTangentialDistorsion)
