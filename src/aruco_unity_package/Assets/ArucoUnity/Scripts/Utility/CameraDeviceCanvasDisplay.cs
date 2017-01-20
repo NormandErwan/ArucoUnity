@@ -9,7 +9,7 @@ namespace ArucoUnity
   namespace Utility
   {
     /// <summary>
-    /// Display the texture of the active camera on a canvas.
+    /// Display the texture of a <see cref="ArucoCamera"/> on a canvas.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html.
     /// </summary>
     public class CameraDeviceCanvasDisplay : MonoBehaviour
@@ -25,8 +25,8 @@ namespace ArucoUnity
       private AspectRatioFitter imageFitter;
 
       [SerializeField]
-      [Tooltip("The camera device controller from which its active camera device will be displayed.")]
-      private CameraDeviceController cameraDeviceController;
+      [Tooltip("The Aruco camera to display.")]
+      private ArucoCamera arucoCamera;
 
       // MonoBehaviour methods
 
@@ -35,7 +35,11 @@ namespace ArucoUnity
       /// </summary>
       private void OnEnable()
       {
-        cameraDeviceController.OnActiveCameraDeviceStarted += CameraDeviceController_OnActiveCameraStarted;
+        arucoCamera.OnStarted += CameraDeviceController_OnActiveCameraStarted;
+        if (arucoCamera.Started)
+        {
+          CameraDeviceController_OnActiveCameraStarted();
+        }
       }
 
       /// <summary>
@@ -43,7 +47,7 @@ namespace ArucoUnity
       /// </summary>
       private void OnDisable()
       {
-        cameraDeviceController.OnActiveCameraDeviceStarted -= CameraDeviceController_OnActiveCameraStarted;
+        arucoCamera.OnStarted -= CameraDeviceController_OnActiveCameraStarted;
       }
 
       // Methods
@@ -60,14 +64,14 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the display of the active camera device when it's started.
       /// </summary>
-      private void CameraDeviceController_OnActiveCameraStarted(CameraDevice activeCameraDevice)
+      private void CameraDeviceController_OnActiveCameraStarted()
       {
-        SetActiveTexture(activeCameraDevice.Texture2D);
+        SetActiveTexture(arucoCamera.Texture2D);
 
-        image.rectTransform.localScale = activeCameraDevice.ImageScaleFrontFacing;
-        image.rectTransform.localRotation = activeCameraDevice.ImageRotation;
-        imageFitter.aspectRatio = activeCameraDevice.ImageRatio;
-        image.uvRect = activeCameraDevice.ImageUvRectFlip;
+        image.rectTransform.localScale = arucoCamera.ImageScaleFrontFacing;
+        image.rectTransform.localRotation = arucoCamera.ImageRotation;
+        imageFitter.aspectRatio = arucoCamera.ImageRatio;
+        image.uvRect = arucoCamera.ImageUvRectFlip;
       }
     }
   }

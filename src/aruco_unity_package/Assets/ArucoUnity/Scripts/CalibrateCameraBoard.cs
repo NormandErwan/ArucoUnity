@@ -56,7 +56,7 @@ namespace ArucoUnity
 
     [Header("Camera configuration")]
     [SerializeField]
-    private CameraDeviceController cameraDeviceController;
+    private ArucoCamera arucoCamera;
 
     [Header("UI")]
     [SerializeField]
@@ -98,12 +98,12 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoDetector.CameraDeviceController"/> and the UI. 
+    /// Set up <see cref="ArucoDetector.ArucoCamera"/> and the UI. 
     /// </summary>
     protected override void OnEnable() // TODO: to factor
     {
       // Set up the parent class
-      CameraDeviceController = cameraDeviceController;
+      ArucoCamera = arucoCamera;
       base.OnEnable();
 
       // Set up onClick functions to UI buttons

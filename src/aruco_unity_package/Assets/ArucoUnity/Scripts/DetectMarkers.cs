@@ -39,8 +39,8 @@ namespace ArucoUnity
 
     [Header("Camera configuration")]
     [SerializeField]
-    [Tooltip("The parameters to use for the marker detection")]
-    private CameraDeviceController cameraDeviceController;
+    [Tooltip("The camera to use for the detection.")]
+    private ArucoCamera arucoCamera;
 
     [SerializeField]
     [Tooltip("The file path to load the camera parameters")]
@@ -82,11 +82,11 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoDetector.CameraDeviceController"/>. 
+    /// Set up <see cref="ArucoDetector.ArucoCamera"/>. 
     /// </summary>
     protected override void OnEnable()
     {
-      CameraDeviceController = cameraDeviceController;
+      ArucoCamera = arucoCamera;
       base.OnEnable();
     }
 
@@ -155,7 +155,7 @@ namespace ArucoUnity
       // Estimate markers pose
       if (EstimatePose && ids.Size() > 0)
       {
-        Functions.EstimatePoseSingleMarkers(corners, MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+        Functions.EstimatePoseSingleMarkers(corners, MarkerSideLength, ArucoCamera.CameraParameters.CameraMatrix, ArucoCamera.CameraParameters.DistCoeffs, out rvecs, out tvecs);
       }
       else
       {
@@ -200,7 +200,7 @@ namespace ArucoUnity
       Mat undistordedImage, finalImage;
       if (EstimatePose)
       {
-        Imgproc.Undistord(image, out undistordedImage, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs);
+        Imgproc.Undistord(image, out undistordedImage, ArucoCamera.CameraParameters.CameraMatrix, ArucoCamera.CameraParameters.DistCoeffs);
         finalImage = undistordedImage;
       }
       else
