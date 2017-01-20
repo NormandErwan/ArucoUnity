@@ -75,19 +75,22 @@ namespace ArucoUnity
       public abstract bool LoadCameraParameters(string cameraParametersFilePath);
 
       /// <summary>
-      /// Initialize the camera and its texture.
+      /// Configurate the camera and its texture.
       /// </summary>
-      //public abstract void ResetCamera(); // TODO: fix
+      /// <returns>If the operation has been successfull.</returns>
+      public abstract bool Configurate();
 
       /// <summary>
       /// Start the camera.
       /// </summary>
-      public abstract void StartCamera();
+      /// <returns>If the operation has been successfull.</returns>
+      public abstract bool StartCamera();
 
       /// <summary>
       /// Stop the camera.
       /// </summary>
-      public abstract void StopCamera();
+      /// <returns>If the operation has been successfull.</returns>
+      public abstract bool StopCamera();
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.

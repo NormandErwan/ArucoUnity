@@ -13,6 +13,12 @@ namespace ArucoUnity
     /// </summary>
     public class CameraDevice : ArucoCamera
     {
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("The id of the camera device to use.")]
+      private int deviceId = 0;
+
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -115,6 +121,8 @@ namespace ArucoUnity
       /// </summary>
       public WebCamTexture WebCamTexture { get; protected set; }
 
+      public int DeviceId { get { return deviceId; } set { deviceId = value; } }
+
       // MonoBehaviour methods
 
       /// <summary>
@@ -162,42 +170,63 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Initialize the camera device and its textures.
+      /// Configurate the camera device and its textures.
       /// </summary>
-      /// <param name="webcamDeviceToUse">The webcam to use.</param>
-      public void ResetCamera(WebCamDevice webcamDeviceToUse)
+      /// <returns>If the operation has been successfull.</returns>
+      public override bool Configurate()
       {
-        WebCamDevice = webcamDeviceToUse;
+        if (Started)
+        {
+          Debug.LogError(gameObject.name + ": Stop the camera to configurate it.");
+          return false;
+        }
 
-        WebCamTexture = new WebCamTexture(webcamDeviceToUse.name);
-        WebCamTexture.filterMode = FilterMode.Trilinear;
+        // Try to check for the camera device
+        WebCamDevice[] webcamDevices = WebCamTexture.devices;
+        if (webcamDevices.Length < DeviceId)
+        {
+          Debug.LogError(gameObject.name + ": The camera device with the id '" + DeviceId + "' is not found.");
+          return false;
+        }
 
-        Started = false;
+        // Switch the camera device
+        WebCamDevice = webcamDevices[DeviceId];
+        WebCamTexture = new WebCamTexture(WebCamDevice.name);
+
+        return true;
       }
 
       /// <summary>
       /// Start the camera and the associated webcam device.
       /// </summary>
-      public override void StartCamera()
+      public override bool StartCamera()
       {
-        if (!Started)
+        if (Started)
         {
-          WebCamTexture.Play();
-          Started = false; // Need some frames to be started, see Update()
+          return false;
         }
+
+        WebCamTexture.Play();
+        Started = false; // Need some frames to be started, see Update()
+
+        return true;
       }
 
       /// <summary>
       /// Stop the camera and the associated webcam device, and notify of the stopping.
       /// </summary>
-      public override void StopCamera()
+      public override bool StopCamera()
       {
-        if (Started)
+        if (!Started)
         {
-          WebCamTexture.Stop();
-          Started = false;
-          RaiseOnStopped();
+          return false;
         }
+
+        WebCamTexture.Stop();
+        Started = false;
+        RaiseOnStopped();
+
+        return true;
       }
     }
   }
