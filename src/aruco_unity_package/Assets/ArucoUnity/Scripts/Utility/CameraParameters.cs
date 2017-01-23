@@ -192,8 +192,6 @@ namespace ArucoUnity
 
         if (cameraParameters == null)
         {
-          Debug.LogError("Unable to load the camera parameters from the '" + cameraParametersFilePath + "' file path. Can't estimate pose of the detected"
-            + " markers.");
           return null;
         }
 
