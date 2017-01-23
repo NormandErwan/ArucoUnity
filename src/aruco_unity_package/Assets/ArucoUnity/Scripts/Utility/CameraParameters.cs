@@ -279,7 +279,7 @@ namespace ArucoUnity
         }
 
         // Camera parameter's focal lenghts
-        CameraFy = (float)CameraMatrix.AtDouble(0, 0);
+        CameraFx = (float)CameraMatrix.AtDouble(0, 0);
         CameraFy = (float)CameraMatrix.AtDouble(1, 1);
 
         // Camera parameter's optical centers
