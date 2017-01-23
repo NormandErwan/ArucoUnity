@@ -160,6 +160,12 @@ namespace ArucoUnity
       [XmlIgnore]
       public Vector3 OpticalCenter { get; protected set; }
 
+      /// <summary>
+      /// The file path of the parameters.
+      /// </summary>
+      [XmlIgnore]
+      public string filePath { get; protected set; }
+
       // Variables
 
       protected int imageHeight, imageWidth;
@@ -181,6 +187,7 @@ namespace ArucoUnity
         {
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           cameraParameters = serializer.Deserialize(reader) as CameraParameters;
+          cameraParameters.filePath = cameraParametersFilePath;
         }
 
         if (cameraParameters == null)

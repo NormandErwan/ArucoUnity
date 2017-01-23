@@ -81,6 +81,7 @@ namespace ArucoUnity
     public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } } // TODO: to factor
     public float FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } } // TODO: to factor
     public CALIB CalibrationFlags { get; set; } // TODO: to factor
+    public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
     // Calibration results properties // TODO: to factor
     public VectorVectorVectorPoint2f AllCorners { get; private set; }
@@ -144,9 +145,6 @@ namespace ArucoUnity
       Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       DetectorParameters = detectorParametersManager.detectorParameters;
       MarkerSideLength = markerSideLength;
-
-      // Configure camera properties
-      CameraParametersFilePath = cameraParametersFilePath;
 
       // Configure pose estimation properties
       EstimatePose = false;

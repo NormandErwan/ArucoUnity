@@ -43,10 +43,6 @@ namespace ArucoUnity
     private ArucoCamera arucoCamera;
 
     [SerializeField]
-    [Tooltip("The file path to load the camera parameters")]
-    private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
-
-    [SerializeField]
     [Tooltip("The Unity camera that will capture the CameraPlane display")]
     private new Camera camera;
 
@@ -123,7 +119,6 @@ namespace ArucoUnity
       Camera = camera;
       CameraPlane = cameraPlane;
       ArucoCameraCanvasDisplay = arucoCameraCanvasDisplay;
-      CameraParametersFilePath = cameraParametersFilePath;
 
       // Configure pose estimation properties
       EstimatePose = estimatePose;

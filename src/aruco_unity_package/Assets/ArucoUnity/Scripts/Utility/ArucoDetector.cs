@@ -85,11 +85,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// The file path to load the camera parameters
-      /// </summary>
-      public string CameraParametersFilePath { get; set; }
-
       // Camera properties
       /// <summary>
       /// The Unity camera that will capture the <see cref="CameraPlane"/> display.
@@ -160,7 +155,6 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the detection and the results display.
       /// </summary>
-      /// <param name="activeCameraDevice">The current active camera device.</param>
       private void Configure()
       {
         // Set properties
@@ -172,13 +166,12 @@ namespace ArucoUnity
         PreConfigure();
 
         // Try to load the camera parameters
-        if (EstimatePose)
+        if (ArucoCamera.CameraParameters == null)
         {
-          bool cameraParametersLoaded = ArucoCamera.LoadCameraParameters(CameraParametersFilePath);
-          EstimatePose &= cameraParametersLoaded;
+          EstimatePose = false;
         }
 
-        // Configure the camera-plane group xor the canvas
+        // Configure the camera-plane group or configure the canvas
         if (EstimatePose)
         {
           ConfigureCameraPlane();

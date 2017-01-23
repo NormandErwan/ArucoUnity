@@ -68,13 +68,6 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Populate <see cref="CameraParameters"/> from a previously saved camera parameters XML file.
-      /// </summary>
-      /// <param name="cameraParametersFilePath">The file path to load.</param>
-      /// <returns>If the camera parameters has been successfully loaded.</returns>
-      public abstract bool LoadCameraParameters(string cameraParametersFilePath);
-
-      /// <summary>
       /// Configure the camera and its properties.
       /// </summary>
       /// <returns>If the operation has been successfull.</returns>

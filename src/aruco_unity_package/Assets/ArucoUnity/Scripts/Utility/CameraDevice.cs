@@ -20,6 +20,10 @@ namespace ArucoUnity
       private int deviceId = 0;
 
       [SerializeField]
+      [Tooltip("The file path to load the camera parameters.")]
+      private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
+
+      [SerializeField]
       [Tooltip("Start the camera automatically after configured it.")]
       private bool autoStart = true;
 
@@ -131,6 +135,11 @@ namespace ArucoUnity
       public int DeviceId { get { return deviceId; } set { deviceId = value; } }
 
       /// <summary>
+      /// The file path to load the camera parameters.
+      /// </summary>
+      public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
+
+      /// <summary>
       /// Start the camera automatically after configured it.
       /// </summary>
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
@@ -182,17 +191,6 @@ namespace ArucoUnity
       // ArucoCamera methods
 
       /// <summary>
-      /// Populate <see cref="CameraParameters"/> from a previously saved camera parameters XML file.
-      /// </summary>
-      /// <param name="cameraParametersFilePath">The file path to load.</param>
-      /// <returns>If the camera parameters has been successfully loaded.</returns>
-      public override bool LoadCameraParameters(string cameraParametersFilePath)
-      {
-        CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
-        return CameraParameters != null;
-      }
-
-      /// <summary>
       /// Configure the camera device with the id <see cref="DeviceId"/> and its properties.
       /// </summary>
       /// <returns>If the operation has been successfull.</returns>
@@ -200,7 +198,7 @@ namespace ArucoUnity
       {
         if (Started)
         {
-          Debug.LogError(gameObject.name + ": Stop the camera to configure it.");
+          Debug.LogError(gameObject.name + ": Stop the camera to configure it. Aborting configuration.");
           return false;
         }
 
@@ -208,7 +206,15 @@ namespace ArucoUnity
         WebCamDevice[] webcamDevices = WebCamTexture.devices;
         if (webcamDevices.Length < DeviceId)
         {
-          Debug.LogError(gameObject.name + ": The camera device with the id '" + DeviceId + "' is not found.");
+          Debug.LogError(gameObject.name + ": The camera device with the id '" + DeviceId + "' is not found. Aborting configuration.");
+          return false;
+        }
+
+        // Try to load the camera parameters
+        CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+        if (CameraParameters == null)
+        {
+          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + cameraParametersFilePath + ". Aborting configuration.");
           return false;
         }
 
