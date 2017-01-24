@@ -48,7 +48,7 @@ namespace ArucoUnity
     private bool estimatePose;
 
     [SerializeField]
-    private MarkerObjectsController markerObjectsController;
+    private TrackedObjectsController trackedObjectsController;
 
     // Properties
 
@@ -105,7 +105,7 @@ namespace ArucoUnity
 
       // Configure pose estimation properties
       EstimatePose = estimatePose;
-      MarkerObjectsController = markerObjectsController;
+      TrackedObjectsController = trackedObjectsController;
     }
 
     // Methods
@@ -168,10 +168,10 @@ namespace ArucoUnity
       }
 
       // Show the marker objects
-      MarkerObjectsController.DeactivateMarkerObjects();
+      TrackedObjectsController.DeactivateMarkerObjects();
       if (EstimatePose)
       {
-        MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
+        TrackedObjectsController.UpdateTransforms(ids, rvecs, tvecs);
       }
 
       // Undistord the image if calibrated

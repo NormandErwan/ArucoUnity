@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public class MarkerObjectsController : MonoBehaviour
+    public class TrackedObjectsController : MonoBehaviour
     {
       // Editor fields
 

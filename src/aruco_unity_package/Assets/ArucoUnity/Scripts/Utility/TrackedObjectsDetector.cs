@@ -77,7 +77,7 @@ namespace ArucoUnity
       public bool EstimatePose { get; set; }
 
       // TODO: inverse the ref
-      public MarkerObjectsController MarkerObjectsController { get; set; }
+      public TrackedObjectsController TrackedObjectsController { get; set; }
 
       // Variables
 
@@ -132,8 +132,8 @@ namespace ArucoUnity
 
         if (ArucoCamera.CameraParameters != null)
         {
-          MarkerObjectsController.SetCamera(ArucoCamera);
-          MarkerObjectsController.MarkerSideLength = MarkerSideLength;
+          TrackedObjectsController.SetCamera(ArucoCamera);
+          TrackedObjectsController.MarkerSideLength = MarkerSideLength;
         }
         else
         {

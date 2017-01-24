@@ -17,22 +17,22 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("")]
-      private MarkerObjectsController markerObjectsController;
+      private TrackedObjectsController trackedObjectsController;
 
       // Properties
 
       public int MarkerId { get { return markerId; } set { markerId = value; } }
 
-      public MarkerObjectsController MarkerObjectsController { get { return markerObjectsController; } set { markerObjectsController = value; } }
+      public TrackedObjectsController TrackedObjectsController { get { return trackedObjectsController; } set { trackedObjectsController = value; } }
 
       // MonoBehaviour methods
 
       protected void Start()
       {
         // TODO: update when MarkerId and MarkerObjectsController are changed
-        if (MarkerObjectsController.isActiveAndEnabled)
+        if (TrackedObjectsController.isActiveAndEnabled)
         {
-          MarkerObjectsController.AddTrackedMarker(this);
+          TrackedObjectsController.AddTrackedMarker(this);
         }
       }
     }
