@@ -147,29 +147,30 @@ namespace ArucoUnity
       /// </summary>
       protected void Update()
       {
-        if (!Started)
+        if (Configured)
         {
-          // Skip making adjustment for incorrect camera data
-          if (WebCamTexture.width < 100)
+          // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
+          if (!Started)
           {
-            Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
-            return;
-          }
-          else
-          {
-            // Initialize the Texture2D and the camera plane
-            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-            ConfigureCameraPlane();
+            if (WebCamTexture.width < 100)
+            {
+              Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
+            }
+            else
+            {
+              ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+              ConfigureCameraPlane();
 
-            // Notify that the camera has started
-            Started = true;
-            RaiseOnStarted();
+              Started = true;
+              RaiseOnStarted();
+            }
           }
-        }
-        else
-        {
+
           // Update the Texture2D content
-          ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
+          if (Started)
+          {
+            ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
+          }
         }
       }
 
@@ -184,7 +185,7 @@ namespace ArucoUnity
         if (Started)
         {
           Debug.LogError(gameObject.name + ": Stop the camera to configure it. Aborting configuration.");
-          return false;
+          return Configured = false;
         }
 
         // Try to check for the camera device
@@ -192,7 +193,7 @@ namespace ArucoUnity
         if (webcamDevices.Length < DeviceId)
         {
           Debug.LogError(gameObject.name + ": The camera device with the id '" + DeviceId + "' is not found. Aborting configuration.");
-          return false;
+          return Configured = false;
         }
 
         // Try to load the camera parameters
@@ -212,7 +213,7 @@ namespace ArucoUnity
           StartCamera();
         }
 
-        return true;
+        return Configured = true;
       }
 
       /// <summary>
@@ -271,6 +272,7 @@ namespace ArucoUnity
         if (cameraPlane == null)
         {
           cameraPlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
+          cameraPlane.name = "CameraImageTexturePlane";
           cameraPlane.transform.SetParent(this.transform);
           cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImageTexture") as Material;
         }

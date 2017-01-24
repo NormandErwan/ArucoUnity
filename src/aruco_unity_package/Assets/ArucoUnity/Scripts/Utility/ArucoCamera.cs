@@ -43,6 +43,11 @@ namespace ArucoUnity
       public bool Started { get; protected set; }
 
       /// <summary>
+      /// True when the camera is configured.
+      /// </summary>
+      public bool Configured { get; protected set; }
+
+      /// <summary>
       /// Image camera texture, updated each frame.
       /// </summary>
       public Texture2D ImageTexture { get; protected set; }
