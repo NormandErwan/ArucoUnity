@@ -274,11 +274,7 @@ namespace ArucoUnity
         CameraMatrix = cameraMatrix,
         DistCoeffs = distCoeffs
       };
-      bool result = CameraParameters.SaveToXmlFile(CameraParametersFilePath);
-      if (!result)
-      {
-        Debug.LogError(gameObject.name + ": Couldn't save the camera parameters to the file path '" + CameraParametersFilePath + ".");
-      }
+      CameraParameters.SaveToXmlFile(CameraParametersFilePath);
     }
 
     // Editor button onclick listeners

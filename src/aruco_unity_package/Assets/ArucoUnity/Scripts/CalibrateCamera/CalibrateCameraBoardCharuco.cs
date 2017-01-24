@@ -295,12 +295,7 @@ namespace ArucoUnity
         CameraMatrix = cameraMatrix,
         DistCoeffs = distCoeffs
       };
-
-      bool result = ArucoCameraParameters.SaveToXmlFile(ArucoCameraParametersFilePath);
-      if (!result)
-      {
-        Debug.LogError(gameObject.name + ": Couldn't save the charuco camera parameters to the file path '" + ArucoCameraParametersFilePath + ".");
-      }
+      ArucoCameraParameters.SaveToXmlFile(ArucoCameraParametersFilePath);
 
       // Interpolate charuco corners using camera parameters
       AllCharucoCorners = new VectorMat();
@@ -337,12 +332,7 @@ namespace ArucoUnity
         CameraMatrix = cameraMatrix,
         DistCoeffs = distCoeffs
       };
-
-      result = CharucoCameraParameters.SaveToXmlFile(CharucoCameraParametersFilePath);
-      if (!result)
-      {
-        Debug.LogError(gameObject.name + ": Couldn't save the charuco camera parameters to the file path '" + CharucoCameraParametersFilePath + ".");
-      }
+      CharucoCameraParameters.SaveToXmlFile(CharucoCameraParametersFilePath);
     }
 
     // Editor button onclick listeners

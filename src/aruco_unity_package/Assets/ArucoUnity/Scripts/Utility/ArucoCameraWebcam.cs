@@ -216,10 +216,6 @@ namespace ArucoUnity
 
         // Try to load the camera parameters
         CameraParameters = CameraParameters.LoadFromXmlFile(CameraParametersFilePath);
-        if (CameraParameters == null)
-        {
-          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + CameraParametersFilePath + ".");
-        }
 
         // Switch the camera device
         WebCamDevice = webcamDevices[WebcamId];

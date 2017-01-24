@@ -177,7 +177,8 @@ namespace ArucoUnity
       /// Create a new CameraParameters object from a previously saved camera parameters XML file.
       /// </summary>
       /// <param name="cameraParametersFilePath">The file path to load.</param>
-      /// <returns>The CameraParameters imported from the XML file or null if the file coulnd't be loaded.</returns>
+      /// <exception cref="ArgumentException">If the camera parameters couldn't be loaded because of a wrong file path.</exception>
+      /// <returns>The CameraParameters loaded from the XML file or null if the file coulnd't be loaded.</returns>
       public static CameraParameters LoadFromXmlFile(string cameraParametersFilePath)
       {
         CameraParameters cameraParameters = null;
@@ -190,17 +191,16 @@ namespace ArucoUnity
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           cameraParameters = serializer.Deserialize(reader) as CameraParameters;
         }
-        catch { }
+        catch
+        {
+          throw new ArgumentException("Couldn't load the camera parameters file path '" + cameraParametersFilePath + ".", "cameraParametersFilePath");
+        }
         finally
         {
           if (reader != null)
           {
             reader.Close();
           }
-        }
-        if (cameraParameters == null)
-        {
-          return null;
         }
         cameraParameters.filePath = cameraParametersFilePath;
 
@@ -240,8 +240,8 @@ namespace ArucoUnity
       /// Save the camera parameters to a XML file.
       /// </summary>
       /// <param name="cameraParametersFilePath">The file path where to save the object.</param>
-      /// <returns>If the file has been saved.</returns>
-      public bool SaveToXmlFile(string cameraParametersFilePath)
+      /// <exception cref="ArgumentException">If the camera parameters couldn't be saved because of a wrong file path.</exception>
+      public void SaveToXmlFile(string cameraParametersFilePath)
       {
         // Update CameraMatrixValues and CameraMatrixType
         CameraMatrixType = CameraMatrix.Type();
@@ -274,16 +274,17 @@ namespace ArucoUnity
         }
 
         // Try to serialize the object and save it to the file
-        bool result = false;
         StreamWriter writer = null;
         try
         {
           writer = new StreamWriter(cameraParametersFilePath);
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           serializer.Serialize(writer, this);
-          result = true;
         }
-        catch { }
+        catch
+        {
+          throw new ArgumentException("Couldn't save the camera parameters to the file path '" + cameraParametersFilePath + ".", "cameraParametersFilePath");
+        }
         finally
         {
           if (writer != null)
@@ -291,8 +292,6 @@ namespace ArucoUnity
             writer.Close();
           }
         }
-
-        return result;
       }
 
       protected void UpdateCameraMatrixDerivedVariables()
