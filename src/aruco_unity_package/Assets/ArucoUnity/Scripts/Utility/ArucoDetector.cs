@@ -30,11 +30,6 @@ namespace ArucoUnity
       /// </summary>
       public bool Configured { get; protected set; }
 
-      /// <summary>
-      /// The result of the last <see cref="ConfigureCameraPlane"/> call.
-      /// </summary>
-      public bool CameraPlaneConfigured { get; protected set; }
-
       // Detection configuration properties
       /// <summary>
       /// The dictionary to use for the detection.
@@ -51,15 +46,6 @@ namespace ArucoUnity
       /// </summary>
       public float MarkerSideLength { get; set; }
 
-      // Camera related properties
-      /// <summary>
-      /// The manipulated camera image texture for the detection. You can set your own during Update(), or use a ArucoCamera.
-      /// </summary>
-      public Texture2D CameraImageTexture { get; set; }
-
-      /// <summary>
-      /// 
-      /// </summary>
       public ArucoCamera ArucoCamera
       {
         get { return arucoCameraValue; }
@@ -67,7 +53,6 @@ namespace ArucoUnity
         {
           // Reset configuration
           Configured = false;
-          CameraPlaneConfigured = false;
 
           // Unsubscribe from the previous ArucoCamera
           if (arucoCameraValue != null)
@@ -84,17 +69,6 @@ namespace ArucoUnity
           }
         }
       }
-
-      // Camera properties
-      /// <summary>
-      /// The Unity camera that will capture the <see cref="CameraPlane"/> display.
-      /// </summary>
-      public Camera Camera { get; set; }
-
-      /// <summary>
-      /// The plane facing the camera that display the <see cref="ArucoDetector.CameraImageTexture"/>.
-      /// </summary>
-      public GameObject CameraPlane { get; set; }
 
       /// <summary>
       /// If <see cref="EstimatePose "/> or <see cref="CameraPlaneConfigured"/> is false, the CameraImageTexture will be displayed on this canvas.
@@ -136,8 +110,6 @@ namespace ArucoUnity
       protected virtual void OnDisable()
       {
         Configured = false;
-        CameraPlaneConfigured = false;
-        CameraImageTexture = null;
 
         if (ArucoCamera != null)
         {
@@ -157,38 +129,21 @@ namespace ArucoUnity
       /// </summary>
       private void Configure()
       {
-        // Set properties
         Configured = false;
-        CameraPlaneConfigured = false;
-        CameraImageTexture = ArucoCamera.Texture2D;
 
-        // Execute the derived classes' configuration
         PreConfigure();
 
-        // Try to load the camera parameters
-        if (ArucoCamera.CameraParameters == null)
+        // Configure the camera-plane group or configure the canvas
+        if (ArucoCamera.CameraParameters != null)
+        {
+          MarkerObjectsController.SetCamera(ArucoCamera);
+          MarkerObjectsController.MarkerSideLength = MarkerSideLength;
+        }
+        else
         {
           EstimatePose = false;
         }
-
-        // Configure the camera-plane group or configure the canvas
-        if (EstimatePose)
-        {
-          ConfigureCameraPlane();
-          if (CameraPlaneConfigured)
-          {
-            MarkerObjectsController.SetCamera(Camera, ArucoCamera.CameraParameters);
-            MarkerObjectsController.MarkerSideLength = MarkerSideLength;
-          }
-        }
-        if (CameraPlane != null)
-        {
-          CameraPlane.gameObject.SetActive(EstimatePose && CameraPlaneConfigured);
-        }
-        if (ArucoCameraCanvasDisplay != null)
-        {
-          ArucoCameraCanvasDisplay.gameObject.SetActive(!EstimatePose || !CameraPlaneConfigured);
-        }
+        ArucoCameraCanvasDisplay.gameObject.SetActive(!EstimatePose);
 
         // Update the state and notify
         if (OnConfigured != null)
@@ -196,40 +151,6 @@ namespace ArucoUnity
           OnConfigured();
         }
         Configured = true;
-      }
-
-      /// <summary>
-      /// Configure from the camera parameters the <see cref="Camera"/> and a the <see cref="CameraPlane"/> that display the 
-      /// <see cref="CameraImageTexture"/> facing the camera.
-      /// </summary>
-      /// <returns>If the configuration has been successful.</returns>
-      public bool ConfigureCameraPlane()
-      {
-        if (Camera == null || CameraPlane == null || ArucoCamera.CameraParameters == null)
-        {
-          Debug.LogError(gameObject.name + ": unable to configure the camera and the facing plane. The following properties must be set: Camera"
-            + " and CameraPlane.");
-          return CameraPlaneConfigured = false;
-        }
-
-        // Configure the camera according to the camera parameters
-        float farClipPlaneNewValueFactor = 1.01f;
-        float vFov = 2f * Mathf.Atan(0.5f * CameraImageTexture.height / ArucoCamera.CameraParameters.CameraFy) * Mathf.Rad2Deg;
-        Camera.fieldOfView = vFov;
-        Camera.farClipPlane = ArucoCamera.CameraParameters.CameraFy * farClipPlaneNewValueFactor;
-        Camera.aspect = ArucoCamera.ImageRatio;
-        Camera.transform.position = Vector3.zero;
-        Camera.transform.rotation = Quaternion.identity;
-
-        // Configure the plane facing the camera that display the texture
-        CameraPlane.transform.position = new Vector3(0, 0, Camera.farClipPlane);
-        CameraPlane.transform.rotation = ArucoCamera.ImageRotation;
-        CameraPlane.transform.localScale = new Vector3(CameraImageTexture.width, CameraImageTexture.height, 1);
-        CameraPlane.transform.localScale = Vector3.Scale(CameraPlane.transform.localScale, ArucoCamera.ImageScaleFrontFacing);
-        CameraPlane.GetComponent<MeshFilter>().mesh = ArucoCamera.ImageMesh;
-        CameraPlane.GetComponent<Renderer>().material.mainTexture = CameraImageTexture;
-
-        return CameraPlaneConfigured = true;
       }
     }
   }

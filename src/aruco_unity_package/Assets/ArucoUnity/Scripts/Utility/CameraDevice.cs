@@ -144,6 +144,10 @@ namespace ArucoUnity
       /// </summary>
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
 
+      // Variables
+
+      GameObject cameraPlane;
+
       // MonoBehaviour methods
 
       /// <summary>
@@ -173,8 +177,9 @@ namespace ArucoUnity
           }
           else
           {
-            // Initialize the Texture2D
-            Texture2D = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+            // Initialize the Texture2D and the camera plane
+            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+            ConfigureCameraPlane();
 
             // Notify that the camera has started
             Started = true;
@@ -184,7 +189,7 @@ namespace ArucoUnity
         else
         {
           // Update the Texture2D content
-          Texture2D.SetPixels32(WebCamTexture.GetPixels32());
+          ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
         }
       }
 
@@ -222,6 +227,7 @@ namespace ArucoUnity
         WebCamDevice = webcamDevices[DeviceId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
+        // AutoStart
         if (AutoStart)
         {
           StartCamera();
@@ -261,6 +267,47 @@ namespace ArucoUnity
         RaiseOnStopped();
 
         return true;
+      }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      protected void ConfigureCameraPlane()
+      {
+        if (CameraParameters == null)
+        {
+          cameraPlane.SetActive(false);
+          return;
+        }
+
+        // Configure the camera according to the camera parameters
+        Camera = GetComponent<Camera>();
+
+        float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
+        float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraParameters.CameraFy) * Mathf.Rad2Deg;
+
+        Camera.orthographic = false;
+        Camera.fieldOfView = vFov;
+        Camera.farClipPlane = CameraParameters.CameraFy * farClipPlaneNewValueFactor;
+        Camera.aspect = ImageRatio;
+        Camera.transform.position = Vector3.zero;
+        Camera.transform.rotation = Quaternion.identity;
+
+        // Configure the plane facing the camera that display the texture
+        if (cameraPlane == null)
+        {
+          cameraPlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
+          cameraPlane.transform.SetParent(this.transform);
+          cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImageTexture") as Material;
+        }
+
+        cameraPlane.transform.position = new Vector3(0, 0, CameraParameters.CameraFy);
+        cameraPlane.transform.rotation = ImageRotation;
+        cameraPlane.transform.localScale = new Vector3(ImageTexture.width, ImageTexture.height, 1);
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, ImageScaleFrontFacing);
+        cameraPlane.GetComponent<MeshFilter>().mesh = ImageMesh;
+        cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
+        cameraPlane.SetActive(true);
       }
     }
   }

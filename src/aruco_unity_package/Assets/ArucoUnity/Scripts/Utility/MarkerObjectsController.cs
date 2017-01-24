@@ -52,8 +52,7 @@ namespace ArucoUnity
 
       protected Dictionary<int, TrackedMarker> trackedMarkers;
       protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
-      protected new Camera camera;
-      protected CameraParameters cameraParameters;
+      protected ArucoCamera arucoCamera;
       private float markerSideLength;
 
       // MonoBehaviour methods
@@ -69,10 +68,9 @@ namespace ArucoUnity
 
       // Methods
 
-      public void SetCamera(Camera camera, CameraParameters cameraParameters)
+      public void SetCamera(ArucoCamera arucoCamera)
       {
-        this.camera = camera;
-        this.cameraParameters = cameraParameters;
+        this.arucoCamera = arucoCamera;
       }
 
       public void AddTrackedMarker(TrackedMarker newTrackedMarker)
@@ -149,8 +147,8 @@ namespace ArucoUnity
 
           // Adjust the object position
           Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
-          Vector3 opticalCenterMarkerObject = new Vector3(cameraParameters.OpticalCenter.x, cameraParameters.OpticalCenter.y, markerObject.transform.position.z);
-          Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenterMarkerObject) - camera.ViewportToWorldPoint(imageCenterMarkerObject);
+          Vector3 opticalCenterMarkerObject = new Vector3(arucoCamera.CameraParameters.OpticalCenter.x, arucoCamera.CameraParameters.OpticalCenter.y, markerObject.transform.position.z);
+          Vector3 opticalShift = arucoCamera.Camera.ViewportToWorldPoint(opticalCenterMarkerObject) - arucoCamera.Camera.ViewportToWorldPoint(imageCenterMarkerObject);
 
           Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
             + markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker

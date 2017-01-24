@@ -181,8 +181,8 @@ namespace ArucoUnity
     public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out Mat image)
     {
       // Detect markers
-      byte[] imageData = CameraImageTexture.GetRawTextureData();
-      image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
+      byte[] imageData = ArucoCamera.ImageTexture.GetRawTextureData();
+      image = new Mat(ArucoCamera.ImageTexture.height, ArucoCamera.ImageTexture.width, TYPE.CV_8UC3, imageData);
       Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
       if (ApplyRefineStrategy)
@@ -219,8 +219,8 @@ namespace ArucoUnity
 
       // Copy the bytes of the image to the texture
       int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
-      CameraImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
-      CameraImageTexture.Apply(false);
+      ArucoCamera.ImageTexture.LoadRawTextureData(imageToDisplay.data, imageDataSize);
+      ArucoCamera.ImageTexture.Apply(false);
     }
 
     public void AddFrameForCalibration(VectorVectorPoint2f corners, VectorInt ids, Mat image)

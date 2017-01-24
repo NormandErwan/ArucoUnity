@@ -43,14 +43,6 @@ namespace ArucoUnity
     private ArucoCamera arucoCamera;
 
     [SerializeField]
-    [Tooltip("The Unity camera that will capture the CameraPlane display")]
-    private new Camera camera;
-
-    [SerializeField]
-    [Tooltip("The plane facing the camera that display the CameraImageTexture")]
-    private GameObject cameraPlane;
-
-    [SerializeField]
     [Tooltip("If EstimatePose is false, the CameraImageTexture will be displayed on this canvas")]
     private ArucoCameraCanvasDisplay arucoCameraCanvasDisplay;
 
@@ -116,8 +108,6 @@ namespace ArucoUnity
       MarkerSideLength = markerSideLength;
 
       // Configure camera properties
-      Camera = camera;
-      CameraPlane = cameraPlane;
       ArucoCameraCanvasDisplay = arucoCameraCanvasDisplay;
 
       // Configure pose estimation properties
@@ -141,10 +131,10 @@ namespace ArucoUnity
       out VectorVec3d tvecs, out Mat image)
     {
       // Copy the bytes of the texture to the image
-      byte[] imageData = CameraImageTexture.GetRawTextureData();
+      byte[] imageData = ArucoCamera.ImageTexture.GetRawTextureData();
 
       // Detect markers
-      image = new Mat(CameraImageTexture.height, CameraImageTexture.width, TYPE.CV_8UC3, imageData);
+      image = new Mat(ArucoCamera.ImageTexture.height, ArucoCamera.ImageTexture.width, TYPE.CV_8UC3, imageData);
       Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
       // Estimate markers pose
@@ -186,7 +176,7 @@ namespace ArucoUnity
 
       // Show the marker objects
       MarkerObjectsController.DeactivateMarkerObjects();
-      if (EstimatePose && CameraPlaneConfigured)
+      if (EstimatePose)
       {
         MarkerObjectsController.UpdateTransforms(ids, rvecs, tvecs);
       }
@@ -205,8 +195,8 @@ namespace ArucoUnity
 
       // Copy the bytes of the final image to the texture
       int imageDataSize = (int)(finalImage.ElemSize() * finalImage.Total());
-      CameraImageTexture.LoadRawTextureData(finalImage.data, imageDataSize);
-      CameraImageTexture.Apply(false);
+      ArucoCamera.ImageTexture.LoadRawTextureData(finalImage.data, imageDataSize);
+      ArucoCamera.ImageTexture.Apply(false);
     }
   }
 

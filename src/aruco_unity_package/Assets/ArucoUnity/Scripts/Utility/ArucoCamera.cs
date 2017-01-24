@@ -7,6 +7,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
+    [RequireComponent(typeof(Camera))]
     public abstract class ArucoCamera : MonoBehaviour
     {
       // Events
@@ -33,12 +34,14 @@ namespace ArucoUnity
       /// <summary>
       /// Image camera texture, updated each frame.
       /// </summary>
-      public Texture2D Texture2D { get; protected set; }
+      public Texture2D ImageTexture { get; protected set; }
 
       /// <summary>
       /// The parameters of the camera.
       /// </summary>
       public CameraParameters CameraParameters { get; protected set; }
+
+      public Camera Camera { get; protected set; }
 
       /// <summary>
       /// The correct image orientation.
