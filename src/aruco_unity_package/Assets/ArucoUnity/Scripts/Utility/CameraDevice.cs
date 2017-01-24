@@ -219,8 +219,7 @@ namespace ArucoUnity
         CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
         if (CameraParameters == null)
         {
-          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + cameraParametersFilePath + ". Aborting configuration.");
-          return false;
+          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + cameraParametersFilePath + ".");
         }
 
         // Switch the camera device
@@ -274,21 +273,18 @@ namespace ArucoUnity
       /// </summary>
       protected void ConfigureCameraPlane()
       {
-        if (CameraParameters == null)
-        {
-          cameraPlane.SetActive(false);
-          return;
-        }
+        // Use the image texture's width as a fake value if there is no camera parameters
+        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFy : ImageTexture.width;
 
         // Configure the camera according to the camera parameters
         Camera = GetComponent<Camera>();
 
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
-        float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraParameters.CameraFy) * Mathf.Rad2Deg;
+        float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraPlaneDistance) * Mathf.Rad2Deg;
 
         Camera.orthographic = false;
         Camera.fieldOfView = vFov;
-        Camera.farClipPlane = CameraParameters.CameraFy * farClipPlaneNewValueFactor;
+        Camera.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
         Camera.aspect = ImageRatio;
         Camera.transform.position = Vector3.zero;
         Camera.transform.rotation = Quaternion.identity;
@@ -301,7 +297,7 @@ namespace ArucoUnity
           cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImageTexture") as Material;
         }
 
-        cameraPlane.transform.position = new Vector3(0, 0, CameraParameters.CameraFy);
+        cameraPlane.transform.position = new Vector3(0, 0, CameraPlaneDistance);
         cameraPlane.transform.rotation = ImageRotation;
         cameraPlane.transform.localScale = new Vector3(ImageTexture.width, ImageTexture.height, 1);
         cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, ImageScaleFrontFacing);
