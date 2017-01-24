@@ -122,20 +122,17 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the camera and its properties.
       /// </summary>
-      /// <returns>If the operation has been successful.</returns>
-      public abstract bool Configure();
+      public abstract void Configure();
 
       /// <summary>
       /// Start the camera.
       /// </summary>
-      /// <returns>If the operation has been successful.</returns>
-      public abstract bool StartCamera();
+      public abstract void StartCamera();
 
       /// <summary>
       /// Stop the camera.
       /// </summary>
-      /// <returns>If the operation has been successful.</returns>
-      public abstract bool StopCamera();
+      public abstract void StopCamera();
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.

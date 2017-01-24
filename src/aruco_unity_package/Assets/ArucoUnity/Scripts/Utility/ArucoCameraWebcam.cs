@@ -198,13 +198,12 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the webcam, with the id <see cref="WebcamId"/> and its the ArucoCamera properties.
       /// </summary>
-      /// <returns>If the operation has been successful.</returns>
-      public override bool Configure()
+      public override void Configure()
       {
         if (Started)
         {
           Debug.LogError(gameObject.name + ": Stop the camera to configure it. Aborting configuration.");
-          return Configured = false;
+          Configured = false;
         }
 
         // Try to check for the webcam
@@ -212,7 +211,7 @@ namespace ArucoUnity
         if (webcamDevices.Length < WebcamId)
         {
           Debug.LogError(gameObject.name + ": The webcam with the id '" + WebcamId + "' is not found. Aborting configuration.");
-          return Configured = false;
+          Configured = false;
         }
 
         // Try to load the camera parameters
@@ -235,41 +234,35 @@ namespace ArucoUnity
         {
           StartCamera();
         }
-
-        return Configured;
       }
 
       /// <summary>
       /// Start the camera and the associated webcam device.
       /// </summary>
-      public override bool StartCamera()
+      public override void StartCamera()
       {
         if (Started)
         {
-          return false;
+          return;
         }
 
         WebCamTexture.Play();
         Started = false; // Need some frames to be started, see Update()
-
-        return true;
       }
 
       /// <summary>
       /// Stop the camera and the associated webcam device, and notify of the stopping.
       /// </summary>
-      public override bool StopCamera()
+      public override void StopCamera()
       {
         if (!Started)
         {
-          return false;
+          return;
         }
 
         WebCamTexture.Stop();
         Started = false;
         RaiseOnStopped();
-
-        return true;
       }
 
       /// <summary>
