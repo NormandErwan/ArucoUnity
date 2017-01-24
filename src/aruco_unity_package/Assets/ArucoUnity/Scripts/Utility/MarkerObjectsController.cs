@@ -148,7 +148,7 @@ namespace ArucoUnity
           // Adjust the object position
           Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, markerObject.transform.position.z);
           Vector3 opticalCenterMarkerObject = new Vector3(arucoCamera.CameraParameters.OpticalCenter.x, arucoCamera.CameraParameters.OpticalCenter.y, markerObject.transform.position.z);
-          Vector3 opticalShift = arucoCamera.Camera.ViewportToWorldPoint(opticalCenterMarkerObject) - arucoCamera.Camera.ViewportToWorldPoint(imageCenterMarkerObject);
+          Vector3 opticalShift = arucoCamera.CameraImage.ViewportToWorldPoint(opticalCenterMarkerObject) - arucoCamera.CameraImage.ViewportToWorldPoint(imageCenterMarkerObject);
 
           Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
             + markerObject.transform.up * markerObject.transform.localScale.y / 2; // Move up the object to coincide with the marker

@@ -68,7 +68,7 @@ namespace ArucoUnity
       /// <summary>
       /// The Unity camera component that will capture the <see cref="ImageTexture"/>.
       /// </summary>
-      public Camera Camera { get; protected set; }
+      public Camera CameraImage { get; protected set; }
 
       /// <summary>
       /// The correct image orientation.

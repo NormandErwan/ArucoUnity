@@ -135,6 +135,11 @@ namespace ArucoUnity
       /// </summary>
       public WebCamTexture WebCamTexture { get; protected set; }
 
+      /// <summary>
+      /// Camera that shot the <see cref="ArucoCamera.CameraImage"/> in order to maintain its aspect ratio on screen.
+      /// </summary>
+      public Camera CameraBackground { get; protected set; }
+
       // Variables
 
       GameObject cameraPlane;
@@ -254,32 +259,35 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configure the <see cref="ArucoCamera.Camera"/> and a facing plane that will display the <see cref="ArucoCamera.ImageTexture"/>.
+      /// Configure the <see cref="ArucoCamera.CameraImage"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 
+      /// display the <see cref="ArucoCamera.ImageTexture"/>.
       /// </summary>
+      // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
+      // TODO: handle case of CameraParameters.FixAspectRatio != 0
       protected void ConfigureCameraPlane()
       {
-        // Use the image texture's width as a fake value if there is no camera parameters
+        // Use the image texture's width as a default value if there is no camera parameters
         float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFy : ImageTexture.width;
 
-        // Configure the camera according to the camera parameters
-        Camera = GetComponent<Camera>();
+        // Configure the CameraImage according to the camera parameters
+        CameraImage = GetComponent<Camera>();
 
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
         float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraPlaneDistance) * Mathf.Rad2Deg;
 
-        Camera.orthographic = false;
-        Camera.fieldOfView = vFov;
-        Camera.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
-        Camera.aspect = ImageRatio;
-        Camera.transform.position = Vector3.zero;
-        Camera.transform.rotation = Quaternion.identity;
+        CameraImage.orthographic = false;
+        CameraImage.fieldOfView = vFov;
+        CameraImage.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
+        CameraImage.aspect = ImageRatio;
+        CameraImage.transform.position = Vector3.zero;
+        CameraImage.transform.rotation = Quaternion.identity;
 
-        // Configure the plane facing the camera that display the texture
+        // Configure the plane facing the CameraImage that display the texture
         if (cameraPlane == null)
         {
           cameraPlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
           cameraPlane.name = "CameraImagePlane";
-          cameraPlane.transform.SetParent(this.transform);
+          cameraPlane.transform.parent = this.transform;
           cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImage") as Material;
         }
 
@@ -290,6 +298,25 @@ namespace ArucoUnity
         cameraPlane.GetComponent<MeshFilter>().mesh = ImageMesh;
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
         cameraPlane.SetActive(true);
+
+        // Create a second camera that shot the first one above in order to maintain the aspect ratio of the ImageTexture on screen
+        if (CameraBackground == null)
+        {
+          GameObject CameraBackgroundGameObject = new GameObject("BlackBackgroundCamera");
+          CameraBackgroundGameObject.transform.parent = this.transform;
+
+          CameraBackground = CameraBackgroundGameObject.AddComponent<Camera>();
+          CameraBackground.clearFlags = CameraClearFlags.SolidColor;
+          CameraBackground.backgroundColor = Color.black;
+          CameraBackground.depth = CameraImage.depth + 1;
+
+          CameraBackground.orthographic = false;
+          CameraBackground.fieldOfView = CameraImage.fieldOfView;
+          CameraBackground.nearClipPlane = CameraImage.nearClipPlane;
+          CameraBackground.farClipPlane = CameraImage.farClipPlane;
+          CameraBackground.transform.position = CameraImage.transform.position;
+          CameraBackground.transform.rotation = CameraImage.transform.rotation;
+        }
       }
     }
   }
