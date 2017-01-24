@@ -10,7 +10,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  public class CalibrateCameraBoardCharuco : ArucoDetector
+  public class CalibrateCameraBoardCharuco : TrackedObjectsDetector
   {
     // Editor fields
 
@@ -111,7 +111,7 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoDetector.ArucoCamera"/> and the UI. 
+    /// Set up <see cref="TrackedObjectsDetector.ArucoCamera"/> and the UI. 
     /// </summary>
     protected override void OnEnable()
     {

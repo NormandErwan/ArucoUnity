@@ -12,7 +12,7 @@ namespace ArucoUnity
   /// <summary>
   /// Detect markers, display results and place game objects on the detected markers transform.
   /// </summary>
-  public class DetectMarkers : ArucoDetector
+  public class DetectMarkers : TrackedObjectsDetector
   {
     // Editor fields
 
@@ -54,7 +54,7 @@ namespace ArucoUnity
 
     // Detection configuration properties
     /// <summary>
-    /// Display the detected markers in the <see cref="ArucoDetector.CameraImageTexture"/>.
+    /// Display the detected markers in the <see cref="TrackedObjectsDetector.CameraImageTexture"/>.
     /// </summary>
     public bool ShowDetectedMarkers { get { return showDetectedMarkers; } set { showDetectedMarkers = value; } }
 
@@ -66,7 +66,7 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoDetector.ArucoCamera"/>. 
+    /// Set up <see cref="TrackedObjectsDetector.ArucoCamera"/>. 
     /// </summary>
     protected override void OnEnable()
     {
@@ -111,7 +111,7 @@ namespace ArucoUnity
     // Methods
 
     /// <summary>
-    /// Detect the markers on the <see cref="ArucoDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
+    /// Detect the markers on the <see cref="TrackedObjectsDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
     /// after the update of the CameraImageTexture.
     /// </summary>
     /// <param name="corners">Vector of the detected marker corners.</param>
@@ -119,7 +119,7 @@ namespace ArucoUnity
     /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification.</param>
     /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
     /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
-    /// <param name="image">The OpenCV's Mat image used for the detection, created from <see cref="ArucoDetector.CameraImageTexture"/>.</param>
+    /// <param name="image">The OpenCV's Mat image used for the detection, created from <see cref="TrackedObjectsDetector.CameraImageTexture"/>.</param>
     public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs,
       out VectorVec3d tvecs, out Mat image)
     {

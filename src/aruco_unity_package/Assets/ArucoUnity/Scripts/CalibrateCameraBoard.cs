@@ -11,7 +11,7 @@ namespace ArucoUnity
   /// \{
 
   // TODO: doc
-  public class CalibrateCameraBoard : ArucoDetector
+  public class CalibrateCameraBoard : TrackedObjectsDetector
   {
     // Editor fields
 
@@ -99,7 +99,7 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoDetector.ArucoCamera"/> and the UI. 
+    /// Set up <see cref="TrackedObjectsDetector.ArucoCamera"/> and the UI. 
     /// </summary>
     protected override void OnEnable() // TODO: to factor
     {
