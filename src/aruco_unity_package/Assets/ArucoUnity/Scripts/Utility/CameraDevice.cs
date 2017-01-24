@@ -23,10 +23,6 @@ namespace ArucoUnity
       [Tooltip("The file path to load the camera parameters.")]
       private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
 
-      [SerializeField]
-      [Tooltip("Start the camera automatically after configured it.")]
-      private bool autoStart = true;
-
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -120,16 +116,6 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The associated webcam device.
-      /// </summary>
-      public WebCamDevice WebCamDevice { get; protected set; }
-
-      /// <summary>
-      /// The texture of the associated webcam device.
-      /// </summary>
-      public WebCamTexture WebCamTexture { get; protected set; }
-
-      /// <summary>
       /// The id of the camera device to use.
       /// </summary>
       public int DeviceId { get { return deviceId; } set { deviceId = value; } }
@@ -140,26 +126,20 @@ namespace ArucoUnity
       public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
       /// <summary>
-      /// Start the camera automatically after configured it.
+      /// The associated webcam device.
       /// </summary>
-      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
+      public WebCamDevice WebCamDevice { get; protected set; }
+
+      /// <summary>
+      /// The texture of the associated webcam device.
+      /// </summary>
+      public WebCamTexture WebCamTexture { get; protected set; }
 
       // Variables
 
       GameObject cameraPlane;
 
       // MonoBehaviour methods
-
-      /// <summary>
-      /// Configure the selected camera device if <see cref="AutoStart"/> is true.
-      /// </summary>
-      protected void Start()
-      {
-        if (AutoStart)
-        {
-          Configure();
-        }
-      }
 
       /// <summary>
       /// Make adjustments to image every frame to be safe, since Unity isn't 
@@ -268,9 +248,7 @@ namespace ArucoUnity
         return true;
       }
 
-      /// <summary>
-      /// 
-      /// </summary>
+      // TODO: doc
       protected void ConfigureCameraPlane()
       {
         // Use the image texture's width as a fake value if there is no camera parameters

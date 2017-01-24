@@ -10,6 +10,12 @@ namespace ArucoUnity
     [RequireComponent(typeof(Camera))]
     public abstract class ArucoCamera : MonoBehaviour
     {
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("Start the camera automatically after configured it.")]
+      private bool autoStart = true;
+
       // Events
 
       public delegate void ArucoCameraAction();
@@ -27,6 +33,11 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
+      /// Start the camera automatically after configured it.
+      /// </summary>
+      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
+
+      /// <summary>
       /// True when the camera has started.
       /// </summary>
       public bool Started { get; protected set; }
@@ -41,6 +52,7 @@ namespace ArucoUnity
       /// </summary>
       public CameraParameters CameraParameters { get; protected set; }
 
+      // TODO: doc
       public Camera Camera { get; protected set; }
 
       /// <summary>
@@ -67,6 +79,19 @@ namespace ArucoUnity
       /// Mirror front-facing camera's image horizontally to look more natural.
       /// </summary>
       public virtual Vector3 ImageScaleFrontFacing { get; protected set; }
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Configure the camera if <see cref="AutoStart"/> is true.
+      /// </summary>
+      protected void Start()
+      {
+        if (AutoStart)
+        {
+          Configure();
+        }
+      }
 
       // Methods
 
