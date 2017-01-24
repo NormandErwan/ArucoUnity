@@ -177,7 +177,7 @@ namespace ArucoUnity
       /// Create a new CameraParameters object from a previously saved camera parameters XML file.
       /// </summary>
       /// <param name="cameraParametersFilePath">The file path to load.</param>
-      /// <returns>The new CameraParameters created from the XML file.</returns>
+      /// <returns>The CameraParameters imported from the XML file or null if the file coulnd't be loaded.</returns>
       public static CameraParameters LoadFromXmlFile(string cameraParametersFilePath)
       {
         CameraParameters cameraParameters = null;
@@ -240,6 +240,7 @@ namespace ArucoUnity
       /// Save the camera parameters to a XML file.
       /// </summary>
       /// <param name="cameraParametersFilePath">The file path where to save the object.</param>
+      /// <returns>If the file has been saved.</returns>
       public bool SaveToXmlFile(string cameraParametersFilePath)
       {
         // Update CameraMatrixValues and CameraMatrixType

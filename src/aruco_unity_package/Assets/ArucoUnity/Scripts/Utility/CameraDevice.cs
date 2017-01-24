@@ -8,7 +8,7 @@ namespace ArucoUnity
   namespace Utility
   {
     /// <summary>
-    /// Manages a webcam device and updates its associated textures each frame.
+    /// Manages any connected webcam to the machine, and retrieves and displays the camera's image every frame.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
     public class CameraDevice : ArucoCamera
@@ -142,8 +142,8 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Make adjustments to image every frame to be safe, since Unity isn't 
-      /// guaranteed to report correct data as soon as device camera is started.
+      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTexture"/> with the 
+      /// <see cref="WebCamTexture"/> content.
       /// </summary>
       protected void Update()
       {
@@ -166,7 +166,7 @@ namespace ArucoUnity
             }
           }
 
-          // Update the Texture2D content
+          // Update the ImageTexture content
           if (Started)
           {
             ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
@@ -179,7 +179,7 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the camera device with the id <see cref="DeviceId"/> and its properties.
       /// </summary>
-      /// <returns>If the operation has been successfull.</returns>
+      /// <returns>If the operation has been successful.</returns>
       public override bool Configure()
       {
         if (Started)
@@ -253,7 +253,9 @@ namespace ArucoUnity
         return true;
       }
 
-      // TODO: doc
+      /// <summary>
+      /// Configure the <see cref="ArucoCamera.Camera"/> and a facing plane that will display the <see cref="ArucoCamera.ImageTexture"/>.
+      /// </summary>
       protected void ConfigureCameraPlane()
       {
         // Use the image texture's width as a fake value if there is no camera parameters
@@ -276,9 +278,9 @@ namespace ArucoUnity
         if (cameraPlane == null)
         {
           cameraPlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
-          cameraPlane.name = "CameraImageTexturePlane";
+          cameraPlane.name = "CameraImagePlane";
           cameraPlane.transform.SetParent(this.transform);
-          cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImageTexture") as Material;
+          cameraPlane.GetComponent<Renderer>().material = Resources.Load("CameraImage") as Material;
         }
 
         cameraPlane.transform.position = new Vector3(0, 0, CameraPlaneDistance);

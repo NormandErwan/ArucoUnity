@@ -7,6 +7,9 @@ namespace ArucoUnity
 
   namespace Utility
   {
+    /// <summary>
+    /// Base for any camera sytem to use with ArucoUnity. Manages to retrieve and display the camera's image every frame.
+    /// </summary>
     [RequireComponent(typeof(Camera))]
     public abstract class ArucoCamera : MonoBehaviour
     {
@@ -53,7 +56,7 @@ namespace ArucoUnity
       public bool Configured { get; protected set; }
 
       /// <summary>
-      /// Image camera texture, updated each frame.
+      /// Image texture, updated each frame.
       /// </summary>
       public Texture2D ImageTexture { get; protected set; }
 
@@ -62,7 +65,9 @@ namespace ArucoUnity
       /// </summary>
       public CameraParameters CameraParameters { get; protected set; }
 
-      // TODO: doc
+      /// <summary>
+      /// The Unity camera component that will capture the <see cref="ImageTexture"/>.
+      /// </summary>
       public Camera Camera { get; protected set; }
 
       /// <summary>
@@ -76,7 +81,7 @@ namespace ArucoUnity
       public virtual float ImageRatio { get; protected set; }
 
       /// <summary>
-      /// Allow to unflip the image if vertically flipped (use for image plane).
+      /// Allow to unflip the image if vertically flipped (use for mesh plane).
       /// </summary>
       public virtual Mesh ImageMesh { get; protected set; }
 
@@ -108,19 +113,19 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the camera and its properties.
       /// </summary>
-      /// <returns>If the operation has been successfull.</returns>
+      /// <returns>If the operation has been successful.</returns>
       public abstract bool Configure();
 
       /// <summary>
       /// Start the camera.
       /// </summary>
-      /// <returns>If the operation has been successfull.</returns>
+      /// <returns>If the operation has been successful.</returns>
       public abstract bool StartCamera();
 
       /// <summary>
       /// Stop the camera.
       /// </summary>
-      /// <returns>If the operation has been successfull.</returns>
+      /// <returns>If the operation has been successful.</returns>
       public abstract bool StopCamera();
 
       /// <summary>
