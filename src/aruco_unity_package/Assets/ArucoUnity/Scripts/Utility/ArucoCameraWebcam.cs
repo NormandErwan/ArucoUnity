@@ -11,20 +11,20 @@ namespace ArucoUnity
     /// Manages any connected webcam to the machine, and retrieves and displays the camera's image every frame.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
-    public class CameraDevice : ArucoCamera
+    public class ArucoCameraWebcam : ArucoCamera
     {
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The id of the camera device to use.")]
-      private int deviceId = 0;
+      [Tooltip("The id of the webcam to use.")]
+      private int webcamId = 0;
 
       [SerializeField]
       [Tooltip("The file path to load the camera parameters.")]
       private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
 
       [SerializeField]
-      [Tooltip("Preserve the aspect ratio of the camera device's image.")]
+      [Tooltip("Preserve the aspect ratio of the webcam image.")]
       private bool preserveAspectRatio = true;
 
       // ArucoCamera properties implementation
@@ -120,9 +120,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The id of the camera device to use.
+      /// The id of the webcam to use.
       /// </summary>
-      public int DeviceId { get { return deviceId; } set { deviceId = value; } }
+      public int WebcamId { get { return webcamId; } set { webcamId = value; } }
 
       /// <summary>
       /// The file path to load the camera parameters.
@@ -130,7 +130,7 @@ namespace ArucoUnity
       public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
       /// <summary>
-      /// Preserve the aspect ratio of the camera device's image.
+      /// Preserve the aspect ratio of the webcam's image.
       /// </summary>
       public bool PreserveAspectRatio { get { return preserveAspectRatio; } set { preserveAspectRatio = value; } }
 
@@ -196,7 +196,7 @@ namespace ArucoUnity
       // ArucoCamera methods
 
       /// <summary>
-      /// Configure the camera device with the id <see cref="DeviceId"/> and its properties.
+      /// Configure the webcam, with the id <see cref="WebcamId"/> and its the ArucoCamera properties.
       /// </summary>
       /// <returns>If the operation has been successful.</returns>
       public override bool Configure()
@@ -207,11 +207,11 @@ namespace ArucoUnity
           return Configured = false;
         }
 
-        // Try to check for the camera device
+        // Try to check for the webcam
         WebCamDevice[] webcamDevices = WebCamTexture.devices;
-        if (webcamDevices.Length < DeviceId)
+        if (webcamDevices.Length < WebcamId)
         {
-          Debug.LogError(gameObject.name + ": The camera device with the id '" + DeviceId + "' is not found. Aborting configuration.");
+          Debug.LogError(gameObject.name + ": The webcam with the id '" + WebcamId + "' is not found. Aborting configuration.");
           return Configured = false;
         }
 
@@ -223,7 +223,7 @@ namespace ArucoUnity
         }
 
         // Switch the camera device
-        WebCamDevice = webcamDevices[DeviceId];
+        WebCamDevice = webcamDevices[WebcamId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
         // Update state
