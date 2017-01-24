@@ -70,11 +70,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// If <see cref="EstimatePose "/> or <see cref="CameraPlaneConfigured"/> is false, the CameraImageTexture will be displayed on this canvas.
-      /// </summary>
-      public ArucoCameraCanvasDisplay ArucoCameraCanvasDisplay { get; set; }
-
       // Pose estimation properties
       /// <summary>
       /// Estimate the detected markers pose (position, rotation).
@@ -143,7 +138,6 @@ namespace ArucoUnity
         {
           EstimatePose = false;
         }
-        ArucoCameraCanvasDisplay.gameObject.SetActive(!EstimatePose);
 
         // Update the state and notify
         if (OnConfigured != null)

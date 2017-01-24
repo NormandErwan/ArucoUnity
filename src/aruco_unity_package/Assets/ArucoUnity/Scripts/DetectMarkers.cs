@@ -42,10 +42,6 @@ namespace ArucoUnity
     [Tooltip("The camera to use for the detection.")]
     private ArucoCamera arucoCamera;
 
-    [SerializeField]
-    [Tooltip("If EstimatePose is false, the CameraImageTexture will be displayed on this canvas")]
-    private ArucoCameraCanvasDisplay arucoCameraCanvasDisplay;
-
     [Header("Pose estimation configuration")]
     [SerializeField]
     [Tooltip("Estimate the detected markers pose (position, rotation)")]
@@ -106,9 +102,6 @@ namespace ArucoUnity
       Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       DetectorParameters = detectorParametersManager.detectorParameters;
       MarkerSideLength = markerSideLength;
-
-      // Configure camera properties
-      ArucoCameraCanvasDisplay = arucoCameraCanvasDisplay;
 
       // Configure pose estimation properties
       EstimatePose = estimatePose;
