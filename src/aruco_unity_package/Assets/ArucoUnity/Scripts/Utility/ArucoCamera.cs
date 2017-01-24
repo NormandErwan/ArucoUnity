@@ -21,6 +21,11 @@ namespace ArucoUnity
       public delegate void ArucoCameraAction();
 
       /// <summary>
+      /// Executed when the camera is configured.
+      /// </summary>
+      public event ArucoCameraAction OnConfigured;
+
+      /// <summary>
       /// Executed when the camera starts.
       /// </summary>
       public event ArucoCameraAction OnStarted;
@@ -137,6 +142,17 @@ namespace ArucoUnity
         if (OnStopped != null)
         {
           OnStopped();
+        }
+      }
+
+      /// <summary>
+      /// Execute the <see cref="OnConfigured"/> action.
+      /// </summary>
+      protected void RaiseOnConfigured()
+      {
+        if (OnConfigured != null)
+        {
+          OnConfigured();
         }
       }
     }

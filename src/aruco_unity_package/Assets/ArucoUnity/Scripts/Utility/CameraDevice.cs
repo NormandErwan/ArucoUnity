@@ -207,13 +207,17 @@ namespace ArucoUnity
         WebCamDevice = webcamDevices[DeviceId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
+        // Update state
+        Configured = true;
+        RaiseOnConfigured();
+
         // AutoStart
         if (AutoStart)
         {
           StartCamera();
         }
 
-        return Configured = true;
+        return Configured;
       }
 
       /// <summary>
