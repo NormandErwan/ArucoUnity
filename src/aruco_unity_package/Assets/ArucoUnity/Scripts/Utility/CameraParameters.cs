@@ -182,18 +182,27 @@ namespace ArucoUnity
       {
         CameraParameters cameraParameters = null;
 
-        // Load the file and deserialize it
-        using (StreamReader reader = new StreamReader(cameraParametersFilePath))
+        // Try to load the file and deserialize it
+        StreamReader reader = null;
+        try
         {
+          reader = new StreamReader(cameraParametersFilePath);
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           cameraParameters = serializer.Deserialize(reader) as CameraParameters;
-          cameraParameters.filePath = cameraParametersFilePath;
         }
-
+        catch { }
+        finally
+        {
+          if (reader != null)
+          {
+            reader.Close();
+          }
+        }
         if (cameraParameters == null)
         {
           return null;
         }
+        cameraParameters.filePath = cameraParametersFilePath;
 
         // Update CameraMatrix
         int cameraMatrixRows = cameraParameters.CameraMatrixValues.Length,
@@ -231,7 +240,7 @@ namespace ArucoUnity
       /// Save the camera parameters to a XML file.
       /// </summary>
       /// <param name="cameraParametersFilePath">The file path where to save the object.</param>
-      public void SaveToXmlFile(string cameraParametersFilePath)
+      public bool SaveToXmlFile(string cameraParametersFilePath)
       {
         // Update CameraMatrixValues and CameraMatrixType
         CameraMatrixType = CameraMatrix.Type();
@@ -263,12 +272,26 @@ namespace ArucoUnity
           }
         }
 
-        // Serialize the object and save it to the file
-        using (StreamWriter writer = new StreamWriter(cameraParametersFilePath))
+        // Try to serialize the object and save it to the file
+        bool result = false;
+        StreamWriter writer = null;
+        try
         {
+          writer = new StreamWriter(cameraParametersFilePath);
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           serializer.Serialize(writer, this);
+          result = true;
         }
+        catch { }
+        finally
+        {
+          if (writer != null)
+          {
+            writer.Close();
+          }
+        }
+
+        return result;
       }
 
       protected void UpdateCameraMatrixDerivedVariables()
