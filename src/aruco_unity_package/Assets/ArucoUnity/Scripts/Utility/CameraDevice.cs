@@ -23,6 +23,10 @@ namespace ArucoUnity
       [Tooltip("The file path to load the camera parameters.")]
       private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
 
+      [SerializeField]
+      [Tooltip("Preserve the aspect ratio of the camera device's image.")]
+      private bool preserveAspectRatio = true;
+
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -126,6 +130,11 @@ namespace ArucoUnity
       public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
       /// <summary>
+      /// Preserve the aspect ratio of the camera device's image.
+      /// </summary>
+      public bool PreserveAspectRatio { get { return preserveAspectRatio; } set { preserveAspectRatio = value; } }
+
+      /// <summary>
       /// The associated webcam device.
       /// </summary>
       public WebCamDevice WebCamDevice { get; protected set; }
@@ -136,7 +145,8 @@ namespace ArucoUnity
       public WebCamTexture WebCamTexture { get; protected set; }
 
       /// <summary>
-      /// Camera that shot the <see cref="ArucoCamera.CameraImage"/> in order to maintain its aspect ratio on screen.
+      /// Camera that shot the <see cref="ArucoCamera.CameraImage"/> in order to maintain the aspect ratio of 
+      /// <see cref="ArucoCamera.ImageTexture"/> on screen.
       /// </summary>
       public Camera CameraBackground { get; protected set; }
 
@@ -206,10 +216,10 @@ namespace ArucoUnity
         }
 
         // Try to load the camera parameters
-        CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+        CameraParameters = CameraParameters.LoadFromXmlFile(CameraParametersFilePath);
         if (CameraParameters == null)
         {
-          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + cameraParametersFilePath + ".");
+          Debug.LogError(gameObject.name + ": Couldn't load the camera parameters file path '" + CameraParametersFilePath + ".");
         }
 
         // Switch the camera device
@@ -303,23 +313,31 @@ namespace ArucoUnity
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
         cameraPlane.SetActive(true);
 
-        // Create a second camera that shot the first one above in order to maintain the aspect ratio of the ImageTexture on screen
-        if (CameraBackground == null)
+        // If preserving the aspect ratio of the CameraImage, create a second camera that shot it as background
+        if (PreserveAspectRatio)
         {
-          GameObject CameraBackgroundGameObject = new GameObject("BlackBackgroundCamera");
-          CameraBackgroundGameObject.transform.parent = this.transform;
+          if (CameraBackground == null)
+          {
+            GameObject CameraBackgroundGameObject = new GameObject("BlackBackgroundCamera");
+            CameraBackgroundGameObject.transform.parent = this.transform;
 
-          CameraBackground = CameraBackgroundGameObject.AddComponent<Camera>();
-          CameraBackground.clearFlags = CameraClearFlags.SolidColor;
-          CameraBackground.backgroundColor = Color.black;
-          CameraBackground.depth = CameraImage.depth + 1;
+            CameraBackground = CameraBackgroundGameObject.AddComponent<Camera>();
+            CameraBackground.clearFlags = CameraClearFlags.SolidColor;
+            CameraBackground.backgroundColor = Color.black;
+            CameraBackground.depth = CameraImage.depth + 1; // Render after the CameraImage
 
-          CameraBackground.orthographic = false;
-          CameraBackground.fieldOfView = CameraImage.fieldOfView;
-          CameraBackground.nearClipPlane = CameraImage.nearClipPlane;
-          CameraBackground.farClipPlane = CameraImage.farClipPlane;
-          CameraBackground.transform.position = CameraImage.transform.position;
-          CameraBackground.transform.rotation = CameraImage.transform.rotation;
+            CameraBackground.orthographic = false;
+            CameraBackground.fieldOfView = CameraImage.fieldOfView;
+            CameraBackground.nearClipPlane = CameraImage.nearClipPlane;
+            CameraBackground.farClipPlane = CameraImage.farClipPlane;
+            CameraBackground.transform.position = CameraImage.transform.position;
+            CameraBackground.transform.rotation = CameraImage.transform.rotation;
+          }
+          CameraBackground.gameObject.SetActive(true);
+        }
+        else if (CameraBackground != null)
+        {
+          CameraBackground.gameObject.SetActive(false);
         }
       }
     }
