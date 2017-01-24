@@ -164,7 +164,11 @@ namespace ArucoUnity
             else
             {
               ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-              ConfigureCameraPlane();
+
+              if (DisplayImage)
+              {
+                ConfigureCameraPlane();
+              }
 
               Started = true;
               RaiseOnStarted();

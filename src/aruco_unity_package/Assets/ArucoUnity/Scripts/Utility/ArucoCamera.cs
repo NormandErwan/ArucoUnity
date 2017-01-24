@@ -16,6 +16,10 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("Display automatically or not the camera's image on screen.")]
+      private bool displayImage = true;
+
+      [SerializeField]
       [Tooltip("Start the camera automatically after configured it.")]
       private bool autoStart = true;
 
@@ -39,6 +43,11 @@ namespace ArucoUnity
       public event ArucoCameraAction OnStopped;
 
       // Properties
+
+      /// <summary>
+      /// Display automatically or not the camera's image on screen.
+      /// </summary>
+      public bool DisplayImage { get { return displayImage; } set { displayImage = value; } }
 
       /// <summary>
       /// Start the camera automatically after configured it.
