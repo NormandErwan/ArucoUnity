@@ -111,6 +111,9 @@ namespace ArucoUnity
       /// </summary>
       protected void Start()
       {
+        Configured = false;
+        Started = false;
+
         if (AutoStart)
         {
           Configure();
