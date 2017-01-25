@@ -80,6 +80,14 @@ namespace ArucoUnity
       {
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       }
+
+      /// <summary>
+      /// Hide at start, until it will be used by a <see cref="ArucoObjectController"/>.
+      /// </summary>
+      protected void Start()
+      {
+        gameObject.SetActive(false);
+      }
     }
   }
 
