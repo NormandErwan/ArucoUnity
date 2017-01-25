@@ -49,7 +49,25 @@ namespace ArucoUnity
 
       public Dictionary Dictionary { get; set; }
 
-      public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+      public float MarkerSideLength 
+      { 
+        get { return markerSideLength; }
+        set
+        {
+          float previousMarkerSideLength = markerSideLength;
+          markerSideLength = value;
+
+          if (previousMarkerSideLength != 0)
+          {
+            transform.localScale /= previousMarkerSideLength;
+          }
+
+          if (markerSideLength != 0)
+          {
+            transform.localScale *= markerSideLength;
+          }
+        }
+      }
 
       public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
 

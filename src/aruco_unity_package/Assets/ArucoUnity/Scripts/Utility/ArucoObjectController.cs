@@ -26,28 +26,6 @@ namespace ArucoUnity
       /// </summary>
       public GameObject DefaultTrackedGameObject { get { return defaultTrackedGameObject; } set { defaultTrackedGameObject = value; } }
 
-      // TODO: move to ArucoObject
-      public float MarkerSideLength
-      {
-        get { return markerSideLength; }
-        set
-        {
-          // Update value
-          float oldMarkerSideLength = markerSideLength;
-          markerSideLength = value;
-
-          // Resize all the marker objects
-          foreach (var markerObject in trackedMarkers)
-          {
-            UpdateLocalScales(markerSideLength, markerObject.Value.gameObject.transform, oldMarkerSideLength);
-          }
-          foreach (var markerObject in defaultTrackedMarkerObjects)
-          {
-            UpdateLocalScales(markerSideLength, markerObject.Value.gameObject.transform, oldMarkerSideLength);
-          }
-        }
-      }
-
       // Variables
 
       protected HashSet<ArucoObject> arucoObjects;
@@ -147,8 +125,6 @@ namespace ArucoUnity
               markerObject.name = markerId.ToString();
               markerObject.transform.SetParent(this.transform);
 
-              UpdateLocalScales(MarkerSideLength, markerObject.transform);
-
               defaultTrackedMarkerObjects.Add(markerId, markerObject);
             }
           }
@@ -170,19 +146,6 @@ namespace ArucoUnity
             + "; positionShift: " + (markerObject.transform.rotation * opticalShift).ToString("F4"));
 
           markerObject.SetActive(true);
-        }
-      }
-
-      private void UpdateLocalScales(float markerSideLength, Transform markerObjectTransform, float oldMarkerSideLength = 1f)
-      {
-        if (oldMarkerSideLength != 0)
-        {
-          markerObjectTransform.localScale /= oldMarkerSideLength;
-        }
-
-        if (markerSideLength != 0)
-        {
-          markerObjectTransform.localScale *= markerSideLength;
         }
       }
     }

@@ -130,7 +130,6 @@ namespace ArucoUnity
         if (ArucoCamera.CameraParameters != null)
         {
           ArucoObjectController.SetCamera(ArucoCamera);
-          ArucoObjectController.MarkerSideLength = MarkerSideLength;
         }
         else
         {
