@@ -33,13 +33,14 @@ namespace ArucoUnity
         get { return arucoObjectController; }
         set
         {
-          ArucoObjectController previousArucoObjectController = arucoObjectController;
-          arucoObjectController = value;
-
-          if (previousArucoObjectController != null)
+          // Remove the previous controller
+          if (arucoObjectController != null)
           {
-            previousArucoObjectController.Remove(this);
+            arucoObjectController.Remove(this);
           }
+
+          // Add the new controller
+          arucoObjectController = value;
           if (arucoObjectController != null)
           {
             ArucoObjectController.Add(this);
@@ -54,14 +55,14 @@ namespace ArucoUnity
         get { return markerSideLength; }
         set
         {
-          float previousMarkerSideLength = markerSideLength;
-          markerSideLength = value;
-
-          if (previousMarkerSideLength != 0)
+          // Restore the previous scale
+          if (markerSideLength != 0)
           {
-            transform.localScale /= previousMarkerSideLength;
+            transform.localScale /= markerSideLength;
           }
 
+          // Adjust to the new scale
+          markerSideLength = value;
           if (markerSideLength != 0)
           {
             transform.localScale *= markerSideLength;
