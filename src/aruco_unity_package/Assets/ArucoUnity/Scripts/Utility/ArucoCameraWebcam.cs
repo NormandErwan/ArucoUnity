@@ -162,34 +162,36 @@ namespace ArucoUnity
       /// </summary>
       protected void Update()
       {
-        if (Configured)
+        if (!Configured)
         {
-          // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
-          if (!Started)
+          return;
+        }
+
+        // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
+        if (!Started)
+        {
+          if (WebCamTexture.width < 100)
           {
-            if (WebCamTexture.width < 100)
-            {
-              Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
-            }
-            else
-            {
-              ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-
-              if (DisplayImage)
-              {
-                ConfigureCameraPlane();
-              }
-
-              Started = true;
-              RaiseOnStarted();
-            }
+            Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
           }
-
-          // Update the ImageTexture content
-          if (Started)
+          else
           {
-            ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
+            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+
+            if (DisplayImage)
+            {
+              ConfigureCameraPlane();
+            }
+
+            Started = true;
+            RaiseOnStarted();
           }
+        }
+
+        // Update the ImageTexture content
+        if (Started)
+        {
+          ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
         }
       }
 
@@ -204,6 +206,7 @@ namespace ArucoUnity
         {
           Debug.LogError(gameObject.name + ": Stop the camera to configure it. Aborting configuration.");
           Configured = false;
+          return;
         }
 
         // Try to check for the webcam
@@ -212,6 +215,7 @@ namespace ArucoUnity
         {
           Debug.LogError(gameObject.name + ": The webcam with the id '" + WebcamId + "' is not found. Aborting configuration.");
           Configured = false;
+          return;
         }
 
         // Try to load the camera parameters
