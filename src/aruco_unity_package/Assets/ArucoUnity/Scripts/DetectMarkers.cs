@@ -171,7 +171,7 @@ namespace ArucoUnity
       ArucoObjectController.DeactivateMarkerObjects();
       if (EstimatePose)
       {
-        ArucoObjectController.UpdateTransforms(ids, rvecs, tvecs);
+        //ArucoObjectController.UpdateTransforms(ids, rvecs, tvecs); // TODO: fix
       }
 
       // Undistord the image if calibrated

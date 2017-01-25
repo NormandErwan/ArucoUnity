@@ -13,20 +13,20 @@ namespace ArucoUnity
     {
       // Editor fields
 
+      // TODO: move to Tracker
       [SerializeField]
       [Tooltip("The default game object to place above the detected markers")]
       private GameObject defaultTrackedGameObject;
 
-      // Events
-      // TODO: OnMarkerDetected, OnMarkerTracked, OnMarkerLost 
-
       // Properties
 
+      // TODO: move to Tracker
       /// <summary>
       /// The default game object to place above the detected markers.
       /// </summary>
       public GameObject DefaultTrackedGameObject { get { return defaultTrackedGameObject; } set { defaultTrackedGameObject = value; } }
 
+      // TODO: move to ArucoObject
       public float MarkerSideLength
       {
         get { return markerSideLength; }
@@ -50,8 +50,11 @@ namespace ArucoUnity
 
       // Variables
 
+      protected HashSet<ArucoObject> arucoObjects;
+      // TODO: move to Tracker
       protected Dictionary<int, Marker> trackedMarkers;
       protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
+
       protected ArucoCamera arucoCamera;
       private float markerSideLength;
 
@@ -73,21 +76,30 @@ namespace ArucoUnity
         this.arucoCamera = arucoCamera;
       }
 
-      public void Add(Marker newTrackedMarker)
+      public void Add(ArucoObject arucoObject)
       {
+        arucoObjects.Add(arucoObject);
+
+        // TODO: fix
+
         // Return if already added
-        foreach (var trackedMarker in trackedMarkers)
-        {
-          if (trackedMarker.Value == newTrackedMarker)
-          {
-            return;
-          }
-        }
+        /* foreach (var trackedMarker in trackedMarkers)
+         {
+           if (trackedMarker.Value == newTrackedMarker)
+           {
+             return;
+           }
+         }*/
 
         // Add the new tracked marker, rescale to the marker size and hide it
-        trackedMarkers.Add(newTrackedMarker.Id, newTrackedMarker);
+        /*trackedMarkers.Add(newTrackedMarker.Id, newTrackedMarker);
         UpdateLocalScales(MarkerSideLength, newTrackedMarker.gameObject.transform);
-        newTrackedMarker.gameObject.SetActive(false);
+        newTrackedMarker.gameObject.SetActive(false);*/
+      }
+
+      public void Remove(ArucoObject arucoObject)
+      {
+        arucoObjects.Remove(arucoObject);
       }
 
       /// <summary>
