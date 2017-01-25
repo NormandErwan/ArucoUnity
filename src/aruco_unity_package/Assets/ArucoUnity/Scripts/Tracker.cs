@@ -12,7 +12,7 @@ namespace ArucoUnity
   /// <summary>
   /// Detect markers, display results and place game objects on the detected markers transform.
   /// </summary>
-  public class DetectMarkers : ArucoObjectDetector
+  public class Tracker : ArucoObjectDetector
   {
     // Editor fields
 
