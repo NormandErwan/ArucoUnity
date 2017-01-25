@@ -64,15 +64,15 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern void au_Dictionary_setMaxCorrectionBits(System.IntPtr dictionary, int maxCorrectionBits);
 
-      public Dictionary(Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cvPtr, markerSize, maxCorrectionBits))
+      public Dictionary(Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
       {
       }
 
-      public Dictionary(Mat bytesList, int markerSize) : base(au_Dictionary_new2(bytesList.cvPtr, markerSize))
+      public Dictionary(Mat bytesList, int markerSize) : base(au_Dictionary_new2(bytesList.cppPtr, markerSize))
       {
       }
 
-      public Dictionary(Mat bytesList) : base(au_Dictionary_new3(bytesList.cvPtr))
+      public Dictionary(Mat bytesList) : base(au_Dictionary_new3(bytesList.cppPtr))
       {
       }
 
@@ -80,7 +80,7 @@ namespace ArucoUnity
       {
       }
 
-      public Dictionary(Dictionary dictionary) : base(au_Dictionary_new5(dictionary.cvPtr))
+      public Dictionary(Dictionary dictionary) : base(au_Dictionary_new5(dictionary.cppPtr))
       {
       }
 
@@ -91,20 +91,20 @@ namespace ArucoUnity
 
       protected override void DeleteCvPtr()
       {
-        au_Dictionary_delete(cvPtr);
+        au_Dictionary_delete(cppPtr);
       }
 
       public void DrawMarker(int id, int sidePixels, ref Mat img, int borderBits)
       {
         Exception exception = new Exception();
-        au_Dictionary_drawMarker(cvPtr, id, sidePixels, img.cvPtr, borderBits, exception.cvPtr);
+        au_Dictionary_drawMarker(cppPtr, id, sidePixels, img.cppPtr, borderBits, exception.cppPtr);
         exception.Check();
       }
 
       public int GetDistanceToId(Dictionary dictionary, Mat bits, int id, bool allRotations)
       {
         Exception exception = new Exception();
-        int distanceToId = au_Dictionary_getDistanceToId1(cvPtr, bits.cvPtr, id, allRotations, exception.cvPtr);
+        int distanceToId = au_Dictionary_getDistanceToId1(cppPtr, bits.cppPtr, id, allRotations, exception.cppPtr);
         exception.Check();
         return distanceToId;
       }
@@ -112,7 +112,7 @@ namespace ArucoUnity
       public int GetDistanceToId(Dictionary dictionary, Mat bits, int id)
       {
         Exception exception = new Exception();
-        int distanceToId = au_Dictionary_getDistanceToId2(cvPtr, bits.cvPtr, id, exception.cvPtr);
+        int distanceToId = au_Dictionary_getDistanceToId2(cppPtr, bits.cppPtr, id, exception.cppPtr);
         exception.Check();
         return distanceToId;
       }
@@ -120,7 +120,7 @@ namespace ArucoUnity
       public bool Identify(Dictionary dictionary, Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
       {
         Exception exception = new Exception();
-        bool result = au_Dictionary_identify(cvPtr, onlyBits.cvPtr, out idx, out rotation, maxCorrectionRate, exception.cvPtr);
+        bool result = au_Dictionary_identify(cppPtr, onlyBits.cppPtr, out idx, out rotation, maxCorrectionRate, exception.cppPtr);
         exception.Check();
         return result;
       }
@@ -128,7 +128,7 @@ namespace ArucoUnity
       static public Mat GetBitsFromByteList(Mat byteList, int markerSiz)
       {
         Exception exception = new Exception();
-        Mat bits = new Mat(au_Dictionary_getBitsFromByteList(byteList.cvPtr, markerSiz, exception.cvPtr));
+        Mat bits = new Mat(au_Dictionary_getBitsFromByteList(byteList.cppPtr, markerSiz, exception.cppPtr));
         exception.Check();
         return bits;
       }
@@ -140,20 +140,20 @@ namespace ArucoUnity
 
       public Mat bytesList
       {
-        get { return new Mat(au_Dictionary_getBytesList(cvPtr), DeleteResponsibility.False); }
-        set { au_Dictionary_setBytesList(cvPtr, value.cvPtr); }
+        get { return new Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
+        set { au_Dictionary_setBytesList(cppPtr, value.cppPtr); }
       }
 
       public int markerSize
       {
-        get { return au_Dictionary_getMarkerSize(cvPtr); }
-        set { au_Dictionary_setMarkerSize(cvPtr, value); }
+        get { return au_Dictionary_getMarkerSize(cppPtr); }
+        set { au_Dictionary_setMarkerSize(cppPtr, value); }
       }
 
       public int maxCorrectionBits
       {
-        get { return au_Dictionary_getMaxCorrectionBits(cvPtr); }
-        set { au_Dictionary_setMaxCorrectionBits(cvPtr, value); }
+        get { return au_Dictionary_getMaxCorrectionBits(cppPtr); }
+        set { au_Dictionary_setMaxCorrectionBits(cppPtr, value); }
       }
     }
   }

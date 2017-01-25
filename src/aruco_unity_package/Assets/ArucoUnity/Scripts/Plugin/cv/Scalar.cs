@@ -30,7 +30,7 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_cv_Scalar_delete(cvPtr);
+          au_cv_Scalar_delete(cppPtr);
         }
       }
     }

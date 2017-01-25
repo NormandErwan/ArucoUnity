@@ -58,7 +58,7 @@ namespace ArucoUnity
 
       protected override void DeleteCvPtr()
       {
-        au_CharucoBoard_delete(cvPtr);
+        au_CharucoBoard_delete(cppPtr);
       }
 
       internal CharucoBoard(System.IntPtr charucoBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
@@ -71,7 +71,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_CharucoBoard_draw1(cvPtr, outSize.cvPtr, out imgPtr, marginSize, borderBits, exception.cvPtr);
+        au_CharucoBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -82,7 +82,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_CharucoBoard_draw2(cvPtr, outSize.cvPtr, out imgPtr, marginSize, exception.cvPtr);
+        au_CharucoBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -93,7 +93,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_CharucoBoard_draw3(cvPtr, outSize.cvPtr, out imgPtr, exception.cvPtr);
+        au_CharucoBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -102,43 +102,43 @@ namespace ArucoUnity
       static public CharucoBoard Create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary)
       {
         Exception exception = new Exception();
-        System.IntPtr charucoBoardPtr = au_CharucoBoard_create(squaresX, squaresY, squareLength, markerLength, dictionary.cvPtr,
-          exception.cvPtr);
+        System.IntPtr charucoBoardPtr = au_CharucoBoard_create(squaresX, squaresY, squareLength, markerLength, dictionary.cppPtr,
+          exception.cppPtr);
         exception.Check();
         return new CharucoBoard(charucoBoardPtr);
       }
 
       public Size GetChessboardSize()
       {
-        return new Size(au_CharucoBoard_getChessboardSize(cvPtr));
+        return new Size(au_CharucoBoard_getChessboardSize(cppPtr));
       }
 
       public float GetMarkerLength()
       {
-        return au_CharucoBoard_getMarkerLength(cvPtr);
+        return au_CharucoBoard_getMarkerLength(cppPtr);
       }
 
       public float GetSquareLength()
       {
-        return au_CharucoBoard_getSquareLength(cvPtr);
+        return au_CharucoBoard_getSquareLength(cppPtr);
       }
 
       public VectorPoint3f chessboardCorners
       {
-        get { return new VectorPoint3f(au_CharucoBoard_getChessboardCorners(cvPtr), DeleteResponsibility.False); }
-        set { au_CharucoBoard_setChessboardCorners(cvPtr, value.cvPtr); }
+        get { return new VectorPoint3f(au_CharucoBoard_getChessboardCorners(cppPtr), DeleteResponsibility.False); }
+        set { au_CharucoBoard_setChessboardCorners(cppPtr, value.cppPtr); }
       }
 
       public VectorVectorInt markerCorners
       {
-        get { return new VectorVectorInt(au_CharucoBoard_getNearestMarkerCorners(cvPtr), DeleteResponsibility.False); }
-        set { au_CharucoBoard_setNearestMarkerCorners(cvPtr, value.cvPtr); }
+        get { return new VectorVectorInt(au_CharucoBoard_getNearestMarkerCorners(cppPtr), DeleteResponsibility.False); }
+        set { au_CharucoBoard_setNearestMarkerCorners(cppPtr, value.cppPtr); }
       }
 
       public VectorVectorInt markerIdx
       {
-        get { return new VectorVectorInt(au_CharucoBoard_getNearestMarkerIdx(cvPtr), DeleteResponsibility.False); }
-        set { au_CharucoBoard_setNearestMarkerIdx(cvPtr, value.cvPtr); }
+        get { return new VectorVectorInt(au_CharucoBoard_getNearestMarkerIdx(cppPtr), DeleteResponsibility.False); }
+        set { au_CharucoBoard_setNearestMarkerIdx(cppPtr, value.cppPtr); }
       }
     }
   }

@@ -43,20 +43,20 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_std_vectorPoint3f_delete(cvPtr);
+          au_std_vectorPoint3f_delete(cppPtr);
         }
 
         public Point3f At(uint pos)
         {
           Exception exception = new Exception();
-          Point3f element = new Point3f(au_std_vectorPoint3f_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+          Point3f element = new Point3f(au_std_vectorPoint3f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Point3f[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorPoint3f_data(cvPtr);
+          System.IntPtr* dataPtr = au_std_vectorPoint3f_data(cppPtr);
           uint size = Size();
 
           Point3f[] data = new Point3f[size];
@@ -70,12 +70,12 @@ namespace ArucoUnity
 
         public void PushBack(Point3f value)
         {
-          au_std_vectorPoint3f_push_back(cvPtr, value.cvPtr);
+          au_std_vectorPoint3f_push_back(cppPtr, value.cppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorPoint3f_size(cvPtr);
+          return au_std_vectorPoint3f_size(cppPtr);
         }
       }
     }

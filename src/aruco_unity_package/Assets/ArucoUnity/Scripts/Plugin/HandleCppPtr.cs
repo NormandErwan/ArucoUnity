@@ -21,13 +21,13 @@ namespace ArucoUnity
 
       public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
-        this.cvPtr = System.IntPtr.Zero;
+        this.cppPtr = System.IntPtr.Zero;
         this.deleteResponsibility = deleteResponsibility;
       }
 
-      public HandleCppPtr(System.IntPtr cvPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+      public HandleCppPtr(System.IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
-        this.cvPtr = cvPtr;
+        this.cppPtr = cppPtr;
         this.deleteResponsibility = deleteResponsibility;
       }
 
@@ -39,7 +39,7 @@ namespace ArucoUnity
         }
       }
 
-      public System.IntPtr cvPtr
+      public System.IntPtr cppPtr
       {
         get { return handle.Handle; }
         set { handle = new HandleRef(this, value); }

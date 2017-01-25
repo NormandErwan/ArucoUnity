@@ -49,25 +49,25 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_cv_Point3f_delete(cvPtr);
+          au_cv_Point3f_delete(cppPtr);
         }
 
         public float x
         {
-          get { return au_cv_Point3f_getX(cvPtr); }
-          set { au_cv_Point3f_setX(cvPtr, value); }
+          get { return au_cv_Point3f_getX(cppPtr); }
+          set { au_cv_Point3f_setX(cppPtr, value); }
         }
 
         public float y
         {
-          get { return au_cv_Point3f_getY(cvPtr); }
-          set { au_cv_Point3f_setY(cvPtr, value); }
+          get { return au_cv_Point3f_getY(cppPtr); }
+          set { au_cv_Point3f_setY(cppPtr, value); }
         }
 
         public float z
         {
-          get { return au_cv_Point3f_getZ(cvPtr); }
-          set { au_cv_Point3f_setZ(cvPtr, value); }
+          get { return au_cv_Point3f_getZ(cppPtr); }
+          set { au_cv_Point3f_setZ(cppPtr, value); }
         }
 
         public static implicit operator Vector3(Point3f point3f)

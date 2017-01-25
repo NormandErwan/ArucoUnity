@@ -22,7 +22,7 @@ namespace ArucoUnity
           Exception exception = new Exception();
           System.IntPtr outputImagePtr;
 
-          au_cv_imgproc_undistord2(inputImage.cvPtr, out outputImagePtr, cameraMatrix.cvPtr, distCoeffs.cvPtr, exception.cvPtr);
+          au_cv_imgproc_undistord2(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
           outputImage = new Mat(outputImagePtr);
 
           exception.Check();

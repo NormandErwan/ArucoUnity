@@ -43,20 +43,20 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_std_vectorVectorPoint2f_delete(cvPtr);
+          au_std_vectorVectorPoint2f_delete(cppPtr);
         }
 
         public VectorPoint2f At(uint pos)
         {
           Exception exception = new Exception();
-          VectorPoint2f element = new VectorPoint2f(au_std_vectorVectorPoint2f_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+          VectorPoint2f element = new VectorPoint2f(au_std_vectorVectorPoint2f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe VectorPoint2f[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorVectorPoint2f_data(cvPtr);
+          System.IntPtr* dataPtr = au_std_vectorVectorPoint2f_data(cppPtr);
           uint size = Size();
 
           VectorPoint2f[] data = new VectorPoint2f[size];
@@ -70,12 +70,12 @@ namespace ArucoUnity
 
         public void PushBack(VectorPoint2f value)
         {
-          au_std_vectorVectorPoint2f_push_back(cvPtr, value.cvPtr);
+          au_std_vectorVectorPoint2f_push_back(cppPtr, value.cppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorVectorPoint2f_size(cvPtr);
+          return au_std_vectorVectorPoint2f_size(cppPtr);
         }
       }
     }

@@ -35,20 +35,20 @@ namespace ArucoUnity
 
       public Dictionary dictionary
       {
-        get { return new Dictionary(au_Board_getDictionary(cvPtr), DeleteResponsibility.False); }
-        set { au_Board_setDictionary(cvPtr, value.cvPtr); }
+        get { return new Dictionary(au_Board_getDictionary(cppPtr), DeleteResponsibility.False); }
+        set { au_Board_setDictionary(cppPtr, value.cppPtr); }
       }
 
       public VectorInt ids
       {
-        get { return new VectorInt(au_Board_getIds(cvPtr), DeleteResponsibility.False); }
-        set { au_Board_setIds(cvPtr, value.cvPtr); }
+        get { return new VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
+        set { au_Board_setIds(cppPtr, value.cppPtr); }
       }
 
       public VectorVectorPoint3f objPoints
       {
-        get { return new VectorVectorPoint3f(au_Board_getObjPoints(cvPtr), DeleteResponsibility.False); }
-        set { au_Board_setObjPoints(cvPtr, value.cvPtr); }
+        get { return new VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
+        set { au_Board_setObjPoints(cppPtr, value.cppPtr); }
       }
     }
   }

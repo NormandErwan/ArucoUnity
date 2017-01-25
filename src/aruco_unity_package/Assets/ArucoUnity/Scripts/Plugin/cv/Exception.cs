@@ -41,7 +41,7 @@ namespace ArucoUnity
 
         public string What()
         {
-          au_cv_Exception_what(cvPtr, sb);
+          au_cv_Exception_what(cppPtr, sb);
           return sb.ToString();
         }
 
@@ -55,7 +55,7 @@ namespace ArucoUnity
 
         public int code
         {
-          get { return au_cv_Exception_getCode(cvPtr); }
+          get { return au_cv_Exception_getCode(cppPtr); }
         }
       }
     }

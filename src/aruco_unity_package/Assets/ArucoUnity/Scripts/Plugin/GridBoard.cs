@@ -44,7 +44,7 @@ namespace ArucoUnity
 
       protected override void DeleteCvPtr()
       {
-        au_GridBoard_delete(cvPtr);
+        au_GridBoard_delete(cppPtr);
       }
 
       internal GridBoard(System.IntPtr gridBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
@@ -57,7 +57,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_GridBoard_draw1(cvPtr, outSize.cvPtr, out imgPtr, marginSize, borderBits, exception.cvPtr);
+        au_GridBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -68,7 +68,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_GridBoard_draw2(cvPtr, outSize.cvPtr, out imgPtr, marginSize, exception.cvPtr);
+        au_GridBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -79,7 +79,7 @@ namespace ArucoUnity
         Exception exception = new Exception();
         System.IntPtr imgPtr;
 
-        au_GridBoard_draw3(cvPtr, outSize.cvPtr, out imgPtr, exception.cvPtr);
+        au_GridBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
         img = new Mat(imgPtr);
 
         exception.Check();
@@ -88,8 +88,8 @@ namespace ArucoUnity
       static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary, int firstMarker)
       {
         Exception exception = new Exception();
-        System.IntPtr gridBoardPtr = au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, firstMarker,
-          exception.cvPtr);
+        System.IntPtr gridBoardPtr = au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, firstMarker,
+          exception.cppPtr);
         exception.Check();
         return new GridBoard(gridBoardPtr);
       }
@@ -97,24 +97,24 @@ namespace ArucoUnity
       static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary)
       {
         Exception exception = new Exception();
-        System.IntPtr gridBoardPtr = au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cvPtr, exception.cvPtr);
+        System.IntPtr gridBoardPtr = au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, exception.cppPtr);
         exception.Check();
         return new GridBoard(gridBoardPtr);
       }
 
       public Size GetGridSize()
       {
-        return new Size(au_GridBoard_getGridSize(cvPtr));
+        return new Size(au_GridBoard_getGridSize(cppPtr));
       }
 
       public float GetMarkerLength()
       {
-        return au_GridBoard_getMarkerLength(cvPtr);
+        return au_GridBoard_getMarkerLength(cppPtr);
       }
 
       public float GetMarkerSeparation()
       {
-        return au_GridBoard_getMarkerSeparation(cvPtr);
+        return au_GridBoard_getMarkerSeparation(cppPtr);
       }
     }
   }

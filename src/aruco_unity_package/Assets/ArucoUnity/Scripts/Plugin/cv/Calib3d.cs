@@ -19,7 +19,7 @@ namespace ArucoUnity
         {
           Exception exception = new Exception();
           System.IntPtr rotationMatPtr;
-          au_cv_calib3d_Rodrigues(rotationVector.cvPtr, out rotationMatPtr, exception.cvPtr);
+          au_cv_calib3d_Rodrigues(rotationVector.cppPtr, out rotationMatPtr, exception.cppPtr);
           rotationMatrix = new Mat(rotationMatPtr);
           exception.Check();
         }

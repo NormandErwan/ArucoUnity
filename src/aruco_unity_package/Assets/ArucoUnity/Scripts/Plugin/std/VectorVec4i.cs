@@ -43,20 +43,20 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_std_vectorVec4i_delete(cvPtr);
+          au_std_vectorVec4i_delete(cppPtr);
         }
 
         public Vec4i At(uint pos)
         {
           Exception exception = new Exception();
-          Vec4i element = new Vec4i(au_std_vectorVec4i_at(cvPtr, pos, exception.cvPtr), DeleteResponsibility.False);
+          Vec4i element = new Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Vec4i[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorVec4i_data(cvPtr);
+          System.IntPtr* dataPtr = au_std_vectorVec4i_data(cppPtr);
           uint size = Size();
 
           Vec4i[] data = new Vec4i[size];
@@ -70,12 +70,12 @@ namespace ArucoUnity
 
         public void PushBack(Vec4i value)
         {
-          au_std_vectorVec4i_push_back(cvPtr, value.cvPtr);
+          au_std_vectorVec4i_push_back(cppPtr, value.cppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorVec4i_size(cvPtr);
+          return au_std_vectorVec4i_size(cppPtr);
         }
       }
     }

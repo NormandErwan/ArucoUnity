@@ -37,13 +37,13 @@ namespace ArucoUnity
 
         protected override void DeleteCvPtr()
         {
-          au_cv_Vec3d_delete(cvPtr);
+          au_cv_Vec3d_delete(cppPtr);
         }
 
         public double Get(int i)
         {
           Exception exception = new Exception();
-          double value = au_cv_Vec3d_get(cvPtr, i, exception.cvPtr);
+          double value = au_cv_Vec3d_get(cppPtr, i, exception.cppPtr);
           exception.Check();
           return value;
         }
@@ -51,7 +51,7 @@ namespace ArucoUnity
         public void Set(int i, double value)
         {
           Exception exception = new Exception();
-          au_cv_Vec3d_set(cvPtr, i, value, exception.cvPtr);
+          au_cv_Vec3d_set(cppPtr, i, value, exception.cppPtr);
           exception.Check();
         }
 

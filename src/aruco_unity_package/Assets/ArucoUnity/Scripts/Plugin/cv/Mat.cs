@@ -85,19 +85,19 @@ namespace ArucoUnity
         public void Create(int rows, int cols, TYPE type)
         {
           Exception exception = new Exception();
-          au_cv_Mat_create(cvPtr, rows, cols, (int)type, exception.cvPtr);
+          au_cv_Mat_create(cppPtr, rows, cols, (int)type, exception.cppPtr);
           exception.Check();
         }
 
         protected override void DeleteCvPtr()
         {
-          au_cv_Mat_delete(cvPtr);
+          au_cv_Mat_delete(cppPtr);
         }
 
         public int AtInt(int i0, int i1)
         {
           Exception exception = new Exception();
-          int value = au_cv_Mat_at_int_get(cvPtr, i0, i1, exception.cvPtr);
+          int value = au_cv_Mat_at_int_get(cppPtr, i0, i1, exception.cppPtr);
           exception.Check();
           return value;
         }
@@ -105,14 +105,14 @@ namespace ArucoUnity
         public void AtInt(int i0, int i1, int value)
         {
           Exception exception = new Exception();
-          au_cv_Mat_at_int_set(cvPtr, i0, i1, value, exception.cvPtr);
+          au_cv_Mat_at_int_set(cppPtr, i0, i1, value, exception.cppPtr);
           exception.Check();
         }
 
         public double AtDouble(int i0, int i1)
         {
           Exception exception = new Exception();
-          double value = au_cv_Mat_at_double_get(cvPtr, i0, i1, exception.cvPtr);
+          double value = au_cv_Mat_at_double_get(cppPtr, i0, i1, exception.cppPtr);
           exception.Check();
           return value;
         }
@@ -120,43 +120,43 @@ namespace ArucoUnity
         public void AtDouble(int i0, int i1, double value)
         {
           Exception exception = new Exception();
-          au_cv_Mat_at_double_set(cvPtr, i0, i1, value, exception.cvPtr);
+          au_cv_Mat_at_double_set(cppPtr, i0, i1, value, exception.cppPtr);
           exception.Check();
         }
 
         public uint ElemSize()
         {
-          return au_cv_Mat_elemSize(cvPtr);
+          return au_cv_Mat_elemSize(cppPtr);
         }
 
         public uint Total()
         {
-          return au_cv_Mat_total(cvPtr);
+          return au_cv_Mat_total(cppPtr);
         }
 
         public TYPE Type()
         {
-          return (TYPE)au_cv_Mat_type(cvPtr);
+          return (TYPE)au_cv_Mat_type(cppPtr);
         }
 
         public int cols
         {
-          get { return au_cv_Mat_getCols(cvPtr); }
+          get { return au_cv_Mat_getCols(cppPtr); }
         }
 
         public System.IntPtr data
         {
-          get { return au_cv_Mat_getData(cvPtr); }
+          get { return au_cv_Mat_getData(cppPtr); }
         }
 
         public int rows
         {
-          get { return au_cv_Mat_getRows(cvPtr); }
+          get { return au_cv_Mat_getRows(cppPtr); }
         }
 
         public Size size
         {
-          get { return new Size(au_cv_Mat_getSize(cvPtr)); }
+          get { return new Size(au_cv_Mat_getSize(cppPtr)); }
         }
       }
     }
