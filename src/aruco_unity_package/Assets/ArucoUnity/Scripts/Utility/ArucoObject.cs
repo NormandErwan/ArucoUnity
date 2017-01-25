@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -7,12 +8,23 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public class ArucoObject : MonoBehaviour
+    public abstract class ArucoObject : MonoBehaviour
     {
       // Editor fields
       [SerializeField]
-      [Tooltip("")]
       private ArucoObjectController arucoObjectController;
+
+      [SerializeField]
+      private PREDEFINED_DICTIONARY_NAME dictionaryName;
+
+      [SerializeField]
+      private float markerSideLength;
+
+      [SerializeField]
+      public int marginsSize;
+
+      [SerializeField]
+      public int markerBorderBits;
 
       // Properties
 
@@ -33,6 +45,21 @@ namespace ArucoUnity
             ArucoObjectController.Add(this);
           }
         }
+      }
+
+      public Dictionary Dictionary { get; set; }
+
+      public float MarkerSideLength { get { return markerSideLength; } set { markerSideLength = value; } }
+
+      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
+
+      public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
+
+      // MonoBehaviour methods
+
+      protected void Awake()
+      {
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       }
     }
   }
