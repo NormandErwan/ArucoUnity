@@ -38,9 +38,6 @@ namespace ArucoUnity
     private bool showRejectedCandidates = false;
 
     [Header("Camera configuration")]
-    [SerializeField]
-    [Tooltip("The camera to use for the detection.")]
-    private ArucoCamera arucoCamera;
 
     [Header("Pose estimation configuration")]
     [SerializeField]
@@ -64,15 +61,6 @@ namespace ArucoUnity
     public bool ShowRejectedCandidates { get { return showRejectedCandidates; } set { showRejectedCandidates = value; } }
 
     // MonoBehaviour methods
-
-    /// <summary>
-    /// Set up <see cref="ArucoObjectDetector.ArucoCamera"/>. 
-    /// </summary>
-    protected override void OnEnable()
-    {
-      ArucoCamera = arucoCamera;
-      base.OnEnable();
-    }
 
     /// <summary>
     /// When configured, detect markers and show results each frame.

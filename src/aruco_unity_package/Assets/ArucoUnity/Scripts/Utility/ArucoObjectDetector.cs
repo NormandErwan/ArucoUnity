@@ -10,6 +10,12 @@ namespace ArucoUnity
   {
     public abstract class ArucoObjectDetector : MonoBehaviour
     {
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera to use for the detection.")]
+      private ArucoCamera arucoCamera;
+
       // Events
 
       public delegate void CameraDeviceMakersDetectorAction();
@@ -46,21 +52,21 @@ namespace ArucoUnity
       // TODO: doc
       public ArucoCamera ArucoCamera
       {
-        get { return arucoCameraValue; }
+        get { return arucoCamera; }
         set
         {
           // Reset configuration
           Configured = false;
 
           // Unsubscribe from the previous ArucoCamera
-          if (arucoCameraValue != null)
+          if (arucoCamera != null)
           {
-            arucoCameraValue.OnStarted -= Configure;
+            arucoCamera.OnStarted -= Configure;
           }
 
           // Subscribe to the new ArucoCamera
-          arucoCameraValue = value;
-          arucoCameraValue.OnStarted += Configure;
+          arucoCamera = value;
+          arucoCamera.OnStarted += Configure;
           if (ArucoCamera != null && ArucoCamera.Started)
           {
             Configure();
@@ -76,11 +82,12 @@ namespace ArucoUnity
       // TODO: inverse the ref
       public ArucoObjectController ArucoObjectController { get; set; }
 
-      // Variables
-
-      private ArucoCamera arucoCameraValue;
-
       // MonoBehaviour methods
+
+      protected virtual void Awake()
+      {
+        ArucoCamera = arucoCamera;
+      }
 
       /// <summary>
       /// Subscribe to <see cref="ArucoCamera"/> and execute the configuration if the camera is already started.

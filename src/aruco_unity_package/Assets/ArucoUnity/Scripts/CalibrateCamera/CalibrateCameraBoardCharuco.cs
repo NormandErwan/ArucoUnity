@@ -56,10 +56,6 @@ namespace ArucoUnity
     [SerializeField]
     private string charucoCameraParametersFilePath = "Assets/ArucoUnity/charuco-calibration.xml";
 
-    [Header("Camera configuration")]
-    [SerializeField]
-    private ArucoCamera arucoCamera;
-
     [Header("UI")]
     [SerializeField]
     private Button addFrameButton;
@@ -111,15 +107,12 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="ArucoObjectDetector.ArucoCamera"/> and the UI. 
+    /// Set up the UI. 
     /// </summary>
-    protected override void OnEnable()
+    protected override void Awake() // TODO: to factor
     {
-      // Set up the parent class
-      ArucoCamera = arucoCamera;
-      base.OnEnable();
+      base.Awake();
 
-      // Set up onClick functions to UI buttons
       addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
       calibrateButton.onClick.AddListener(CalibrateFromEditor);
       resetButton.onClick.AddListener(ResetCalibrationFromEditor);
