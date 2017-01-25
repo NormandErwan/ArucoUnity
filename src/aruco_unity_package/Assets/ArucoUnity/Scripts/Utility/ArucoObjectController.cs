@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public class TrackedObjectsController : MonoBehaviour
+    public class ArucoObjectController : MonoBehaviour
     {
       // Editor fields
 
@@ -50,7 +50,7 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Dictionary<int, TrackedMarker> trackedMarkers;
+      protected Dictionary<int, Marker> trackedMarkers;
       protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
       protected ArucoCamera arucoCamera;
       private float markerSideLength;
@@ -62,7 +62,7 @@ namespace ArucoUnity
       /// </summary>
       protected void Awake()
       {
-        trackedMarkers = new Dictionary<int, TrackedMarker>();
+        trackedMarkers = new Dictionary<int, Marker>();
         defaultTrackedMarkerObjects = new Dictionary<int, GameObject>();
       }
 
@@ -73,7 +73,7 @@ namespace ArucoUnity
         this.arucoCamera = arucoCamera;
       }
 
-      public void AddTrackedMarker(TrackedMarker newTrackedMarker)
+      public void Add(Marker newTrackedMarker)
       {
         // Return if already added
         foreach (var trackedMarker in trackedMarkers)
@@ -85,7 +85,7 @@ namespace ArucoUnity
         }
 
         // Add the new tracked marker, rescale to the marker size and hide it
-        trackedMarkers.Add(newTrackedMarker.MarkerId, newTrackedMarker);
+        trackedMarkers.Add(newTrackedMarker.Id, newTrackedMarker);
         UpdateLocalScales(MarkerSideLength, newTrackedMarker.gameObject.transform);
         newTrackedMarker.gameObject.SetActive(false);
       }
@@ -119,7 +119,7 @@ namespace ArucoUnity
           GameObject markerObject = null;
 
           // Try to retrieve the associated tracked marker
-          TrackedMarker trackedMarker;
+          Marker trackedMarker;
           if (trackedMarkers.TryGetValue(markerId, out trackedMarker))
           {
             markerObject = trackedMarker.gameObject;

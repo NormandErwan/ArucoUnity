@@ -8,10 +8,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    /// <summary>
-    /// Base for any traked objects detection class.
-    /// </summary>
-    public abstract class TrackedObjectsDetector : MonoBehaviour
+    public abstract class ArucoObjectDetector : MonoBehaviour
     {
       // Events
 
@@ -77,7 +74,7 @@ namespace ArucoUnity
       public bool EstimatePose { get; set; }
 
       // TODO: inverse the ref
-      public TrackedObjectsController TrackedObjectsController { get; set; }
+      public ArucoObjectController ArucoObjectController { get; set; }
 
       // Variables
 
@@ -132,8 +129,8 @@ namespace ArucoUnity
 
         if (ArucoCamera.CameraParameters != null)
         {
-          TrackedObjectsController.SetCamera(ArucoCamera);
-          TrackedObjectsController.MarkerSideLength = MarkerSideLength;
+          ArucoObjectController.SetCamera(ArucoCamera);
+          ArucoObjectController.MarkerSideLength = MarkerSideLength;
         }
         else
         {

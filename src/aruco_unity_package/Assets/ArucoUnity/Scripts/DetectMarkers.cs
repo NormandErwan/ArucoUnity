@@ -12,7 +12,7 @@ namespace ArucoUnity
   /// <summary>
   /// Detect markers, display results and place game objects on the detected markers transform.
   /// </summary>
-  public class DetectMarkers : TrackedObjectsDetector
+  public class DetectMarkers : ArucoObjectDetector
   {
     // Editor fields
 
@@ -48,13 +48,13 @@ namespace ArucoUnity
     private bool estimatePose;
 
     [SerializeField]
-    private TrackedObjectsController trackedObjectsController;
+    private ArucoObjectController arucoObjectController;
 
     // Properties
 
     // Detection configuration properties
     /// <summary>
-    /// Display the detected markers in the <see cref="TrackedObjectsDetector.CameraImageTexture"/>.
+    /// Display the detected markers in the <see cref="ArucoObjectDetector.CameraImageTexture"/>.
     /// </summary>
     public bool ShowDetectedMarkers { get { return showDetectedMarkers; } set { showDetectedMarkers = value; } }
 
@@ -66,7 +66,7 @@ namespace ArucoUnity
     // MonoBehaviour methods
 
     /// <summary>
-    /// Set up <see cref="TrackedObjectsDetector.ArucoCamera"/>. 
+    /// Set up <see cref="ArucoObjectDetector.ArucoCamera"/>. 
     /// </summary>
     protected override void OnEnable()
     {
@@ -105,13 +105,13 @@ namespace ArucoUnity
 
       // Configure pose estimation properties
       EstimatePose = estimatePose;
-      TrackedObjectsController = trackedObjectsController;
+      ArucoObjectController = arucoObjectController;
     }
 
     // Methods
 
     /// <summary>
-    /// Detect the markers on the <see cref="TrackedObjectsDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
+    /// Detect the markers on the <see cref="ArucoObjectDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
     /// after the update of the CameraImageTexture.
     /// </summary>
     /// <param name="corners">Vector of the detected marker corners.</param>
@@ -119,7 +119,7 @@ namespace ArucoUnity
     /// <param name="rejectedImgPoints">Vector of the corners with not a correct identification.</param>
     /// <param name="rvecs">Vector of rotation vectors of the detected markers.</param>
     /// <param name="tvecs">Vector of translation vectors of the detected markers.</param>
-    /// <param name="image">The OpenCV's Mat image used for the detection, created from <see cref="TrackedObjectsDetector.CameraImageTexture"/>.</param>
+    /// <param name="image">The OpenCV's Mat image used for the detection, created from <see cref="ArucoObjectDetector.CameraImageTexture"/>.</param>
     public void Detect(out VectorVectorPoint2f corners, out VectorInt ids, out VectorVectorPoint2f rejectedImgPoints, out VectorVec3d rvecs,
       out VectorVec3d tvecs, out Mat image)
     {
@@ -168,10 +168,10 @@ namespace ArucoUnity
       }
 
       // Show the marker objects
-      TrackedObjectsController.DeactivateMarkerObjects();
+      ArucoObjectController.DeactivateMarkerObjects();
       if (EstimatePose)
       {
-        TrackedObjectsController.UpdateTransforms(ids, rvecs, tvecs);
+        ArucoObjectController.UpdateTransforms(ids, rvecs, tvecs);
       }
 
       // Undistord the image if calibrated
