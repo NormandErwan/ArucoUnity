@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -63,6 +65,25 @@ namespace ArucoUnity
       /// True when the camera is configured.
       /// </summary>
       public bool Configured { get; protected set; }
+
+      /// <summary>
+      /// The image in a OpenCV format. When getting, a new Mat is created from the <see cref="ImageTexture"/> content. When setting, the
+      /// <see cref="ImageTexture"/> content is updated from the Mat.
+      /// </summary>
+      public Mat Image 
+      {
+        get
+        {
+          byte[] imageData = ImageTexture.GetRawTextureData();
+          return new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+        } 
+        set // TODO: lazzy init only when get, put in cache, and update the ImageTexture automatically whitout any need to set
+        {
+          int imageDataSize = (int)(value.ElemSize() * value.Total());
+          ImageTexture.LoadRawTextureData(value.data, imageDataSize);
+          ImageTexture.Apply(false);
+        }
+      }
 
       /// <summary>
       /// Image texture, updated each frame.
@@ -136,6 +157,13 @@ namespace ArucoUnity
       /// Stop the camera.
       /// </summary>
       public abstract void StopCamera();
+
+      public void Undistord()
+      {
+        Mat undistordedImage;
+        Imgproc.Undistord(Image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
+        Image = undistordedImage;
+      }
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.
