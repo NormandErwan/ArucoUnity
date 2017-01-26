@@ -152,7 +152,7 @@ namespace ArucoUnity
 
       // Variables
 
-      GameObject cameraPlane;
+      protected GameObject cameraPlane;
 
       // ArucoCamera methods
 
@@ -228,7 +228,7 @@ namespace ArucoUnity
       /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTexture"/> with the 
       /// <see cref="WebCamTexture"/> content.
       /// </summary>
-      protected override void UpdateImage()
+      protected override void UpdateCameraImage()
       {
         if (!Configured)
         {

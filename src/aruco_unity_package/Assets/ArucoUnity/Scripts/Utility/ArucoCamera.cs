@@ -84,14 +84,17 @@ namespace ArucoUnity
       {
         get
         {
-          byte[] imageData = ImageTexture.GetRawTextureData();
-          return new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
-        } 
-        set // TODO: lazzy init only when get, put in cache, and update the ImageTexture automatically whitout any need to set
+          if (image == null)
+          {
+            byte[] imageData = ImageTexture.GetRawTextureData();
+            image = new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+          }
+          return image;
+        }
+        set
         {
-          int imageDataSize = (int)(value.ElemSize() * value.Total());
-          ImageTexture.LoadRawTextureData(value.data, imageDataSize);
-          ImageTexture.Apply(false);
+          image = value;
+          imageHasBeenSet = true;
         }
       }
 
@@ -135,12 +138,17 @@ namespace ArucoUnity
       /// </summary>
       public virtual Vector3 ImageScaleFrontFacing { get; protected set; }
 
+      // Variables
+
+      private Mat image;
+      private bool imageHasBeenSet;
+
       // MonoBehaviour methods
 
       /// <summary>
       /// Configure the camera if <see cref="AutoStart"/> is true.
       /// </summary>
-      protected void Start()
+      private void Start()
       {
         Configured = false;
         Started = false;
@@ -152,9 +160,24 @@ namespace ArucoUnity
         }
       }
 
-      protected void Update()
+      private void Update()
       {
-        UpdateImage();
+        image = null;
+        imageHasBeenSet = false;
+
+        UpdateCameraImage();
+      }
+
+      private void LateUpdate()
+      {
+        Undistord();
+
+        if (imageHasBeenSet)
+        {
+          int imageDataSize = (int)(image.ElemSize() * image.Total());
+          ImageTexture.LoadRawTextureData(image.data, imageDataSize);
+          ImageTexture.Apply(false);
+        }
       }
 
       // Methods
@@ -181,7 +204,7 @@ namespace ArucoUnity
         Image = undistordedImage;
       }
 
-      protected abstract void UpdateImage();
+      protected abstract void UpdateCameraImage();
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.
