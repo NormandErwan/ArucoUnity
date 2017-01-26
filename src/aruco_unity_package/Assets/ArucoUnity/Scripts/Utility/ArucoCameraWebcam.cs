@@ -154,51 +154,6 @@ namespace ArucoUnity
 
       GameObject cameraPlane;
 
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTexture"/> with the 
-      /// <see cref="WebCamTexture"/> content.
-      /// </summary>
-      protected void Update()
-      {
-        if (!Configured)
-        {
-          ImageUpdatedThisFrame = false;
-          return;
-        }
-
-        // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
-        if (!Started)
-        {
-          if (WebCamTexture.width < 100)
-          {
-            Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
-          }
-          else
-          {
-            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-
-            if (DisplayImage)
-            {
-              ConfigureCameraPlane();
-            }
-
-            Started = true;
-            RaiseOnStarted();
-          }
-        }
-
-        // Update the ImageTexture content
-        if (Started)
-        {
-          Graphics.CopyTexture(WebCamTexture, ImageTexture);
-
-          ImageUpdatedThisFrame = true;
-          RaiseOnImageUpdated();
-        }
-      }
-
       // ArucoCamera methods
 
       /// <summary>
@@ -268,6 +223,49 @@ namespace ArucoUnity
         Started = false;
         RaiseOnStopped();
       }
+
+      /// <summary>
+      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTexture"/> with the 
+      /// <see cref="WebCamTexture"/> content.
+      /// </summary>
+      protected override void UpdateImage()
+      {
+        if (!Configured)
+        {
+          ImageUpdatedThisFrame = false;
+          return;
+        }
+
+        // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
+        if (!Started)
+        {
+          if (WebCamTexture.width < 100)
+          {
+            Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
+            return;
+          }
+          else
+          {
+            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+
+            if (DisplayImage)
+            {
+              ConfigureCameraPlane();
+            }
+
+            Started = true;
+            RaiseOnStarted();
+          }
+        }
+
+        // Update the ImageTexture content
+        Graphics.CopyTexture(WebCamTexture, ImageTexture);
+
+        ImageUpdatedThisFrame = true;
+        RaiseOnImageUpdated();
+      }
+
+      // Methods
 
       /// <summary>
       /// Configure the <see cref="ArucoCamera.ImageCamera"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 

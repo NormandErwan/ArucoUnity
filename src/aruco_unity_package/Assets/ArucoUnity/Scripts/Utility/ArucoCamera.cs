@@ -152,6 +152,11 @@ namespace ArucoUnity
         }
       }
 
+      protected void Update()
+      {
+        UpdateImage();
+      }
+
       // Methods
 
       /// <summary>
@@ -175,6 +180,8 @@ namespace ArucoUnity
         Imgproc.Undistord(Image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
         Image = undistordedImage;
       }
+
+      protected abstract void UpdateImage();
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.
