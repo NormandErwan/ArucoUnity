@@ -192,6 +192,7 @@ namespace ArucoUnity
         if (Started)
         {
           ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
+          ImageTexture.Apply(false);
         }
       }
 
