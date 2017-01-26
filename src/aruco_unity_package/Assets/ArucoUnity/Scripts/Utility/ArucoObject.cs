@@ -37,7 +37,7 @@ namespace ArucoUnity
           arucoObjectController = value;
           if (arucoObjectController != null)
           {
-            ArucoObjectController.Add(this);
+            arucoObjectController.Add(this);
           }
         }
       }
@@ -52,6 +52,11 @@ namespace ArucoUnity
       protected void Start()
       {
         gameObject.SetActive(false);
+
+        if (ArucoObjectController != null)
+        {
+          ArucoObjectController.Add(this);
+        }
       }
     }
   }
