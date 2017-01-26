@@ -117,6 +117,7 @@ namespace ArucoUnity
         if (ArucoCamera != null)
         {
           ArucoCamera.OnStarted -= Configure;
+          ArucoCamera.OnImageUpdated -= ArucoCameraImageUpdated;
         }
       }
 
@@ -148,13 +149,15 @@ namespace ArucoUnity
       /// </summary>
       protected abstract void PreConfigure();
 
+      protected abstract void ArucoCameraImageUpdated();
+
       /// <summary>
       /// Configure the detection.
       /// </summary>
       private void Configure()
       {
+        // Execute the configuration of derived classes
         Configured = false;
-
         PreConfigure();
 
         // Update the state and notify
@@ -163,6 +166,9 @@ namespace ArucoUnity
         {
           OnConfigured();
         }
+
+        // Subscribe to ArucoCamera events
+        ArucoCamera.OnImageUpdated += ArucoCameraImageUpdated;
       }
     }
   }

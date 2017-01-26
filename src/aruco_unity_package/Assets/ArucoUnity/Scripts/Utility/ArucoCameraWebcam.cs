@@ -145,7 +145,7 @@ namespace ArucoUnity
       public WebCamTexture WebCamTexture { get; protected set; }
 
       /// <summary>
-      /// Camera that shot the <see cref="ArucoCamera.CameraImage"/> in order to maintain the aspect ratio of 
+      /// Camera that shot the <see cref="ArucoCamera.ImageCamera"/> in order to maintain the aspect ratio of 
       /// <see cref="ArucoCamera.ImageTexture"/> on screen.
       /// </summary>
       public Camera CameraBackground { get; protected set; }
@@ -164,6 +164,7 @@ namespace ArucoUnity
       {
         if (!Configured)
         {
+          ImageUpdatedThisFrame = false;
           return;
         }
 
@@ -193,6 +194,9 @@ namespace ArucoUnity
         {
           ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
           ImageTexture.Apply(false);
+
+          ImageUpdatedThisFrame = true;
+          RaiseOnImageUpdated();
         }
       }
 
@@ -267,7 +271,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configure the <see cref="ArucoCamera.CameraImage"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 
+      /// Configure the <see cref="ArucoCamera.ImageCamera"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 
       /// display the <see cref="ArucoCamera.ImageTexture"/>.
       /// </summary>
       // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
@@ -278,17 +282,17 @@ namespace ArucoUnity
         float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFy : ImageTexture.width;
 
         // Configure the CameraImage according to the camera parameters
-        CameraImage = GetComponent<Camera>();
+        ImageCamera = GetComponent<Camera>();
 
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
         float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraPlaneDistance) * Mathf.Rad2Deg;
 
-        CameraImage.orthographic = false;
-        CameraImage.fieldOfView = vFov;
-        CameraImage.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
-        CameraImage.aspect = ImageRatio;
-        CameraImage.transform.position = Vector3.zero;
-        CameraImage.transform.rotation = Quaternion.identity;
+        ImageCamera.orthographic = false;
+        ImageCamera.fieldOfView = vFov;
+        ImageCamera.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
+        ImageCamera.aspect = ImageRatio;
+        ImageCamera.transform.position = Vector3.zero;
+        ImageCamera.transform.rotation = Quaternion.identity;
 
         // Configure the plane facing the CameraImage that display the texture
         if (cameraPlane == null)
@@ -318,14 +322,14 @@ namespace ArucoUnity
             CameraBackground = CameraBackgroundGameObject.AddComponent<Camera>();
             CameraBackground.clearFlags = CameraClearFlags.SolidColor;
             CameraBackground.backgroundColor = Color.black;
-            CameraBackground.depth = CameraImage.depth + 1; // Render after the CameraImage
+            CameraBackground.depth = ImageCamera.depth + 1; // Render after the CameraImage
 
             CameraBackground.orthographic = false;
-            CameraBackground.fieldOfView = CameraImage.fieldOfView;
-            CameraBackground.nearClipPlane = CameraImage.nearClipPlane;
-            CameraBackground.farClipPlane = CameraImage.farClipPlane;
-            CameraBackground.transform.position = CameraImage.transform.position;
-            CameraBackground.transform.rotation = CameraImage.transform.rotation;
+            CameraBackground.fieldOfView = ImageCamera.fieldOfView;
+            CameraBackground.nearClipPlane = ImageCamera.nearClipPlane;
+            CameraBackground.farClipPlane = ImageCamera.farClipPlane;
+            CameraBackground.transform.position = ImageCamera.transform.position;
+            CameraBackground.transform.rotation = ImageCamera.transform.rotation;
           }
           CameraBackground.gameObject.SetActive(true);
         }

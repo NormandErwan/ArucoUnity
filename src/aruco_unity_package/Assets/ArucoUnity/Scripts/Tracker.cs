@@ -81,7 +81,7 @@ namespace ArucoUnity
     /// <summary>
     /// When configured, detect markers and show results each frame.
     /// </summary>
-    protected void LateUpdate()
+    protected override void ArucoCameraImageUpdated()
     {
       DeactivateArucoObjects();
 
@@ -207,7 +207,7 @@ namespace ArucoUnity
       // Adjust the object position
       Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
       Vector3 opticalCenterMarkerObject = new Vector3(ArucoCamera.CameraParameters.OpticalCenter.x, ArucoCamera.CameraParameters.OpticalCenter.y, arucoGameObject.transform.position.z);
-      Vector3 opticalShift = ArucoCamera.CameraImage.ViewportToWorldPoint(opticalCenterMarkerObject) - ArucoCamera.CameraImage.ViewportToWorldPoint(imageCenterMarkerObject);
+      Vector3 opticalShift = ArucoCamera.ImageCamera.ViewportToWorldPoint(opticalCenterMarkerObject) - ArucoCamera.ImageCamera.ViewportToWorldPoint(imageCenterMarkerObject);
 
       Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
         + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker

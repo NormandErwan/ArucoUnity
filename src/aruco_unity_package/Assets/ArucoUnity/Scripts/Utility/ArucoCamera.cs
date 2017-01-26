@@ -44,6 +44,11 @@ namespace ArucoUnity
       /// </summary>
       public event ArucoCameraAction OnStopped;
 
+      /// <summary>
+      /// Executed when the image has been updated.
+      /// </summary>
+      public event ArucoCameraAction OnImageUpdated;
+
       // Properties
 
       /// <summary>
@@ -65,6 +70,11 @@ namespace ArucoUnity
       /// True when the camera is configured.
       /// </summary>
       public bool Configured { get; protected set; }
+
+      /// <summary>
+      /// True when the image has been updated this frame.
+      /// </summary>
+      public bool ImageUpdatedThisFrame { get; protected set; }
 
       /// <summary>
       /// The image in a OpenCV format. When getting, a new Mat is created from the <see cref="ImageTexture"/> content. When setting, the
@@ -98,7 +108,7 @@ namespace ArucoUnity
       /// <summary>
       /// The Unity camera component that will capture the <see cref="ImageTexture"/>.
       /// </summary>
-      public Camera CameraImage { get; protected set; }
+      public Camera ImageCamera { get; protected set; }
 
       /// <summary>
       /// The correct image orientation.
@@ -134,6 +144,7 @@ namespace ArucoUnity
       {
         Configured = false;
         Started = false;
+        ImageUpdatedThisFrame = false;
 
         if (AutoStart)
         {
@@ -195,6 +206,17 @@ namespace ArucoUnity
         if (OnConfigured != null)
         {
           OnConfigured();
+        }
+      }
+
+      /// <summary>
+      /// Execute the <see cref="OnImageUpdated"/> action.
+      /// </summary>
+      protected void RaiseOnImageUpdated()
+      {
+        if (OnImageUpdated != null)
+        {
+          OnImageUpdated();
         }
       }
     }

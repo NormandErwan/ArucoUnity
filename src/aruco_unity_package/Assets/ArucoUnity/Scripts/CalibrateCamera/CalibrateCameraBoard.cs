@@ -95,7 +95,7 @@ namespace ArucoUnity
       resetButton.onClick.AddListener(ResetCalibrationFromEditor);
     }
 
-    void LateUpdate() // TODO: to factor
+    protected override void ArucoCameraImageUpdated() // TODO: to factor
     {
       if (Configured)
       {
