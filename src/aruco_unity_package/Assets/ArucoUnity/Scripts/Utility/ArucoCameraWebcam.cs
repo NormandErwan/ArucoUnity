@@ -259,7 +259,8 @@ namespace ArucoUnity
         }
 
         // Update the ImageTexture content
-        Graphics.CopyTexture(WebCamTexture, ImageTexture);
+        ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
+        ImageTexture.Apply(false);
 
         ImageUpdatedThisFrame = true;
         RaiseOnImageUpdated();
