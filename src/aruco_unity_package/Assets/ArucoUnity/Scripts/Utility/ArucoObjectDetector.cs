@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.std;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -8,13 +9,17 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public abstract class ArucoObjectDetector : MonoBehaviour
+    public abstract class ArucoObjectDetector : ArucoObjectController
     {
       // Editor fields
 
       [SerializeField]
       [Tooltip("The camera to use for the detection.")]
       private ArucoCamera arucoCamera;
+
+      [SerializeField]
+      [Tooltip("The parameters to use for the marker detection")]
+      private ArucoDetectorParametersController detectorParametersController;
 
       // Events
 
@@ -27,29 +32,6 @@ namespace ArucoUnity
 
       // Properties
 
-      /// <summary>
-      /// True when the detector is ready and configured.
-      /// </summary>
-      public bool Configured { get; protected set; }
-
-      /// <summary>
-      /// The dictionary to use for the detection.
-      /// </summary>
-      // TODO: move to TrackedObject class
-      public Dictionary Dictionary { get; set; }
-
-      /// <summary>
-      /// The parameters to use for the detection.
-      /// </summary>
-      public DetectorParameters DetectorParameters { get; set; }
-
-      /// <summary>
-      /// The side length of the markers that will be detected (in meters).
-      /// </summary>
-      // TODO: move to TrackedObject class
-      public float MarkerSideLength { get; set; }
-
-      // TODO: doc
       public ArucoCamera ArucoCamera
       {
         get { return arucoCamera; }
@@ -75,18 +57,38 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Estimate the detected markers pose (position, rotation).
+      /// The parameters to use for the detection.
       /// </summary>
-      public bool EstimatePose { get; set; }
+      public DetectorParameters DetectorParameters { get; set; }
 
-      // TODO: inverse the ref
-      public ArucoObjectController ArucoObjectController { get; set; }
+      /// <summary>
+      /// True when the detector is ready and configured.
+      /// </summary>
+      public bool Configured { get; protected set; }
+
+      /// <summary>
+      /// Vector of the detected marker corners. Updated by <see cref="Detect"/>.
+      /// </summary>
+      public VectorVectorPoint2f MarkerCorners { get; protected set; }
+
+      /// <summary>
+      /// Vector of identifiers of the detected markers. Updated by <see cref="Detect"/>.
+      /// </summary>
+      public VectorInt MarkerIds { get; protected set; }
+
+      /// <summary>
+      /// Vector of the corners with not a correct identification. Updated by <see cref="Detect"/>.
+      /// </summary>
+      public VectorVectorPoint2f RejectedCandidateCorners { get; protected set; }
 
       // MonoBehaviour methods
 
-      protected virtual void Awake()
+      protected override void Start()
       {
+        base.Start();
+
         ArucoCamera = arucoCamera;
+        DetectorParameters = detectorParametersController.detectorParameters;
       }
 
       /// <summary>
@@ -121,6 +123,27 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
+      /// Detect the markers on the <see cref="ArucoObjectDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
+      /// after the update of the CameraImageTexture.
+      /// </summary>
+      // TODO: detect in a separate thread for performances
+      public void Detect()
+      {
+        if (!Configured)
+        {
+          return;
+        }
+
+        VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
+        VectorInt markerIds;
+
+        Functions.DetectMarkers(ArucoCamera.Image, Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+        MarkerCorners = markerCorners;
+        RejectedCandidateCorners = rejectedCandidateCorners;
+        MarkerIds = markerIds;
+      }
+
+      /// <summary>
       /// The configuration content of derived classes.
       /// </summary>
       protected abstract void PreConfigure();
@@ -133,15 +156,6 @@ namespace ArucoUnity
         Configured = false;
 
         PreConfigure();
-
-        if (ArucoCamera.CameraParameters != null)
-        {
-          ArucoObjectController.SetCamera(ArucoCamera);
-        }
-        else
-        {
-          EstimatePose = false;
-        }
 
         // Update the state and notify
         Configured = true;

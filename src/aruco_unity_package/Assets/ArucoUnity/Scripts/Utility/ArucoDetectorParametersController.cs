@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \{
 
   /// <summary>
-  /// Editor manager for the <see cref="DetectorParameters"/>.
+  /// Editor controller for the <see cref="DetectorParameters"/>.
   /// </summary>
   public class ArucoDetectorParametersController : MonoBehaviour
   {
@@ -105,7 +105,7 @@ namespace ArucoUnity
     /// <summary>
     /// Set the value of the <see cref="detectorParameters"/> from the editor fields.
     /// </summary>
-    void Start()
+    void Awake()
     {
       detectorParameters = new DetectorParameters();
 

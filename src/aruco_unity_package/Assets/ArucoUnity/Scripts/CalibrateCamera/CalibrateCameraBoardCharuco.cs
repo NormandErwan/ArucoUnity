@@ -28,17 +28,6 @@ namespace ArucoUnity
     public float squareSideLength;
 
     [SerializeField]
-    [Tooltip("Marker side length (in meters)")]
-    private float markerSideLength;
-
-    [SerializeField]
-    private PREDEFINED_DICTIONARY_NAME dictionaryName;
-
-    [Header("Calibration configuration")]
-    [SerializeField]
-    private ArucoDetectorParametersController detectorParametersManager;
-
-    [SerializeField]
     private bool applyRefineStrategy = false;
 
     [SerializeField]
@@ -109,9 +98,9 @@ namespace ArucoUnity
     /// <summary>
     /// Set up the UI. 
     /// </summary>
-    protected override void Awake() // TODO: to factor
+    protected override void Start() // TODO: to factor
     {
-      base.Awake();
+      base.Start();
 
       addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
       calibrateButton.onClick.AddListener(CalibrateFromEditor);
@@ -146,16 +135,8 @@ namespace ArucoUnity
     /// </summary>
     protected override void PreConfigure()
     {
-      // Configure detection properties
-      Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-      DetectorParameters = detectorParametersManager.detectorParameters;
-      MarkerSideLength = markerSideLength;
-
-      // Configure pose estimation properties
-      EstimatePose = false;
-
       // Configure the board calibration
-      CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, markerSideLength, Dictionary);
+      CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, MarkerSideLength, Dictionary);
       ConfigureCalibrationFlags();
       ResetCalibrationFromEditor();
     }

@@ -25,19 +25,8 @@ namespace ArucoUnity
     private int markersNumberY;
 
     [SerializeField]
-    [Tooltip("Marker side length (in meters)")]
-    private float markerSideLength;
-
-    [SerializeField]
     [Tooltip("Separation between two consecutive markers in the grid (in meters)")]
     private float markerSeparation;
-
-    [SerializeField]
-    private PREDEFINED_DICTIONARY_NAME dictionaryName;
-
-    [Header("Calibration configuration")]
-    [SerializeField]
-    private ArucoDetectorParametersController detectorParametersManager;
 
     [SerializeField]
     private bool applyRefineStrategy = false;
@@ -97,9 +86,9 @@ namespace ArucoUnity
     /// <summary>
     /// Set up the UI. 
     /// </summary>
-    protected override void Awake() // TODO: to factor
+    protected override void Start() // TODO: to factor
     {
-      base.Awake();
+      base.Start();
 
       addFrameButton.onClick.AddListener(AddNextFrameForCalibration);
       calibrateButton.onClick.AddListener(CalibrateFromEditor);
@@ -134,16 +123,8 @@ namespace ArucoUnity
     /// </summary>
     protected override void PreConfigure()
     {
-      // Configure detection properties
-      Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-      DetectorParameters = detectorParametersManager.detectorParameters;
-      MarkerSideLength = markerSideLength;
-
-      // Configure pose estimation properties
-      EstimatePose = false;
-
       // Configure the board calibration
-      Board = GridBoard.Create(markersNumberX, markersNumberY, markerSideLength, markerSeparation, Dictionary);
+      Board = GridBoard.Create(markersNumberX, markersNumberY, MarkerSideLength, markerSeparation, Dictionary);
       ConfigureCalibrationFlags(); // TODO: to factor
       ResetCalibrationFromEditor(); // TODO: to factor
     }

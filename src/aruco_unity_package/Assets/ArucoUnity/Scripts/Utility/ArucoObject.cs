@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -11,14 +10,9 @@ namespace ArucoUnity
     public abstract class ArucoObject : MonoBehaviour
     {
       // Editor fields
+
       [SerializeField]
       private ArucoObjectController arucoObjectController;
-
-      [SerializeField]
-      private PREDEFINED_DICTIONARY_NAME dictionaryName;
-
-      [SerializeField]
-      private float markerSideLength;
 
       [SerializeField]
       public int marginsSize;
@@ -28,7 +22,7 @@ namespace ArucoUnity
 
       // Properties
 
-      public ArucoObjectController ArucoObjectController
+      public ArucoObjectController ArucoObjectController // TODO: multiple controllers?
       {
         get { return arucoObjectController; }
         set
@@ -48,38 +42,9 @@ namespace ArucoUnity
         }
       }
 
-      public Dictionary Dictionary { get; set; }
-
-      public float MarkerSideLength 
-      { 
-        get { return markerSideLength; }
-        set
-        {
-          // Restore the previous scale
-          if (markerSideLength != 0)
-          {
-            transform.localScale /= markerSideLength;
-          }
-
-          // Adjust to the new scale
-          markerSideLength = value;
-          if (markerSideLength != 0)
-          {
-            transform.localScale *= markerSideLength;
-          }
-        }
-      }
-
       public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
 
       public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
-
-      // MonoBehaviour methods
-
-      protected void Awake()
-      {
-        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-      }
 
       /// <summary>
       /// Hide at start, until it will be used by a <see cref="ArucoObjectController"/>.
