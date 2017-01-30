@@ -158,6 +158,11 @@ namespace ArucoUnity
       {
         arucoObject.gameObject.SetActive(false);
       }
+
+      foreach (var arucoObject in defaultTrackedMarkerObjects)
+      {
+        arucoObject.Value.SetActive(false);
+      }
     }
 
     /// <summary>
@@ -190,6 +195,7 @@ namespace ArucoUnity
             arucoGameObject = Instantiate(DefaultTrackedGameObject);
             arucoGameObject.name = markerId.ToString();
             arucoGameObject.transform.SetParent(this.transform);
+            arucoGameObject.transform.localScale *= MarkerSideLength;
 
             defaultTrackedMarkerObjects.Add(markerId, arucoGameObject);
           }

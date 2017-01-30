@@ -65,9 +65,9 @@ namespace ArucoUnity
       {
         ArucoObjects.Add(arucoObject);
 
-        if (markerSideLength != 0)
+        if (MarkerSideLength != 0)
         {
-          arucoObject.transform.localScale *= markerSideLength;
+          arucoObject.transform.localScale *= MarkerSideLength;
         }
       }
 
@@ -75,9 +75,9 @@ namespace ArucoUnity
       {
         ArucoObjects.Remove(arucoObject);
 
-        if (markerSideLength != 0)
+        if (MarkerSideLength != 0)
         {
-          arucoObject.transform.localScale /= markerSideLength;
+          arucoObject.transform.localScale /= MarkerSideLength;
         }
       }
     }
