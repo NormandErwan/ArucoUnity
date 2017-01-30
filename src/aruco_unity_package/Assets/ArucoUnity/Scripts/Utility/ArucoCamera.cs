@@ -12,7 +12,6 @@ namespace ArucoUnity
     /// <summary>
     /// Base for any camera sytem to use with ArucoUnity. Manages to retrieve and display the camera's image every frame.
     /// </summary>
-    [RequireComponent(typeof(Camera))]
     public abstract class ArucoCamera : MonoBehaviour
     {
       // Editor fields
@@ -94,7 +93,7 @@ namespace ArucoUnity
         set
         {
           image = value;
-          imageHasBeenSet = true;
+          imageHasBeenSetThisFrame = true;
         }
       }
 
@@ -140,15 +139,15 @@ namespace ArucoUnity
 
       // Variables
 
+      protected bool imageHasBeenSetThisFrame;
       private Mat image;
-      private bool imageHasBeenSet;
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Configure the camera if <see cref="AutoStart"/> is true.
+      /// Configure the camera at start  if <see cref="AutoStart"/> is true.
       /// </summary>
-      private void Start()
+      protected virtual void Start()
       {
         Configured = false;
         Started = false;
@@ -160,24 +159,29 @@ namespace ArucoUnity
         }
       }
 
-      private void Update()
+      protected virtual void Update()
       {
         image = null;
-        imageHasBeenSet = false;
+        imageHasBeenSetThisFrame = false;
 
         UpdateCameraImage();
       }
 
-      private void LateUpdate()
+      protected virtual void LateUpdate()
       {
         Undistord();
 
-        if (imageHasBeenSet)
+        if (imageHasBeenSetThisFrame)
         {
           int imageDataSize = (int)(image.ElemSize() * image.Total());
           ImageTexture.LoadRawTextureData(image.data, imageDataSize);
           ImageTexture.Apply(false);
         }
+      }
+
+      protected virtual void OnDestroy()
+      {
+        StopCamera();
       }
 
       // Methods
@@ -197,13 +201,25 @@ namespace ArucoUnity
       /// </summary>
       public abstract void StopCamera();
 
-      public void Undistord()
+      /// <summary>
+      /// Undistord the image according to the <see cref="CameraParameters"/>, if not null. <see cref="Image"/> is immediatly updated. 
+      /// <see cref="ImageTexture"/> will be updated at LateUpdate().
+      /// </summary>
+      public virtual void Undistord()
       {
+        if (CameraParameters == null)
+        {
+          return;
+        }
+
         Mat undistordedImage;
         Imgproc.Undistord(Image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
         Image = undistordedImage;
       }
 
+      /// <summary>
+      /// Update <see cref="ImageTexture"/> if the camera has started.
+      /// </summary>
       protected abstract void UpdateCameraImage();
 
       /// <summary>
