@@ -68,7 +68,7 @@ The documentation of available online:
 
 ## Licenses
 
-See the [LICENSE](LICENSE.md) file for license rights and limitations (3-clause BSD license).
+See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
 
 See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. ArUco Unity makes use of the
 following projects:
