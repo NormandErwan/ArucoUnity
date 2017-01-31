@@ -177,7 +177,7 @@ namespace ArucoUnity
 
         // Try to load the webcam
         WebCamDevice[] webcamDevices = WebCamTexture.devices;
-        if (webcamDevices.Length < WebcamId)
+        if (webcamDevices.Length <= WebcamId)
         {
           Configured = false;
           throw new System.ArgumentException("The webcam with the id '" + WebcamId + "' is not found.", "WebcamId");
