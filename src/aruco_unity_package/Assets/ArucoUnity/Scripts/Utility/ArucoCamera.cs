@@ -1,6 +1,7 @@
 ﻿using ArucoUnity.Plugin;
 using ArucoUnity.Plugin.cv;
 using UnityEngine;
+using System;
 
 namespace ArucoUnity
 {
@@ -83,21 +84,23 @@ namespace ArucoUnity
       {
         get
         {
-          if (images == null)
+          if (!imagesGetThisFrame)
           {
-            images = new Mat[ImageTextures.Length];
             for (int i = 0; i < ImageTextures.Length; i++)
             {
               byte[] imageData = ImageTextures[i].GetRawTextureData();
               images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, TYPE.CV_8UC3, imageData);
             }
+            imagesGetThisFrame = true;
           }
+
           return images;
         }
         set
         {
           if (value.Length == images.Length)
           {
+            Array.Clear(images, 0, images.Length);
             images = value;
             imagesHasBeenSetThisFrame = true;
           }
@@ -147,7 +150,8 @@ namespace ArucoUnity
       // Variables
 
       protected bool imagesHasBeenSetThisFrame;
-      private Mat[] images;
+      protected Mat[] images;
+      protected bool imagesGetThisFrame;
 
       // MonoBehaviour methods
 
@@ -159,6 +163,9 @@ namespace ArucoUnity
         Configured = false;
         Started = false;
         ImagesUpdatedThisFrame = false;
+        imagesGetThisFrame = false;
+
+        images = new Mat[ImageTextures.Length];
       }
 
       /// <summary>
@@ -177,7 +184,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Update()
       {
-        images = null;
+        imagesGetThisFrame = false;
         imagesHasBeenSetThisFrame = false;
 
         UpdateCameraImages();

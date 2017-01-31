@@ -163,11 +163,12 @@ namespace ArucoUnity
       /// </summary>
       protected override void Awake()
       {
-        base.Awake();
         startInitiated = false;
 
         ImageTextures = new Texture2D[1];
         ImageCameras = new Camera[1] { GetComponent<Camera>() };
+
+        base.Awake();
       }
 
       // ArucoCamera methods
@@ -271,6 +272,7 @@ namespace ArucoUnity
             }
 
             // Update state
+            startInitiated = false;
             Started = true;
             RaiseOnStarted();
           }
