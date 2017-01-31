@@ -25,8 +25,12 @@ namespace ArucoUnity
       private AspectRatioFitter imageFitter;
 
       [SerializeField]
-      [Tooltip("The Aruco camera to display.")]
+      [Tooltip("The ArUco camera system to display.")]
       private ArucoCamera arucoCamera;
+
+      [SerializeField]
+      [Tooltip("The id of the camera of the ArUco camera system to display.")]
+      private int cameraId;
 
       // MonoBehaviour methods
 
@@ -66,12 +70,18 @@ namespace ArucoUnity
       /// </summary>
       private void CameraDeviceController_OnActiveCameraStarted()
       {
-        SetActiveTexture(arucoCamera.ImageTexture);
+        if (arucoCamera.ImageTextures.Length <= cameraId)
+        {
+          Debug.LogError(gameObject.name + " - Couldn't select the cameraId: '" + cameraId + "'. The max id is: '" + arucoCamera.ImageTextures.Length + "'.");
+          return;
+        }
 
-        image.rectTransform.localScale = arucoCamera.ImageScaleFrontFacing;
-        image.rectTransform.localRotation = arucoCamera.ImageRotation;
-        imageFitter.aspectRatio = arucoCamera.ImageRatio;
-        image.uvRect = arucoCamera.ImageUvRectFlip;
+        SetActiveTexture(arucoCamera.ImageTextures[cameraId]);
+
+        image.rectTransform.localScale = arucoCamera.ImageScalesFrontFacing[cameraId];
+        image.rectTransform.localRotation = arucoCamera.ImageRotations[cameraId];
+        imageFitter.aspectRatio = arucoCamera.ImageRatios[cameraId];
+        image.uvRect = arucoCamera.ImageUvRectFlips[cameraId];
       }
     }
   }

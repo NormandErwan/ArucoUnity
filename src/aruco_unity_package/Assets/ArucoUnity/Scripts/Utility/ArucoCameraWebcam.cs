@@ -8,9 +8,10 @@ namespace ArucoUnity
   namespace Utility
   {
     /// <summary>
-    /// Manages any connected webcam to the machine, and retrieves and displays the camera's image every frame.
+    /// Manages any connected webcam to the machine, retrieves and displays the camera's image every frame. Use one webcam at a time.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
+    [RequireComponent(typeof(Camera))]
     public class ArucoCameraWebcam : ArucoCamera
     {
       // Editor fields
@@ -30,31 +31,31 @@ namespace ArucoUnity
       // ArucoCamera properties implementation
 
       /// <summary>
-      /// The correct image orientation.
+      /// <see cref="ArucoCamera.ImageRotations"/>
       /// </summary>
-      public override Quaternion ImageRotation
+      public override Quaternion[] ImageRotations
       {
         get
         {
-          return Quaternion.Euler(0f, 0f, -WebCamTexture.videoRotationAngle);
+          return new Quaternion[] { Quaternion.Euler(0f, 0f, -WebCamTexture.videoRotationAngle) };
         }
       }
 
       /// <summary>
-      /// The image ratio.
+      /// <see cref="ArucoCamera.ImageRatios"/>
       /// </summary>
-      public override float ImageRatio
+      public override float[] ImageRatios
       {
         get
         {
-          return WebCamTexture.width / (float)WebCamTexture.height;
+          return new float[] { WebCamTexture.width / (float)WebCamTexture.height };
         }
       }
 
       /// <summary>
-      /// Allow to unflip the image if vertically flipped (use for image plane).
+      /// <see cref="ArucoCamera.ImageMeshes"/>
       /// </summary>
-      public override Mesh ImageMesh
+      public override Mesh[] ImageMeshes
       {
         get
         {
@@ -87,33 +88,33 @@ namespace ArucoUnity
 
           mesh.RecalculateNormals();
 
-          return mesh;
+          return new Mesh[] { mesh };
         }
       }
 
       /// <summary>
-      /// Allow to unflip the image if vertically flipped (use for canvas).
+      /// <see cref="ArucoCamera.ImageUvRectFlips"/>
       /// </summary>
-      public override Rect ImageUvRectFlip
+      public override Rect[] ImageUvRectFlips
       {
         get
         {
           Rect defaultRect = new Rect(0f, 0f, 1f, 1f),
                verticallyMirroredRect = new Rect(0f, 1f, 1f, -1f);
-          return WebCamTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect;
+          return new Rect[] { WebCamTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect };
         }
       }
 
       /// <summary>
-      /// Mirror front-facing camera's image horizontally to look more natural.
+      /// <see cref="ArucoCamera.ImageScalesFrontFacing"/>
       /// </summary>
-      public override Vector3 ImageScaleFrontFacing
+      public override Vector3[] ImageScalesFrontFacing
       {
         get
         {
           Vector3 defaultScale = new Vector3(1f, 1f, 1f),
                   frontFacingScale = new Vector3(-1f, 1f, 1f);
-          return WebCamDevice.isFrontFacing ? frontFacingScale : defaultScale;
+          return new Vector3[] { WebCamDevice.isFrontFacing ? frontFacingScale : defaultScale };
         }
       }
 
@@ -145,8 +146,8 @@ namespace ArucoUnity
       public WebCamTexture WebCamTexture { get; protected set; }
 
       /// <summary>
-      /// Camera that shot the <see cref="ArucoCamera.ImageCamera"/> in order to maintain the aspect ratio of 
-      /// <see cref="ArucoCamera.ImageTexture"/> on screen.
+      /// Camera that shot the <see cref="ArucoCamera.ImageCameras"/> in order to maintain the aspect ratio of 
+      /// <see cref="ArucoCamera.ImageTextures"/> on screen.
       /// </summary>
       public Camera CameraBackground { get; protected set; }
 
@@ -157,16 +158,22 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// <see cref="ArucoCamera.Awake"/>
+      /// </summary>
       protected override void Awake()
       {
         base.Awake();
         startInitiated = false;
+
+        ImageTextures = new Texture2D[1];
+        ImageCameras = new Camera[1] { GetComponent<Camera>() };
       }
 
       // ArucoCamera methods
 
       /// <summary>
-      /// Configure the webcam, with the id <see cref="WebcamId"/> and its the ArucoCamera properties. The camera needs to be stopped before configured.
+      /// Configure the webcam and its properties with the id <see cref="WebcamId"/>. The camera needs to be stopped before configured.
       /// </summary>
       public override void Configure()
       {
@@ -186,7 +193,10 @@ namespace ArucoUnity
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
         // Try to load the camera parameters
-        CameraParameters = CameraParameters.LoadFromXmlFile(CameraParametersFilePath);
+        if (CameraParametersFilePath != null)
+        {
+          CameraParameters = new CameraParameters[] { Utility.CameraParameters.LoadFromXmlFile(CameraParametersFilePath) };
+        }
 
         // Update state
         Configured = true;
@@ -195,14 +205,14 @@ namespace ArucoUnity
         // AutoStart
         if (AutoStart)
         {
-          StartCamera();
+          StartCameras();
         }
       }
 
       /// <summary>
       /// Start the camera and the associated webcam device.
       /// </summary>
-      public override void StartCamera()
+      public override void StartCameras()
       {
         if (!Configured || Started || startInitiated)
         {
@@ -216,7 +226,7 @@ namespace ArucoUnity
       /// <summary>
       /// Stop the camera and the associated webcam device, and notify of the stopping.
       /// </summary>
-      public override void StopCamera()
+      public override void StopCameras()
       {
         if (!Configured || (!Started && !startInitiated))
         {
@@ -231,14 +241,14 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTexture"/> with the 
+      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> with the 
       /// <see cref="WebCamTexture"/> content.
       /// </summary>
-      protected override void UpdateCameraImage()
+      protected override void UpdateCameraImages()
       {
         if (!Configured || (!Started && !startInitiated))
         {
-          ImageUpdatedThisFrame = false;
+          ImagesUpdatedThisFrame = false;
           return;
         }
 
@@ -246,16 +256,16 @@ namespace ArucoUnity
         {
           if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
           {
-            ImageUpdatedThisFrame = false;
+            ImagesUpdatedThisFrame = false;
             return;
           }
           else
           {
             // Configure texture
-            ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+            ImageTextures[0] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
 
             // Configure display
-            if (DisplayImage)
+            if (DisplayImages)
             {
               ConfigureCameraPlane();
             }
@@ -267,38 +277,35 @@ namespace ArucoUnity
         }
 
         // Update the ImageTexture content
-        ImageTexture.SetPixels32(WebCamTexture.GetPixels32());
-        ImageTexture.Apply(false);
+        ImageTextures[0].SetPixels32(WebCamTexture.GetPixels32());
+        ImageTextures[0].Apply(false);
 
-        ImageUpdatedThisFrame = true;
+        ImagesUpdatedThisFrame = true;
         RaiseOnImageUpdated();
       }
 
       // Methods
 
       /// <summary>
-      /// Configure the <see cref="ArucoCamera.ImageCamera"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 
-      /// display the <see cref="ArucoCamera.ImageTexture"/>.
+      /// Configure the <see cref="ArucoCamera.ImageCameras"/>, the <see cref="CameraBackground"/> and a facing plane of the CameraImage that will 
+      /// display the <see cref="ArucoCamera.ImageTextures"/>.
       /// </summary>
       // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
       // TODO: handle case of CameraParameters.FixAspectRatio != 0
       protected void ConfigureCameraPlane()
       {
         // Use the image texture's width as a default value if there is no camera parameters
-        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFy : ImageTexture.width;
+        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters[0].CameraFy : ImageTextures[0].width;
 
         // Configure the CameraImage according to the camera parameters
-        ImageCamera = GetComponent<Camera>();
-
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
-        float vFov = 2f * Mathf.Atan(0.5f * ImageTexture.height / CameraPlaneDistance) * Mathf.Rad2Deg;
-
-        ImageCamera.orthographic = false;
-        ImageCamera.fieldOfView = vFov;
-        ImageCamera.farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
-        ImageCamera.aspect = ImageRatio;
-        ImageCamera.transform.position = Vector3.zero;
-        ImageCamera.transform.rotation = Quaternion.identity;
+        float vFov = 2f * Mathf.Atan(0.5f * ImageTextures[0].height / CameraPlaneDistance) * Mathf.Rad2Deg;
+        ImageCameras[0].orthographic = false;
+        ImageCameras[0].fieldOfView = vFov;
+        ImageCameras[0].farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
+        ImageCameras[0].aspect = ImageRatios[0];
+        ImageCameras[0].transform.position = Vector3.zero;
+        ImageCameras[0].transform.rotation = Quaternion.identity;
 
         // Configure the plane facing the CameraImage that display the texture
         if (cameraPlane == null)
@@ -310,11 +317,11 @@ namespace ArucoUnity
         }
 
         cameraPlane.transform.position = new Vector3(0, 0, CameraPlaneDistance);
-        cameraPlane.transform.rotation = ImageRotation;
-        cameraPlane.transform.localScale = new Vector3(ImageTexture.width, ImageTexture.height, 1);
-        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, ImageScaleFrontFacing);
-        cameraPlane.GetComponent<MeshFilter>().mesh = ImageMesh;
-        cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
+        cameraPlane.transform.rotation = ImageRotations[0];
+        cameraPlane.transform.localScale = new Vector3(ImageTextures[0].width, ImageTextures[0].height, 1);
+        cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, ImageScalesFrontFacing[0]);
+        cameraPlane.GetComponent<MeshFilter>().mesh = ImageMeshes[0];
+        cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTextures[0];
         cameraPlane.SetActive(true);
 
         // If preserving the aspect ratio of the CameraImage, create a second camera that shot it as background
@@ -328,14 +335,14 @@ namespace ArucoUnity
             CameraBackground = CameraBackgroundGameObject.AddComponent<Camera>();
             CameraBackground.clearFlags = CameraClearFlags.SolidColor;
             CameraBackground.backgroundColor = Color.black;
-            CameraBackground.depth = ImageCamera.depth + 1; // Render after the CameraImage
+            CameraBackground.depth = ImageCameras[0].depth + 1; // Render after the CameraImage
 
             CameraBackground.orthographic = false;
-            CameraBackground.fieldOfView = ImageCamera.fieldOfView;
-            CameraBackground.nearClipPlane = ImageCamera.nearClipPlane;
-            CameraBackground.farClipPlane = ImageCamera.farClipPlane;
-            CameraBackground.transform.position = ImageCamera.transform.position;
-            CameraBackground.transform.rotation = ImageCamera.transform.rotation;
+            CameraBackground.fieldOfView = ImageCameras[0].fieldOfView;
+            CameraBackground.nearClipPlane = ImageCameras[0].nearClipPlane;
+            CameraBackground.farClipPlane = ImageCameras[0].farClipPlane;
+            CameraBackground.transform.position = ImageCameras[0].transform.position;
+            CameraBackground.transform.rotation = ImageCameras[0].transform.rotation;
           }
           CameraBackground.gameObject.SetActive(true);
         }

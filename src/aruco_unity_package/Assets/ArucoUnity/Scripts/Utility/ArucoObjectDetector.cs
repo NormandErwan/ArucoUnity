@@ -67,19 +67,19 @@ namespace ArucoUnity
       public bool Configured { get; protected set; }
 
       /// <summary>
-      /// Vector of the detected marker corners. Updated by <see cref="Detect"/>.
+      /// Vector of the detected marker corners on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorVectorPoint2f MarkerCorners { get; protected set; }
+      public VectorVectorPoint2f[] MarkerCorners { get; protected set; }
 
       /// <summary>
-      /// Vector of identifiers of the detected markers. Updated by <see cref="Detect"/>.
+      /// Vector of identifiers of the detected markers on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorInt MarkerIds { get; protected set; }
+      public VectorInt[] MarkerIds { get; protected set; }
 
       /// <summary>
-      /// Vector of the corners with not a correct identification. Updated by <see cref="Detect"/>.
+      /// Vector of the corners with not a correct identification on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorVectorPoint2f RejectedCandidateCorners { get; protected set; }
+      public VectorVectorPoint2f[] RejectedCandidateCorners { get; protected set; }
 
       // MonoBehaviour methods
 
@@ -117,14 +117,14 @@ namespace ArucoUnity
         if (ArucoCamera != null)
         {
           ArucoCamera.OnStarted -= Configure;
-          ArucoCamera.OnImageUpdated -= ArucoCameraImageUpdated;
+          ArucoCamera.OnImagesUpdated -= ArucoCameraImageUpdated;
         }
       }
 
       // Methods
 
       /// <summary>
-      /// Detect the markers on the <see cref="ArucoObjectDetector.CameraImageTexture"/> and estimate their poses. Should be called during LateUpdate(),
+      /// Detect the markers on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event,
       /// after the update of the CameraImageTexture.
       /// </summary>
       // TODO: detect in a separate thread for performances
@@ -135,13 +135,16 @@ namespace ArucoUnity
           return;
         }
 
-        VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
-        VectorInt markerIds;
+        for (int i = 0; i < ArucoCamera.Images.Length; i++)
+        {
+          VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
+          VectorInt markerIds;
 
-        Functions.DetectMarkers(ArucoCamera.Image, Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
-        MarkerCorners = markerCorners;
-        RejectedCandidateCorners = rejectedCandidateCorners;
-        MarkerIds = markerIds;
+          Functions.DetectMarkers(ArucoCamera.Images[i], Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+          MarkerCorners[i] = markerCorners;
+          RejectedCandidateCorners[i] = rejectedCandidateCorners;
+          MarkerIds[i] = markerIds;
+        }
       }
 
       /// <summary>
@@ -149,6 +152,9 @@ namespace ArucoUnity
       /// </summary>
       protected abstract void PreConfigure();
 
+      /// <summary>
+      /// Update the camera images.
+      /// </summary>
       protected abstract void ArucoCameraImageUpdated();
 
       /// <summary>
@@ -156,8 +162,15 @@ namespace ArucoUnity
       /// </summary>
       private void Configure()
       {
-        // Execute the configuration of derived classes
         Configured = false;
+
+        // Initialize the properties
+        int camerasNumber = ArucoCamera.ImageTextures.Length;
+        MarkerCorners = new VectorVectorPoint2f[camerasNumber];
+        RejectedCandidateCorners = new VectorVectorPoint2f[camerasNumber];
+        MarkerIds = new VectorInt[camerasNumber];
+
+        // Execute the configuration of derived classes
         PreConfigure();
 
         // Update the state and notify
@@ -168,7 +181,7 @@ namespace ArucoUnity
         }
 
         // Subscribe to ArucoCamera events
-        ArucoCamera.OnImageUpdated += ArucoCameraImageUpdated;
+        ArucoCamera.OnImagesUpdated += ArucoCameraImageUpdated;
       }
     }
   }

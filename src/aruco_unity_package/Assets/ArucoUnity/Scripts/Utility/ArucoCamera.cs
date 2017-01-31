@@ -10,18 +10,18 @@ namespace ArucoUnity
   namespace Utility
   {
     /// <summary>
-    /// Base for any camera sytem to use with ArucoUnity. Manages to retrieve and display the camera's image every frame.
+    /// Manages to retrieve and display every frame the images of any system with a fixed number of cameras to use with ArucoUnity.
     /// </summary>
     public abstract class ArucoCamera : MonoBehaviour
     {
       // Editor fields
 
       [SerializeField]
-      [Tooltip("Display automatically or not the camera's image on screen.")]
-      private bool displayImage = true;
+      [Tooltip("Display automatically or not the camera images on screen.")]
+      private bool displayImages = true;
 
       [SerializeField]
-      [Tooltip("Start the camera automatically after configured it.")]
+      [Tooltip("Start the cameras automatically after configured it.")]
       private bool autoStart = true;
 
       // Events
@@ -29,126 +29,136 @@ namespace ArucoUnity
       public delegate void ArucoCameraAction();
 
       /// <summary>
-      /// Executed when the camera is configured.
+      /// Executed when the camera system is configured.
       /// </summary>
       public event ArucoCameraAction OnConfigured;
 
       /// <summary>
-      /// Executed when the camera starts.
+      /// Executed when the camera system starts.
       /// </summary>
       public event ArucoCameraAction OnStarted;
 
       /// <summary>
-      /// Executed when the camera stops.
+      /// Executed when the camera system stops.
       /// </summary>
       public event ArucoCameraAction OnStopped;
 
       /// <summary>
-      /// Executed when the image has been updated.
+      /// Executed when the images has been updated.
       /// </summary>
-      public event ArucoCameraAction OnImageUpdated;
+      public event ArucoCameraAction OnImagesUpdated;
 
       // Properties
 
       /// <summary>
-      /// Display automatically or not the camera's image on screen.
+      /// Display automatically or not the camera images on screen.
       /// </summary>
-      public bool DisplayImage { get { return displayImage; } set { displayImage = value; } }
+      public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
 
       /// <summary>
-      /// Start the camera automatically after configured it.
+      /// Start the camera system automatically after configured it.
       /// </summary>
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
 
       /// <summary>
-      /// True when the camera has started.
+      /// True when the camera system has started.
       /// </summary>
       public bool Started { get; protected set; }
 
       /// <summary>
-      /// True when the camera is configured.
+      /// True when the camera system is configured.
       /// </summary>
       public bool Configured { get; protected set; }
 
       /// <summary>
-      /// True when the image has been updated this frame.
+      /// True when the images has been updated this frame.
       /// </summary>
-      public bool ImageUpdatedThisFrame { get; protected set; }
+      public bool ImagesUpdatedThisFrame { get; protected set; }
 
       /// <summary>
-      /// The image in a OpenCV format. When getting, a new Mat is created from the <see cref="ImageTexture"/> content. When setting, the
-      /// <see cref="ImageTexture"/> content is updated from the Mat.
+      /// The images in a OpenCV format. When getting the property, a new Mat is created for each image from the corresponding 
+      /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Mat array.
       /// </summary>
-      public Mat Image 
+      public Mat[] Images 
       {
         get
         {
-          if (image == null)
+          if (images == null)
           {
-            byte[] imageData = ImageTexture.GetRawTextureData();
-            image = new Mat(ImageTexture.height, ImageTexture.width, TYPE.CV_8UC3, imageData);
+            images = new Mat[ImageTextures.Length];
+            for (int i = 0; i < ImageTextures.Length; i++)
+            {
+              byte[] imageData = ImageTextures[i].GetRawTextureData();
+              images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, TYPE.CV_8UC3, imageData);
+            }
           }
-          return image;
+          return images;
         }
         set
         {
-          image = value;
-          imageHasBeenSetThisFrame = true;
+          if (value.Length == images.Length)
+          {
+            images = value;
+            imagesHasBeenSetThisFrame = true;
+          }
         }
       }
 
       /// <summary>
-      /// Image texture, updated each frame.
+      /// Image textures, updated each frame.
       /// </summary>
-      public Texture2D ImageTexture { get; protected set; }
+      public Texture2D[] ImageTextures { get; protected set; }
 
       /// <summary>
-      /// The parameters of the camera.
+      /// The parameters of each camera.
       /// </summary>
-      public CameraParameters CameraParameters { get; protected set; }
+      public CameraParameters[] CameraParameters { get; protected set; }
 
       /// <summary>
-      /// The Unity camera component that will capture the <see cref="ImageTexture"/>.
+      /// The Unity camera components that will capture the <see cref="ImageTextures"/>.
       /// </summary>
-      public Camera ImageCamera { get; protected set; }
+      public Camera[] ImageCameras { get; protected set; }
 
       /// <summary>
-      /// The correct image orientation.
+      /// The correct image orientations.
       /// </summary>
-      public virtual Quaternion ImageRotation { get; protected set; }
+      public virtual Quaternion[] ImageRotations { get; protected set; }
 
       /// <summary>
-      /// The image ratio.
+      /// The image ratios.
       /// </summary>
-      public virtual float ImageRatio { get; protected set; }
+      public virtual float[] ImageRatios { get; protected set; }
 
       /// <summary>
-      /// Allow to unflip the image if vertically flipped (use for mesh plane).
+      /// Allow to unflip an image if vertically flipped (use for mesh plane).
       /// </summary>
-      public virtual Mesh ImageMesh { get; protected set; }
+      public virtual Mesh[] ImageMeshes { get; protected set; }
 
       /// <summary>
-      /// Allow to unflip the image if vertically flipped (use for canvas).
+      /// Allow to unflip an image if vertically flipped (use for canvas).
       /// </summary>
-      public virtual Rect ImageUvRectFlip { get; protected set; }
+      public virtual Rect[] ImageUvRectFlips { get; protected set; }
 
       /// <summary>
-      /// Mirror front-facing camera's image horizontally to look more natural.
+      /// Mirror front-facing camera images horizontally to look more natural.
       /// </summary>
-      public virtual Vector3 ImageScaleFrontFacing { get; protected set; }
+      public virtual Vector3[] ImageScalesFrontFacing { get; protected set; }
 
       // Variables
 
-      protected bool imageHasBeenSetThisFrame;
-      private Mat image;
+      protected bool imagesHasBeenSetThisFrame;
+      private Mat[] images;
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// Initialize camera system state.
+      /// </summary>
       protected virtual void Awake()
       {
         Configured = false;
         Started = false;
-        ImageUpdatedThisFrame = false;
+        ImagesUpdatedThisFrame = false;
       }
 
       /// <summary>
@@ -162,51 +172,63 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Reset <see cref="Images"/> and retrieve the new images for this frame.
+      /// </summary>
       protected virtual void Update()
       {
-        image = null;
-        imageHasBeenSetThisFrame = false;
+        images = null;
+        imagesHasBeenSetThisFrame = false;
 
-        UpdateCameraImage();
+        UpdateCameraImages();
       }
 
+      /// <summary>
+      /// Apply on <see cref="ImageTextures"/> the changes made on <see cref="Images"/> during the frame.
+      /// </summary>
       protected virtual void LateUpdate()
       {
         Undistord();
 
-        if (imageHasBeenSetThisFrame)
+        if (imagesHasBeenSetThisFrame)
         {
-          int imageDataSize = (int)(image.ElemSize() * image.Total());
-          ImageTexture.LoadRawTextureData(image.data, imageDataSize);
-          ImageTexture.Apply(false);
+          for (int i = 0; i < ImageTextures.Length; i++)
+          {
+            int imageDataSize = (int)(images[i].ElemSize() * images[i].Total());
+            ImageTextures[i].LoadRawTextureData(images[i].data, imageDataSize);
+            ImageTextures[i].Apply(false);
+          }
         }
       }
 
+      /// <summary>
+      /// Automatically stop the camera.
+      /// </summary>
       protected virtual void OnDestroy()
       {
-        StopCamera();
+        StopCameras();
       }
 
       // Methods
 
       /// <summary>
-      /// Configure the camera and its properties.
+      /// Configure the cameras and their properties.
       /// </summary>
       public abstract void Configure();
 
       /// <summary>
-      /// Start the camera.
+      /// Start the camera system.
       /// </summary>
-      public abstract void StartCamera();
+      public abstract void StartCameras();
 
       /// <summary>
-      /// Stop the camera.
+      /// Stop the camera system.
       /// </summary>
-      public abstract void StopCamera();
+      public abstract void StopCameras();
 
       /// <summary>
-      /// Undistord the image according to the <see cref="CameraParameters"/>, if not null. <see cref="Image"/> is immediatly updated. 
-      /// <see cref="ImageTexture"/> will be updated at LateUpdate().
+      /// Undistord the images according to the <see cref="Utility.CameraParameters"/>, if not null. <see cref="Images"/> is immediatly updated. 
+      /// <see cref="ImageTextures"/> will be updated at LateUpdate().
       /// </summary>
       public virtual void Undistord()
       {
@@ -215,15 +237,18 @@ namespace ArucoUnity
           return;
         }
 
-        Mat undistordedImage;
-        Imgproc.Undistord(Image, out undistordedImage, CameraParameters.CameraMatrix, CameraParameters.DistCoeffs);
-        Image = undistordedImage;
+        for (int i = 0; i < ImageTextures.Length; i++)
+        {
+          Mat undistordedImage;
+          Imgproc.Undistord(Images[i], out undistordedImage, CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
+          Images[i] = undistordedImage;
+        }
       }
 
       /// <summary>
-      /// Update <see cref="ImageTexture"/> if the camera has started.
+      /// Update <see cref="ImageTextures"/> if the camera system has started.
       /// </summary>
-      protected abstract void UpdateCameraImage();
+      protected abstract void UpdateCameraImages();
 
       /// <summary>
       /// Execute the <see cref="OnStarted"/> action.
@@ -259,13 +284,13 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Execute the <see cref="OnImageUpdated"/> action.
+      /// Execute the <see cref="OnImagesUpdated"/> action.
       /// </summary>
       protected void RaiseOnImageUpdated()
       {
-        if (OnImageUpdated != null)
+        if (OnImagesUpdated != null)
         {
-          OnImageUpdated();
+          OnImagesUpdated();
         }
       }
     }

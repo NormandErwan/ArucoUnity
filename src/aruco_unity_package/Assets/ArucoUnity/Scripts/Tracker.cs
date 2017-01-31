@@ -56,14 +56,14 @@ namespace ArucoUnity
     public GameObject DefaultTrackedGameObject { get { return defaultTrackedGameObject; } set { defaultTrackedGameObject = value; } }
 
     /// <summary>
-    /// Vector of rotation vectors of the detected markers.
+    /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public VectorVec3d Rvecs { get; protected set; }
+    public VectorVec3d[] Rvecs { get; protected set; }
 
     /// <summary>
-    /// Vector of translation vectors of the detected markers.
+    /// Vector of translation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public VectorVec3d Tvecs { get; protected set; }
+    public VectorVec3d[] Tvecs { get; protected set; }
 
     // Variables
 
@@ -102,50 +102,63 @@ namespace ArucoUnity
       {
         EstimateTransforms = false;
       }
+
+      // Initialize the properties
+      int camerasNumber = ArucoCamera.ImageTextures.Length;
+      Rvecs = new VectorVec3d[camerasNumber];
+      Tvecs = new VectorVec3d[camerasNumber];
     }
 
     // Methods
 
     public void Draw()
     {
-      Mat cameraImage = ArucoCamera.Image;
       bool updatedCameraImage = false;
+      Mat[] cameraImages = ArucoCamera.Images;
 
-      // Draw the detected markers
-      if (DrawDetectedMarkers && MarkerIds.Size() > 0)
+      for (int i = 0; i < cameraImages.Length; i++)
       {
-        Functions.DrawDetectedMarkers(cameraImage, MarkerCorners, MarkerIds);
-        updatedCameraImage = true;
-      }
+        // Draw the detected markers
+        if (DrawDetectedMarkers && MarkerIds[i].Size() > 0)
+        {
+          Functions.DrawDetectedMarkers(cameraImages[i], MarkerCorners[i], MarkerIds[i]);
+          updatedCameraImage = true;
+        }
 
-      // Draw rejected marker candidates
-      if (DrawRejectedCandidates && RejectedCandidateCorners.Size() > 0)
-      {
-        Functions.DrawDetectedMarkers(cameraImage, RejectedCandidateCorners, new Color(100, 0, 255));
-        updatedCameraImage = true;
+        // Draw rejected marker candidates
+        if (DrawRejectedCandidates && RejectedCandidateCorners[i].Size() > 0)
+        {
+          Functions.DrawDetectedMarkers(cameraImages[i], RejectedCandidateCorners[i], new Color(100, 0, 255));
+          updatedCameraImage = true;
+        }
       }
 
       if (updatedCameraImage)
       {
-        ArucoCamera.Image = cameraImage;
+        ArucoCamera.Images = cameraImages;
       }
     }
 
     public void EstimateTranforms()
     {
-      if (!EstimateTransforms || MarkerIds.Size() < 0)
+      for (int i = 0; i < ArucoCamera.ImageTextures.Length; i++)
       {
-        Rvecs = null;
-        Tvecs = null;
-      }
+        if (!EstimateTransforms || MarkerIds[i].Size() < 0)
+        {
+          Rvecs[i] = null;
+          Tvecs[i] = null;
+        }
 
-      // Estimate markers pose
-      if (MarkerIds.Size() > 0)
-      {
-        VectorVec3d rvecs, tvecs;
-        Functions.EstimatePoseSingleMarkers(MarkerCorners, MarkerSideLength, ArucoCamera.CameraParameters.CameraMatrix, ArucoCamera.CameraParameters.DistCoeffs, out rvecs, out tvecs);
-        Rvecs = rvecs;
-        Tvecs = tvecs;
+        CameraParameters cameraParameters = ArucoCamera.CameraParameters[i];
+
+        // Estimate markers pose
+        if (MarkerIds[i].Size() > 0)
+        {
+          VectorVec3d rvecs, tvecs;
+          Functions.EstimatePoseSingleMarkers(MarkerCorners[i], MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+          Rvecs[i] = rvecs;
+          Tvecs[i] = tvecs;
+        }
       }
     }
 
@@ -166,13 +179,15 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// Place and orient the object to match the marker.
+    /// Place and orient the object to match the marker on the first camera image.
     /// </summary>
     public void Place()
     {
-      for (uint i = 0; i < MarkerIds.Size(); i++)
+      int cameraId = 0;
+
+      for (uint i = 0; i < MarkerIds[cameraId].Size(); i++)
       {
-        int markerId = MarkerIds.At(i);
+        int markerId = MarkerIds[cameraId].At(i);
 
         bool foundArucoObject = false;
         foreach (ArucoObject arucoObject in ArucoObjects)
@@ -181,7 +196,7 @@ namespace ArucoUnity
           if (marker != null && marker.Id == markerId)
           {
             foundArucoObject = true;
-            PlaceGameObject(marker.gameObject, Rvecs.At(i), Tvecs.At(i));
+            PlaceGameObject(marker.gameObject, Rvecs[cameraId].At(i), Tvecs[cameraId].At(i), cameraId);
           }
         }
 
@@ -199,27 +214,30 @@ namespace ArucoUnity
 
             defaultTrackedMarkerObjects.Add(markerId, arucoGameObject);
           }
-          PlaceGameObject(arucoGameObject, Rvecs.At(i), Tvecs.At(i));
+          PlaceGameObject(arucoGameObject, Rvecs[cameraId].At(i), Tvecs[cameraId].At(i), cameraId);
         }
       }
     }
 
-    protected void PlaceGameObject(GameObject arucoGameObject, Vec3d rvec, Vec3d tvec)
+    protected void PlaceGameObject(GameObject arucoGameObject, Vec3d rvec, Vec3d tvec, int cameraId)
     {
       // Place and orient the object to match the marker
       arucoGameObject.transform.rotation = rvec.ToRotation();
       arucoGameObject.transform.position = tvec.ToPosition();
 
       // Adjust the object position
-      Vector3 imageCenterMarkerObject = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
-      Vector3 opticalCenterMarkerObject = new Vector3(ArucoCamera.CameraParameters.OpticalCenter.x, ArucoCamera.CameraParameters.OpticalCenter.y, arucoGameObject.transform.position.z);
-      Vector3 opticalShift = ArucoCamera.ImageCamera.ViewportToWorldPoint(opticalCenterMarkerObject) - ArucoCamera.ImageCamera.ViewportToWorldPoint(imageCenterMarkerObject);
+      Camera camera = ArucoCamera.ImageCameras[cameraId];
+      Vector3 cameraOpticalCenter = ArucoCamera.CameraParameters[cameraId].OpticalCenter;
+
+      Vector3 imageCenter = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
+      Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);
+      Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenter) - camera.ViewportToWorldPoint(imageCenter);
 
       Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
         + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
       arucoGameObject.transform.localPosition += positionShift;
 
-      print(arucoGameObject.name + " - imageCenter: " + imageCenterMarkerObject.ToString("F3") + "; opticalCenter: " + opticalCenterMarkerObject.ToString("F3")
+      print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
         + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
       arucoGameObject.SetActive(true);
