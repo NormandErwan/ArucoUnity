@@ -3,9 +3,12 @@ cmake_minimum_required(VERSION 3.0)
 project(ArucoUnityLib)
 
 # Dependencies
-find_package(OpenCV REQUIRED
-             COMPONENTS aruco
-             PATHS ${OpenCVAruco_INSTALL_DIR})
+if (AUTO_BUILD_OPENCV)
+  find_package(OpenCV REQUIRED COMPONENTS aruco 
+               PATHS ${OpenCVAruco_INSTALL_DIR} NO_DEFAULT_PATH)
+else()
+  find_package(OpenCV REQUIRED COMPONENTS aruco)
+endif()
 
 # Target
 set(PROJECT_HEADERS
