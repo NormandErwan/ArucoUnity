@@ -153,36 +153,40 @@ namespace ArucoUnity
       // Variables
 
       protected GameObject cameraPlane;
+      protected bool startInitiated;
+
+      // MonoBehaviour methods
+
+      protected override void Awake()
+      {
+        base.Awake();
+        startInitiated = false;
+      }
 
       // ArucoCamera methods
 
       /// <summary>
-      /// Configure the webcam, with the id <see cref="WebcamId"/> and its the ArucoCamera properties.
+      /// Configure the webcam, with the id <see cref="WebcamId"/> and its the ArucoCamera properties. The camera needs to be stopped before configured.
       /// </summary>
       public override void Configure()
       {
-        if (Started)
+        if (Started || startInitiated)
         {
-          Debug.LogError(gameObject.name + ": Stop the camera to configure it. Aborting configuration.");
-          Configured = false;
           return;
         }
 
-        // Try to check for the webcam
+        // Try to load the webcam
         WebCamDevice[] webcamDevices = WebCamTexture.devices;
         if (webcamDevices.Length < WebcamId)
         {
-          Debug.LogError(gameObject.name + ": The webcam with the id '" + WebcamId + "' is not found. Aborting configuration.");
           Configured = false;
-          return;
+          throw new System.ArgumentException("The webcam with the id '" + WebcamId + "' is not found.", "WebcamId");
         }
+        WebCamDevice = webcamDevices[WebcamId];
+        WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
         // Try to load the camera parameters
         CameraParameters = CameraParameters.LoadFromXmlFile(CameraParametersFilePath);
-
-        // Switch the camera device
-        WebCamDevice = webcamDevices[WebcamId];
-        WebCamTexture = new WebCamTexture(WebCamDevice.name);
 
         // Update state
         Configured = true;
@@ -200,13 +204,13 @@ namespace ArucoUnity
       /// </summary>
       public override void StartCamera()
       {
-        if (Started)
+        if (!Configured || Started || startInitiated)
         {
           return;
         }
 
         WebCamTexture.Play();
-        Started = false; // Need some frames to be started, see Update()
+        startInitiated = true;
       }
 
       /// <summary>
@@ -214,12 +218,14 @@ namespace ArucoUnity
       /// </summary>
       public override void StopCamera()
       {
-        if (!Started)
+        if (!Configured || (!Started && !startInitiated))
         {
           return;
         }
 
         WebCamTexture.Stop();
+
+        startInitiated = false;
         Started = false;
         RaiseOnStopped();
       }
@@ -230,29 +236,31 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImage()
       {
-        if (!Configured)
+        if (!Configured || (!Started && !startInitiated))
         {
           ImageUpdatedThisFrame = false;
           return;
         }
 
-        // Wait the WebCamTexture to be initialized, to configure the ImageTexture, the CameraPlane and notify the camera has started
-        if (!Started)
+       if (startInitiated)
         {
-          if (WebCamTexture.width < 100)
+          if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
           {
-            Debug.Log(gameObject.name + ": Still waiting another frame for correct info.");
+            ImageUpdatedThisFrame = false;
             return;
           }
           else
           {
+            // Configure texture
             ImageTexture = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
 
+            // Configure display
             if (DisplayImage)
             {
               ConfigureCameraPlane();
             }
 
+            // Update state
             Started = true;
             RaiseOnStarted();
           }

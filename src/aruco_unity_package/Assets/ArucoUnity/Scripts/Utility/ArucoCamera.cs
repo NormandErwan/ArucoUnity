@@ -144,15 +144,18 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
-      /// <summary>
-      /// Configure the camera at start  if <see cref="AutoStart"/> is true.
-      /// </summary>
-      protected virtual void Start()
+      protected virtual void Awake()
       {
         Configured = false;
         Started = false;
         ImageUpdatedThisFrame = false;
+      }
 
+      /// <summary>
+      /// Configure the camera at start if <see cref="AutoStart"/> is true.
+      /// </summary>
+      protected virtual void Start()
+      {
         if (AutoStart)
         {
           Configure();
