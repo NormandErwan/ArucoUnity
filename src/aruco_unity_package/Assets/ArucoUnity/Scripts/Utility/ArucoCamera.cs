@@ -113,8 +113,10 @@ namespace ArucoUnity
         {
           if (value.Length == images.Length)
           {
-            Array.Clear(images, 0, images.Length);
-            images = value;
+            for (int i = 0; i < images.Length; i++)
+            {
+              images[i] = value[i];
+            }
             imagesHasBeenSetThisFrame = true;
           }
         }
@@ -213,7 +215,7 @@ namespace ArucoUnity
         {
           for (int i = 0; i < ImageTextures.Length; i++)
           {
-            ImageTextures[i].LoadRawTextureData(images[i].dataIntPtr, imageDataSizes[i]);
+            ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
             ImageTextures[i].Apply(false);
           }
         }
