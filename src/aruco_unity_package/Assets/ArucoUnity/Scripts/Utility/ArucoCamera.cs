@@ -84,12 +84,25 @@ namespace ArucoUnity
       {
         get
         {
-          if (!imagesGetThisFrame)
+          // Initialize
+          if (images == null)
           {
+            images = new Mat[ImageTextures.Length];
+            imageDataSizes = new int[ImageTextures.Length];
+
             for (int i = 0; i < ImageTextures.Length; i++)
             {
               byte[] imageData = ImageTextures[i].GetRawTextureData();
               images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, TYPE.CV_8UC3, imageData);
+              imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
+            }
+            imagesGetThisFrame = true;
+          }
+          else if (!imagesGetThisFrame)
+          {
+            for (int i = 0; i < ImageTextures.Length; i++)
+            {
+              images[i].dataByte = ImageTextures[i].GetRawTextureData();
             }
             imagesGetThisFrame = true;
           }
@@ -151,6 +164,7 @@ namespace ArucoUnity
 
       protected bool imagesHasBeenSetThisFrame;
       protected Mat[] images;
+      protected int[] imageDataSizes;
       protected bool imagesGetThisFrame;
 
       // MonoBehaviour methods
@@ -164,8 +178,6 @@ namespace ArucoUnity
         Started = false;
         ImagesUpdatedThisFrame = false;
         imagesGetThisFrame = false;
-
-        images = new Mat[ImageTextures.Length];
       }
 
       /// <summary>
@@ -201,8 +213,7 @@ namespace ArucoUnity
         {
           for (int i = 0; i < ImageTextures.Length; i++)
           {
-            int imageDataSize = (int)(images[i].ElemSize() * images[i].Total());
-            ImageTextures[i].LoadRawTextureData(images[i].dataIntPtr, imageDataSize);
+            ImageTextures[i].LoadRawTextureData(images[i].dataIntPtr, imageDataSizes[i]);
             ImageTextures[i].Apply(false);
           }
         }
@@ -244,12 +255,12 @@ namespace ArucoUnity
           return;
         }
 
+        Mat[] undistordedImages = new Mat[ImageTextures.Length];
         for (int i = 0; i < ImageTextures.Length; i++)
         {
-          Mat undistordedImage;
-          Imgproc.Undistord(Images[i], out undistordedImage, CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
-          Images[i] = undistordedImage;
+          Imgproc.Undistord(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
         }
+        Images = undistordedImages;
       }
 
       /// <summary>
