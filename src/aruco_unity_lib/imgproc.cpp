@@ -3,7 +3,7 @@
 
 extern "C" {
   // Static member functions
-  void au_cv_imgproc_undistord2(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
+  void au_cv_imgproc_undistort2(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
     try {
       *dst = new cv::Mat();
 

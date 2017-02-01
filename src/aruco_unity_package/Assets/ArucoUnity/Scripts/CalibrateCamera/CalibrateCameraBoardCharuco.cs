@@ -183,7 +183,7 @@ namespace ArucoUnity
       Mat undistordedImage, imageToDisplay;
       if (calibrate)
       {
-        Imgproc.Undistord(image, out undistordedImage, CharucoCameraParameters.CameraMatrix, CharucoCameraParameters.DistCoeffs);
+        Imgproc.Undistort(image, out undistordedImage, CharucoCameraParameters.CameraMatrix, CharucoCameraParameters.DistCoeffs);
         imageToDisplay = undistordedImage;
       }
       else

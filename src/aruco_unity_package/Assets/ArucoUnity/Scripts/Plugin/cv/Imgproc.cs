@@ -13,16 +13,16 @@ namespace ArucoUnity
       {
         // Static Member Functions
         [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_undistord2(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
+        static extern void au_cv_imgproc_undistort2(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
           System.IntPtr distCoeffs, System.IntPtr exception);
 
         // TODO: add the other version of undistord
-        public static void Undistord(Mat inputImage, out Mat outputImage, Mat cameraMatrix, Mat distCoeffs)
+        public static void Undistort(Mat inputImage, out Mat outputImage, Mat cameraMatrix, Mat distCoeffs)
         {
           Exception exception = new Exception();
           System.IntPtr outputImagePtr;
 
-          au_cv_imgproc_undistord2(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
+          au_cv_imgproc_undistort2(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
           outputImage = new Mat(outputImagePtr);
 
           exception.Check();

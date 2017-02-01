@@ -24,7 +24,7 @@ extern "C" {
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#ga69f2545a8b62a6b0fc2ee060dc30559d
   // TODO: au_cv_imgproc_undistord1
-  ARUCO_UNITY_API void au_cv_imgproc_undistord2(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_imgproc_undistort2(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
 
   //! @} Static Member Functions
 }

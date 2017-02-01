@@ -207,7 +207,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        Undistord();
+        Undistort();
 
         if (imagesHasBeenSetThisFrame)
         {
@@ -245,10 +245,10 @@ namespace ArucoUnity
       public abstract void StopCameras();
 
       /// <summary>
-      /// Undistord the images according to the <see cref="Utility.CameraParameters"/>, if not null. <see cref="Images"/> is immediatly updated. 
+      /// Undistort the images according to the <see cref="Utility.CameraParameters"/>, if not null. <see cref="Images"/> is immediatly updated. 
       /// <see cref="ImageTextures"/> will be updated at LateUpdate().
       /// </summary>
-      public virtual void Undistord()
+      public virtual void Undistort()
       {
         if (CameraParameters == null)
         {
@@ -258,7 +258,7 @@ namespace ArucoUnity
         Mat[] undistordedImages = new Mat[ImageTextures.Length];
         for (int i = 0; i < ImageTextures.Length; i++)
         {
-          Imgproc.Undistord(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
+          Imgproc.Undistort(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
         }
         Images = undistordedImages;
       }
