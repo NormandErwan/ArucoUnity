@@ -143,10 +143,11 @@ namespace ArucoUnity
     {
       for (int i = 0; i < ArucoCamera.ImageTextures.Length; i++)
       {
-        if (!EstimateTransforms || MarkerIds[i].Size() < 0)
+        if (!EstimateTransforms || MarkerIds[i].Size() <= 0)
         {
           Rvecs[i] = null;
           Tvecs[i] = null;
+          continue;
         }
 
         CameraParameters cameraParameters = ArucoCamera.CameraParameters[i];
