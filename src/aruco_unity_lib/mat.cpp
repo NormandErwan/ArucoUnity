@@ -88,8 +88,20 @@ extern "C" {
     return mat->cols;
   }
 
-  uchar* au_cv_Mat_getData(cv::Mat* mat) {
-    return mat->data;
+  uchar* au_cv_Mat_getData_void(cv::Mat* mat) {
+	  return mat->data;
+  }
+
+  void au_cv_Mat_setData_void(cv::Mat* mat, uchar* value) {
+	  mat->data = value;
+  }
+
+  uchar* au_cv_Mat_getData_uchar(cv::Mat* mat) {
+    return au_cv_Mat_getData_void(mat);
+  }
+
+  void au_cv_Mat_setData_uchar(cv::Mat* mat, uchar* value) {
+	  au_cv_Mat_setData_void(mat, value);
   }
 
   int au_cv_Mat_getRows(cv::Mat* mat) {

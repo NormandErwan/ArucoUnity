@@ -202,7 +202,7 @@ namespace ArucoUnity
           for (int i = 0; i < ImageTextures.Length; i++)
           {
             int imageDataSize = (int)(images[i].ElemSize() * images[i].Total());
-            ImageTextures[i].LoadRawTextureData(images[i].data, imageDataSize);
+            ImageTextures[i].LoadRawTextureData(images[i].dataIntPtr, imageDataSize);
             ImageTextures[i].Apply(false);
           }
         }

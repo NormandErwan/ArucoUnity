@@ -43,7 +43,7 @@ namespace ArucoUnity
       public virtual void Draw(GameObject plane)
       {
         int imageDataSize = (int)(Image.ElemSize() * Image.Total());
-        ImageTexture.LoadRawTextureData(Image.data, imageDataSize);
+        ImageTexture.LoadRawTextureData(Image.dataIntPtr, imageDataSize);
         ImageTexture.Apply();
 
         plane.GetComponent<Renderer>().material.mainTexture = ImageTexture;

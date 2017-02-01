@@ -193,7 +193,7 @@ namespace ArucoUnity
 
       // Copy the bytes of the image to the texture
       int imageDataSize = (int)(imageToDisplay.ElemSize() * imageToDisplay.Total());
-      ArucoCamera.ImageTextures[0].LoadRawTextureData(imageToDisplay.data, imageDataSize);
+      ArucoCamera.ImageTextures[0].LoadRawTextureData(imageToDisplay.dataIntPtr, imageDataSize);
       ArucoCamera.ImageTextures[0].Apply(false);
     }
 

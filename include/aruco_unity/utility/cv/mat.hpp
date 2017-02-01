@@ -108,7 +108,21 @@ extern "C" {
 
   //! \brief Returns a pointer to the data.
   //! \param mat The Mat used.
-  ARUCO_UNITY_API uchar* au_cv_Mat_getData(cv::Mat* mat);
+  ARUCO_UNITY_API uchar* au_cv_Mat_getData_void(cv::Mat* mat);
+
+  //! \brief Sets the p data.
+  //! \param mat The Mat used.
+  //! \param mat The new value.
+  ARUCO_UNITY_API void au_cv_Mat_setData_void(cv::Mat* mat, uchar* value);
+
+  //! \brief Returns a pointer to the data.
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API uchar* au_cv_Mat_getData_uchar(cv::Mat* mat);
+
+  //! \brief Sets the p data.
+  //! \param mat The Mat used.
+  //! \param mat The new value.
+  ARUCO_UNITY_API void au_cv_Mat_setData_uchar(cv::Mat* mat, uchar* value);
 
   //! \brief Returns the number of rows.
   //! \param mat The Mat used.

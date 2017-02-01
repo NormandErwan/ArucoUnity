@@ -57,7 +57,16 @@ namespace ArucoUnity
         static extern int au_cv_Mat_getCols(System.IntPtr mat);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Mat_getData(System.IntPtr mat);
+        static extern System.IntPtr au_cv_Mat_getData_void(System.IntPtr mat);
+
+        [DllImport("ArucoUnity")]
+        static extern void au_cv_Mat_setData_void(System.IntPtr mat, System.IntPtr data);
+
+        [DllImport("ArucoUnity")]
+        static extern byte[] au_cv_Mat_getData_uchar(System.IntPtr mat);
+
+        [DllImport("ArucoUnity")]
+        static extern void au_cv_Mat_setData_uchar(System.IntPtr mat, byte[] data);
 
         [DllImport("ArucoUnity")]
         static extern int au_cv_Mat_getRows(System.IntPtr mat);
@@ -144,9 +153,16 @@ namespace ArucoUnity
           get { return au_cv_Mat_getCols(cppPtr); }
         }
 
-        public System.IntPtr data
+        public System.IntPtr dataIntPtr
         {
-          get { return au_cv_Mat_getData(cppPtr); }
+          get { return au_cv_Mat_getData_void(cppPtr); }
+          set { au_cv_Mat_setData_void(cppPtr, value); }
+        }
+
+        public byte[] dataByte
+        {
+          get { return au_cv_Mat_getData_uchar(cppPtr); }
+          set { au_cv_Mat_setData_uchar(cppPtr, value); }
         }
 
         public int rows
