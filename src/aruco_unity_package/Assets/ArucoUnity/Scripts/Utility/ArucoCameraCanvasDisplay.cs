@@ -39,8 +39,8 @@ namespace ArucoUnity
       /// </summary>
       private void OnEnable()
       {
-        arucoCamera.OnStarted += CameraDeviceController_OnActiveCameraStarted;
-        if (arucoCamera.Started)
+        arucoCamera.Started += CameraDeviceController_OnActiveCameraStarted;
+        if (arucoCamera.IsStarted)
         {
           CameraDeviceController_OnActiveCameraStarted();
         }
@@ -51,7 +51,7 @@ namespace ArucoUnity
       /// </summary>
       private void OnDisable()
       {
-        arucoCamera.OnStarted -= CameraDeviceController_OnActiveCameraStarted;
+        arucoCamera.Started -= CameraDeviceController_OnActiveCameraStarted;
       }
 
       // Methods

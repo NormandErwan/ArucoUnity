@@ -178,7 +178,7 @@ namespace ArucoUnity
       /// </summary>
       public override void Configure()
       {
-        if (Started || startInitiated)
+        if (IsStarted || startInitiated)
         {
           return;
         }
@@ -187,7 +187,7 @@ namespace ArucoUnity
         WebCamDevice[] webcamDevices = WebCamTexture.devices;
         if (webcamDevices.Length <= WebcamId)
         {
-          Configured = false;
+          IsConfigured = false;
           throw new System.ArgumentException("The webcam with the id '" + WebcamId + "' is not found.", "WebcamId");
         }
         WebCamDevice = webcamDevices[WebcamId];
@@ -200,8 +200,8 @@ namespace ArucoUnity
         }
 
         // Update state
-        Configured = true;
-        RaiseOnConfigured();
+        IsConfigured = true;
+        OnConfigured();
 
         // AutoStart
         if (AutoStart)
@@ -215,7 +215,7 @@ namespace ArucoUnity
       /// </summary>
       public override void StartCameras()
       {
-        if (!Configured || Started || startInitiated)
+        if (!IsConfigured || IsStarted || startInitiated)
         {
           return;
         }
@@ -229,7 +229,7 @@ namespace ArucoUnity
       /// </summary>
       public override void StopCameras()
       {
-        if (!Configured || (!Started && !startInitiated))
+        if (!IsConfigured || (!IsStarted && !startInitiated))
         {
           return;
         }
@@ -237,8 +237,8 @@ namespace ArucoUnity
         WebCamTexture.Stop();
 
         startInitiated = false;
-        Started = false;
-        RaiseOnStopped();
+        IsStarted = false;
+        OnStopped();
       }
 
       /// <summary>
@@ -247,7 +247,7 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        if (!Configured || (!Started && !startInitiated))
+        if (!IsConfigured || (!IsStarted && !startInitiated))
         {
           ImagesUpdatedThisFrame = false;
           return;
@@ -273,8 +273,8 @@ namespace ArucoUnity
 
             // Update state
             startInitiated = false;
-            Started = true;
-            RaiseOnStarted();
+            IsStarted = true;
+            OnStarted();
           }
         }
 
@@ -283,7 +283,7 @@ namespace ArucoUnity
         ImageTextures[0].Apply(false);
 
         ImagesUpdatedThisFrame = true;
-        RaiseOnImageUpdated();
+        OnImageUpdated();
       }
 
       // Methods

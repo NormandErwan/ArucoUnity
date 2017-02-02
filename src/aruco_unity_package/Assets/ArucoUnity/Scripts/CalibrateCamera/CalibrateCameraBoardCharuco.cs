@@ -109,7 +109,7 @@ namespace ArucoUnity
 
     protected override void ArucoCameraImageUpdated()
     {
-      if (Configured)
+      if (IsConfigured)
       {
         VectorInt ids;
         VectorVectorPoint2f corners, rejectedImgPoints;

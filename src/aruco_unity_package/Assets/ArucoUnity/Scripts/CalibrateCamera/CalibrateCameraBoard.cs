@@ -97,7 +97,7 @@ namespace ArucoUnity
 
     protected override void ArucoCameraImageUpdated() // TODO: to factor
     {
-      if (Configured)
+      if (IsConfigured)
       {
         Mat image;
         VectorInt ids;

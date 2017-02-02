@@ -27,27 +27,27 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void ArucoCameraAction();
+      public delegate void CameraEventHandler();
 
       /// <summary>
       /// Executed when the camera system is configured.
       /// </summary>
-      public event ArucoCameraAction OnConfigured;
+      public event CameraEventHandler Configured = delegate { };
 
       /// <summary>
       /// Executed when the camera system starts.
       /// </summary>
-      public event ArucoCameraAction OnStarted;
+      public event CameraEventHandler Started = delegate { };
 
       /// <summary>
       /// Executed when the camera system stops.
       /// </summary>
-      public event ArucoCameraAction OnStopped;
+      public event CameraEventHandler Stopped = delegate { };
 
       /// <summary>
       /// Executed when the images has been updated.
       /// </summary>
-      public event ArucoCameraAction OnImagesUpdated;
+      public event CameraEventHandler ImagesUpdated = delegate { };
 
       // Properties
 
@@ -64,12 +64,12 @@ namespace ArucoUnity
       /// <summary>
       /// True when the camera system has started.
       /// </summary>
-      public bool Started { get; protected set; }
+      public bool IsStarted { get; protected set; }
 
       /// <summary>
       /// True when the camera system is configured.
       /// </summary>
-      public bool Configured { get; protected set; }
+      public bool IsConfigured { get; protected set; }
 
       /// <summary>
       /// True when the images has been updated this frame.
@@ -176,8 +176,8 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
-        Configured = false;
-        Started = false;
+        IsConfigured = false;
+        IsStarted = false;
         ImagesUpdatedThisFrame = false;
         imagesGetThisFrame = false;
       }
@@ -271,47 +271,35 @@ namespace ArucoUnity
       protected abstract void UpdateCameraImages();
 
       /// <summary>
-      /// Execute the <see cref="OnStarted"/> action.
+      /// Execute the <see cref="Started"/> action.
       /// </summary>
-      protected void RaiseOnStarted()
+      protected void OnStarted()
       {
-        if (OnStarted != null)
-        {
-          OnStarted();
-        }
+        Started();
       }
 
       /// <summary>
-      /// Execute the <see cref="OnStarted"/> action.
+      /// Execute the <see cref="Started"/> action.
       /// </summary>
-      protected void RaiseOnStopped()
+      protected void OnStopped()
       {
-        if (OnStopped != null)
-        {
-          OnStopped();
-        }
+        Stopped();
       }
 
       /// <summary>
-      /// Execute the <see cref="OnConfigured"/> action.
+      /// Execute the <see cref="Configured"/> action.
       /// </summary>
-      protected void RaiseOnConfigured()
+      protected void OnConfigured()
       {
-        if (OnConfigured != null)
-        {
-          OnConfigured();
-        }
+        Configured();
       }
 
       /// <summary>
-      /// Execute the <see cref="OnImagesUpdated"/> action.
+      /// Execute the <see cref="ImagesUpdated"/> action.
       /// </summary>
-      protected void RaiseOnImageUpdated()
+      protected void OnImageUpdated()
       {
-        if (OnImagesUpdated != null)
-        {
-          OnImagesUpdated();
-        }
+        ImagesUpdated();
       }
     }
   }

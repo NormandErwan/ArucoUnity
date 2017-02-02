@@ -25,12 +25,12 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void ArucoObjectDetectorAction();
+      public delegate void ArucoObjectDetectorEventHandler();
 
       /// <summary>
       /// Executed when the detector is ready and configured.
       /// </summary>
-      public event ArucoObjectDetectorAction OnConfigured;
+      public event ArucoObjectDetectorEventHandler Configured;
 
       // Properties
 
@@ -40,20 +40,20 @@ namespace ArucoUnity
         set
         {
           // Reset configuration
-          Configured = false;
+          IsConfigured = false;
 
           // Unsubscribe from the previous ArucoCamera
           if (arucoCamera != null)
           {
-            arucoCamera.OnStarted -= Configure;
+            arucoCamera.Started -= Configure;
           }
 
           // Subscribe to the new ArucoCamera
           arucoCamera = value;
           if (arucoCamera != null)
           {
-            arucoCamera.OnStarted += Configure;
-            if (ArucoCamera.Started)
+            arucoCamera.Started += Configure;
+            if (ArucoCamera.IsStarted)
             {
               Configure();
             }
@@ -69,7 +69,7 @@ namespace ArucoUnity
       /// <summary>
       /// True when the detector is ready and configured.
       /// </summary>
-      public bool Configured { get; protected set; }
+      public bool IsConfigured { get; protected set; }
 
       /// <summary>
       /// Vector of the detected marker corners on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
@@ -109,9 +109,9 @@ namespace ArucoUnity
       {
         if (ArucoCamera != null)
         {
-          ArucoCamera.OnStarted += Configure;
+          ArucoCamera.Started += Configure;
 
-          if (ArucoCamera.Started)
+          if (ArucoCamera.IsStarted)
           {
             Configure();
           }
@@ -123,12 +123,12 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnDisable()
       {
-        Configured = false;
+        IsConfigured = false;
 
         if (ArucoCamera != null)
         {
-          ArucoCamera.OnStarted -= Configure;
-          ArucoCamera.OnImagesUpdated -= ArucoCameraImageUpdated;
+          ArucoCamera.Started -= Configure;
+          ArucoCamera.ImagesUpdated -= ArucoCameraImageUpdated;
         }
       }
 
@@ -141,7 +141,7 @@ namespace ArucoUnity
       // TODO: detect in a separate thread for performances
       public void Detect()
       {
-        if (!Configured)
+        if (!IsConfigured)
         {
           return;
         }
@@ -175,7 +175,7 @@ namespace ArucoUnity
 
       protected virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
       {
-        if (Configured)
+        if (IsConfigured)
         {
           for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
           {
@@ -188,7 +188,7 @@ namespace ArucoUnity
 
       protected virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
       {
-        if (Configured)
+        if (IsConfigured)
         {
           for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
           {
@@ -204,7 +204,7 @@ namespace ArucoUnity
       /// </summary>
       private void Configure()
       {
-        Configured = false;
+        IsConfigured = false;
 
         // Initialize the properties
         int camerasNumber = ArucoCamera.ImageTextures.Length;
@@ -232,14 +232,11 @@ namespace ArucoUnity
         PreConfigure();
 
         // Update the state and notify
-        Configured = true;
-        if (OnConfigured != null)
-        {
-          OnConfigured();
-        }
+        IsConfigured = true;
+        Configured();
 
         // Subscribe to ArucoCamera events
-        ArucoCamera.OnImagesUpdated += ArucoCameraImageUpdated;
+        ArucoCamera.ImagesUpdated += ArucoCameraImageUpdated;
       }
     }
   }

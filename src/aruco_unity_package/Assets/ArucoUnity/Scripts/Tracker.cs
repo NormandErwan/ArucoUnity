@@ -65,7 +65,7 @@ namespace ArucoUnity
     {
       DeactivateArucoObjects();
 
-      if (Configured)
+      if (IsConfigured)
       {
         Detect();
         Draw();
@@ -103,7 +103,7 @@ namespace ArucoUnity
 
     protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
     {
-      if (Configured)
+      if (IsConfigured)
       {
         base.ArucoObjectController_DictionaryAdded(dictionary);
 
@@ -117,7 +117,7 @@ namespace ArucoUnity
 
     protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
-      if (Configured)
+      if (IsConfigured)
       {
         base.ArucoObjectController_DictionaryRemoved(dictionary);
 
