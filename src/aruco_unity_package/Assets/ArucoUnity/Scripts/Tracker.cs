@@ -15,6 +15,10 @@ namespace ArucoUnity
   /// </summary>
   public class Tracker : ArucoObjectDetector
   {
+    // Constants
+
+    protected float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+
     // Editor fields
 
     [SerializeField]
@@ -189,7 +193,7 @@ namespace ArucoUnity
           if (MarkerIds[cameraId][dictionary].Size() > 0)
           {
             VectorVec3d rvecs, tvecs;
-            Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+            Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
             Rvecs[cameraId][dictionary] = rvecs;
             Tvecs[cameraId][dictionary] = tvecs;
           }
@@ -236,18 +240,20 @@ namespace ArucoUnity
             Marker marker = arucoObject as Marker;
             if (marker != null && marker.Id == markerId)
             {
-              PlaceGameObject(marker.gameObject, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
+              PlaceArucoObject(marker, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
             }
           }
         }
       }
     }
 
-    protected void PlaceGameObject(GameObject arucoGameObject, Vec3d rvec, Vec3d tvec, int cameraId)
+    protected void PlaceArucoObject(ArucoObject arucoObject, Vec3d rvec, Vec3d tvec, int cameraId)
     {
+      GameObject arucoGameObject = arucoObject.gameObject;
+
       // Place and orient the object to match the marker
+      arucoGameObject.transform.position = tvec.ToPosition() * arucoObject.MarkerSideLength;
       arucoGameObject.transform.rotation = rvec.ToRotation();
-      arucoGameObject.transform.position = tvec.ToPosition();
 
       // Adjust the object position
       Camera camera = ArucoCamera.ImageCameras[cameraId];
@@ -261,8 +267,8 @@ namespace ArucoUnity
         + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
       arucoGameObject.transform.localPosition += positionShift;
 
-      print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
-        + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
+      //print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
+      //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
       arucoGameObject.SetActive(true);
     }

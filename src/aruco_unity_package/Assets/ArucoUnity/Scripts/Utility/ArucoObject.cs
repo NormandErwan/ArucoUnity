@@ -20,6 +20,9 @@ namespace ArucoUnity
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
+      private float markerSideLength;
+
+      [SerializeField]
       public int marginsSize;
 
       [SerializeField]
@@ -30,6 +33,26 @@ namespace ArucoUnity
       public HashSet<ArucoObjectController> ArucoObjectControllers { get; set; }
 
       public Dictionary Dictionary { get; set; }
+
+      public float MarkerSideLength
+      {
+        get { return markerSideLength; }
+        set
+        {
+          // Restore the previous scale
+          if (markerSideLength != 0)
+          {
+            gameObject.transform.localScale /= markerSideLength;
+          }
+
+          // Adjust to the new scale
+          markerSideLength = value;
+          if (markerSideLength != 0)
+          {
+            gameObject.transform.localScale *= markerSideLength;
+          }
+        }
+      }
 
       public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
 
@@ -44,6 +67,11 @@ namespace ArucoUnity
       {
         ArucoObjectControllers = new HashSet<ArucoObjectController>(arucoObjectControllers);
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+
+        if (markerSideLength != 0)
+        {
+          gameObject.transform.localScale *= markerSideLength;
+        }
       }
 
       /// <summary>

@@ -10,11 +10,6 @@ namespace ArucoUnity
   {
     public abstract class ArucoObjectController : MonoBehaviour
     {
-      // Editor fields
-
-      [SerializeField]
-      private float markerSideLength;
-
       // Events
 
       public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
@@ -28,38 +23,6 @@ namespace ArucoUnity
       public event DictionaryEventHandler DictionaryRemoved = delegate { };
 
       // Properties
-
-      public float MarkerSideLength
-      {
-        get { return markerSideLength; }
-        set
-        {
-          // Restore the previous scale
-          if (markerSideLength != 0)
-          {
-            foreach (var arucoObjectDictionary in ArucoObjects)
-            {
-              foreach (var arucoObject in arucoObjectDictionary.Value)
-              {
-                arucoObject.transform.localScale /= markerSideLength;
-              }
-            }
-          }
-
-          // Adjust to the new scale
-          markerSideLength = value;
-          if (markerSideLength != 0)
-          {
-            foreach (var arucoObjectDictionary in ArucoObjects)
-            {
-              foreach (var arucoObject in arucoObjectDictionary.Value)
-              {
-                arucoObject.transform.localScale *= markerSideLength;
-              }
-            }
-          }
-        }
-      }
 
       public Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>> ArucoObjects { get; protected set; }
 
@@ -92,11 +55,6 @@ namespace ArucoUnity
 
         arucoObjectsCollection.Add(arucoObject);
         ArucoObjectAdded(arucoObject);
-
-        if (MarkerSideLength != 0)
-        {
-          arucoObject.transform.localScale *= MarkerSideLength;
-        }
       }
 
       public virtual void Remove(ArucoObject arucoObject)
@@ -117,11 +75,6 @@ namespace ArucoUnity
         {
           ArucoObjects.Remove(arucoObject.Dictionary);
           DictionaryRemoved(arucoObject.Dictionary);
-        }
-
-        if (MarkerSideLength != 0)
-        {
-          arucoObject.transform.localScale /= MarkerSideLength;
         }
       }
     }
