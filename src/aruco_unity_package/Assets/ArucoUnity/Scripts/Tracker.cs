@@ -60,6 +60,34 @@ namespace ArucoUnity
     /// </summary>
     public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Tvecs { get; protected set; }
 
+    // ArucoObjectController methods
+
+    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    {
+      base.ArucoObjectController_DictionaryAdded(dictionary);
+      if (IsConfigured)
+      {
+        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        {
+          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
+          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+        }
+      }
+    }
+
+    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    {
+      base.ArucoObjectController_DictionaryRemoved(dictionary);
+      if (IsConfigured)
+      {
+        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        {
+          Rvecs[cameraId].Remove(dictionary);
+          Tvecs[cameraId].Remove(dictionary);
+        }
+      }
+    }
+
     // ArucoObjectDetector methods
 
     /// <summary>
@@ -97,32 +125,6 @@ namespace ArucoUnity
 
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
           Tvecs[cameraId].Add(dictionary, new VectorVec3d());
-        }
-      }
-    }
-
-    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
-    {
-      base.ArucoObjectController_DictionaryAdded(dictionary);
-      if (IsConfigured)
-      {
-        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
-        {
-          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
-          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
-        }
-      }
-    }
-
-    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
-    {
-      base.ArucoObjectController_DictionaryRemoved(dictionary);
-      if (IsConfigured)
-      {
-        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
-        {
-          Rvecs[cameraId].Remove(dictionary);
-          Tvecs[cameraId].Remove(dictionary);
         }
       }
     }
