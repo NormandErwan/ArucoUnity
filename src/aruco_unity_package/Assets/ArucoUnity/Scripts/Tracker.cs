@@ -29,10 +29,6 @@ namespace ArucoUnity
     [Tooltip("Estimate the detected markers pose (position, rotation)")]
     private bool estimateTransforms = true;
 
-    [SerializeField]
-    [Tooltip("The default game object to place above the detected markers")]
-    private GameObject defaultTrackedGameObject;
-
     // Properties
 
     /// <summary>
@@ -51,11 +47,6 @@ namespace ArucoUnity
     public bool EstimateTransforms { get { return estimateTransforms; } set { estimateTransforms = value; } }
 
     /// <summary>
-    /// The default game object to place above the detected markers.
-    /// </summary>
-    public GameObject DefaultTrackedGameObject { get { return defaultTrackedGameObject; } set { defaultTrackedGameObject = value; } }
-
-    /// <summary>
     /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
     public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Rvecs { get; protected set; }
@@ -64,10 +55,6 @@ namespace ArucoUnity
     /// Vector of translation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
     public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Tvecs { get; protected set; }
-
-    // Variables
-
-    protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
 
     // ArucoObjectDetector methods
 
@@ -98,7 +85,6 @@ namespace ArucoUnity
       int camerasNumber = ArucoCamera.ImageTextures.Length;
       Rvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
       Tvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
-      defaultTrackedMarkerObjects = new Dictionary<int, GameObject>();
 
       for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
       {
@@ -219,11 +205,6 @@ namespace ArucoUnity
           arucoObject.gameObject.SetActive(false);
         }
       }
-
-      foreach (var arucoObject in defaultTrackedMarkerObjects)
-      {
-        arucoObject.Value.SetActive(false);
-      }
     }
 
     /// <summary>
@@ -241,32 +222,13 @@ namespace ArucoUnity
         {
           int markerId = MarkerIds[cameraId][dictionary].At(i);
 
-          bool foundArucoObject = false;
           foreach (var arucoObject in arucoObjectDictionary.Value)
           {
             Marker marker = arucoObject as Marker;
             if (marker != null && marker.Id == markerId)
             {
-              foundArucoObject = true;
               PlaceGameObject(marker.gameObject, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
             }
-          }
-
-          if (!foundArucoObject)
-          {
-            // Found the default tracked game object for the current tracked marker
-            GameObject arucoGameObject = null;
-            if (!defaultTrackedMarkerObjects.TryGetValue(markerId, out arucoGameObject))
-            {
-              // If not found, instantiate it
-              arucoGameObject = Instantiate(DefaultTrackedGameObject);
-              arucoGameObject.name = markerId.ToString();
-              arucoGameObject.transform.SetParent(this.transform);
-              arucoGameObject.transform.localScale *= MarkerSideLength;
-
-              defaultTrackedMarkerObjects.Add(markerId, arucoGameObject);
-            }
-            PlaceGameObject(arucoGameObject, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
           }
         }
       }
