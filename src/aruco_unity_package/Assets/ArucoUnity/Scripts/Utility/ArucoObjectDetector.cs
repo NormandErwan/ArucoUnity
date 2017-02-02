@@ -45,6 +45,7 @@ namespace ArucoUnity
           // Unsubscribe from the previous ArucoCamera
           if (arucoCamera != null)
           {
+            arucoCamera.ImagesUpdated -= ArucoCameraImageUpdated;
             arucoCamera.Started -= Configure;
           }
 
@@ -52,11 +53,12 @@ namespace ArucoUnity
           arucoCamera = value;
           if (arucoCamera != null)
           {
-            arucoCamera.Started += Configure;
             if (ArucoCamera.IsStarted)
             {
               Configure();
             }
+            arucoCamera.Started += Configure;
+            arucoCamera.ImagesUpdated += ArucoCameraImageUpdated;
           }
         }
       }
@@ -100,36 +102,6 @@ namespace ArucoUnity
       {
         base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
         base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
-      }
-
-      /// <summary>
-      /// Subscribe to <see cref="ArucoCamera"/> and execute the configuration if the camera is already started.
-      /// </summary>
-      protected virtual void OnEnable()
-      {
-        if (ArucoCamera != null)
-        {
-          ArucoCamera.Started += Configure;
-
-          if (ArucoCamera.IsStarted)
-          {
-            Configure();
-          }
-        }
-      }
-
-      /// <summary>
-      /// Unsubscribe from <see cref="ArucoCamera"/>.
-      /// </summary>
-      protected virtual void OnDisable()
-      {
-        IsConfigured = false;
-
-        if (ArucoCamera != null)
-        {
-          ArucoCamera.Started -= Configure;
-          ArucoCamera.ImagesUpdated -= ArucoCameraImageUpdated;
-        }
       }
 
       // Methods
@@ -234,9 +206,6 @@ namespace ArucoUnity
         // Update the state and notify
         IsConfigured = true;
         Configured();
-
-        // Subscribe to ArucoCamera events
-        ArucoCamera.ImagesUpdated += ArucoCameraImageUpdated;
       }
     }
   }
