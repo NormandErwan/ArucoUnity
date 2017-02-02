@@ -30,7 +30,7 @@ namespace ArucoUnity
       /// <summary>
       /// Executed when the detector is ready and configured.
       /// </summary>
-      public event ArucoObjectDetectorEventHandler Configured;
+      public event ArucoObjectDetectorEventHandler Configured = delegate { };
 
       // Properties
 
