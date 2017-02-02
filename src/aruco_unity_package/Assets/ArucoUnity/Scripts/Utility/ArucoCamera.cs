@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Plugin;
 using ArucoUnity.Plugin.cv;
 using UnityEngine;
-using System;
 
 namespace ArucoUnity
 {
@@ -18,12 +17,12 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("Display automatically or not the camera images on screen.")]
-      private bool displayImages = true;
-
-      [SerializeField]
       [Tooltip("Start the cameras automatically after configured it.")]
       private bool autoStart = true;
+
+      [SerializeField]
+      [Tooltip("Display automatically or not the camera images on screen.")]
+      private bool displayImages = true;
 
       // Events
 
@@ -52,14 +51,14 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Display automatically or not the camera images on screen.
-      /// </summary>
-      public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
-
-      /// <summary>
       /// Start the camera system automatically after configured it.
       /// </summary>
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
+
+      /// <summary>
+      /// Display automatically or not the camera images on screen.
+      /// </summary>
+      public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
 
       /// <summary>
       /// True when the camera system has started.
