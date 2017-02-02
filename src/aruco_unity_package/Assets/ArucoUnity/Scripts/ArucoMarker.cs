@@ -7,7 +7,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public class Marker : ArucoObject
+    public class ArucoMarker : ArucoObject
     {
       // Editor fields
 

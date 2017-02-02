@@ -239,7 +239,7 @@ namespace ArucoUnity
 
           foreach (var arucoObject in arucoObjectDictionary.Value)
           {
-            Marker marker = arucoObject as Marker;
+            ArucoMarker marker = arucoObject as ArucoMarker;
             if (marker != null && marker.Id == markerId)
             {
               PlaceArucoObject(marker, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
