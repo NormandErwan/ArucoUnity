@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -13,7 +14,7 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      private ArucoObjectController arucoObjectController;
+      private ArucoObjectController[] arucoObjectControllers;
 
       [SerializeField]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
@@ -26,25 +27,7 @@ namespace ArucoUnity
 
       // Properties
 
-      public ArucoObjectController ArucoObjectController // TODO: multiple controllers?
-      {
-        get { return arucoObjectController; }
-        set
-        {
-          // Remove the previous controller
-          if (arucoObjectController != null)
-          {
-            arucoObjectController.Remove(this);
-          }
-
-          // Add the new controller
-          arucoObjectController = value;
-          if (arucoObjectController != null)
-          {
-            arucoObjectController.Add(this);
-          }
-        }
-      }
+      public HashSet<ArucoObjectController> ArucoObjectControllers { get; set; }
 
       public Dictionary Dictionary { get; set; }
 
@@ -59,19 +42,38 @@ namespace ArucoUnity
       /// </summary>
       protected void Awake()
       {
+        ArucoObjectControllers = new HashSet<ArucoObjectController>(arucoObjectControllers);
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
       }
 
       /// <summary>
-      /// Hide at start, until it will be used by a <see cref="ArucoObjectController"/>.
+      /// Hide at start, until it will be used by a <see cref="ArucoObjectControllers"/>.
       /// </summary>
       protected void Start()
       {
         gameObject.SetActive(false);
 
-        if (ArucoObjectController != null)
+        foreach (var arucoObjectController in ArucoObjectControllers)
         {
-          ArucoObjectController.Add(this);
+          arucoObjectController.Add(this);
+        }
+      }
+
+      // Methods
+
+      public void AddController(ArucoObjectController arucoObjectController)
+      {
+        if (ArucoObjectControllers.Add(arucoObjectController))
+        {
+          arucoObjectController.Add(this);
+        }
+      }
+
+      public void RemoveController(ArucoObjectController arucoObjectController)
+      {
+        if (ArucoObjectControllers.Remove(arucoObjectController))
+        {
+          arucoObjectController.Remove(this);
         }
       }
     }
