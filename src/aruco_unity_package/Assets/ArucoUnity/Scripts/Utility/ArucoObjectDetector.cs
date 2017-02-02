@@ -1,5 +1,7 @@
 ﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
 using ArucoUnity.Plugin.std;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -23,12 +25,12 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void CameraDeviceMakersDetectorAction();
+      public delegate void ArucoObjectDetectorAction();
 
       /// <summary>
       /// Executed when the detector is ready and configured.
       /// </summary>
-      public event CameraDeviceMakersDetectorAction OnConfigured;
+      public event ArucoObjectDetectorAction OnConfigured;
 
       // Properties
 
@@ -48,10 +50,13 @@ namespace ArucoUnity
 
           // Subscribe to the new ArucoCamera
           arucoCamera = value;
-          arucoCamera.OnStarted += Configure;
-          if (ArucoCamera != null && ArucoCamera.Started)
+          if (arucoCamera != null)
           {
-            Configure();
+            arucoCamera.OnStarted += Configure;
+            if (ArucoCamera.Started)
+            {
+              Configure();
+            }
           }
         }
       }
@@ -69,26 +74,32 @@ namespace ArucoUnity
       /// <summary>
       /// Vector of the detected marker corners on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorVectorPoint2f[] MarkerCorners { get; protected set; }
+      public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] MarkerCorners { get; protected set; }
 
       /// <summary>
       /// Vector of identifiers of the detected markers on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorInt[] MarkerIds { get; protected set; }
+      public Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[] MarkerIds { get; protected set; }
 
       /// <summary>
       /// Vector of the corners with not a correct identification on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
       /// </summary>
-      public VectorVectorPoint2f[] RejectedCandidateCorners { get; protected set; }
+      public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] RejectedCandidateCorners { get; protected set; }
 
       // MonoBehaviour methods
 
-      protected override void Start()
+      protected override void Awake()
       {
-        base.Start();
+        base.Awake();
 
         ArucoCamera = arucoCamera;
-        DetectorParameters = detectorParametersController.detectorParameters;
+        DetectorParameters = detectorParametersController.DetectorParameters;
+      }
+
+      protected virtual void Start()
+      {
+        base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
+        base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
       }
 
       /// <summary>
@@ -135,15 +146,20 @@ namespace ArucoUnity
           return;
         }
 
-        for (int i = 0; i < ArucoCamera.Images.Length; i++)
+        Mat[] cameraImages = ArucoCamera.Images;
+        for (int cameraId = 0; cameraId < cameraImages.Length; cameraId++)
         {
-          VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
-          VectorInt markerIds;
+          foreach (var arucoObjectDictionary in ArucoObjects)
+          {
+            Dictionary dictionary = arucoObjectDictionary.Key;
+            VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
+            VectorInt markerIds;
 
-          Functions.DetectMarkers(ArucoCamera.Images[i], Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
-          MarkerCorners[i] = markerCorners;
-          RejectedCandidateCorners[i] = rejectedCandidateCorners;
-          MarkerIds[i] = markerIds;
+            Functions.DetectMarkers(cameraImages[cameraId], dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+            MarkerCorners[cameraId][dictionary] = markerCorners;
+            MarkerIds[cameraId][dictionary] = markerIds;
+            RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
+          }
         }
       }
 
@@ -157,6 +173,32 @@ namespace ArucoUnity
       /// </summary>
       protected abstract void ArucoCameraImageUpdated();
 
+      protected virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+      {
+        if (Configured)
+        {
+          for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+          {
+            MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+            MarkerIds[cameraId].Add(dictionary, new VectorInt());
+            RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+          }
+        }
+      }
+
+      protected virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+      {
+        if (Configured)
+        {
+          for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+          {
+            MarkerCorners[cameraId].Remove(dictionary);
+            MarkerIds[cameraId].Remove(dictionary);
+            RejectedCandidateCorners[cameraId].Remove(dictionary);
+          }
+        }
+      }
+
       /// <summary>
       /// Configure the detection.
       /// </summary>
@@ -166,9 +208,25 @@ namespace ArucoUnity
 
         // Initialize the properties
         int camerasNumber = ArucoCamera.ImageTextures.Length;
-        MarkerCorners = new VectorVectorPoint2f[camerasNumber];
-        RejectedCandidateCorners = new VectorVectorPoint2f[camerasNumber];
-        MarkerIds = new VectorInt[camerasNumber];
+        MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[camerasNumber];
+        MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[camerasNumber];
+        RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[camerasNumber];
+
+        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        {
+          MarkerCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
+          MarkerIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>();
+          RejectedCandidateCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
+
+          foreach (var arucoObjectDictionary in ArucoObjects)
+          {
+            Dictionary dictionary = arucoObjectDictionary.Key;
+
+            MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+            MarkerIds[cameraId].Add(dictionary, new VectorInt());
+            RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+          }
+        }
 
         // Execute the configuration of derived classes
         PreConfigure();

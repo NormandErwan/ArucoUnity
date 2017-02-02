@@ -136,7 +136,7 @@ namespace ArucoUnity
     protected override void PreConfigure()
     {
       // Configure the board calibration
-      CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, MarkerSideLength, Dictionary);
+      CharucoBoard = CharucoBoard.Create(squaresNumberX, squaresNumberY, squareSideLength, MarkerSideLength, new Dictionary());
       ConfigureCalibrationFlags();
       ResetCalibrationFromEditor();
     }
@@ -157,7 +157,7 @@ namespace ArucoUnity
       // Detect markers
       byte[] imageData = ArucoCamera.ImageTextures[0].GetRawTextureData();
       image = new Mat(ArucoCamera.ImageTextures[0].height, ArucoCamera.ImageTextures[0].width, TYPE.CV_8UC3, imageData);
-      Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
+      Functions.DetectMarkers(image, new Dictionary(), out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
       if (ApplyRefineStrategy)
       {

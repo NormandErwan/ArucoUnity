@@ -124,7 +124,7 @@ namespace ArucoUnity
     protected override void PreConfigure()
     {
       // Configure the board calibration
-      Board = GridBoard.Create(markersNumberX, markersNumberY, MarkerSideLength, markerSeparation, Dictionary);
+      Board = GridBoard.Create(markersNumberX, markersNumberY, MarkerSideLength, markerSeparation, new Dictionary()); // TODO: fix Dictionary
       ConfigureCalibrationFlags(); // TODO: to factor
       ResetCalibrationFromEditor(); // TODO: to factor
     }
@@ -144,7 +144,7 @@ namespace ArucoUnity
       // Detect markers
       byte[] imageData = ArucoCamera.ImageTextures[0].GetRawTextureData();
       image = new Mat(ArucoCamera.ImageTextures[0].height, ArucoCamera.ImageTextures[0].width, TYPE.CV_8UC3, imageData);
-      Functions.DetectMarkers(image, Dictionary, out corners, out ids, DetectorParameters, out rejectedImgPoints);
+      Functions.DetectMarkers(image, new Dictionary(), out corners, out ids, DetectorParameters, out rejectedImgPoints);
 
       if (ApplyRefineStrategy)
       {

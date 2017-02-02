@@ -155,6 +155,8 @@ namespace ArucoUnity
         get { return au_Dictionary_getMaxCorrectionBits(cppPtr); }
         set { au_Dictionary_setMaxCorrectionBits(cppPtr, value); }
       }
+
+      public PREDEFINED_DICTIONARY_NAME name { get; set; }
     }
   }
 

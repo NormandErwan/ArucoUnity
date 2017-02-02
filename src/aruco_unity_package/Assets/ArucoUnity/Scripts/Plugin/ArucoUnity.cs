@@ -643,7 +643,9 @@ namespace ArucoUnity
 
       public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
       {
-        return new Dictionary(au_getPredefinedDictionary(name));
+        Dictionary dictionary = new Dictionary(au_getPredefinedDictionary(name));
+        dictionary.name = name;
+        return dictionary;
       }
 
       public static int InterpolateCornersCharuco(VectorVectorPoint2f markerCorners, VectorInt markerIds, Mat image, CharucoBoard board,

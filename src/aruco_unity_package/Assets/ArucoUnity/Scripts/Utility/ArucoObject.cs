@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -13,6 +14,9 @@ namespace ArucoUnity
 
       [SerializeField]
       private ArucoObjectController arucoObjectController;
+
+      [SerializeField]
+      private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
       public int marginsSize;
@@ -42,9 +46,21 @@ namespace ArucoUnity
         }
       }
 
+      public Dictionary Dictionary { get; set; }
+
       public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
 
       public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Initialize properties.
+      /// </summary>
+      protected void Awake()
+      {
+        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+      }
 
       /// <summary>
       /// Hide at start, until it will be used by a <see cref="ArucoObjectController"/>.

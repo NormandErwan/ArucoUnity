@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using ArucoUnity.Plugin;
 
 namespace ArucoUnity
 {
@@ -14,14 +13,21 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      private PREDEFINED_DICTIONARY_NAME dictionaryName;
-
-      [SerializeField]
       private float markerSideLength;
 
-      // Properties
+      // Events
 
-      public Dictionary Dictionary { get; set; } // TODO : can be moved to ArucoObject without impacting to much the performances?
+      public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
+
+      public event ArucoObjectEventHandler ArucoObjectAdded = delegate { };
+      public event ArucoObjectEventHandler ArucoObjectRemoved = delegate { };
+
+      public delegate void DictionaryEventHandler(ArucoUnity.Plugin.Dictionary dictionary);
+
+      public event DictionaryEventHandler DictionaryAdded = delegate { };
+      public event DictionaryEventHandler DictionaryRemoved = delegate { };
+
+      // Properties
 
       public float MarkerSideLength
       {
@@ -31,9 +37,12 @@ namespace ArucoUnity
           // Restore the previous scale
           if (markerSideLength != 0)
           {
-            foreach (var arucoObject in ArucoObjects)
+            foreach (var arucoObjectDictionary in ArucoObjects)
             {
-              arucoObject.transform.localScale /= markerSideLength;
+              foreach (var arucoObject in arucoObjectDictionary.Value)
+              {
+                arucoObject.transform.localScale /= markerSideLength;
+              }
             }
           }
 
@@ -41,29 +50,48 @@ namespace ArucoUnity
           markerSideLength = value;
           if (markerSideLength != 0)
           {
-            foreach (var arucoObject in ArucoObjects)
+            foreach (var arucoObjectDictionary in ArucoObjects)
             {
-              arucoObject.transform.localScale *= markerSideLength;
+              foreach (var arucoObject in arucoObjectDictionary.Value)
+              {
+                arucoObject.transform.localScale *= markerSideLength;
+              }
             }
           }
         }
       }
 
-      public HashSet<ArucoObject> ArucoObjects { get; protected set; }
+      public Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
 
-      protected virtual void Start()
+      protected virtual void Awake()
       {
-        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-        ArucoObjects = new HashSet<ArucoObject>();
+        ArucoObjects = new Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>>();
       }
 
       // Methods
 
-      public void Add(ArucoObject arucoObject)
+      public virtual void Add(ArucoObject arucoObject)
       {
-        ArucoObjects.Add(arucoObject);
+        HashSet<ArucoObject> arucoObjectsCollection = null;
+        foreach (var arucoObjectDictionary in ArucoObjects)
+        {
+          if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
+          {
+            arucoObjectsCollection = arucoObjectDictionary.Value;
+          }
+        }
+
+        if (arucoObjectsCollection == null)
+        {
+          ArucoObjects.Add(arucoObject.Dictionary, new HashSet<ArucoObject>());
+          arucoObjectsCollection = ArucoObjects[arucoObject.Dictionary];
+          DictionaryAdded(arucoObject.Dictionary);
+        }
+
+        arucoObjectsCollection.Add(arucoObject);
+        ArucoObjectAdded(arucoObject);
 
         if (MarkerSideLength != 0)
         {
@@ -71,9 +99,25 @@ namespace ArucoUnity
         }
       }
 
-      public void Remove(ArucoObject arucoObject)
+      public virtual void Remove(ArucoObject arucoObject)
       {
-        ArucoObjects.Remove(arucoObject);
+        HashSet<ArucoObject> arucoObjectsCollection = null;
+        foreach (var arucoObjectDictionary in ArucoObjects)
+        {
+          if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
+          {
+            arucoObjectsCollection = arucoObjectDictionary.Value;
+          }
+        }
+
+        arucoObjectsCollection.Remove(arucoObject);
+        ArucoObjectRemoved(arucoObject);
+
+        if (arucoObjectsCollection.Count == 0)
+        {
+          ArucoObjects.Remove(arucoObject.Dictionary);
+          DictionaryRemoved(arucoObject.Dictionary);
+        }
 
         if (MarkerSideLength != 0)
         {

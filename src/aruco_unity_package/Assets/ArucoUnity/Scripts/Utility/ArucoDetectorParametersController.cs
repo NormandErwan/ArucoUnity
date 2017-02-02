@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \{
 
   /// <summary>
-  /// Editor controller for the <see cref="DetectorParameters"/>.
+  /// Editor controller for the <see cref="Plugin.DetectorParameters"/>.
   /// </summary>
   public class ArucoDetectorParametersController : MonoBehaviour
   {
@@ -93,43 +93,48 @@ namespace ArucoUnity
     [Tooltip("The maximun error correction capability for each dictionary (default 0.6).")]
     private double errorCorrectionRate = 0.6;
 
-    // Variables
+    // Properties
 
     /// <summary>
     /// The managed DetectorParameters.
     /// </summary>
-    public DetectorParameters detectorParameters;
-
-    // MonoBehaviour methods
-
-    /// <summary>
-    /// Set the value of the <see cref="detectorParameters"/> from the editor fields.
-    /// </summary>
-    void Awake()
+    public DetectorParameters DetectorParameters
     {
-      detectorParameters = new DetectorParameters();
-
-      detectorParameters.AdaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
-      detectorParameters.AdaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
-      detectorParameters.AdaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
-      detectorParameters.AdaptiveThreshConstant = adaptiveThreshConstant;
-      detectorParameters.MinMarkerPerimeterRate = minMarkerPerimeterRate;
-      detectorParameters.MaxMarkerPerimeterRate = maxMarkerPerimeterRate;
-      detectorParameters.PolygonalApproxAccuracyRate = polygonalApproxAccuracyRate;
-      detectorParameters.MinCornerDistanceRate = minCornerDistanceRate;
-      detectorParameters.MinDistanceToBorder = minDistanceToBorder;
-      detectorParameters.MinMarkerDistanceRate = minMarkerDistanceRate;
-      detectorParameters.DoCornerRefinement = doCornerRefinement;
-      detectorParameters.CornerRefinementWinSize = cornerRefinementWinSize;
-      detectorParameters.CornerRefinementMaxIterations = cornerRefinementMaxIterations;
-      detectorParameters.CornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
-      detectorParameters.MarkerBorderBits = markerBorderBits;
-      detectorParameters.PerspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
-      detectorParameters.PerspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
-      detectorParameters.MaxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
-      detectorParameters.MinOtsuStdDev = minOtsuStdDev;
-      detectorParameters.ErrorCorrectionRate = errorCorrectionRate;
+      get
+      {
+        if (detectorParameters == null)
+        {
+          detectorParameters = new DetectorParameters();
+          DetectorParameters.AdaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
+          DetectorParameters.AdaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
+          DetectorParameters.AdaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
+          DetectorParameters.AdaptiveThreshConstant = adaptiveThreshConstant;
+          DetectorParameters.MinMarkerPerimeterRate = minMarkerPerimeterRate;
+          DetectorParameters.MaxMarkerPerimeterRate = maxMarkerPerimeterRate;
+          DetectorParameters.PolygonalApproxAccuracyRate = polygonalApproxAccuracyRate;
+          DetectorParameters.MinCornerDistanceRate = minCornerDistanceRate;
+          DetectorParameters.MinDistanceToBorder = minDistanceToBorder;
+          DetectorParameters.MinMarkerDistanceRate = minMarkerDistanceRate;
+          DetectorParameters.DoCornerRefinement = doCornerRefinement;
+          DetectorParameters.CornerRefinementWinSize = cornerRefinementWinSize;
+          DetectorParameters.CornerRefinementMaxIterations = cornerRefinementMaxIterations;
+          DetectorParameters.CornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
+          DetectorParameters.MarkerBorderBits = markerBorderBits;
+          DetectorParameters.PerspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
+          DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
+          DetectorParameters.MaxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
+          DetectorParameters.MinOtsuStdDev = minOtsuStdDev;
+          DetectorParameters.ErrorCorrectionRate = errorCorrectionRate;
+        }
+        return detectorParameters;
+      }
+      set { detectorParameters = value; }
     }
+
+
+    // Variables
+
+    private DetectorParameters detectorParameters;
   }
 
   /// \} aruco_unity_package

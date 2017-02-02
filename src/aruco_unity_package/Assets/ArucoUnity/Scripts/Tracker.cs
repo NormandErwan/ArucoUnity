@@ -58,25 +58,18 @@ namespace ArucoUnity
     /// <summary>
     /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public VectorVec3d[] Rvecs { get; protected set; }
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Rvecs { get; protected set; }
 
     /// <summary>
     /// Vector of translation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public VectorVec3d[] Tvecs { get; protected set; }
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Tvecs { get; protected set; }
 
     // Variables
 
     protected Dictionary<int, GameObject> defaultTrackedMarkerObjects;
 
-    // MonoBehaviour methods
-
-    protected override void Start()
-    {
-      base.Start();
-
-      defaultTrackedMarkerObjects = new Dictionary<int, GameObject>();
-    }
+    // ArucoObjectDetector methods
 
     /// <summary>
     /// When configured, detect markers and show results each frame.
@@ -94,8 +87,6 @@ namespace ArucoUnity
       }
     }
 
-    // ArucoDetector methods
-
     protected override void PreConfigure()
     {
       if (ArucoCamera.CameraParameters == null)
@@ -105,8 +96,51 @@ namespace ArucoUnity
 
       // Initialize the properties
       int camerasNumber = ArucoCamera.ImageTextures.Length;
-      Rvecs = new VectorVec3d[camerasNumber];
-      Tvecs = new VectorVec3d[camerasNumber];
+      Rvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
+      Tvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
+      defaultTrackedMarkerObjects = new Dictionary<int, GameObject>();
+
+      for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+      {
+        Rvecs[cameraId] = new Dictionary<Dictionary, VectorVec3d>();
+        Tvecs[cameraId] = new Dictionary<Dictionary, VectorVec3d>();
+
+        foreach (var arucoObjectDictionary in ArucoObjects)
+        {
+          Dictionary dictionary = arucoObjectDictionary.Key;
+
+          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
+          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+        }
+      }
+    }
+
+    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    {
+      if (Configured)
+      {
+        base.ArucoObjectController_DictionaryAdded(dictionary);
+
+        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        {
+          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
+          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+        }
+      }
+    }
+
+    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    {
+      if (Configured)
+      {
+        base.ArucoObjectController_DictionaryRemoved(dictionary);
+
+        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        {
+          Rvecs[cameraId].Remove(dictionary);
+          Tvecs[cameraId].Remove(dictionary);
+        }
+      }
     }
 
     // Methods
@@ -116,20 +150,25 @@ namespace ArucoUnity
       bool updatedCameraImage = false;
       Mat[] cameraImages = ArucoCamera.Images;
 
-      for (int i = 0; i < cameraImages.Length; i++)
+      for (int cameraId = 0; cameraId < cameraImages.Length; cameraId++)
       {
-        // Draw the detected markers
-        if (DrawDetectedMarkers && MarkerIds[i].Size() > 0)
+        foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Functions.DrawDetectedMarkers(cameraImages[i], MarkerCorners[i], MarkerIds[i]);
-          updatedCameraImage = true;
-        }
+          Dictionary dictionary = arucoObjectDictionary.Key;
 
-        // Draw rejected marker candidates
-        if (DrawRejectedCandidates && RejectedCandidateCorners[i].Size() > 0)
-        {
-          Functions.DrawDetectedMarkers(cameraImages[i], RejectedCandidateCorners[i], new Color(100, 0, 255));
-          updatedCameraImage = true;
+          // Draw the detected markers
+          if (DrawDetectedMarkers && MarkerIds[cameraId][dictionary].Size() > 0)
+          {
+            Functions.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+            updatedCameraImage = true;
+          }
+
+          // Draw rejected marker candidates
+          if (DrawRejectedCandidates && RejectedCandidateCorners[cameraId][dictionary].Size() > 0)
+          {
+            Functions.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], new Color(100, 0, 255));
+            updatedCameraImage = true;
+          }
         }
       }
 
@@ -141,24 +180,29 @@ namespace ArucoUnity
 
     public void EstimateTranforms()
     {
-      for (int i = 0; i < ArucoCamera.ImageTextures.Length; i++)
+      for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
       {
-        if (!EstimateTransforms || MarkerIds[i].Size() <= 0)
+        foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Rvecs[i] = null;
-          Tvecs[i] = null;
-          continue;
-        }
+          Dictionary dictionary = arucoObjectDictionary.Key;
 
-        CameraParameters cameraParameters = ArucoCamera.CameraParameters[i];
+          if (!EstimateTransforms || MarkerIds[cameraId][dictionary].Size() <= 0)
+          {
+            Rvecs[cameraId][dictionary] = null;
+            Tvecs[cameraId][dictionary] = null;
+            continue;
+          }
 
-        // Estimate markers pose
-        if (MarkerIds[i].Size() > 0)
-        {
-          VectorVec3d rvecs, tvecs;
-          Functions.EstimatePoseSingleMarkers(MarkerCorners[i], MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
-          Rvecs[i] = rvecs;
-          Tvecs[i] = tvecs;
+          CameraParameters cameraParameters = ArucoCamera.CameraParameters[cameraId];
+
+          // Estimate markers pose
+          if (MarkerIds[cameraId][dictionary].Size() > 0)
+          {
+            VectorVec3d rvecs, tvecs;
+            Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], MarkerSideLength, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+            Rvecs[cameraId][dictionary] = rvecs;
+            Tvecs[cameraId][dictionary] = tvecs;
+          }
         }
       }
     }
@@ -168,9 +212,12 @@ namespace ArucoUnity
     /// </summary>
     public void DeactivateArucoObjects()
     {
-      foreach (ArucoObject arucoObject in ArucoObjects)
+      foreach (var arucoObjectDictionary in ArucoObjects)
       {
-        arucoObject.gameObject.SetActive(false);
+        foreach (var arucoObject in arucoObjectDictionary.Value)
+        {
+          arucoObject.gameObject.SetActive(false);
+        }
       }
 
       foreach (var arucoObject in defaultTrackedMarkerObjects)
@@ -184,38 +231,43 @@ namespace ArucoUnity
     /// </summary>
     public void Place()
     {
-      int cameraId = 0;
+      int cameraId = 0; // TODO: editor field parameter
 
-      for (uint i = 0; i < MarkerIds[cameraId].Size(); i++)
+      foreach (var arucoObjectDictionary in ArucoObjects)
       {
-        int markerId = MarkerIds[cameraId].At(i);
+        Dictionary dictionary = arucoObjectDictionary.Key;
 
-        bool foundArucoObject = false;
-        foreach (ArucoObject arucoObject in ArucoObjects)
+        for (uint i = 0; i < MarkerIds[cameraId][dictionary].Size(); i++)
         {
-          Marker marker = arucoObject as Marker;
-          if (marker != null && marker.Id == markerId)
-          {
-            foundArucoObject = true;
-            PlaceGameObject(marker.gameObject, Rvecs[cameraId].At(i), Tvecs[cameraId].At(i), cameraId);
-          }
-        }
+          int markerId = MarkerIds[cameraId][dictionary].At(i);
 
-        if (!foundArucoObject)
-        {
-          // Found the default tracked game object for the current tracked marker
-          GameObject arucoGameObject = null;
-          if (!defaultTrackedMarkerObjects.TryGetValue(markerId, out arucoGameObject))
+          bool foundArucoObject = false;
+          foreach (var arucoObject in arucoObjectDictionary.Value)
           {
-            // If not found, instantiate it
-            arucoGameObject = Instantiate(DefaultTrackedGameObject);
-            arucoGameObject.name = markerId.ToString();
-            arucoGameObject.transform.SetParent(this.transform);
-            arucoGameObject.transform.localScale *= MarkerSideLength;
-
-            defaultTrackedMarkerObjects.Add(markerId, arucoGameObject);
+            Marker marker = arucoObject as Marker;
+            if (marker != null && marker.Id == markerId)
+            {
+              foundArucoObject = true;
+              PlaceGameObject(marker.gameObject, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
+            }
           }
-          PlaceGameObject(arucoGameObject, Rvecs[cameraId].At(i), Tvecs[cameraId].At(i), cameraId);
+
+          if (!foundArucoObject)
+          {
+            // Found the default tracked game object for the current tracked marker
+            GameObject arucoGameObject = null;
+            if (!defaultTrackedMarkerObjects.TryGetValue(markerId, out arucoGameObject))
+            {
+              // If not found, instantiate it
+              arucoGameObject = Instantiate(DefaultTrackedGameObject);
+              arucoGameObject.name = markerId.ToString();
+              arucoGameObject.transform.SetParent(this.transform);
+              arucoGameObject.transform.localScale *= MarkerSideLength;
+
+              defaultTrackedMarkerObjects.Add(markerId, arucoGameObject);
+            }
+            PlaceGameObject(arucoGameObject, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
+          }
         }
       }
     }
