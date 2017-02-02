@@ -64,14 +64,10 @@ namespace ArucoUnity
     protected override void ArucoCameraImageUpdated()
     {
       DeactivateArucoObjects();
-
-      if (IsConfigured)
-      {
-        Detect();
-        Draw();
-        EstimateTranforms();
-        Place();
-      }
+      Detect();
+      Draw();
+      EstimateTranforms();
+      Place();
     }
 
     protected override void PreConfigure()
@@ -103,10 +99,9 @@ namespace ArucoUnity
 
     protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
     {
+      base.ArucoObjectController_DictionaryAdded(dictionary);
       if (IsConfigured)
       {
-        base.ArucoObjectController_DictionaryAdded(dictionary);
-
         for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
         {
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
@@ -117,10 +112,9 @@ namespace ArucoUnity
 
     protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
+      base.ArucoObjectController_DictionaryRemoved(dictionary);
       if (IsConfigured)
       {
-        base.ArucoObjectController_DictionaryRemoved(dictionary);
-
         for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
         {
           Rvecs[cameraId].Remove(dictionary);
@@ -133,6 +127,11 @@ namespace ArucoUnity
 
     public void Draw()
     {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
       bool updatedCameraImage = false;
       Mat[] cameraImages = ArucoCamera.Images;
 
@@ -166,6 +165,11 @@ namespace ArucoUnity
 
     public void EstimateTranforms()
     {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
       for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
@@ -212,6 +216,11 @@ namespace ArucoUnity
     /// </summary>
     public void Place()
     {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
       int cameraId = 0; // TODO: editor field parameter
 
       foreach (var arucoObjectDictionary in ArucoObjects)
