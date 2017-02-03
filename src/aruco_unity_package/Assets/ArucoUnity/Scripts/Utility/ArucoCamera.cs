@@ -296,7 +296,7 @@ namespace ArucoUnity
       /// <summary>
       /// Execute the <see cref="ImagesUpdated"/> action.
       /// </summary>
-      protected void OnImageUpdated()
+      protected void OnImagesUpdated()
       {
         ImagesUpdated();
       }

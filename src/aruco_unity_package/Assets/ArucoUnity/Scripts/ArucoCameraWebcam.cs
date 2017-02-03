@@ -283,7 +283,7 @@ namespace ArucoUnity
         ImageTextures[0].Apply(false);
 
         ImagesUpdatedThisFrame = true;
-        OnImageUpdated();
+        OnImagesUpdated();
       }
 
       // Methods
