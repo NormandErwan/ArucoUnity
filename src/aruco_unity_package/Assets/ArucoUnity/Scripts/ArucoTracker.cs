@@ -67,7 +67,7 @@ namespace ArucoUnity
       base.ArucoObjectController_DictionaryAdded(dictionary);
       if (IsConfigured)
       {
-        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
         {
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
           Tvecs[cameraId].Add(dictionary, new VectorVec3d());
@@ -80,7 +80,7 @@ namespace ArucoUnity
       base.ArucoObjectController_DictionaryRemoved(dictionary);
       if (IsConfigured)
       {
-        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
         {
           Rvecs[cameraId].Remove(dictionary);
           Tvecs[cameraId].Remove(dictionary);
@@ -110,14 +110,13 @@ namespace ArucoUnity
       }
 
       // Initialize the properties
-      int camerasNumber = ArucoCamera.ImageTextures.Length;
-      Rvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
-      Tvecs = new Dictionary<Dictionary, VectorVec3d>[camerasNumber];
+      Rvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
+      Tvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
 
-      for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
-        Rvecs[cameraId] = new Dictionary<Dictionary, VectorVec3d>();
-        Tvecs[cameraId] = new Dictionary<Dictionary, VectorVec3d>();
+        Rvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
+        Tvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
 
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
@@ -141,7 +140,7 @@ namespace ArucoUnity
       bool updatedCameraImage = false;
       Mat[] cameraImages = ArucoCamera.Images;
 
-      for (int cameraId = 0; cameraId < cameraImages.Length; cameraId++)
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
@@ -176,7 +175,7 @@ namespace ArucoUnity
         return;
       }
 
-      for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
         {

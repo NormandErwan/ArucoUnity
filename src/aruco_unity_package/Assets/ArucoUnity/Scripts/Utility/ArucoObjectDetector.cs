@@ -118,8 +118,7 @@ namespace ArucoUnity
           return;
         }
 
-        Mat[] cameraImages = ArucoCamera.Images;
-        for (int cameraId = 0; cameraId < cameraImages.Length; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
@@ -127,7 +126,7 @@ namespace ArucoUnity
             VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
             VectorInt markerIds;
 
-            Functions.DetectMarkers(cameraImages[cameraId], dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+            Functions.DetectMarkers(ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
             MarkerCorners[cameraId][dictionary] = markerCorners;
             MarkerIds[cameraId][dictionary] = markerIds;
             RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
@@ -149,7 +148,7 @@ namespace ArucoUnity
       {
         if (IsConfigured)
         {
-          for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+          for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
           {
             MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
             MarkerIds[cameraId].Add(dictionary, new VectorInt());
@@ -162,7 +161,7 @@ namespace ArucoUnity
       {
         if (IsConfigured)
         {
-          for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+          for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
           {
             MarkerCorners[cameraId].Remove(dictionary);
             MarkerIds[cameraId].Remove(dictionary);
@@ -179,12 +178,11 @@ namespace ArucoUnity
         IsConfigured = false;
 
         // Initialize the properties
-        int camerasNumber = ArucoCamera.ImageTextures.Length;
-        MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[camerasNumber];
-        MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[camerasNumber];
-        RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[camerasNumber];
+        MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
+        MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[ArucoCamera.CamerasNumber];
+        RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
 
-        for (int cameraId = 0; cameraId < ArucoCamera.ImageTextures.Length; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
         {
           MarkerCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
           MarkerIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>();

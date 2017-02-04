@@ -61,6 +61,11 @@ namespace ArucoUnity
       public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
 
       /// <summary>
+      /// The number of cameras in the system.
+      /// </summary>
+      public abstract int CamerasNumber { get; }
+
+      /// <summary>
       /// True when the camera system has started.
       /// </summary>
       public bool IsStarted { get; protected set; }
@@ -212,7 +217,7 @@ namespace ArucoUnity
 
         if (imagesHasBeenSetThisFrame)
         {
-          for (int i = 0; i < ImageTextures.Length; i++)
+          for (int i = 0; i < CamerasNumber; i++)
           {
             ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
             ImageTextures[i].Apply(false);
@@ -256,8 +261,8 @@ namespace ArucoUnity
           return;
         }
 
-        Mat[] undistordedImages = new Mat[ImageTextures.Length];
-        for (int i = 0; i < ImageTextures.Length; i++)
+        Mat[] undistordedImages = new Mat[CamerasNumber];
+        for (int i = 0; i < CamerasNumber; i++)
         {
           Imgproc.Undistort(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
         }
