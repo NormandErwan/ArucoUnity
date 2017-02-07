@@ -76,6 +76,11 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   ARUCO_UNITY_API void au_cv_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception);
 
+  //! \brief Returns the number of matrix channels. 
+  //! \param mat The Mat used.
+  //! \return The channels number.
+  ARUCO_UNITY_API int au_cv_Mat_channels(cv::Mat* mat);
+
   //! \brief Allocates new array data if needed.
   //!
   //! \param mat The Mat used.
@@ -88,6 +93,10 @@ extern "C" {
   //! \brief Returns the matrix element size in bytes.
   //! \param mat The Mat used.
   ARUCO_UNITY_API size_t au_cv_Mat_elemSize(cv::Mat* mat);
+
+  //! \brief Returns the size of each matrix element channel in bytes. 
+  //! \param mat The Mat used.
+  ARUCO_UNITY_API size_t au_cv_Mat_elemSize1(cv::Mat* mat);
 
   //! \brief Returns the total number of array elements.
   //! \param mat The Mat used.

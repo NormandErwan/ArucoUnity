@@ -41,6 +41,9 @@ namespace ArucoUnity
         static extern void au_cv_Mat_at_double_set(System.IntPtr mat, int i0, int i1, double value, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
+        static extern int au_cv_Mat_channels(System.IntPtr mat);
+
+        [DllImport("ArucoUnity")]
         static extern void au_cv_Mat_create(System.IntPtr mat, int rows, int cols, int type, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
@@ -51,6 +54,9 @@ namespace ArucoUnity
 
         [DllImport("ArucoUnity")]
         static extern uint au_cv_Mat_elemSize(System.IntPtr mat);
+
+        [DllImport("ArucoUnity")]
+        static extern uint au_cv_Mat_elemSize1(System.IntPtr mat);
 
         // Variables
         [DllImport("ArucoUnity")]
@@ -89,6 +95,11 @@ namespace ArucoUnity
         internal Mat(System.IntPtr matPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
           : base(matPtr, deleteResponsibility)
         {
+        }
+
+        public int Channels()
+        {
+          return au_cv_Mat_channels(cppPtr);
         }
 
         public void Create(int rows, int cols, TYPE type)
@@ -136,6 +147,11 @@ namespace ArucoUnity
         public uint ElemSize()
         {
           return au_cv_Mat_elemSize(cppPtr);
+        }
+
+        public uint ElemSize1()
+        {
+          return au_cv_Mat_elemSize1(cppPtr);
         }
 
         public uint Total()

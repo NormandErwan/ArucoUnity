@@ -62,6 +62,10 @@ extern "C" {
     };
   }
 
+  int au_cv_Mat_channels(cv::Mat* mat) {
+    return mat->channels();
+  }
+
   void au_cv_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
     try {
       mat->create(rows, cols, type);
@@ -73,6 +77,10 @@ extern "C" {
 
   size_t au_cv_Mat_elemSize(cv::Mat* mat) {
     return mat->elemSize();
+  }
+
+  size_t au_cv_Mat_elemSize1(cv::Mat* mat) {
+    return mat->elemSize1();
   }
 
   size_t au_cv_Mat_total(cv::Mat* mat) {
