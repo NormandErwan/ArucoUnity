@@ -92,10 +92,10 @@ namespace ArucoUnity
           // Initialize
           if (images == null)
           {
-            images = new Mat[ImageTextures.Length];
-            imageDataSizes = new int[ImageTextures.Length];
+            images = new Mat[CamerasNumber];
+            imageDataSizes = new int[CamerasNumber];
 
-            for (int i = 0; i < ImageTextures.Length; i++)
+            for (int i = 0; i < CamerasNumber; i++)
             {
               byte[] imageData = ImageTextures[i].GetRawTextureData();
               images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
@@ -105,7 +105,7 @@ namespace ArucoUnity
           }
           else if (!imagesGetThisFrame)
           {
-            for (int i = 0; i < ImageTextures.Length; i++)
+            for (int i = 0; i < CamerasNumber; i++)
             {
               images[i].dataByte = ImageTextures[i].GetRawTextureData();
             }
@@ -116,9 +116,9 @@ namespace ArucoUnity
         }
         set
         {
-          if (value.Length == images.Length)
+          if (value.Length == CamerasNumber)
           {
-            for (int i = 0; i < images.Length; i++)
+            for (int i = 0; i < CamerasNumber; i++)
             {
               images[i] = value[i];
             }
