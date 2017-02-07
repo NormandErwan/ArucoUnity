@@ -29,10 +29,10 @@ set(ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib") # Destination of the
 set(LIBRARY_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib") # Destination of the librairies for non-dll platform
 
 # Build OpenCV's Aruco module at configuration time unless the user deactivated it, to be able to use find_package command in aruco_unity_lib's CMakeLists
-set(OpenCVAruco_BUILD_DIR "${CMAKE_BINARY_DIR}/3rdparty/opencv_contrib")
-set(OpenCVAruco_INSTALL_DIR "${OpenCVAruco_BUILD_DIR}/OpenCVAruco-prefix/src/OpenCVAruco-build/install") # Default OpenCV installation directory
+if (AUTO_BUILD_OPENCV)
+  set(OpenCVAruco_BUILD_DIR "${CMAKE_BINARY_DIR}/3rdparty/opencv_contrib")
+  set(OpenCVAruco_INSTALL_DIR "${OpenCVAruco_BUILD_DIR}/OpenCVAruco-prefix/src/OpenCVAruco-build/install") # Default OpenCV installation directory
 
-if (AUTO_BUILD_OPENCV) # Configure and build in the binary dir
   configure_file("${CMAKE_SOURCE_DIR}/3rdparty/opencv_contrib/CMakeLists.txt" "${OpenCVAruco_BUILD_DIR}/CMakeLists.txt" COPYONLY)
   execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
                   WORKING_DIRECTORY "${OpenCVAruco_BUILD_DIR}"

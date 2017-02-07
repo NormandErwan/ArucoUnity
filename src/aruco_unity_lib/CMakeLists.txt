@@ -86,9 +86,9 @@ install(TARGETS ${ArucoUnity_PROJECT_NAME} # Installation of the library in the 
         RUNTIME DESTINATION ${Unity_PLUGINS_DIR}
         LIBRARY DESTINATION ${Unity_PLUGINS_DIR}
 )
-if (WIN32) 
-  file(GLOB_RECURSE OpenCVAruco_RUNTIME_LIBS ${OpenCVAruco_INSTALL_DIR}/*.dll)
-  install(FILES ${OpenCVAruco_RUNTIME_LIBS} # Installation of the dll dependencies on Windows
+if (WIN32)
+  file(GLOB_RECURSE OpenCV_RUNTIME_LIBS ${OpenCV_LIB_PATH}/../*.dll)
+  install(FILES ${OpenCV_RUNTIME_LIBS} # Installation of the dll dependencies on Windows
           DESTINATION ${Unity_PLUGINS_DIR}
   )
 endif()
