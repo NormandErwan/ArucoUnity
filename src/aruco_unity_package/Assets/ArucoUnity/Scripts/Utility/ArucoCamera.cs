@@ -1,5 +1,6 @@
 ﻿using ArucoUnity.Plugin;
 using ArucoUnity.Plugin.cv;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -84,7 +85,7 @@ namespace ArucoUnity
       /// The images in a OpenCV format. When getting the property, a new Mat is created for each image from the corresponding 
       /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Mat array.
       /// </summary>
-      public Mat[] Images 
+      public virtual Mat[] Images 
       {
         get
         {
@@ -97,7 +98,7 @@ namespace ArucoUnity
             for (int i = 0; i < ImageTextures.Length; i++)
             {
               byte[] imageData = ImageTextures[i].GetRawTextureData();
-              images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, TYPE.CV_8UC3, imageData);
+              images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
               imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
             }
             imagesGetThisFrame = true;
@@ -304,6 +305,31 @@ namespace ArucoUnity
       protected void OnImagesUpdated()
       {
         ImagesUpdated();
+      }
+
+      /// <summary>
+      /// Returns the OpenCV type equivalent to the format of the texture.
+      /// </summary>
+      /// <param name="imageTexture">The texture to analyze.</param>
+      /// <returns>The equivalent OpenCV type.</returns>
+      protected TYPE ImageType(Texture2D imageTexture)
+      {
+        TYPE type;
+        var format = imageTexture.format;
+        switch (format)
+        {
+          case TextureFormat.RGB24:
+            type = TYPE.CV_8UC3;
+            break;
+          case TextureFormat.BGRA32:
+          case TextureFormat.ARGB32:
+          case TextureFormat.RGBA32:
+            type = TYPE.CV_8UC4;
+            break;
+          default:
+            throw new ArgumentException("This type of texture is actually not supported: " + imageTexture.format + ".", "imageTexture");
+        }
+        return type;
       }
     }
   }
