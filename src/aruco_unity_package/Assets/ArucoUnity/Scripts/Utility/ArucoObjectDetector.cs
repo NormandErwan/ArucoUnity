@@ -11,7 +11,7 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public abstract class ArucoObjectDetector : ArucoObjectController
+    public abstract class ArucoObjectDetector : ArucoObjectsController
     {
       // Editor fields
 

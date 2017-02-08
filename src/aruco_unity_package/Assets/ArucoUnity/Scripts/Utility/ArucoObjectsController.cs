@@ -8,12 +8,12 @@ namespace ArucoUnity
 
   namespace Utility
   {
-    public abstract class ArucoObjectController : MonoBehaviour
+    public abstract class ArucoObjectsController : MonoBehaviour
     {
       // Editor fields
 
       [SerializeField]
-      private ArucoObject[] arucoObjects;
+      protected ArucoObject[] arucoObjects;
 
       // Events
 
