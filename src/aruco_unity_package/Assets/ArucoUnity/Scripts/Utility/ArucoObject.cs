@@ -9,6 +9,9 @@ namespace ArucoUnity
 
   namespace Utility
   {
+    /// <summary>
+    /// Describes the shared properties of all the ArUco objects. Trackers, Creators and Calibrators use this interface.
+    /// </summary>
     public abstract class ArucoObject : MonoBehaviour
     {
       // Editor fields
@@ -17,23 +20,29 @@ namespace ArucoUnity
       private ArucoObjectController[] arucoObjectControllers;
 
       [SerializeField]
+      [Tooltip("The dictionary to use.")]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
+      [Tooltip("The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.")]
       private float markerSideLength;
 
       [SerializeField]
-      public int marginsSize;
-
-      [SerializeField]
-      public int markerBorderBits;
+      [Tooltip("Number of bits in marker borders (default: 1). Used by Creators.")]
+      private int markerBorderBits;
 
       // Properties
 
       public HashSet<ArucoObjectController> ArucoObjectControllers { get; set; }
 
+      /// <summary>
+      /// The dictionary to use.
+      /// </summary>
       public Dictionary Dictionary { get; set; }
 
+      /// <summary>
+      /// The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// </summary>
       public float MarkerSideLength
       {
         get { return markerSideLength; }
@@ -54,14 +63,12 @@ namespace ArucoUnity
         }
       }
 
-      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
-
       public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize properties.
+      /// Initialize the properties and adjust the gameOject localScale to the <see cref="markerSideLength"/>.
       /// </summary>
       protected void Awake()
       {
