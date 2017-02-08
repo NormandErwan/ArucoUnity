@@ -98,8 +98,10 @@ namespace ArucoUnity
         DetectorParameters = detectorParametersController.DetectorParameters;
       }
 
-      protected virtual void Start()
+      protected override void Start()
       {
+        base.Start();
+
         base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
         base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
       }

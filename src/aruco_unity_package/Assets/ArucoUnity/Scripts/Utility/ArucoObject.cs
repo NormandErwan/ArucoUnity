@@ -17,9 +17,6 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      private ArucoObjectController[] arucoObjectControllers;
-
-      [SerializeField]
       [Tooltip("The dictionary to use.")]
       private PREDEFINED_DICTIONARY_NAME dictionaryName;
 
@@ -32,8 +29,6 @@ namespace ArucoUnity
       private int markerBorderBits;
 
       // Properties
-
-      public HashSet<ArucoObjectController> ArucoObjectControllers { get; set; }
 
       /// <summary>
       /// The dictionary to use.
@@ -68,48 +63,18 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize the properties and adjust the gameOject localScale to the <see cref="markerSideLength"/>.
+      /// Initialize the properties, adjust the gameObject localScale to the <see cref="markerSideLength"/> and hide the gameObject.
       /// </summary>
       protected void Awake()
       {
-        ArucoObjectControllers = new HashSet<ArucoObjectController>(arucoObjectControllers);
         Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
         if (markerSideLength != 0)
         {
           gameObject.transform.localScale *= markerSideLength;
         }
-      }
 
-      /// <summary>
-      /// Hide at start, until it will be used by a <see cref="ArucoObjectControllers"/>.
-      /// </summary>
-      protected void Start()
-      {
         gameObject.SetActive(false);
-
-        foreach (var arucoObjectController in ArucoObjectControllers)
-        {
-          arucoObjectController.Add(this);
-        }
-      }
-
-      // Methods
-
-      public void AddController(ArucoObjectController arucoObjectController)
-      {
-        if (ArucoObjectControllers.Add(arucoObjectController))
-        {
-          arucoObjectController.Add(this);
-        }
-      }
-
-      public void RemoveController(ArucoObjectController arucoObjectController)
-      {
-        if (ArucoObjectControllers.Remove(arucoObjectController))
-        {
-          arucoObjectController.Remove(this);
-        }
       }
     }
   }

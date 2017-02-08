@@ -10,6 +10,11 @@ namespace ArucoUnity
   {
     public abstract class ArucoObjectController : MonoBehaviour
     {
+      // Editor fields
+
+      [SerializeField]
+      private ArucoObject[] arucoObjects;
+
       // Events
 
       public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
@@ -31,6 +36,14 @@ namespace ArucoUnity
       protected virtual void Awake()
       {
         ArucoObjects = new Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>>();
+      }
+
+      protected virtual void Start()
+      {
+        foreach (ArucoObject arucoObject in arucoObjects)
+        {
+          Add(arucoObject);
+        }
       }
 
       // Methods
