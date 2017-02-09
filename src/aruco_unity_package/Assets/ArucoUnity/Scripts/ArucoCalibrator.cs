@@ -11,7 +11,7 @@ namespace ArucoUnity
   /// \{
 
   // TODO: doc
-  public class CalibrateCameraBoard : ArucoObjectDetector
+  public class ArucoCalibrator : ArucoObjectDetector
   {
     // Editor fields
 
