@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -10,7 +11,7 @@ namespace ArucoUnity
     /// <summary>
     /// Describes a ChArUco board.
     /// </summary>
-    public class ArucoCharucoBoard : ArucoObject
+    public class ArucoCharucoBoard : ArucoBoard
     {
       // Editor fields
 
@@ -31,17 +32,53 @@ namespace ArucoUnity
       /// <summary>
       /// Number of squares in the X direction.
       /// </summary>
-      public int SquaresNumberX { get { return squaresNumberX; } set { squaresNumberX = value; } }
+      public int SquaresNumberX {
+        get { return squaresNumberX; }
+        set
+        {
+          PropertyPreUpdate();
+          squaresNumberX = value;
+          PropertyUpdated();
+        }
+      }
 
       /// <summary>
       /// Number of squares in the Y direction.
       /// </summary>
-      public int SquaresNumberY { get { return squaresNumberY; } set { squaresNumberY = value; } }
+      public int SquaresNumberY {
+        get { return squaresNumberY; }
+        set
+        {
+          PropertyPreUpdate();
+          squaresNumberY = value;
+          PropertyUpdated();
+        }
+      }
 
       /// <summary>
       /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
-      public int SquareSideLength { get { return squareSideLength; } set { squareSideLength = value; } }
+      public int SquareSideLength {
+        get { return squareSideLength; }
+        set
+        {
+          PropertyPreUpdate();
+          squareSideLength = value;
+          PropertyUpdated();
+        }
+      }
+
+      public CharucoBoard Board { get; protected set; }
+
+      // Methods
+
+      protected override void UpdateBoard()
+      {
+        ImageSize.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;
+        ImageSize.height = SquaresNumberY * SquareSideLength + 2 * MarginsSize;
+
+        Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
+      }
     }
   }
 

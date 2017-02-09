@@ -33,7 +33,16 @@ namespace ArucoUnity
       /// <summary>
       /// The dictionary to use.
       /// </summary>
-      public Dictionary Dictionary { get; set; }
+      public Dictionary Dictionary
+      {
+        get { return dictionary; }
+        set
+        {
+          PropertyPreUpdate();
+          dictionary = value;
+          PropertyUpdated();
+        }
+      }
 
       /// <summary>
       /// The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
@@ -43,31 +52,37 @@ namespace ArucoUnity
         get { return markerSideLength; }
         set
         {
-          // Restore the previous scale
-          if (markerSideLength != 0)
-          {
-            gameObject.transform.localScale /= markerSideLength;
-          }
-
-          // Adjust to the new scale
+          PropertyPreUpdate();
           markerSideLength = value;
-          if (markerSideLength != 0)
-          {
-            gameObject.transform.localScale *= markerSideLength;
-          }
+          PropertyUpdated();
         }
       }
 
-      public int MarkerBorderBits { get { return markerBorderBits; } set { markerBorderBits = value; } }
+      /// <summary>
+      /// Number of bits in marker borders (default: 1). Used by Creators.
+      /// </summary>
+      public int MarkerBorderBits {
+        get { return markerBorderBits; }
+        set
+        {
+          PropertyPreUpdate();
+          markerBorderBits = value;
+          PropertyUpdated();
+        }
+      }
+
+      // Variables
+
+      private Dictionary dictionary;
 
       // MonoBehaviour methods
 
       /// <summary>
       /// Initialize the properties, adjust the gameObject localScale to the <see cref="markerSideLength"/> and hide the gameObject.
       /// </summary>
-      protected void Awake()
+      protected virtual void Awake()
       {
-        Dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        dictionary = Functions.GetPredefinedDictionary(dictionaryName);
 
         if (markerSideLength != 0)
         {
@@ -75,6 +90,32 @@ namespace ArucoUnity
         }
 
         gameObject.SetActive(false);
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Called before a property is going to be updated.
+      /// </summary>
+      protected virtual void PropertyPreUpdate()
+      {
+        // Restore the previous scale
+        if (markerSideLength != 0)
+        {
+          gameObject.transform.localScale /= markerSideLength;
+        }
+      }
+
+      /// <summary>
+      /// Called after a property has been updated.
+      /// </summary>
+      protected virtual void PropertyUpdated()
+      {
+        // Adjust to the new scale
+        if (markerSideLength != 0)
+        {
+          gameObject.transform.localScale *= markerSideLength;
+        }
       }
     }
   }
