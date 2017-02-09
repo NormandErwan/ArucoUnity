@@ -67,15 +67,18 @@ extern "C" {
   }
 
   // Member Functions
-  void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, 
+  void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat** img, int borderBits, 
     cv::Exception* exception) {
     try {
-      dictionary->get()->drawMarker(id, sidePixels, *img, borderBits);
-    } catch (const cv::Exception& e) {
+      *img = new cv::Mat();
+
+      dictionary->get()->drawMarker(id, sidePixels, **img, borderBits);
+      cv::cvtColor(**img, **img, CV_GRAY2RGB);
+    } 
+    catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(*img, *img, CV_GRAY2RGB);
   }
 
   int au_Dictionary_getDistanceToId1(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Mat* bits, int id, bool allRotations, cv::Exception* exception) {

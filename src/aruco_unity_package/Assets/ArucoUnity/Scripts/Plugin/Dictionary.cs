@@ -29,7 +29,7 @@ namespace ArucoUnity
       static extern void au_Dictionary_delete(System.IntPtr dictionary);
 
       [DllImport("ArucoUnity")]
-      static extern void au_Dictionary_drawMarker(System.IntPtr dictionary, int id, int sidePixels, System.IntPtr img, int borderBits, System.IntPtr exception);
+      static extern void au_Dictionary_drawMarker(System.IntPtr dictionary, int id, int sidePixels, out System.IntPtr img, int borderBits, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern int au_Dictionary_getDistanceToId1(System.IntPtr dictionary, System.IntPtr bits, int id, bool allRotations, System.IntPtr exception);
@@ -94,10 +94,14 @@ namespace ArucoUnity
         au_Dictionary_delete(cppPtr);
       }
 
-      public void DrawMarker(int id, int sidePixels, ref Mat img, int borderBits)
+      public void DrawMarker(int id, int sidePixels, out Mat img, int borderBits)
       {
         Exception exception = new Exception();
-        au_Dictionary_drawMarker(cppPtr, id, sidePixels, img.cppPtr, borderBits, exception.cppPtr);
+        System.IntPtr imgPtr;
+
+        au_Dictionary_drawMarker(cppPtr, id, sidePixels, out imgPtr, borderBits, exception.cppPtr);
+        img = new Mat(imgPtr);
+
         exception.Check();
       }
 

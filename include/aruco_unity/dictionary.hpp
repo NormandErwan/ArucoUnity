@@ -79,7 +79,7 @@ extern "C" {
   //! \param img The marker's pixels returned.
   //! \param borderBits The number of bits forming the marker border.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat* img, int borderBits, 
+  ARUCO_UNITY_API void au_Dictionary_drawMarker(cv::Ptr<cv::aruco::Dictionary>* dictionary, int id, int sidePixels, cv::Mat** img, int borderBits, 
     cv::Exception* exception);
 
   //! \brief Returns the distance of the input bits to the specific id. If allRotations is true, the four posible bits rotation are considered.
