@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -6,85 +7,85 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  /// <summary>
+  /// Describes a ChArUco board.
+  /// </summary>
+  public class ArucoCharucoBoard : ArucoBoard
   {
+    // Editor fields
+
+    [SerializeField]
+    [Tooltip("Number of squares in the X direction.")]
+    private int squaresNumberX;
+
+    [SerializeField]
+    [Tooltip("Number of squares in the Y direction.")]
+    private int squaresNumberY;
+
+    [SerializeField]
+    [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
+    private int squareSideLength;
+
+    // Properties
+
     /// <summary>
-    /// Describes a ChArUco board.
+    /// Number of squares in the X direction.
     /// </summary>
-    public class ArucoCharucoBoard : ArucoBoard
+    public int SquaresNumberX
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("Number of squares in the X direction.")]
-      private int squaresNumberX;
-
-      [SerializeField]
-      [Tooltip("Number of squares in the Y direction.")]
-      private int squaresNumberY;
-
-      [SerializeField]
-      [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
-      private int squareSideLength;
-
-      // Properties
-
-      /// <summary>
-      /// Number of squares in the X direction.
-      /// </summary>
-      public int SquaresNumberX {
-        get { return squaresNumberX; }
-        set
-        {
-          OnPropertyUpdating();
-          squaresNumberX = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// Number of squares in the Y direction.
-      /// </summary>
-      public int SquaresNumberY {
-        get { return squaresNumberY; }
-        set
-        {
-          OnPropertyUpdating();
-          squaresNumberY = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
-      /// </summary>
-      public int SquareSideLength {
-        get { return squareSideLength; }
-        set
-        {
-          OnPropertyUpdating();
-          squareSideLength = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// The associated grid board from the ArucoUnity plugin library.
-      /// </summary>
-      public CharucoBoard Board { get; protected set; }
-
-      // Methods
-
-      /// <summary>
-      /// <see cref="ArucoBoard.UpdateBoard"/>
-      /// </summary>
-      protected override void UpdateBoard()
+      get { return squaresNumberX; }
+      set
       {
-        ImageSize.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;
-        ImageSize.height = SquaresNumberY * SquareSideLength + 2 * MarginsSize;
-
-        Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
+        OnPropertyUpdating();
+        squaresNumberX = value;
+        OnPropertyUpdated();
       }
+    }
+
+    /// <summary>
+    /// Number of squares in the Y direction.
+    /// </summary>
+    public int SquaresNumberY
+    {
+      get { return squaresNumberY; }
+      set
+      {
+        OnPropertyUpdating();
+        squaresNumberY = value;
+        OnPropertyUpdated();
+      }
+    }
+
+    /// <summary>
+    /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
+    /// </summary>
+    public int SquareSideLength
+    {
+      get { return squareSideLength; }
+      set
+      {
+        OnPropertyUpdating();
+        squareSideLength = value;
+        OnPropertyUpdated();
+      }
+    }
+
+    /// <summary>
+    /// The associated grid board from the ArucoUnity plugin library.
+    /// </summary>
+    public CharucoBoard Board { get; protected set; }
+
+    // Methods
+
+    /// <summary>
+    /// <see cref="ArucoBoard.UpdateBoard"/>
+    /// </summary>
+    protected override void UpdateBoard()
+    {
+      ImageSize.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;
+      ImageSize.height = SquaresNumberY * SquareSideLength + 2 * MarginsSize;
+
+      Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
     }
   }
 

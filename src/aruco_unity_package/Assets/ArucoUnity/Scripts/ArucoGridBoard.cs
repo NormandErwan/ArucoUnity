@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -6,85 +7,85 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  /// <summary>
+  /// Describes an ArUco grid board.
+  /// </summary>
+  public class ArucoGridBoard : ArucoBoard
   {
+    // Editor fields
+
+    [SerializeField]
+    [Tooltip("Number of markers in the X direction.")]
+    private int markersNumberX;
+
+    [SerializeField]
+    [Tooltip("Number of markers in the Y direction.")]
+    private int markersNumberY;
+
+    [SerializeField]
+    [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
+    private int markerSeparation;
+
+    // Properties
+
     /// <summary>
-    /// Describes an ArUco grid board.
+    /// Number of markers in the X direction.
     /// </summary>
-    public class ArucoGridBoard : ArucoBoard
+    public int MarkersNumberX
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("Number of markers in the X direction.")]
-      private int markersNumberX;
-
-      [SerializeField]
-      [Tooltip("Number of markers in the Y direction.")]
-      private int markersNumberY;
-      
-      [SerializeField]
-      [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
-      private int markerSeparation;
-
-      // Properties
-
-      /// <summary>
-      /// Number of markers in the X direction.
-      /// </summary>
-      public int MarkersNumberX {
-        get { return markersNumberX; }
-        set
-        {
-          OnPropertyUpdating();
-          markersNumberX = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// Number of markers in the Y direction.
-      /// </summary>
-      public int MarkersNumberY {
-        get { return markersNumberY; }
-        set
-        {
-          OnPropertyUpdating();
-          markersNumberY = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
-      /// </summary>
-      public int MarkerSeparation {
-        get { return markerSeparation; }
-        set
-        {
-          OnPropertyUpdating();
-          markerSeparation = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// The associated grid board from the ArucoUnity plugin library.
-      /// </summary>
-      public GridBoard Board { get; protected set; }
-
-      // Methods
-
-      /// <summary>
-      /// <see cref="ArucoBoard.UpdateBoard"/>
-      /// </summary>
-      protected override void UpdateBoard()
+      get { return markersNumberX; }
+      set
       {
-        ImageSize.width = MarkersNumberX * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
-        ImageSize.height = MarkersNumberY * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
-
-        Board = GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
+        OnPropertyUpdating();
+        markersNumberX = value;
+        OnPropertyUpdated();
       }
+    }
+
+    /// <summary>
+    /// Number of markers in the Y direction.
+    /// </summary>
+    public int MarkersNumberY
+    {
+      get { return markersNumberY; }
+      set
+      {
+        OnPropertyUpdating();
+        markersNumberY = value;
+        OnPropertyUpdated();
+      }
+    }
+
+    /// <summary>
+    /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
+    /// </summary>
+    public int MarkerSeparation
+    {
+      get { return markerSeparation; }
+      set
+      {
+        OnPropertyUpdating();
+        markerSeparation = value;
+        OnPropertyUpdated();
+      }
+    }
+
+    /// <summary>
+    /// The associated grid board from the ArucoUnity plugin library.
+    /// </summary>
+    public GridBoard Board { get; protected set; }
+
+    // Methods
+
+    /// <summary>
+    /// <see cref="ArucoBoard.UpdateBoard"/>
+    /// </summary>
+    protected override void UpdateBoard()
+    {
+      ImageSize.width = MarkersNumberX * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
+      ImageSize.height = MarkersNumberY * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
+
+      Board = GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
     }
   }
 

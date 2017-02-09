@@ -1,62 +1,61 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Utility;
+using UnityEngine;
 
 namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  /// <summary>
+  /// Describes an ChArUco diamond marker.
+  /// </summary>
+  public class ArucoDiamond : ArucoObject
   {
+    // Editor fields
+
+    [SerializeField]
+    [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
+    private int squareSideLength;
+
+    [SerializeField]
+    [Tooltip("The four ids of the four markers of the diamond.")]
+    private int[] ids;
+
+    // Properties
+
     /// <summary>
-    /// Describes an ChArUco diamond marker.
+    /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
     /// </summary>
-    public class ArucoDiamond : ArucoObject
+    public int SquareSideLength
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
-      private int squareSideLength;
-
-      [SerializeField]
-      [Tooltip("The four ids of the four markers of the diamond.")]
-      private int[] ids;
-
-      // Properties
-
-      /// <summary>
-      /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
-      /// </summary>
-      public int SquareSideLength {
-        get { return squareSideLength; }
-        set
-        {
-          OnPropertyUpdating();
-          squareSideLength = value;
-          OnPropertyUpdated();
-        }
-      }
-
-      /// <summary>
-      /// The four ids of the four markers of the diamond.
-      /// </summary>
-      public int[] Ids
+      get { return squareSideLength; }
+      set
       {
-        get
-        {
-          if (ids.Length != 4)
-          {
-            Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
-          }
+        OnPropertyUpdating();
+        squareSideLength = value;
+        OnPropertyUpdated();
+      }
+    }
 
-          return ids;
-        }
-        set
+    /// <summary>
+    /// The four ids of the four markers of the diamond.
+    /// </summary>
+    public int[] Ids
+    {
+      get
+      {
+        if (ids.Length != 4)
         {
-          OnPropertyUpdating();
-          ids = value;
-          OnPropertyUpdated();
+          Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
         }
+
+        return ids;
+      }
+      set
+      {
+        OnPropertyUpdating();
+        ids = value;
+        OnPropertyUpdated();
       }
     }
   }
