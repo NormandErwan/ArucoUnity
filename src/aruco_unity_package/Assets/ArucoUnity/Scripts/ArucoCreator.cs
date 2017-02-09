@@ -36,7 +36,7 @@ namespace ArucoUnity
       private bool saveImage;
 
       [SerializeField]
-      [Tooltip("The output folder for the saved image, relative to the Assets/ folder.")]
+      [Tooltip("The output folder for the saved image, relative to the Application.persistentDataPath folder.")]
       private string outputFolder = "ArucoUnity/Images/";
 
       [SerializeField]
@@ -71,7 +71,7 @@ namespace ArucoUnity
       public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
 
       /// <summary>
-      /// The output folder for the saved image, relative to the Assets/ folder (default: ArucoUnity/Images/).
+      /// The output folder for the saved image, relative to the Application.persistentDataPath folder (default: ArucoUnity/Images/).
       /// </summary>
       public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
 
@@ -181,8 +181,53 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Save()
       {
-        string outputImage = OutputFolder + ImageFilename;
-        string imageFilePath = Path.Combine(Application.dataPath, outputImage); // TODO: use Application.persistentDataPath for iOS
+        string imageFilePath = ImageFilename;
+        if (imageFilePath == null || imageFilePath.Length == 0)
+        {
+          imageFilePath = "ArUcoUnity_";
+
+          // In case of a marker
+          ArucoMarker marker = ArucoObject as ArucoMarker;
+          if (marker != null)
+          {
+            imageFilePath += "Marker_" + marker.Dictionary.name + "_Id_" + marker.Id;
+          }
+
+          // In case of a grid board
+          ArucoGridBoard gridBoard = ArucoObject as ArucoGridBoard;
+          if (gridBoard != null)
+          {
+            imageFilePath += "GridBoard_" + gridBoard.Dictionary.name + "_X_" + gridBoard.MarkersNumberX + "_Y_" + gridBoard.MarkersNumberY 
+              + "_MarkerSize_" + gridBoard.MarkerSideLength;
+          }
+
+          // In case of a charuco board
+          ArucoCharucoBoard charucoBoard = ArucoObject as ArucoCharucoBoard;
+          if (charucoBoard != null)
+          {
+            imageFilePath += "ChArUcoBoard_" + charucoBoard.Dictionary.name + "_X_" + charucoBoard.SquaresNumberX 
+              + "_Y_" + charucoBoard.SquaresNumberY + "_SquareSize_" + charucoBoard.SquareSideLength 
+              + "_MarkerSize_" + charucoBoard.MarkerSideLength;
+          }
+
+          // In case of a diamond
+          ArucoDiamond diamond = ArucoObject as ArucoDiamond;
+          if (diamond != null && diamond.Ids.Length == 4)
+          {
+            imageFilePath += "DiamondMarker_" + diamond.Dictionary.name + "_Ids_" + diamond.Ids[0] + "_" + diamond.Ids[1] + "_" + diamond.Ids[2] + "_"
+              + diamond.Ids[3] + "_" + "_SquareSize_" + diamond.SquareSideLength + "_MarkerSize_" + diamond.MarkerSideLength;
+          }
+
+          imageFilePath += ".png";
+        }
+
+        string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
+        if (!Directory.Exists(outputFolderPath))
+        {
+          Directory.CreateDirectory(outputFolderPath);
+        }
+
+        imageFilePath = outputFolderPath + imageFilePath;
         File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
       }
     }
