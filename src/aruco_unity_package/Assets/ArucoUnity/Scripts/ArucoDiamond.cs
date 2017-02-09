@@ -15,10 +15,6 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The size of the margins in pixels, used by Creators (default: 0).")]
-      private int marginsSize;
-
-      [SerializeField]
       [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
       private int squareSideLength;
 
@@ -27,19 +23,6 @@ namespace ArucoUnity
       private int[] ids;
 
       // Properties
-
-      /// <summary>
-      /// The size of the margins in pixels (default: 0).
-      /// </summary>
-      public int MarginsSize {
-        get { return marginsSize; }
-        set
-        {
-          OnPropertyUpdating();
-          marginsSize = value;
-          OnPropertyUpdated();
-        }
-      }
 
       /// <summary>
       /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
