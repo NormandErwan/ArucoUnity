@@ -36,9 +36,9 @@ namespace ArucoUnity
         get { return squaresNumberX; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           squaresNumberX = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -49,9 +49,9 @@ namespace ArucoUnity
         get { return squaresNumberY; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           squaresNumberY = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -62,16 +62,22 @@ namespace ArucoUnity
         get { return squareSideLength; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           squareSideLength = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
+      /// <summary>
+      /// The associated grid board from the ArucoUnity plugin library.
+      /// </summary>
       public CharucoBoard Board { get; protected set; }
 
       // Methods
 
+      /// <summary>
+      /// <see cref="ArucoBoard.UpdateBoard"/>
+      /// </summary>
       protected override void UpdateBoard()
       {
         ImageSize.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;

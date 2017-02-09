@@ -31,27 +31,48 @@ namespace ArucoUnity
       /// <summary>
       /// The size of the margins in pixels (default: 0).
       /// </summary>
-      public int MarginsSize { get { return marginsSize; } set { marginsSize = value; } }
+      public int MarginsSize {
+        get { return marginsSize; }
+        set
+        {
+          OnPropertyUpdating();
+          marginsSize = value;
+          OnPropertyUpdated();
+        }
+      }
 
       /// <summary>
       /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
-      public int SquareSideLength { get { return squareSideLength; } set { squareSideLength = value; } }
+      public int SquareSideLength {
+        get { return squareSideLength; }
+        set
+        {
+          OnPropertyUpdating();
+          squareSideLength = value;
+          OnPropertyUpdated();
+        }
+      }
 
       /// <summary>
       /// The four ids of the four markers of the diamond.
       /// </summary>
-      public int[] Ids { get { return ids; } set { ids = value; } }
-
-      // MonoBehaviour methods
-
-      protected override void Awake()
+      public int[] Ids
       {
-        base.Awake();
-
-        if (Ids.Length != 4)
+        get
         {
-          Debug.LogWarning("ArucoDiamond requires 4 ids.");
+          if (ids.Length != 4)
+          {
+            Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
+          }
+
+          return ids;
+        }
+        set
+        {
+          OnPropertyUpdating();
+          ids = value;
+          OnPropertyUpdated();
         }
       }
     }

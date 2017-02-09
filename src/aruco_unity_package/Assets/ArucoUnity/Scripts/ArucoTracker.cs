@@ -60,8 +60,34 @@ namespace ArucoUnity
     /// </summary>
     public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Tvecs { get; protected set; }
 
+    // MonoBehaviour methods
+
+    /// <summary>
+    /// Susbcribe to events from ArucoObjectController for every ArUco object added or removed.
+    /// </summary>
+    protected override void Start()
+    {
+      base.Start();
+
+      base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
+      base.ArucoObjectRemoved += ArucoObjectController_ArucoObjectRemoved;
+    }
+
+    /// <summary>
+    /// Unsuscribe from ArucoObjectController events.
+    /// </summary>
+    protected void OnDestroy()
+    {
+      base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
+      base.ArucoObjectRemoved -= ArucoObjectController_ArucoObjectRemoved;
+    }
+
     // ArucoObjectController methods
 
+    /// <summary>
+    /// Update the properties when a new dictionary is added.
+    /// </summary>
+    /// <param name="dictionary">The new dictionary.</param>
     protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryAdded(dictionary);
@@ -75,6 +101,10 @@ namespace ArucoUnity
       }
     }
 
+    /// <summary>
+    /// Update the properties when a dictionary is removed.
+    /// </summary>
+    /// <param name="dictionary">The dictionary removed.</param>
     protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryRemoved(dictionary);
@@ -86,6 +116,28 @@ namespace ArucoUnity
           Tvecs[cameraId].Remove(dictionary);
         }
       }
+    }
+
+    /// <summary>
+    /// Suscribe to the property events of an ArUco object.
+    /// </summary>
+    /// <param name="arucoObject">The new ArUco object to suscribe.</param>
+    protected virtual void ArucoObjectController_ArucoObjectAdded(ArucoObject arucoObject)
+    {
+      arucoObject.gameObject.SetActive(false);
+
+      arucoObject.PropertyUpdating += ArucoObject_PropertyUpdating;
+      arucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+    }
+
+    /// <summary>
+    /// Unsuscribe from the property events of an ArUco object.
+    /// </summary>
+    /// <param name="arucoObject">The ArUco object to unsuscribe.</param>
+    protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
+    {
+      arucoObject.PropertyUpdating -= ArucoObject_PropertyUpdating;
+      arucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
     }
 
     // ArucoObjectDetector methods
@@ -272,6 +324,30 @@ namespace ArucoUnity
       //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
       arucoGameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
+    /// </summary>
+    /// <param name="arucoObject"></param>
+    protected void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
+    {
+      if (arucoObject.MarkerSideLength != 0)
+      {
+        arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
+      }
+    }
+
+    /// <summary>
+    /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
+    /// </summary>
+    /// <param name="arucoObject"></param>
+    protected void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+    {
+      if (arucoObject.MarkerSideLength != 0)
+      {
+        arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
+      }
     }
   }
 

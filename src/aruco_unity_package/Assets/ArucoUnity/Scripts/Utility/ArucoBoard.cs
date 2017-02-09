@@ -21,43 +21,57 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The size of the margins in pixels (default: 0).
+      /// The size of the margins in pixels (default: 0). Used by the Creators.
       /// </summary>
       public int MarginsSize {
         get { return marginsSize; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           marginsSize = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
+      /// <summary>
+      /// The image size for drawing the board.
+      /// </summary>
       public Plugin.cv.Size ImageSize { get; protected set; }
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// Initialize the properties and suscribe to <see cref="ArucoObject.PropertyUpdated"/>.
+      /// </summary>
       protected override void Awake()
       {
         base.Awake();
 
         ImageSize = new Plugin.cv.Size();
         UpdateBoard();
-      }
 
-      // ArucoObject methods
+        base.PropertyUpdated += ArucoBoard_PropertyUpdated;
+      }
 
       /// <summary>
-      /// <see cref="ArucoObject.PropertyUpdated"/>
+      /// Unsuscribe from events.
       /// </summary>
-      protected override void PropertyUpdated()
+      protected void OnDestroy()
       {
-        base.PropertyUpdated();
-
-        UpdateBoard();
+        base.PropertyUpdated -= ArucoBoard_PropertyUpdated;
       }
 
+      // Methods
+
+      /// <summary>
+      /// Update the board property.
+      /// </summary>
       protected abstract void UpdateBoard();
+
+      private void ArucoBoard_PropertyUpdated(ArucoObject currentArucoObject)
+      {
+        UpdateBoard();
+      }
     }
   }
 

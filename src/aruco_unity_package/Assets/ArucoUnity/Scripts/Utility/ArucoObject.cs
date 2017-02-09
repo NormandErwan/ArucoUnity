@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -28,6 +27,20 @@ namespace ArucoUnity
       [Tooltip("Number of bits in marker borders (default: 1). Used by Creators.")]
       private int markerBorderBits;
 
+      // Events
+
+      public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
+
+      /// <summary>
+      /// Executed before a property is going to be updated.
+      /// </summary>
+      public event ArucoObjectEventHandler PropertyUpdating = delegate { };
+
+      /// <summary>
+      /// Executed after a property has been updated.
+      /// </summary>
+      public event ArucoObjectEventHandler PropertyUpdated = delegate { };
+
       // Properties
 
       /// <summary>
@@ -38,9 +51,9 @@ namespace ArucoUnity
         get { return dictionary; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           dictionary = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -52,9 +65,9 @@ namespace ArucoUnity
         get { return markerSideLength; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           markerSideLength = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -65,9 +78,9 @@ namespace ArucoUnity
         get { return markerBorderBits; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           markerBorderBits = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -78,44 +91,27 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize the properties, adjust the gameObject localScale to the <see cref="markerSideLength"/> and hide the gameObject.
+      /// Initialize the properties.
       /// </summary>
       protected virtual void Awake()
       {
         dictionary = Functions.GetPredefinedDictionary(dictionaryName);
-
-        if (markerSideLength != 0)
-        {
-          gameObject.transform.localScale *= markerSideLength;
-        }
-
-        gameObject.SetActive(false);
-      }
-
-      // Methods
-
-      /// <summary>
-      /// Called before a property is going to be updated.
-      /// </summary>
-      protected virtual void PropertyPreUpdate()
-      {
-        // Restore the previous scale
-        if (markerSideLength != 0)
-        {
-          gameObject.transform.localScale /= markerSideLength;
-        }
       }
 
       /// <summary>
-      /// Called after a property has been updated.
+      /// Call the event <see cref="PropertyUpdating"/>.
       /// </summary>
-      protected virtual void PropertyUpdated()
+      protected void OnPropertyUpdating()
       {
-        // Adjust to the new scale
-        if (markerSideLength != 0)
-        {
-          gameObject.transform.localScale *= markerSideLength;
-        }
+        PropertyUpdating(this);
+      }
+
+      /// <summary>
+      /// Call the event <see cref="PropertyUpdated"/>.
+      /// </summary>
+      protected void OnPropertyUpdated()
+      {
+        PropertyUpdated(this);
       }
     }
   }

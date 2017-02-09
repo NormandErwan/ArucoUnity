@@ -23,7 +23,15 @@ namespace ArucoUnity
       /// <summary>
       /// The marker id in the used dictionary.
       /// </summary>
-      public int Id { get { return id; } set { id = value; } }
+      public int Id {
+        get { return id; }
+        set
+        {
+          OnPropertyUpdating();
+          id = value;
+          OnPropertyUpdated();
+        }
+      }
     }
   }
 

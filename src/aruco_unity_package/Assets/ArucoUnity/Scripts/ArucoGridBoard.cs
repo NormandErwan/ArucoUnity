@@ -36,9 +36,9 @@ namespace ArucoUnity
         get { return markersNumberX; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           markersNumberX = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -49,9 +49,9 @@ namespace ArucoUnity
         get { return markersNumberY; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           markersNumberY = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
@@ -62,16 +62,22 @@ namespace ArucoUnity
         get { return markerSeparation; }
         set
         {
-          PropertyPreUpdate();
+          OnPropertyUpdating();
           markerSeparation = value;
-          PropertyUpdated();
+          OnPropertyUpdated();
         }
       }
 
+      /// <summary>
+      /// The associated grid board from the ArucoUnity plugin library.
+      /// </summary>
       public GridBoard Board { get; protected set; }
 
       // Methods
 
+      /// <summary>
+      /// <see cref="ArucoBoard.UpdateBoard"/>
+      /// </summary>
       protected override void UpdateBoard()
       {
         ImageSize.width = MarkersNumberX * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
