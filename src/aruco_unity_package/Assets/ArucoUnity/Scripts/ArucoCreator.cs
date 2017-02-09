@@ -2,7 +2,6 @@
 using ArucoUnity.Plugin.cv;
 using UnityEngine;
 using System.IO;
-using System.Collections.Generic;
 
 namespace ArucoUnity
 {
@@ -40,7 +39,7 @@ namespace ArucoUnity
       private string outputFolder = "ArucoUnity/Images/";
 
       [SerializeField]
-      [Tooltip("The saved image name. If empty, it will be generated automatically.")]
+      [Tooltip("The saved image name. The extension (.png) is added automatically. If empty, it will be generated automatically. ")]
       private string imageFilename;
 
       // Properties
@@ -76,7 +75,7 @@ namespace ArucoUnity
       public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
 
       /// <summary>
-      /// The saved image name. If null, it will be generated automatically.
+      /// The saved image name. The extension (.png) is added automatically. If null, it will be generated automatically.
       /// </summary>
       public string ImageFilename { get { return imageFilename; } set { imageFilename = value; } }
 
@@ -215,11 +214,10 @@ namespace ArucoUnity
           if (diamond != null && diamond.Ids.Length == 4)
           {
             imageFilePath += "DiamondMarker_" + diamond.Dictionary.name + "_Ids_" + diamond.Ids[0] + "_" + diamond.Ids[1] + "_" + diamond.Ids[2] + "_"
-              + diamond.Ids[3] + "_" + "_SquareSize_" + diamond.SquareSideLength + "_MarkerSize_" + diamond.MarkerSideLength;
+              + diamond.Ids[3] + "_SquareSize_" + diamond.SquareSideLength + "_MarkerSize_" + diamond.MarkerSideLength;
           }
-
-          imageFilePath += ".png";
         }
+        imageFilePath += ".png";
 
         string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
         if (!Directory.Exists(outputFolderPath))
