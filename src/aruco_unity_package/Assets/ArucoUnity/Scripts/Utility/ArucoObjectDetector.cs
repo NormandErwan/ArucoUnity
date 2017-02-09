@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
 using ArucoUnity.Plugin.std;
 using System.Collections.Generic;
 using UnityEngine;

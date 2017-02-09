@@ -8,6 +8,9 @@ namespace ArucoUnity
 
   namespace Utility
   {
+    /// <summary>
+    /// Manages a list of <see cref="ArucoObject"/>.
+    /// </summary>
     public abstract class ArucoObjectsController : MonoBehaviour
     {
       // Editor fields
