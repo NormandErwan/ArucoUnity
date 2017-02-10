@@ -221,7 +221,7 @@ namespace ArucoUnity
         EstimateTransforms = false;
       }
 
-      // Initialize the properties
+      // Initialize the properties and the ArUco objects
       MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
       MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[ArucoCamera.CamerasNumber];
       RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
@@ -245,6 +245,15 @@ namespace ArucoUnity
           RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
           Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+
+          // Adjust the scale of the game object of each ArUco object
+          foreach (var arucoObject in arucoObjectDictionary.Value)
+          {
+            if (arucoObject.MarkerSideLength != 0)
+            {
+              arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
+            }
+          }
         }
       }
     }
@@ -322,6 +331,8 @@ namespace ArucoUnity
             Functions.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], new Color(100, 0, 255));
             updatedCameraImage = true;
           }
+
+          // TODO: draw grid board, charuco board, diamonds
         }
       }
 
@@ -344,6 +355,7 @@ namespace ArucoUnity
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
 
+          // Skip if don't estimate nor markers detected
           if (!EstimateTransforms || MarkerIds[cameraId][dictionary].Size() <= 0)
           {
             Rvecs[cameraId][dictionary] = null;
@@ -354,13 +366,12 @@ namespace ArucoUnity
           CameraParameters cameraParameters = ArucoCamera.CameraParameters[cameraId];
 
           // Estimate markers pose
-          if (MarkerIds[cameraId][dictionary].Size() > 0)
-          {
-            VectorVec3d rvecs, tvecs;
-            Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
-            Rvecs[cameraId][dictionary] = rvecs;
-            Tvecs[cameraId][dictionary] = tvecs;
-          }
+          VectorVec3d rvecs, tvecs;
+          Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+          Rvecs[cameraId][dictionary] = rvecs;
+          Tvecs[cameraId][dictionary] = tvecs;
+
+          // TODO: estimate grid board, charuco board, diamond
         }
       }
     }
@@ -381,6 +392,7 @@ namespace ArucoUnity
       {
         Dictionary dictionary = arucoObjectDictionary.Key;
 
+        // Place ArUco markers
         for (uint i = 0; i < MarkerIds[cameraId][dictionary].Size(); i++)
         {
           int markerId = MarkerIds[cameraId][dictionary].At(i);
@@ -394,6 +406,8 @@ namespace ArucoUnity
             }
           }
         }
+
+        // TODO: place grid board, charuco board, diamond
       }
     }
 
