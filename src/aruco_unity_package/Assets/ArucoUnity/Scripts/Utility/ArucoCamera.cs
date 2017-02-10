@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
+﻿using ArucoUnity.Plugin.cv;
 using System;
 using UnityEngine;
 
@@ -18,7 +17,7 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("Start the cameras automatically after configured it.")]
+      [Tooltip("Start the cameras automatically after configured it. Call StartCameras() alternatively.")]
       private bool autoStart = true;
 
       [SerializeField]
@@ -67,14 +66,14 @@ namespace ArucoUnity
       public abstract int CamerasNumber { get; }
 
       /// <summary>
-      /// True when the camera system has started.
-      /// </summary>
-      public bool IsStarted { get; protected set; }
-
-      /// <summary>
       /// True when the camera system is configured.
       /// </summary>
       public bool IsConfigured { get; protected set; }
+
+      /// <summary>
+      /// True when the camera system is started.
+      /// </summary>
+      public bool IsStarted { get; protected set; }
 
       /// <summary>
       /// True when the images has been updated this frame.

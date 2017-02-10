@@ -189,6 +189,8 @@ namespace ArucoUnity
         return;
       }
 
+      IsConfigured = false;
+
       // Try to load the webcam
       WebCamDevice[] webcamDevices = WebCamTexture.devices;
       if (webcamDevices.Length <= WebcamId)
