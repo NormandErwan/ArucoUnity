@@ -132,7 +132,9 @@ namespace ArucoUnity
         {
           return;
         }
+
         IsStarted = true;
+        Started();
       }
 
       /// <summary>
@@ -144,7 +146,9 @@ namespace ArucoUnity
         {
           return;
         }
+
         IsStarted = false;
+        Stopped();
       }
 
       /// <summary>
