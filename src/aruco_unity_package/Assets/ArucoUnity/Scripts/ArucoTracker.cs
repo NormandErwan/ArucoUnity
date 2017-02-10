@@ -13,7 +13,7 @@ namespace ArucoUnity
   /// <summary>
   /// Detect markers, display results and place game objects on the detected markers transform.
   /// </summary>
-  public class ArucoTracker : ArucoObjectDetector
+  public class ArucoTracker : ArucoObjectsController
   {
     // Constants
 
@@ -51,6 +51,21 @@ namespace ArucoUnity
     public bool EstimateTransforms { get { return estimateTransforms; } set { estimateTransforms = value; } }
 
     /// <summary>
+    /// Vector of the detected marker corners on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
+    /// </summary>
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] MarkerCorners { get; protected set; }
+
+    /// <summary>
+    /// Vector of identifiers of the detected markers on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
+    /// </summary>
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[] MarkerIds { get; protected set; }
+
+    /// <summary>
+    /// Vector of the corners with not a correct identification on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
+    /// </summary>
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] RejectedCandidateCorners { get; protected set; }
+
+    /// <summary>
     /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
     public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Rvecs { get; protected set; }
@@ -71,55 +86,27 @@ namespace ArucoUnity
 
       base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
       base.ArucoObjectRemoved += ArucoObjectController_ArucoObjectRemoved;
+
+      base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
+      base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
     }
 
     /// <summary>
     /// Unsuscribe from ArucoObjectController events.
     /// </summary>
-    protected void OnDestroy()
+    protected virtual void OnDestroy()
     {
       base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
       base.ArucoObjectRemoved -= ArucoObjectController_ArucoObjectRemoved;
+
+      base.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
+      base.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
     }
 
     // ArucoObjectController methods
 
     /// <summary>
-    /// Update the properties when a new dictionary is added.
-    /// </summary>
-    /// <param name="dictionary">The new dictionary.</param>
-    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
-    {
-      base.ArucoObjectController_DictionaryAdded(dictionary);
-      if (IsConfigured)
-      {
-        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
-        {
-          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
-          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
-        }
-      }
-    }
-
-    /// <summary>
-    /// Update the properties when a dictionary is removed.
-    /// </summary>
-    /// <param name="dictionary">The dictionary removed.</param>
-    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
-    {
-      base.ArucoObjectController_DictionaryRemoved(dictionary);
-      if (IsConfigured)
-      {
-        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
-        {
-          Rvecs[cameraId].Remove(dictionary);
-          Tvecs[cameraId].Remove(dictionary);
-        }
-      }
-    }
-
-    /// <summary>
-    /// Suscribe to the property events of an ArUco object.
+    /// Suscribe to the property events of an ArUco object, and hide its gameObject since it has not been detected yet.
     /// </summary>
     /// <param name="arucoObject">The new ArUco object to suscribe.</param>
     protected virtual void ArucoObjectController_ArucoObjectAdded(ArucoObject arucoObject)
@@ -138,6 +125,74 @@ namespace ArucoUnity
     {
       arucoObject.PropertyUpdating -= ArucoObject_PropertyUpdating;
       arucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
+    }
+
+    /// <summary>
+    /// Update the properties when a new dictionary is added.
+    /// </summary>
+    /// <param name="dictionary">The new dictionary.</param>
+    protected void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+      {
+        MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+        MarkerIds[cameraId].Add(dictionary, new VectorInt());
+        RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+        Rvecs[cameraId].Add(dictionary, new VectorVec3d());
+        Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+      }
+    }
+
+    /// <summary>
+    /// Update the properties when a dictionary is removed.
+    /// </summary>
+    /// <param name="dictionary">The dictionary removed.</param>
+    protected void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+      {
+        MarkerCorners[cameraId].Remove(dictionary);
+        MarkerIds[cameraId].Remove(dictionary);
+        RejectedCandidateCorners[cameraId].Remove(dictionary);
+        Rvecs[cameraId].Remove(dictionary);
+        Tvecs[cameraId].Remove(dictionary);
+      }
+    }
+
+    // ArucoObject methods
+
+    /// <summary>
+    /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
+    /// </summary>
+    /// <param name="arucoObject"></param>
+    protected void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
+    {
+      if (arucoObject.MarkerSideLength != 0)
+      {
+        arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
+      }
+    }
+
+    /// <summary>
+    /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
+    /// </summary>
+    /// <param name="arucoObject"></param>
+    protected void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+    {
+      if (arucoObject.MarkerSideLength != 0)
+      {
+        arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
+      }
     }
 
     // ArucoObjectDetector methods
@@ -162,11 +217,17 @@ namespace ArucoUnity
       }
 
       // Initialize the properties
+      MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
+      MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[ArucoCamera.CamerasNumber];
+      RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
       Rvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
       Tvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
 
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
+        MarkerCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
+        MarkerIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>();
+        RejectedCandidateCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
         Rvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
         Tvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
 
@@ -174,6 +235,9 @@ namespace ArucoUnity
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
 
+          MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
+          MarkerIds[cameraId].Add(dictionary, new VectorInt());
+          RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
           Tvecs[cameraId].Add(dictionary, new VectorVec3d());
         }
@@ -181,6 +245,48 @@ namespace ArucoUnity
     }
 
     // Methods
+
+    /// <summary>
+    /// Hide all the aruco objects.
+    /// </summary>
+    public void DeactivateArucoObjects()
+    {
+      foreach (var arucoObjectDictionary in ArucoObjects)
+      {
+        foreach (var arucoObject in arucoObjectDictionary.Value)
+        {
+          arucoObject.gameObject.SetActive(false);
+        }
+      }
+    }
+
+    /// <summary>
+    /// Detect the markers on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event,
+    /// after the update of the CameraImageTexture.
+    /// </summary>
+    // TODO: detect in a separate thread for performances
+    public void Detect()
+    {
+      if (!IsConfigured)
+      {
+        return;
+      }
+
+      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+      {
+        foreach (var arucoObjectDictionary in ArucoObjects)
+        {
+          Dictionary dictionary = arucoObjectDictionary.Key;
+          VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
+          VectorInt markerIds;
+
+          Functions.DetectMarkers(ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+          MarkerCorners[cameraId][dictionary] = markerCorners;
+          MarkerIds[cameraId][dictionary] = markerIds;
+          RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
+        }
+      }
+    }
 
     public void Draw()
     {
@@ -255,20 +361,6 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// Hide all the aruco objects.
-    /// </summary>
-    public void DeactivateArucoObjects()
-    {
-      foreach (var arucoObjectDictionary in ArucoObjects)
-      {
-        foreach (var arucoObject in arucoObjectDictionary.Value)
-        {
-          arucoObject.gameObject.SetActive(false);
-        }
-      }
-    }
-
-    /// <summary>
     /// Place and orient the object to match the marker on the first camera image.
     /// </summary>
     public void Place()
@@ -324,30 +416,6 @@ namespace ArucoUnity
       //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
       arucoGameObject.SetActive(true);
-    }
-
-    /// <summary>
-    /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
-    /// </summary>
-    /// <param name="arucoObject"></param>
-    protected void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
-    {
-      if (arucoObject.MarkerSideLength != 0)
-      {
-        arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
-      }
-    }
-
-    /// <summary>
-    /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
-    /// </summary>
-    /// <param name="arucoObject"></param>
-    protected void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
-    {
-      if (arucoObject.MarkerSideLength != 0)
-      {
-        arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
-      }
     }
   }
 
