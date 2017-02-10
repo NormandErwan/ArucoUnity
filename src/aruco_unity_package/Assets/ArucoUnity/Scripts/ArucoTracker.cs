@@ -198,10 +198,15 @@ namespace ArucoUnity
     // ArucoObjectDetector methods
 
     /// <summary>
-    /// When configured, detect markers and show results each frame.
+    /// When configured and started, detect markers and show results each frame.
     /// </summary>
     protected override void ArucoCameraImageUpdated()
     {
+      if (!IsConfigured || !IsStarted)
+      {
+        return;
+      }
+
       DeactivateArucoObjects();
       Detect();
       Draw();
