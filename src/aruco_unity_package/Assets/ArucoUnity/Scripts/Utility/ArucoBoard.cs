@@ -38,6 +38,11 @@ namespace ArucoUnity
       /// </summary>
       public Plugin.cv.Size ImageSize { get; protected set; }
 
+      /// <summary>
+      /// The associated board from the ArucoUnity plugin library.
+      /// </summary>
+      public Plugin.Board Board { get; protected set; }
+
       // MonoBehaviour methods
 
       /// <summary>

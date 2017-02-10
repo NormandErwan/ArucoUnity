@@ -70,11 +70,6 @@ namespace ArucoUnity
       }
     }
 
-    /// <summary>
-    /// The associated grid board from the ArucoUnity plugin library.
-    /// </summary>
-    public CharucoBoard Board { get; protected set; }
-
     // Methods
 
     /// <summary>
