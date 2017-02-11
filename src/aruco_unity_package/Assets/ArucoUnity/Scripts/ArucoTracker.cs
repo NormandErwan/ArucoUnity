@@ -295,6 +295,7 @@ namespace ArucoUnity
           VectorInt markerIds;
 
           Functions.DetectMarkers(ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+
           MarkerCorners[cameraId][dictionary] = markerCorners;
           MarkerIds[cameraId][dictionary] = markerIds;
           RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
