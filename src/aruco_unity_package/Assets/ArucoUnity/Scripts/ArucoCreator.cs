@@ -129,17 +129,19 @@ namespace ArucoUnity
       }
 
       // In case of a grid board
-      ArucoGridBoard gridBoard = ArucoObject as ArucoGridBoard;
-      if (gridBoard != null)
+      ArucoGridBoard arucoGridBoard = ArucoObject as ArucoGridBoard;
+      if (arucoGridBoard != null)
       {
-        gridBoard.Board.Draw(gridBoard.ImageSize, out image, gridBoard.MarginsSize, gridBoard.MarkerBorderBits);
+        GridBoard gridBoard = arucoGridBoard.Board as GridBoard;
+        gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
       }
 
       // In case of a charuco board
-      ArucoCharucoBoard charucoBoard = ArucoObject as ArucoCharucoBoard;
-      if (charucoBoard != null)
+      ArucoCharucoBoard arucoCharucoBoard = ArucoObject as ArucoCharucoBoard;
+      if (arucoCharucoBoard != null)
       {
-        charucoBoard.Board.Draw(charucoBoard.ImageSize, out image, charucoBoard.MarginsSize, charucoBoard.MarkerBorderBits);
+        CharucoBoard charucoBoard = arucoCharucoBoard.Board as CharucoBoard;
+        charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
       }
 
       // In case of a diamond
