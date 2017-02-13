@@ -14,13 +14,13 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 ### Configuration
 
-Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. By default, it will retrieve and build OpenCV
-with the [ArUco module](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco). Run the following commands,
-it will take several minutes:
+Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. CMake can automatically build OpenCV (recommended)
+with the [ArUco module](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), by checking the
+`AUTO_BUILD_OPENCV` opion. Run the following commands, it will take several minutes:
 
 ```bash
 $ cd <aruco_unity_build_directory>
-$ cmake <aruco_unity_source_directory>
+$ cmake -DAUTO_BUILD_OPENCV=ON <aruco_unity_source_directory>
 ```
 
 If you want to provide your own version of OpenCV, add the following options to the above cmake configuration command:

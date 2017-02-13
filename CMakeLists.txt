@@ -10,7 +10,7 @@ set(VERSION_PATCH 0)
 set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
 # Configuration
-option(AUTO_BUILD_OPENCV "Build automatically the latest OpenCV version with the ArUco module (or compile it and provide your version with the option -DOpenCV_DIR)." ON)
+option(AUTO_BUILD_OPENCV "Build automatically the latest OpenCV version with the ArUco module (or compile it and provide your version with the option -DOpenCV_DIR)." OFF)
 option(BUILD_DOCS "Build the docs." OFF)
 option(BUILD_TESTS "Build the tests." OFF)
 
