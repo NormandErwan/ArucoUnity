@@ -22,8 +22,7 @@ extern "C" {
   //! \param rows Number of rows. 
   //! \param cols Number of columns. 
   //! \param type Array type. 
-  //! \param data Pointer to the data. The external data is not automatically deallocated, so you should take care of it. 
-  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new2_uchar(int rows, int cols, int type, uchar* data);
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new2(int rows, int cols, int type);
 
   //! \brief Creates a Mat.
   //!
@@ -31,7 +30,15 @@ extern "C" {
   //! \param cols Number of columns. 
   //! \param type Array type. 
   //! \param data Pointer to the data. The external data is not automatically deallocated, so you should take care of it. 
-  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new2_double(int rows, int cols, int type, double* data);
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new8_uchar(int rows, int cols, int type, uchar* data);
+
+  //! \brief Creates a Mat.
+  //!
+  //! \param rows Number of rows. 
+  //! \param cols Number of columns. 
+  //! \param type Array type. 
+  //! \param data Pointer to the data. The external data is not automatically deallocated, so you should take care of it. 
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new8_double(int rows, int cols, int type, double* data);
 
   //! \brief Deletes any Mat.
   //! \param mat The Mat used.

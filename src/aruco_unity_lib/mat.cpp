@@ -7,11 +7,16 @@ extern "C" {
     return new cv::Mat();
   }
 
-  cv::Mat* au_cv_Mat_new2_uchar(int rows, int cols, int type, uchar* data) {
+  cv::Mat* au_cv_Mat_new2(int rows, int cols, int type)
+  {
+    return new cv::Mat(rows, cols, type);
+  }
+
+  cv::Mat* au_cv_Mat_new8_uchar(int rows, int cols, int type, uchar* data) {
     return new cv::Mat(rows, cols, type, data);
   }
 
-  cv::Mat* au_cv_Mat_new2_double(int rows, int cols, int type, double* data) {
+  cv::Mat* au_cv_Mat_new8_double(int rows, int cols, int type, double* data) {
     return new cv::Mat(rows, cols, type, data);
   }
   

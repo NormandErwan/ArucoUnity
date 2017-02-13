@@ -16,13 +16,13 @@ namespace ArucoUnity
         static extern System.IntPtr au_cv_Mat_new1();
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Mat_new2_uchar(int rows, int cols, int type, byte[] data);
+        static extern System.IntPtr au_cv_Mat_new2(int rows, int cols, int type);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Mat_new2_double(int rows, int cols, int type, double[] data);
+        static extern System.IntPtr au_cv_Mat_new8_uchar(int rows, int cols, int type, byte[] data);
 
         [DllImport("ArucoUnity")]
-        static extern void au_cv_Mat_create(System.IntPtr mat, int rows, int cols, int type);
+        static extern System.IntPtr au_cv_Mat_new8_double(int rows, int cols, int type, double[] data); 
 
         [DllImport("ArucoUnity")]
         static extern void au_cv_Mat_delete(System.IntPtr mat);
@@ -84,11 +84,15 @@ namespace ArucoUnity
         {
         }
 
-        public Mat(int rows, int cols, TYPE type, byte[] data) : base(au_cv_Mat_new2_uchar(rows, cols, (int)type, data))
+        public Mat(int rows, int cols, TYPE type) : base(au_cv_Mat_new2(rows, cols, (int)type))
         {
         }
 
-        public Mat(int rows, int cols, TYPE type, double[] data) : base(au_cv_Mat_new2_double(rows, cols, (int)type, data))
+        public Mat(int rows, int cols, TYPE type, byte[] data) : base(au_cv_Mat_new8_uchar(rows, cols, (int)type, data))
+        {
+        }
+
+        public Mat(int rows, int cols, TYPE type, double[] data) : base(au_cv_Mat_new8_double(rows, cols, (int)type, data))
         {
         }
 
