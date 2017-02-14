@@ -24,7 +24,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
-    private int markerSeparation;
+    private float markerSeparation;
 
     // Properties
 
@@ -59,7 +59,7 @@ namespace ArucoUnity
     /// <summary>
     /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
     /// </summary>
-    public int MarkerSeparation
+    public float MarkerSeparation
     {
       get { return markerSeparation; }
       set
@@ -77,8 +77,8 @@ namespace ArucoUnity
     /// </summary>
     protected override void UpdateBoard()
     {
-      ImageSize.width = MarkersNumberX * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
-      ImageSize.height = MarkersNumberY * ((int)MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsSize;
+      ImageSize.width = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
+      ImageSize.height = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
 
       Board = GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
     }
