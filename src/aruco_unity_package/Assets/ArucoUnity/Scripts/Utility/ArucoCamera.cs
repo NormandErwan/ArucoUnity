@@ -63,7 +63,12 @@ namespace ArucoUnity
       /// <summary>
       /// The number of cameras in the system.
       /// </summary>
-      public abstract int CamerasNumber { get; }
+      public abstract int CamerasNumber { get; protected set; }
+
+      /// <summary>
+      /// The name of the camera system used.
+      /// </summary>
+      public abstract string Name { get; protected set; }
 
       /// <summary>
       /// True when the camera system is configured.

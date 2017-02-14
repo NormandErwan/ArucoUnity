@@ -32,7 +32,12 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoCamera.CamerasNumber"/>
     /// </summary>
-    public override int CamerasNumber { get { return 1; } }
+    public override int CamerasNumber { get { return 1; } protected set { } }
+
+    /// <summary>
+    /// <see cref="ArucoCamera.Name"/>
+    /// </summary>
+    public override string Name { get; protected set; }
 
     /// <summary>
     /// <see cref="ArucoCamera.ImageRotations"/>
@@ -200,6 +205,7 @@ namespace ArucoUnity
       }
       WebCamDevice = webcamDevices[WebcamId];
       WebCamTexture = new WebCamTexture(WebCamDevice.name);
+      Name = webcamDevices[WebcamId].name;
 
       // Try to load the camera parameters
       if (CameraParametersFilePath != null)
