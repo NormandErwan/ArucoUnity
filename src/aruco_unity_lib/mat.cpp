@@ -7,8 +7,7 @@ extern "C" {
     return new cv::Mat();
   }
 
-  cv::Mat* au_cv_Mat_new2(int rows, int cols, int type)
-  {
+  cv::Mat* au_cv_Mat_new2(int rows, int cols, int type) {
     return new cv::Mat(rows, cols, type);
   }
 
