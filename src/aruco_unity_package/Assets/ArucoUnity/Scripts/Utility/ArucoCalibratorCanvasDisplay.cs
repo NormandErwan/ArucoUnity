@@ -79,11 +79,15 @@ namespace ArucoUnity
           imageDisplayRect.anchorMin = Vector2.zero;
           imageDisplayRect.anchorMax = Vector2.one;
           imageDisplayRect.offsetMin = imageDisplayRect.offsetMax = Vector2.zero;
-          imageDisplayRect.localScale = arucoCalibrator.ArucoCamera.ImageScalesFrontFacing[i];
+          imageDisplayRect.localScale = arucoCamera.ImageScalesFrontFacing[i];
 
           RawImage imageDisplayImage = imageDisplay.AddComponent<RawImage>();
-          imageDisplayImage.texture = arucoCalibrator.ArucoCamera.ImageTextures[i];
-          imageDisplayImage.uvRect = arucoCalibrator.ArucoCamera.ImageUvRectFlips[i];
+          imageDisplayImage.texture = arucoCamera.ImageTextures[i];
+          imageDisplayImage.uvRect = arucoCamera.ImageUvRectFlips[i];
+
+          AspectRatioFitter imageDisplayFitter = imageDisplay.AddComponent<AspectRatioFitter>();
+          imageDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+          imageDisplayFitter.aspectRatio = arucoCamera.ImageRatios[i];
         }
       }
 
