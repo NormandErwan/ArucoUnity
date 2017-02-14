@@ -11,6 +11,10 @@ extern "C" {
     return new cv::Mat(rows, cols, type);
   }
 
+  cv::Mat* au_cv_Mat_new3(cv::Size* size, int type) {
+    return new cv::Mat(*size, type);
+  }
+
   cv::Mat* au_cv_Mat_new8_uchar(int rows, int cols, int type, uchar* data) {
     return new cv::Mat(rows, cols, type, data);
   }

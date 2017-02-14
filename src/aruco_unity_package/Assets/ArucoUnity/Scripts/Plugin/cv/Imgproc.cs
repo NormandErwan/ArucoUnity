@@ -50,15 +50,15 @@ namespace ArucoUnity
           System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap1(System.IntPtr src, out System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
+        static extern void au_cv_imgproc_remap1(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
           int borderType, System.IntPtr borderValue, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap2(System.IntPtr src, out System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
+        static extern void au_cv_imgproc_remap2(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
           int borderType, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap3(System.IntPtr src, out System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
+        static extern void au_cv_imgproc_remap3(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
           System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
@@ -79,38 +79,25 @@ namespace ArucoUnity
           exception.Check();
         }
 
-        public static void Remap(Mat src, out Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType, 
+        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType, 
           Scalar borderValue)
         {
           Exception exception = new Exception();
-          System.IntPtr dstPtr;
-
-          au_cv_imgproc_remap1(src.cppPtr, out dstPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int) borderType, borderValue.cppPtr,
-            exception.cppPtr);
-          dst = new Mat(dstPtr);
-
+          au_cv_imgproc_remap1(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int) borderType, borderValue.cppPtr, exception.cppPtr);
           exception.Check();
         }
 
-        public static void Remap(Mat src, out Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType)
+        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType)
         {
           Exception exception = new Exception();
-          System.IntPtr dstPtr;
-
-          au_cv_imgproc_remap2(src.cppPtr, out dstPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, exception.cppPtr);
-          dst = new Mat(dstPtr);
-
+          au_cv_imgproc_remap2(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, exception.cppPtr);
           exception.Check();
         }
 
-        public static void Remap(Mat src, out Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation)
+        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation)
         {
           Exception exception = new Exception();
-          System.IntPtr dstPtr;
-
-          au_cv_imgproc_remap3(src.cppPtr, out dstPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, exception.cppPtr);
-          dst = new Mat(dstPtr);
-
+          au_cv_imgproc_remap3(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, exception.cppPtr);
           exception.Check();
         }
 

@@ -18,13 +18,11 @@ extern "C" {
     }
   }
 
-  void au_cv_imgproc_remap1(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
+  void au_cv_imgproc_remap1(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
     cv::Scalar* borderValue, cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat(map1->size(), src->type());
-
-      cv::remap(*src, **dst, *map1, *map2, interpolation, borderType, *borderValue);
+      cv::remap(*src, *dst, *map1, *map2, interpolation, borderType, *borderValue);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
@@ -32,13 +30,11 @@ extern "C" {
     }
   }
 
-  void au_cv_imgproc_remap2(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
+  void au_cv_imgproc_remap2(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
     cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat(map1->size(), src->type());
-
-      cv::remap(*src, **dst, *map1, *map2, interpolation, borderType);
+      cv::remap(*src, *dst, *map1, *map2, interpolation, borderType);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
@@ -46,12 +42,10 @@ extern "C" {
     }
   }
 
-  void au_cv_imgproc_remap3(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, cv::Exception* exception)
+  void au_cv_imgproc_remap3(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat(map1->size(), src->type());
-
-      cv::remap(*src, **dst, *map1, *map2, interpolation);
+      cv::remap(*src, *dst, *map1, *map2, interpolation);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);

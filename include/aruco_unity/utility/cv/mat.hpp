@@ -26,6 +26,12 @@ extern "C" {
 
   //! \brief Creates a Mat.
   //!
+  //! \param size 2D array size. 
+  //! \param type Array type. 
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_new3(cv::Size* size, int type);
+
+  //! \brief Creates a Mat.
+  //!
   //! \param rows Number of rows. 
   //! \param cols Number of columns. 
   //! \param type Array type. 

@@ -17,13 +17,13 @@ extern "C" {
   ARUCO_UNITY_API void au_cv_imgproc_initUndistortRectifyMap(cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat* R, cv::Mat* newCameraMatrix,
     cv::Size* size, int m1type, cv::Mat** map1, cv::Mat** map2, cv::Exception* exception);
 
-  ARUCO_UNITY_API void au_cv_imgproc_remap1(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
+  ARUCO_UNITY_API void au_cv_imgproc_remap1(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
     cv::Scalar* borderValue, cv::Exception* exception);
 
-  ARUCO_UNITY_API void au_cv_imgproc_remap2(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
+  ARUCO_UNITY_API void au_cv_imgproc_remap2(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
     cv::Exception* exception);
 
-  ARUCO_UNITY_API void au_cv_imgproc_remap3(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation,
+  ARUCO_UNITY_API void au_cv_imgproc_remap3(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation,
     cv::Exception* exception);
 
   //! \brief Transforms an image to compensate for lens distortion.

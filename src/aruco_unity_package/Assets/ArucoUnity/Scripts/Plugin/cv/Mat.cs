@@ -19,6 +19,9 @@ namespace ArucoUnity
         static extern System.IntPtr au_cv_Mat_new2(int rows, int cols, int type);
 
         [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_cv_Mat_new3(System.IntPtr size, int type);
+
+        [DllImport("ArucoUnity")]
         static extern System.IntPtr au_cv_Mat_new8_uchar(int rows, int cols, int type, byte[] data);
 
         [DllImport("ArucoUnity")]
@@ -85,6 +88,10 @@ namespace ArucoUnity
         }
 
         public Mat(int rows, int cols, TYPE type) : base(au_cv_Mat_new2(rows, cols, (int)type))
+        {
+        }
+
+        public Mat(Size size, TYPE type) : base(au_cv_Mat_new3(size.cppPtr, (int)type))
         {
         }
 
