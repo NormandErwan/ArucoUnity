@@ -88,7 +88,7 @@ namespace ArucoUnity
       {
         get
         {
-          // Initialize the images for the first time
+          // Initialize the images and the undistortion maps for the first time
           if (images == null)
           {
             images = new Mat[CamerasNumber];
@@ -98,17 +98,19 @@ namespace ArucoUnity
 
             for (int i = 0; i < CamerasNumber; i++)
             {
+              // Image
               byte[] imageData = ImageTextures[i].GetRawTextureData();
               images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
               imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
 
+              // Undistortion maps
               undistordedImages_maps[i] = new Mat[2]; // map1 and map2
-              Imgproc.InitUndistortRectifyMap(CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs, CameraParameters[i].CameraMatrix,
-                undistordedImages_R, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
+              Imgproc.InitUndistortRectifyMap(CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs, undistordedImages_R, 
+                CameraParameters[i].CameraMatrix, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
             }
             imagesGetThisFrame = true;
           }
-          // Update once per frame the images
+          // Update the images data only once per frame
           else if (!imagesGetThisFrame)
           {
             for (int i = 0; i < CamerasNumber; i++)
@@ -128,7 +130,7 @@ namespace ArucoUnity
             {
               images[i] = value[i];
             }
-            imagesHasBeenSetThisFrame = true;
+            imagesHasBeenSetThisFrame = true; // The ImageTextures should be update at the end of the frame
           }
         }
       }
@@ -272,9 +274,7 @@ namespace ArucoUnity
         Mat[] undistordedImages = new Mat[CamerasNumber];
         for (int i = 0; i < CamerasNumber; i++)
         {
-          // TODO: test
-          Imgproc.Undistort(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
-          //Imgproc.Remap(Images[i], out undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], InterpolationFlags.INTER_LINEAR);
+          Imgproc.Remap(Images[i], out undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], InterpolationFlags.INTER_LINEAR);
         }
         Images = undistordedImages;
       }

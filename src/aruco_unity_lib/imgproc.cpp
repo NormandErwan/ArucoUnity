@@ -22,7 +22,7 @@ extern "C" {
     cv::Scalar* borderValue, cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat();
+      *dst = new cv::Mat(map1->size(), src->type());
 
       cv::remap(*src, **dst, *map1, *map2, interpolation, borderType, *borderValue);
     }
@@ -36,7 +36,7 @@ extern "C" {
     cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat();
+      *dst = new cv::Mat(map1->size(), src->type());
 
       cv::remap(*src, **dst, *map1, *map2, interpolation, borderType);
     }
@@ -49,7 +49,7 @@ extern "C" {
   void au_cv_imgproc_remap3(cv::Mat* src, cv::Mat** dst, cv::Mat* map1, cv::Mat* map2, int interpolation, cv::Exception* exception)
   {
     try {
-      *dst = new cv::Mat();
+      *dst = new cv::Mat(map1->size(), src->type());
 
       cv::remap(*src, **dst, *map1, *map2, interpolation);
     }
