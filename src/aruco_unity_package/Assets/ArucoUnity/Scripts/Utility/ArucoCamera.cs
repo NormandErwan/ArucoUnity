@@ -88,20 +88,27 @@ namespace ArucoUnity
       {
         get
         {
-          // Initialize
+          // Initialize the images for the first time
           if (images == null)
           {
             images = new Mat[CamerasNumber];
             imageDataSizes = new int[CamerasNumber];
+            undistordedImages_maps = new Mat[CamerasNumber][];
+            Mat undistordedImages_R = new Mat();
 
             for (int i = 0; i < CamerasNumber; i++)
             {
               byte[] imageData = ImageTextures[i].GetRawTextureData();
               images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
               imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
+
+              undistordedImages_maps[i] = new Mat[2]; // map1 and map2
+              Imgproc.InitUndistortRectifyMap(CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs, CameraParameters[i].CameraMatrix,
+                undistordedImages_R, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
             }
             imagesGetThisFrame = true;
           }
+          // Update once per frame the images
           else if (!imagesGetThisFrame)
           {
             for (int i = 0; i < CamerasNumber; i++)
@@ -171,6 +178,7 @@ namespace ArucoUnity
       protected bool imagesHasBeenSetThisFrame;
       protected Mat[] images;
       protected int[] imageDataSizes;
+      protected Mat[][] undistordedImages_maps;
       protected bool imagesGetThisFrame;
 
       // MonoBehaviour methods
@@ -264,7 +272,9 @@ namespace ArucoUnity
         Mat[] undistordedImages = new Mat[CamerasNumber];
         for (int i = 0; i < CamerasNumber; i++)
         {
+          // TODO: test
           Imgproc.Undistort(Images[i], out undistordedImages[i], CameraParameters[i].CameraMatrix, CameraParameters[i].DistCoeffs);
+          //Imgproc.Remap(Images[i], out undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], InterpolationFlags.INTER_LINEAR);
         }
         Images = undistordedImages;
       }
