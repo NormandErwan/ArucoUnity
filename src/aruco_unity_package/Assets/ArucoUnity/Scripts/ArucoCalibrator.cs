@@ -3,6 +3,7 @@ using ArucoUnity.Plugin.cv;
 using ArucoUnity.Plugin.std;
 using ArucoUnity.Utility;
 using System;
+using System.IO;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -35,9 +36,12 @@ namespace ArucoUnity
     private bool fixPrincipalPointAtCenter = false;
 
     [SerializeField]
-    [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder." +
-      " The filename is generated automatically.")]
+    [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder.")]
     private string outputFolder = "ArucoUnity/Calibrations/";
+
+    [Tooltip("The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the "
+      + "camera name.")]
+    private string calibrationFilename;
 
     // Properties
 
@@ -85,7 +89,15 @@ namespace ArucoUnity
       }
     }
 
+    /// <summary>
+    /// The output folder for the calibration files, relative to the Application.persistentDataPath folder.
+    /// </summary>
     public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
+
+    /// <summary>
+    /// The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the camera name.
+    /// </summary>
+    public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
     public VectorVectorVectorPoint2f AllCorners { get; protected set; }
 
@@ -304,7 +316,7 @@ namespace ArucoUnity
       Rvecs = rvecs;
       Tvecs = tvecs;
 
-      // Save camera parameters
+      // Create camera parameters
       CameraParameters = new CameraParameters()
       {
         ImageHeight = ArucoCamera.ImageTextures[cameraId].height,
@@ -315,9 +327,19 @@ namespace ArucoUnity
         CameraMatrix = cameraMatrix,
         DistCoeffs = distCoeffs
       };
-      // TODO : take account of outputFolder
-      string CameraParametersFilePath = "calibration.xml"; // TODO : generate name
-      CameraParameters.SaveToXmlFile(CameraParametersFilePath);
+
+      // Save camera parameters
+      string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
+      if (!Directory.Exists(outputFolderPath))
+      {
+        Directory.CreateDirectory(outputFolderPath);
+      }
+
+      string calibrationFilePath = outputFolderPath;
+      calibrationFilePath += (CalibrationFilename == null || CalibrationFilename.Length == 0) ? ArucoCamera.Name : CalibrationFilename;
+      calibrationFilePath += ".xml";
+      
+      CameraParameters.SaveToXmlFile(calibrationFilePath);
     }
 
     protected void UpdateCalibrationFlags()

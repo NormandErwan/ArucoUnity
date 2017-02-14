@@ -38,7 +38,7 @@ namespace ArucoUnity
     private string outputFolder = "ArucoUnity/Images/";
 
     [SerializeField]
-    [Tooltip("The saved image name. The extension (.png) is added automatically. If empty, it will be generated automatically. ")]
+    [Tooltip("The saved image name. The extension (.png) is added automatically. If empty, it will be generated automatically from the ArUco object.")]
     private string imageFilename;
 
     // Properties
