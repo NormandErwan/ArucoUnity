@@ -24,6 +24,10 @@ namespace ArucoUnity
       [Tooltip("Display automatically or not the camera images on screen.")]
       private bool displayImages = true;
 
+      [SerializeField]
+      [Tooltip("Undistort automatically each image according to the camera parameters.")]
+      private bool autoUndistortWithCameraParameters = true;
+
       // Events
 
       public delegate void CameraEventHandler();
@@ -59,6 +63,11 @@ namespace ArucoUnity
       /// Display automatically or not the camera images on screen.
       /// </summary>
       public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
+
+      /// <summary>
+      /// Undistort automatically each image according to the camera parameters.
+      /// </summary>
+      public bool AutoUndistortWithCameraParameters { get { return autoUndistortWithCameraParameters; } set { autoUndistortWithCameraParameters = value; } }
 
       /// <summary>
       /// The number of cameras in the system.
@@ -275,7 +284,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Undistort()
       {
-        if (CameraParameters == null)
+        if (CameraParameters == null || AutoUndistortWithCameraParameters == false)
         {
           return;
         }
