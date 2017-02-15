@@ -39,8 +39,9 @@ namespace ArucoUnity
     [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder.")]
     private string outputFolder = "ArucoUnity/Calibrations/";
 
+    [SerializeField]
     [Tooltip("The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the "
-      + "camera name.")]
+      + "camera name and the current datetime.")]
     private string calibrationFilename;
 
     // Properties
@@ -95,7 +96,8 @@ namespace ArucoUnity
     public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
 
     /// <summary>
-    /// The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the camera name.
+    /// The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the camera name
+    /// and the current datetime.
     /// </summary>
     public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
@@ -336,7 +338,9 @@ namespace ArucoUnity
       }
 
       string calibrationFilePath = outputFolderPath;
-      calibrationFilePath += (CalibrationFilename == null || CalibrationFilename.Length == 0) ? ArucoCamera.Name : CalibrationFilename;
+      calibrationFilePath += (CalibrationFilename == null || CalibrationFilename.Length == 0) 
+        ? ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")
+        : CalibrationFilename;
       calibrationFilePath += ".xml";
       
       CameraParameters.SaveToXmlFile(calibrationFilePath);
