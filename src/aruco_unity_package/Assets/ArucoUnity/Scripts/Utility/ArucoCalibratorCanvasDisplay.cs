@@ -71,52 +71,53 @@ namespace ArucoUnity
       {
         ArucoCamera arucoCamera = arucoCalibrator.ArucoCamera;
 
-        // Configure the grid layout on the arucoCameraImagesRect
-        GridLayoutGroup arucoCameraImagesGrid = arucoCameraImagesRect.GetComponent<GridLayoutGroup>();
-        if (arucoCameraImagesGrid == null)
+        // Configure the arucoCameraImagesRect as a grid of images
+        int gridCols = 1, gridRows = 1;
+        for (int i = 0; i < arucoCamera.CamerasNumber; i++)
         {
-          arucoCameraImagesGrid = arucoCameraImagesRect.gameObject.AddComponent<GridLayoutGroup>();
-        }
-
-        int arucoCameraImagesGridCols = 1;
-        int arucoCameraImagesGridRows = 1;
-        for (int i = 1; i < arucoCamera.CamerasNumber; i += 2)
-        {
-          if (arucoCameraImagesRect.rect.width / arucoCameraImagesGridCols >= arucoCameraImagesRect.rect.height / arucoCameraImagesGridRows)
+          if (gridCols * gridRows > i)
           {
-            arucoCameraImagesGridCols++;
+            continue;
+          }
+          else if (arucoCameraImagesRect.rect.width / gridCols >= arucoCameraImagesRect.rect.height / gridRows)
+          {
+            gridCols++;
           }
           else
           {
-            arucoCameraImagesGridRows++;
+            gridRows++;
           }
         }
-        arucoCameraImagesGrid.cellSize = new Vector2(arucoCameraImagesRect.rect.width / arucoCameraImagesGridCols, arucoCameraImagesRect.rect.height / arucoCameraImagesGridRows);
+        Vector2 gridCellSize = new Vector2(1f / gridCols, 1f / gridRows);
 
+        // Configure the cells of the grid of images
         for (int i = 0; i < arucoCamera.CamerasNumber; i++)
         {
-          // Create a cell on the grid layout for each camera image
-          GameObject imageDisplayParent = new GameObject("Image " + i + " display", typeof(RectTransform));
-          RectTransform imageDisplayParentRect = imageDisplayParent.GetComponent<RectTransform>();
-          imageDisplayParentRect.SetParent(arucoCameraImagesRect);
-          imageDisplayParentRect.anchorMin = Vector2.zero;
-          imageDisplayParentRect.anchorMax = Vector2.one;
-          imageDisplayParentRect.offsetMin = imageDisplayParentRect.offsetMax = Vector2.zero;
-          imageDisplayParentRect.localScale = Vector3.one;
+          int cellCol = i % gridCols; // Range : 0 to (gridCols - 1), images from left ot right
+          int cellRow = (gridRows - 1) - (i / gridCols); // Range : (gridRows - 1) to 0, images from top to bottom
+
+          // Create a cell on the grid for each camera image
+          GameObject cell = new GameObject("Image " + i + " display", typeof(RectTransform));
+          RectTransform cellRect = cell.GetComponent<RectTransform>();
+          cellRect.SetParent(arucoCameraImagesRect);
+          cellRect.anchorMin = new Vector2(1f / gridCols * cellCol, 1f / gridRows * cellRow);
+          cellRect.anchorMax = cellRect.anchorMin + gridCellSize;
+          cellRect.offsetMin = cellRect.offsetMax = Vector2.zero;
+          cellRect.localScale = Vector3.one;
 
           // Create an image display inside the cell
-          GameObject imageDisplay = new GameObject("Image", typeof(RectTransform));
-          RectTransform imageDisplayRect = imageDisplay.GetComponent<RectTransform>();
-          imageDisplayRect.SetParent(imageDisplayParentRect);
-          imageDisplayRect.localScale = arucoCamera.ImageScalesFrontFacing[i];
+          GameObject cellDisplay = new GameObject("Image", typeof(RectTransform));
+          RectTransform cellDisplayRect = cellDisplay.GetComponent<RectTransform>();
+          cellDisplayRect.SetParent(cellRect);
+          cellDisplayRect.localScale = arucoCamera.ImageScalesFrontFacing[i];
 
-          RawImage imageDisplayImage = imageDisplay.AddComponent<RawImage>();
-          imageDisplayImage.texture = arucoCamera.ImageTextures[i];
-          imageDisplayImage.uvRect = arucoCamera.ImageUvRectFlips[i];
+          RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
+          cellDisplayImage.texture = arucoCamera.ImageTextures[i];
+          cellDisplayImage.uvRect = arucoCamera.ImageUvRectFlips[i];
 
-          AspectRatioFitter imageDisplayFitter = imageDisplay.AddComponent<AspectRatioFitter>();
-          imageDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
-          imageDisplayFitter.aspectRatio = arucoCamera.ImageRatios[i];
+          AspectRatioFitter cellDisplayFitter = cellDisplay.AddComponent<AspectRatioFitter>();
+          cellDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+          cellDisplayFitter.aspectRatio = arucoCamera.ImageRatios[i];
         }
       }
 
