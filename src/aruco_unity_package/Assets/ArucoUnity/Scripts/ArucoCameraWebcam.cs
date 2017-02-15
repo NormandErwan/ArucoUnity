@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Utility;
+using System.IO;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -21,7 +22,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("The file path to load the camera parameters.")]
-    private string cameraParametersFilePath = "Assets/ArucoUnity/aruco-calibration.xml";
+    private string cameraParametersFilePath = "ArucoUnity/Calibrations/calibration.xml";
 
     [SerializeField]
     [Tooltip("Preserve the aspect ratio of the webcam image.")]
@@ -210,7 +211,8 @@ namespace ArucoUnity
       // Try to load the camera parameters
       if (CameraParametersFilePath != null)
       {
-        CameraParameters = new CameraParameters[] { Utility.CameraParameters.LoadFromXmlFile(CameraParametersFilePath) };
+        string fullCameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CameraParametersFilePath);
+        CameraParameters = new CameraParameters[] { Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath) };
       }
 
       // Update state
