@@ -107,9 +107,9 @@ namespace ArucoUnity
 
     public VectorMat AllImages { get; protected set; }
 
-    public VectorMat AllCharucoCorners { get; protected set; }
+    public VectorVectorPoint2f AllCharucoCorners { get; protected set; }
 
-    public VectorMat AllCharucoIds { get; protected set; }
+    public VectorVectorInt AllCharucoIds { get; protected set; }
 
     public VectorMat Rvecs { get; protected set; }
 
@@ -292,13 +292,14 @@ namespace ArucoUnity
       if (arucoCharucoBoard != null) 
       {
         CharucoBoard charucoBoard = ArucoBoard.Board as CharucoBoard;
-        AllCharucoCorners = new VectorMat();
-        AllCharucoIds = new VectorMat();
+        AllCharucoCorners = new VectorVectorPoint2f();
+        AllCharucoIds = new VectorVectorInt();
 
         // Interpolate charuco corners using camera parameters
         for (uint i = 0; i < AllIds.Size(); i++)
         {
-          Mat charucoCorners, charucoIds;
+          VectorPoint2f charucoCorners;
+          VectorInt charucoIds;
           Functions.InterpolateCornersCharuco(AllCorners.At(i), AllIds.At(i), AllImages.At(i), charucoBoard, out charucoCorners, out charucoIds);
 
           AllCharucoCorners.PushBack(charucoCorners);
