@@ -396,11 +396,11 @@ extern "C" {
   }
 
   int au_estimatePoseBoard(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, cv::Ptr<cv::aruco::Board>* board,
-    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception) {
+    cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception) {
     int valid = 0;
     try {
-      *rvec = new cv::Mat();
-      *tvec = new cv::Mat();
+      *rvec = new cv::Vec3d();
+      *tvec = new cv::Vec3d();
 
       valid = cv::aruco::estimatePoseBoard(*corners, *ids, *board, *cameraMatrix, *distCoeffs, **rvec, **tvec);
     }
@@ -412,11 +412,11 @@ extern "C" {
   }
   
   bool au_estimatePoseCharucoBoard(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, cv::Ptr<cv::aruco::CharucoBoard>* board,
-    cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception) {
+    cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception) {
     bool validPose = 0;
     try {
-      *rvec = new cv::Mat();
-      *tvec = new cv::Mat();
+      *rvec = new cv::Vec3d();
+      *tvec = new cv::Vec3d();
 
       validPose = cv::aruco::estimatePoseCharucoBoard(*charucoCorners, *charucoIds, *board, *cameraMatrix, *distCoeffs, **rvec, **tvec);
     }

@@ -579,31 +579,31 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static int EstimatePoseBoard(VectorVectorPoint2f corners, VectorInt ids, GridBoard board, VectorMat cameraMatrix, VectorMat distCoeffs,
-        out Mat rvec, out Mat tvec)
+      public static int EstimatePoseBoard(VectorVectorPoint2f corners, VectorInt ids, GridBoard board, Mat cameraMatrix, Mat distCoeffs,
+        out Vec3d rvec, out Vec3d tvec)
       {
         Exception exception = new Exception();
         System.IntPtr rvecPtr, tvecPtr;
 
         int valid = au_estimatePoseBoard(corners.cppPtr, ids.cppPtr, board.cppPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, out rvecPtr, out tvecPtr,
           exception.cppPtr);
-        rvec = new Mat(rvecPtr);
-        tvec = new Mat(tvecPtr);
+        rvec = new Vec3d(rvecPtr);
+        tvec = new Vec3d(tvecPtr);
 
         exception.Check();
         return valid;
       }
 
       public static bool EstimatePoseCharucoBoard(VectorPoint2f charucoCorners, VectorInt charucoIds, CharucoBoard board, Mat cameraMatrix,
-        Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs)
+        Mat distCoeffs, out Vec3d rvec, out Vec3d tvec)
       {
         Exception exception = new Exception();
-        System.IntPtr rvecsPtr, tvecsPtr;
+        System.IntPtr rvecPtr, tvecPtr;
 
         bool valid = au_estimatePoseCharucoBoard(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr,
-          out rvecsPtr, out tvecsPtr, exception.cppPtr);
-        rvecs = new VectorMat(rvecsPtr);
-        tvecs = new VectorMat(tvecsPtr);
+          out rvecPtr, out tvecPtr, exception.cppPtr);
+        rvec = new Vec3d(rvecPtr);
+        tvec = new Vec3d(tvecPtr);
 
         exception.Check();
         return valid;

@@ -250,7 +250,7 @@ extern "C" {
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gae89235944f3bdbaad69d8dbac5340f1c
   ARUCO_UNITY_API int au_estimatePoseBoard(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, cv::Ptr<cv::aruco::Board>* board,
-    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception);
+    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception);
 
   //! \brief Pose estimation for a ChArUco board given some of their corners
   //!
@@ -266,7 +266,7 @@ extern "C" {
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
   ARUCO_UNITY_API bool au_estimatePoseCharucoBoard(std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
-    cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat** rvec, cv::Mat** tvec, cv::Exception* exception);
+    cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception);
 
   //! \brief Pose estimation for single markers.
   //!
