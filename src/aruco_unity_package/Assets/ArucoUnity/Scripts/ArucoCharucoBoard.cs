@@ -71,6 +71,22 @@ namespace ArucoUnity
       }
     }
 
+    public VectorPoint2f DetectedCorners { get; set; }
+
+    public VectorInt DetectedIds { get; set; }
+
+    public bool ValidTransform { get; set; }
+
+    // MonoBehaviour methods
+
+    protected override void Awake()
+    {
+      base.Awake();
+
+      DetectedCorners = null;
+      DetectedIds = null;
+    }
+
     // Methods
 
     /// <summary>

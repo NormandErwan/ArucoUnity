@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using ArucoUnity.Plugin;
 
 namespace ArucoUnity
 {
@@ -92,7 +93,7 @@ namespace ArucoUnity
           }
         }
 
-        // If not found, create the new list
+        // If not found, create the new list attached to this dictionary
         if (arucoObjectsCollection == null)
         {
           ArucoObjects.Add(arucoObject.Dictionary, new HashSet<ArucoObject>());
@@ -137,6 +138,26 @@ namespace ArucoUnity
           ArucoObjects.Remove(arucoObject.Dictionary);
           DictionaryRemoved(arucoObject.Dictionary);
         }
+      }
+
+      // TODO: cache the results
+      public virtual HashSet<T> GetArucoObjects<T>(ArucoUnity.Plugin.Dictionary dictionary) where T : ArucoObject
+      {
+        if (!ArucoObjects.ContainsKey(dictionary))
+        {
+          return null;
+        }
+
+        HashSet<T> arucoObjectsTCollection = new HashSet<T>();
+        foreach (var arucoObject in ArucoObjects[dictionary])
+        {
+          T arucoObjectT = arucoObject as T;
+          if (arucoObjectT != null)
+          {
+            arucoObjectsTCollection.Add(arucoObjectT);
+          }
+        }
+        return arucoObjectsTCollection;
       }
     }
   }

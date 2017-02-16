@@ -1,4 +1,6 @@
-﻿using ArucoUnity.Utility;
+﻿using ArucoUnity.Plugin.cv;
+using ArucoUnity.Plugin.std;
+using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -57,6 +59,24 @@ namespace ArucoUnity
         ids = value;
         OnPropertyUpdated();
       }
+    }
+
+    public VectorVectorPoint2f DetectedCorners { get; set; }
+
+    public VectorVec4i DetectedIds { get; set; }
+
+    public VectorVec3d Rvecs { get; set; }
+
+    public VectorVec3d Tvecs { get; set; }
+
+    // MonoBehaviour methods
+
+    protected override void Awake()
+    {
+      base.Awake();
+
+      DetectedCorners = null;
+      DetectedIds = null;
     }
   }
 

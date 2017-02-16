@@ -70,6 +70,8 @@ namespace ArucoUnity
       }
     }
 
+    public int detectedMarkers { get; set; }
+
     // Methods
 
     /// <summary>

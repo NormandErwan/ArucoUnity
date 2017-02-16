@@ -579,7 +579,7 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static int EstimatePoseBoard(VectorVectorPoint2f corners, VectorInt ids, GridBoard board, Mat cameraMatrix, Mat distCoeffs,
+      public static int EstimatePoseBoard(VectorVectorPoint2f corners, VectorInt ids, Board board, Mat cameraMatrix, Mat distCoeffs,
         out Vec3d rvec, out Vec3d tvec)
       {
         Exception exception = new Exception();
