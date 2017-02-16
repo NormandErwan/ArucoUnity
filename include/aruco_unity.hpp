@@ -68,27 +68,27 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
-  ARUCO_UNITY_API double au_calibrateCameraCharuco1(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds, 
+  ARUCO_UNITY_API double au_calibrateCameraCharuco1(std::vector<std::vector<cv::Point2f>>* charucoCorners, std::vector<std::vector<int>>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
 
   //! \see au_calibrateCameraAruco1().
-  ARUCO_UNITY_API double au_calibrateCameraCharuco2(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds, 
+  ARUCO_UNITY_API double au_calibrateCameraCharuco2(std::vector<std::vector<cv::Point2f>>* charucoCorners, std::vector<std::vector<int>>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, int flags, cv::Exception* exception);
   
   //! \see au_calibrateCameraAruco1().
-  ARUCO_UNITY_API double au_calibrateCameraCharuco3(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds, 
+  ARUCO_UNITY_API double au_calibrateCameraCharuco3(std::vector<std::vector<cv::Point2f>>* charucoCorners, std::vector<std::vector<int>>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     std::vector<cv::Mat>** tvecs, cv::Exception* exception);
   
   //! \see au_calibrateCameraAruco1().
-  ARUCO_UNITY_API double au_calibrateCameraCharuco4(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds, 
+  ARUCO_UNITY_API double au_calibrateCameraCharuco4(std::vector<std::vector<cv::Point2f>>* charucoCorners, std::vector<std::vector<int>>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, 
     cv::Exception* exception);
   
   //! \see au_calibrateCameraAruco1().
-  ARUCO_UNITY_API double au_calibrateCameraCharuco5(std::vector<cv::Mat>* charucoCorners, std::vector<cv::Mat>* charucoIds, 
+  ARUCO_UNITY_API double au_calibrateCameraCharuco5(std::vector<std::vector<cv::Point2f>>* charucoCorners, std::vector<std::vector<int>>* charucoIds,
     cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
 
   //! \brief Detect ChArUco Diamond markers
@@ -105,19 +105,19 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
-  ARUCO_UNITY_API void au_detectCharucoDiamond1(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, 
-    std::vector<int>* markerIds, float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, 
-    std::vector<cv::Vec4i>** diamondIds, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
+  ARUCO_UNITY_API void au_detectCharucoDiamond1(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
+    float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, std::vector<cv::Vec4i>** diamondIds, 
+    cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
 
   //! \see au_detectCharucoDiamond1().
-  ARUCO_UNITY_API void au_detectCharucoDiamond2(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, 
-    std::vector<int>* markerIds, float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, 
-    std::vector<cv::Vec4i>** diamondIds, cv::Mat* cameraMatrix, cv::Exception* exception);
+  ARUCO_UNITY_API void au_detectCharucoDiamond2(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
+    float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, std::vector<cv::Vec4i>** diamondIds, 
+    cv::Mat* cameraMatrix, cv::Exception* exception);
 
   //! \see au_detectCharucoDiamond1().
-  ARUCO_UNITY_API void au_detectCharucoDiamond3(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, 
-    std::vector<int>* markerIds, float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, 
-    std::vector<cv::Vec4i>** diamondIds, cv::Exception* exception);
+  ARUCO_UNITY_API void au_detectCharucoDiamond3(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
+    float squareMarkerLengthRate, std::vector<std::vector<cv::Point2f>>** diamondCorners, std::vector<cv::Vec4i>** diamondIds, 
+    cv::Exception* exception);
 
   //! \brief Basic marker detection.
   //!
@@ -181,15 +181,15 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
-  ARUCO_UNITY_API void au_drawDetectedCornersCharuco1(cv::Mat* image, cv::Mat* charucoCorners, cv::Mat* charucoIds, 
+  ARUCO_UNITY_API void au_drawDetectedCornersCharuco1(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
     cv::Scalar* cornerColor, cv::Exception* exception);
 
   //! \see au_drawDetectedCornersCharuco1().
-  ARUCO_UNITY_API void au_drawDetectedCornersCharuco2(cv::Mat* image, cv::Mat* charucoCorners, cv::Mat* charucoIds, 
+  ARUCO_UNITY_API void au_drawDetectedCornersCharuco2(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, 
     cv::Exception* exception);
 
   //! \see au_drawDetectedCornersCharuco1().
-  ARUCO_UNITY_API void au_drawDetectedCornersCharuco3(cv::Mat* image, cv::Mat* charucoCorners, cv::Exception* exception);
+  ARUCO_UNITY_API void au_drawDetectedCornersCharuco3(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, cv::Exception* exception);
 
   //! \brief Draw a set of detected ChArUco Diamond markers
   //!
@@ -298,17 +298,17 @@ extern "C" {
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
   ARUCO_UNITY_API int au_interpolateCornersCharuco1(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
-    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, 
+    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds,
     cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception);
 
   //! \see au_interpolateCornersCharuco1().
   ARUCO_UNITY_API int au_interpolateCornersCharuco2(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
-    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, 
+    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds,
     cv::Mat* cameraMatrix, cv::Exception* exception);
 
   //! \see au_interpolateCornersCharuco1().
   ARUCO_UNITY_API int au_interpolateCornersCharuco3(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, 
-    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Mat** charucoCorners, cv::Mat** charucoIds, 
+    cv::Mat* image, cv::Ptr<cv::aruco::CharucoBoard>* board, std::vector<cv::Point2f>** charucoCorners, std::vector<int>** charucoIds,
     cv::Exception* exception);
 
   //! \brief Refind not detected markers based on the already detected and the board layout.
