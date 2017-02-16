@@ -111,16 +111,17 @@ namespace ArucoUnity
 
       [DllImport("ArucoUnity")]
       static extern void au_detectCharucoDiamond1(System.IntPtr image, System.IntPtr markerCorners, System.IntPtr markerIds,
-        float squareMarkerLengthRate, System.IntPtr diamondCorners, System.IntPtr diamondIds, System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
-        System.IntPtr exception);
+        float squareMarkerLengthRate, out System.IntPtr diamondCorners, out System.IntPtr diamondIds, System.IntPtr cameraMatrix, 
+        System.IntPtr distCoeffs, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern void au_detectCharucoDiamond2(System.IntPtr image, System.IntPtr markerCorners, System.IntPtr markerIds,
-        float squareMarkerLengthRate, System.IntPtr diamondCorners, System.IntPtr diamondIds, System.IntPtr cameraMatrix, System.IntPtr exception);
+        float squareMarkerLengthRate, out System.IntPtr diamondCorners, out System.IntPtr diamondIds, System.IntPtr cameraMatrix, 
+        System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern void au_detectCharucoDiamond3(System.IntPtr image, System.IntPtr markerCorners, System.IntPtr markerIds,
-        float squareMarkerLengthRate, System.IntPtr diamondCorners, System.IntPtr diamondIds, System.IntPtr exception);
+        float squareMarkerLengthRate, out System.IntPtr diamondCorners, out System.IntPtr diamondIds, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern void au_detectMarkers1(System.IntPtr image, System.IntPtr dictionary, out System.IntPtr corners, out System.IntPtr ids,
@@ -135,16 +136,16 @@ namespace ArucoUnity
         System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern void au_drawCharucoDiamond1(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, out System.IntPtr img,
-        int marginSize, int borderBits, System.IntPtr exception);
+      static extern void au_drawCharucoDiamond1(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, 
+        out System.IntPtr img, int marginSize, int borderBits, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern void au_drawCharucoDiamond2(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, out System.IntPtr img,
-        int marginSize, System.IntPtr exception);
+      static extern void au_drawCharucoDiamond2(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, 
+        out System.IntPtr img, int marginSize, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern void au_drawCharucoDiamond3(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, out System.IntPtr img,
-        System.IntPtr exception);
+      static extern void au_drawCharucoDiamond3(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, 
+        out System.IntPtr img, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern void au_drawDetectedCornersCharuco1(System.IntPtr image, System.IntPtr charucoCorners, System.IntPtr charucoIds,
@@ -392,29 +393,44 @@ namespace ArucoUnity
       }
 
       public static void DetectCharucoDiamond(Mat image, VectorVectorPoint2f markerCorners, VectorInt markerIds, float squareMarkerLengthRate,
-        VectorVectorPoint2f diamondCorners, VectorVec4i diamondIds, Mat cameraMatrix, Mat distCoeffs)
+        out VectorVectorPoint2f diamondCorners, out VectorVec4i diamondIds, Mat cameraMatrix, Mat distCoeffs)
       {
         Exception exception = new Exception();
-        au_detectCharucoDiamond1(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, diamondCorners.cppPtr, diamondIds.cppPtr,
-          cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
+        System.IntPtr diamondCornersPtr, diamondIdsPtr;
+
+        au_detectCharucoDiamond1(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr, 
+          out diamondIdsPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
+        diamondCorners = new VectorVectorPoint2f(diamondCornersPtr);
+        diamondIds = new VectorVec4i(diamondIdsPtr);
+
         exception.Check();
       }
 
       public static void DetectCharucoDiamond(Mat image, VectorVectorPoint2f markerCorners, VectorInt markerIds, float squareMarkerLengthRate,
-        VectorVectorPoint2f diamondCorners, VectorVec4i diamondIds, Mat cameraMatrix)
+        out VectorVectorPoint2f diamondCorners, out VectorVec4i diamondIds, Mat cameraMatrix)
       {
         Exception exception = new Exception();
-        au_detectCharucoDiamond2(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, diamondCorners.cppPtr, diamondIds.cppPtr,
-          cameraMatrix.cppPtr, exception.cppPtr);
+        System.IntPtr diamondCornersPtr, diamondIdsPtr;
+
+        au_detectCharucoDiamond2(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr, 
+          out diamondIdsPtr, cameraMatrix.cppPtr, exception.cppPtr);
+        diamondCorners = new VectorVectorPoint2f(diamondCornersPtr);
+        diamondIds = new VectorVec4i(diamondIdsPtr);
+
         exception.Check();
       }
 
       public static void DetectCharucoDiamond(Mat image, VectorVectorPoint2f markerCorners, VectorInt markerIds, float squareMarkerLengthRate,
-        VectorVectorPoint2f diamondCorners, VectorVec4i diamondIds)
+        out VectorVectorPoint2f diamondCorners, out VectorVec4i diamondIds)
       {
         Exception exception = new Exception();
-        au_detectCharucoDiamond3(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, diamondCorners.cppPtr, diamondIds.cppPtr,
-          exception.cppPtr);
+        System.IntPtr diamondCornersPtr, diamondIdsPtr;
+
+        au_detectCharucoDiamond3(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr, 
+          out diamondIdsPtr, exception.cppPtr);
+        diamondCorners = new VectorVectorPoint2f(diamondCornersPtr);
+        diamondIds = new VectorVec4i(diamondIdsPtr);
+
         exception.Check();
       }
 
@@ -512,24 +528,24 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Dictionary dictionary, VectorVec4i diamondCorners, VectorInt diamondIds, Scalar borderColor)
+      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners, VectorInt diamondIds, Scalar borderColor)
       {
         Exception exception = new Exception();
-        au_drawDetectedDiamonds1(dictionary.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, borderColor.cppPtr, exception.cppPtr);
+        au_drawDetectedDiamonds1(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, borderColor.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Dictionary dictionary, VectorVec4i diamondCorners, VectorInt diamondIds)
+      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners, VectorInt diamondIds)
       {
         Exception exception = new Exception();
-        au_drawDetectedDiamonds2(dictionary.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, exception.cppPtr);
+        au_drawDetectedDiamonds2(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Dictionary dictionary, VectorVec4i diamondCorners)
+      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners)
       {
         Exception exception = new Exception();
-        au_drawDetectedDiamonds3(dictionary.cppPtr, diamondCorners.cppPtr, exception.cppPtr);
+        au_drawDetectedDiamonds3(image.cppPtr, diamondCorners.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
