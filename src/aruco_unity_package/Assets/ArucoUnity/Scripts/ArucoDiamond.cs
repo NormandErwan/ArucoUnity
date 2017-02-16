@@ -17,7 +17,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
-    private int squareSideLength;
+    private float squareSideLength;
 
     [SerializeField]
     [Tooltip("The four ids of the four markers of the diamond.")]
@@ -28,7 +28,7 @@ namespace ArucoUnity
     /// <summary>
     /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
     /// </summary>
-    public int SquareSideLength
+    public float SquareSideLength
     {
       get { return squareSideLength; }
       set

@@ -153,7 +153,7 @@ namespace ArucoUnity
         {
           ids.Set(i, diamond.Ids[i]);
         }
-        Functions.DrawCharucoDiamond(diamond.Dictionary, ids, diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
+        Functions.DrawCharucoDiamond(diamond.Dictionary, ids, (int)diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
       }
 
       // Set the properties
