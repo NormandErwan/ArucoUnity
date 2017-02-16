@@ -250,7 +250,7 @@ extern "C" {
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#gae89235944f3bdbaad69d8dbac5340f1c
   ARUCO_UNITY_API int au_estimatePoseBoard(std::vector<std::vector<cv::Point2f>>* corners, std::vector<int>* ids, cv::Ptr<cv::aruco::Board>* board,
-    std::vector<cv::Mat>* cameraMatrix, std::vector<cv::Mat>* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception);
+    cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Exception* exception);
 
   //! \brief Pose estimation for a ChArUco board given some of their corners
   //!
