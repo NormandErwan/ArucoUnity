@@ -201,15 +201,15 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
-  ARUCO_UNITY_API void au_drawDetectedDiamonds1(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, std::vector<int>* diamondIds,
-    cv::Scalar* borderColor, cv::Exception* exception);
+  ARUCO_UNITY_API void au_drawDetectedDiamonds1(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, 
+    std::vector<cv::Vec4i>* diamondIds, cv::Scalar* borderColor, cv::Exception* exception);
 
   //! \see au_drawDetectedDiamonds1().
-  ARUCO_UNITY_API void au_drawDetectedDiamonds2(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, std::vector<int>* diamondIds,
-    cv::Exception* exception);
+  ARUCO_UNITY_API void au_drawDetectedDiamonds2(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, 
+    std::vector<cv::Vec4i>* diamondIds, cv::Exception* exception);
 
   //! \see au_drawDetectedDiamonds1().
-  ARUCO_UNITY_API void au_drawDetectedDiamonds3(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, cv::Exception* exception);
+  ARUCO_UNITY_API void au_drawDetectedDiamonds3(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, cv::Exception* exception);
 
   //! \brief Draw detected markers in image.
   //!

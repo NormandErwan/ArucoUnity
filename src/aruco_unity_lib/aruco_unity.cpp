@@ -322,7 +322,7 @@ extern "C" {
     }
   }
 
-  void au_drawDetectedDiamonds1(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, std::vector<int>* diamondIds, cv::Scalar* borderColor, 
+  void au_drawDetectedDiamonds1(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, std::vector<cv::Vec4i>* diamondIds, cv::Scalar* borderColor,
     cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedDiamonds(*image, *diamondCorners, *diamondIds, *borderColor);
@@ -333,7 +333,7 @@ extern "C" {
     }
   }
 
-  void au_drawDetectedDiamonds2(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, std::vector<int>* diamondIds, cv::Exception* exception) {
+  void au_drawDetectedDiamonds2(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, std::vector<cv::Vec4i>* diamondIds, cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedDiamonds(*image, *diamondCorners, *diamondIds);
     }
@@ -343,7 +343,7 @@ extern "C" {
     }
   }
 
-  void au_drawDetectedDiamonds3(cv::Mat* image, std::vector<cv::Vec4i>* diamondCorners, cv::Exception* exception) {
+  void au_drawDetectedDiamonds3(cv::Mat* image, std::vector<std::vector<cv::Point2f>>* diamondCorners, cv::Exception* exception) {
     try {
       cv::aruco::drawDetectedDiamonds(*image, *diamondCorners);
     }

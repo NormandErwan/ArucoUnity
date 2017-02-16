@@ -528,21 +528,21 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners, VectorInt diamondIds, Scalar borderColor)
+      public static void DrawDetectedDiamonds(Mat image, VectorVectorPoint2f diamondCorners, VectorVec4i diamondIds, Scalar borderColor)
       {
         Exception exception = new Exception();
         au_drawDetectedDiamonds1(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, borderColor.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners, VectorInt diamondIds)
+      public static void DrawDetectedDiamonds(Mat image, VectorVectorPoint2f diamondCorners, VectorVec4i diamondIds)
       {
         Exception exception = new Exception();
         au_drawDetectedDiamonds2(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Mat image, VectorVec4i diamondCorners)
+      public static void DrawDetectedDiamonds(Mat image, VectorVectorPoint2f diamondCorners)
       {
         Exception exception = new Exception();
         au_drawDetectedDiamonds3(image.cppPtr, diamondCorners.cppPtr, exception.cppPtr);
