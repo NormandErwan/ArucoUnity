@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.cv;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -10,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Describes the shared properties of the ArUco boards.
     /// </summary>
-    public abstract class ArucoBoard : ArucoObject
+    public abstract class ArucoBoard<T> : ArucoObject where T : Board
     {
       // Editor fields
 
@@ -36,12 +38,12 @@ namespace ArucoUnity
       /// <summary>
       /// The image size for drawing the board.
       /// </summary>
-      public Plugin.cv.Size ImageSize { get; protected set; }
+      public Size ImageSize { get; protected set; }
 
       /// <summary>
       /// The associated board from the ArucoUnity plugin library.
       /// </summary>
-      public Plugin.Board Board { get; protected set; }
+      public T Board { get; protected set; }
 
       // MonoBehaviour methods
 
@@ -52,7 +54,7 @@ namespace ArucoUnity
       {
         base.Awake();
 
-        ImageSize = new Plugin.cv.Size();
+        ImageSize = new Size();
         UpdateBoard();
 
         base.PropertyUpdated += ArucoBoard_PropertyUpdated;

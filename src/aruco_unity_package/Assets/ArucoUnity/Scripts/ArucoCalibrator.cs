@@ -21,7 +21,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("The ArUco board to use for calibrate.")]
-    protected ArucoBoard arucoBoard;
+    protected ArucoBoard<Board> arucoBoard;
 
     [SerializeField]
     private bool applyRefineStrategy = false;
@@ -46,7 +46,7 @@ namespace ArucoUnity
 
     // Properties
 
-    public ArucoBoard ArucoBoard { get { return arucoBoard; } set { arucoBoard = value; } }
+    public ArucoBoard<Board> ArucoBoard { get { return arucoBoard; } set { arucoBoard = value; } }
 
     public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
 
@@ -288,10 +288,9 @@ namespace ArucoUnity
       double reprojectionError = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContanated, markerCounterPerFrame, ArucoBoard.Board,
         imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, (int)CalibrationFlags);
 
-      ArucoCharucoBoard arucoCharucoBoard = ArucoBoard as ArucoCharucoBoard;
-      if (arucoCharucoBoard != null) 
+      CharucoBoard charucoBoard = ArucoBoard.Board as CharucoBoard;
+      if (charucoBoard != null)
       {
-        CharucoBoard charucoBoard = ArucoBoard.Board as CharucoBoard;
         AllCharucoCorners = new VectorVectorPoint2f();
         AllCharucoIds = new VectorVectorInt();
 

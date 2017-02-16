@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using ArucoUnity.Plugin.std;
 using ArucoUnity.Utility;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace ArucoUnity
   /// <summary>
   /// Describes a ChArUco board.
   /// </summary>
-  public class ArucoCharucoBoard : ArucoBoard
+  public class ArucoCharucoBoard : ArucoBoard<CharucoBoard>
   {
     // Editor fields
 
