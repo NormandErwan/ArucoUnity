@@ -252,7 +252,7 @@ extern "C" {
     }
   }
 
-  void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Vec3d* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec, float length, 
+  void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec, float length, 
     cv::Exception* exception)
   {
     try {

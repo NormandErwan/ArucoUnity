@@ -159,7 +159,7 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga16fda651a4e6a8f5747a85cbb6b400a2
-  ARUCO_UNITY_API void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Vec3d* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec,
+  ARUCO_UNITY_API void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec,
     float length, cv::Exception* exception);
 
   //! \brief Draw a ChArUco Diamond marker.
