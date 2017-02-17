@@ -99,6 +99,8 @@ namespace ArucoUnity
       ImageSize.width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
       ImageSize.height = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
 
+      AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
+
       Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
     }
   }

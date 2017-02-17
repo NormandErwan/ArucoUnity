@@ -61,9 +61,13 @@ namespace ArucoUnity
       }
     }
 
+    public float AxisLength { get; protected set; }
+
     public VectorVectorPoint2f DetectedCorners { get; set; }
 
     public VectorVec4i DetectedIds { get; set; }
+
+    public int DetectedMarkers { get; set; }
 
     public VectorVec3d Rvecs { get; set; }
 
@@ -71,12 +75,34 @@ namespace ArucoUnity
 
     // MonoBehaviour methods
 
+    /// <summary>
+    /// Initialize the properties and suscribe to <see cref="ArucoObject.PropertyUpdated"/>.
     protected override void Awake()
     {
       base.Awake();
 
       DetectedCorners = null;
       DetectedIds = null;
+
+      base.PropertyUpdated += ArucoBoard_PropertyUpdated;
+    }
+
+    /// <summary>
+    /// Unsuscribe from events.
+    /// </summary>
+    protected void OnDestroy()
+    {
+      base.PropertyUpdated -= ArucoBoard_PropertyUpdated;
+    }
+
+    // Methods
+
+    /// <summary>
+    /// Update the properties.
+    /// </summary>
+    private void ArucoBoard_PropertyUpdated(ArucoObject currentArucoObject)
+    {
+      AxisLength = SquareSideLength * 0.5f;
     }
   }
 

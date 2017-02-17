@@ -45,6 +45,8 @@ namespace ArucoUnity
       /// </summary>
       public T Board { get; protected set; }
 
+      public float AxisLength { get; protected set; }
+
       public Vec3d Rvec { get; set; }
 
       public Vec3d Tvec { get; set; }

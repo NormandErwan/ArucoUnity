@@ -413,6 +413,7 @@ namespace ArucoUnity
 
             arucoDiamond.DetectedCorners = diamondCorners;
             arucoDiamond.DetectedIds = diamondIds;
+            arucoDiamond.DetectedMarkers = (diamondIds != null) ? (int)diamondIds.Size() : 0;
           }
 
          MarkerCorners[cameraId][dictionary] = markerCorners;
@@ -509,6 +510,7 @@ namespace ArucoUnity
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
+          CameraParameters[] cameraParameters = ArucoCamera.CameraParameters;
 
           // Draw the detected markers
           // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
@@ -528,38 +530,52 @@ namespace ArucoUnity
           // Draw the detected grid boards
           foreach (var arucoGridBoard in GetArucoObjects<ArucoGridBoard>(dictionary))
           {
-            if (DrawAxes && arucoGridBoard.MarkersUsedForEstimation > 0)
+            if (DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
             {
-              // TODO: draw axis
+              Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+                arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
+              updatedCameraImage = true;
             }
           }
 
           // Draw the detected charuco boards
           foreach (var arucoCharucoBoard in GetArucoObjects<ArucoCharucoBoard>(dictionary))
           {
-            if (DrawDetectedCharucoMarkers && arucoCharucoBoard.InterpolatedCorners > 0)
+            if (arucoCharucoBoard.InterpolatedCorners > 0 && arucoCharucoBoard.Rvec != null)
             {
-              Functions.DrawDetectedCornersCharuco(cameraImages[cameraId], arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
-            }
+              if (DrawDetectedCharucoMarkers)
+              {
+                Functions.DrawDetectedCornersCharuco(cameraImages[cameraId], arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
+              }
 
-            if (DrawAxes && arucoCharucoBoard.ValidTransform)
-            {
-              // TODO: draw axis
+              if (DrawAxes && cameraParameters != null && arucoCharucoBoard.ValidTransform)
+              {
+                Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+                  arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
+              }
             }
           }
 
           // Draw the detected diamonds
           foreach (var arucoDiamond in GetArucoObjects<ArucoDiamond>(dictionary))
           {
-            if (DrawDetectedDiamonds && arucoDiamond.DetectedIds != null && arucoDiamond.DetectedIds.Size() > 0)
+            if (arucoDiamond.DetectedMarkers > 0)
             {
-              // TODO: fix
-              //Functions.DrawDetectedDiamonds(cameraImages[cameraId], arucoDiamond.DetectedCorners, arucoDiamond.DetectedIds);
-            }
+              if (DrawDetectedDiamonds)
+              {
+                // TODO: fix
+                //Functions.DrawDetectedDiamonds(cameraImages[cameraId], arucoDiamond.DetectedCorners, arucoDiamond.DetectedIds);
+              }
 
-            if (DrawAxes && arucoDiamond.Rvecs != null)
-            {
-              // TODO: draw axis
+              // TODO: detection conflit between boards and diamonds
+              if (DrawAxes && arucoDiamond.Rvecs != null)
+              {
+                for (uint i = 0; i < arucoDiamond.DetectedMarkers; i++)
+                {
+                  Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+                    arucoDiamond.Rvecs.At(i), arucoDiamond.Tvecs.At(i), arucoDiamond.AxisLength);
+                }
+              }
             }
           }
         }
