@@ -361,7 +361,7 @@ namespace ArucoUnity
             }
           }
 
-          // Detect charuco corners or set the detected properties to null
+          // Detect charuco boards
           foreach (var arucoCharucoBoard in GetArucoObjects<ArucoCharucoBoard>(dictionary))
           {
             VectorPoint2f charucoCorners = null;
@@ -371,14 +371,19 @@ namespace ArucoUnity
             {
               if (cameraParameters == null)
               {
-                Functions.InterpolateCornersCharuco(markerCorners, markerIds, cameraImage, arucoCharucoBoard.Board, out charucoCorners,
-                  out charucoIds);
+                arucoCharucoBoard.InterpolatedCorners = Functions.InterpolateCornersCharuco(markerCorners, markerIds, cameraImage, 
+                  arucoCharucoBoard.Board, out charucoCorners, out charucoIds);
               }
               else
               {
-                Functions.InterpolateCornersCharuco(markerCorners, markerIds, cameraImage, arucoCharucoBoard.Board, out charucoCorners,
-                  out charucoIds, cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs);
+                arucoCharucoBoard.InterpolatedCorners = Functions.InterpolateCornersCharuco(markerCorners, markerIds, cameraImage, 
+                  arucoCharucoBoard.Board, out charucoCorners, out charucoIds, cameraParameters[cameraId].CameraMatrix, 
+                  cameraParameters[cameraId].DistCoeffs);
               }
+            }
+            else
+            {
+              arucoCharucoBoard.InterpolatedCorners = 0;
             }
 
             arucoCharucoBoard.DetectedCorners = charucoCorners;
@@ -395,6 +400,7 @@ namespace ArucoUnity
             {
               if (cameraParameters == null)
               {
+                // TODO: handle multiple diamond detection (can do only one detection for all the diamonds?)
                 Functions.DetectCharucoDiamond(cameraImage, markerCorners, markerIds, arucoDiamond.SquareSideLength / arucoDiamond.MarkerSideLength,
                   out diamondCorners, out diamondIds);
               }
@@ -409,7 +415,7 @@ namespace ArucoUnity
             arucoDiamond.DetectedIds = diamondIds;
           }
 
-          MarkerCorners[cameraId][dictionary] = markerCorners;
+         MarkerCorners[cameraId][dictionary] = markerCorners;
           MarkerIds[cameraId][dictionary] = markerIds;
           RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
         }
@@ -453,9 +459,10 @@ namespace ArucoUnity
           // Estimate grid board transforms
           foreach (var arucoGridBoard in GetArucoObjects<ArucoGridBoard>(dictionary))
           {
-            Vec3d rvec, tvec;
-            arucoGridBoard.detectedMarkers = Functions.EstimatePoseBoard(MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary], 
-              arucoGridBoard.Board, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvec, out tvec);
+            Vec3d rvec = null, tvec = null;
+            // TODO: fix crash
+            //arucoGridBoard.MarkersUsedForEstimation = Functions.EstimatePoseBoard(MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary], 
+            //  arucoGridBoard.Board, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvec, out tvec);
 
             arucoGridBoard.Rvec = rvec;
             arucoGridBoard.Tvec = tvec;
@@ -504,6 +511,7 @@ namespace ArucoUnity
           Dictionary dictionary = arucoObjectDictionary.Key;
 
           // Draw the detected markers
+          // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
           if (DrawDetectedMarkers && detectedMarkers[cameraId][dictionary] > 0)
           {
             Functions.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
@@ -520,37 +528,38 @@ namespace ArucoUnity
           // Draw the detected grid boards
           foreach (var arucoGridBoard in GetArucoObjects<ArucoGridBoard>(dictionary))
           {
-            if (DrawAxes && arucoGridBoard.detectedMarkers > 0)
+            if (DrawAxes && arucoGridBoard.MarkersUsedForEstimation > 0)
             {
-              // TODO
+              // TODO: draw axis
             }
           }
 
           // Draw the detected charuco boards
           foreach (var arucoCharucoBoard in GetArucoObjects<ArucoCharucoBoard>(dictionary))
           {
-            if (DrawDetectedCharucoMarkers)
+            if (DrawDetectedCharucoMarkers && arucoCharucoBoard.InterpolatedCorners > 0)
             {
               Functions.DrawDetectedCornersCharuco(cameraImages[cameraId], arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
             }
 
             if (DrawAxes && arucoCharucoBoard.ValidTransform)
             {
-              // TODO
+              // TODO: draw axis
             }
           }
 
           // Draw the detected diamonds
           foreach (var arucoDiamond in GetArucoObjects<ArucoDiamond>(dictionary))
           {
-            if (DrawDetectedDiamonds)
+            if (DrawDetectedDiamonds && arucoDiamond.DetectedIds != null && arucoDiamond.DetectedIds.Size() > 0)
             {
-              Functions.DrawDetectedDiamonds(cameraImages[cameraId], arucoDiamond.DetectedCorners, arucoDiamond.DetectedIds);
+              // TODO: fix
+              //Functions.DrawDetectedDiamonds(cameraImages[cameraId], arucoDiamond.DetectedCorners, arucoDiamond.DetectedIds);
             }
 
             if (DrawAxes && arucoDiamond.Rvecs != null)
             {
-              // TODO
+              // TODO: draw axis
             }
           }
         }

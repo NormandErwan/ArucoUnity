@@ -75,6 +75,8 @@ namespace ArucoUnity
 
     public VectorInt DetectedIds { get; set; }
 
+    public int InterpolatedCorners { get; set; }
+
     public bool ValidTransform { get; set; }
 
     // MonoBehaviour methods
