@@ -609,22 +609,23 @@ namespace ArucoUnity
       {
         Dictionary dictionary = arucoObjectDictionary.Key;
 
-        // Place ArUco markers
-        for (uint i = 0; i < detectedMarkers[cameraId][dictionary]; i++)
+        // Place markers
+        foreach (var arucoMarker in GetArucoObjects<ArucoMarker>(dictionary))
         {
-          int markerId = MarkerIds[cameraId][dictionary].At(i);
-
-          foreach (var arucoObject in arucoObjectDictionary.Value)
+          for (uint i = 0; i < detectedMarkers[cameraId][dictionary]; i++)
           {
-            ArucoMarker marker = arucoObject as ArucoMarker;
-            if (marker != null && marker.Id == markerId)
+            if (arucoMarker.Id == MarkerIds[cameraId][dictionary].At(i))
             {
-              PlaceArucoObject(marker, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
+              PlaceArucoObject(arucoMarker, Rvecs[cameraId][dictionary].At(i), Tvecs[cameraId][dictionary].At(i), cameraId);
             }
           }
         }
 
-        // TODO: place grid board, charuco board, diamond
+        // Place grid board
+
+        // Place charuco board
+
+        // Place diamond
       }
     }
 

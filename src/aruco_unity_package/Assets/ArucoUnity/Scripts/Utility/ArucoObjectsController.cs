@@ -50,6 +50,8 @@ namespace ArucoUnity
       /// <summary>
       /// The list of the used ArUco objects.
       /// </summary>
+      // TODO: replace the HashSet with a Dictionary<ArucoId, ArucoObject>, where ArucoId is a struct with Type and Id (calculated from parameters 
+      // for boards and diamonds) in order to reduce ArucoTracker complexity
       public Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
