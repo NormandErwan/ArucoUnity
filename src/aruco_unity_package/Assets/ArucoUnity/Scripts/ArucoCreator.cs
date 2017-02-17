@@ -172,6 +172,7 @@ namespace ArucoUnity
     /// </summary>
     public virtual void Draw()
     {
+      ImagePlane.SetActive(true);
       ImagePlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
     }
 
