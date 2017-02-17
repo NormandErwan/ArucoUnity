@@ -136,6 +136,10 @@ namespace ArucoUnity
         System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
+      static extern void au_drawAxis(System.IntPtr image, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr rvec,
+        System.IntPtr tvec, float length, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
       static extern void au_drawCharucoDiamond1(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength, 
         out System.IntPtr img, int marginSize, int borderBits, System.IntPtr exception);
 
@@ -470,6 +474,13 @@ namespace ArucoUnity
         corners = new VectorVectorPoint2f(cornersPtr);
         ids = new VectorInt(idsPtr);
 
+        exception.Check();
+      }
+
+      public static void DrawAxis(Mat image, Mat cameraMatrix, Mat distCoeffs, Vec3d rvec, Vec3d tvec, float length)
+      {
+        Exception exception = new Exception();
+        au_drawAxis(image.cppPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, rvec.cppPtr, tvec.cppPtr, length, exception.cppPtr);
         exception.Check();
       }
 

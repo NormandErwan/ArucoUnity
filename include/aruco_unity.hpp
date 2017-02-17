@@ -148,6 +148,20 @@ extern "C" {
   ARUCO_UNITY_API void au_detectMarkers3(cv::Mat* image, cv::Ptr<cv::aruco::Dictionary>* dictionary, std::vector<std::vector<cv::Point2f>>** corners,
     std::vector<int>** ids, cv::Exception* exception);
 
+  //! \brief Draw coordinate system axis from pose estimation. 
+  //!
+  //! \param image Input/output image.
+  //! \param cameraMatrix Input 3x3 floating-point camera matrix.
+  //! \param distCoeffs Vector of distortion coefficients.
+  //! \param rvec Rotation vector of the coordinate system that will be drawn.
+  //! \param tvec Translation vector of the coordinate system that will be drawn.
+  //! \param exception Length of the painted axis in the same unit than tvec (usually in meters).
+  //!
+  //! See the OpenCV documentation for more information: 
+  //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga16fda651a4e6a8f5747a85cbb6b400a2
+  ARUCO_UNITY_API void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Vec3d* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec,
+    float length, cv::Exception* exception);
+
   //! \brief Draw a ChArUco Diamond marker.
   //!
   //! \param dictionary Dictionary of markers indicating the type of markers.

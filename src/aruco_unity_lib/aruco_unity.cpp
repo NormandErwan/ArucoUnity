@@ -252,6 +252,18 @@ extern "C" {
     }
   }
 
+  void au_drawAxis(cv::Mat* image, cv::Mat* cameraMatrix, cv::Vec3d* distCoeffs, cv::Vec3d* rvec, cv::Vec3d* tvec, float length, 
+    cv::Exception* exception)
+  {
+    try {
+      cv::aruco::drawAxis(*image, *cameraMatrix, *distCoeffs, *rvec, *tvec, length);
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return;
+    }
+  }
+
   void au_drawCharucoDiamond1(cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Vec4i* ids, int squareLength, int markerLength, cv::Mat** img, 
     int marginSize, int borderBits, cv::Exception* exception) {
     try {
