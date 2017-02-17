@@ -25,7 +25,7 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.")]
-    private int squareSideLength;
+    private float squareSideLength;
 
     // Properties
 
@@ -60,7 +60,7 @@ namespace ArucoUnity
     /// <summary>
     /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
     /// </summary>
-    public int SquareSideLength
+    public float SquareSideLength
     {
       get { return squareSideLength; }
       set
@@ -94,8 +94,8 @@ namespace ArucoUnity
     /// </summary>
     protected override void UpdateBoard()
     {
-      ImageSize.width = SquaresNumberX * SquareSideLength + 2 * MarginsSize;
-      ImageSize.height = SquaresNumberY * SquareSideLength + 2 * MarginsSize;
+      ImageSize.width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
+      ImageSize.height = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
 
       Board = CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
     }
