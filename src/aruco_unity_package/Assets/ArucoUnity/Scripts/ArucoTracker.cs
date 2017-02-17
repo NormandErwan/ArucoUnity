@@ -17,7 +17,9 @@ namespace ArucoUnity
   {
     // Constants
 
-    protected float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+    protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+
+    protected readonly Color REJECTED_MARKERS_CANDIDATES_COLOR = new Color(100, 0, 255);
 
     // Editor fields
 
@@ -416,7 +418,7 @@ namespace ArucoUnity
             arucoDiamond.DetectedMarkers = (diamondIds != null) ? (int)diamondIds.Size() : 0;
           }
 
-         MarkerCorners[cameraId][dictionary] = markerCorners;
+          MarkerCorners[cameraId][dictionary] = markerCorners;
           MarkerIds[cameraId][dictionary] = markerIds;
           RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
         }
@@ -523,7 +525,7 @@ namespace ArucoUnity
           // Draw the rejected marker candidates
           if (DrawRejectedCandidates && RejectedCandidateCorners[cameraId][dictionary].Size() > 0)
           {
-            Functions.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], new Color(100, 0, 255));
+            Functions.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], REJECTED_MARKERS_CANDIDATES_COLOR);
             updatedCameraImage = true;
           }
 
@@ -546,12 +548,14 @@ namespace ArucoUnity
               if (DrawDetectedCharucoMarkers)
               {
                 Functions.DrawDetectedCornersCharuco(cameraImages[cameraId], arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
+                updatedCameraImage = true;
               }
 
               if (DrawAxes && cameraParameters != null && arucoCharucoBoard.ValidTransform)
               {
                 Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
                   arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
+                updatedCameraImage = true;
               }
             }
           }
@@ -565,15 +569,17 @@ namespace ArucoUnity
               {
                 // TODO: fix
                 //Functions.DrawDetectedDiamonds(cameraImages[cameraId], arucoDiamond.DetectedCorners, arucoDiamond.DetectedIds);
+                updatedCameraImage = true;
               }
 
-              // TODO: detection conflit between boards and diamonds
               if (DrawAxes && arucoDiamond.Rvecs != null)
               {
                 for (uint i = 0; i < arucoDiamond.DetectedMarkers; i++)
                 {
-                  Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
-                    arucoDiamond.Rvecs.At(i), arucoDiamond.Tvecs.At(i), arucoDiamond.AxisLength);
+                  // TODO: fix
+                  //Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+                  //  arucoDiamond.Rvecs.At(i), arucoDiamond.Tvecs.At(i), arucoDiamond.AxisLength);
+                  updatedCameraImage = true;
                 }
               }
             }
