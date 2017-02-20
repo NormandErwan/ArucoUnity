@@ -1,8 +1,8 @@
 # ArucoUnity
 
 *.unitypackage
-*.png*
-*.xml*
+**/Assets/ArucoUnity/Images*
+**/Assets/ArucoUnity/Calibrations*
 
 # Unity
 
