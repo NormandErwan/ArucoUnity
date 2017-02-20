@@ -18,7 +18,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The parameters to use for the marker detection.")]
-      private ArucoDetectorParametersController detectorParametersController;
+      private DetectorParametersController detectorParametersController;
 
       [SerializeField]
       [Tooltip("Start automatically when the configuration is done. Call alternatively StartDetector().")]
