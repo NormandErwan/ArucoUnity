@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.std;
-using ArucoUnity.Utility;
+﻿using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
