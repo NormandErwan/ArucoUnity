@@ -102,46 +102,11 @@ namespace ArucoUnity
       {
         get
         {
-          // Initialize the images and the undistortion maps for the first time
-          if (images == null)
-          {
-            images = new Mat[CamerasNumber];
-            imageDataSizes = new int[CamerasNumber];
-            undistordedImages = new Mat[CamerasNumber];
-            undistordedImages_maps = new Mat[CamerasNumber][];
-            Mat undistordedImages_R = new Mat();
-
-            for (int i = 0; i < CamerasNumber; i++)
-            {
-              // Image
-              byte[] imageData = ImageTextures[i].GetRawTextureData();
-              images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
-              imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
-
-              // Undistortion maps
-              Mat cameraMatrix = CameraParameters[i].CameraMatrix;
-              undistordedImages_maps[i] = new Mat[2]; // map1 and map2
-              Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters[i].DistCoeffs, undistordedImages_R,
-                cameraMatrix, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
-              undistordedImages[i] = new Mat(undistordedImages_maps[i][0].size, ImageType(ImageTextures[i]));
-            }
-            imagesGetThisFrame = true;
-          }
-          // Update the images data only once per frame
-          else if (!imagesGetThisFrame)
-          {
-            for (int i = 0; i < CamerasNumber; i++)
-            {
-              images[i].dataByte = ImageTextures[i].GetRawTextureData();
-            }
-            imagesGetThisFrame = true;
-          }
-
           return images;
         }
         set
         {
-          if (value.Length == CamerasNumber)
+          if (images != null && value != null && value.Length == CamerasNumber)
           {
             for (int i = 0; i < CamerasNumber; i++)
             {
@@ -199,7 +164,6 @@ namespace ArucoUnity
       protected int[] imageDataSizes;
       protected Mat[] undistordedImages;
       protected Mat[][] undistordedImages_maps;
-      protected bool imagesGetThisFrame;
 
       // MonoBehaviour methods
 
@@ -211,7 +175,6 @@ namespace ArucoUnity
         IsConfigured = false;
         IsStarted = false;
         ImagesUpdatedThisFrame = false;
-        imagesGetThisFrame = false;
       }
 
       /// <summary>
@@ -230,7 +193,6 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Update()
       {
-        imagesGetThisFrame = false;
         imagesHasBeenSetThisFrame = false;
 
         UpdateCameraImages();
@@ -306,6 +268,7 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStarted()
       {
+        InitializeMatImages();
         Started();
       }
 
@@ -330,6 +293,7 @@ namespace ArucoUnity
       /// </summary>
       protected void OnImagesUpdated()
       {
+        UpdateMatImages();
         ImagesUpdated();
       }
 
@@ -356,6 +320,44 @@ namespace ArucoUnity
             throw new ArgumentException("This type of texture is actually not supported: " + imageTexture.format + ".", "imageTexture");
         }
         return type;
+      }
+
+      /// <summary>
+      /// Initialize the <see cref="Images"/> property, the undistortion maps and the undistorded images.
+      /// </summary>
+      protected void InitializeMatImages()
+      {
+        images = new Mat[CamerasNumber];
+        imageDataSizes = new int[CamerasNumber];
+        undistordedImages = new Mat[CamerasNumber];
+        undistordedImages_maps = new Mat[CamerasNumber][];
+        Mat undistordedImages_R = new Mat();
+
+        for (int i = 0; i < CamerasNumber; i++)
+        {
+          // Image
+          byte[] imageData = ImageTextures[i].GetRawTextureData();
+          images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
+          imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
+
+          // Undistortion maps
+          Mat cameraMatrix = CameraParameters[i].CameraMatrix;
+          undistordedImages_maps[i] = new Mat[2]; // map1 and map2
+          Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters[i].DistCoeffs, undistordedImages_R,
+            cameraMatrix, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
+          undistordedImages[i] = new Mat(undistordedImages_maps[i][0].size, ImageType(ImageTextures[i]));
+        }
+      }
+
+      /// <summary>
+      /// Update the <see cref="Images"/> property.
+      /// </summary>
+      protected void UpdateMatImages()
+      {
+        for (int i = 0; i < CamerasNumber; i++)
+        {
+          images[i].dataByte = ImageTextures[i].GetRawTextureData();
+        }
       }
     }
   }
