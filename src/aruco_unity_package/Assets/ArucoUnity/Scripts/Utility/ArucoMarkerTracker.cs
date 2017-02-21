@@ -35,8 +35,8 @@ namespace ArucoUnity
 
       Functions.DetectMarkers(arucoTracker.ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, 
         arucoTracker.DetectorParameters, out rejectedCandidateCorners);
-      arucoTracker.DetectedMarkers[cameraId][dictionary] = (int)markerIds.Size();
 
+      arucoTracker.DetectedMarkers[cameraId][dictionary] = (int)markerIds.Size();
       arucoTracker.MarkerCorners[cameraId][dictionary] = markerCorners;
       arucoTracker.MarkerIds[cameraId][dictionary] = markerIds;
       arucoTracker.RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;

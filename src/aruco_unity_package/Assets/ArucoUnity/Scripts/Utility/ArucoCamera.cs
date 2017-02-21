@@ -1,5 +1,7 @@
 ﻿using ArucoUnity.Plugin.cv;
 using System;
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -193,18 +195,14 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Update()
       {
-        imagesHasBeenSetThisFrame = false;
-
         UpdateCameraImages();
       }
 
       /// <summary>
-      /// Apply on <see cref="ImageTextures"/> the changes made on <see cref="Images"/> during the frame.
+      /// Apply the changes made on the <see cref="Images"/> during the frame to the <see cref="ImageTextures"/>.
       /// </summary>
       protected virtual void LateUpdate()
       {
-        Undistort();
-
         if (imagesHasBeenSetThisFrame)
         {
           for (int i = 0; i < CamerasNumber; i++)
@@ -212,6 +210,7 @@ namespace ArucoUnity
             ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
             ImageTextures[i].Apply(false);
           }
+          imagesHasBeenSetThisFrame = false;
         }
       }
 
@@ -246,7 +245,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Undistort()
       {
-        if (CameraParameters == null || AutoUndistortWithCameraParameters == false)
+        if (CameraParameters == null)
         {
           return;
         }
@@ -269,6 +268,7 @@ namespace ArucoUnity
       protected void OnStarted()
       {
         InitializeMatImages();
+        StartCoroutine("AutoUndistort");
         Started();
       }
 
@@ -277,6 +277,7 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStopped()
       {
+        StopCoroutine("AutoUndistort");
         Stopped();
       }
 
@@ -350,13 +351,28 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update the <see cref="Images"/> property.
+      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property.
       /// </summary>
       protected void UpdateMatImages()
       {
         for (int i = 0; i < CamerasNumber; i++)
         {
           images[i].dataByte = ImageTextures[i].GetRawTextureData();
+        }
+      }
+
+      /// <summary>
+      /// When the camera is started, undistort the images if <see cref="AutoUndistortWithCameraParameters"/> is true.
+      /// </summary>
+      protected IEnumerator AutoUndistort()
+      {
+        while (true)
+        {
+          yield return null;
+          if (AutoUndistortWithCameraParameters)
+          {
+            Undistort();
+          }
         }
       }
     }

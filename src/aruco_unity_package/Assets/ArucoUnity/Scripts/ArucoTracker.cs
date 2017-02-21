@@ -4,6 +4,8 @@ using ArucoUnity.Plugin.cv;
 using ArucoUnity.Plugin.std;
 using ArucoUnity.Utility;
 using System.Collections.Generic;
+using System.Threading;
+using System.Collections;
 
 namespace ArucoUnity
 {
@@ -112,6 +114,9 @@ namespace ArucoUnity
     // Variables
 
     protected Dictionary<System.Type, ArucoObjectTracker> trackers;
+    private bool arucoCameraImageUpdated;
+    private Thread trackingThread;
+    private Mutex trackingMutex;
 
     // MonoBehaviour methods
 
@@ -146,7 +151,7 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// Unsuscribe from ArucoObjectController events.
+    /// Unsuscribe from ArucoObjectController events, and abort the tracking thread.
     /// </summary>
     protected virtual void OnDestroy()
     {
@@ -155,6 +160,11 @@ namespace ArucoUnity
 
       base.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
       base.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
+
+      if (trackingThread != null)
+      {
+        trackingThread.Abort();
+      }
     }
 
     // ArucoObjectController methods
@@ -249,6 +259,9 @@ namespace ArucoUnity
 
     // ArucoObjectDetector methods
 
+    /// <summary>
+    /// Initialize the properties, the ArUco object list, and the tracking.
+    /// </summary>
     protected override void PreConfigure()
     {
       if (ArucoCamera.CameraParameters == null)
@@ -294,24 +307,28 @@ namespace ArucoUnity
           }
         }
       }
+
+      // Initialize the tracking
+      trackingMutex = new Mutex();
+      trackingThread = new Thread(() =>
+      {
+        while (true)
+        {
+          Track();
+        }
+      });
+      trackingThread.Start();
+      StartCoroutine("ApplyTracking");
     }
 
     /// <summary>
-    /// When configured and started, detect markers and show results each frame.
+    /// Set the tracking thread to track the next it will be executed.
     /// </summary>
-    // TODO: detect in a separate thread for performances
     protected override void ArucoCameraImageUpdated()
     {
-      if (!IsConfigured || !IsStarted)
-      {
-        return;
-      }
-
-      DeactivateArucoObjects();
-      Detect();
-      EstimateTranforms();
-      Draw();
-      Place();
+      trackingMutex.WaitOne();
+      arucoCameraImageUpdated = true;
+      trackingMutex.ReleaseMutex();
     }
 
     // Methods
@@ -430,6 +447,47 @@ namespace ArucoUnity
         {
           tracker.Value.Place(cameraId, dictionary);
         }
+      }
+    }
+
+    /// <summary>
+    /// Executed on a separated tracking thread, detect and estimate the transforms of ArUco objects on the 
+    /// <see cref="ArucoObjectsController.ArucoObjects"/> list.
+    /// </summary>
+    protected void Track()
+    {
+      trackingMutex.WaitOne();
+
+      if (IsConfigured && IsStarted && arucoCameraImageUpdated)
+      {
+        Detect();
+        EstimateTranforms();
+        arucoCameraImageUpdated = false;
+      }
+
+      trackingMutex.ReleaseMutex();
+    }
+
+    /// <summary>
+    /// Draw the results of the detection and place each detected ArUco object on the <see cref="ArucoObjectsController.ArucoObjects"/> list, 
+    /// according to the results of the tracking thread.
+    /// </summary>
+    /// <remarks>
+    /// In a coroutine to be executed after the <see cref="ArucoCamera.Images"/> update on the Update() function, but before the 
+    /// <see cref="ArucoCamera.ImageTextures"/> update on the LateUpdate() function. See: https://docs.unity3d.com/Manual/ExecutionOrder.html.
+    /// </remarks>
+    protected IEnumerator ApplyTracking()
+    {
+      while (true)
+      {
+        yield return null;
+        trackingMutex.WaitOne();
+
+        DeactivateArucoObjects();
+        Draw();
+        Place();
+
+        trackingMutex.ReleaseMutex();
       }
     }
   }
