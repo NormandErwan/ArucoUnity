@@ -209,7 +209,7 @@ namespace ArucoUnity
       Name = webcamDevices[WebcamId].name;
 
       // Try to load the camera parameters
-      if (CameraParametersFilePath != null)
+      if (CameraParametersFilePath != null && CameraParametersFilePath.Length > 0)
       {
         string fullCameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CameraParametersFilePath);
         CameraParameters = new CameraParameters[] { Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath) };
