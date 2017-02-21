@@ -47,11 +47,15 @@ namespace ArucoUnity
     /// </summary>
     public override void EstimateTranforms(int cameraId, Dictionary dictionary)
     {
-      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters[cameraId];
+      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      if (cameraParameters == null)
+      {
+        return;
+      }
 
       VectorVec3d rvecs, tvecs;
       Functions.EstimatePoseSingleMarkers(arucoTracker.MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
-        cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvecs, out tvecs);
+        cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvecs, out tvecs);
 
       arucoTracker.Rvecs[cameraId][dictionary] = rvecs;
       arucoTracker.Tvecs[cameraId][dictionary] = tvecs;

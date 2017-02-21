@@ -36,14 +36,18 @@ namespace ArucoUnity
     /// </summary>
     public override void EstimateTranforms(int cameraId, Dictionary dictionary)
     {
-      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters[cameraId];
+      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      if (cameraParameters == null)
+      {
+        return;
+      }
 
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
         Vec3d rvec = null, tvec = null;
         // TODO: fix crash
         //arucoGridBoard.MarkersUsedForEstimation = Functions.EstimatePoseBoard(MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary], 
-        //  arucoGridBoard.Board, cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, out rvec, out tvec);
+        //  arucoGridBoard.Board, cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvec, out tvec);
 
         arucoGridBoard.Rvec = rvec;
         arucoGridBoard.Tvec = tvec;
@@ -57,15 +61,15 @@ namespace ArucoUnity
     {
       bool updatedCameraImage = false;
       Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
-      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters[cameraId];
+      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
         if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 
           && arucoGridBoard.Rvec != null)
         {
-          Functions.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrix, cameraParameters.DistCoeffs, arucoGridBoard.Rvec,
-            arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
+          Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, 
+            arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
           updatedCameraImage = true;
         }
       }
