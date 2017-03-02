@@ -75,6 +75,19 @@ namespace ArucoUnity
     // Methods
 
     /// <summary>
+    /// <see cref="ArucoBoard.UpdateHashCode"/>
+    /// </summary>
+    protected override void UpdateHashCode()
+    {
+      hashCode = 17;
+      hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
+      hashCode = hashCode * 31 + MarkersNumberX;
+      hashCode = hashCode * 31 + MarkersNumberY;
+      hashCode = hashCode * 31 + Mathf.RoundToInt(MarkerSideLength * 1000); // MarkerSideLength is not less than millimetres
+      hashCode = hashCode * 31 + Mathf.RoundToInt(MarkerSeparation * 1000); // MarkerSeparation is not less than millimetres
+    }
+
+    /// <summary>
     /// <see cref="ArucoBoard.UpdateBoard"/>
     /// </summary>
     protected override void UpdateBoard()

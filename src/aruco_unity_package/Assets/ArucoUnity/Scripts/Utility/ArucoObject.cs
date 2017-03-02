@@ -43,6 +43,8 @@ namespace ArucoUnity
 
       // Properties
 
+      public abstract int HashCode { get; }
+
       /// <summary>
       /// The dictionary to use.
       /// </summary>

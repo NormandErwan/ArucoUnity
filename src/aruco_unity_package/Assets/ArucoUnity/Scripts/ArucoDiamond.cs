@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.cv;
-using ArucoUnity.Plugin.std;
+﻿using ArucoUnity.Plugin.std;
 using ArucoUnity.Utility;
 using UnityEngine;
 
@@ -24,6 +23,11 @@ namespace ArucoUnity
     private int[] ids;
 
     // Properties
+
+    /// <summary>
+    /// <see cref="ArucoObject.HashCode"/>.
+    /// </summary>
+    public override int HashCode { get { return hashCode; } }
 
     /// <summary>
     /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
@@ -73,6 +77,10 @@ namespace ArucoUnity
 
     public VectorVec3d Tvecs { get; set; }
 
+    // Variable
+
+    protected int hashCode;
+
     // MonoBehaviour methods
 
     /// <summary>
@@ -93,6 +101,19 @@ namespace ArucoUnity
     protected override void OnPropertyUpdated()
     {
       AxisLength = SquareSideLength * 0.5f;
+    }
+
+    // Methods
+
+    protected virtual void UpdateHashCode()
+    {
+      hashCode = 17;
+      hashCode = hashCode * 31 + typeof(ArucoDiamond).GetHashCode();
+      hashCode = hashCode * 31 + Mathf.RoundToInt(SquareSideLength * 1000); // SquareSideLength is not less than millimetres
+      foreach (var id in Ids)
+      {
+        hashCode = hashCode * 31 + id;
+      }
     }
   }
 
