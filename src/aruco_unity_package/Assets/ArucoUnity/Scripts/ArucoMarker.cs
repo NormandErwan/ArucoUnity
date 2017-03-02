@@ -15,20 +15,20 @@ namespace ArucoUnity
 
     [SerializeField]
     [Tooltip("The marker id in the used dictionary.")]
-    private int id;
+    private int markerId;
 
     // Properties
 
     /// <summary>
     /// The marker id in the used dictionary.
     /// </summary>
-    public int Id
+    public int MarkerId
     {
-      get { return id; }
+      get { return markerId; }
       set
       {
         OnPropertyUpdating();
-        id = value;
+        markerId = value;
         OnPropertyUpdated();
       }
     }

@@ -99,7 +99,7 @@ namespace ArucoUnity
       {
         for (uint i = 0; i < arucoTracker.DetectedMarkers[cameraId][dictionary]; i++)
         {
-          if (arucoMarker.Id == arucoTracker.MarkerIds[cameraId][dictionary].At(i))
+          if (arucoMarker.MarkerId == arucoTracker.MarkerIds[cameraId][dictionary].At(i))
           {
             PlaceArucoObject(arucoMarker, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), cameraId);
           }

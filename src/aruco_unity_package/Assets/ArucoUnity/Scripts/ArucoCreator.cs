@@ -125,7 +125,7 @@ namespace ArucoUnity
       ArucoMarker marker = ArucoObject as ArucoMarker;
       if (marker != null)
       {
-        marker.Dictionary.DrawMarker(marker.Id, (int)marker.MarkerSideLength, out image, marker.MarkerBorderBits);
+        marker.Dictionary.DrawMarker(marker.MarkerId, (int)marker.MarkerSideLength, out image, marker.MarkerBorderBits);
       }
 
       // In case of a grid board
@@ -191,7 +191,7 @@ namespace ArucoUnity
         ArucoMarker marker = ArucoObject as ArucoMarker;
         if (marker != null)
         {
-          imageFilePath += "Marker_" + marker.Dictionary.name + "_Id_" + marker.Id;
+          imageFilePath += "Marker_" + marker.Dictionary.name + "_Id_" + marker.MarkerId;
         }
 
         // In case of a grid board
