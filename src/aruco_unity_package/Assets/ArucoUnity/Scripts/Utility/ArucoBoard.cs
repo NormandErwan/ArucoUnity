@@ -62,29 +62,25 @@ namespace ArucoUnity
 
         ImageSize = new Size();
         UpdateBoard();
-
-        base.PropertyUpdated += ArucoBoard_PropertyUpdated;
       }
 
+      // ArucoObject methods
+
       /// <summary>
-      /// Unsuscribe from events.
+      /// <see cref="ArucoObject.OnPropertyUpdated"/>.
       /// </summary>
-      protected void OnDestroy()
+      protected override void OnPropertyUpdated()
       {
-        base.PropertyUpdated -= ArucoBoard_PropertyUpdated;
+        UpdateBoard();
+        base.OnPropertyUpdated();
       }
 
       // Methods
 
       /// <summary>
-      /// Update the board property.
+      /// Update the <see cref="Board"/> property.
       /// </summary>
       protected abstract void UpdateBoard();
-
-      private void ArucoBoard_PropertyUpdated(ArucoObject currentArucoObject)
-      {
-        UpdateBoard();
-      }
     }
   }
 

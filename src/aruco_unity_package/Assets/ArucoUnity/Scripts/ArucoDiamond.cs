@@ -83,24 +83,14 @@ namespace ArucoUnity
 
       DetectedCorners = null;
       DetectedIds = null;
-
-      base.PropertyUpdated += ArucoBoard_PropertyUpdated;
     }
 
-    /// <summary>
-    /// Unsuscribe from events.
-    /// </summary>
-    protected void OnDestroy()
-    {
-      base.PropertyUpdated -= ArucoBoard_PropertyUpdated;
-    }
-
-    // Methods
+    // ArucoObject methods
 
     /// <summary>
-    /// Update the properties.
+    /// <see cref="ArucoObject.OnPropertyUpdated"/>.
     /// </summary>
-    private void ArucoBoard_PropertyUpdated(ArucoObject currentArucoObject)
+    protected override void OnPropertyUpdated()
     {
       AxisLength = SquareSideLength * 0.5f;
     }

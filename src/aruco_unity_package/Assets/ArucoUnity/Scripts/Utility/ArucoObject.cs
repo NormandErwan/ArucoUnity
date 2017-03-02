@@ -101,7 +101,7 @@ namespace ArucoUnity
       /// <summary>
       /// Call the event <see cref="PropertyUpdating"/>.
       /// </summary>
-      protected void OnPropertyUpdating()
+      protected virtual void OnPropertyUpdating()
       {
         PropertyUpdating(this);
       }
@@ -109,7 +109,7 @@ namespace ArucoUnity
       /// <summary>
       /// Call the event <see cref="PropertyUpdated"/>.
       /// </summary>
-      protected void OnPropertyUpdated()
+      protected virtual void OnPropertyUpdated()
       {
         PropertyUpdated(this);
       }
