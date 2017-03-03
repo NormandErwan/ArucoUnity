@@ -71,19 +71,13 @@ namespace ArucoUnity
     /// <summary>
     /// Place and orient an ArUco object.
     /// </summary>
-    protected void PlaceArucoObject(ArucoObject arucoObject, Vec3d rvec, Vec3d tvec, int cameraId)
+    protected void PlaceArucoObject(ArucoObject arucoObject, Vec3d rvec, Vec3d tvec, int cameraId, float positionFactor = 1f)
     {
       GameObject arucoGameObject = arucoObject.gameObject;
 
       // Place and orient the object to match the marker
-      arucoGameObject.transform.position = tvec.ToPosition();
+      arucoGameObject.transform.position = tvec.ToPosition() * positionFactor;
       arucoGameObject.transform.rotation = rvec.ToRotation();
-
-      // Placement corrections
-      if (arucoObject is ArucoMarker)
-      {
-        arucoGameObject.transform.position *= arucoObject.MarkerSideLength;
-      }
 
       // Adjust the object position
       Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];

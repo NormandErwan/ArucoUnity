@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.std;
-using ArucoUnity.Utility;
+﻿using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -73,16 +72,6 @@ namespace ArucoUnity
 
     public float AxisLength { get; protected set; }
 
-    public VectorVectorPoint2f DetectedCorners { get; set; }
-
-    public VectorVec4i DetectedIds { get; set; }
-
-    public int DetectedMarkers { get; set; }
-
-    public VectorVec3d Rvecs { get; set; }
-
-    public VectorVec3d Tvecs { get; set; }
-
     // Variable
 
     protected int hashCode;
@@ -94,9 +83,7 @@ namespace ArucoUnity
     protected override void Awake()
     {
       base.Awake();
-
-      DetectedCorners = null;
-      DetectedIds = null;
+      
       hashCode = GetArucoHashCode(this);
     }
 

@@ -14,7 +14,6 @@ namespace ArucoUnity
     // Constants
 
     protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
-
     protected readonly Color REJECTED_MARKERS_CANDIDATES_COLOR = new Color(100, 0, 255);
 
     // Constructor
@@ -101,7 +100,9 @@ namespace ArucoUnity
         int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(arucoTracker.MarkerIds[cameraId][dictionary].At(i));
         if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
         {
-          PlaceArucoObject(foundArucoObject, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), cameraId);
+          float positionFactor = foundArucoObject.MarkerSideLength;
+          PlaceArucoObject(foundArucoObject, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), 
+            cameraId, positionFactor);
         }
       }
     }
