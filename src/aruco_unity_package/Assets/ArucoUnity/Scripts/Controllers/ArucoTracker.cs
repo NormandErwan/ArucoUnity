@@ -143,8 +143,30 @@ namespace ArucoUnity
     {
       base.Start();
 
-      base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
+      // Remove aruco objects with no associated trackers from the list
+      foreach (var arucoObjectDictionary in ArucoObjects)
+      {
+        List<ArucoObject> arucoObjectsToDelete = new List<ArucoObject>();
 
+        foreach (var arucoObject in arucoObjectDictionary.Value)
+        {
+          ArucoObjectTracker tracker;
+          if (!trackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
+          {
+            Debug.LogError("No tracker found for the type '" + arucoObject.Value.GetType() + "'. Removing the object '"
+              + arucoObject.Value.gameObject.name + "' from the tracking list.");
+            arucoObjectsToDelete.Add(arucoObject.Value);
+          }
+        }
+
+        foreach (var arucoObject in arucoObjectsToDelete)
+        {
+          Remove(arucoObject);
+        }
+      }
+
+      // Suscribe to ArucoObjectController events
+      base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
       base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
       base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
     }
@@ -155,7 +177,6 @@ namespace ArucoUnity
     protected virtual void OnDestroy()
     {
       base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
-
       base.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
       base.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
 
@@ -271,7 +292,6 @@ namespace ArucoUnity
       RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
       Rvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
       Tvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
-
       DetectedMarkers = new Dictionary<ArucoUnity.Plugin.Dictionary, int>[ArucoCamera.CamerasNumber];
 
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
@@ -281,7 +301,6 @@ namespace ArucoUnity
         RejectedCandidateCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
         Rvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
         Tvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
-
         DetectedMarkers[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, int>();
 
         foreach (var arucoObjectDictionary in ArucoObjects)
@@ -293,24 +312,16 @@ namespace ArucoUnity
           RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
           Rvecs[cameraId].Add(dictionary, new VectorVec3d());
           Tvecs[cameraId].Add(dictionary, new VectorVec3d());
-
           DetectedMarkers[cameraId].Add(dictionary, 0);
+        }
+      }
 
-          // Adjust the scale of the game object of each ArUco object
-          foreach (var arucoObject in arucoObjectDictionary.Value)
-          {
-            ArucoObjectTracker tracker;
-            if (!trackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
-            {
-              Debug.LogError("No tracker found for the type '" + arucoObject.Value.GetType() + "'. Removing the object '" 
-                + arucoObject.Value.gameObject.name + "' from the tracking list.");
-              Remove(arucoObject.Value);
-            }
-            else
-            {
-              tracker.ArucoObject_PropertyUpdated(arucoObject.Value);
-            }
-          }
+      // Trackers do adjustements on the aruco objects
+      foreach (var arucoObjectDictionary in ArucoObjects)
+      {
+        foreach (var arucoObject in arucoObjectDictionary.Value)
+        {
+          trackers[arucoObject.Value.GetType()].ArucoObject_PropertyUpdated(arucoObject.Value);
         }
       }
 
