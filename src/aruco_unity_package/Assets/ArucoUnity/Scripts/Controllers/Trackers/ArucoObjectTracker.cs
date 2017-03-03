@@ -76,8 +76,14 @@ namespace ArucoUnity
       GameObject arucoGameObject = arucoObject.gameObject;
 
       // Place and orient the object to match the marker
-      arucoGameObject.transform.position = tvec.ToPosition() * arucoObject.MarkerSideLength;
+      arucoGameObject.transform.position = tvec.ToPosition();
       arucoGameObject.transform.rotation = rvec.ToRotation();
+
+      // Placement corrections
+      if (arucoObject is ArucoMarker)
+      {
+        arucoGameObject.transform.position *= arucoObject.MarkerSideLength;
+      }
 
       // Adjust the object position
       Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];

@@ -121,6 +121,13 @@ namespace ArucoUnity
     /// </summary>
     public override void Place(int cameraId, Dictionary dictionary)
     {
+      foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
+      {
+        if (arucoCharucoBoard.ValidTransform)
+        {
+          PlaceArucoObject(arucoCharucoBoard, arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, cameraId);
+        }
+      }
     }
   }
 
