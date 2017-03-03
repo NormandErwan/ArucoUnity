@@ -168,7 +168,7 @@ namespace ArucoUnity
         HashSet<T> arucoObjectsTCollection = new HashSet<T>();
         foreach (var arucoObject in ArucoObjects[dictionary])
         {
-          T arucoObjectT = arucoObject as T;
+          T arucoObjectT = arucoObject.Value as T;
           if (arucoObjectT != null)
           {
             arucoObjectsTCollection.Add(arucoObjectT);
