@@ -91,17 +91,28 @@ namespace ArucoUnity
 
     // Methods
 
+    public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)
+    {
+      int hashCode = 17;
+      hashCode = hashCode * 31 + typeof(ArucoCharucoBoard).GetHashCode();
+      hashCode = hashCode * 31 + squaresNumberX;
+      hashCode = hashCode * 31 + squaresNumberY;
+      hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
+      hashCode = hashCode * 31 + Mathf.RoundToInt(squareSideLength * 1000); // SquareSideLength is not less than millimetres
+      return hashCode;
+    }
+
+    protected static int GetArucoHashCode(ArucoCharucoBoard arucoCharucoBoard)
+    {
+      return GetArucoHashCode(arucoCharucoBoard.SquaresNumberX, arucoCharucoBoard.SquaresNumberY, arucoCharucoBoard.MarkerSideLength, arucoCharucoBoard.SquareSideLength);
+    }
+
     /// <summary>
     /// <see cref="ArucoBoard.UpdateHashCode"/>
     /// </summary>
     protected override void UpdateHashCode()
     {
-      hashCode = 17;
-      hashCode = hashCode * 31 + typeof(ArucoCharucoBoard).GetHashCode();
-      hashCode = hashCode * 31 + SquaresNumberX;
-      hashCode = hashCode * 31 + SquaresNumberY;
-      hashCode = hashCode * 31 + Mathf.RoundToInt(MarkerSideLength * 1000); // MarkerSideLength is not less than millimetres
-      hashCode = hashCode * 31 + Mathf.RoundToInt(SquareSideLength * 1000); // SquareSideLength is not less than millimetres
+      hashCode = GetArucoHashCode(this);
     }
 
     /// <summary>

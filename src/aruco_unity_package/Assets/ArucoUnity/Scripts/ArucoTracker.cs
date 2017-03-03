@@ -144,7 +144,6 @@ namespace ArucoUnity
       base.Start();
 
       base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
-      base.ArucoObjectRemoved += ArucoObjectController_ArucoObjectRemoved;
 
       base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
       base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
@@ -156,7 +155,6 @@ namespace ArucoUnity
     protected virtual void OnDestroy()
     {
       base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
-      base.ArucoObjectRemoved -= ArucoObjectController_ArucoObjectRemoved;
 
       base.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
       base.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
@@ -175,20 +173,16 @@ namespace ArucoUnity
     /// <param name="arucoObject">The new ArUco object to suscribe.</param>
     protected virtual void ArucoObjectController_ArucoObjectAdded(ArucoObject arucoObject)
     {
+      ArucoObjectTracker tracker;
+      if (!trackers.TryGetValue(arucoObject.GetType(), out tracker))
+      {
+        Debug.LogError("No tracker found for the type '" + arucoObject.GetType() + "'. Removing the object '" + arucoObject.gameObject.name +
+          "' from the tracking list.");
+        Remove(arucoObject);
+        return;
+      }
+
       arucoObject.gameObject.SetActive(false);
-
-      arucoObject.PropertyUpdating += ArucoObject_PropertyUpdating;
-      arucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
-    }
-
-    /// <summary>
-    /// Unsuscribe from the property events of an ArUco object.
-    /// </summary>
-    /// <param name="arucoObject">The ArUco object to unsuscribe.</param>
-    protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
-    {
-      arucoObject.PropertyUpdating -= ArucoObject_PropertyUpdating;
-      arucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
     }
 
     /// <summary>
@@ -243,8 +237,9 @@ namespace ArucoUnity
     /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
     /// </summary>
     /// <param name="arucoObject"></param>
-    protected void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
+    protected override void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
     {
+      base.ArucoObject_PropertyUpdating(arucoObject);
       trackers[arucoObject.GetType()].ArucoObject_PropertyUpdating(arucoObject);
     }
 
@@ -252,8 +247,9 @@ namespace ArucoUnity
     /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
     /// </summary>
     /// <param name="arucoObject"></param>
-    protected void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+    protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
     {
+      base.ArucoObject_PropertyUpdated(arucoObject);
       trackers[arucoObject.GetType()].ArucoObject_PropertyUpdated(arucoObject);
     }
 
@@ -303,7 +299,17 @@ namespace ArucoUnity
           // Adjust the scale of the game object of each ArUco object
           foreach (var arucoObject in arucoObjectDictionary.Value)
           {
-            trackers[arucoObject.GetType()].ArucoObject_PropertyUpdated(arucoObject);
+            ArucoObjectTracker tracker;
+            if (!trackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
+            {
+              Debug.LogError("No tracker found for the type '" + arucoObject.Value.GetType() + "'. Removing the object '" 
+                + arucoObject.Value.gameObject.name + "' from the tracking list.");
+              Remove(arucoObject.Value);
+            }
+            else
+            {
+              tracker.ArucoObject_PropertyUpdated(arucoObject.Value);
+            }
           }
         }
       }
@@ -342,7 +348,7 @@ namespace ArucoUnity
       {
         foreach (var arucoObject in arucoObjectDictionary.Value)
         {
-          arucoObject.gameObject.SetActive(false);
+          arucoObject.Value.gameObject.SetActive(false);
         }
       }
     }

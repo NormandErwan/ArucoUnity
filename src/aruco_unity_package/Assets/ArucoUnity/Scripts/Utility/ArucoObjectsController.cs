@@ -49,9 +49,7 @@ namespace ArucoUnity
       /// <summary>
       /// The list of the used ArUco objects.
       /// </summary>
-      // TODO: replace the HashSet with a Dictionary<ArucoId, ArucoObject>, where ArucoId is a struct with Type and Id (calculated from parameters 
-      // for boards and diamonds) in order to reduce ArucoTracker complexity
-      public Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>> ArucoObjects { get; protected set; }
+      public Dictionary<ArucoUnity.Plugin.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
 
@@ -62,7 +60,7 @@ namespace ArucoUnity
       {
         base.Awake();
 
-        ArucoObjects = new Dictionary<ArucoUnity.Plugin.Dictionary, HashSet<ArucoObject>>();
+        ArucoObjects = new Dictionary<ArucoUnity.Plugin.Dictionary, Dictionary<int, ArucoObject>>();
       }
 
       /// <summary>
@@ -85,25 +83,38 @@ namespace ArucoUnity
       public virtual void Add(ArucoObject arucoObject)
       {
         // Try to find a list with the same dictionary than the new ArUco object
-        HashSet<ArucoObject> arucoObjectsCollection = null;
+        Dictionary<int, ArucoObject> arucoObjectsCollection = null;
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
           if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
           {
             arucoObjectsCollection = arucoObjectDictionary.Value;
+            break;
           }
         }
 
         // If not found, create the new list attached to this dictionary
         if (arucoObjectsCollection == null)
         {
-          ArucoObjects.Add(arucoObject.Dictionary, new HashSet<ArucoObject>());
-          arucoObjectsCollection = ArucoObjects[arucoObject.Dictionary];
+          arucoObjectsCollection = new Dictionary<int, ArucoObject>();
+          ArucoObjects.Add(arucoObject.Dictionary, arucoObjectsCollection);
           DictionaryAdded(arucoObject.Dictionary);
         }
+        // Return if the ArUco object is already in the list 
+        else
+        {
+          if (arucoObjectsCollection.ContainsKey(arucoObject.HashCode))
+          {
+            return;
+          }
+        }
+
+        // Suscribe to property events on the aruco object
+        arucoObject.PropertyUpdating += ArucoObject_PropertyUpdating;
+        arucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
 
         // Add the ArUco object to the list
-        arucoObjectsCollection.Add(arucoObject);
+        arucoObjectsCollection.Add(arucoObject.HashCode, arucoObject);
         ArucoObjectAdded(arucoObject);
       }
 
@@ -114,12 +125,13 @@ namespace ArucoUnity
       public virtual void Remove(ArucoObject arucoObject)
       {
         // Find the list with the same dictionary than the ArUco object to remove
-        HashSet<ArucoObject> arucoObjectsCollection = null;
+        Dictionary<int, ArucoObject> arucoObjectsCollection = null;
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
           if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
           {
             arucoObjectsCollection = arucoObjectDictionary.Value;
+            break;
           }
         }
 
@@ -130,8 +142,12 @@ namespace ArucoUnity
         }
 
         // Remove the ArUco object
-        arucoObjectsCollection.Remove(arucoObject);
+        arucoObjectsCollection.Remove(arucoObject.HashCode);
         ArucoObjectRemoved(arucoObject);
+
+        // Unsuscribe to property events on the aruco object
+        arucoObject.PropertyUpdating -= ArucoObject_PropertyUpdating;
+        arucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
 
         // If the list is empty, remove it with its dictionary
         if (arucoObjectsCollection.Count == 0)
@@ -159,6 +175,25 @@ namespace ArucoUnity
           }
         }
         return arucoObjectsTCollection;
+      }
+
+      /// <summary>
+      /// Before the ArUco object's properties will be updated, remove it from the ArUco objects list.
+      /// </summary>
+      /// <param name="arucoObject">The updated ArUco object.</param>
+      protected virtual void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
+      {
+        Remove(arucoObject);
+      }
+
+      /// <summary>
+      /// Add again the updated ArUco object.
+      /// </summary>
+      /// <param name="arucoObject">The updated ArUco object.</param>
+      // TODO: find a more elegant way to adjust the aruco object list from the aruco object's dictionary and hashcode changes.
+      protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+      {
+        Add(arucoObject);
       }
     }
   }

@@ -95,14 +95,13 @@ namespace ArucoUnity
     /// </summary>
     public override void Place(int cameraId, Dictionary dictionary)
     {
-      foreach (var arucoMarker in arucoTracker.GetArucoObjects<ArucoMarker>(dictionary))
+      for (uint i = 0; i < arucoTracker.DetectedMarkers[cameraId][dictionary]; i++)
       {
-        for (uint i = 0; i < arucoTracker.DetectedMarkers[cameraId][dictionary]; i++)
+        ArucoObject foundArucoObject;
+        int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(arucoTracker.MarkerIds[cameraId][dictionary].At(i));
+        if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
         {
-          if (arucoMarker.MarkerId == arucoTracker.MarkerIds[cameraId][dictionary].At(i))
-          {
-            PlaceArucoObject(arucoMarker, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), cameraId);
-          }
+          PlaceArucoObject(foundArucoObject, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), cameraId);
         }
       }
     }

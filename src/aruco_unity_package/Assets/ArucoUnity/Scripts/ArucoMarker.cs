@@ -34,7 +34,7 @@ namespace ArucoUnity
       {
         OnPropertyUpdating();
         markerId = value;
-        UpdateHashCode();
+        hashCode = GetArucoHashCode(this);
         OnPropertyUpdated();
       }
     }
@@ -48,16 +48,22 @@ namespace ArucoUnity
     protected override void Awake()
     {
       base.Awake();
-      UpdateHashCode();
+      hashCode = GetArucoHashCode(this);
     }
 
     // Methods
 
-    protected virtual void UpdateHashCode()
+    public static int GetArucoHashCode(int markerId)
     {
-      hashCode = 17;
+      int hashCode = 17;
       hashCode = hashCode * 31 + typeof(ArucoMarker).GetHashCode();
-      hashCode = hashCode * 31 + MarkerId;
+      hashCode = hashCode * 31 + markerId;
+      return hashCode;
+    }
+
+    protected static int GetArucoHashCode(ArucoMarker arucoMarker)
+    {
+      return GetArucoHashCode(arucoMarker.MarkerId);
     }
   }
 

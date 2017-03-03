@@ -74,17 +74,28 @@ namespace ArucoUnity
 
     // Methods
 
+    public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
+    {
+      int hashCode = 17;
+      hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
+      hashCode = hashCode * 31 + markersNumberX;
+      hashCode = hashCode * 31 + markersNumberY;
+      hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
+      hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
+      return hashCode;
+    }
+
+    protected static int GetArucoHashCode(ArucoGridBoard arucoGridBoard)
+    {
+      return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength, arucoGridBoard.MarkerSeparation);
+    }
+
     /// <summary>
     /// <see cref="ArucoBoard.UpdateHashCode"/>
     /// </summary>
     protected override void UpdateHashCode()
     {
-      hashCode = 17;
-      hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
-      hashCode = hashCode * 31 + MarkersNumberX;
-      hashCode = hashCode * 31 + MarkersNumberY;
-      hashCode = hashCode * 31 + Mathf.RoundToInt(MarkerSideLength * 1000); // MarkerSideLength is not less than millimetres
-      hashCode = hashCode * 31 + Mathf.RoundToInt(MarkerSeparation * 1000); // MarkerSeparation is not less than millimetres
+      hashCode = GetArucoHashCode(this);
     }
 
     /// <summary>

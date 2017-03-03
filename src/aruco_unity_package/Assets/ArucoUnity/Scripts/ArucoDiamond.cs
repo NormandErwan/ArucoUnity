@@ -59,6 +59,12 @@ namespace ArucoUnity
       }
       set
       {
+        if (value.Length != 4)
+        {
+          Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
+          return;
+        }
+
         OnPropertyUpdating();
         ids = value;
         OnPropertyUpdated();
@@ -91,6 +97,7 @@ namespace ArucoUnity
 
       DetectedCorners = null;
       DetectedIds = null;
+      hashCode = GetArucoHashCode(this);
     }
 
     // ArucoObject methods
@@ -101,19 +108,27 @@ namespace ArucoUnity
     protected override void OnPropertyUpdated()
     {
       AxisLength = SquareSideLength * 0.5f;
+      hashCode = GetArucoHashCode(this);
+      base.OnPropertyUpdated();
     }
 
     // Methods
 
-    protected virtual void UpdateHashCode()
+    public static int GetArucoHashCode(float squareSideLength, int[] ids)
     {
-      hashCode = 17;
+      int hashCode = 17;
       hashCode = hashCode * 31 + typeof(ArucoDiamond).GetHashCode();
-      hashCode = hashCode * 31 + Mathf.RoundToInt(SquareSideLength * 1000); // SquareSideLength is not less than millimetres
-      foreach (var id in Ids)
+      hashCode = hashCode * 31 + Mathf.RoundToInt(squareSideLength * 1000); // SquareSideLength is not less than millimetres
+      foreach (var id in ids)
       {
         hashCode = hashCode * 31 + id;
       }
+      return hashCode;
+    }
+
+    protected static int GetArucoHashCode(ArucoDiamond arucoDiamond)
+    {
+      return GetArucoHashCode(arucoDiamond.SquareSideLength, arucoDiamond.Ids);
     }
   }
 
