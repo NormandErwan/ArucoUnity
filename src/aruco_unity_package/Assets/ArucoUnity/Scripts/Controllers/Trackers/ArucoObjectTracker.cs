@@ -11,14 +11,11 @@ namespace ArucoUnity
 
   public abstract class ArucoObjectTracker
   {
+    // Variables
+
     protected ArucoTracker arucoTracker;
 
-    public ArucoObjectTracker(ArucoTracker arucoTracker)
-    {
-      this.arucoTracker = arucoTracker;
-    }
-
-    // ArucoObject methods
+    // ArucoObject related methods
 
     /// <summary>
     /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
@@ -42,7 +39,25 @@ namespace ArucoUnity
       }
     }
 
+    // ArucoObjectController related methods
+
+    public virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    {
+    }
+
+    public virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    {
+    }
+
     // Methods
+
+    /// <summary>
+    /// Initialize the properties and the tracking.
+    /// </summary>
+    public virtual void Configure(ArucoTracker arucoTracker)
+    {
+      this.arucoTracker = arucoTracker;
+    }
 
     /// <summary>
     /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 

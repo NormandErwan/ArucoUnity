@@ -9,10 +9,6 @@ namespace ArucoUnity
 
   public class ArucoGridBoardTracker : ArucoObjectTracker
   {
-    public ArucoGridBoardTracker(ArucoTracker arucoTracker) : base(arucoTracker)
-    {
-    }
-
     // ArucoObjectTracker methods
 
     /// <summary>

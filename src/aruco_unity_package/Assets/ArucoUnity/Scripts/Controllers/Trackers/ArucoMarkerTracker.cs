@@ -16,12 +16,6 @@ namespace ArucoUnity
     protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
     protected readonly Color REJECTED_MARKERS_CANDIDATES_COLOR = new Color(100, 0, 255);
 
-    // Constructor
-
-    public ArucoMarkerTracker(ArucoTracker arucoTracker) : base(arucoTracker)
-    {
-    }
-
     // ArucoObjectTracker methods
 
     /// <summary>

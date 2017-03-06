@@ -129,10 +129,10 @@ namespace ArucoUnity
 
       trackers = new Dictionary<System.Type, ArucoObjectTracker>()
       {
-        { typeof(ArucoMarker), new ArucoMarkerTracker(this) },
-        { typeof(ArucoGridBoard), new ArucoGridBoardTracker(this) },
-        { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker(this) },
-        { typeof(ArucoDiamond), new ArucoDiamondTracker(this) }
+        { typeof(ArucoMarker), new ArucoMarkerTracker() },
+        { typeof(ArucoGridBoard), new ArucoGridBoardTracker() },
+        { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
+        { typeof(ArucoDiamond), new ArucoDiamondTracker() }
       };
     }
 
@@ -224,15 +224,19 @@ namespace ArucoUnity
         RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
         MarkerRvecs[cameraId].Add(dictionary, new VectorVec3d());
         MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
-
         DetectedMarkers[cameraId].Add(dictionary, 0);
+      }
+
+      foreach (var tracker in trackers)
+      {
+        tracker.Value.ArucoObjectController_DictionaryAdded(dictionary);
       }
     }
 
     /// <summary>
     /// Update the properties when a dictionary is removed.
     /// </summary>
-    /// <param name="dictionary">The dictionary removed.</param>
+    /// <param name="dictionary">The removed dictionary.</param>
     protected void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
       if (!IsConfigured)
@@ -247,8 +251,12 @@ namespace ArucoUnity
         RejectedCandidateCorners[cameraId].Remove(dictionary);
         MarkerRvecs[cameraId].Remove(dictionary);
         MarkerTvecs[cameraId].Remove(dictionary);
-
         DetectedMarkers[cameraId].Remove(dictionary);
+      }
+
+      foreach (var tracker in trackers)
+      {
+        tracker.Value.ArucoObjectController_DictionaryRemoved(dictionary);
       }
     }
 
@@ -314,6 +322,12 @@ namespace ArucoUnity
           MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
           DetectedMarkers[cameraId].Add(dictionary, 0);
         }
+      }
+
+      // Configure the trackers
+      foreach (var tracker in trackers)
+      {
+        tracker.Value.Configure(this);
       }
 
       // Trackers do adjustements on the aruco objects
