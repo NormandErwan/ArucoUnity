@@ -56,8 +56,8 @@ namespace ArucoUnity
       Functions.EstimatePoseSingleMarkers(arucoTracker.MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
         cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvecs, out tvecs);
 
-      arucoTracker.Rvecs[cameraId][dictionary] = rvecs;
-      arucoTracker.Tvecs[cameraId][dictionary] = tvecs;
+      arucoTracker.MarkerRvecs[cameraId][dictionary] = rvecs;
+      arucoTracker.MarkerTvecs[cameraId][dictionary] = tvecs;
     }
 
     /// <summary>
@@ -100,8 +100,8 @@ namespace ArucoUnity
         int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(arucoTracker.MarkerIds[cameraId][dictionary].At(i));
         if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
         {
-          float positionFactor = foundArucoObject.MarkerSideLength;
-          PlaceArucoObject(foundArucoObject, arucoTracker.Rvecs[cameraId][dictionary].At(i), arucoTracker.Tvecs[cameraId][dictionary].At(i), 
+          float positionFactor = foundArucoObject.MarkerSideLength / ESTIMATE_POSE_MARKER_LENGTH;
+          PlaceArucoObject(foundArucoObject, arucoTracker.MarkerRvecs[cameraId][dictionary].At(i), arucoTracker.MarkerTvecs[cameraId][dictionary].At(i), 
             cameraId, positionFactor);
         }
       }

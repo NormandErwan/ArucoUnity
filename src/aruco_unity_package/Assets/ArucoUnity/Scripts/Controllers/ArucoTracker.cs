@@ -104,12 +104,12 @@ namespace ArucoUnity
     /// <summary>
     /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Rvecs { get; protected internal set; }
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] MarkerRvecs { get; protected internal set; }
 
     /// <summary>
     /// Vector of translation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] Tvecs { get; protected internal set; }
+    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] MarkerTvecs { get; protected internal set; }
 
     // Variables
 
@@ -222,8 +222,8 @@ namespace ArucoUnity
         MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
         MarkerIds[cameraId].Add(dictionary, new VectorInt());
         RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-        Rvecs[cameraId].Add(dictionary, new VectorVec3d());
-        Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+        MarkerRvecs[cameraId].Add(dictionary, new VectorVec3d());
+        MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
 
         DetectedMarkers[cameraId].Add(dictionary, 0);
       }
@@ -245,8 +245,8 @@ namespace ArucoUnity
         MarkerCorners[cameraId].Remove(dictionary);
         MarkerIds[cameraId].Remove(dictionary);
         RejectedCandidateCorners[cameraId].Remove(dictionary);
-        Rvecs[cameraId].Remove(dictionary);
-        Tvecs[cameraId].Remove(dictionary);
+        MarkerRvecs[cameraId].Remove(dictionary);
+        MarkerTvecs[cameraId].Remove(dictionary);
 
         DetectedMarkers[cameraId].Remove(dictionary);
       }
@@ -290,8 +290,8 @@ namespace ArucoUnity
       MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
       MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[ArucoCamera.CamerasNumber];
       RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
-      Rvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
-      Tvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
+      MarkerRvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
+      MarkerTvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
       DetectedMarkers = new Dictionary<ArucoUnity.Plugin.Dictionary, int>[ArucoCamera.CamerasNumber];
 
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
@@ -299,8 +299,8 @@ namespace ArucoUnity
         MarkerCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
         MarkerIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>();
         RejectedCandidateCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
-        Rvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
-        Tvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
+        MarkerRvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
+        MarkerTvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
         DetectedMarkers[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, int>();
 
         foreach (var arucoObjectDictionary in ArucoObjects)
@@ -310,8 +310,8 @@ namespace ArucoUnity
           MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
           MarkerIds[cameraId].Add(dictionary, new VectorInt());
           RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-          Rvecs[cameraId].Add(dictionary, new VectorVec3d());
-          Tvecs[cameraId].Add(dictionary, new VectorVec3d());
+          MarkerRvecs[cameraId].Add(dictionary, new VectorVec3d());
+          MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
           DetectedMarkers[cameraId].Add(dictionary, 0);
         }
       }
@@ -407,8 +407,8 @@ namespace ArucoUnity
           // Skip if don't estimate, or no markers detected, or no camera parameters
           if (!EstimateTransforms || DetectedMarkers[cameraId][dictionary] <= 0 || ArucoCamera.CameraParameters == null)
           {
-            Rvecs[cameraId][dictionary] = null;
-            Tvecs[cameraId][dictionary] = null;
+            MarkerRvecs[cameraId][dictionary] = null;
+            MarkerTvecs[cameraId][dictionary] = null;
             continue;
           }
 
