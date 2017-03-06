@@ -12,20 +12,20 @@ namespace ArucoUnity
   {
     // Constants
 
-    protected readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 1f;
+    protected readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
     protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
 
     // Properties
 
-    public VectorVectorPoint2f DetectedCorners { get; set; }
+    public VectorVectorPoint2f DiamondCorners { get; set; }
 
-    public VectorVec4i DetectedIds { get; set; }
+    public VectorVec4i DiamondIds { get; set; }
 
-    public int DetectedMarkers { get; set; }
+    public int DetectedDiamonds { get; set; }
 
-    public VectorVec3d Rvecs { get; set; }
+    public VectorVec3d DiamondRvecs { get; set; }
 
-    public VectorVec3d Tvecs { get; set; }
+    public VectorVec3d DiamondTvecs { get; set; }
 
     // Constructor
 
@@ -49,7 +49,6 @@ namespace ArucoUnity
       {
         if (cameraParameters == null)
         {
-          // TODO: handle multiple diamond detection (can do only one detection for all the diamonds?)
           Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerCorners[cameraId][dictionary],
             arucoTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds);
         }
@@ -59,11 +58,11 @@ namespace ArucoUnity
             arucoTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds, 
             cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs);
         }
-
-        DetectedCorners = diamondCorners;
-        DetectedIds = diamondIds;
-        DetectedMarkers = (diamondIds != null) ? (int)diamondIds.Size() : 0;
       }
+
+      DiamondCorners = diamondCorners;
+      DiamondIds = diamondIds;
+      DetectedDiamonds = (diamondIds != null) ? (int)diamondIds.Size() : 0;
     }
 
     /// <summary>
@@ -78,12 +77,12 @@ namespace ArucoUnity
       }
 
       // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
-      VectorVec3d rvecs, tvecs;
-      Functions.EstimatePoseSingleMarkers(DetectedCorners, ESTIMATE_POSE_MARKER_LENGTH, cameraParameters[cameraId].CameraMatrix,
-        cameraParameters[cameraId].DistCoeffs, out rvecs, out tvecs);
+      VectorVec3d diamondRvecs, diamondTvecs;
+      Functions.EstimatePoseSingleMarkers(DiamondCorners, ESTIMATE_POSE_MARKER_LENGTH, cameraParameters[cameraId].CameraMatrix,
+        cameraParameters[cameraId].DistCoeffs, out diamondRvecs, out diamondTvecs);
 
-      Rvecs = rvecs;
-      Tvecs = tvecs;
+      DiamondRvecs = diamondRvecs;
+      DiamondTvecs = diamondTvecs;
     }
 
     /// <summary>
@@ -95,18 +94,17 @@ namespace ArucoUnity
       Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
       CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
-      if (DetectedMarkers > 0)
+      if (DetectedDiamonds > 0)
       {
         if (arucoTracker.DrawDetectedDiamonds)
         {
-          // TODO: fix
-          //Functions.DrawDetectedDiamonds(cameraImages[cameraId], DetectedCorners, DetectedIds);
+          Functions.DrawDetectedDiamonds(cameraImages[cameraId], DiamondCorners, DiamondIds);
           updatedCameraImage = true;
         }
 
-        if (arucoTracker.DrawAxes && cameraParameters != null && Rvecs != null)
+        if (arucoTracker.DrawAxes && cameraParameters != null && DiamondRvecs != null)
         {
-          for (uint i = 0; i < DetectedMarkers; i++)
+          for (uint i = 0; i < DetectedDiamonds; i++)
           {
             // TODO: match the detected markers [i] with a ArucoDiamond on the list to get the AxisLength
             //Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
