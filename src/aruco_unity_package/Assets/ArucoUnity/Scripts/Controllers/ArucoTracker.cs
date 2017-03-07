@@ -140,19 +140,18 @@ namespace ArucoUnity
       trackingMutex = new Mutex();
       trackingThread = new Thread(() =>
       {
-        while (true)
+        try
         {
-          try
+          while (true)
           {
-            trackingException = null;
             Track();
           }
-          catch (System.Exception e)
-          {
-            trackingMutex.WaitOne();
-            trackingException = e;
-            trackingMutex.ReleaseMutex();
-          }
+        }
+        catch (System.Exception e)
+        {
+          trackingMutex.WaitOne();
+          trackingException = e;
+          trackingMutex.ReleaseMutex();
         }
       });
     }
