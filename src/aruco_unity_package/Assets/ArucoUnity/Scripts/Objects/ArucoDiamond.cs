@@ -70,8 +70,6 @@ namespace ArucoUnity
       }
     }
 
-    public float AxisLength { get; protected set; }
-
     // Variable
 
     protected int hashCode;
@@ -83,8 +81,7 @@ namespace ArucoUnity
     protected override void Awake()
     {
       base.Awake();
-      
-      hashCode = GetArucoHashCode(this);
+      OnPropertyUpdated();
     }
 
     // ArucoObject methods
@@ -94,18 +91,16 @@ namespace ArucoUnity
     /// </summary>
     protected override void OnPropertyUpdated()
     {
-      AxisLength = SquareSideLength * 0.5f;
       hashCode = GetArucoHashCode(this);
       base.OnPropertyUpdated();
     }
 
     // Methods
 
-    public static int GetArucoHashCode(float squareSideLength, int[] ids)
+    public static int GetArucoHashCode(int[] ids)
     {
       int hashCode = 17;
       hashCode = hashCode * 31 + typeof(ArucoDiamond).GetHashCode();
-      hashCode = hashCode * 31 + Mathf.RoundToInt(squareSideLength * 1000); // SquareSideLength is not less than millimetres
       foreach (var id in ids)
       {
         hashCode = hashCode * 31 + id;
@@ -115,7 +110,7 @@ namespace ArucoUnity
 
     protected static int GetArucoHashCode(ArucoDiamond arucoDiamond)
     {
-      return GetArucoHashCode(arucoDiamond.SquareSideLength, arucoDiamond.Ids);
+      return GetArucoHashCode(arucoDiamond.Ids);
     }
   }
 

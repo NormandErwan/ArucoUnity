@@ -13,8 +13,9 @@ namespace ArucoUnity
   {
     // Constants
 
-    protected readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
-    protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+    protected static readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
+    protected static readonly float ESTIMATE_POSE_SQUARE_LENGTH = 1f;
+    protected static readonly float DRAW_AXIS_LENGTH = ESTIMATE_POSE_SQUARE_LENGTH / 2f;
 
     // Properties
 
@@ -134,9 +135,12 @@ namespace ArucoUnity
       }
 
       // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
-      VectorVec3d diamondRvecs, diamondTvecs;
-      Functions.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters[cameraId].CameraMatrix,
-        cameraParameters[cameraId].DistCoeffs, out diamondRvecs, out diamondTvecs);
+      VectorVec3d diamondRvecs = null, diamondTvecs = null;
+      if (DetectedDiamonds[cameraId][dictionary] > 0)
+      {
+        Functions.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters[cameraId].CameraMatrix,
+          cameraParameters[cameraId].DistCoeffs, out diamondRvecs, out diamondTvecs);
+      }
 
       DiamondRvecs[cameraId][dictionary] = diamondRvecs;
       DiamondTvecs[cameraId][dictionary] = diamondTvecs;
@@ -153,19 +157,20 @@ namespace ArucoUnity
 
       if (DetectedDiamonds[cameraId][dictionary] > 0)
       {
+        // Draw detected diamonds
         if (arucoTracker.DrawDetectedDiamonds)
         {
           Functions.DrawDetectedDiamonds(cameraImages[cameraId], DiamondCorners[cameraId][dictionary], DiamondIds[cameraId][dictionary]);
           updatedCameraImage = true;
         }
 
-        if (arucoTracker.DrawAxes && cameraParameters != null && DiamondRvecs != null)
+        // Draw axes of detected diamonds
+        if (arucoTracker.DrawAxes && cameraParameters != null && DiamondRvecs[cameraId][dictionary] != null)
         {
           for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
           {
-            // TODO: match the detected markers [i] with a ArucoDiamond on the list to get the AxisLength
-            //Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
-            //  Rvecs.At(i), Tvecs.At(i), arucoDiamond.AxisLength);
+            Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+            DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DRAW_AXIS_LENGTH);
             updatedCameraImage = true;
           }
         }
@@ -182,6 +187,42 @@ namespace ArucoUnity
     /// </summary>
     public override void Place(int cameraId, Dictionary dictionary)
     {
+      if (DiamondRvecs[cameraId][dictionary] != null)
+      {
+        for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
+        {
+          ArucoDiamond foundArucoDiamond;
+          if (TryGetArucoDiamond(cameraId, dictionary, i, out foundArucoDiamond))
+          {
+            float positionFactor = foundArucoDiamond.SquareSideLength * ESTIMATE_POSE_SQUARE_LENGTH / DETECT_SQUARE_MARKER_LENGTH_RATE; // Equal to marker lenght
+            PlaceArucoObject(foundArucoDiamond, arucoTracker.MarkerRvecs[cameraId][dictionary].At(i), arucoTracker.MarkerTvecs[cameraId][dictionary].At(i),
+              cameraId, positionFactor);
+          }
+        }
+      }
+    }
+
+    protected bool TryGetArucoDiamond(int cameraId, Dictionary dictionary, uint arucoObjectId, out ArucoDiamond arucoDiamond)
+    {
+      int[] detectedDiamondIds = new int[4];
+      for (int j = 0; j < 4; j++)
+      {
+        detectedDiamondIds[j] = DiamondIds[cameraId][dictionary].At(arucoObjectId).Get(j);
+      }
+
+      ArucoObject foundArucoObject;
+      int detectedDiamondHashCode = ArucoDiamond.GetArucoHashCode(detectedDiamondIds);
+      if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedDiamondHashCode, out foundArucoObject))
+      {
+        arucoDiamond = foundArucoObject as ArucoDiamond;
+        if (arucoDiamond != null)
+        {
+          return true;
+        }
+      }
+
+      arucoDiamond = null;
+      return false;
     }
   }
 
