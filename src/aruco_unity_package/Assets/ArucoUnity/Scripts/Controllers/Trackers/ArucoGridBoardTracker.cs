@@ -41,9 +41,9 @@ namespace ArucoUnity
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
         Vec3d rvec = null, tvec = null;
-        // TODO: fix crash
-        //arucoGridBoard.MarkersUsedForEstimation = Functions.EstimatePoseBoard(MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary], 
-        //  arucoGridBoard.Board, cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvec, out tvec);
+        arucoGridBoard.MarkersUsedForEstimation = Functions.EstimatePoseBoard(arucoTracker.MarkerCorners[cameraId][dictionary],
+          arucoTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters[cameraId].CameraMatrix, 
+          cameraParameters[cameraId].DistCoeffs, out rvec, out tvec);
 
         arucoGridBoard.Rvec = rvec;
         arucoGridBoard.Tvec = tvec;
@@ -81,6 +81,13 @@ namespace ArucoUnity
     /// </summary>
     public override void Place(int cameraId, Dictionary dictionary)
     {
+      foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
+      {
+        if (arucoGridBoard.MarkersUsedForEstimation > 0)
+        {
+          PlaceArucoObject(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
+        }
+      }
     }
   }
 
