@@ -173,6 +173,7 @@ namespace ArucoUnity
             DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DRAW_AXIS_LENGTH);
             updatedCameraImage = true;
           }
+          throw new System.Exception("bla");
         }
       }
 

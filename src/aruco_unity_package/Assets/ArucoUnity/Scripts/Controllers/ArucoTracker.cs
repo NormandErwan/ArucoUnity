@@ -117,6 +117,7 @@ namespace ArucoUnity
     private bool arucoCameraImageUpdated;
     private Thread trackingThread;
     private Mutex trackingMutex;
+    private System.Exception trackingException;
 
     // MonoBehaviour methods
 
@@ -127,6 +128,7 @@ namespace ArucoUnity
     {
       base.Awake();
 
+      // Initialize the trackers
       trackers = new Dictionary<System.Type, ArucoObjectTracker>()
       {
         { typeof(ArucoMarker), new ArucoMarkerTracker() },
@@ -134,6 +136,26 @@ namespace ArucoUnity
         { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
         { typeof(ArucoDiamond), new ArucoDiamondTracker() }
       };
+
+      // Initialize the tracking
+      trackingMutex = new Mutex();
+      trackingThread = new Thread(() =>
+      {
+        while (true)
+        {
+          try
+          {
+            trackingException = null;
+            Track();
+          }
+          catch (System.Exception e)
+          {
+            trackingMutex.WaitOne();
+            trackingException = e;
+            trackingMutex.ReleaseMutex();
+          }
+        }
+      });
     }
 
     /// <summary>
@@ -339,27 +361,32 @@ namespace ArucoUnity
         }
       }
 
-      // Initialize the tracking
-      trackingMutex = new Mutex();
-      trackingThread = new Thread(() =>
-      {
-        while (true)
-        {
-          Track();
-        }
-      });
+      // Start the tracking
       trackingThread.Start();
       StartCoroutine("ApplyTracking");
     }
 
     /// <summary>
-    /// Set the tracking thread to track the next it will be executed.
+    /// Set the tracking thread to track the next it will be executed and re-throw the tracking thread exceptions.
     /// </summary>
     protected override void ArucoCameraImageUpdated()
     {
       trackingMutex.WaitOne();
+
       arucoCameraImageUpdated = true;
+
+      System.Exception e = null;
+      if (trackingException != null)
+      {
+        e = trackingException;
+      }
+
       trackingMutex.ReleaseMutex();
+
+      if (e != null)
+      {
+        throw e;
+      }
     }
 
     // Methods
