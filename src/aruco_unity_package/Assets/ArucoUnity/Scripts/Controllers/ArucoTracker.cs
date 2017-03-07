@@ -465,7 +465,8 @@ namespace ArucoUnity
     /// </summary>
     public void Draw()
     {
-      if (!IsConfigured)
+      // Skip if no configurate, or don't estimate, or no camera parameters
+      if (!IsConfigured || !EstimateTransforms || ArucoCamera.CameraParameters == null)
       {
         return;
       }
@@ -475,6 +476,12 @@ namespace ArucoUnity
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
+
+          // Skip if  no markers detected
+          if (DetectedMarkers[cameraId][dictionary] <= 0)
+          {
+            continue;
+          }
 
           foreach (var tracker in trackers)
           {
@@ -489,7 +496,8 @@ namespace ArucoUnity
     /// </summary>
     public void Place()
     {
-      if (!IsConfigured)
+      // Skip if no configurate, or don't estimate, or no camera parameters
+      if (!IsConfigured || !EstimateTransforms || ArucoCamera.CameraParameters == null)
       {
         return;
       }
@@ -499,6 +507,12 @@ namespace ArucoUnity
       foreach (var arucoObjectDictionary in ArucoObjects)
       {
         Dictionary dictionary = arucoObjectDictionary.Key;
+
+        // Skip if  no markers detected
+        if (DetectedMarkers[cameraId][dictionary] <= 0)
+        {
+          continue;
+        }
 
         foreach (var tracker in trackers)
         {

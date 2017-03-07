@@ -61,8 +61,7 @@ namespace ArucoUnity
 
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
-        if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 
-          && arucoGridBoard.Rvec != null)
+        if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
         {
           Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, 
             arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
@@ -83,7 +82,7 @@ namespace ArucoUnity
     {
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
-        if (arucoGridBoard.MarkersUsedForEstimation > 0)
+        if (arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
         {
           PlaceArucoObject(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
         }
