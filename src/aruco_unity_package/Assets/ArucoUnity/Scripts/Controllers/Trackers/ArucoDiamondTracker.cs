@@ -14,7 +14,9 @@ namespace ArucoUnity
     // Constants
 
     protected static readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
+
     protected static readonly float ESTIMATE_POSE_SQUARE_LENGTH = 1f;
+
     protected static readonly float DRAW_AXIS_LENGTH = ESTIMATE_POSE_SQUARE_LENGTH / 2f;
 
     // Properties
@@ -31,7 +33,11 @@ namespace ArucoUnity
 
     // ArucoObjectController related methods
 
-    public override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    /// <summary>
+    /// Update the properties when a new dictionary is added.
+    /// </summary>
+    /// <param name="dictionary">The new dictionary.</param>
+    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryAdded(dictionary);
 
@@ -44,7 +50,7 @@ namespace ArucoUnity
       }
     }
 
-    public override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryRemoved(dictionary);
 
@@ -60,11 +66,11 @@ namespace ArucoUnity
     // ArucoObjectTracker methods
 
     /// <summary>
-    /// <see cref="ArucoObjectTracker.Configure()"/>
+    /// <see cref="ArucoObjectTracker.Activate()"/>
     /// </summary>
-    public override void Configure(ArucoTracker arucoTracker)
+    public override void Activate(ArucoTracker arucoTracker)
     {
-      base.Configure(arucoTracker);
+      base.Activate(arucoTracker);
 
       DiamondCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
       DiamondIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
@@ -94,26 +100,45 @@ namespace ArucoUnity
     }
 
     /// <summary>
+    /// <see cref="ArucoObjectTracker.Deactivate()"/>
+    /// </summary>
+    public override void Deactivate()
+    {
+      base.Deactivate();
+
+      DiamondCorners = null;
+      DiamondIds = null;
+      DetectedDiamonds = null;
+      DiamondRvecs = null;
+      DiamondTvecs = null;
+    }
+
+    /// <summary>
     /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
     public override void Detect(int cameraId, Dictionary dictionary)
     {
+      if (!IsActivated)
+      {
+        return;
+      }
+
       CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       VectorVectorPoint2f diamondCorners = null;
       VectorVec4i diamondIds = null;
 
-      if (arucoTracker.DetectedMarkers[cameraId][dictionary] > 0)
+      if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0)
       {
         if (cameraParameters == null)
         {
-          Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerCorners[cameraId][dictionary],
-            arucoTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds);
+          Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
+            arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds);
         }
         else
         {
-          Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerCorners[cameraId][dictionary],
-            arucoTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds,
+          Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
+            arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds,
             cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs);
         }
       }
@@ -128,11 +153,12 @@ namespace ArucoUnity
     /// </summary>
     public override void EstimateTranforms(int cameraId, Dictionary dictionary)
     {
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-      if (cameraParameters == null)
+      if (!IsActivated)
       {
         return;
       }
+
+      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
       VectorVec3d diamondRvecs = null, diamondTvecs = null;
@@ -151,6 +177,11 @@ namespace ArucoUnity
     /// </summary>
     public override void Draw(int cameraId, Dictionary dictionary)
     {
+      if (!IsActivated)
+      {
+        return;
+      }
+
       bool updatedCameraImage = false;
       Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
       CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
@@ -188,6 +219,11 @@ namespace ArucoUnity
     /// </summary>
     public override void Place(int cameraId, Dictionary dictionary)
     {
+      if (!IsActivated)
+      {
+        return;
+      }
+
       if (DiamondRvecs[cameraId][dictionary] != null)
       {
         for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
@@ -196,7 +232,7 @@ namespace ArucoUnity
           if (TryGetArucoDiamond(cameraId, dictionary, i, out foundArucoDiamond))
           {
             float positionFactor = foundArucoDiamond.SquareSideLength * ESTIMATE_POSE_SQUARE_LENGTH / DETECT_SQUARE_MARKER_LENGTH_RATE; // Equal to marker lenght
-            PlaceArucoObject(foundArucoDiamond, arucoTracker.MarkerRvecs[cameraId][dictionary].At(i), arucoTracker.MarkerTvecs[cameraId][dictionary].At(i),
+            PlaceArucoObject(foundArucoDiamond, arucoTracker.MarkerTracker.MarkerRvecs[cameraId][dictionary].At(i), arucoTracker.MarkerTracker.MarkerTvecs[cameraId][dictionary].At(i),
               cameraId, positionFactor);
           }
         }

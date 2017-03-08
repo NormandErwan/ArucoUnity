@@ -83,36 +83,11 @@ namespace ArucoUnity
     /// </summary>
     public bool EstimateTransforms { get { return estimateTransforms; } set { estimateTransforms = value; } }
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, int>[] DetectedMarkers { get; protected internal set; }
-
-    /// <summary>
-    /// Vector of the detected marker corners on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
-    /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] MarkerCorners { get; protected internal set; }
-
-    /// <summary>
-    /// Vector of identifiers of the detected markers on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
-    /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[] MarkerIds { get; protected internal set; }
-
-    /// <summary>
-    /// Vector of the corners with not a correct identification on each <see cref="ArucoCamera.Images"/>. Updated by <see cref="Detect"/>.
-    /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] RejectedCandidateCorners { get; protected internal set; }
-
-    /// <summary>
-    /// Vector of rotation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
-    /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] MarkerRvecs { get; protected internal set; }
-
-    /// <summary>
-    /// Vector of translation vectors of the detected markers on each <see cref="ArucoCamera.Images"/>.
-    /// </summary>
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] MarkerTvecs { get; protected internal set; }
+    public ArucoMarkerTracker MarkerTracker { get; protected set; }
 
     // Variables
 
-    protected Dictionary<System.Type, ArucoObjectTracker> trackers;
+    protected Dictionary<System.Type, ArucoObjectTracker> additionalTrackers;
     private bool arucoCameraImageUpdated;
     private Thread trackingThread;
     private Mutex trackingMutex;
@@ -128,15 +103,15 @@ namespace ArucoUnity
       base.Awake();
 
       // Initialize the trackers
-      trackers = new Dictionary<System.Type, ArucoObjectTracker>()
+      MarkerTracker = new ArucoMarkerTracker();
+      additionalTrackers = new Dictionary<System.Type, ArucoObjectTracker>()
       {
-        { typeof(ArucoMarker), new ArucoMarkerTracker() },
         { typeof(ArucoGridBoard), new ArucoGridBoardTracker() },
         { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
         { typeof(ArucoDiamond), new ArucoDiamondTracker() }
       };
 
-      // Initialize the tracking
+      // Initialize the tracking thread
       trackingMutex = new Mutex();
       trackingThread = new Thread(() =>
       {
@@ -162,48 +137,18 @@ namespace ArucoUnity
     protected override void Start()
     {
       base.Start();
-
-      // Remove aruco objects with no associated trackers from the list
-      foreach (var arucoObjectDictionary in ArucoObjects)
-      {
-        List<ArucoObject> arucoObjectsToDelete = new List<ArucoObject>();
-
-        foreach (var arucoObject in arucoObjectDictionary.Value)
-        {
-          ArucoObjectTracker tracker;
-          if (!trackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
-          {
-            Debug.LogError("No tracker found for the type '" + arucoObject.Value.GetType() + "'. Removing the object '"
-              + arucoObject.Value.gameObject.name + "' from the tracking list.");
-            arucoObjectsToDelete.Add(arucoObject.Value);
-          }
-        }
-
-        foreach (var arucoObject in arucoObjectsToDelete)
-        {
-          Remove(arucoObject);
-        }
-      }
-
-      // Suscribe to ArucoObjectController events
       base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
-      base.DictionaryAdded += ArucoObjectController_DictionaryAdded;
-      base.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
+      base.ArucoObjectRemoved += ArucoObjectController_ArucoObjectRemoved;
     }
 
     /// <summary>
     /// Unsuscribe from ArucoObjectController events, and abort the tracking thread.
     /// </summary>
-    protected virtual void OnDestroy()
+    protected override void OnDestroy()
     {
+      base.OnDestroy();
       base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
-      base.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
-      base.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
-
-      if (trackingThread != null)
-      {
-        trackingThread.Abort();
-      }
+      base.ArucoObjectRemoved -= ArucoObjectController_ArucoObjectRemoved;
     }
 
     // ArucoObjectController methods
@@ -214,8 +159,8 @@ namespace ArucoUnity
     /// <param name="arucoObject">The new ArUco object to suscribe.</param>
     protected virtual void ArucoObjectController_ArucoObjectAdded(ArucoObject arucoObject)
     {
-      ArucoObjectTracker tracker;
-      if (!trackers.TryGetValue(arucoObject.GetType(), out tracker))
+      ArucoObjectTracker tracker = null;
+      if (arucoObject.GetType() != typeof(ArucoMarker) && !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
       {
         Debug.LogError("No tracker found for the type '" + arucoObject.GetType() + "'. Removing the object '" + arucoObject.gameObject.name +
           "' from the tracking list.");
@@ -223,61 +168,17 @@ namespace ArucoUnity
         return;
       }
 
+      if (tracker != null && !tracker.IsActivated)
+      {
+        tracker.Activate(this);
+      }
+
       arucoObject.gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// Update the properties when a new dictionary is added.
-    /// </summary>
-    /// <param name="dictionary">The new dictionary.</param>
-    protected void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
     {
-      if (!IsConfigured)
-      {
-        return;
-      }
 
-      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
-      {
-        MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-        MarkerIds[cameraId].Add(dictionary, new VectorInt());
-        RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-        MarkerRvecs[cameraId].Add(dictionary, new VectorVec3d());
-        MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
-        DetectedMarkers[cameraId].Add(dictionary, 0);
-      }
-
-      foreach (var tracker in trackers)
-      {
-        tracker.Value.ArucoObjectController_DictionaryAdded(dictionary);
-      }
-    }
-
-    /// <summary>
-    /// Update the properties when a dictionary is removed.
-    /// </summary>
-    /// <param name="dictionary">The removed dictionary.</param>
-    protected void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
-    {
-      if (!IsConfigured)
-      {
-        return;
-      }
-
-      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
-      {
-        MarkerCorners[cameraId].Remove(dictionary);
-        MarkerIds[cameraId].Remove(dictionary);
-        RejectedCandidateCorners[cameraId].Remove(dictionary);
-        MarkerRvecs[cameraId].Remove(dictionary);
-        MarkerTvecs[cameraId].Remove(dictionary);
-        DetectedMarkers[cameraId].Remove(dictionary);
-      }
-
-      foreach (var tracker in trackers)
-      {
-        tracker.Value.ArucoObjectController_DictionaryRemoved(dictionary);
-      }
     }
 
     // ArucoObject methods
@@ -289,7 +190,14 @@ namespace ArucoUnity
     protected override void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
     {
       base.ArucoObject_PropertyUpdating(arucoObject);
-      trackers[arucoObject.GetType()].ArucoObject_PropertyUpdating(arucoObject);
+      if (arucoObject.GetType() == typeof(ArucoMarker))
+      {
+        MarkerTracker.RestoreGameObjectScale(arucoObject);
+      }
+      else
+      {
+        additionalTrackers[arucoObject.GetType()].RestoreGameObjectScale(arucoObject);
+      }
     }
 
     /// <summary>
@@ -299,7 +207,14 @@ namespace ArucoUnity
     protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
     {
       base.ArucoObject_PropertyUpdated(arucoObject);
-      trackers[arucoObject.GetType()].ArucoObject_PropertyUpdated(arucoObject);
+      if (arucoObject.GetType() == typeof(ArucoMarker))
+      {
+        MarkerTracker.AdjustGameObjectScale(arucoObject);
+      }
+      else
+      {
+        additionalTrackers[arucoObject.GetType()].AdjustGameObjectScale(arucoObject);
+      }
     }
 
     // ArucoObjectDetector methods
@@ -314,58 +229,50 @@ namespace ArucoUnity
         EstimateTransforms = false;
       }
 
-      // Initialize the properties and the ArUco objects
-      MarkerCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
-      MarkerIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>[ArucoCamera.CamerasNumber];
-      RejectedCandidateCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[ArucoCamera.CamerasNumber];
-      MarkerRvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
-      MarkerTvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[ArucoCamera.CamerasNumber];
-      DetectedMarkers = new Dictionary<ArucoUnity.Plugin.Dictionary, int>[ArucoCamera.CamerasNumber];
-
-      for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
-      {
-        MarkerCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
-        MarkerIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorInt>();
-        RejectedCandidateCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
-        MarkerRvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
-        MarkerTvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
-        DetectedMarkers[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, int>();
-
-        foreach (var arucoObjectDictionary in ArucoObjects)
-        {
-          Dictionary dictionary = arucoObjectDictionary.Key;
-
-          MarkerCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-          MarkerIds[cameraId].Add(dictionary, new VectorInt());
-          RejectedCandidateCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-          MarkerRvecs[cameraId].Add(dictionary, new VectorVec3d());
-          MarkerTvecs[cameraId].Add(dictionary, new VectorVec3d());
-          DetectedMarkers[cameraId].Add(dictionary, 0);
-        }
-      }
-
-      // Configure the trackers
-      foreach (var tracker in trackers)
-      {
-        tracker.Value.Configure(this);
-      }
-
-      // Trackers do adjustements on the aruco objects
+      // Trackers configuration
+      MarkerTracker.Activate(this);
       foreach (var arucoObjectDictionary in ArucoObjects)
       {
+        // List the aruco objects to delete from the list
+        List<ArucoObject> arucoObjectsToDelete = new List<ArucoObject>();
         foreach (var arucoObject in arucoObjectDictionary.Value)
         {
-          trackers[arucoObject.Value.GetType()].ArucoObject_PropertyUpdated(arucoObject.Value);
+          if (arucoObject.Value.GetType() != typeof(ArucoMarker))
+          {
+            ArucoObjectTracker tracker;
+            if (additionalTrackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
+            {
+              // Activate tracker
+              if (!tracker.IsActivated)
+              {
+                tracker.Activate(this);
+              }
+            }
+            else
+            {
+              arucoObjectsToDelete.Add(arucoObject.Value);
+            }
+          }
+        }
+
+        // Remove aruco objects with no associated trackers from the list
+        foreach (var arucoObject in arucoObjectsToDelete)
+        {
+          Remove(arucoObject);
+          Debug.LogError("No tracker found for the type '" + arucoObject.GetType() + "'. Removing the object '" + arucoObject.gameObject.name
+            + "' from the tracking list.");
+        }
+
+        // Make adjustements on the tracked aruco objects
+        foreach (var arucoObject in arucoObjectDictionary.Value)
+        {
+          ArucoObject_PropertyUpdated(arucoObject.Value);
         }
       }
-
-      // Start the tracking
-      trackingThread.Start();
-      StartCoroutine("ApplyTracking");
     }
 
     /// <summary>
-    /// Set the tracking thread to track the next it will be executed and re-throw the tracking thread exceptions.
+    /// Set the tracking thread to track the next it will be executed, and re-throw the tracking thread exceptions.
     /// </summary>
     protected override void ArucoCameraImageUpdated()
     {
@@ -385,6 +292,28 @@ namespace ArucoUnity
       {
         throw e;
       }
+    }
+
+    /// <summary>
+    /// Start the tracking.
+    /// </summary>
+    protected override void StartDetector()
+    {
+      base.StartDetector();
+
+      trackingThread.Start();
+      StartCoroutine("ApplyTracking");
+    }
+
+    /// <summary>
+    /// Stop the tracking.
+    /// </summary>
+    protected override void StopDetector()
+    {
+      base.StopDetector();
+
+      trackingThread.Abort();
+      StopCoroutine("ApplyTracking");
     }
 
     // Methods
@@ -419,7 +348,8 @@ namespace ArucoUnity
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
 
-          foreach (var tracker in trackers)
+          MarkerTracker.Detect(cameraId, dictionary);
+          foreach (var tracker in additionalTrackers)
           {
             tracker.Value.Detect(cameraId, dictionary);
           }
@@ -432,7 +362,8 @@ namespace ArucoUnity
     /// </summary>
     public void EstimateTranforms()
     {
-      if (!IsConfigured)
+      // Skip if no configurate, or don't estimate
+      if (!IsConfigured || !EstimateTransforms)
       {
         return;
       }
@@ -443,15 +374,8 @@ namespace ArucoUnity
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
 
-          // Skip if don't estimate, or no markers detected, or no camera parameters
-          if (!EstimateTransforms || DetectedMarkers[cameraId][dictionary] <= 0 || ArucoCamera.CameraParameters == null)
-          {
-            MarkerRvecs[cameraId][dictionary] = null;
-            MarkerTvecs[cameraId][dictionary] = null;
-            continue;
-          }
-
-          foreach (var tracker in trackers)
+          MarkerTracker.EstimateTranforms(cameraId, dictionary);
+          foreach (var tracker in additionalTrackers)
           {
             tracker.Value.EstimateTranforms(cameraId, dictionary);
           }
@@ -464,8 +388,8 @@ namespace ArucoUnity
     /// </summary>
     public void Draw()
     {
-      // Skip if no configurate, or don't estimate, or no camera parameters
-      if (!IsConfigured || !EstimateTransforms || ArucoCamera.CameraParameters == null)
+      // Skip if no configurate, or don't estimate
+      if (!IsConfigured || !EstimateTransforms)
       {
         return;
       }
@@ -476,13 +400,8 @@ namespace ArucoUnity
         {
           Dictionary dictionary = arucoObjectDictionary.Key;
 
-          // Skip if  no markers detected
-          if (DetectedMarkers[cameraId][dictionary] <= 0)
-          {
-            continue;
-          }
-
-          foreach (var tracker in trackers)
+          MarkerTracker.Draw(cameraId, dictionary);
+          foreach (var tracker in additionalTrackers)
           {
             tracker.Value.Draw(cameraId, dictionary);
           }
@@ -495,8 +414,8 @@ namespace ArucoUnity
     /// </summary>
     public void Place()
     {
-      // Skip if no configurate, or don't estimate, or no camera parameters
-      if (!IsConfigured || !EstimateTransforms || ArucoCamera.CameraParameters == null)
+      // Skip if no configurate, or don't estimate
+      if (!IsConfigured || !EstimateTransforms)
       {
         return;
       }
@@ -507,13 +426,8 @@ namespace ArucoUnity
       {
         Dictionary dictionary = arucoObjectDictionary.Key;
 
-        // Skip if  no markers detected
-        if (DetectedMarkers[cameraId][dictionary] <= 0)
-        {
-          continue;
-        }
-
-        foreach (var tracker in trackers)
+        MarkerTracker.Place(cameraId, dictionary);
+        foreach (var tracker in additionalTrackers)
         {
           tracker.Value.Place(cameraId, dictionary);
         }

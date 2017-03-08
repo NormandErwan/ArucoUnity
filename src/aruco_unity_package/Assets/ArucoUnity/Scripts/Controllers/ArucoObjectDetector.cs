@@ -111,6 +111,11 @@ namespace ArucoUnity
         DetectorParameters = detectorParametersController.DetectorParameters;
       }
 
+      protected virtual void OnDestroy()
+      {
+        StopDetector();
+      }
+
       // Methods
 
       /// <summary>

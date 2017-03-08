@@ -11,16 +11,27 @@ namespace ArucoUnity
 
   public abstract class ArucoObjectTracker
   {
+    // Properties
+
+    public bool IsActivated { get; protected set; }
+
     // Variables
 
     protected ArucoTracker arucoTracker;
+
+    // Constructor
+
+    public ArucoObjectTracker()
+    {
+      Deactivate();
+    }
 
     // ArucoObject related methods
 
     /// <summary>
     /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
     /// </summary>
-    public virtual void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
+    public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
     {
       if (arucoObject.MarkerSideLength != 0)
       {
@@ -31,7 +42,7 @@ namespace ArucoUnity
     /// <summary>
     /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
     /// </summary>
-    public virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+    public virtual void AdjustGameObjectScale(ArucoObject arucoObject)
     {
       if (arucoObject.MarkerSideLength != 0)
       {
@@ -41,22 +52,48 @@ namespace ArucoUnity
 
     // ArucoObjectController related methods
 
-    public virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    protected virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
     {
+      if (!IsActivated)
+      {
+        return;
+      }
     }
 
-    public virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    protected virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
     {
+      if (!IsActivated)
+      {
+        return;
+      }
     }
 
     // Methods
 
     /// <summary>
-    /// Initialize the properties and the tracking.
+    /// Initialize the properties and the tracker.
     /// </summary>
-    public virtual void Configure(ArucoTracker arucoTracker)
+    public virtual void Activate(ArucoTracker arucoTracker)
     {
       this.arucoTracker = arucoTracker;
+      IsActivated = true;
+
+      arucoTracker.DictionaryAdded += ArucoObjectController_DictionaryAdded;
+      arucoTracker.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
+    }
+
+    /// <summary>
+    /// Deactivate the tracker.
+    /// </summary>
+    public virtual void Deactivate()
+    {
+      if (arucoTracker != null)
+      {
+        arucoTracker.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
+        arucoTracker.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
+      }
+      arucoTracker = null;
+      IsActivated = false;
     }
 
     /// <summary>
@@ -102,6 +139,7 @@ namespace ArucoUnity
       Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);
       Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenter) - camera.ViewportToWorldPoint(imageCenter);
 
+      // TODO: fix the position shift orientation
       Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
         + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
       arucoGameObject.transform.localPosition += positionShift;
