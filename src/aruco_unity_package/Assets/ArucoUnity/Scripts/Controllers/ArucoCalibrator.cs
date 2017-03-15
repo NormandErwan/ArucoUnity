@@ -56,7 +56,7 @@ namespace ArucoUnity
       set
       {
         assumeZeroTangentialDistorsion = value;
-        UpdateCalibrationOptions();
+        UpdateCalibrationFlags();
       }
     }
 
@@ -66,7 +66,7 @@ namespace ArucoUnity
       set
       {
         fixAspectRatio = value;
-        UpdateCalibrationOptions();
+        UpdateCalibrationFlags();
       }
     }
 
@@ -76,7 +76,7 @@ namespace ArucoUnity
       set
       {
         fixPrincipalPointAtCenter = value;
-        UpdateCalibrationOptions();
+        UpdateCalibrationFlags();
       }
     }
 
@@ -86,7 +86,7 @@ namespace ArucoUnity
       set
       {
         calibrationFlags = value;
-        UpdateCalibrationFlags();
+        UpdateCalibrationOptions();
       }
     }
 
