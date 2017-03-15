@@ -178,7 +178,7 @@ namespace ArucoUnity
 
     protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
     {
-
+      // TODO
     }
 
     // ArucoObject methods

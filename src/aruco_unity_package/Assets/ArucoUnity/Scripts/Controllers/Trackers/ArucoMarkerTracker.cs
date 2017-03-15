@@ -14,7 +14,7 @@ namespace ArucoUnity
   {
     // Constants
 
-    protected readonly float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+    protected const float ESTIMATE_POSE_MARKER_LENGTH = 1f;
     
     protected readonly Color REJECTED_MARKERS_CANDIDATES_COLOR = new Color(100, 0, 255);
 

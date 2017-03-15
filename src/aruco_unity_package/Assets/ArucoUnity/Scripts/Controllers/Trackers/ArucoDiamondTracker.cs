@@ -13,11 +13,11 @@ namespace ArucoUnity
   {
     // Constants
 
-    protected static readonly float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
+    protected const float DETECT_SQUARE_MARKER_LENGTH_RATE = 2f;
 
-    protected static readonly float ESTIMATE_POSE_SQUARE_LENGTH = 1f;
+    protected const float ESTIMATE_POSE_SQUARE_LENGTH = 1f;
 
-    protected static readonly float DRAW_AXIS_LENGTH = ESTIMATE_POSE_SQUARE_LENGTH / 2f;
+    protected const float DRAW_AXIS_LENGTH = ESTIMATE_POSE_SQUARE_LENGTH / 2f;
 
     // Properties
 
