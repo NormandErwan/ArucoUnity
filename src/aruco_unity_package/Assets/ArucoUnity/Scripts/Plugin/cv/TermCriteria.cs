@@ -51,7 +51,7 @@ namespace ArucoUnity
         {
         }
 
-        public TermCriteria(int type, int maxCount, double epsilon) : base(au_cv_TermCriteria_new2(type, maxCount, epsilon))
+        public TermCriteria(Type type, int maxCount, double epsilon) : base(au_cv_TermCriteria_new2((int)type, maxCount, epsilon))
         {
         }
 

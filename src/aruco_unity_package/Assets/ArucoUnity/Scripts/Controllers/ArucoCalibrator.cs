@@ -101,6 +101,8 @@ namespace ArucoUnity
     /// </summary>
     public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
+    public TermCriteria CalibrationTermCriteria { get; set; }
+
     public VectorVectorVectorPoint2f[] AllCorners { get; protected set; }
 
     public VectorVectorInt[] AllIds { get; protected set; }
@@ -132,6 +134,12 @@ namespace ArucoUnity
     protected override void Awake()
     {
       base.Awake();
+
+      if (CalibrationTermCriteria == null)
+      {
+        CalibrationTermCriteria = new TermCriteria(TermCriteria.Type.COUNT | TermCriteria.Type.EPS, 100, 1E-5);
+      }
+
       UpdateCalibrationFlags();
     }
 
@@ -326,7 +334,9 @@ namespace ArucoUnity
         // Calibrate camera with aruco
         Size imageSize = ArucoCamera.Images[cameraId].size;
         VectorMat rvecs, tvecs;
-        reprojectionErrors[cameraId] = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, ArucoBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, (int)CalibrationFlags);
+        reprojectionErrors[cameraId] = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
+          ArucoBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, (int)CalibrationFlags, 
+          CalibrationTermCriteria);
 
         // If the used board is a charuco board, refine the calibration
         if (charucoBoard != null)
@@ -346,7 +356,8 @@ namespace ArucoUnity
           }
 
           // Calibrate camera using charuco
-          reprojectionErrors[cameraId] = Functions.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId]);
+          reprojectionErrors[cameraId] = Functions.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, 
+            imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, (int)CalibrationFlags, CalibrationTermCriteria);
         }
 
         // Save calibration parameters
