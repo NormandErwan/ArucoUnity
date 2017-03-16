@@ -335,7 +335,7 @@ namespace ArucoUnity
         Size imageSize = ArucoCamera.Images[cameraId].size;
         VectorMat rvecs, tvecs;
         reprojectionErrors[cameraId] = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
-          ArucoBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, (int)CalibrationFlags, 
+          ArucoBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags, 
           CalibrationTermCriteria);
 
         // If the used board is a charuco board, refine the calibration
@@ -357,7 +357,7 @@ namespace ArucoUnity
 
           // Calibrate camera using charuco
           reprojectionErrors[cameraId] = Functions.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, 
-            imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, (int)CalibrationFlags, CalibrationTermCriteria);
+            imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags, CalibrationTermCriteria);
         }
 
         // Save calibration parameters

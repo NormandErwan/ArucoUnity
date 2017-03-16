@@ -255,13 +255,13 @@ namespace ArucoUnity
         System.IntPtr rejectedCorners, System.IntPtr exception);
 
       public static double CalibrateCameraAruco(VectorVectorPoint2f corners, VectorInt ids, VectorInt counter, Board board, Size imageSize,
-        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags, TermCriteria criteria)
+        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, CALIB flags, TermCriteria criteria)
       {
         Exception exception = new Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraAruco1(corners.cppPtr, ids.cppPtr, counter.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, flags, criteria.cppPtr, exception.cppPtr);
+          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
         rvecs = new VectorMat(rvecsPtr);
         tvecs = new VectorMat(tvecsPtr);
 
@@ -270,13 +270,13 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraAruco(VectorVectorPoint2f corners, VectorInt ids, VectorInt counter, Board board, Size imageSize,
-        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags)
+        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, CALIB flags)
       {
         Exception exception = new Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraAruco2(corners.cppPtr, ids.cppPtr, counter.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, flags, exception.cppPtr);
+          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, exception.cppPtr);
         rvecs = new VectorMat(rvecsPtr);
         tvecs = new VectorMat(tvecsPtr);
 
@@ -326,13 +326,13 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraCharuco(VectorVectorPoint2f charucoCorners, VectorVectorInt charucoIds, CharucoBoard board, Size imageSize,
-        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags, TermCriteria criteria)
+        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, CALIB flags, TermCriteria criteria)
       {
         Exception exception = new Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco1(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, flags, criteria.cppPtr, exception.cppPtr);
+          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
         rvecs = new VectorMat(rvecsPtr);
         tvecs = new VectorMat(tvecsPtr);
 
@@ -341,13 +341,13 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraCharuco(VectorVectorPoint2f charucoCorners, VectorVectorInt charucoIds, CharucoBoard board, Size imageSize,
-        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, int flags)
+        Mat cameraMatrix, Mat distCoeffs, out VectorMat rvecs, out VectorMat tvecs, CALIB flags)
       {
         Exception exception = new Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco2(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, flags, exception.cppPtr);
+          distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, exception.cppPtr);
         rvecs = new VectorMat(rvecsPtr);
         tvecs = new VectorMat(tvecsPtr);
 
