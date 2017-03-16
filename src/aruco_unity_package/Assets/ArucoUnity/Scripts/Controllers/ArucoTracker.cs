@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.std;
 using ArucoUnity.Utility;
 using System.Collections.Generic;
 using System.Threading;

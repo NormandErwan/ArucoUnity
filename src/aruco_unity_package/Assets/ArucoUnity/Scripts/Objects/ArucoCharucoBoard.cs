@@ -11,7 +11,7 @@ namespace ArucoUnity
   /// <summary>
   /// Describes a ChArUco board.
   /// </summary>
-  public class ArucoCharucoBoard : ArucoBoard<CharucoBoard>
+  public class ArucoCharucoBoard : ArucoBoard
   {
     // Editor fields
 
@@ -28,7 +28,7 @@ namespace ArucoUnity
     private float squareSideLength;
 
     // Properties
-
+    
     /// <summary>
     /// Number of squares in the X direction.
     /// </summary>

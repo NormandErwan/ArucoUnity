@@ -127,7 +127,7 @@ namespace ArucoUnity
       /// <summary>
       /// The parameters of each camera.
       /// </summary>
-      public CameraParameters[] CameraParameters { get; protected set; }
+      public CameraParameters CameraParameters { get; protected set; }
 
       /// <summary>
       /// The Unity camera components that will capture the <see cref="ImageTextures"/>.
@@ -339,21 +339,21 @@ namespace ArucoUnity
           undistordedImages_R = new Mat();
         }
 
-        for (int i = 0; i < CamerasNumber; i++)
+        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
           // Image
-          byte[] imageData = ImageTextures[i].GetRawTextureData();
-          images[i] = new Mat(ImageTextures[i].height, ImageTextures[i].width, ImageType(ImageTextures[i]), imageData);
-          imageDataSizes[i] = (int)(images[i].ElemSize() * images[i].Total());
+          byte[] imageData = ImageTextures[cameraId].GetRawTextureData();
+          images[cameraId] = new Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]), imageData);
+          imageDataSizes[cameraId] = (int)(images[cameraId].ElemSize() * images[cameraId].Total());
 
           // Undistortion maps
           if (CameraParameters != null)
           {
-            Mat cameraMatrix = CameraParameters[i].CameraMatrix;
-            undistordedImages_maps[i] = new Mat[2]; // map1 and map2
-            Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters[i].DistCoeffs, undistordedImages_R,
-              cameraMatrix, Images[i].size, TYPE.CV_16SC2, out undistordedImages_maps[i][0], out undistordedImages_maps[i][1]);
-            undistordedImages[i] = new Mat(undistordedImages_maps[i][0].size, ImageType(ImageTextures[i]));
+            Mat cameraMatrix = CameraParameters.CamerasMatrix[cameraId];
+            undistordedImages_maps[cameraId] = new Mat[2]; // map1 and map2
+            Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters.DistCoeffs[cameraId], undistordedImages_R,
+              cameraMatrix, Images[cameraId].size, TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
+            undistordedImages[cameraId] = new Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
           }
         }
       }

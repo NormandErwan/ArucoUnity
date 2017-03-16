@@ -10,7 +10,7 @@ namespace ArucoUnity
   /// <summary>
   /// Describes an ArUco grid board.
   /// </summary>
-  public class ArucoGridBoard : ArucoBoard<GridBoard>
+  public class ArucoGridBoard : ArucoBoard
   {
     // Editor fields
 

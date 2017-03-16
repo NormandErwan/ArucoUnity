@@ -212,7 +212,7 @@ namespace ArucoUnity
       if (CameraParametersFilePath != null && CameraParametersFilePath.Length > 0)
       {
         string fullCameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CameraParametersFilePath);
-        CameraParameters = new CameraParameters[] { Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath) };
+        CameraParameters = Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
       }
 
       // Update state
@@ -313,7 +313,7 @@ namespace ArucoUnity
     protected void ConfigureCameraPlane()
     {
       // Use the image texture's width as a default value if there is no camera parameters
-      float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters[cameraId].CameraFocalLength.y : ImageTextures[cameraId].width;
+      float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CamerasFocalLength[cameraId].y : ImageTextures[cameraId].width;
 
       // Configure the CameraImage according to the camera parameters
       float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera

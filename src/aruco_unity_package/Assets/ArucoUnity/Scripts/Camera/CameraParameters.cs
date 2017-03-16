@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
+﻿using ArucoUnity.Plugin.cv;
 using UnityEngine;
 using System;
 using System.IO;
@@ -24,10 +23,25 @@ namespace ArucoUnity
       /// <summary>
       /// Create an empty CameraParameters and set <see cref="CalibrationDateTime"/> to now.
       /// </summary>
-      /// <remarks>The constructor if needed for the serialization.</remarks>
+      /// <remarks>The constructor is needed for the serialization.</remarks>
       public CameraParameters()
       {
+      }
+
+      public CameraParameters(int camerasNumber)
+      {
         CalibrationDateTime = DateTime.Now;
+        CamerasNumber = camerasNumber;
+
+        ImagesHeight = new int[CamerasNumber];
+        ImagesWidth = new int[CamerasNumber];
+        CamerasMatrix = new Mat[CamerasNumber];
+        CamerasMatrixValues = new double[CamerasNumber][][];
+        DistCoeffs = new Mat[CamerasNumber];
+        DistCoeffsValues = new double[CamerasNumber][][];
+        CamerasFocalLength = new Vector2[CamerasNumber];
+        CamerasOpticalCenter = new Vector2[CamerasNumber];
+        OpticalCenters = new Vector3[CamerasNumber];
       }
 
       // Properties
@@ -37,10 +51,12 @@ namespace ArucoUnity
       /// </summary>
       public DateTime CalibrationDateTime { get; set; }
 
+      public int CamerasNumber { get; protected set; }
+
       /// <summary>
       /// The image height during the calibration.
       /// </summary>
-      public int ImageHeight
+      public int[] ImagesHeight
       {
         get { return imageHeight; }
         set
@@ -53,7 +69,7 @@ namespace ArucoUnity
       /// <summary>
       /// The image width during the calibration.
       /// </summary>
-      public int ImageWidth
+      public int[] ImagesWidth
       {
         get { return imageWidth; }
         set
@@ -76,15 +92,15 @@ namespace ArucoUnity
       /// <summary>
       /// The average re-projection error of the calibration.
       /// </summary>
-      public double ReprojectionError { get; set; }
+      public double[] ReprojectionError { get; set; }
 
       /// <summary>
       /// The camera matrix of the calibration.
       /// </summary>
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatrixType"/> and 
-      /// <see cref="CameraMatrixValues"/> properties.</remarks>
+      /// <see cref="CamerasMatrixValues"/> properties.</remarks>
       [XmlIgnore]
-      public Mat CameraMatrix
+      public Mat[] CamerasMatrix
       {
         get { return cameraMatrix; }
         set
@@ -102,11 +118,11 @@ namespace ArucoUnity
       public TYPE CameraMatrixType { get; set; }
 
       /// <summary>
-      /// The camera matrix values of the calibration. Equals to the <see cref="CameraMatrix"/> content and automatically written when 
+      /// The camera matrix values of the calibration. Equals to the <see cref="CamerasMatrix"/> content and automatically written when 
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public double[][] CameraMatrixValues { get; set; }
+      public double[][][] CamerasMatrixValues { get; set; }
 
       /// <summary>
       /// The distorsition coefficients of the calibration.
@@ -114,7 +130,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="DistCoeffsType"/> and 
       /// <see cref="DistCoeffsValues"/> properties.</remarks>
       [XmlIgnore]
-      public Mat DistCoeffs { get; set; }
+      public Mat[] DistCoeffs { get; set; }
 
       /// <summary>
       /// The distorsition coefficients type of the calibration. Equals to <see cref="DistCoeffs.Type()"/> and automatically written when 
@@ -128,27 +144,27 @@ namespace ArucoUnity
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public double[][] DistCoeffsValues { get; set; }
+      public double[][][] DistCoeffsValues { get; set; }
 
       /// <summary>
       /// The camera focal length expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 0)"/> on the x-axis
       /// and to to <see cref="CameraMatrix.AtDouble(1, 1)"/> on the y-axis.
       /// </summary>
       [XmlIgnore]
-      public Vector2 CameraFocalLength { get; protected set; }
+      public Vector2[] CamerasFocalLength { get; protected set; }
 
       /// <summary>
       /// The camera optical center expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 2)"/> on the x-axis
       /// and to <see cref="CameraMatrix.AtDouble(1, 2)"/> on the y-axis.
       /// </summary>
       [XmlIgnore]
-      public Vector2 CameraOpticalCenter { get; protected set; }
+      public Vector2[] CamerasOpticalCenter { get; protected set; }
 
       /// <summary>
       /// The camera optical center in the Unity world space.
       /// </summary>
       [XmlIgnore]
-      public Vector3 OpticalCenter { get; protected set; }
+      public Vector3[] OpticalCenters { get; protected set; }
 
       /// <summary>
       /// The file path of the parameters.
@@ -158,8 +174,8 @@ namespace ArucoUnity
 
       // Variables
 
-      protected int imageHeight, imageWidth;
-      protected Mat cameraMatrix;
+      protected int[] imageHeight, imageWidth;
+      protected Mat[] cameraMatrix;
 
       // Methods
 
@@ -194,34 +210,44 @@ namespace ArucoUnity
         }
         cameraParameters.FilePath = cameraParametersFilePath;
 
-        // Update CameraMatrix
-        int cameraMatrixRows = cameraParameters.CameraMatrixValues.Length,
-            cameraMatrixCols = cameraParameters.CameraMatrixValues[0].Length;
-
-        cameraParameters.CameraMatrix = new Mat();
-        cameraParameters.CameraMatrix.Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatrixType);
-        for (int i = 0; i < cameraMatrixRows; i++)
+        for (int cameraId = 0; cameraId < cameraParameters.CamerasNumber; cameraId++)
         {
-          for (int j = 0; j < cameraMatrixCols; j++)
+          // Update CameraMatrix
+          int cameraMatrixRows = cameraParameters.CamerasMatrixValues[cameraId].Length,
+              cameraMatrixCols = cameraParameters.CamerasMatrixValues[cameraId][0].Length;
+
+          cameraParameters.CamerasMatrix = new Mat[cameraParameters.CamerasNumber];
+          cameraParameters.CamerasMatrix[cameraId] = new Mat();
+          cameraParameters.CamerasMatrix[cameraId].Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatrixType);
+          for (int i = 0; i < cameraMatrixRows; i++)
           {
-            cameraParameters.CameraMatrix.AtDouble(i, j, cameraParameters.CameraMatrixValues[i][j]);
+            for (int j = 0; j < cameraMatrixCols; j++)
+            {
+              cameraParameters.CamerasMatrix[cameraId].AtDouble(i, j, cameraParameters.CamerasMatrixValues[cameraId][i][j]);
+            }
+          }
+
+          // Update DistCoeffs
+          int distCoeffsRows = cameraParameters.DistCoeffsValues[cameraId].Length,
+              distCoeffsCols = cameraParameters.DistCoeffsValues[cameraId][0].Length;
+
+          cameraParameters.DistCoeffs = new Mat[cameraParameters.CamerasNumber];
+          cameraParameters.DistCoeffs[cameraId] = new Mat();
+          cameraParameters.DistCoeffs[cameraId].Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
+          for (int i = 0; i < distCoeffsRows; i++)
+          {
+            for (int j = 0; j < distCoeffsCols; j++)
+            {
+              cameraParameters.DistCoeffs[cameraId].AtDouble(i, j, cameraParameters.DistCoeffsValues[cameraId][i][j]);
+            }
           }
         }
+
+        // Populate non-serialized properties
+        cameraParameters.CamerasFocalLength = new Vector2[cameraParameters.CamerasNumber];
+        cameraParameters.CamerasOpticalCenter = new Vector2[cameraParameters.CamerasNumber];
+        cameraParameters.OpticalCenters = new Vector3[cameraParameters.CamerasNumber];
         cameraParameters.UpdateCameraMatrixDerivedVariables();
-
-        // Update DistCoeffs
-        int distCoeffsRows = cameraParameters.DistCoeffsValues.Length,
-            distCoeffsCols = cameraParameters.DistCoeffsValues[0].Length;
-
-        cameraParameters.DistCoeffs = new Mat();
-        cameraParameters.DistCoeffs.Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
-        for (int i = 0; i < distCoeffsRows; i++)
-        {
-          for (int j = 0; j < distCoeffsCols; j++)
-          {
-            cameraParameters.DistCoeffs.AtDouble(i, j, cameraParameters.DistCoeffsValues[i][j]);
-          }
-        }
 
         return cameraParameters;
       }
@@ -234,32 +260,38 @@ namespace ArucoUnity
       public void SaveToXmlFile(string cameraParametersFilePath)
       {
         // Update CameraMatrixValues and CameraMatrixType
-        CameraMatrixType = CameraMatrix.Type();
-        int cameraMatrixRows = CameraMatrix.rows,
-            cameraMatrixCols = CameraMatrix.cols;
-
-        CameraMatrixValues = new double[cameraMatrixRows][];
-        for (int i = 0; i < cameraMatrixRows; i++)
+        CameraMatrixType = CamerasMatrix[0].Type();
+        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
-          CameraMatrixValues[i] = new double[cameraMatrixCols];
-          for (int j = 0; j < cameraMatrixCols; j++)
+          int cameraMatrixRows = CamerasMatrix[cameraId].rows,
+              cameraMatrixCols = CamerasMatrix[cameraId].cols;
+
+          CamerasMatrixValues[cameraId] = new double[cameraMatrixRows][];
+          for (int i = 0; i < cameraMatrixRows; i++)
           {
-            CameraMatrixValues[i][j] = CameraMatrix.AtDouble(i, j);
+            CamerasMatrixValues[cameraId][i] = new double[cameraMatrixCols];
+            for (int j = 0; j < cameraMatrixCols; j++)
+            {
+              CamerasMatrixValues[cameraId][i][j] = CamerasMatrix[cameraId].AtDouble(i, j);
+            }
           }
         }
 
         // Update DistCoeffsValues and DistCoeffsType
-        DistCoeffsType = DistCoeffs.Type();
-        int distCoeffsRows = DistCoeffs.rows,
-            distCoeffsCols = DistCoeffs.cols;
-
-        DistCoeffsValues = new double[distCoeffsRows][];
-        for (int i = 0; i < distCoeffsRows; i++)
+        DistCoeffsType = DistCoeffs[0].Type();
+        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
-          DistCoeffsValues[i] = new double[distCoeffsCols];
-          for (int j = 0; j < distCoeffsCols; j++)
+          int distCoeffsRows = DistCoeffs[cameraId].rows,
+            distCoeffsCols = DistCoeffs[cameraId].cols;
+
+          DistCoeffsValues[cameraId] = new double[distCoeffsRows][];
+          for (int i = 0; i < distCoeffsRows; i++)
           {
-            DistCoeffsValues[i][j] = DistCoeffs.AtDouble(i, j);
+            DistCoeffsValues[cameraId][i] = new double[distCoeffsCols];
+            for (int j = 0; j < distCoeffsCols; j++)
+            {
+              DistCoeffsValues[cameraId][i][j] = DistCoeffs[cameraId].AtDouble(i, j);
+            }
           }
         }
 
@@ -286,18 +318,22 @@ namespace ArucoUnity
 
       protected void UpdateCameraMatrixDerivedVariables()
       {
-        if (ImageWidth == 0 || ImageHeight == 0 || CameraMatrix == null || CameraMatrix.size.width != 3 || CameraMatrix.size.height != 3)
+        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
-          return;
+          if (ImagesWidth == null || ImagesWidth[cameraId] == 0 || ImagesHeight == null || ImagesHeight[cameraId] == 0 || CamerasMatrix == null
+            || CamerasMatrix[cameraId] == null || CamerasMatrix[cameraId].size.width != 3 || CamerasMatrix[cameraId].size.height != 3)
+          {
+            return;
+          }
+
+          // Camera parameter's focal lenghts and optical centers
+          CamerasFocalLength[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 0), (float)CamerasMatrix[cameraId].AtDouble(1, 1));
+          CamerasOpticalCenter[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 2), (float)CamerasMatrix[cameraId].AtDouble(1, 2));
+
+          // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
+          // TODO: take account of FixAspectRatio
+          OpticalCenters[cameraId] = new Vector3(CamerasOpticalCenter[cameraId].x / ImagesWidth[cameraId], CamerasOpticalCenter[cameraId].y / ImagesHeight[cameraId], CamerasFocalLength[cameraId].y);
         }
-
-        // Camera parameter's focal lenghts and optical centers
-        CameraFocalLength = new Vector2((float)CameraMatrix.AtDouble(0, 0), (float)CameraMatrix.AtDouble(1, 1));
-        CameraOpticalCenter = new Vector2((float)CameraMatrix.AtDouble(0, 2), (float)CameraMatrix.AtDouble(1, 2));
-
-        // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
-        // TODO: take account of FixAspectRatio
-        OpticalCenter = new Vector3(CameraOpticalCenter.x / ImageWidth, CameraOpticalCenter.y / ImageHeight, CameraFocalLength.y);
       }
     }
   }

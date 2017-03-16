@@ -133,7 +133,7 @@ namespace ArucoUnity
 
       // Adjust the object position
       Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];
-      Vector3 cameraOpticalCenter = arucoTracker.ArucoCamera.CameraParameters[cameraId].OpticalCenter;
+      Vector3 cameraOpticalCenter = arucoTracker.ArucoCamera.CameraParameters.OpticalCenters[cameraId];
 
       Vector3 imageCenter = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
       Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);

@@ -174,11 +174,11 @@ namespace ArucoUnity
         return;
       }
 
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       VectorVec3d rvecs, tvecs;
       Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
-        cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvecs, out tvecs);
+        cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
       MarkerRvecs[cameraId][dictionary] = rvecs;
       MarkerTvecs[cameraId][dictionary] = tvecs;

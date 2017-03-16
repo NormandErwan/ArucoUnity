@@ -22,7 +22,7 @@ namespace ArucoUnity
         return;
       }
 
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
       {
@@ -41,14 +41,14 @@ namespace ArucoUnity
           if (cameraParameters == null)
           {
             arucoCharucoBoard.InterpolatedCorners = Functions.InterpolateCornersCharuco(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary], 
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId], arucoCharucoBoard.Board, out charucoCorners,
+              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId], (CharucoBoard)arucoCharucoBoard.Board, out charucoCorners,
               out charucoIds);
           }
           else
           {
             arucoCharucoBoard.InterpolatedCorners = Functions.InterpolateCornersCharuco(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId], arucoCharucoBoard.Board, out charucoCorners,
-              out charucoIds, cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs);
+              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId], (CharucoBoard)arucoCharucoBoard.Board, out charucoCorners,
+              out charucoIds, cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId]);
           }
         }
         else
@@ -71,13 +71,13 @@ namespace ArucoUnity
         return;
       }
 
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
       {
         Vec3d rvec, tvec;
         arucoCharucoBoard.ValidTransform = Functions.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
-          arucoCharucoBoard.Board, cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, out rvec, out tvec);
+          (CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
 
         arucoCharucoBoard.Rvec = rvec;
         arucoCharucoBoard.Tvec = tvec;
@@ -96,7 +96,7 @@ namespace ArucoUnity
 
       bool updatedCameraImage = false;
       Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
       {
@@ -110,7 +110,7 @@ namespace ArucoUnity
 
           if (arucoTracker.DrawAxes && cameraParameters != null && arucoCharucoBoard.ValidTransform)
           {
-            Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs, 
+            Functions.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], 
               arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
             updatedCameraImage = true;
           }

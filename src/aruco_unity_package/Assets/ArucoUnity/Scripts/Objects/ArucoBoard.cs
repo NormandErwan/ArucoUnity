@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Describes the shared properties of the ArUco boards.
     /// </summary>
-    public abstract class ArucoBoard<T> : ArucoObject where T : Board
+    public abstract class ArucoBoard : ArucoObject
     {
       // Editor fields
 
@@ -48,7 +48,7 @@ namespace ArucoUnity
       /// <summary>
       /// The associated board from the ArucoUnity plugin library.
       /// </summary>
-      public T Board { get; protected set; }
+      public Board Board { get; protected set; }
 
       public float AxisLength { get; protected set; }
 

@@ -123,7 +123,7 @@ namespace ArucoUnity
         return;
       }
 
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       VectorVectorPoint2f diamondCorners = null;
       VectorVec4i diamondIds = null;
@@ -139,7 +139,7 @@ namespace ArucoUnity
         {
           Functions.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
             arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds,
-            cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs);
+            cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId]);
         }
       }
 
@@ -158,14 +158,14 @@ namespace ArucoUnity
         return;
       }
 
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
       VectorVec3d diamondRvecs = null, diamondTvecs = null;
       if (DetectedDiamonds[cameraId][dictionary] > 0)
       {
-        Functions.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters[cameraId].CameraMatrix,
-          cameraParameters[cameraId].DistCoeffs, out diamondRvecs, out diamondTvecs);
+        Functions.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters.CamerasMatrix[cameraId],
+          cameraParameters.DistCoeffs[cameraId], out diamondRvecs, out diamondTvecs);
       }
 
       DiamondRvecs[cameraId][dictionary] = diamondRvecs;
@@ -184,7 +184,7 @@ namespace ArucoUnity
 
       bool updatedCameraImage = false;
       Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
-      CameraParameters[] cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+      CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       if (DetectedDiamonds[cameraId][dictionary] > 0)
       {
@@ -200,7 +200,7 @@ namespace ArucoUnity
         {
           for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
           {
-            Functions.DrawAxis(cameraImages[cameraId], cameraParameters[cameraId].CameraMatrix, cameraParameters[cameraId].DistCoeffs,
+            Functions.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId],
             DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DRAW_AXIS_LENGTH);
             updatedCameraImage = true;
           }
