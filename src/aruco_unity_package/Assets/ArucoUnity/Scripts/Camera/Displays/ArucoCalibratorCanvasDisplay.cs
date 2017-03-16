@@ -203,8 +203,8 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CamerasNumber; cameraId++)
         {
-          calibrationReprojectionErrorTexts[cameraId].text = "Reprojection error: "
-           + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionError[cameraId].ToString("F3") : "");
+          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CamerasNumber + "\n"
+           + "Reprojection error: " + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionError[cameraId].ToString("F3") : "0.000");
         }
       }
     }
