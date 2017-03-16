@@ -313,7 +313,7 @@ namespace ArucoUnity
     protected void ConfigureCameraPlane()
     {
       // Use the image texture's width as a default value if there is no camera parameters
-      float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters[cameraId].CameraFy : ImageTextures[cameraId].width;
+      float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters[cameraId].CameraFocalLength.y : ImageTextures[cameraId].width;
 
       // Configure the CameraImage according to the camera parameters
       float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera

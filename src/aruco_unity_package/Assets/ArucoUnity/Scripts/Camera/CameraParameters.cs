@@ -131,28 +131,18 @@ namespace ArucoUnity
       public double[][] DistCoeffsValues { get; set; }
 
       /// <summary>
-      /// The camera focal length on the x-axis expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 0)"/>.
+      /// The camera focal length expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 0)"/> on the x-axis
+      /// and to to <see cref="CameraMatrix.AtDouble(1, 1)"/> on the y-axis.
       /// </summary>
       [XmlIgnore]
-      public float CameraFx { get; protected set; }
+      public Vector2 CameraFocalLength { get; protected set; }
 
       /// <summary>
-      /// The camera focal length on the y-axis expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(1, 1)"/>.
+      /// The camera optical center expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 2)"/> on the x-axis
+      /// and to <see cref="CameraMatrix.AtDouble(1, 2)"/> on the y-axis.
       /// </summary>
       [XmlIgnore]
-      public float CameraFy { get; protected set; }
-
-      /// <summary>
-      /// The camera optical center on the x-axis expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(0, 2)"/>.
-      /// </summary>
-      [XmlIgnore]
-      public float CameraCx { get; protected set; }
-
-      /// <summary>
-      /// The camera optical center on the y-axis expressed in pixels coordinates. Equals to <see cref="CameraMatrix.AtDouble(1, 2)"/>.
-      /// </summary>
-      [XmlIgnore]
-      public float CameraCy { get; protected set; }
+      public Vector2 CameraOpticalCenter { get; protected set; }
 
       /// <summary>
       /// The camera optical center in the Unity world space.
@@ -164,7 +154,7 @@ namespace ArucoUnity
       /// The file path of the parameters.
       /// </summary>
       [XmlIgnore]
-      public string filePath { get; protected set; }
+      public string FilePath { get; protected set; }
 
       // Variables
 
@@ -202,7 +192,7 @@ namespace ArucoUnity
             reader.Close();
           }
         }
-        cameraParameters.filePath = cameraParametersFilePath;
+        cameraParameters.FilePath = cameraParametersFilePath;
 
         // Update CameraMatrix
         int cameraMatrixRows = cameraParameters.CameraMatrixValues.Length,
@@ -301,17 +291,13 @@ namespace ArucoUnity
           return;
         }
 
-        // Camera parameter's focal lenghts
-        CameraFx = (float)CameraMatrix.AtDouble(0, 0);
-        CameraFy = (float)CameraMatrix.AtDouble(1, 1);
-
-        // Camera parameter's optical centers
-        CameraCx = (float)CameraMatrix.AtDouble(0, 2);
-        CameraCy = (float)CameraMatrix.AtDouble(1, 2);
+        // Camera parameter's focal lenghts and optical centers
+        CameraFocalLength = new Vector2((float)CameraMatrix.AtDouble(0, 0), (float)CameraMatrix.AtDouble(1, 1));
+        CameraOpticalCenter = new Vector2((float)CameraMatrix.AtDouble(0, 2), (float)CameraMatrix.AtDouble(1, 2));
 
         // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
         // TODO: take account of FixAspectRatio
-        OpticalCenter = new Vector3(CameraCx / ImageWidth, CameraCy / ImageHeight, CameraFy);
+        OpticalCenter = new Vector3(CameraOpticalCenter.x / ImageWidth, CameraOpticalCenter.y / ImageHeight, CameraFocalLength.y);
       }
     }
   }
