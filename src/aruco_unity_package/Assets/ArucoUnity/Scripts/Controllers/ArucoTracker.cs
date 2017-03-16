@@ -387,8 +387,8 @@ namespace ArucoUnity
     /// </summary>
     public void Draw()
     {
-      // Skip if no configurate, or don't estimate
-      if (!IsConfigured || !EstimateTransforms)
+      // Skip if no configurate
+      if (!IsConfigured)
       {
         return;
       }
