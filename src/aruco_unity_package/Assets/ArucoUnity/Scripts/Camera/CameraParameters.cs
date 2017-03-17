@@ -210,13 +210,19 @@ namespace ArucoUnity
         }
         cameraParameters.FilePath = cameraParametersFilePath;
 
+        // Populate non-serialized properties
+        cameraParameters.CamerasMatrix = new Mat[cameraParameters.CamerasNumber];
+        cameraParameters.DistCoeffs = new Mat[cameraParameters.CamerasNumber];
+        cameraParameters.CamerasFocalLength = new Vector2[cameraParameters.CamerasNumber];
+        cameraParameters.CamerasOpticalCenter = new Vector2[cameraParameters.CamerasNumber];
+        cameraParameters.OpticalCenters = new Vector3[cameraParameters.CamerasNumber];
+
         for (int cameraId = 0; cameraId < cameraParameters.CamerasNumber; cameraId++)
         {
           // Update CameraMatrix
           int cameraMatrixRows = cameraParameters.CamerasMatrixValues[cameraId].Length,
               cameraMatrixCols = cameraParameters.CamerasMatrixValues[cameraId][0].Length;
 
-          cameraParameters.CamerasMatrix = new Mat[cameraParameters.CamerasNumber];
           cameraParameters.CamerasMatrix[cameraId] = new Mat();
           cameraParameters.CamerasMatrix[cameraId].Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatrixType);
           for (int i = 0; i < cameraMatrixRows; i++)
@@ -231,7 +237,6 @@ namespace ArucoUnity
           int distCoeffsRows = cameraParameters.DistCoeffsValues[cameraId].Length,
               distCoeffsCols = cameraParameters.DistCoeffsValues[cameraId][0].Length;
 
-          cameraParameters.DistCoeffs = new Mat[cameraParameters.CamerasNumber];
           cameraParameters.DistCoeffs[cameraId] = new Mat();
           cameraParameters.DistCoeffs[cameraId].Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
           for (int i = 0; i < distCoeffsRows; i++)
@@ -242,11 +247,6 @@ namespace ArucoUnity
             }
           }
         }
-
-        // Populate non-serialized properties
-        cameraParameters.CamerasFocalLength = new Vector2[cameraParameters.CamerasNumber];
-        cameraParameters.CamerasOpticalCenter = new Vector2[cameraParameters.CamerasNumber];
-        cameraParameters.OpticalCenters = new Vector3[cameraParameters.CamerasNumber];
         cameraParameters.UpdateCameraMatrixDerivedVariables();
 
         return cameraParameters;
