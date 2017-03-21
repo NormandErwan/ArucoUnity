@@ -66,4 +66,6 @@ ExternalProject_Add(${PROJECT_NAME}
     -DBUILD_opencv_ximgproc=OFF
     -DBUILD_opencv_xobjdetect=OFF
     -DBUILD_opencv_xphoto=OFF
+    -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+  INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 )
