@@ -268,12 +268,13 @@ extern "C" {
     int marginSize, int borderBits, cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       cv::aruco::drawCharucoDiamond(*dictionary, *ids, squareLength, markerLength, **img, marginSize, borderBits);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -281,12 +282,13 @@ extern "C" {
     int marginSize, cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       cv::aruco::drawCharucoDiamond(*dictionary, *ids, squareLength, markerLength, **img, marginSize);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -294,12 +296,13 @@ extern "C" {
     cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       cv::aruco::drawCharucoDiamond(*dictionary, *ids, squareLength, markerLength, **img);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 

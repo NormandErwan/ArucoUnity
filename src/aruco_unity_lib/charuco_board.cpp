@@ -1,4 +1,5 @@
 #include "aruco_unity/charuco_board.hpp"
+#include "aruco_unity.hpp"
 #include "aruco_unity/utility/cv/exception.hpp"
 #include <opencv2/imgproc.hpp>
 
@@ -13,12 +14,13 @@ extern "C" {
     cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       charucoBoard->get()->draw(*outSize, **img, marginSize, borderBits);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -26,26 +28,26 @@ extern "C" {
     cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       charucoBoard->get()->draw(*outSize, **img, marginSize);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
   void au_CharucoBoard_draw3(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception) {
     try {
       *img = new cv::Mat();
-
       charucoBoard->get()->draw(*outSize, **img);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
+
+    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
