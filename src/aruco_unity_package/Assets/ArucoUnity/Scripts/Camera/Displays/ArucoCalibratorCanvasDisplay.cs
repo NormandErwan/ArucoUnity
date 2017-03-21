@@ -111,11 +111,10 @@ namespace ArucoUnity
           GameObject cellDisplay = new GameObject("Image");
           RectTransform cellDisplayRect = cellDisplay.AddComponent<RectTransform>();
           cellDisplayRect.SetParent(cellRect);
-          cellDisplayRect.localScale = arucoCamera.ImageScalesFrontFacing[cameraId];
+          cellDisplayRect.localScale = Vector3.one;
 
           RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
           cellDisplayImage.texture = arucoCamera.ImageTextures[cameraId];
-          cellDisplayImage.uvRect = arucoCamera.ImageUvRectFlips[cameraId];
 
           AspectRatioFitter cellDisplayFitter = cellDisplay.AddComponent<AspectRatioFitter>(); // Fit the image inside the cell
           cellDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;

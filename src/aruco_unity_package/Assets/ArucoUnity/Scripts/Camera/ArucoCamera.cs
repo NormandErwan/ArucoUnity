@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Plugin.cv;
 using System;
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -114,7 +113,7 @@ namespace ArucoUnity
             {
               images[i] = value[i];
             }
-            imagesHasBeenSetThisFrame = true; // The ImageTextures should be update at the end of the frame
+            imagesHasBeenSetThisFrame = true; // The ImageTextures should be updated at the end of the frame
           }
         }
       }
@@ -135,29 +134,14 @@ namespace ArucoUnity
       public Camera[] ImageCameras { get; protected set; }
 
       /// <summary>
-      /// The correct image orientations.
-      /// </summary>
-      public virtual Quaternion[] ImageRotations { get; protected set; }
-
-      /// <summary>
       /// The image ratios.
       /// </summary>
       public virtual float[] ImageRatios { get; protected set; }
 
       /// <summary>
-      /// Allow to unflip an image if vertically flipped (use for mesh plane).
+      /// The recommended mesh plane to display the <see cref="ImageTextures"/>.
       /// </summary>
       public virtual Mesh[] ImageMeshes { get; protected set; }
-
-      /// <summary>
-      /// Allow to unflip an image if vertically flipped (use for canvas).
-      /// </summary>
-      public virtual Rect[] ImageUvRectFlips { get; protected set; }
-
-      /// <summary>
-      /// Mirror front-facing camera images horizontally to look more natural.
-      /// </summary>
-      public virtual Vector3[] ImageScalesFrontFacing { get; protected set; }
 
       // Variables
 

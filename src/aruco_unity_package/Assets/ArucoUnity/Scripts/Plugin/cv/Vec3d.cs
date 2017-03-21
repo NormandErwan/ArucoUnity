@@ -57,18 +57,13 @@ namespace ArucoUnity
 
         public Vector3 ToPosition()
         {
-          // Convert from OpenCV's right-handed coordinates system to Unity's left-handed coordinates system
-          Vector3 position = new Vector3();
-          position.x = -(float)Get(0);
-          position.y = (float)Get(1);
-          position.z = (float)Get(2);
-          return position;
+          return new Vector3((float)Get(0), (float)Get(1), (float)Get(2));
         }
 
         public Quaternion ToRotation()
         {
           // Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
-          Vector3 angleAxis = new Vector3((float)Get(0), -(float)Get(1), -(float)Get(2));
+          Vector3 angleAxis = new Vector3((float)Get(0), (float)Get(1), (float)Get(2));
           Vector3 angleAxisNormalized = angleAxis.normalized;
           float angle = angleAxis.magnitude;
           float s = Mathf.Sin(angle / 2);
@@ -79,7 +74,7 @@ namespace ArucoUnity
           rotation.z = angleAxisNormalized.z * s;
           rotation.w = Mathf.Cos(angle / 2);
 
-          rotation = rotation * Quaternion.Euler(0f, 90f, 90f); // Re-orient to put the y axis up, and the the x and z axis each side of the first corner of the marker
+          rotation *= Quaternion.Euler(0f, 90f, 90f); // Re-orient to put the y axis up, and the the x and z axis each side of the first corner of the marker
 
           return rotation;
         }

@@ -77,11 +77,7 @@ namespace ArucoUnity
         }
 
         SetActiveTexture(arucoCamera.ImageTextures[cameraId]);
-
-        image.rectTransform.localScale = arucoCamera.ImageScalesFrontFacing[cameraId];
-        image.rectTransform.localRotation = arucoCamera.ImageRotations[cameraId];
         imageFitter.aspectRatio = arucoCamera.ImageRatios[cameraId];
-        image.uvRect = arucoCamera.ImageUvRectFlips[cameraId];
       }
     }
   }

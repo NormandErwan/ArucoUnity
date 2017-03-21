@@ -41,17 +41,6 @@ namespace ArucoUnity
     public override string Name { get; protected set; }
 
     /// <summary>
-    /// <see cref="ArucoCamera.ImageRotations"/>
-    /// </summary>
-    public override Quaternion[] ImageRotations
-    {
-      get
-      {
-        return new Quaternion[] { Quaternion.Euler(0f, 0f, -WebCamTexture.videoRotationAngle) };
-      }
-    }
-
-    /// <summary>
     /// <see cref="ArucoCamera.ImageRatios"/>
     /// </summary>
     public override float[] ImageRatios
@@ -79,52 +68,18 @@ namespace ArucoUnity
             new Vector3(-0.5f, 0.5f, 0.0f),
         };
         mesh.triangles = new int[] { 0, 1, 2, 1, 0, 3 };
-
-        Vector2[] defaultUv = new Vector2[]
+        
+        mesh.uv = new Vector2[]
         {
             new Vector2(0.0f, 0.0f),
             new Vector2(1.0f, 1.0f),
             new Vector2(1.0f, 0.0f),
             new Vector2(0.0f, 1.0f)
         };
-        Vector2[] verticallyMirroredUv = new Vector2[]
-        {
-            new Vector2(0.0f, 1.0f),
-            new Vector2(1.0f, 0.0f),
-            new Vector2(1.0f, 1.0f),
-            new Vector2(0.0f, 0.0f)
-        };
-        mesh.uv = WebCamTexture.videoVerticallyMirrored ? verticallyMirroredUv : defaultUv;
 
         mesh.RecalculateNormals();
 
         return new Mesh[] { mesh };
-      }
-    }
-
-    /// <summary>
-    /// <see cref="ArucoCamera.ImageUvRectFlips"/>
-    /// </summary>
-    public override Rect[] ImageUvRectFlips
-    {
-      get
-      {
-        Rect defaultRect = new Rect(0f, 0f, 1f, 1f),
-             verticallyMirroredRect = new Rect(0f, 1f, 1f, -1f);
-        return new Rect[] { WebCamTexture.videoVerticallyMirrored ? verticallyMirroredRect : defaultRect };
-      }
-    }
-
-    /// <summary>
-    /// <see cref="ArucoCamera.ImageScalesFrontFacing"/>
-    /// </summary>
-    public override Vector3[] ImageScalesFrontFacing
-    {
-      get
-      {
-        Vector3 defaultScale = new Vector3(1f, 1f, 1f),
-                frontFacingScale = new Vector3(-1f, 1f, 1f);
-        return new Vector3[] { WebCamDevice.isFrontFacing ? frontFacingScale : defaultScale };
       }
     }
 
@@ -166,6 +121,7 @@ namespace ArucoUnity
     protected GameObject cameraPlane;
     protected bool startInitiated;
     protected int cameraId = 0;
+    protected int imageWidth, imageHeight;
 
     // MonoBehaviour methods
 
@@ -279,7 +235,9 @@ namespace ArucoUnity
         else
         {
           // Configure texture
-          ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+          imageWidth = WebCamTexture.width;
+          imageHeight = WebCamTexture.height;
+          ImageTextures[cameraId] = new Texture2D(imageWidth, imageHeight, TextureFormat.RGB24, false);
 
           // Configure display
           if (DisplayImages)
@@ -295,7 +253,23 @@ namespace ArucoUnity
       }
 
       // Update the ImageTexture content
-      ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
+      Color32[] imagePixels, webcamPixels = WebCamTexture.GetPixels32();
+      if (WebCamDevice.isFrontFacing)
+      {
+        // Flip horizontally the pixels
+        imagePixels = new Color32[webcamPixels.Length];
+        for (int i = 0; i < webcamPixels.Length; i++)
+        {
+          int xi = i % imageWidth, yi = i / imageWidth,
+              iflip = yi * imageWidth + (imageWidth - xi - 1);
+          imagePixels[i] = webcamPixels[iflip];
+        }
+      }
+      else
+      {
+        imagePixels = webcamPixels;
+      }
+      ImageTextures[cameraId].SetPixels32(imagePixels);
       ImageTextures[cameraId].Apply(false);
 
       ImagesUpdatedThisFrame = true;
@@ -335,9 +309,8 @@ namespace ArucoUnity
       }
 
       cameraPlane.transform.position = new Vector3(0, 0, CameraPlaneDistance);
-      cameraPlane.transform.rotation = ImageRotations[cameraId];
+      cameraPlane.transform.rotation = Quaternion.identity;
       cameraPlane.transform.localScale = new Vector3(ImageTextures[cameraId].width, ImageTextures[cameraId].height, 1);
-      cameraPlane.transform.localScale = Vector3.Scale(cameraPlane.transform.localScale, ImageScalesFrontFacing[cameraId]);
       cameraPlane.GetComponent<MeshFilter>().mesh = ImageMeshes[cameraId];
       cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTextures[cameraId];
       cameraPlane.SetActive(true);
