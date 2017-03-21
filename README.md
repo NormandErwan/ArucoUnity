@@ -14,17 +14,25 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 ### Configuration
 
-Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. CMake can automatically build OpenCV (recommended)
-with the [ArUco module](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), by checking the
-`AUTO_BUILD_OPENCV` opion. Run the following commands, it will take several minutes:
+Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. 
+
+First, you will need to provide a build of OpenCV with the 
+[ArUco module](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco) as dependency. You can follow these
+instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib). Or you
+can build the provided cmake project by running the following commands:
+
+```bash
+$ cd <opencv_build_directory>
+$ cmake -DCMAKE_INSTALL_PREFIX=<opencv_install_dir> <aruco_unity_source_directory>/3rdparty/opencv_contrib/
+$ cmake --build .
+```
+
+Then configure the ArUco Unity library by running the following commands:
 
 ```bash
 $ cd <aruco_unity_build_directory>
-$ cmake -DAUTO_BUILD_OPENCV=ON <aruco_unity_source_directory>
+$ cmake -DOpenCV_DIR=<opencv_install_dir> <aruco_unity_source_directory>
 ```
-
-If you want to provide your own version of OpenCV, add the following options to the above cmake configuration command:
-`-DAUTO_BUILD_OPENCV=OFF -DOpenCV_DIR=<opencv_install_dir>`. Your OpenCV version must be built with the ArUco module. Follow these instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib)
 
 ### Building
 
@@ -57,7 +65,7 @@ $ cmake -DBUILD_TESTS=ON <aruco_unity_source_directory>
 $ ctest
 ```
 
-All tests should pass.
+The Google Test dependency will be automatically built. All tests should pass.
 
 ## Documentation
 
