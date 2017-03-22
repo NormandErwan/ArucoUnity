@@ -143,8 +143,8 @@ namespace ArucoUnity
       protected int[] imageDataSizes;
       protected Mat[] undistordedImages;
       protected Mat[][] undistordedImages_maps;
-      protected bool flipHorizontallyImages = false;
-      private int flipCode; // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+      protected bool flipHorizontallyImages = false, flipVerticallyImages = false;
+      protected int? flipCode; // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
 
       // MonoBehaviour methods
 
@@ -183,8 +183,11 @@ namespace ArucoUnity
       {
         for (int i = 0; i < CamerasNumber; i++)
         {
-          int verticalFlipCode = 0;
+          // Convert back to the images from OpenCV's right-handed coordinate system to Unity's left-handed coordinate system
+          int verticalFlipCode = 0; 
           Core.Flip(Images[i], Images[i], verticalFlipCode);
+
+          // Load back the data from the Images to the ImageTextures
           ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
           ImageTextures[i].Apply(false);
         }
@@ -205,7 +208,23 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Configure()
       {
-        flipCode = (!flipHorizontallyImages) ? 0 : -1; // Vertical flip only or simultaneous horizontal and vertical flip
+        // Configure the flip code to load the ImageTextures to the Images
+        if (flipHorizontallyImages && !flipVerticallyImages)
+        {
+          flipCode = -1;
+        }
+        else if (!flipHorizontallyImages && flipVerticallyImages)
+        {
+          flipCode = null;
+        }
+        else if (flipHorizontallyImages && flipVerticallyImages)
+        {
+          flipCode = 1;
+        }
+        else if (!flipHorizontallyImages && !flipVerticallyImages)
+        {
+          flipCode = 0;
+        }
 
         // Update state
         IsConfigured = true;
@@ -286,7 +305,10 @@ namespace ArucoUnity
         for (int i = 0; i < CamerasNumber; i++)
         {
           images[i].dataByte = ImageTextures[i].GetRawTextureData();
-          Core.Flip(Images[i], Images[i], flipCode); 
+          if (flipCode != null)
+          {
+            Core.Flip(Images[i], Images[i], (int)flipCode);
+          }
         }
         ImagesUpdated();
       }

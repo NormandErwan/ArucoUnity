@@ -171,8 +171,9 @@ namespace ArucoUnity
         CameraParameters = Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
       }
 
-      // Configure the frames
+      // Configure the image correct orientation
       flipHorizontallyImages = true;
+      flipVerticallyImages = false;
 
       base.Configure();
     }
