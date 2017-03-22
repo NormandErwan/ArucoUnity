@@ -171,15 +171,10 @@ namespace ArucoUnity
         CameraParameters = Utility.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
       }
 
-      // Update state
-      IsConfigured = true;
-      OnConfigured();
+      // Configure the frames
+      flipHorizontallyImages = true;
 
-      // AutoStart
-      if (AutoStart)
-      {
-        StartCameras();
-      }
+      base.Configure();
     }
 
     /// <summary>
@@ -221,7 +216,6 @@ namespace ArucoUnity
     {
       if (!IsConfigured || (!IsStarted && !startInitiated))
       {
-        ImagesUpdatedThisFrame = false;
         return;
       }
 
@@ -229,7 +223,6 @@ namespace ArucoUnity
       {
         if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
         {
-          ImagesUpdatedThisFrame = false;
           return;
         }
         else
@@ -253,26 +246,8 @@ namespace ArucoUnity
       }
 
       // Update the ImageTexture content
-      Color32[] imagePixels, webcamPixels = WebCamTexture.GetPixels32();
-      if (WebCamDevice.isFrontFacing)
-      {
-        // Flip horizontally the pixels
-        imagePixels = new Color32[webcamPixels.Length];
-        for (int i = 0; i < webcamPixels.Length; i++)
-        {
-          int xi = i % imageWidth, yi = i / imageWidth,
-              iflip = yi * imageWidth + (imageWidth - xi - 1);
-          imagePixels[i] = webcamPixels[iflip];
-        }
-      }
-      else
-      {
-        imagePixels = webcamPixels;
-      }
-      ImageTextures[cameraId].SetPixels32(imagePixels);
-      ImageTextures[cameraId].Apply(false);
+      ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
 
-      ImagesUpdatedThisFrame = true;
       OnImagesUpdated();
     }
 

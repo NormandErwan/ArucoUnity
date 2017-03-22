@@ -91,11 +91,6 @@ namespace ArucoUnity
       public bool IsStarted { get; protected set; }
 
       /// <summary>
-      /// True when the images has been updated this frame.
-      /// </summary>
-      public bool ImagesUpdatedThisFrame { get; protected set; }
-
-      /// <summary>
       /// The images in a OpenCV format. When getting the property, a new Mat is created for each image from the corresponding 
       /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Mat array.
       /// </summary>
@@ -113,7 +108,6 @@ namespace ArucoUnity
             {
               images[i] = value[i];
             }
-            imagesHasBeenSetThisFrame = true; // The ImageTextures should be updated at the end of the frame
           }
         }
       }
@@ -145,11 +139,12 @@ namespace ArucoUnity
 
       // Variables
 
-      protected bool imagesHasBeenSetThisFrame;
       protected Mat[] images;
       protected int[] imageDataSizes;
       protected Mat[] undistordedImages;
       protected Mat[][] undistordedImages_maps;
+      protected bool flipHorizontallyImages = false;
+      private int flipCode; // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
 
       // MonoBehaviour methods
 
@@ -160,7 +155,6 @@ namespace ArucoUnity
       {
         IsConfigured = false;
         IsStarted = false;
-        ImagesUpdatedThisFrame = false;
       }
 
       /// <summary>
@@ -187,15 +181,12 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        if (imagesHasBeenSetThisFrame)
+        for (int i = 0; i < CamerasNumber; i++)
         {
-          for (int i = 0; i < CamerasNumber; i++)
-          {
-            Core.Flip(Images[i], Images[i], 0);
-            ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
-            ImageTextures[i].Apply(false);
-          }
-          imagesHasBeenSetThisFrame = false;
+          int verticalFlipCode = 0;
+          Core.Flip(Images[i], Images[i], verticalFlipCode);
+          ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
+          ImageTextures[i].Apply(false);
         }
       }
 
@@ -212,7 +203,20 @@ namespace ArucoUnity
       /// <summary>
       /// Configure the cameras and their properties.
       /// </summary>
-      public abstract void Configure();
+      public virtual void Configure()
+      {
+        flipCode = (!flipHorizontallyImages) ? 0 : -1; // Vertical flip only or simultaneous horizontal and vertical flip
+
+        // Update state
+        IsConfigured = true;
+        OnConfigured();
+
+        // AutoStart
+        if (AutoStart)
+        {
+          StartCameras();
+        }
+      }
 
       /// <summary>
       /// Start the camera system.
@@ -282,7 +286,7 @@ namespace ArucoUnity
         for (int i = 0; i < CamerasNumber; i++)
         {
           images[i].dataByte = ImageTextures[i].GetRawTextureData();
-          Core.Flip(Images[i], Images[i], 0); // Convert the image from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+          Core.Flip(Images[i], Images[i], flipCode); 
         }
         ImagesUpdated();
       }
