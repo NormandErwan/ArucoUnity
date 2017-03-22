@@ -276,7 +276,6 @@ namespace ArucoUnity
       protected void OnStarted()
       {
         InitializeMatImages();
-        StartCoroutine("AutoUndistort");
         Started();
       }
 
@@ -285,7 +284,6 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStopped()
       {
-        StopCoroutine("AutoUndistort");
         Stopped();
       }
 
@@ -310,6 +308,12 @@ namespace ArucoUnity
             Core.Flip(Images[i], Images[i], (int)flipCode);
           }
         }
+
+        if (AutoUndistortWithCameraParameters)
+        {
+          Undistort();
+        }
+
         ImagesUpdated();
       }
 
@@ -369,21 +373,6 @@ namespace ArucoUnity
             Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters.DistCoeffs[cameraId], undistordedImages_R,
               cameraMatrix, Images[cameraId].size, TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
             undistordedImages[cameraId] = new Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
-          }
-        }
-      }
-
-      /// <summary>
-      /// When the camera is started, undistort the images if <see cref="AutoUndistortWithCameraParameters"/> is true.
-      /// </summary>
-      protected IEnumerator AutoUndistort()
-      {
-        while (true)
-        {
-          yield return null;
-          if (AutoUndistortWithCameraParameters)
-          {
-            Undistort();
           }
         }
       }
