@@ -156,6 +156,10 @@ namespace ArucoUnity
         Functions.DrawCharucoDiamond(diamond.Dictionary, ids, (int)diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
       }
 
+      // Vertical flip to convert the image from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+      int verticalFlipCode = 0;
+      Core.Flip(image, image, verticalFlipCode);
+
       // Set the properties
       Image = image;
       if (Image != null)

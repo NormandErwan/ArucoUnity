@@ -11,8 +11,6 @@
 //! See the OpenCV documentation for more information about its ArUco Marker Detection extra module: http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html
 //! @{
 
-unsigned const cv_core_flip_vertical_code = 0;
-
 extern "C" {
   //! \brief Calibrate a camera using aruco markers
   //!

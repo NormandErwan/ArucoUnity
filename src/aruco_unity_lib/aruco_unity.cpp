@@ -274,7 +274,6 @@ extern "C" {
       return;
     };
 
-    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -288,7 +287,6 @@ extern "C" {
       return;
     };
 
-    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -302,7 +300,6 @@ extern "C" {
       return;
     };
 
-    cv::flip(**img, **img, cv_core_flip_vertical_code);
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
