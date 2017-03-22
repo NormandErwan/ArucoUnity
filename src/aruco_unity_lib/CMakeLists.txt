@@ -16,6 +16,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/utility.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/calib3d.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/core.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/exception.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/imgproc.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/cv/mat.hpp
@@ -42,6 +43,7 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/board.cpp
     ${PROJECT_SOURCE_DIR}/calib3d.cpp
     ${PROJECT_SOURCE_DIR}/charuco_board.cpp
+    ${PROJECT_SOURCE_DIR}/core.cpp
     ${PROJECT_SOURCE_DIR}/detector_parameters.cpp
     ${PROJECT_SOURCE_DIR}/dictionary.cpp
     ${PROJECT_SOURCE_DIR}/exception.cpp

@@ -191,6 +191,7 @@ namespace ArucoUnity
         {
           for (int i = 0; i < CamerasNumber; i++)
           {
+            Core.Flip(Images[i], Images[i], 0);
             ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
             ImageTextures[i].Apply(false);
           }
@@ -274,11 +275,15 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Execute the <see cref="ImagesUpdated"/> action.
+      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property.
       /// </summary>
       protected void OnImagesUpdated()
       {
-        UpdateMatImages();
+        for (int i = 0; i < CamerasNumber; i++)
+        {
+          images[i].dataByte = ImageTextures[i].GetRawTextureData();
+          Core.Flip(Images[i], Images[i], 0); // Convert the image from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+        }
         ImagesUpdated();
       }
 
@@ -339,17 +344,6 @@ namespace ArucoUnity
               cameraMatrix, Images[cameraId].size, TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
             undistordedImages[cameraId] = new Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
           }
-        }
-      }
-
-      /// <summary>
-      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property.
-      /// </summary>
-      protected void UpdateMatImages()
-      {
-        for (int i = 0; i < CamerasNumber; i++)
-        {
-          images[i].dataByte = ImageTextures[i].GetRawTextureData();
         }
       }
 

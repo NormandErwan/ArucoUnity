@@ -57,13 +57,13 @@ namespace ArucoUnity
 
         public Vector3 ToPosition()
         {
-          return new Vector3((float)Get(0), (float)Get(1), (float)Get(2));
+          return new Vector3((float)Get(0), -(float)Get(1), (float)Get(2));
         }
 
         public Quaternion ToRotation()
         {
           // Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
-          Vector3 angleAxis = new Vector3((float)Get(0), (float)Get(1), (float)Get(2));
+          Vector3 angleAxis = new Vector3(-(float)Get(0), (float)Get(1), -(float)Get(2));
           Vector3 angleAxisNormalized = angleAxis.normalized;
           float angle = angleAxis.magnitude;
           float s = Mathf.Sin(angle / 2);
