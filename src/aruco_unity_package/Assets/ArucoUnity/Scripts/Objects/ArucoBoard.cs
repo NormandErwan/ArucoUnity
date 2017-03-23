@@ -47,7 +47,7 @@ namespace ArucoUnity
       /// <summary>
       /// The associated board from the ArucoUnity plugin library.
       /// </summary>
-      public Board Board { get; protected set; }
+      public Aruco.Board Board { get; protected set; }
 
       public float AxisLength { get; protected set; }
 

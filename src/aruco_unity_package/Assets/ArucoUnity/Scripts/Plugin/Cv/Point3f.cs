@@ -1,3 +1,4 @@
+using ArucoUnity.Plugin.Utility;
 using System.Runtime.InteropServices;
 using UnityEngine;
 

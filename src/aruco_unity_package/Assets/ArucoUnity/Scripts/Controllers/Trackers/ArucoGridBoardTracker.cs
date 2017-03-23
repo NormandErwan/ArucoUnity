@@ -13,7 +13,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Detect(int cameraId, Dictionary dictionary)
+    public override void Detect(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -34,7 +34,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void EstimateTranforms(int cameraId, Dictionary dictionary)
+    public override void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
       {
@@ -58,7 +58,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Draw(int cameraId, Dictionary dictionary)
+    public override void Draw(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
       {
@@ -88,7 +88,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Place(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Place(int cameraId, Dictionary dictionary)
+    public override void Place(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
       {

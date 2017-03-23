@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using ArucoUnity.Plugin;
 
 namespace ArucoUnity
 {
@@ -22,7 +23,7 @@ namespace ArucoUnity
       // Events
 
       public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
-      public delegate void DictionaryEventHandler(ArucoUnity.Plugin.Dictionary dictionary);
+      public delegate void DictionaryEventHandler(Aruco.Dictionary dictionary);
 
       /// <summary>
       /// When an ArUco object has been added to the list.
@@ -49,7 +50,7 @@ namespace ArucoUnity
       /// <summary>
       /// The list of the used ArUco objects.
       /// </summary>
-      public Dictionary<ArucoUnity.Plugin.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
+      public Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
 
@@ -60,7 +61,7 @@ namespace ArucoUnity
       {
         base.Awake();
 
-        ArucoObjects = new Dictionary<ArucoUnity.Plugin.Dictionary, Dictionary<int, ArucoObject>>();
+        ArucoObjects = new Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>>();
       }
 
       /// <summary>
@@ -158,7 +159,7 @@ namespace ArucoUnity
       }
 
       // TODO: cache the results
-      public virtual HashSet<T> GetArucoObjects<T>(ArucoUnity.Plugin.Dictionary dictionary) where T : ArucoObject
+      public virtual HashSet<T> GetArucoObjects<T>(Aruco.Dictionary dictionary) where T : ArucoObject
       {
         if (!ArucoObjects.ContainsKey(dictionary))
         {

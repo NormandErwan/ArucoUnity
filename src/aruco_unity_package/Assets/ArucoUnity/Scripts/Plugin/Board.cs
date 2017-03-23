@@ -1,5 +1,6 @@
-using System.Runtime.InteropServices;
 using ArucoUnity.Plugin.Std;
+using ArucoUnity.Plugin.Utility;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {
@@ -8,47 +9,50 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    public abstract class Board : HandleCppPtr
+    public static partial class Aruco
     {
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
-
-      [DllImport("ArucoUnity")]
-      static extern void au_Board_setDictionary(System.IntPtr board, System.IntPtr dictionary);
-
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_Board_getIds(System.IntPtr board);
-
-      [DllImport("ArucoUnity")]
-      static extern void au_Board_setIds(System.IntPtr board, System.IntPtr ids);
-
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_Board_getObjPoints(System.IntPtr board);
-
-      [DllImport("ArucoUnity")]
-      static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
-
-      internal Board(System.IntPtr boardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
-          : base(boardPtr, deleteResponsibility)
+      public abstract class Board : HandleCppPtr
       {
-      }
+        [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
 
-      public Dictionary dictionary
-      {
-        get { return new Dictionary(au_Board_getDictionary(cppPtr), DeleteResponsibility.False); }
-        set { au_Board_setDictionary(cppPtr, value.cppPtr); }
-      }
+        [DllImport("ArucoUnity")]
+        static extern void au_Board_setDictionary(System.IntPtr board, System.IntPtr dictionary);
 
-      public VectorInt ids
-      {
-        get { return new VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
-        set { au_Board_setIds(cppPtr, value.cppPtr); }
-      }
+        [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_Board_getIds(System.IntPtr board);
 
-      public VectorVectorPoint3f objPoints
-      {
-        get { return new VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
-        set { au_Board_setObjPoints(cppPtr, value.cppPtr); }
+        [DllImport("ArucoUnity")]
+        static extern void au_Board_setIds(System.IntPtr board, System.IntPtr ids);
+
+        [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_Board_getObjPoints(System.IntPtr board);
+
+        [DllImport("ArucoUnity")]
+        static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
+
+        internal Board(System.IntPtr boardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+            : base(boardPtr, deleteResponsibility)
+        {
+        }
+
+        public Dictionary dictionary
+        {
+          get { return new Dictionary(au_Board_getDictionary(cppPtr), DeleteResponsibility.False); }
+          set { au_Board_setDictionary(cppPtr, value.cppPtr); }
+        }
+
+        public VectorInt ids
+        {
+          get { return new VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
+          set { au_Board_setIds(cppPtr, value.cppPtr); }
+        }
+
+        public VectorVectorPoint3f objPoints
+        {
+          get { return new VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
+          set { au_Board_setObjPoints(cppPtr, value.cppPtr); }
+        }
       }
     }
   }

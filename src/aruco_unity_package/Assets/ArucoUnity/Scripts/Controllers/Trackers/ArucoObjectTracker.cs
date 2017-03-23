@@ -51,7 +51,7 @@ namespace ArucoUnity
 
     // ArucoObjectController related methods
 
-    protected virtual void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    protected virtual void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -59,7 +59,7 @@ namespace ArucoUnity
       }
     }
 
-    protected virtual void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    protected virtual void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -99,25 +99,25 @@ namespace ArucoUnity
     /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 
     /// the CameraImageTexture.
     /// </summary>
-    public abstract void Detect(int cameraId, Dictionary dictionary);
+    public abstract void Detect(int cameraId, Aruco.Dictionary dictionary);
 
     /// <summary>
     /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
     /// <see cref="Detect(int, Dictionary)"/>.
     /// </summary>
-    public abstract void EstimateTranforms(int cameraId, Dictionary dictionary);
+    public abstract void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary);
 
     /// <summary>
     /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 
     /// <see cref="Detect(int, Dictionary)"/>.
     /// </summary>
-    public abstract void Draw(int cameraId, Dictionary dictionary);
+    public abstract void Draw(int cameraId, Aruco.Dictionary dictionary);
 
     /// <summary>
     /// Place and orient the detected ArUco objects on the first camera image according to the results of 
     /// <see cref="EstimateTranforms(int, Dictionary)"/>.
     /// </summary>
-    public abstract void Place(int cameraId, Dictionary dictionary);
+    public abstract void Place(int cameraId, Aruco.Dictionary dictionary);
 
     /// <summary>
     /// Place and orient an ArUco object.

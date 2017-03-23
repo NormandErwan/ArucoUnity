@@ -17,7 +17,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The dictionary to use.")]
-      private PREDEFINED_DICTIONARY_NAME dictionaryName;
+      private Aruco.PREDEFINED_DICTIONARY_NAME dictionaryName;
 
       [SerializeField]
       [Tooltip("The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.")]
@@ -48,7 +48,7 @@ namespace ArucoUnity
       /// <summary>
       /// The dictionary to use.
       /// </summary>
-      public Dictionary Dictionary
+      public Aruco.Dictionary Dictionary
       {
         get { return dictionary; }
         set
@@ -88,7 +88,7 @@ namespace ArucoUnity
 
       // Variables
 
-      private Dictionary dictionary;
+      private Aruco.Dictionary dictionary;
 
       // MonoBehaviour methods
 

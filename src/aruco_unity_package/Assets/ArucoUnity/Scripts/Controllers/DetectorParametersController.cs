@@ -98,13 +98,13 @@ namespace ArucoUnity
     /// <summary>
     /// The managed DetectorParameters.
     /// </summary>
-    public DetectorParameters DetectorParameters
+    public Aruco.DetectorParameters DetectorParameters
     {
       get
       {
         if (detectorParameters == null)
         {
-          detectorParameters = new DetectorParameters();
+          detectorParameters = new Aruco.DetectorParameters();
           DetectorParameters.AdaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
           DetectorParameters.AdaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
           DetectorParameters.AdaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
@@ -134,7 +134,7 @@ namespace ArucoUnity
 
     // Variables
 
-    private DetectorParameters detectorParameters;
+    private Aruco.DetectorParameters detectorParameters;
   }
 
   /// \} aruco_unity_package

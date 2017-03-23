@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using ArucoUnity.Plugin.Utility;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {

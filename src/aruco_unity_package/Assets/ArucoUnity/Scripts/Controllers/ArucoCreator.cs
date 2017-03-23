@@ -131,7 +131,7 @@ namespace ArucoUnity
       ArucoGridBoard arucoGridBoard = ArucoObject as ArucoGridBoard;
       if (arucoGridBoard != null)
       {
-        GridBoard gridBoard = arucoGridBoard.Board as GridBoard;
+        Aruco.GridBoard gridBoard = arucoGridBoard.Board as Aruco.GridBoard;
         gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
       }
 
@@ -139,7 +139,7 @@ namespace ArucoUnity
       ArucoCharucoBoard arucoCharucoBoard = ArucoObject as ArucoCharucoBoard;
       if (arucoCharucoBoard != null)
       {
-        CharucoBoard charucoBoard = arucoCharucoBoard.Board as CharucoBoard;
+        Aruco.CharucoBoard charucoBoard = arucoCharucoBoard.Board as Aruco.CharucoBoard;
         charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
       }
 

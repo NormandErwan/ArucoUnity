@@ -345,7 +345,7 @@ namespace ArucoUnity
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Dictionary dictionary = arucoObjectDictionary.Key;
+          Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
           MarkerTracker.Detect(cameraId, dictionary);
           foreach (var tracker in additionalTrackers)
@@ -371,7 +371,7 @@ namespace ArucoUnity
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Dictionary dictionary = arucoObjectDictionary.Key;
+          Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
           MarkerTracker.EstimateTranforms(cameraId, dictionary);
           foreach (var tracker in additionalTrackers)
@@ -397,7 +397,7 @@ namespace ArucoUnity
       {
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Dictionary dictionary = arucoObjectDictionary.Key;
+          Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
           MarkerTracker.Draw(cameraId, dictionary);
           foreach (var tracker in additionalTrackers)
@@ -423,7 +423,7 @@ namespace ArucoUnity
 
       foreach (var arucoObjectDictionary in ArucoObjects)
       {
-        Dictionary dictionary = arucoObjectDictionary.Key;
+        Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
         MarkerTracker.Place(cameraId, dictionary);
         foreach (var tracker in additionalTrackers)

@@ -212,7 +212,7 @@ namespace ArucoUnity
 
     public void Calibrate()
     {
-      CharucoBoard charucoBoard = CalibrationBoard.Board as CharucoBoard;
+      Aruco.CharucoBoard charucoBoard = CalibrationBoard.Board as Aruco.CharucoBoard;
 
       // Check if there is enough captured frames for calibration
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)

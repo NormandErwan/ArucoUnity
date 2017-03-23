@@ -80,7 +80,7 @@ namespace ArucoUnity
       /// <summary>
       /// The parameters to use for the detection.
       /// </summary>
-      public DetectorParameters DetectorParameters { get; set; }
+      public Aruco.DetectorParameters DetectorParameters { get; set; }
 
       /// <summary>
       /// Start automatically when the configuration is done. Call alternatively StartDetection().

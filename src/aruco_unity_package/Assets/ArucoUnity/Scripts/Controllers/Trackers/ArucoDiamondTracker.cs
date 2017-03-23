@@ -20,15 +20,15 @@ namespace ArucoUnity
 
     // Properties
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[] DiamondCorners { get; set; }
+    public Dictionary<Aruco.Dictionary, VectorVectorPoint2f>[] DiamondCorners { get; set; }
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec4i>[] DiamondIds { get; set; }
+    public Dictionary<Aruco.Dictionary, VectorVec4i>[] DiamondIds { get; set; }
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, int>[] DetectedDiamonds { get; set; }
+    public Dictionary<Aruco.Dictionary, int>[] DetectedDiamonds { get; set; }
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] DiamondRvecs { get; set; }
+    public Dictionary<Aruco.Dictionary, VectorVec3d>[] DiamondRvecs { get; set; }
 
-    public Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[] DiamondTvecs { get; set; }
+    public Dictionary<Aruco.Dictionary, VectorVec3d>[] DiamondTvecs { get; set; }
 
     // ArucoObjectController related methods
 
@@ -36,7 +36,7 @@ namespace ArucoUnity
     /// Update the properties when a new dictionary is added.
     /// </summary>
     /// <param name="dictionary">The new dictionary.</param>
-    protected override void ArucoObjectController_DictionaryAdded(Dictionary dictionary)
+    protected override void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryAdded(dictionary);
 
@@ -49,7 +49,7 @@ namespace ArucoUnity
       }
     }
 
-    protected override void ArucoObjectController_DictionaryRemoved(Dictionary dictionary)
+    protected override void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
     {
       base.ArucoObjectController_DictionaryRemoved(dictionary);
 
@@ -71,23 +71,23 @@ namespace ArucoUnity
     {
       base.Activate(arucoTracker);
 
-      DiamondCorners = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondIds = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
-      DetectedDiamonds = new Dictionary<ArucoUnity.Plugin.Dictionary, int>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondRvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondTvecs = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondCorners = new Dictionary<Aruco.Dictionary, VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondIds = new Dictionary<Aruco.Dictionary, VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
+      DetectedDiamonds = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondRvecs = new Dictionary<Aruco.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondTvecs = new Dictionary<Aruco.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
 
       for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
       {
-        DiamondCorners[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVectorPoint2f>();
-        DiamondIds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec4i>();
-        DetectedDiamonds[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, int>();
-        DiamondRvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
-        DiamondTvecs[cameraId] = new Dictionary<ArucoUnity.Plugin.Dictionary, VectorVec3d>();
+        DiamondCorners[cameraId] = new Dictionary<Aruco.Dictionary, VectorVectorPoint2f>();
+        DiamondIds[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec4i>();
+        DetectedDiamonds[cameraId] = new Dictionary<Aruco.Dictionary, int>();
+        DiamondRvecs[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec3d>();
+        DiamondTvecs[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec3d>();
 
         foreach (var arucoObjectDictionary in arucoTracker.ArucoObjects)
         {
-          Dictionary dictionary = arucoObjectDictionary.Key;
+          Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
           DiamondCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
           DiamondIds[cameraId].Add(dictionary, new VectorVec4i());
@@ -115,7 +115,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Detect(int cameraId, Dictionary dictionary)
+    public override void Detect(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -150,7 +150,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void EstimateTranforms(int cameraId, Dictionary dictionary)
+    public override void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -174,7 +174,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Draw(int cameraId, Dictionary dictionary)
+    public override void Draw(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -203,7 +203,6 @@ namespace ArucoUnity
             DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DRAW_AXIS_LENGTH);
             updatedCameraImage = true;
           }
-          throw new System.Exception("bla");
         }
       }
 
@@ -216,7 +215,7 @@ namespace ArucoUnity
     /// <summary>
     /// <see cref="ArucoObjectTracker.Place(int, Dictionary, HashSet{ArucoObject})"/>
     /// </summary>
-    public override void Place(int cameraId, Dictionary dictionary)
+    public override void Place(int cameraId, Aruco.Dictionary dictionary)
     {
       if (!IsActivated)
       {
@@ -238,7 +237,7 @@ namespace ArucoUnity
       }
     }
 
-    protected bool TryGetArucoDiamond(int cameraId, Dictionary dictionary, uint arucoObjectId, out ArucoDiamond arucoDiamond)
+    protected bool TryGetArucoDiamond(int cameraId, Aruco.Dictionary dictionary, uint arucoObjectId, out ArucoDiamond arucoDiamond)
     {
       int[] detectedDiamondIds = new int[4];
       for (int j = 0; j < 4; j++)

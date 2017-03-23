@@ -7,45 +7,48 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    public abstract class HandleCppPtr
+    namespace Utility
     {
-      public enum DeleteResponsibility
+      public abstract class HandleCppPtr
       {
-        True,
-        False
-      }
-
-      public DeleteResponsibility deleteResponsibility;
-      
-      HandleRef handle;
-
-      public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
-      {
-        this.cppPtr = System.IntPtr.Zero;
-        this.deleteResponsibility = deleteResponsibility;
-      }
-
-      public HandleCppPtr(System.IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
-      {
-        this.cppPtr = cppPtr;
-        this.deleteResponsibility = deleteResponsibility;
-      }
-
-      ~HandleCppPtr()
-      {
-        if (deleteResponsibility == DeleteResponsibility.True)
+        public enum DeleteResponsibility
         {
-          DeleteCvPtr();
+          True,
+          False
         }
-      }
 
-      public System.IntPtr cppPtr
-      {
-        get { return handle.Handle; }
-        set { handle = new HandleRef(this, value); }
-      }
+        public DeleteResponsibility deleteResponsibility;
 
-      protected abstract void DeleteCvPtr();
+        HandleRef handle;
+
+        public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        {
+          this.cppPtr = System.IntPtr.Zero;
+          this.deleteResponsibility = deleteResponsibility;
+        }
+
+        public HandleCppPtr(System.IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        {
+          this.cppPtr = cppPtr;
+          this.deleteResponsibility = deleteResponsibility;
+        }
+
+        ~HandleCppPtr()
+        {
+          if (deleteResponsibility == DeleteResponsibility.True)
+          {
+            DeleteCvPtr();
+          }
+        }
+
+        public System.IntPtr cppPtr
+        {
+          get { return handle.Handle; }
+          set { handle = new HandleRef(this, value); }
+        }
+
+        protected abstract void DeleteCvPtr();
+      }
     }
   }
 

@@ -12,31 +12,31 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    public enum PREDEFINED_DICTIONARY_NAME
-    {
-      DICT_4X4_50 = 0,
-      DICT_4X4_100,
-      DICT_4X4_250,
-      DICT_4X4_1000,
-      DICT_5X5_50,
-      DICT_5X5_100,
-      DICT_5X5_250,
-      DICT_5X5_1000,
-      DICT_6X6_50,
-      DICT_6X6_100,
-      DICT_6X6_250,
-      DICT_6X6_1000,
-      DICT_7X7_50,
-      DICT_7X7_100,
-      DICT_7X7_250,
-      DICT_7X7_1000,
-      DICT_ARUCO_ORIGINAL
-    }
-
-    public class Aruco
+    public static partial class Aruco
     {
       /// \addtogroup aruco_unity_package
       /// \{
+
+      public enum PREDEFINED_DICTIONARY_NAME
+      {
+        DICT_4X4_50 = 0,
+        DICT_4X4_100,
+        DICT_4X4_250,
+        DICT_4X4_1000,
+        DICT_5X5_50,
+        DICT_5X5_100,
+        DICT_5X5_250,
+        DICT_5X5_1000,
+        DICT_6X6_50,
+        DICT_6X6_100,
+        DICT_6X6_250,
+        DICT_6X6_1000,
+        DICT_7X7_50,
+        DICT_7X7_100,
+        DICT_7X7_250,
+        DICT_7X7_1000,
+        DICT_ARUCO_ORIGINAL
+      }
 
       [DllImport("ArucoUnity")]
       static extern double au_calibrateCameraAruco1(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board,
