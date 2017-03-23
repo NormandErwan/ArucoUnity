@@ -1,4 +1,4 @@
-#include "aruco_unity/utility/cv/size.hpp"
+#include "aruco_unity/cv/size.hpp"
 
 extern "C" {
   // Constructors & Destructors

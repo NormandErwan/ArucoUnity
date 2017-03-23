@@ -1,4 +1,4 @@
-#include "aruco_unity/utility/cv/term_criteria.hpp"
+#include "aruco_unity/cv/term_criteria.hpp"
 
 extern "C" {
   // Constructors & Destructors

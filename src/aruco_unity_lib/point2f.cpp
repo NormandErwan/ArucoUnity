@@ -1,4 +1,4 @@
-#include "aruco_unity/utility/cv/point2f.hpp"
+#include "aruco_unity/cv/point2f.hpp"
 
 extern "C" {
   // Constructors & Destructors

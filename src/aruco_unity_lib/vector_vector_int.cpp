@@ -1,5 +1,5 @@
-#include "aruco_unity/utility/std/vector_vector_int.hpp"
-#include "aruco_unity/utility/cv/exception.hpp"
+#include "aruco_unity/std/vector_vector_int.hpp"
+#include "aruco_unity/cv/exception.hpp"
 
 extern "C" {
   // Constructors & Destructors

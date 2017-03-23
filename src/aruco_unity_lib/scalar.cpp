@@ -1,4 +1,4 @@
-#include "aruco_unity/utility/cv/scalar.hpp"
+#include "aruco_unity/cv/scalar.hpp"
 
 extern "C" {
   // Constructors & Destructors
