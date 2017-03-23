@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
-using ArucoUnity.Plugin.std;
+using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 using System;
 using System.IO;
@@ -53,7 +52,7 @@ namespace ArucoUnity
     /// </summary>
     public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
-    public TermCriteria CalibrationTermCriteria { get; set; }
+    public Cv.TermCriteria CalibrationTermCriteria { get; set; }
 
     public VectorVectorVectorPoint2f[] AllCorners { get; protected set; }
 
@@ -85,7 +84,7 @@ namespace ArucoUnity
 
       if (CalibrationTermCriteria == null)
       {
-        CalibrationTermCriteria = new TermCriteria(TermCriteria.Type.COUNT | TermCriteria.Type.EPS, 100, 1E-5);
+        CalibrationTermCriteria = new Cv.TermCriteria(Cv.TermCriteria.Type.COUNT | Cv.TermCriteria.Type.EPS, 100, 1E-5);
       }
     }
 
@@ -149,16 +148,16 @@ namespace ArucoUnity
         VectorInt markerIds;
         VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
 
-        Mat image = ArucoCamera.Images[cameraId];
+        Cv.Mat image = ArucoCamera.Images[cameraId];
 
-        Functions.DetectMarkers(image, CalibrationBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+        Aruco.DetectMarkers(image, CalibrationBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
 
         MarkerCornersCurrentImage[cameraId] = markerCorners;
         MarkerIdsCurrentImage[cameraId] = markerIds;
 
         if (RefineMarkersDetection)
         {
-          Functions.RefineDetectedMarkers(image, CalibrationBoard.Board, MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId], rejectedCandidateCorners);
+          Aruco.RefineDetectedMarkers(image, CalibrationBoard.Board, MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId], rejectedCandidateCorners);
         }
       }
     }
@@ -171,13 +170,13 @@ namespace ArucoUnity
       }
 
       bool updatedCameraImage = false;
-      Mat[] cameraImages = ArucoCamera.Images;
+      Cv.Mat[] cameraImages = ArucoCamera.Images;
 
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
         if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() > 0)
         {
-          Functions.DrawDetectedMarkers(cameraImages[cameraId], MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId]);
+          Aruco.DrawDetectedMarkers(cameraImages[cameraId], MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId]);
           updatedCameraImage = true;
         }
       }
@@ -195,7 +194,7 @@ namespace ArucoUnity
         return;
       }
 
-      Mat[] cameraImages = ArucoCamera.Images;
+      Cv.Mat[] cameraImages = ArucoCamera.Images;
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
         if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() < 1)
@@ -240,8 +239,8 @@ namespace ArucoUnity
       }
 
       // Prepare camera parameters
-      Mat[] camerasMatrix = new Mat[ArucoCamera.CamerasNumber],
-            distCoeffs = new Mat[ArucoCamera.CamerasNumber];
+      Cv.Mat[] camerasMatrix = new Cv.Mat[ArucoCamera.CamerasNumber],
+            distCoeffs = new Cv.Mat[ArucoCamera.CamerasNumber];
       double[] reprojectionErrors = new double[ArucoCamera.CamerasNumber];
 
       // Calibrate each camera
@@ -250,13 +249,13 @@ namespace ArucoUnity
         // Prepare camera parameters
         if (CalibrationFlagsController.FixAspectRatio)
         {
-          camerasMatrix[cameraId] = new Mat(3, 3, TYPE.CV_64F, new double[9] { CalibrationFlagsController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+          camerasMatrix[cameraId] = new Cv.Mat(3, 3, Cv.TYPE.CV_64F, new double[9] { CalibrationFlagsController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
         }
         else
         {
-          camerasMatrix[cameraId] = new Mat();
+          camerasMatrix[cameraId] = new Cv.Mat();
         }
-        distCoeffs[cameraId] = new Mat();
+        distCoeffs[cameraId] = new Cv.Mat();
 
         // Prepare data for calibration
         VectorVectorPoint2f allCornersContenated = new VectorVectorPoint2f();
@@ -278,9 +277,9 @@ namespace ArucoUnity
         }
 
         // Calibrate camera with aruco
-        Size imageSize = ArucoCamera.Images[cameraId].size;
+        Cv.Size imageSize = ArucoCamera.Images[cameraId].size;
         VectorMat rvecs, tvecs;
-        reprojectionErrors[cameraId] = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
+        reprojectionErrors[cameraId] = Aruco.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
           CalibrationBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlagsController.CalibrationFlags, CalibrationTermCriteria);
 
         // If the used board is a charuco board, refine the calibration
@@ -294,14 +293,14 @@ namespace ArucoUnity
           {
             VectorPoint2f charucoCorners;
             VectorInt charucoIds;
-            Functions.InterpolateCornersCharuco(AllCorners[cameraId].At(i), AllIds[cameraId].At(i), AllImages[cameraId].At(i), charucoBoard, out charucoCorners, out charucoIds);
+            Aruco.InterpolateCornersCharuco(AllCorners[cameraId].At(i), AllIds[cameraId].At(i), AllImages[cameraId].At(i), charucoBoard, out charucoCorners, out charucoIds);
 
             AllCharucoCorners[cameraId].PushBack(charucoCorners);
             AllCharucoIds[cameraId].PushBack(charucoIds);
           }
 
           // Calibrate camera using charuco
-          reprojectionErrors[cameraId] = Functions.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, 
+          reprojectionErrors[cameraId] = Aruco.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, 
             imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlagsController.CalibrationFlags, CalibrationTermCriteria);
         }
 

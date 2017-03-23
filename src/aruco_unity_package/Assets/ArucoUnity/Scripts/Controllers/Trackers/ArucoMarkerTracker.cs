@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
-using ArucoUnity.Plugin.std;
+using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 using System.Collections.Generic;
 using UnityEngine;
@@ -155,7 +154,7 @@ namespace ArucoUnity
       VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
       VectorInt markerIds;
 
-      Functions.DetectMarkers(arucoTracker.ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, 
+      Aruco.DetectMarkers(arucoTracker.ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds, 
         arucoTracker.DetectorParameters, out rejectedCandidateCorners);
 
       DetectedMarkers[cameraId][dictionary] = (int)markerIds.Size();
@@ -177,7 +176,7 @@ namespace ArucoUnity
       CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       VectorVec3d rvecs, tvecs;
-      Functions.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
+      Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
         cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
       MarkerRvecs[cameraId][dictionary] = rvecs;
@@ -195,20 +194,20 @@ namespace ArucoUnity
       }
 
       bool updatedCameraImage = false;
-      Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+      Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
 
       // Draw the detected markers
       // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
       if (arucoTracker.DrawDetectedMarkers && DetectedMarkers[cameraId][dictionary] > 0)
       {
-        Functions.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+        Aruco.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
         updatedCameraImage = true;
       }
 
       // Draw the rejected marker candidates
       if (arucoTracker.DrawRejectedCandidates && RejectedCandidateCorners[cameraId][dictionary].Size() > 0)
       {
-        Functions.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], REJECTED_MARKERS_CANDIDATES_COLOR);
+        Aruco.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], REJECTED_MARKERS_CANDIDATES_COLOR);
         updatedCameraImage = true;
       }
 

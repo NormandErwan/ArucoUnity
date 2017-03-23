@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -8,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace std
+    namespace Std
     {
       public class VectorMat : HandleCppPtr
       {
@@ -46,29 +45,29 @@ namespace ArucoUnity
           au_std_vectorMat_delete(cppPtr);
         }
 
-        public Mat At(uint pos)
+        public Cv.Mat At(uint pos)
         {
-          Exception exception = new Exception();
-          Mat element = new Mat(au_std_vectorMat_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Exception exception = new Cv.Exception();
+          Cv.Mat element = new Cv.Mat(au_std_vectorMat_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Mat[] Data()
+        public unsafe Cv.Mat[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorMat_data(cppPtr);
           uint size = Size();
 
-          Mat[] data = new Mat[size];
+          Cv.Mat[] data = new Cv.Mat[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Mat(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Mat(dataPtr[i], DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Mat value)
+        public void PushBack(Cv.Mat value)
         {
           au_std_vectorMat_push_back(cppPtr, value.cppPtr);
         }

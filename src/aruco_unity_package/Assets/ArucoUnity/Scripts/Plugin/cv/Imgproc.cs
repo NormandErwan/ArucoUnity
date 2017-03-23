@@ -7,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace cv
+    public static partial class Cv
     {
       /// <summary>
       /// See the OpenCV documentation for more information: 
@@ -42,76 +42,73 @@ namespace ArucoUnity
         WARP_INVERSE_MAP = 16 /// Inverse transformation.
       }
 
-      public static class Imgproc
+      // Static Member Functions
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_imgproc_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr R,
+        System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_imgproc_remap1(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
+        int borderType, System.IntPtr borderValue, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_imgproc_remap2(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
+        int borderType, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_imgproc_remap3(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
+        System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_imgproc_undistort2(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
+        System.IntPtr distCoeffs, System.IntPtr exception);
+
+      public static void InitUndistortRectifyMap(Mat cameraMatrix, Mat distCoeffs, Mat R, Mat newCameraMatrix, Size size, TYPE m1type, out Mat map1,
+        out Mat map2)
       {
-        // Static Member Functions
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr R, 
-          System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, System.IntPtr exception);
+        Exception exception = new Exception();
+        System.IntPtr map1Ptr, map2Ptr;
 
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap1(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
-          int borderType, System.IntPtr borderValue, System.IntPtr exception);
+        au_cv_imgproc_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr, (int)m1type,
+          out map1Ptr, out map2Ptr, exception.cppPtr);
+        map1 = new Mat(map1Ptr);
+        map2 = new Mat(map2Ptr);
 
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap2(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
-          int borderType, System.IntPtr exception);
+        exception.Check();
+      }
 
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_remap3(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation, 
-          System.IntPtr exception);
+      public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType,
+        Scalar borderValue)
+      {
+        Exception exception = new Exception();
+        au_cv_imgproc_remap1(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, borderValue.cppPtr, exception.cppPtr);
+        exception.Check();
+      }
 
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_imgproc_undistort2(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
-          System.IntPtr distCoeffs, System.IntPtr exception);
+      public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType)
+      {
+        Exception exception = new Exception();
+        au_cv_imgproc_remap2(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, exception.cppPtr);
+        exception.Check();
+      }
 
-        public static void InitUndistortRectifyMap(Mat cameraMatrix, Mat distCoeffs, Mat R, Mat newCameraMatrix, Size size, TYPE m1type, out Mat map1,
-          out Mat map2)
-        {
-          Exception exception = new Exception();
-          System.IntPtr map1Ptr, map2Ptr;
+      public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation)
+      {
+        Exception exception = new Exception();
+        au_cv_imgproc_remap3(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, exception.cppPtr);
+        exception.Check();
+      }
 
-          au_cv_imgproc_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr, (int)m1type,
-            out map1Ptr, out map2Ptr, exception.cppPtr);
-          map1 = new Mat(map1Ptr);
-          map2 = new Mat(map2Ptr);
+      // TODO: add the other version of undistord
+      public static void Undistort(Mat inputImage, out Mat outputImage, Mat cameraMatrix, Mat distCoeffs)
+      {
+        Exception exception = new Exception();
+        System.IntPtr outputImagePtr;
 
-          exception.Check();
-        }
+        au_cv_imgproc_undistort2(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
+        outputImage = new Mat(outputImagePtr);
 
-        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType, 
-          Scalar borderValue)
-        {
-          Exception exception = new Exception();
-          au_cv_imgproc_remap1(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int) borderType, borderValue.cppPtr, exception.cppPtr);
-          exception.Check();
-        }
-
-        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation, BorderTypes borderType)
-        {
-          Exception exception = new Exception();
-          au_cv_imgproc_remap2(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, exception.cppPtr);
-          exception.Check();
-        }
-
-        public static void Remap(Mat src, Mat dst, Mat map1, Mat map2, InterpolationFlags interpolation)
-        {
-          Exception exception = new Exception();
-          au_cv_imgproc_remap3(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, exception.cppPtr);
-          exception.Check();
-        }
-
-        // TODO: add the other version of undistord
-        public static void Undistort(Mat inputImage, out Mat outputImage, Mat cameraMatrix, Mat distCoeffs)
-        {
-          Exception exception = new Exception();
-          System.IntPtr outputImagePtr;
-
-          au_cv_imgproc_undistort2(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, exception.cppPtr);
-          outputImage = new Mat(outputImagePtr);
-
-          exception.Check();
-        }
+        exception.Check();
       }
     }
   }

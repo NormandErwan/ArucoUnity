@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -8,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace std
+    namespace Std
     {
       public class VectorInt : HandleCppPtr
       {
@@ -51,7 +50,7 @@ namespace ArucoUnity
 
         public int At(uint pos)
         {
-          Exception exception = new Exception();
+          Cv.Exception exception = new Cv.Exception();
           int element = au_std_vectorInt_at(cppPtr, pos, exception.cppPtr);
           exception.Check();
           return element;
@@ -78,7 +77,7 @@ namespace ArucoUnity
 
         public void Reserve(uint newCap)
         {
-          Exception exception = new Exception();
+          Cv.Exception exception = new Cv.Exception();
           au_std_vectorInt_reserve(cppPtr, newCap, exception.cppPtr);
           exception.Check();
         }

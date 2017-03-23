@@ -1,6 +1,5 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
-using ArucoUnity.Plugin.std;
+using ArucoUnity.Plugin.Std;
 
 namespace ArucoUnity
 {
@@ -66,51 +65,51 @@ namespace ArucoUnity
       {
       }
 
-      public void Draw(Size outSize, out Mat img, int marginSize, int borderBits)
+      public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize, int borderBits)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_CharucoBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
-      public void Draw(Size outSize, out Mat img, int marginSize)
+      public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_CharucoBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
-      public void Draw(Size outSize, out Mat img)
+      public void Draw(Cv.Size outSize, out Cv.Mat img)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_CharucoBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
       static public CharucoBoard Create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr charucoBoardPtr = au_CharucoBoard_create(squaresX, squaresY, squareLength, markerLength, dictionary.cppPtr,
           exception.cppPtr);
         exception.Check();
         return new CharucoBoard(charucoBoardPtr);
       }
 
-      public Size GetChessboardSize()
+      public Cv.Size GetChessboardSize()
       {
-        return new Size(au_CharucoBoard_getChessboardSize(cppPtr));
+        return new Cv.Size(au_CharucoBoard_getChessboardSize(cppPtr));
       }
 
       public float GetMarkerLength()

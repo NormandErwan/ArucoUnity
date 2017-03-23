@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
 using ArucoUnity.Utility;
 using UnityEngine;
 
@@ -123,7 +122,7 @@ namespace ArucoUnity
     /// <summary>
     /// Place and orient an ArUco object.
     /// </summary>
-    protected void PlaceArucoObject(ArucoObject arucoObject, Vec3d rvec, Vec3d tvec, int cameraId, float positionFactor = 1f)
+    protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
     {
       GameObject arucoGameObject = arucoObject.gameObject;
       Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];

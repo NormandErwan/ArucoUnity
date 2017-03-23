@@ -1,6 +1,5 @@
-﻿using ArucoUnity.Plugin.cv;
+﻿using ArucoUnity.Plugin;
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -91,10 +90,10 @@ namespace ArucoUnity
       public bool IsStarted { get; protected set; }
 
       /// <summary>
-      /// The images in a OpenCV format. When getting the property, a new Mat is created for each image from the corresponding 
-      /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Mat array.
+      /// The images in a OpenCV format. When getting the property, a new Cv.Mat is created for each image from the corresponding 
+      /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Cv.Mat array.
       /// </summary>
-      public virtual Mat[] Images 
+      public virtual Cv.Mat[] Images 
       {
         get
         {
@@ -139,10 +138,10 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Mat[] images;
+      protected Cv.Mat[] images;
       protected int[] imageDataSizes;
-      protected Mat[] undistordedImages;
-      protected Mat[][] undistordedImages_maps;
+      protected Cv.Mat[] undistordedImages;
+      protected Cv.Mat[][] undistordedImages_maps;
       protected bool flipHorizontallyImages = false, flipVerticallyImages = false;
       protected int? flipCode; // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
 
@@ -185,7 +184,7 @@ namespace ArucoUnity
         {
           // Convert back to the images from OpenCV's right-handed coordinate system to Unity's left-handed coordinate system
           int verticalFlipCode = 0; 
-          Core.Flip(Images[i], Images[i], verticalFlipCode);
+          Cv.Flip(Images[i], Images[i], verticalFlipCode);
 
           // Load back the data from the Images to the ImageTextures
           ImageTextures[i].LoadRawTextureData(Images[i].dataIntPtr, imageDataSizes[i]);
@@ -260,7 +259,7 @@ namespace ArucoUnity
 
         for (int i = 0; i < CamerasNumber; i++)
         {
-          Imgproc.Remap(Images[i], undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], InterpolationFlags.INTER_LINEAR);
+          Cv.Remap(Images[i], undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], Cv.InterpolationFlags.INTER_LINEAR);
         }
         Images = undistordedImages;
       }
@@ -305,7 +304,7 @@ namespace ArucoUnity
           images[i].dataByte = ImageTextures[i].GetRawTextureData();
           if (flipCode != null)
           {
-            Core.Flip(Images[i], Images[i], (int)flipCode);
+            Cv.Flip(Images[i], Images[i], (int)flipCode);
           }
         }
 
@@ -322,19 +321,19 @@ namespace ArucoUnity
       /// </summary>
       /// <param name="imageTexture">The texture to analyze.</param>
       /// <returns>The equivalent OpenCV type.</returns>
-      protected TYPE ImageType(Texture2D imageTexture)
+      protected Cv.TYPE ImageType(Texture2D imageTexture)
       {
-        TYPE type;
+        Cv.TYPE type;
         var format = imageTexture.format;
         switch (format)
         {
           case TextureFormat.RGB24:
-            type = TYPE.CV_8UC3;
+            type = Cv.TYPE.CV_8UC3;
             break;
           case TextureFormat.BGRA32:
           case TextureFormat.ARGB32:
           case TextureFormat.RGBA32:
-            type = TYPE.CV_8UC4;
+            type = Cv.TYPE.CV_8UC4;
             break;
           default:
             throw new ArgumentException("This type of texture is actually not supported: " + imageTexture.format + ".", "imageTexture");
@@ -347,32 +346,32 @@ namespace ArucoUnity
       /// </summary>
       protected void InitializeMatImages()
       {
-        images = new Mat[CamerasNumber];
+        images = new Cv.Mat[CamerasNumber];
         imageDataSizes = new int[CamerasNumber];
 
-        Mat undistordedImages_R = null;
+        Cv.Mat undistordedImages_R = null;
         if (CameraParameters != null)
         {
-          undistordedImages = new Mat[CamerasNumber];
-          undistordedImages_maps = new Mat[CamerasNumber][];
-          undistordedImages_R = new Mat();
+          undistordedImages = new Cv.Mat[CamerasNumber];
+          undistordedImages_maps = new Cv.Mat[CamerasNumber][];
+          undistordedImages_R = new Cv.Mat();
         }
 
         for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
           // Image
           byte[] imageData = ImageTextures[cameraId].GetRawTextureData();
-          images[cameraId] = new Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]), imageData);
+          images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]), imageData);
           imageDataSizes[cameraId] = (int)(images[cameraId].ElemSize() * images[cameraId].Total());
 
           // Undistortion maps
           if (CameraParameters != null)
           {
-            Mat cameraMatrix = CameraParameters.CamerasMatrix[cameraId];
-            undistordedImages_maps[cameraId] = new Mat[2]; // map1 and map2
-            Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters.DistCoeffs[cameraId], undistordedImages_R,
-              cameraMatrix, Images[cameraId].size, TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
-            undistordedImages[cameraId] = new Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
+            Cv.Mat cameraMatrix = CameraParameters.CamerasMatrix[cameraId];
+            undistordedImages_maps[cameraId] = new Cv.Mat[2]; // map1 and map2
+            Cv.InitUndistortRectifyMap(cameraMatrix, CameraParameters.DistCoeffs[cameraId], undistordedImages_R,
+              cameraMatrix, Images[cameraId].size, Cv.TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
+            undistordedImages[cameraId] = new Cv.Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
           }
         }
       }

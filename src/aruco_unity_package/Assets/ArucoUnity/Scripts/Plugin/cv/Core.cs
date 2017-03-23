@@ -7,20 +7,17 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace cv
+    public static partial class Cv
     {
-      public static class Core
-      {
-        // Static Member Functions
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_core_flip(System.IntPtr src, System.IntPtr dst, int flipCode, System.IntPtr exception);
+      // Static Member Functions
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_core_flip(System.IntPtr src, System.IntPtr dst, int flipCode, System.IntPtr exception);
 
-        public static void Flip(Mat src, Mat dst, int flipCode)
-        {
-          Exception exception = new Exception();
-          au_cv_core_flip(src.cppPtr, dst.cppPtr, flipCode, exception.cppPtr);
-          exception.Check();
-        }
+      public static void Flip(Mat src, Mat dst, int flipCode)
+      {
+        Exception exception = new Exception();
+        au_cv_core_flip(src.cppPtr, dst.cppPtr, flipCode, exception.cppPtr);
+        exception.Check();
       }
     }
   }

@@ -1,5 +1,5 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.std;
+using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 using UnityEngine;
 

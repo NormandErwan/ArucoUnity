@@ -164,7 +164,7 @@ namespace ArucoUnity
       }
     }
 
-    public CALIB CalibrationFlags
+    public Cv.CALIB CalibrationFlags
     {
       get { return calibrationFlags; }
       set
@@ -176,50 +176,50 @@ namespace ArucoUnity
 
     // Variables
 
-    private CALIB calibrationFlags;
+    private Cv.CALIB calibrationFlags;
 
     // Methods
 
     protected void UpdateCalibrationFlags()
     {
       calibrationFlags = 0;
-      if (UseIntrinsicGuess)        { calibrationFlags |= CALIB.USE_INTRINSIC_GUESS; }
-      if (FixAspectRatio)           { calibrationFlags |= CALIB.FIX_ASPECT_RATIO;    }
-      if (FixPrincipalPoint)        { calibrationFlags |= CALIB.FIX_PRINCIPAL_POINT; }
-      if (ZeroTangentialDistorsion) { calibrationFlags |= CALIB.ZERO_TANGENT_DIST;   }
-      if (FixK[0])                  { calibrationFlags |= CALIB.FIX_K1;              }
-      if (FixK[1])                  { calibrationFlags |= CALIB.FIX_K2;              }
-      if (FixK[2])                  { calibrationFlags |= CALIB.FIX_K3;              }
-      if (FixK[3])                  { calibrationFlags |= CALIB.FIX_K4;              }
-      if (FixK[4])                  { calibrationFlags |= CALIB.FIX_K5;              }
-      if (FixK[5])                  { calibrationFlags |= CALIB.FIX_K6;              }
-      if (RationalModel)            { calibrationFlags |= CALIB.RATIONAL_MODEL;      }
-      if (ThinPrismModel)           { calibrationFlags |= CALIB.THIN_PRISM_MODEL;    }
-      if (FixS1_S2_S3_S4)           { calibrationFlags |= CALIB.FIX_S1_S2_S3_S4;     }
-      if (TiltedModel)              { calibrationFlags |= CALIB.TILTED_MODEL;        }
-      if (FixTauxTauy)              { calibrationFlags |= CALIB.FIX_TAUX_TAUY;       }
+      if (UseIntrinsicGuess)        { calibrationFlags |= Cv.CALIB.USE_INTRINSIC_GUESS; }
+      if (FixAspectRatio)           { calibrationFlags |= Cv.CALIB.FIX_ASPECT_RATIO;    }
+      if (FixPrincipalPoint)        { calibrationFlags |= Cv.CALIB.FIX_PRINCIPAL_POINT; }
+      if (ZeroTangentialDistorsion) { calibrationFlags |= Cv.CALIB.ZERO_TANGENT_DIST;   }
+      if (FixK[0])                  { calibrationFlags |= Cv.CALIB.FIX_K1;              }
+      if (FixK[1])                  { calibrationFlags |= Cv.CALIB.FIX_K2;              }
+      if (FixK[2])                  { calibrationFlags |= Cv.CALIB.FIX_K3;              }
+      if (FixK[3])                  { calibrationFlags |= Cv.CALIB.FIX_K4;              }
+      if (FixK[4])                  { calibrationFlags |= Cv.CALIB.FIX_K5;              }
+      if (FixK[5])                  { calibrationFlags |= Cv.CALIB.FIX_K6;              }
+      if (RationalModel)            { calibrationFlags |= Cv.CALIB.RATIONAL_MODEL;      }
+      if (ThinPrismModel)           { calibrationFlags |= Cv.CALIB.THIN_PRISM_MODEL;    }
+      if (FixS1_S2_S3_S4)           { calibrationFlags |= Cv.CALIB.FIX_S1_S2_S3_S4;     }
+      if (TiltedModel)              { calibrationFlags |= Cv.CALIB.TILTED_MODEL;        }
+      if (FixTauxTauy)              { calibrationFlags |= Cv.CALIB.FIX_TAUX_TAUY;       }
   }
 
     protected void UpdateCalibrationOptions()
     {
-      UseIntrinsicGuess        = CalibrationFlagsContain(CALIB.USE_INTRINSIC_GUESS);
-      FixAspectRatio           = CalibrationFlagsContain(CALIB.FIX_ASPECT_RATIO);
-      FixPrincipalPoint        = CalibrationFlagsContain(CALIB.FIX_PRINCIPAL_POINT);
-      ZeroTangentialDistorsion = CalibrationFlagsContain(CALIB.ZERO_TANGENT_DIST);
-      FixK[0]                  = CalibrationFlagsContain(CALIB.FIX_K1);
-      FixK[1]                  = CalibrationFlagsContain(CALIB.FIX_K2);
-      FixK[2]                  = CalibrationFlagsContain(CALIB.FIX_K3);
-      FixK[3]                  = CalibrationFlagsContain(CALIB.FIX_K4);
-      FixK[4]                  = CalibrationFlagsContain(CALIB.FIX_K5);
-      FixK[5]                  = CalibrationFlagsContain(CALIB.FIX_K6);
-      RationalModel            = CalibrationFlagsContain(CALIB.RATIONAL_MODEL);
-      ThinPrismModel           = CalibrationFlagsContain(CALIB.THIN_PRISM_MODEL);
-      FixS1_S2_S3_S4           = CalibrationFlagsContain(CALIB.FIX_S1_S2_S3_S4);
-      TiltedModel              = CalibrationFlagsContain(CALIB.TILTED_MODEL);
-      FixTauxTauy              = CalibrationFlagsContain(CALIB.FIX_TAUX_TAUY);
+      UseIntrinsicGuess        = CalibrationFlagsContain(Cv.CALIB.USE_INTRINSIC_GUESS);
+      FixAspectRatio           = CalibrationFlagsContain(Cv.CALIB.FIX_ASPECT_RATIO);
+      FixPrincipalPoint        = CalibrationFlagsContain(Cv.CALIB.FIX_PRINCIPAL_POINT);
+      ZeroTangentialDistorsion = CalibrationFlagsContain(Cv.CALIB.ZERO_TANGENT_DIST);
+      FixK[0]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K1);
+      FixK[1]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K2);
+      FixK[2]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K3);
+      FixK[3]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K4);
+      FixK[4]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K5);
+      FixK[5]                  = CalibrationFlagsContain(Cv.CALIB.FIX_K6);
+      RationalModel            = CalibrationFlagsContain(Cv.CALIB.RATIONAL_MODEL);
+      ThinPrismModel           = CalibrationFlagsContain(Cv.CALIB.THIN_PRISM_MODEL);
+      FixS1_S2_S3_S4           = CalibrationFlagsContain(Cv.CALIB.FIX_S1_S2_S3_S4);
+      TiltedModel              = CalibrationFlagsContain(Cv.CALIB.TILTED_MODEL);
+      FixTauxTauy              = CalibrationFlagsContain(Cv.CALIB.FIX_TAUX_TAUY);
     }
 
-    protected bool CalibrationFlagsContain(CALIB calibrationFlag)
+    protected bool CalibrationFlagsContain(Cv.CALIB calibrationFlag)
     {
       return (CalibrationFlags & calibrationFlag) == calibrationFlag;
     }

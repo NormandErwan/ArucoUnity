@@ -7,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace cv
+    public static partial class Cv
     {
       public class Vec4i : HandleCppPtr
       {

@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -8,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace std
+    namespace Std
     {
       public class VectorVectorVectorPoint2f : HandleCppPtr
       {
@@ -48,7 +47,7 @@ namespace ArucoUnity
 
         public VectorVectorPoint2f At(uint pos)
         {
-          Exception exception = new Exception();
+          Cv.Exception exception = new Cv.Exception();
           VectorVectorPoint2f element = new VectorVectorPoint2f(au_std_vectorVectorVectorPoint2f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;

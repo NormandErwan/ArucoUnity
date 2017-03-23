@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
 using ArucoUnity.Utility;
 
 namespace ArucoUnity
@@ -25,7 +24,7 @@ namespace ArucoUnity
       {
         foreach (var arucoBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
-          Functions.RefineDetectedMarkers(arucoTracker.ArucoCamera.Images[cameraId], arucoBoard.Board, arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary], 
+          Aruco.RefineDetectedMarkers(arucoTracker.ArucoCamera.Images[cameraId], arucoBoard.Board, arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary], 
             arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.MarkerTracker.RejectedCandidateCorners[cameraId][dictionary]);
           arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] = (int)arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary].Size();
         }
@@ -46,8 +45,8 @@ namespace ArucoUnity
 
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
-        Vec3d rvec = null, tvec = null;
-        arucoGridBoard.MarkersUsedForEstimation = Functions.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
+        Cv.Vec3d rvec = null, tvec = null;
+        arucoGridBoard.MarkersUsedForEstimation = Aruco.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
           arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters.CamerasMatrix[cameraId], 
           cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
 
@@ -67,14 +66,14 @@ namespace ArucoUnity
       }
 
       bool updatedCameraImage = false;
-      Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+      Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
       CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
       {
         if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
         {
-          Functions.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], 
+          Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], 
             arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
           updatedCameraImage = true;
         }

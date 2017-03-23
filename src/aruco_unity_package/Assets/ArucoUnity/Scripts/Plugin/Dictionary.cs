@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -64,15 +63,15 @@ namespace ArucoUnity
       [DllImport("ArucoUnity")]
       static extern void au_Dictionary_setMaxCorrectionBits(System.IntPtr dictionary, int maxCorrectionBits);
 
-      public Dictionary(Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
+      public Dictionary(Cv.Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
       {
       }
 
-      public Dictionary(Mat bytesList, int markerSize) : base(au_Dictionary_new2(bytesList.cppPtr, markerSize))
+      public Dictionary(Cv.Mat bytesList, int markerSize) : base(au_Dictionary_new2(bytesList.cppPtr, markerSize))
       {
       }
 
-      public Dictionary(Mat bytesList) : base(au_Dictionary_new3(bytesList.cppPtr))
+      public Dictionary(Cv.Mat bytesList) : base(au_Dictionary_new3(bytesList.cppPtr))
       {
       }
 
@@ -94,57 +93,57 @@ namespace ArucoUnity
         au_Dictionary_delete(cppPtr);
       }
 
-      public void DrawMarker(int id, int sidePixels, out Mat img, int borderBits)
+      public void DrawMarker(int id, int sidePixels, out Cv.Mat img, int borderBits)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_Dictionary_drawMarker(cppPtr, id, sidePixels, out imgPtr, borderBits, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
-      public int GetDistanceToId(Dictionary dictionary, Mat bits, int id, bool allRotations)
+      public int GetDistanceToId(Dictionary dictionary, Cv.Mat bits, int id, bool allRotations)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         int distanceToId = au_Dictionary_getDistanceToId1(cppPtr, bits.cppPtr, id, allRotations, exception.cppPtr);
         exception.Check();
         return distanceToId;
       }
 
-      public int GetDistanceToId(Dictionary dictionary, Mat bits, int id)
+      public int GetDistanceToId(Dictionary dictionary, Cv.Mat bits, int id)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         int distanceToId = au_Dictionary_getDistanceToId2(cppPtr, bits.cppPtr, id, exception.cppPtr);
         exception.Check();
         return distanceToId;
       }
 
-      public bool Identify(Dictionary dictionary, Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
+      public bool Identify(Dictionary dictionary, Cv.Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         bool result = au_Dictionary_identify(cppPtr, onlyBits.cppPtr, out idx, out rotation, maxCorrectionRate, exception.cppPtr);
         exception.Check();
         return result;
       }
 
-      static public Mat GetBitsFromByteList(Mat byteList, int markerSiz)
+      static public Cv.Mat GetBitsFromByteList(Cv.Mat byteList, int markerSiz)
       {
-        Exception exception = new Exception();
-        Mat bits = new Mat(au_Dictionary_getBitsFromByteList(byteList.cppPtr, markerSiz, exception.cppPtr));
+        Cv.Exception exception = new Cv.Exception();
+        Cv.Mat bits = new Cv.Mat(au_Dictionary_getBitsFromByteList(byteList.cppPtr, markerSiz, exception.cppPtr));
         exception.Check();
         return bits;
       }
 
-      static public Mat GetByteListFromBits(System.IntPtr bits)
+      static public Cv.Mat GetByteListFromBits(System.IntPtr bits)
       {
-        return new Mat(au_Dictionary_getByteListFromBits(bits));
+        return new Cv.Mat(au_Dictionary_getByteListFromBits(bits));
       }
 
-      public Mat bytesList
+      public Cv.Mat bytesList
       {
-        get { return new Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
+        get { return new Cv.Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
         set { au_Dictionary_setBytesList(cppPtr, value.cppPtr); }
       }
 

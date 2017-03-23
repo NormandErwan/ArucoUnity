@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.cv;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -43,7 +42,7 @@ namespace ArucoUnity
       /// <summary>
       /// The image size for drawing the board.
       /// </summary>
-      public Size ImageSize { get; protected set; }
+      public Cv.Size ImageSize { get; protected set; }
 
       /// <summary>
       /// The associated board from the ArucoUnity plugin library.
@@ -52,9 +51,9 @@ namespace ArucoUnity
 
       public float AxisLength { get; protected set; }
 
-      public Vec3d Rvec { get; set; }
+      public Cv.Vec3d Rvec { get; set; }
 
-      public Vec3d Tvec { get; set; }
+      public Cv.Vec3d Tvec { get; set; }
 
       // Variables
 
@@ -69,7 +68,7 @@ namespace ArucoUnity
       {
         base.Awake();
 
-        ImageSize = new Size();
+        ImageSize = new Cv.Size();
         UpdateBoard();
         UpdateHashCode();
       }

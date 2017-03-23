@@ -97,7 +97,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
-        dictionary = Functions.GetPredefinedDictionary(dictionaryName);
+        dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
       }
 
       /// <summary>

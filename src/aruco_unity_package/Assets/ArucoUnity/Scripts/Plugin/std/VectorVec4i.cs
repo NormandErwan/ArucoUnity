@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -8,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace std
+    namespace Std
     {
       public class VectorVec4i : HandleCppPtr
       {
@@ -46,29 +45,29 @@ namespace ArucoUnity
           au_std_vectorVec4i_delete(cppPtr);
         }
 
-        public Vec4i At(uint pos)
+        public Cv.Vec4i At(uint pos)
         {
-          Exception exception = new Exception();
-          Vec4i element = new Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Exception exception = new Cv.Exception();
+          Cv.Vec4i element = new Cv.Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Vec4i[] Data()
+        public unsafe Cv.Vec4i[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorVec4i_data(cppPtr);
           uint size = Size();
 
-          Vec4i[] data = new Vec4i[size];
+          Cv.Vec4i[] data = new Cv.Vec4i[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Vec4i(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Vec4i(dataPtr[i], DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Vec4i value)
+        public void PushBack(Cv.Vec4i value)
         {
           au_std_vectorVec4i_push_back(cppPtr, value.cppPtr);
         }

@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -8,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace std
+    namespace Std
     {
       public class VectorPoint3f : HandleCppPtr
       {
@@ -46,29 +45,29 @@ namespace ArucoUnity
           au_std_vectorPoint3f_delete(cppPtr);
         }
 
-        public Point3f At(uint pos)
+        public Cv.Point3f At(uint pos)
         {
-          Exception exception = new Exception();
-          Point3f element = new Point3f(au_std_vectorPoint3f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Exception exception = new Cv.Exception();
+          Cv.Point3f element = new Cv.Point3f(au_std_vectorPoint3f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Point3f[] Data()
+        public unsafe Cv.Point3f[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorPoint3f_data(cppPtr);
           uint size = Size();
 
-          Point3f[] data = new Point3f[size];
+          Cv.Point3f[] data = new Cv.Point3f[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Point3f(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Point3f(dataPtr[i], DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Point3f value)
+        public void PushBack(Cv.Point3f value)
         {
           au_std_vectorPoint3f_push_back(cppPtr, value.cppPtr);
         }

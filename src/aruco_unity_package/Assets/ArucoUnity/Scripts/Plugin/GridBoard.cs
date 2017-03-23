@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ArucoUnity.Plugin.cv;
 
 namespace ArucoUnity
 {
@@ -52,42 +51,42 @@ namespace ArucoUnity
       {
       }
 
-      public void Draw(Size outSize, out Mat img, int marginSize, int borderBits)
+      public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize, int borderBits)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_GridBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
-      public void Draw(Size outSize, out Mat img, int marginSize)
+      public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_GridBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
-      public void Draw(Size outSize, out Mat img)
+      public void Draw(Cv.Size outSize, out Cv.Mat img)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imgPtr;
 
         au_GridBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
-        img = new Mat(imgPtr);
+        img = new Cv.Mat(imgPtr);
 
         exception.Check();
       }
 
       static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary, int firstMarker)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr gridBoardPtr = au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, firstMarker,
           exception.cppPtr);
         exception.Check();
@@ -96,15 +95,15 @@ namespace ArucoUnity
 
       static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary)
       {
-        Exception exception = new Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr gridBoardPtr = au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, exception.cppPtr);
         exception.Check();
         return new GridBoard(gridBoardPtr);
       }
 
-      public Size GetGridSize()
+      public Cv.Size GetGridSize()
       {
-        return new Size(au_GridBoard_getGridSize(cppPtr));
+        return new Cv.Size(au_GridBoard_getGridSize(cppPtr));
       }
 
       public float GetMarkerLength()

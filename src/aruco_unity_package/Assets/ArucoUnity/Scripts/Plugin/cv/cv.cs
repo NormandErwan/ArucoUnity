@@ -5,7 +5,7 @@
 
   namespace Plugin
   {
-    namespace cv
+    public static partial class Cv
     {
       public enum CONSTANTS
       {
