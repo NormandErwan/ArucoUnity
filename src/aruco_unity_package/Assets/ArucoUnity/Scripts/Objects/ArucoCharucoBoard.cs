@@ -1,6 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.Std;
-using ArucoUnity.Utility;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -71,9 +69,9 @@ namespace ArucoUnity
       }
     }
 
-    public VectorPoint2f DetectedCorners { get; set; }
+    public Std.VectorPoint2f DetectedCorners { get; set; }
 
-    public VectorInt DetectedIds { get; set; }
+    public Std.VectorInt DetectedIds { get; set; }
 
     public int InterpolatedCorners { get; set; }
 

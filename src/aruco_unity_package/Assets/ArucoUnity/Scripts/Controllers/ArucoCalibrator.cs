@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Utility;
 using System;
 using System.IO;
 using UnityEngine;
