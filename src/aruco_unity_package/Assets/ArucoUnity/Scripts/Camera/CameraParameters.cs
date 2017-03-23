@@ -87,7 +87,7 @@ namespace ArucoUnity
       /// <summary>
       /// Non null if there is a fix image aspect ratio.
       /// </summary>
-      public float FixAspectRatio { get; set; }
+      public float FixAspectRatioValue { get; set; }
 
       /// <summary>
       /// The average re-projection error of the calibration.

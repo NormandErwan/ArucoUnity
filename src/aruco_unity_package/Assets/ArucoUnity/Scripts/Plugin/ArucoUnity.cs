@@ -52,8 +52,10 @@ namespace ArucoUnity
       FIX_S1_S2_S3_S4 = 0x10000,
       TILTED_MODEL = 0x40000,
       FIX_TAUX_TAUY = 0x80000,
+      // only for stereo
       FIX_INTRINSIC = 0x00100,
       SAME_FOCAL_LENGTH = 0x00200,
+      // for stereo rectification
       ZERO_DISPARITY = 0x00400,
       USE_LU = (1 << 17)
     };

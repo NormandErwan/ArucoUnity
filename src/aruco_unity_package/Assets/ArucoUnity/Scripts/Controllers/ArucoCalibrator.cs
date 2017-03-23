@@ -13,27 +13,17 @@ namespace ArucoUnity
 
   public class ArucoCalibrator : ArucoObjectDetector
   {
-    // Constants
-
-    protected const float DEFAULT_FIX_ASPECT_RATIO = 1f;
-
     // Editor fields
 
     [SerializeField]
     [Tooltip("The ArUco board to use for calibrate.")]
-    private ArucoBoard arucoBoard;
+    private ArucoBoard calibrationBoard;
 
     [SerializeField]
-    private bool applyRefineStrategy = false;
+    private bool refineMarkersDetection = false;
 
     [SerializeField]
-    private bool assumeZeroTangentialDistorsion = false;
-
-    [SerializeField]
-    private float fixAspectRatio;
-
-    [SerializeField]
-    private bool fixPrincipalPointAtCenter = false;
+    private CalibrationFlagsController calibrationFlagsController;
 
     [SerializeField]
     [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder.")]
@@ -46,49 +36,11 @@ namespace ArucoUnity
 
     // Properties
 
-    public ArucoBoard ArucoBoard { get { return arucoBoard; } set { arucoBoard = value; } }
+    public ArucoBoard CalibrationBoard { get { return calibrationBoard; } set { calibrationBoard = value; } }
 
-    public bool ApplyRefineStrategy { get { return applyRefineStrategy; } set { applyRefineStrategy = value; } }
+    public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
-    public bool AssumeZeroTangentialDistorsion 
-    {
-      get { return assumeZeroTangentialDistorsion; }
-      set
-      {
-        assumeZeroTangentialDistorsion = value;
-        UpdateCalibrationFlags();
-      }
-    }
-
-    public float FixAspectRatio 
-    {
-      get { return fixAspectRatio; }
-      set
-      {
-        fixAspectRatio = value;
-        UpdateCalibrationFlags();
-      }
-    }
-
-    public bool FixPrincipalPointAtCenter 
-    {
-      get { return fixPrincipalPointAtCenter; }
-      set
-      {
-        fixPrincipalPointAtCenter = value;
-        UpdateCalibrationFlags();
-      }
-    }
-
-    public CALIB CalibrationFlags 
-    {
-      get { return calibrationFlags; }
-      set
-      {
-        calibrationFlags = value;
-        UpdateCalibrationOptions();
-      }
-    }
+    public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
 
     /// <summary>
     /// The output folder for the calibration files, relative to the Application.persistentDataPath folder.
@@ -125,10 +77,6 @@ namespace ArucoUnity
 
     public bool IsCalibrated { get; protected set; }
 
-    // Variables
-
-    private CALIB calibrationFlags;
-
     // MonoBehaviour methods
 
     protected override void Awake()
@@ -139,15 +87,13 @@ namespace ArucoUnity
       {
         CalibrationTermCriteria = new TermCriteria(TermCriteria.Type.COUNT | TermCriteria.Type.EPS, 100, 1E-5);
       }
-
-      UpdateCalibrationFlags();
     }
 
     // ArucoDetector Methods
 
     protected override void PreConfigure()
     {
-      if (ArucoBoard == null)
+      if (CalibrationBoard == null)
       {
         throw new ArgumentNullException("ArucoBoard", "ArucoBoard property needs to be set to configure the calibrator.");
       }
@@ -205,14 +151,14 @@ namespace ArucoUnity
 
         Mat image = ArucoCamera.Images[cameraId];
 
-        Functions.DetectMarkers(image, ArucoBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+        Functions.DetectMarkers(image, CalibrationBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
 
         MarkerCornersCurrentImage[cameraId] = markerCorners;
         MarkerIdsCurrentImage[cameraId] = markerIds;
 
-        if (ApplyRefineStrategy)
+        if (RefineMarkersDetection)
         {
-          Functions.RefineDetectedMarkers(image, ArucoBoard.Board, MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId], rejectedCandidateCorners);
+          Functions.RefineDetectedMarkers(image, CalibrationBoard.Board, MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId], rejectedCandidateCorners);
         }
       }
     }
@@ -267,7 +213,7 @@ namespace ArucoUnity
 
     public void Calibrate()
     {
-      CharucoBoard charucoBoard = ArucoBoard.Board as CharucoBoard;
+      CharucoBoard charucoBoard = CalibrationBoard.Board as CharucoBoard;
 
       // Check if there is enough captured frames for calibration
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
@@ -302,9 +248,9 @@ namespace ArucoUnity
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
         // Prepare camera parameters
-        if ((CalibrationFlags & CALIB.FIX_ASPECT_RATIO) == CALIB.FIX_ASPECT_RATIO)
+        if (CalibrationFlagsController.FixAspectRatio)
         {
-          camerasMatrix[cameraId] = new Mat(3, 3, TYPE.CV_64F, new double[9] { FixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+          camerasMatrix[cameraId] = new Mat(3, 3, TYPE.CV_64F, new double[9] { CalibrationFlagsController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
         }
         else
         {
@@ -335,8 +281,7 @@ namespace ArucoUnity
         Size imageSize = ArucoCamera.Images[cameraId].size;
         VectorMat rvecs, tvecs;
         reprojectionErrors[cameraId] = Functions.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
-          ArucoBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags, 
-          CalibrationTermCriteria);
+          CalibrationBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlagsController.CalibrationFlags, CalibrationTermCriteria);
 
         // If the used board is a charuco board, refine the calibration
         if (charucoBoard != null)
@@ -357,7 +302,7 @@ namespace ArucoUnity
 
           // Calibrate camera using charuco
           reprojectionErrors[cameraId] = Functions.CalibrateCameraCharuco(AllCharucoCorners[cameraId], AllCharucoIds[cameraId], charucoBoard, 
-            imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags, CalibrationTermCriteria);
+            imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlagsController.CalibrationFlags, CalibrationTermCriteria);
         }
 
         // Save calibration parameters
@@ -370,8 +315,8 @@ namespace ArucoUnity
       // Create camera parameters
       CameraParameters = new CameraParameters(ArucoCamera.CamerasNumber)
       {
-        CalibrationFlags = (int)CalibrationFlags,
-        FixAspectRatio = FixAspectRatio,
+        CalibrationFlags = (int)CalibrationFlagsController.CalibrationFlags,
+        FixAspectRatioValue = CalibrationFlagsController.FixAspectRatioValue,
         ReprojectionError = reprojectionErrors,
         CamerasMatrix = camerasMatrix,
         DistCoeffs = distCoeffs
@@ -396,39 +341,6 @@ namespace ArucoUnity
       calibrationFilePath += ".xml";
       
       CameraParameters.SaveToXmlFile(calibrationFilePath);
-    }
-
-    protected void UpdateCalibrationFlags()
-    {
-      calibrationFlags = 0;
-      if (AssumeZeroTangentialDistorsion)
-      {
-        calibrationFlags |= CALIB.ZERO_TANGENT_DIST;
-      }
-      if (FixAspectRatio > 0)
-      {
-        calibrationFlags |= CALIB.FIX_ASPECT_RATIO;
-      }
-      if (fixPrincipalPointAtCenter)
-      {
-        calibrationFlags |= CALIB.FIX_PRINCIPAL_POINT;
-      }
-    }
-
-    protected void UpdateCalibrationOptions()
-    {
-      if ((CalibrationFlags & CALIB.ZERO_TANGENT_DIST) == CALIB.ZERO_TANGENT_DIST)
-      {
-        AssumeZeroTangentialDistorsion = true;
-      }
-      if ((CalibrationFlags & CALIB.FIX_ASPECT_RATIO) == CALIB.FIX_ASPECT_RATIO)
-      {
-        FixAspectRatio = DEFAULT_FIX_ASPECT_RATIO;
-      }
-      if ((CalibrationFlags & CALIB.FIX_PRINCIPAL_POINT) == CALIB.FIX_PRINCIPAL_POINT)
-      {
-        fixPrincipalPointAtCenter = true;
-      }
     }
   }
 
