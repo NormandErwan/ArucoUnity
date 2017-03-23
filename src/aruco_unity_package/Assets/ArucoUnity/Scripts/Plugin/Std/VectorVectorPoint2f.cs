@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.Utility;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {
@@ -8,9 +7,9 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace Std
+    public static partial class Std
     {
-      public class VectorVectorPoint2f : HandleCppPtr
+      public class VectorVectorPoint2f : Utility.HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

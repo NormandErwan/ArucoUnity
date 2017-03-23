@@ -7,7 +7,7 @@ namespace ArucoUnity
 
   namespace Plugin
   {
-    namespace Utility
+    public static partial class Utility
     {
       public abstract class HandleCppPtr
       {

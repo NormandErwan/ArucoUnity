@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 using System.Collections.Generic;
 
@@ -20,15 +19,15 @@ namespace ArucoUnity
 
     // Properties
 
-    public Dictionary<Aruco.Dictionary, VectorVectorPoint2f>[] DiamondCorners { get; set; }
+    public Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[] DiamondCorners { get; set; }
 
-    public Dictionary<Aruco.Dictionary, VectorVec4i>[] DiamondIds { get; set; }
+    public Dictionary<Aruco.Dictionary, Std.VectorVec4i>[] DiamondIds { get; set; }
 
     public Dictionary<Aruco.Dictionary, int>[] DetectedDiamonds { get; set; }
 
-    public Dictionary<Aruco.Dictionary, VectorVec3d>[] DiamondRvecs { get; set; }
+    public Dictionary<Aruco.Dictionary, Std.VectorVec3d>[] DiamondRvecs { get; set; }
 
-    public Dictionary<Aruco.Dictionary, VectorVec3d>[] DiamondTvecs { get; set; }
+    public Dictionary<Aruco.Dictionary, Std.VectorVec3d>[] DiamondTvecs { get; set; }
 
     // ArucoObjectController related methods
 
@@ -42,10 +41,10 @@ namespace ArucoUnity
 
       for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
       {
-        DiamondIds[cameraId].Add(dictionary, new VectorVec4i());
+        DiamondIds[cameraId].Add(dictionary, new Std.VectorVec4i());
         DetectedDiamonds[cameraId].Add(dictionary, 0);
-        DiamondRvecs[cameraId].Add(dictionary, new VectorVec3d());
-        DiamondTvecs[cameraId].Add(dictionary, new VectorVec3d());
+        DiamondRvecs[cameraId].Add(dictionary, new Std.VectorVec3d());
+        DiamondTvecs[cameraId].Add(dictionary, new Std.VectorVec3d());
       }
     }
 
@@ -71,29 +70,29 @@ namespace ArucoUnity
     {
       base.Activate(arucoTracker);
 
-      DiamondCorners = new Dictionary<Aruco.Dictionary, VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondIds = new Dictionary<Aruco.Dictionary, VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondIds = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
       DetectedDiamonds = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondRvecs = new Dictionary<Aruco.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
-      DiamondTvecs = new Dictionary<Aruco.Dictionary, VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondRvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
+      DiamondTvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
 
       for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
       {
-        DiamondCorners[cameraId] = new Dictionary<Aruco.Dictionary, VectorVectorPoint2f>();
-        DiamondIds[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec4i>();
+        DiamondCorners[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>();
+        DiamondIds[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>();
         DetectedDiamonds[cameraId] = new Dictionary<Aruco.Dictionary, int>();
-        DiamondRvecs[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec3d>();
-        DiamondTvecs[cameraId] = new Dictionary<Aruco.Dictionary, VectorVec3d>();
+        DiamondRvecs[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>();
+        DiamondTvecs[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>();
 
         foreach (var arucoObjectDictionary in arucoTracker.ArucoObjects)
         {
           Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
-          DiamondCorners[cameraId].Add(dictionary, new VectorVectorPoint2f());
-          DiamondIds[cameraId].Add(dictionary, new VectorVec4i());
+          DiamondCorners[cameraId].Add(dictionary, new Std.VectorVectorPoint2f());
+          DiamondIds[cameraId].Add(dictionary, new Std.VectorVec4i());
           DetectedDiamonds[cameraId].Add(dictionary, 0);
-          DiamondRvecs[cameraId].Add(dictionary, new VectorVec3d());
-          DiamondTvecs[cameraId].Add(dictionary, new VectorVec3d());
+          DiamondRvecs[cameraId].Add(dictionary, new Std.VectorVec3d());
+          DiamondTvecs[cameraId].Add(dictionary, new Std.VectorVec3d());
         }
       }
     }
@@ -124,8 +123,8 @@ namespace ArucoUnity
 
       CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
-      VectorVectorPoint2f diamondCorners = null;
-      VectorVec4i diamondIds = null;
+      Std.VectorVectorPoint2f diamondCorners = null;
+      Std.VectorVec4i diamondIds = null;
 
       if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0)
       {
@@ -160,7 +159,7 @@ namespace ArucoUnity
       CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
       // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
-      VectorVec3d diamondRvecs = null, diamondTvecs = null;
+      Std.VectorVec3d diamondRvecs = null, diamondTvecs = null;
       if (DetectedDiamonds[cameraId][dictionary] > 0)
       {
         Aruco.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters.CamerasMatrix[cameraId],

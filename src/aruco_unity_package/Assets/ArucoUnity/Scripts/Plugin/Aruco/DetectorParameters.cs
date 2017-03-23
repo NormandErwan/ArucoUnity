@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.Utility;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {
@@ -10,7 +9,7 @@ namespace ArucoUnity
   {
     public static partial class Aruco
     {
-      public class DetectorParameters : HandleCppPtr
+      public class DetectorParameters : Utility.HandleCppPtr
       {
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_DetectorParameters_create();

@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.Utility;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {
@@ -63,7 +62,7 @@ namespace ArucoUnity
         return new Dictionary(dictionaryPtr);
       }
 
-      public class Dictionary : HandleCppPtr
+      public class Dictionary : Utility.HandleCppPtr
       {
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_Dictionary_new1(System.IntPtr bytesList, int markerSize, int maxCorrectionBits);

@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 using System;
 using System.IO;
@@ -54,25 +53,25 @@ namespace ArucoUnity
 
     public Cv.TermCriteria CalibrationTermCriteria { get; set; }
 
-    public VectorVectorVectorPoint2f[] AllCorners { get; protected set; }
+    public Std.VectorVectorVectorPoint2f[] AllCorners { get; protected set; }
 
-    public VectorVectorInt[] AllIds { get; protected set; }
+    public Std.VectorVectorInt[] AllIds { get; protected set; }
 
-    public VectorMat[] AllImages { get; protected set; }
+    public Std.VectorMat[] AllImages { get; protected set; }
 
-    public VectorVectorPoint2f[] AllCharucoCorners { get; protected set; }
+    public Std.VectorVectorPoint2f[] AllCharucoCorners { get; protected set; }
 
-    public VectorVectorInt[] AllCharucoIds { get; protected set; }
+    public Std.VectorVectorInt[] AllCharucoIds { get; protected set; }
 
-    public VectorMat[] Rvecs { get; protected set; }
+    public Std.VectorMat[] Rvecs { get; protected set; }
 
-    public VectorMat[] Tvecs { get; protected set; }
+    public Std.VectorMat[] Tvecs { get; protected set; }
 
     public CameraParameters CameraParameters { get; protected set; }
 
-    public VectorVectorPoint2f[] MarkerCornersCurrentImage { get; protected set; }
+    public Std.VectorVectorPoint2f[] MarkerCornersCurrentImage { get; protected set; }
 
-    public VectorInt[] MarkerIdsCurrentImage { get; protected set; }
+    public Std.VectorInt[] MarkerIdsCurrentImage { get; protected set; }
 
     public bool IsCalibrated { get; protected set; }
 
@@ -115,22 +114,22 @@ namespace ArucoUnity
 
     public void ResetCalibration()
     {
-      AllCorners = new VectorVectorVectorPoint2f[ArucoCamera.CamerasNumber];
-      AllIds = new VectorVectorInt[ArucoCamera.CamerasNumber];
-      AllImages = new VectorMat[ArucoCamera.CamerasNumber];
+      AllCorners = new Std.VectorVectorVectorPoint2f[ArucoCamera.CamerasNumber];
+      AllIds = new Std.VectorVectorInt[ArucoCamera.CamerasNumber];
+      AllImages = new Std.VectorMat[ArucoCamera.CamerasNumber];
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
-        AllCorners[cameraId] = new VectorVectorVectorPoint2f();
-        AllIds[cameraId] = new VectorVectorInt();
-        AllImages[cameraId] = new VectorMat();
+        AllCorners[cameraId] = new Std.VectorVectorVectorPoint2f();
+        AllIds[cameraId] = new Std.VectorVectorInt();
+        AllImages[cameraId] = new Std.VectorMat();
       }
 
-      AllCharucoCorners = new VectorVectorPoint2f[ArucoCamera.CamerasNumber];
-      AllCharucoIds = new VectorVectorInt[ArucoCamera.CamerasNumber];
-      Rvecs = new VectorMat[ArucoCamera.CamerasNumber];
-      Tvecs = new VectorMat[ArucoCamera.CamerasNumber];
-      MarkerCornersCurrentImage = new VectorVectorPoint2f[ArucoCamera.CamerasNumber];
-      MarkerIdsCurrentImage = new VectorInt[ArucoCamera.CamerasNumber];
+      AllCharucoCorners = new Std.VectorVectorPoint2f[ArucoCamera.CamerasNumber];
+      AllCharucoIds = new Std.VectorVectorInt[ArucoCamera.CamerasNumber];
+      Rvecs = new Std.VectorMat[ArucoCamera.CamerasNumber];
+      Tvecs = new Std.VectorMat[ArucoCamera.CamerasNumber];
+      MarkerCornersCurrentImage = new Std.VectorVectorPoint2f[ArucoCamera.CamerasNumber];
+      MarkerIdsCurrentImage = new Std.VectorInt[ArucoCamera.CamerasNumber];
 
       CameraParameters = null;
       IsCalibrated = false;
@@ -145,8 +144,8 @@ namespace ArucoUnity
 
       for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
       {
-        VectorInt markerIds;
-        VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
+        Std.VectorInt markerIds;
+        Std.VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
 
         Cv.Mat image = ArucoCamera.Images[cameraId];
 
@@ -258,15 +257,15 @@ namespace ArucoUnity
         distCoeffs[cameraId] = new Cv.Mat();
 
         // Prepare data for calibration
-        VectorVectorPoint2f allCornersContenated = new VectorVectorPoint2f();
-        VectorInt allIdsContenated = new VectorInt();
-        VectorInt markerCounterPerFrame = new VectorInt();
+        Std.VectorVectorPoint2f allCornersContenated = new Std.VectorVectorPoint2f();
+        Std.VectorInt allIdsContenated = new Std.VectorInt();
+        Std.VectorInt markerCounterPerFrame = new Std.VectorInt();
 
         uint allCornersSize = AllCorners[cameraId].Size();
         markerCounterPerFrame.Reserve(allCornersSize);
         for (uint i = 0; i < allCornersSize; i++)
         {
-          VectorVectorPoint2f allCornersI = AllCorners[cameraId].At(i);
+          Std.VectorVectorPoint2f allCornersI = AllCorners[cameraId].At(i);
           uint allCornersISize = allCornersI.Size();
           markerCounterPerFrame.PushBack((int)allCornersISize);
           for (uint j = 0; j < allCornersISize; j++)
@@ -278,21 +277,21 @@ namespace ArucoUnity
 
         // Calibrate camera with aruco
         Cv.Size imageSize = ArucoCamera.Images[cameraId].size;
-        VectorMat rvecs, tvecs;
+        Std.VectorMat rvecs, tvecs;
         reprojectionErrors[cameraId] = Aruco.CalibrateCameraAruco(allCornersContenated, allIdsContenated, markerCounterPerFrame, 
           CalibrationBoard.Board, imageSize, camerasMatrix[cameraId], distCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlagsController.CalibrationFlags, CalibrationTermCriteria);
 
         // If the used board is a charuco board, refine the calibration
         if (charucoBoard != null)
         {
-          AllCharucoCorners[cameraId] = new VectorVectorPoint2f();
-          AllCharucoIds[cameraId] = new VectorVectorInt();
+          AllCharucoCorners[cameraId] = new Std.VectorVectorPoint2f();
+          AllCharucoIds[cameraId] = new Std.VectorVectorInt();
 
           // Interpolate charuco corners using camera parameters
           for (uint i = 0; i < AllIds[cameraId].Size(); i++)
           {
-            VectorPoint2f charucoCorners;
-            VectorInt charucoIds;
+            Std.VectorPoint2f charucoCorners;
+            Std.VectorInt charucoIds;
             Aruco.InterpolateCornersCharuco(AllCorners[cameraId].At(i), AllIds[cameraId].At(i), AllImages[cameraId].At(i), charucoBoard, out charucoCorners, out charucoIds);
 
             AllCharucoCorners[cameraId].PushBack(charucoCorners);

@@ -1,4 +1,3 @@
-using ArucoUnity.Plugin.Utility;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity
@@ -10,7 +9,7 @@ namespace ArucoUnity
   {
     public static partial class Cv
     {
-      public class TermCriteria : HandleCppPtr
+      public class TermCriteria : Utility.HandleCppPtr
       {
         public enum Type
         {

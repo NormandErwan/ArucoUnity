@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin.Utility;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace ArucoUnity
 {
@@ -10,7 +9,7 @@ namespace ArucoUnity
   {
     public static partial class Cv
     {
-      public class Mat : HandleCppPtr
+      public class Mat : Utility.HandleCppPtr
       {
         // Constructor & Destructor
         [DllImport("ArucoUnity")]

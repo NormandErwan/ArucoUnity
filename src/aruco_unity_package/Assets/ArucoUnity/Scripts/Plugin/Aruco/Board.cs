@@ -1,5 +1,3 @@
-using ArucoUnity.Plugin.Std;
-using ArucoUnity.Plugin.Utility;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity
@@ -11,7 +9,7 @@ namespace ArucoUnity
   {
     public static partial class Aruco
     {
-      public abstract class Board : HandleCppPtr
+      public abstract class Board : Utility.HandleCppPtr
       {
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
@@ -42,15 +40,15 @@ namespace ArucoUnity
           set { au_Board_setDictionary(cppPtr, value.cppPtr); }
         }
 
-        public VectorInt ids
+        public Std.VectorInt ids
         {
-          get { return new VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
+          get { return new Std.VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
           set { au_Board_setIds(cppPtr, value.cppPtr); }
         }
 
-        public VectorVectorPoint3f objPoints
+        public Std.VectorVectorPoint3f objPoints
         {
-          get { return new VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
+          get { return new Std.VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
           set { au_Board_setObjPoints(cppPtr, value.cppPtr); }
         }
       }

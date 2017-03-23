@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Plugin;
-using ArucoUnity.Plugin.Std;
 using ArucoUnity.Utility;
 
 namespace ArucoUnity
@@ -32,8 +31,8 @@ namespace ArucoUnity
           arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] = (int)arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary].Size();
         }
 
-        VectorPoint2f charucoCorners = null;
-        VectorInt charucoIds = null;
+        Std.VectorPoint2f charucoCorners = null;
+        Std.VectorInt charucoIds = null;
 
         if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0)
         {
