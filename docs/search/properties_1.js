@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['board',['Board',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board.html#aa805fc62d7efb5b3df2220c57f85fd48',1,'ArucoUnity.Samples.CalibrateCameraBoard.Board()'],['../class_aruco_unity_1_1_samples_1_1_create_board.html#a7f2e85914b681021f9ce288403b3bb3a',1,'ArucoUnity.Samples.CreateBoard.Board()']]],
-  ['byteslist',['bytesList',['../class_aruco_unity_1_1_dictionary.html#a1928904049d5a3ee60fd1ce4a7cb9ccf',1,'ArucoUnity::Dictionary']]]
+  ['board',['Board',['../class_aruco_unity_1_1_objects_1_1_aruco_board.html#a170f2666b11e5cc676e1f27cc022f491',1,'ArucoUnity::Objects::ArucoBoard']]],
+  ['byteslist',['bytesList',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_dictionary.html#a3dc10a86eeb8ddc909c3397cdc441f37',1,'ArucoUnity::Plugin::Aruco::Dictionary']]]
 ];

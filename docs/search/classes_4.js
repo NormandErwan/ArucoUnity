@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functions',['Functions',['../class_aruco_unity_1_1_functions.html',1,'ArucoUnity']]]
+  ['exception',['Exception',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_exception.html',1,'ArucoUnity::Plugin::Cv']]]
 ];

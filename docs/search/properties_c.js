@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['showdetectedmarkers',['ShowDetectedMarkers',['../class_aruco_unity_1_1_samples_1_1_detect_board.html#a9145a9f878ee19a58c69058f5b499f08',1,'ArucoUnity.Samples.DetectBoard.ShowDetectedMarkers()'],['../class_aruco_unity_1_1_samples_1_1_detect_markers.html#ae52917950c3ae140787db262c76bed9d',1,'ArucoUnity.Samples.DetectMarkers.ShowDetectedMarkers()']]],
-  ['showrejectedcandidates',['ShowRejectedCandidates',['../class_aruco_unity_1_1_samples_1_1_detect_board.html#a54b55f2511212517cfa7e6ae96c81347',1,'ArucoUnity.Samples.DetectBoard.ShowRejectedCandidates()'],['../class_aruco_unity_1_1_samples_1_1_detect_markers.html#ae0624373448efc6bc1207e1dab1c14b5',1,'ArucoUnity.Samples.DetectMarkers.ShowRejectedCandidates()']]],
-  ['size',['Size',['../class_aruco_unity_1_1_samples_1_1_create_board.html#a9c50efeba9657ed4ac7712e9520a6f85',1,'ArucoUnity.Samples.CreateBoard.Size()'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html#ac12c4f8bffab7a4a047785b5375f3542',1,'ArucoUnity.Utility.cv.Mat.size()']]],
-  ['squaresidelength',['SquareSideLength',['../class_aruco_unity_1_1_samples_1_1_create_diamond.html#adeda31c7d35b91518fa7391757e56e8f',1,'ArucoUnity::Samples::CreateDiamond']]],
-  ['started',['Started',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device.html#a7b56bdbacd9f61c73991b614a7927c51',1,'ArucoUnity::Samples::Utility::CameraDevice']]]
+  ['rationalmodel',['RationalModel',['../class_aruco_unity_1_1_controllers_1_1_calibration_flags_controller.html#a84faf7541d1680bcb465b152c7b16cc1',1,'ArucoUnity::Controllers::CalibrationFlagsController']]],
+  ['refinedetectedmarkers',['RefineDetectedMarkers',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a24e906e453c9d8ce4b73947eaeefbced',1,'ArucoUnity::Controllers::ArucoTracker']]],
+  ['refinemarkersdetection',['RefineMarkersDetection',['../class_aruco_unity_1_1_controllers_1_1_aruco_calibrator.html#a330a694b477cc7a97fe71c3c8faaf6cc',1,'ArucoUnity::Controllers::ArucoCalibrator']]],
+  ['rejectedcandidatecorners',['RejectedCandidateCorners',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#a831bcb4656b90d9079da95bb9aabdad5',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoMarkerTracker']]],
+  ['reprojectionerror',['ReprojectionError',['../class_aruco_unity_1_1_cameras_1_1_camera_parameters.html#a5d9fa200fcad21a8069488d1b9578190',1,'ArucoUnity::Cameras::CameraParameters']]],
+  ['rows',['rows',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#afc628db926f133c4c76b53c2ddc5bad4',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['rvec',['Rvec',['../class_aruco_unity_1_1_objects_1_1_aruco_board.html#a4a07d25ce76909d0f52fb7bf70d881b0',1,'ArucoUnity::Objects::ArucoBoard']]],
+  ['rvecs',['Rvecs',['../class_aruco_unity_1_1_controllers_1_1_aruco_calibrator.html#a815e91addc1a289df8674fdad7f4ab32',1,'ArucoUnity::Controllers::ArucoCalibrator']]]
 ];

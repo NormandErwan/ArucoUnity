@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['eps',['EPS',['../class_aruco_unity_1_1_utility_1_1cv_1_1_term_criteria.html#a5c746ebeb92e0582ef706479b3ae33daac2c027d8c62500300145c3043546d4c6',1,'ArucoUnity::Utility::cv::TermCriteria']]]
+  ['dict_5f4x4_5f100',['DICT_4X4_100',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4aa8b6f9327c7c5d2c7880e107720fdf7e',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f4x4_5f1000',['DICT_4X4_1000',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a995fd70e413b4fca7de992f0e3356d5f',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f4x4_5f250',['DICT_4X4_250',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a2cacc1e97e6e927fd00b9492c7c7edd8',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f4x4_5f50',['DICT_4X4_50',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4ab1b572b154f44bc369da700dec4f2d0c',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f5x5_5f100',['DICT_5X5_100',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4abb5460a9a2621b6e86503ea5146c4e61',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f5x5_5f1000',['DICT_5X5_1000',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4ab88afa8fb73ebce1ba595afeb14f1fca',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f5x5_5f250',['DICT_5X5_250',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a98605bdd9d78cff7cc6271949f473836',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f5x5_5f50',['DICT_5X5_50',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a9f1aa539542f6a4da3e1bc894625ec7c',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f6x6_5f100',['DICT_6X6_100',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a82379bc17d0940da99e4194937383b19',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f6x6_5f1000',['DICT_6X6_1000',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4ac4e102b86543671d678f14f24908839f',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f6x6_5f250',['DICT_6X6_250',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a2511aa5904ec839f6222096b982f5742',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f6x6_5f50',['DICT_6X6_50',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4adf345605aab4fb3773ca8211276ed181',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f7x7_5f100',['DICT_7X7_100',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a6661023f5466160a95a7751aee76d009',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f7x7_5f1000',['DICT_7X7_1000',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a8fa5475590459a1c260ecef985688ede',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f7x7_5f250',['DICT_7X7_250',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a3a9401076a8d45c8fb278a61c2cc827c',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5f7x7_5f50',['DICT_7X7_50',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4a024f8d8b6174f835e1c8828199bc570f',1,'ArucoUnity::Plugin::Aruco']]],
+  ['dict_5faruco_5foriginal',['DICT_ARUCO_ORIGINAL',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6e86cdbc0a0645b1b8112b198fd39ba4abd37c617678ac3696ec673a9afde639c',1,'ArucoUnity::Plugin::Aruco']]]
 ];

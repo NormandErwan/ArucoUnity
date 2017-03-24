@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['loadcameraparameters',['LoadCameraParameters',['../class_aruco_unity_1_1_samples_1_1_detect_markers.html#a7c1fe1a8babd362e6cffd19585778a21',1,'ArucoUnity::Samples::DetectMarkers']]],
-  ['loadfromxmlfile',['LoadFromXmlFile',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a9b41a7d069e57a98376b4289ceb85239',1,'ArucoUnity::Samples::Utility::CameraParameters']]]
+  ['identify',['Identify',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_dictionary.html#af7b1dd88d6a3f843f0a8f4ff3fc7a99d',1,'ArucoUnity::Plugin::Aruco::Dictionary']]],
+  ['imagetype',['ImageType',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ad0b1ed27adc2fa1b9efda49ac2498334',1,'ArucoUnity::Cameras::ArucoCamera']]],
+  ['initializematimages',['InitializeMatImages',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa7b9fb64cdb1e65ed672f10c0a369b1d',1,'ArucoUnity::Cameras::ArucoCamera']]],
+  ['initundistortrectifymap',['InitUndistortRectifyMap',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a93ca6090353807a0493285d1ce09c538',1,'ArucoUnity::Plugin::Cv']]],
+  ['interpolatecornerscharuco',['InterpolateCornersCharuco',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a5a516cb07b162da209eb179b7c0ee3ce',1,'ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)'],['../class_aruco_unity_1_1_plugin_1_1_aruco.html#aa44bea034072708a8bc9698ed94c03fb',1,'ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix)'],['../class_aruco_unity_1_1_plugin_1_1_aruco.html#aa4640481516d6484df2d05e3009ce9ad',1,'ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds)']]]
 ];

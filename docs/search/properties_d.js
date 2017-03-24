@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['texture2d',['Texture2D',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device.html#af09d7e06378fa99ad2062486cb341380',1,'ArucoUnity::Samples::Utility::CameraDevice']]],
-  ['tvecs',['Tvecs',['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board.html#a258801a1e9470b7fbcfba28dd9abcd83',1,'ArucoUnity.Samples.CalibrateCameraBoard.Tvecs()'],['../class_aruco_unity_1_1_samples_1_1_calibrate_camera_board_charuco.html#a231fa52fdfca7340e78acb5943d746e8',1,'ArucoUnity.Samples.CalibrateCameraBoardCharuco.Tvecs()']]],
-  ['type',['type',['../class_aruco_unity_1_1_utility_1_1cv_1_1_term_criteria.html#a02c4d82cd765484793bc4b9c9d3c643f',1,'ArucoUnity::Utility::cv::TermCriteria']]]
+  ['saveimage',['SaveImage',['../class_aruco_unity_1_1_controllers_1_1_aruco_creator.html#ac5b56bcdab0d410389f35193dcb6496f',1,'ArucoUnity::Controllers::ArucoCreator']]],
+  ['size',['size',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a5ade1942c34914efef5c0270caeaa178',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['squaresidelength',['SquareSideLength',['../class_aruco_unity_1_1_objects_1_1_aruco_charuco_board.html#a39790e10ed51b72b71051c712e71e8aa',1,'ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength()'],['../class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#aea7d3664222a097061e07bb694d3bd5c',1,'ArucoUnity.Objects.ArucoDiamond.SquareSideLength()']]],
+  ['squaresnumberx',['SquaresNumberX',['../class_aruco_unity_1_1_objects_1_1_aruco_charuco_board.html#aace78a79c5232c1a670de55e96e59cb5',1,'ArucoUnity::Objects::ArucoCharucoBoard']]],
+  ['squaresnumbery',['SquaresNumberY',['../class_aruco_unity_1_1_objects_1_1_aruco_charuco_board.html#a2bd79e661d5f583f8f900782eb2c8039',1,'ArucoUnity::Objects::ArucoCharucoBoard']]]
 ];

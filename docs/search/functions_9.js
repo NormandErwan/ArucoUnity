@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['ondisable',['OnDisable',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_markers_detector.html#aa9195b3ad7e31d1f615437f7ee663b97',1,'ArucoUnity::Samples::Utility::CameraDeviceMarkersDetector']]],
-  ['onenable',['OnEnable',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_markers_detector.html#aa8b4be5a12830404abd6b02ce8a807eb',1,'ArucoUnity::Samples::Utility::CameraDeviceMarkersDetector']]],
-  ['operator_20scalar',['operator Scalar',['../class_aruco_unity_1_1_utility_1_1cv_1_1_scalar.html#a5344c91afb69c13de90b4550c555a1ef',1,'ArucoUnity::Utility::cv::Scalar']]],
-  ['operator_20vector2',['operator Vector2',['../class_aruco_unity_1_1_utility_1_1cv_1_1_point2f.html#abb7760a57aeea7f5fb888f466cb2327a',1,'ArucoUnity::Utility::cv::Point2f']]],
-  ['operator_20vector3',['operator Vector3',['../class_aruco_unity_1_1_utility_1_1cv_1_1_point2f.html#a6357e2d72a88457d8863c91d4f1747ac',1,'ArucoUnity.Utility.cv.Point2f.operator Vector3()'],['../class_aruco_unity_1_1_utility_1_1cv_1_1_point3f.html#aaa79256ad0ff6af0ec6b171f385efb0f',1,'ArucoUnity.Utility.cv.Point3f.operator Vector3()']]]
+  ['mat',['Mat',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#ac73211d9d38efe41a319472c251b1971',1,'ArucoUnity.Plugin.Cv.Mat.Mat()'],['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#aaa90fe7b4aca963d52b9aa865da1a9f9',1,'ArucoUnity.Plugin.Cv.Mat.Mat(int rows, int cols, TYPE type)'],['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a208cb8117bab7c408a7d2c15d0e3f99a',1,'ArucoUnity.Plugin.Cv.Mat.Mat(Size size, TYPE type)'],['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a36d6dd842a0472620a4ac38d3b0ee535',1,'ArucoUnity.Plugin.Cv.Mat.Mat(int rows, int cols, TYPE type, byte[] data)'],['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a6427afc2b10953e4a3de214d21094766',1,'ArucoUnity.Plugin.Cv.Mat.Mat(int rows, int cols, TYPE type, double[] data)']]]
 ];

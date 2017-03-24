@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['elemsize',['ElemSize',['../class_aruco_unity_1_1_utility_1_1cv_1_1_mat.html#af2af3fbcf48eb2e07f85887e01596c18',1,'ArucoUnity::Utility::cv::Mat']]],
-  ['estimateposeboard',['EstimatePoseBoard',['../group__aruco__unity__package.html#ga78e0900faf93df504e0e72873fc0df51',1,'ArucoUnity::Functions']]],
-  ['estimateposecharucoboard',['EstimatePoseCharucoBoard',['../group__aruco__unity__package.html#gaa5cfaca115fbcdb4a0a9980207d91694',1,'ArucoUnity::Functions']]],
-  ['estimateposesinglemarkers',['EstimatePoseSingleMarkers',['../group__aruco__unity__package.html#ga34300e7175c0ae6b05dd97ab290bc6d7',1,'ArucoUnity::Functions']]],
-  ['exception',['Exception',['../class_aruco_unity_1_1_utility_1_1cv_1_1_exception.html#aed2b24e1961d4c4fc0e8df8cd9d098de',1,'ArucoUnity::Utility::cv::Exception']]],
-  ['exportarrays',['ExportArrays',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_parameters.html#a01fb19db56ae6f18a67a27298ee9ea4d',1,'ArucoUnity::Samples::Utility::CameraParameters']]]
+  ['elemsize',['ElemSize',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a38ee7787d5deda9404b8169ccae4d4fc',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['elemsize1',['ElemSize1',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#ac4c96fc06bc10cc24992c7aff6101d90',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['estimateposeboard',['EstimatePoseBoard',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6cf98f705f5ff9ce6cbb8c632339ba2e',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimateposecharucoboard',['EstimatePoseCharucoBoard',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#ac3db622cb27c8e9e952328912efb54b6',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimateposesinglemarkers',['EstimatePoseSingleMarkers',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#ae324268bdbd0446631aef855c8353c25',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimatetranforms',['EstimateTranforms',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a352ef1b0eae52bd7da931599bfa6ac1d',1,'ArucoUnity.Controllers.ArucoTracker.EstimateTranforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_charuco_board_tracker.html#a547298f62f4643a06c61a6a3648e3857',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoCharucoBoardTracker.EstimateTranforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html#acce27cda1dfbb2d3df1f29e941679fcd',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker.EstimateTranforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_grid_board_tracker.html#a4c648e45f7ff36643ab14b992ada9618',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoGridBoardTracker.EstimateTranforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#ad68e90e6f68cca12e7b90e811b7de4f0',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoMarkerTracker.EstimateTranforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_object_tracker.html#afc4ee2232e95f1a9584949b7fcd0d7aa',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoObjectTracker.EstimateTranforms()']]],
+  ['exception',['Exception',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_exception.html#ac51249c48d98e5926eb4ca1b7e1b0217',1,'ArucoUnity::Plugin::Cv::Exception']]]
 ];

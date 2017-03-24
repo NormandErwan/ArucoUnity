@@ -61,7 +61,7 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">imgproc module<div class="ingroups"><a class="el" href="group__aruco__unity__lib.html">ArUco Unity library</a> &raquo; <a class="el" href="group__utility.html">C interfaces for classes used by ArUco</a> &raquo; <a class="el" href="group__cv.html">C interfaces for classes and modules of the OpenCV library</a></div></div>  </div>
+<div class="title">imgproc module<div class="ingroups"><a class="el" href="group__aruco__unity__lib.html">ArUco Unity library</a> &raquo; <a class="el" href="group__cv.html">C interfaces for classes and modules of the OpenCV library</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -70,22 +70,311 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Static Member Functions</h2></td></tr>
-<tr class="memitem:gaa29391c83c1122dce4141a32c8c9fedc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gaa29391c83c1122dce4141a32c8c9fedc">au_cv_imgproc_undistord2</a> (cv::Mat *src, cv::Mat **dst, cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Exception *exception)</td></tr>
-<tr class="memdesc:gaa29391c83c1122dce4141a32c8c9fedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms an image to compensate for lens distortion.  <a href="#gaa29391c83c1122dce4141a32c8c9fedc">More...</a><br /></td></tr>
-<tr class="separator:gaa29391c83c1122dce4141a32c8c9fedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga3520ae5b6412a80e5ea40af40b5ee18a">au_cv_imgproc_initUndistortRectifyMap</a> (cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Mat *R, cv::Mat *newCameraMatrix, cv::Size *size, int m1type, cv::Mat **map1, cv::Mat **map2, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the undistortion and rectification transformation map.  <a href="#ga3520ae5b6412a80e5ea40af40b5ee18a">More...</a><br /></td></tr>
+<tr class="separator:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f66dd929e30f3c39c035a52307266d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga3f66dd929e30f3c39c035a52307266d5">au_cv_imgproc_remap1</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, int borderType, cv::Scalar *borderValue, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga3f66dd929e30f3c39c035a52307266d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a generic geometrical transformation to an image.  <a href="#ga3f66dd929e30f3c39c035a52307266d5">More...</a><br /></td></tr>
+<tr class="separator:ga3f66dd929e30f3c39c035a52307266d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadeeb0846fd6394aa4d7925d2d1d3807f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gadeeb0846fd6394aa4d7925d2d1d3807f">au_cv_imgproc_remap2</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, int borderType, cv::Exception *exception)</td></tr>
+<tr class="separator:gadeeb0846fd6394aa4d7925d2d1d3807f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadef8b8d60e3832f3088665f5e403421d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gadef8b8d60e3832f3088665f5e403421d">au_cv_imgproc_remap3</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, cv::Exception *exception)</td></tr>
+<tr class="separator:gadef8b8d60e3832f3088665f5e403421d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga4fbcc18a0db7e5d8293736ff900efcef">au_cv_imgproc_undistort2</a> (cv::Mat *src, cv::Mat **dst, cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms an image to compensate for lens distortion.  <a href="#ga4fbcc18a0db7e5d8293736ff900efcef">More...</a><br /></td></tr>
+<tr class="separator:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Image processing module. </p>
 <p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/d7/dbd/group__imgproc.html">http://docs.opencv.org/3.1.0/d7/dbd/group__imgproc.html</a> </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gaa29391c83c1122dce4141a32c8c9fedc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa29391c83c1122dce4141a32c8c9fedc">&#9670;&nbsp;</a></span>au_cv_imgproc_undistord2()</h2>
+<a id="ga3520ae5b6412a80e5ea40af40b5ee18a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3520ae5b6412a80e5ea40af40b5ee18a">&#9670;&nbsp;</a></span>au_cv_imgproc_initUndistortRectifyMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_undistord2 </td>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_initUndistortRectifyMap </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>cameraMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>distCoeffs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>newCameraMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Size *&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m1type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat **&#160;</td>
+          <td class="paramname"><em>map1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat **&#160;</td>
+          <td class="paramname"><em>map2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the undistortion and rectification transformation map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraMatrix</td><td>Input camera matrix. </td></tr>
+    <tr><td class="paramname">distCoeffs</td><td>Input vector of distortion coefficients. </td></tr>
+    <tr><td class="paramname">R</td><td>Optional rectification transformation in the object space (3x3 matrix). </td></tr>
+    <tr><td class="paramname">newCameraMatrix</td><td>New camera matrix. </td></tr>
+    <tr><td class="paramname">size</td><td>Undistorted image size. </td></tr>
+    <tr><td class="paramname">m1type</td><td>Type of the first output map that can be CV_32FC1 or CV_16SC2. </td></tr>
+    <tr><td class="paramname">map1</td><td>The first output map. </td></tr>
+    <tr><td class="paramname">map2</td><td>The second output map. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#ga7dfb72c9cf9780a347fbe3d1c47e5d5a">http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#ga7dfb72c9cf9780a347fbe3d1c47e5d5a</a> </p>
+
+</div>
+</div>
+<a id="ga3f66dd929e30f3c39c035a52307266d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f66dd929e30f3c39c035a52307266d5">&#9670;&nbsp;</a></span>au_cv_imgproc_remap1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_remap1 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interpolation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>borderType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Scalar *&#160;</td>
+          <td class="paramname"><em>borderValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a generic geometrical transformation to an image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source image. </td></tr>
+    <tr><td class="paramname">dst</td><td>Destination image. </td></tr>
+    <tr><td class="paramname">map1</td><td>The first map of either (x,y) points or just x values having the type CV_16SC2 , CV_32FC1, or CV_32FC2. </td></tr>
+    <tr><td class="paramname">map2</td><td>The second map of y values having the type CV_16UC1, CV_32FC1, or none (empty map if map1 is (x,y) points), respectively. </td></tr>
+    <tr><td class="paramname">interpolation</td><td>Interpolation method (see cv::InterpolationFlags). </td></tr>
+    <tr><td class="paramname">borderType</td><td>Pixel extrapolation method (see cv::BorderTypes). </td></tr>
+    <tr><td class="paramname">borderValue</td><td>Value used in case of a constant border. </td></tr>
+    <tr><td class="paramname">exception</td><td>The first exception threw by any trigerred CV_ASSERT.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See the OpenCV documentation for more information: <a href="http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#gab75ef31ce5cdfb5c44b6da5f3b908ea4">http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#gab75ef31ce5cdfb5c44b6da5f3b908ea4</a> </p>
+
+</div>
+</div>
+<a id="gadeeb0846fd6394aa4d7925d2d1d3807f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadeeb0846fd6394aa4d7925d2d1d3807f">&#9670;&nbsp;</a></span>au_cv_imgproc_remap2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_remap2 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interpolation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>borderType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__imgproc.html#ga3f66dd929e30f3c39c035a52307266d5" title="Applies a generic geometrical transformation to an image. ">au_cv_imgproc_remap1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="gadef8b8d60e3832f3088665f5e403421d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadef8b8d60e3832f3088665f5e403421d">&#9670;&nbsp;</a></span>au_cv_imgproc_remap3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_remap3 </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat *&#160;</td>
+          <td class="paramname"><em>map2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interpolation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Exception *&#160;</td>
+          <td class="paramname"><em>exception</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__imgproc.html#ga3f66dd929e30f3c39c035a52307266d5" title="Applies a generic geometrical transformation to an image. ">au_cv_imgproc_remap1()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga4fbcc18a0db7e5d8293736ff900efcef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fbcc18a0db7e5d8293736ff900efcef">&#9670;&nbsp;</a></span>au_cv_imgproc_undistort2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void au_cv_imgproc_undistort2 </td>
           <td>(</td>
           <td class="paramtype">cv::Mat *&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -140,7 +429,7 @@ Static Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 16 2017 19:35:54 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 24 2017 13:22:39 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['onactivecameradevicechanged',['OnActiveCameraDeviceChanged',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_controller.html#a96ca6cd7b43087e074c2adbb993a4311',1,'ArucoUnity::Samples::Utility::CameraDeviceController']]],
-  ['onactivecameradevicestarted',['OnActiveCameraDeviceStarted',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_controller.html#acab991417517abbd55d620a73e365f9d',1,'ArucoUnity::Samples::Utility::CameraDeviceController']]],
-  ['onactivecameradevicestopped',['OnActiveCameraDeviceStopped',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_controller.html#abd5157b1dca8756702a3ec8174d10dbb',1,'ArucoUnity::Samples::Utility::CameraDeviceController']]],
-  ['onconfigurated',['OnConfigurated',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_markers_detector.html#a4ad9f487fab57e9b88ad4ad199645a53',1,'ArucoUnity::Samples::Utility::CameraDeviceMarkersDetector']]],
-  ['onstarted',['OnStarted',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device.html#a3195709f5737df6f8bb4eaefffd0feeb',1,'ArucoUnity::Samples::Utility::CameraDevice']]],
-  ['onstopped',['OnStopped',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device.html#a93d98f226cbcbba96b84656cae34f48c',1,'ArucoUnity::Samples::Utility::CameraDevice']]]
+  ['arucoobjectadded',['ArucoObjectAdded',['../class_aruco_unity_1_1_controllers_1_1_aruco_objects_controller.html#abf3cb844175f175c54fd20de9a3d5648',1,'ArucoUnity::Controllers::ArucoObjectsController']]],
+  ['arucoobjectremoved',['ArucoObjectRemoved',['../class_aruco_unity_1_1_controllers_1_1_aruco_objects_controller.html#a87b26bd6c2539dfbdb4cac893e183586',1,'ArucoUnity::Controllers::ArucoObjectsController']]]
 ];

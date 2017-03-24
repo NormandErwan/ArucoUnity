@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['use_5fintrinsic_5fguess',['USE_INTRINSIC_GUESS',['../group__aruco__unity__package.html#gga4d794e2096effa5370879aaaab6b6b85a595f663acbbf7cc672c6eefa1823adc0',1,'ArucoUnity']]],
-  ['use_5flu',['USE_LU',['../group__aruco__unity__package.html#gga4d794e2096effa5370879aaaab6b6b85af30ce79053f8e7943b10355202f1f100',1,'ArucoUnity']]]
+  ['same_5ffocal_5flength',['SAME_FOCAL_LENGTH',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a24bd1bb2401a5eea63ddddc0f5d7073bac10a2a5d8953fa34b2c92a9d3ba15625',1,'ArucoUnity::Plugin::Cv']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['cameraimageresolutionx',['cameraImageResolutionX',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_markers_detector.html#a058b0ba343bdeff22da612ac72362ea7',1,'ArucoUnity::Samples::Utility::CameraDeviceMarkersDetector']]],
-  ['cameraimageresolutiony',['cameraImageResolutionY',['../class_aruco_unity_1_1_samples_1_1_utility_1_1_camera_device_markers_detector.html#a8d49052f49e4a9d38e55e22568b22495',1,'ArucoUnity::Samples::Utility::CameraDeviceMarkersDetector']]]
+  ['cameraid',['cameraId',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a2092aadc345965c4f3b870ec4a2ef6ef',1,'ArucoUnity::Cameras::ArucoCameraWebcam']]],
+  ['cameramatrix',['cameraMatrix',['../class_aruco_unity_1_1_cameras_1_1_camera_parameters.html#a1d3ced51e008bc4caf75df11985c79ae',1,'ArucoUnity::Cameras::CameraParameters']]],
+  ['cameraplane',['cameraPlane',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#ab1a4411cb60071df241c80f764b8f6a2',1,'ArucoUnity::Cameras::ArucoCameraWebcam']]]
 ];

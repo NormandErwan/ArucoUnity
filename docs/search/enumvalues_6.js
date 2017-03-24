@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['same_5ffocal_5flength',['SAME_FOCAL_LENGTH',['../group__aruco__unity__package.html#gga4d794e2096effa5370879aaaab6b6b85ac10a2a5d8953fa34b2c92a9d3ba15625',1,'ArucoUnity']]]
+  ['max_5fiter',['MAX_ITER',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_term_criteria.html#a6eb2a86e2de94b4e5a8ed5ac90ab44beaa516b79064940c9539f59fb929245f62',1,'ArucoUnity::Plugin::Cv::TermCriteria']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ArUco Unity: C:/Users/an15400/Documents/aruco-unity/include/aruco_unity/utility/cv/imgproc.hpp File Reference</title>
+<title>ArUco Unity: C:/Users/an15400/Documents/aruco-unity/aruco-unity/include/aruco_unity/cv/imgproc.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,7 +60,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4f99bd79871be9d7b31a58c9bccf5986.html">aruco_unity</a></li><li class="navelem"><a class="el" href="dir_1a2e2be40205faa50fdb035fb6b0314f.html">utility</a></li><li class="navelem"><a class="el" href="dir_0a423f2b74273f1cffeaafeb201717a2.html">cv</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4f99bd79871be9d7b31a58c9bccf5986.html">aruco_unity</a></li><li class="navelem"><a class="el" href="dir_b0dbfcc69451558d78d0e47ae261c061.html">cv</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,14 +74,24 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Static Member Functions</div></td></tr>
-<tr class="memitem:gaa29391c83c1122dce4141a32c8c9fedc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gaa29391c83c1122dce4141a32c8c9fedc">au_cv_imgproc_undistord2</a> (cv::Mat *src, cv::Mat **dst, cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Exception *exception)</td></tr>
-<tr class="memdesc:gaa29391c83c1122dce4141a32c8c9fedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms an image to compensate for lens distortion.  <a href="group__imgproc.html#gaa29391c83c1122dce4141a32c8c9fedc">More...</a><br /></td></tr>
-<tr class="separator:gaa29391c83c1122dce4141a32c8c9fedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga3520ae5b6412a80e5ea40af40b5ee18a">au_cv_imgproc_initUndistortRectifyMap</a> (cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Mat *R, cv::Mat *newCameraMatrix, cv::Size *size, int m1type, cv::Mat **map1, cv::Mat **map2, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the undistortion and rectification transformation map.  <a href="group__imgproc.html#ga3520ae5b6412a80e5ea40af40b5ee18a">More...</a><br /></td></tr>
+<tr class="separator:ga3520ae5b6412a80e5ea40af40b5ee18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f66dd929e30f3c39c035a52307266d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga3f66dd929e30f3c39c035a52307266d5">au_cv_imgproc_remap1</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, int borderType, cv::Scalar *borderValue, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga3f66dd929e30f3c39c035a52307266d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a generic geometrical transformation to an image.  <a href="group__imgproc.html#ga3f66dd929e30f3c39c035a52307266d5">More...</a><br /></td></tr>
+<tr class="separator:ga3f66dd929e30f3c39c035a52307266d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadeeb0846fd6394aa4d7925d2d1d3807f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gadeeb0846fd6394aa4d7925d2d1d3807f">au_cv_imgproc_remap2</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, int borderType, cv::Exception *exception)</td></tr>
+<tr class="separator:gadeeb0846fd6394aa4d7925d2d1d3807f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadef8b8d60e3832f3088665f5e403421d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#gadef8b8d60e3832f3088665f5e403421d">au_cv_imgproc_remap3</a> (cv::Mat *src, cv::Mat *dst, cv::Mat *map1, cv::Mat *map2, int interpolation, cv::Exception *exception)</td></tr>
+<tr class="separator:gadef8b8d60e3832f3088665f5e403421d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="exports_8hpp.html#a8d3ccc1741420a252882c86d41c10276">ARUCO_UNITY_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__imgproc.html#ga4fbcc18a0db7e5d8293736ff900efcef">au_cv_imgproc_undistort2</a> (cv::Mat *src, cv::Mat **dst, cv::Mat *cameraMatrix, cv::Mat *distCoeffs, cv::Exception *exception)</td></tr>
+<tr class="memdesc:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms an image to compensate for lens distortion.  <a href="group__imgproc.html#ga4fbcc18a0db7e5d8293736ff900efcef">More...</a><br /></td></tr>
+<tr class="separator:ga4fbcc18a0db7e5d8293736ff900efcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 16 2017 19:35:52 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 24 2017 13:22:37 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
