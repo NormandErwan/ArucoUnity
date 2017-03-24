@@ -8,153 +8,150 @@ namespace ArucoUnity
   /// \{
   /// 
 
-  namespace Controllers
+  namespace Controllers.ObjectTrackers
   {
-    namespace ObjectTrackers
+    public abstract class ArucoObjectTracker
     {
-      public abstract class ArucoObjectTracker
+      // Properties
+
+      public bool IsActivated { get; protected set; }
+
+      // Variables
+
+      protected ArucoTracker arucoTracker;
+
+      // Constructor
+
+      public ArucoObjectTracker()
       {
-        // Properties
+        Deactivate();
+      }
 
-        public bool IsActivated { get; protected set; }
+      // ArucoObject related methods
 
-        // Variables
-
-        protected ArucoTracker arucoTracker;
-
-        // Constructor
-
-        public ArucoObjectTracker()
+      /// <summary>
+      /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
+      /// </summary>
+      public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
+      {
+        if (arucoObject.MarkerSideLength != 0)
         {
-          Deactivate();
+          arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
         }
+      }
 
-        // ArucoObject related methods
-
-        /// <summary>
-        /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
-        /// </summary>
-        public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
+      /// <summary>
+      /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
+      /// </summary>
+      public virtual void AdjustGameObjectScale(ArucoObject arucoObject)
+      {
+        if (arucoObject.MarkerSideLength != 0)
         {
-          if (arucoObject.MarkerSideLength != 0)
-          {
-            arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
-          }
+          arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
         }
+      }
 
-        /// <summary>
-        /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
-        /// </summary>
-        public virtual void AdjustGameObjectScale(ArucoObject arucoObject)
+      // ArucoObjectController related methods
+
+      protected virtual void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
+      {
+        if (!IsActivated)
         {
-          if (arucoObject.MarkerSideLength != 0)
-          {
-            arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
-          }
+          return;
         }
+      }
 
-        // ArucoObjectController related methods
-
-        protected virtual void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
+      protected virtual void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
+      {
+        if (!IsActivated)
         {
-          if (!IsActivated)
-          {
-            return;
-          }
+          return;
         }
+      }
 
-        protected virtual void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
+      // Methods
+
+      /// <summary>
+      /// Initialize the properties and the tracker.
+      /// </summary>
+      public virtual void Activate(ArucoTracker arucoTracker)
+      {
+        this.arucoTracker = arucoTracker;
+        IsActivated = true;
+
+        arucoTracker.DictionaryAdded += ArucoObjectController_DictionaryAdded;
+        arucoTracker.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
+      }
+
+      /// <summary>
+      /// Deactivate the tracker.
+      /// </summary>
+      public virtual void Deactivate()
+      {
+        if (arucoTracker != null)
         {
-          if (!IsActivated)
-          {
-            return;
-          }
+          arucoTracker.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
+          arucoTracker.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
         }
+        arucoTracker = null;
+        IsActivated = false;
+      }
 
-        // Methods
+      /// <summary>
+      /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 
+      /// the CameraImageTexture.
+      /// </summary>
+      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary);
 
-        /// <summary>
-        /// Initialize the properties and the tracker.
-        /// </summary>
-        public virtual void Activate(ArucoTracker arucoTracker)
-        {
-          this.arucoTracker = arucoTracker;
-          IsActivated = true;
+      /// <summary>
+      /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
+      /// <see cref="Detect(int, Dictionary)"/>.
+      /// </summary>
+      public abstract void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary);
 
-          arucoTracker.DictionaryAdded += ArucoObjectController_DictionaryAdded;
-          arucoTracker.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
-        }
+      /// <summary>
+      /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 
+      /// <see cref="Detect(int, Dictionary)"/>.
+      /// </summary>
+      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary);
 
-        /// <summary>
-        /// Deactivate the tracker.
-        /// </summary>
-        public virtual void Deactivate()
-        {
-          if (arucoTracker != null)
-          {
-            arucoTracker.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
-            arucoTracker.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
-          }
-          arucoTracker = null;
-          IsActivated = false;
-        }
+      /// <summary>
+      /// Place and orient the detected ArUco objects on the first camera image according to the results of 
+      /// <see cref="EstimateTranforms(int, Dictionary)"/>.
+      /// </summary>
+      public abstract void Place(int cameraId, Aruco.Dictionary dictionary);
 
-        /// <summary>
-        /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 
-        /// the CameraImageTexture.
-        /// </summary>
-        public abstract void Detect(int cameraId, Aruco.Dictionary dictionary);
+      /// <summary>
+      /// Place and orient an ArUco object.
+      /// </summary>
+      protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Core.Vec3d rvec, Cv.Core.Vec3d tvec, int cameraId, float positionFactor = 1f)
+      {
+        GameObject arucoGameObject = arucoObject.gameObject;
+        Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];
 
-        /// <summary>
-        /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
-        /// <see cref="Detect(int, Dictionary)"/>.
-        /// </summary>
-        public abstract void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary);
+        // Place and orient the object to match the marker
+        Transform arucoObjectTransform = arucoGameObject.transform;
+        arucoGameObject.transform.SetParent(camera.transform);
+        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
+        arucoGameObject.transform.localRotation = rvec.ToRotation();
+        arucoGameObject.transform.SetParent(arucoObjectTransform);
 
-        /// <summary>
-        /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 
-        /// <see cref="Detect(int, Dictionary)"/>.
-        /// </summary>
-        public abstract void Draw(int cameraId, Aruco.Dictionary dictionary);
+        // Adjust the object position
+        Vector3 cameraOpticalCenter = arucoTracker.ArucoCamera.CameraParameters.OpticalCenters[cameraId];
 
-        /// <summary>
-        /// Place and orient the detected ArUco objects on the first camera image according to the results of 
-        /// <see cref="EstimateTranforms(int, Dictionary)"/>.
-        /// </summary>
-        public abstract void Place(int cameraId, Aruco.Dictionary dictionary);
+        Vector3 imageCenter = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
+        Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);
+        Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenter) - camera.ViewportToWorldPoint(imageCenter);
 
-        /// <summary>
-        /// Place and orient an ArUco object.
-        /// </summary>
-        protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Core.Vec3d rvec, Cv.Core.Vec3d tvec, int cameraId, float positionFactor = 1f)
-        {
-          GameObject arucoGameObject = arucoObject.gameObject;
-          Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];
+        // TODO: fix the position shift orientation
+        Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
+          + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
+        arucoGameObject.transform.localPosition += positionShift;
 
-          // Place and orient the object to match the marker
-          Transform arucoObjectTransform = arucoGameObject.transform;
-          arucoGameObject.transform.SetParent(camera.transform);
-          arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
-          arucoGameObject.transform.localRotation = rvec.ToRotation();
-          arucoGameObject.transform.SetParent(arucoObjectTransform);
+        //print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
+        //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
-          // Adjust the object position
-          Vector3 cameraOpticalCenter = arucoTracker.ArucoCamera.CameraParameters.OpticalCenters[cameraId];
-
-          Vector3 imageCenter = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
-          Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);
-          Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenter) - camera.ViewportToWorldPoint(imageCenter);
-
-          // TODO: fix the position shift orientation
-          Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
-            + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
-          arucoGameObject.transform.localPosition += positionShift;
-
-          //print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
-          //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
-
-          arucoGameObject.SetActive(true);
-        }
+        arucoGameObject.SetActive(true);
       }
     }
   }
