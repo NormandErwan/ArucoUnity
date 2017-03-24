@@ -259,7 +259,7 @@ namespace ArucoUnity
 
         for (int i = 0; i < CamerasNumber; i++)
         {
-          Cv.Imgproc.Remap(Images[i], undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], Cv.Imgproc.InterpolationFlags.INTER_LINEAR);
+          Cv.Imgproc.Remap(Images[i], undistordedImages[i], undistordedImages_maps[i][0], undistordedImages_maps[i][1], Cv.Imgproc.InterpolationFlags.Linear);
         }
         Images = undistordedImages;
       }

@@ -100,7 +100,7 @@ namespace ArucoUnity
         out System.IntPtr charucoCorners, out System.IntPtr charucoIds, System.IntPtr exception);
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
-        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.CALIB flags, Cv.Core.TermCriteria criteria)
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.Calib flags, Cv.Core.TermCriteria criteria)
       {
         Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
@@ -115,7 +115,7 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
-        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.CALIB flags)
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.Calib flags)
       {
         Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;

@@ -17,15 +17,14 @@ namespace ArucoUnity
         /// </summary>
         public enum BorderTypes
         {
-          BORDER_CONSTANT = 0, /// `iiiiii|abcdefgh|iiiiiii` with some specified `i`
-          BORDER_REPLICATE = 1, /// `aaaaaa|abcdefgh|hhhhhhh`
-          BORDER_REFLECT = 2, /// `fedcba|abcdefgh|hgfedcb`
-          BORDER_WRAP = 3, /// `cdefgh|abcdefgh|abcdefg`
-          BORDER_REFLECT_101 = 4, /// `gfedcb|abcdefgh|gfedcba`
-          BORDER_TRANSPARENT = 5, /// `uvwxyz|absdefgh|ijklmno`
-          BORDER_REFLECT101 = BORDER_REFLECT_101, /// Same as BORDER_REFLECT_101.
-          BORDER_DEFAULT = BORDER_REFLECT_101, /// Same as BORDER_REFLECT_101.
-          BORDER_ISOLATED = 16 /// Do not look outside of ROI.
+          Constant = 0, /// `iiiiii|abcdefgh|iiiiiii` with some specified `i`
+          Replicate = 1, /// `aaaaaa|abcdefgh|hhhhhhh`
+          Reflect = 2, /// `fedcba|abcdefgh|hgfedcb`
+          Wrap = 3, /// `cdefgh|abcdefgh|abcdefg`
+          Reflect101 = 4, /// `gfedcb|abcdefgh|gfedcba`
+          Transparent = 5, /// `uvwxyz|absdefgh|ijklmno`
+          Default = Reflect101, /// Same as BORDER_REFLECT_101.
+          Isolated = 16 /// Do not look outside of ROI.
         }
 
         /// <summary>
@@ -34,14 +33,14 @@ namespace ArucoUnity
         /// </summary>
         public enum InterpolationFlags
         {
-          INTER_NEAREST = 0, /// Nearest neighbor interpolation.
-          INTER_LINEAR = 1, /// Bilinear interpolation.
-          INTER_CUBIC = 2, /// Bicubic interpolation.
-          INTER_AREA = 3, /// Resampling using pixel area relation.
-          INTER_LANCZOS4 = 4, /// Lanczos interpolation over 8x8 neighborhood.
-          INTER_MAX = 7, /// Mask for interpolation codes.
-          WARP_FILL_OUTLIERS = 8, /// Fills all of the destination image pixels.
-          WARP_INVERSE_MAP = 16 /// Inverse transformation.
+          Nearest = 0, /// Nearest neighbor interpolation.
+          Linear = 1, /// Bilinear interpolation.
+          Cubic = 2, /// Bicubic interpolation.
+          Area = 3, /// Resampling using pixel area relation.
+          Lanczos4 = 4, /// Lanczos interpolation over 8x8 neighborhood.
+          Max = 7, /// Mask for interpolation codes.
+          WarpFillOutliers = 8, /// Fills all of the destination image pixels.
+          WarpInverseMap = 16 /// Inverse transformation.
         }
 
         // Static Member Functions

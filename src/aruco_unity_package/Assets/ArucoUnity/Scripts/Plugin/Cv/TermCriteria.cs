@@ -15,9 +15,9 @@ namespace ArucoUnity
         {
           public enum Type
           {
-            COUNT = 0,
-            MAX_ITER = COUNT,
-            EPS = 2
+            Count = 0,
+            MaxIter = Count,
+            Eps = 2
           }
 
           // Constructor & Destructor

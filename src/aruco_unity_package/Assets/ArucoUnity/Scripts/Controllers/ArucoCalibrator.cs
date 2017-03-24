@@ -86,7 +86,7 @@ namespace ArucoUnity
 
         if (CalibrationTermCriteria == null)
         {
-          CalibrationTermCriteria = new Cv.Core.TermCriteria(Cv.Core.TermCriteria.Type.COUNT | Cv.Core.TermCriteria.Type.EPS, 100, 1E-5);
+          CalibrationTermCriteria = new Cv.Core.TermCriteria(Cv.Core.TermCriteria.Type.Count | Cv.Core.TermCriteria.Type.Eps, 100, 1E-5);
         }
       }
 
