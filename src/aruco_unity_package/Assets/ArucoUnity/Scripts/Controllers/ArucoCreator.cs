@@ -82,7 +82,7 @@ namespace ArucoUnity
       /// <summary>
       /// The created image of the <see cref="ArucoObject"/>.
       /// </summary>
-      public Cv.Mat Image { get; protected set; }
+      public Cv.Core.Mat Image { get; protected set; }
 
       /// <summary>
       /// The created texture of the <see cref="ArucoObject"/>.
@@ -119,7 +119,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Create()
       {
-        Cv.Mat image = null;
+        Cv.Core.Mat image = null;
         ImageTexture = null;
 
         // In case of a marker
@@ -149,7 +149,7 @@ namespace ArucoUnity
         ArucoDiamond diamond = ArucoObject as ArucoDiamond;
         if (diamond != null && diamond.Ids.Length == 4)
         {
-          Cv.Vec4i ids = new Cv.Vec4i();
+          Cv.Core.Vec4i ids = new Cv.Core.Vec4i();
           for (int i = 0; i < diamond.Ids.Length; ++i)
           {
             ids.Set(i, diamond.Ids[i]);
@@ -159,7 +159,7 @@ namespace ArucoUnity
 
         // Vertical flip to convert the image from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
         int verticalFlipCode = 0;
-        Cv.Flip(image, image, verticalFlipCode);
+        Cv.Core.Flip(image, image, verticalFlipCode);
 
         // Set the properties
         Image = image;

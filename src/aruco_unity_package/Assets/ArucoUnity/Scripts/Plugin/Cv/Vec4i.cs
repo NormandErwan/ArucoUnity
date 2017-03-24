@@ -9,49 +9,52 @@ namespace ArucoUnity
   {
     public static partial class Cv
     {
-      public class Vec4i : Utility.HandleCppPtr
+      public static partial class Core
       {
-        // Constructor & Destructor
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Vec4i_new();
-
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_Vec4i_delete(System.IntPtr vec4i);
-
-        // Variables
-        [DllImport("ArucoUnity")]
-        static extern int au_cv_Vec4i_get(System.IntPtr vec4i, int i, System.IntPtr exception);
-
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_Vec4i_set(System.IntPtr vec4i, int i, int value, System.IntPtr exception);
-
-        public Vec4i() : base(au_cv_Vec4i_new())
+        public class Vec4i : Utility.HandleCppPtr
         {
-        }
+          // Constructor & Destructor
+          [DllImport("ArucoUnity")]
+          static extern System.IntPtr au_cv_Vec4i_new();
 
-        public Vec4i(System.IntPtr vec4iPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
-          : base(vec4iPtr, deleteResponsibility)
-        {
-        }
+          [DllImport("ArucoUnity")]
+          static extern void au_cv_Vec4i_delete(System.IntPtr vec4i);
 
-        protected override void DeleteCvPtr()
-        {
-          au_cv_Vec4i_delete(cppPtr);
-        }
+          // Variables
+          [DllImport("ArucoUnity")]
+          static extern int au_cv_Vec4i_get(System.IntPtr vec4i, int i, System.IntPtr exception);
 
-        public int Get(int i)
-        {
-          Exception exception = new Exception();
-          int value = au_cv_Vec4i_get(cppPtr, i, exception.cppPtr);
-          exception.Check();
-          return value;
-        }
+          [DllImport("ArucoUnity")]
+          static extern void au_cv_Vec4i_set(System.IntPtr vec4i, int i, int value, System.IntPtr exception);
 
-        public void Set(int i, int value)
-        {
-          Exception exception = new Exception();
-          au_cv_Vec4i_set(cppPtr, i, value, exception.cppPtr);
-          exception.Check();
+          public Vec4i() : base(au_cv_Vec4i_new())
+          {
+          }
+
+          public Vec4i(System.IntPtr vec4iPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+            : base(vec4iPtr, deleteResponsibility)
+          {
+          }
+
+          protected override void DeleteCvPtr()
+          {
+            au_cv_Vec4i_delete(cppPtr);
+          }
+
+          public int Get(int i)
+          {
+            Exception exception = new Exception();
+            int value = au_cv_Vec4i_get(cppPtr, i, exception.cppPtr);
+            exception.Check();
+            return value;
+          }
+
+          public void Set(int i, int value)
+          {
+            Exception exception = new Exception();
+            au_cv_Vec4i_set(cppPtr, i, value, exception.cppPtr);
+            exception.Check();
+          }
         }
       }
     }

@@ -126,7 +126,7 @@ namespace ArucoUnity
         /// <summary>
         /// Place and orient an ArUco object.
         /// </summary>
-        protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
+        protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Core.Vec3d rvec, Cv.Core.Vec3d tvec, int cameraId, float positionFactor = 1f)
         {
           GameObject arucoGameObject = arucoObject.gameObject;
           Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];

@@ -99,10 +99,10 @@ namespace ArucoUnity
       static extern int au_interpolateCornersCharuco3(System.IntPtr markerCorners, System.IntPtr markerIds, System.IntPtr image, System.IntPtr board,
         out System.IntPtr charucoCorners, out System.IntPtr charucoIds, System.IntPtr exception);
 
-      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Size imageSize,
-        Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.CALIB flags, Cv.TermCriteria criteria)
+      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.CALIB flags, Cv.Core.TermCriteria criteria)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco1(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
@@ -114,10 +114,10 @@ namespace ArucoUnity
         return reProjectionError;
       }
 
-      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Size imageSize,
-        Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.CALIB flags)
+      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib3d.CALIB flags)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco2(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
@@ -129,10 +129,10 @@ namespace ArucoUnity
         return reProjectionError;
       }
 
-      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Size imageSize,
-        Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs)
+      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco3(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
@@ -144,10 +144,10 @@ namespace ArucoUnity
         return reProjectionError;
       }
 
-      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Size imageSize,
-        Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)
+      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco4(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
@@ -158,10 +158,10 @@ namespace ArucoUnity
         return reProjectionError;
       }
 
-      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Size imageSize,
-        Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
+      public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board, Cv.Core.Size imageSize,
+        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
 
         double reProjectionError = au_calibrateCameraCharuco5(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
           distCoeffs.cppPtr, exception.cppPtr);
@@ -170,10 +170,10 @@ namespace ArucoUnity
         return reProjectionError;
       }
 
-      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
-        out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
+      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
+        out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr diamondCornersPtr, diamondIdsPtr;
 
         au_detectCharucoDiamond1(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr,
@@ -184,10 +184,10 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
-        out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix)
+      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
+        out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Core.Mat cameraMatrix)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr diamondCornersPtr, diamondIdsPtr;
 
         au_detectCharucoDiamond2(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr,
@@ -198,10 +198,10 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
+      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate,
         out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr diamondCornersPtr, diamondIdsPtr;
 
         au_detectCharucoDiamond3(image.cppPtr, markerCorners.cppPtr, markerIds.cppPtr, squareMarkerLengthRate, out diamondCornersPtr,
@@ -212,101 +212,101 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Vec4i ids, int squareLength, int markerLength, out Cv.Mat image, int marginSize,
+      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Core.Vec4i ids, int squareLength, int markerLength, out Cv.Core.Mat image, int marginSize,
         int borderBits)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr imagePtr;
 
         au_drawCharucoDiamond1(dictionary.cppPtr, ids.cppPtr, squareLength, markerLength, out imagePtr, marginSize, borderBits, exception.cppPtr);
-        image = new Cv.Mat(imagePtr);
+        image = new Cv.Core.Mat(imagePtr);
 
         exception.Check();
       }
 
-      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Vec4i ids, int squareLength, int markerLength, out Cv.Mat image, int marginSize)
+      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Core.Vec4i ids, int squareLength, int markerLength, out Cv.Core.Mat image, int marginSize)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr imagePtr;
 
         au_drawCharucoDiamond2(dictionary.cppPtr, ids.cppPtr, squareLength, markerLength, out imagePtr, marginSize, exception.cppPtr);
-        image = new Cv.Mat(imagePtr);
+        image = new Cv.Core.Mat(imagePtr);
 
         exception.Check();
       }
 
-      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Vec4i ids, int squareLength, int markerLength, out Cv.Mat image)
+      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Core.Vec4i ids, int squareLength, int markerLength, out Cv.Core.Mat image)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr imagePtr;
 
         au_drawCharucoDiamond3(dictionary.cppPtr, ids.cppPtr, squareLength, markerLength, out imagePtr, exception.cppPtr);
-        image = new Cv.Mat(imagePtr);
+        image = new Cv.Core.Mat(imagePtr);
 
         exception.Check();
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, Cv.Scalar cornerColor)
+      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, Cv.Core.Scalar cornerColor)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedCornersCharuco1(image.cppPtr, charucoCorners.cppPtr, charucoIds.cppPtr, cornerColor.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds)
+      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedCornersCharuco2(image.cppPtr, charucoCorners.cppPtr, charucoIds.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners)
+      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedCornersCharuco3(image.cppPtr, charucoCorners.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds, Cv.Scalar borderColor)
+      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds, Cv.Core.Scalar borderColor)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedDiamonds1(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, borderColor.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds)
+      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedDiamonds2(image.cppPtr, diamondCorners.cppPtr, diamondIds.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners)
+      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         au_drawDetectedDiamonds3(image.cppPtr, diamondCorners.cppPtr, exception.cppPtr);
         exception.Check();
       }
 
-      public static bool EstimatePoseCharucoBoard(Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, CharucoBoard board, Cv.Mat cameraMatrix,
-        Cv.Mat distCoeffs, out Cv.Vec3d rvec, out Cv.Vec3d tvec)
+      public static bool EstimatePoseCharucoBoard(Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, CharucoBoard board, Cv.Core.Mat cameraMatrix,
+        Cv.Core.Mat distCoeffs, out Cv.Core.Vec3d rvec, out Cv.Core.Vec3d tvec)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecPtr, tvecPtr;
 
         bool valid = au_estimatePoseCharucoBoard(charucoCorners.cppPtr, charucoIds.cppPtr, board.cppPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr,
           out rvecPtr, out tvecPtr, exception.cppPtr);
-        rvec = new Cv.Vec3d(rvecPtr);
-        tvec = new Cv.Vec3d(tvecPtr);
+        rvec = new Cv.Core.Vec3d(rvecPtr);
+        tvec = new Cv.Core.Vec3d(tvecPtr);
 
         exception.Check();
         return valid;
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
-        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image, CharucoBoard board,
+        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr charucoCornersPtr, charucoIdsPtr;
 
         int interpolateCorners = au_interpolateCornersCharuco1(markerCorners.cppPtr, markerIds.cppPtr, image.cppPtr, board.cppPtr,
@@ -318,10 +318,10 @@ namespace ArucoUnity
         return interpolateCorners;
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
-        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix)
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image, CharucoBoard board,
+        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Core.Mat cameraMatrix)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr charucoCornersPtr, charucoIdsPtr;
 
         int interpolateCorners = au_interpolateCornersCharuco2(markerCorners.cppPtr, markerIds.cppPtr, image.cppPtr, board.cppPtr,
@@ -333,10 +333,10 @@ namespace ArucoUnity
         return interpolateCorners;
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image, CharucoBoard board,
         out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds)
       {
-        Cv.Exception exception = new Cv.Exception();
+        Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr charucoCornersPtr, charucoIdsPtr;
 
         int interpolateCorners = au_interpolateCornersCharuco3(markerCorners.cppPtr, markerIds.cppPtr, image.cppPtr, board.cppPtr,
@@ -405,51 +405,51 @@ namespace ArucoUnity
         {
         }
 
-        public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize, int borderBits)
+        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize, int borderBits)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr imgPtr;
 
           au_CharucoBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
-          img = new Cv.Mat(imgPtr);
+          img = new Cv.Core.Mat(imgPtr);
 
           exception.Check();
         }
 
-        public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize)
+        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr imgPtr;
 
           au_CharucoBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
-          img = new Cv.Mat(imgPtr);
+          img = new Cv.Core.Mat(imgPtr);
 
           exception.Check();
         }
 
-        public void Draw(Cv.Size outSize, out Cv.Mat img)
+        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr imgPtr;
 
           au_CharucoBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
-          img = new Cv.Mat(imgPtr);
+          img = new Cv.Core.Mat(imgPtr);
 
           exception.Check();
         }
 
         static public CharucoBoard Create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr charucoBoardPtr = au_CharucoBoard_create(squaresX, squaresY, squareLength, markerLength, dictionary.cppPtr,
             exception.cppPtr);
           exception.Check();
           return new CharucoBoard(charucoBoardPtr);
         }
 
-        public Cv.Size GetChessboardSize()
+        public Cv.Core.Size GetChessboardSize()
         {
-          return new Cv.Size(au_CharucoBoard_getChessboardSize(cppPtr));
+          return new Cv.Core.Size(au_CharucoBoard_getChessboardSize(cppPtr));
         }
 
         public float GetMarkerLength()

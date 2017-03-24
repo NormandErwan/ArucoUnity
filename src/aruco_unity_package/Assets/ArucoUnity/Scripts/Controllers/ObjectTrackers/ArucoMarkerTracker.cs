@@ -198,7 +198,7 @@ namespace ArucoUnity
           }
 
           bool updatedCameraImage = false;
-          Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+          Cv.Core.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
 
           // Draw the detected markers
           // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers

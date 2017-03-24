@@ -47,7 +47,7 @@ namespace ArucoUnity
 
         public VectorPoint3f At(uint pos)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           VectorPoint3f element = new VectorPoint3f(au_std_vectorVectorPoint3f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;

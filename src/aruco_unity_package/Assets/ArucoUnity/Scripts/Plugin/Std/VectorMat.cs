@@ -45,29 +45,29 @@ namespace ArucoUnity
           au_std_vectorMat_delete(cppPtr);
         }
 
-        public Cv.Mat At(uint pos)
+        public Cv.Core.Mat At(uint pos)
         {
-          Cv.Exception exception = new Cv.Exception();
-          Cv.Mat element = new Cv.Mat(au_std_vectorMat_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Core.Mat element = new Cv.Core.Mat(au_std_vectorMat_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Cv.Mat[] Data()
+        public unsafe Cv.Core.Mat[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorMat_data(cppPtr);
           uint size = Size();
 
-          Cv.Mat[] data = new Cv.Mat[size];
+          Cv.Core.Mat[] data = new Cv.Core.Mat[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Mat(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Core.Mat(dataPtr[i], DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Cv.Mat value)
+        public void PushBack(Cv.Core.Mat value)
         {
           au_std_vectorMat_push_back(cppPtr, value.cppPtr);
         }

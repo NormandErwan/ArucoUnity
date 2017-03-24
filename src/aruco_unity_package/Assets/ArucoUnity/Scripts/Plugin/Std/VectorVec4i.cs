@@ -45,29 +45,29 @@ namespace ArucoUnity
           au_std_vectorVec4i_delete(cppPtr);
         }
 
-        public Cv.Vec4i At(uint pos)
+        public Cv.Core.Vec4i At(uint pos)
         {
-          Cv.Exception exception = new Cv.Exception();
-          Cv.Vec4i element = new Cv.Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Core.Vec4i element = new Cv.Core.Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Cv.Vec4i[] Data()
+        public unsafe Cv.Core.Vec4i[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorVec4i_data(cppPtr);
           uint size = Size();
 
-          Cv.Vec4i[] data = new Cv.Vec4i[size];
+          Cv.Core.Vec4i[] data = new Cv.Core.Vec4i[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Vec4i(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Core.Vec4i(dataPtr[i], DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Cv.Vec4i value)
+        public void PushBack(Cv.Core.Vec4i value)
         {
           au_std_vectorVec4i_push_back(cppPtr, value.cppPtr);
         }

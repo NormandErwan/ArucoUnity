@@ -35,9 +35,9 @@ namespace ArucoUnity
 
         ImagesHeight = new int[CamerasNumber];
         ImagesWidth = new int[CamerasNumber];
-        CamerasMatrix = new Cv.Mat[CamerasNumber];
+        CamerasMatrix = new Cv.Core.Mat[CamerasNumber];
         CamerasMatrixValues = new double[CamerasNumber][][];
-        DistCoeffs = new Cv.Mat[CamerasNumber];
+        DistCoeffs = new Cv.Core.Mat[CamerasNumber];
         DistCoeffsValues = new double[CamerasNumber][][];
         CamerasFocalLength = new Vector2[CamerasNumber];
         CamerasOpticalCenter = new Vector2[CamerasNumber];
@@ -100,7 +100,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatrixType"/> and 
       /// <see cref="CamerasMatrixValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] CamerasMatrix
+      public Cv.Core.Mat[] CamerasMatrix
       {
         get { return cameraMatrix; }
         set
@@ -115,7 +115,7 @@ namespace ArucoUnity
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.TYPE CameraMatrixType { get; set; }
+      public Cv.Core.TYPE CameraMatrixType { get; set; }
 
       /// <summary>
       /// The camera matrix values of the calibration. Equals to the <see cref="CamerasMatrix"/> content and automatically written when 
@@ -130,14 +130,14 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="DistCoeffsType"/> and 
       /// <see cref="DistCoeffsValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] DistCoeffs { get; set; }
+      public Cv.Core.Mat[] DistCoeffs { get; set; }
 
       /// <summary>
       /// The distorsition coefficients type of the calibration. Equals to <see cref="DistCoeffs.Type()"/> and automatically written when 
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.TYPE DistCoeffsType { get; set; }
+      public Cv.Core.TYPE DistCoeffsType { get; set; }
 
       /// <summary>
       /// The distorsition coefficients values of the calibration. Equals to the <see cref="DistCoeffs"/> content and automatically written when 
@@ -175,7 +175,7 @@ namespace ArucoUnity
       // Variables
 
       protected int[] imageHeight, imageWidth;
-      protected Cv.Mat[] cameraMatrix;
+      protected Cv.Core.Mat[] cameraMatrix;
 
       // Methods
 
@@ -211,8 +211,8 @@ namespace ArucoUnity
         cameraParameters.FilePath = cameraParametersFilePath;
 
         // Populate non-serialized properties
-        cameraParameters.CamerasMatrix = new Cv.Mat[cameraParameters.CamerasNumber];
-        cameraParameters.DistCoeffs = new Cv.Mat[cameraParameters.CamerasNumber];
+        cameraParameters.CamerasMatrix = new Cv.Core.Mat[cameraParameters.CamerasNumber];
+        cameraParameters.DistCoeffs = new Cv.Core.Mat[cameraParameters.CamerasNumber];
         cameraParameters.CamerasFocalLength = new Vector2[cameraParameters.CamerasNumber];
         cameraParameters.CamerasOpticalCenter = new Vector2[cameraParameters.CamerasNumber];
         cameraParameters.OpticalCenters = new Vector3[cameraParameters.CamerasNumber];
@@ -223,7 +223,7 @@ namespace ArucoUnity
           int cameraMatrixRows = cameraParameters.CamerasMatrixValues[cameraId].Length,
               cameraMatrixCols = cameraParameters.CamerasMatrixValues[cameraId][0].Length;
 
-          cameraParameters.CamerasMatrix[cameraId] = new Cv.Mat();
+          cameraParameters.CamerasMatrix[cameraId] = new Cv.Core.Mat();
           cameraParameters.CamerasMatrix[cameraId].Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatrixType);
           for (int i = 0; i < cameraMatrixRows; i++)
           {
@@ -237,7 +237,7 @@ namespace ArucoUnity
           int distCoeffsRows = cameraParameters.DistCoeffsValues[cameraId].Length,
               distCoeffsCols = cameraParameters.DistCoeffsValues[cameraId][0].Length;
 
-          cameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
+          cameraParameters.DistCoeffs[cameraId] = new Cv.Core.Mat();
           cameraParameters.DistCoeffs[cameraId].Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
           for (int i = 0; i < distCoeffsRows; i++)
           {

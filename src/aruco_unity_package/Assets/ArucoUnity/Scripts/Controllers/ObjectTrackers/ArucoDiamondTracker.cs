@@ -186,7 +186,7 @@ namespace ArucoUnity
           }
 
           bool updatedCameraImage = false;
-          Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+          Cv.Core.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
           CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
           if (DetectedDiamonds[cameraId][dictionary] > 0)

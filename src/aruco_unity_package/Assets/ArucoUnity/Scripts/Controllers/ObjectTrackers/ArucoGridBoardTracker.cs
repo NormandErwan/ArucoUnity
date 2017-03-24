@@ -50,7 +50,7 @@ namespace ArucoUnity
 
           foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
           {
-            Cv.Vec3d rvec = null, tvec = null;
+            Cv.Core.Vec3d rvec = null, tvec = null;
             arucoGridBoard.MarkersUsedForEstimation = Aruco.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
               arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters.CamerasMatrix[cameraId],
               cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
@@ -71,7 +71,7 @@ namespace ArucoUnity
           }
 
           bool updatedCameraImage = false;
-          Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+          Cv.Core.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
           CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
           foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))

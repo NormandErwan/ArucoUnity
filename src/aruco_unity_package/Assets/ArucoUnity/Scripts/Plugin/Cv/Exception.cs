@@ -10,52 +10,55 @@ namespace ArucoUnity
   {
     public static partial class Cv
     {
-      public class Exception : Utility.HandleCppPtr
+      public static partial class Core
       {
-        // Constructor & Destructor
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Exception_new();
-
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_Exception_delete(System.IntPtr exception);
-
-        // Functions
-        [DllImport("ArucoUnity")]
-        static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb);
-
-        // Variables
-        [DllImport("ArucoUnity")]
-        static extern int au_cv_Exception_getCode(System.IntPtr exception);
-
-        StringBuilder sb;
-
-        public Exception() : base(au_cv_Exception_new())
+        public class Exception : Utility.HandleCppPtr
         {
-          sb = new StringBuilder(1024);
-        }
+          // Constructor & Destructor
+          [DllImport("ArucoUnity")]
+          static extern System.IntPtr au_cv_Exception_new();
 
-        protected override void DeleteCvPtr()
-        {
-          //au_cv_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
-        }
+          [DllImport("ArucoUnity")]
+          static extern void au_cv_Exception_delete(System.IntPtr exception);
 
-        public string What()
-        {
-          au_cv_Exception_what(cppPtr, sb);
-          return sb.ToString();
-        }
+          // Functions
+          [DllImport("ArucoUnity")]
+          static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb);
 
-        public void Check()
-        {
-          if (code != 0)
+          // Variables
+          [DllImport("ArucoUnity")]
+          static extern int au_cv_Exception_getCode(System.IntPtr exception);
+
+          StringBuilder sb;
+
+          public Exception() : base(au_cv_Exception_new())
           {
-            throw new System.Exception(What());
+            sb = new StringBuilder(1024);
           }
-        }
 
-        public int code
-        {
-          get { return au_cv_Exception_getCode(cppPtr); }
+          protected override void DeleteCvPtr()
+          {
+            //au_cv_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
+          }
+
+          public string What()
+          {
+            au_cv_Exception_what(cppPtr, sb);
+            return sb.ToString();
+          }
+
+          public void Check()
+          {
+            if (code != 0)
+            {
+              throw new System.Exception(What());
+            }
+          }
+
+          public int code
+          {
+            get { return au_cv_Exception_getCode(cppPtr); }
+          }
         }
       }
     }

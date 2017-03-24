@@ -50,7 +50,7 @@ namespace ArucoUnity
 
         public int At(uint pos)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           int element = au_std_vectorInt_at(cppPtr, pos, exception.cppPtr);
           exception.Check();
           return element;
@@ -77,7 +77,7 @@ namespace ArucoUnity
 
         public void Reserve(uint newCap)
         {
-          Cv.Exception exception = new Cv.Exception();
+          Cv.Core.Exception exception = new Cv.Core.Exception();
           au_std_vectorInt_reserve(cppPtr, newCap, exception.cppPtr);
           exception.Check();
         }

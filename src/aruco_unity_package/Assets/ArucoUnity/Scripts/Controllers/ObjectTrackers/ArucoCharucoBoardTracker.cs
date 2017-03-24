@@ -78,7 +78,7 @@ namespace ArucoUnity
 
           foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
           {
-            Cv.Vec3d rvec, tvec;
+            Cv.Core.Vec3d rvec, tvec;
             arucoCharucoBoard.ValidTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
               (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
 
@@ -98,7 +98,7 @@ namespace ArucoUnity
           }
 
           bool updatedCameraImage = false;
-          Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+          Cv.Core.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
           CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
           foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
