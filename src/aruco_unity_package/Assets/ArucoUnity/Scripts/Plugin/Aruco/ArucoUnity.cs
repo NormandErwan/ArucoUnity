@@ -13,9 +13,6 @@ namespace ArucoUnity
   {
     public static partial class Aruco
     {
-      /// \addtogroup aruco_unity_package
-      /// \{
-
       [DllImport("ArucoUnity")]
       static extern double au_calibrateCameraAruco1(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board,
       System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
@@ -356,9 +353,6 @@ namespace ArucoUnity
         au_refineDetectedMarkers8(image.cppPtr, board.cppPtr, detectedCorners.cppPtr, detectedIds.cppPtr, rejectedCorners.cppPtr, exception.cppPtr);
         exception.Check();
       }
-
-      /// \} aruco_unity_package functions
-
     }
   }
 

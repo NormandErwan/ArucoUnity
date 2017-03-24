@@ -5,64 +5,67 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  /// <summary>
-  /// Describes an ArUco marker.
-  /// </summary>
-  public class ArucoMarker : ArucoObject
+  namespace Objects
   {
-    // Editor fields
-
-    [SerializeField]
-    [Tooltip("The marker id in the used dictionary.")]
-    private int markerId;
-
-    // Properties
-
     /// <summary>
-    /// <see cref="ArucoObject.HashCode"/>.
+    /// Describes an ArUco marker.
     /// </summary>
-    public override int HashCode { get { return hashCode; } }
-
-    /// <summary>
-    /// The marker id in the used dictionary.
-    /// </summary>
-    public int MarkerId
+    public class ArucoMarker : ArucoObject
     {
-      get { return markerId; }
-      set
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("The marker id in the used dictionary.")]
+      private int markerId;
+
+      // Properties
+
+      /// <summary>
+      /// <see cref="ArucoObject.HashCode"/>.
+      /// </summary>
+      public override int HashCode { get { return hashCode; } }
+
+      /// <summary>
+      /// The marker id in the used dictionary.
+      /// </summary>
+      public int MarkerId
       {
-        OnPropertyUpdating();
-        markerId = value;
-        hashCode = GetArucoHashCode(this);
-        OnPropertyUpdated();
+        get { return markerId; }
+        set
+        {
+          OnPropertyUpdating();
+          markerId = value;
+          hashCode = GetArucoHashCode(this);
+          OnPropertyUpdated();
+        }
       }
-    }
 
-    // Variables
+      // Variables
 
-    protected int hashCode;
+      protected int hashCode;
 
-    // MonoBehaviour methods
+      // MonoBehaviour methods
 
-    protected override void Awake()
-    {
-      base.Awake();
-      hashCode = GetArucoHashCode(this);
-    }
+      protected override void Awake()
+      {
+        base.Awake();
+        hashCode = GetArucoHashCode(this);
+      }
 
-    // Methods
+      // Methods
 
-    public static int GetArucoHashCode(int markerId)
-    {
-      int hashCode = 17;
-      hashCode = hashCode * 31 + typeof(ArucoMarker).GetHashCode();
-      hashCode = hashCode * 31 + markerId;
-      return hashCode;
-    }
+      public static int GetArucoHashCode(int markerId)
+      {
+        int hashCode = 17;
+        hashCode = hashCode * 31 + typeof(ArucoMarker).GetHashCode();
+        hashCode = hashCode * 31 + markerId;
+        return hashCode;
+      }
 
-    protected static int GetArucoHashCode(ArucoMarker arucoMarker)
-    {
-      return GetArucoHashCode(arucoMarker.MarkerId);
+      protected static int GetArucoHashCode(ArucoMarker arucoMarker)
+      {
+        return GetArucoHashCode(arucoMarker.MarkerId);
+      }
     }
   }
 

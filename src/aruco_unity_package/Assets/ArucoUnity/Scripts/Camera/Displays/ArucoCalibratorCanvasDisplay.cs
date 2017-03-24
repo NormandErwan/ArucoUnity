@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Controllers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace ArucoUnity
@@ -6,204 +7,207 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Utility
+  namespace Cameras
   {
-    public class ArucoCalibratorCanvasDisplay : MonoBehaviour
+    namespace Displays
     {
-      // Editor fields
-
-      [SerializeField]
-      private ArucoCalibrator arucoCalibrator;
-
-      [SerializeField]
-      private RectTransform arucoCameraImagesRect;
-
-      [SerializeField]
-      private Button addFrameButton;
-
-      [SerializeField]
-      private Button calibrateButton;
-
-      [SerializeField]
-      private Button resetButton;
-
-      [SerializeField]
-      private Text framesForCalibrationText;
-
-      // Variables
-
-      private Text[] calibrationReprojectionErrorTexts;
-
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Prepare the buttons and subscribe to ArucoCalibrator configured event to set the image display.
-      /// </summary>
-      protected void Awake()
+      public class ArucoCalibratorCanvasDisplay : MonoBehaviour
       {
-        // Deactivate the buttons
-        addFrameButton.enabled = false;
-        calibrateButton.enabled = false;
-        resetButton.enabled = false;
+        // Editor fields
 
-        // Bind the button clicks
-        addFrameButton.onClick.AddListener(AddFrameForCalibration);
-        calibrateButton.onClick.AddListener(Calibrate);
-        resetButton.onClick.AddListener(ResetCalibration);
+        [SerializeField]
+        private ArucoCalibrator arucoCalibrator;
 
-        // Suscribe to ArucoCalibrator events
-        arucoCalibrator.Configured += ConfigureUI;
-        if (arucoCalibrator.IsConfigured)
+        [SerializeField]
+        private RectTransform arucoCameraImagesRect;
+
+        [SerializeField]
+        private Button addFrameButton;
+
+        [SerializeField]
+        private Button calibrateButton;
+
+        [SerializeField]
+        private Button resetButton;
+
+        [SerializeField]
+        private Text framesForCalibrationText;
+
+        // Variables
+
+        private Text[] calibrationReprojectionErrorTexts;
+
+        // MonoBehaviour methods
+
+        /// <summary>
+        /// Prepare the buttons and subscribe to ArucoCalibrator configured event to set the image display.
+        /// </summary>
+        protected void Awake()
         {
-          ConfigureUI();
-        }
-      }
+          // Deactivate the buttons
+          addFrameButton.enabled = false;
+          calibrateButton.enabled = false;
+          resetButton.enabled = false;
 
-      /// <summary>
-      /// Configure the images display.
-      /// </summary>
-      protected void ConfigureUI()
-      {
-        // Configure the buttons
-        addFrameButton.enabled = true;
-        calibrateButton.enabled = false;
-        resetButton.enabled = false;
+          // Bind the button clicks
+          addFrameButton.onClick.AddListener(AddFrameForCalibration);
+          calibrateButton.onClick.AddListener(Calibrate);
+          resetButton.onClick.AddListener(ResetCalibration);
 
-        // Configure the images display
-        ArucoCamera arucoCamera = arucoCalibrator.ArucoCamera;
-        calibrationReprojectionErrorTexts = new Text[arucoCamera.CamerasNumber];
-
-        // Configure the arucoCameraImagesRect as a grid of images
-        int gridCols = 1, gridRows = 1;
-        for (int i = 0; i < arucoCamera.CamerasNumber; i++)
-        {
-          if (gridCols * gridRows > i)
+          // Suscribe to ArucoCalibrator events
+          arucoCalibrator.Configured += ConfigureUI;
+          if (arucoCalibrator.IsConfigured)
           {
-            continue;
-          }
-          else if (arucoCameraImagesRect.rect.width / gridCols >= arucoCameraImagesRect.rect.height / gridRows)
-          {
-            gridCols++;
-          }
-          else
-          {
-            gridRows++;
+            ConfigureUI();
           }
         }
-        Vector2 gridCellSize = new Vector2(1f / gridCols, 1f / gridRows);
 
-        // Configure the cells of the grid of images
-        for (int cameraId = 0; cameraId < arucoCamera.CamerasNumber; cameraId++)
+        /// <summary>
+        /// Configure the images display.
+        /// </summary>
+        protected void ConfigureUI()
         {
-          int cellCol = cameraId % gridCols; // Range : 0 to (gridCols - 1), images from left ot right
-          int cellRow = (gridRows - 1) - (cameraId / gridCols); // Range : (gridRows - 1) to 0, images from top to bottom
+          // Configure the buttons
+          addFrameButton.enabled = true;
+          calibrateButton.enabled = false;
+          resetButton.enabled = false;
 
-          // Create a cell on the grid for each camera image
-          GameObject cell = new GameObject("Image " + cameraId + " display");
-          RectTransform cellRect = cell.AddComponent<RectTransform>();
-          cellRect.SetParent(arucoCameraImagesRect);
-          cellRect.anchorMin = new Vector2(1f / gridCols * cellCol, 1f / gridRows * cellRow); // Cell's position
-          cellRect.anchorMax = cellRect.anchorMin + gridCellSize; // All cells have the same size
-          cellRect.offsetMin = cellRect.offsetMax = Vector2.zero; // No margins
-          cellRect.localScale = Vector3.one;
+          // Configure the images display
+          ArucoCamera arucoCamera = arucoCalibrator.ArucoCamera;
+          calibrationReprojectionErrorTexts = new Text[arucoCamera.CamerasNumber];
 
-          // Create an image display inside the cell
-          GameObject cellDisplay = new GameObject("Image");
-          RectTransform cellDisplayRect = cellDisplay.AddComponent<RectTransform>();
-          cellDisplayRect.SetParent(cellRect);
-          cellDisplayRect.localScale = Vector3.one;
+          // Configure the arucoCameraImagesRect as a grid of images
+          int gridCols = 1, gridRows = 1;
+          for (int i = 0; i < arucoCamera.CamerasNumber; i++)
+          {
+            if (gridCols * gridRows > i)
+            {
+              continue;
+            }
+            else if (arucoCameraImagesRect.rect.width / gridCols >= arucoCameraImagesRect.rect.height / gridRows)
+            {
+              gridCols++;
+            }
+            else
+            {
+              gridRows++;
+            }
+          }
+          Vector2 gridCellSize = new Vector2(1f / gridCols, 1f / gridRows);
 
-          RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
-          cellDisplayImage.texture = arucoCamera.ImageTextures[cameraId];
+          // Configure the cells of the grid of images
+          for (int cameraId = 0; cameraId < arucoCamera.CamerasNumber; cameraId++)
+          {
+            int cellCol = cameraId % gridCols; // Range : 0 to (gridCols - 1), images from left ot right
+            int cellRow = (gridRows - 1) - (cameraId / gridCols); // Range : (gridRows - 1) to 0, images from top to bottom
 
-          AspectRatioFitter cellDisplayFitter = cellDisplay.AddComponent<AspectRatioFitter>(); // Fit the image inside the cell
-          cellDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
-          cellDisplayFitter.aspectRatio = arucoCamera.ImageRatios[cameraId];
+            // Create a cell on the grid for each camera image
+            GameObject cell = new GameObject("Image " + cameraId + " display");
+            RectTransform cellRect = cell.AddComponent<RectTransform>();
+            cellRect.SetParent(arucoCameraImagesRect);
+            cellRect.anchorMin = new Vector2(1f / gridCols * cellCol, 1f / gridRows * cellRow); // Cell's position
+            cellRect.anchorMax = cellRect.anchorMin + gridCellSize; // All cells have the same size
+            cellRect.offsetMin = cellRect.offsetMax = Vector2.zero; // No margins
+            cellRect.localScale = Vector3.one;
 
-          // Create a text for calibration reprojection error inside the cell
-          GameObject reproError = new GameObject("CalibrationReprojectionErrorText");
-          RectTransform reproErrorRect = reproError.AddComponent<RectTransform>();
-          reproErrorRect.SetParent(cellRect);
-          reproErrorRect.pivot = Vector2.zero;
-          reproErrorRect.anchorMin = reproErrorRect.anchorMax = Vector2.zero;
-          reproErrorRect.offsetMin = Vector2.one * 5; // Pos X and pos Y margins
-          reproErrorRect.offsetMax = new Vector2(70, 60); // width and Height
-          reproErrorRect.localScale = Vector3.one;
+            // Create an image display inside the cell
+            GameObject cellDisplay = new GameObject("Image");
+            RectTransform cellDisplayRect = cellDisplay.AddComponent<RectTransform>();
+            cellDisplayRect.SetParent(cellRect);
+            cellDisplayRect.localScale = Vector3.one;
 
-          Text reproErrorText = reproError.AddComponent<Text>();
-          reproErrorText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-          reproErrorText.fontSize = 12;
-          reproErrorText.color = Color.red;
-          calibrationReprojectionErrorTexts[cameraId] = reproErrorText;
+            RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
+            cellDisplayImage.texture = arucoCamera.ImageTextures[cameraId];
+
+            AspectRatioFitter cellDisplayFitter = cellDisplay.AddComponent<AspectRatioFitter>(); // Fit the image inside the cell
+            cellDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+            cellDisplayFitter.aspectRatio = arucoCamera.ImageRatios[cameraId];
+
+            // Create a text for calibration reprojection error inside the cell
+            GameObject reproError = new GameObject("CalibrationReprojectionErrorText");
+            RectTransform reproErrorRect = reproError.AddComponent<RectTransform>();
+            reproErrorRect.SetParent(cellRect);
+            reproErrorRect.pivot = Vector2.zero;
+            reproErrorRect.anchorMin = reproErrorRect.anchorMax = Vector2.zero;
+            reproErrorRect.offsetMin = Vector2.one * 5; // Pos X and pos Y margins
+            reproErrorRect.offsetMax = new Vector2(70, 60); // width and Height
+            reproErrorRect.localScale = Vector3.one;
+
+            Text reproErrorText = reproError.AddComponent<Text>();
+            reproErrorText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            reproErrorText.fontSize = 12;
+            reproErrorText.color = Color.red;
+            calibrationReprojectionErrorTexts[cameraId] = reproErrorText;
+          }
+
+          // Configure the text
+          UpdateFramesForCalibrationText();
+          UpdateCalibrationReprojectionErrorText();
         }
 
-        // Configure the text
-        UpdateFramesForCalibrationText();
-        UpdateCalibrationReprojectionErrorText();
-      }
-
-      /// <summary>
-      /// Add the images of the next frame for the calibration, and update the UI.
-      /// </summary>
-      private void AddFrameForCalibration()
-      {
-        if (!arucoCalibrator.IsConfigured)
+        /// <summary>
+        /// Add the images of the next frame for the calibration, and update the UI.
+        /// </summary>
+        private void AddFrameForCalibration()
         {
-          return;
+          if (!arucoCalibrator.IsConfigured)
+          {
+            return;
+          }
+
+          arucoCalibrator.AddFrameForCalibration();
+
+          calibrateButton.enabled = true;
+          resetButton.enabled = true;
+          UpdateFramesForCalibrationText();
         }
 
-        arucoCalibrator.AddFrameForCalibration();
-
-        calibrateButton.enabled = true;
-        resetButton.enabled = true;
-        UpdateFramesForCalibrationText();
-      }
-
-      /// <summary>
-      /// Calibrate and update the UI.
-      /// </summary>
-      private void Calibrate()
-      {
-        if (!arucoCalibrator.IsConfigured)
+        /// <summary>
+        /// Calibrate and update the UI.
+        /// </summary>
+        private void Calibrate()
         {
-          return;
+          if (!arucoCalibrator.IsConfigured)
+          {
+            return;
+          }
+
+          arucoCalibrator.Calibrate();
+          UpdateCalibrationReprojectionErrorText();
         }
 
-        arucoCalibrator.Calibrate();
-        UpdateCalibrationReprojectionErrorText();
-      }
-
-      /// <summary>
-      /// Reset the calibration and update the UI.
-      /// </summary>
-      private void ResetCalibration()
-      {
-        arucoCalibrator.ResetCalibration();
-
-        calibrateButton.enabled = false;
-        resetButton.enabled = false;
-        UpdateFramesForCalibrationText();
-        UpdateCalibrationReprojectionErrorText();
-      }
-
-      /// <summary>
-      /// Update the text of the number of images added for calibration.
-      /// </summary>
-      void UpdateFramesForCalibrationText()
-      {
-        string frames = (arucoCalibrator.AllIds != null && arucoCalibrator.AllIds[0] != null) ? "" + arucoCalibrator.AllIds[0].Size() : "0";
-        framesForCalibrationText.text = "Frames for calibration: " + frames;
-      }
-
-      /// <summary>
-      /// Update text for of the calibration result.
-      /// </summary>
-      private void UpdateCalibrationReprojectionErrorText()
-      {
-        for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CamerasNumber; cameraId++)
+        /// <summary>
+        /// Reset the calibration and update the UI.
+        /// </summary>
+        private void ResetCalibration()
         {
-          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CamerasNumber + "\n"
-           + "Reprojection error: " + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionError[cameraId].ToString("F3") : "0.000");
+          arucoCalibrator.ResetCalibration();
+
+          calibrateButton.enabled = false;
+          resetButton.enabled = false;
+          UpdateFramesForCalibrationText();
+          UpdateCalibrationReprojectionErrorText();
+        }
+
+        /// <summary>
+        /// Update the text of the number of images added for calibration.
+        /// </summary>
+        void UpdateFramesForCalibrationText()
+        {
+          string frames = (arucoCalibrator.AllIds != null && arucoCalibrator.AllIds[0] != null) ? "" + arucoCalibrator.AllIds[0].Size() : "0";
+          framesForCalibrationText.text = "Frames for calibration: " + frames;
+        }
+
+        /// <summary>
+        /// Update text for of the calibration result.
+        /// </summary>
+        private void UpdateCalibrationReprojectionErrorText()
+        {
+          for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CamerasNumber; cameraId++)
+          {
+            calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CamerasNumber + "\n"
+             + "Reprojection error: " + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionError[cameraId].ToString("F3") : "0.000");
+          }
         }
       }
     }

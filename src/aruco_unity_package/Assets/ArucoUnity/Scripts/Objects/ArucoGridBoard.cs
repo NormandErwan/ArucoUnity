@@ -6,108 +6,111 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  /// <summary>
-  /// Describes an ArUco grid board.
-  /// </summary>
-  public class ArucoGridBoard : ArucoBoard
+  namespace Objects
   {
-    // Editor fields
-
-    [SerializeField]
-    [Tooltip("Number of markers in the X direction.")]
-    private int markersNumberX;
-
-    [SerializeField]
-    [Tooltip("Number of markers in the Y direction.")]
-    private int markersNumberY;
-
-    [SerializeField]
-    [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
-    private float markerSeparation;
-
-    // Properties
-
     /// <summary>
-    /// Number of markers in the X direction.
+    /// Describes an ArUco grid board.
     /// </summary>
-    public int MarkersNumberX
+    public class ArucoGridBoard : ArucoBoard
     {
-      get { return markersNumberX; }
-      set
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("Number of markers in the X direction.")]
+      private int markersNumberX;
+
+      [SerializeField]
+      [Tooltip("Number of markers in the Y direction.")]
+      private int markersNumberY;
+
+      [SerializeField]
+      [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
+      private float markerSeparation;
+
+      // Properties
+
+      /// <summary>
+      /// Number of markers in the X direction.
+      /// </summary>
+      public int MarkersNumberX
       {
-        OnPropertyUpdating();
-        markersNumberX = value;
-        OnPropertyUpdated();
+        get { return markersNumberX; }
+        set
+        {
+          OnPropertyUpdating();
+          markersNumberX = value;
+          OnPropertyUpdated();
+        }
       }
-    }
 
-    /// <summary>
-    /// Number of markers in the Y direction.
-    /// </summary>
-    public int MarkersNumberY
-    {
-      get { return markersNumberY; }
-      set
+      /// <summary>
+      /// Number of markers in the Y direction.
+      /// </summary>
+      public int MarkersNumberY
       {
-        OnPropertyUpdating();
-        markersNumberY = value;
-        OnPropertyUpdated();
+        get { return markersNumberY; }
+        set
+        {
+          OnPropertyUpdating();
+          markersNumberY = value;
+          OnPropertyUpdated();
+        }
       }
-    }
 
-    /// <summary>
-    /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
-    /// </summary>
-    public float MarkerSeparation
-    {
-      get { return markerSeparation; }
-      set
+      /// <summary>
+      /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// </summary>
+      public float MarkerSeparation
       {
-        OnPropertyUpdating();
-        markerSeparation = value;
-        OnPropertyUpdated();
+        get { return markerSeparation; }
+        set
+        {
+          OnPropertyUpdating();
+          markerSeparation = value;
+          OnPropertyUpdated();
+        }
       }
-    }
 
-    public int MarkersUsedForEstimation { get; set; }
+      public int MarkersUsedForEstimation { get; set; }
 
-    // Methods
+      // Methods
 
-    public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
-    {
-      int hashCode = 17;
-      hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
-      hashCode = hashCode * 31 + markersNumberX;
-      hashCode = hashCode * 31 + markersNumberY;
-      hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
-      hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
-      return hashCode;
-    }
+      public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
+      {
+        int hashCode = 17;
+        hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
+        hashCode = hashCode * 31 + markersNumberX;
+        hashCode = hashCode * 31 + markersNumberY;
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
+        return hashCode;
+      }
 
-    protected static int GetArucoHashCode(ArucoGridBoard arucoGridBoard)
-    {
-      return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength, arucoGridBoard.MarkerSeparation);
-    }
+      protected static int GetArucoHashCode(ArucoGridBoard arucoGridBoard)
+      {
+        return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength, arucoGridBoard.MarkerSeparation);
+      }
 
-    /// <summary>
-    /// <see cref="ArucoBoard.UpdateHashCode"/>
-    /// </summary>
-    protected override void UpdateHashCode()
-    {
-      hashCode = GetArucoHashCode(this);
-    }
+      /// <summary>
+      /// <see cref="ArucoBoard.UpdateHashCode"/>
+      /// </summary>
+      protected override void UpdateHashCode()
+      {
+        hashCode = GetArucoHashCode(this);
+      }
 
-    /// <summary>
-    /// <see cref="ArucoBoard.UpdateBoard"/>
-    /// </summary>
-    protected override void UpdateBoard()
-    {
-      ImageSize.width = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
-      ImageSize.height = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
+      /// <summary>
+      /// <see cref="ArucoBoard.UpdateBoard"/>
+      /// </summary>
+      protected override void UpdateBoard()
+      {
+        ImageSize.width = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
+        ImageSize.height = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
 
-      AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + markerSeparation);
+        AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + markerSeparation);
 
-      Board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
+        Board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
+      }
     }
   }
 

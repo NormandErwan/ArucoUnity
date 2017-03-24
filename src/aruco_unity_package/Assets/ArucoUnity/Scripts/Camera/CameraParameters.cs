@@ -9,6 +9,8 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
+  namespace Cameras
+  {
     /// <summary>
     /// Manage OpenCV's camera parameters from a calibration.
     /// 
@@ -314,23 +316,24 @@ namespace ArucoUnity
         }
       }
 
-    protected void UpdateCameraMatrixDerivedVariables()
-    {
-      for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
+      protected void UpdateCameraMatrixDerivedVariables()
       {
-        if (ImagesWidth == null || ImagesWidth[cameraId] == 0 || ImagesHeight == null || ImagesHeight[cameraId] == 0 || CamerasMatrix == null
-          || CamerasMatrix[cameraId] == null || CamerasMatrix[cameraId].size.width != 3 || CamerasMatrix[cameraId].size.height != 3)
+        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
         {
-          return;
+          if (ImagesWidth == null || ImagesWidth[cameraId] == 0 || ImagesHeight == null || ImagesHeight[cameraId] == 0 || CamerasMatrix == null
+            || CamerasMatrix[cameraId] == null || CamerasMatrix[cameraId].size.width != 3 || CamerasMatrix[cameraId].size.height != 3)
+          {
+            return;
+          }
+
+          // Camera parameter's focal lenghts and optical centers
+          CamerasFocalLength[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 0), (float)CamerasMatrix[cameraId].AtDouble(1, 1));
+          CamerasOpticalCenter[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 2), (float)CamerasMatrix[cameraId].AtDouble(1, 2));
+
+          // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
+          // TODO: take account of FixAspectRatio
+          OpticalCenters[cameraId] = new Vector3(CamerasOpticalCenter[cameraId].x / ImagesWidth[cameraId], CamerasOpticalCenter[cameraId].y / ImagesHeight[cameraId], CamerasFocalLength[cameraId].y);
         }
-
-        // Camera parameter's focal lenghts and optical centers
-        CamerasFocalLength[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 0), (float)CamerasMatrix[cameraId].AtDouble(1, 1));
-        CamerasOpticalCenter[cameraId] = new Vector2((float)CamerasMatrix[cameraId].AtDouble(0, 2), (float)CamerasMatrix[cameraId].AtDouble(1, 2));
-
-        // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
-        // TODO: take account of FixAspectRatio
-        OpticalCenters[cameraId] = new Vector3(CamerasOpticalCenter[cameraId].x / ImagesWidth[cameraId], CamerasOpticalCenter[cameraId].y / ImagesHeight[cameraId], CamerasFocalLength[cameraId].y);
       }
     }
   }
