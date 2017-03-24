@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Controllers.CalibrationFlagsControllers;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System;
@@ -24,7 +25,7 @@ namespace ArucoUnity
       private bool refineMarkersDetection = false;
 
       [SerializeField]
-      private CalibrationFlagsController calibrationFlagsController;
+      private CalibrationFlagsBaseController calibrationFlagsController;
 
       [SerializeField]
       [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder.")]
@@ -41,7 +42,7 @@ namespace ArucoUnity
 
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
-      public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
+      public CalibrationFlagsBaseController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
 
       /// <summary>
       /// The output folder for the calibration files, relative to the Application.persistentDataPath folder.
