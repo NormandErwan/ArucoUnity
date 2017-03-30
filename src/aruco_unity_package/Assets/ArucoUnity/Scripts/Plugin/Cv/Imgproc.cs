@@ -61,6 +61,10 @@ namespace ArucoUnity
           System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
+        static extern void au_cv_imgproc_undistort1(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
+          System.IntPtr distCoeffs, System.IntPtr newCameraMatrix, System.IntPtr exception);
+
+        [DllImport("ArucoUnity")]
         static extern void au_cv_imgproc_undistort2(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
           System.IntPtr distCoeffs, System.IntPtr exception);
 
@@ -100,7 +104,19 @@ namespace ArucoUnity
           exception.Check();
         }
 
-        // TODO: add the other version of undistord
+        public static void Undistort(Core.Mat inputImage, out Core.Mat outputImage, Core.Mat cameraMatrix, Core.Mat distCoeffs, 
+          Core.Mat newCameraMatrix)
+        {
+          Core.Exception exception = new Core.Exception();
+          System.IntPtr outputImagePtr;
+
+          au_cv_imgproc_undistort1(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, newCameraMatrix.cppPtr, 
+            exception.cppPtr);
+          outputImage = new Core.Mat(outputImagePtr);
+
+          exception.Check();
+        }
+
         public static void Undistort(Core.Mat inputImage, out Core.Mat outputImage, Core.Mat cameraMatrix, Core.Mat distCoeffs)
         {
           Core.Exception exception = new Core.Exception();

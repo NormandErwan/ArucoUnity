@@ -53,6 +53,19 @@ extern "C" {
     }
   }
 
+  void au_cv_imgproc_undistort1(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat* newCameraMatrix, 
+    cv::Exception* exception) {
+    try {
+      *dst = new cv::Mat();
+
+      cv::undistort(*src, **dst, *cameraMatrix, *distCoeffs, *newCameraMatrix);
+    }
+    catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return;
+    }
+  }
+
   void au_cv_imgproc_undistort2(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Exception* exception) {
     try {
       *dst = new cv::Mat();
