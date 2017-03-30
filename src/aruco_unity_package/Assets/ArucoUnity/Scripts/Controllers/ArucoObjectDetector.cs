@@ -1,5 +1,6 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Plugin;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -168,6 +169,12 @@ namespace ArucoUnity
         }
 
         IsConfigured = false;
+
+        // Check validity of mandatory properties
+        if (DetectorParameters != null)
+        {
+          throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");
+        }
 
         // Execute the configuration of derived classes
         PreConfigure();
