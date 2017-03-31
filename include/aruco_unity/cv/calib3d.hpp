@@ -37,19 +37,9 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_calibrate1(std::vector<std::vector<cv::Point3f>>* objectPoints,
+  ARUCO_UNITY_API double au_cv_calib3d_fisheye_calibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* image_size, cv::Mat* K, cv::Mat* D, std::vector<cv::Mat>** rvecs,
     std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_calibrate1().
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_calibrate2(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* image_size, cv::Mat* K, cv::Mat* D, std::vector<cv::Mat>** rvecs,
-    std::vector<cv::Mat>** tvecs, int flags, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_calibrate1().
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_calibrate3(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* image_size, cv::Mat* K, cv::Mat* D, std::vector<cv::Mat>** rvecs,
-    std::vector<cv::Mat>** tvecs, cv::Exception* exception);
 
   //! \brief Estimates new camera matrix for undistortion or rectification.
   //!
@@ -64,20 +54,8 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#ga384940fdf04c03e362e94b6eb9b673c9
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify1(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
+  ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
     cv::Mat** P, double balance, cv::Size* new_size, double fov_scale, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify2(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
-    cv::Mat** P, double balance, cv::Size* new_size, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify3(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
-    cv::Mat** P, double balance, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify4(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
-    cv::Mat** P, cv::Exception* exception);
 
   //! \brief Computes undistortion and rectification maps for image transform by cv::remap().
   //!
@@ -112,19 +90,9 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gadbb3a6ca6429528ef302c784df47949b
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_stereoCalibrate1(std::vector<std::vector<cv::Point3f>>* objectPoints,
+  ARUCO_UNITY_API double au_cv_calib3d_fisheye_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat** K1, cv::Mat** D1,
     cv::Mat** K2, cv::Mat** D2, cv::Size* imageSize, cv::Mat** R, cv::Mat** T, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_stereoCalibrate1().
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_stereoCalibrate2(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat** K1, cv::Mat** D1,
-    cv::Mat** K2, cv::Mat** D2, cv::Size* imageSize, cv::Mat** R, cv::Mat** T, int flags, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_stereoCalibrate1().
-  ARUCO_UNITY_API double au_cv_calib3d_fisheye_stereoCalibrate3(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat** K1, cv::Mat** D1,
-    cv::Mat** K2, cv::Mat** D2, cv::Size* imageSize, cv::Mat** R, cv::Mat** T, cv::Exception* exception);
 
   //! \brief Stereo rectification for fisheye camera model
   //!
@@ -147,22 +115,9 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gac1af58774006689056b0f2ef1db55ecc
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_stereoRectify1(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
+  ARUCO_UNITY_API void au_cv_calib3d_fisheye_stereoRectify(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
     cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, cv::Size* newImageSize, double balance,
     double fov_scale, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_stereoRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_stereoRectify2(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
-    cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, cv::Size* newImageSize, double balance,
-    cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_stereoRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_stereoRectify3(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
-    cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, cv::Size* newImageSize, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_stereoRectify1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_stereoRectify4(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
-    cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, cv::Exception* exception);
 
   //! \brief Transforms an image to compensate for fisheye lens distortion.
   //!
@@ -175,16 +130,8 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#ga167df4b00a6fd55287ba829fbf9913b9
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_undistortImage1(cv::Mat* distorted, cv::Mat** undistorted, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+  ARUCO_UNITY_API void au_cv_calib3d_fisheye_undistortImage(cv::Mat* distorted, cv::Mat** undistorted, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
     cv::Mat* newCameraMatrix, cv::Size* newSize, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_undistortImage1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_undistortImage2(cv::Mat* distorted, cv::Mat** undistorted, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    cv::Mat* newCameraMatrix, cv::Exception* exception);
-
-  //! \see au_cv_calib3d_fisheye_undistortImage1().
-  ARUCO_UNITY_API void au_cv_calib3d_fisheye_undistortImage3(cv::Mat* distorted, cv::Mat** undistorted, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    cv::Exception* exception);
 
   //! @} Static Member Functions
 }

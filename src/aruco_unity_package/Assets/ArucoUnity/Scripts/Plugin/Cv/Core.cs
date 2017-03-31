@@ -14,6 +14,7 @@ namespace ArucoUnity
         public const int CN_SHIFT = 3;
         public const int DEPTH_MAX = 1 << CN_SHIFT;
         public const int MAT_DEPTH_MAX = DEPTH_MAX - 1;
+        public const double EPSILON = 2.2204460492503131e-016;
 
         public enum Type
         {
