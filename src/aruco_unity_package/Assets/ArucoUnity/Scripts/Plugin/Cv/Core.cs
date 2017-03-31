@@ -11,30 +11,27 @@ namespace ArucoUnity
     {
       public static partial class Core
       {
-        public enum Constants
-        {
-          CnShift = 3,
-          DepthMax = 1 << CnShift,
-          MatDepthMask = DepthMax - 1
-        };
+        public const int CN_SHIFT = 3;
+        public const int DEPTH_MAX = 1 << CN_SHIFT;
+        public const int MAT_DEPTH_MAX = DEPTH_MAX - 1;
 
         public enum TYPE
         {
           CV_8U = 0,
-          CV_8UC1 = (CV_8U & Constants.MatDepthMask) + (0 << Constants.CnShift),
-          CV_8UC2 = (CV_8U & Constants.MatDepthMask) + (1 << Constants.CnShift),
-          CV_8UC3 = (CV_8U & Constants.MatDepthMask) + (2 << Constants.CnShift),
-          CV_8UC4 = (CV_8U & Constants.MatDepthMask) + (3 << Constants.CnShift),
+          CV_8UC1 = (CV_8U & MAT_DEPTH_MAX) + (0 << CN_SHIFT),
+          CV_8UC2 = (CV_8U & MAT_DEPTH_MAX) + (1 << CN_SHIFT),
+          CV_8UC3 = (CV_8U & MAT_DEPTH_MAX) + (2 << CN_SHIFT),
+          CV_8UC4 = (CV_8U & MAT_DEPTH_MAX) + (3 << CN_SHIFT),
           CV_16S = 3,
-          CV_16SC1 = (CV_16S & Constants.MatDepthMask) + (0 << Constants.CnShift),
-          CV_16SC2 = (CV_16S & Constants.MatDepthMask) + (1 << Constants.CnShift),
-          CV_16SC3 = (CV_16S & Constants.MatDepthMask) + (2 << Constants.CnShift),
-          CV_16SC4 = (CV_16S & Constants.MatDepthMask) + (3 << Constants.CnShift),
+          CV_16SC1 = (CV_16S & MAT_DEPTH_MAX) + (0 << CN_SHIFT),
+          CV_16SC2 = (CV_16S & MAT_DEPTH_MAX) + (1 << CN_SHIFT),
+          CV_16SC3 = (CV_16S & MAT_DEPTH_MAX) + (2 << CN_SHIFT),
+          CV_16SC4 = (CV_16S & MAT_DEPTH_MAX) + (3 << CN_SHIFT),
           CV_64F = 6,
-          CV_64FC1 = (CV_64F & Constants.MatDepthMask) + (0 << Constants.CnShift),
-          CV_64FC2 = (CV_64F & Constants.MatDepthMask) + (1 << Constants.CnShift),
-          CV_64FC3 = (CV_64F & Constants.MatDepthMask) + (2 << Constants.CnShift),
-          CV_64FC4 = (CV_64F & Constants.MatDepthMask) + (3 << Constants.CnShift),
+          CV_64FC1 = (CV_64F & MAT_DEPTH_MAX) + (0 << CN_SHIFT),
+          CV_64FC2 = (CV_64F & MAT_DEPTH_MAX) + (1 << CN_SHIFT),
+          CV_64FC3 = (CV_64F & MAT_DEPTH_MAX) + (2 << CN_SHIFT),
+          CV_64FC4 = (CV_64F & MAT_DEPTH_MAX) + (3 << CN_SHIFT),
         };
 
         // Static Member Functions
