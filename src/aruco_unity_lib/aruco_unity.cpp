@@ -1,5 +1,5 @@
 #include "aruco_unity.hpp"
-#include "aruco_unity/utility/cv/exception.hpp"
+#include "aruco_unity/cv/exception.hpp"
 #include <opencv2/imgproc.hpp>
 
 extern "C" {
