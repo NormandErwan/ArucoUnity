@@ -3,10 +3,63 @@
 
 extern "C" {
   // Static member functions
+  double au_cv_calib3d_calibrateCamera1(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs,
+    std::vector<double>* stdDeviationsIntrinsics, std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors,
+    int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    try {
+      *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
+      cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, *stdDeviationsIntrinsics, 
+        *stdDeviationsExtrinsics, *perViewErrors, flags, *criteria);
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+  }
+
+  double au_cv_calib3d_calibrateCamera2(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
+    cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags,
+    cv::TermCriteria* criteria, cv::Exception* exception) {
+    try {
+      *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
+      cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+  }
+
+  cv::Mat* au_cv_calib3d_initCameraMatrix2D(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
+    cv::Size* imageSize, double aspectRatio, cv::Exception* exception) {
+    cv::Mat cameraMatrix;
+    try {
+      cameraMatrix = cv::initCameraMatrix2D(*objectPoints, *imagePoints, *imageSize, aspectRatio);
+    } 
+    catch (const cv::Exception& e) { 
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e); 
+      return; 
+    }
+    return new cv::Mat(cameraMatrix);
+  }
+
   void au_cv_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception) {
     try {
       *dst = new cv::Mat();
       cv::Rodrigues(*src, **dst);
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+  }
+
+  double au_cv_calib3d_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints1,
+    std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2,
+    cv::Size* imageSize, cv::Mat** R, cv::Mat** T, cv::Mat** E, cv::Mat** F, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    try {
+      *R = new cv::Mat(), *T = new cv::Mat(), *E = new cv::Mat(), *F = new cv::Mat();
+      cv::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, **R,
+        **T, **E, **F, flags, *criteria);
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+  }
+
+  void au_cv_calib3d_stereoRectify(cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2, cv::Size* imageSize,
+    cv::Mat* R, cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, double alpha, cv::Size* newImageSize,
+    cv::Rect* validPixROI1, cv::Rect* validPixROI2, cv::Exception* exception) {
+    try {
+      *R1 = new cv::Mat(), *R2 = new cv::Mat(), *P1 = new cv::Mat(), *P2 = new cv::Mat(), *Q = new cv::Mat();
+      cv::stereoRectify(*cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, *R, *tvec, **R1, **R2, **P1, **P2, **Q, 
+        flags, alpha, *newImageSize, validPixROI1, validPixROI2);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
@@ -47,7 +100,7 @@ extern "C" {
     double error = 0;
     try {
       *K1 = new cv::Mat(), *D1 = new cv::Mat(), *K2 = new cv::Mat(), *D2 = new cv::Mat(), *R = new cv::Mat();
-      error = cv::fisheye::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, **K1, **D1, **K2, **D2, *imageSize, **R, **R, flags, 
+      error = cv::fisheye::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, **K1, **D1, **K2, **D2, *imageSize, **R, **T, flags, 
         *criteria);
     }
     catch (const cv::Exception& e) {

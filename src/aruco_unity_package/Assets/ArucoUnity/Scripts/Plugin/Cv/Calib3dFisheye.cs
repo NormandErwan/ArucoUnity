@@ -29,11 +29,6 @@ namespace ArucoUnity
             FixPrincipalPoint = 1 << 9
           };
 
-          public enum StereoRectifyFlags
-          {
-            ZeroDisparity = 1024
-          };
-
           // Native functions
 
           [DllImport("ArucoUnity")]
@@ -102,10 +97,12 @@ namespace ArucoUnity
           {
             Core.Exception exception = new Core.Exception();
             System.IntPtr map1Ptr, map2Ptr;
+
             au_cv_calib3d_fisheye_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr,
               m1type, out map1Ptr, out map2Ptr, exception.cppPtr);
             map1 = new Core.Mat(map1Ptr);
             map2 = new Core.Mat(map2Ptr);
+
             exception.Check();
           }
 
