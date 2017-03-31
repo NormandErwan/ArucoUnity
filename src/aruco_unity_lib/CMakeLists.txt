@@ -22,12 +22,14 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/point2f.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/point3f.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/rect.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/scalar.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/size.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/term_criteria.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/vec3d.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/vec4i.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/std/std.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/std/vector_double.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/std/vector_int.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/std/vector_mat.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/std/vector_point2f.hpp
@@ -53,11 +55,13 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/mat.cpp
     ${PROJECT_SOURCE_DIR}/point2f.cpp
     ${PROJECT_SOURCE_DIR}/point3f.cpp
+    ${PROJECT_SOURCE_DIR}/rect.cpp
     ${PROJECT_SOURCE_DIR}/scalar.cpp
     ${PROJECT_SOURCE_DIR}/size.cpp
     ${PROJECT_SOURCE_DIR}/term_criteria.cpp
     ${PROJECT_SOURCE_DIR}/vec3d.cpp
     ${PROJECT_SOURCE_DIR}/vec4i.cpp
+    ${PROJECT_SOURCE_DIR}/vector_double.cpp
     ${PROJECT_SOURCE_DIR}/vector_int.cpp
     ${PROJECT_SOURCE_DIR}/vector_mat.cpp
     ${PROJECT_SOURCE_DIR}/vector_point2f.cpp
