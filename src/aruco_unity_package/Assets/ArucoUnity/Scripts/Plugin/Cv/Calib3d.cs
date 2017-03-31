@@ -39,9 +39,12 @@ namespace ArucoUnity
           UseLu = (1 << 17)
         };
 
-        // Static Member Functions
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern void au_cv_calib3d_Rodrigues(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr exception);
+
+        // Static functions
 
         public static void Rodrigues(Core.Vec3d rotationVector, out Core.Mat rotationMatrix)
         {
