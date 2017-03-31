@@ -252,7 +252,7 @@ namespace ArucoUnity
           // Prepare camera parameters
           if (CalibrationFlagsController.FixAspectRatio)
           {
-            camerasMatrix[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.TYPE.CV_64F, new double[9] { CalibrationFlagsController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+            camerasMatrix[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F, new double[9] { CalibrationFlagsController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
           }
           else
           {

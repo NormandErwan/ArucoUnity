@@ -69,7 +69,7 @@ namespace ArucoUnity
           System.IntPtr distCoeffs, System.IntPtr exception);
 
         public static void InitUndistortRectifyMap(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Mat R, Core.Mat newCameraMatrix, Core.Size size, 
-          Core.TYPE m1type, out Core.Mat map1, out Core.Mat map2)
+          Core.Type m1type, out Core.Mat map1, out Core.Mat map2)
         {
           Core.Exception exception = new Core.Exception();
           System.IntPtr map1Ptr, map2Ptr;

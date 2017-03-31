@@ -115,7 +115,7 @@ namespace ArucoUnity
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.Core.TYPE CameraMatrixType { get; set; }
+      public Cv.Core.Type CameraMatrixType { get; set; }
 
       /// <summary>
       /// The camera matrix values of the calibration. Equals to the <see cref="CamerasMatrix"/> content and automatically written when 
@@ -137,7 +137,7 @@ namespace ArucoUnity
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.Core.TYPE DistCoeffsType { get; set; }
+      public Cv.Core.Type DistCoeffsType { get; set; }
 
       /// <summary>
       /// The distorsition coefficients values of the calibration. Equals to the <see cref="DistCoeffs"/> content and automatically written when 

@@ -321,19 +321,19 @@ namespace ArucoUnity
       /// </summary>
       /// <param name="imageTexture">The texture to analyze.</param>
       /// <returns>The equivalent OpenCV type.</returns>
-      protected Cv.Core.TYPE ImageType(Texture2D imageTexture)
+      protected Cv.Core.Type ImageType(Texture2D imageTexture)
       {
-        Cv.Core.TYPE type;
+        Cv.Core.Type type;
         var format = imageTexture.format;
         switch (format)
         {
           case TextureFormat.RGB24:
-            type = Cv.Core.TYPE.CV_8UC3;
+            type = Cv.Core.Type.CV_8UC3;
             break;
           case TextureFormat.BGRA32:
           case TextureFormat.ARGB32:
           case TextureFormat.RGBA32:
-            type = Cv.Core.TYPE.CV_8UC4;
+            type = Cv.Core.Type.CV_8UC4;
             break;
           default:
             throw new ArgumentException("This type of texture is actually not supported: " + imageTexture.format + ".", "imageTexture");
@@ -370,7 +370,7 @@ namespace ArucoUnity
             Cv.Core.Mat cameraMatrix = CameraParameters.CamerasMatrix[cameraId];
             undistordedImages_maps[cameraId] = new Cv.Core.Mat[2]; // map1 and map2
             Cv.Imgproc.InitUndistortRectifyMap(cameraMatrix, CameraParameters.DistCoeffs[cameraId], undistordedImages_R,
-              cameraMatrix, Images[cameraId].size, Cv.Core.TYPE.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
+              cameraMatrix, Images[cameraId].size, Cv.Core.Type.CV_16SC2, out undistordedImages_maps[cameraId][0], out undistordedImages_maps[cameraId][1]);
             undistordedImages[cameraId] = new Cv.Core.Mat(undistordedImages_maps[cameraId][0].size, ImageType(ImageTextures[cameraId]));
           }
         }

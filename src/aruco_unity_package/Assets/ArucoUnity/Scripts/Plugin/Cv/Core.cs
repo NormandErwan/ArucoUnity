@@ -15,7 +15,7 @@ namespace ArucoUnity
         public const int DEPTH_MAX = 1 << CN_SHIFT;
         public const int MAT_DEPTH_MAX = DEPTH_MAX - 1;
 
-        public enum TYPE
+        public enum Type
         {
           CV_8U = 0,
           CV_8UC1 = (CV_8U & MAT_DEPTH_MAX) + (0 << CN_SHIFT),

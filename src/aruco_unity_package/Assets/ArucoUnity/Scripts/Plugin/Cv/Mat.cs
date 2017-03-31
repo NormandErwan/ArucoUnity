@@ -89,19 +89,19 @@ namespace ArucoUnity
           {
           }
 
-          public Mat(int rows, int cols, TYPE type) : base(au_cv_Mat_new2(rows, cols, (int)type))
+          public Mat(int rows, int cols, Type type) : base(au_cv_Mat_new2(rows, cols, (int)type))
           {
           }
 
-          public Mat(Size size, TYPE type) : base(au_cv_Mat_new3(size.cppPtr, (int)type))
+          public Mat(Size size, Type type) : base(au_cv_Mat_new3(size.cppPtr, (int)type))
           {
           }
 
-          public Mat(int rows, int cols, TYPE type, byte[] data) : base(au_cv_Mat_new8_uchar(rows, cols, (int)type, data))
+          public Mat(int rows, int cols, Type type, byte[] data) : base(au_cv_Mat_new8_uchar(rows, cols, (int)type, data))
           {
           }
 
-          public Mat(int rows, int cols, TYPE type, double[] data) : base(au_cv_Mat_new8_double(rows, cols, (int)type, data))
+          public Mat(int rows, int cols, Type type, double[] data) : base(au_cv_Mat_new8_double(rows, cols, (int)type, data))
           {
           }
 
@@ -115,7 +115,7 @@ namespace ArucoUnity
             return au_cv_Mat_channels(cppPtr);
           }
 
-          public void Create(int rows, int cols, TYPE type)
+          public void Create(int rows, int cols, Type type)
           {
             Exception exception = new Exception();
             au_cv_Mat_create(cppPtr, rows, cols, (int)type, exception.cppPtr);
@@ -172,9 +172,9 @@ namespace ArucoUnity
             return au_cv_Mat_total(cppPtr);
           }
 
-          public TYPE Type()
+          public Type Type()
           {
-            return (TYPE)au_cv_Mat_type(cppPtr);
+            return (Type)au_cv_Mat_type(cppPtr);
           }
 
           public int cols
