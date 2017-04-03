@@ -79,18 +79,6 @@ namespace ArucoUnity
 
       public bool IsCalibrated { get; protected set; }
 
-      // MonoBehaviour methods
-
-      protected override void Awake()
-      {
-        base.Awake();
-
-        if (CalibrationTermCriteria == null)
-        {
-          CalibrationTermCriteria = new Cv.Core.TermCriteria(Cv.Core.TermCriteria.Type.Count | Cv.Core.TermCriteria.Type.Eps, 100, 1E-5);
-        }
-      }
-
       // ArucoDetector Methods
 
       protected override void PreConfigure()
