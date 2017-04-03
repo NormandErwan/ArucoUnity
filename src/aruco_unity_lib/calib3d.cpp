@@ -7,20 +7,30 @@ extern "C" {
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs,
     std::vector<double>* stdDeviationsIntrinsics, std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors,
     int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
-      cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, *stdDeviationsIntrinsics, 
+      error = cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, *stdDeviationsIntrinsics, 
         *stdDeviationsExtrinsics, *perViewErrors, flags, *criteria);
-    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+    } catch (const cv::Exception& e) { 
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e); 
+      return error;
+    }
+    return error;
   }
 
   double au_cv_calib3d_calibrateCamera2(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags,
     cv::TermCriteria* criteria, cv::Exception* exception) {
+    double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
       cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
-    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+    } catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return error;
+    }
+    return error;
   }
 
   cv::Mat* au_cv_calib3d_initCameraMatrix2D(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
@@ -31,7 +41,7 @@ extern "C" {
     } 
     catch (const cv::Exception& e) { 
       ARUCO_UNITY_COPY_EXCEPTION(exception, e); 
-      return; 
+      return NULL; 
     }
     return new cv::Mat(cameraMatrix);
   }
@@ -46,11 +56,16 @@ extern "C" {
   double au_cv_calib3d_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints1,
     std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2,
     cv::Size* imageSize, cv::Mat** R, cv::Mat** T, cv::Mat** E, cv::Mat** F, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    double error = 0;
     try {
       *R = new cv::Mat(), *T = new cv::Mat(), *E = new cv::Mat(), *F = new cv::Mat();
-      cv::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, **R,
+      error = cv::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, **R,
         **T, **E, **F, flags, *criteria);
-    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+    } catch (const cv::Exception& e) {
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return error;
+    }
+    return error;
   }
 
   void au_cv_calib3d_stereoRectify(cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2, cv::Size* imageSize,
