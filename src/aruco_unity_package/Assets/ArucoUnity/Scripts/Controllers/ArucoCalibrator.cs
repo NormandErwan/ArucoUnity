@@ -28,12 +28,12 @@ namespace ArucoUnity
       private CalibrationFlagsBaseController calibrationFlagsController;
 
       [SerializeField]
-      [Tooltip("The output folder for the calibration files, relative to the Application.persistentDataPath folder.")]
-      private string outputFolder = "ArucoUnity/Calibrations/";
+      [Tooltip("The folder for the calibration files, relative to the Application.persistentDataPath folder.")]
+      private string calibrationFolder = "ArucoUnity/Calibrations/";
 
       [SerializeField]
-      [Tooltip("The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the "
-        + "camera name and the current datetime.")]
+      [Tooltip("The xml calibration file to load as a guess, and where the calibration parameters will be saved. If empty, it will be generated"
+        + " automatically from the camera name and the current datetime.")]
       private string calibrationFilename;
 
       // Properties
@@ -45,13 +45,13 @@ namespace ArucoUnity
       public CalibrationFlagsBaseController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
 
       /// <summary>
-      /// The output folder for the calibration files, relative to the Application.persistentDataPath folder.
+      /// The folder for the calibration files, relative to the Application.persistentDataPath folder.
       /// </summary>
-      public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
+      public string CalibrationFolder { get { return calibrationFolder; } set { calibrationFolder = value; } }
 
       /// <summary>
-      /// The saved calibration name. The extension (.xml) is added automatically. If empty, it will be generated automatically from the camera name
-      /// and the current datetime.
+      /// The xml calibration file to load as a guess, and where the calibration parameters will be saved. The extension (.xml) is added
+      /// automatically. If empty, it will be generated automatically from the camera name and the current datetime.
       /// </summary>
       public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
@@ -204,6 +204,7 @@ namespace ArucoUnity
         {
           if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() < 1)
           {
+            // TODO: exception
             Debug.LogWarning("Not enough markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CamerasNumber + " to add the frame for "
               + "calibration. It requires more than one marker detected.");
             continue;
@@ -234,26 +235,58 @@ namespace ArucoUnity
           }
         }
 
-        // Prepare the camera parameters
-        // TODO : check if the camera parameters file can be read and load it for intrinsic guessing
-        Cv.Core.Mat[] camerasMatrix = new Cv.Core.Mat[ArucoCamera.CamerasNumber], 
-                      distCoeffs = new Cv.Core.Mat[ArucoCamera.CamerasNumber];
-        double[] reprojectionErrors = new double[ArucoCamera.CamerasNumber];
+        // Camera parameters
+        Cv.Core.Mat[] camerasMatrix, distCoeffs;
+        double[] reprojectionErrors;
+
+        // Load the camera parameters if they exist
+        string cameraParametersFilePath;
+        string cameraParametersFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CalibrationFolder);
+        if (!Directory.Exists(cameraParametersFolderPath))
+        {
+          Directory.CreateDirectory(cameraParametersFolderPath);
+        }
+        if (CalibrationFilename != null && CalibrationFilename.Length > 0)
+        {
+          cameraParametersFilePath = cameraParametersFolderPath + CalibrationFilename;
+          CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
+
+          if (CameraParameters.CamerasNumber != ArucoCamera.CamerasNumber)
+          {
+            throw new ArgumentException("The loaded camera parameters from the file '" + cameraParametersFilePath + "' is for a system with " +
+              CameraParameters.CamerasNumber + " camera. But the current calibrating camera has " + ArucoCamera.CamerasNumber + ". These numbers"
+              + " must be equal.", "CalibrationFilename");
+          }
+
+          camerasMatrix = CameraParameters.CamerasMatrix;
+          distCoeffs = CameraParameters.DistCoeffs;
+          reprojectionErrors = CameraParameters.ReprojectionError;
+        }
+        // Initialize the camera parameters
+        else
+        {
+          camerasMatrix = new Cv.Core.Mat[ArucoCamera.CamerasNumber];
+          distCoeffs = new Cv.Core.Mat[ArucoCamera.CamerasNumber];
+          reprojectionErrors = new double[ArucoCamera.CamerasNumber];
+        }
 
         // Calibrate each camera
         for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
         {
-          // Prepare the camera parameters
-          if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController.FixAspectRatio)
+          // Prepare the camera parameters if non initialized
+          if (CameraParameters == null)
           {
-            camerasMatrix[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F, new double[9] {
+            if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController.FixAspectRatio)
+            {
+              camerasMatrix[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F, new double[9] {
               calibrationFlagsNonFisheyeController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+            }
+            else
+            {
+              camerasMatrix[cameraId] = new Cv.Core.Mat();
+            }
+            distCoeffs[cameraId] = new Cv.Core.Mat();
           }
-          else
-          {
-            camerasMatrix[cameraId] = new Cv.Core.Mat();
-          }
-          distCoeffs[cameraId] = new Cv.Core.Mat();
 
           // Prepare data for calibration
           Std.VectorVectorPoint3f boardOjectPoints = new Std.VectorVectorPoint3f();
@@ -345,18 +378,16 @@ namespace ArucoUnity
         }
 
         // Save the camera parameters
-        string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
-        if (!Directory.Exists(outputFolderPath))
+        cameraParametersFilePath = cameraParametersFolderPath;
+        if (CalibrationFilename != null && CalibrationFilename.Length > 0)
         {
-          Directory.CreateDirectory(outputFolderPath);
+          cameraParametersFilePath += CalibrationFilename;
         }
-
-        string calibrationFilePath = outputFolderPath;
-        calibrationFilePath += (CalibrationFilename == null || CalibrationFilename.Length == 0)
-          ? ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")
-          : CalibrationFilename;
-        calibrationFilePath += ".xml";
-        CameraParameters.SaveToXmlFile(calibrationFilePath);
+        else
+        {
+          cameraParametersFilePath += ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xml";
+        }
+        CameraParameters.SaveToXmlFile(cameraParametersFilePath);
       }
     }
   }

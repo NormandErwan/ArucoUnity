@@ -51,6 +51,9 @@ namespace ArucoUnity
       /// </summary>
       public DateTime CalibrationDateTime { get; set; }
 
+      /// <summary>
+      /// The number of the camera during the calibration.
+      /// </summary>
       public int CamerasNumber { get; protected set; }
 
       /// <summary>

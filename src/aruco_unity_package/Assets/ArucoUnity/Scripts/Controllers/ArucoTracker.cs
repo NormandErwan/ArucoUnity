@@ -107,11 +107,11 @@ namespace ArucoUnity
         // Initialize the trackers
         MarkerTracker = new ArucoMarkerTracker();
         additionalTrackers = new Dictionary<System.Type, ArucoObjectTracker>()
-      {
-        { typeof(ArucoGridBoard), new ArucoGridBoardTracker() },
-        { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
-        { typeof(ArucoDiamond), new ArucoDiamondTracker() }
-      };
+        {
+          { typeof(ArucoGridBoard), new ArucoGridBoardTracker() },
+          { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
+          { typeof(ArucoDiamond), new ArucoDiamondTracker() }
+        };
 
         // Initialize the tracking thread
         trackingMutex = new Mutex();
