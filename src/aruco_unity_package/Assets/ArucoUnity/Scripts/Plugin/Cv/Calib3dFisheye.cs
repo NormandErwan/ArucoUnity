@@ -93,13 +93,13 @@ namespace ArucoUnity
           }
 
           public static void InitUndistortRectifyMap(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Mat R, Core.Mat newCameraMatrix,
-            Core.Size size, int m1type, out Core.Mat map1, out Core.Mat map2)
+            Core.Size size, Core.Type m1type, out Core.Mat map1, out Core.Mat map2)
           {
             Core.Exception exception = new Core.Exception();
             System.IntPtr map1Ptr, map2Ptr;
 
             au_cv_calib3d_fisheye_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr,
-              m1type, out map1Ptr, out map2Ptr, exception.cppPtr);
+              (int)m1type, out map1Ptr, out map2Ptr, exception.cppPtr);
             map1 = new Core.Mat(map1Ptr);
             map2 = new Core.Mat(map2Ptr);
 
