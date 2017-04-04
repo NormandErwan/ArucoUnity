@@ -449,8 +449,16 @@ extern "C" {
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return;
     }
+  }
+
+  void au_getBoardObjectAndImagePoints(const cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
+    std::vector<int>* detectedIds, cv::Mat** objPoints, cv::Mat** imgPoints, cv::Exception* exception) {
+    try {
+      *imgPoints = new cv::Mat();
+      *objPoints = new cv::Mat();
+      cv::aruco::getBoardObjectAndImagePoints(*board, *detectedCorners, *detectedIds, **objPoints, **imgPoints);
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
   int au_interpolateCornersCharuco1(std::vector<std::vector<cv::Point2f>>* markerCorners, std::vector<int>* markerIds, cv::Mat* image, 

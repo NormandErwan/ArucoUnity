@@ -70,6 +70,10 @@ namespace ArucoUnity
         System.IntPtr distCoeffs, out System.IntPtr rvec, out System.IntPtr tvec, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
+      static extern void au_getBoardObjectAndImagePoints(System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
+        out System.IntPtr objPoints, out System.IntPtr imgPoints, System.IntPtr exception);
+      
+      [DllImport("ArucoUnity")]
       static extern void au_refineDetectedMarkers1(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
         System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate,
         bool checkAllOrders, System.IntPtr recoveredIdxs, System.IntPtr parameters, System.IntPtr exception);
@@ -276,6 +280,20 @@ namespace ArucoUnity
         au_estimatePoseSingleMarkers(corners.cppPtr, markerLength, cameraMatrix.cppPtr, distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, exception.cppPtr);
         rvecs = new Std.VectorVec3d(rvecsPtr);
         tvecs = new Std.VectorVec3d(tvecsPtr);
+
+        exception.Check();
+      }
+
+      public static void GetBoardObjectAndImagePoints(Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+        out Cv.Core.Mat objPoints, out Cv.Core.Mat imgPoints)
+      {
+        Cv.Core.Exception exception = new Cv.Core.Exception();
+        System.IntPtr objPointsPtr, imgPointsPtr;
+
+        au_getBoardObjectAndImagePoints(board.cppPtr, detectedCorners.cppPtr, detectedIds.cppPtr, out objPointsPtr, out imgPointsPtr,
+          exception.cppPtr);
+        objPoints = new Cv.Core.Mat(objPointsPtr);
+        imgPoints = new Cv.Core.Mat(imgPointsPtr);
 
         exception.Check();
       }

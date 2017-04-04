@@ -297,6 +297,18 @@ extern "C" {
   ARUCO_UNITY_API void au_estimatePoseSingleMarkers(std::vector<std::vector<cv::Point2f>>* corners, float markerLength, cv::Mat* cameraMatrix, 
     cv::Mat* distCoeffs, std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, cv::Exception* exception);
 
+  //! \brief Returns the corresponding the image points and object points of a board configuration and a set of markers.
+  //!
+  //! \param board Marker board layout.
+  //! \param detectedCorners List of identifiers for each marker.
+  //! \param detectedIds List of detected marker corners of the board.
+  //! \param objPoints Vector of vectors of the projections of board marker corner points.
+  //! \param imgPoints Vector of vectors of board marker points in the board coordinate space.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
+  ARUCO_UNITY_API void au_getBoardObjectAndImagePoints(const cv::Ptr<cv::aruco::Board>* board,
+    std::vector<std::vector<cv::Point2f>>* detectedCorners, std::vector<int>* detectedIds, cv::Mat** objPoints, cv::Mat** imgPoints,
+    cv::Exception* exception);
+
   //! \brief Interpolate position of ChArUco board corners
   //!
   //! \param markerCorners Vector of already detected markers corners.
