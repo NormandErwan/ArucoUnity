@@ -192,7 +192,7 @@ namespace ArucoUnity
       /// </summary>
       void UpdateFramesForCalibrationText()
       {
-        string frames = (arucoCalibrator.AllIds != null && arucoCalibrator.AllIds[0] != null) ? "" + arucoCalibrator.AllIds[0].Size() : "0";
+        string frames = (arucoCalibrator.MarkerIds != null && arucoCalibrator.MarkerIds[0] != null) ? "" + arucoCalibrator.MarkerIds[0].Size() : "0";
         framesForCalibrationText.text = "Frames for calibration: " + frames;
       }
 
