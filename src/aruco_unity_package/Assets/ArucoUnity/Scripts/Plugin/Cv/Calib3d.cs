@@ -165,8 +165,8 @@ namespace ArucoUnity
           System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
           au_cv_calib3d_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr,
-            rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.cppPtr, validPixROI2.cppPtr,
-            validPixROI2.cppPtr, exception.cppPtr);
+            rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.cppPtr, validPixROI1Ptr,
+            validPixROI2Ptr, exception.cppPtr);
           R1 = new Core.Mat(R1Ptr);
           R2 = new Core.Mat(R2Ptr);
           P1 = new Core.Mat(P1Ptr);
