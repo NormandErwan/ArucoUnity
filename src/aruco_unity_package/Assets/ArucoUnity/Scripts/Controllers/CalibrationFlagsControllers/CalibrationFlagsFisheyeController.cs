@@ -77,6 +77,12 @@ namespace ArucoUnity
         }
       }
 
+      public override int CalibrationFlagsValue
+      {
+        get { return (int)calibrationFlags; }
+        set { calibrationFlags = (Cv.Calib3d.Fisheye.Calib)value; }
+      }
+
       protected override int FixKLength { get { return 4; } set { } }
 
       // Variables

@@ -56,6 +56,8 @@ namespace ArucoUnity
         }
       }
 
+      public abstract int CalibrationFlagsValue { get; set; }
+
       protected abstract int FixKLength { get; set; }
 
       // Methods

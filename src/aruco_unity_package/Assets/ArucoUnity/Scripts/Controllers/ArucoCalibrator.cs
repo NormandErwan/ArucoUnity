@@ -95,13 +95,13 @@ namespace ArucoUnity
         {
           throw new ArgumentNullException("CalibrationFlagsController", "The CalibrationFlagsController property needs to be set to configure the calibrator.");
         }
-        if (ArucoCamera.IsFisheye && calibrationFlagsFisheyeController == null)
-        {
-          throw new ArgumentNullException("CalibrationFlagsController", "The camera used if fisheye, but the calibration flags are for non-fisheye camera. Use CalibrationFlagsFisheyeController instead.");
-        }
         if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController == null)
         {
           throw new ArgumentNullException("CalibrationFlagsController", "The camera used if non fisheye, but the calibration flags are for fisheye camera. Use CalibrationFlagsController instead.");
+        }
+        if (ArucoCamera.IsFisheye && calibrationFlagsFisheyeController == null)
+        {
+          throw new ArgumentNullException("CalibrationFlagsController", "The camera used if fisheye, but the calibration flags are for non-fisheye camera. Use CalibrationFlagsFisheyeController instead.");
         }
 
         ResetCalibration();
@@ -332,8 +332,8 @@ namespace ArucoUnity
         // Create the camera parameters
         CameraParameters = new CameraParameters(ArucoCamera.CamerasNumber)
         {
-          //CalibrationFlags = (int)CalibrationFlagsController.CalibrationFlags, // TODO: fix
-          //FixAspectRatioValue = CalibrationFlagsController.FixAspectRatioValue, // TODO: fix
+          CalibrationFlagsValue = CalibrationFlagsController.CalibrationFlagsValue,
+          FixAspectRatioValue = (!ArucoCamera.IsFisheye) ? calibrationFlagsNonFisheyeController.FixAspectRatioValue : 0,
           ReprojectionError = reprojectionErrors,
           CamerasMatrix = camerasMatrix,
           DistCoeffs = distCoeffs

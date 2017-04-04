@@ -23,7 +23,7 @@ namespace ArucoUnity
       /// <summary>
       /// Create an empty CameraParameters and set <see cref="CalibrationDateTime"/> to now.
       /// </summary>
-      /// <remarks>The constructor is needed for the serialization.</remarks>
+      /// <remarks>This constructor is needed for the serialization.</remarks>
       public CameraParameters()
       {
       }
@@ -82,7 +82,7 @@ namespace ArucoUnity
       /// <summary>
       /// The calibration flags used.
       /// </summary>
-      public int CalibrationFlags { get; set; }
+      public int CalibrationFlagsValue { get; set; }
 
       /// <summary>
       /// Non null if there is a fix image aspect ratio.

@@ -133,6 +133,12 @@ namespace ArucoUnity
         }
       }
 
+      public override int CalibrationFlagsValue
+      {
+        get { return (int)calibrationFlags; }
+        set { calibrationFlags = (Cv.Calib3d.Calib)value; }
+      }
+
       protected override int FixKLength { get { return 6; } set { } }
 
       // Variables
