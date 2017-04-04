@@ -28,6 +28,10 @@ namespace ArucoUnity
       [Tooltip("Undistort automatically each image according to the camera parameters.")]
       private bool autoUndistortWithCameraParameters = true;
 
+      [SerializeField]
+      [Tooltip("Are the camera fisheye?")]
+      private bool isFisheye = false;
+
       // Events
 
       public delegate void CameraEventHandler();
@@ -88,6 +92,11 @@ namespace ArucoUnity
       /// True when the camera system is started.
       /// </summary>
       public bool IsStarted { get; protected set; }
+
+      /// <summary>
+      /// Are the camera fisheye?
+      /// </summary>
+      public bool IsFisheye { get { return isFisheye; } set { isFisheye = value; } }
 
       /// <summary>
       /// The images in a OpenCV format. When getting the property, a new Cv.Core.Mat is created for each image from the corresponding 
