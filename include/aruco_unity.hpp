@@ -306,8 +306,8 @@ extern "C" {
   //! \param imgPoints Vector of vectors of board marker points in the board coordinate space.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   ARUCO_UNITY_API void au_getBoardObjectAndImagePoints(const cv::Ptr<cv::aruco::Board>* board,
-    std::vector<std::vector<cv::Point2f>>* detectedCorners, std::vector<int>* detectedIds, cv::Mat** objPoints, cv::Mat** imgPoints,
-    cv::Exception* exception);
+    std::vector<std::vector<cv::Point2f>>* detectedCorners, std::vector<int>* detectedIds, std::vector<cv::Point3f>** objPoints,
+    std::vector<cv::Point2f>** imgPoints, cv::Exception* exception);
 
   //! \brief Interpolate position of ChArUco board corners
   //!

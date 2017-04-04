@@ -453,10 +453,10 @@ extern "C" {
   }
 
   void au_getBoardObjectAndImagePoints(const cv::Ptr<cv::aruco::Board>* board, std::vector<std::vector<cv::Point2f>>* detectedCorners,
-    std::vector<int>* detectedIds, cv::Mat** objPoints, cv::Mat** imgPoints, cv::Exception* exception) {
+    std::vector<int>* detectedIds, std::vector<cv::Point3f>** objPoints, std::vector<cv::Point2f>** imgPoints, cv::Exception* exception) {
     try {
-      *imgPoints = new cv::Mat();
-      *objPoints = new cv::Mat();
+      *objPoints = new std::vector<cv::Point3f>();
+      *imgPoints = new std::vector<cv::Point2f>();
       cv::aruco::getBoardObjectAndImagePoints(*board, *detectedCorners, *detectedIds, **objPoints, **imgPoints);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }

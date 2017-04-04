@@ -285,15 +285,15 @@ namespace ArucoUnity
       }
 
       public static void GetBoardObjectAndImagePoints(Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
-        out Cv.Core.Mat objPoints, out Cv.Core.Mat imgPoints)
+        out Std.VectorPoint3f objPoints, out Std.VectorPoint2f imgPoints)
       {
         Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr objPointsPtr, imgPointsPtr;
 
         au_getBoardObjectAndImagePoints(board.cppPtr, detectedCorners.cppPtr, detectedIds.cppPtr, out objPointsPtr, out imgPointsPtr,
           exception.cppPtr);
-        objPoints = new Cv.Core.Mat(objPointsPtr);
-        imgPoints = new Cv.Core.Mat(imgPointsPtr);
+        objPoints = new Std.VectorPoint3f(objPointsPtr);
+        imgPoints = new Std.VectorPoint2f(imgPointsPtr);
 
         exception.Check();
       }
