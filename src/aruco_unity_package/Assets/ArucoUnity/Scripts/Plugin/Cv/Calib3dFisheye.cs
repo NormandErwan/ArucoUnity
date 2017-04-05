@@ -33,11 +33,11 @@ namespace ArucoUnity
 
           [DllImport("ArucoUnity")]
           static extern double au_cv_calib3d_fisheye_calibrate(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr image_size,
-            System.IntPtr K, System.IntPtr D, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags, System.IntPtr criteria,
-            System.IntPtr exception);
+            System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
+            System.IntPtr criteria, System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
-          static extern void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(System.IntPtr K, System.IntPtr D,
+          static extern void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
             System.IntPtr image_size, System.IntPtr R, out System.IntPtr P, double balance, System.IntPtr new_size, double fov_scale,
             System.IntPtr exception);
 
@@ -47,14 +47,15 @@ namespace ArucoUnity
 
           [DllImport("ArucoUnity")]
           static extern double au_cv_calib3d_fisheye_stereoCalibrate(System.IntPtr objectPoints, System.IntPtr imagePoints1,
-            System.IntPtr imagePoints2, out System.IntPtr K1, out System.IntPtr D1, out System.IntPtr K2, out System.IntPtr D2,
-            System.IntPtr imageSize, out System.IntPtr R, out System.IntPtr T, int flags, System.IntPtr criteria, System.IntPtr exception);
+            System.IntPtr imagePoints2, System.IntPtr cameraMatrix1, System.IntPtr distCoeffs1, System.IntPtr cameraMatrix2,
+            System.IntPtr distCoeffs2, System.IntPtr imageSize, out System.IntPtr R, out System.IntPtr T, int flags, System.IntPtr criteria,
+            System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
-          static extern void au_cv_calib3d_fisheye_stereoRectify(System.IntPtr K1, System.IntPtr D1, System.IntPtr K2, System.IntPtr D2,
-            System.IntPtr imageSize, System.IntPtr R, System.IntPtr tvec, out System.IntPtr R1, out System.IntPtr R2, out System.IntPtr P1,
-            out System.IntPtr P2, out System.IntPtr Q, int flags, System.IntPtr newImageSize, double balance, double fov_scale,
-            System.IntPtr exception);
+          static extern void au_cv_calib3d_fisheye_stereoRectify(System.IntPtr cameraMatrix1, System.IntPtr distCoeffs1,
+            System.IntPtr cameraMatrix2, System.IntPtr distCoeffs2, System.IntPtr imageSize, System.IntPtr R, System.IntPtr tvec,
+            out System.IntPtr R1, out System.IntPtr R2, out System.IntPtr P1, out System.IntPtr P2, out System.IntPtr Q, int flags,
+            System.IntPtr newImageSize, double balance, double fovScale, System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_calib3d_fisheye_undistortImage(System.IntPtr distorted, out System.IntPtr undistorted,
@@ -107,19 +108,16 @@ namespace ArucoUnity
           }
 
           public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
-            Std.VectorVectorPoint2f imagePoints2, out Core.Mat K1, out Core.Mat D1, out Core.Mat K2, out Core.Mat D2, Core.Size imageSize, 
-            out Core.Mat rvec, out Core.Mat tvec, Calib flags = Calib.FixIntrinsic, Core.TermCriteria criteria = null)
+            Std.VectorVectorPoint2f imagePoints2, Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+            Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, Calib flags = Calib.FixIntrinsic, Core.TermCriteria criteria = null)
           {
             criteria = (criteria != null) ? criteria : new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
             Core.Exception exception = new Core.Exception();
-            System.IntPtr K1Ptr, D1Ptr, K2Ptr, D2Ptr, rvecPtr, tvecPtr;
+            System.IntPtr rvecPtr, tvecPtr;
 
-            double error = au_cv_calib3d_fisheye_stereoCalibrate(objectPoints.cppPtr, imagePoints1.cppPtr, imagePoints2.cppPtr, out K1Ptr, 
-              out D1Ptr, out K2Ptr, out D2Ptr, imageSize.cppPtr, out rvecPtr, out tvecPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
-            K1 = new Core.Mat(K1Ptr);
-            D1 = new Core.Mat(D1Ptr);
-            K2 = new Core.Mat(K2Ptr);
-            D2 = new Core.Mat(D2Ptr);
+            double error = au_cv_calib3d_fisheye_stereoCalibrate(objectPoints.cppPtr, imagePoints1.cppPtr, imagePoints2.cppPtr, cameraMatrix1.cppPtr,
+              distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr, out rvecPtr, out tvecPtr, (int)flags, criteria.cppPtr,
+              exception.cppPtr);
             rvec = new Core.Mat(rvecPtr);
             tvec = new Core.Mat(tvecPtr);
 
@@ -127,15 +125,15 @@ namespace ArucoUnity
             return error;
           }
 
-          public static void StereoRectify(Core.Mat K1, Core.Mat D1, Core.Mat K2, Core.Mat D2, Core.Size imageSize, Core.Mat rvec, Core.Mat tvec,
-            out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q, StereoRectifyFlags flags,
-            Core.Size newImageSize = null, double balance = 0.0, double fovScale = 1.0)
+          public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+            Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
+            StereoRectifyFlags flags, Core.Size newImageSize = null, double balance = 0.0, double fovScale = 1.0)
           {
             newImageSize = (newImageSize != null) ? newImageSize : new Core.Size();
             Core.Exception exception = new Core.Exception();
             System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
-            au_cv_calib3d_fisheye_stereoRectify(K1.cppPtr, D1.cppPtr, K2.cppPtr, D2.cppPtr, imageSize.cppPtr, rvec.cppPtr, tvec.cppPtr, out R1Ptr, 
+            au_cv_calib3d_fisheye_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr, rvec.cppPtr, tvec.cppPtr, out R1Ptr, 
               out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, newImageSize.cppPtr, balance, fovScale, exception.cppPtr);
             R1 = new Core.Mat(R1Ptr);
             R2 = new Core.Mat(R2Ptr);

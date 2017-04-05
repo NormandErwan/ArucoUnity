@@ -59,8 +59,8 @@ extern "C" {
     double error = 0;
     try {
       *R = new cv::Mat(), *T = new cv::Mat(), *E = new cv::Mat(), *F = new cv::Mat();
-      error = cv::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, **R,
-        **T, **E, **F, flags, *criteria);
+      error = cv::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2,
+        *imageSize, **R, **T, **E, **F, flags, *criteria);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return error;
@@ -73,18 +73,18 @@ extern "C" {
     cv::Rect* validPixROI1, cv::Rect* validPixROI2, cv::Exception* exception) {
     try {
       *R1 = new cv::Mat(), *R2 = new cv::Mat(), *P1 = new cv::Mat(), *P2 = new cv::Mat(), *Q = new cv::Mat();
-      cv::stereoRectify(*cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, *R, *tvec, **R1, **R2, **P1, **P2, **Q, 
-        flags, alpha, *newImageSize, validPixROI1, validPixROI2);
+      cv::stereoRectify(*cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, *R, *tvec, **R1, **R2, **P1, **P2, **Q, flags,
+        alpha, *newImageSize, validPixROI1, validPixROI2);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
   double au_cv_calib3d_fisheye_calibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* image_size, cv::Mat* K, cv::Mat* D, std::vector<cv::Mat>** rvecs,
-    std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
+    std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
-      error = cv::fisheye::calibrate(*objectPoints, *imagePoints, *image_size, *K, *D, **rvecs, **tvecs, flags, *criteria);
+      error = cv::fisheye::calibrate(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
@@ -93,11 +93,11 @@ extern "C" {
     return error;
   }
 
-  void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cv::Mat* K, cv::Mat* D, cv::Size* image_size, cv::Mat* R,
-    cv::Mat** P, double balance, cv::Size* new_size, double fov_scale, cv::Exception* exception) {
+  void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Size* imageSize,
+    cv::Mat* R, cv::Mat** P, double balance, cv::Size* newSize, double fovScale, cv::Exception* exception) {
     try {
       *P = new cv::Mat();
-      cv::fisheye::estimateNewCameraMatrixForUndistortRectify(*K, *D, *image_size, *R, **P, balance, *new_size, fov_scale);
+      cv::fisheye::estimateNewCameraMatrixForUndistortRectify(*cameraMatrix, *distCoeffs, *imageSize, *R, **P, balance, *newSize, fovScale);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
@@ -110,13 +110,14 @@ extern "C" {
   }
 
   double au_cv_calib3d_fisheye_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
-    std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat** K1, cv::Mat** D1,
-    cv::Mat** K2, cv::Mat** D2, cv::Size* imageSize, cv::Mat** R, cv::Mat** T, int flags, cv::TermCriteria* criteria, cv::Exception* exception) {
+    std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat* cameraMatrix1,
+    cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2, cv::Size* imageSize, cv::Mat** R, cv::Mat** T, int flags,
+    cv::TermCriteria* criteria, cv::Exception* exception) {
     double error = 0;
     try {
-      *K1 = new cv::Mat(), *D1 = new cv::Mat(), *K2 = new cv::Mat(), *D2 = new cv::Mat(), *R = new cv::Mat();
-      error = cv::fisheye::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, **K1, **D1, **K2, **D2, *imageSize, **R, **T, flags, 
-        *criteria);
+      *R = new cv::Mat(), *T = new cv::Mat();
+      error = cv::fisheye::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2,
+        *imageSize, **R, **T, flags, *criteria);
     }
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
@@ -125,13 +126,13 @@ extern "C" {
     return error;
   }
 
-  void au_cv_calib3d_fisheye_stereoRectify(cv::Mat* K1, cv::Mat* D1, cv::Mat* K2, cv::Mat* D2, cv::Size* imageSize, cv::Mat* R,
-    cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, cv::Size* newImageSize, double balance,
-    double fov_scale, cv::Exception* exception) {
+  void au_cv_calib3d_fisheye_stereoRectify(cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2,
+    cv::Size* imageSize, cv::Mat* R, cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags,
+    cv::Size* newImageSize, double balance, double fovScale, cv::Exception* exception) {
     try {
       *R1 = new cv::Mat(), *R2 = new cv::Mat(), *P1 = new cv::Mat(), *P2 = new cv::Mat(), *Q = new cv::Mat();
-      cv::fisheye::stereoRectify(*K1, *D1, *K2, *D2, *imageSize, *R, *tvec, **R1, **R2, **P1, **P2, **Q, flags, *newImageSize,
-        balance, fov_scale);
+      cv::fisheye::stereoRectify(*cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2, *imageSize, *R, *tvec, **R1, **R2, **P1, **P2, **Q,
+        flags, *newImageSize, balance, fovScale);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 

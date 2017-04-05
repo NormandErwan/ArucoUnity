@@ -148,8 +148,8 @@ namespace ArucoUnity
           tvec = new Core.Mat(tvecPtr);
           E = new Core.Mat(EPtr);
           F = new Core.Mat(FPtr);
-          exception.Check();
 
+          exception.Check();
           return error;
         }
 
