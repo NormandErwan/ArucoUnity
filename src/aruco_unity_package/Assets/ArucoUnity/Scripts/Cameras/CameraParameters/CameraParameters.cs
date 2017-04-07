@@ -20,6 +20,7 @@ namespace ArucoUnity
     public class CameraParameters
     {
       // Constructors
+
       /// <summary>
       /// Create an empty CameraParameters and set <see cref="CalibrationDateTime"/> to now.
       /// </summary>
@@ -95,20 +96,20 @@ namespace ArucoUnity
       /// <summary>
       /// The average re-projection error of the calibration.
       /// </summary>
-      public double[] ReprojectionError { get; set; }
+      public double[] ReprojectionErrors { get; set; }
 
       /// <summary>
-      /// The camera matrix of the calibration.
+      /// The camera matrices of the calibration.
       /// </summary>
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatricesType"/> and 
       /// <see cref="CameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
       public Cv.Core.Mat[] CameraMatrices
       {
-        get { return cameraMatrix; }
+        get { return cameraMatrices; }
         set
         {
-          cameraMatrix = value;
+          cameraMatrices = value;
           UpdateCameraMatrixDerivedVariables();
         }
       }
@@ -150,6 +151,11 @@ namespace ArucoUnity
       public double[][][] DistCoeffsValues { get; set; }
 
       /// <summary>
+      /// Parameters from stereo calibration on the camera system.
+      /// </summary>
+      public StereoCameraParameters[] StereoCameraParameters { get; set; }
+
+      /// <summary>
       /// The camera focal length expressed in pixels coordinates. Equals to <see cref="CameraMatrices.AtDouble(0, 0)"/> on the x-axis
       /// and to to <see cref="CameraMatrices.AtDouble(1, 1)"/> on the y-axis.
       /// </summary>
@@ -178,7 +184,7 @@ namespace ArucoUnity
       // Variables
 
       protected int[] imageHeight, imageWidth;
-      protected Cv.Core.Mat[] cameraMatrix;
+      protected Cv.Core.Mat[] cameraMatrices;
 
       // Methods
 
@@ -214,43 +220,18 @@ namespace ArucoUnity
         cameraParameters.FilePath = cameraParametersFilePath;
 
         // Populate non-serialized properties
-        cameraParameters.CameraMatrices = new Cv.Core.Mat[cameraParameters.CameraNumber];
-        cameraParameters.DistCoeffs = new Cv.Core.Mat[cameraParameters.CameraNumber];
         cameraParameters.CameraFocalLengths = new Vector2[cameraParameters.CameraNumber];
         cameraParameters.CameraOpticalCenters = new Vector2[cameraParameters.CameraNumber];
         cameraParameters.OpticalCenters = new Vector3[cameraParameters.CameraNumber];
-
-        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
-        {
-          // Update CameraMatrices
-          int cameraMatrixRows = cameraParameters.CameraMatricesValues[cameraId].Length,
-              cameraMatrixCols = cameraParameters.CameraMatricesValues[cameraId][0].Length;
-
-          cameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat();
-          cameraParameters.CameraMatrices[cameraId].Create(cameraMatrixRows, cameraMatrixCols, cameraParameters.CameraMatricesType);
-          for (int i = 0; i < cameraMatrixRows; i++)
-          {
-            for (int j = 0; j < cameraMatrixCols; j++)
-            {
-              cameraParameters.CameraMatrices[cameraId].AtDouble(i, j, cameraParameters.CameraMatricesValues[cameraId][i][j]);
-            }
-          }
-
-          // Update DistCoeffs
-          int distCoeffsRows = cameraParameters.DistCoeffsValues[cameraId].Length,
-              distCoeffsCols = cameraParameters.DistCoeffsValues[cameraId][0].Length;
-
-          cameraParameters.DistCoeffs[cameraId] = new Cv.Core.Mat();
-          cameraParameters.DistCoeffs[cameraId].Create(distCoeffsRows, distCoeffsCols, cameraParameters.DistCoeffsType);
-          for (int i = 0; i < distCoeffsRows; i++)
-          {
-            for (int j = 0; j < distCoeffsCols; j++)
-            {
-              cameraParameters.DistCoeffs[cameraId].AtDouble(i, j, cameraParameters.DistCoeffsValues[cameraId][i][j]);
-            }
-          }
-        }
+        cameraParameters.CameraMatrices = CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
+        cameraParameters.DistCoeffs = CreateProperty(cameraParameters.DistCoeffsType, cameraParameters.DistCoeffsValues);
         cameraParameters.UpdateCameraMatrixDerivedVariables();
+
+        // Populate non-serialized properties of the stereo camera parameters
+        foreach (var currentStereoCameraParameters in cameraParameters.StereoCameraParameters)
+        {
+          currentStereoCameraParameters.UpdateNonSerializedProperties();
+        }
 
         return cameraParameters;
       }
@@ -262,40 +243,18 @@ namespace ArucoUnity
       /// <exception cref="ArgumentException">If the camera parameters couldn't be saved because of a wrong file path.</exception>
       public void SaveToXmlFile(string cameraParametersFilePath)
       {
-        // Update CameraMatricesValues and CameraMatricesType
+        // Update CameraMatrixValues and CameraMatrixType
         CameraMatricesType = CameraMatrices[0].Type();
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          int cameraMatrixRows = CameraMatrices[cameraId].rows,
-              cameraMatrixCols = CameraMatrices[cameraId].cols;
-
-          CameraMatricesValues[cameraId] = new double[cameraMatrixRows][];
-          for (int i = 0; i < cameraMatrixRows; i++)
-          {
-            CameraMatricesValues[cameraId][i] = new double[cameraMatrixCols];
-            for (int j = 0; j < cameraMatrixCols; j++)
-            {
-              CameraMatricesValues[cameraId][i][j] = CameraMatrices[cameraId].AtDouble(i, j);
-            }
-          }
-        }
+        UpdatePropertyValues(CameraMatrices, CameraMatricesValues);
 
         // Update DistCoeffsValues and DistCoeffsType
         DistCoeffsType = DistCoeffs[0].Type();
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          int distCoeffsRows = DistCoeffs[cameraId].rows,
-            distCoeffsCols = DistCoeffs[cameraId].cols;
+        UpdatePropertyValues(DistCoeffs, DistCoeffsValues);
 
-          DistCoeffsValues[cameraId] = new double[distCoeffsRows][];
-          for (int i = 0; i < distCoeffsRows; i++)
-          {
-            DistCoeffsValues[cameraId][i] = new double[distCoeffsCols];
-            for (int j = 0; j < distCoeffsCols; j++)
-            {
-              DistCoeffsValues[cameraId][i][j] = DistCoeffs[cameraId].AtDouble(i, j);
-            }
-          }
+        // Update properties for serialization of the stereo camera parameters
+        foreach (var currentStereoCameraParameters in StereoCameraParameters)
+        {
+          currentStereoCameraParameters.UpdateSerializedProperties();
         }
 
         // Try to serialize the object and save it to the file
@@ -337,6 +296,46 @@ namespace ArucoUnity
           // TODO: take account of FixAspectRatio
           OpticalCenters[cameraId] = new Vector3(CameraOpticalCenters[cameraId].x / ImageWidths[cameraId], CameraOpticalCenters[cameraId].y / ImageHeights[cameraId], CameraFocalLengths[cameraId].y);
         }
+      }
+
+      protected void UpdatePropertyValues(Cv.Core.Mat[] property, double[][][] propertyValues)
+      {
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          int rows = property[cameraId].rows,
+              cols = property[cameraId].cols;
+          propertyValues[cameraId] = new double[rows][];
+          for (int i = 0; i < rows; i++)
+          {
+            propertyValues[cameraId][i] = new double[cols];
+            for (int j = 0; j < cols; j++)
+            {
+              propertyValues[cameraId][i][j] = property[cameraId].AtDouble(i, j);
+            }
+          }
+        }
+      }
+
+      protected static Cv.Core.Mat[] CreateProperty(Cv.Core.Type propertyType, double[][][] propertyValues)
+      {
+        int cameraNumber = propertyValues.Length,
+            rows = propertyValues[0].Length,
+            cols = propertyValues[0][0].Length;
+
+        Cv.Core.Mat[] property = new Cv.Core.Mat[cameraNumber];
+        for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
+        {
+          property[cameraId] = new Cv.Core.Mat(rows, cols, propertyType);
+          for (int i = 0; i < rows; i++)
+          {
+            for (int j = 0; j < cols; j++)
+            {
+              property[cameraId].AtDouble(i, j, propertyValues[cameraId][i][j]);
+            }
+          }
+        }
+
+        return property;
       }
     }
   }
