@@ -32,9 +32,9 @@ namespace ArucoUnity
       // ArucoCamera properties implementation
 
       /// <summary>
-      /// <see cref="ArucoCamera.CamerasNumber"/>
+      /// <see cref="ArucoCamera.CameraNumber"/>
       /// </summary>
-      public override int CamerasNumber { get { return 1; } protected set { } }
+      public override int CameraNumber { get { return 1; } protected set { } }
 
       /// <summary>
       /// <see cref="ArucoCamera.Name"/>
@@ -133,8 +133,8 @@ namespace ArucoUnity
       {
         startInitiated = false;
 
-        ImageTextures = new Texture2D[CamerasNumber];
-        ImageCameras = new Camera[CamerasNumber];
+        ImageTextures = new Texture2D[CameraNumber];
+        ImageCameras = new Camera[CameraNumber];
         ImageCameras[cameraId] = GetComponent<Camera>();
 
         base.Awake();
@@ -264,7 +264,7 @@ namespace ArucoUnity
       protected void ConfigureCameraPlane()
       {
         // Use the image texture's width as a default value if there is no camera parameters
-        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CamerasFocalLength[cameraId].y : ImageTextures[cameraId].width;
+        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFocalLengths[cameraId].y : ImageTextures[cameraId].width;
 
         // Configure the CameraImage according to the camera parameters
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera

@@ -76,7 +76,7 @@ namespace ArucoUnity
       /// <summary>
       /// The number of cameras in the system.
       /// </summary>
-      public abstract int CamerasNumber { get; protected set; }
+      public abstract int CameraNumber { get; protected set; }
 
       /// <summary>
       /// The name of the camera system used.
@@ -110,9 +110,9 @@ namespace ArucoUnity
         }
         set
         {
-          if (images != null && value != null && value.Length == CamerasNumber)
+          if (images != null && value != null && value.Length == CameraNumber)
           {
-            for (int i = 0; i < CamerasNumber; i++)
+            for (int i = 0; i < CameraNumber; i++)
             {
               images[i] = value[i];
             }
@@ -189,7 +189,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        for (int i = 0; i < CamerasNumber; i++)
+        for (int i = 0; i < CameraNumber; i++)
         {
           // Convert back to the images from OpenCV's right-handed coordinate system to Unity's left-handed coordinate system
           int verticalFlipCode = 0;
@@ -266,7 +266,7 @@ namespace ArucoUnity
           return;
         }
 
-        for (int i = 0; i < CamerasNumber; i++)
+        for (int i = 0; i < CameraNumber; i++)
         {
           Cv.Imgproc.Remap(Images[i], undistordedImages[i], undistordedImageMaps[i][0], undistordedImageMaps[i][1], Cv.Imgproc.InterpolationFlags.Linear);
         }
@@ -308,7 +308,7 @@ namespace ArucoUnity
       /// </summary>
       protected void OnImagesUpdated()
       {
-        for (int i = 0; i < CamerasNumber; i++)
+        for (int i = 0; i < CameraNumber; i++)
         {
           images[i].dataByte = ImageTextures[i].GetRawTextureData();
           if (flipCode != null)
@@ -355,18 +355,18 @@ namespace ArucoUnity
       /// </summary>
       protected void InitializeMatImages()
       {
-        images = new Cv.Core.Mat[CamerasNumber];
-        imageDataSizes = new int[CamerasNumber];
+        images = new Cv.Core.Mat[CameraNumber];
+        imageDataSizes = new int[CameraNumber];
 
         Cv.Core.Mat undistordedImageRectifications = null;
         if (CameraParameters != null)
         {
-          undistordedImages = new Cv.Core.Mat[CamerasNumber];
-          undistordedImageMaps = new Cv.Core.Mat[CamerasNumber][];
+          undistordedImages = new Cv.Core.Mat[CameraNumber];
+          undistordedImageMaps = new Cv.Core.Mat[CameraNumber][];
           undistordedImageRectifications = new Cv.Core.Mat();
         }
 
-        for (int cameraId = 0; cameraId < CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           // Init the images
           byte[] imageData = ImageTextures[cameraId].GetRawTextureData();
@@ -380,14 +380,14 @@ namespace ArucoUnity
             undistordedImageMaps[cameraId] = new Cv.Core.Mat[2]; // map1 and map2
             if (!IsFisheye)
             {
-              Cv.Imgproc.InitUndistortRectifyMap(CameraParameters.CamerasMatrix[cameraId], CameraParameters.DistCoeffs[cameraId],
-                undistordedImageRectifications, CameraParameters.CamerasMatrix[cameraId], Images[cameraId].size, Cv.Core.Type.CV_16SC2,
+              Cv.Imgproc.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
+                undistordedImageRectifications, CameraParameters.CameraMatrices[cameraId], Images[cameraId].size, Cv.Core.Type.CV_16SC2,
                 out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
             }
             else
             {
-              Cv.Calib3d.Fisheye.InitUndistortRectifyMap(CameraParameters.CamerasMatrix[cameraId], CameraParameters.DistCoeffs[cameraId],
-                undistordedImageRectifications, CameraParameters.CamerasMatrix[cameraId], Images[cameraId].size, Cv.Core.Type.CV_16SC2,
+              Cv.Calib3d.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
+                undistordedImageRectifications, CameraParameters.CameraMatrices[cameraId], Images[cameraId].size, Cv.Core.Type.CV_16SC2,
                 out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
             }
             undistordedImages[cameraId] = new Cv.Core.Mat(undistordedImageMaps[cameraId][0].size, ImageType(ImageTextures[cameraId]));

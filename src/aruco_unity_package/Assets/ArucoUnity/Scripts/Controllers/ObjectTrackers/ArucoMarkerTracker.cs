@@ -58,7 +58,7 @@ namespace ArucoUnity
       {
         base.ArucoObjectController_DictionaryAdded(dictionary);
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId].Add(dictionary, new Std.VectorVectorPoint2f());
           MarkerIds[cameraId].Add(dictionary, new Std.VectorInt());
@@ -77,7 +77,7 @@ namespace ArucoUnity
       {
         base.ArucoObjectController_DictionaryRemoved(dictionary);
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId].Remove(dictionary);
           MarkerIds[cameraId].Remove(dictionary);
@@ -98,14 +98,14 @@ namespace ArucoUnity
         base.Activate(arucoTracker);
 
         // Initialize the properties and the ArUco objects
-        MarkerCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
-        MarkerIds = new Dictionary<Aruco.Dictionary, Std.VectorInt>[arucoTracker.ArucoCamera.CamerasNumber];
-        RejectedCandidateCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
-        MarkerRvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
-        MarkerTvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
-        DetectedMarkers = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CamerasNumber];
+        MarkerCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CameraNumber];
+        MarkerIds = new Dictionary<Aruco.Dictionary, Std.VectorInt>[arucoTracker.ArucoCamera.CameraNumber];
+        RejectedCandidateCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CameraNumber];
+        MarkerRvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CameraNumber];
+        MarkerTvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CameraNumber];
+        DetectedMarkers = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CameraNumber];
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>();
           MarkerIds[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorInt>();
@@ -179,7 +179,7 @@ namespace ArucoUnity
 
         Std.VectorVec3d rvecs, tvecs;
         Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
-          cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
+          cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
         MarkerRvecs[cameraId][dictionary] = rvecs;
         MarkerTvecs[cameraId][dictionary] = tvecs;

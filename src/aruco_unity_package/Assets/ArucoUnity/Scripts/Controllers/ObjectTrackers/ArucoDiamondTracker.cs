@@ -42,7 +42,7 @@ namespace ArucoUnity
       {
         base.ArucoObjectController_DictionaryAdded(dictionary);
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           DiamondIds[cameraId].Add(dictionary, new Std.VectorVec4i());
           DetectedDiamonds[cameraId].Add(dictionary, 0);
@@ -55,7 +55,7 @@ namespace ArucoUnity
       {
         base.ArucoObjectController_DictionaryRemoved(dictionary);
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           DiamondIds[cameraId].Remove(dictionary);
           DetectedDiamonds[cameraId].Remove(dictionary);
@@ -73,13 +73,13 @@ namespace ArucoUnity
       {
         base.Activate(arucoTracker);
 
-        DiamondCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CamerasNumber];
-        DiamondIds = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>[arucoTracker.ArucoCamera.CamerasNumber];
-        DetectedDiamonds = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CamerasNumber];
-        DiamondRvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
-        DiamondTvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CamerasNumber];
+        DiamondCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoTracker.ArucoCamera.CameraNumber];
+        DiamondIds = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>[arucoTracker.ArucoCamera.CameraNumber];
+        DetectedDiamonds = new Dictionary<Aruco.Dictionary, int>[arucoTracker.ArucoCamera.CameraNumber];
+        DiamondRvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CameraNumber];
+        DiamondTvecs = new Dictionary<Aruco.Dictionary, Std.VectorVec3d>[arucoTracker.ArucoCamera.CameraNumber];
 
-        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           DiamondCorners[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>();
           DiamondIds[cameraId] = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>();
@@ -140,7 +140,7 @@ namespace ArucoUnity
           {
             Aruco.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
               arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DETECT_SQUARE_MARKER_LENGTH_RATE, out diamondCorners, out diamondIds,
-              cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId]);
+              cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId]);
           }
         }
 
@@ -165,7 +165,7 @@ namespace ArucoUnity
         Std.VectorVec3d diamondRvecs = null, diamondTvecs = null;
         if (DetectedDiamonds[cameraId][dictionary] > 0)
         {
-          Aruco.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters.CamerasMatrix[cameraId],
+          Aruco.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], ESTIMATE_POSE_SQUARE_LENGTH, cameraParameters.CameraMatrices[cameraId],
             cameraParameters.DistCoeffs[cameraId], out diamondRvecs, out diamondTvecs);
         }
 
@@ -201,7 +201,7 @@ namespace ArucoUnity
           {
             for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
             {
-              Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId],
+              Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
               DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DRAW_AXIS_LENGTH);
               updatedCameraImage = true;
             }

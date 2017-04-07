@@ -344,7 +344,7 @@ namespace ArucoUnity
           return;
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
@@ -370,7 +370,7 @@ namespace ArucoUnity
           return;
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
@@ -396,7 +396,7 @@ namespace ArucoUnity
           return;
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {

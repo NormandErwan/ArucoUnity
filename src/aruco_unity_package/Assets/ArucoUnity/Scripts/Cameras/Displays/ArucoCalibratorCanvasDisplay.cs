@@ -72,11 +72,11 @@ namespace ArucoUnity
 
         // Configure the images display
         ArucoCamera arucoCamera = arucoCalibrator.ArucoCamera;
-        calibrationReprojectionErrorTexts = new Text[arucoCamera.CamerasNumber];
+        calibrationReprojectionErrorTexts = new Text[arucoCamera.CameraNumber];
 
         // Configure the arucoCameraImagesRect as a grid of images
         int gridCols = 1, gridRows = 1;
-        for (int i = 0; i < arucoCamera.CamerasNumber; i++)
+        for (int i = 0; i < arucoCamera.CameraNumber; i++)
         {
           if (gridCols * gridRows > i)
           {
@@ -94,7 +94,7 @@ namespace ArucoUnity
         Vector2 gridCellSize = new Vector2(1f / gridCols, 1f / gridRows);
 
         // Configure the cells of the grid of images
-        for (int cameraId = 0; cameraId < arucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
         {
           int cellCol = cameraId % gridCols; // Range : 0 to (gridCols - 1), images from left ot right
           int cellRow = (gridRows - 1) - (cameraId / gridCols); // Range : (gridRows - 1) to 0, images from top to bottom
@@ -201,9 +201,9 @@ namespace ArucoUnity
       /// </summary>
       private void UpdateCalibrationReprojectionErrorText()
       {
-        for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CamerasNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CameraNumber; cameraId++)
         {
-          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CamerasNumber + "\n"
+          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CameraNumber + "\n"
            + "Reprojection error: " + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionError[cameraId].ToString("F3") : "0.000");
         }
       }

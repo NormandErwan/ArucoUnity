@@ -50,7 +50,7 @@ namespace ArucoUnity
         {
           Cv.Core.Vec3d rvec = null, tvec = null;
           arucoGridBoard.MarkersUsedForEstimation = Aruco.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-            arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters.CamerasMatrix[cameraId],
+            arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters.CameraMatrices[cameraId],
             cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
 
           arucoGridBoard.Rvec = rvec;
@@ -76,7 +76,7 @@ namespace ArucoUnity
         {
           if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
           {
-            Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId],
+            Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
               arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
             updatedCameraImage = true;
           }

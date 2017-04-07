@@ -49,7 +49,7 @@ namespace ArucoUnity
             {
               arucoCharucoBoard.InterpolatedCorners = Aruco.InterpolateCornersCharuco(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
                 arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId], (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners,
-                out charucoIds, cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId]);
+                out charucoIds, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId]);
             }
           }
           else
@@ -78,7 +78,7 @@ namespace ArucoUnity
         {
           Cv.Core.Vec3d rvec, tvec;
           arucoCharucoBoard.ValidTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
-            (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
+            (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
 
           arucoCharucoBoard.Rvec = rvec;
           arucoCharucoBoard.Tvec = tvec;
@@ -111,7 +111,7 @@ namespace ArucoUnity
 
             if (arucoTracker.DrawAxes && cameraParameters != null && arucoCharucoBoard.ValidTransform)
             {
-              Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CamerasMatrix[cameraId], cameraParameters.DistCoeffs[cameraId],
+              Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
                 arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
               updatedCameraImage = true;
             }
