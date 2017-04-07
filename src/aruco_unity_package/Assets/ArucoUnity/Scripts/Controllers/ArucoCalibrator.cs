@@ -119,13 +119,13 @@ namespace ArucoUnity
         }
         if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController == null)
         {
-          throw new ArgumentException("CalibrationFlagsController", "The camera used if non fisheye, but the calibration flags are for fisheye"
-            + " camera. Use CalibrationFlagsController instead.");
+          throw new ArgumentException("CalibrationFlagsController", "The camera used is non fisheye, but the calibration flags are for fisheye"
+            + " cameras. Use CalibrationFlagsController instead.");
         }
         if (ArucoCamera.IsFisheye && calibrationFlagsFisheyeController == null)
         {
-          throw new ArgumentException("CalibrationFlagsController", "The camera used if fisheye, but the calibration flags are for non-fisheye"
-            + " camera. Use CalibrationFlagsFisheyeController instead.");
+          throw new ArgumentException("CalibrationFlagsController", "The camera used is fisheye, but the calibration flags are for non-fisheye"
+            + " cameras. Use CalibrationFlagsFisheyeController instead.");
         }
 
         // Check for the stereo calibration properties
@@ -222,6 +222,9 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Add the current frame and the detected corners for the calibration.
+      /// </summary>
       public void AddFrameForCalibration()
       {
         if (!IsConfigured || IsCalibrated)
@@ -229,17 +232,20 @@ namespace ArucoUnity
           return;
         }
 
+        // Check for validity
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        {
+          if (MarkerIdsCurrentImage[cameraId] == null || MarkerIdsCurrentImage[cameraId].Size() < 1)
+          {
+            throw new Exception("Not enough markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
+              + " frame for calibration. It requires more than one marker detected.");
+          }
+        }
+
+        // Add the current frame for calibration
         Cv.Core.Mat[] cameraImages = ArucoCamera.Images;
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() < 1)
-          {
-            // TODO: exception
-            Debug.LogWarning("Not enough markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the frame for "
-              + "calibration. It requires more than one marker detected.");
-            continue;
-          }
-
           MarkerCorners[cameraId].PushBack(MarkerCornersCurrentImage[cameraId]);
           MarkerIds[cameraId].PushBack(MarkerIdsCurrentImage[cameraId]);
           CameraImages[cameraId].PushBack(ArucoCamera.Images[cameraId]);
@@ -261,7 +267,7 @@ namespace ArucoUnity
             throw new Exception("Need at least one frame captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
               + " to calibrate.");
           }
-          else if (charucoBoard == null && MarkerIds[cameraId].Size() < 4)
+          else if (charucoBoard != null && MarkerIds[cameraId].Size() < 4)
           {
             throw new Exception("Need at least four frames captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
               + " to calibrate with a ChAruco board.");
