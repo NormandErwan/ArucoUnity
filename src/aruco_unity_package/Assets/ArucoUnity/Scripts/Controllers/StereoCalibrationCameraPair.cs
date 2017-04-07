@@ -156,8 +156,7 @@ namespace ArucoUnity
         // Prepare the camera parameters
         CameraParameters = new StereoCameraParameters()
         {
-          CameraId1 = CameraId1,
-          CameraId2 = CameraId2,
+          CameraIds = new int[] { CameraId1, CameraId2 },
           CalibrationFlagsValue = CalibrationFlagsController.CalibrationFlagsValue
         };
 
@@ -198,10 +197,8 @@ namespace ArucoUnity
         // Save the camera parameters
         CameraParameters.RotationMatrix = rvec;
         CameraParameters.TranslationVector = tvec;
-        CameraParameters.RotationMatrix1 = rotationMatrix1;
-        CameraParameters.RotationMatrix2 = rotationMatrix2;
-        CameraParameters.ProjectionMatrix1 = projectionMatrix1;
-        CameraParameters.ProjectionMatrix2 = projectionMatrix2;
+        CameraParameters.RotationMatrices = new Cv.Core.Mat[] { rotationMatrix1, rotationMatrix2 };
+        CameraParameters.ProjectionMatrices = new Cv.Core.Mat[] { projectionMatrix1, projectionMatrix2 };
       }
     }
   }

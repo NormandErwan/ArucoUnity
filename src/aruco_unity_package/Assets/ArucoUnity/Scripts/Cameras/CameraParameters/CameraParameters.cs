@@ -298,12 +298,14 @@ namespace ArucoUnity
         }
       }
 
-      protected void UpdatePropertyValues(Cv.Core.Mat[] property, double[][][] propertyValues)
+      internal static void UpdatePropertyValues(Cv.Core.Mat[] property, double[][][] propertyValues)
       {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        int cameraNumber = property.Length,
+            rows = property[0].rows,
+            cols = property[0].cols;
+
+        for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
         {
-          int rows = property[cameraId].rows,
-              cols = property[cameraId].cols;
           propertyValues[cameraId] = new double[rows][];
           for (int i = 0; i < rows; i++)
           {
@@ -316,7 +318,7 @@ namespace ArucoUnity
         }
       }
 
-      protected static Cv.Core.Mat[] CreateProperty(Cv.Core.Type propertyType, double[][][] propertyValues)
+      internal static Cv.Core.Mat[] CreateProperty(Cv.Core.Type propertyType, double[][][] propertyValues)
       {
         int cameraNumber = propertyValues.Length,
             rows = propertyValues[0].Length,

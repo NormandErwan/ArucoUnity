@@ -12,8 +12,16 @@ namespace ArucoUnity
     [Serializable]
     public class StereoCameraParameters
     {
+      // Const
+
+      public const int CAMERA_NUMBER = 2;
+
       // Constructors
 
+      /// <summary>
+      /// Create an empty StereoCameraParameters.
+      /// </summary>
+      /// <remarks>This constructor is needed for the serialization.</remarks>
       public StereoCameraParameters()
       {
       }
@@ -21,14 +29,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The id of first camera of the stereo pair.
+      /// The ids of the two cameras of the stereo pair.
       /// </summary>
-      public int CameraId1 { get; set; }
-
-      /// <summary>
-      /// The id of second camera of the stereo pair.
-      /// </summary>
-      public int CameraId2 { get; set; }
+      public int[] CameraIds { get; set; }
 
       /// <summary>
       /// The calibration flags used.
@@ -36,9 +39,9 @@ namespace ArucoUnity
       public int CalibrationFlagsValue { get; set; }
 
       /// <summary>
-      /// The rotation matrix between the 1st and the 2nd camera coordinate systems.
+      /// The rotation matrix between the first and the second camera coordinate systems.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="RotationMatrixType"/> and 
+      /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="RotationMatrixType"/> and 
       /// <see cref="RotationMatrixValues"/> properties.</remarks>
       [XmlIgnore]
       public Cv.Core.Mat RotationMatrix { get; set; }
@@ -50,7 +53,7 @@ namespace ArucoUnity
       /// <summary>
       /// The translation vector between the coordinate systems of the cameras. 
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="TranslationVectorType"/> and 
+      /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="TranslationVectorType"/> and 
       /// <see cref="TranslationVectorValues"/> properties.</remarks>
       [XmlIgnore]
       public Cv.Core.Mat TranslationVector { get; set; }
@@ -65,52 +68,28 @@ namespace ArucoUnity
       public double ReprojectionError { get; set; }
 
       /// <summary>
-      /// The rotation matrix (rectification transform) for the first camera.
+      /// The rotation matrix (rectification transform) for the two cameras of the stereo pair.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="RotationMatrix1Type"/> and 
-      /// <see cref="RotationMatrix1Values"/> properties.</remarks>
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="RotationMatrixType"/> and 
+      /// <see cref="RotationMatrixValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat RotationMatrix1 { get; set; }
+      public Cv.Core.Mat[] RotationMatrices { get; set; }
 
-      public Cv.Core.Type RotationMatrix1Type { get; set; }
+      public Cv.Core.Type RotationMatricesType { get; set; }
 
-      public double[][] RotationMatrix1Values { get; set; }
+      public double[][][] RotationMatricesValues { get; set; }
 
       /// <summary>
-      /// The rotation matrix (rectification transform) for the second camera.
+      /// Projection matrix in the new (rectified) coordinate systems for the two cameras of the stereo pair.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="RotationMatrix2Type"/> and 
-      /// <see cref="RotationMatrix2Values"/> properties.</remarks>
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="ProjectionMatricesType"/> and 
+      /// <see cref="ProjectionMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat RotationMatrix2 { get; set; }
+      public Cv.Core.Mat[] ProjectionMatrices { get; set; }
 
-      public Cv.Core.Type RotationMatrix2Type { get; set; }
+      public Cv.Core.Type ProjectionMatricesType { get; set; }
 
-      public double[][] RotationMatrix2Values { get; set; }
-
-      /// <summary>
-      /// Projection matrix in the new (rectified) coordinate systems for the first camera.
-      /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="ProjectionMatrix1Type"/> and 
-      /// <see cref="ProjectionMatrix1Values"/> properties.</remarks>
-      [XmlIgnore]
-      public Cv.Core.Mat ProjectionMatrix1 { get; set; }
-
-      public Cv.Core.Type ProjectionMatrix1Type { get; set; }
-
-      public double[][] ProjectionMatrix1Values { get; set; }
-
-      /// <summary>
-      /// Projection matrix in the new (rectified) coordinate systems for the second camera.
-      /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="ProjectionMatrix2Type"/> and 
-      /// <see cref="ProjectionMatrix2Values"/> properties.</remarks>
-      [XmlIgnore]
-      public Cv.Core.Mat ProjectionMatrix2 { get; set; }
-
-      public Cv.Core.Type ProjectionMatrix2Type { get; set; }
-
-      public double[][] ProjectionMatrix2Values { get; set; }
+      public double[][][] ProjectionMatricesValues { get; set; }
 
       // Methods
 
@@ -122,27 +101,21 @@ namespace ArucoUnity
         TranslationVectorType = TranslationVector.Type();
         TranslationVectorValues = PropertyValues(TranslationVector);
 
-        RotationMatrix1Type = RotationMatrix1.Type();
-        RotationMatrix1Values = PropertyValues(RotationMatrix1);
+        RotationMatricesType = RotationMatrices[0].Type();
+        RotationMatricesValues = new double[CAMERA_NUMBER][][];
+        CameraParameters.UpdatePropertyValues(RotationMatrices, RotationMatricesValues);
 
-        RotationMatrix2Type = RotationMatrix2.Type();
-        RotationMatrix2Values = PropertyValues(RotationMatrix2);
-
-        ProjectionMatrix1Type = ProjectionMatrix1.Type();
-        ProjectionMatrix1Values = PropertyValues(ProjectionMatrix1);
-
-        ProjectionMatrix2Type = ProjectionMatrix2.Type();
-        ProjectionMatrix2Values = PropertyValues(ProjectionMatrix2);
+        ProjectionMatricesType = ProjectionMatrices[0].Type();
+        ProjectionMatricesValues = new double[CAMERA_NUMBER][][];
+        CameraParameters.UpdatePropertyValues(ProjectionMatrices, ProjectionMatricesValues);
       }
 
       public void UpdateNonSerializedProperties()
       {
         RotationMatrix = CreateProperty(RotationMatrixType, RotationMatrixValues);
         TranslationVector = CreateProperty(TranslationVectorType, TranslationVectorValues);
-        RotationMatrix1 = CreateProperty(RotationMatrix1Type, RotationMatrix1Values);
-        RotationMatrix2 = CreateProperty(RotationMatrix2Type, RotationMatrix2Values);
-        ProjectionMatrix1 = CreateProperty(ProjectionMatrix1Type, ProjectionMatrix1Values);
-        ProjectionMatrix2 = CreateProperty(ProjectionMatrix2Type, ProjectionMatrix2Values);
+        RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
+        ProjectionMatrices = CameraParameters.CreateProperty(ProjectionMatricesType, ProjectionMatricesValues);
       }
 
       protected double[][] PropertyValues(Cv.Core.Mat property)
