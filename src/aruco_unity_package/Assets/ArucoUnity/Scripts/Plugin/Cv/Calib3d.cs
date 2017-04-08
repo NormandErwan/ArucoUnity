@@ -19,7 +19,6 @@ namespace ArucoUnity
           FixAspectRatio = 0x00002,
           FixPrincipalPoint = 0x00004,
           ZeroTangentDist = 0x00008,
-          FixFocalLength = 0x00010,
           FixK1 = 0x00020,
           FixK2 = 0x00040,
           FixK3 = 0x00080,
@@ -32,6 +31,7 @@ namespace ArucoUnity
           TiltedModel = 0x40000,
           FixTauxTauy = 0x80000,
           // Only for stereo
+          FixFocalLength = 0x00010,
           FixIntrinsic = 0x00100,
           SameFocalLength = 0x00200
         };

@@ -41,6 +41,16 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixTauxTauy = false;
 
+      [Header("Stereo only")]
+      [SerializeField]
+      private bool fixFocalLength = false;
+
+      [SerializeField]
+      private bool fixIntrinsic = false;
+
+      [SerializeField]
+      private bool sameFocalLength = false;
+
       // Properties
 
       public bool FixAspectRatio
@@ -123,6 +133,36 @@ namespace ArucoUnity
         }
       }
 
+      public bool FixFocalLength
+      {
+        get { return fixFocalLength; }
+        set
+        {
+          fixFocalLength = value;
+          UpdateCalibrationFlags();
+        }
+      }
+
+      public bool FixIntrinsic
+      {
+        get { return fixIntrinsic; }
+        set
+        {
+          fixIntrinsic = value;
+          UpdateCalibrationFlags();
+        }
+      }
+
+      public bool SameFocalLength
+      {
+        get { return sameFocalLength; }
+        set
+        {
+          sameFocalLength = value;
+          UpdateCalibrationFlags();
+        }
+      }
+
       public Cv.Calib3d.Calib CalibrationFlags
       {
         get { return calibrationFlags; }
@@ -165,6 +205,9 @@ namespace ArucoUnity
         if (FixS1_S2_S3_S4)           { calibrationFlags |= Cv.Calib3d.Calib.FixS1S2S3S4; }
         if (TiltedModel)              { calibrationFlags |= Cv.Calib3d.Calib.TiltedModel; }
         if (FixTauxTauy)              { calibrationFlags |= Cv.Calib3d.Calib.FixTauxTauy; }
+        if (FixFocalLength)           { calibrationFlags |= Cv.Calib3d.Calib.FixFocalLength; }
+        if (FixIntrinsic)             { calibrationFlags |= Cv.Calib3d.Calib.FixIntrinsic; }
+        if (SameFocalLength)          { calibrationFlags |= Cv.Calib3d.Calib.SameFocalLength; }
       }
 
       protected override void UpdateCalibrationOptions()
@@ -183,6 +226,9 @@ namespace ArucoUnity
         FixS1_S2_S3_S4 =           Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixS1S2S3S4);
         TiltedModel =              Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.TiltedModel);
         FixTauxTauy =              Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixTauxTauy);
+        FixFocalLength =           Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixFocalLength);
+        FixIntrinsic =             Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixIntrinsic);
+        SameFocalLength =          Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.SameFocalLength);
       }
     }
   }

@@ -22,6 +22,7 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixSkew = false;
 
+      [Header("Stereo only")]
       [SerializeField]
       private bool fixIntrinsic = false;
 
