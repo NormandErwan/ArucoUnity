@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Vec4i* au_cv_Vec4i_new() {
     return new cv::Vec4i();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vec4i;
   }
 
-  // Variables
+  // Attributes
+
   int au_cv_Vec4i_get(cv::Vec4i* vec4i, int i, cv::Exception* exception) {
     int value = 0;
     try {
@@ -26,8 +28,6 @@ extern "C" {
   void au_cv_Vec4i_set(cv::Vec4i* vec4i, int i, int value, cv::Exception* exception) {
     try {
       (*vec4i)[i] = value;
-    } catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-    }
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 }

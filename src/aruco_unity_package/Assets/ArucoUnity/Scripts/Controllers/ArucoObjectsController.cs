@@ -88,7 +88,7 @@ namespace ArucoUnity
         Dictionary<int, ArucoObject> arucoObjectsCollection = null;
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
+          if (arucoObjectDictionary.Key.Name == arucoObject.Dictionary.Name || arucoObjectDictionary.Key == arucoObject.Dictionary)
           {
             arucoObjectsCollection = arucoObjectDictionary.Value;
             break;
@@ -130,7 +130,7 @@ namespace ArucoUnity
         Dictionary<int, ArucoObject> arucoObjectsCollection = null;
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          if (arucoObjectDictionary.Key.name == arucoObject.Dictionary.name || arucoObjectDictionary.Key == arucoObject.Dictionary)
+          if (arucoObjectDictionary.Key.Name == arucoObject.Dictionary.Name || arucoObjectDictionary.Key == arucoObject.Dictionary)
           {
             arucoObjectsCollection = arucoObjectDictionary.Value;
             break;

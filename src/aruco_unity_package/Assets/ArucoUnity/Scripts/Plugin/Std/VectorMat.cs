@@ -11,14 +11,14 @@ namespace ArucoUnity
     {
       public class VectorMat : Utility.HandleCppPtr
       {
-        // Constructor & Destructor
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_std_vectorMat_new();
 
         [DllImport("ArucoUnity")]
         static extern void au_std_vectorMat_delete(System.IntPtr vector);
 
-        // Functions
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_std_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
@@ -30,6 +30,8 @@ namespace ArucoUnity
 
         [DllImport("ArucoUnity")]
         static extern uint au_std_vectorMat_size(System.IntPtr vector);
+
+        // Constructors & destructor
 
         public VectorMat() : base(au_std_vectorMat_new())
         {
@@ -44,6 +46,8 @@ namespace ArucoUnity
         {
           au_std_vectorMat_delete(cppPtr);
         }
+
+        // Methods
 
         public Cv.Core.Mat At(uint pos)
         {

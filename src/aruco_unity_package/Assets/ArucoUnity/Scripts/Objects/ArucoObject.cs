@@ -17,7 +17,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The dictionary to use.")]
-      private Aruco.PREDEFINED_DICTIONARY_NAME dictionaryName;
+      private Aruco.PredefinedDictionaryName dictionaryName;
 
       [SerializeField]
       [Tooltip("The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.")]

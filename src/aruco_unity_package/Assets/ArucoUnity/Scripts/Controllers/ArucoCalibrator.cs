@@ -341,7 +341,7 @@ namespace ArucoUnity
           imagePoints[cameraId] = boardImagePoints;
 
           // Calibrate the camera
-          Cv.Core.Size imageSize = ArucoCamera.Images[cameraId].size;
+          Cv.Core.Size imageSize = ArucoCamera.Images[cameraId].Size;
           Std.VectorMat rvecs, tvecs;
           if (!ArucoCamera.IsFisheye)
           {
@@ -377,7 +377,7 @@ namespace ArucoUnity
               for (uint marker = 0; marker < markerCount; marker++)
               {
                 uint pointId = (uint)charucoIds.At(marker);
-                Cv.Core.Point3f objectPoint = charucoBoard.chessboardCorners.At(pointId);
+                Cv.Core.Point3f objectPoint = charucoBoard.ChessboardCorners.At(pointId);
                 charucoObjectPoints.At(frame).PushBack(objectPoint);
               }
             }

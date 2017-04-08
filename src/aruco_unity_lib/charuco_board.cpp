@@ -1,16 +1,17 @@
 #include "aruco_unity/charuco_board.hpp"
-#include "aruco_unity.hpp"
 #include "aruco_unity/cv/exception.hpp"
 #include <opencv2/imgproc.hpp>
 
 extern "C" {
   // Constructors & Destructors
+
   void au_CharucoBoard_delete(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
     delete charucoBoard;
   }
 
   // Member Functions
-  void au_CharucoBoard_draw1(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, int borderBits,
+
+  void au_CharucoBoard_draw(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, int borderBits,
     cv::Exception* exception) {
     try {
       *img = new cv::Mat();
@@ -19,32 +20,6 @@ extern "C" {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-
-    cv::cvtColor(**img, **img, CV_GRAY2RGB);
-  }
-
-  void au_CharucoBoard_draw2(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
-    cv::Exception* exception) {
-    try {
-      *img = new cv::Mat();
-      charucoBoard->get()->draw(*outSize, **img, marginSize);
-    } catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return;
-    };
-
-    cv::cvtColor(**img, **img, CV_GRAY2RGB);
-  }
-
-  void au_CharucoBoard_draw3(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception) {
-    try {
-      *img = new cv::Mat();
-      charucoBoard->get()->draw(*outSize, **img);
-    } catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return;
-    };
-
     cv::cvtColor(**img, **img, CV_GRAY2RGB);
   }
 
@@ -61,6 +36,7 @@ extern "C" {
   }
 
   // Static Member Functions
+
   cv::Ptr<cv::aruco::CharucoBoard>* au_CharucoBoard_create(int squaresX, int squaresY, float squareLength, float markerLength, 
     cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Exception* exception) {
     cv::Ptr<cv::aruco::CharucoBoard> charucoBoard;
@@ -74,6 +50,7 @@ extern "C" {
   }
 
   // Attributes
+
   std::vector<cv::Point3f>* au_CharucoBoard_getChessboardCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
     return &(charucoBoard->get()->chessboardCorners);
   }

@@ -165,7 +165,7 @@ namespace ArucoUnity
         Cv.Core.Mat distCoeffs1 = cameraParameters.DistCoeffs[CameraId1];
         Cv.Core.Mat cameraMatrix2 = cameraParameters.CameraMatrices[CameraId2];
         Cv.Core.Mat distCoeffs2 = cameraParameters.DistCoeffs[CameraId2];
-        Cv.Core.Size imageSize = arucoCamera.Images[CameraId1].size;
+        Cv.Core.Size imageSize = arucoCamera.Images[CameraId1].Size;
         Cv.Core.Mat rvec, tvec, essentialMatrix, fundamentalMatrix;
         if (!arucoCamera.IsFisheye)
         {

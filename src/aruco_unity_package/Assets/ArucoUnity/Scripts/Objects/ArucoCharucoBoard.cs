@@ -120,8 +120,8 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateBoard()
       {
-        ImageSize.width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
-        ImageSize.height = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
+        ImageSize.Width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
+        ImageSize.Height = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
 
         AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
 

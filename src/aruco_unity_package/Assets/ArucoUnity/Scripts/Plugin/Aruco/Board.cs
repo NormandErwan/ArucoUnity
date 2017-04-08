@@ -11,6 +11,8 @@ namespace ArucoUnity
     {
       public abstract class Board : Utility.HandleCppPtr
       {
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
 
@@ -29,24 +31,28 @@ namespace ArucoUnity
         [DllImport("ArucoUnity")]
         static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
 
+        // Constructors
+
         internal Board(System.IntPtr boardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
             : base(boardPtr, deleteResponsibility)
         {
         }
 
-        public Dictionary dictionary
+        // Properties
+
+        public Dictionary Dictionary
         {
           get { return new Dictionary(au_Board_getDictionary(cppPtr), DeleteResponsibility.False); }
           set { au_Board_setDictionary(cppPtr, value.cppPtr); }
         }
 
-        public Std.VectorInt ids
+        public Std.VectorInt Ids
         {
           get { return new Std.VectorInt(au_Board_getIds(cppPtr), DeleteResponsibility.False); }
           set { au_Board_setIds(cppPtr, value.cppPtr); }
         }
 
-        public Std.VectorVectorPoint3f objPoints
+        public Std.VectorVectorPoint3f ObjPoints
         {
           get { return new Std.VectorVectorPoint3f(au_Board_getObjPoints(cppPtr), DeleteResponsibility.False); }
           set { au_Board_setObjPoints(cppPtr, value.cppPtr); }

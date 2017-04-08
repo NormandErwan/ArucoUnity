@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Mat* au_cv_Mat_new1() {
     return new cv::Mat();
   }
@@ -28,6 +29,7 @@ extern "C" {
   }
 
   // Member Functions
+
   int au_cv_Mat_at_int_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
     int value = 0;
     try {
@@ -36,38 +38,28 @@ extern "C" {
     catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return value;
-    };
+    }
     return value;
   }
 
   void au_cv_Mat_at_int_set(cv::Mat* mat, int i0, int i1, int value, cv::Exception* exception) {
     try {
       mat->at<int>(i0, i1) = value;
-    }
-    catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-    };
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
   double au_cv_Mat_at_double_get(cv::Mat* mat, int i0, int i1, cv::Exception* exception) {
     double value = 0;
     try {
       value = mat->at<double>(i0, i1);
-    }
-    catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-      return value;
-    };
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
     return value;
   }
 
   void au_cv_Mat_at_double_set(cv::Mat* mat, int i0, int i1, double value, cv::Exception* exception) {
     try {
       mat->at<double>(i0, i1) = value;
-    }
-    catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-    };
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
   int au_cv_Mat_channels(cv::Mat* mat) {
@@ -77,10 +69,7 @@ extern "C" {
   void au_cv_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
     try {
       mat->create(rows, cols, type);
-    }
-    catch (const cv::Exception& e) {
-      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
-    };
+    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 
   size_t au_cv_Mat_elemSize(cv::Mat* mat) {
@@ -99,7 +88,8 @@ extern "C" {
     return mat->type();
   }
 
-  // Variables
+  // Attributes
+
   int au_cv_Mat_getCols(cv::Mat* mat) {
     return mat->cols;
   }

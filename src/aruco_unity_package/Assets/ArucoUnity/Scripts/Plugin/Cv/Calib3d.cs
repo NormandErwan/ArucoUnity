@@ -76,13 +76,12 @@ namespace ArucoUnity
           out System.IntPtr P1, out System.IntPtr P2, out System.IntPtr Q, int flags, double alpha, System.IntPtr newImageSize,
           System.IntPtr validPixROI1, System.IntPtr validPixROI2, System.IntPtr exception);
 
-        // Static functions
+        // Static methods
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
           Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
-          Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags, Core.TermCriteria criteria = null)
+          Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags, Core.TermCriteria criteria)
         {
-          criteria = (criteria != null) ? criteria : new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecsPtr, tvecsPtr;
 
@@ -97,10 +96,17 @@ namespace ArucoUnity
         }
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags,
-          Core.TermCriteria criteria = null)
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
+          Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags = 0)
         {
-          criteria = (criteria != null) ? criteria : new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
+          Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
+          return CalibrateCamera(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, stdDeviationsIntrinsics,
+            stdDeviationsExtrinsics, perViewErrors, flags, criteria);
+        }
+
+        public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags, Core.TermCriteria criteria)
+        {
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecsPtr, tvecsPtr;
 
@@ -111,6 +117,13 @@ namespace ArucoUnity
           exception.Check();
 
           return error;
+        }
+
+        public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags = 0)
+        {
+          Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
+          return CalibrateCamera(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
         }
 
         public static Core.Mat InitCameraMatrix2D(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
@@ -134,10 +147,8 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
-          Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, out Core.Mat E, out Core.Mat F, Calib flags = Calib.FixIntrinsic,
-          Core.TermCriteria criteria = null)
+          Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, out Core.Mat E, out Core.Mat F, Calib flags, Core.TermCriteria criteria)
         {
-          criteria = (criteria != null) ? criteria : new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, 1e-6);
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecPtr, tvecPtr, EPtr, FPtr;
 
@@ -153,20 +164,25 @@ namespace ArucoUnity
           return error;
         }
 
+        public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
+          Std.VectorVectorPoint2f imagePoints2, Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+          Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, out Core.Mat E, out Core.Mat F, Calib flags = Calib.FixIntrinsic)
+        {
+          Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, 1e-6);
+          return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize,
+            out rvec, out tvec, out E, out F, flags, criteria);
+        }
+
         public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
           Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
-          StereoRectifyFlags flags = StereoRectifyFlags.ZeroDisparity, double alpha = -1, Core.Size newImageSize = null,
-          Core.Rect validPixROI1 = null, Core.Rect validPixROI2 = null)
+          StereoRectifyFlags flags, double alpha, Core.Size newImageSize, Core.Rect validPixROI1, Core.Rect validPixROI2)
         {
-          newImageSize = (newImageSize != null) ? newImageSize : new Core.Size();
-          System.IntPtr validPixROI1Ptr = (validPixROI1 != null) ? validPixROI1.cppPtr : System.IntPtr.Zero;
-          System.IntPtr validPixROI2Ptr = (validPixROI2 != null) ? validPixROI2.cppPtr : System.IntPtr.Zero;
           Core.Exception exception = new Core.Exception();
           System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
           au_cv_calib3d_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr,
-            rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.cppPtr, validPixROI1Ptr,
-            validPixROI2Ptr, exception.cppPtr);
+            rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.cppPtr,
+            validPixROI1.cppPtr, validPixROI2.cppPtr, exception.cppPtr);
           R1 = new Core.Mat(R1Ptr);
           R2 = new Core.Mat(R2Ptr);
           P1 = new Core.Mat(P1Ptr);
@@ -174,6 +190,33 @@ namespace ArucoUnity
           Q = new Core.Mat(QPtr);
 
           exception.Check();
+        }
+
+        public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+          Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
+          StereoRectifyFlags flags, double alpha, Core.Size newImageSize, Core.Rect validPixROI1)
+        {
+          Core.Rect validPixROI2 = new Core.Rect();
+          StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out R1, out R2, out P1, out P2, out Q, flags,
+            alpha, newImageSize, validPixROI1, validPixROI2);
+        }
+
+        public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+          Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
+          StereoRectifyFlags flags, double alpha, Core.Size newImageSize)
+        {
+          Core.Rect validPixROI1 = new Core.Rect();
+          StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out R1, out R2, out P1, out P2, out Q, flags,
+            alpha, newImageSize, validPixROI1);
+        }
+
+        public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+          Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
+          StereoRectifyFlags flags = StereoRectifyFlags.ZeroDisparity, double alpha = -1)
+        {
+          Core.Size newImageSize = new Core.Size();
+          StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out R1, out R2, out P1, out P2, out Q, flags,
+            alpha, newImageSize);
         }
       }
     }

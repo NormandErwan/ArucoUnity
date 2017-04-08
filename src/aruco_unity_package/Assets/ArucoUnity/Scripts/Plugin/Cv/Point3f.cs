@@ -14,14 +14,14 @@ namespace ArucoUnity
       {
         public class Point3f : Utility.HandleCppPtr
         {
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Point3f_new();
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_Point3f_delete(System.IntPtr point3f);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern float au_cv_Point3f_getX(System.IntPtr point3f);
 
@@ -40,6 +40,8 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_Point3f_setZ(System.IntPtr point3f, float z);
 
+          // Constructors & destructor
+
           public Point3f() : base(au_cv_Point3f_new())
           {
           }
@@ -49,32 +51,34 @@ namespace ArucoUnity
           {
           }
 
+          public static implicit operator Vector3(Point3f point3f)
+          {
+            return new Vector3(point3f.X, point3f.Y, point3f.Z);
+          }
+
           protected override void DeleteCvPtr()
           {
             au_cv_Point3f_delete(cppPtr);
           }
 
-          public float x
+          // Properties
+
+          public float X
           {
             get { return au_cv_Point3f_getX(cppPtr); }
             set { au_cv_Point3f_setX(cppPtr, value); }
           }
 
-          public float y
+          public float Y
           {
             get { return au_cv_Point3f_getY(cppPtr); }
             set { au_cv_Point3f_setY(cppPtr, value); }
           }
 
-          public float z
+          public float Z
           {
             get { return au_cv_Point3f_getZ(cppPtr); }
             set { au_cv_Point3f_setZ(cppPtr, value); }
-          }
-
-          public static implicit operator Vector3(Point3f point3f)
-          {
-            return new Vector3(point3f.x, point3f.y, point3f.z);
           }
         }
       }

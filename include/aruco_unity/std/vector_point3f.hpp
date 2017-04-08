@@ -23,7 +23,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Functions
+  //! \name Member Functions
   //! @{
   
   //! \brief Access specified element with bounds checking. 
@@ -46,7 +46,7 @@ extern "C" {
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_std_vectorPoint3f_size(std::vector<cv::Point3f>* vector);
 
-  //! @} Functions
+  //! @} Member Functions
 }
 
 //! @} vector_point3f

@@ -2,6 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::TermCriteria* au_cv_TermCriteria_new1() {
     return new cv::TermCriteria();
   }
@@ -14,7 +15,8 @@ extern "C" {
     delete termCriteria;
   }
 
-  // Variables
+  // Attributes
+
   double au_cv_TermCriteria_getEpsilon(cv::TermCriteria* termCriteria) {
     return termCriteria->epsilon;
   }

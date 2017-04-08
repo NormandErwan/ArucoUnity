@@ -13,19 +13,21 @@ namespace ArucoUnity
       {
         public class Vec4i : Utility.HandleCppPtr
         {
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Vec4i_new();
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_Vec4i_delete(System.IntPtr vec4i);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern int au_cv_Vec4i_get(System.IntPtr vec4i, int i, System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_Vec4i_set(System.IntPtr vec4i, int i, int value, System.IntPtr exception);
+
+          // Constructors & destructor
 
           public Vec4i() : base(au_cv_Vec4i_new())
           {
@@ -40,6 +42,8 @@ namespace ArucoUnity
           {
             au_cv_Vec4i_delete(cppPtr);
           }
+
+          // Methods
 
           public int Get(int i)
           {

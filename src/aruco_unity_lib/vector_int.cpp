@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<int>* au_std_vectorInt_new() {
     return new std::vector<int>();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
+  // Member Functions
+
   int au_std_vectorInt_at(std::vector<int>* vector, size_t pos, cv::Exception* exception) {
     int element = 0;
     try {
@@ -34,8 +36,7 @@ extern "C" {
   void au_std_vectorInt_reserve(std::vector<int>* vector, size_t new_cap, cv::Exception* exception) {
     try {
       vector->reserve(new_cap);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
     }
   }

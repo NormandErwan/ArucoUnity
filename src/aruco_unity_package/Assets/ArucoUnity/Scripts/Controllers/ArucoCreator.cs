@@ -166,8 +166,8 @@ namespace ArucoUnity
         if (Image != null)
         {
           int markerDataSize = (int)(Image.ElemSize() * Image.Total());
-          ImageTexture = new Texture2D(Image.cols, Image.rows, TextureFormat.RGB24, false);
-          ImageTexture.LoadRawTextureData(Image.dataIntPtr, markerDataSize);
+          ImageTexture = new Texture2D(Image.Cols, Image.Rows, TextureFormat.RGB24, false);
+          ImageTexture.LoadRawTextureData(Image.DataIntPtr, markerDataSize);
           ImageTexture.Apply();
         }
       }
@@ -196,14 +196,14 @@ namespace ArucoUnity
           ArucoMarker marker = ArucoObject as ArucoMarker;
           if (marker != null)
           {
-            imageFilePath += "Marker_" + marker.Dictionary.name + "_Id_" + marker.MarkerId;
+            imageFilePath += "Marker_" + marker.Dictionary.Name + "_Id_" + marker.MarkerId;
           }
 
           // In case of a grid board
           ArucoGridBoard gridBoard = ArucoObject as ArucoGridBoard;
           if (gridBoard != null)
           {
-            imageFilePath += "GridBoard_" + gridBoard.Dictionary.name + "_X_" + gridBoard.MarkersNumberX + "_Y_" + gridBoard.MarkersNumberY
+            imageFilePath += "GridBoard_" + gridBoard.Dictionary.Name + "_X_" + gridBoard.MarkersNumberX + "_Y_" + gridBoard.MarkersNumberY
               + "_MarkerSize_" + gridBoard.MarkerSideLength;
           }
 
@@ -211,7 +211,7 @@ namespace ArucoUnity
           ArucoCharucoBoard charucoBoard = ArucoObject as ArucoCharucoBoard;
           if (charucoBoard != null)
           {
-            imageFilePath += "ChArUcoBoard_" + charucoBoard.Dictionary.name + "_X_" + charucoBoard.SquaresNumberX
+            imageFilePath += "ChArUcoBoard_" + charucoBoard.Dictionary.Name + "_X_" + charucoBoard.SquaresNumberX
               + "_Y_" + charucoBoard.SquaresNumberY + "_SquareSize_" + charucoBoard.SquareSideLength
               + "_MarkerSize_" + charucoBoard.MarkerSideLength;
           }
@@ -220,7 +220,7 @@ namespace ArucoUnity
           ArucoDiamond diamond = ArucoObject as ArucoDiamond;
           if (diamond != null && diamond.Ids.Length == 4)
           {
-            imageFilePath += "DiamondMarker_" + diamond.Dictionary.name + "_Ids_" + diamond.Ids[0] + "_" + diamond.Ids[1] + "_" + diamond.Ids[2] + "_"
+            imageFilePath += "DiamondMarker_" + diamond.Dictionary.Name + "_Ids_" + diamond.Ids[0] + "_" + diamond.Ids[1] + "_" + diamond.Ids[2] + "_"
               + diamond.Ids[3] + "_SquareSize_" + diamond.SquareSideLength + "_MarkerSize_" + diamond.MarkerSideLength;
           }
         }

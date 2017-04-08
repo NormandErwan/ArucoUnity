@@ -32,7 +32,7 @@ extern "C" {
 
   //! @} Member Functions
 
-  //! \name Variables
+  //! \name Attributes
   //! @{
 
   //! \brief Returns the height.
@@ -53,7 +53,7 @@ extern "C" {
   //! \param width The new value.
   ARUCO_UNITY_API void au_cv_Size_setWidth(cv::Size* size, int width);
 
-  //! @} Variables
+  //! @} Attributes
 }
 
 //! @} size

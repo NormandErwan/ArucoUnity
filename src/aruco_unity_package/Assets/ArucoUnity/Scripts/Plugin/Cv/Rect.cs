@@ -13,7 +13,8 @@ namespace ArucoUnity
       {
         public class Rect : Utility.HandleCppPtr
         {
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Rect_new1();
 
@@ -23,7 +24,6 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_Rect_delete(System.IntPtr Rect);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern int au_cv_Rect_getX(System.IntPtr Rect);
 
@@ -48,6 +48,8 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_Rect_setHeight(System.IntPtr Rect, int height);
 
+          // Constructors & destructor
+
           public Rect() : base(au_cv_Rect_new1())
           {
           }
@@ -66,25 +68,27 @@ namespace ArucoUnity
             au_cv_Rect_delete(cppPtr);
           }
 
-          public int x
+          // Properties
+
+          public int X
           {
             get { return au_cv_Rect_getX(cppPtr); }
             set { au_cv_Rect_setX(cppPtr, value); }
           }
 
-          public int y
+          public int Y
           {
             get { return au_cv_Rect_getY(cppPtr); }
             set { au_cv_Rect_setY(cppPtr, value); }
           }
 
-          public int width
+          public int Width
           {
             get { return au_cv_Rect_getWidth(cppPtr); }
             set { au_cv_Rect_setWidth(cppPtr, value); }
           }
 
-          public int height
+          public int Height
           {
             get { return au_cv_Rect_getHeight(cppPtr); }
             set { au_cv_Rect_setHeight(cppPtr, value); }

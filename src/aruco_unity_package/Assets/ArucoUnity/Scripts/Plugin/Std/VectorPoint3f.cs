@@ -11,14 +11,14 @@ namespace ArucoUnity
     {
       public class VectorPoint3f : Utility.HandleCppPtr
       {
-        // Constructor & Destructor
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_std_vectorPoint3f_new();
 
         [DllImport("ArucoUnity")]
         static extern void au_std_vectorPoint3f_delete(System.IntPtr vector);
 
-        // Functions
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_std_vectorPoint3f_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
@@ -30,6 +30,8 @@ namespace ArucoUnity
 
         [DllImport("ArucoUnity")]
         static extern uint au_std_vectorPoint3f_size(System.IntPtr vector);
+
+        // Constructors & destructor
 
         public VectorPoint3f() : base(au_std_vectorPoint3f_new())
         {
@@ -44,6 +46,8 @@ namespace ArucoUnity
         {
           au_std_vectorPoint3f_delete(cppPtr);
         }
+
+        // Methods
 
         public Cv.Core.Point3f At(uint pos)
         {

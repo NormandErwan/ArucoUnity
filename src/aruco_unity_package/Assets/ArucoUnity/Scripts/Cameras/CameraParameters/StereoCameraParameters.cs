@@ -120,11 +120,11 @@ namespace ArucoUnity
 
       protected double[][] PropertyValues(Cv.Core.Mat property)
       {
-        double[][] propertyValues = new double[property.rows][];
-        for (int i = 0; i < property.rows; i++)
+        double[][] propertyValues = new double[property.Rows][];
+        for (int i = 0; i < property.Rows; i++)
         {
-          propertyValues[i] = new double[property.cols];
-          for (int j = 0; j < property.cols; j++)
+          propertyValues[i] = new double[property.Cols];
+          for (int j = 0; j < property.Cols; j++)
           {
             propertyValues[i][j] = property.AtDouble(i, j);
           }

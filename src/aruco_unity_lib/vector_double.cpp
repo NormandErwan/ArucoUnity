@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<double>* au_std_vectorDouble_new() {
     return new std::vector<double>();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
+  // Member Functions
+
   double au_std_vectorDouble_at(std::vector<double>* vector, size_t pos, cv::Exception* exception) {
     double element = 0;
     try {
@@ -34,8 +36,7 @@ extern "C" {
   void au_std_vectorDouble_reserve(std::vector<double>* vector, size_t new_cap, cv::Exception* exception) {
     try {
       vector->reserve(new_cap);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
     }
   }

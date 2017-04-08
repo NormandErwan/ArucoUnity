@@ -2,6 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Size* au_cv_Size_new() {
     return new cv::Size();
   }
@@ -11,11 +12,13 @@ extern "C" {
   }
 
   // Member functions
+
   int au_cv_Size_area(cv::Size* size) {
     return size->area();
   }
 
-  // Variables
+  // Attributes
+
   int au_cv_Size_getHeight(cv::Size* size) {
     return size->height;
   }

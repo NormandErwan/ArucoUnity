@@ -23,7 +23,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Functions
+  //! \name Member Functions
   //! @{
 
   //! \brief Access specified element with bounds checking.
@@ -31,7 +31,8 @@ extern "C" {
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API std::vector<cv::Point3f>* au_std_vectorVectorPoint3f_at(std::vector<std::vector<cv::Point3f>>* vector, size_t pos, cv::Exception* exception);
+  ARUCO_UNITY_API std::vector<cv::Point3f>* au_std_vectorVectorPoint3f_at(std::vector<std::vector<cv::Point3f>>* vector, size_t pos,
+    cv::Exception* exception);
 
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
@@ -46,7 +47,7 @@ extern "C" {
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_std_vectorVectorPoint3f_size(std::vector<std::vector<cv::Point3f>>* vector);
 
-  //! @} Functions
+  //! @} Member Functions
 }
 
 //! @} vector_vector_point3f

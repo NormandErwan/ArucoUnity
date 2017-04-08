@@ -23,7 +23,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Functions
+  //! \name Member Functions
   //! @{
   
   //! \brief Access specified element with bounds checking.
@@ -31,23 +31,25 @@ extern "C" {
   //! \param vector The vector used.
   //! \param pos Position of the element to return.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
-  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_at(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, size_t pos, 
-    cv::Exception* exception);
+  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_at(
+    std::vector<std::vector<std::vector<cv::Point2f>>>* vector, size_t pos, cv::Exception* exception);
   
   //! \brief Direct access to the underlying array.
   //! \param vector The vector used.
-  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_data(std::vector<std::vector<std::vector<cv::Point2f>>>* vector);
+  ARUCO_UNITY_API std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_data(
+    std::vector<std::vector<std::vector<cv::Point2f>>>* vector);
 
   //! \brief Adds an element to the end.
   //! \param vector The vector used.
   //! \param value The value of the element to append.
-  ARUCO_UNITY_API void au_std_vectorVectorVectorPoint2f_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, std::vector<std::vector<cv::Point2f>>* value);
+  ARUCO_UNITY_API void au_std_vectorVectorVectorPoint2f_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector,
+    std::vector<std::vector<cv::Point2f>>* value);
   
   //! \brief Returns the number of vector elements.
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_std_vectorVectorVectorPoint2f_size(std::vector<std::vector<std::vector<cv::Point2f>>>* vector);
 
-  //! @} Functions
+  //! @} Member Functions
 }
 
 //! @} vector_vector_vector_point2f

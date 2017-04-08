@@ -2,6 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Ptr<cv::aruco::DetectorParameters>* au_DetectorParameters_create() {
     cv::Ptr<cv::aruco::DetectorParameters> ptr = cv::aruco::DetectorParameters::create();
     return new cv::Ptr<cv::aruco::DetectorParameters>(ptr);
@@ -12,6 +13,7 @@ extern "C" {
   }
 
   // Variables
+
   int au_DetectorParameters_getAdaptiveThreshWinSizeMin(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
     return parameters->get()->adaptiveThreshWinSizeMin;
   }
@@ -112,7 +114,8 @@ extern "C" {
     return parameters->get()->cornerRefinementMaxIterations;
   }
 
-  void au_DetectorParameters_setCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementMaxIterations) {
+  void au_DetectorParameters_setCornerRefinementMaxIterations(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    int cornerRefinementMaxIterations) {
     parameters->get()->cornerRefinementMaxIterations = cornerRefinementMaxIterations;
   }
 
@@ -120,7 +123,8 @@ extern "C" {
     return parameters->get()->cornerRefinementMinAccuracy;
   }
 
-  void au_DetectorParameters_setCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double cornerRefinementMinAccuracy) {
+  void au_DetectorParameters_setCornerRefinementMinAccuracy(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    double cornerRefinementMinAccuracy) {
     parameters->get()->cornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
   }
 
@@ -136,7 +140,8 @@ extern "C" {
     return parameters->get()->perspectiveRemovePixelPerCell;
   }
 
-  void au_DetectorParameters_setPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int perspectiveRemovePixelPerCell) {
+  void au_DetectorParameters_setPerspectiveRemovePixelPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    int perspectiveRemovePixelPerCell) {
     parameters->get()->perspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
   }
 
@@ -144,7 +149,8 @@ extern "C" {
     return parameters->get()->perspectiveRemoveIgnoredMarginPerCell;
   }
 
-  void au_DetectorParameters_setPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double perspectiveRemoveIgnoredMarginPerCell) {
+  void au_DetectorParameters_setPerspectiveRemoveIgnoredMarginPerCell(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    double perspectiveRemoveIgnoredMarginPerCell) {
     parameters->get()->perspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
   }
 
@@ -152,7 +158,8 @@ extern "C" {
     return parameters->get()->maxErroneousBitsInBorderRate;
   }
 
-  void au_DetectorParameters_setMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters, double maxErroneousBitsInBorderRate) {
+  void au_DetectorParameters_setMaxErroneousBitsInBorderRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    double maxErroneousBitsInBorderRate) {
     parameters->get()->maxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
   }
 

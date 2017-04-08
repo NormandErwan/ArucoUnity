@@ -9,75 +9,15 @@ namespace ArucoUnity
   {
     public static partial class Aruco
     {
-      public enum PREDEFINED_DICTIONARY_NAME
-      {
-        DICT_4X4_50 = 0,
-        DICT_4X4_100,
-        DICT_4X4_250,
-        DICT_4X4_1000,
-        DICT_5X5_50,
-        DICT_5X5_100,
-        DICT_5X5_250,
-        DICT_5X5_1000,
-        DICT_6X6_50,
-        DICT_6X6_100,
-        DICT_6X6_250,
-        DICT_6X6_1000,
-        DICT_7X7_50,
-        DICT_7X7_100,
-        DICT_7X7_250,
-        DICT_7X7_1000,
-        DICT_ARUCO_ORIGINAL
-      }
-
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_getPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name);
-
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_generateCustomDictionary1(int nMarkers, int markerSize, System.IntPtr exception);
-
-      [DllImport("ArucoUnity")]
-      static extern System.IntPtr au_generateCustomDictionary2(int nMarkers, int markerSize, System.IntPtr baseDictionary, System.IntPtr exception);
-
-      public static Dictionary GetPredefinedDictionary(PREDEFINED_DICTIONARY_NAME name)
-      {
-        Dictionary dictionary = new Dictionary(au_getPredefinedDictionary(name));
-        dictionary.name = name;
-        return dictionary;
-      }
-
-      public static Dictionary GenerateCustomDictionary(int nMarkers, int markerSize)
-      {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
-        System.IntPtr dictionaryPtr = au_generateCustomDictionary1(nMarkers, markerSize, exception.cppPtr);
-        exception.Check();
-        return new Dictionary(dictionaryPtr);
-      }
-
-      public static Dictionary GenerateCustomDictionary(int nMarkers, int markerSize, Dictionary baseDictionary)
-      {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
-        System.IntPtr dictionaryPtr = au_generateCustomDictionary2(nMarkers, markerSize, baseDictionary.cppPtr, exception.cppPtr);
-        exception.Check();
-        return new Dictionary(dictionaryPtr);
-      }
-
       public class Dictionary : Utility.HandleCppPtr
       {
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_Dictionary_new1(System.IntPtr bytesList, int markerSize, int maxCorrectionBits);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Dictionary_new2(System.IntPtr bytesList, int markerSize);
-
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Dictionary_new3(System.IntPtr bytesList);
-
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Dictionary_new4();
-
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_Dictionary_new5(System.IntPtr dictionary);
+        static extern System.IntPtr au_Dictionary_new2(System.IntPtr dictionary);
 
         [DllImport("ArucoUnity")]
         static extern void au_Dictionary_delete(System.IntPtr dictionary);
@@ -86,10 +26,7 @@ namespace ArucoUnity
         static extern void au_Dictionary_drawMarker(System.IntPtr dictionary, int id, int sidePixels, out System.IntPtr img, int borderBits, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern int au_Dictionary_getDistanceToId1(System.IntPtr dictionary, System.IntPtr bits, int id, bool allRotations, System.IntPtr exception);
-
-        [DllImport("ArucoUnity")]
-        static extern int au_Dictionary_getDistanceToId2(System.IntPtr dictionary, System.IntPtr bits, int id, System.IntPtr exception);
+        static extern int au_Dictionary_getDistanceToId(System.IntPtr dictionary, System.IntPtr bits, int id, bool allRotations, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
         static extern bool au_Dictionary_identify(System.IntPtr dictionary, System.IntPtr onlyBits, out int idx, out int rotation, double maxCorrectionRate, System.IntPtr exception);
@@ -118,23 +55,18 @@ namespace ArucoUnity
         [DllImport("ArucoUnity")]
         static extern void au_Dictionary_setMaxCorrectionBits(System.IntPtr dictionary, int maxCorrectionBits);
 
-        public Dictionary(Cv.Core.Mat bytesList, int markerSize, int maxCorrectionBits) : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
+        // Constructors & destructor
+
+        public Dictionary(Cv.Core.Mat bytesList, int markerSize = 0, int maxCorrectionBits = 0)
+          : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
         {
         }
 
-        public Dictionary(Cv.Core.Mat bytesList, int markerSize) : base(au_Dictionary_new2(bytesList.cppPtr, markerSize))
+        public Dictionary() : this(new Cv.Core.Mat())
         {
         }
 
-        public Dictionary(Cv.Core.Mat bytesList) : base(au_Dictionary_new3(bytesList.cppPtr))
-        {
-        }
-
-        public Dictionary() : base(au_Dictionary_new4())
-        {
-        }
-
-        public Dictionary(Dictionary dictionary) : base(au_Dictionary_new5(dictionary.cppPtr))
+        public Dictionary(Dictionary dictionary) : base(au_Dictionary_new2(dictionary.cppPtr))
         {
         }
 
@@ -148,40 +80,29 @@ namespace ArucoUnity
           au_Dictionary_delete(cppPtr);
         }
 
-        public void DrawMarker(int id, int sidePixels, out Cv.Core.Mat img, int borderBits)
+        // Properties
+
+        public Cv.Core.Mat BytesList
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr imgPtr;
-
-          au_Dictionary_drawMarker(cppPtr, id, sidePixels, out imgPtr, borderBits, exception.cppPtr);
-          img = new Cv.Core.Mat(imgPtr);
-
-          exception.Check();
+          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
+          set { au_Dictionary_setBytesList(cppPtr, value.cppPtr); }
         }
 
-        public int GetDistanceToId(Dictionary dictionary, Cv.Core.Mat bits, int id, bool allRotations)
+        public int MarkerSize
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          int distanceToId = au_Dictionary_getDistanceToId1(cppPtr, bits.cppPtr, id, allRotations, exception.cppPtr);
-          exception.Check();
-          return distanceToId;
+          get { return au_Dictionary_getMarkerSize(cppPtr); }
+          set { au_Dictionary_setMarkerSize(cppPtr, value); }
         }
 
-        public int GetDistanceToId(Dictionary dictionary, Cv.Core.Mat bits, int id)
+        public int MaxCorrectionBits
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          int distanceToId = au_Dictionary_getDistanceToId2(cppPtr, bits.cppPtr, id, exception.cppPtr);
-          exception.Check();
-          return distanceToId;
+          get { return au_Dictionary_getMaxCorrectionBits(cppPtr); }
+          set { au_Dictionary_setMaxCorrectionBits(cppPtr, value); }
         }
 
-        public bool Identify(Dictionary dictionary, Cv.Core.Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
-        {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          bool result = au_Dictionary_identify(cppPtr, onlyBits.cppPtr, out idx, out rotation, maxCorrectionRate, exception.cppPtr);
-          exception.Check();
-          return result;
-        }
+        public PredefinedDictionaryName Name { get; set; }
+
+        // Static methods
 
         static public Cv.Core.Mat GetBitsFromByteList(Cv.Core.Mat byteList, int markerSiz)
         {
@@ -196,25 +117,34 @@ namespace ArucoUnity
           return new Cv.Core.Mat(au_Dictionary_getByteListFromBits(bits));
         }
 
-        public Cv.Core.Mat bytesList
+        // Methods
+
+        public void DrawMarker(int id, int sidePixels, out Cv.Core.Mat img, int borderBits)
         {
-          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
-          set { au_Dictionary_setBytesList(cppPtr, value.cppPtr); }
+          Cv.Core.Exception exception = new Cv.Core.Exception();
+          System.IntPtr imgPtr;
+
+          au_Dictionary_drawMarker(cppPtr, id, sidePixels, out imgPtr, borderBits, exception.cppPtr);
+          img = new Cv.Core.Mat(imgPtr);
+
+          exception.Check();
         }
 
-        public int markerSize
+        public int GetDistanceToId(Dictionary dictionary, Cv.Core.Mat bits, int id, bool allRotations = true)
         {
-          get { return au_Dictionary_getMarkerSize(cppPtr); }
-          set { au_Dictionary_setMarkerSize(cppPtr, value); }
+          Cv.Core.Exception exception = new Cv.Core.Exception();
+          int distanceToId = au_Dictionary_getDistanceToId(cppPtr, bits.cppPtr, id, allRotations, exception.cppPtr);
+          exception.Check();
+          return distanceToId;
         }
 
-        public int maxCorrectionBits
+        public bool Identify(Dictionary dictionary, Cv.Core.Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
         {
-          get { return au_Dictionary_getMaxCorrectionBits(cppPtr); }
-          set { au_Dictionary_setMaxCorrectionBits(cppPtr, value); }
+          Cv.Core.Exception exception = new Cv.Core.Exception();
+          bool result = au_Dictionary_identify(cppPtr, onlyBits.cppPtr, out idx, out rotation, maxCorrectionRate, exception.cppPtr);
+          exception.Check();
+          return result;
         }
-
-        public PREDEFINED_DICTIONARY_NAME name { get; set; }
       }
     }
   }

@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<std::vector<int>>* au_std_vectorVectorInt_new() {
     return new std::vector<std::vector<int>>();
   }
@@ -12,6 +13,7 @@ extern "C" {
   }
 
   // Functions
+
   std::vector<int>* au_std_vectorVectorInt_at(std::vector<std::vector<int>>* vector, size_t pos, cv::Exception* exception) {
     std::vector<int>* element = NULL;
     try {

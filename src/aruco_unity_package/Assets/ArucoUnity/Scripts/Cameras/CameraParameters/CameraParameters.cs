@@ -283,7 +283,7 @@ namespace ArucoUnity
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           if (ImageWidths == null || ImageWidths[cameraId] == 0 || ImageHeights == null || ImageHeights[cameraId] == 0 || CameraMatrices == null
-            || CameraMatrices[cameraId] == null || CameraMatrices[cameraId].size.width != 3 || CameraMatrices[cameraId].size.height != 3)
+            || CameraMatrices[cameraId] == null || CameraMatrices[cameraId].Size.Width != 3 || CameraMatrices[cameraId].Size.Height != 3)
           {
             return;
           }
@@ -301,8 +301,8 @@ namespace ArucoUnity
       internal static void UpdatePropertyValues(Cv.Core.Mat[] property, double[][][] propertyValues)
       {
         int cameraNumber = property.Length,
-            rows = property[0].rows,
-            cols = property[0].cols;
+            rows = property[0].Rows,
+            cols = property[0].Cols;
 
         for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
         {

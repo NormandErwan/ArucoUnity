@@ -14,22 +14,25 @@ namespace ArucoUnity
       {
         public class Exception : Utility.HandleCppPtr
         {
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Exception_new();
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_Exception_delete(System.IntPtr exception);
 
-          // Functions
           [DllImport("ArucoUnity")]
           static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern int au_cv_Exception_getCode(System.IntPtr exception);
 
-          StringBuilder sb;
+          // Variables
+
+          private StringBuilder sb;
+
+          // Constructor & Destructor
 
           public Exception() : base(au_cv_Exception_new())
           {
@@ -41,6 +44,15 @@ namespace ArucoUnity
             //au_cv_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
           }
 
+          // Properties
+
+          public int Code
+          {
+            get { return au_cv_Exception_getCode(cppPtr); }
+          }
+
+          // Methods
+
           public string What()
           {
             au_cv_Exception_what(cppPtr, sb);
@@ -49,15 +61,10 @@ namespace ArucoUnity
 
           public void Check()
           {
-            if (code != 0)
+            if (Code != 0)
             {
               throw new System.Exception(What());
             }
-          }
-
-          public int code
-          {
-            get { return au_cv_Exception_getCode(cppPtr); }
           }
         }
       }

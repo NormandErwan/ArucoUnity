@@ -2,7 +2,6 @@
 #include "aruco_unity/cv/exception.hpp"
 
 extern "C" {
-  // Static member functions
   double au_cv_calib3d_calibrateCamera1(std::vector<std::vector<cv::Point3f>>* objectPoints, std::vector<std::vector<cv::Point2f>>* imagePoints,
     cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs,
     std::vector<double>* stdDeviationsIntrinsics, std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors,
@@ -38,8 +37,7 @@ extern "C" {
     cv::Mat cameraMatrix;
     try {
       cameraMatrix = cv::initCameraMatrix2D(*objectPoints, *imagePoints, *imageSize, aspectRatio);
-    } 
-    catch (const cv::Exception& e) { 
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e); 
       return NULL; 
     }
@@ -85,8 +83,7 @@ extern "C" {
     try {
       *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
       error = cv::fisheye::calibrate(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return error;
     }
@@ -118,8 +115,7 @@ extern "C" {
       *R = new cv::Mat(), *T = new cv::Mat();
       error = cv::fisheye::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *cameraMatrix1, *distCoeffs1, *cameraMatrix2, *distCoeffs2,
         *imageSize, **R, **T, flags, *criteria);
-    }
-    catch (const cv::Exception& e) {
+    } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return error;
     }

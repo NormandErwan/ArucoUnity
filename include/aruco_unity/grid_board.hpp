@@ -35,15 +35,8 @@ extern "C" {
   //! \param marginSize Minimum margins (in pixels) of the board in the output image.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \param borderBits Width of the marker borders.
-  ARUCO_UNITY_API void au_GridBoard_draw1(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
+  ARUCO_UNITY_API void au_GridBoard_draw(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
     int borderBits, cv::Exception* exception);
-
-  //! \see au_GridBoard_draw1().
-  ARUCO_UNITY_API void au_GridBoard_draw2(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, int marginSize, 
-    cv::Exception* exception);
-
-  //! \see au_GridBoard_draw1().
-  ARUCO_UNITY_API void au_GridBoard_draw3(cv::Ptr<cv::aruco::GridBoard>* gridBoard, cv::Size* outSize, cv::Mat** img, cv::Exception* exception);
 
   //! \brief Returns the size of the GridBoard.
   //! \param gridBoard The GridBoard used.
@@ -72,12 +65,8 @@ extern "C" {
   //! \param firstMarker Id of first marker in dictionary to use on board.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //! \return The output GridBoard object.
-  ARUCO_UNITY_API cv::Ptr<cv::aruco::GridBoard>* au_GridBoard_create1(int markersX, int markersY, float markerLength, float markerSeparation, 
+  ARUCO_UNITY_API cv::Ptr<cv::aruco::GridBoard>* au_GridBoard_create(int markersX, int markersY, float markerLength, float markerSeparation, 
     cv::Ptr<cv::aruco::Dictionary>* dictionary, int firstMarker, cv::Exception* exception);
-
-  //! \see au_GridBoard_create1().
-  ARUCO_UNITY_API cv::Ptr<cv::aruco::GridBoard>* au_GridBoard_create2(int markersX, int markersY, float markerLength, float markerSeparation, 
-    cv::Ptr<cv::aruco::Dictionary>* dictionary, cv::Exception* exception);
 
   //! @} Static Member Functions
 }

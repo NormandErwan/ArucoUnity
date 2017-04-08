@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<cv::Mat>* au_std_vectorMat_new() {
     return new std::vector<cv::Mat>();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
+  // Member Functions
+
   cv::Mat* au_std_vectorMat_at(std::vector<cv::Mat>* vector, size_t pos, cv::Exception* exception) {
     cv::Mat* element = NULL;
     try {

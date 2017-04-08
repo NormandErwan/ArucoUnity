@@ -11,10 +11,14 @@ namespace ArucoUnity
     {
       public static partial class Core
       {
+        // Constants
+
         public const int CN_SHIFT = 3;
         public const int DEPTH_MAX = 1 << CN_SHIFT;
         public const int MAT_DEPTH_MAX = DEPTH_MAX - 1;
         public const double EPSILON = 2.2204460492503131e-016;
+
+        // Enums
 
         public enum Type
         {
@@ -35,9 +39,12 @@ namespace ArucoUnity
           CV_64FC4 = (CV_64F & MAT_DEPTH_MAX) + (3 << CN_SHIFT),
         };
 
-        // Static Member Functions
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern void au_cv_core_flip(System.IntPtr src, System.IntPtr dst, int flipCode, System.IntPtr exception);
+
+        // Static methods
 
         public static void Flip(Mat src, Mat dst, int flipCode)
         {

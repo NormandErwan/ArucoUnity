@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<cv::Point3f>* au_std_vectorPoint3f_new() {
     return new std::vector<cv::Point3f>();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
+  // Member Functions
+
   cv::Point3f* au_std_vectorPoint3f_at(std::vector<cv::Point3f>* vector, size_t pos, cv::Exception* exception) {
     cv::Point3f* element = NULL;
     try {

@@ -11,6 +11,8 @@ namespace ArucoUnity
     {
       public class DetectorParameters : Utility.HandleCppPtr
       {
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_DetectorParameters_create();
 

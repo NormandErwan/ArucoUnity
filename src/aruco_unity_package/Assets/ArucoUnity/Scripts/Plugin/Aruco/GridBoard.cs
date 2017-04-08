@@ -11,19 +11,14 @@ namespace ArucoUnity
     {
       public class GridBoard : Board
       {
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern void au_GridBoard_delete(System.IntPtr gridBoard);
 
         [DllImport("ArucoUnity")]
-        static extern void au_GridBoard_draw1(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize, int borderBits,
+        static extern void au_GridBoard_draw(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize, int borderBits,
           System.IntPtr exception);
-
-        [DllImport("ArucoUnity")]
-        static extern void au_GridBoard_draw2(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize,
-          System.IntPtr exception);
-
-        [DllImport("ArucoUnity")]
-        static extern void au_GridBoard_draw3(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_GridBoard_getGridSize(System.IntPtr gridBoard);
@@ -35,71 +30,44 @@ namespace ArucoUnity
         static extern float au_GridBoard_getMarkerSeparation(System.IntPtr gridBoard);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_GridBoard_create1(int markersX, int markersY, float markerLength, float markerSeparation, System.IntPtr dictionary,
+        static extern System.IntPtr au_GridBoard_create(int markersX, int markersY, float markerLength, float markerSeparation, System.IntPtr dictionary,
           int firstMarker, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_GridBoard_create2(int markersX, int markersY, float markerLength, float markerSeparation, System.IntPtr dictionary,
-          System.IntPtr exception);
-
-        protected override void DeleteCvPtr()
-        {
-          au_GridBoard_delete(cppPtr);
-        }
+        // Constructors & destructor
 
         internal GridBoard(System.IntPtr gridBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
             : base(gridBoardPtr, deleteResponsibility)
         {
         }
 
-        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize, int borderBits)
+        protected override void DeleteCvPtr()
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr imgPtr;
-
-          au_GridBoard_draw1(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
-          img = new Cv.Core.Mat(imgPtr);
-
-          exception.Check();
+          au_GridBoard_delete(cppPtr);
         }
 
-        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize)
+        // Static methods
+
+        static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary,
+          int firstMarker = 0)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr imgPtr;
-
-          au_GridBoard_draw2(cppPtr, outSize.cppPtr, out imgPtr, marginSize, exception.cppPtr);
-          img = new Cv.Core.Mat(imgPtr);
-
-          exception.Check();
-        }
-
-        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img)
-        {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr imgPtr;
-
-          au_GridBoard_draw3(cppPtr, outSize.cppPtr, out imgPtr, exception.cppPtr);
-          img = new Cv.Core.Mat(imgPtr);
-
-          exception.Check();
-        }
-
-        static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary, int firstMarker)
-        {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr gridBoardPtr = au_GridBoard_create1(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, firstMarker,
+          System.IntPtr gridBoardPtr = au_GridBoard_create(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, firstMarker,
             exception.cppPtr);
           exception.Check();
           return new GridBoard(gridBoardPtr);
         }
 
-        static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary)
+        // Methods
+
+        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize = 0, int borderBits = 1)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr gridBoardPtr = au_GridBoard_create2(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, exception.cppPtr);
+          System.IntPtr imgPtr;
+
+          au_GridBoard_draw(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
+          img = new Cv.Core.Mat(imgPtr);
+
           exception.Check();
-          return new GridBoard(gridBoardPtr);
         }
 
         public Cv.Core.Size GetGridSize()

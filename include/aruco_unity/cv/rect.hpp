@@ -26,7 +26,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Variables
+  //! \name Attributes
   //! @{
 
   //! \brief Returns the x value.
@@ -65,7 +65,7 @@ extern "C" {
   //! \param height The new value.
   ARUCO_UNITY_API void au_cv_Rect_setHeight(cv::Rect* rect, int height);
 
-  //! @} Variables
+  //! @} Attributes
 }
 
 //! @} rect

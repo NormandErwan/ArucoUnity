@@ -13,6 +13,8 @@ namespace ArucoUnity
       {
         public class TermCriteria : Utility.HandleCppPtr
         {
+          // Enums
+
           public enum Type
           {
             Count = 0,
@@ -20,7 +22,8 @@ namespace ArucoUnity
             Eps = 2
           }
 
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_TermCriteria_new1();
 
@@ -30,7 +33,6 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_TermCriteria_delete(System.IntPtr termCriteria);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern double au_cv_TermCriteria_getEpsilon(System.IntPtr termCriteria);
 
@@ -49,6 +51,8 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_TermCriteria_setType(System.IntPtr termCriteria, int type);
 
+          // Constructors & destructor
+
           public TermCriteria() : base(au_cv_TermCriteria_new1())
           {
           }
@@ -62,19 +66,21 @@ namespace ArucoUnity
             au_cv_TermCriteria_delete(cppPtr);
           }
 
-          public double epsilon
+          // Properties
+
+          public double Epsilon
           {
             get { return au_cv_TermCriteria_getEpsilon(cppPtr); }
             set { au_cv_TermCriteria_setEpsilon(cppPtr, value); }
           }
 
-          public int maxCount
+          public int MaxCount
           {
             get { return au_cv_TermCriteria_getMaxCount(cppPtr); }
             set { au_cv_TermCriteria_setMaxCount(cppPtr, value); }
           }
 
-          public int type
+          public int TypeValue
           {
             get { return au_cv_TermCriteria_getType(cppPtr); }
             set { au_cv_TermCriteria_setType(cppPtr, value); }

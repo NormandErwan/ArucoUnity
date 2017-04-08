@@ -70,8 +70,8 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr rvecsPtr, tvecsPtr;
 
-            double error = au_cv_calib3d_fisheye_calibrate(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr,
-              out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
+            double error = au_cv_calib3d_fisheye_calibrate(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
+              distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
             rvecs = new Std.VectorMat(rvecsPtr);
             tvecs = new Std.VectorMat(tvecsPtr);
 
@@ -79,10 +79,17 @@ namespace ArucoUnity
             return error;
           }
 
-          public static void EstimateNewCameraMatrixForUndistortRectify(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Size imageSize, Core.Mat R,
-            out Core.Mat newCameraMatrix, double balance = 0.0, Core.Size newSize = null, double fovScale = 1.0)
+          public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
+            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
+            Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags = 0)
           {
-            newSize = (newSize != null) ? newSize : new Core.Size();
+            Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
+            return Calibrate(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
+          }
+
+          public static void EstimateNewCameraMatrixForUndistortRectify(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Size imageSize, Core.Mat R,
+            out Core.Mat newCameraMatrix, double balance, Core.Size newSize, double fovScale = 1.0)
+          {
             Core.Exception exception = new Core.Exception();
             System.IntPtr newCameraMatrixPtr;
 
@@ -91,6 +98,13 @@ namespace ArucoUnity
             newCameraMatrix = new Core.Mat(newCameraMatrixPtr);
 
             exception.Check();
+          }
+
+          public static void EstimateNewCameraMatrixForUndistortRectify(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Size imageSize, Core.Mat R,
+            out Core.Mat newCameraMatrix, double balance = 1.0)
+          {
+            Core.Size newSize = new Core.Size();
+            EstimateNewCameraMatrixForUndistortRectify(cameraMatrix, distCoeffs, imageSize, R, out newCameraMatrix, balance, newSize);
           }
 
           public static void InitUndistortRectifyMap(Core.Mat cameraMatrix, Core.Mat distCoeffs, Core.Mat R, Core.Mat newCameraMatrix,
@@ -109,7 +123,7 @@ namespace ArucoUnity
 
           public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
             Std.VectorVectorPoint2f imagePoints2, Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
-            Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, Calib flags = Calib.FixIntrinsic, Core.TermCriteria criteria = null)
+            Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, Calib flags, Core.TermCriteria criteria)
           {
             criteria = (criteria != null) ? criteria : new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
             Core.Exception exception = new Core.Exception();
@@ -125,16 +139,26 @@ namespace ArucoUnity
             return error;
           }
 
+          public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
+            Std.VectorVectorPoint2f imagePoints2, Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+            Core.Size imageSize, out Core.Mat rvec, out Core.Mat tvec, Calib flags = Calib.FixIntrinsic)
+          {
+            Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
+            return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize,
+              out rvec, out tvec, flags, criteria);
+          }
+
           public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
             Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
-            StereoRectifyFlags flags, Core.Size newImageSize = null, double balance = 0.0, double fovScale = 1.0)
+            StereoRectifyFlags flags, Core.Size newImageSize, double balance = 0.0, double fovScale = 1.0)
           {
             newImageSize = (newImageSize != null) ? newImageSize : new Core.Size();
             Core.Exception exception = new Core.Exception();
             System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
-            au_cv_calib3d_fisheye_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr, rvec.cppPtr, tvec.cppPtr, out R1Ptr, 
-              out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, newImageSize.cppPtr, balance, fovScale, exception.cppPtr);
+            au_cv_calib3d_fisheye_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr,
+              rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, newImageSize.cppPtr, balance, fovScale,
+              exception.cppPtr);
             R1 = new Core.Mat(R1Ptr);
             R2 = new Core.Mat(R2Ptr);
             P1 = new Core.Mat(P1Ptr);
@@ -144,11 +168,18 @@ namespace ArucoUnity
             exception.Check();
           }
 
-          public static void UndistortImage(Core.Mat distorted, out Core.Mat undistorted, Core.Mat cameraMatrix, Core.Mat distCoeffs, 
-            Core.Mat newCameraMatrix = null, Core.Size newSize = null)
+          public static void StereoRectify(Core.Mat cameraMatrix1, Core.Mat distCoeffs1, Core.Mat cameraMatrix2, Core.Mat distCoeffs2,
+            Core.Size imageSize, Core.Mat rvec, Core.Mat tvec, out Core.Mat R1, out Core.Mat R2, out Core.Mat P1, out Core.Mat P2, out Core.Mat Q,
+            StereoRectifyFlags flags)
           {
-            newCameraMatrix = (newCameraMatrix != null) ? newCameraMatrix : new Core.Mat();
-            newSize = (newSize != null) ? newSize : new Core.Size();
+            Core.Size newImageSize = new Core.Size();
+            StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out R1, out R2, out P1, out P2, out Q,
+              flags, newImageSize);
+          }
+
+          public static void UndistortImage(Core.Mat distorted, out Core.Mat undistorted, Core.Mat cameraMatrix, Core.Mat distCoeffs, 
+            Core.Mat newCameraMatrix, Core.Size newSize)
+          {
             Core.Exception exception = new Core.Exception();
             System.IntPtr undistortedPtr;
 
@@ -157,6 +188,19 @@ namespace ArucoUnity
             undistorted = new Core.Mat(undistortedPtr);
 
             exception.Check();
+          }
+
+          public static void UndistortImage(Core.Mat distorted, out Core.Mat undistorted, Core.Mat cameraMatrix, Core.Mat distCoeffs,
+            Core.Mat newCameraMatrix)
+          {
+            Core.Size newSize = new Core.Size();
+            UndistortImage(distorted, out undistorted, cameraMatrix, distorted, newCameraMatrix, newSize);
+          }
+
+          public static void UndistortImage(Core.Mat distorted, out Core.Mat undistorted, Core.Mat cameraMatrix, Core.Mat distCoeffs)
+          {
+            Core.Mat newCameraMatrix = new Core.Mat();
+            UndistortImage(distorted, out undistorted, cameraMatrix, distorted, newCameraMatrix);
           }
         }
       }

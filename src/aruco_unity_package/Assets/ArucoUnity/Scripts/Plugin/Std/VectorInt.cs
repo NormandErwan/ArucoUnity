@@ -11,14 +11,14 @@ namespace ArucoUnity
     {
       public class VectorInt : Utility.HandleCppPtr
       {
-        // Constructor & Destructor
+        // Native functions
+
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_std_vectorInt_new();
 
         [DllImport("ArucoUnity")]
         static extern void au_std_vectorInt_delete(System.IntPtr vector);
 
-        // Functions
         [DllImport("ArucoUnity")]
         static extern int au_std_vectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
@@ -34,6 +34,8 @@ namespace ArucoUnity
         [DllImport("ArucoUnity")]
         static extern uint au_std_vectorInt_size(System.IntPtr vector);
 
+        // Constructors & destructor
+
         public VectorInt() : base(au_std_vectorInt_new())
         {
         }
@@ -47,6 +49,8 @@ namespace ArucoUnity
         {
           au_std_vectorInt_delete(cppPtr);
         }
+
+        // Methods
 
         public int At(uint pos)
         {

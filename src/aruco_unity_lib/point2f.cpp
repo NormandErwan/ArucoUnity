@@ -2,6 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Point2f* au_cv_Point2f_new() {
     return new cv::Point2f();
   }
@@ -11,6 +12,7 @@ extern "C" {
   }
 
   // Variables
+
   float au_cv_Point2f_getX(cv::Point2f* point2f) {
     return point2f->x;
   }

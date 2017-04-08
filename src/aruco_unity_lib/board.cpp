@@ -2,6 +2,7 @@
 
 extern "C" {
   // Attributes
+
   cv::Ptr<cv::aruco::Dictionary>* au_Board_getDictionary(cv::Ptr<cv::aruco::Board>* board) {
     return &(board->get()->dictionary);
   }

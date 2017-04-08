@@ -2,6 +2,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   cv::Rect* au_cv_Rect_new1() {
     return new cv::Rect();
   }
@@ -14,7 +15,8 @@ extern "C" {
     delete rect;
   }
 
-  // Variables
+  // Attributes
+
   int au_cv_Rect_getX(cv::Rect* rect) {
     return rect->x;
   }

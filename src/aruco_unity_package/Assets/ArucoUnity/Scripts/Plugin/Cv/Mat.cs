@@ -13,7 +13,8 @@ namespace ArucoUnity
       {
         public class Mat : Utility.HandleCppPtr
         {
-          // Constructor & Destructor
+          // Native functions
+
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Mat_new1();
 
@@ -32,7 +33,6 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern void au_cv_Mat_delete(System.IntPtr mat);
 
-          // Member Functions
           [DllImport("ArucoUnity")]
           static extern int au_cv_Mat_at_int_get(System.IntPtr mat, int i0, int i1, System.IntPtr exception);
 
@@ -63,7 +63,6 @@ namespace ArucoUnity
           [DllImport("ArucoUnity")]
           static extern uint au_cv_Mat_elemSize1(System.IntPtr mat);
 
-          // Variables
           [DllImport("ArucoUnity")]
           static extern int au_cv_Mat_getCols(System.IntPtr mat);
 
@@ -84,6 +83,8 @@ namespace ArucoUnity
 
           [DllImport("ArucoUnity")]
           static extern System.IntPtr au_cv_Mat_getSize(System.IntPtr mat);
+
+          // Constructors & destructor
 
           public Mat() : base(au_cv_Mat_new1())
           {
@@ -110,6 +111,42 @@ namespace ArucoUnity
           {
           }
 
+          protected override void DeleteCvPtr()
+          {
+            au_cv_Mat_delete(cppPtr);
+          }
+
+          // Properties
+
+          public int Cols
+          {
+            get { return au_cv_Mat_getCols(cppPtr); }
+          }
+
+          public System.IntPtr DataIntPtr
+          {
+            get { return au_cv_Mat_getData_void(cppPtr); }
+            set { au_cv_Mat_setData_void(cppPtr, value); }
+          }
+
+          public byte[] DataByte
+          {
+            get { return au_cv_Mat_getData_uchar(cppPtr); }
+            set { au_cv_Mat_setData_uchar(cppPtr, value); }
+          }
+
+          public int Rows
+          {
+            get { return au_cv_Mat_getRows(cppPtr); }
+          }
+
+          public Size Size
+          {
+            get { return new Size(au_cv_Mat_getSize(cppPtr)); }
+          }
+
+          // Methods
+
           public int Channels()
           {
             return au_cv_Mat_channels(cppPtr);
@@ -120,11 +157,6 @@ namespace ArucoUnity
             Exception exception = new Exception();
             au_cv_Mat_create(cppPtr, rows, cols, (int)type, exception.cppPtr);
             exception.Check();
-          }
-
-          protected override void DeleteCvPtr()
-          {
-            au_cv_Mat_delete(cppPtr);
           }
 
           public int AtInt(int i0, int i1)
@@ -175,33 +207,6 @@ namespace ArucoUnity
           public Type Type()
           {
             return (Type)au_cv_Mat_type(cppPtr);
-          }
-
-          public int cols
-          {
-            get { return au_cv_Mat_getCols(cppPtr); }
-          }
-
-          public System.IntPtr dataIntPtr
-          {
-            get { return au_cv_Mat_getData_void(cppPtr); }
-            set { au_cv_Mat_setData_void(cppPtr, value); }
-          }
-
-          public byte[] dataByte
-          {
-            get { return au_cv_Mat_getData_uchar(cppPtr); }
-            set { au_cv_Mat_setData_uchar(cppPtr, value); }
-          }
-
-          public int rows
-          {
-            get { return au_cv_Mat_getRows(cppPtr); }
-          }
-
-          public Size size
-          {
-            get { return new Size(au_cv_Mat_getSize(cppPtr)); }
           }
         }
       }

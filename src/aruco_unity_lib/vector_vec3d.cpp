@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<cv::Vec3d>* au_std_vectorVec3d_new() {
     return new std::vector<cv::Vec3d>();
   }
@@ -12,6 +13,7 @@ extern "C" {
   }
 
   // Functions
+
   cv::Vec3d* au_std_vectorVec3d_at(std::vector<cv::Vec3d>* vector, size_t pos, cv::Exception* exception) {
     cv::Vec3d* element = NULL;
     try {

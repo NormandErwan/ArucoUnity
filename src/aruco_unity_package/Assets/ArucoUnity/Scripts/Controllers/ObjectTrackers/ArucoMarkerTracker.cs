@@ -209,7 +209,7 @@ namespace ArucoUnity
         // Draw the rejected marker candidates
         if (arucoTracker.DrawRejectedCandidates && RejectedCandidateCorners[cameraId][dictionary].Size() > 0)
         {
-          Aruco.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary], REJECTED_MARKERS_CANDIDATES_COLOR);
+          Aruco.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary]);
           updatedCameraImage = true;
         }
 

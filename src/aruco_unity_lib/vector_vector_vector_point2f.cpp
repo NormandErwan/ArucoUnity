@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<std::vector<std::vector<cv::Point2f>>>* au_std_vectorVectorVectorPoint2f_new() {
     return new std::vector<std::vector<std::vector<cv::Point2f>>>();
   }
@@ -11,8 +12,9 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
-  std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_at(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, size_t pos, cv::Exception* exception) {
+  // Member Functions
+  std::vector<std::vector<cv::Point2f>>* au_std_vectorVectorVectorPoint2f_at(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, size_t pos,
+    cv::Exception* exception) {
     std::vector<std::vector<cv::Point2f>>* element = NULL;
     try {
       element = &(vector->at(pos));
@@ -27,7 +29,8 @@ extern "C" {
     return vector->data();
   }
 
-  void au_std_vectorVectorVectorPoint2f_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector, std::vector<std::vector<cv::Point2f>>* value) {
+  void au_std_vectorVectorVectorPoint2f_push_back(std::vector<std::vector<std::vector<cv::Point2f>>>* vector,
+    std::vector<std::vector<cv::Point2f>>* value) {
     vector->push_back(std::vector<std::vector<cv::Point2f>>(*value));
   }
 

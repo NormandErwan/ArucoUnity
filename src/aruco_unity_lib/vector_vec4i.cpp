@@ -3,6 +3,7 @@
 
 extern "C" {
   // Constructors & Destructors
+
   std::vector<cv::Vec4i>* au_std_vectorVec4i_new() {
     return new std::vector<cv::Vec4i>();
   }
@@ -11,7 +12,8 @@ extern "C" {
     delete vector;
   }
 
-  // Functions
+  // Member Functions
+
   cv::Vec4i* au_std_vectorVec4i_at(std::vector<cv::Vec4i>* vector, size_t pos, cv::Exception* exception) {
     cv::Vec4i* element = NULL;
     try {

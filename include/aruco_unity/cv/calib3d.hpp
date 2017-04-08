@@ -36,7 +36,8 @@ extern "C" {
   ARUCO_UNITY_API double au_cv_calib3d_calibrateCamera1(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
     std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, std::vector<double>* stdDeviationsIntrinsics,
-    std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
+    std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors, int flags, cv::TermCriteria* criteria,
+    cv::Exception* exception);
 
   //! \see au_cv_calib3d_calibrateCamera1().
   ARUCO_UNITY_API double au_cv_calib3d_calibrateCamera2(std::vector<std::vector<cv::Point3f>>* objectPoints,
@@ -123,7 +124,8 @@ extern "C" {
   //! \param distCoeffs Output vector of distortion coefficients.
   //! \param rvecs Output vector of rotation vectors (see Rodrigues) estimated for each pattern view.
   //! \param tvecs Output vector of translation vectors estimated for each pattern view.
-  //! \param flags Different flags for the calibration process (see http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1).
+  //! \param flags Different flags for the calibration process (see 
+  //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1).
   //! \param criteria Termination criteria for the iterative optimization algorithm.
   //!
   //! See the OpenCV documentation for more information: 
@@ -176,7 +178,8 @@ extern "C" {
   //! \param imageSize Size of the image used only to initialize intrinsic camera matrix.
   //! \param R Output Rotation matrix between the 1st and the 2nd camera coordinate systems.
   //! \param T Output Translation vector between the coordinate systems of the cameras.
-  //! \param flags Different flags for the calibration process (see http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gadbb3a6ca6429528ef302c784df47949b)
+  //! \param flags Different flags for the calibration process (see 
+  //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gadbb3a6ca6429528ef302c784df47949b)
   //! \param criteria Termination criteria for the iterative optimization algorithm.
   //!
   //! See the OpenCV documentation for more information: 

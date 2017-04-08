@@ -30,7 +30,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Variables
+  //! \name Attributes
   //! @{
 
   //! \brief Returns the epsilon value.
@@ -60,7 +60,7 @@ extern "C" {
   //! \param type The new value.
   ARUCO_UNITY_API void au_cv_TermCriteria_setType(cv::TermCriteria* termCriteria, int type);
 
-  //! @} Variables
+  //! @} Attributes
 }
 
 //! @} term_criteria

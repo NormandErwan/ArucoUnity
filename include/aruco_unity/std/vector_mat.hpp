@@ -23,7 +23,7 @@ extern "C" {
 
   //! @} Constructors & Destructors
 
-  //! \name Functions
+  //! \name Member Functions
   //! @{
   
   //! \brief Access specified element with bounds checking. 
@@ -46,7 +46,7 @@ extern "C" {
   //! \param vector The vector used.
   ARUCO_UNITY_API size_t au_std_vectorMat_size(std::vector<cv::Mat>* vector);
 
-  //! @} Functions
+  //! @} Member Functions
 }
 
 //! @} vector_mat

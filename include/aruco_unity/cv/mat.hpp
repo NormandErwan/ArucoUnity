@@ -121,7 +121,7 @@ extern "C" {
 
   //! @} Member Functions
   
-  //! \name Variables
+  //! \name Attributes
   //! @{
 
   //! \brief Returns the number of columns.
@@ -150,11 +150,11 @@ extern "C" {
   //! \param mat The Mat used.
   ARUCO_UNITY_API int au_cv_Mat_getRows(cv::Mat* mat);
 
-  //! \brief TODO
+  //! \brief Returns the size of the Mat.
   //! \param mat The Mat used.
   ARUCO_UNITY_API cv::Size* au_cv_Mat_getSize(cv::Mat* mat);
 
-  //! @} Variables
+  //! @} Attribute
 }
 
 //! @} mat
