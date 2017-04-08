@@ -56,29 +56,29 @@ namespace ArucoUnity
             return new Vector3(point3f.X, point3f.Y, point3f.Z);
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Point3f_delete(cppPtr);
+            au_cv_Point3f_delete(CppPtr);
           }
 
           // Properties
 
           public float X
           {
-            get { return au_cv_Point3f_getX(cppPtr); }
-            set { au_cv_Point3f_setX(cppPtr, value); }
+            get { return au_cv_Point3f_getX(CppPtr); }
+            set { au_cv_Point3f_setX(CppPtr, value); }
           }
 
           public float Y
           {
-            get { return au_cv_Point3f_getY(cppPtr); }
-            set { au_cv_Point3f_setY(cppPtr, value); }
+            get { return au_cv_Point3f_getY(CppPtr); }
+            set { au_cv_Point3f_setY(CppPtr, value); }
           }
 
           public float Z
           {
-            get { return au_cv_Point3f_getZ(cppPtr); }
-            set { au_cv_Point3f_setZ(cppPtr, value); }
+            get { return au_cv_Point3f_getZ(CppPtr); }
+            set { au_cv_Point3f_setZ(CppPtr, value); }
           }
         }
       }

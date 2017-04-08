@@ -9,45 +9,53 @@ namespace ArucoUnity
   {
     public static partial class Utility
     {
+      public enum DeleteResponsibility
+      {
+        True,
+        False
+      }
+
       public abstract class HandleCppPtr
       {
-        public enum DeleteResponsibility
-        {
-          True,
-          False
-        }
-
-        public DeleteResponsibility deleteResponsibility;
-
-        HandleRef handle;
+        // Constructors & destructor
 
         public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         {
-          this.cppPtr = System.IntPtr.Zero;
-          this.deleteResponsibility = deleteResponsibility;
+          CppPtr = System.IntPtr.Zero;
+          DeleteResponsibility = deleteResponsibility;
         }
 
         public HandleCppPtr(System.IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         {
-          this.cppPtr = cppPtr;
-          this.deleteResponsibility = deleteResponsibility;
+          CppPtr = cppPtr;
+          DeleteResponsibility = deleteResponsibility;
         }
 
         ~HandleCppPtr()
         {
-          if (deleteResponsibility == DeleteResponsibility.True)
+          if (DeleteResponsibility == DeleteResponsibility.True)
           {
-            DeleteCvPtr();
+            DeleteCppPtr();
           }
         }
 
-        public System.IntPtr cppPtr
+        // Properties
+
+        public DeleteResponsibility DeleteResponsibility { get; set; }
+
+        public System.IntPtr CppPtr
         {
           get { return handle.Handle; }
           set { handle = new HandleRef(this, value); }
         }
 
-        protected abstract void DeleteCvPtr();
+        // Variables
+
+        HandleRef handle;
+
+        // Methods
+
+        protected abstract void DeleteCppPtr();
       }
     }
   }

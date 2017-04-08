@@ -33,9 +33,9 @@ namespace ArucoUnity
             return new Scalar(color.r, color.g, color.b);
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Scalar_delete(cppPtr);
+            au_cv_Scalar_delete(CppPtr);
           }
         }
       }

@@ -61,29 +61,29 @@ namespace ArucoUnity
           {
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_TermCriteria_delete(cppPtr);
+            au_cv_TermCriteria_delete(CppPtr);
           }
 
           // Properties
 
           public double Epsilon
           {
-            get { return au_cv_TermCriteria_getEpsilon(cppPtr); }
-            set { au_cv_TermCriteria_setEpsilon(cppPtr, value); }
+            get { return au_cv_TermCriteria_getEpsilon(CppPtr); }
+            set { au_cv_TermCriteria_setEpsilon(CppPtr, value); }
           }
 
           public int MaxCount
           {
-            get { return au_cv_TermCriteria_getMaxCount(cppPtr); }
-            set { au_cv_TermCriteria_setMaxCount(cppPtr, value); }
+            get { return au_cv_TermCriteria_getMaxCount(CppPtr); }
+            set { au_cv_TermCriteria_setMaxCount(CppPtr, value); }
           }
 
           public int TypeValue
           {
-            get { return au_cv_TermCriteria_getType(cppPtr); }
-            set { au_cv_TermCriteria_setType(cppPtr, value); }
+            get { return au_cv_TermCriteria_getType(CppPtr); }
+            set { au_cv_TermCriteria_setType(CppPtr, value); }
           }
         }
       }

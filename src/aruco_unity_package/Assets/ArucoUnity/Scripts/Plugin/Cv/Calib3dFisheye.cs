@@ -70,8 +70,8 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr rvecsPtr, tvecsPtr;
 
-            double error = au_cv_calib3d_fisheye_calibrate(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-              distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
+            double error = au_cv_calib3d_fisheye_calibrate(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
+              distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
             rvecs = new Std.VectorMat(rvecsPtr);
             tvecs = new Std.VectorMat(tvecsPtr);
 
@@ -93,8 +93,8 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr newCameraMatrixPtr;
 
-            au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cameraMatrix.cppPtr, distCoeffs.cppPtr, imageSize.cppPtr, R.cppPtr, 
-              out newCameraMatrixPtr, balance, newSize.cppPtr, fovScale, exception.cppPtr);
+            au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cameraMatrix.CppPtr, distCoeffs.CppPtr, imageSize.CppPtr, R.CppPtr, 
+              out newCameraMatrixPtr, balance, newSize.CppPtr, fovScale, exception.CppPtr);
             newCameraMatrix = new Core.Mat(newCameraMatrixPtr);
 
             exception.Check();
@@ -113,8 +113,8 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr map1Ptr, map2Ptr;
 
-            au_cv_calib3d_fisheye_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr,
-              (int)m1type, out map1Ptr, out map2Ptr, exception.cppPtr);
+            au_cv_calib3d_fisheye_initUndistortRectifyMap(cameraMatrix.CppPtr, distCoeffs.CppPtr, R.CppPtr, newCameraMatrix.CppPtr, size.CppPtr,
+              (int)m1type, out map1Ptr, out map2Ptr, exception.CppPtr);
             map1 = new Core.Mat(map1Ptr);
             map2 = new Core.Mat(map2Ptr);
 
@@ -129,9 +129,9 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr rvecPtr, tvecPtr;
 
-            double error = au_cv_calib3d_fisheye_stereoCalibrate(objectPoints.cppPtr, imagePoints1.cppPtr, imagePoints2.cppPtr, cameraMatrix1.cppPtr,
-              distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr, out rvecPtr, out tvecPtr, (int)flags, criteria.cppPtr,
-              exception.cppPtr);
+            double error = au_cv_calib3d_fisheye_stereoCalibrate(objectPoints.CppPtr, imagePoints1.CppPtr, imagePoints2.CppPtr, cameraMatrix1.CppPtr,
+              distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr, out rvecPtr, out tvecPtr, (int)flags, criteria.CppPtr,
+              exception.CppPtr);
             rvec = new Core.Mat(rvecPtr);
             tvec = new Core.Mat(tvecPtr);
 
@@ -156,9 +156,9 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
-            au_cv_calib3d_fisheye_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr,
-              rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, newImageSize.cppPtr, balance, fovScale,
-              exception.cppPtr);
+            au_cv_calib3d_fisheye_stereoRectify(cameraMatrix1.CppPtr, distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr,
+              rvec.CppPtr, tvec.CppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, newImageSize.CppPtr, balance, fovScale,
+              exception.CppPtr);
             R1 = new Core.Mat(R1Ptr);
             R2 = new Core.Mat(R2Ptr);
             P1 = new Core.Mat(P1Ptr);
@@ -183,8 +183,8 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr undistortedPtr;
 
-            au_cv_calib3d_fisheye_undistortImage(distorted.cppPtr, out undistortedPtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, 
-              newCameraMatrix.cppPtr, newSize.cppPtr, exception.cppPtr);
+            au_cv_calib3d_fisheye_undistortImage(distorted.CppPtr, out undistortedPtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, 
+              newCameraMatrix.CppPtr, newSize.CppPtr, exception.CppPtr);
             undistorted = new Core.Mat(undistortedPtr);
 
             exception.Check();

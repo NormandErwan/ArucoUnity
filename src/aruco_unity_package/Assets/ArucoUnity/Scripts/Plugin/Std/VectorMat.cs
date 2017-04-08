@@ -42,9 +42,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorMat_delete(cppPtr);
+          au_std_vectorMat_delete(CppPtr);
         }
 
         // Methods
@@ -52,14 +52,14 @@ namespace ArucoUnity
         public Cv.Core.Mat At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Mat element = new Cv.Core.Mat(au_std_vectorMat_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Mat element = new Cv.Core.Mat(au_std_vectorMat_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Cv.Core.Mat[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorMat_data(cppPtr);
+          System.IntPtr* dataPtr = au_std_vectorMat_data(CppPtr);
           uint size = Size();
 
           Cv.Core.Mat[] data = new Cv.Core.Mat[size];
@@ -73,12 +73,12 @@ namespace ArucoUnity
 
         public void PushBack(Cv.Core.Mat value)
         {
-          au_std_vectorMat_push_back(cppPtr, value.cppPtr);
+          au_std_vectorMat_push_back(CppPtr, value.CppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorMat_size(cppPtr);
+          return au_std_vectorMat_size(CppPtr);
         }
       }
     }

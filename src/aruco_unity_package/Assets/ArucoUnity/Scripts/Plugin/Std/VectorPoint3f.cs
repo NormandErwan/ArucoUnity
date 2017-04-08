@@ -42,9 +42,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorPoint3f_delete(cppPtr);
+          au_std_vectorPoint3f_delete(CppPtr);
         }
 
         // Methods
@@ -52,14 +52,14 @@ namespace ArucoUnity
         public Cv.Core.Point3f At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Point3f element = new Cv.Core.Point3f(au_std_vectorPoint3f_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Point3f element = new Cv.Core.Point3f(au_std_vectorPoint3f_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Cv.Core.Point3f[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorPoint3f_data(cppPtr);
+          System.IntPtr* dataPtr = au_std_vectorPoint3f_data(CppPtr);
           uint size = Size();
 
           Cv.Core.Point3f[] data = new Cv.Core.Point3f[size];
@@ -73,12 +73,12 @@ namespace ArucoUnity
 
         public void PushBack(Cv.Core.Point3f value)
         {
-          au_std_vectorPoint3f_push_back(cppPtr, value.cppPtr);
+          au_std_vectorPoint3f_push_back(CppPtr, value.CppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorPoint3f_size(cppPtr);
+          return au_std_vectorPoint3f_size(CppPtr);
         }
       }
     }

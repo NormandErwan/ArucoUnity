@@ -124,129 +124,129 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_DetectorParameters_delete(cppPtr);
+          au_DetectorParameters_delete(CppPtr);
         }
 
         public int AdaptiveThreshWinSizeMin
         {
-          get { return au_DetectorParameters_getAdaptiveThreshWinSizeMin(cppPtr); }
-          set { au_DetectorParameters_setAdaptiveThreshWinSizeMin(cppPtr, value); }
+          get { return au_DetectorParameters_getAdaptiveThreshWinSizeMin(CppPtr); }
+          set { au_DetectorParameters_setAdaptiveThreshWinSizeMin(CppPtr, value); }
         }
 
         public int AdaptiveThreshWinSizeMax
         {
-          get { return au_DetectorParameters_getAdaptiveThreshWinSizeMax(cppPtr); }
-          set { au_DetectorParameters_setAdaptiveThreshWinSizeMax(cppPtr, value); }
+          get { return au_DetectorParameters_getAdaptiveThreshWinSizeMax(CppPtr); }
+          set { au_DetectorParameters_setAdaptiveThreshWinSizeMax(CppPtr, value); }
         }
 
         public int AdaptiveThreshWinSizeStep
         {
-          get { return au_DetectorParameters_getAdaptiveThreshWinSizeStep(cppPtr); }
-          set { au_DetectorParameters_setAdaptiveThreshWinSizeStep(cppPtr, value); }
+          get { return au_DetectorParameters_getAdaptiveThreshWinSizeStep(CppPtr); }
+          set { au_DetectorParameters_setAdaptiveThreshWinSizeStep(CppPtr, value); }
         }
 
         public double AdaptiveThreshConstant
         {
-          get { return au_DetectorParameters_getAdaptiveThreshConstant(cppPtr); }
-          set { au_DetectorParameters_setAdaptiveThreshConstant(cppPtr, value); }
+          get { return au_DetectorParameters_getAdaptiveThreshConstant(CppPtr); }
+          set { au_DetectorParameters_setAdaptiveThreshConstant(CppPtr, value); }
         }
 
         public double MinMarkerPerimeterRate
         {
-          get { return au_DetectorParameters_getMinMarkerPerimeterRate(cppPtr); }
-          set { au_DetectorParameters_setMinMarkerPerimeterRate(cppPtr, value); }
+          get { return au_DetectorParameters_getMinMarkerPerimeterRate(CppPtr); }
+          set { au_DetectorParameters_setMinMarkerPerimeterRate(CppPtr, value); }
         }
 
         public double MaxMarkerPerimeterRate
         {
-          get { return au_DetectorParameters_getMaxMarkerPerimeterRate(cppPtr); }
-          set { au_DetectorParameters_setMaxMarkerPerimeterRate(cppPtr, value); }
+          get { return au_DetectorParameters_getMaxMarkerPerimeterRate(CppPtr); }
+          set { au_DetectorParameters_setMaxMarkerPerimeterRate(CppPtr, value); }
         }
 
         public double PolygonalApproxAccuracyRate
         {
-          get { return au_DetectorParameters_getPolygonalApproxAccuracyRate(cppPtr); }
-          set { au_DetectorParameters_setPolygonalApproxAccuracyRate(cppPtr, value); }
+          get { return au_DetectorParameters_getPolygonalApproxAccuracyRate(CppPtr); }
+          set { au_DetectorParameters_setPolygonalApproxAccuracyRate(CppPtr, value); }
         }
 
         public double MinCornerDistanceRate
         {
-          get { return au_DetectorParameters_getMinCornerDistanceRate(cppPtr); }
-          set { au_DetectorParameters_setMinCornerDistanceRate(cppPtr, value); }
+          get { return au_DetectorParameters_getMinCornerDistanceRate(CppPtr); }
+          set { au_DetectorParameters_setMinCornerDistanceRate(CppPtr, value); }
         }
 
         public int MinDistanceToBorder
         {
-          get { return au_DetectorParameters_getMinDistanceToBorder(cppPtr); }
-          set { au_DetectorParameters_setMinDistanceToBorder(cppPtr, value); }
+          get { return au_DetectorParameters_getMinDistanceToBorder(CppPtr); }
+          set { au_DetectorParameters_setMinDistanceToBorder(CppPtr, value); }
         }
 
         public double MinMarkerDistanceRate
         {
-          get { return au_DetectorParameters_getMinMarkerDistanceRate(cppPtr); }
-          set { au_DetectorParameters_setMinMarkerDistanceRate(cppPtr, value); }
+          get { return au_DetectorParameters_getMinMarkerDistanceRate(CppPtr); }
+          set { au_DetectorParameters_setMinMarkerDistanceRate(CppPtr, value); }
         }
 
         public bool DoCornerRefinement
         {
-          get { return au_DetectorParameters_getDoCornerRefinement(cppPtr); }
-          set { au_DetectorParameters_setDoCornerRefinement(cppPtr, value); }
+          get { return au_DetectorParameters_getDoCornerRefinement(CppPtr); }
+          set { au_DetectorParameters_setDoCornerRefinement(CppPtr, value); }
         }
 
         public int CornerRefinementWinSize
         {
-          get { return au_DetectorParameters_getCornerRefinementWinSize(cppPtr); }
-          set { au_DetectorParameters_setCornerRefinementWinSize(cppPtr, value); }
+          get { return au_DetectorParameters_getCornerRefinementWinSize(CppPtr); }
+          set { au_DetectorParameters_setCornerRefinementWinSize(CppPtr, value); }
         }
 
         public int CornerRefinementMaxIterations
         {
-          get { return au_DetectorParameters_getCornerRefinementMaxIterations(cppPtr); }
-          set { au_DetectorParameters_setCornerRefinementMaxIterations(cppPtr, value); }
+          get { return au_DetectorParameters_getCornerRefinementMaxIterations(CppPtr); }
+          set { au_DetectorParameters_setCornerRefinementMaxIterations(CppPtr, value); }
         }
 
         public double CornerRefinementMinAccuracy
         {
-          get { return au_DetectorParameters_getCornerRefinementMinAccuracy(cppPtr); }
-          set { au_DetectorParameters_setCornerRefinementMinAccuracy(cppPtr, value); }
+          get { return au_DetectorParameters_getCornerRefinementMinAccuracy(CppPtr); }
+          set { au_DetectorParameters_setCornerRefinementMinAccuracy(CppPtr, value); }
         }
 
         public int MarkerBorderBits
         {
-          get { return au_DetectorParameters_getMarkerBorderBits(cppPtr); }
-          set { au_DetectorParameters_setMarkerBorderBits(cppPtr, value); }
+          get { return au_DetectorParameters_getMarkerBorderBits(CppPtr); }
+          set { au_DetectorParameters_setMarkerBorderBits(CppPtr, value); }
         }
 
         public int PerspectiveRemovePixelPerCell
         {
-          get { return au_DetectorParameters_getPerspectiveRemovePixelPerCell(cppPtr); }
-          set { au_DetectorParameters_setPerspectiveRemovePixelPerCell(cppPtr, value); }
+          get { return au_DetectorParameters_getPerspectiveRemovePixelPerCell(CppPtr); }
+          set { au_DetectorParameters_setPerspectiveRemovePixelPerCell(CppPtr, value); }
         }
 
         public double PerspectiveRemoveIgnoredMarginPerCell
         {
-          get { return au_DetectorParameters_getPerspectiveRemoveIgnoredMarginPerCell(cppPtr); }
-          set { au_DetectorParameters_setPerspectiveRemoveIgnoredMarginPerCell(cppPtr, value); }
+          get { return au_DetectorParameters_getPerspectiveRemoveIgnoredMarginPerCell(CppPtr); }
+          set { au_DetectorParameters_setPerspectiveRemoveIgnoredMarginPerCell(CppPtr, value); }
         }
 
         public double MaxErroneousBitsInBorderRate
         {
-          get { return au_DetectorParameters_getMaxErroneousBitsInBorderRate(cppPtr); }
-          set { au_DetectorParameters_setMaxErroneousBitsInBorderRate(cppPtr, value); }
+          get { return au_DetectorParameters_getMaxErroneousBitsInBorderRate(CppPtr); }
+          set { au_DetectorParameters_setMaxErroneousBitsInBorderRate(CppPtr, value); }
         }
 
         public double MinOtsuStdDev
         {
-          get { return au_DetectorParameters_getMinOtsuStdDev(cppPtr); }
-          set { au_DetectorParameters_setMinOtsuStdDev(cppPtr, value); }
+          get { return au_DetectorParameters_getMinOtsuStdDev(CppPtr); }
+          set { au_DetectorParameters_setMinOtsuStdDev(CppPtr, value); }
         }
 
         public double ErrorCorrectionRate
         {
-          get { return au_DetectorParameters_getErrorCorrectionRate(cppPtr); }
-          set { au_DetectorParameters_setErrorCorrectionRate(cppPtr, value); }
+          get { return au_DetectorParameters_getErrorCorrectionRate(CppPtr); }
+          set { au_DetectorParameters_setErrorCorrectionRate(CppPtr, value); }
         }
       }
     }

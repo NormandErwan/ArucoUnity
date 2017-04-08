@@ -42,9 +42,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorVec3d_delete(cppPtr);
+          au_std_vectorVec3d_delete(CppPtr);
         }
 
         // Methods
@@ -52,14 +52,14 @@ namespace ArucoUnity
         public Cv.Core.Vec3d At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Vec3d element = new Cv.Core.Vec3d(au_std_vectorVec3d_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Vec3d element = new Cv.Core.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Cv.Core.Vec3d[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorVec3d_data(cppPtr);
+          System.IntPtr* dataPtr = au_std_vectorVec3d_data(CppPtr);
           uint size = Size();
 
           Cv.Core.Vec3d[] data = new Cv.Core.Vec3d[size];
@@ -73,12 +73,12 @@ namespace ArucoUnity
 
         public void PushBack(Cv.Core.Vec3d value)
         {
-          au_std_vectorVec3d_push_back(cppPtr, value.cppPtr);
+          au_std_vectorVec3d_push_back(CppPtr, value.CppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorVec3d_size(cppPtr);
+          return au_std_vectorVec3d_size(CppPtr);
         }
       }
     }

@@ -42,9 +42,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorVectorInt_delete(cppPtr);
+          au_std_vectorVectorInt_delete(CppPtr);
         }
 
         // Methods
@@ -52,14 +52,14 @@ namespace ArucoUnity
         public VectorInt At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          VectorInt element = new VectorInt(au_std_vectorVectorInt_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          VectorInt element = new VectorInt(au_std_vectorVectorInt_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe VectorInt[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorVectorInt_data(cppPtr);
+          System.IntPtr* dataPtr = au_std_vectorVectorInt_data(CppPtr);
           uint size = Size();
 
           VectorInt[] data = new VectorInt[size];
@@ -73,12 +73,12 @@ namespace ArucoUnity
 
         public void PushBack(VectorInt value)
         {
-          au_std_vectorVectorInt_push_back(cppPtr, value.cppPtr);
+          au_std_vectorVectorInt_push_back(CppPtr, value.CppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorVectorInt_size(cppPtr);
+          return au_std_vectorVectorInt_size(CppPtr);
         }
       }
     }

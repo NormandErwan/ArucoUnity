@@ -85,9 +85,9 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecsPtr, tvecsPtr;
 
-          double error = au_cv_calib3d_calibrateCamera1(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-            distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, stdDeviationsIntrinsics.cppPtr, stdDeviationsExtrinsics.cppPtr, perViewErrors.cppPtr,
-            (int)flags, criteria.cppPtr, exception.cppPtr);
+          double error = au_cv_calib3d_calibrateCamera1(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
+            distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, stdDeviationsIntrinsics.CppPtr, stdDeviationsExtrinsics.CppPtr, perViewErrors.CppPtr,
+            (int)flags, criteria.CppPtr, exception.CppPtr);
           rvecs = new Std.VectorMat(rvecsPtr);
           tvecs = new Std.VectorMat(tvecsPtr);
           exception.Check();
@@ -110,8 +110,8 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecsPtr, tvecsPtr;
 
-          double error = au_cv_calib3d_calibrateCamera2(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, cameraMatrix.cppPtr,
-            distCoeffs.cppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.cppPtr, exception.cppPtr);
+          double error = au_cv_calib3d_calibrateCamera2(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
+            distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
           rvecs = new Std.VectorMat(rvecsPtr);
           tvecs = new Std.VectorMat(tvecsPtr);
           exception.Check();
@@ -130,8 +130,8 @@ namespace ArucoUnity
           double aspectRatio = 1.0)
         {
           Core.Exception exception = new Core.Exception();
-          System.IntPtr cameraMatrixPtr = au_cv_calib3d_initCameraMatrix2D(objectPoints.cppPtr, imagePoints.cppPtr, imageSize.cppPtr, aspectRatio,
-            exception.cppPtr);
+          System.IntPtr cameraMatrixPtr = au_cv_calib3d_initCameraMatrix2D(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, aspectRatio,
+            exception.CppPtr);
           exception.Check();
           return new Core.Mat(cameraMatrixPtr);
         }
@@ -140,7 +140,7 @@ namespace ArucoUnity
         {
           Core.Exception exception = new Core.Exception();
           System.IntPtr rotationMatPtr;
-          au_cv_calib3d_Rodrigues(rotationVector.cppPtr, out rotationMatPtr, exception.cppPtr);
+          au_cv_calib3d_Rodrigues(rotationVector.CppPtr, out rotationMatPtr, exception.CppPtr);
           rotationMatrix = new Core.Mat(rotationMatPtr);
           exception.Check();
         }
@@ -152,9 +152,9 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecPtr, tvecPtr, EPtr, FPtr;
 
-          double error = au_cv_calib3d_stereoCalibrate(objectPoints.cppPtr, imagePoints1.cppPtr, imagePoints2.cppPtr, cameraMatrix1.cppPtr,
-            distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr, out rvecPtr, out tvecPtr, out EPtr, out FPtr, (int)flags,
-            criteria.cppPtr, exception.cppPtr);
+          double error = au_cv_calib3d_stereoCalibrate(objectPoints.CppPtr, imagePoints1.CppPtr, imagePoints2.CppPtr, cameraMatrix1.CppPtr,
+            distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr, out rvecPtr, out tvecPtr, out EPtr, out FPtr, (int)flags,
+            criteria.CppPtr, exception.CppPtr);
           rvec = new Core.Mat(rvecPtr);
           tvec = new Core.Mat(tvecPtr);
           E = new Core.Mat(EPtr);
@@ -180,9 +180,9 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr R1Ptr, R2Ptr, P1Ptr, P2Ptr, QPtr;
 
-          au_cv_calib3d_stereoRectify(cameraMatrix1.cppPtr, distCoeffs1.cppPtr, cameraMatrix2.cppPtr, distCoeffs2.cppPtr, imageSize.cppPtr,
-            rvec.cppPtr, tvec.cppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.cppPtr,
-            validPixROI1.cppPtr, validPixROI2.cppPtr, exception.cppPtr);
+          au_cv_calib3d_stereoRectify(cameraMatrix1.CppPtr, distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr,
+            rvec.CppPtr, tvec.CppPtr, out R1Ptr, out R2Ptr, out P1Ptr, out P2Ptr, out QPtr, (int)flags, alpha, newImageSize.CppPtr,
+            validPixROI1.CppPtr, validPixROI2.CppPtr, exception.CppPtr);
           R1 = new Core.Mat(R1Ptr);
           R2 = new Core.Mat(R2Ptr);
           P1 = new Core.Mat(P1Ptr);

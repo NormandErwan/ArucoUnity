@@ -45,9 +45,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorDouble_delete(cppPtr);
+          au_std_vectorDouble_delete(CppPtr);
         }
 
         // Methods
@@ -55,14 +55,14 @@ namespace ArucoUnity
         public double At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          double element = au_std_vectorDouble_at(cppPtr, pos, exception.cppPtr);
+          double element = au_std_vectorDouble_at(CppPtr, pos, exception.CppPtr);
           exception.Check();
           return element;
         }
 
         public unsafe double[] Data()
         {
-          double* dataPtr = au_std_vectorDouble_data(cppPtr);
+          double* dataPtr = au_std_vectorDouble_data(CppPtr);
           uint size = Size();
 
           double[] data = new double[size];
@@ -76,19 +76,19 @@ namespace ArucoUnity
 
         public void PushBack(double value)
         {
-          au_std_vectorDouble_push_back(cppPtr, value);
+          au_std_vectorDouble_push_back(CppPtr, value);
         }
 
         public void Reserve(uint newCap)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          au_std_vectorDouble_reserve(cppPtr, newCap, exception.cppPtr);
+          au_std_vectorDouble_reserve(CppPtr, newCap, exception.CppPtr);
           exception.Check();
         }
 
         public uint Size()
         {
-          return au_std_vectorDouble_size(cppPtr);
+          return au_std_vectorDouble_size(CppPtr);
         }
       }
     }

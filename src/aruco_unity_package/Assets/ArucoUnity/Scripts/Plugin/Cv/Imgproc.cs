@@ -67,8 +67,8 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr map1Ptr, map2Ptr;
 
-          au_cv_imgproc_initUndistortRectifyMap(cameraMatrix.cppPtr, distCoeffs.cppPtr, R.cppPtr, newCameraMatrix.cppPtr, size.cppPtr, (int)m1type,
-            out map1Ptr, out map2Ptr, exception.cppPtr);
+          au_cv_imgproc_initUndistortRectifyMap(cameraMatrix.CppPtr, distCoeffs.CppPtr, R.CppPtr, newCameraMatrix.CppPtr, size.CppPtr, (int)m1type,
+            out map1Ptr, out map2Ptr, exception.CppPtr);
           map1 = new Core.Mat(map1Ptr);
           map2 = new Core.Mat(map2Ptr);
 
@@ -79,7 +79,7 @@ namespace ArucoUnity
           Core.Scalar borderValue)
         {
           Core.Exception exception = new Core.Exception();
-          au_cv_imgproc_remap(src.cppPtr, dst.cppPtr, map1.cppPtr, map2.cppPtr, (int)interpolation, (int)borderType, borderValue.cppPtr, exception.cppPtr);
+          au_cv_imgproc_remap(src.CppPtr, dst.CppPtr, map1.CppPtr, map2.CppPtr, (int)interpolation, (int)borderType, borderValue.CppPtr, exception.CppPtr);
           exception.Check();
         }
 
@@ -96,8 +96,8 @@ namespace ArucoUnity
           Core.Exception exception = new Core.Exception();
           System.IntPtr outputImagePtr;
 
-          au_cv_imgproc_undistort(inputImage.cppPtr, out outputImagePtr, cameraMatrix.cppPtr, distCoeffs.cppPtr, newCameraMatrix.cppPtr,
-            exception.cppPtr);
+          au_cv_imgproc_undistort(inputImage.CppPtr, out outputImagePtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, newCameraMatrix.CppPtr,
+            exception.CppPtr);
           outputImage = new Core.Mat(outputImagePtr);
 
           exception.Check();

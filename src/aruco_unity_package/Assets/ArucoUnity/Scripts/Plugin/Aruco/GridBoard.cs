@@ -40,9 +40,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_GridBoard_delete(cppPtr);
+          au_GridBoard_delete(CppPtr);
         }
 
         // Static methods
@@ -51,8 +51,8 @@ namespace ArucoUnity
           int firstMarker = 0)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          System.IntPtr gridBoardPtr = au_GridBoard_create(markersX, markersY, markerLength, markerSeparation, dictionary.cppPtr, firstMarker,
-            exception.cppPtr);
+          System.IntPtr gridBoardPtr = au_GridBoard_create(markersX, markersY, markerLength, markerSeparation, dictionary.CppPtr, firstMarker,
+            exception.CppPtr);
           exception.Check();
           return new GridBoard(gridBoardPtr);
         }
@@ -64,7 +64,7 @@ namespace ArucoUnity
           Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr imgPtr;
 
-          au_GridBoard_draw(cppPtr, outSize.cppPtr, out imgPtr, marginSize, borderBits, exception.cppPtr);
+          au_GridBoard_draw(CppPtr, outSize.CppPtr, out imgPtr, marginSize, borderBits, exception.CppPtr);
           img = new Cv.Core.Mat(imgPtr);
 
           exception.Check();
@@ -72,17 +72,17 @@ namespace ArucoUnity
 
         public Cv.Core.Size GetGridSize()
         {
-          return new Cv.Core.Size(au_GridBoard_getGridSize(cppPtr));
+          return new Cv.Core.Size(au_GridBoard_getGridSize(CppPtr));
         }
 
         public float GetMarkerLength()
         {
-          return au_GridBoard_getMarkerLength(cppPtr);
+          return au_GridBoard_getMarkerLength(CppPtr);
         }
 
         public float GetMarkerSeparation()
         {
-          return au_GridBoard_getMarkerSeparation(cppPtr);
+          return au_GridBoard_getMarkerSeparation(CppPtr);
         }
       }
     }

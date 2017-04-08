@@ -94,7 +94,7 @@ namespace ArucoUnity
           {
           }
 
-          public Mat(Size size, Type type) : base(au_cv_Mat_new3(size.cppPtr, (int)type))
+          public Mat(Size size, Type type) : base(au_cv_Mat_new3(size.CppPtr, (int)type))
           {
           }
 
@@ -111,58 +111,58 @@ namespace ArucoUnity
           {
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Mat_delete(cppPtr);
+            au_cv_Mat_delete(CppPtr);
           }
 
           // Properties
 
           public int Cols
           {
-            get { return au_cv_Mat_getCols(cppPtr); }
+            get { return au_cv_Mat_getCols(CppPtr); }
           }
 
           public System.IntPtr DataIntPtr
           {
-            get { return au_cv_Mat_getData_void(cppPtr); }
-            set { au_cv_Mat_setData_void(cppPtr, value); }
+            get { return au_cv_Mat_getData_void(CppPtr); }
+            set { au_cv_Mat_setData_void(CppPtr, value); }
           }
 
           public byte[] DataByte
           {
-            get { return au_cv_Mat_getData_uchar(cppPtr); }
-            set { au_cv_Mat_setData_uchar(cppPtr, value); }
+            get { return au_cv_Mat_getData_uchar(CppPtr); }
+            set { au_cv_Mat_setData_uchar(CppPtr, value); }
           }
 
           public int Rows
           {
-            get { return au_cv_Mat_getRows(cppPtr); }
+            get { return au_cv_Mat_getRows(CppPtr); }
           }
 
           public Size Size
           {
-            get { return new Size(au_cv_Mat_getSize(cppPtr)); }
+            get { return new Size(au_cv_Mat_getSize(CppPtr)); }
           }
 
           // Methods
 
           public int Channels()
           {
-            return au_cv_Mat_channels(cppPtr);
+            return au_cv_Mat_channels(CppPtr);
           }
 
           public void Create(int rows, int cols, Type type)
           {
             Exception exception = new Exception();
-            au_cv_Mat_create(cppPtr, rows, cols, (int)type, exception.cppPtr);
+            au_cv_Mat_create(CppPtr, rows, cols, (int)type, exception.CppPtr);
             exception.Check();
           }
 
           public int AtInt(int i0, int i1)
           {
             Exception exception = new Exception();
-            int value = au_cv_Mat_at_int_get(cppPtr, i0, i1, exception.cppPtr);
+            int value = au_cv_Mat_at_int_get(CppPtr, i0, i1, exception.CppPtr);
             exception.Check();
             return value;
           }
@@ -170,14 +170,14 @@ namespace ArucoUnity
           public void AtInt(int i0, int i1, int value)
           {
             Exception exception = new Exception();
-            au_cv_Mat_at_int_set(cppPtr, i0, i1, value, exception.cppPtr);
+            au_cv_Mat_at_int_set(CppPtr, i0, i1, value, exception.CppPtr);
             exception.Check();
           }
 
           public double AtDouble(int i0, int i1)
           {
             Exception exception = new Exception();
-            double value = au_cv_Mat_at_double_get(cppPtr, i0, i1, exception.cppPtr);
+            double value = au_cv_Mat_at_double_get(CppPtr, i0, i1, exception.CppPtr);
             exception.Check();
             return value;
           }
@@ -185,28 +185,28 @@ namespace ArucoUnity
           public void AtDouble(int i0, int i1, double value)
           {
             Exception exception = new Exception();
-            au_cv_Mat_at_double_set(cppPtr, i0, i1, value, exception.cppPtr);
+            au_cv_Mat_at_double_set(CppPtr, i0, i1, value, exception.CppPtr);
             exception.Check();
           }
 
           public uint ElemSize()
           {
-            return au_cv_Mat_elemSize(cppPtr);
+            return au_cv_Mat_elemSize(CppPtr);
           }
 
           public uint ElemSize1()
           {
-            return au_cv_Mat_elemSize1(cppPtr);
+            return au_cv_Mat_elemSize1(CppPtr);
           }
 
           public uint Total()
           {
-            return au_cv_Mat_total(cppPtr);
+            return au_cv_Mat_total(CppPtr);
           }
 
           public Type Type()
           {
-            return (Type)au_cv_Mat_type(cppPtr);
+            return (Type)au_cv_Mat_type(CppPtr);
           }
         }
       }

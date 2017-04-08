@@ -47,30 +47,30 @@ namespace ArucoUnity
           {
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Size_delete(cppPtr);
+            au_cv_Size_delete(CppPtr);
           }
 
           // Properties
 
           public int Height
           {
-            get { return au_cv_Size_getHeight(cppPtr); }
-            set { au_cv_Size_setHeight(cppPtr, value); }
+            get { return au_cv_Size_getHeight(CppPtr); }
+            set { au_cv_Size_setHeight(CppPtr, value); }
           }
 
           public int Width
           {
-            get { return au_cv_Size_getWidth(cppPtr); }
-            set { au_cv_Size_setWidth(cppPtr, value); }
+            get { return au_cv_Size_getWidth(CppPtr); }
+            set { au_cv_Size_setWidth(CppPtr, value); }
           }
 
           // Methods
 
           public int Area()
           {
-            return au_cv_Size_area(cppPtr);
+            return au_cv_Size_area(CppPtr);
           }
         }
       }

@@ -49,7 +49,7 @@ namespace ArucoUnity
         public static void Flip(Mat src, Mat dst, int flipCode)
         {
           Exception exception = new Exception();
-          au_cv_core_flip(src.cppPtr, dst.cppPtr, flipCode, exception.cppPtr);
+          au_cv_core_flip(src.CppPtr, dst.CppPtr, flipCode, exception.CppPtr);
           exception.Check();
         }
       }

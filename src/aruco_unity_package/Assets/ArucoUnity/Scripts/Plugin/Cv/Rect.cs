@@ -63,35 +63,35 @@ namespace ArucoUnity
           {
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Rect_delete(cppPtr);
+            au_cv_Rect_delete(CppPtr);
           }
 
           // Properties
 
           public int X
           {
-            get { return au_cv_Rect_getX(cppPtr); }
-            set { au_cv_Rect_setX(cppPtr, value); }
+            get { return au_cv_Rect_getX(CppPtr); }
+            set { au_cv_Rect_setX(CppPtr, value); }
           }
 
           public int Y
           {
-            get { return au_cv_Rect_getY(cppPtr); }
-            set { au_cv_Rect_setY(cppPtr, value); }
+            get { return au_cv_Rect_getY(CppPtr); }
+            set { au_cv_Rect_setY(CppPtr, value); }
           }
 
           public int Width
           {
-            get { return au_cv_Rect_getWidth(cppPtr); }
-            set { au_cv_Rect_setWidth(cppPtr, value); }
+            get { return au_cv_Rect_getWidth(CppPtr); }
+            set { au_cv_Rect_setWidth(CppPtr, value); }
           }
 
           public int Height
           {
-            get { return au_cv_Rect_getHeight(cppPtr); }
-            set { au_cv_Rect_setHeight(cppPtr, value); }
+            get { return au_cv_Rect_getHeight(CppPtr); }
+            set { au_cv_Rect_setHeight(CppPtr, value); }
           }
         }
       }

@@ -42,9 +42,9 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_std_vectorVec4i_delete(cppPtr);
+          au_std_vectorVec4i_delete(CppPtr);
         }
 
         // Methods
@@ -52,14 +52,14 @@ namespace ArucoUnity
         public Cv.Core.Vec4i At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Vec4i element = new Cv.Core.Vec4i(au_std_vectorVec4i_at(cppPtr, pos, exception.cppPtr), DeleteResponsibility.False);
+          Cv.Core.Vec4i element = new Cv.Core.Vec4i(au_std_vectorVec4i_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
         public unsafe Cv.Core.Vec4i[] Data()
         {
-          System.IntPtr* dataPtr = au_std_vectorVec4i_data(cppPtr);
+          System.IntPtr* dataPtr = au_std_vectorVec4i_data(CppPtr);
           uint size = Size();
 
           Cv.Core.Vec4i[] data = new Cv.Core.Vec4i[size];
@@ -73,12 +73,12 @@ namespace ArucoUnity
 
         public void PushBack(Cv.Core.Vec4i value)
         {
-          au_std_vectorVec4i_push_back(cppPtr, value.cppPtr);
+          au_std_vectorVec4i_push_back(CppPtr, value.CppPtr);
         }
 
         public uint Size()
         {
-          return au_std_vectorVec4i_size(cppPtr);
+          return au_std_vectorVec4i_size(CppPtr);
         }
       }
     }

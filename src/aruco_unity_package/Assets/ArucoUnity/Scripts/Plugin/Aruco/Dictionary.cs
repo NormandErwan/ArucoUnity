@@ -58,7 +58,7 @@ namespace ArucoUnity
         // Constructors & destructor
 
         public Dictionary(Cv.Core.Mat bytesList, int markerSize = 0, int maxCorrectionBits = 0)
-          : base(au_Dictionary_new1(bytesList.cppPtr, markerSize, maxCorrectionBits))
+          : base(au_Dictionary_new1(bytesList.CppPtr, markerSize, maxCorrectionBits))
         {
         }
 
@@ -66,7 +66,7 @@ namespace ArucoUnity
         {
         }
 
-        public Dictionary(Dictionary dictionary) : base(au_Dictionary_new2(dictionary.cppPtr))
+        public Dictionary(Dictionary dictionary) : base(au_Dictionary_new2(dictionary.CppPtr))
         {
         }
 
@@ -75,29 +75,29 @@ namespace ArucoUnity
         {
         }
 
-        protected override void DeleteCvPtr()
+        protected override void DeleteCppPtr()
         {
-          au_Dictionary_delete(cppPtr);
+          au_Dictionary_delete(CppPtr);
         }
 
         // Properties
 
         public Cv.Core.Mat BytesList
         {
-          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(cppPtr), DeleteResponsibility.False); }
-          set { au_Dictionary_setBytesList(cppPtr, value.cppPtr); }
+          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(CppPtr), DeleteResponsibility.False); }
+          set { au_Dictionary_setBytesList(CppPtr, value.CppPtr); }
         }
 
         public int MarkerSize
         {
-          get { return au_Dictionary_getMarkerSize(cppPtr); }
-          set { au_Dictionary_setMarkerSize(cppPtr, value); }
+          get { return au_Dictionary_getMarkerSize(CppPtr); }
+          set { au_Dictionary_setMarkerSize(CppPtr, value); }
         }
 
         public int MaxCorrectionBits
         {
-          get { return au_Dictionary_getMaxCorrectionBits(cppPtr); }
-          set { au_Dictionary_setMaxCorrectionBits(cppPtr, value); }
+          get { return au_Dictionary_getMaxCorrectionBits(CppPtr); }
+          set { au_Dictionary_setMaxCorrectionBits(CppPtr, value); }
         }
 
         public PredefinedDictionaryName Name { get; set; }
@@ -107,7 +107,7 @@ namespace ArucoUnity
         static public Cv.Core.Mat GetBitsFromByteList(Cv.Core.Mat byteList, int markerSiz)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Mat bits = new Cv.Core.Mat(au_Dictionary_getBitsFromByteList(byteList.cppPtr, markerSiz, exception.cppPtr));
+          Cv.Core.Mat bits = new Cv.Core.Mat(au_Dictionary_getBitsFromByteList(byteList.CppPtr, markerSiz, exception.CppPtr));
           exception.Check();
           return bits;
         }
@@ -124,7 +124,7 @@ namespace ArucoUnity
           Cv.Core.Exception exception = new Cv.Core.Exception();
           System.IntPtr imgPtr;
 
-          au_Dictionary_drawMarker(cppPtr, id, sidePixels, out imgPtr, borderBits, exception.cppPtr);
+          au_Dictionary_drawMarker(CppPtr, id, sidePixels, out imgPtr, borderBits, exception.CppPtr);
           img = new Cv.Core.Mat(imgPtr);
 
           exception.Check();
@@ -133,7 +133,7 @@ namespace ArucoUnity
         public int GetDistanceToId(Dictionary dictionary, Cv.Core.Mat bits, int id, bool allRotations = true)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          int distanceToId = au_Dictionary_getDistanceToId(cppPtr, bits.cppPtr, id, allRotations, exception.cppPtr);
+          int distanceToId = au_Dictionary_getDistanceToId(CppPtr, bits.CppPtr, id, allRotations, exception.CppPtr);
           exception.Check();
           return distanceToId;
         }
@@ -141,7 +141,7 @@ namespace ArucoUnity
         public bool Identify(Dictionary dictionary, Cv.Core.Mat onlyBits, out int idx, out int rotation, double maxCorrectionRate)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          bool result = au_Dictionary_identify(cppPtr, onlyBits.cppPtr, out idx, out rotation, maxCorrectionRate, exception.cppPtr);
+          bool result = au_Dictionary_identify(CppPtr, onlyBits.CppPtr, out idx, out rotation, maxCorrectionRate, exception.CppPtr);
           exception.Check();
           return result;
         }

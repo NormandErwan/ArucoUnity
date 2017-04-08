@@ -55,23 +55,23 @@ namespace ArucoUnity
             return new Vector3(point2f.X, point2f.Y, 0);
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
-            au_cv_Point2f_delete(cppPtr);
+            au_cv_Point2f_delete(CppPtr);
           }
 
           // Properties
 
           public float X
           {
-            get { return au_cv_Point2f_getX(cppPtr); }
-            set { au_cv_Point2f_setX(cppPtr, value); }
+            get { return au_cv_Point2f_getX(CppPtr); }
+            set { au_cv_Point2f_setX(CppPtr, value); }
           }
 
           public float Y
           {
-            get { return au_cv_Point2f_getY(cppPtr); }
-            set { au_cv_Point2f_setY(cppPtr, value); }
+            get { return au_cv_Point2f_getY(CppPtr); }
+            set { au_cv_Point2f_setY(CppPtr, value); }
           }
         }
       }

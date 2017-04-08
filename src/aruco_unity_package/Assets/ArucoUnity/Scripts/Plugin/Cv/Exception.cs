@@ -39,7 +39,7 @@ namespace ArucoUnity
             sb = new StringBuilder(1024);
           }
 
-          protected override void DeleteCvPtr()
+          protected override void DeleteCppPtr()
           {
             //au_cv_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
           }
@@ -48,14 +48,14 @@ namespace ArucoUnity
 
           public int Code
           {
-            get { return au_cv_Exception_getCode(cppPtr); }
+            get { return au_cv_Exception_getCode(CppPtr); }
           }
 
           // Methods
 
           public string What()
           {
-            au_cv_Exception_what(cppPtr, sb);
+            au_cv_Exception_what(CppPtr, sb);
             return sb.ToString();
           }
 
