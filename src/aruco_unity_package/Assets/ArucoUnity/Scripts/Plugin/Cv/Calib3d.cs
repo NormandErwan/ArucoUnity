@@ -31,12 +31,9 @@ namespace ArucoUnity
           FixS1S2S3S4 = 0x10000,
           TiltedModel = 0x40000,
           FixTauxTauy = 0x80000,
-          // only for stereo
+          // Only for stereo
           FixIntrinsic = 0x00100,
-          SameFocalLength = 0x00200,
-          // for stereo rectification
-          ZeroDisparity = 0x00400,
-          UseLu = (1 << 17)
+          SameFocalLength = 0x00200
         };
 
         public enum StereoRectifyFlags
