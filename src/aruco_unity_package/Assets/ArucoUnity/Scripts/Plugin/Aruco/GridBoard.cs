@@ -30,12 +30,12 @@ namespace ArucoUnity
         static extern float au_GridBoard_getMarkerSeparation(System.IntPtr gridBoard);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_GridBoard_create(int markersX, int markersY, float markerLength, float markerSeparation, System.IntPtr dictionary,
-          int firstMarker, System.IntPtr exception);
+        static extern System.IntPtr au_GridBoard_create(int markersX, int markersY, float markerLength, float markerSeparation,
+          System.IntPtr dictionary, int firstMarker, System.IntPtr exception);
 
         // Constructors & destructor
 
-        internal GridBoard(System.IntPtr gridBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        internal GridBoard(System.IntPtr gridBoardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(gridBoardPtr, deleteResponsibility)
         {
         }

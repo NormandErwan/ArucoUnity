@@ -37,7 +37,8 @@ namespace ArucoUnity
         {
         }
 
-        public VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorVectorPoint3f(System.IntPtr vectorVectorPoint3fPtr,
+          Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorVectorPoint3fPtr, deleteResponsibility)
         {
         }
@@ -52,7 +53,8 @@ namespace ArucoUnity
         public VectorPoint3f At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          VectorPoint3f element = new VectorPoint3f(au_std_vectorVectorPoint3f_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          VectorPoint3f element = new VectorPoint3f(au_std_vectorVectorPoint3f_at(CppPtr, pos, exception.CppPtr),
+            Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +67,7 @@ namespace ArucoUnity
           VectorPoint3f[] data = new VectorPoint3f[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new VectorPoint3f(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new VectorPoint3f(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

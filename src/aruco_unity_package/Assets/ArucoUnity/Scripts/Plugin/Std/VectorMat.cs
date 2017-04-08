@@ -37,7 +37,7 @@ namespace ArucoUnity
         {
         }
 
-        public VectorMat(System.IntPtr vectorMatPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorMat(System.IntPtr vectorMatPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorMatPtr, deleteResponsibility)
         {
         }
@@ -52,7 +52,7 @@ namespace ArucoUnity
         public Cv.Core.Mat At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Mat element = new Cv.Core.Mat(au_std_vectorMat_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          Cv.Core.Mat element = new Cv.Core.Mat(au_std_vectorMat_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +65,7 @@ namespace ArucoUnity
           Cv.Core.Mat[] data = new Cv.Core.Mat[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Core.Mat(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Core.Mat(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

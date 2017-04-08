@@ -155,8 +155,8 @@ namespace ArucoUnity
         Cv.Core.Exception exception = new Cv.Core.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
-        double reProjectionError = au_calibrateCameraCharuco(charucoCorners.CppPtr, charucoIds.CppPtr, board.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
-          distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
+        double reProjectionError = au_calibrateCameraCharuco(charucoCorners.CppPtr, charucoIds.CppPtr, board.CppPtr, imageSize.CppPtr,
+          cameraMatrix.CppPtr, distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
         rvecs = new Std.VectorMat(rvecsPtr);
         tvecs = new Std.VectorMat(tvecsPtr);
 

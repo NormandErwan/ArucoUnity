@@ -40,7 +40,7 @@ namespace ArucoUnity
         {
         }
 
-        public VectorInt(System.IntPtr vectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorInt(System.IntPtr vectorIntPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorIntPtr, deleteResponsibility)
         {
         }

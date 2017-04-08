@@ -79,7 +79,8 @@ namespace ArucoUnity
           Core.Scalar borderValue)
         {
           Core.Exception exception = new Core.Exception();
-          au_cv_imgproc_remap(src.CppPtr, dst.CppPtr, map1.CppPtr, map2.CppPtr, (int)interpolation, (int)borderType, borderValue.CppPtr, exception.CppPtr);
+          au_cv_imgproc_remap(src.CppPtr, dst.CppPtr, map1.CppPtr, map2.CppPtr, (int)interpolation, (int)borderType, borderValue.CppPtr,
+            exception.CppPtr);
           exception.Check();
         }
 

@@ -37,7 +37,7 @@ namespace ArucoUnity
         {
         }
 
-        public VectorVec4i(System.IntPtr vectorVec4iPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorVec4i(System.IntPtr vectorVec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorVec4iPtr, deleteResponsibility)
         {
         }
@@ -52,7 +52,7 @@ namespace ArucoUnity
         public Cv.Core.Vec4i At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Vec4i element = new Cv.Core.Vec4i(au_std_vectorVec4i_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          Cv.Core.Vec4i element = new Cv.Core.Vec4i(au_std_vectorVec4i_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +65,7 @@ namespace ArucoUnity
           Cv.Core.Vec4i[] data = new Cv.Core.Vec4i[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Core.Vec4i(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Core.Vec4i(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

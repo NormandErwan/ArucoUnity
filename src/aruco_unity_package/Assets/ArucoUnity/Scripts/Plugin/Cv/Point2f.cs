@@ -40,7 +40,7 @@ namespace ArucoUnity
           {
           }
 
-          public Point2f(System.IntPtr point2fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          public Point2f(System.IntPtr point2fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(point2fPtr, deleteResponsibility)
           {
           }

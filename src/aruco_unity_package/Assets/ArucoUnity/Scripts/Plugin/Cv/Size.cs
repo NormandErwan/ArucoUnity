@@ -42,7 +42,7 @@ namespace ArucoUnity
           {
           }
 
-          public Size(System.IntPtr sizePtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          public Size(System.IntPtr sizePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(sizePtr, deleteResponsibility)
           {
           }

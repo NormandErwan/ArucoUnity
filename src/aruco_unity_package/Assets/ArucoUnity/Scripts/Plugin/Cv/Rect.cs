@@ -58,7 +58,7 @@ namespace ArucoUnity
           {
           }
 
-          public Rect(System.IntPtr RectPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          public Rect(System.IntPtr RectPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(RectPtr, deleteResponsibility)
           {
           }

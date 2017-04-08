@@ -33,7 +33,7 @@ namespace ArucoUnity
           {
           }
 
-          public Vec4i(System.IntPtr vec4iPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          public Vec4i(System.IntPtr vec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(vec4iPtr, deleteResponsibility)
           {
           }

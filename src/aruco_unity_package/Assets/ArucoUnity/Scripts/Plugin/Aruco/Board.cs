@@ -33,7 +33,7 @@ namespace ArucoUnity
 
         // Constructors
 
-        internal Board(System.IntPtr boardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        internal Board(System.IntPtr boardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(boardPtr, deleteResponsibility)
         {
         }
@@ -42,19 +42,19 @@ namespace ArucoUnity
 
         public Dictionary Dictionary
         {
-          get { return new Dictionary(au_Board_getDictionary(CppPtr), DeleteResponsibility.False); }
+          get { return new Dictionary(au_Board_getDictionary(CppPtr), Utility.DeleteResponsibility.False); }
           set { au_Board_setDictionary(CppPtr, value.CppPtr); }
         }
 
         public Std.VectorInt Ids
         {
-          get { return new Std.VectorInt(au_Board_getIds(CppPtr), DeleteResponsibility.False); }
+          get { return new Std.VectorInt(au_Board_getIds(CppPtr), Utility.DeleteResponsibility.False); }
           set { au_Board_setIds(CppPtr, value.CppPtr); }
         }
 
         public Std.VectorVectorPoint3f ObjPoints
         {
-          get { return new Std.VectorVectorPoint3f(au_Board_getObjPoints(CppPtr), DeleteResponsibility.False); }
+          get { return new Std.VectorVectorPoint3f(au_Board_getObjPoints(CppPtr), Utility.DeleteResponsibility.False); }
           set { au_Board_setObjPoints(CppPtr, value.CppPtr); }
         }
       }

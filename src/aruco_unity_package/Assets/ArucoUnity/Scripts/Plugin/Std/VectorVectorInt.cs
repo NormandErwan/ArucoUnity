@@ -37,7 +37,8 @@ namespace ArucoUnity
         {
         }
 
-        public VectorVectorInt(System.IntPtr vectorVectorIntPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorVectorInt(System.IntPtr vectorVectorIntPtr,
+          Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorVectorIntPtr, deleteResponsibility)
         {
         }
@@ -52,7 +53,7 @@ namespace ArucoUnity
         public VectorInt At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          VectorInt element = new VectorInt(au_std_vectorVectorInt_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          VectorInt element = new VectorInt(au_std_vectorVectorInt_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +66,7 @@ namespace ArucoUnity
           VectorInt[] data = new VectorInt[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new VectorInt(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new VectorInt(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

@@ -37,7 +37,8 @@ namespace ArucoUnity
         {
         }
 
-        public VectorVectorVectorPoint2f(System.IntPtr vectorVectorVectorPoint2fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorVectorVectorPoint2f(System.IntPtr vectorVectorVectorPoint2fPtr,
+          Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorVectorVectorPoint2fPtr, deleteResponsibility)
         {
         }
@@ -52,7 +53,8 @@ namespace ArucoUnity
         public VectorVectorPoint2f At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          VectorVectorPoint2f element = new VectorVectorPoint2f(au_std_vectorVectorVectorPoint2f_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          VectorVectorPoint2f element = new VectorVectorPoint2f(au_std_vectorVectorVectorPoint2f_at(CppPtr, pos, exception.CppPtr),
+            Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +67,7 @@ namespace ArucoUnity
           VectorVectorPoint2f[] data = new VectorVectorPoint2f[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new VectorVectorPoint2f(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new VectorVectorPoint2f(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

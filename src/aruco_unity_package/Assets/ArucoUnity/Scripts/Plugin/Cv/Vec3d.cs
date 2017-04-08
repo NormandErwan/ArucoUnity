@@ -34,7 +34,7 @@ namespace ArucoUnity
           {
           }
 
-          public Vec3d(System.IntPtr vec3dPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          public Vec3d(System.IntPtr vec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(vec3dPtr, deleteResponsibility)
           {
           }

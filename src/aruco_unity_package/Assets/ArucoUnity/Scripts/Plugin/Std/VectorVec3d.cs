@@ -37,7 +37,7 @@ namespace ArucoUnity
         {
         }
 
-        public VectorVec3d(System.IntPtr vectorVec3dPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorVec3d(System.IntPtr vectorVec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorVec3dPtr, deleteResponsibility)
         {
         }
@@ -52,7 +52,7 @@ namespace ArucoUnity
         public Cv.Core.Vec3d At(uint pos)
         {
           Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Vec3d element = new Cv.Core.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
+          Cv.Core.Vec3d element = new Cv.Core.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
@@ -65,7 +65,7 @@ namespace ArucoUnity
           Cv.Core.Vec3d[] data = new Cv.Core.Vec3d[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Core.Vec3d(dataPtr[i], DeleteResponsibility.False);
+            data[i] = new Cv.Core.Vec3d(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;

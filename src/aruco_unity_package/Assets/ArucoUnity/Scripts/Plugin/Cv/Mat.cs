@@ -106,7 +106,7 @@ namespace ArucoUnity
           {
           }
 
-          internal Mat(System.IntPtr matPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+          internal Mat(System.IntPtr matPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
             : base(matPtr, deleteResponsibility)
           {
           }

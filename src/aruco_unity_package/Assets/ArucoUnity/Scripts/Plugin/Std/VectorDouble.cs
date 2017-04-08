@@ -40,7 +40,7 @@ namespace ArucoUnity
         {
         }
 
-        public VectorDouble(System.IntPtr vectorDoublePtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        public VectorDouble(System.IntPtr vectorDoublePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(vectorDoublePtr, deleteResponsibility)
         {
         }

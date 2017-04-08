@@ -70,7 +70,7 @@ namespace ArucoUnity
         {
         }
 
-        internal Dictionary(System.IntPtr dictionaryPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+        internal Dictionary(System.IntPtr dictionaryPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(dictionaryPtr, deleteResponsibility)
         {
         }
@@ -84,7 +84,7 @@ namespace ArucoUnity
 
         public Cv.Core.Mat BytesList
         {
-          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(CppPtr), DeleteResponsibility.False); }
+          get { return new Cv.Core.Mat(au_Dictionary_getBytesList(CppPtr), Utility.DeleteResponsibility.False); }
           set { au_Dictionary_setBytesList(CppPtr, value.CppPtr); }
         }
 
