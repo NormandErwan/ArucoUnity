@@ -12,7 +12,7 @@ namespace ArucoUnity
     {
       // Editor fields
 
-      [HideInInspector]
+      [SerializeField]
       private bool useIntrinsicGuess = false;
 
       [SerializeField]
