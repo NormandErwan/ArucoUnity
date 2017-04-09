@@ -24,7 +24,7 @@ extern "C" {
     double error = 0;
     try {
       *rvecs = new std::vector<cv::Mat>(), *tvecs = new std::vector<cv::Mat>();
-      cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
+      error = cv::calibrateCamera(*objectPoints, *imagePoints, *imageSize, *cameraMatrix, *distCoeffs, **rvecs, **tvecs, flags, *criteria);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return error;
