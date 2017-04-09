@@ -63,9 +63,8 @@ namespace ArucoUnity
 
           // Static methods
 
-          public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize, 
-            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags = default(Calib), 
-            Core.TermCriteria criteria = null)
+          public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
+            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags, Core.TermCriteria criteria)
           {
             Core.Exception exception = new Core.Exception();
             System.IntPtr rvecsPtr, tvecsPtr;
@@ -79,9 +78,8 @@ namespace ArucoUnity
             return error;
           }
 
-          public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
-            Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags = 0)
+          public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
+            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags = 0)
           {
             Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
             return Calibrate(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
@@ -93,7 +91,7 @@ namespace ArucoUnity
             Core.Exception exception = new Core.Exception();
             System.IntPtr newCameraMatrixPtr;
 
-            au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cameraMatrix.CppPtr, distCoeffs.CppPtr, imageSize.CppPtr, R.CppPtr, 
+            au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cameraMatrix.CppPtr, distCoeffs.CppPtr, imageSize.CppPtr, R.CppPtr,
               out newCameraMatrixPtr, balance, newSize.CppPtr, fovScale, exception.CppPtr);
             newCameraMatrix = new Core.Mat(newCameraMatrixPtr);
 

@@ -164,6 +164,7 @@ namespace ArucoUnity
         ArucoObjectTracker tracker = null;
         if (arucoObject.GetType() != typeof(ArucoMarker) && !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
         {
+          // TODO: exception
           Debug.LogError("No tracker found for the type '" + arucoObject.GetType() + "'. Removing the object '" + arucoObject.gameObject.name +
             "' from the tracking list.");
           Remove(arucoObject);
