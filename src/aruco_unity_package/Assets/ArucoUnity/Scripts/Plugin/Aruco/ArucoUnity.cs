@@ -16,23 +16,23 @@ namespace ArucoUnity
 
       public enum PredefinedDictionaryName
       {
-        DICT_4X4_50 = 0,
-        DICT_4X4_100,
-        DICT_4X4_250,
-        DICT_4X4_1000,
-        DICT_5X5_50,
-        DICT_5X5_100,
-        DICT_5X5_250,
-        DICT_5X5_1000,
-        DICT_6X6_50,
-        DICT_6X6_100,
-        DICT_6X6_250,
-        DICT_6X6_1000,
-        DICT_7X7_50,
-        DICT_7X7_100,
-        DICT_7X7_250,
-        DICT_7X7_1000,
-        DICT_ARUCO_ORIGINAL
+        Dict4x4_50 = 0,
+        Dict4x4_100,
+        Dict4x4_250,
+        Dict4x4_1000,
+        Dict5x5_50,
+        Dict5x5_100,
+        Dict5x5_250,
+        Dict5x5_1000,
+        Dict6x6_50,
+        Dict6x6_100,
+        Dict6x6_250,
+        Dict6x6_1000,
+        Dict7x7_50,
+        Dict7x7_100,
+        Dict7x7_250,
+        Dict7x7_1000,
+        DictArucoOriginal
       }
 
       // Native functions
