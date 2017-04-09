@@ -223,9 +223,10 @@ namespace ArucoUnity
       public virtual void Configure()
       {
         // Configure the flip codes to transfer images from Unity to OpenCV and vice-versa
+        preDetectflipCode = 0; // Vertical flip
         if (!flipHorizontallyImages && !flipVerticallyImages)
         {
-           postDetectflipCode = 0; // Vertical flip
+          postDetectflipCode = 0; // Vertical flip
         }
         else if (flipHorizontallyImages && !flipVerticallyImages)
         {
@@ -233,13 +234,13 @@ namespace ArucoUnity
         }
         else if (!flipHorizontallyImages && flipVerticallyImages)
         {
-          postDetectflipCode = null; // Don't flip
+          postDetectflipCode = 0; // Vertical flip
+          preDetectflipCode = null; // Don't flip
         }
         else if (flipHorizontallyImages && flipVerticallyImages)
         {
           postDetectflipCode = 1; // Horizontal flip
         }
-        preDetectflipCode = 0; // Vertical flip
 
         // Update state
         IsConfigured = true;
