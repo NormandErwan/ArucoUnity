@@ -29,6 +29,10 @@ namespace ArucoUnity
       [Tooltip("Preserve the aspect ratio of the webcam image.")]
       private bool preserveAspectRatio = true;
 
+      [SerializeField]
+      [Tooltip("True if the camera image is horizontally flipped (e.g. the camera is facing the user).")]
+      private bool horizontallyFlipped = false;
+
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -102,6 +106,11 @@ namespace ArucoUnity
       public bool PreserveAspectRatio { get { return preserveAspectRatio; } set { preserveAspectRatio = value; } }
 
       /// <summary>
+      /// True if the camera image is horizontally flipped (e.g. the camera is facing the user).
+      /// </summary>
+      public bool HorizontallyFlipped { get { return horizontallyFlipped; } set { horizontallyFlipped = value; } }
+
+      /// <summary>
       /// The associated webcam device.
       /// </summary>
       public WebCamDevice WebCamDevice { get; protected set; }
@@ -173,7 +182,7 @@ namespace ArucoUnity
         }
 
         // Configure the image correct orientation
-        flipHorizontallyImages = false;
+        flipHorizontallyImages = HorizontallyFlipped;
         flipVerticallyImages = false;
 
         base.Configure();
