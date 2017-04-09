@@ -89,11 +89,6 @@ namespace ArucoUnity
       /// </summary>
       public double RectifyFisheyeFovScale { get { return rectifyFisheyeFovScale; } set { rectifyFisheyeFovScale = value; } }
 
-      /// <summary>
-      /// Termination criteria for the iterative optimization algorithm of the calibration. Set to null to use the default one.
-      /// </summary>
-      public Cv.Core.TermCriteria CalibrationTermCriteria { get; set; }
-
       public StereoCameraParameters CameraParameters { get; set; }
 
       // Variables
@@ -171,13 +166,13 @@ namespace ArucoUnity
         {
           CameraParameters.ReprojectionError = Cv.Calib3d.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
             cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec, out essentialMatrix, out fundamentalMatrix,
-            calibrationFlagsNonFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+            calibrationFlagsNonFisheyeController.CalibrationFlags);
         }
         else
         {
           CameraParameters.ReprojectionError = Cv.Calib3d.Fisheye.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
             imagePoints[CameraId2], cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec,
-            calibrationFlagsFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+            calibrationFlagsFisheyeController.CalibrationFlags);
         }
 
         // Computes rectification transforms

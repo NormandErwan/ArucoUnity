@@ -65,11 +65,6 @@ namespace ArucoUnity
       public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
       /// <summary>
-      /// Termination criteria for the iterative optimization algorithm of the calibration. Set to null to use the default one.
-      /// </summary>
-      public Cv.Core.TermCriteria CalibrationTermCriteria { get; set; }
-
-      /// <summary>
       /// The pair of cameras to apply a stereo calibration.
       /// </summary>
       public StereoCalibrationCameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
@@ -347,13 +342,13 @@ namespace ArucoUnity
           {
             CameraParameters.ReprojectionErrors[cameraId] = Cv.Calib3d.CalibrateCamera(boardObjectPoints, boardImagePoints, imageSize,
               CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-              calibrationFlagsNonFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+              calibrationFlagsNonFisheyeController.CalibrationFlags);
           }
           else
           {
             CameraParameters.ReprojectionErrors[cameraId] = Cv.Calib3d.Fisheye.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
               CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-              calibrationFlagsFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+              calibrationFlagsFisheyeController.CalibrationFlags);
           }
 
           // If the used board is a charuco board, refine the calibration
@@ -389,13 +384,13 @@ namespace ArucoUnity
             {
               CameraParameters.ReprojectionErrors[cameraId] = Cv.Calib3d.CalibrateCamera(charucoObjectPoints, charucoImagePoints, imageSize,
                 CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-                calibrationFlagsNonFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+                calibrationFlagsNonFisheyeController.CalibrationFlags);
             }
             else
             {
               CameraParameters.ReprojectionErrors[cameraId] = Cv.Calib3d.Fisheye.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
                 CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-                calibrationFlagsFisheyeController.CalibrationFlags, CalibrationTermCriteria);
+                calibrationFlagsFisheyeController.CalibrationFlags);
             }
           }
 
