@@ -36,6 +36,7 @@ namespace ArucoUnity
 
         ImageHeights = new int[CameraNumber];
         ImageWidths = new int[CameraNumber];
+        ReprojectionErrors = new double[CameraNumber];
         CameraMatrices = new Cv.Core.Mat[CameraNumber];
         CameraMatricesValues = new double[CameraNumber][][];
         DistCoeffs = new Cv.Core.Mat[CameraNumber];
