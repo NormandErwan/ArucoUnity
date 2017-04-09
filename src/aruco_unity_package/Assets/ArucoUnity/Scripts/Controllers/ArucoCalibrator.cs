@@ -113,7 +113,7 @@ namespace ArucoUnity
         // Check for the flags
         calibrationFlagsNonFisheyeController = CalibrationFlagsController as CalibrationFlagsController;
         calibrationFlagsFisheyeController = CalibrationFlagsController as CalibrationFlagsFisheyeController;
-        if (CalibrationFlagsController == null || calibrationFlagsNonFisheyeController == null || calibrationFlagsFisheyeController == null)
+        if (CalibrationFlagsController == null || (calibrationFlagsNonFisheyeController == null && calibrationFlagsFisheyeController == null))
         {
           throw new ArgumentNullException("CalibrationFlagsController", "This property needs to be set to configure the calibrator.");
         }

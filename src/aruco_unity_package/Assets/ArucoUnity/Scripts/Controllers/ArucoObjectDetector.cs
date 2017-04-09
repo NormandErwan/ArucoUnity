@@ -171,7 +171,7 @@ namespace ArucoUnity
         IsConfigured = false;
 
         // Check validity of mandatory properties
-        if (DetectorParameters != null)
+        if (DetectorParameters == null)
         {
           throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");
         }
