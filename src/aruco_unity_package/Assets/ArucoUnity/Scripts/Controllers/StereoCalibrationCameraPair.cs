@@ -77,7 +77,7 @@ namespace ArucoUnity
       /// New image resolution after rectification. When null (default) or (0,0) is passed, it is set to the original imageSize. Setting it to
       /// larger value can help you preserve details in the original image, especially when there is a big radial distortion.
       /// </summary>
-      public Cv.Core.Size NewImageSize { get; set; }
+      public Cv.Core.Size NewImageSize { get { return newImageSize; } set { newImageSize = value; } }
 
       /// <summary>
       /// Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).
@@ -95,6 +95,7 @@ namespace ArucoUnity
 
       CalibrationFlagsController calibrationFlagsNonFisheyeController;
       CalibrationFlagsFisheyeController calibrationFlagsFisheyeController;
+      Cv.Core.Size newImageSize = new Cv.Core.Size();
 
       // Methods
 
