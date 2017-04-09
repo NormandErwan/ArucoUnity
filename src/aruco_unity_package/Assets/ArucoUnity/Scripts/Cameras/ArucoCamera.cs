@@ -153,8 +153,10 @@ namespace ArucoUnity
       protected int[] imageDataSizes;
       protected Cv.Core.Mat[] undistordedImages;
       protected Cv.Core.Mat[][] undistordedImageMaps;
-      protected bool flipHorizontallyImages = false, flipVerticallyImages = false;
-      protected int? flipCode; // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+      protected bool flipHorizontallyImages = false, 
+                     flipVerticallyImages = false;
+      protected int? preDetectflipCode, // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
+                     postDetectflipCode; // Convert back the images
 
       // MonoBehaviour methods
 
@@ -191,15 +193,17 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        for (int i = 0; i < CameraNumber; i++)
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          // Convert back to the images from OpenCV's right-handed coordinate system to Unity's left-handed coordinate system
-          int verticalFlipCode = 0;
-          Cv.Core.Flip(Images[i], Images[i], verticalFlipCode);
+          // Convert the Images before load them back to the ImageTextures
+          if (postDetectflipCode != null)
+          {
+            Cv.Core.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
+          }
 
           // Load back the data from the Images to the ImageTextures
-          ImageTextures[i].LoadRawTextureData(Images[i].DataIntPtr, imageDataSizes[i]);
-          ImageTextures[i].Apply(false);
+          ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, imageDataSizes[cameraId]);
+          ImageTextures[cameraId].Apply(false);
         }
       }
 
@@ -218,23 +222,24 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Configure()
       {
-        // Configure the flip code to load the ImageTextures to the Images
-        if (flipHorizontallyImages && !flipVerticallyImages)
+        // Configure the flip codes to transfer images from Unity to OpenCV and vice-versa
+        if (!flipHorizontallyImages && !flipVerticallyImages)
         {
-          flipCode = -1;
+           postDetectflipCode = 0; // Vertical flip
+        }
+        else if (flipHorizontallyImages && !flipVerticallyImages)
+        {
+          postDetectflipCode = -1; // Flip on both axis
         }
         else if (!flipHorizontallyImages && flipVerticallyImages)
         {
-          flipCode = null;
+          postDetectflipCode = null; // Don't flip
         }
         else if (flipHorizontallyImages && flipVerticallyImages)
         {
-          flipCode = 1;
+          postDetectflipCode = 1; // Horizontal flip
         }
-        else if (!flipHorizontallyImages && !flipVerticallyImages)
-        {
-          flipCode = 0;
-        }
+        preDetectflipCode = 0; // Vertical flip
 
         // Update state
         IsConfigured = true;
@@ -314,9 +319,9 @@ namespace ArucoUnity
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           images[cameraId].DataByte = ImageTextures[cameraId].GetRawTextureData();
-          if (flipCode != null)
+          if (preDetectflipCode != null)
           {
-            Cv.Core.Flip(Images[cameraId], Images[cameraId], (int)flipCode);
+            Cv.Core.Flip(Images[cameraId], Images[cameraId], (int)preDetectflipCode);
           }
         }
 

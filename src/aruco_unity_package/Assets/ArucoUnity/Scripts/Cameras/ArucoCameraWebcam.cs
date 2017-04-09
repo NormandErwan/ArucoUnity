@@ -173,7 +173,7 @@ namespace ArucoUnity
         }
 
         // Configure the image correct orientation
-        flipHorizontallyImages = true;
+        flipHorizontallyImages = false;
         flipVerticallyImages = false;
 
         base.Configure();
