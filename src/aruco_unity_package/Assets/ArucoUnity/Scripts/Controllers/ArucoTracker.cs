@@ -119,7 +119,7 @@ namespace ArucoUnity
         {
           try
           {
-            while (true)
+            while (IsStarted)
             {
               Track();
             }
@@ -303,7 +303,6 @@ namespace ArucoUnity
       protected override void StartDetector()
       {
         base.StartDetector();
-
         trackingThread.Start();
         StartCoroutine("ApplyTracking");
       }
@@ -314,9 +313,7 @@ namespace ArucoUnity
       protected override void StopDetector()
       {
         base.StopDetector();
-
-        trackingThread.Abort();
-        StopCoroutine("ApplyTracking");
+        StopCoroutine("ApplyTracking"); // The thread will stop automatically with the flag IsStarted false
       }
 
       // Methods
