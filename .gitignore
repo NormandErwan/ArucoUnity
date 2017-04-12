@@ -3,14 +3,13 @@
 *.unitypackage
 **/Assets/ArucoUnity/Images*
 **/Assets/ArucoUnity/Calibrations*
+**/Assets/ArucoUnity/Plugins*
 
 # Unity
 
 **/Temp/
 **/Library/
 **/Builds/
-**/Assets/Plugins/
-**/Assets/Plugins.meta
 **/*.sln
 **/*.csproj
 
