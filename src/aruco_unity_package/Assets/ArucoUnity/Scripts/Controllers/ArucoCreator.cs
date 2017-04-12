@@ -157,17 +157,19 @@ namespace ArucoUnity
           Aruco.DrawCharucoDiamond(diamond.Dictionary, ids, (int)diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
         }
 
-        // Vertical flip to convert the image from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
-        int verticalFlipCode = 0;
-        Cv.Core.Flip(image, image, verticalFlipCode);
-
         // Set the properties
         Image = image;
         if (Image != null)
         {
+          // Vertical flip to correctly display the image on the texture
+          int verticalFlipCode = 0;
+          Cv.Core.Mat imageForTexture = Image.Clone();
+          Cv.Core.Flip(imageForTexture, imageForTexture, verticalFlipCode);
+
+          // Load the image to the texture
           int markerDataSize = (int)(Image.ElemSize() * Image.Total());
           ImageTexture = new Texture2D(Image.Cols, Image.Rows, TextureFormat.RGB24, false);
-          ImageTexture.LoadRawTextureData(Image.DataIntPtr, markerDataSize);
+          ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
           ImageTexture.Apply();
         }
       }
