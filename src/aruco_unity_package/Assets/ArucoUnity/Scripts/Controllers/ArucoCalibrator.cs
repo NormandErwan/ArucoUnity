@@ -232,8 +232,8 @@ namespace ArucoUnity
         {
           if (MarkerIdsCurrentImage[cameraId] == null || MarkerIdsCurrentImage[cameraId].Size() < 1)
           {
-            throw new Exception("Not enough markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
-              + " frame for calibration. It requires more than one marker detected.");
+            throw new Exception("No markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
+              + " frame for calibration. It requires at least one marker detected.");
           }
         }
 
@@ -303,8 +303,8 @@ namespace ArucoUnity
 
             if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController.FixAspectRatio)
             {
-              CameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F, new double[9] {
-              calibrationFlagsNonFisheyeController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+              CameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F,
+                new double[9] { calibrationFlagsNonFisheyeController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
             }
             else
             {

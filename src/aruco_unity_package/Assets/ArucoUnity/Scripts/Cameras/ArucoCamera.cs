@@ -195,15 +195,17 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          // Convert the Images before load them back to the ImageTextures
+          // Flip the Images if needed, load them back to the textures and revert the flip to keep the correct orientation on both image and texture
           if (postDetectflipCode != null)
           {
             Cv.Core.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
           }
-
-          // Load back the data from the Images to the ImageTextures
           ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, imageDataSizes[cameraId]);
           ImageTextures[cameraId].Apply(false);
+          if (postDetectflipCode != null)
+          {
+            Cv.Core.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
+          }
         }
       }
 
@@ -223,23 +225,26 @@ namespace ArucoUnity
       public virtual void Configure()
       {
         // Configure the flip codes to transfer images from Unity to OpenCV and vice-versa
-        preDetectflipCode = 0; // Vertical flip
+        // The raw bytes from a Texture to a Mat and from a Mat to a Texture needs to be vertically flipped to be in the correct orientation
         if (!flipHorizontallyImages && !flipVerticallyImages)
         {
-          postDetectflipCode = 0; // Vertical flip
+          preDetectflipCode = 0; // Vertical flip
+          postDetectflipCode = 0;
         }
         else if (flipHorizontallyImages && !flipVerticallyImages)
         {
+          preDetectflipCode = 0;
           postDetectflipCode = -1; // Flip on both axis
         }
         else if (!flipHorizontallyImages && flipVerticallyImages)
         {
-          postDetectflipCode = 0; // Vertical flip
-          preDetectflipCode = null; // Don't flip
+          preDetectflipCode = null; // Don't flip, texture image is already flipped
+          postDetectflipCode = 0;
         }
         else if (flipHorizontallyImages && flipVerticallyImages)
         {
-          postDetectflipCode = 1; // Horizontal flip
+          preDetectflipCode = null;
+          postDetectflipCode = -1;
         }
 
         // Update state
@@ -297,7 +302,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Execute the <see cref="Started"/> action.
+      /// Execute the <see cref="Stopped"/> action.
       /// </summary>
       protected void OnStopped()
       {
@@ -317,6 +322,7 @@ namespace ArucoUnity
       /// </summary>
       protected void OnImagesUpdated()
       {
+        // Load the texture contents to the images, then flip the images if needed
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           images[cameraId].DataByte = ImageTextures[cameraId].GetRawTextureData();
@@ -326,6 +332,7 @@ namespace ArucoUnity
           }
         }
 
+        // Undistort the images if required
         if (AutoUndistortWithCameraParameters)
         {
           Undistort();
