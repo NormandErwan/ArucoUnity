@@ -66,6 +66,10 @@ extern "C" {
     return mat->channels();
   }
 
+  cv::Mat* au_cv_Mat_clone(cv::Mat* mat) {
+    return new cv::Mat(mat->clone());
+  }
+
   void au_cv_Mat_create(cv::Mat* mat, int rows, int cols, int type, cv::Exception* exception) {
     try {
       mat->create(rows, cols, type);

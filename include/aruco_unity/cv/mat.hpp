@@ -94,6 +94,11 @@ extern "C" {
   //! \return The channels number.
   ARUCO_UNITY_API int au_cv_Mat_channels(cv::Mat* mat);
 
+  //! \brief Creates a full copy of the array and the underlying data. 
+  //! \param mat The Mat used.
+  //! \return The Mat copy.
+  ARUCO_UNITY_API cv::Mat* au_cv_Mat_clone(cv::Mat* mat);
+
   //! \brief Allocates new array data if needed.
   //!
   //! \param mat The Mat used.

@@ -49,6 +49,9 @@ namespace ArucoUnity
           static extern int au_cv_Mat_channels(System.IntPtr mat);
 
           [DllImport("ArucoUnity")]
+          static extern System.IntPtr au_cv_Mat_clone(System.IntPtr mat);
+
+          [DllImport("ArucoUnity")]
           static extern void au_cv_Mat_create(System.IntPtr mat, int rows, int cols, int type, System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
@@ -150,6 +153,11 @@ namespace ArucoUnity
           public int Channels()
           {
             return au_cv_Mat_channels(CppPtr);
+          }
+
+          public Mat Clone()
+          {
+            return new Mat(au_cv_Mat_clone(CppPtr));
           }
 
           public void Create(int rows, int cols, Type type)
