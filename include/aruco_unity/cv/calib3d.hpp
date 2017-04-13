@@ -35,14 +35,14 @@ extern "C" {
   //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d
   ARUCO_UNITY_API double au_cv_calib3d_calibrateCamera1(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, std::vector<double>* stdDeviationsIntrinsics,
+    std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, std::vector<double>* stdDeviationsIntrinsics,
     std::vector<double>* stdDeviationsExtrinsics, std::vector<double>* perViewErrors, int flags, cv::TermCriteria* criteria,
     cv::Exception* exception);
 
   //! \see au_cv_calib3d_calibrateCamera1().
   ARUCO_UNITY_API double au_cv_calib3d_calibrateCamera2(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
+    std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
 
   //! \brief Finds an initial camera matrix from 3D-2D point correspondences.
   //! 
@@ -132,7 +132,7 @@ extern "C" {
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1
   ARUCO_UNITY_API double au_cv_calib3d_fisheye_calibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    std::vector<cv::Mat>** rvecs, std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
+    std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
 
   //! \brief Estimates new camera matrix for undistortion or rectification.
   //!

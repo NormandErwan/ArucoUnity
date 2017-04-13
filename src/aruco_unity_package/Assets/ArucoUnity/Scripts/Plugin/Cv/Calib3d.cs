@@ -76,7 +76,7 @@ namespace ArucoUnity
         // Static methods
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Std.VectorDouble stdDeviationsIntrinsics,
           Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags, Core.TermCriteria criteria)
         {
           Core.Exception exception = new Core.Exception();
@@ -85,15 +85,15 @@ namespace ArucoUnity
           double error = au_cv_calib3d_calibrateCamera1(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
             distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, stdDeviationsIntrinsics.CppPtr, stdDeviationsExtrinsics.CppPtr, perViewErrors.CppPtr,
             (int)flags, criteria.CppPtr, exception.CppPtr);
-          rvecs = new Std.VectorMat(rvecsPtr);
-          tvecs = new Std.VectorMat(tvecsPtr);
+          rvecs = new Std.VectorVec3d(rvecsPtr);
+          tvecs = new Std.VectorVec3d(tvecsPtr);
           exception.Check();
 
           return error;
         }
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Std.VectorDouble stdDeviationsIntrinsics,
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Std.VectorDouble stdDeviationsIntrinsics,
           Std.VectorDouble stdDeviationsExtrinsics, Std.VectorDouble perViewErrors, Calib flags = 0)
         {
           Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
@@ -102,22 +102,22 @@ namespace ArucoUnity
         }
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags, Core.TermCriteria criteria)
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Calib flags, Core.TermCriteria criteria)
         {
           Core.Exception exception = new Core.Exception();
           System.IntPtr rvecsPtr, tvecsPtr;
 
           double error = au_cv_calib3d_calibrateCamera2(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
             distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
-          rvecs = new Std.VectorMat(rvecsPtr);
-          tvecs = new Std.VectorMat(tvecsPtr);
-          exception.Check();
+          rvecs = new Std.VectorVec3d(rvecsPtr);
+          tvecs = new Std.VectorVec3d(tvecsPtr);
 
+          exception.Check();
           return error;
         }
 
         public static double CalibrateCamera(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags = 0)
+          Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Calib flags = 0)
         {
           Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 30, Core.EPSILON);
           return CalibrateCamera(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);

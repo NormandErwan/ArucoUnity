@@ -32,13 +32,13 @@ namespace ArucoUnity
           // Native functions
 
           [DllImport("ArucoUnity")]
-          static extern double au_cv_calib3d_fisheye_calibrate(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr image_size,
+          static extern double au_cv_calib3d_fisheye_calibrate(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
             System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
             System.IntPtr criteria, System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
           static extern void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
-            System.IntPtr image_size, System.IntPtr R, out System.IntPtr P, double balance, System.IntPtr new_size, double fov_scale,
+            System.IntPtr image_size, System.IntPtr R, out System.IntPtr P, double balance, System.IntPtr newSize, double fov_scale,
             System.IntPtr exception);
 
           [DllImport("ArucoUnity")]
@@ -64,22 +64,22 @@ namespace ArucoUnity
           // Static methods
 
           public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags, Core.TermCriteria criteria)
+            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Calib flags, Core.TermCriteria criteria)
           {
             Core.Exception exception = new Core.Exception();
             System.IntPtr rvecsPtr, tvecsPtr;
 
             double error = au_cv_calib3d_fisheye_calibrate(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
               distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
-            rvecs = new Std.VectorMat(rvecsPtr);
-            tvecs = new Std.VectorMat(tvecsPtr);
+            rvecs = new Std.VectorVec3d(rvecsPtr);
+            tvecs = new Std.VectorVec3d(tvecsPtr);
 
             exception.Check();
             return error;
           }
 
           public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Core.Size imageSize,
-            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Calib flags = 0)
+            Core.Mat cameraMatrix, Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Calib flags = 0)
           {
             Core.TermCriteria criteria = new Core.TermCriteria(Core.TermCriteria.Type.Count | Core.TermCriteria.Type.Eps, 100, Core.EPSILON);
             return Calibrate(objectPoints, imagePoints, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);

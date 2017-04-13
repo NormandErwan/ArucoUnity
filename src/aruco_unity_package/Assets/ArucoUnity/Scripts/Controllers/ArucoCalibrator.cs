@@ -75,9 +75,9 @@ namespace ArucoUnity
 
       public Std.VectorMat[] CameraImages { get; protected set; }
 
-      public Std.VectorMat[] Rvecs { get; protected set; }
+      public Std.VectorVec3d[] Rvecs { get; protected set; }
 
-      public Std.VectorMat[] Tvecs { get; protected set; }
+      public Std.VectorVec3d[] Tvecs { get; protected set; }
 
       public CameraParameters CameraParameters { get; protected set; }
 
@@ -157,8 +157,8 @@ namespace ArucoUnity
           CameraImages[cameraId] = new Std.VectorMat();
         }
         
-        Rvecs = new Std.VectorMat[ArucoCamera.CameraNumber];
-        Tvecs = new Std.VectorMat[ArucoCamera.CameraNumber];
+        Rvecs = new Std.VectorVec3d[ArucoCamera.CameraNumber];
+        Tvecs = new Std.VectorVec3d[ArucoCamera.CameraNumber];
         MarkerCornersCurrentImage = new Std.VectorVectorPoint2f[ArucoCamera.CameraNumber];
         MarkerIdsCurrentImage = new Std.VectorInt[ArucoCamera.CameraNumber];
 
@@ -337,7 +337,7 @@ namespace ArucoUnity
 
           // Calibrate the camera
           Cv.Core.Size imageSize = ArucoCamera.Images[cameraId].Size;
-          Std.VectorMat rvecs, tvecs;
+          Std.VectorVec3d rvecs, tvecs;
           if (!ArucoCamera.IsFisheye)
           {
             CameraParameters.ReprojectionErrors[cameraId] = Cv.Calib3d.CalibrateCamera(boardObjectPoints, boardImagePoints, imageSize,
