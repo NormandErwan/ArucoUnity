@@ -134,14 +134,15 @@ extern "C" {
   ARUCO_UNITY_API void au_DetectorParameters_setMinMarkerDistanceRate(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
     double minMarkerDistanceRate);
 
-  //! \brief Returns if there is a subpixel refinement or not.
+  //! \brief Returns the corner refinement method.
   //! \param parameters The DetectorParameters used.
-  ARUCO_UNITY_API bool au_DetectorParameters_getDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters);
+  ARUCO_UNITY_API int au_DetectorParameters_getCornerRefinementMethod(cv::Ptr<cv::aruco::DetectorParameters>* parameters);
 
-  //! \brief Sets if there is a subpixel refinement or not.
+  //! \brief Sets the corner refinement method.
   //! \param parameters The DetectorParameters used.
-  //! \param doCornerRefinement The new value.
-  ARUCO_UNITY_API void au_DetectorParameters_setDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters, bool doCornerRefinement);
+  //! \param cornerRefinementMethod The new value.
+  ARUCO_UNITY_API void au_DetectorParameters_setCornerRefinementMethod(cv::Ptr<cv::aruco::DetectorParameters>* parameters,
+    int cornerRefinementMethod);
 
   //! \brief Returns the window size for the corner refinement process (in pixels) (default 5).
   //! \param parameters The DetectorParameters used.

@@ -56,8 +56,8 @@ namespace ArucoUnity
       private double minMarkerDistanceRate = 0.05;
 
       [SerializeField]
-      [Tooltip("If there is a subpixel refinement or not.")]
-      private bool doCornerRefinement = false;
+      [Tooltip("The method to use for corner refinement.")]
+      private Aruco.CornerRefineMethod cornerRefinementMethod = Aruco.CornerRefineMethod.None;
 
       [SerializeField]
       [Tooltip("The window size for the corner refinement process (in pixels) (default 5).")]
@@ -117,7 +117,7 @@ namespace ArucoUnity
             DetectorParameters.MinCornerDistanceRate = minCornerDistanceRate;
             DetectorParameters.MinDistanceToBorder = minDistanceToBorder;
             DetectorParameters.MinMarkerDistanceRate = minMarkerDistanceRate;
-            DetectorParameters.DoCornerRefinement = doCornerRefinement;
+            DetectorParameters.CornerRefinementMethod = cornerRefinementMethod;
             DetectorParameters.CornerRefinementWinSize = cornerRefinementWinSize;
             DetectorParameters.CornerRefinementMaxIterations = cornerRefinementMaxIterations;
             DetectorParameters.CornerRefinementMinAccuracy = cornerRefinementMinAccuracy;

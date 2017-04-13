@@ -35,6 +35,13 @@ namespace ArucoUnity
         DictArucoOriginal
       }
 
+      public enum CornerRefineMethod
+      {
+        None, /// No corner refinement
+        Subpix, /// Refine the corners using subpix
+        Contour /// Refine the corners using the contour-points
+      }
+
       // Native functions
 
       [DllImport("ArucoUnity")]

@@ -70,9 +70,9 @@ namespace ArucoUnity
         static extern void au_DetectorParameters_setMinMarkerDistanceRate(System.IntPtr parameters, double minMarkerDistanceRate);
 
         [DllImport("ArucoUnity")]
-        static extern bool au_DetectorParameters_getDoCornerRefinement(System.IntPtr parameters);
+        static extern int au_DetectorParameters_getCornerRefinementMethod(System.IntPtr parameters);
         [DllImport("ArucoUnity")]
-        static extern void au_DetectorParameters_setDoCornerRefinement(System.IntPtr parameters, bool doCornerRefinement);
+        static extern void au_DetectorParameters_setCornerRefinementMethod(System.IntPtr parameters, int cornerRefinementMethod);
 
         [DllImport("ArucoUnity")]
         static extern int au_DetectorParameters_getCornerRefinementWinSize(System.IntPtr parameters);
@@ -188,10 +188,10 @@ namespace ArucoUnity
           set { au_DetectorParameters_setMinMarkerDistanceRate(CppPtr, value); }
         }
 
-        public bool DoCornerRefinement
+        public CornerRefineMethod CornerRefinementMethod
         {
-          get { return au_DetectorParameters_getDoCornerRefinement(CppPtr); }
-          set { au_DetectorParameters_setDoCornerRefinement(CppPtr, value); }
+          get { return (CornerRefineMethod)au_DetectorParameters_getCornerRefinementMethod(CppPtr); }
+          set { au_DetectorParameters_setCornerRefinementMethod(CppPtr, (int)value); }
         }
 
         public int CornerRefinementWinSize

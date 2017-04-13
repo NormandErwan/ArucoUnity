@@ -94,12 +94,12 @@ extern "C" {
     parameters->get()->minMarkerDistanceRate = minMarkerDistanceRate;
   }
 
-  bool au_DetectorParameters_getDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
-    return parameters->get()->doCornerRefinement;
+  int au_DetectorParameters_getCornerRefinementMethod(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
+    return parameters->get()->cornerRefinementMethod;
   }
 
-  void au_DetectorParameters_setDoCornerRefinement(cv::Ptr<cv::aruco::DetectorParameters>* parameters, bool doCornerRefinement) {
-    parameters->get()->doCornerRefinement = doCornerRefinement;
+  void au_DetectorParameters_setCornerRefinementMethod(cv::Ptr<cv::aruco::DetectorParameters>* parameters, int cornerRefinementMethod) {
+    parameters->get()->cornerRefinementMethod = cornerRefinementMethod;
   }
 
   int au_DetectorParameters_getCornerRefinementWinSize(cv::Ptr<cv::aruco::DetectorParameters>* parameters) {
