@@ -33,9 +33,9 @@ namespace ArucoUnity
       private bool rectifyZeroDisparity = true;
 
       [SerializeField]
-      [Tooltip("Free scaling parameter between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid pixels are"
-        + " visible, 1 to shift the images so that no source image pixels are lost.")]
-      private double rectifyAlpha = -1;
+      [Tooltip("Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only"
+        + " valid pixels are visible, 1 to shift the images so that no source image pixels are lost.")]
+      private double rectifySkew = -1;
 
       [SerializeField]
       [Tooltip("Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).")]
@@ -68,10 +68,10 @@ namespace ArucoUnity
       public bool RectifyZeroDisparity { get { return rectifyZeroDisparity; } set { rectifyZeroDisparity = value; } }
 
       /// <summary>
-      /// Free scaling parameter between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid pixels are visible,
-      /// 1 to shift the images so that no source image pixels are lost.
+      /// Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid
+      /// pixels are visible, 1 to shift the images so that no source image pixels are lost.
       /// </summary>
-      public double RectifyAlpha { get { return rectifyAlpha; } set { rectifyAlpha = value; } }
+      public double RectifySkew { get { return rectifySkew; } set { rectifySkew = value; } }
 
       /// <summary>
       /// New image resolution after rectification. When null (default) or (0,0) is passed, it is set to the original imageSize. Setting it to
@@ -111,7 +111,7 @@ namespace ArucoUnity
         }
         if (CameraId2 >= arucoCamera.CameraNumber)
         {
-          throw new ArgumentOutOfRangeException("CameraId2", "The id of the first camera is higher than the number of the cameras.");
+          throw new ArgumentOutOfRangeException("CameraId2", "The id of the second camera is higher than the number of the cameras.");
         }
 
         // Check for equality of image sizes
@@ -181,7 +181,7 @@ namespace ArucoUnity
         if (!arucoCamera.IsFisheye)
         {
           Cv.Calib3d.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
-            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, RectifyAlpha, NewImageSize);
+            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, RectifySkew, NewImageSize);
         }
         else
         {
