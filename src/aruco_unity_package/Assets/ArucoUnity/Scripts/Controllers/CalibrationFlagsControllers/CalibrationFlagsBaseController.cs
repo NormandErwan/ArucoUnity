@@ -19,38 +19,21 @@ namespace ArucoUnity
       private bool fixPrincipalPoint = false;
 
       [SerializeField]
-      private bool[] fixK;
+      private bool[] fixKDistorsionCoefficients;
 
       // Properties
 
-      public bool UseIntrinsicGuess
-      {
-        get { return useIntrinsicGuess; }
-        set
-        {
-          useIntrinsicGuess = value;
-          UpdateCalibrationFlags();
-        }
-      }
+      public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
 
-      public bool FixPrincipalPoint
-      {
-        get { return fixPrincipalPoint; }
-        set
-        {
-          fixPrincipalPoint = value;
-          UpdateCalibrationFlags();
-        }
-      }
+      public bool FixPrincipalPoint { get { return fixPrincipalPoint; } set { fixPrincipalPoint = value; } }
 
-      public bool[] FixK
+      public bool[] FixKDistorsionCoefficients
       {
-        get { return fixK; }
-        set
-        {
+        get { return fixKDistorsionCoefficients; }
+        set {
           if (value.Length == FixKLength)
           {
-            fixK = value;
+            fixKDistorsionCoefficients = value;
             UpdateCalibrationFlags();
           }
         }
@@ -68,9 +51,9 @@ namespace ArucoUnity
 
       protected virtual void OnValidate()
       {
-        if (fixK.Length != FixKLength)
+        if (fixKDistorsionCoefficients.Length != FixKLength)
         {
-          Array.Resize(ref fixK, FixKLength);
+          Array.Resize(ref fixKDistorsionCoefficients, FixKLength);
         }
       }
     }
