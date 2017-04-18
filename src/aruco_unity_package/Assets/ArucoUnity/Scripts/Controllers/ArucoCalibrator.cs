@@ -124,7 +124,7 @@ namespace ArucoUnity
         }
 
         // Check for the stereo calibration properties
-        foreach(var stereoCameraPair in StereoCalibrationCameraPairs)
+        foreach (var stereoCameraPair in StereoCalibrationCameraPairs)
         {
           stereoCameraPair.PropertyCheck(ArucoCamera);
         }
@@ -301,16 +301,19 @@ namespace ArucoUnity
             CameraParameters.ImageHeights[cameraId] = ArucoCamera.ImageTextures[cameraId].height;
             CameraParameters.ImageWidths[cameraId] = ArucoCamera.ImageTextures[cameraId].width;
 
-            if (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController.FixAspectRatio)
+            double cameraMatrixAspectRatio = (!ArucoCamera.IsFisheye && calibrationFlagsNonFisheyeController.FixAspectRatio) 
+              ? calibrationFlagsNonFisheyeController.FixAspectRatioValue : 1.0;
+            CameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F, 
+              new double[9] { cameraMatrixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+
+            if (!ArucoCamera.IsFisheye)
             {
-              CameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat(3, 3, Cv.Core.Type.CV_64F,
-                new double[9] { calibrationFlagsNonFisheyeController.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
+              CameraParameters.DistCoeffs[cameraId] = new Cv.Core.Mat(8, 1, Cv.Core.Type.CV_64F, new double[8] { 0, 0, 0, 0, 0, 0, 0, 0 });
             }
             else
             {
-              CameraParameters.CameraMatrices[cameraId] = new Cv.Core.Mat();
+              CameraParameters.DistCoeffs[cameraId] = new Cv.Core.Mat(4, 1, Cv.Core.Type.CV_64F, new double[4] { 0, 0, 0, 0 });
             }
-            CameraParameters.DistCoeffs[cameraId] = new Cv.Core.Mat();
           }
         }
 
