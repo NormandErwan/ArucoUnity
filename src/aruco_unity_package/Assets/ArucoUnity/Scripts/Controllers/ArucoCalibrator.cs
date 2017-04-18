@@ -421,11 +421,10 @@ namespace ArucoUnity
         }
 
         // If required, apply a stereo calibration and save the resuts in the camera parameters
-        CameraParameters.StereoCameraParameters = new StereoCameraParameters[StereoCalibrationCameraPairs.Length];
+        CameraParameters.StereoCameraParametersList = new StereoCameraParameters[StereoCalibrationCameraPairs.Length];
         for (int i = 0; i < StereoCalibrationCameraPairs.Length; i++)
         {
-          StereoCalibrationCameraPairs[i].Calibrate(ArucoCamera, CameraParameters, objectPoints, imagePoints);
-          CameraParameters.StereoCameraParameters[i] = StereoCalibrationCameraPairs[i].StereoCameraParameters;
+          CameraParameters.StereoCameraParametersList[i] = StereoCalibrationCameraPairs[i].Calibrate(ArucoCamera, CameraParameters, objectPoints, imagePoints);
         }
 
         IsCalibrated = true;

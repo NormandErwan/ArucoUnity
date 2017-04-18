@@ -178,7 +178,7 @@ namespace ArucoUnity
       /// <summary>
       /// Parameters from stereo calibration on the camera system.
       /// </summary>
-      public StereoCameraParameters[] StereoCameraParameters { get; set; }
+      public StereoCameraParameters[] StereoCameraParametersList { get; set; }
 
       /// <summary>
       /// The camera focal length expressed in pixels coordinates. Equals to <see cref="CameraMatrices.AtDouble(0, 0)"/> on the x-axis
@@ -254,7 +254,7 @@ namespace ArucoUnity
         cameraParameters.UpdateCameraMatrixDerivedVariables();
 
         // Populate non-serialized properties of the stereo camera parameters
-        foreach (var currentStereoCameraParameters in cameraParameters.StereoCameraParameters)
+        foreach (var currentStereoCameraParameters in cameraParameters.StereoCameraParametersList)
         {
           currentStereoCameraParameters.UpdateNonSerializedProperties();
         }
@@ -282,7 +282,7 @@ namespace ArucoUnity
         UpdatePropertyValues(OmnidirXis, OmnidirXisValues);
 
         // Update properties for serialization of the stereo camera parameters
-        foreach (var currentStereoCameraParameters in StereoCameraParameters)
+        foreach (var currentStereoCameraParameters in StereoCameraParametersList)
         {
           currentStereoCameraParameters.UpdateSerializedProperties();
         }

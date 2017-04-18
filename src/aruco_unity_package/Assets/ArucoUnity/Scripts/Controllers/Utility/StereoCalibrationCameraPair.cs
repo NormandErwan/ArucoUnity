@@ -52,8 +52,6 @@ namespace ArucoUnity
       /// </summary>
       public Cv.Size NewImageSize { get { return newImageSize; } set { newImageSize = value; } }
 
-      public StereoCameraParameters StereoCameraParameters { get; set; }
-
       // Variables
 
       CalibrationFlagsPinholeController calibrationFlagsPinholeController;
@@ -112,11 +110,11 @@ namespace ArucoUnity
         }
       }
 
-      public void Calibrate(ArucoCamera arucoCamera, CameraParameters cameraParameters, Std.VectorVectorPoint3f[] objectPoints,
+      public StereoCameraParameters Calibrate(ArucoCamera arucoCamera, CameraParameters cameraParameters, Std.VectorVectorPoint3f[] objectPoints,
         Std.VectorVectorPoint2f[] imagePoints)
       {
         // Prepare the camera parameters
-        StereoCameraParameters = new StereoCameraParameters()
+        StereoCameraParameters stereoCameraParameters = new StereoCameraParameters()
         {
           CameraIds = new int[] { CameraId1, CameraId2 },
           CalibrationFlagsValue = CalibrationFlagsController.CalibrationFlagsValue
@@ -133,20 +131,20 @@ namespace ArucoUnity
         Cv.Mat rvec, tvec, essentialMatrix, fundamentalMatrix;
         if (calibrationFlagsPinholeController)
         {
-          StereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
+          stereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
             cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec, out essentialMatrix, out fundamentalMatrix,
             calibrationFlagsPinholeController.CalibrationFlags);
         }
         else if (calibrationFlagsFisheyeController)
         {
-          StereoCameraParameters.ReprojectionError = Cv.Fisheye.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
+          stereoCameraParameters.ReprojectionError = Cv.Fisheye.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
             imagePoints[CameraId2], cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec,
             calibrationFlagsFisheyeController.CalibrationFlags);
         }
         else if (calibrationFlagsOmnidirController)
         {
           Cv.Mat rvecsL, tvecsL;
-          StereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
+          stereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
             imagePoints[CameraId2], imageSize, imageSize, cameraMatrix1, xi1, distCoeffs1, cameraMatrix2, xi2, distCoeffs2, out rvec, out tvec,
             out rvecsL, out tvecsL, calibrationFlagsOmnidirController.CalibrationFlags);
         }
@@ -187,11 +185,13 @@ namespace ArucoUnity
         }
 
         // Save the camera parameters
-        StereoCameraParameters.RotationMatrix = rvec;
-        StereoCameraParameters.TranslationVector = tvec;
-        StereoCameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
-        StereoCameraParameters.NewCameraMatrices[CameraId1] = newCameraMatrix1;
-        StereoCameraParameters.NewCameraMatrices[CameraId2] = newCameraMatrix2;
+        stereoCameraParameters.RotationMatrix = rvec;
+        stereoCameraParameters.TranslationVector = tvec;
+        stereoCameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
+        stereoCameraParameters.NewCameraMatrices[CameraId1] = newCameraMatrix1;
+        stereoCameraParameters.NewCameraMatrices[CameraId2] = newCameraMatrix2;
+
+        return stereoCameraParameters;
       }
     }
   }

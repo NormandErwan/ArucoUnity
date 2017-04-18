@@ -411,7 +411,7 @@ namespace ArucoUnity
 
           // Set the undistortion maps for the cameras with stereo calibration results first
           List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList();
-          foreach (var stereoCameraParameters in CameraParameters.StereoCameraParameters)
+          foreach (var stereoCameraParameters in CameraParameters.StereoCameraParametersList)
           {
             for (int i = 0; i < StereoCameraParameters.CAMERA_NUMBER; i++)
             {
