@@ -37,9 +37,9 @@ namespace ArucoUnity
         ImageHeights = new int[CameraNumber];
         ImageWidths = new int[CameraNumber];
         ReprojectionErrors = new double[CameraNumber];
-        CameraMatrices = new Cv.Core.Mat[CameraNumber];
+        CameraMatrices = new Cv.Mat[CameraNumber];
         CameraMatricesValues = new double[CameraNumber][][];
-        DistCoeffs = new Cv.Core.Mat[CameraNumber];
+        DistCoeffs = new Cv.Mat[CameraNumber];
         DistCoeffsValues = new double[CameraNumber][][];
         CameraFocalLengths = new Vector2[CameraNumber];
         CameraOpticalCenters = new Vector2[CameraNumber];
@@ -105,7 +105,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatricesType"/> and 
       /// <see cref="CameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat[] CameraMatrices
+      public Cv.Mat[] CameraMatrices
       {
         get { return cameraMatrices; }
         set
@@ -120,7 +120,7 @@ namespace ArucoUnity
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.Core.Type CameraMatricesType { get; set; }
+      public Cv.Type CameraMatricesType { get; set; }
 
       /// <summary>
       /// The camera matrix values of the calibration. Equals to the <see cref="CameraMatrices"/> content and automatically written when 
@@ -135,14 +135,14 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="DistCoeffsType"/> and 
       /// <see cref="DistCoeffsValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat[] DistCoeffs { get; set; }
+      public Cv.Mat[] DistCoeffs { get; set; }
 
       /// <summary>
       /// The distorsition coefficients type of the calibration. Equals to <see cref="DistCoeffs.Type()"/> and automatically written when 
       /// <see cref="SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
-      public Cv.Core.Type DistCoeffsType { get; set; }
+      public Cv.Type DistCoeffsType { get; set; }
 
       /// <summary>
       /// The distorsition coefficients values of the calibration. Equals to the <see cref="DistCoeffs"/> content and automatically written when 
@@ -185,7 +185,7 @@ namespace ArucoUnity
       // Variables
 
       protected int[] imageHeight, imageWidth;
-      protected Cv.Core.Mat[] cameraMatrices;
+      protected Cv.Mat[] cameraMatrices;
 
       // Methods
 
@@ -299,7 +299,7 @@ namespace ArucoUnity
         }
       }
 
-      internal static void UpdatePropertyValues(Cv.Core.Mat[] property, double[][][] propertyValues)
+      internal static void UpdatePropertyValues(Cv.Mat[] property, double[][][] propertyValues)
       {
         int cameraNumber = property.Length,
             rows = property[0].Rows,
@@ -319,16 +319,16 @@ namespace ArucoUnity
         }
       }
 
-      internal static Cv.Core.Mat[] CreateProperty(Cv.Core.Type propertyType, double[][][] propertyValues)
+      internal static Cv.Mat[] CreateProperty(Cv.Type propertyType, double[][][] propertyValues)
       {
         int cameraNumber = propertyValues.Length,
             rows = propertyValues[0].Length,
             cols = propertyValues[0][0].Length;
 
-        Cv.Core.Mat[] property = new Cv.Core.Mat[cameraNumber];
+        Cv.Mat[] property = new Cv.Mat[cameraNumber];
         for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
         {
-          property[cameraId] = new Cv.Core.Mat(rows, cols, propertyType);
+          property[cameraId] = new Cv.Mat(rows, cols, propertyType);
           for (int i = 0; i < rows; i++)
           {
             for (int j = 0; j < cols; j++)

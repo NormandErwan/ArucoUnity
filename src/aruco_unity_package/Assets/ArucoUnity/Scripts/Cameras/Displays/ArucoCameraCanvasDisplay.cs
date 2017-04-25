@@ -72,7 +72,9 @@ namespace ArucoUnity
       {
         if (arucoCamera.ImageTextures.Length <= cameraId)
         {
-          Debug.LogError(gameObject.name + " - Couldn't select the cameraId: '" + cameraId + "'. The max id is: '" + arucoCamera.ImageTextures.Length + "'.");
+          // TODO: exception
+          Debug.LogError(gameObject.name + " - Couldn't select the cameraId: '" + cameraId + "'. The max id is: '" + arucoCamera.ImageTextures.Length
+            + "'.");
           return;
         }
 

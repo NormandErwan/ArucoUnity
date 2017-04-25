@@ -104,7 +104,8 @@ namespace ArucoUnity
 
       protected static int GetArucoHashCode(ArucoCharucoBoard arucoCharucoBoard)
       {
-        return GetArucoHashCode(arucoCharucoBoard.SquaresNumberX, arucoCharucoBoard.SquaresNumberY, arucoCharucoBoard.MarkerSideLength, arucoCharucoBoard.SquareSideLength);
+        return GetArucoHashCode(arucoCharucoBoard.SquaresNumberX, arucoCharucoBoard.SquaresNumberY, arucoCharucoBoard.MarkerSideLength,
+          arucoCharucoBoard.SquareSideLength);
       }
 
       /// <summary>

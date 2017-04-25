@@ -178,8 +178,8 @@ namespace ArucoUnity
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
         Std.VectorVec3d rvecs, tvecs;
-        Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH,
-          cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
+        Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters.CameraMatrices[cameraId],
+          cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
         MarkerRvecs[cameraId][dictionary] = rvecs;
         MarkerTvecs[cameraId][dictionary] = tvecs;
@@ -196,7 +196,7 @@ namespace ArucoUnity
         }
 
         bool updatedCameraImage = false;
-        Cv.Core.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+        Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
 
         // Draw the detected markers
         // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers

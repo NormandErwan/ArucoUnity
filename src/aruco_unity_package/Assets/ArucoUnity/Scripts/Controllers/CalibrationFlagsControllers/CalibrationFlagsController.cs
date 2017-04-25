@@ -75,7 +75,7 @@ namespace ArucoUnity
 
       public bool SameFocalLength { get { return sameFocalLength; } set { sameFocalLength = value; } }
 
-      public Cv.Calib3d.Calib CalibrationFlags
+      public Cv.Calib CalibrationFlags
       {
         get
         {
@@ -92,59 +92,59 @@ namespace ArucoUnity
       public override int CalibrationFlagsValue
       {
         get { return (int)CalibrationFlags; }
-        set { CalibrationFlags = (Cv.Calib3d.Calib)value; }
+        set { CalibrationFlags = (Cv.Calib)value; }
       }
 
       protected override int FixKLength { get { return 6; } set { } }
 
       // Variables
 
-      private Cv.Calib3d.Calib calibrationFlags;
+      private Cv.Calib calibrationFlags;
 
       // Methods
 
       protected override void UpdateCalibrationFlags()
       {
         calibrationFlags = 0;
-        if (UseIntrinsicGuess)             { calibrationFlags |= Cv.Calib3d.Calib.UseIntrinsicGuess; }
-        if (FixPrincipalPoint)             { calibrationFlags |= Cv.Calib3d.Calib.FixPrincipalPoint; }
-        if (FixKDistorsionCoefficients[0]) { calibrationFlags |= Cv.Calib3d.Calib.FixK1; }
-        if (FixKDistorsionCoefficients[1]) { calibrationFlags |= Cv.Calib3d.Calib.FixK2; }
-        if (FixKDistorsionCoefficients[2]) { calibrationFlags |= Cv.Calib3d.Calib.FixK3; }
-        if (FixKDistorsionCoefficients[3]) { calibrationFlags |= Cv.Calib3d.Calib.FixK4; }
-        if (FixKDistorsionCoefficients[4]) { calibrationFlags |= Cv.Calib3d.Calib.FixK5; }
-        if (FixKDistorsionCoefficients[5]) { calibrationFlags |= Cv.Calib3d.Calib.FixK6; }
-        if (FixAspectRatio)                { calibrationFlags |= Cv.Calib3d.Calib.FixAspectRatio; }
-        if (ZeroTangentialDistorsion)      { calibrationFlags |= Cv.Calib3d.Calib.ZeroTangentDist; }
-        if (RationalModel)                 { calibrationFlags |= Cv.Calib3d.Calib.RationalModel; }
-        if (ThinPrismModel)                { calibrationFlags |= Cv.Calib3d.Calib.ThinPrismModel; }
-        if (FixS1_S2_S3_S4)                { calibrationFlags |= Cv.Calib3d.Calib.FixS1S2S3S4; }
-        if (TiltedModel)                   { calibrationFlags |= Cv.Calib3d.Calib.TiltedModel; }
-        if (FixTauxTauy)                   { calibrationFlags |= Cv.Calib3d.Calib.FixTauxTauy; }
-        if (FixFocalLength)                { calibrationFlags |= Cv.Calib3d.Calib.FixFocalLength; }
-        if (FixIntrinsic)                  { calibrationFlags |= Cv.Calib3d.Calib.FixIntrinsic; }
-        if (SameFocalLength)               { calibrationFlags |= Cv.Calib3d.Calib.SameFocalLength; }
+        if (UseIntrinsicGuess)             { calibrationFlags |= Cv.Calib.UseIntrinsicGuess; }
+        if (FixPrincipalPoint)             { calibrationFlags |= Cv.Calib.FixPrincipalPoint; }
+        if (FixKDistorsionCoefficients[0]) { calibrationFlags |= Cv.Calib.FixK1; }
+        if (FixKDistorsionCoefficients[1]) { calibrationFlags |= Cv.Calib.FixK2; }
+        if (FixKDistorsionCoefficients[2]) { calibrationFlags |= Cv.Calib.FixK3; }
+        if (FixKDistorsionCoefficients[3]) { calibrationFlags |= Cv.Calib.FixK4; }
+        if (FixKDistorsionCoefficients[4]) { calibrationFlags |= Cv.Calib.FixK5; }
+        if (FixKDistorsionCoefficients[5]) { calibrationFlags |= Cv.Calib.FixK6; }
+        if (FixAspectRatio)                { calibrationFlags |= Cv.Calib.FixAspectRatio; }
+        if (ZeroTangentialDistorsion)      { calibrationFlags |= Cv.Calib.ZeroTangentDist; }
+        if (RationalModel)                 { calibrationFlags |= Cv.Calib.RationalModel; }
+        if (ThinPrismModel)                { calibrationFlags |= Cv.Calib.ThinPrismModel; }
+        if (FixS1_S2_S3_S4)                { calibrationFlags |= Cv.Calib.FixS1S2S3S4; }
+        if (TiltedModel)                   { calibrationFlags |= Cv.Calib.TiltedModel; }
+        if (FixTauxTauy)                   { calibrationFlags |= Cv.Calib.FixTauxTauy; }
+        if (FixFocalLength)                { calibrationFlags |= Cv.Calib.FixFocalLength; }
+        if (FixIntrinsic)                  { calibrationFlags |= Cv.Calib.FixIntrinsic; }
+        if (SameFocalLength)               { calibrationFlags |= Cv.Calib.SameFocalLength; }
       }
 
       protected override void UpdateCalibrationOptions()
       {
-        UseIntrinsicGuess =             Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.UseIntrinsicGuess);
-        FixPrincipalPoint =             Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixPrincipalPoint);
-        FixKDistorsionCoefficients[0] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK1);
-        FixKDistorsionCoefficients[1] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK2);
-        FixKDistorsionCoefficients[2] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK3);
-        FixKDistorsionCoefficients[3] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK4);
-        FixKDistorsionCoefficients[4] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK5);
-        FixKDistorsionCoefficients[5] = Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixK6);
-        ZeroTangentialDistorsion =      Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.ZeroTangentDist);
-        RationalModel =                 Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.RationalModel);
-        ThinPrismModel =                Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.ThinPrismModel);
-        FixS1_S2_S3_S4 =                Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixS1S2S3S4);
-        TiltedModel =                   Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.TiltedModel);
-        FixTauxTauy =                   Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixTauxTauy);
-        FixFocalLength =                Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixFocalLength);
-        FixIntrinsic =                  Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.FixIntrinsic);
-        SameFocalLength =               Enum.IsDefined(typeof(Cv.Calib3d.Calib), Cv.Calib3d.Calib.SameFocalLength);
+        UseIntrinsicGuess =             Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.UseIntrinsicGuess);
+        FixPrincipalPoint =             Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixPrincipalPoint);
+        FixKDistorsionCoefficients[0] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK1);
+        FixKDistorsionCoefficients[1] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK2);
+        FixKDistorsionCoefficients[2] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK3);
+        FixKDistorsionCoefficients[3] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK4);
+        FixKDistorsionCoefficients[4] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK5);
+        FixKDistorsionCoefficients[5] = Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixK6);
+        ZeroTangentialDistorsion =      Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.ZeroTangentDist);
+        RationalModel =                 Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.RationalModel);
+        ThinPrismModel =                Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.ThinPrismModel);
+        FixS1_S2_S3_S4 =                Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixS1S2S3S4);
+        TiltedModel =                   Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.TiltedModel);
+        FixTauxTauy =                   Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixTauxTauy);
+        FixFocalLength =                Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixFocalLength);
+        FixIntrinsic =                  Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.FixIntrinsic);
+        SameFocalLength =               Enum.IsDefined(typeof(Cv.Calib), Cv.Calib.SameFocalLength);
       }
     }
   }

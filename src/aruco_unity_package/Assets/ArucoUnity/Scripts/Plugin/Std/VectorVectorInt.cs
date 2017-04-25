@@ -52,7 +52,7 @@ namespace ArucoUnity
 
         public VectorInt At(uint pos)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           VectorInt element = new VectorInt(au_std_vectorVectorInt_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;

@@ -54,7 +54,7 @@ namespace ArucoUnity
 
         public double At(uint pos)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           double element = au_std_vectorDouble_at(CppPtr, pos, exception.CppPtr);
           exception.Check();
           return element;
@@ -81,7 +81,7 @@ namespace ArucoUnity
 
         public void Reserve(uint newCap)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           au_std_vectorDouble_reserve(CppPtr, newCap, exception.CppPtr);
           exception.Check();
         }

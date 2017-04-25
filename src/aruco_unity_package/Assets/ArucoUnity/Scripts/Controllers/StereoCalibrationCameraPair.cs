@@ -77,7 +77,7 @@ namespace ArucoUnity
       /// New image resolution after rectification. When null (default) or (0,0) is passed, it is set to the original imageSize. Setting it to
       /// larger value can help you preserve details in the original image, especially when there is a big radial distortion.
       /// </summary>
-      public Cv.Core.Size NewImageSize { get { return newImageSize; } set { newImageSize = value; } }
+      public Cv.Size NewImageSize { get { return newImageSize; } set { newImageSize = value; } }
 
       /// <summary>
       /// Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).
@@ -95,7 +95,7 @@ namespace ArucoUnity
 
       CalibrationFlagsController calibrationFlagsNonFisheyeController;
       CalibrationFlagsFisheyeController calibrationFlagsFisheyeController;
-      Cv.Core.Size newImageSize = new Cv.Core.Size();
+      Cv.Size newImageSize = new Cv.Size();
 
       // Methods
 
@@ -147,7 +147,7 @@ namespace ArucoUnity
         // Prepare data
         calibrationFlagsNonFisheyeController = CalibrationFlagsController as CalibrationFlagsController;
         calibrationFlagsFisheyeController = CalibrationFlagsController as CalibrationFlagsFisheyeController;
-        Cv.Calib3d.StereoRectifyFlags stereoRectifyFlags = (RectifyZeroDisparity) ? Cv.Calib3d.StereoRectifyFlags.ZeroDisparity : 0;
+        Cv.StereoRectifyFlags stereoRectifyFlags = (RectifyZeroDisparity) ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
 
         // Prepare the camera parameters
         CameraParameters = new StereoCameraParameters()
@@ -157,35 +157,35 @@ namespace ArucoUnity
         };
 
         // Estimates transformation between the two cameras 
-        Cv.Core.Mat cameraMatrix1 = cameraParameters.CameraMatrices[CameraId1];
-        Cv.Core.Mat distCoeffs1 = cameraParameters.DistCoeffs[CameraId1];
-        Cv.Core.Mat cameraMatrix2 = cameraParameters.CameraMatrices[CameraId2];
-        Cv.Core.Mat distCoeffs2 = cameraParameters.DistCoeffs[CameraId2];
-        Cv.Core.Size imageSize = arucoCamera.Images[CameraId1].Size;
-        Cv.Core.Mat rvec, tvec, essentialMatrix, fundamentalMatrix;
+        Cv.Mat cameraMatrix1 = cameraParameters.CameraMatrices[CameraId1];
+        Cv.Mat distCoeffs1 = cameraParameters.DistCoeffs[CameraId1];
+        Cv.Mat cameraMatrix2 = cameraParameters.CameraMatrices[CameraId2];
+        Cv.Mat distCoeffs2 = cameraParameters.DistCoeffs[CameraId2];
+        Cv.Size imageSize = arucoCamera.Images[CameraId1].Size;
+        Cv.Mat rvec, tvec, essentialMatrix, fundamentalMatrix;
         if (!arucoCamera.IsFisheye)
         {
-          CameraParameters.ReprojectionError = Cv.Calib3d.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
+          CameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
             cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec, out essentialMatrix, out fundamentalMatrix,
             calibrationFlagsNonFisheyeController.CalibrationFlags);
         }
         else
         {
-          CameraParameters.ReprojectionError = Cv.Calib3d.Fisheye.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
+          CameraParameters.ReprojectionError = Cv.Fisheye.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1],
             imagePoints[CameraId2], cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec,
             calibrationFlagsFisheyeController.CalibrationFlags);
         }
 
         // Computes rectification transforms
-        Cv.Core.Mat rotationMatrix1, rotationMatrix2, projectionMatrix1, projectionMatrix2, Q;
+        Cv.Mat rotationMatrix1, rotationMatrix2, projectionMatrix1, projectionMatrix2, Q;
         if (!arucoCamera.IsFisheye)
         {
-          Cv.Calib3d.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
+          Cv.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
             out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, RectifySkew, NewImageSize);
         }
         else
         {
-          Cv.Calib3d.Fisheye.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
+          Cv.Fisheye.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
             out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, NewImageSize, RectifyFisheyeBalance,
             RectifyFisheyeFovScale);
         }
@@ -193,8 +193,8 @@ namespace ArucoUnity
         // Save the camera parameters
         CameraParameters.RotationMatrix = rvec;
         CameraParameters.TranslationVector = tvec;
-        CameraParameters.RotationMatrices = new Cv.Core.Mat[] { rotationMatrix1, rotationMatrix2 };
-        CameraParameters.ProjectionMatrices = new Cv.Core.Mat[] { projectionMatrix1, projectionMatrix2 };
+        CameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
+        CameraParameters.ProjectionMatrices = new Cv.Mat[] { projectionMatrix1, projectionMatrix2 };
       }
     }
   }

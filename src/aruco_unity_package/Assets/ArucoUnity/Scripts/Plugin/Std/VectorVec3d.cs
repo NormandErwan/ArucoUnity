@@ -49,29 +49,29 @@ namespace ArucoUnity
 
         // Methods
 
-        public Cv.Core.Vec3d At(uint pos)
+        public Cv.Vec3d At(uint pos)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Vec3d element = new Cv.Core.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
+          Cv.Exception exception = new Cv.Exception();
+          Cv.Vec3d element = new Cv.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Cv.Core.Vec3d[] Data()
+        public unsafe Cv.Vec3d[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorVec3d_data(CppPtr);
           uint size = Size();
 
-          Cv.Core.Vec3d[] data = new Cv.Core.Vec3d[size];
+          Cv.Vec3d[] data = new Cv.Vec3d[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Core.Vec3d(dataPtr[i], Utility.DeleteResponsibility.False);
+            data[i] = new Cv.Vec3d(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Cv.Core.Vec3d value)
+        public void PushBack(Cv.Vec3d value)
         {
           au_std_vectorVec3d_push_back(CppPtr, value.CppPtr);
         }

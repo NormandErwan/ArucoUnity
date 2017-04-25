@@ -88,7 +88,8 @@ namespace ArucoUnity
 
       protected static int GetArucoHashCode(ArucoGridBoard arucoGridBoard)
       {
-        return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength, arucoGridBoard.MarkerSeparation);
+        return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength,
+          arucoGridBoard.MarkerSeparation);
       }
 
       /// <summary>

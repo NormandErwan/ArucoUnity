@@ -50,7 +50,7 @@ namespace ArucoUnity
         static public GridBoard Create(int markersX, int markersY, float markerLength, float markerSeparation, Dictionary dictionary,
           int firstMarker = 0)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           System.IntPtr gridBoardPtr = au_GridBoard_create(markersX, markersY, markerLength, markerSeparation, dictionary.CppPtr, firstMarker,
             exception.CppPtr);
           exception.Check();
@@ -59,20 +59,20 @@ namespace ArucoUnity
 
         // Methods
 
-        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize = 0, int borderBits = 1)
+        public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize = 0, int borderBits = 1)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           System.IntPtr imgPtr;
 
           au_GridBoard_draw(CppPtr, outSize.CppPtr, out imgPtr, marginSize, borderBits, exception.CppPtr);
-          img = new Cv.Core.Mat(imgPtr);
+          img = new Cv.Mat(imgPtr);
 
           exception.Check();
         }
 
-        public Cv.Core.Size GetGridSize()
+        public Cv.Size GetGridSize()
         {
-          return new Cv.Core.Size(au_GridBoard_getGridSize(CppPtr));
+          return new Cv.Size(au_GridBoard_getGridSize(CppPtr));
         }
 
         public float GetMarkerLength()

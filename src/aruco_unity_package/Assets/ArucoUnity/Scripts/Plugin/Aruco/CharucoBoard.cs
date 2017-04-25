@@ -30,8 +30,8 @@ namespace ArucoUnity
         static extern float au_CharucoBoard_getSquareLength(System.IntPtr charucoBoard);
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_CharucoBoard_create(int squaresX, int squaresY, float squareLength, float markerLength, System.IntPtr dictionary,
-        System.IntPtr exception);
+        static extern System.IntPtr au_CharucoBoard_create(int squaresX, int squaresY, float squareLength, float markerLength,
+          System.IntPtr dictionary, System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
         static extern System.IntPtr au_CharucoBoard_getChessboardCorners(System.IntPtr charucoBoard);
@@ -87,7 +87,7 @@ namespace ArucoUnity
 
         static public CharucoBoard Create(int squaresX, int squaresY, float squareLength, float markerLength, Dictionary dictionary)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           System.IntPtr charucoBoardPtr = au_CharucoBoard_create(squaresX, squaresY, squareLength, markerLength, dictionary.CppPtr,
             exception.CppPtr);
           exception.Check();
@@ -96,20 +96,20 @@ namespace ArucoUnity
 
         // Methods
 
-        public void Draw(Cv.Core.Size outSize, out Cv.Core.Mat img, int marginSize = 0, int borderBits = 1)
+        public void Draw(Cv.Size outSize, out Cv.Mat img, int marginSize = 0, int borderBits = 1)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           System.IntPtr imgPtr;
 
           au_CharucoBoard_draw(CppPtr, outSize.CppPtr, out imgPtr, marginSize, borderBits, exception.CppPtr);
-          img = new Cv.Core.Mat(imgPtr);
+          img = new Cv.Mat(imgPtr);
 
           exception.Check();
         }
 
-        public Cv.Core.Size GetChessboardSize()
+        public Cv.Size GetChessboardSize()
         {
-          return new Cv.Core.Size(au_CharucoBoard_getChessboardSize(CppPtr));
+          return new Cv.Size(au_CharucoBoard_getChessboardSize(CppPtr));
         }
 
         public float GetMarkerLength()

@@ -44,9 +44,9 @@ namespace ArucoUnity
       /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="RotationMatrixType"/> and 
       /// <see cref="RotationMatrixValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat RotationMatrix { get; set; }
+      public Cv.Mat RotationMatrix { get; set; }
 
-      public Cv.Core.Type RotationMatrixType { get; set; }
+      public Cv.Type RotationMatrixType { get; set; }
 
       public double[][] RotationMatrixValues { get; set; }
 
@@ -56,9 +56,9 @@ namespace ArucoUnity
       /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="TranslationVectorType"/> and 
       /// <see cref="TranslationVectorValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat TranslationVector { get; set; }
+      public Cv.Mat TranslationVector { get; set; }
 
-      public Cv.Core.Type TranslationVectorType { get; set; }
+      public Cv.Type TranslationVectorType { get; set; }
 
       public double[][] TranslationVectorValues { get; set; }
 
@@ -73,9 +73,9 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="RotationMatrixType"/> and 
       /// <see cref="RotationMatrixValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat[] RotationMatrices { get; set; }
+      public Cv.Mat[] RotationMatrices { get; set; }
 
-      public Cv.Core.Type RotationMatricesType { get; set; }
+      public Cv.Type RotationMatricesType { get; set; }
 
       public double[][][] RotationMatricesValues { get; set; }
 
@@ -85,9 +85,9 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="ProjectionMatricesType"/> and 
       /// <see cref="ProjectionMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Core.Mat[] ProjectionMatrices { get; set; }
+      public Cv.Mat[] ProjectionMatrices { get; set; }
 
-      public Cv.Core.Type ProjectionMatricesType { get; set; }
+      public Cv.Type ProjectionMatricesType { get; set; }
 
       public double[][][] ProjectionMatricesValues { get; set; }
 
@@ -118,7 +118,7 @@ namespace ArucoUnity
         ProjectionMatrices = CameraParameters.CreateProperty(ProjectionMatricesType, ProjectionMatricesValues);
       }
 
-      protected double[][] PropertyValues(Cv.Core.Mat property)
+      protected double[][] PropertyValues(Cv.Mat property)
       {
         double[][] propertyValues = new double[property.Rows][];
         for (int i = 0; i < property.Rows; i++)
@@ -132,10 +132,10 @@ namespace ArucoUnity
         return propertyValues;
       }
 
-      protected Cv.Core.Mat CreateProperty(Cv.Core.Type propertyType, double[][] propertyValues)
+      protected Cv.Mat CreateProperty(Cv.Type propertyType, double[][] propertyValues)
       {
         int rows = propertyValues.Length, cols = propertyValues[0].Length;
-        Cv.Core.Mat property = new Cv.Core.Mat(rows, cols, propertyType);
+        Cv.Mat property = new Cv.Mat(rows, cols, propertyType);
         for (int i = 0; i < rows; i++)
         {
           for (int j = 0; j < cols; j++)

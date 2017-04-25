@@ -82,7 +82,7 @@ namespace ArucoUnity
       /// <summary>
       /// The created image of the <see cref="ArucoObject"/>.
       /// </summary>
-      public Cv.Core.Mat Image { get; protected set; }
+      public Cv.Mat Image { get; protected set; }
 
       /// <summary>
       /// The created texture of the <see cref="ArucoObject"/>.
@@ -119,7 +119,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Create()
       {
-        Cv.Core.Mat image = null;
+        Cv.Mat image = null;
         ImageTexture = null;
 
         // In case of a marker
@@ -149,7 +149,7 @@ namespace ArucoUnity
         ArucoDiamond diamond = ArucoObject as ArucoDiamond;
         if (diamond != null && diamond.Ids.Length == 4)
         {
-          Cv.Core.Vec4i ids = new Cv.Core.Vec4i();
+          Cv.Vec4i ids = new Cv.Vec4i();
           for (int i = 0; i < diamond.Ids.Length; ++i)
           {
             ids.Set(i, diamond.Ids[i]);
@@ -163,8 +163,8 @@ namespace ArucoUnity
         {
           // Vertical flip to correctly display the image on the texture
           int verticalFlipCode = 0;
-          Cv.Core.Mat imageForTexture = Image.Clone();
-          Cv.Core.Flip(imageForTexture, imageForTexture, verticalFlipCode);
+          Cv.Mat imageForTexture = Image.Clone();
+          Cv.Flip(imageForTexture, imageForTexture, verticalFlipCode);
 
           // Load the image to the texture
           int markerDataSize = (int)(Image.ElemSize() * Image.Total());

@@ -52,7 +52,7 @@ namespace ArucoUnity
 
         public VectorPoint2f At(uint pos)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
+          Cv.Exception exception = new Cv.Exception();
           VectorPoint2f element = new VectorPoint2f(au_std_vectorVectorPoint2f_at(CppPtr, pos, exception.CppPtr),
             Utility.DeleteResponsibility.False);
           exception.Check();

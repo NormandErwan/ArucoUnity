@@ -49,29 +49,29 @@ namespace ArucoUnity
 
         // Methods
 
-        public Cv.Core.Point3f At(uint pos)
+        public Cv.Point3f At(uint pos)
         {
-          Cv.Core.Exception exception = new Cv.Core.Exception();
-          Cv.Core.Point3f element = new Cv.Core.Point3f(au_std_vectorPoint3f_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
+          Cv.Exception exception = new Cv.Exception();
+          Cv.Point3f element = new Cv.Point3f(au_std_vectorPoint3f_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
           exception.Check();
           return element;
         }
 
-        public unsafe Cv.Core.Point3f[] Data()
+        public unsafe Cv.Point3f[] Data()
         {
           System.IntPtr* dataPtr = au_std_vectorPoint3f_data(CppPtr);
           uint size = Size();
 
-          Cv.Core.Point3f[] data = new Cv.Core.Point3f[size];
+          Cv.Point3f[] data = new Cv.Point3f[size];
           for (int i = 0; i < size; i++)
           {
-            data[i] = new Cv.Core.Point3f(dataPtr[i], Utility.DeleteResponsibility.False);
+            data[i] = new Cv.Point3f(dataPtr[i], Utility.DeleteResponsibility.False);
           }
 
           return data;
         }
 
-        public void PushBack(Cv.Core.Point3f value)
+        public void PushBack(Cv.Point3f value)
         {
           au_std_vectorPoint3f_push_back(CppPtr, value.CppPtr);
         }

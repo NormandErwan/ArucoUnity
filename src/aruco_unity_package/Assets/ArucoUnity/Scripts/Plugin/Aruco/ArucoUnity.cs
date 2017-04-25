@@ -118,10 +118,10 @@ namespace ArucoUnity
       // Static methods
 
       public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs,
-        Cv.Calib3d.Calib flags, Cv.Core.TermCriteria criteria)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags,
+        Cv.TermCriteria criteria)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraAruco(corners.CppPtr, ids.CppPtr, counter.CppPtr, board.CppPtr, imageSize.CppPtr,
@@ -134,32 +134,31 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs,
-        Cv.Calib3d.Calib flags = 0)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = 0)
       {
-        Cv.Core.TermCriteria criteria = new Cv.Core.TermCriteria(Cv.Core.TermCriteria.Type.Count | Cv.Core.TermCriteria.Type.Eps, 30, Cv.Core.EPSILON);
+        Cv.TermCriteria criteria = new Cv.TermCriteria(Cv.TermCriteria.Type.Count | Cv.TermCriteria.Type.Eps, 30, Cv.EPSILON);
         return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
       }
 
       public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)
       {
         Std.VectorMat tvecs;
         return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs);
       }
 
       public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
       {
         Std.VectorMat rvecs;
         return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs);
       }
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs,
-        Cv.Calib3d.Calib flags, Cv.Core.TermCriteria criteria)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags,
+        Cv.TermCriteria criteria)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         double reProjectionError = au_calibrateCameraCharuco(charucoCorners.CppPtr, charucoIds.CppPtr, board.CppPtr, imageSize.CppPtr,
@@ -172,32 +171,31 @@ namespace ArucoUnity
       }
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs,
-        Cv.Calib3d.Calib flags = 0)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = 0)
       {
-        Cv.Core.TermCriteria criteria = new Cv.Core.TermCriteria(Cv.Core.TermCriteria.Type.Count | Cv.Core.TermCriteria.Type.Eps, 30, Cv.Core.EPSILON);
+        Cv.TermCriteria criteria = new Cv.TermCriteria(Cv.TermCriteria.Type.Count | Cv.TermCriteria.Type.Eps, 30, Cv.EPSILON);
         return CalibrateCameraCharuco(charucoCorners, charucoIds, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
       }
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Std.VectorMat rvecs)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)
       {
         Std.VectorMat tvecs;
         return CalibrateCameraCharuco(charucoCorners, charucoIds, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs);
       }
 
       public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, CharucoBoard board,
-        Cv.Core.Size imageSize, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
+        Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
       {
         Std.VectorMat rvecs;
         return CalibrateCameraCharuco(charucoCorners, charucoIds, board, imageSize, cameraMatrix, distCoeffs, out rvecs);
       }
 
-      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
-        float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Core.Mat cameraMatrix,
-        Cv.Core.Mat distCoeffs)
+      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
+        float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix,
+        Cv.Mat distCoeffs)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr diamondCornersPtr, diamondIdsPtr;
 
         au_detectCharucoDiamond(image.CppPtr, markerCorners.CppPtr, markerIds.CppPtr, squareMarkerLengthRate, out diamondCornersPtr,
@@ -208,24 +206,24 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
-        float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Core.Mat cameraMatrix)
+      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
+        float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix)
       {
-        Cv.Core.Mat distCoeffs = new Cv.Core.Mat();
+        Cv.Mat distCoeffs = new Cv.Mat();
         DetectCharucoDiamond(image, markerCorners, markerIds, squareMarkerLengthRate, out diamondCorners, out diamondIds, cameraMatrix, distCoeffs);
       }
 
-      public static void DetectCharucoDiamond(Cv.Core.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
+      public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds,
         float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds)
       {
-        Cv.Core.Mat cameraMatrix = new Cv.Core.Mat();
+        Cv.Mat cameraMatrix = new Cv.Mat();
         DetectCharucoDiamond(image, markerCorners, markerIds, squareMarkerLengthRate, out diamondCorners, out diamondIds, cameraMatrix);
       }
 
-      public static void DetectMarkers(Cv.Core.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids,
+      public static void DetectMarkers(Cv.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids,
         DetectorParameters parameters, out Std.VectorVectorPoint2f rejectedImgPoints)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr cornersPtr, idsPtr, rejectedPtr;
 
         au_detectMarkers(image.CppPtr, dictionary.CppPtr, out cornersPtr, out idsPtr, parameters.CppPtr, out rejectedPtr, exception.CppPtr);
@@ -236,131 +234,129 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void DetectMarkers(Cv.Core.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids,
+      public static void DetectMarkers(Cv.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids,
         DetectorParameters parameters)
       {
         Std.VectorVectorPoint2f rejectedImgPoints;
         DetectMarkers(image, dictionary, out corners, out ids, parameters, out rejectedImgPoints);
       }
 
-      public static void DetectMarkers(Cv.Core.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids)
+      public static void DetectMarkers(Cv.Mat image, Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids)
       {
         DetectorParameters parameters = new DetectorParameters();
         DetectMarkers(image, dictionary, out corners, out ids, parameters);
       }
 
-      public static void DrawAxis(Cv.Core.Mat image, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, Cv.Core.Vec3d rvec, Cv.Core.Vec3d tvec,
-        float length)
+      public static void DrawAxis(Cv.Mat image, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Vec3d rvec, Cv.Vec3d tvec, float length)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         au_drawAxis(image.CppPtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, rvec.CppPtr, tvec.CppPtr, length, exception.CppPtr);
         exception.Check();
       }
-      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Core.Vec4i ids, int squareLength, int markerLength, out Cv.Core.Mat image,
+      public static void DrawCharucoDiamond(Dictionary dictionary, Cv.Vec4i ids, int squareLength, int markerLength, out Cv.Mat image,
         int marginSize = 0, int borderBits = 1)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr imagePtr;
 
         au_drawCharucoDiamond(dictionary.CppPtr, ids.CppPtr, squareLength, markerLength, out imagePtr, marginSize, borderBits, exception.CppPtr);
-        image = new Cv.Core.Mat(imagePtr);
+        image = new Cv.Mat(imagePtr);
 
         exception.Check();
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds,
-        Cv.Core.Scalar cornerColor)
+      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, Cv.Scalar cornerColor)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         au_drawDetectedCornersCharuco(image.CppPtr, charucoCorners.CppPtr, charucoIds.CppPtr, cornerColor.CppPtr, exception.CppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds)
+      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds)
       {
-        Cv.Core.Scalar cornerColor = new Cv.Core.Scalar(255, 0, 0);
+        Cv.Scalar cornerColor = new Cv.Scalar(255, 0, 0);
         DrawDetectedCornersCharuco(image, charucoCorners, charucoIds, cornerColor);
       }
 
-      public static void DrawDetectedCornersCharuco(Cv.Core.Mat image, Std.VectorPoint2f charucoCorners)
+      public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners)
       {
         Std.VectorInt charucoIds = new Std.VectorInt();
         DrawDetectedCornersCharuco(image, charucoCorners, charucoIds);
       }
 
-      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds,
-        Cv.Core.Scalar borderColor)
+      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds,
+        Cv.Scalar borderColor)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         au_drawDetectedDiamonds(image.CppPtr, diamondCorners.CppPtr, diamondIds.CppPtr, borderColor.CppPtr, exception.CppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds)
+      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds)
       {
-        Cv.Core.Scalar borderColor = new Cv.Core.Scalar(0, 0, 255);
+        Cv.Scalar borderColor = new Cv.Scalar(0, 0, 255);
         DrawDetectedDiamonds(image, diamondCorners, diamondIds, borderColor);
       }
 
-      public static void DrawDetectedDiamonds(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners)
+      public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners)
       {
         Std.VectorVec4i diamondIds = new Std.VectorVec4i();
         DrawDetectedDiamonds(image, diamondCorners, diamondIds);
       }
 
-      public static void DrawDetectedMarkers(Cv.Core.Mat image, Std.VectorVectorPoint2f corners, Std.VectorInt ids, Cv.Core.Scalar borderColor)
+      public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f corners, Std.VectorInt ids, Cv.Scalar borderColor)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         au_drawDetectedMarkers(image.CppPtr, corners.CppPtr, ids.CppPtr, borderColor.CppPtr, exception.CppPtr);
         exception.Check();
       }
 
-      public static void DrawDetectedMarkers(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorInt ids)
+      public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorInt ids)
       {
-        Cv.Core.Scalar borderColor = new Cv.Core.Scalar(0, 255, 0);
+        Cv.Scalar borderColor = new Cv.Scalar(0, 255, 0);
         DrawDetectedMarkers(image, diamondCorners, ids, borderColor);
       }
 
-      public static void DrawDetectedMarkers(Cv.Core.Mat image, Std.VectorVectorPoint2f diamondCorners)
+      public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners)
       {
         Std.VectorInt ids = new Std.VectorInt();
         DrawDetectedMarkers(image, diamondCorners, ids);
       }
 
-      public static int EstimatePoseBoard(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Board board, Cv.Core.Mat cameraMatrix,
-        Cv.Core.Mat distCoeffs, out Cv.Core.Vec3d rvec, out Cv.Core.Vec3d tvec)
+      public static int EstimatePoseBoard(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Board board, Cv.Mat cameraMatrix, Cv.Mat distCoeffs,
+        out Cv.Vec3d rvec, out Cv.Vec3d tvec)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr rvecPtr, tvecPtr;
 
         int valid = au_estimatePoseBoard(corners.CppPtr, ids.CppPtr, board.CppPtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, out rvecPtr, out tvecPtr,
           exception.CppPtr);
-        rvec = new Cv.Core.Vec3d(rvecPtr);
-        tvec = new Cv.Core.Vec3d(tvecPtr);
+        rvec = new Cv.Vec3d(rvecPtr);
+        tvec = new Cv.Vec3d(tvecPtr);
 
         exception.Check();
         return valid;
       }
 
       public static bool EstimatePoseCharucoBoard(Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, CharucoBoard board,
-        Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, out Cv.Core.Vec3d rvec, out Cv.Core.Vec3d tvec)
+        Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Cv.Vec3d rvec, out Cv.Vec3d tvec)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr rvecPtr, tvecPtr;
 
         bool valid = au_estimatePoseCharucoBoard(charucoCorners.CppPtr, charucoIds.CppPtr, board.CppPtr, cameraMatrix.CppPtr, distCoeffs.CppPtr,
           out rvecPtr, out tvecPtr, exception.CppPtr);
-        rvec = new Cv.Core.Vec3d(rvecPtr);
-        tvec = new Cv.Core.Vec3d(tvecPtr);
+        rvec = new Cv.Vec3d(rvecPtr);
+        tvec = new Cv.Vec3d(tvecPtr);
 
         exception.Check();
         return valid;
       }
 
-      public static void EstimatePoseSingleMarkers(Std.VectorVectorPoint2f corners, float markerLength, Cv.Core.Mat cameraMatrix,
-         Cv.Core.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs)
+      public static void EstimatePoseSingleMarkers(Std.VectorVectorPoint2f corners, float markerLength, Cv.Mat cameraMatrix, Cv.Mat distCoeffs,
+        out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr rvecsPtr, tvecsPtr;
 
         au_estimatePoseSingleMarkers(corners.CppPtr, markerLength, cameraMatrix.CppPtr, distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr,
@@ -373,7 +369,7 @@ namespace ArucoUnity
 
       public static Dictionary GenerateCustomDictionary(int nMarkers, int markerSize, Dictionary baseDictionary)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr dictionaryPtr = au_generateCustomDictionary(nMarkers, markerSize, baseDictionary.CppPtr, exception.CppPtr);
         exception.Check();
         return new Dictionary(dictionaryPtr);
@@ -388,7 +384,7 @@ namespace ArucoUnity
       public static void GetBoardObjectAndImagePoints(Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
         out Std.VectorPoint3f objPoints, out Std.VectorPoint2f imgPoints)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr objPointsPtr, imgPointsPtr;
 
         au_getBoardObjectAndImagePoints(board.CppPtr, detectedCorners.CppPtr, detectedIds.CppPtr, out objPointsPtr, out imgPointsPtr,
@@ -406,10 +402,10 @@ namespace ArucoUnity
         return dictionary;
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image,
-        CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs)
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
+        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         System.IntPtr charucoCornersPtr, charucoIdsPtr;
 
         int interpolateCorners = au_interpolateCornersCharuco(markerCorners.CppPtr, markerIds.CppPtr, image.CppPtr, board.CppPtr,
@@ -421,32 +417,32 @@ namespace ArucoUnity
         return interpolateCorners;
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image,
-        CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Core.Mat cameraMatrix)
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
+        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix)
       {
-        Cv.Core.Mat distCoeffs = new Cv.Core.Mat();
+        Cv.Mat distCoeffs = new Cv.Mat();
         return InterpolateCornersCharuco(markerCorners, markerIds, image, board, out charucoCorners, out charucoIds, cameraMatrix, distCoeffs);
       }
 
-      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Core.Mat image,
-        CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds)
+      public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, CharucoBoard board,
+        out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds)
       {
-        Cv.Core.Mat cameraMatrix = new Cv.Core.Mat();
+        Cv.Mat cameraMatrix = new Cv.Mat();
         return InterpolateCornersCharuco(markerCorners, markerIds, image, board, out charucoCorners, out charucoIds, cameraMatrix);
       }
 
-      public static void RefineDetectedMarkers(Cv.Core.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
-        Std.VectorVectorPoint2f rejectedCorners, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
+      public static void RefineDetectedMarkers(Cv.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+        Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
         bool checkAllOrders, Std.VectorInt recoveredIdxs, DetectorParameters parameters)
       {
-        Cv.Core.Exception exception = new Cv.Core.Exception();
+        Cv.Exception exception = new Cv.Exception();
         au_refineDetectedMarkers(image.CppPtr, board.CppPtr, detectedCorners.CppPtr, detectedIds.CppPtr, rejectedCorners.CppPtr, cameraMatrix.CppPtr,
           distCoeffs.CppPtr, minRepDistance, errorCorrectionRate, checkAllOrders, recoveredIdxs.CppPtr, parameters.CppPtr, exception.CppPtr);
         exception.Check();
       }
 
-      public static void RefineDetectedMarkers(Cv.Core.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
-        Std.VectorVectorPoint2f rejectedCorners, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
+      public static void RefineDetectedMarkers(Cv.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+        Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance, float errorCorrectionRate,
         bool checkAllOrders, Std.VectorInt recoveredIdxs)
       {
         DetectorParameters parameters = new DetectorParameters();
@@ -454,8 +450,8 @@ namespace ArucoUnity
           errorCorrectionRate, checkAllOrders, recoveredIdxs, parameters);
       }
 
-      public static void RefineDetectedMarkers(Cv.Core.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
-        Std.VectorVectorPoint2f rejectedCorners, Cv.Core.Mat cameraMatrix, Cv.Core.Mat distCoeffs, float minRepDistance = 10f,
+      public static void RefineDetectedMarkers(Cv.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+        Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance = 10f,
         float errorCorrectionRate = 3f, bool checkAllOrders = true)
       {
         Std.VectorInt recoveredIdxs = new Std.VectorInt();
@@ -463,17 +459,17 @@ namespace ArucoUnity
           errorCorrectionRate, checkAllOrders, recoveredIdxs);
       }
 
-      public static void RefineDetectedMarkers(Cv.Core.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
-        Std.VectorVectorPoint2f rejectedCorners, Cv.Core.Mat cameraMatrix)
+      public static void RefineDetectedMarkers(Cv.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+        Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix)
       {
-        Cv.Core.Mat distCoeffs = new Cv.Core.Mat();
+        Cv.Mat distCoeffs = new Cv.Mat();
         RefineDetectedMarkers(image, board, detectedCorners, detectedIds, rejectedCorners, cameraMatrix, distCoeffs);
       }
 
-      public static void RefineDetectedMarkers(Cv.Core.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
+      public static void RefineDetectedMarkers(Cv.Mat image, Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds,
         Std.VectorVectorPoint2f rejectedCorners)
       {
-        Cv.Core.Mat cameraMatrix = new Cv.Core.Mat();
+        Cv.Mat cameraMatrix = new Cv.Mat();
         RefineDetectedMarkers(image, board, detectedCorners, detectedIds, rejectedCorners, cameraMatrix);
       }
     }
