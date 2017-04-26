@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(ArucoUnityLib)
 
 # Dependencies
-find_package(OpenCV REQUIRED COMPONENTS aruco)
+find_package(OpenCV REQUIRED COMPONENTS aruco ccalib)
 
 # Target
 set(PROJECT_HEADERS
@@ -15,6 +15,7 @@ set(PROJECT_HEADERS
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/grid_board.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/utility/exports.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/calib3d.hpp
+    ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/ccalib.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/core.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/cv.hpp
     ${PROJECT_INCLUDE_DIRS}/aruco_unity/cv/exception.hpp
@@ -45,6 +46,7 @@ set(PROJECT_SOURCES
     ${PROJECT_SOURCE_DIR}/aruco_unity.cpp
     ${PROJECT_SOURCE_DIR}/board.cpp
     ${PROJECT_SOURCE_DIR}/calib3d.cpp
+    ${PROJECT_SOURCE_DIR}/ccalib.cpp
     ${PROJECT_SOURCE_DIR}/charuco_board.cpp
     ${PROJECT_SOURCE_DIR}/core.cpp
     ${PROJECT_SOURCE_DIR}/detector_parameters.cpp

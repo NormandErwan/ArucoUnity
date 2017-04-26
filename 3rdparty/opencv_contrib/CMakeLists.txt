@@ -26,7 +26,7 @@ ExternalProject_Add(${PROJECT_NAME}
     -DBUILD_opencv_bgsegm=OFF
     -DBUILD_opencv_bioinspired=OFF
     -DBUILD_opencv_calib3d=ON
-    -DBUILD_opencv_ccalib=OFF
+    -DBUILD_opencv_ccalib=ON
     -DBUILD_opencv_contrib_world=OFF
     -DBUILD_opencv_core=ON
     -DBUILD_opencv_datasets=OFF
@@ -36,8 +36,8 @@ ExternalProject_Add(${PROJECT_NAME}
     -DBUILD_opencv_feature2d=ON
     -DBUILD_opencv_flann=ON
     -DBUILD_opencv_fuzzy=OFF
-    -DBUILD_opencv_highgui=OFF
-    -DBUILD_opencv_imgcodecs=OFF
+    -DBUILD_opencv_highgui=ON
+    -DBUILD_opencv_imgcodecs=ON
     -DBUILD_opencv_imgproc=ON
     -DBUILD_opencv_line_descriptor=OFF
     -DBUILD_opencv_ml=ON

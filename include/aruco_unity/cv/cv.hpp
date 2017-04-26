@@ -7,6 +7,7 @@
 //! @defgroup cv C interfaces for classes and modules of the OpenCV library
 //! @{
 //!   @defgroup calib3d calib3d module
+//!   @defgroup ccalib ccalib module
 //!   @defgroup core core module
 //!   @defgroup exception Exception class
 //!   @defgroup imgproc imgproc module

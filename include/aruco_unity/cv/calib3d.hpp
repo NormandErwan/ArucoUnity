@@ -115,7 +115,7 @@ extern "C" {
     cv::Size* imageSize, cv::Mat* R, cv::Mat* T, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags, double alpha,
     cv::Size* newImageSize, cv::Rect* validPixROI1, cv::Rect* validPixROI2, cv::Exception* exception);
 
-  //! \brief Performs camera calibaration
+  //! \brief Performs camera calibaration.
   //!
   //! \param objectPoints Vector of vectors of calibration pattern points in the calibration pattern coordinate space.
   //! \param imagePoints Vector of vectors of the projections of calibration pattern points.
