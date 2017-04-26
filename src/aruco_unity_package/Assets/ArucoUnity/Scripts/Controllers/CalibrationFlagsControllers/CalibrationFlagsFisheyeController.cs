@@ -14,6 +14,9 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      private bool fixPrincipalPoint = false;
+
+      [SerializeField]
       private bool recomputeExtrinsic = false;
 
       [SerializeField]
@@ -22,11 +25,27 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixSkew = false;
 
-      [Header("Stereo only")]
+      [Header("Stereo calibration flags")]
       [SerializeField]
       private bool fixIntrinsic = false;
 
+      [Header("Stereo rectification flags")]
+      [SerializeField]
+      [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views.")]
+      private bool zeroDisparity = true;
+
+      [SerializeField]
+      [Tooltip("Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).")]
+      [Range(0,1)]
+      private double fovBalance = 0;
+
+      [SerializeField]
+      [Tooltip("Divisor for new focal length (default: 1).")]
+      private double fovScale = 1;
+
       // Properties
+
+      public bool FixPrincipalPoint { get { return fixPrincipalPoint; } set { fixPrincipalPoint = value; } }
 
       public bool RecomputeExtrinsic { get { return recomputeExtrinsic; } set { recomputeExtrinsic = value; } }
 
@@ -35,6 +54,21 @@ namespace ArucoUnity
       public bool FixSkew { get { return fixSkew; } set { fixSkew = value; } }
 
       public bool FixIntrinsic { get { return fixIntrinsic; } set { fixIntrinsic = value; } }
+
+      /// <summary>
+      /// If true (default), the principal points of the images have the same pixel coordinates in the rectified views.
+      /// </summary>
+      public bool ZeroDisparity { get { return zeroDisparity; } set { zeroDisparity = value; } }
+
+      /// <summary>
+      /// Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).
+      /// </summary>
+      public double FovBalance { get { return fovBalance; } set { fovBalance = value; } }
+
+      /// <summary>
+      /// Divisor for new focal length (default: 1).
+      /// </summary>
+      public double FovScale { get { return fovScale; } set { fovScale = value; } }
 
       public Cv.Fisheye.Calib CalibrationFlags
       {
@@ -56,11 +90,11 @@ namespace ArucoUnity
         set { CalibrationFlags = (Cv.Fisheye.Calib)value; }
       }
 
-      protected override int FixKLength { get { return 4; } set { } }
+      protected override int FixKLength { get { return 4; } }
 
       // Variables
 
-      Cv.Fisheye.Calib calibrationFlags;
+      private Cv.Fisheye.Calib calibrationFlags;
 
       // Methods
 

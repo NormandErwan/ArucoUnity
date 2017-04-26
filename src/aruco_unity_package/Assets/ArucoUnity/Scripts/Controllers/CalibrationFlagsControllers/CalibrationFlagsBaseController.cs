@@ -12,11 +12,9 @@ namespace ArucoUnity
     {
       // Editor fields
 
+      [Header("Calibration flags")]
       [SerializeField]
       private bool useIntrinsicGuess = false;
-
-      [SerializeField]
-      private bool fixPrincipalPoint = false;
 
       [SerializeField]
       private bool[] fixKDistorsionCoefficients;
@@ -24,8 +22,6 @@ namespace ArucoUnity
       // Properties
 
       public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
-
-      public bool FixPrincipalPoint { get { return fixPrincipalPoint; } set { fixPrincipalPoint = value; } }
 
       public bool[] FixKDistorsionCoefficients
       {
@@ -41,7 +37,7 @@ namespace ArucoUnity
 
       public abstract int CalibrationFlagsValue { get; set; }
 
-      protected abstract int FixKLength { get; set; }
+      protected abstract int FixKLength { get; }
 
       // Methods
 

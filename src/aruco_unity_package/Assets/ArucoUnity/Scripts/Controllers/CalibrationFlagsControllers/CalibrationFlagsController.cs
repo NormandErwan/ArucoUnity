@@ -18,6 +18,9 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      private bool fixPrincipalPoint = false;
+
+      [SerializeField]
       private bool fixAspectRatio = false;
 
       [SerializeField]
@@ -41,7 +44,7 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixTauxTauy = false;
 
-      [Header("Stereo only")]
+      [Header("Stereo calibration flags")]
       [SerializeField]
       private bool fixFocalLength = false;
 
@@ -51,7 +54,20 @@ namespace ArucoUnity
       [SerializeField]
       private bool sameFocalLength = false;
 
+      [Header("Stereo rectification flags")]
+      [SerializeField]
+      [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views.")]
+      private bool zeroDisparity = true;
+
+      [SerializeField]
+      [Tooltip("Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only"
+        + " valid pixels are visible, 1 to shift the images so that no source image pixels are lost.")]
+      [Range(-1,1)]
+      private double skew = -1;
+
       // Properties
+
+      public bool FixPrincipalPoint { get { return fixPrincipalPoint; } set { fixPrincipalPoint = value; } }
 
       public bool FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
 
@@ -75,6 +91,17 @@ namespace ArucoUnity
 
       public bool SameFocalLength { get { return sameFocalLength; } set { sameFocalLength = value; } }
 
+      /// <summary>
+      /// If true (default), the principal points of the images have the same pixel coordinates in the rectified views.
+      /// </summary>
+      public bool ZeroDisparity { get { return zeroDisparity; } set { zeroDisparity = value; } }
+
+      /// <summary>
+      /// Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid
+      /// pixels are visible, 1 to shift the images so that no source image pixels are lost.
+      /// </summary>
+      public double Skew { get { return skew; } set { skew = value; } }
+
       public Cv.Calib CalibrationFlags
       {
         get
@@ -95,7 +122,7 @@ namespace ArucoUnity
         set { CalibrationFlags = (Cv.Calib)value; }
       }
 
-      protected override int FixKLength { get { return 6; } set { } }
+      protected override int FixKLength { get { return 6; } }
 
       // Variables
 

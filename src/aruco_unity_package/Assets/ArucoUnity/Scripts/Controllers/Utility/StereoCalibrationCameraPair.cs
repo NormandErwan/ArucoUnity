@@ -28,23 +28,6 @@ namespace ArucoUnity
       [Tooltip("The flags for the stereo calibration.")]
       private CalibrationFlagsBaseController calibrationFlagsController;
 
-      [SerializeField]
-      [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views.")]
-      private bool rectifyZeroDisparity = true;
-
-      [SerializeField]
-      [Tooltip("Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only"
-        + " valid pixels are visible, 1 to shift the images so that no source image pixels are lost.")]
-      private double rectifySkew = -1;
-
-      [SerializeField]
-      [Tooltip("Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).")]
-      private double rectifyFisheyeBalance = 0;
-
-      [SerializeField]
-      [Tooltip("Divisor for new focal length (default: 1).")]
-      private double rectifyFisheyeFovScale = 1;
-
       // Properties
 
       /// <summary>
@@ -58,36 +41,15 @@ namespace ArucoUnity
       public int CameraId2 { get { return cameraId2; } set { cameraId2 = value; } }
 
       /// <summary>
-      /// The flags for the stereo calibration.
+      /// The flags for the stereo calibration and rectification.
       /// </summary>
       public CalibrationFlagsBaseController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
-
-      /// <summary>
-      /// If true (default), the principal points of the images have the same pixel coordinates in the rectified views.
-      /// </summary>
-      public bool RectifyZeroDisparity { get { return rectifyZeroDisparity; } set { rectifyZeroDisparity = value; } }
-
-      /// <summary>
-      /// Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid
-      /// pixels are visible, 1 to shift the images so that no source image pixels are lost.
-      /// </summary>
-      public double RectifySkew { get { return rectifySkew; } set { rectifySkew = value; } }
 
       /// <summary>
       /// New image resolution after rectification. When null (default) or (0,0) is passed, it is set to the original imageSize. Setting it to
       /// larger value can help you preserve details in the original image, especially when there is a big radial distortion.
       /// </summary>
       public Cv.Size NewImageSize { get { return newImageSize; } set { newImageSize = value; } }
-
-      /// <summary>
-      /// Sets the new focal length in range between the min focal length and the max focal length, between 0 and 1 (default: 0).
-      /// </summary>
-      public double RectifyFisheyeBalance { get { return rectifyFisheyeBalance; } set { rectifyFisheyeBalance = value; } }
-
-      /// <summary>
-      /// Divisor for new focal length (default: 1).
-      /// </summary>
-      public double RectifyFisheyeFovScale { get { return rectifyFisheyeFovScale; } set { rectifyFisheyeFovScale = value; } }
 
       public StereoCameraParameters CameraParameters { get; set; }
 
@@ -147,7 +109,6 @@ namespace ArucoUnity
         // Prepare data
         calibrationFlagsNonFisheyeController = CalibrationFlagsController as CalibrationFlagsController;
         calibrationFlagsFisheyeController = CalibrationFlagsController as CalibrationFlagsFisheyeController;
-        Cv.StereoRectifyFlags stereoRectifyFlags = (RectifyZeroDisparity) ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
 
         // Prepare the camera parameters
         CameraParameters = new StereoCameraParameters()
@@ -180,14 +141,17 @@ namespace ArucoUnity
         Cv.Mat rotationMatrix1, rotationMatrix2, projectionMatrix1, projectionMatrix2, Q;
         if (!arucoCamera.IsFisheye)
         {
+          Cv.StereoRectifyFlags stereoRectifyFlags = (calibrationFlagsNonFisheyeController.ZeroDisparity) ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
           Cv.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
-            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, RectifySkew, NewImageSize);
+            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags,
+            calibrationFlagsNonFisheyeController.Skew, NewImageSize);
         }
         else
         {
+          Cv.StereoRectifyFlags stereoRectifyFlags = (calibrationFlagsFisheyeController.ZeroDisparity) ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
           Cv.Fisheye.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
-            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, NewImageSize, RectifyFisheyeBalance,
-            RectifyFisheyeFovScale);
+            out rotationMatrix2, out projectionMatrix1, out projectionMatrix2, out Q, stereoRectifyFlags, NewImageSize,
+            calibrationFlagsFisheyeController.FovBalance, calibrationFlagsFisheyeController.FovScale);
         }
 
         // Save the camera parameters
