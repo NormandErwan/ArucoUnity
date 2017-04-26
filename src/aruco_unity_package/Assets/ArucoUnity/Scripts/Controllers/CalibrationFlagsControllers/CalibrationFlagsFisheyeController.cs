@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Controllers.CalibrationFlagsControllers
   {
-    public class CalibrationFlagsFisheyeController : CalibrationFlagsBaseController
+    public class CalibrationFlagsFisheyeController : CalibrationFlagsController
     {
       // Editor fields
 

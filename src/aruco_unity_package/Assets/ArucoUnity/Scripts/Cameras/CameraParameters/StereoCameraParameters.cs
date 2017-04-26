@@ -82,14 +82,14 @@ namespace ArucoUnity
       /// <summary>
       /// Projection matrix in the new (rectified) coordinate systems for the two cameras of the stereo pair.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="ProjectionMatricesType"/> and 
-      /// <see cref="ProjectionMatricesValues"/> properties.</remarks>
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="NewCameraMatricesType"/> and 
+      /// <see cref="NewCameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] ProjectionMatrices { get; set; }
+      public Cv.Mat[] NewCameraMatrices { get; set; }
 
-      public Cv.Type ProjectionMatricesType { get; set; }
+      public Cv.Type NewCameraMatricesType { get; set; }
 
-      public double[][][] ProjectionMatricesValues { get; set; }
+      public double[][][] NewCameraMatricesValues { get; set; }
 
       // Methods
 
@@ -105,9 +105,9 @@ namespace ArucoUnity
         RotationMatricesValues = new double[CAMERA_NUMBER][][];
         CameraParameters.UpdatePropertyValues(RotationMatrices, RotationMatricesValues);
 
-        ProjectionMatricesType = ProjectionMatrices[0].Type();
-        ProjectionMatricesValues = new double[CAMERA_NUMBER][][];
-        CameraParameters.UpdatePropertyValues(ProjectionMatrices, ProjectionMatricesValues);
+        NewCameraMatricesType = NewCameraMatrices[0].Type();
+        NewCameraMatricesValues = new double[CAMERA_NUMBER][][];
+        CameraParameters.UpdatePropertyValues(NewCameraMatrices, NewCameraMatricesValues);
       }
 
       public void UpdateNonSerializedProperties()
@@ -115,7 +115,7 @@ namespace ArucoUnity
         RotationMatrix = CreateProperty(RotationMatrixType, RotationMatrixValues);
         TranslationVector = CreateProperty(TranslationVectorType, TranslationVectorValues);
         RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
-        ProjectionMatrices = CameraParameters.CreateProperty(ProjectionMatricesType, ProjectionMatricesValues);
+        NewCameraMatrices = CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
       }
 
       protected double[][] PropertyValues(Cv.Mat property)

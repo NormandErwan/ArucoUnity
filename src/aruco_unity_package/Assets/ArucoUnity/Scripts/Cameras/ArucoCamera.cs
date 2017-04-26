@@ -11,6 +11,16 @@ namespace ArucoUnity
 
   namespace Cameras
   {
+    public enum UndistortionType
+    {
+      Pinhole,
+      Fisheye,
+      OmnidirPerspective,
+      OmnidirCylindrical,
+      OmnidirLonglati,
+      OmnidirStereographic
+    }
+
     /// <summary>
     /// Manages to retrieve and display every frame the images of any system with a fixed number of cameras to use with ArucoUnity.
     /// </summary>
@@ -31,8 +41,8 @@ namespace ArucoUnity
       private bool autoUndistortWithCameraParameters = true;
 
       [SerializeField]
-      [Tooltip("Are the camera fisheye?")]
-      private bool isFisheye = false;
+      [Tooltip("The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (calib3d module) or omnidir (ccalib module).")]
+      private UndistortionType undistortionType = Cameras.UndistortionType.Pinhole;
 
       // Events
 
@@ -96,9 +106,10 @@ namespace ArucoUnity
       public bool IsStarted { get; protected set; }
 
       /// <summary>
-      /// Are the camera fisheye?
+      /// The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (calib3d module) or omnidir
+      /// (ccalib module).
       /// </summary>
-      public bool IsFisheye { get { return isFisheye; } set { isFisheye = value; } }
+      public UndistortionType UndistortionType { get { return undistortionType; } set { undistortionType = value; } }
 
       /// <summary>
       /// The images in a OpenCV format. When getting the property, a new Cv.Mat is created for each image from the corresponding 
@@ -391,25 +402,16 @@ namespace ArucoUnity
             undistordedImageMaps[cameraId] = new Cv.Mat[2]; // map1 and map2
           }
 
+          // TODO: scale if there is a difference between camera image size and camera parameters image size (during calibration)
+
           // Set the undistortion maps for the cameras with stereo calibration results first
-          List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList<int>();
+          List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList();
           foreach (var stereoCameraParameters in CameraParameters.StereoCameraParameters)
           {
             for (int i = 0; i < StereoCameraParameters.CAMERA_NUMBER; i++)
             {
               int cameraId = stereoCameraParameters.CameraIds[i];
-              if (!IsFisheye)
-              {
-                Cv.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-                  stereoCameraParameters.RotationMatrices[i], stereoCameraParameters.ProjectionMatrices[i], Images[cameraId].Size,
-                  Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
-              }
-              else
-              {
-                Cv.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-                  stereoCameraParameters.RotationMatrices[i], stereoCameraParameters.ProjectionMatrices[i], Images[cameraId].Size,
-                  Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
-              }
+              InitUndistortRectifyMap(cameraId, stereoCameraParameters.RotationMatrices[i], stereoCameraParameters.NewCameraMatrices[i]);
               monoCameraIds.Remove(stereoCameraParameters.CameraIds[i]);
             }
           }
@@ -418,18 +420,7 @@ namespace ArucoUnity
           Cv.Mat monoCameraRectification = new Cv.Mat();
           foreach (int cameraId in monoCameraIds)
           {
-            if (!IsFisheye)
-            {
-              Cv.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-                monoCameraRectification, CameraParameters.CameraMatrices[cameraId], Images[cameraId].Size, Cv.Type.CV_16SC2,
-                out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
-            }
-            else
-            {
-              Cv.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-                monoCameraRectification, CameraParameters.CameraMatrices[cameraId], Images[cameraId].Size, Cv.Type.CV_16SC2,
-                out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
-            }
+            InitUndistortRectifyMap(cameraId, monoCameraRectification, CameraParameters.CameraMatrices[cameraId]);
           }
 
           // Initialize the undistorted images
@@ -438,6 +429,42 @@ namespace ArucoUnity
           {
             undistordedImages[cameraId] = new Cv.Mat(undistordedImageMaps[cameraId][0].Size, ImageType(ImageTextures[cameraId]));
           }
+        }
+      }
+
+      private void InitUndistortRectifyMap(int cameraId, Cv.Mat rotationMatrix, Cv.Mat newCameraMatrix)
+      {
+        if (UndistortionType == UndistortionType.Pinhole)
+        {
+          Cv.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
+            newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
+        }
+        else if (UndistortionType == UndistortionType.Fisheye)
+        {
+          Cv.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
+            newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
+        }
+        else if (UndistortionType == UndistortionType.OmnidirPerspective)
+        {
+          double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
+          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 2, 0, width / 2, 0, height / 2, height / 2, 0, 0, 1 });
+
+          Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
+            CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size,
+            Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], Cv.Omnidir.Rectifify.Perspective);
+        }
+        else if (new[] { UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati, UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
+        {
+          double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
+          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 3.1415, 0, 0, 0, height / 3.1415, 0, 0, 0, 1 });
+
+          Cv.Omnidir.Rectifify flags = Cv.Omnidir.Rectifify.Cylindrical;
+          if (UndistortionType == UndistortionType.OmnidirLonglati) { flags = Cv.Omnidir.Rectifify.Longlati; }
+          if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
+
+          Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
+            CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size,
+            Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], flags);
         }
       }
     }

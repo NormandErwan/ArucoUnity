@@ -41,6 +41,8 @@ namespace ArucoUnity
         CameraMatricesValues = new double[CameraNumber][][];
         DistCoeffs = new Cv.Mat[CameraNumber];
         DistCoeffsValues = new double[CameraNumber][][];
+        OmnidirXis = new Cv.Mat[CameraNumber];
+        OmnidirXisValues = new double[CameraNumber][][];
         CameraFocalLengths = new Vector2[CameraNumber];
         CameraOpticalCenters = new Vector2[CameraNumber];
         OpticalCenters = new Vector3[CameraNumber];
@@ -152,6 +154,28 @@ namespace ArucoUnity
       public double[][][] DistCoeffsValues { get; set; }
 
       /// <summary>
+      /// The xi parameter used in the omnidir calibration process (ccalib module).
+      /// </summary>
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="OmnidirXisType"/> and 
+      /// <see cref="OmnidirXisValues"/> properties.</remarks>
+      [XmlIgnore]
+      public Cv.Mat[] OmnidirXis { get; set; }
+
+      /// <summary>
+      /// The xi parameter type of the calibration. Equals to <see cref="OmnidirXis.Type()"/> and automatically written when 
+      /// <see cref="SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
+      public Cv.Type OmnidirXisType { get; set; }
+
+      /// <summary>
+      /// The xi parameter values of the calibration. Equals to the <see cref="OmnidirXis"/> content and automatically written when 
+      /// <see cref="SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
+      public double[][][] OmnidirXisValues { get; set; }
+
+      /// <summary>
       /// Parameters from stereo calibration on the camera system.
       /// </summary>
       public StereoCameraParameters[] StereoCameraParameters { get; set; }
@@ -226,6 +250,7 @@ namespace ArucoUnity
         cameraParameters.OpticalCenters = new Vector3[cameraParameters.CameraNumber];
         cameraParameters.CameraMatrices = CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
         cameraParameters.DistCoeffs = CreateProperty(cameraParameters.DistCoeffsType, cameraParameters.DistCoeffsValues);
+        cameraParameters.OmnidirXis = CreateProperty(cameraParameters.OmnidirXisType, cameraParameters.OmnidirXisValues);
         cameraParameters.UpdateCameraMatrixDerivedVariables();
 
         // Populate non-serialized properties of the stereo camera parameters
@@ -251,6 +276,10 @@ namespace ArucoUnity
         // Update DistCoeffsValues and DistCoeffsType
         DistCoeffsType = DistCoeffs[0].Type();
         UpdatePropertyValues(DistCoeffs, DistCoeffsValues);
+
+        // Update OmnidirXisValues and OmnidirXisType
+        OmnidirXisType = OmnidirXis[0].Type();
+        UpdatePropertyValues(OmnidirXis, OmnidirXisValues);
 
         // Update properties for serialization of the stereo camera parameters
         foreach (var currentStereoCameraParameters in StereoCameraParameters)
