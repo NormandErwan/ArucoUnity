@@ -204,6 +204,11 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
+        if (!IsConfigured || !IsStarted)
+        {
+          return;
+        }
+
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           // Flip the Images if needed, load them back to the textures and revert the flip to keep the correct orientation on both image and texture
