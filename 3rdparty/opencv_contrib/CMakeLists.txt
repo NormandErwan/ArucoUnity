@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.0)
 
 project(OpenCVAruco)
 
+# Configuration
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/install" CACHE PATH "Install path prefix" FORCE)
+endif()
+
 # Dependencies
 include(ExternalProject)
 
