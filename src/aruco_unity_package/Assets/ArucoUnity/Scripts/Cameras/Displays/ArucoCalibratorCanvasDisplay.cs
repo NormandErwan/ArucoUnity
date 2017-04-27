@@ -112,7 +112,7 @@ namespace ArucoUnity
           GameObject cellDisplay = new GameObject("Image");
           RectTransform cellDisplayRect = cellDisplay.AddComponent<RectTransform>();
           cellDisplayRect.SetParent(cellRect);
-          cellDisplayRect.localScale = Vector3.one;
+          cellDisplayRect.localScale = new Vector3(-1, 1, 1); // Flip on the X axis to mirror the image
 
           RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
           cellDisplayImage.texture = arucoCamera.ImageTextures[cameraId];
