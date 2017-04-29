@@ -1,6 +1,8 @@
 # ArUco Unity
 
-OpenCV's ArUco Marker Detection module adapted for Unity 5.
+OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module adapted for Unity 5.
+The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and
+[ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) are also included.
 
 This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)
  and was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
@@ -8,7 +10,7 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 ## Usage
 
 1. Retrieve the ArucoUnity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy `<aruco_unity_source_directory>/src/aruco_unity_package/Assets` folder into your Unity project.
-2. Open your Unity project and use the prefabs of the ArucoUnity package.
+2. Use the prefabs or the examples scenes of the ArucoUnity package.
 
 ## Build
 
@@ -16,8 +18,7 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. 
 
-First, you will need to provide a build of OpenCV with the 
-[ArUco module](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco) as dependency. You can follow these
+First, you will need to provide a build of OpenCV with the ArUco module as dependency. You can follow these
 instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib). Or you
 can build the provided cmake project by running the following commands:
 
