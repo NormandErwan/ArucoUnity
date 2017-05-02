@@ -44,7 +44,7 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixTauxTauy = false;
 
-      [Header("Stereo calibration flags")]
+      [Header("Additional flags for stereo calibration")]
       [SerializeField]
       private bool fixFocalLength = false;
 

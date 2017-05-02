@@ -25,7 +25,7 @@ namespace ArucoUnity
       [SerializeField]
       private bool fixSkew = false;
 
-      [Header("Stereo calibration flags")]
+      [Header("Additional flags for stereo calibration")]
       [SerializeField]
       private bool fixIntrinsic = false;
 
