@@ -449,27 +449,29 @@ namespace ArucoUnity
           Cv.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
             newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
         }
-        else if (UndistortionType == UndistortionType.OmnidirPerspective)
+        else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati, UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
         {
-          double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
-          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 2, 0, width / 2, 0, height / 2, height / 2, 0, 0, 1 });
-
-          Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-            CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size,
-            Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], Cv.Omnidir.Rectifify.Perspective);
-        }
-        else if (new[] { UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati, UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
-        {
-          double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
-          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 3.1415, 0, 0, 0, height / 3.1415, 0, 0, 0, 1 });
-
-          Cv.Omnidir.Rectifify flags = Cv.Omnidir.Rectifify.Cylindrical;
+          Cv.Omnidir.Rectifify flags = Cv.Omnidir.Rectifify.Perspective;
+          if (UndistortionType == UndistortionType.OmnidirCylindrical) { flags = Cv.Omnidir.Rectifify.Cylindrical; }
           if (UndistortionType == UndistortionType.OmnidirLonglati) { flags = Cv.Omnidir.Rectifify.Longlati; }
           if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
 
+          if (newCameraMatrix.Total() == 0)
+          {
+            double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
+            if (flags == Cv.Omnidir.Rectifify.Perspective)
+            {
+              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 2, 0, width / 2, 0, height / 2, height / 2, 0, 0, 1 });
+            }
+            else
+            {
+              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 3.1415, 0, 0, 0, height / 3.1415, 0, 0, 0, 1 });
+            }
+          }
+
           Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
-            CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size,
-            Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], flags);
+            CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2,
+            out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], flags);
         }
       }
     }
