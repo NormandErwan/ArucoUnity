@@ -81,7 +81,7 @@ extern "C" {
   ARUCO_UNITY_API double au_cv_ccalib_omnidir_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Size* imageSize1,
     cv::Size* imageSize2, cv::Mat* cameraMatrix1, cv::Mat xi1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* xi2, cv::Mat* distCoeffs2,
-    cv::Mat** rvec, cv::Mat** tvec, cv::Mat** rvecsL, cv::Mat** tvecsL, int flags, cv::TermCriteria* criteria, cv::Mat** idx,
+    cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Mat** rvecsL, cv::Mat** tvecsL, int flags, cv::TermCriteria* criteria, cv::Mat** idx,
     cv::Exception* exception);
 
   //! \brief Stereo rectification for omnidirectional camera model. It computes the rectification rotations for two cameras. 
@@ -93,7 +93,7 @@ extern "C" {
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#gaf055863d589cb166c23cc26fcaa6ce98
-  ARUCO_UNITY_API void au_cv_ccalib_omnidir_stereoRectify(cv::Mat* rvec, cv::Mat* tvec, cv::Mat** R1, cv::Mat** R2, cv::Exception* exception);
+  ARUCO_UNITY_API void au_cv_ccalib_omnidir_stereoRectify(cv::Vec3d* rvec, cv::Vec3d* tvec, cv::Mat** R1, cv::Mat** R2, cv::Exception* exception);
 
   //! \brief Undistort omnidirectional images to perspective images.
   //!

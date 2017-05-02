@@ -15,7 +15,7 @@ namespace ArucoUnity
         // Native functions
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Vec3d_new();
+        static extern System.IntPtr au_cv_Vec3d_new(double v0, double v1, double v2);
 
         [DllImport("ArucoUnity")]
         static extern void au_cv_Vec3d_delete(System.IntPtr vec3d);
@@ -28,7 +28,7 @@ namespace ArucoUnity
 
         // Constructors & destructor
 
-        public Vec3d() : base(au_cv_Vec3d_new())
+        public Vec3d(double v0 = 0, double v1 = 0, double v2 = 0) : base(au_cv_Vec3d_new(v0, v1, v2))
         {
         }
 

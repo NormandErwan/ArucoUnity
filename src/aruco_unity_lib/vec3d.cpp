@@ -4,8 +4,8 @@
 extern "C" {
   // Constructors & Destructors
 
-  cv::Vec3d* au_cv_Vec3d_new() {
-    return new cv::Vec3d();
+  cv::Vec3d* au_cv_Vec3d_new(double v0, double v1, double v2) {
+    return new cv::Vec3d(v0, v1, v2);
   }
   
   void au_cv_Vec3d_delete(cv::Vec3d* vec3d) {

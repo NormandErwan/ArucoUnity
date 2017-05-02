@@ -128,7 +128,8 @@ namespace ArucoUnity
         Cv.Mat distCoeffs2 = cameraParameters.DistCoeffs[CameraId2];
         Cv.Mat xi2 = cameraParameters.OmnidirXis[CameraId2];
         Cv.Size imageSize = arucoCamera.Images[CameraId1].Size;
-        Cv.Mat rvec, tvec, essentialMatrix, fundamentalMatrix;
+        Cv.Vec3d rvec, tvec;
+        Cv.Mat essentialMatrix, fundamentalMatrix;
         if (calibrationFlagsPinholeController)
         {
           stereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[CameraId1], imagePoints[CameraId1], imagePoints[CameraId2],
@@ -150,8 +151,8 @@ namespace ArucoUnity
         }
         else
         {
-          rvec = new Cv.Mat();
-          tvec = new Cv.Mat();
+          rvec = new Cv.Vec3d();
+          tvec = new Cv.Vec3d();
         }
 
         // Computes rectification transforms
@@ -185,11 +186,10 @@ namespace ArucoUnity
         }
 
         // Save the camera parameters
-        stereoCameraParameters.RotationMatrix = rvec;
+        stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;
         stereoCameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
-        stereoCameraParameters.NewCameraMatrices[CameraId1] = newCameraMatrix1;
-        stereoCameraParameters.NewCameraMatrices[CameraId2] = newCameraMatrix2;
+        stereoCameraParameters.NewCameraMatrices = new Cv.Mat[] { newCameraMatrix1, newCameraMatrix2 };
 
         return stereoCameraParameters;
       }

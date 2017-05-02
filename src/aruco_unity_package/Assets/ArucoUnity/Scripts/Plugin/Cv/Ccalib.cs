@@ -110,7 +110,7 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Mat rvec, out Mat tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria, out Mat idx)
+           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria, out Mat idx)
         {
           Exception exception = new Exception();
           System.IntPtr rvecPtr, tvecPtr, rvecsLPtr, tvecsLPtr, idxPtr;
@@ -118,8 +118,8 @@ namespace ArucoUnity
           double error = au_cv_ccalib_omnidir_stereoCalibrate(objectPoints.CppPtr, imagePoints1.CppPtr, imagePoints2.CppPtr, imageSize1.CppPtr,
             imageSize2.CppPtr, cameraMatrix1.CppPtr, xi1.CppPtr, distCoeffs1.CppPtr, cameraMatrix2.CppPtr, xi2.CppPtr, distCoeffs2.CppPtr, out rvecPtr,
             out tvecPtr, out rvecsLPtr, out tvecsLPtr, (int)flags, criteria.CppPtr, out idxPtr, exception.CppPtr);
-          rvec = new Mat(rvecPtr);
-          tvec = new Mat(tvecPtr);
+          rvec = new Vec3d(rvecPtr);
+          tvec = new Vec3d(tvecPtr);
           rvecsL = new Mat(rvecsLPtr);
           tvecsL = new Mat(tvecsLPtr);
           idx = new Mat(idxPtr);
@@ -130,7 +130,7 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Mat rvec, out Mat tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria)
+           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria)
         {
           Mat idx;
           return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, imageSize1, imageSize2, cameraMatrix1, xi1, distCoeffs1, cameraMatrix2,
@@ -139,14 +139,14 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Mat rvec, out Mat tvec, out Mat rvecsL, out Mat tvecsL, Calib flags)
+           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags)
         {
           TermCriteria criteria = new TermCriteria(TermCriteria.Type.Count | TermCriteria.Type.Eps, 200, EPSILON);
           return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, imageSize1, imageSize2, cameraMatrix1, xi1, distCoeffs1, cameraMatrix2,
             xi2, distCoeffs2, out rvec, out tvec, out rvecsL, out tvecsL, flags, criteria);
         }
 
-        public static void StereoRectify(Mat rvec, Mat tvec, out Mat R1, out Mat R2)
+        public static void StereoRectify(Vec3d rvec, Vec3d tvec, out Mat R1, out Mat R2)
         {
           Exception exception = new Exception();
           System.IntPtr R1Ptr, R2Ptr;

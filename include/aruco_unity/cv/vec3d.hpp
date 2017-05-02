@@ -14,8 +14,8 @@ extern "C" {
   //! \name Constructors & Destructors
   //! @{
 
-  //! \brief Creates an empty Vec3d.
-  ARUCO_UNITY_API cv::Vec3d* au_cv_Vec3d_new();
+  //! \brief Creates a Vec3d.
+  ARUCO_UNITY_API cv::Vec3d* au_cv_Vec3d_new(double v0, double v1, double v2);
 
   //! \brief Deletes any Vec3d.
   //! \param vec3d The Vec3d used.
