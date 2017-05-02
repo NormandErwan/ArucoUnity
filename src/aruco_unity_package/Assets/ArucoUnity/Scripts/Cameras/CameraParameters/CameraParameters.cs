@@ -65,10 +65,10 @@ namespace ArucoUnity
       /// </summary>
       public int[] ImageHeights
       {
-        get { return imageHeight; }
+        get { return imageHeights; }
         set
         {
-          imageHeight = value;
+          imageHeights = value;
           UpdateCameraMatrixDerivedVariables();
         }
       }
@@ -78,10 +78,10 @@ namespace ArucoUnity
       /// </summary>
       public int[] ImageWidths
       {
-        get { return imageWidth; }
+        get { return imageWidths; }
         set
         {
-          imageWidth = value;
+          imageWidths = value;
           UpdateCameraMatrixDerivedVariables();
         }
       }
@@ -208,7 +208,7 @@ namespace ArucoUnity
 
       // Variables
 
-      protected int[] imageHeight, imageWidth;
+      protected int[] imageHeights, imageWidths;
       protected Cv.Mat[] cameraMatrices;
 
       // Methods
@@ -231,9 +231,10 @@ namespace ArucoUnity
           XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
           cameraParameters = serializer.Deserialize(reader) as CameraParameters;
         }
-        catch
+        catch (Exception ex)
         {
-          throw new ArgumentException("Couldn't load the camera parameters file path '" + cameraParametersFilePath + ".", "cameraParametersFilePath");
+          throw new ArgumentException("Couldn't load the camera parameters file path '" + cameraParametersFilePath + ". ",
+            "cameraParametersFilePath", ex);
         }
         finally
         {
@@ -350,13 +351,13 @@ namespace ArucoUnity
 
       internal static Cv.Mat[] CreateProperty(Cv.Type propertyType, double[][][] propertyValues)
       {
-        int cameraNumber = propertyValues.Length,
-            rows = propertyValues[0].Length,
-            cols = propertyValues[0][0].Length;
+        int cameraNumber = propertyValues.Length;
 
         Cv.Mat[] property = new Cv.Mat[cameraNumber];
         for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
         {
+          int rows = propertyValues[cameraId].Length,
+              cols = (rows > 0) ? propertyValues[cameraId][0].Length : 0;
           property[cameraId] = new Cv.Mat(rows, cols, propertyType);
           for (int i = 0; i < rows; i++)
           {
