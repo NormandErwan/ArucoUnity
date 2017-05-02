@@ -315,6 +315,7 @@ namespace ArucoUnity
             CameraParameters.CameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F,
               new double[9] { cameraMatrixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
             CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
+            CameraParameters.OmnidirXis[cameraId] = new Cv.Mat();
           }
         }
 
@@ -323,7 +324,7 @@ namespace ArucoUnity
         Std.VectorVectorPoint2f[] imagePoints = new Std.VectorVectorPoint2f[ArucoCamera.CameraNumber];
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          // Prepare data for calibration
+          // Get objet and image calibration points from detected ids and corners
           Std.VectorVectorPoint3f boardObjectPoints = new Std.VectorVectorPoint3f();
           Std.VectorVectorPoint2f boardImagePoints = new Std.VectorVectorPoint2f();
           uint frameCount = MarkerCorners[cameraId].Size();
@@ -392,7 +393,6 @@ namespace ArucoUnity
               }
             }
             objectPoints[cameraId] = boardObjectPoints;
-            imagePoints[cameraId] = boardImagePoints;
 
             // Refine the calibration
             if (calibrationFlagsPinholeController)
