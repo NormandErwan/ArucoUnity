@@ -413,7 +413,7 @@ namespace ArucoUnity
           List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList();
           foreach (var stereoCameraParameters in CameraParameters.StereoCameraParametersList)
           {
-            for (int i = 0; i < StereoCameraParameters.CAMERA_NUMBER; i++)
+            for (int i = 0; i < StereoCameraParameters.CameraNumber; i++)
             {
               int cameraId = stereoCameraParameters.CameraIds[i];
               InitUndistortRectifyMap(cameraId, stereoCameraParameters.RotationMatrices[i], stereoCameraParameters.NewCameraMatrices[i]);

@@ -13,7 +13,7 @@ namespace ArucoUnity
     {
       // Constants
 
-      const float DEFAULT_FIX_ASPECT_RATIO = 1f;
+      const float DefaultFixAspectRatio = 1f;
 
       // Editor fields
 
@@ -24,7 +24,7 @@ namespace ArucoUnity
       private bool fixAspectRatio = false;
 
       [SerializeField]
-      private float fixAspectRatioValue = DEFAULT_FIX_ASPECT_RATIO;
+      private float fixAspectRatioValue = DefaultFixAspectRatio;
 
       [SerializeField]
       private bool zeroTangentialDistorsion = false;

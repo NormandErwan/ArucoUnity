@@ -14,7 +14,7 @@ namespace ArucoUnity
     {
       // Const
 
-      public const int CAMERA_NUMBER = 2;
+      public const int CameraNumber = 2;
 
       // Constructors
 
@@ -94,11 +94,11 @@ namespace ArucoUnity
         TranslationVectorValues = new double[3] { TranslationVector.Get(0), TranslationVector.Get(1), TranslationVector.Get(2) };
 
         RotationMatricesType = RotationMatrices[0].Type();
-        RotationMatricesValues = new double[CAMERA_NUMBER][][];
+        RotationMatricesValues = new double[CameraNumber][][];
         CameraParameters.UpdatePropertyValues(RotationMatrices, RotationMatricesValues);
 
         NewCameraMatricesType = NewCameraMatrices[0].Type();
-        NewCameraMatricesValues = new double[CAMERA_NUMBER][][];
+        NewCameraMatricesValues = new double[CameraNumber][][];
         CameraParameters.UpdatePropertyValues(NewCameraMatrices, NewCameraMatricesValues);
       }
 

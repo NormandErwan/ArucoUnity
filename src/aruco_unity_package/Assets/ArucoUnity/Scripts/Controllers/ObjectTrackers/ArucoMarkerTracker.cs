@@ -15,9 +15,9 @@ namespace ArucoUnity
     {
       // Constants
 
-      protected const float ESTIMATE_POSE_MARKER_LENGTH = 1f;
+      protected const float EstimatePoseMarkerLength = 1f;
 
-      protected readonly Color REJECTED_MARKERS_CANDIDATES_COLOR = new Color(100, 0, 255);
+      protected readonly Color RejectedMarkerCandidatesColor = new Color(100, 0, 255);
 
       // Properties
 
@@ -178,7 +178,7 @@ namespace ArucoUnity
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
         Std.VectorVec3d rvecs, tvecs;
-        Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], ESTIMATE_POSE_MARKER_LENGTH, cameraParameters.CameraMatrices[cameraId],
+        Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], EstimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
           cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
         MarkerRvecs[cameraId][dictionary] = rvecs;
@@ -235,7 +235,7 @@ namespace ArucoUnity
           int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
           if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
           {
-            float positionFactor = foundArucoObject.MarkerSideLength / ESTIMATE_POSE_MARKER_LENGTH;
+            float positionFactor = foundArucoObject.MarkerSideLength / EstimatePoseMarkerLength;
             PlaceArucoObject(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
               cameraId, positionFactor);
           }
