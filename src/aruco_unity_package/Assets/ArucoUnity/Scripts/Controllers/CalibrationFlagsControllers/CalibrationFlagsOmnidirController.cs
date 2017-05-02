@@ -107,6 +107,16 @@ namespace ArucoUnity
         FixGamma =                      Enum.IsDefined(typeof(Cv.Omnidir.Calib), Cv.Omnidir.Calib.FixGamma);
         FixCenter =                     Enum.IsDefined(typeof(Cv.Omnidir.Calib), Cv.Omnidir.Calib.FixCenter);
       }
+
+      protected override void OnValidate()
+      {
+        base.OnValidate();
+
+        if (fixP.Length != FixPLength)
+        {
+          Array.Resize(ref fixP, FixPLength);
+        }
+      }
     }
   }
 
