@@ -212,11 +212,6 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        if (!IsConfigured || (!IsStarted && !startInitiated))
-        {
-          return;
-        }
-
         if (startInitiated)
         {
           if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization

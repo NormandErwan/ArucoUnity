@@ -196,7 +196,10 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Update()
       {
-        UpdateCameraImages();
+        if (IsConfigured && IsStarted)
+        {
+          UpdateCameraImages();
+        }
       }
 
       /// <summary>
