@@ -75,7 +75,7 @@ extern "C" {
   //! \param cameraMatrix2 Input/output second camera matrix.
   //! \param distCoeffs2 Input/output lens distortion coefficients for the second camera.
   //! \param imageSize Size of the image used only to initialize intrinsic camera matrix.
-  //! \param rvec Output rotation vector  between the 1st and the 2nd camera coordinate systems.
+  //! \param rvec Output rotation vector between the 1st and the 2nd camera coordinate systems.
   //! \param tvec Output translation vector between the coordinate systems of the cameras.
   //! \param E Output essential matrix.
   //! \param F Output fundamental matrix.
