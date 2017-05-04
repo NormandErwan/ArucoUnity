@@ -266,6 +266,20 @@ namespace ArucoUnity
           postDetectflipCode = -1;
         }
 
+        // Initialize the variables
+        images = new Cv.Mat[CameraNumber];
+        imageDataSizes = new int[CameraNumber];
+        undistordedImages = new Cv.Mat[CameraNumber];
+
+        if (CameraParameters != null)
+        {
+          undistordedImageMaps = new Cv.Mat[CameraNumber][];
+          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+          {
+            undistordedImageMaps[cameraId] = new Cv.Mat[2]; // map1 and map2
+          }
+        }
+
         // Update state
         IsConfigured = true;
         OnConfigured();
@@ -390,8 +404,6 @@ namespace ArucoUnity
       protected void InitializeMatImages()
       {
         // Initialize the images
-        images = new Cv.Mat[CameraNumber];
-        imageDataSizes = new int[CameraNumber];
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
           byte[] imageData = ImageTextures[cameraId].GetRawTextureData();
@@ -400,16 +412,9 @@ namespace ArucoUnity
           imageDataSizes[cameraId] = (int)(images[cameraId].ElemSize() * images[cameraId].Total());
         }
 
-        // Initialize the undistortion maps and undistorted images
+        // Initialize the undistorted images
         if (CameraParameters != null)
         {
-          // Initialize the undistortion maps
-          undistordedImageMaps = new Cv.Mat[CameraNumber][];
-          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-          {
-            undistordedImageMaps[cameraId] = new Cv.Mat[2]; // map1 and map2
-          }
-
           // TODO: scale if there is a difference between camera image size and camera parameters image size (during calibration)
 
           // Set the undistortion maps for the cameras with stereo calibration results first
@@ -432,7 +437,6 @@ namespace ArucoUnity
           }
 
           // Initialize the undistorted images
-          undistordedImages = new Cv.Mat[CameraNumber];
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
             undistordedImages[cameraId] = new Cv.Mat(undistordedImageMaps[cameraId][0].Size, ImageType(ImageTextures[cameraId]));
