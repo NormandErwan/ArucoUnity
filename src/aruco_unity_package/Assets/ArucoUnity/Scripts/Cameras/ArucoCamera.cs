@@ -167,6 +167,7 @@ namespace ArucoUnity
                      flipVerticallyImages = false;
       protected int? preDetectflipCode, // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
                      postDetectflipCode; // Convert back the images
+      protected Cv.Mat[] cameraMatricesSave, distCoeffsSave;
 
       // MonoBehaviour methods
 
@@ -268,6 +269,9 @@ namespace ArucoUnity
         // Initialize the variables
         images = new Cv.Mat[CameraNumber];
         imageDataSizes = new int[CameraNumber];
+        cameraMatricesSave = new Cv.Mat[CameraNumber];
+        distCoeffsSave = new Cv.Mat[CameraNumber];
+
         if (CameraParameters != null)
         {
           undistordedImageMaps = new Cv.Mat[CameraNumber][];
@@ -320,6 +324,17 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStarted()
       {
+        // Save the CameraParameters property as the rectification in the undistortion process may alter it
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          cameraMatricesSave[cameraId] = new Cv.Mat(CameraParameters.CameraMatrices[cameraId].CppPtr);
+          CameraParameters.CameraMatrices[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
+
+          distCoeffsSave[cameraId] = new Cv.Mat(CameraParameters.DistCoeffs[cameraId].CppPtr);
+          CameraParameters.DistCoeffs[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
+        }
+
+        // Initialize and execute the action
         InitializeMatImages();
         Started();
       }
@@ -329,7 +344,12 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStopped()
       {
+        // Execute the action
         Stopped();
+
+        // Restore the CameraParameters property to its original state
+        CameraParameters.CameraMatrices = cameraMatricesSave;
+        CameraParameters.DistCoeffs = distCoeffsSave;
       }
 
       /// <summary>
@@ -444,9 +464,9 @@ namespace ArucoUnity
         else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati, UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
         {
           Cv.Omnidir.Rectifify flags = Cv.Omnidir.Rectifify.Perspective;
-          if (UndistortionType == UndistortionType.OmnidirCylindrical) { flags = Cv.Omnidir.Rectifify.Cylindrical; }
-          if (UndistortionType == UndistortionType.OmnidirLonglati) { flags = Cv.Omnidir.Rectifify.Longlati; }
-          if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
+          if      (UndistortionType == UndistortionType.OmnidirCylindrical)   { flags = Cv.Omnidir.Rectifify.Cylindrical; }
+          else if (UndistortionType == UndistortionType.OmnidirLonglati)      { flags = Cv.Omnidir.Rectifify.Longlati; }
+          else if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
 
           if (newCameraMatrix.Total() == 0)
           {
@@ -464,6 +484,9 @@ namespace ArucoUnity
           Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
             CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2,
             out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], flags);
+
+          CameraParameters.CameraMatrices[cameraId] = newCameraMatrix;
+          CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
         }
       }
     }
