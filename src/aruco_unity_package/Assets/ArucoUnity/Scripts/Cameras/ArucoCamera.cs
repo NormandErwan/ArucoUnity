@@ -162,7 +162,6 @@ namespace ArucoUnity
 
       protected Cv.Mat[] images;
       protected int[] imageDataSizes;
-      protected Cv.Mat[] undistordedImages;
       protected Cv.Mat[][] undistordedImageMaps;
       protected bool flipHorizontallyImages = false, 
                      flipVerticallyImages = false;
@@ -269,8 +268,6 @@ namespace ArucoUnity
         // Initialize the variables
         images = new Cv.Mat[CameraNumber];
         imageDataSizes = new int[CameraNumber];
-        undistordedImages = new Cv.Mat[CameraNumber];
-
         if (CameraParameters != null)
         {
           undistordedImageMaps = new Cv.Mat[CameraNumber][];
@@ -307,16 +304,10 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Undistort()
       {
-        if (CameraParameters == null)
-        {
-          return;
-        }
-
         for (int i = 0; i < CameraNumber; i++)
         {
-          Cv.Remap(Images[i], undistordedImages[i], undistordedImageMaps[i][0], undistordedImageMaps[i][1], Cv.InterpolationFlags.Linear);
+          Cv.Remap(Images[i], Images[i], undistordedImageMaps[i][0], undistordedImageMaps[i][1], Cv.InterpolationFlags.Linear);
         }
-        Images = undistordedImages;
       }
 
       /// <summary>
@@ -365,7 +356,7 @@ namespace ArucoUnity
         }
 
         // Undistort the images if required
-        if (AutoUndistortWithCameraParameters)
+        if (AutoUndistortWithCameraParameters && CameraParameters != null)
         {
           Undistort();
         }
@@ -434,12 +425,6 @@ namespace ArucoUnity
           foreach (int cameraId in monoCameraIds)
           {
             InitUndistortRectifyMap(cameraId, monoCameraRectification, CameraParameters.CameraMatrices[cameraId]);
-          }
-
-          // Initialize the undistorted images
-          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-          {
-            undistordedImages[cameraId] = new Cv.Mat(undistordedImageMaps[cameraId][0].Size, ImageType(ImageTextures[cameraId]));
           }
         }
       }
