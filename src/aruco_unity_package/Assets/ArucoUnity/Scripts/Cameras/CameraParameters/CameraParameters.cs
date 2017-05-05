@@ -63,28 +63,12 @@ namespace ArucoUnity
       /// <summary>
       /// The image height during the calibration.
       /// </summary>
-      public int[] ImageHeights
-      {
-        get { return imageHeights; }
-        set
-        {
-          imageHeights = value;
-          UpdateCameraMatrixDerivedVariables();
-        }
-      }
+      public int[] ImageHeights { get; set; }
 
       /// <summary>
       /// The image width during the calibration.
       /// </summary>
-      public int[] ImageWidths
-      {
-        get { return imageWidths; }
-        set
-        {
-          imageWidths = value;
-          UpdateCameraMatrixDerivedVariables();
-        }
-      }
+      public int[] ImageWidths { get; set; }
 
       /// <summary>
       /// The calibration flags used.
@@ -107,15 +91,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatricesType"/> and 
       /// <see cref="CameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] CameraMatrices
-      {
-        get { return cameraMatrices; }
-        set
-        {
-          cameraMatrices = value;
-          UpdateCameraMatrixDerivedVariables();
-        }
-      }
+      public Cv.Mat[] CameraMatrices { get; set; }
 
       /// <summary>
       /// The camera matrix type of the calibration. Equals to <see cref="CameraMatrices.Type()"/> and automatically written when 
@@ -246,13 +222,9 @@ namespace ArucoUnity
         cameraParameters.FilePath = cameraParametersFilePath;
 
         // Populate non-serialized properties
-        cameraParameters.CameraFocalLengths = new Vector2[cameraParameters.CameraNumber];
-        cameraParameters.CameraOpticalCenters = new Vector2[cameraParameters.CameraNumber];
-        cameraParameters.OpticalCenters = new Vector3[cameraParameters.CameraNumber];
         cameraParameters.CameraMatrices = CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
         cameraParameters.DistCoeffs = CreateProperty(cameraParameters.DistCoeffsType, cameraParameters.DistCoeffsValues);
         cameraParameters.OmnidirXis = CreateProperty(cameraParameters.OmnidirXisType, cameraParameters.OmnidirXisValues);
-        cameraParameters.UpdateCameraMatrixDerivedVariables();
 
         // Populate non-serialized properties of the stereo camera parameters
         foreach (var currentStereoCameraParameters in cameraParameters.StereoCameraParametersList)
@@ -306,26 +278,6 @@ namespace ArucoUnity
           {
             writer.Close();
           }
-        }
-      }
-
-      protected void UpdateCameraMatrixDerivedVariables()
-      {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          if (ImageWidths == null || ImageWidths[cameraId] == 0 || ImageHeights == null || ImageHeights[cameraId] == 0 || CameraMatrices == null
-            || CameraMatrices[cameraId] == null || CameraMatrices[cameraId].Size.Width != 3 || CameraMatrices[cameraId].Size.Height != 3)
-          {
-            return;
-          }
-
-          // Camera parameter's focal lenghts and optical centers
-          CameraFocalLengths[cameraId] = new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 0), (float)CameraMatrices[cameraId].AtDouble(1, 1));
-          CameraOpticalCenters[cameraId] = new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 2), (float)CameraMatrices[cameraId].AtDouble(1, 2));
-
-          // Optical center in the Unity world space; based on: http://stackoverflow.com/a/36580522
-          // TODO: take account of FixAspectRatio
-          OpticalCenters[cameraId] = new Vector3(CameraOpticalCenters[cameraId].x / ImageWidths[cameraId], CameraOpticalCenters[cameraId].y / ImageHeights[cameraId], CameraFocalLengths[cameraId].y);
         }
       }
 
