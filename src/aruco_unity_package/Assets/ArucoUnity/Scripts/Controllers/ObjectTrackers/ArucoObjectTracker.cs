@@ -107,7 +107,7 @@ namespace ArucoUnity
       /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
       /// <see cref="Detect(int, Dictionary)"/>.
       /// </summary>
-      public abstract void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary);
+      public abstract void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary);
 
       /// <summary>
       /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 

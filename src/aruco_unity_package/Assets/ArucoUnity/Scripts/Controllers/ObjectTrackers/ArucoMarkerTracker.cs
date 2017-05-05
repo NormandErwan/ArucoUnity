@@ -168,7 +168,7 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary)"/>
       /// </summary>
-      public override void EstimateTranforms(int cameraId, Aruco.Dictionary dictionary)
+      public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
         if (!IsActivated || DetectedMarkers[cameraId][dictionary] <= 0)
         {

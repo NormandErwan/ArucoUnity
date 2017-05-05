@@ -45,8 +45,8 @@ namespace ArucoUnity
       private bool drawDetectedDiamonds = true;
 
       [SerializeField]
-      [Tooltip("Estimate the detected markers pose (position, rotation).")]
-      private bool estimateTransforms = true;
+      [Tooltip("Update the transforms of the detected ArUco objects.")]
+      private bool updateTransforms = true;
 
       // Properties
 
@@ -81,9 +81,9 @@ namespace ArucoUnity
       public bool DrawDetectedDiamonds { get { return drawDetectedDiamonds; } set { drawDetectedDiamonds = value; } }
 
       /// <summary>
-      /// Estimate the detected markers transform.
+      /// Update the transforms of the detected ArUco objects.
       /// </summary>
-      public bool EstimateTransforms { get { return estimateTransforms; } set { estimateTransforms = value; } }
+      public bool UpdateTransforms { get { return updateTransforms; } set { updateTransforms = value; } }
 
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
 
@@ -229,7 +229,7 @@ namespace ArucoUnity
       {
         if (ArucoCamera.CameraParameters == null)
         {
-          EstimateTransforms = false;
+          UpdateTransforms = false;
         }
 
         // Trackers configuration
@@ -360,10 +360,9 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary)"/>
       /// </summary>
-      public void EstimateTranforms()
+      public void EstimateTransforms()
       {
-        // Skip if no configurate, or don't estimate
-        if (!IsConfigured || !EstimateTransforms)
+        if (!IsConfigured)
         {
           return;
         }
@@ -374,10 +373,10 @@ namespace ArucoUnity
           {
             Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
 
-            MarkerTracker.EstimateTranforms(cameraId, dictionary);
+            MarkerTracker.EstimateTransforms(cameraId, dictionary);
             foreach (var tracker in additionalTrackers)
             {
-              tracker.Value.EstimateTranforms(cameraId, dictionary);
+              tracker.Value.EstimateTransforms(cameraId, dictionary);
             }
           }
         }
@@ -388,7 +387,6 @@ namespace ArucoUnity
       /// </summary>
       public void Draw()
       {
-        // Skip if no configurate
         if (!IsConfigured)
         {
           return;
@@ -414,8 +412,7 @@ namespace ArucoUnity
       /// </summary>
       public void Place()
       {
-        // Skip if no configurate, or don't estimate
-        if (!IsConfigured || !EstimateTransforms)
+        if (!IsConfigured || !UpdateTransforms)
         {
           return;
         }
@@ -445,7 +442,7 @@ namespace ArucoUnity
         if (IsConfigured && IsStarted && arucoCameraImageUpdated)
         {
           Detect();
-          EstimateTranforms();
+          EstimateTransforms();
           arucoCameraImageUpdated = false;
         }
 
