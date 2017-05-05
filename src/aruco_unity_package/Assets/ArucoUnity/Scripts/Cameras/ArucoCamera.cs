@@ -451,6 +451,7 @@ namespace ArucoUnity
 
       private void InitUndistortRectifyMap(int cameraId, Cv.Mat rotationMatrix, Cv.Mat newCameraMatrix)
       {
+        // Init the undistort rectify maps
         if (UndistortionType == UndistortionType.Pinhole)
         {
           Cv.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
@@ -468,26 +469,32 @@ namespace ArucoUnity
           else if (UndistortionType == UndistortionType.OmnidirLonglati)      { flags = Cv.Omnidir.Rectifify.Longlati; }
           else if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
 
+          // If no newCameraMatrix, inititalize it with the recommended values
           if (newCameraMatrix.Total() == 0)
           {
             double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
             if (flags == Cv.Omnidir.Rectifify.Perspective)
             {
-              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 2, 0, width / 2, 0, height / 2, height / 2, 0, 0, 1 });
+              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 2, 0, width / 2, 0, height / 2, height / 2, 0, 0, 1 }).Clone();
             }
             else
             {
-              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 3.1415, 0, 0, 0, height / 3.1415, 0, 0, 0, 1 });
+              newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { width / 3.1415, 0, 0, 0, height / 3.1415, 0, 0, 0, 1 }).Clone();
             }
           }
 
           Cv.Omnidir.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId],
             CameraParameters.OmnidirXis[cameraId], rotationMatrix, newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2,
             out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1], flags);
-
-          CameraParameters.CameraMatrices[cameraId] = newCameraMatrix;
-          CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
         }
+        else
+        {
+          throw new Exception("Unable to initialize the undistort rectify maps with this UndistortionType: " + UndistortionType);
+        }
+
+        // Update camera intrinsic parameters for the undistorted images
+        CameraParameters.CameraMatrices[cameraId] = newCameraMatrix;
+        CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
       }
     }
   }
