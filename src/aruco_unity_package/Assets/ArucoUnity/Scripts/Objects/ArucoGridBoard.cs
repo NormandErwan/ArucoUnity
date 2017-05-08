@@ -71,34 +71,22 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// The number of markers employed by the tracker the last frame for the estimation of the transform of the board.
+      /// </summary>
       public int MarkersUsedForEstimation { get; set; }
 
-      // Methods
-
-      public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
-      {
-        int hashCode = 17;
-        hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
-        hashCode = hashCode * 31 + markersNumberX;
-        hashCode = hashCode * 31 + markersNumberY;
-        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
-        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
-        return hashCode;
-      }
-
-      protected static int GetArucoHashCode(ArucoGridBoard arucoGridBoard)
-      {
-        return GetArucoHashCode(arucoGridBoard.MarkersNumberX, arucoGridBoard.MarkersNumberY, arucoGridBoard.MarkerSideLength,
-          arucoGridBoard.MarkerSeparation);
-      }
+      // ArucoObject methods
 
       /// <summary>
-      /// <see cref="ArucoBoard.UpdateHashCode"/>
+      /// <see cref="ArucoObject.UpdateHashCode"/>
       /// </summary>
       protected override void UpdateHashCode()
       {
-        hashCode = GetArucoHashCode(this);
+        HashCode = GetArucoHashCode(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation);
       }
+
+      // ArucoBoard methods
 
       /// <summary>
       /// <see cref="ArucoBoard.UpdateBoard"/>
@@ -111,6 +99,19 @@ namespace ArucoUnity
         AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + markerSeparation);
 
         Board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
+      }
+
+      // Methods
+
+      public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
+      {
+        int hashCode = 17;
+        hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
+        hashCode = hashCode * 31 + markersNumberX;
+        hashCode = hashCode * 31 + markersNumberY;
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
+        return hashCode;
       }
     }
   }

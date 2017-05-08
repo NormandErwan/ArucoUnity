@@ -79,42 +79,17 @@ namespace ArucoUnity
 
       public bool ValidTransform { get; set; }
 
-      // MonoBehaviour methods
-
-      protected override void Awake()
-      {
-        base.Awake();
-
-        DetectedCorners = null;
-        DetectedIds = null;
-      }
-
-      // Methods
-
-      public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)
-      {
-        int hashCode = 17;
-        hashCode = hashCode * 31 + typeof(ArucoCharucoBoard).GetHashCode();
-        hashCode = hashCode * 31 + squaresNumberX;
-        hashCode = hashCode * 31 + squaresNumberY;
-        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
-        hashCode = hashCode * 31 + Mathf.RoundToInt(squareSideLength * 1000); // SquareSideLength is not less than millimetres
-        return hashCode;
-      }
-
-      protected static int GetArucoHashCode(ArucoCharucoBoard arucoCharucoBoard)
-      {
-        return GetArucoHashCode(arucoCharucoBoard.SquaresNumberX, arucoCharucoBoard.SquaresNumberY, arucoCharucoBoard.MarkerSideLength,
-          arucoCharucoBoard.SquareSideLength);
-      }
+      // ArucoObject methods
 
       /// <summary>
-      /// <see cref="ArucoBoard.UpdateHashCode"/>
+      /// <see cref="ArucoObject.UpdateHashCode"/>
       /// </summary>
       protected override void UpdateHashCode()
       {
-        hashCode = GetArucoHashCode(this);
+        HashCode = GetArucoHashCode(SquaresNumberX, SquaresNumberY, MarkerSideLength, SquareSideLength);
       }
+
+      // ArucoBoard methods
 
       /// <summary>
       /// <see cref="ArucoBoard.UpdateBoard"/>
@@ -127,6 +102,19 @@ namespace ArucoUnity
         AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
 
         Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
+      }
+
+      // Methods
+
+      public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)
+      {
+        int hashCode = 17;
+        hashCode = hashCode * 31 + typeof(ArucoCharucoBoard).GetHashCode();
+        hashCode = hashCode * 31 + squaresNumberX;
+        hashCode = hashCode * 31 + squaresNumberY;
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // SquareSideLength is not less than millimetres
+        return hashCode;
       }
     }
   }

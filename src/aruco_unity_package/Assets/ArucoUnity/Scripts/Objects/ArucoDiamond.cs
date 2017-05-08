@@ -25,11 +25,6 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// <see cref="ArucoObject.HashCode"/>.
-      /// </summary>
-      public override int HashCode { get { return hashCode; } }
-
-      /// <summary>
       /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float SquareSideLength
@@ -71,29 +66,14 @@ namespace ArucoUnity
         }
       }
 
-      // Variable
-
-      protected int hashCode;
-
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Initialize the properties and suscribe to <see cref="ArucoObject.PropertyUpdated"/>.
-      protected override void Awake()
-      {
-        base.Awake();
-        OnPropertyUpdated();
-      }
-
       // ArucoObject methods
 
       /// <summary>
-      /// <see cref="ArucoObject.OnPropertyUpdated"/>.
+      /// <see cref="ArucoObject.UpdateHashCode"/>
       /// </summary>
-      protected override void OnPropertyUpdated()
+      protected override void UpdateHashCode()
       {
-        hashCode = GetArucoHashCode(this);
-        base.OnPropertyUpdated();
+        HashCode = GetArucoHashCode(Ids);
       }
 
       // Methods
@@ -107,11 +87,6 @@ namespace ArucoUnity
           hashCode = hashCode * 31 + id;
         }
         return hashCode;
-      }
-
-      protected static int GetArucoHashCode(ArucoDiamond arucoDiamond)
-      {
-        return GetArucoHashCode(arucoDiamond.Ids);
       }
     }
   }

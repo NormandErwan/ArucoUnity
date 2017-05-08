@@ -43,7 +43,7 @@ namespace ArucoUnity
 
       // Properties
 
-      public abstract int HashCode { get; }
+      public int HashCode { get; protected set; }
 
       /// <summary>
       /// The dictionary to use.
@@ -98,8 +98,19 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
-        dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
+        if (Dictionary == null)
+        {
+          dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
+        }
+        UpdateHashCode();
       }
+
+      // Methods
+
+      /// <summary>
+      /// Update the hash code of the object.
+      /// </summary>
+      protected abstract void UpdateHashCode();
 
       /// <summary>
       /// Call the event <see cref="PropertyUpdating"/>.
@@ -114,6 +125,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnPropertyUpdated()
       {
+        UpdateHashCode();
         PropertyUpdated(this);
       }
     }

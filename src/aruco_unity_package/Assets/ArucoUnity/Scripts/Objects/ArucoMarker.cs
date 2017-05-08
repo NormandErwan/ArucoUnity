@@ -21,11 +21,6 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// <see cref="ArucoObject.HashCode"/>.
-      /// </summary>
-      public override int HashCode { get { return hashCode; } }
-
-      /// <summary>
       /// The marker id in the used dictionary.
       /// </summary>
       public int MarkerId
@@ -35,21 +30,18 @@ namespace ArucoUnity
         {
           OnPropertyUpdating();
           markerId = value;
-          hashCode = GetArucoHashCode(this);
           OnPropertyUpdated();
         }
       }
 
-      // Variables
+      // ArucoObject methods
 
-      protected int hashCode;
-
-      // MonoBehaviour methods
-
-      protected override void Awake()
+      /// <summary>
+      /// <see cref="ArucoObject.UpdateHashCode"/>
+      /// </summary>
+      protected override void UpdateHashCode()
       {
-        base.Awake();
-        hashCode = GetArucoHashCode(this);
+        HashCode = GetArucoHashCode(MarkerId);
       }
 
       // Methods
@@ -60,11 +52,6 @@ namespace ArucoUnity
         hashCode = hashCode * 31 + typeof(ArucoMarker).GetHashCode();
         hashCode = hashCode * 31 + markerId;
         return hashCode;
-      }
-
-      protected static int GetArucoHashCode(ArucoMarker arucoMarker)
-      {
-        return GetArucoHashCode(arucoMarker.MarkerId);
       }
     }
   }

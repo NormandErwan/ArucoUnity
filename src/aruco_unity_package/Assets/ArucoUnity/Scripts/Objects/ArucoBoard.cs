@@ -22,11 +22,6 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// <see cref="ArucoObject.HashCode"/>.
-      /// </summary>
-      public override int HashCode { get { return hashCode; } }
-
-      /// <summary>
       /// The size of the margins in pixels (default: 0). Used by the Creators.
       /// </summary>
       public int MarginsSize
@@ -56,19 +51,14 @@ namespace ArucoUnity
 
       public Cv.Vec3d Tvec { get; set; }
 
-      // Variables
-
-      protected int hashCode;
-
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize the properties and suscribe to <see cref="ArucoObject.PropertyUpdated"/>.
+      /// <see cref="ArucoObject.Awake()"/>
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
-
         ImageSize = new Cv.Size();
         UpdateBoard();
         UpdateHashCode();
@@ -82,13 +72,8 @@ namespace ArucoUnity
       protected override void OnPropertyUpdated()
       {
         UpdateBoard();
-        UpdateHashCode();
         base.OnPropertyUpdated();
       }
-
-      // Methods
-
-      protected abstract void UpdateHashCode();
 
       /// <summary>
       /// Update the <see cref="Board"/> property.
