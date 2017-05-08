@@ -84,6 +84,9 @@ namespace ArucoUnity
       /// <param name="arucoObject">The ArUco object to add.</param>
       public virtual void Add(ArucoObject arucoObject)
       {
+        // Make sure the object is started and initialized
+        arucoObject.gameObject.SetActive(true);
+
         // Try to find a list with the same dictionary than the new ArUco object
         Dictionary<int, ArucoObject> arucoObjectsCollection = null;
         foreach (var arucoObjectDictionary in ArucoObjects)
