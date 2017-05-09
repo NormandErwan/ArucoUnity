@@ -197,12 +197,28 @@ namespace ArucoUnity
 
         bool updatedCameraImage = false;
         Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
-        // Draw the detected markers
-        // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
         if (arucoTracker.DrawDetectedMarkers && DetectedMarkers[cameraId][dictionary] > 0)
         {
+          // Draw all the detected markers
+          // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
           Aruco.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+
+          // Draw axes of detected tracked markers
+          if (arucoTracker.DrawAxes)
+          {
+            for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
+            {
+              ArucoObject foundArucoObject;
+              int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
+              if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
+              {
+                Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+                MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), foundArucoObject.MarkerSideLength);
+              }
+            }
+          }
           updatedCameraImage = true;
         }
 
