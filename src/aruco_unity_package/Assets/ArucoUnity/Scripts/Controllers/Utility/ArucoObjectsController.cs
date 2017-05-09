@@ -140,10 +140,9 @@ namespace ArucoUnity
           }
         }
 
-        // If not found, nothing to remove
         if (arucoObjectsCollection == null)
         {
-          return;
+          throw new System.ArgumentException("Can't remove the ArUco object: not found.", "arucoObject");
         }
 
         // Remove the ArUco object
