@@ -90,10 +90,10 @@ namespace ArucoUnity
       // Variables
 
       protected Dictionary<System.Type, ArucoObjectTracker> additionalTrackers;
-      private bool arucoCameraImageUpdated;
-      private Thread trackingThread;
-      private Mutex trackingMutex;
-      private System.Exception trackingException;
+      protected bool arucoCameraImageUpdated;
+      protected Thread trackingThread;
+      protected Mutex trackingMutex;
+      protected System.Exception trackingException;
 
       // MonoBehaviour methods
 
@@ -121,12 +121,13 @@ namespace ArucoUnity
           {
             while (IsStarted)
             {
+              trackingMutex.WaitOne();
               Track();
+              trackingMutex.ReleaseMutex();
             }
           }
           catch (System.Exception e)
           {
-            trackingMutex.WaitOne();
             trackingException = e;
             trackingMutex.ReleaseMutex();
           }
@@ -164,11 +165,7 @@ namespace ArucoUnity
         ArucoObjectTracker tracker = null;
         if (arucoObject.GetType() != typeof(ArucoMarker) && !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
         {
-          // TODO: exception
-          Debug.LogError("No tracker found for the type '" + arucoObject.GetType() + "'. Removing the object '" + arucoObject.gameObject.name +
-            "' from the tracking list.");
-          Remove(arucoObject);
-          return;
+          throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
         }
 
         if (tracker != null && !tracker.IsActivated)
@@ -181,7 +178,7 @@ namespace ArucoUnity
 
       protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
       {
-        // TODO
+        // TODO: deactivate the associated tracker if it was the last aruco object with this type
       }
 
       // ArucoObject methods
@@ -227,11 +224,6 @@ namespace ArucoUnity
       /// </summary>
       protected override void PreConfigure()
       {
-        if (ArucoCamera.CameraParameters == null)
-        {
-          UpdateTransforms = false;
-        }
-
         // Trackers configuration
         MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
@@ -280,19 +272,14 @@ namespace ArucoUnity
       protected override void ArucoCameraImageUpdated()
       {
         trackingMutex.WaitOne();
-
         arucoCameraImageUpdated = true;
-
-        System.Exception e = null;
-        if (trackingException != null)
-        {
-          e = trackingException;
-        }
-
+        System.Exception e = trackingException;
+        trackingException = null;
         trackingMutex.ReleaseMutex();
 
         if (e != null)
         {
+          StopDetector();
           throw e;
         }
       }
@@ -412,7 +399,7 @@ namespace ArucoUnity
       /// </summary>
       public void Place()
       {
-        if (!IsConfigured || !UpdateTransforms)
+        if (!IsConfigured)
         {
           return;
         }
@@ -437,16 +424,12 @@ namespace ArucoUnity
       /// </summary>
       protected void Track()
       {
-        trackingMutex.WaitOne();
-
-        if (IsConfigured && IsStarted && arucoCameraImageUpdated)
+        if (arucoCameraImageUpdated)
         {
           Detect();
           EstimateTransforms();
           arucoCameraImageUpdated = false;
         }
-
-        trackingMutex.ReleaseMutex();
       }
 
       /// <summary>
@@ -464,9 +447,12 @@ namespace ArucoUnity
           yield return null;
           trackingMutex.WaitOne();
 
-          DeactivateArucoObjects();
           Draw();
-          Place();
+          if (UpdateTransforms)
+          {
+            DeactivateArucoObjects();
+            Place();
+          }
 
           trackingMutex.ReleaseMutex();
         }
