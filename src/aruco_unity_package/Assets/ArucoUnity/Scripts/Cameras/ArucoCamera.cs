@@ -270,8 +270,11 @@ namespace ArucoUnity
           postDetectflipCode = -1;
         }
 
-        // Initialize the variables
+        // Initialize the properties and variables
         images = new Cv.Mat[CameraNumber];
+        ImageCameras = new Camera[CameraNumber];
+        ImageTextures = new Texture2D[CameraNumber];
+
         imageDataSizes = new int[CameraNumber];
         cameraMatricesSave = new Cv.Mat[CameraNumber];
         distCoeffsSave = new Cv.Mat[CameraNumber];
@@ -372,11 +375,10 @@ namespace ArucoUnity
       /// </summary>
       protected void OnImagesUpdated()
       {
-        // Load the texture contents to the images, then flip the images if needed
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        // Flip the images if needed
+        if (preDetectflipCode != null)
         {
-          images[cameraId].DataByte = ImageTextures[cameraId].GetRawTextureData();
-          if (preDetectflipCode != null)
+          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
             Cv.Flip(Images[cameraId], Images[cameraId], (int)preDetectflipCode);
           }
@@ -425,9 +427,7 @@ namespace ArucoUnity
         // Initialize the images
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          byte[] imageData = ImageTextures[cameraId].GetRawTextureData();
-          images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]),
-            imageData);
+          images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]));
           imageDataSizes[cameraId] = (int)(images[cameraId].ElemSize() * images[cameraId].Total());
         }
 

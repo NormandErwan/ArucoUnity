@@ -120,25 +120,8 @@ namespace ArucoUnity
       // Variables
 
       protected GameObject cameraPlane;
-      protected bool startInitiated;
+      protected bool startInitiated = false;
       protected int cameraId = 0;
-      protected int imageWidth, imageHeight;
-
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// <see cref="ArucoCamera.Awake"/>
-      /// </summary>
-      protected override void Awake()
-      {
-        startInitiated = false;
-
-        ImageTextures = new Texture2D[CameraNumber];
-        ImageCameras = new Camera[CameraNumber];
-        ImageCameras[cameraId] = GetComponent<Camera>();
-
-        base.Awake();
-      }
 
       // ArucoCamera methods
 
@@ -152,6 +135,8 @@ namespace ArucoUnity
           return;
         }
 
+        // Reset state
+        startInitiated = false;
         IsConfigured = false;
 
         // Try to load the webcam
@@ -180,13 +165,11 @@ namespace ArucoUnity
       /// </summary>
       public override void StartCameras()
       {
-        if (!IsConfigured || IsStarted || startInitiated)
+        if (IsConfigured && !IsStarted && !startInitiated)
         {
-          return;
+          WebCamTexture.Play();
+          startInitiated = true;
         }
-
-        WebCamTexture.Play();
-        startInitiated = true;
       }
 
       /// <summary>
@@ -194,15 +177,12 @@ namespace ArucoUnity
       /// </summary>
       public override void StopCameras()
       {
-        if (!IsConfigured || (!IsStarted && !startInitiated))
+        if (IsConfigured && (IsStarted || startInitiated))
         {
-          return;
+          WebCamTexture.Stop();
+          startInitiated = false;
+          OnStopped();
         }
-
-        WebCamTexture.Stop();
-
-        startInitiated = false;
-        OnStopped();
       }
 
       /// <summary>
@@ -219,12 +199,8 @@ namespace ArucoUnity
           }
           else
           {
-            // Configure texture
-            imageWidth = WebCamTexture.width;
-            imageHeight = WebCamTexture.height;
-            ImageTextures[cameraId] = new Texture2D(imageWidth, imageHeight, TextureFormat.RGB24, false);
-
-            // Configure display
+            // Configure
+            ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
             if (DisplayImages)
             {
               ConfigureCameraPlane();
@@ -236,8 +212,9 @@ namespace ArucoUnity
           }
         }
 
-        // Update the ImageTexture content
+        // Update the ImageTextures and the Images content
         ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
+        Images[cameraId].DataByte = ImageTextures[cameraId].GetRawTextureData();
 
         OnImagesUpdated();
       }
@@ -258,6 +235,7 @@ namespace ArucoUnity
         // Configure the CameraImage according to the camera parameters
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera
         float vFov = 2f * Mathf.Atan(0.5f * ImageTextures[cameraId].height / CameraPlaneDistance) * Mathf.Rad2Deg;
+        ImageCameras[cameraId] = GetComponent<Camera>();
         ImageCameras[cameraId].orthographic = false;
         ImageCameras[cameraId].fieldOfView = vFov;
         ImageCameras[cameraId].farClipPlane = CameraPlaneDistance * farClipPlaneNewValueFactor;
