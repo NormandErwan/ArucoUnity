@@ -202,7 +202,6 @@ namespace ArucoUnity
         WebCamTexture.Stop();
 
         startInitiated = false;
-        IsStarted = false;
         OnStopped();
       }
 
@@ -233,7 +232,6 @@ namespace ArucoUnity
 
             // Update state
             startInitiated = false;
-            IsStarted = true;
             OnStarted();
           }
         }

@@ -172,7 +172,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize camera system state.
+      /// Initialize the camera system state.
       /// </summary>
       protected virtual void Awake()
       {
@@ -181,7 +181,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configure the camera at start if <see cref="AutoStart"/> is true.
+      /// Configure the camera system at start if <see cref="AutoStart"/> is true.
       /// </summary>
       protected virtual void Start()
       {
@@ -192,7 +192,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Reset <see cref="Images"/> and retrieve the new images for this frame.
+      /// Update <see cref="Images"/> with the new frame images.
       /// </summary>
       protected virtual void Update()
       {
@@ -334,8 +334,9 @@ namespace ArucoUnity
           CameraParameters.DistCoeffs[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
         }
 
-        // Initialize and execute the action
         InitializeMatImages();
+
+        IsStarted = true;
         Started();
       }
 
@@ -344,12 +345,13 @@ namespace ArucoUnity
       /// </summary>
       protected void OnStopped()
       {
-        // Execute the action
-        Stopped();
+        IsStarted = false;
 
         // Restore the CameraParameters property to its original state
         CameraParameters.CameraMatrices = cameraMatricesSave;
         CameraParameters.DistCoeffs = distCoeffsSave;
+
+        Stopped();
       }
 
       /// <summary>
@@ -361,7 +363,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property.
+      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property, undistort them if required and execute the 
+      /// <see cref="ImagesUpdated"/> action.
       /// </summary>
       protected void OnImagesUpdated()
       {
