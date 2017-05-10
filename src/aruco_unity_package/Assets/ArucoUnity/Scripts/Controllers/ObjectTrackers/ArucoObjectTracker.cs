@@ -127,29 +127,11 @@ namespace ArucoUnity
       protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
         GameObject arucoGameObject = arucoObject.gameObject;
-        Camera camera = arucoTracker.ArucoCamera.ImageCameras[cameraId];
 
-        // Place and orient the object to match the marker
-        Transform arucoObjectTransform = arucoGameObject.transform;
-        arucoGameObject.transform.SetParent(camera.transform);
-        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
+        arucoGameObject.transform.SetParent(arucoTracker.ArucoCamera.ImageCameras[cameraId].transform);
+        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor
+          + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker;
         arucoGameObject.transform.localRotation = rvec.ToRotation();
-        arucoGameObject.transform.SetParent(arucoObjectTransform);
-
-        // Adjust the object position
-        Vector3 cameraOpticalCenter = arucoTracker.ArucoCamera.CameraParameters.OpticalCenters[cameraId];
-
-        Vector3 imageCenter = new Vector3(0.5f, 0.5f, arucoGameObject.transform.position.z);
-        Vector3 opticalCenter = new Vector3(cameraOpticalCenter.x, cameraOpticalCenter.y, arucoGameObject.transform.position.z);
-        Vector3 opticalShift = camera.ViewportToWorldPoint(opticalCenter) - camera.ViewportToWorldPoint(imageCenter);
-
-        // TODO: fix the position shift orientation
-        Vector3 positionShift = opticalShift // Take account of the optical center not in the image center
-          + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker
-        arucoGameObject.transform.localPosition += positionShift;
-
-        //print(arucoGameObject.name + " - imageCenter: " + imageCenter.ToString("F3") + "; opticalCenter: " + opticalCenter.ToString("F3")
-        //  + "; positionShift: " + (arucoGameObject.transform.rotation * opticalShift).ToString("F4"));
 
         arucoGameObject.SetActive(true);
       }
