@@ -162,11 +162,14 @@ namespace ArucoUnity
 
       protected Cv.Mat[] images;
       protected int[] imageDataSizes;
+      protected bool imagesUpdatedThisFrame = false;
+
       protected Cv.Mat[][] undistordedImageMaps;
       protected bool flipHorizontallyImages = false, 
                      flipVerticallyImages = false;
       protected int? preDetectflipCode, // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
                      postDetectflipCode; // Convert back the images
+
       protected Cv.Mat[] cameraMatricesSave, distCoeffsSave;
 
       // MonoBehaviour methods
@@ -198,6 +201,7 @@ namespace ArucoUnity
       {
         if (IsConfigured && IsStarted)
         {
+          imagesUpdatedThisFrame = false;
           UpdateCameraImages();
         }
       }
@@ -207,7 +211,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        if (!IsConfigured || !IsStarted)
+        if (!IsConfigured || !IsStarted || !imagesUpdatedThisFrame)
         {
           return;
         }
@@ -384,6 +388,7 @@ namespace ArucoUnity
           Undistort();
         }
 
+        imagesUpdatedThisFrame = true;
         ImagesUpdated();
       }
 
