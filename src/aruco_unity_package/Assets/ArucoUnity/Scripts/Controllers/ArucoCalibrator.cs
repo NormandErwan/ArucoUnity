@@ -142,7 +142,7 @@ namespace ArucoUnity
         ResetCalibration();
       }
 
-      protected override void ArucoCameraImageUpdated()
+      protected override void ArucoCamera_ImagesUpdated()
       {
         if (!IsConfigured || !IsStarted)
         {

@@ -61,7 +61,7 @@ namespace ArucoUnity
           // Unsubscribe from the previous ArucoCamera
           if (arucoCamera != null)
           {
-            arucoCamera.ImagesUpdated -= ArucoCameraImageUpdated;
+            arucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
             arucoCamera.Started -= Configure;
           }
 
@@ -74,7 +74,7 @@ namespace ArucoUnity
               Configure();
             }
             arucoCamera.Started += Configure;
-            arucoCamera.ImagesUpdated += ArucoCameraImageUpdated;
+            arucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
           }
         }
       }
@@ -128,7 +128,7 @@ namespace ArucoUnity
       /// <summary>
       /// Called when the camera images has been updated.
       /// </summary>
-      protected abstract void ArucoCameraImageUpdated();
+      protected virtual void ArucoCamera_ImagesUpdated() { }
 
       /// <summary>
       /// Start the detector.

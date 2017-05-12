@@ -133,6 +133,10 @@ namespace ArucoUnity
         }
       }
 
+      public byte[][] ImageDatas { get; protected set; }
+
+      public int[] ImageDataSizes { get; protected set; }
+
       /// <summary>
       /// Image textures, updated each frame.
       /// </summary>
@@ -161,7 +165,6 @@ namespace ArucoUnity
       // Variables
 
       protected Cv.Mat[] images;
-      protected int[] imageDataSizes;
       protected bool imagesUpdatedThisFrame = false;
 
       protected Cv.Mat[][] undistordedImageMaps;
@@ -218,17 +221,14 @@ namespace ArucoUnity
 
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          // Flip the Images if needed, load them back to the textures and revert the flip to keep the correct orientation on both image and texture
+          // Flip the Images if needed and load them to the textures
           if (postDetectflipCode != null)
           {
             Cv.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
           }
-          ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, imageDataSizes[cameraId]);
+
+          ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
           ImageTextures[cameraId].Apply(false);
-          if (postDetectflipCode != null)
-          {
-            Cv.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
-          }
         }
       }
 
@@ -272,10 +272,11 @@ namespace ArucoUnity
 
         // Initialize the properties and variables
         images = new Cv.Mat[CameraNumber];
+        ImageDatas = new byte[CameraNumber][];
+        ImageDataSizes = new int[CameraNumber];
         ImageCameras = new Camera[CameraNumber];
         ImageTextures = new Texture2D[CameraNumber];
 
-        imageDataSizes = new int[CameraNumber];
         cameraMatricesSave = new Cv.Mat[CameraNumber];
         distCoeffsSave = new Cv.Mat[CameraNumber];
 
@@ -399,11 +400,10 @@ namespace ArucoUnity
       /// </summary>
       /// <param name="imageTexture">The texture to analyze.</param>
       /// <returns>The equivalent OpenCV type.</returns>
-      protected Cv.Type ImageType(Texture2D imageTexture)
+      public Cv.Type ImageType(TextureFormat textureFormat)
       {
         Cv.Type type;
-        var format = imageTexture.format;
-        switch (format)
+        switch (textureFormat)
         {
           case TextureFormat.RGB24:
             type = Cv.Type.CV_8UC3;
@@ -414,7 +414,7 @@ namespace ArucoUnity
             type = Cv.Type.CV_8UC4;
             break;
           default:
-            throw new ArgumentException("This type of texture is actually not supported: " + imageTexture.format + ".", "imageTexture");
+            throw new ArgumentException("This type of texture is actually not supported: " + textureFormat + ".", "textureFormat");
         }
         return type;
       }
@@ -427,8 +427,10 @@ namespace ArucoUnity
         // Initialize the images
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId]));
-          imageDataSizes[cameraId] = (int)(images[cameraId].ElemSize() * images[cameraId].Total());
+          Images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId].format));
+          ImageDataSizes[cameraId] = (int)(Images[cameraId].ElemSize() * Images[cameraId].Total());
+          ImageDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
+          Images[cameraId].DataByte = ImageDatas[cameraId];
         }
 
         // Initialize the undistorted images

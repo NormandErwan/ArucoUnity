@@ -212,9 +212,9 @@ namespace ArucoUnity
           }
         }
 
-        // Update the ImageTextures and the Images content
+        // Update the ImageTextures and the Images data
         ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
-        Images[cameraId].DataByte = ImageTextures[cameraId].GetRawTextureData();
+        System.Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
 
         OnImagesUpdated();
       }
