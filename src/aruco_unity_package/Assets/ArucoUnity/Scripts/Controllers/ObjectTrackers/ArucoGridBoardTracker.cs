@@ -16,21 +16,22 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
       /// </summary>
-      public override void Detect(int cameraId, Aruco.Dictionary dictionary)
+      public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated)
         {
           return;
         }
 
+        ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
+
         if (arucoTracker.RefineDetectedMarkers)
         {
           foreach (var arucoBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
           {
-            Aruco.RefineDetectedMarkers(arucoTracker.ArucoCamera.Images[cameraId], arucoBoard.Board,
-              arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary], arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary],
-              arucoTracker.MarkerTracker.RejectedCandidateCorners[cameraId][dictionary]);
-            arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] = (int)arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary].Size();
+            Aruco.RefineDetectedMarkers(image, arucoBoard.Board, markerTracker.MarkerCorners[cameraId][dictionary],
+              markerTracker.MarkerIds[cameraId][dictionary], markerTracker.RejectedCandidateCorners[cameraId][dictionary]);
+            markerTracker.DetectedMarkers[cameraId][dictionary] = (int)markerTracker.MarkerIds[cameraId][dictionary].Size();
           }
         }
       }
@@ -62,30 +63,22 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
       /// </summary>
-      public override void Draw(int cameraId, Aruco.Dictionary dictionary)
+      public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
         {
           return;
         }
 
-        bool updatedCameraImage = false;
-        Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
           if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.MarkersUsedForEstimation > 0 && arucoGridBoard.Rvec != null)
           {
-            Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+            Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
               arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
-            updatedCameraImage = true;
           }
-        }
-
-        if (updatedCameraImage)
-        {
-          arucoTracker.ArucoCamera.Images = cameraImages;
         }
       }
 

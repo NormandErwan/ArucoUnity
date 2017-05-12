@@ -144,9 +144,9 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// <see cref="ArucoObjectTracker.Detect(int, Dictionary)"/>
+      /// <see cref="ArucoObjectTracker.Detect(Cv.Mat, Dictionary)"/>
       /// </summary>
-      public override void Detect(int cameraId, Aruco.Dictionary dictionary)
+      public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated)
         {
@@ -156,8 +156,7 @@ namespace ArucoUnity
         Std.VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
         Std.VectorInt markerIds;
 
-        Aruco.DetectMarkers(arucoTracker.ArucoCamera.Images[cameraId], dictionary, out markerCorners, out markerIds,
-          arucoTracker.DetectorParameters, out rejectedCandidateCorners);
+        Aruco.DetectMarkers(image, dictionary, out markerCorners, out markerIds, arucoTracker.DetectorParameters, out rejectedCandidateCorners);
 
         DetectedMarkers[cameraId][dictionary] = (int)markerIds.Size();
         MarkerCorners[cameraId][dictionary] = markerCorners;
@@ -188,22 +187,20 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.Draw(int, Dictionary)"/>
       /// </summary>
-      public override void Draw(int cameraId, Aruco.Dictionary dictionary)
+      public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated)
         {
           return;
         }
-
-        bool updatedCameraImage = false;
-        Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
+        
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
         if (arucoTracker.DrawDetectedMarkers && DetectedMarkers[cameraId][dictionary] > 0)
         {
           // Draw all the detected markers
           // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
-          Aruco.DrawDetectedMarkers(cameraImages[cameraId], MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+          Aruco.DrawDetectedMarkers(image, MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
 
           // Draw axes of detected tracked markers
           if (arucoTracker.DrawAxes)
@@ -214,24 +211,17 @@ namespace ArucoUnity
               int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
               if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
               {
-                Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+                Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
                 MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), foundArucoObject.MarkerSideLength);
               }
             }
           }
-          updatedCameraImage = true;
         }
 
         // Draw the rejected marker candidates
         if (arucoTracker.DrawRejectedCandidates && RejectedCandidateCorners[cameraId][dictionary].Size() > 0)
         {
-          Aruco.DrawDetectedMarkers(cameraImages[cameraId], RejectedCandidateCorners[cameraId][dictionary]);
-          updatedCameraImage = true;
-        }
-
-        if (updatedCameraImage)
-        {
-          arucoTracker.ArucoCamera.Images = cameraImages;
+          Aruco.DrawDetectedMarkers(image, RejectedCandidateCorners[cameraId][dictionary]);
         }
       }
 

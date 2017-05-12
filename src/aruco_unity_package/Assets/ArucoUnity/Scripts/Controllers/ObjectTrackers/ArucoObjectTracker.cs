@@ -101,7 +101,15 @@ namespace ArucoUnity
       /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 
       /// the CameraImageTexture.
       /// </summary>
-      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary);
+      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
+
+      public virtual void Detect(int cameraId, Aruco.Dictionary dictionary)
+      {
+        if (IsActivated)
+        {
+          Detect(cameraId, dictionary, arucoTracker.ArucoCamera.Images[cameraId]);
+        }
+      }
 
       /// <summary>
       /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
@@ -113,8 +121,15 @@ namespace ArucoUnity
       /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 
       /// <see cref="Detect(int, Dictionary)"/>.
       /// </summary>
-      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary);
+      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
 
+      public virtual void Draw(int cameraId, Aruco.Dictionary dictionary)
+      {
+        if (IsActivated)
+        {
+          Draw(cameraId, dictionary, arucoTracker.ArucoCamera.Images[cameraId]);
+        }
+      }
       /// <summary>
       /// Place and orient the detected ArUco objects on the first camera image according to the results of 
       /// <see cref="EstimateTranforms(int, Dictionary)"/>.

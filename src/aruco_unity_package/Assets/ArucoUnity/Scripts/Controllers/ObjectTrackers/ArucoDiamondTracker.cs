@@ -15,9 +15,7 @@ namespace ArucoUnity
       // Constants
 
       protected const float DetectSquareMarkerLengthRate = 2f;
-
       protected const float EstimatePoseSquareLength = 1f;
-
       protected const float DrawAxisLength = EstimatePoseSquareLength / 2f;
 
       // Properties
@@ -117,7 +115,7 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
       /// </summary>
-      public override void Detect(int cameraId, Aruco.Dictionary dictionary)
+      public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated)
         {
@@ -125,22 +123,23 @@ namespace ArucoUnity
         }
 
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+        ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
 
         Std.VectorVectorPoint2f diamondCorners = null;
         Std.VectorVec4i diamondIds = null;
 
-        if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0)
+        if (markerTracker.DetectedMarkers[cameraId][dictionary] > 0)
         {
           if (cameraParameters == null)
           {
-            Aruco.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DetectSquareMarkerLengthRate, out diamondCorners, out diamondIds);
+            Aruco.DetectCharucoDiamond(image, markerTracker.MarkerCorners[cameraId][dictionary], markerTracker.MarkerIds[cameraId][dictionary],
+              DetectSquareMarkerLengthRate, out diamondCorners, out diamondIds);
           }
           else
           {
-            Aruco.DetectCharucoDiamond(arucoTracker.ArucoCamera.Images[cameraId], arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], DetectSquareMarkerLengthRate, out diamondCorners, out diamondIds,
-              cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId]);
+            Aruco.DetectCharucoDiamond(image, markerTracker.MarkerCorners[cameraId][dictionary], markerTracker.MarkerIds[cameraId][dictionary],
+              DetectSquareMarkerLengthRate, out diamondCorners, out diamondIds, cameraParameters.CameraMatrices[cameraId],
+              cameraParameters.DistCoeffs[cameraId]);
           }
         }
 
@@ -176,15 +175,13 @@ namespace ArucoUnity
       /// <summary>
       /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
       /// </summary>
-      public override void Draw(int cameraId, Aruco.Dictionary dictionary)
+      public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
         if (!IsActivated)
         {
           return;
         }
 
-        bool updatedCameraImage = false;
-        Cv.Mat[] cameraImages = arucoTracker.ArucoCamera.Images;
         CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
 
         if (DetectedDiamonds[cameraId][dictionary] > 0)
@@ -192,8 +189,7 @@ namespace ArucoUnity
           // Draw detected diamonds
           if (arucoTracker.DrawDetectedDiamonds)
           {
-            Aruco.DrawDetectedDiamonds(cameraImages[cameraId], DiamondCorners[cameraId][dictionary], DiamondIds[cameraId][dictionary]);
-            updatedCameraImage = true;
+            Aruco.DrawDetectedDiamonds(image, DiamondCorners[cameraId][dictionary], DiamondIds[cameraId][dictionary]);
           }
 
           // Draw axes of detected diamonds
@@ -201,16 +197,10 @@ namespace ArucoUnity
           {
             for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)
             {
-              Aruco.DrawAxis(cameraImages[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+              Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
               DiamondRvecs[cameraId][dictionary].At(i), DiamondTvecs[cameraId][dictionary].At(i), DrawAxisLength);
-              updatedCameraImage = true;
             }
           }
-        }
-
-        if (updatedCameraImage)
-        {
-          arucoTracker.ArucoCamera.Images = cameraImages;
         }
       }
 
@@ -232,8 +222,8 @@ namespace ArucoUnity
             if (TryGetArucoDiamond(cameraId, dictionary, i, out foundArucoDiamond))
             {
               float positionFactor = foundArucoDiamond.SquareSideLength * EstimatePoseSquareLength / DetectSquareMarkerLengthRate; // Equal to marker lenght
-              PlaceArucoObject(foundArucoDiamond, arucoTracker.MarkerTracker.MarkerRvecs[cameraId][dictionary].At(i), arucoTracker.MarkerTracker.MarkerTvecs[cameraId][dictionary].At(i),
-                cameraId, positionFactor);
+              PlaceArucoObject(foundArucoDiamond, arucoTracker.MarkerTracker.MarkerRvecs[cameraId][dictionary].At(i),
+                arucoTracker.MarkerTracker.MarkerTvecs[cameraId][dictionary].At(i), cameraId, positionFactor);
             }
           }
         }
