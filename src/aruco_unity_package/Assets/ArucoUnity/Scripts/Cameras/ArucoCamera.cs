@@ -333,13 +333,16 @@ namespace ArucoUnity
       protected void OnStarted()
       {
         // Save the CameraParameters property as the rectification in the undistortion process may alter it
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        if (CameraParameters != null)
         {
-          cameraMatricesSave[cameraId] = new Cv.Mat(CameraParameters.CameraMatrices[cameraId].CppPtr);
-          CameraParameters.CameraMatrices[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
+          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+          {
+            cameraMatricesSave[cameraId] = new Cv.Mat(CameraParameters.CameraMatrices[cameraId].CppPtr);
+            CameraParameters.CameraMatrices[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
 
-          distCoeffsSave[cameraId] = new Cv.Mat(CameraParameters.DistCoeffs[cameraId].CppPtr);
-          CameraParameters.DistCoeffs[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
+            distCoeffsSave[cameraId] = new Cv.Mat(CameraParameters.DistCoeffs[cameraId].CppPtr);
+            CameraParameters.DistCoeffs[cameraId].DeleteResponsibility = Utility.DeleteResponsibility.False;
+          }
         }
 
         InitializeMatImages();
@@ -356,8 +359,11 @@ namespace ArucoUnity
         IsStarted = false;
 
         // Restore the CameraParameters property to its original state
-        CameraParameters.CameraMatrices = cameraMatricesSave;
-        CameraParameters.DistCoeffs = distCoeffsSave;
+        if (CameraParameters != null)
+        {
+          CameraParameters.CameraMatrices = cameraMatricesSave;
+          CameraParameters.DistCoeffs = distCoeffsSave;
+        }
 
         Stopped();
       }
