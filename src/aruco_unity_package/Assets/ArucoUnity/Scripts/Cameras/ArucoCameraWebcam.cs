@@ -123,6 +123,34 @@ namespace ArucoUnity
       protected bool startInitiated = false;
       protected int cameraId = 0;
 
+      // MonoBehaviour methods
+
+      protected override void Update()
+      {
+        if (startInitiated)
+        {
+          if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
+          {
+            return;
+          }
+          else
+          {
+            // Configure
+            ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+            if (DisplayImages)
+            {
+              ConfigureCameraPlane();
+            }
+
+            // Update state
+            startInitiated = false;
+            OnStarted();
+          }
+        }
+
+        base.Update();
+      }
+
       // ArucoCamera methods
 
       /// <summary>
@@ -191,28 +219,6 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        if (startInitiated)
-        {
-          if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
-          {
-            return;
-          }
-          else
-          {
-            // Configure
-            ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-            if (DisplayImages)
-            {
-              ConfigureCameraPlane();
-            }
-
-            // Update state
-            startInitiated = false;
-            OnStarted();
-          }
-        }
-
-        // Update the ImageTextures and the Images data
         ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
         System.Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
 
@@ -229,8 +235,7 @@ namespace ArucoUnity
       // TODO: handle case of CameraParameters.FixAspectRatio != 0
       protected void ConfigureCameraPlane()
       {
-        // Use the image texture's width as a default value if there is no camera parameters
-        float CameraPlaneDistance = (CameraParameters != null) ? CameraParameters.CameraFocalLengths[cameraId].y : ImageTextures[cameraId].width;
+        float CameraPlaneDistance = ImageTextures[cameraId].width;
 
         // Configure the CameraImage according to the camera parameters
         float farClipPlaneNewValueFactor = 1.01f; // To be sure that the camera plane is visible by the camera

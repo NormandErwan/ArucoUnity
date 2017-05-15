@@ -246,7 +246,6 @@ namespace ArucoUnity
         MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          List<ArucoObject> arucoObjectsToDelete = new List<ArucoObject>();
           foreach (var arucoObject in arucoObjectDictionary.Value)
           {
             // Activate required trackers
