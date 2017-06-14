@@ -75,6 +75,7 @@ extern "C" {
   //! \param flags The flags that control stereoCalibrate.
   //! \param criteria Termination criteria for optimization.
   //! \param idx Indices of image pairs that pass initialization, which are really used in calibration.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#ga6f1aa828b02e7263394acb5f6821cc84
@@ -90,6 +91,7 @@ extern "C" {
   //! \param tvec Translation between the first and the second camera.
   //! \param R1 Output 3x3 rotation matrix for the first camera.
   //! \param R2 Output 3x3 rotation matrix for the second camera.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#gaf055863d589cb166c23cc26fcaa6ce98

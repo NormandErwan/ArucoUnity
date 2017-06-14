@@ -139,7 +139,7 @@ extern "C" {
 
   //! \brief Sets the p data.
   //! \param mat The Mat used.
-  //! \param mat The new value.
+  //! \param value The new value.
   ARUCO_UNITY_API void au_cv_Mat_setData_void(cv::Mat* mat, uchar* value);
 
   //! \brief Returns a pointer to the data.
@@ -148,7 +148,7 @@ extern "C" {
 
   //! \brief Sets the p data.
   //! \param mat The Mat used.
-  //! \param mat The new value.
+  //! \param value The new value.
   ARUCO_UNITY_API void au_cv_Mat_setData_uchar(cv::Mat* mat, uchar* value);
 
   //! \brief Returns the number of rows.

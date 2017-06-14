@@ -50,6 +50,7 @@ extern "C" {
   //! \param imagePoints Vector of vectors of the projections of the calibration pattern points.
   //! \param imageSize Image size in pixels used to initialize the principal point.
   //! \param aspectRatio
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga8132c7dbbb61738cc3510bebbdffde55
@@ -81,6 +82,7 @@ extern "C" {
   //! \param F Output fundamental matrix.
   //! \param flags Different flags that may be zero or a combination.
   //! \param criteria Termination criteria for the iterative optimization algorithm.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga246253dcc6de2e0376c599e7d692303a
@@ -108,6 +110,7 @@ extern "C" {
   //! \param newImageSize New image resolution after rectification.
   //! \param validPixROI1 Optional output rectangles inside the rectified images where all the pixels are valid.
   //! \param validPixROI2 Optional output rectangles inside the rectified images where all the pixels are valid.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga617b1685d4059c6040827800e72ad2b6
@@ -127,6 +130,7 @@ extern "C" {
   //! \param flags Different flags for the calibration process (see 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1).
   //! \param criteria Termination criteria for the iterative optimization algorithm.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gad626a78de2b1dae7489e152a5a5a89e1
@@ -137,29 +141,31 @@ extern "C" {
   //! \brief Estimates new camera matrix for undistortion or rectification.
   //!
   //! \param cameraMatrix Camera matrix.
-  //! \param imageSize
   //! \param distCoeffs Input vector of distortion coefficients.
+  //! \param imageSize
   //! \param R Rectification transformation in the object space.
-  //! \param P New camera matrix (3x3) or new projection matrix (3x4).
+  //! \param newCameraMatrix New camera matrix (3x3) or new projection matrix (3x4).
   //! \param balance Sets the new focal length in range between the min focal length and the max focal length. Balance is in range of [0, 1].
   //! \param newSize
   //! \param fovScale Divisor for new focal length.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#ga384940fdf04c03e362e94b6eb9b673c9
   ARUCO_UNITY_API void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
-    cv::Size* imageSize, cv::Mat* R, cv::Mat** P, double balance, cv::Size* newSize, double fovScale, cv::Exception* exception);
+    cv::Size* imageSize, cv::Mat* R, cv::Mat** newCameraMatrix, double balance, cv::Size* newSize, double fovScale, cv::Exception* exception);
 
   //! \brief Computes undistortion and rectification maps for image transform by cv::remap().
   //!
   //! \param cameraMatrix Camera matrix.
   //! \param distCoeffs Input vector of distortion coefficients.
   //! \param R Rectification transformation in the object space.
-  //! \param P New camera matrix (3x3) or new projection matrix (3x4)
+  //! \param newCameraMatrix New camera matrix (3x3) or new projection matrix (3x4)
   //! \param size Undistorted image size.
   //! \param m1type Type of the first output map that can be CV_32FC1 or CV_16SC2.
   //! \param map1 The first output map.
   //! \param map2 The second output map.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#ga0d37b45f780b32f63ed19c21aa9fd333
@@ -181,6 +187,7 @@ extern "C" {
   //! \param flags Different flags for the calibration process (see 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gadbb3a6ca6429528ef302c784df47949b)
   //! \param criteria Termination criteria for the iterative optimization algorithm.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gadbb3a6ca6429528ef302c784df47949b
@@ -207,6 +214,7 @@ extern "C" {
   //! \param newImageSize New image resolution after rectification.
   //! \param balance Sets the new focal length in range between the min focal length and the max focal length. Balance is in range of [0, 1].
   //! \param fovScale Divisor for new focal length.
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#gac1af58774006689056b0f2ef1db55ecc
@@ -218,10 +226,11 @@ extern "C" {
   //!
   //! \param distorted Image with fisheye lens distortion.
   //! \param undistorted Output image with compensated fisheye lens distortion.
-  //! \param K Camera matrix.
-  //! \param D Input vector of distortion coefficients.
-  //! \param Knew Camera matrix of the distorted image.
-  //! \param new_size
+  //! \param cameraMatrix Camera matrix.
+  //! \param distCoeffs Input vector of distortion coefficients.
+  //! \param newCameraMatrix Camera matrix of the distorted image.
+  //! \param newSize
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/db/d58/group__calib3d__fisheye.html#ga167df4b00a6fd55287ba829fbf9913b9

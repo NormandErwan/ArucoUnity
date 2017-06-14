@@ -92,10 +92,11 @@ extern "C" {
   }
 
   void au_cv_calib3d_fisheye_estimateNewCameraMatrixForUndistortRectify(cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Size* imageSize,
-    cv::Mat* R, cv::Mat** P, double balance, cv::Size* newSize, double fovScale, cv::Exception* exception) {
+    cv::Mat* R, cv::Mat** newCameraMatrix, double balance, cv::Size* newSize, double fovScale, cv::Exception* exception) {
     try {
-      *P = new cv::Mat();
-      cv::fisheye::estimateNewCameraMatrixForUndistortRectify(*cameraMatrix, *distCoeffs, *imageSize, *R, **P, balance, *newSize, fovScale);
+      *newCameraMatrix = new cv::Mat();
+      cv::fisheye::estimateNewCameraMatrixForUndistortRectify(*cameraMatrix, *distCoeffs, *imageSize, *R, **newCameraMatrix, balance, *newSize,
+        fovScale);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
   }
 

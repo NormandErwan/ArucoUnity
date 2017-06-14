@@ -102,7 +102,8 @@ extern "C" {
   //! \param distCoeffs Vector of distortion coefficients.
   //! \param rvec Rotation vector of the coordinate system that will be drawn.
   //! \param tvec Translation vector of the coordinate system that will be drawn.
-  //! \param exception Length of the painted axis in the same unit than tvec (usually in meters).
+  //! \param length Length of the painted axis in the same unit than tvec (usually in meters).
+  //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
   //! http://docs.opencv.org/3.1.0/d9/d6a/group__aruco.html#ga16fda651a4e6a8f5747a85cbb6b400a2
