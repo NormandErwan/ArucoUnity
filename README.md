@@ -11,6 +11,17 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 1. Retrieve the ArucoUnity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy `<aruco_unity_source_directory>/src/aruco_unity_package/Assets` folder into your Unity project.
 2. Use the prefabs or the examples scenes of the ArucoUnity package.
+    - The `Assets/ArucoUnity/Scenes/Creation` scene demonstrates the creation of two different markers, one grid board, one ChArUco board and one diamond marker. Simply run the scene.
+    - The `Assets/ArucoUnity/Scenes/Calibration` scene demonstrates the calibration of a camera. To use:
+        - Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene.
+        - Activate the `ArucoCalibrator` corresponding to the selected `Undistortion Type`.
+        - Configure the `Calibration Board` used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image. 
+        - Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.
+    - The `Assets/ArucoUnity/Scenes/Tracking` scene demonstrates the tracking of a marker. To use:
+        - Configure the `Undistortion Type`, the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `Assets/ArucoUnity/Calibrations/<calibration_file>.xml`).
+        - Create an empty object and add it an `ArucoMarker` script and configure it according to the printed marker you want to track. Add 3D content as a child of this object.
+        - Add this object to the `Aruco Objects` list property of the `ArucoTracker` object. Make sure the `ArucoCamera` property of the  `ArucoTracker` object is linked to the`ArucoCameraWebcam` object configured earlier.
+        - Run the scene. The `ArucoTracker` will place any detected marker in the `Aruco Objects` list relative to the camera of the `ArucoCamera` property.
 
 ## Build
 
@@ -18,7 +29,7 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. 
 
-First, you will need to provide a build of OpenCV with the ArUco module as dependency. You can follow these
+First, you will need to provide a build of OpenCV (minimum version: 3.2) with the ArUco module as dependency. You can follow these
 instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib). Or you
 can build the provided cmake project by running the following commands:
 
@@ -82,5 +93,6 @@ See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD
 See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. ArUco Unity makes use of the
 following projects:
 
-- [OpenCV](http://opencv.org/) and its [ArUco Marker Detection](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco) extra module.
+- [OpenCV](http://opencv.org/) and the [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and
+[ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) extra modules.
 - [Google Test](https://github.com/google/googletest)
