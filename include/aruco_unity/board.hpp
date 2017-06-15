@@ -10,7 +10,7 @@
 //! @defgroup board Board
 //! \brief Board of markers.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d4/db2/classcv_1_1aruco_1_1Board.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d4/db2/classcv_1_1aruco_1_1Board.html
 //! @{
 
 extern "C" {

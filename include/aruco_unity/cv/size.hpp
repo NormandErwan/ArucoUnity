@@ -7,7 +7,7 @@
 //! @addtogroup size
 //! \brief Class for specifying the size of an image or rectangle.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d6/d50/classcv_1_1Size__.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d6/d50/classcv_1_1Size__.html
 //! @{
 
 extern "C" {

@@ -10,7 +10,7 @@
 //! @defgroup charuco_board CharucoBoard
 //! \brief A ChArUco board is a planar board where the markers are placed inside the white squares of a chessboard.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d0/d3c/classcv_1_1aruco_1_1CharucoBoard.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d0/d3c/classcv_1_1aruco_1_1CharucoBoard.html
 //! @{
 
 extern "C" {

@@ -10,7 +10,7 @@
 //! @defgroup detector_parameters DetectorParameters
 //! \brief Parameters for the detectMarker process
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d1/dcd/structcv_1_1aruco_1_1DetectorParameters.html.
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d1/dcd/structcv_1_1aruco_1_1DetectorParameters.html.
 //! @{
 
 extern "C" {

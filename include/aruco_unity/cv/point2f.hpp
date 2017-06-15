@@ -7,7 +7,7 @@
 //! @addtogroup point2f
 //! \brief 2D float points specified by its coordinates x and y.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/db/d4e/classcv_1_1Point__.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/db/d4e/classcv_1_1Point__.html
 //! @{
 
 extern "C" {

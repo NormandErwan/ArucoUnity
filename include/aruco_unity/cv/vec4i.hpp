@@ -7,7 +7,7 @@
 //! @addtogroup vec4i
 //! \brief Numerical vector of four int elements.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d6/dcf/classcv_1_1Vec.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d6/dcf/classcv_1_1Vec.html
 //! @{
 
 extern "C" {

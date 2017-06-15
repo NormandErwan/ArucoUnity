@@ -7,7 +7,7 @@
 //! @addtogroup calib3d
 //! \brief Camera Calibration and 3D Reconstruction module.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html
 //! @{
 
 extern "C" {
@@ -32,7 +32,7 @@ extern "C" {
   //! \return The overall RMS re-projection error.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d
+  //! http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d
   ARUCO_UNITY_API double au_cv_calib3d_calibrateCamera1(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
     std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, std::vector<double>* stdDeviationsIntrinsics,
@@ -53,7 +53,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga8132c7dbbb61738cc3510bebbdffde55
+  //! http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga8132c7dbbb61738cc3510bebbdffde55
   ARUCO_UNITY_API cv::Mat* au_cv_calib3d_initCameraMatrix2D(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, double aspectRatio, cv::Exception* exception);
 
@@ -63,7 +63,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga61585db663d9da06b68e70cfbf6a1eac
+  //! http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga61585db663d9da06b68e70cfbf6a1eac
   ARUCO_UNITY_API void au_cv_calib3d_Rodrigues(cv::Vec3d* src, cv::Mat** dst, cv::Exception* exception);
 
   //! \brief Calibrates the stereo camera.
@@ -85,7 +85,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga246253dcc6de2e0376c599e7d692303a
+  //! http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga246253dcc6de2e0376c599e7d692303a
   ARUCO_UNITY_API double au_cv_calib3d_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Mat* cameraMatrix1, 
     cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2, cv::Size* imageSize, cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Mat** E,
@@ -113,7 +113,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d9/d0c/group__calib3d.html#ga617b1685d4059c6040827800e72ad2b6
+  //! http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga617b1685d4059c6040827800e72ad2b6
   ARUCO_UNITY_API void au_cv_calib3d_stereoRectify(cv::Mat* cameraMatrix1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* distCoeffs2,
     cv::Size* imageSize, cv::Vec3d* rvec, cv::Vec3d* tvec, cv::Mat** R1, cv::Mat** R2, cv::Mat** P1, cv::Mat** P2, cv::Mat** Q, int flags,
     double alpha, cv::Size* newImageSize, cv::Rect* validPixROI1, cv::Rect* validPixROI2, cv::Exception* exception);

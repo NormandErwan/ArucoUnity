@@ -7,7 +7,7 @@
 //! @addtogroup mat
 //! \brief n-dimensional dense array class.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d3/d63/classcv_1_1Mat.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d3/d63/classcv_1_1Mat.html
 //! @{
 
 extern "C" {

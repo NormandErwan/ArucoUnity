@@ -7,7 +7,7 @@
 //! @addtogroup scalar
 //! \brief Template class for a 4-element vector derived from Vec.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d1/da0/classcv_1_1Scalar__.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d1/da0/classcv_1_1Scalar__.html
 //! @{
 
 extern "C" {

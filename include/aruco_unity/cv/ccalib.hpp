@@ -7,7 +7,7 @@
 //! @addtogroup ccalib
 //! \brief Custom Calibration Pattern for 3D reconstruction module.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html
 //! @{
 
 extern "C" {
@@ -31,7 +31,7 @@ extern "C" {
   //! \return The overall RMS re-projection error.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#gac31505e43f856154a0fd7b65c1fc9ce9
+  //! http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html#gac31505e43f856154a0fd7b65c1fc9ce9
   ARUCO_UNITY_API double au_cv_ccalib_omnidir_calibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* xi, cv::Mat* distCoeffs,
     std::vector<cv::Vec3d>** rvecs, std::vector<cv::Vec3d>** tvecs, int flags, cv::TermCriteria* criteria, cv::Mat** idx, cv::Exception* exception);
@@ -51,7 +51,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#ga0d0b216ff9c9c2cee1ab9cc13cc20faa
+  //! http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html#ga0d0b216ff9c9c2cee1ab9cc13cc20faa
   ARUCO_UNITY_API void au_cv_ccalib_omnidir_initUndistortRectifyMap(cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat* xi, cv::Mat* R,
     cv::Mat* newCameraMatrix, cv::Size* size, int m1type, cv::Mat** map1, cv::Mat** map2, int flags, cv::Exception* exception);
 
@@ -78,7 +78,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#ga6f1aa828b02e7263394acb5f6821cc84
+  //! http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html#ga6f1aa828b02e7263394acb5f6821cc84
   ARUCO_UNITY_API double au_cv_ccalib_omnidir_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints,
     std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Size* imageSize1,
     cv::Size* imageSize2, cv::Mat* cameraMatrix1, cv::Mat xi1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* xi2, cv::Mat* distCoeffs2,
@@ -94,7 +94,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#gaf055863d589cb166c23cc26fcaa6ce98
+  //! http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html#gaf055863d589cb166c23cc26fcaa6ce98
   ARUCO_UNITY_API void au_cv_ccalib_omnidir_stereoRectify(cv::Vec3d* rvec, cv::Vec3d* tvec, cv::Mat** R1, cv::Mat** R2, cv::Exception* exception);
 
   //! \brief Undistort omnidirectional images to perspective images.
@@ -111,7 +111,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/d3/ddc/group__ccalib.html#gafe4f53d9b64bfe15b86e75a4699cbba4
+  //! http://docs.opencv.org/3.2.0/d3/ddc/group__ccalib.html#gafe4f53d9b64bfe15b86e75a4699cbba4
   ARUCO_UNITY_API void au_cv_ccalib_omnidir_undistortImage(cv::Mat* distorted, cv::Mat** undistorted, cv::Mat* cameraMatrix, cv::Mat* distCoeffs,
     cv::Mat* xi, int flags, cv::Mat* newCameraMatrix, cv::Size* newSize, cv::Mat* R, cv::Exception* exception);
 

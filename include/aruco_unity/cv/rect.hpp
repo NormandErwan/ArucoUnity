@@ -7,7 +7,7 @@
 //! @addtogroup rect
 //! \brief Class for int 2D rectangles.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d2/d44/classcv_1_1Rect__.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d2/d44/classcv_1_1Rect__.html
 //! @{
 
 extern "C" {

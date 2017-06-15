@@ -7,7 +7,7 @@
 //! @addtogroup imgproc
 //! \brief Image processing module.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d7/dbd/group__imgproc.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d7/dbd/group__imgproc.html
 //! @{
 
 extern "C" {
@@ -26,7 +26,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#ga7dfb72c9cf9780a347fbe3d1c47e5d5a
+  //! http://docs.opencv.org/3.2.0/da/d54/group__imgproc__transform.html#ga7dfb72c9cf9780a347fbe3d1c47e5d5a
   ARUCO_UNITY_API void au_cv_imgproc_initUndistortRectifyMap(cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat* R, cv::Mat* newCameraMatrix,
     cv::Size* size, int m1type, cv::Mat** map1, cv::Mat** map2, cv::Exception* exception);
 
@@ -41,7 +41,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#gab75ef31ce5cdfb5c44b6da5f3b908ea4
+  //! http://docs.opencv.org/3.2.0/da/d54/group__imgproc__transform.html#gab75ef31ce5cdfb5c44b6da5f3b908ea4
   ARUCO_UNITY_API void au_cv_imgproc_remap(cv::Mat* src, cv::Mat* dst, cv::Mat* map1, cv::Mat* map2, int interpolation, int borderType,
     cv::Scalar* borderValue, cv::Exception* exception);
 
@@ -54,7 +54,7 @@ extern "C" {
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
   //! See the OpenCV documentation for more information: 
-  //! http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#ga69f2545a8b62a6b0fc2ee060dc30559d
+  //! http://docs.opencv.org/3.2.0/da/d54/group__imgproc__transform.html#ga69f2545a8b62a6b0fc2ee060dc30559d
   ARUCO_UNITY_API void au_cv_imgproc_undistort(cv::Mat* src, cv::Mat** dst, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Mat* newCameraMatrix, 
     cv::Exception* exception);
 

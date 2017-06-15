@@ -13,7 +13,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// See the OpenCV documentation for more information: 
-      /// http://docs.opencv.org/3.1.0/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5
+      /// http://docs.opencv.org/3.2.0/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5
       /// </summary>
       public enum BorderTypes
       {
@@ -29,7 +29,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// See the OpenCV documentation for more information: 
-      /// http://docs.opencv.org/3.1.0/da/d54/group__imgproc__transform.html#gga5bb5a1fea74ea38e1a5445ca803ff121ac97d8e4880d8b5d509e96825c7522deb
+      /// http://docs.opencv.org/3.2.0/da/d54/group__imgproc__transform.html#gga5bb5a1fea74ea38e1a5445ca803ff121ac97d8e4880d8b5d509e96825c7522deb
       /// </summary>
       public enum InterpolationFlags
       {

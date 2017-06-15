@@ -7,7 +7,7 @@
 //! @addtogroup term_criteria
 //! \brief The class defining termination criteria for iterative algorithms.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/d9/d5d/classcv_1_1TermCriteria.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/d9/d5d/classcv_1_1TermCriteria.html
 //! @{
 
 extern "C" {

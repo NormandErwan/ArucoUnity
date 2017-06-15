@@ -10,7 +10,7 @@
 //! @defgroup grid_board GridBoard
 //! \brief Planar board with grid arrangement of markers.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/de/d05/classcv_1_1aruco_1_1GridBoard.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/de/d05/classcv_1_1aruco_1_1GridBoard.html
 //! @{
 
 extern "C" {

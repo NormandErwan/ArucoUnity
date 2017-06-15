@@ -14,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manage OpenCV's camera parameters from a calibration.
     /// 
-    /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.1.0/da/d13/tutorial_aruco_calibration.html
+    /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.2.0/da/d13/tutorial_aruco_calibration.html
     /// </summary>
     [Serializable]
     public class CameraParameters

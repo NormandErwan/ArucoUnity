@@ -7,7 +7,7 @@
 //! @addtogroup point3f
 //! \brief 3D float points specified by its coordinates x, y and z.
 //!
-//! See the OpenCV documentation for more information: http://docs.opencv.org/3.1.0/df/d6c/classcv_1_1Point3__.html
+//! See the OpenCV documentation for more information: http://docs.opencv.org/3.2.0/df/d6c/classcv_1_1Point3__.html
 //! @{
 
 extern "C" {
