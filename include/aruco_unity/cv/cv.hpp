@@ -14,6 +14,7 @@
 //!   @defgroup mat Mat class
 //!   @defgroup point2f Point2f class
 //!   @defgroup point3f Point3f class
+//!   @defgroup rect Rect class
 //!   @defgroup scalar Scalar class
 //!   @defgroup size Size class
 //!   @defgroup term_criteria TermCriteria class

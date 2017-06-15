@@ -6,6 +6,7 @@
 
 //! @defgroup std C interfaces for classes of the C++ Standard Library
 //! @{
+//!   @defgroup vector_double std::vector<double>
 //!   @defgroup vector_int std::vector<int>
 //!   @defgroup vector_mat std::vector<cv::Mat>
 //!   @defgroup vector_point2f std::vector<cv::Point2f>
