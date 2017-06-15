@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras
+  namespace Cameras.Parameters
   {
     [Serializable]
     public class StereoCameraParameters
@@ -139,4 +139,6 @@ namespace ArucoUnity
       }
     }
   }
+
+  /// \} aruco_unity_package
 }

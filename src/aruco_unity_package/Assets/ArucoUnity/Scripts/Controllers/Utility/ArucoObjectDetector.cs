@@ -8,7 +8,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.Utility
   {
     public abstract class ArucoObjectDetector : MonoBehaviour
     {

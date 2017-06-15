@@ -8,7 +8,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.Utility
   {
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/>.

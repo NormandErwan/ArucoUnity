@@ -182,7 +182,7 @@ namespace ArucoUnity
         if (CameraParametersFilePath != null && CameraParametersFilePath.Length > 0)
         {
           string fullCameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CameraParametersFilePath);
-          CameraParameters = CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
+          CameraParameters = Parameters.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
         }
 
         base.Configure();

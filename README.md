@@ -29,7 +29,7 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 Use [CMake](https://cmake.org/) to configurate the ArUco Unity library. 
 
-First, you will need to provide a build of OpenCV (minimum version: 3.2) with the ArUco module as dependency. You can follow these
+First, you will need to provide a build of OpenCV (minimum version: 3.2.0) with the ArUco module as dependency. You can follow these
 instructions: [https://github.com/opencv/opencv_contrib](https://github.com/opencv/opencv_contrib). Or you
 can build the provided cmake project by running the following commands:
 

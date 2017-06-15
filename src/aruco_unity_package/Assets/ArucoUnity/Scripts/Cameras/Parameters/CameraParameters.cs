@@ -9,7 +9,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras
+  namespace Cameras.Parameters
   {
     /// <summary>
     /// Manage OpenCV's camera parameters from a calibration.

@@ -2,10 +2,7 @@
 
 namespace ArucoUnity
 {
-  /// \defgroup aruco_unity_package ArUco Unity package
-  /// \brief Unity 5 package that provide the OpenCV's ArUco Marker Detection extra module features using the ArUco Unity library.
-  ///
-  /// See the OpenCV documentation for more information about its ArUco Marker Detection extra module: http://docs.opencv.org/3.2.0/d9/d6a/group__aruco.html
+  /// \addtogroup aruco_unity_package
   /// \{
 
   namespace Plugin

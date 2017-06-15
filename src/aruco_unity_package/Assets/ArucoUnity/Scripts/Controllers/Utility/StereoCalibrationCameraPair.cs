@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Controllers.CalibrationFlagsControllers;
 using ArucoUnity.Plugin;
 using System;
@@ -10,7 +11,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.Utility
   {
     [Serializable]
     public class StereoCalibrationCameraPair

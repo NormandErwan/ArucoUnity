@@ -1,4 +1,4 @@
-﻿using ArucoUnity.Controllers;
+﻿using ArucoUnity.Cameras;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Displays
+  namespace Controllers.Utility
   {
     public class ArucoCalibratorCanvasDisplay : MonoBehaviour
     {

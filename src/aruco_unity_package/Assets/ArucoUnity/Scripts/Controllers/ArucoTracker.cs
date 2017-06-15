@@ -5,6 +5,7 @@ using System.Threading;
 using ArucoUnity.Objects;
 using ArucoUnity.Controllers.ObjectTrackers;
 using System.Collections;
+using ArucoUnity.Controllers.Utility;
 
 namespace ArucoUnity
 {

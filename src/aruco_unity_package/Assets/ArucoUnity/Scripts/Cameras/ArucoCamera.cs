@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Plugin;
+﻿using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Plugin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace ArucoUnity
 
   namespace Cameras
   {
+    /// <summary>
+    /// The different algorithms to use for the undistortion of the images.
+    /// </summary>
     public enum UndistortionType
     {
       Pinhole,
@@ -21,7 +25,8 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// Manages to retrieve and display every frame the images of any system with a fixed number of cameras to use with ArucoUnity.
+    /// Retrieve and display every frame the images of any camera system with a fixed number of cameras to use for calibration or ArUco object
+    /// tracking.
     /// </summary>
     public abstract class ArucoCamera : MonoBehaviour
     {
