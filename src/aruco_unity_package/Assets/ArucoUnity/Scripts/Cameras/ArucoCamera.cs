@@ -14,7 +14,6 @@ namespace ArucoUnity
     public enum UndistortionType
     {
       Pinhole,
-      Fisheye,
       OmnidirPerspective,
       OmnidirCylindrical,
       OmnidirLonglati,
@@ -41,8 +40,9 @@ namespace ArucoUnity
       private bool autoUndistortWithCameraParameters = true;
 
       [SerializeField]
-      [Tooltip("The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (calib3d module) or omnidir (ccalib module).")]
-      private UndistortionType undistortionType = Cameras.UndistortionType.Pinhole;
+      [Tooltip("The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (ccalib module with" +
+        " perspective undistortion) or omnidir (ccalib module).")]
+      private UndistortionType undistortionType = UndistortionType.Pinhole;
 
       // Events
 
@@ -106,8 +106,8 @@ namespace ArucoUnity
       public bool IsStarted { get; protected set; }
 
       /// <summary>
-      /// The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (calib3d module) or omnidir
-      /// (ccalib module).
+      /// The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module) fisheye (ccalib module with perspective
+      /// undistortion) or omnidir (ccalib module).
       /// </summary>
       public UndistortionType UndistortionType { get { return undistortionType; } set { undistortionType = value; } }
 
@@ -473,12 +473,8 @@ namespace ArucoUnity
           Cv.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
             newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
         }
-        else if (UndistortionType == UndistortionType.Fisheye)
-        {
-          Cv.Fisheye.InitUndistortRectifyMap(CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], rotationMatrix,
-            newCameraMatrix, Images[cameraId].Size, Cv.Type.CV_16SC2, out undistordedImageMaps[cameraId][0], out undistordedImageMaps[cameraId][1]);
-        }
-        else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati, UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
+        else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati,
+          UndistortionType.OmnidirStereographic }.Contains(UndistortionType))
         {
           Cv.Omnidir.Rectifify flags = Cv.Omnidir.Rectifify.Perspective;
           if      (UndistortionType == UndistortionType.OmnidirCylindrical)   { flags = Cv.Omnidir.Rectifify.Cylindrical; }

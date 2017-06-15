@@ -91,7 +91,6 @@ namespace ArucoUnity
       // Variables
 
       CalibrationFlagsPinholeController calibrationFlagsPinholeController;
-      CalibrationFlagsFisheyeController calibrationFlagsFisheyeController;
       CalibrationFlagsOmnidirController calibrationFlagsOmnidirController;
 
       // ArucoDetector Methods
@@ -109,10 +108,9 @@ namespace ArucoUnity
 
         // Check for the calibration flags
         calibrationFlagsPinholeController = CalibrationFlagsController as CalibrationFlagsPinholeController;
-        calibrationFlagsFisheyeController = CalibrationFlagsController as CalibrationFlagsFisheyeController;
         calibrationFlagsOmnidirController = CalibrationFlagsController as CalibrationFlagsOmnidirController;
         if (CalibrationFlagsController == null 
-          || (calibrationFlagsPinholeController == null && calibrationFlagsFisheyeController == null && calibrationFlagsOmnidirController == null))
+          || (calibrationFlagsPinholeController == null && calibrationFlagsOmnidirController == null))
         {
           throw new ArgumentNullException("CalibrationFlagsController", "This property needs to be set to configure the calibrator.");
         }
@@ -120,11 +118,6 @@ namespace ArucoUnity
         {
           throw new ArgumentException("CalibrationFlagsController", "The camera is set for the pinhole undistortion, but the calibration flags are"
             + " not. Use CalibrationFlagsPinholeController instead.");
-        }
-        else if (ArucoCamera.UndistortionType == UndistortionType.Fisheye && calibrationFlagsFisheyeController == null)
-        {
-          throw new ArgumentException("CalibrationFlagsController", "The camera is set for the fisheye undistortion, but the calibration flags are"
-            + " not. Use CalibrationFlagsFisheyeController instead.");
         }
         else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati,
           UndistortionType.OmnidirStereographic }.Contains(ArucoCamera.UndistortionType) && calibrationFlagsOmnidirController == null)
@@ -349,12 +342,6 @@ namespace ArucoUnity
               CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
               calibrationFlagsPinholeController.CalibrationFlags);
           }
-          else if (calibrationFlagsFisheyeController)
-          {
-            CameraParameters.ReprojectionErrors[cameraId] = Cv.Fisheye.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
-              CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-              calibrationFlagsFisheyeController.CalibrationFlags);
-          }
           else if (calibrationFlagsOmnidirController)
           {
             CameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
@@ -400,12 +387,6 @@ namespace ArucoUnity
               CameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(charucoObjectPoints, charucoImagePoints, imageSize,
                 CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
                 calibrationFlagsPinholeController.CalibrationFlags);
-            }
-            else if (calibrationFlagsFisheyeController)
-            {
-              CameraParameters.ReprojectionErrors[cameraId] = Cv.Fisheye.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
-                CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-                calibrationFlagsFisheyeController.CalibrationFlags);
             }
             else if (calibrationFlagsOmnidirController)
             {
