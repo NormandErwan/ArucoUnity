@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Objects;
+﻿using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -14,17 +12,8 @@ namespace ArucoUnity
     {
       // ArucoObjectTracker methods
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Detect(int, Aruco.Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
         ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
 
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
@@ -65,52 +54,38 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
-          Cv.Vec3d rvec, tvec;
-          arucoCharucoBoard.ValidTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
+          Cv.Vec3d rvec = null, tvec = null;
+          bool validTransform = false;
+
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
+          {
+            validTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
             (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec,
             out tvec);
+          }
 
           arucoCharucoBoard.Rvec = rvec;
           arucoCharucoBoard.Tvec = tvec;
+          arucoCharucoBoard.ValidTransform = validTransform;
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
-          if (arucoCharucoBoard.InterpolatedCorners > 0 && arucoCharucoBoard.Rvec != null)
+          if (arucoCharucoBoard.InterpolatedCorners > 0)
           {
             if (arucoTracker.DrawDetectedCharucoMarkers)
             {
               Aruco.DrawDetectedCornersCharuco(image, arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
             }
 
-            if (arucoTracker.DrawAxes && cameraParameters != null && arucoCharucoBoard.ValidTransform)
+            if (arucoTracker.DrawAxes && cameraParameters != null && arucoCharucoBoard.Rvec != null)
             {
               Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
                 arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
@@ -119,19 +94,11 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Place(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Place(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated || arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] <= 0)
-        {
-          return;
-        }
-
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
-          if (arucoCharucoBoard.ValidTransform)
+          if (arucoCharucoBoard.Rvec != null)
           {
             PlaceArucoObject(arucoCharucoBoard, arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, cameraId);
           }

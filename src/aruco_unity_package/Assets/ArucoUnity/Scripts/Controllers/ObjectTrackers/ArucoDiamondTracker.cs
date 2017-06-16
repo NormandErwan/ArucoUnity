@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Objects;
+﻿using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System.Collections.Generic;
 
@@ -31,16 +29,10 @@ namespace ArucoUnity
 
       public Dictionary<Aruco.Dictionary, Std.VectorVec3d>[] DiamondTvecs { get; set; }
 
-      // ArucoObjectController related methods
+      // ArucoObjectsController related methods
 
-      /// <summary>
-      /// Update the properties when a new dictionary is added.
-      /// </summary>
-      /// <param name="dictionary">The new dictionary.</param>
-      protected override void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
+      protected override void ArucoObjectsController_DictionaryAdded(Aruco.Dictionary dictionary)
       {
-        base.ArucoObjectController_DictionaryAdded(dictionary);
-
         for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           DiamondIds[cameraId].Add(dictionary, new Std.VectorVec4i());
@@ -50,10 +42,8 @@ namespace ArucoUnity
         }
       }
 
-      protected override void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
+      protected override void ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary dictionary)
       {
-        base.ArucoObjectController_DictionaryRemoved(dictionary);
-
         for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           DiamondIds[cameraId].Remove(dictionary);
@@ -65,9 +55,6 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Activate()"/>
-      /// </summary>
       public override void Activate(ArucoTracker arucoTracker)
       {
         base.Activate(arucoTracker);
@@ -99,9 +86,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Deactivate()"/>
-      /// </summary>
       public override void Deactivate()
       {
         base.Deactivate();
@@ -113,17 +97,8 @@ namespace ArucoUnity
         DiamondTvecs = null;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Detect(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
         ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
 
         Std.VectorVectorPoint2f diamondCorners = null;
@@ -149,21 +124,12 @@ namespace ArucoUnity
         DetectedDiamonds[cameraId][dictionary] = (diamondIds != null) ? (int)diamondIds.Size() : 0;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
         // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
         Std.VectorVec3d diamondRvecs = null, diamondTvecs = null;
-        if (DetectedDiamonds[cameraId][dictionary] > 0)
+
+        if (DetectedDiamonds[cameraId][dictionary] > 0 && cameraParameters != null)
         {
           Aruco.EstimatePoseSingleMarkers(DiamondCorners[cameraId][dictionary], EstimatePoseSquareLength, cameraParameters.CameraMatrices[cameraId],
             cameraParameters.DistCoeffs[cameraId], out diamondRvecs, out diamondTvecs);
@@ -173,18 +139,8 @@ namespace ArucoUnity
         DiamondTvecs[cameraId][dictionary] = diamondTvecs;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Draw(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
         if (DetectedDiamonds[cameraId][dictionary] > 0)
         {
           // Draw detected diamonds
@@ -205,16 +161,8 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Place(int, Dictionary, HashSet{ArucoObject})"/>
-      /// </summary>
       public override void Place(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
         if (DiamondRvecs[cameraId][dictionary] != null)
         {
           for (uint i = 0; i < DetectedDiamonds[cameraId][dictionary]; i++)

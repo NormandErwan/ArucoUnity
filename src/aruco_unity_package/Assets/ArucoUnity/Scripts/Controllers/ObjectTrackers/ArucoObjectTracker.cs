@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Objects;
+﻿using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using UnityEngine;
 
@@ -10,34 +11,68 @@ namespace ArucoUnity
 
   namespace Controllers.ObjectTrackers
   {
+    /// <summary>
+    /// Base for detecting and estimating the transform of an ArUco object.
+    /// </summary>
     public abstract class ArucoObjectTracker
     {
       // Properties
 
+      /// <summary>
+      /// Is the tracker configured and activated?
+      /// </summary>
       public bool IsActivated { get; protected set; }
 
       // Variables
 
       protected ArucoTracker arucoTracker;
+      protected CameraParameters cameraParameters;
 
-      // Constructor
-
-      public ArucoObjectTracker()
-      {
-        Deactivate();
-      }
-
-      // ArucoObject related methods
+      // ArucoObjectsController related methods
 
       /// <summary>
-      /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
+      /// Update the properties when a new dictionary is added.
       /// </summary>
-      public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
+      /// <param name="dictionary">The new dictionary.</param>
+      protected virtual void ArucoObjectsController_DictionaryAdded(Aruco.Dictionary dictionary)
       {
-        if (arucoObject.MarkerSideLength != 0)
-        {
-          arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
-        }
+      }
+
+      /// <summary>
+      /// Update the properties when a dictionary is removed.
+      /// </summary>
+      /// <param name="dictionary">The removed dictionary.</param>
+      protected virtual void ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary dictionary)
+      {
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Configure and activate the tracker.
+      /// </summary>
+      public virtual void Activate(ArucoTracker arucoTracker)
+      {
+        this.arucoTracker = arucoTracker;
+        cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+        IsActivated = true;
+
+        arucoTracker.DictionaryAdded += ArucoObjectsController_DictionaryAdded;
+        arucoTracker.DictionaryRemoved += ArucoObjectsController_DictionaryRemoved;
+      }
+
+
+      /// <summary>
+      /// Deactivate the tracker.
+      /// </summary>
+      public virtual void Deactivate()
+      {
+        arucoTracker.DictionaryAdded -= ArucoObjectsController_DictionaryAdded;
+        arucoTracker.DictionaryRemoved -= ArucoObjectsController_DictionaryRemoved;
+
+        IsActivated = false;
+        arucoTracker = null;
+        cameraParameters = null;
       }
 
       /// <summary>
@@ -51,58 +86,22 @@ namespace ArucoUnity
         }
       }
 
-      // ArucoObjectController related methods
-
-      protected virtual void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
+      /// <summary>
+      /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
+      /// </summary>
+      public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
       {
-        if (!IsActivated)
+        if (arucoObject.MarkerSideLength != 0)
         {
-          return;
+          arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
         }
       }
 
-      protected virtual void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
-      {
-        if (!IsActivated)
-        {
-          return;
-        }
-      }
-
-      // Methods
-
       /// <summary>
-      /// Initialize the properties and the tracker.
+      /// Detect ArUco objects on the current image of a camera.
       /// </summary>
-      public virtual void Activate(ArucoTracker arucoTracker)
-      {
-        this.arucoTracker = arucoTracker;
-        IsActivated = true;
-
-        arucoTracker.DictionaryAdded += ArucoObjectController_DictionaryAdded;
-        arucoTracker.DictionaryRemoved += ArucoObjectController_DictionaryRemoved;
-      }
-
-      /// <summary>
-      /// Deactivate the tracker.
-      /// </summary>
-      public virtual void Deactivate()
-      {
-        if (arucoTracker != null)
-        {
-          arucoTracker.DictionaryAdded -= ArucoObjectController_DictionaryAdded;
-          arucoTracker.DictionaryRemoved -= ArucoObjectController_DictionaryRemoved;
-        }
-        arucoTracker = null;
-        IsActivated = false;
-      }
-
-      /// <summary>
-      /// Detect the ArUco objects on each <see cref="ArucoCamera.Images"/>. Should be called during the OnImagesUpdated() event, after the update of 
-      /// the CameraImageTexture.
-      /// </summary>
-      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
-
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use for the detection.</param>
       public virtual void Detect(int cameraId, Aruco.Dictionary dictionary)
       {
         if (IsActivated)
@@ -112,17 +111,25 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Estimate the gameObject's transform of each detected ArUco object. Works on the results of 
-      /// <see cref="Detect(int, Dictionary)"/>.
+      /// Detect ArUco objects for a camera on an custom image.
       /// </summary>
+      /// <param name="cameraId">The id of the camera.</param>
+      /// <param name="dictionary">The dictionary to use for the detection.</param>
+      /// <param name="dictionary">The image to use for the detection.</param>
+      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
+
+      /// <summary>
+      /// Estimate the gameObject's transform of each detected ArUco object.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use.</param>
       public abstract void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary);
 
       /// <summary>
-      /// Draw the detected ArUco objects on each <see cref="ArucoCamera.Images"/>. Works on the results of 
-      /// <see cref="Detect(int, Dictionary)"/>.
+      /// Draw the detected ArUco objects on the current image of a camera.
       /// </summary>
-      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
-
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use.</param>
       public virtual void Draw(int cameraId, Aruco.Dictionary dictionary)
       {
         if (IsActivated)
@@ -130,15 +137,30 @@ namespace ArucoUnity
           Draw(cameraId, dictionary, arucoTracker.ArucoCamera.Images[cameraId]);
         }
       }
+
       /// <summary>
-      /// Place and orient the detected ArUco objects on the first camera image according to the results of 
-      /// <see cref="EstimateTranforms(int, Dictionary)"/>.
+      /// Draw the detected ArUco objects for a camera on a custom image.
       /// </summary>
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use.</param>
+      /// <param name="image">Draw on this image.</param>
+      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
+
+      /// <summary>
+      /// Place and orient the detected ArUco objects relative to a camera.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use.</param>
       public abstract void Place(int cameraId, Aruco.Dictionary dictionary);
 
       /// <summary>
-      /// Place and orient an ArUco object.
+      /// Update the gameObject's transform of an ArUco object.
       /// </summary>
+      /// <param name="arucoObject">The ArUco object to place.</param>
+      /// <param name="rvec">The estimated rotation vector of the ArUco object.</param>
+      /// <param name="tvec">The estimated translation vector of the ArUco object.</param>
+      /// <param name="cameraId">The id of the camera to use. The gameObject is placed and oriented relative to this camera.</param>
+      /// <param name="positionFactor">Factor on the position vector.</param>
       protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
         GameObject arucoGameObject = arucoObject.gameObject;

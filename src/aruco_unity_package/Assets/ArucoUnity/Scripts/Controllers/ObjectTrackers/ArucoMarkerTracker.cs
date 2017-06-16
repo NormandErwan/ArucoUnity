@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Objects;
+﻿using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,16 +47,10 @@ namespace ArucoUnity
       /// </summary>
       public Dictionary<Aruco.Dictionary, Std.VectorVec3d>[] MarkerTvecs { get; protected internal set; }
 
-      // ArucoObjectController related methods
+      // ArucoObjectsController related methods
 
-      /// <summary>
-      /// Update the properties when a new dictionary is added.
-      /// </summary>
-      /// <param name="dictionary">The new dictionary.</param>
-      protected override void ArucoObjectController_DictionaryAdded(Aruco.Dictionary dictionary)
+      protected override void ArucoObjectsController_DictionaryAdded(Aruco.Dictionary dictionary)
       {
-        base.ArucoObjectController_DictionaryAdded(dictionary);
-
         for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId].Add(dictionary, new Std.VectorVectorPoint2f());
@@ -70,14 +62,9 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// Update the properties when a dictionary is removed.
-      /// </summary>
-      /// <param name="dictionary">The removed dictionary.</param>
-      protected override void ArucoObjectController_DictionaryRemoved(Aruco.Dictionary dictionary)
+      
+      protected override void ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary dictionary)
       {
-        base.ArucoObjectController_DictionaryRemoved(dictionary);
-
         for (int cameraId = 0; cameraId < arucoTracker.ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId].Remove(dictionary);
@@ -91,9 +78,6 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Activate(ArucoTracker)"/>
-      /// </summary>
       public override void Activate(ArucoTracker arucoTracker)
       {
         base.Activate(arucoTracker);
@@ -129,9 +113,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Deactivate"/>
-      /// </summary>
       public override void Deactivate()
       {
         base.Deactivate();
@@ -144,16 +125,8 @@ namespace ArucoUnity
         DetectedMarkers = null;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Detect(Cv.Mat, Dictionary)"/>
-      /// </summary>
       public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-
         Std.VectorVectorPoint2f markerCorners, rejectedCandidateCorners;
         Std.VectorInt markerIds;
 
@@ -165,46 +138,33 @@ namespace ArucoUnity
         RejectedCandidateCorners[cameraId][dictionary] = rejectedCandidateCorners;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary)"/>
-      /// </summary>
       public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated || DetectedMarkers[cameraId][dictionary] <= 0)
+        Std.VectorVec3d rvecs = null, tvecs = null;
+
+        if (DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
         {
-          return;
+          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], EstimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
+            cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
         }
-
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
-        Std.VectorVec3d rvecs, tvecs;
-        Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], EstimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
-          cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
 
         MarkerRvecs[cameraId][dictionary] = rvecs;
         MarkerTvecs[cameraId][dictionary] = tvecs;
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Draw(int, Dictionary)"/>
-      /// </summary>
       public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
-        if (!IsActivated)
-        {
-          return;
-        }
-        
-        CameraParameters cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
-
-        if (arucoTracker.DrawDetectedMarkers && DetectedMarkers[cameraId][dictionary] > 0)
+        if (DetectedMarkers[cameraId][dictionary] > 0)
         {
           // Draw all the detected markers
-          // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
-          Aruco.DrawDetectedMarkers(image, MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+          if (arucoTracker.DrawDetectedMarkers)
+          {
+            // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
+            Aruco.DrawDetectedMarkers(image, MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
+          }
 
           // Draw axes of detected tracked markers
-          if (arucoTracker.DrawAxes)
+          if (arucoTracker.DrawAxes && cameraParameters != null && MarkerRvecs[cameraId][dictionary] != null)
           {
             for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
             {
@@ -226,25 +186,20 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Place(int, Dictionary)"/>
-      /// </summary>
       public override void Place(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (!IsActivated)
+        if (MarkerRvecs[cameraId][dictionary] != null)
         {
-          return;
-        }
-
-        for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
-        {
-          ArucoObject foundArucoObject;
-          int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
-          if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
+          for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
           {
-            float positionFactor = foundArucoObject.MarkerSideLength / EstimatePoseMarkerLength;
-            PlaceArucoObject(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
-              cameraId, positionFactor);
+            ArucoObject foundArucoObject;
+            int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
+            if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
+            {
+              float positionFactor = foundArucoObject.MarkerSideLength / EstimatePoseMarkerLength;
+              PlaceArucoObject(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
+                cameraId, positionFactor);
+            }
           }
         }
       }
