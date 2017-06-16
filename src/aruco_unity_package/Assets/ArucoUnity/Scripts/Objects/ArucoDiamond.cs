@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -12,6 +13,10 @@ namespace ArucoUnity
     /// </summary>
     public class ArucoDiamond : ArucoObject
     {
+      // Const
+
+      protected const int IdsLength = 4;
+
       // Editor fields
 
       [SerializeField]
@@ -45,18 +50,18 @@ namespace ArucoUnity
       {
         get
         {
-          if (ids.Length != 4)
+          if (ids.Length != IdsLength)
           {
-            Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
+            Debug.LogError("Invalid number of Ids: ArucoDiamond requires " + IdsLength  + " ids.");
           }
 
           return ids;
         }
         set
         {
-          if (value.Length != 4)
+          if (value.Length != IdsLength)
           {
-            Debug.LogError("Invalid number of Ids: ArucoDiamond requires 4 ids.");
+            Debug.LogError("Invalid number of Ids: ArucoDiamond requires " + IdsLength + " ids.");
             return;
           }
 
@@ -87,6 +92,14 @@ namespace ArucoUnity
           hashCode = hashCode * 31 + id;
         }
         return hashCode;
+      }
+
+      protected virtual void OnValidate()
+      {
+        if (ids.Length != IdsLength)
+        {
+          Array.Resize(ref ids, IdsLength);
+        }
       }
     }
   }
