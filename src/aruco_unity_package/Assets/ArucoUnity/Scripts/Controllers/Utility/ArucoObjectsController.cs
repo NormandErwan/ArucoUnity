@@ -11,14 +11,14 @@ namespace ArucoUnity
   namespace Controllers.Utility
   {
     /// <summary>
-    /// Manages a list of <see cref="ArucoObject"/>.
+    /// Manages a list of <see cref="ArucoObject"/> to detect.
     /// </summary>
     public abstract class ArucoObjectsController : ArucoObjectDetector
     {
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The list of the used ArUco objects.")]
+      [Tooltip("The list of the ArUco objects to detect.")]
       private ArucoObject[] arucoObjects;
 
       // Events
@@ -32,7 +32,7 @@ namespace ArucoUnity
       public event ArucoObjectEventHandler ArucoObjectAdded = delegate { };
 
       /// <summary>
-      /// When an ArUco object has been removed to the list.
+      /// When an ArUco object has been removed from the list.
       /// </summary>
       public event ArucoObjectEventHandler ArucoObjectRemoved = delegate { };
 
@@ -49,7 +49,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The list of the used ArUco objects.
+      /// The list of the ArUco objects to detect.
       /// </summary>
       public Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
 
@@ -61,7 +61,6 @@ namespace ArucoUnity
       protected override void Awake()
       {
         base.Awake();
-
         ArucoObjects = new Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>>();
       }
 
@@ -162,23 +161,30 @@ namespace ArucoUnity
       }
 
       // TODO: cache the results
+      /// <summary>
+      /// Return a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="T"/> in a certain
+      /// <paramref name="dictionary"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the ArUco objects in the returned sublist.</typeparam>
+      /// <param name="dictionary">The <see cref="Aruco.Dictionary" /> to use.</param>
+      /// <returns>The sublist.</returns>
       public virtual HashSet<T> GetArucoObjects<T>(Aruco.Dictionary dictionary) where T : ArucoObject
       {
         if (!ArucoObjects.ContainsKey(dictionary))
         {
-          return null;
+          throw new System.ArgumentException("This dictionary is not found.", "dictionary");
         }
 
-        HashSet<T> arucoObjectsTCollection = new HashSet<T>();
+        HashSet<T> arucoTObjectsCollection = new HashSet<T>();
         foreach (var arucoObject in ArucoObjects[dictionary])
         {
-          T arucoObjectT = arucoObject.Value as T;
-          if (arucoObjectT != null)
+          T arucoTObject = arucoObject.Value as T;
+          if (arucoTObject != null)
           {
-            arucoObjectsTCollection.Add(arucoObjectT);
+            arucoTObjectsCollection.Add(arucoTObject);
           }
         }
-        return arucoObjectsTCollection;
+        return arucoTObjectsCollection;
       }
 
       /// <summary>

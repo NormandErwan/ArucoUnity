@@ -10,6 +10,10 @@ namespace ArucoUnity
 
   namespace Controllers.Utility
   {
+    /// <summary>
+    /// Base class for detecting ArUco objects on a <see cref="ArucoCamera"/>'s frames according to <see cref="DetectorParametersController"/>'s
+    /// detection parameters.
+    /// </summary>
     public abstract class ArucoObjectDetector : MonoBehaviour
     {
       // Editor fields
@@ -112,7 +116,10 @@ namespace ArucoUnity
         ArucoCamera = arucoCamera;
         DetectorParameters = detectorParametersController.DetectorParameters;
       }
-
+      
+      /// <summary>
+      /// Automatically stop the detector.
+      /// </summary>
       protected virtual void OnDestroy()
       {
         StopDetector();

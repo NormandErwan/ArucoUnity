@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading;
 using ArucoUnity.Objects;
 using ArucoUnity.Controllers.ObjectTrackers;
-using System.Collections;
 using ArucoUnity.Controllers.Utility;
 
 namespace ArucoUnity
@@ -15,7 +14,7 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Detect markers, display results and place game objects on the detected markers transform.
+    /// Detect ArUco objects, display detections and apply the estimated transform to associated gameObjects.
     /// </summary>
     public class ArucoTracker : ArucoObjectsController
     {
@@ -144,9 +143,9 @@ namespace ArucoUnity
       /// </summary>
       protected override void Start()
       {
+        base.ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
+        base.ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
         base.Start();
-        base.ArucoObjectAdded += ArucoObjectController_ArucoObjectAdded;
-        base.ArucoObjectRemoved += ArucoObjectController_ArucoObjectRemoved;
       }
 
       /// <summary>
@@ -155,35 +154,77 @@ namespace ArucoUnity
       protected override void OnDestroy()
       {
         base.OnDestroy();
-        base.ArucoObjectAdded -= ArucoObjectController_ArucoObjectAdded;
-        base.ArucoObjectRemoved -= ArucoObjectController_ArucoObjectRemoved;
+        base.ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
+        base.ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
       }
 
       // ArucoObjectController methods
 
       /// <summary>
-      /// Suscribe to the property events of an ArUco object, and hide its gameObject since it has not been detected yet.
+      /// Activate the tracker associated with the <paramref name="arucoObject"/> and configure its gameObject.
       /// </summary>
-      /// <param name="arucoObject">The new ArUco object to suscribe.</param>
-      protected virtual void ArucoObjectController_ArucoObjectAdded(ArucoObject arucoObject)
+      /// <param name="arucoObject">The added ArUco object.</param>
+      protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
       {
+        if (arucoObject.GetType() == typeof(ArucoMarker))
+        {
+          return;
+        }
+
+        // Activate the tracker if necessary
         ArucoObjectTracker tracker = null;
-        if (arucoObject.GetType() != typeof(ArucoMarker) && !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+        if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
         {
           throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
         }
-
-        if (tracker != null && !tracker.IsActivated)
+        else if (!tracker.IsActivated)
         {
           tracker.Activate(this);
         }
 
+        // Configure the game object
+        AdjustGameObjectScale(arucoObject);
         arucoObject.gameObject.SetActive(false);
       }
 
-      protected virtual void ArucoObjectController_ArucoObjectRemoved(ArucoObject arucoObject)
+      /// <summary>
+      /// Deactivate the tracker associated with the <paramref name="arucoObject"/> if it was the last one of this type.
+      /// </summary>
+      /// <param name="arucoObject">The removed</param>
+      protected virtual void ArucoObjectsController_ArucoObjectRemoved(ArucoObject arucoObject)
       {
-        // TODO: deactivate the associated tracker if it was the last aruco object with this type
+        ArucoObjectTracker tracker = null;
+        if (arucoObject.GetType() == typeof(ArucoMarker) || !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+        {
+          return;
+        }
+
+        if (tracker.IsActivated)
+        {
+          bool deactivateTracker = true;
+
+          // Try to find at leat one object of the same type as arucoObject
+          foreach (var arucoObjectDictionary in ArucoObjects)
+          {
+            foreach (var arucoObject2 in arucoObjectDictionary.Value)
+            {
+              if (arucoObject2.GetType() == arucoObject.GetType())
+              {
+                deactivateTracker = false;
+                break;
+              }
+            }
+            if (!deactivateTracker)
+            {
+              break;
+            }
+          }
+
+          if (deactivateTracker)
+          {
+            tracker.Deactivate();
+          }
+        }
       }
 
       // ArucoObject methods
@@ -211,6 +252,11 @@ namespace ArucoUnity
       /// <param name="arucoObject"></param>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
+        AdjustGameObjectScale(arucoObject);
+      }
+
+      private void AdjustGameObjectScale(ArucoObject arucoObject)
+      {
         base.ArucoObject_PropertyUpdated(arucoObject);
         if (arucoObject.GetType() == typeof(ArucoMarker))
         {
@@ -225,11 +271,10 @@ namespace ArucoUnity
       // ArucoObjectDetector methods
 
       /// <summary>
-      /// Initialize the properties, the ArUco object list, and the tracking.
+      /// Initialize the properties, the ArUco object list, and the tracking images.
       /// </summary>
       protected override void PreConfigure()
       {
-        // Tracking thread images configuration
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
         trackingImagesData = new byte[ArucoCamera.CameraNumber][];
         arucoCameraImageCopyData = new byte[ArucoCamera.CameraNumber][];
@@ -243,33 +288,7 @@ namespace ArucoUnity
           trackingImages[cameraId].DataByte = trackingImagesData[cameraId];
         }
 
-        // Trackers configuration
         MarkerTracker.Activate(this);
-        foreach (var arucoObjectDictionary in ArucoObjects)
-        {
-          foreach (var arucoObject in arucoObjectDictionary.Value)
-          {
-            // Activate required trackers
-            if (arucoObject.Value.GetType() != typeof(ArucoMarker))
-            {
-              ArucoObjectTracker tracker;
-              if (additionalTrackers.TryGetValue(arucoObject.Value.GetType(), out tracker))
-              {
-                if (!tracker.IsActivated)
-                {
-                  tracker.Activate(this);
-                }
-              }
-              else
-              {
-                throw new System.ArgumentException("No tracker found for the ArUco object type: " + arucoObject.GetType() + ".", "ArucoObjects");
-              }
-            }
-
-            // Make adjustements on the tracked aruco objects
-            ArucoObject_PropertyUpdated(arucoObject.Value);
-          }
-        }
       }
 
       /// <summary>
@@ -349,26 +368,19 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Detect(int, Dictionary)"/>
-      /// </summary>
       public void Detect(Cv.Mat[] images)
       {
-        if (!IsConfigured)
-        {
-          return;
-        }
-
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
-            Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
-
-            MarkerTracker.Detect(cameraId, dictionary, images[cameraId]);
+            MarkerTracker.Detect(cameraId, arucoObjectDictionary.Key, images[cameraId]);
             foreach (var tracker in additionalTrackers)
             {
-              tracker.Value.Detect(cameraId, dictionary, images[cameraId]);
+              if (tracker.Value.IsActivated)
+              {
+                tracker.Value.Detect(cameraId, arucoObjectDictionary.Key, images[cameraId]);
+              }
             }
           }
         }
@@ -379,51 +391,37 @@ namespace ArucoUnity
         Detect(ArucoCamera.Images);
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.EstimateTranforms(int, Dictionary)"/>
-      /// </summary>
       public void EstimateTransforms()
       {
-        if (!IsConfigured)
-        {
-          return;
-        }
-
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
-            Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
-
-            MarkerTracker.EstimateTransforms(cameraId, dictionary);
+            MarkerTracker.EstimateTransforms(cameraId, arucoObjectDictionary.Key);
             foreach (var tracker in additionalTrackers)
             {
-              tracker.Value.EstimateTransforms(cameraId, dictionary);
+              if (tracker.Value.IsActivated)
+              {
+                tracker.Value.EstimateTransforms(cameraId, arucoObjectDictionary.Key);
+              }
             }
           }
         }
       }
-
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Draw(int, Dictionary)"/>
-      /// </summary>
+      
       public void Draw(Cv.Mat[] images)
       {
-        if (!IsConfigured)
-        {
-          return;
-        }
-
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
           {
-            Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
-
-            MarkerTracker.Draw(cameraId, dictionary, images[cameraId]);
+            MarkerTracker.Draw(cameraId, arucoObjectDictionary.Key, images[cameraId]);
             foreach (var tracker in additionalTrackers)
             {
-              tracker.Value.Draw(cameraId, dictionary, images[cameraId]);
+              if (tracker.Value.IsActivated)
+              {
+                tracker.Value.Draw(cameraId, arucoObjectDictionary.Key, images[cameraId]);
+              }
             }
           }
         }
@@ -434,32 +432,25 @@ namespace ArucoUnity
         Draw(ArucoCamera.Images);
       }
 
-      /// <summary>
-      /// <see cref="ArucoObjectTracker.Place(int, Dictionary)"/>
-      /// </summary>
       public void Place()
       {
-        if (!IsConfigured)
-        {
-          return;
-        }
-
         int cameraId = 0; // TODO: editor field parameter
 
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          Aruco.Dictionary dictionary = arucoObjectDictionary.Key;
-
-          MarkerTracker.Place(cameraId, dictionary);
+          MarkerTracker.Place(cameraId, arucoObjectDictionary.Key);
           foreach (var tracker in additionalTrackers)
           {
-            tracker.Value.Place(cameraId, dictionary);
+            if (tracker.Value.IsActivated)
+            {
+              tracker.Value.Place(cameraId, arucoObjectDictionary.Key);
+            }
           }
         }
       }
 
       /// <summary>
-      /// Executed on a separated tracking thread, detect and estimate the transforms of ArUco objects on the 
+      /// Executed on a separated tracking thread. Detect and estimate the transforms of ArUco objects on the 
       /// <see cref="ArucoObjectsController.ArucoObjects"/> list.
       /// </summary>
       protected void Track()
