@@ -32,21 +32,17 @@ namespace ArucoUnity
           {
             if (cameraParameters == null)
             {
-              arucoCharucoBoard.InterpolatedCorners = Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
+               Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
                 markerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId],
                 (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds);
             }
             else
             {
-              arucoCharucoBoard.InterpolatedCorners = Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
+              Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
                 markerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId],
                 (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, cameraParameters.CameraMatrices[cameraId],
                 cameraParameters.DistCoeffs[cameraId]);
             }
-          }
-          else
-          {
-            arucoCharucoBoard.InterpolatedCorners = 0;
           }
 
           arucoCharucoBoard.DetectedCorners = charucoCorners;
@@ -78,7 +74,7 @@ namespace ArucoUnity
       {
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
-          if (arucoCharucoBoard.InterpolatedCorners > 0)
+          if (arucoCharucoBoard.DetectedIds.Size() > 0)
           {
             if (arucoTracker.DrawDetectedCharucoMarkers)
             {

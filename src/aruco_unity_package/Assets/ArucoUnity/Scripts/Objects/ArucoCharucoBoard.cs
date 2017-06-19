@@ -30,7 +30,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Number of squares in the X direction.
+      /// The number of squares in the X direction.
       /// </summary>
       public int SquaresNumberX
       {
@@ -44,7 +44,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Number of squares in the Y direction.
+      /// The number of squares in the Y direction.
       /// </summary>
       public int SquaresNumberY
       {
@@ -58,7 +58,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float SquareSideLength
       {
@@ -71,29 +71,30 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// The list of the detected marker by the tracker the last frame.
+      /// </summary>
       public Std.VectorPoint2f DetectedCorners { get; set; }
 
+      /// <summary>
+      /// The list of the ids of the detected marker by the tracker the last frame.
+      /// </summary>
       public Std.VectorInt DetectedIds { get; set; }
 
-      public int InterpolatedCorners { get; set; }
-
+      /// <summary>
+      /// Is the transform of the board has been correctly estimated by the tracker the last frame.
+      /// </summary>
       public bool ValidTransform { get; set; }
 
       // ArucoObject methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.UpdateHashCode"/>
-      /// </summary>
-      protected override void UpdateHashCode()
+      protected override void UpdateArucoHashCode()
       {
-        HashCode = GetArucoHashCode(SquaresNumberX, SquaresNumberY, MarkerSideLength, SquareSideLength);
+        ArucoHashCode = GetArucoHashCode(SquaresNumberX, SquaresNumberY, MarkerSideLength, SquareSideLength);
       }
 
       // ArucoBoard methods
 
-      /// <summary>
-      /// <see cref="ArucoBoard.UpdateBoard"/>
-      /// </summary>
       protected override void UpdateBoard()
       {
         ImageSize.Width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
@@ -106,6 +107,14 @@ namespace ArucoUnity
 
       // Methods
 
+      /// <summary>
+      /// Computes the hash code of a ChAruco board.
+      /// </summary>
+      /// <param name="squaresNumberX">The number of squares in the X direction.</param>
+      /// <param name="squaresNumberY">The number of squares in the Y direction.</param>
+      /// <param name="markerSideLength">The side length of each marker.</param>
+      /// <param name="squareSideLength">The side length of each square.</param>
+      /// <returns>The calculated ArUco hash code.</returns>
       public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)
       {
         int hashCode = 17;

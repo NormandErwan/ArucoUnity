@@ -36,16 +36,18 @@ namespace ArucoUnity
 
       // ArucoObject methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.UpdateHashCode"/>
-      /// </summary>
-      protected override void UpdateHashCode()
+      protected override void UpdateArucoHashCode()
       {
-        HashCode = GetArucoHashCode(MarkerId);
+        ArucoHashCode = GetArucoHashCode(MarkerId);
       }
 
       // Methods
 
+      /// <summary>
+      /// Computes the hash code of a marker based on its id.
+      /// </summary>
+      /// <param name="markerId">The marker id.</param>
+      /// <returns>The calculated ArUco hash code.</returns>
       public static int GetArucoHashCode(int markerId)
       {
         int hashCode = 17;

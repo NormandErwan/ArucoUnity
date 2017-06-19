@@ -15,6 +15,9 @@ namespace ArucoUnity
     {
       // Const
 
+      /// <summary>
+      /// A ChArUco diamond marker is composed of four markers.
+      /// </summary>
       protected const int IdsLength = 4;
 
       // Editor fields
@@ -30,7 +33,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float SquareSideLength
       {
@@ -73,16 +76,18 @@ namespace ArucoUnity
 
       // ArucoObject methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.UpdateHashCode"/>
-      /// </summary>
-      protected override void UpdateHashCode()
+      protected override void UpdateArucoHashCode()
       {
-        HashCode = GetArucoHashCode(Ids);
+        ArucoHashCode = GetArucoHashCode(Ids);
       }
 
       // Methods
 
+      /// <summary>
+      /// Computes the hash code of a ChArUco diamond marker.
+      /// </summary>
+      /// <param name="ids">The list of ids of the four markers.</param>
+      /// <returns>The calculated ArUco hash code.</returns>
       public static int GetArucoHashCode(int[] ids)
       {
         int hashCode = 17;
@@ -94,6 +99,9 @@ namespace ArucoUnity
         return hashCode;
       }
 
+      /// <summary>
+      /// Keep the ids array to its fixed sized in the editor.
+      /// </summary>
       protected virtual void OnValidate()
       {
         if (ids.Length != IdsLength)

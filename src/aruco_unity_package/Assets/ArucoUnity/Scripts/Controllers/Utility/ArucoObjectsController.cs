@@ -107,7 +107,7 @@ namespace ArucoUnity
         // Return if the ArUco object is already in the list 
         else
         {
-          if (arucoObjectsCollection.ContainsKey(arucoObject.HashCode))
+          if (arucoObjectsCollection.ContainsKey(arucoObject.ArucoHashCode))
           {
             return;
           }
@@ -118,7 +118,7 @@ namespace ArucoUnity
         arucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
 
         // Add the ArUco object to the list
-        arucoObjectsCollection.Add(arucoObject.HashCode, arucoObject);
+        arucoObjectsCollection.Add(arucoObject.ArucoHashCode, arucoObject);
         ArucoObjectAdded(arucoObject);
       }
 
@@ -145,7 +145,7 @@ namespace ArucoUnity
         }
 
         // Remove the ArUco object
-        arucoObjectsCollection.Remove(arucoObject.HashCode);
+        arucoObjectsCollection.Remove(arucoObject.ArucoHashCode);
         ArucoObjectRemoved(arucoObject);
 
         // Unsuscribe to property events on the aruco object

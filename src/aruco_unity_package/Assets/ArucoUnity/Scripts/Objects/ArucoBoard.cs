@@ -45,30 +45,33 @@ namespace ArucoUnity
       /// </summary>
       public Aruco.Board Board { get; protected set; }
 
+      /// <summary>
+      /// The length of the axis lines when drawn on the board.
+      /// </summary>
       public float AxisLength { get; protected set; }
 
+      /// <summary>
+      /// The estimated rotation vector of the board when tracked.
+      /// </summary>
       public Cv.Vec3d Rvec { get; set; }
 
+      /// <summary>
+      /// The estimated translation vector of the board when tracked.
+      /// </summary>
       public Cv.Vec3d Tvec { get; set; }
 
       // MonoBehaviour methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.Awake()"/>
-      /// </summary>
       protected override void Awake()
       {
         base.Awake();
         ImageSize = new Cv.Size();
         UpdateBoard();
-        UpdateHashCode();
+        UpdateArucoHashCode();
       }
 
       // ArucoObject methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.OnPropertyUpdated"/>.
-      /// </summary>
       protected override void OnPropertyUpdated()
       {
         UpdateBoard();

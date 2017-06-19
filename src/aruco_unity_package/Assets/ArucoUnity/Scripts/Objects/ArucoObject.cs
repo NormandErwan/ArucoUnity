@@ -20,7 +20,7 @@ namespace ArucoUnity
       private Aruco.PredefinedDictionaryName dictionaryName;
 
       [SerializeField]
-      [Tooltip("The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.")]
+      [Tooltip("The side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.")]
       private float markerSideLength;
 
       [SerializeField]
@@ -43,7 +43,7 @@ namespace ArucoUnity
 
       // Properties
 
-      public int HashCode { get; protected set; }
+      public int ArucoHashCode { get; protected set; }
 
       /// <summary>
       /// The dictionary to use.
@@ -60,7 +60,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The size of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// The side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float MarkerSideLength
       {
@@ -102,15 +102,15 @@ namespace ArucoUnity
         {
           dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
         }
-        UpdateHashCode();
+        UpdateArucoHashCode();
       }
 
       // Methods
 
       /// <summary>
-      /// Update the hash code of the object.
+      /// Update the ArUco hash code of the object.
       /// </summary>
-      protected abstract void UpdateHashCode();
+      protected abstract void UpdateArucoHashCode();
 
       /// <summary>
       /// Call the event <see cref="PropertyUpdating"/>.
@@ -125,7 +125,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnPropertyUpdated()
       {
-        UpdateHashCode();
+        UpdateArucoHashCode();
         PropertyUpdated(this);
       }
     }

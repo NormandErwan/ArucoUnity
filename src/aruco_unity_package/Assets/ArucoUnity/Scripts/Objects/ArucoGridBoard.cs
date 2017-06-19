@@ -30,7 +30,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Number of markers in the X direction.
+      /// The number of markers in the X direction.
       /// </summary>
       public int MarkersNumberX
       {
@@ -44,7 +44,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Number of markers in the Y direction.
+      /// The number of markers in the Y direction.
       /// </summary>
       public int MarkersNumberY
       {
@@ -58,7 +58,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// The separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float MarkerSeparation
       {
@@ -78,19 +78,13 @@ namespace ArucoUnity
 
       // ArucoObject methods
 
-      /// <summary>
-      /// <see cref="ArucoObject.UpdateHashCode"/>
-      /// </summary>
-      protected override void UpdateHashCode()
+      protected override void UpdateArucoHashCode()
       {
-        HashCode = GetArucoHashCode(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation);
+        ArucoHashCode = GetArucoHashCode(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation);
       }
 
       // ArucoBoard methods
 
-      /// <summary>
-      /// <see cref="ArucoBoard.UpdateBoard"/>
-      /// </summary>
       protected override void UpdateBoard()
       {
         ImageSize.Width = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
@@ -103,6 +97,14 @@ namespace ArucoUnity
 
       // Methods
 
+      /// <summary>
+      /// Computes the hash code of a grid board.
+      /// </summary>
+      /// <param name="markersNumberX">The number of markers in the X direction.</param>
+      /// <param name="markersNumberY">The number of markers in the Y direction.</param>
+      /// <param name="markerSideLength">The side length of each marker.</param>
+      /// <param name="markerSeparation">The separation between two consecutive markers in the grid.</param>
+      /// <returns>The calculated ArUco hash code.</returns>
       public static int GetArucoHashCode(int markersNumberX, int markersNumberY, float markerSideLength, float markerSeparation)
       {
         int hashCode = 17;
