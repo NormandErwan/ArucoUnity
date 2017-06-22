@@ -25,9 +25,12 @@ namespace ArucoUnity
     }
 
     /// <summary>
-    /// Retrieve and display every frame the images of any camera system with a fixed number of cameras to use for calibration or ArUco object
-    /// tracking.
+    /// Capture and display every frame the images of any camera system with a fixed number of cameras to use for calibration or ArUco object
+    /// tracking. Each camera of the system is associated with a Unity camera that shots as background the current captured frame.
     /// </summary>
+    /// <remarks>If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
+    /// <see cref="ArucoCameraWebcam"/> as example. You will need to implement <see cref="StartCameras"/>, <see cref="StopCameras"/> and
+    /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.</remarks>
     public abstract class ArucoCamera : MonoBehaviour
     {
       // Editor fields
@@ -45,8 +48,8 @@ namespace ArucoUnity
       private bool autoUndistortWithCameraParameters = true;
 
       [SerializeField]
-      [Tooltip("The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module), fisheye (ccalib module with" +
-        " perspective undistortion) or omnidir (ccalib module).")]
+      [Tooltip("The algorithm to use for the undistortion of the images. Use `Pinhole` for standard pinhole cameras, and `OmnidirPerspective` for"
+        + "fisheye cameras.")]
       private UndistortionType undistortionType = UndistortionType.Pinhole;
 
       // Events
@@ -81,7 +84,7 @@ namespace ArucoUnity
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
 
       /// <summary>
-      /// Display automatically or not the camera images on screen.
+      /// Display automatically the camera images on screen.
       /// </summary>
       public bool DisplayImages { get { return displayImages; } set { displayImages = value; } }
 
@@ -111,14 +114,13 @@ namespace ArucoUnity
       public bool IsStarted { get; protected set; }
 
       /// <summary>
-      /// The algorithm to use for the undistortion of the images: pinhole camera (default, calib3d module) fisheye (ccalib module with perspective
-      /// undistortion) or omnidir (ccalib module).
+      /// The algorithm to use for the undistortion of the images. Use `Pinhole` for standard pinhole cameras, and `OmnidirPerspective` for fisheye
+      /// cameras.
       /// </summary>
       public UndistortionType UndistortionType { get { return undistortionType; } set { undistortionType = value; } }
 
       /// <summary>
-      /// The images in a OpenCV format. When getting the property, a new Cv.Mat is created for each image from the corresponding 
-      /// <see cref="ImageTextures"/> content. When setting, the <see cref="ImageTextures"/> content is updated for each image from the Cv.Mat array.
+      /// The images manipulated by OpenCV.
       /// </summary>
       public virtual Cv.Mat[] Images
       {
@@ -138,12 +140,18 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// The <see cref="Images"/> content.
+      /// </summary>
       public byte[][] ImageDatas { get; protected set; }
 
+      /// <summary>
+      /// The size of each image in <see cref="ImageDatas"/>.
+      /// </summary>
       public int[] ImageDataSizes { get; protected set; }
 
       /// <summary>
-      /// Image textures, updated each frame.
+      /// The image textures used by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
       /// </summary>
       public Texture2D[] ImageTextures { get; protected set; }
 
@@ -153,7 +161,8 @@ namespace ArucoUnity
       public CameraParameters CameraParameters { get; protected set; }
 
       /// <summary>
-      /// The Unity camera components that will capture the <see cref="ImageTextures"/>.
+      /// The Unity camera components. There is one for each physical camera (<see cref="CameraNumber"/> cameras). If <see cref="DisplayImages"/> is
+      /// set, the <see cref="ImageTextures"/> will be set as background of these Unity cameras.
       /// </summary>
       public Camera[] ImageCameras { get; protected set; }
 
@@ -232,6 +241,7 @@ namespace ArucoUnity
             Cv.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
           }
 
+          // Load the Images to the ImageTextures
           ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
           ImageTextures[cameraId].Apply(false);
         }
@@ -317,7 +327,8 @@ namespace ArucoUnity
 
       /// <summary>
       /// Undistort the images according to the <see cref="Utility.CameraParameters"/>, if not null. <see cref="Images"/> is immediatly updated. 
-      /// <see cref="ImageTextures"/> will be updated at LateUpdate().
+      /// <see cref="ImageTextures"/> will be updated at <see cref="LateUpdate"/> from <see cref="Images"/>. It's time-consuming but it'ss often
+      /// necessary for a well-aligned AR.
       /// </summary>
       public virtual void Undistort()
       {
@@ -382,8 +393,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update the <see cref="Images"/> property from the <see cref="ImageTextures"/> property, undistort them if required and execute the 
-      /// <see cref="ImagesUpdated"/> action.
+      /// Undistort the <see cref="Images"/> if required and execute the <see cref="ImagesUpdated"/> action.
       /// </summary>
       protected void OnImagesUpdated()
       {
@@ -409,7 +419,7 @@ namespace ArucoUnity
       /// <summary>
       /// Returns the OpenCV type equivalent to the format of the texture.
       /// </summary>
-      /// <param name="imageTexture">The texture to analyze.</param>
+      /// <param name="textureFormat">The Unity texture format.</param>
       /// <returns>The equivalent OpenCV type.</returns>
       public Cv.Type ImageType(TextureFormat textureFormat)
       {

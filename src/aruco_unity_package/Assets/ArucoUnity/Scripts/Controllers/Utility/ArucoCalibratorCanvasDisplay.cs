@@ -153,7 +153,7 @@ namespace ArucoUnity
           return;
         }
 
-        arucoCalibrator.AddFrameForCalibration();
+        arucoCalibrator.AddCurrentFrameForCalibration();
 
         calibrateButton.enabled = true;
         resetButton.enabled = true;

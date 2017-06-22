@@ -10,6 +10,12 @@ namespace ArucoUnity
 
   namespace Controllers
   {
+    /// <summary>
+    /// Create and display images of an ArUco object ready to be printed.
+    /// 
+    /// See the OpenCV documentation for more information about the marker creation (second section of the following tutorial):
+    /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
+    /// </summary>
     public class ArucoCreator : MonoBehaviour
     {
       // Editor fields

@@ -100,7 +100,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Keep the ids array to its fixed sized in the editor.
+      /// Keep the ids array to its fixed size in the editor.
       /// </summary>
       protected virtual void OnValidate()
       {

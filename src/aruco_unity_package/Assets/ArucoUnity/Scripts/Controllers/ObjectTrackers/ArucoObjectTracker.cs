@@ -98,7 +98,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect ArUco objects on the current image of a camera.
+      /// Detect the ArUco objects on the current image of a camera.
       /// </summary>
       /// <param name="cameraId">The id of the camera to use.</param>
       /// <param name="dictionary">The dictionary to use for the detection.</param>
@@ -111,7 +111,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect ArUco objects for a camera on an custom image.
+      /// Detect the ArUco objects for a camera on an custom image.
       /// </summary>
       /// <param name="cameraId">The id of the camera.</param>
       /// <param name="dictionary">The dictionary to use for the detection.</param>

@@ -15,6 +15,8 @@ namespace ArucoUnity
   {
     /// <summary>
     /// Detect ArUco objects, display detections and apply the estimated transform to associated gameObjects.
+    /// 
+    /// See the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
     public class ArucoTracker : ArucoObjectsController
     {
@@ -47,6 +49,10 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("Update the transforms of the detected ArUco objects.")]
       private bool updateTransforms = true;
+
+      [SerializeField]
+      [Tooltip("Update the transforms of the detected ArUco objects relative to this camera.")]
+      private int transformsRelativeCameraId;
 
       // Properties
 
@@ -85,6 +91,14 @@ namespace ArucoUnity
       /// </summary>
       public bool UpdateTransforms { get { return updateTransforms; } set { updateTransforms = value; } }
 
+      /// <summary>
+      /// Update the transforms of the detected ArUco objects relative to this camera.
+      /// </summary>
+      public int TransformsRelativeCameraId { get { return transformsRelativeCameraId; } set { transformsRelativeCameraId = value; } }
+
+      /// <summary>
+      /// The tracker of ArUco markers used.
+      /// </summary>
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
 
       // Variables
@@ -232,7 +246,6 @@ namespace ArucoUnity
       /// <summary>
       /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
       /// </summary>
-      /// <param name="arucoObject"></param>
       protected override void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
       {
         base.ArucoObject_PropertyUpdating(arucoObject);
@@ -249,12 +262,14 @@ namespace ArucoUnity
       /// <summary>
       /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
       /// </summary>
-      /// <param name="arucoObject"></param>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
         AdjustGameObjectScale(arucoObject);
       }
 
+      /// <summary>
+      /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
+      /// </summary>
       private void AdjustGameObjectScale(ArucoObject arucoObject)
       {
         base.ArucoObject_PropertyUpdated(arucoObject);
@@ -324,15 +339,20 @@ namespace ArucoUnity
               if (!arucoCameraImagesUpdated)
               {
                 arucoCameraImagesUpdated = true;
+
+                // Copy the current images of the camera for the tracking thread
                 for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
                 {
                   System.Array.Copy(ArucoCamera.ImageDatas[cameraId], arucoCameraImageCopyData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
                 }
+
+                // Copy back the previous images use by the tracking thread (for synchronization of the images with the tranforms of the tracked objects
                 for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
                 {
                   System.Array.Copy(trackingImagesData[cameraId], ArucoCamera.ImageDatas[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
                 }
 
+                // Update the transforms of the tracked objects
                 if (UpdateTransforms)
                 {
                   DeactivateArucoObjects();
@@ -368,8 +388,17 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Detect the ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
+      /// </summary>
+      /// <param name="images">The images set.</param>
       public void Detect(Cv.Mat[] images)
       {
+        if (!IsConfigured)
+        {
+          return;
+        }
+
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
@@ -386,13 +415,24 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Detect the ArUco objects on the current images of the <see cref="ArucoCamera"/> camera system.
+      /// </summary>
       public void Detect()
       {
         Detect(ArucoCamera.Images);
       }
 
+      /// <summary>
+      /// Estimate the gameObject's transform of each detected ArUco object of the <see cref="ArucoCamera"/> camera system.
+      /// </summary>
       public void EstimateTransforms()
       {
+        if (!IsConfigured)
+        {
+          return;
+        }
+
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
@@ -408,9 +448,18 @@ namespace ArucoUnity
           }
         }
       }
-      
+
+      /// <summary>
+      /// Draw the detected ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
+      /// </summary>
+      /// <param name="images">The images set.</param>
       public void Draw(Cv.Mat[] images)
       {
+        if (!IsConfigured)
+        {
+          return;
+        }
+
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           foreach (var arucoObjectDictionary in ArucoObjects)
@@ -427,31 +476,40 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Draw the detected ArUco objects of the <see cref="ArucoCamera"/> camera system on the current images of these cameras.
+      /// </summary>
       public void Draw()
       {
         Draw(ArucoCamera.Images);
       }
 
+      /// <summary>
+      /// Place and orient the detected ArUco objects relative to the camera with the <see cref="TransformsRelativeCameraId"/> id.
+      /// </summary>
       public void Place()
       {
-        int cameraId = 0; // TODO: editor field parameter
+        if (!IsConfigured)
+        {
+          return;
+        }
 
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
-          MarkerTracker.Place(cameraId, arucoObjectDictionary.Key);
+          MarkerTracker.Place(TransformsRelativeCameraId, arucoObjectDictionary.Key);
           foreach (var tracker in additionalTrackers)
           {
             if (tracker.Value.IsActivated)
             {
-              tracker.Value.Place(cameraId, arucoObjectDictionary.Key);
+              tracker.Value.Place(TransformsRelativeCameraId, arucoObjectDictionary.Key);
             }
           }
         }
       }
 
       /// <summary>
-      /// Executed on a separated tracking thread. Detect and estimate the transforms of ArUco objects on the 
-      /// <see cref="ArucoObjectsController.ArucoObjects"/> list.
+      /// Detect and estimate the transforms of ArUco objects on the <see cref="ArucoObjectsController.ArucoObjects"/> list. Executed on a separated
+      /// tracking thread.
       /// </summary>
       protected void Track()
       {

@@ -11,7 +11,7 @@ namespace ArucoUnity
   namespace Controllers.Utility
   {
     /// <summary>
-    /// Base class for detecting ArUco objects on a <see cref="ArucoCamera"/>'s frames according to <see cref="DetectorParametersController"/>'s
+    /// Detect ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParametersController"/>'s
     /// detection parameters.
     /// </summary>
     public abstract class ArucoObjectDetector : MonoBehaviour

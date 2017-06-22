@@ -98,7 +98,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The managed DetectorParameters.
+      /// The managed <see cref="DetectorParameters"/>.
       /// </summary>
       public Aruco.DetectorParameters DetectorParameters
       {

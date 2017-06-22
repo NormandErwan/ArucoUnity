@@ -12,9 +12,7 @@ namespace ArucoUnity
   namespace Cameras.Parameters
   {
     /// <summary>
-    /// Manage OpenCV's camera parameters from a calibration.
-    /// 
-    /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.2.0/da/d13/tutorial_aruco_calibration.html
+    /// Manage the camera parameters from a calibration.
     /// </summary>
     [Serializable]
     public class CameraParameters
@@ -29,6 +27,11 @@ namespace ArucoUnity
       {
       }
 
+      /// <summary>
+      /// Initialize the properties.
+      /// </summary>
+      /// <param name="camerasNumber">The number of camera in the camera system. Must be equal to the number of cameras of the related
+      /// <see cref="ArucoCamera"/>.</param>
       public CameraParameters(int camerasNumber)
       {
         CalibrationDateTime = DateTime.Now;
@@ -281,6 +284,9 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Update the <paramref name="propertyValues"/> value from <paramref name="property"/>.
+      /// </summary>
       internal static void UpdatePropertyValues(Cv.Mat[] property, double[][][] propertyValues)
       {
         int cameraNumber = property.Length,
@@ -301,6 +307,12 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Return a property created from a <paramref name="propertyType"/> type and a array of values.
+      /// </summary>
+      /// <param name="propertyType">The type of the property.</param>
+      /// <param name="propertyValues">The content of the propery.</param>
+      /// <returns>The property</returns>
       internal static Cv.Mat[] CreateProperty(Cv.Type propertyType, double[][][] propertyValues)
       {
         int cameraNumber = propertyValues.Length;

@@ -125,6 +125,10 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger
+      /// the <see cref="ArucoCamera.Started"/> event.
+      /// </summary>
       protected override void Update()
       {
         if (startInitiated)
@@ -139,7 +143,7 @@ namespace ArucoUnity
             ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
             if (DisplayImages)
             {
-              ConfigureCameraPlane();
+              ConfigureImageCameraBackgrounds();
             }
 
             // Update state
@@ -189,7 +193,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Start the camera and the associated webcam device.
+      /// Initiate the camera start and the associated webcam device.
       /// </summary>
       public override void StartCameras()
       {
@@ -201,7 +205,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stop the camera and the associated webcam device, and notify of the stopping.
+      /// Stop the camera and the associated webcam device, and trigger the <see cref="ArucoCamera.Stopped"/> event.
       /// </summary>
       public override void StopCameras()
       {
@@ -214,8 +218,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> with the 
-      /// <see cref="WebCamTexture"/> content.
+      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> and the
+      /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTexture"/> content.
       /// </summary>
       protected override void UpdateCameraImages()
       {
@@ -233,7 +237,7 @@ namespace ArucoUnity
       /// </summary>
       // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
       // TODO: handle case of CameraParameters.FixAspectRatio != 0
-      protected void ConfigureCameraPlane()
+      protected void ConfigureImageCameraBackgrounds()
       {
         float CameraPlaneDistance = ImageTextures[cameraId].width;
 

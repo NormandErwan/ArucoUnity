@@ -11,7 +11,7 @@ namespace ArucoUnity
   namespace Controllers.Utility
   {
     /// <summary>
-    /// Manages a list of <see cref="ArucoObject"/> to detect.
+    /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.
     /// </summary>
     public abstract class ArucoObjectsController : ArucoObjectDetector
     {

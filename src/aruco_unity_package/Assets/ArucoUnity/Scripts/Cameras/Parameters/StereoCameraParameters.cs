@@ -9,6 +9,9 @@ namespace ArucoUnity
 
   namespace Cameras.Parameters
   {
+    /// <summary>
+    /// Manage the camera parameters of a camera pair from a stereo calibration.
+    /// </summary>
     [Serializable]
     public class StereoCameraParameters
     {
@@ -70,8 +73,18 @@ namespace ArucoUnity
       [XmlIgnore]
       public Cv.Mat[] RotationMatrices { get; set; }
 
+      /// <summary>
+      /// The rotation matrix type of the calibration. Equals to <see cref="RotationMatrices.Type()"/> and automatically written when 
+      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
       public Cv.Type RotationMatricesType { get; set; }
 
+      /// <summary>
+      /// The xi parameter values of the calibration. Equals to the <see cref="RotationMatrices"/> content and automatically written when 
+      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
       public double[][][] RotationMatricesValues { get; set; }
 
       /// <summary>
@@ -82,12 +95,26 @@ namespace ArucoUnity
       [XmlIgnore]
       public Cv.Mat[] NewCameraMatrices { get; set; }
 
+      /// <summary>
+      /// The new camera matrix type of the calibration. Equals to <see cref="NewCameraMatrices.Type()"/> and automatically written when 
+      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
+
       public Cv.Type NewCameraMatricesType { get; set; }
 
+      /// <summary>
+      /// The new camera matrix values of the calibration. Equals to the <see cref="NewCameraMatrices"/> content and automatically written when 
+      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
       public double[][][] NewCameraMatricesValues { get; set; }
 
       // Methods
 
+      /// <summary>
+      /// Update the serialized properties from the non serialized properties.
+      /// </summary>
       public void UpdateSerializedProperties()
       {
         RotationVectorValues = new double[3] { RotationVector.Get(0), RotationVector.Get(1), RotationVector.Get(2) };
@@ -102,40 +129,15 @@ namespace ArucoUnity
         CameraParameters.UpdatePropertyValues(NewCameraMatrices, NewCameraMatricesValues);
       }
 
+      /// <summary>
+      /// Initialize the non serialized properties from the serialized properties.
+      /// </summary>
       public void UpdateNonSerializedProperties()
       {
         RotationVector = new Cv.Vec3d(RotationVectorValues[0], RotationVectorValues[1], RotationVectorValues[2]);
         TranslationVector = new Cv.Vec3d(TranslationVectorValues[0], TranslationVectorValues[1], TranslationVectorValues[2]);
         RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
         NewCameraMatrices = CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
-      }
-
-      protected double[][] PropertyValues(Cv.Mat property)
-      {
-        double[][] propertyValues = new double[property.Rows][];
-        for (int i = 0; i < property.Rows; i++)
-        {
-          propertyValues[i] = new double[property.Cols];
-          for (int j = 0; j < property.Cols; j++)
-          {
-            propertyValues[i][j] = property.AtDouble(i, j);
-          }
-        }
-        return propertyValues;
-      }
-
-      protected Cv.Mat CreateProperty(Cv.Type propertyType, double[][] propertyValues)
-      {
-        int rows = propertyValues.Length, cols = propertyValues[0].Length;
-        Cv.Mat property = new Cv.Mat(rows, cols, propertyType);
-        for (int i = 0; i < rows; i++)
-        {
-          for (int j = 0; j < cols; j++)
-          {
-            property.AtDouble(i, j, propertyValues[i][j]);
-          }
-        }
-        return property;
       }
     }
   }

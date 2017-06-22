@@ -16,19 +16,27 @@ namespace ArucoUnity
 
   namespace Controllers
   {
+    /// <summary>
+    /// Calibrate a <see cref="ArucoObjectDetector.ArucoCamera"/> camera system with a <see cref="ArucoBoard"/>, and save the calibration results in a file to be used
+    /// for tracking.
+    /// 
+    /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.2.0/da/d13/tutorial_aruco_calibration.html
+    /// </summary>
     public class ArucoCalibrator : ArucoObjectDetector
     {
       // Editor fields
 
       [Header("Calibration")]
       [SerializeField]
-      [Tooltip("The ArUco board to use for calibrate.")]
+      [Tooltip("The ArUco board to use for calibration.")]
       private ArucoBoard calibrationBoard;
 
       [SerializeField]
+      [Tooltip("Use a refine algorithm to find not detected markers based on the already detected and the board layout (if using a board).")]
       private bool refineMarkersDetection = false;
 
       [SerializeField]
+      [Tooltip("The calibration flags to use.")]
       private CalibrationFlagsController calibrationFlagsController;
 
       [SerializeField]
@@ -42,18 +50,24 @@ namespace ArucoUnity
 
       [Header("Stereo Calibration")]
       [SerializeField]
-      [Tooltip("The pair of cameras to apply a stereo calibration.")]
+      [Tooltip("The list of the camera pairs on which apply a stereo calibration.")]
       private StereoCalibrationCameraPair[] stereoCalibrationCameraPairs;
 
       // Properties
 
       /// <summary>
-      /// The ArUco board to use for calibrate.
+      /// The ArUco board to use for calibration.
       /// </summary>
       public ArucoBoard CalibrationBoard { get { return calibrationBoard; } set { calibrationBoard = value; } }
 
+      /// <summary>
+      /// Use a refine algorithm to find not detected markers based on the already detected and the board layout.
+      /// </summary>
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
+      /// <summary>
+      /// The calibration flags to use.
+      /// </summary>
       public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
 
       /// <summary>
@@ -68,26 +82,53 @@ namespace ArucoUnity
       public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
 
       /// <summary>
-      /// The pair of cameras to apply a stereo calibration.
+      /// The list of the camera pairs on which apply a stereo calibration.
       /// </summary>
       public StereoCalibrationCameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
 
+      /// <summary>
+      /// The detected marker corners for each camera.
+      /// </summary>
       public Std.VectorVectorVectorPoint2f[] MarkerCorners { get; protected set; }
 
+      /// <summary>
+      /// The detected marker ids for each camera.
+      /// </summary>
       public Std.VectorVectorInt[] MarkerIds { get; protected set; }
 
+      /// <summary>
+      /// The images to use for the calibration.
+      /// </summary>
       public Std.VectorMat[] CameraImages { get; protected set; }
 
+      /// <summary>
+      /// The estimated rotation vector for each detected markers in each camera.
+      /// </summary>
       public Std.VectorVec3d[] Rvecs { get; protected set; }
 
+      /// <summary>
+      /// The estimated translation vector for each detected markers in each camera.
+      /// </summary>
       public Std.VectorVec3d[] Tvecs { get; protected set; }
 
+      /// <summary>
+      /// The calibration results.
+      /// </summary>
       public CameraParameters CameraParameters { get; protected set; }
 
+      /// <summary>
+      /// The detected marker corners on the current images of each camera.
+      /// </summary>
       public Std.VectorVectorPoint2f[] MarkerCornersCurrentImage { get; protected set; }
 
+      /// <summary>
+      /// The detected marker ids on the current images of each camera.
+      /// </summary>
       public Std.VectorInt[] MarkerIdsCurrentImage { get; protected set; }
 
+      /// <summary>
+      /// If the calibration has been done for the camera system.
+      /// </summary>
       public bool IsCalibrated { get; protected set; }
 
       // Variables
@@ -137,6 +178,9 @@ namespace ArucoUnity
         ResetCalibration();
       }
 
+      /// <summary>
+      /// Detect and draw the ArUco markers on the current images of the cameras.
+      /// </summary>
       protected override void ArucoCamera_ImagesUpdated()
       {
         if (!IsConfigured || !IsStarted)
@@ -150,6 +194,9 @@ namespace ArucoUnity
 
       // Methods
 
+      /// <summary>
+      /// Reset the properties.
+      /// </summary>
       public void ResetCalibration()
       {
         MarkerCorners = new Std.VectorVectorVectorPoint2f[ArucoCamera.CameraNumber];
@@ -171,6 +218,10 @@ namespace ArucoUnity
         IsCalibrated = false;
       }
 
+      /// <summary>
+      /// Detect the Aruco markers on the current images of the cameras and store the results in the <see cref="MarkerCornersCurrentImage"/> and
+      /// <see cref="MarkerIdsCurrentImage"/> properties.
+      /// </summary>
       public void Detect()
       {
         if (!IsConfigured)
@@ -198,6 +249,9 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Draw the detected ArUco markers on the current images of the cameras.
+      /// </summary>
       public void Draw()
       {
         if (!IsConfigured)
@@ -205,30 +259,21 @@ namespace ArucoUnity
           return;
         }
 
-        bool updatedCameraImage = false;
-        Cv.Mat[] cameraImages = ArucoCamera.Images;
-
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() > 0)
           {
-            Aruco.DrawDetectedMarkers(cameraImages[cameraId], MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId]);
-            updatedCameraImage = true;
+            Aruco.DrawDetectedMarkers(ArucoCamera.Images[cameraId], MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId]);
           }
-        }
-
-        if (updatedCameraImage)
-        {
-          ArucoCamera.Images = cameraImages;
         }
       }
 
       /// <summary>
-      /// Add the current frame and the detected corners for the calibration.
+      /// Add the current images of the cameras and the detected corners for the calibration.
       /// </summary>
-      public void AddFrameForCalibration()
+      public void AddCurrentFrameForCalibration()
       {
-        if (!IsConfigured || IsCalibrated)
+        if (!IsConfigured)
         {
           return;
         }
@@ -239,11 +284,11 @@ namespace ArucoUnity
           if (MarkerIdsCurrentImage[cameraId] == null || MarkerIdsCurrentImage[cameraId].Size() < 1)
           {
             throw new Exception("No markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
-              + " frame for calibration. It requires at least one marker detected.");
+              + " current images for calibration. It requires at least one marker detected.");
           }
         }
 
-        // Add the current frame for calibration
+        // Save the images and the detected corners
         Cv.Mat[] cameraImages = ArucoCamera.Images;
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
@@ -253,6 +298,12 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Calibrate each camera of the <see cref="ArucoObjectDetector.ArucoCamera"/> system using the detected markers added with
+      /// <see cref="AddCurrentFrameForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="CalibrationFlagsController"/> and save
+      /// the results on a calibration file. Stereo calibrations will be additionally executed on these results for every camera pair in
+      /// <see cref="StereoCalibrationCameraPairs"/>.
+      /// </summary>
       public void Calibrate()
       {
         // Prepare data
