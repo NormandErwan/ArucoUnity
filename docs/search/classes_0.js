@@ -3,9 +3,8 @@ var searchData=
   ['aruco',['Aruco',['../class_aruco_unity_1_1_plugin_1_1_aruco.html',1,'ArucoUnity::Plugin']]],
   ['arucoboard',['ArucoBoard',['../class_aruco_unity_1_1_objects_1_1_aruco_board.html',1,'ArucoUnity::Objects']]],
   ['arucocalibrator',['ArucoCalibrator',['../class_aruco_unity_1_1_controllers_1_1_aruco_calibrator.html',1,'ArucoUnity::Controllers']]],
-  ['arucocalibratorcanvasdisplay',['ArucoCalibratorCanvasDisplay',['../class_aruco_unity_1_1_cameras_1_1_displays_1_1_aruco_calibrator_canvas_display.html',1,'ArucoUnity::Cameras::Displays']]],
+  ['arucocalibratorcanvasdisplay',['ArucoCalibratorCanvasDisplay',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_calibrator_canvas_display.html',1,'ArucoUnity::Controllers::Utility']]],
   ['arucocamera',['ArucoCamera',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html',1,'ArucoUnity::Cameras']]],
-  ['arucocameracanvasdisplay',['ArucoCameraCanvasDisplay',['../class_aruco_unity_1_1_cameras_1_1_displays_1_1_aruco_camera_canvas_display.html',1,'ArucoUnity::Cameras::Displays']]],
   ['arucocamerawebcam',['ArucoCameraWebcam',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html',1,'ArucoUnity::Cameras']]],
   ['arucocharucoboard',['ArucoCharucoBoard',['../class_aruco_unity_1_1_objects_1_1_aruco_charuco_board.html',1,'ArucoUnity::Objects']]],
   ['arucocharucoboardtracker',['ArucoCharucoBoardTracker',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_charuco_board_tracker.html',1,'ArucoUnity::Controllers::ObjectTrackers']]],
@@ -17,8 +16,8 @@ var searchData=
   ['arucomarker',['ArucoMarker',['../class_aruco_unity_1_1_objects_1_1_aruco_marker.html',1,'ArucoUnity::Objects']]],
   ['arucomarkertracker',['ArucoMarkerTracker',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html',1,'ArucoUnity::Controllers::ObjectTrackers']]],
   ['arucoobject',['ArucoObject',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html',1,'ArucoUnity::Objects']]],
-  ['arucoobjectdetector',['ArucoObjectDetector',['../class_aruco_unity_1_1_controllers_1_1_aruco_object_detector.html',1,'ArucoUnity::Controllers']]],
-  ['arucoobjectscontroller',['ArucoObjectsController',['../class_aruco_unity_1_1_controllers_1_1_aruco_objects_controller.html',1,'ArucoUnity::Controllers']]],
+  ['arucoobjectdetector',['ArucoObjectDetector',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_object_detector.html',1,'ArucoUnity::Controllers::Utility']]],
+  ['arucoobjectscontroller',['ArucoObjectsController',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_objects_controller.html',1,'ArucoUnity::Controllers::Utility']]],
   ['arucoobjecttracker',['ArucoObjectTracker',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_object_tracker.html',1,'ArucoUnity::Controllers::ObjectTrackers']]],
   ['arucotracker',['ArucoTracker',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html',1,'ArucoUnity::Controllers']]]
 ];

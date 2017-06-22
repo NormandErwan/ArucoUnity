@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['use_5fintrinsic_5fguess',['USE_INTRINSIC_GUESS',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a24bd1bb2401a5eea63ddddc0f5d7073ba595f663acbbf7cc672c6eefa1823adc0',1,'ArucoUnity::Plugin::Cv']]],
-  ['use_5flu',['USE_LU',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a24bd1bb2401a5eea63ddddc0f5d7073baf30ce79053f8e7943b10355202f1f100',1,'ArucoUnity::Plugin::Cv']]]
+  ['perspective',['Perspective',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_omnidir.html#a909841b03260f21b2aba0c1d0efba617aa80420eef88d11f77532f1b9cb467fa3',1,'ArucoUnity::Plugin::Cv::Omnidir']]],
+  ['pinhole',['Pinhole',['../namespace_aruco_unity_1_1_cameras.html#a937310c72f7e12840c3fd79d472d799ca7d1cdfb9791af070cb401cd584adaf9d',1,'ArucoUnity::Cameras']]]
 ];

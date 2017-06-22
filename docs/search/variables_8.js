@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['startinitiated',['startInitiated',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a4a8c0841e21da310ed18c1fd40bb77a6',1,'ArucoUnity::Cameras::ArucoCameraWebcam']]]
+  ['rejectedmarkercandidatescolor',['RejectedMarkerCandidatesColor',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#a6e7a01f98ee44757261a2b84490febf1',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoMarkerTracker']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['same_5ffocal_5flength',['SAME_FOCAL_LENGTH',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a24bd1bb2401a5eea63ddddc0f5d7073bac10a2a5d8953fa34b2c92a9d3ba15625',1,'ArucoUnity::Plugin::Cv']]]
+  ['nearest',['Nearest',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a4eca8f49bb79ab01852cd0e441599300a60494f02d440f316319dd0fad40ad007',1,'ArucoUnity::Plugin::Cv']]],
+  ['none',['None',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a42905a5797a55ced329b027e7a25c8b4a6adf97f83acf6453d4a6a4b1070f3754',1,'ArucoUnity::Plugin::Aruco']]]
 ];

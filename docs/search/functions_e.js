@@ -6,5 +6,5 @@ var searchData=
   ['total',['Total',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a84bf8e3b8af9a20b27ea392b47900c39',1,'ArucoUnity::Plugin::Cv::Mat']]],
   ['track',['Track',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a57d2dd1c88c142eaf0ae3f9bdeb179a5',1,'ArucoUnity::Controllers::ArucoTracker']]],
   ['trygetarucodiamond',['TryGetArucoDiamond',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html#ae83f129bebb356aafed003da3fd40d04',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoDiamondTracker']]],
-  ['type',['Type',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a3a468f278c4d35f0327a8fc45469fc75',1,'ArucoUnity::Plugin::Cv::Mat']]]
+  ['type',['Type',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a0e53940cb2cefc829b061341fa818d07',1,'ArucoUnity::Plugin::Cv::Mat']]]
 ];

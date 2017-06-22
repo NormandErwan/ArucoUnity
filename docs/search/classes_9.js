@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scalar',['Scalar',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_scalar.html',1,'ArucoUnity::Plugin::Cv']]],
-  ['size',['Size',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_size.html',1,'ArucoUnity::Plugin::Cv']]],
-  ['std',['Std',['../class_aruco_unity_1_1_plugin_1_1_std.html',1,'ArucoUnity::Plugin']]]
+  ['point2f',['Point2f',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_point2f.html',1,'ArucoUnity::Plugin::Cv']]],
+  ['point3f',['Point3f',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_point3f.html',1,'ArucoUnity::Plugin::Cv']]]
 ];

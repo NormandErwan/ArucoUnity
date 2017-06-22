@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['exception_20class',['Exception class',['../group__exception.html',1,'']]],
+  ['elemsize',['ElemSize',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#a38ee7787d5deda9404b8169ccae4d4fc',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['elemsize1',['ElemSize1',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html#ac4c96fc06bc10cc24992c7aff6101d90',1,'ArucoUnity::Plugin::Cv::Mat']]],
+  ['eps',['Eps',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_term_criteria.html#a6eb2a86e2de94b4e5a8ed5ac90ab44bea84e5e5128d886ca0c340ee5a407eaf1c',1,'ArucoUnity::Plugin::Cv::TermCriteria']]],
+  ['epsilon',['EPSILON',['../class_aruco_unity_1_1_plugin_1_1_cv.html#a691c721d50f2403502845942e4f58703',1,'ArucoUnity.Plugin.Cv.EPSILON()'],['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_term_criteria.html#a081401d5086cce9542bd58190ef7d3c6',1,'ArucoUnity.Plugin.Cv.TermCriteria.Epsilon()']]],
+  ['errorcorrectionrate',['ErrorCorrectionRate',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#afd6194ac699b447a341ead87be9d823d',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
+  ['estimateposeboard',['EstimatePoseBoard',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#a6cf98f705f5ff9ce6cbb8c632339ba2e',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimateposecharucoboard',['EstimatePoseCharucoBoard',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#ac3db622cb27c8e9e952328912efb54b6',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimateposemarkerlength',['EstimatePoseMarkerLength',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#acf61394290b7142188eb72cd1787b9b9',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoMarkerTracker']]],
+  ['estimateposesinglemarkers',['EstimatePoseSingleMarkers',['../class_aruco_unity_1_1_plugin_1_1_aruco.html#ae324268bdbd0446631aef855c8353c25',1,'ArucoUnity::Plugin::Aruco']]],
+  ['estimateposesquarelength',['EstimatePoseSquareLength',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html#ab05a31555d36add668c9e559313f6d14',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoDiamondTracker']]],
+  ['estimatetransforms',['EstimateTransforms',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a727cfe63dc609b5ea40304f30671ea67',1,'ArucoUnity.Controllers.ArucoTracker.EstimateTransforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_charuco_board_tracker.html#a04dd117c08abddd28761f176195cf4be',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoCharucoBoardTracker.EstimateTransforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html#a007d37c8646c122281b92fba15e309d4',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker.EstimateTransforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_grid_board_tracker.html#a1c24d72e7852462cadf3fc15b27118cf',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoGridBoardTracker.EstimateTransforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#ac0a26dea7d79b0db22469a94239247af',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoMarkerTracker.EstimateTransforms()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_object_tracker.html#a00736e3e547fd7a65b288a7496c72ee5',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoObjectTracker.EstimateTransforms()']]],
+  ['exception',['Exception',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_exception.html#ac51249c48d98e5926eb4ca1b7e1b0217',1,'ArucoUnity.Plugin.Cv.Exception.Exception()'],['../group__exception.html',1,'(Global Namespace)']]],
+  ['exception',['Exception',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_exception.html',1,'ArucoUnity::Plugin::Cv']]],
+  ['exception_2ecs',['Exception.cs',['../_exception_8cs.html',1,'']]],
   ['exception_2ehpp',['exception.hpp',['../exception_8hpp.html',1,'']]],
   ['exports_2ehpp',['exports.hpp',['../exports_8hpp.html',1,'']]]
 ];
