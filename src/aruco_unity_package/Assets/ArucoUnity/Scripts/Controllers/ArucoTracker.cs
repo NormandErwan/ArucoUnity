@@ -116,7 +116,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes the trackers list and the tracking thread.
+      /// Initializes the trackers list and the tracking thread and susbcribe to events from ArucoObjectController for every ArUco object added or removed.
       /// </summary>
       protected override void Awake()
       {
@@ -150,16 +150,10 @@ namespace ArucoUnity
             trackingMutex.ReleaseMutex();
           }
         });
-      }
 
-      /// <summary>
-      /// Susbcribe to events from ArucoObjectController for every ArUco object added or removed.
-      /// </summary>
-      protected override void Start()
-      {
-        base.ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
-        base.ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
-        base.Start();
+        // Susbcribe to events from ArucoObjectController
+        ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
+        ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
       }
 
       /// <summary>
@@ -168,8 +162,8 @@ namespace ArucoUnity
       protected override void OnDestroy()
       {
         base.OnDestroy();
-        base.ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
-        base.ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
+        ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
+        ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
       }
 
       // ArucoObjectController methods
@@ -180,25 +174,22 @@ namespace ArucoUnity
       /// <param name="arucoObject">The added ArUco object.</param>
       protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
       {
-        if (arucoObject.GetType() == typeof(ArucoMarker))
-        {
-          return;
-        }
-
         // Activate the tracker if necessary
-        ArucoObjectTracker tracker = null;
-        if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+        if (arucoObject.GetType() != typeof(ArucoMarker))
         {
-          throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
-        }
-        else if (!tracker.IsActivated)
-        {
-          tracker.Activate(this);
+          ArucoObjectTracker tracker = null;
+          if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+          {
+            throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
+          }
+          else if (!tracker.IsActivated)
+          {
+            tracker.Activate(this);
+          }
         }
 
         // Configure the game object
         AdjustGameObjectScale(arucoObject);
-        arucoObject.gameObject.SetActive(false);
       }
 
       /// <summary>
@@ -264,6 +255,7 @@ namespace ArucoUnity
       /// </summary>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
+        base.ArucoObject_PropertyUpdated(arucoObject);
         AdjustGameObjectScale(arucoObject);
       }
 
@@ -272,7 +264,6 @@ namespace ArucoUnity
       /// </summary>
       private void AdjustGameObjectScale(ArucoObject arucoObject)
       {
-        base.ArucoObject_PropertyUpdated(arucoObject);
         if (arucoObject.GetType() == typeof(ArucoMarker))
         {
           MarkerTracker.AdjustGameObjectScale(arucoObject);
