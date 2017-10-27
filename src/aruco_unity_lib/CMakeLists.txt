@@ -98,6 +98,7 @@ if (WIN32) # Installation of the OpenCV dll dependencies on Windows
 endif()
 
 # Package
+set(CONFIGURE_FILE )
 configure_file("${CMAKE_SOURCE_DIR}/cmake/${ArucoUnity_PROJECT_NAME}Config.cmake" "${CMAKE_INSTALL_PREFIX}/${ArucoUnity_PROJECT_NAME}Config.cmake" @ONLY)
-install(FILES "${CMAKE_INSTALL_PREFIX}/${ArucoUnity_PROJECT_NAME}Config.cmake" 
-        DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}/cmake/)
+#install(FILES "${CMAKE_INSTALL_PREFIX}/${ArucoUnity_PROJECT_NAME}Config.cmake" 
+#        DESTINATION ${LIBRARY_OUTPUT_DIRECTORY}/cmake/)

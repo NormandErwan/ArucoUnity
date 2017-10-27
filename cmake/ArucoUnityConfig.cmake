@@ -16,10 +16,10 @@
 #      - @CMAKE_PROJECT_NAME@_LIB_DIR       : The directory where lib files are. Calling LINK_DIRECTORIES
 #                                       with this path is NOT needed.
 #      - @CMAKE_PROJECT_NAME@_INCLUDE_DIRS  : The @CMAKE_PROJECT_NAME@ include directories.
-#      - @CMAKE_PROJECT_NAME@_VERSION       : The version of this @CMAKE_PROJECT_NAME@ build. Example: "1.2.0"
-#      - @CMAKE_PROJECT_NAME@_VERSION_MAJOR : Major version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "1"
-#      - @CMAKE_PROJECT_NAME@_VERSION_MINOR : Minor version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "2"
-#      - @CMAKE_PROJECT_NAME@_VERSION_PATCH : Patch version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "0"
+#      - @CMAKE_PROJECT_NAME@_VERSION       : The version of this @CMAKE_PROJECT_NAME@ build. Example: "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@"
+#      - @CMAKE_PROJECT_NAME@_VERSION_MAJOR : Major version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "@VERSION_MAJOR@"
+#      - @CMAKE_PROJECT_NAME@_VERSION_MINOR : Minor version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "@VERSION_MINOR@"
+#      - @CMAKE_PROJECT_NAME@_VERSION_PATCH : Patch version part of @CMAKE_PROJECT_NAME@_VERSION. Example: "@VERSION_PATCH@"
 #
 # ===================================================================================
 SET(@CMAKE_PROJECT_NAME@_INCLUDE_DIRS "@CMAKE_INSTALL_PREFIX@/include")
