@@ -9,9 +9,9 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 ## Usage
 
-Download the latest build release, or see the Build section. Import the package in your Unity project.
+Download the [latest build release](https://github.com/enormand/aruco-unity/releases), or see the Build section. Import the package in your Unity project.
 
-## Marker tracking
+### Marker tracking
 
 - Open the `Assets/ArucoUnity/Scenes/Tracking` scene.
 - Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `ArucoUnity/Calibrations/<calibration_file>.xml`).
@@ -20,7 +20,7 @@ Download the latest build release, or see the Build section. Import the package 
 - Add this object to the `Aruco Objects` list property of the `ArucoTracker` object.
 - Run the scene. The `ArucoTracker` will place any detected marker in the `Aruco Objects` list relative to the camera of the `ArucoCamera` property.
 
-## Camera calibration
+### Camera calibration
 
 - Open the `Assets/ArucoUnity/Scenes/Calibration`.
 - Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. The `CameraParametersFilePath` is optional: it will be filled automatically.
@@ -28,7 +28,7 @@ Download the latest build release, or see the Build section. Import the package 
 - Configure the `Calibration Board` used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.
 - Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.
 
-## Marker creation
+### Marker creation
 
 Open and run the the `Assets/ArucoUnity/Scenes/Creation` scene. It demonstrates the creation of two different markers, one grid
 board, one ChArUco board and one diamond marker.
