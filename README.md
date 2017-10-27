@@ -9,19 +9,29 @@ This project has been developed as part of the master thesis of [Erwan Normand](
 
 ## Usage
 
-1. Retrieve the ArucoUnity package on the Unity Asset Store (available soon). Or you can build the library source code (see the Build section), then copy `<aruco_unity_source_directory>/src/aruco_unity_package/Assets` folder into your Unity project.
-2. Use the prefabs or the examples scenes of the ArucoUnity package.
-    - The `Assets/ArucoUnity/Scenes/Creation` scene demonstrates the creation of two different markers, one grid board, one ChArUco board and one diamond marker. Simply run the scene.
-    - The `Assets/ArucoUnity/Scenes/Calibration` scene demonstrates the calibration of a camera. To use:
-        - Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene.
-        - Activate the `ArucoCalibrator` corresponding to the selected `Undistortion Type`.
-        - Configure the `Calibration Board` used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.
-        - Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.
-    - The `Assets/ArucoUnity/Scenes/Tracking` scene demonstrates the tracking of a marker. To use:
-        - Configure the `Undistortion Type`, the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `Assets/ArucoUnity/Calibrations/<calibration_file>.xml`).
-        - Create an empty object and add it an `ArucoMarker` script and configure it according to the printed marker you want to track. Add 3D content as a child of this object.
-        - Add this object to the `Aruco Objects` list property of the `ArucoTracker` object. Make sure the `ArucoCamera` property of the  `ArucoTracker` object is linked to the`ArucoCameraWebcam` object configured earlier.
-        - Run the scene. The `ArucoTracker` will place any detected marker in the `Aruco Objects` list relative to the camera of the `ArucoCamera` property.
+Download the latest build release, or see the Build section. Import the package in your Unity project.
+
+## Marker tracking
+
+- Open the `Assets/ArucoUnity/Scenes/Tracking` scene.
+- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `Assets/ArucoUnity/Calibrations/<calibration_file>.xml`).
+- Make sure the `ArucoCamera` property of the `ArucoTracker` object is linked to the `ArucoCameraWebcam` object configured earlier.
+- Create an empty object and add it an `ArucoMarker` script and configure it according to the printed marker you want to track. Add 3D content as a child of this object.
+- Add this object to the `Aruco Objects` list property of the `ArucoTracker` object.
+- Run the scene. The `ArucoTracker` will place any detected marker in the `Aruco Objects` list relative to the camera of the `ArucoCamera` property.
+
+## Camera calibration
+
+- Open the `Assets/ArucoUnity/Scenes/Calibration`.
+- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. - The `CameraParametersFilePath` is optional: it will point to `Assets/ArucoUnity/Calibrations/` is not set.
+- Activate the `ArucoCalibrator` corresponding to the selected `Undistortion Type`.
+- Configure the `Calibration Board` used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.
+- Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.
+
+## Marker creation
+
+Open and run the the `Assets/ArucoUnity/Scenes/Creation` scene. It demonstrates the creation of two different markers, one grid
+board, one ChArUco board and one diamond marker.
 
 ## Build
 
