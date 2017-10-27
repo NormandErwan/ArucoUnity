@@ -171,11 +171,6 @@ namespace ArucoUnity
       /// </summary>
       public virtual float[] ImageRatios { get; protected set; }
 
-      /// <summary>
-      /// The recommended mesh plane to display the <see cref="ImageTextures"/>.
-      /// </summary>
-      public virtual Mesh[] ImageMeshes { get; protected set; }
-
       // Variables
 
       protected Cv.Mat[] images;

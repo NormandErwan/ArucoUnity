@@ -52,38 +52,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// <see cref="ArucoCamera.ImageMeshes"/>
-      /// </summary>
-      public override Mesh[] ImageMeshes
-      {
-        get
-        {
-          Mesh mesh = new Mesh();
-
-          mesh.vertices = new Vector3[]
-          {
-            new Vector3(-0.5f, -0.5f, 0.0f),
-            new Vector3(0.5f, 0.5f, 0.0f),
-            new Vector3(0.5f, -0.5f, 0.0f),
-            new Vector3(-0.5f, 0.5f, 0.0f),
-          };
-          mesh.triangles = new int[] { 0, 1, 2, 1, 0, 3 };
-
-          mesh.uv = new Vector2[]
-          {
-            new Vector2(0.0f, 0.0f),
-            new Vector2(1.0f, 1.0f),
-            new Vector2(1.0f, 0.0f),
-            new Vector2(0.0f, 1.0f)
-          };
-
-          mesh.RecalculateNormals();
-
-          return new Mesh[] { mesh };
-        }
-      }
-
       // Properties
 
       /// <summary>
@@ -102,12 +70,12 @@ namespace ArucoUnity
       public bool PreserveAspectRatio { get { return preserveAspectRatio; } set { preserveAspectRatio = value; } }
 
       /// <summary>
-      /// The associated webcam device.
+      /// The webcam to use.
       /// </summary>
       public WebCamDevice WebCamDevice { get; protected set; }
 
       /// <summary>
-      /// The texture of the associated webcam device.
+      /// The texture of the associated webcam.
       /// </summary>
       public WebCamTexture WebCamTexture { get; protected set; }
 
@@ -141,10 +109,7 @@ namespace ArucoUnity
           {
             // Configure
             ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-            if (DisplayImages)
-            {
-              ConfigureImageCameraBackgrounds();
-            }
+            ConfigureImageCameraBackgrounds();
 
             // Update state
             startInitiated = false;
@@ -264,9 +229,8 @@ namespace ArucoUnity
         cameraPlane.transform.position = new Vector3(0, 0, CameraPlaneDistance);
         cameraPlane.transform.rotation = Quaternion.identity;
         cameraPlane.transform.localScale = new Vector3(ImageTextures[cameraId].width, ImageTextures[cameraId].height, 1);
-        cameraPlane.GetComponent<MeshFilter>().mesh = ImageMeshes[cameraId];
         cameraPlane.GetComponent<Renderer>().material.mainTexture = ImageTextures[cameraId];
-        cameraPlane.SetActive(true);
+        cameraPlane.SetActive(DisplayImages);
 
         // If preserving the aspect ratio of the CameraImage, create a second camera that shot it as background
         if (PreserveAspectRatio)
