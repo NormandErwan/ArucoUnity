@@ -14,7 +14,7 @@ Download the latest build release, or see the Build section. Import the package 
 ## Marker tracking
 
 - Open the `Assets/ArucoUnity/Scenes/Tracking` scene.
-- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `Assets/ArucoUnity/Calibrations/<calibration_file>.xml`).
+- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `ArucoUnity/Calibrations/<calibration_file>.xml`).
 - Make sure the `ArucoCamera` property of the `ArucoTracker` object is linked to the `ArucoCameraWebcam` object configured earlier.
 - Create an empty object and add it an `ArucoMarker` script and configure it according to the printed marker you want to track. Add 3D content as a child of this object.
 - Add this object to the `Aruco Objects` list property of the `ArucoTracker` object.
@@ -23,7 +23,7 @@ Download the latest build release, or see the Build section. Import the package 
 ## Camera calibration
 
 - Open the `Assets/ArucoUnity/Scenes/Calibration`.
-- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. - The `CameraParametersFilePath` is optional: it will point to `Assets/ArucoUnity/Calibrations/` is not set.
+- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. The `CameraParametersFilePath` is optional: it will be filled automatically.
 - Activate the `ArucoCalibrator` corresponding to the selected `Undistortion Type`.
 - Configure the `Calibration Board` used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.
 - Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.
