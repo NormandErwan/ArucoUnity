@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ArucoUnity.Plugin;
 using ArucoUnity.Objects;
+using System;
 
 namespace ArucoUnity
 {
@@ -23,28 +24,25 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
-      public delegate void DictionaryEventHandler(Aruco.Dictionary dictionary);
-
       /// <summary>
       /// When an ArUco object has been added to the list.
       /// </summary>
-      public event ArucoObjectEventHandler ArucoObjectAdded = delegate { };
+      public event Action<ArucoObject> ArucoObjectAdded = delegate { };
 
       /// <summary>
       /// When an ArUco object has been removed from the list.
       /// </summary>
-      public event ArucoObjectEventHandler ArucoObjectRemoved = delegate { };
+      public event Action<ArucoObject> ArucoObjectRemoved = delegate { };
 
       /// <summary>
       /// When a new dictionary among the ArUco objects has been added.
       /// </summary>
-      public event DictionaryEventHandler DictionaryAdded = delegate { };
+      public event Action<Aruco.Dictionary> DictionaryAdded = delegate { };
 
       /// <summary>
       /// When a new dictionary is no more used by any ArUco objects.
       /// </summary>
-      public event DictionaryEventHandler DictionaryRemoved = delegate { };
+      public event Action<Aruco.Dictionary> DictionaryRemoved = delegate { };
 
       // Properties
 

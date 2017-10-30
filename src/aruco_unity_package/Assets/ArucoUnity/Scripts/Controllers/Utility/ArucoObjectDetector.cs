@@ -32,22 +32,20 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void ArucoObjectDetectorEventHandler();
-
       /// <summary>
       /// Executed when the detector is ready and configured.
       /// </summary>
-      public event ArucoObjectDetectorEventHandler Configured = delegate { };
+      public event Action Configured = delegate { };
 
       /// <summary>
       /// Executed when the detector is started.
       /// </summary>
-      public event ArucoObjectDetectorEventHandler Started = delegate { };
+      public event Action Started = delegate { };
 
       /// <summary>
       /// Executed when the detector is stopped.
       /// </summary>
-      public event ArucoObjectDetectorEventHandler Stopped = delegate { };
+      public event Action Stopped = delegate { };
 
       // Properties
 

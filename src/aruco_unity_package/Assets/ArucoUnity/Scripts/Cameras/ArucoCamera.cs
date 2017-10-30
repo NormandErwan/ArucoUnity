@@ -54,27 +54,25 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void CameraEventHandler();
-
       /// <summary>
       /// Executed when the camera system is configured.
       /// </summary>
-      public event CameraEventHandler Configured = delegate { };
+      public event Action Configured = delegate { };
 
       /// <summary>
       /// Executed when the camera system starts.
       /// </summary>
-      public event CameraEventHandler Started = delegate { };
+      public event Action Started = delegate { };
 
       /// <summary>
       /// Executed when the camera system stops.
       /// </summary>
-      public event CameraEventHandler Stopped = delegate { };
+      public event Action Stopped = delegate { };
 
       /// <summary>
       /// Executed when the images has been updated.
       /// </summary>
-      public event CameraEventHandler ImagesUpdated = delegate { };
+      public event Action ImagesUpdated = delegate { };
 
       // Properties
 

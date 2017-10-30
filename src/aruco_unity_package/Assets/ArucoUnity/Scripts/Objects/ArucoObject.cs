@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Plugin;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -29,17 +30,15 @@ namespace ArucoUnity
 
       // Events
 
-      public delegate void ArucoObjectEventHandler(ArucoObject arucoObject);
-
       /// <summary>
       /// Executed before a property is going to be updated.
       /// </summary>
-      public event ArucoObjectEventHandler PropertyUpdating = delegate { };
+      public event Action<ArucoObject> PropertyUpdating = delegate { };
 
       /// <summary>
       /// Executed after a property has been updated.
       /// </summary>
-      public event ArucoObjectEventHandler PropertyUpdated = delegate { };
+      public event Action<ArucoObject> PropertyUpdated = delegate { };
 
       // Properties
 
