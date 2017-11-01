@@ -199,6 +199,7 @@ namespace ArucoUnity
               float positionFactor = foundArucoObject.MarkerSideLength / EstimatePoseMarkerLength;
               PlaceArucoObject(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
                 cameraId, positionFactor);
+              foundArucoObject.gameObject.transform.localScale = foundArucoObject.MarkerSideLength * Vector3.one; // TODO: move it to PlaceArucoObject?
             }
           }
         }
