@@ -166,8 +166,7 @@ namespace ArucoUnity
         GameObject arucoGameObject = arucoObject.gameObject;
 
         arucoGameObject.transform.SetParent(arucoTracker.ArucoCamera.ImageCameras[cameraId].transform);
-        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor
-          + arucoGameObject.transform.up * arucoGameObject.transform.localScale.y / 2; // Move up the object to coincide with the marker;
+        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
         arucoGameObject.transform.localRotation = rvec.ToRotation();
 
         arucoGameObject.SetActive(true);
