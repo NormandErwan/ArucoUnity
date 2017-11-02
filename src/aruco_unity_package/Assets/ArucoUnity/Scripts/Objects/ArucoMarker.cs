@@ -34,16 +34,6 @@ namespace ArucoUnity
         }
       }
 
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Adjust the scale to <see cref="ArucoObject.MarkerSideLength"/> length.
-      /// </summary>
-      protected virtual void OnValidate()
-      {
-        transform.localScale = MarkerSideLength * Vector3.one;
-      }
-
       // ArucoObject methods
 
       protected override void UpdateArucoHashCode()

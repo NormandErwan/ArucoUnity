@@ -76,28 +76,6 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
-      /// </summary>
-      public virtual void AdjustGameObjectScale(ArucoObject arucoObject)
-      {
-        if (arucoObject.MarkerSideLength != 0)
-        {
-          arucoObject.gameObject.transform.localScale *= arucoObject.MarkerSideLength;
-        }
-      }
-
-      /// <summary>
-      /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
-      /// </summary>
-      public virtual void RestoreGameObjectScale(ArucoObject arucoObject)
-      {
-        if (arucoObject.MarkerSideLength != 0)
-        {
-          arucoObject.gameObject.transform.localScale /= arucoObject.MarkerSideLength;
-        }
-      }
-
-      /// <summary>
       /// Detect the ArUco objects on the current image of a camera.
       /// </summary>
       /// <param name="cameraId">The id of the camera to use.</param>

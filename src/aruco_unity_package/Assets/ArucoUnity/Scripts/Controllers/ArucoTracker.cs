@@ -174,7 +174,6 @@ namespace ArucoUnity
       /// <param name="arucoObject">The added ArUco object.</param>
       protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
       {
-        // Activate the tracker if necessary
         if (arucoObject.GetType() != typeof(ArucoMarker))
         {
           ArucoObjectTracker tracker = null;
@@ -187,9 +186,6 @@ namespace ArucoUnity
             tracker.Activate(this);
           }
         }
-
-        // Configure the game object
-        AdjustGameObjectScale(arucoObject);
       }
 
       /// <summary>
@@ -229,48 +225,6 @@ namespace ArucoUnity
           {
             tracker.Deactivate();
           }
-        }
-      }
-
-      // ArucoObject methods
-
-      /// <summary>
-      /// Before the ArUco object's properties will be updated, restore the game object's scale of this object.
-      /// </summary>
-      protected override void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
-      {
-        base.ArucoObject_PropertyUpdating(arucoObject);
-        if (arucoObject.GetType() == typeof(ArucoMarker))
-        {
-          MarkerTracker.RestoreGameObjectScale(arucoObject);
-        }
-        else
-        {
-          additionalTrackers[arucoObject.GetType()].RestoreGameObjectScale(arucoObject);
-        }
-      }
-
-      /// <summary>
-      /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
-      /// </summary>
-      protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
-      {
-        base.ArucoObject_PropertyUpdated(arucoObject);
-        AdjustGameObjectScale(arucoObject);
-      }
-
-      /// <summary>
-      /// Adjust the game object's scale of the ArUco object according to its MarkerSideLength property.
-      /// </summary>
-      private void AdjustGameObjectScale(ArucoObject arucoObject)
-      {
-        if (arucoObject.GetType() == typeof(ArucoMarker))
-        {
-          MarkerTracker.AdjustGameObjectScale(arucoObject);
-        }
-        else
-        {
-          additionalTrackers[arucoObject.GetType()].AdjustGameObjectScale(arucoObject);
         }
       }
 

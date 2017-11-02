@@ -102,8 +102,9 @@ namespace ArucoUnity
       /// <summary>
       /// Keep the ids array to its fixed size in the editor.
       /// </summary>
-      protected virtual void OnValidate()
+      protected override void OnValidate()
       {
+        base.OnValidate();
         if (ids.Length != IdsLength)
         {
           Array.Resize(ref ids, IdsLength);

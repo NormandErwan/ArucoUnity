@@ -139,7 +139,7 @@ namespace ArucoUnity
 
         if (arucoObjectsCollection == null)
         {
-          throw new System.ArgumentException("Can't remove the ArUco object: not found.", "arucoObject");
+          throw new ArgumentException("Can't remove the ArUco object: not found.", "arucoObject");
         }
 
         // Remove the ArUco object
@@ -170,7 +170,7 @@ namespace ArucoUnity
       {
         if (!ArucoObjects.ContainsKey(dictionary))
         {
-          throw new System.ArgumentException("This dictionary is not found.", "dictionary");
+          throw new ArgumentException("This dictionary is not found.", "dictionary");
         }
 
         HashSet<T> arucoTObjectsCollection = new HashSet<T>();

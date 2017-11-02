@@ -68,6 +68,7 @@ namespace ArucoUnity
         {
           OnPropertyUpdating();
           markerSideLength = value;
+          AdjustGameObjectScale();
           OnPropertyUpdated();
         }
       }
@@ -104,12 +105,28 @@ namespace ArucoUnity
         UpdateArucoHashCode();
       }
 
+      /// <summary>
+      /// Calls <see cref="AdjustGameObjectScale()"/>.
+      /// </summary>
+      protected virtual void OnValidate()
+      {
+        AdjustGameObjectScale();
+      }
+
       // Methods
 
       /// <summary>
       /// Update the ArUco hash code of the object.
       /// </summary>
       protected abstract void UpdateArucoHashCode();
+
+      /// <summary>
+      /// Adjust the scale to <see cref="MarkerSideLength"/> length.
+      /// </summary>
+      public virtual void AdjustGameObjectScale()
+      {
+        transform.localScale = MarkerSideLength * Vector3.one;
+      }
 
       /// <summary>
       /// Call the event <see cref="PropertyUpdating"/>.
