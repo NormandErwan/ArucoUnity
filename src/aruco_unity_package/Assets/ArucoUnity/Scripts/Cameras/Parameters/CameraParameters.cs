@@ -46,9 +46,6 @@ namespace ArucoUnity
         DistCoeffsValues = new double[CameraNumber][][];
         OmnidirXis = new Cv.Mat[CameraNumber];
         OmnidirXisValues = new double[CameraNumber][][];
-        CameraFocalLengths = new Vector2[CameraNumber];
-        CameraOpticalCenters = new Vector2[CameraNumber];
-        OpticalCenters = new Vector3[CameraNumber];
       }
 
       // Properties
@@ -160,26 +157,6 @@ namespace ArucoUnity
       public StereoCameraParameters[] StereoCameraParametersList { get; set; }
 
       /// <summary>
-      /// The camera focal length expressed in pixels coordinates. Equals to <see cref="CameraMatrices.AtDouble(0, 0)"/> on the x-axis
-      /// and to to <see cref="CameraMatrices.AtDouble(1, 1)"/> on the y-axis.
-      /// </summary>
-      [XmlIgnore]
-      public Vector2[] CameraFocalLengths { get; protected set; }
-
-      /// <summary>
-      /// The camera optical center expressed in pixels coordinates. Equals to <see cref="CameraMatrices.AtDouble(0, 2)"/> on the x-axis
-      /// and to <see cref="CameraMatrices.AtDouble(1, 2)"/> on the y-axis.
-      /// </summary>
-      [XmlIgnore]
-      public Vector2[] CameraOpticalCenters { get; protected set; }
-
-      /// <summary>
-      /// The camera optical center in the Unity world space.
-      /// </summary>
-      [XmlIgnore]
-      public Vector3[] OpticalCenters { get; protected set; }
-
-      /// <summary>
       /// The file path of the parameters.
       /// </summary>
       [XmlIgnore]
@@ -187,7 +164,6 @@ namespace ArucoUnity
 
       // Variables
 
-      protected int[] imageHeights, imageWidths;
       protected Cv.Mat[] cameraMatrices;
 
       // Methods
@@ -282,6 +258,24 @@ namespace ArucoUnity
             writer.Close();
           }
         }
+      }
+
+      /// <summary>
+      /// Gets the camera focal lengths, expressed in pixels units. Equals to
+      /// <code>F = (CameraMatrices[cameraId].AtDouble(0, 0), CameraMatrices[cameraId].AtDouble(1, 1))</code>
+      /// </summary>
+      public Vector2 GetCameraFocalLengths(int cameraId)
+      {
+        return new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 0), (float)CameraMatrices[cameraId].AtDouble(1, 1));
+      }
+
+      /// <summary>
+      /// Gets the camera principal point, expressed in pixels units. Equals to
+      /// <code>C = (CameraMatrices[cameraId].AtDouble(0, 2), CameraMatrices[cameraId].AtDouble(1, 2))</code>
+      /// </summary>
+      public Vector2 GetCameraPrincipalPoint(int cameraId)
+      {
+        return new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 2), (float)CameraMatrices[cameraId].AtDouble(1, 2));
       }
 
       /// <summary>
