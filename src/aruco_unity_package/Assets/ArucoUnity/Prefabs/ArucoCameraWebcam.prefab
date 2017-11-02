@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4036374087783020}
   - component: {fileID: 20651606296162378}
-  - component: {fileID: 92274762895882022}
   - component: {fileID: 124768575578751554}
   - component: {fileID: 81342151767876604}
   - component: {fileID: 114852932360525986}
@@ -86,13 +85,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841685483093218}
   m_Enabled: 1
---- !u!92 &92274762895882022
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841685483093218}
-  m_Enabled: 1
 --- !u!114 &114852932360525986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,7 +101,7 @@ MonoBehaviour:
   autoUndistortWithCameraParameters: 1
   undistortionType: 0
   webcamId: 0
-  cameraParametersFilePath: 
+  cameraParametersFilePath: ArucoUnity/Calibrations/USB Camera - 2017-10-27_19-20-12.xml
   preserveAspectRatio: 1
 --- !u!124 &124768575578751554
 Behaviour:

@@ -332,6 +332,10 @@ Prefab:
       propertyPath: arucoObjects.Array.data[1]
       value: 
       objectReference: {fileID: 887812763}
+    - target: {fileID: 1807315793213710, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
   m_IsPrefabParent: 0
@@ -511,13 +515,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114852932360525986, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
-        type: 2}
-      propertyPath: cameraParametersFilePath
-      value: ArucoUnity/Calibrations/USB Camera - 2017-10-27_17-01-28.xml
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 92274762895882022, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1644300903
