@@ -89,8 +89,8 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void UpdateBoard()
       {
-        ImageSize.Width = imageSize.x;
-        ImageSize.Height = imageSize.y;
+        //ImageSize.Width = imageSize.x;
+        //ImageSize.Height = imageSize.y;
       }
     }
   }

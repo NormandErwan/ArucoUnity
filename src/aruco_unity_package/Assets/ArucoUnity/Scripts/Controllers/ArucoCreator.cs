@@ -16,6 +16,7 @@ namespace ArucoUnity
     /// See the OpenCV documentation for more information about the marker creation (second section of the following tutorial):
     /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
+    [ExecuteInEditMode]
     public class ArucoCreator : MonoBehaviour
     {
       // Editor fields
@@ -49,7 +50,7 @@ namespace ArucoUnity
       /// <summary>
       /// The ArUco object to create.
       /// </summary>
-      protected ArucoObject ArucoObject { get { return arucoObject; } set { arucoObject = value; } }
+      protected ArucoObject ArucoObject { get { return arucoObject; } set { SetArucoObject(value); } }
 
       /// <summary>
       /// Create the image and the image texture automatically at start.
@@ -88,34 +89,38 @@ namespace ArucoUnity
 
       // Variables
 
+      protected static GameObject arucoCreatorImagePlane;
       protected GameObject imagePlane;
+      protected string imagePlaneName = "ImagePlane";
       protected Renderer imagePlaneRenderer;
 
       // MonoBehaviour methods
 
       protected virtual void Awake()
       {
+        if (arucoCreatorImagePlane == null)
+        {
+          arucoCreatorImagePlane = Resources.Load("ArucoCreatorImagePlane") as GameObject;
+        }
+
         if (imagePlane == null)
         {
-          var imagePlaneTransform = transform.Find("ImagePlane");
+          var imagePlaneTransform = transform.Find(imagePlaneName);
           if (imagePlaneTransform != null)
           {
             imagePlane = imagePlaneTransform.gameObject;
           }
           else
           {
-            imagePlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            imagePlane = Instantiate(arucoCreatorImagePlane, transform);
             imagePlane.name = "ImagePlane";
-            imagePlane.transform.SetParent(transform);
             imagePlane.transform.localPosition = Vector3.zero;
             imagePlane.transform.localRotation = Quaternion.identity;
             imagePlane.transform.localScale = Vector3.one;
           }
+          imagePlaneRenderer = imagePlane.GetComponent<Renderer>();
 
           imagePlane.SetActive(false);
-
-          imagePlaneRenderer = imagePlane.GetComponent<Renderer>();
-          imagePlaneRenderer.material = Resources.Load("UnlitImage") as Material;
         }
       }
 
@@ -124,19 +129,39 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Start()
       {
-        if (CreateAtStart && ArucoObject)
+        if (ArucoObject)
         {
-          Create();
 
-          if (DrawImage)
+#if UNITY_EDITOR
+          if (Application.isPlaying)
           {
-            Draw();
-          }
+            if (CreateAtStart)
+            {
+              ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+#endif
+              Create();
 
-          if (SaveImage)
-          {
-            Save();
+              if (DrawImage)
+              {
+                Draw();
+              }
+
+              if (SaveImage)
+              {
+                Save();
+              }
+#if UNITY_EDITOR
+            }
           }
+#endif
+        }
+      }
+
+      protected virtual void OnDestroy()
+      {
+        if (ArucoObject)
+        {
+          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
         }
       }
 
@@ -269,6 +294,43 @@ namespace ArucoUnity
         imageFilename += ".png";
 
         return imageFilename;
+      }
+
+      protected virtual void SetArucoObject(ArucoObject arucoObject)
+      {
+        if (ArucoObject != null)
+        {
+          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
+        }
+
+        this.arucoObject = arucoObject;
+        if (ArucoObject != null)
+        {
+          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+        }
+      }
+
+      protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+      {
+          Create();
+
+          if (DrawImage)
+          {
+            Draw();
+          }
+
+#if UNITY_EDITOR
+          if (Application.isPlaying)
+          {
+#endif
+            if (SaveImage)
+            {
+              Save();
+            }
+
+#if UNITY_EDITOR
+          }
+#endif
       }
     }
   }

@@ -10,6 +10,7 @@ namespace ArucoUnity
     /// <summary>
     /// Describes an ArUco marker.
     /// </summary>
+    [ExecuteInEditMode]
     public class ArucoMarker : ArucoObject
     {
       // Editor fields

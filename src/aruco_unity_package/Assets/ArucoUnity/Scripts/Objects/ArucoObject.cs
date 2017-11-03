@@ -102,15 +102,14 @@ namespace ArucoUnity
           dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
         }
         UpdateArucoHashCode();
-        AdjustGameObjectScale();
       }
 
       /// <summary>
-      /// Calls <see cref="AdjustGameObjectScale()"/>.
+      /// Calls <see cref="OnPropertyUpdated()"/> when an editor field is updated.
       /// </summary>
       protected virtual void OnValidate()
       {
-        AdjustGameObjectScale();
+        OnPropertyUpdated();
       }
 
       // Methods
@@ -130,7 +129,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnPropertyUpdating()
       {
-        PropertyUpdating(this);
+        PropertyUpdating.Invoke(this);
       }
 
       /// <summary>
@@ -140,7 +139,7 @@ namespace ArucoUnity
       {
         UpdateArucoHashCode();
         AdjustGameObjectScale();
-        PropertyUpdated(this);
+        PropertyUpdated.Invoke(this);
       }
     }
   }

@@ -106,7 +106,7 @@ namespace ArucoUnity
       {
         base.UpdateBoard();
         AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
-        Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
+        //Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
       }
 
       // Methods
