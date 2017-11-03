@@ -30,7 +30,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The number of markers in the X direction.
+      /// Gets or sets the number of markers in the X direction.
       /// </summary>
       public int MarkersNumberX
       {
@@ -44,7 +44,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The number of markers in the Y direction.
+      /// Gets or sets the number of markers in the Y direction.
       /// </summary>
       public int MarkersNumberY
       {
@@ -58,7 +58,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// Gets or sets the separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float MarkerSeparation
       {
@@ -72,11 +72,18 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The number of markers employed by the tracker the last frame for the estimation of the transform of the board.
+      /// Gets or sets the number of markers employed by the tracker the last frame for the estimation of the transform of the board.
       /// </summary>
-      public int MarkersUsedForEstimation { get; set; }
+      public int MarkersUsedForEstimation { get; internal set; }
 
       // ArucoObject methods
+
+      protected override void AdjustGameObjectScale()
+      {
+        imageSize.x = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
+        imageSize.y = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
+        transform.localScale = new Vector3(imageSize.x, imageSize.y, 1);
+      }
 
       protected override void UpdateArucoHashCode()
       {
@@ -87,11 +94,8 @@ namespace ArucoUnity
 
       protected override void UpdateBoard()
       {
-        ImageSize.Width = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
-        ImageSize.Height = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
-
+        base.UpdateBoard();
         AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + markerSeparation);
-
         Board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
       }
 

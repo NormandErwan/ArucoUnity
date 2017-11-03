@@ -30,7 +30,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The number of squares in the X direction.
+      /// Gets or sets the number of squares in the X direction.
       /// </summary>
       public int SquaresNumberX
       {
@@ -44,7 +44,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The number of squares in the Y direction.
+      /// Gets or sets the number of squares in the Y direction.
       /// </summary>
       public int SquaresNumberY
       {
@@ -58,7 +58,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// Gets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float SquareSideLength
       {
@@ -72,21 +72,28 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The list of the detected marker by the tracker the last frame.
+      /// Gets or sets the list of the detected marker by the tracker the last frame.
       /// </summary>
-      public Std.VectorPoint2f DetectedCorners { get; set; }
+      public Std.VectorPoint2f DetectedCorners { get; internal set; }
 
       /// <summary>
-      /// The list of the ids of the detected marker by the tracker the last frame.
+      /// Gets or sets the list of the ids of the detected marker by the tracker the last frame.
       /// </summary>
-      public Std.VectorInt DetectedIds { get; set; }
+      public Std.VectorInt DetectedIds { get; internal set; }
 
       /// <summary>
-      /// Is the transform of the board has been correctly estimated by the tracker the last frame.
+      /// Gets or sets if the transform of the board has been correctly estimated by the tracker the last frame.
       /// </summary>
-      public bool ValidTransform { get; set; }
+      public bool ValidTransform { get; internal set; }
 
       // ArucoObject methods
+
+      protected override void AdjustGameObjectScale()
+      {
+        imageSize.x = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
+        imageSize.y = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
+        transform.localScale = new Vector3(imageSize.x, imageSize.y, 1);
+      }
 
       protected override void UpdateArucoHashCode()
       {
@@ -97,11 +104,8 @@ namespace ArucoUnity
 
       protected override void UpdateBoard()
       {
-        ImageSize.Width = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
-        ImageSize.Height = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
-
+        base.UpdateBoard();
         AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
-
         Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
       }
 

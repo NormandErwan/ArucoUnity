@@ -21,7 +21,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The marker id in the used dictionary.
+      /// Gets or sets the marker id in the used dictionary.
       /// </summary>
       public int MarkerId
       {
@@ -35,6 +35,11 @@ namespace ArucoUnity
       }
 
       // ArucoObject methods
+
+      protected override void AdjustGameObjectScale()
+      {
+        transform.localScale = MarkerSideLength * Vector3.one;
+      }
 
       protected override void UpdateArucoHashCode()
       {

@@ -45,7 +45,7 @@ namespace ArucoUnity
       public int ArucoHashCode { get; protected set; }
 
       /// <summary>
-      /// The dictionary to use.
+      /// Gets or sets the dictionary to use.
       /// </summary>
       public Aruco.Dictionary Dictionary
       {
@@ -59,7 +59,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// Gets or sets the side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float MarkerSideLength
       {
@@ -68,13 +68,12 @@ namespace ArucoUnity
         {
           OnPropertyUpdating();
           markerSideLength = value;
-          AdjustGameObjectScale();
           OnPropertyUpdated();
         }
       }
 
       /// <summary>
-      /// Number of bits in marker borders (default: 1). Used by Creators.
+      /// Gets or sets the number of bits in marker borders (default: 1). Used by Creators.
       /// </summary>
       public int MarkerBorderBits
       {
@@ -94,7 +93,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initialize the properties.
+      /// Initializes the properties.
       /// </summary>
       protected virtual void Awake()
       {
@@ -103,6 +102,7 @@ namespace ArucoUnity
           dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
         }
         UpdateArucoHashCode();
+        AdjustGameObjectScale();
       }
 
       /// <summary>
@@ -116,20 +116,17 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Update the ArUco hash code of the object.
+      /// Adjusts the scale to <see cref="MarkerSideLength"/> length.
+      /// </summary>
+      protected abstract void AdjustGameObjectScale();
+
+      /// <summary>
+      /// Updates the ArUco hash code of the object.
       /// </summary>
       protected abstract void UpdateArucoHashCode();
 
       /// <summary>
-      /// Adjust the scale to <see cref="MarkerSideLength"/> length.
-      /// </summary>
-      public virtual void AdjustGameObjectScale()
-      {
-        transform.localScale = MarkerSideLength * Vector3.one;
-      }
-
-      /// <summary>
-      /// Call the event <see cref="PropertyUpdating"/>.
+      /// Calls the event <see cref="PropertyUpdating"/>.
       /// </summary>
       protected virtual void OnPropertyUpdating()
       {
@@ -137,11 +134,12 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Call the event <see cref="PropertyUpdated"/>.
+      /// Calls the <see cref="UpdateArucoHashCode"/> method and the <see cref="PropertyUpdated"/> event.
       /// </summary>
       protected virtual void OnPropertyUpdated()
       {
         UpdateArucoHashCode();
+        AdjustGameObjectScale();
         PropertyUpdated(this);
       }
     }

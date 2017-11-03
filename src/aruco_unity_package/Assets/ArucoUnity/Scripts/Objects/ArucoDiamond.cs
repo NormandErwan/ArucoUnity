@@ -20,6 +20,11 @@ namespace ArucoUnity
       /// </summary>
       protected const int IdsLength = 4;
 
+      /// <summary>
+      /// A ChArUco diamond marker is composed of 3x3 squares(3 per side).
+      /// </summary>
+      protected const int SquareNumberPerSide = 3;
+
       // Editor fields
 
       [SerializeField]
@@ -33,7 +38,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
+      /// Gets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.
       /// </summary>
       public float SquareSideLength
       {
@@ -47,7 +52,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The four ids of the four markers of the diamond.
+      /// Gets or sets the four ids of the four markers of the diamond.
       /// </summary>
       public int[] Ids
       {
@@ -76,6 +81,11 @@ namespace ArucoUnity
 
       // ArucoObject methods
 
+      protected override void AdjustGameObjectScale()
+      {
+        transform.localScale = SquareNumberPerSide * SquareSideLength * Vector3.one;
+      }
+
       protected override void UpdateArucoHashCode()
       {
         ArucoHashCode = GetArucoHashCode(Ids);
@@ -100,7 +110,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Keep the ids array to its fixed size in the editor.
+      /// Keeps the ids array to its fixed size in the editor.
       /// </summary>
       protected override void OnValidate()
       {

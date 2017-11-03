@@ -22,7 +22,7 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The size of the margins in pixels (default: 0). Used by the Creators.
+      /// Gets or sets the size of the margins in pixels (default: 0). Used by the Creators.
       /// </summary>
       public int MarginsSize
       {
@@ -36,29 +36,33 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The image size for drawing the board.
+      /// Gets or sets the image size for drawing the board.
       /// </summary>
       public Cv.Size ImageSize { get; protected set; }
 
       /// <summary>
-      /// The associated board from the ArucoUnity plugin library.
+      /// Gets or sets the associated board from the ArucoUnity plugin library.
       /// </summary>
       public Aruco.Board Board { get; protected set; }
 
       /// <summary>
-      /// The length of the axis lines when drawn on the board.
+      /// Gets or sets the length of the axis lines when drawn on the board.
       /// </summary>
       public float AxisLength { get; protected set; }
 
       /// <summary>
-      /// The estimated rotation vector of the board when tracked.
+      /// Gets or sets the estimated rotation vector of the board when tracked.
       /// </summary>
       public Cv.Vec3d Rvec { get; set; }
 
       /// <summary>
-      /// The estimated translation vector of the board when tracked.
+      /// Gets or sets the estimated translation vector of the board when tracked.
       /// </summary>
       public Cv.Vec3d Tvec { get; set; }
+
+      // Variables
+
+      protected Vector2Int imageSize = Vector2Int.one;
 
       // MonoBehaviour methods
 
@@ -67,11 +71,13 @@ namespace ArucoUnity
         base.Awake();
         ImageSize = new Cv.Size();
         UpdateBoard();
-        UpdateArucoHashCode();
       }
 
       // ArucoObject methods
 
+      /// <summary>
+      /// Calls the <see cref="UpdateBoard"/> method and calls <see cref="ArucoObject.OnPropertyUpdated"/>.
+      /// </summary>
       protected override void OnPropertyUpdated()
       {
         UpdateBoard();
@@ -79,9 +85,13 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update the <see cref="Board"/> property.
+      /// Updates the <see cref="Board"/> property.
       /// </summary>
-      protected abstract void UpdateBoard();
+      protected virtual void UpdateBoard()
+      {
+        ImageSize.Width = imageSize.x;
+        ImageSize.Height = imageSize.y;
+      }
     }
   }
 
