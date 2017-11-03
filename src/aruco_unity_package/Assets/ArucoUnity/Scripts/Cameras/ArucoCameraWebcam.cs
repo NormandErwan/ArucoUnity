@@ -225,7 +225,7 @@ namespace ArucoUnity
           cameraBackground.transform.rotation = Quaternion.identity;
 
           cameraBackgroundRenderer = cameraBackground.GetComponent<Renderer>();
-          cameraBackgroundRenderer.material = Resources.Load("CameraBackground") as Material;
+          cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
         }
         cameraBackgroundRenderer.material.mainTexture = ImageTextures[cameraId];
 

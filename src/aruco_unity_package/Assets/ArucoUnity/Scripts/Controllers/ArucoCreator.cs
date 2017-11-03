@@ -33,10 +33,6 @@ namespace ArucoUnity
       private bool drawImage;
 
       [SerializeField]
-      [Tooltip("The plane where to display the created image.")]
-      private GameObject imagePlane;
-
-      [SerializeField]
       [Tooltip("Save the created image.")]
       private bool saveImage;
 
@@ -66,11 +62,6 @@ namespace ArucoUnity
       public bool DrawImage { get { return drawImage; } set { drawImage = value; } }
 
       /// <summary>
-      /// The plane where to display the created image.
-      /// </summary>
-      public GameObject ImagePlane { get { return imagePlane; } set { imagePlane = value; } }
-
-      /// <summary>
       /// Save the created image.
       /// </summary>
       public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
@@ -95,7 +86,38 @@ namespace ArucoUnity
       /// </summary>
       public Texture2D ImageTexture { get; protected set; }
 
+      // Variables
+
+      protected GameObject imagePlane;
+      protected Renderer imagePlaneRenderer;
+
       // MonoBehaviour methods
+
+      protected virtual void Awake()
+      {
+        if (imagePlane == null)
+        {
+          var imagePlaneTransform = transform.Find("ImagePlane");
+          if (imagePlaneTransform != null)
+          {
+            imagePlane = imagePlaneTransform.gameObject;
+          }
+          else
+          {
+            imagePlane = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            imagePlane.name = "ImagePlane";
+            imagePlane.transform.SetParent(transform);
+            imagePlane.transform.localPosition = Vector3.zero;
+            imagePlane.transform.localRotation = Quaternion.identity;
+            imagePlane.transform.localScale = Vector3.one;
+          }
+
+          imagePlane.SetActive(false);
+
+          imagePlaneRenderer = imagePlane.GetComponent<Renderer>();
+          imagePlaneRenderer.material = Resources.Load("UnlitImage") as Material;
+        }
+      }
 
       /// <summary>
       /// Create, draw and save the image of the <see cref="ArucoObject"/> at start if specified by the user.
@@ -185,8 +207,8 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Draw()
       {
-        ImagePlane.SetActive(true);
-        ImagePlane.GetComponent<Renderer>().material.mainTexture = ImageTexture;
+        imagePlane.SetActive(true);
+        imagePlaneRenderer.material.mainTexture = ImageTexture;
       }
 
       /// <summary>
