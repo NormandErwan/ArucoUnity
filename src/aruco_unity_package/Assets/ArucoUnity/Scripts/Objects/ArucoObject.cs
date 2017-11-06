@@ -98,6 +98,10 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
+        if (Dictionary == null)
+        {
+          dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
+        }
         UpdateProperties();
       }
 
@@ -109,6 +113,10 @@ namespace ArucoUnity
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
+          if (Dictionary == null || dictionaryName != Dictionary.Name)
+          {
+            dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
+          }
           OnPropertyUpdated();
         }
 #endif
@@ -148,11 +156,6 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void UpdateProperties()
       {
-        if (Dictionary == null)
-        {
-          dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
-        }
-
         UpdateArucoHashCode();
         AdjustGameObjectScale();
       }
