@@ -29,6 +29,8 @@ namespace ArucoUnity
       [Tooltip("Number of bits in marker borders (default: 1). Used by Creators.")]
       private int markerBorderBits;
 
+      private bool displayInEditor = true;
+
       // Events
 
       /// <summary>
@@ -86,6 +88,8 @@ namespace ArucoUnity
           OnPropertyUpdated();
         }
       }
+
+      public bool DisplayInEditor { get { return displayInEditor; } set { displayInEditor = value; } }
 
       // Variables
 

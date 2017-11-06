@@ -17,21 +17,13 @@ namespace ArucoUnity
     /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
     [ExecuteInEditMode]
-    public class ArucoCreator : MonoBehaviour
+    public class ArucoCreator : ArucoObjectDisplay
     {
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The ArUco object to create.")]
-      protected ArucoObject arucoObject;
-
-      [SerializeField]
-      [Tooltip("Create the image and the image texture automatically at start.")]
-      private bool createAtStart = true;
-
-      [SerializeField]
-      [Tooltip("Display the created image.")]
-      private bool drawImage = true;
+      [Tooltip("Display the image in the editor.")]
+      private bool displayInEditor = true;
 
       [SerializeField]
       [Tooltip("Save the created image.")]
@@ -48,22 +40,12 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The ArUco object to create.
+      /// Display the image in the editor.
       /// </summary>
-      protected ArucoObject ArucoObject { get { return arucoObject; } set { SetArucoObject(value); } }
+      public bool DisplayInEditor { get { return displayInEditor; } set { displayInEditor = value; } }
 
       /// <summary>
-      /// Create the image and the image texture automatically at start.
-      /// </summary>
-      public bool CreateAtStart { get { return createAtStart; } set { createAtStart = value; } }
-
-      /// <summary>
-      /// Display the created image.
-      /// </summary>
-      public bool DrawImage { get { return drawImage; } set { drawImage = value; } }
-
-      /// <summary>
-      /// Save the created image.
+      /// Save the image.
       /// </summary>
       public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
 
@@ -77,72 +59,7 @@ namespace ArucoUnity
       /// </summary>
       public string ImageFilename { get { return optionalImageFilename; } set { optionalImageFilename = value; } }
 
-      /// <summary>
-      /// The created image of the <see cref="ArucoObject"/>.
-      /// </summary>
-      public Cv.Mat Image { get; protected set; }
-
-      /// <summary>
-      /// The created texture of the <see cref="ArucoObject"/>.
-      /// </summary>
-      public Texture2D ImageTexture { get; protected set; }
-
-      // Variables
-
-#if UNITY_EDITOR
-      protected ArucoObject lastArucoObjectOnValidate = null;
-#endif
-      protected static GameObject imagePlanePrefab;
-      protected GameObject imagePlane;
-      protected string imagePlaneName = "ImagePlane";
-      protected Material imagePlaneMaterial;
-
       // MonoBehaviour methods
-
-      /// <summary>
-      /// Initializes the image plane that display the <see cref="ArucoObject"/>.
-      /// </summary>
-      protected virtual void Awake()
-      {
-        if (imagePlanePrefab == null)
-        {
-          imagePlanePrefab = Resources.Load("ArucoCreatorImagePlane") as GameObject;
-        }
-
-        if (imagePlane == null)
-        {
-          var imagePlaneTransform = transform.Find(imagePlaneName);
-          if (imagePlaneTransform != null)
-          {
-            imagePlane = imagePlaneTransform.gameObject;
-          }
-          else
-          {
-            imagePlane = Instantiate(imagePlanePrefab, transform);
-            imagePlane.name = "ImagePlane";
-            imagePlane.transform.localPosition = Vector3.zero;
-            imagePlane.transform.localRotation = Quaternion.identity;
-            imagePlane.transform.localScale = Vector3.one;
-          }
-
-#if UNITY_EDITOR
-          if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-          {
-            var renderer = imagePlane.GetComponent<Renderer>();
-            imagePlaneMaterial = new Material(renderer.sharedMaterial);
-            renderer.sharedMaterial = imagePlaneMaterial;
-          }
-          else
-          {
-            imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
-          }
-#else
-          imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
-#endif
-
-          imagePlane.SetActive(false);
-        }
-      }
 
       /// <summary>
       /// Calls <see cref="SetArucoObject"/> and calls <see cref="ArucoObject_PropertyUpdated"/> if <see cref="CreateAtStart"/> is true.
@@ -156,10 +73,6 @@ namespace ArucoUnity
           if (ArucoObject)
           {
             SetArucoObject(ArucoObject);
-            if (CreateAtStart)
-            {
-              ArucoObject_PropertyUpdated(ArucoObject);
-            }
           }
 #if UNITY_EDITOR
         }
@@ -191,11 +104,6 @@ namespace ArucoUnity
 
             SetArucoObject(currentArucoObject);
             lastArucoObjectOnValidate = ArucoObject;
-          }
-
-          if (ArucoObject)
-          {
-            ArucoObject_PropertyUpdated(ArucoObject);
           }
         }
 #endif
@@ -269,10 +177,13 @@ namespace ArucoUnity
         }
       }
 
-      public virtual void Draw()
+      /// <summary>
+      /// If <see cref="DisplayInEditor"/> is true, display <see cref="ImagePlane"/> with the <see cref="ImageTexture"/> texture.
+      /// </summary>
+      public virtual void Display()
       {
-        imagePlane.SetActive(DrawImage);
-        if (DrawImage)
+        ImagePlane.SetActive(DisplayInEditor);
+        if (DisplayInEditor)
         {
           imagePlaneMaterial.mainTexture = ImageTexture;
         }
@@ -339,7 +250,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, adn Unsubscribes from the previous ArucoObject.
+      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, and unsubscribes from the previous ArucoObject.
       /// </summary>
       protected virtual void SetArucoObject(ArucoObject arucoObject)
       {
@@ -352,6 +263,7 @@ namespace ArucoUnity
         if (ArucoObject != null)
         {
           ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+          ArucoObject_PropertyUpdated(ArucoObject);
         }
       }
 
@@ -361,7 +273,7 @@ namespace ArucoUnity
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
         Create();
-        Draw();
+        Display();
 
 #if UNITY_EDITOR
         if (Application.isPlaying)
