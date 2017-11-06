@@ -79,6 +79,21 @@ namespace ArucoUnity
         }
       }
 
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Keeps the ids array to its fixed size in the editor.
+      /// </summary>
+      protected override void OnValidate()
+      {
+        base.OnValidate();
+
+        if (ids.Length != IdsLength)
+        {
+          Array.Resize(ref ids, IdsLength);
+        }
+      }
+
       // ArucoObject methods
 
       protected override void AdjustGameObjectScale()
@@ -107,18 +122,6 @@ namespace ArucoUnity
           hashCode = hashCode * 31 + id;
         }
         return hashCode;
-      }
-
-      /// <summary>
-      /// Keeps the ids array to its fixed size in the editor.
-      /// </summary>
-      protected override void OnValidate()
-      {
-        base.OnValidate();
-        if (ids.Length != IdsLength)
-        {
-          Array.Resize(ref ids, IdsLength);
-        }
       }
     }
   }

@@ -104,9 +104,15 @@ namespace ArucoUnity
 
       protected override void UpdateBoard()
       {
-        base.UpdateBoard();
+#if UNITY_EDITOR
+        if (SquaresNumberX <= 0 || SquaresNumberY <= 0 || SquareSideLength <= 0 || MarkerSideLength <= 0)
+        {
+          return;
+        }
+#endif
+
         AxisLength = 0.5f * (Mathf.Min(SquaresNumberX, SquaresNumberY) * SquareSideLength);
-        //Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
+        Board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, SquareSideLength, MarkerSideLength, Dictionary);
       }
 
       // Methods

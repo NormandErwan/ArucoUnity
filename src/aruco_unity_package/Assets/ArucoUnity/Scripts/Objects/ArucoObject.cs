@@ -12,6 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Describes the shared properties of all the ArUco objects. Trackers, Creators and Calibrators use this interface.
     /// </summary>
+    [ExecuteInEditMode]
     public abstract class ArucoObject : MonoBehaviour
     {
       // Editor fields
@@ -93,23 +94,24 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes the properties.
+      /// Calls <see cref="UpdateProperties()"/>.
       /// </summary>
       protected virtual void Awake()
       {
-        if (Dictionary == null)
-        {
-          dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
-        }
-        UpdateArucoHashCode();
+        UpdateProperties();
       }
 
       /// <summary>
-      /// Calls <see cref="OnPropertyUpdated()"/> when an editor field is updated.
+      /// Calls <see cref="OnPropertyUpdated()"/> in editor mode.
       /// </summary>
       protected virtual void OnValidate()
       {
-        OnPropertyUpdated();
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+          OnPropertyUpdated();
+        }
+#endif
       }
 
       // Methods
@@ -127,19 +129,32 @@ namespace ArucoUnity
       /// <summary>
       /// Calls the event <see cref="PropertyUpdating"/>.
       /// </summary>
-      protected virtual void OnPropertyUpdating()
+      protected void OnPropertyUpdating()
       {
         PropertyUpdating.Invoke(this);
       }
 
       /// <summary>
-      /// Calls the <see cref="UpdateArucoHashCode"/> method and the <see cref="PropertyUpdated"/> event.
+      /// Calls <see cref="UpdateProperties"/> and the <see cref="PropertyUpdated"/> event.
       /// </summary>
-      protected virtual void OnPropertyUpdated()
+      protected void OnPropertyUpdated()
       {
+        UpdateProperties();
+        PropertyUpdated.Invoke(this);
+      }
+
+      /// <summary>
+      /// Initializes the properties and calls the <see cref="UpdateArucoHashCode"/> and <see cref="AdjustGameObjectScale"/> methods.
+      /// </summary>
+      protected virtual void UpdateProperties()
+      {
+        if (Dictionary == null)
+        {
+          dictionary = Aruco.GetPredefinedDictionary(dictionaryName);
+        }
+
         UpdateArucoHashCode();
         AdjustGameObjectScale();
-        PropertyUpdated.Invoke(this);
       }
     }
   }

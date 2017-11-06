@@ -27,15 +27,15 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Create the image and the image texture automatically at start.")]
-      private bool createAtStart;
+      private bool createAtStart = true;
 
       [SerializeField]
       [Tooltip("Display the created image.")]
-      private bool drawImage;
+      private bool drawImage = true;
 
       [SerializeField]
       [Tooltip("Save the created image.")]
-      private bool saveImage;
+      private bool saveImage = false;
 
       [SerializeField]
       [Tooltip("The output folder for the saved image, relative to the Application.persistentDataPath folder.")]
@@ -89,18 +89,24 @@ namespace ArucoUnity
 
       // Variables
 
-      protected static GameObject arucoCreatorImagePlane;
+#if UNITY_EDITOR
+      protected ArucoObject lastArucoObjectOnValidate = null;
+#endif
+      protected static GameObject imagePlanePrefab;
       protected GameObject imagePlane;
       protected string imagePlaneName = "ImagePlane";
-      protected Renderer imagePlaneRenderer;
+      protected Material imagePlaneMaterial;
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// Initializes the image plane that display the <see cref="ArucoObject"/>.
+      /// </summary>
       protected virtual void Awake()
       {
-        if (arucoCreatorImagePlane == null)
+        if (imagePlanePrefab == null)
         {
-          arucoCreatorImagePlane = Resources.Load("ArucoCreatorImagePlane") as GameObject;
+          imagePlanePrefab = Resources.Load("ArucoCreatorImagePlane") as GameObject;
         }
 
         if (imagePlane == null)
@@ -112,57 +118,87 @@ namespace ArucoUnity
           }
           else
           {
-            imagePlane = Instantiate(arucoCreatorImagePlane, transform);
+            imagePlane = Instantiate(imagePlanePrefab, transform);
             imagePlane.name = "ImagePlane";
             imagePlane.transform.localPosition = Vector3.zero;
             imagePlane.transform.localRotation = Quaternion.identity;
             imagePlane.transform.localScale = Vector3.one;
           }
-          imagePlaneRenderer = imagePlane.GetComponent<Renderer>();
+
+#if UNITY_EDITOR
+          if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+          {
+            var renderer = imagePlane.GetComponent<Renderer>();
+            imagePlaneMaterial = new Material(renderer.sharedMaterial);
+            renderer.sharedMaterial = imagePlaneMaterial;
+          }
+          else
+          {
+            imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
+          }
+#else
+          imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
+#endif
 
           imagePlane.SetActive(false);
         }
       }
 
       /// <summary>
-      /// Create, draw and save the image of the <see cref="ArucoObject"/> at start if specified by the user.
+      /// Calls <see cref="SetArucoObject"/> and calls <see cref="ArucoObject_PropertyUpdated"/> if <see cref="CreateAtStart"/> is true.
       /// </summary>
       protected virtual void Start()
       {
-        if (ArucoObject)
-        {
-
 #if UNITY_EDITOR
-          if (Application.isPlaying)
+        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+#endif
+          if (ArucoObject)
           {
+            SetArucoObject(ArucoObject);
             if (CreateAtStart)
             {
-              ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
-#endif
-              Create();
-
-              if (DrawImage)
-              {
-                Draw();
-              }
-
-              if (SaveImage)
-              {
-                Save();
-              }
-#if UNITY_EDITOR
+              ArucoObject_PropertyUpdated(ArucoObject);
             }
           }
-#endif
+#if UNITY_EDITOR
         }
+#endif
       }
 
+      /// <summary>
+      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
+      /// </summary>
       protected virtual void OnDestroy()
       {
         if (ArucoObject)
         {
           ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
         }
+      }
+
+      protected virtual void OnValidate()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+          Awake();
+
+          if (lastArucoObjectOnValidate != ArucoObject)
+          {
+            var currentArucoObject = ArucoObject;
+            arucoObject = lastArucoObjectOnValidate;
+
+            SetArucoObject(currentArucoObject);
+            lastArucoObjectOnValidate = ArucoObject;
+          }
+
+          if (ArucoObject)
+          {
+            ArucoObject_PropertyUpdated(ArucoObject);
+          }
+        }
+#endif
       }
 
       // Methods
@@ -177,7 +213,7 @@ namespace ArucoUnity
 
         // In case of a marker
         ArucoMarker marker = ArucoObject as ArucoMarker;
-        if (marker != null)
+        if (marker != null && marker.Dictionary != null)
         {
           marker.Dictionary.DrawMarker(marker.MarkerId, (int)marker.MarkerSideLength, out image, marker.MarkerBorderBits);
         }
@@ -187,7 +223,10 @@ namespace ArucoUnity
         if (arucoGridBoard != null)
         {
           Aruco.GridBoard gridBoard = arucoGridBoard.Board as Aruco.GridBoard;
-          gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
+          if (gridBoard != null)
+          {
+            gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
+          }
         }
 
         // In case of a charuco board
@@ -195,7 +234,10 @@ namespace ArucoUnity
         if (arucoCharucoBoard != null)
         {
           Aruco.CharucoBoard charucoBoard = arucoCharucoBoard.Board as Aruco.CharucoBoard;
-          charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
+          if (charucoBoard != null)
+          {
+            charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
+          }
         }
 
         // In case of a diamond
@@ -225,15 +267,6 @@ namespace ArucoUnity
           ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
           ImageTexture.Apply();
         }
-      }
-
-      /// <summary>
-      /// Draw the <see cref="ImageTexture"/> on the <see cref="ImagePlane"/>.
-      /// </summary>
-      public virtual void Draw()
-      {
-        imagePlane.SetActive(true);
-        imagePlaneRenderer.material.mainTexture = ImageTexture;
       }
 
       /// <summary>
@@ -296,6 +329,9 @@ namespace ArucoUnity
         return imageFilename;
       }
 
+      /// <summary>
+      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, adn Unsubscribes from the previous ArucoObject.
+      /// </summary>
       protected virtual void SetArucoObject(ArucoObject arucoObject)
       {
         if (ArucoObject != null)
@@ -310,26 +346,29 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Creates, draws and saves the image of the <see cref="ArucoObject"/>.
+      /// </summary>
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
-          Create();
+        Create();
 
-          if (DrawImage)
-          {
-            Draw();
-          }
+        imagePlane.SetActive(DrawImage);
+        if (DrawImage)
+        {
+          imagePlaneMaterial.mainTexture = ImageTexture;
+        }
 
 #if UNITY_EDITOR
-          if (Application.isPlaying)
-          {
+        if (Application.isPlaying)
+        {
 #endif
-            if (SaveImage)
-            {
-              Save();
-            }
-
-#if UNITY_EDITOR
+          if (SaveImage)
+          {
+            Save();
           }
+#if UNITY_EDITOR
+        }
 #endif
       }
     }

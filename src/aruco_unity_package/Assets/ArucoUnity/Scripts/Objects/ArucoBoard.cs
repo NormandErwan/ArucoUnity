@@ -66,32 +66,38 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// Calls <see cref="UpdateProperties"/>.
+      /// </summary>
       protected override void Awake()
       {
         base.Awake();
-        ImageSize = new Cv.Size();
-        UpdateBoard();
+        UpdateProperties();
       }
 
       // ArucoObject methods
 
       /// <summary>
-      /// Calls the <see cref="UpdateBoard"/> method and calls <see cref="ArucoObject.OnPropertyUpdated"/>.
+      /// Calls <see cref="ArucoObject.OnPropertyUpdated"/>, updates the <see cref="ImageSize"/> property and calls <see cref="UpdateBoard"/>.
       /// </summary>
-      protected override void OnPropertyUpdated()
+      protected override void UpdateProperties()
       {
+        base.UpdateProperties();
+
+        if (ImageSize == null)
+        {
+          ImageSize = new Cv.Size();
+        }
+        ImageSize.Width = imageSize.x;
+        ImageSize.Height = imageSize.y;
+
         UpdateBoard();
-        base.OnPropertyUpdated();
       }
 
       /// <summary>
-      /// Updates the <see cref="Board"/> property.
+      /// Updates the <see cref="Board"/> properties.
       /// </summary>
-      protected virtual void UpdateBoard()
-      {
-        //ImageSize.Width = imageSize.x;
-        //ImageSize.Height = imageSize.y;
-      }
+      protected abstract void UpdateBoard();
     }
   }
 
