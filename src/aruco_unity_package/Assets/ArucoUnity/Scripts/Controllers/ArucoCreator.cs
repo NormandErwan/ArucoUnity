@@ -269,6 +269,15 @@ namespace ArucoUnity
         }
       }
 
+      public virtual void Draw()
+      {
+        imagePlane.SetActive(DrawImage);
+        if (DrawImage)
+        {
+          imagePlaneMaterial.mainTexture = ImageTexture;
+        }
+      }
+
       /// <summary>
       /// Save the <see cref="ImageTexture"/> on a image file in the <see cref="OutputFolder"/> with <see cref="ImageFilename"/> as filename.
       /// </summary>
@@ -352,12 +361,7 @@ namespace ArucoUnity
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
         Create();
-
-        imagePlane.SetActive(DrawImage);
-        if (DrawImage)
-        {
-          imagePlaneMaterial.mainTexture = ImageTexture;
-        }
+        Draw();
 
 #if UNITY_EDITOR
         if (Application.isPlaying)
