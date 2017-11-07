@@ -104,6 +104,8 @@ namespace ArucoUnity
 #else
           imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
 #endif
+
+          ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
         }
       }
 
@@ -130,20 +132,9 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
-      /// </summary>
-      protected virtual void OnDestroy()
-      {
-        if (ArucoObject)
-        {
-          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
-        }
-      }
-
-      /// <summary>
       /// Updates the display in the Unity Editor.
       /// </summary>
-      protected virtual void OnValidate()
+      protected virtual void Update()
       {
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
@@ -160,6 +151,17 @@ namespace ArucoUnity
           }
         }
 #endif
+      }
+
+      /// <summary>
+      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
+      /// </summary>
+      protected virtual void OnDestroy()
+      {
+        if (ArucoObject)
+        {
+          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
+        }
       }
 
       // Methods

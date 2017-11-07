@@ -15,7 +15,6 @@ namespace ArucoUnity
     /// See the OpenCV documentation for more information about the marker creation (second section of the following tutorial):
     /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
-    [ExecuteInEditMode]
     public class ArucoCreator : ArucoObjectDisplayer
     {
       // Editor fields
