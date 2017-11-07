@@ -10,7 +10,7 @@ namespace ArucoUnity
   namespace Controllers
   {
     [ExecuteInEditMode]
-    public class ArucoObjectDisplay : MonoBehaviour
+    public class ArucoObjectDisplayer : MonoBehaviour
     {
       // Constants
 

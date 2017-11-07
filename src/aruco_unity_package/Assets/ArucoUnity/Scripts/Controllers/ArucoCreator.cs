@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Plugin;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using ArucoUnity.Objects;
 
@@ -17,13 +16,9 @@ namespace ArucoUnity
     /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
     [ExecuteInEditMode]
-    public class ArucoCreator : ArucoObjectDisplay
+    public class ArucoCreator : ArucoObjectDisplayer
     {
       // Editor fields
-
-      [SerializeField]
-      [Tooltip("Display the image in the editor.")]
-      private bool displayInEditor = true;
 
       [SerializeField]
       [Tooltip("Save the created image.")]
@@ -40,11 +35,6 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Display the image in the editor.
-      /// </summary>
-      public bool DisplayInEditor { get { return displayInEditor; } set { displayInEditor = value; } }
-
-      /// <summary>
       /// Save the image.
       /// </summary>
       public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
@@ -59,135 +49,7 @@ namespace ArucoUnity
       /// </summary>
       public string ImageFilename { get { return optionalImageFilename; } set { optionalImageFilename = value; } }
 
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Calls <see cref="SetArucoObject"/> and calls <see cref="ArucoObject_PropertyUpdated"/> if <see cref="CreateAtStart"/> is true.
-      /// </summary>
-      protected virtual void Start()
-      {
-#if UNITY_EDITOR
-        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-#endif
-          if (ArucoObject)
-          {
-            SetArucoObject(ArucoObject);
-          }
-#if UNITY_EDITOR
-        }
-#endif
-      }
-
-      /// <summary>
-      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
-      /// </summary>
-      protected virtual void OnDestroy()
-      {
-        if (ArucoObject)
-        {
-          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
-        }
-      }
-
-      protected virtual void OnValidate()
-      {
-#if UNITY_EDITOR
-        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-          Awake();
-
-          if (lastArucoObjectOnValidate != ArucoObject)
-          {
-            var currentArucoObject = ArucoObject;
-            arucoObject = lastArucoObjectOnValidate;
-
-            SetArucoObject(currentArucoObject);
-            lastArucoObjectOnValidate = ArucoObject;
-          }
-        }
-#endif
-      }
-
       // Methods
-
-      /// <summary>
-      /// Create the image and the image texture of the <see cref="ArucoObject"/>.
-      /// </summary>
-      public virtual void Create()
-      {
-        Cv.Mat image = null;
-        ImageTexture = null;
-
-        // In case of a marker
-        ArucoMarker marker = ArucoObject as ArucoMarker;
-        if (marker != null && marker.Dictionary != null)
-        {
-          marker.Dictionary.DrawMarker(marker.MarkerId, (int)marker.MarkerSideLength, out image, marker.MarkerBorderBits);
-        }
-
-        // In case of a grid board
-        ArucoGridBoard arucoGridBoard = ArucoObject as ArucoGridBoard;
-        if (arucoGridBoard != null)
-        {
-          Aruco.GridBoard gridBoard = arucoGridBoard.Board as Aruco.GridBoard;
-          if (gridBoard != null)
-          {
-            gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
-          }
-        }
-
-        // In case of a charuco board
-        ArucoCharucoBoard arucoCharucoBoard = ArucoObject as ArucoCharucoBoard;
-        if (arucoCharucoBoard != null)
-        {
-          Aruco.CharucoBoard charucoBoard = arucoCharucoBoard.Board as Aruco.CharucoBoard;
-          if (charucoBoard != null)
-          {
-            charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
-          }
-        }
-
-        // In case of a diamond
-        ArucoDiamond diamond = ArucoObject as ArucoDiamond;
-        if (diamond != null && diamond.Ids.Length == 4)
-        {
-          Cv.Vec4i ids = new Cv.Vec4i();
-          for (int i = 0; i < diamond.Ids.Length; ++i)
-          {
-            ids.Set(i, diamond.Ids[i]);
-          }
-          Aruco.DrawCharucoDiamond(diamond.Dictionary, ids, (int)diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
-        }
-
-        // Set the properties
-        Image = image;
-        if (Image != null)
-        {
-          // Vertical flip to correctly display the image on the texture
-          int verticalFlipCode = 0;
-          Cv.Mat imageForTexture = Image.Clone();
-          Cv.Flip(imageForTexture, imageForTexture, verticalFlipCode);
-
-          // Load the image to the texture
-          int markerDataSize = (int)(Image.ElemSize() * Image.Total());
-          ImageTexture = new Texture2D(Image.Cols, Image.Rows, TextureFormat.RGB24, false);
-          ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
-          ImageTexture.Apply();
-        }
-      }
-
-      /// <summary>
-      /// If <see cref="DisplayInEditor"/> is true, display <see cref="ImagePlane"/> with the <see cref="ImageTexture"/> texture.
-      /// </summary>
-      public virtual void Display()
-      {
-        ImagePlane.SetActive(DisplayInEditor);
-        if (DisplayInEditor)
-        {
-          imagePlaneMaterial.mainTexture = ImageTexture;
-        }
-      }
 
       /// <summary>
       /// Save the <see cref="ImageTexture"/> on a image file in the <see cref="OutputFolder"/> with <see cref="ImageFilename"/> as filename.
@@ -250,33 +112,14 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, and unsubscribes from the previous ArucoObject.
+      /// Calls <see cref="Create"/>, <see cref="Display"/> and <see cref="Save"/>.
       /// </summary>
-      protected virtual void SetArucoObject(ArucoObject arucoObject)
+      protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
-        if (ArucoObject != null)
-        {
-          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
-        }
-
-        this.arucoObject = arucoObject;
-        if (ArucoObject != null)
-        {
-          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
-          ArucoObject_PropertyUpdated(ArucoObject);
-        }
-      }
-
-      /// <summary>
-      /// Creates, draws and saves the image of the <see cref="ArucoObject"/>.
-      /// </summary>
-      protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
-      {
-        Create();
-        Display();
+        base.ArucoObject_PropertyUpdated(arucoObject);
 
 #if UNITY_EDITOR
-        if (Application.isPlaying)
+        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
 #endif
           if (SaveImage)
