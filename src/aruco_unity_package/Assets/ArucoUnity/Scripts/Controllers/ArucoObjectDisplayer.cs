@@ -86,7 +86,7 @@ namespace ArucoUnity
             ImagePlane = Instantiate(ImagePlanePrefab, transform);
             ImagePlane.name = ImagePlanePrefab.name;
             ImagePlane.transform.localPosition = Vector3.zero;
-            ImagePlane.transform.localRotation = Quaternion.identity;
+            ImagePlane.transform.forward = -transform.up; // Rotated up
             ImagePlane.transform.localScale = Vector3.one;
           }
 

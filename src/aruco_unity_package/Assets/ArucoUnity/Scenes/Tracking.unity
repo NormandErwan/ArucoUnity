@@ -438,6 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887812764}
   - component: {fileID: 887812763}
+  - component: {fileID: 887812765}
   m_Layer: 0
   m_Name: Aruco Marker Dict 4x4_50 Id 8
   m_TagString: Untagged
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dictionaryName: 0
   markerSideLength: 0.06
-  markerBorderBits: 0
+  markerBorderBits: 1
   markerId: 8
 --- !u!4 &887812764
 Transform:
@@ -476,6 +477,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &887812765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887812762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8644fbc5335334e944b09d5c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arucoObject: {fileID: 887812763}
+  displayInGame: 0
 --- !u!1001 &1578749948
 Prefab:
   m_ObjectHideFlags: 0
