@@ -92,6 +92,9 @@ namespace ArucoUnity
 
 #if UNITY_EDITOR
           if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+#else
+          if (Application.isEditor)
+#endif
           {
             var renderer = ImagePlane.GetComponent<Renderer>();
             imagePlaneMaterial = new Material(renderer.sharedMaterial);
@@ -101,16 +104,13 @@ namespace ArucoUnity
           {
             imagePlaneMaterial = ImagePlane.GetComponent<Renderer>().material;
           }
-#else
-          imagePlaneMaterial = imagePlane.GetComponent<Renderer>().material;
-#endif
 
-          ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
+            ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
         }
       }
 
       /// <summary>
-      /// Calls <see cref="SetArucoObject"/> to creates and displays the <see cref="ArucoObject"/>.
+      /// Calls <see cref="SetArucoObject"/> to display the <see cref="ArucoObject"/>.
       /// </summary>
       protected virtual void Start()
       {
@@ -124,7 +124,7 @@ namespace ArucoUnity
           }
           else
           {
-            ImagePlane.SetActive(false);
+            enabled = false;
           }
 #if UNITY_EDITOR
         }
@@ -162,6 +162,22 @@ namespace ArucoUnity
         {
           ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
         }
+      }
+
+      /// <summary>
+      /// Shows <see cref="ImagePlane"/>.
+      /// </summary>
+      private void OnEnable()
+      {
+        ImagePlane.SetActive(true);
+      }
+
+      /// <summary>
+      /// Hides <see cref="ImagePlane"/>.
+      /// </summary>
+      private void OnDisable()
+      {
+        ImagePlane.SetActive(false);
       }
 
       // Methods
@@ -243,7 +259,6 @@ namespace ArucoUnity
       public virtual void Display()
       {
         imagePlaneMaterial.mainTexture = ImageTexture;
-        ImagePlane.SetActive(true);
       }
 
       /// <summary>
@@ -259,8 +274,8 @@ namespace ArucoUnity
         this.arucoObject = arucoObject;
         if (ArucoObject != null)
         {
-          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
           ArucoObject_PropertyUpdated(ArucoObject);
+          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
         }
       }
 
