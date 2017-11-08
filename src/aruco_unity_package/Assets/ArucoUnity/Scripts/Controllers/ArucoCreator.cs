@@ -48,6 +48,36 @@ namespace ArucoUnity
       /// </summary>
       public string ImageFilename { get { return optionalImageFilename; } set { optionalImageFilename = value; } }
 
+      // MonoBehaviour methods
+
+      protected override void Awake()
+      {
+        base.Awake();
+        ImagePlane.transform.rotation = Quaternion.identity;
+      }
+
+      // ArucoObjectDisplayer methods
+
+      /// <summary>
+      /// Calls <see cref="Create"/>, <see cref="Display"/> and <see cref="Save"/>.
+      /// </summary>
+      protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+      {
+        base.ArucoObject_PropertyUpdated(arucoObject);
+
+#if UNITY_EDITOR
+        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+#endif
+          if (SaveImage)
+          {
+            Save();
+          }
+#if UNITY_EDITOR
+        }
+#endif
+      }
+
       // Methods
 
       /// <summary>
@@ -108,26 +138,6 @@ namespace ArucoUnity
         imageFilename += ".png";
 
         return imageFilename;
-      }
-
-      /// <summary>
-      /// Calls <see cref="Create"/>, <see cref="Display"/> and <see cref="Save"/>.
-      /// </summary>
-      protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
-      {
-        base.ArucoObject_PropertyUpdated(arucoObject);
-
-#if UNITY_EDITOR
-        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-#endif
-          if (SaveImage)
-          {
-            Save();
-          }
-#if UNITY_EDITOR
-        }
-#endif
       }
     }
   }
