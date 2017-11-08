@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 887812763}
-  displayInGame: 0
+  displayInGame: 1
 --- !u!1001 &1578749948
 Prefab:
   m_ObjectHideFlags: 0

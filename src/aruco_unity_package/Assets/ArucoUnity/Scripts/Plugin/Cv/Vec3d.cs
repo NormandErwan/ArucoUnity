@@ -59,26 +59,36 @@ namespace ArucoUnity
           exception.Check();
         }
 
+        /// <summary>
+        /// Converts the Vec3d as an OpenCV's translation vector to a Vector3.
+        /// </summary>
+        /// <returns>The converted vector.</returns>
         public Vector3 ToPosition()
         {
-          return new Vector3((float)Get(0), -(float)Get(1), (float)Get(2));
+          return new Vector3((float)Get(0), -(float)Get(1), (float)Get(2)); // Convert the vector from left-handed to right-handed
         }
 
+        /// <summary>
+        /// Converts the Vec3d as an OpenCV's rotation vector to a Quaternion. Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
+        /// </summary>
+        /// <returns>The converted quaternion.</returns>
         public Quaternion ToRotation()
         {
-          // Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
-          Vector3 angleAxis = new Vector3(-(float)Get(0), (float)Get(1), -(float)Get(2));
-          Vector3 angleAxisNormalized = angleAxis.normalized;
-          float angle = angleAxis.magnitude;
-          float s = Mathf.Sin(angle / 2);
+          // Convert the vector from left-handed to right-handed
+          Vector3 angleAxis = new Vector3((float)Get(0), -(float)Get(1), (float)Get(2));
+          Vector3 unitVector = angleAxis.normalized;
+          float angle = -angleAxis.magnitude;
 
+          // Convert from axis-angle to quaternion
           Quaternion rotation;
-          rotation.x = angleAxisNormalized.x * s;
-          rotation.y = angleAxisNormalized.y * s;
-          rotation.z = angleAxisNormalized.z * s;
+          float sinHalfAngle = Mathf.Sin(angle / 2);
+          rotation.x = unitVector.x * sinHalfAngle;
+          rotation.y = unitVector.y * sinHalfAngle;
+          rotation.z = unitVector.z * sinHalfAngle;
           rotation.w = Mathf.Cos(angle / 2);
 
-          rotation *= Quaternion.Euler(0f, 90f, 90f); // Re-orient to put the y axis up, and the the x and z axis each side of the first corner of the marker
+          // Re-orient to put the y axis up
+          rotation *= Quaternion.Euler(90f, 0f, 0f); 
 
           return rotation;
         }
