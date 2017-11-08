@@ -13,12 +13,7 @@ namespace ArucoUnity
     /// </summary>
     public class ArucoDiamond : ArucoObject
     {
-      // Const
-
-      /// <summary>
-      /// A ChArUco diamond marker is composed of four markers.
-      /// </summary>
-      protected const int IdsLength = 4;
+      // Constants
 
       /// <summary>
       /// A ChArUco diamond marker is composed of 3x3 squares(3 per side).
@@ -32,8 +27,20 @@ namespace ArucoUnity
       private float squareSideLength;
 
       [SerializeField]
-      [Tooltip("The four ids of the four markers of the diamond.")]
-      private int[] ids;
+      [Tooltip("The id of the first marker of the diamond.")]
+      private int marker1Id;
+
+      [SerializeField]
+      [Tooltip("The id of the second marker of the diamond.")]
+      private int marker2Id;
+
+      [SerializeField]
+      [Tooltip("The id of the third marker of the diamond.")]
+      private int marker3Id;
+
+      [SerializeField]
+      [Tooltip("The id of the fourth marker of the diamond.")]
+      private int marker4Id;
 
       // Properties
 
@@ -56,20 +63,12 @@ namespace ArucoUnity
       /// </summary>
       public int[] Ids
       {
-        get
-        {
-          if (ids.Length != IdsLength)
-          {
-            Debug.LogError("Invalid number of Ids: ArucoDiamond requires " + IdsLength  + " ids.");
-          }
-
-          return ids;
-        }
+        get { return ids; }
         set
         {
-          if (value.Length != IdsLength)
+          if (value.Length != ids.Length)
           {
-            Debug.LogError("Invalid number of Ids: ArucoDiamond requires " + IdsLength + " ids.");
+            Debug.LogError("Invalid number of Ids: ArucoDiamond requires " + ids.Length + " ids.");
             return;
           }
 
@@ -79,19 +78,16 @@ namespace ArucoUnity
         }
       }
 
+      // Variables
+
+      protected int[] ids;
+
       // MonoBehaviour methods
 
-      /// <summary>
-      /// Keeps the ids array to its fixed size in the editor.
-      /// </summary>
-      protected override void OnValidate()
+      protected override void Awake()
       {
-        base.OnValidate();
-
-        if (ids.Length != IdsLength)
-        {
-          Array.Resize(ref ids, IdsLength);
-        }
+        ids = new int[] { marker1Id, marker2Id, marker3Id, marker4Id };
+        base.Awake();
       }
 
       // ArucoObject methods
@@ -103,7 +99,10 @@ namespace ArucoUnity
 
       protected override void UpdateArucoHashCode()
       {
-        ArucoHashCode = GetArucoHashCode(Ids);
+        if (Ids != null)
+        {
+          ArucoHashCode = GetArucoHashCode(Ids);
+        }
       }
 
       // Methods

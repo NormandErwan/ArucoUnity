@@ -655,7 +655,10 @@ MonoBehaviour:
   markerSideLength: 150
   markerBorderBits: 0
   squareSideLength: 200
-  ids: 00000000010000000200000003000000
+  marker1Id: 1
+  marker2Id: 2
+  marker3Id: 3
+  marker4Id: 4
 --- !u!114 &1264974613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +724,10 @@ MonoBehaviour:
   markerSideLength: 120
   markerBorderBits: 0
   squareSideLength: 200
-  ids: 00000000010000000200000003000000
+  marker1Id: 1
+  marker2Id: 2
+  marker3Id: 3
+  marker4Id: 4
 --- !u!114 &1374276494
 MonoBehaviour:
   m_ObjectHideFlags: 0
