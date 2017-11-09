@@ -491,6 +491,7 @@ namespace ArucoUnity
       // TODO: handle case of CameraParameters.FixAspectRatio != 0
       protected void ConfigureCameraAndBackground(int cameraId, ref GameObject cameraBackground, float cameraBackgroundDistance = defaultCameraBackgroundDistance)
       {
+        Camera camera = ImageCameras[cameraId];
         float imageWidth = CameraParameters.ImageWidths[cameraId];
         float imageHeight = CameraParameters.ImageHeights[cameraId];
         Vector2 cameraF = CameraParameters.GetCameraFocalLengths(cameraId);
@@ -499,15 +500,15 @@ namespace ArucoUnity
         // Estimate fov using these equations : https://stackoverflow.com/questions/39992968/how-to-calculate-field-of-view-of-the-camera-from-camera-intrinsic-matrix
         float fovX = 2f * Mathf.Atan(0.5f * imageWidth / cameraF.x) * Mathf.Rad2Deg;
         float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
-        ImageCameras[cameraId].fieldOfView = fovY;
-        ImageCameras[cameraId].aspect = ImageRatios[cameraId];
+        camera.fieldOfView = fovY;
+        camera.aspect = ImageRatios[cameraId];
 
         // Configure the background plane facing the camera
         if (cameraBackground == null)
         {
           cameraBackground = GameObject.CreatePrimitive(PrimitiveType.Quad);
           cameraBackground.name = "CameraBackground";
-          cameraBackground.transform.parent = this.transform;
+          cameraBackground.transform.SetParent(camera.transform);
           cameraBackground.transform.rotation = Quaternion.identity;
         }
 
