@@ -29,10 +29,6 @@ namespace ArucoUnity
       [Tooltip("The file path to load the camera parameters.")]
       private string cameraParametersFilePath = "ArucoUnity/Calibrations/calibration.xml";
 
-      [SerializeField]
-      [Tooltip("Preserve the aspect ratio of the webcam image.")]
-      private bool preserveAspectRatio = true;
-
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -61,11 +57,6 @@ namespace ArucoUnity
       /// The file path to load the camera parameters.
       /// </summary>
       public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
-
-      /// <summary>
-      /// Preserve the aspect ratio of the webcam's image.
-      /// </summary>
-      public bool PreserveAspectRatio { get { return preserveAspectRatio; } set { preserveAspectRatio = value; } }
 
       /// <summary>
       /// The webcam to use.
@@ -103,6 +94,7 @@ namespace ArucoUnity
             // Configure
             ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
             ConfigureCameraAndBackground();
+            cameraBackground.SetActive(DisplayImages);
 
             // Update state
             startInitiated = false;
