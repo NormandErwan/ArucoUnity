@@ -33,6 +33,10 @@ namespace ArucoUnity
     /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.</remarks>
     public abstract class ArucoCamera : MonoBehaviour
     {
+      // Constants
+
+      protected const float defaultCameraBackgroundDistance = 1f;
+
       // Editor fields
 
       [SerializeField]
@@ -473,6 +477,56 @@ namespace ArucoUnity
         }
       }
 
+      /// <summary>
+      /// Configure the <see cref="ImageCameras"/> and the background that will display live webcam video through the
+      /// <see cref="ImageTextures"/> according to the parameter cameraId.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to configure.</param>
+      /// <param name="cameraBackground">The background facing the camera to configure.</param>
+      /// <remarks>
+      /// See https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html and 
+      /// https://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html#details for reference.
+      /// </remarks>
+      // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
+      // TODO: handle case of CameraParameters.FixAspectRatio != 0
+      protected void ConfigureCameraAndBackground(int cameraId, ref GameObject cameraBackground, float cameraBackgroundDistance = defaultCameraBackgroundDistance)
+      {
+        float imageWidth = CameraParameters.ImageWidths[cameraId];
+        float imageHeight = CameraParameters.ImageHeights[cameraId];
+        Vector2 cameraF = CameraParameters.GetCameraFocalLengths(cameraId);
+        Vector2 cameraC = CameraParameters.GetCameraPrincipalPoint(cameraId);
+
+        // Estimate fov using these equations : https://stackoverflow.com/questions/39992968/how-to-calculate-field-of-view-of-the-camera-from-camera-intrinsic-matrix
+        float fovX = 2f * Mathf.Atan(0.5f * imageWidth / cameraF.x) * Mathf.Rad2Deg;
+        float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
+        ImageCameras[cameraId].fieldOfView = fovY;
+        ImageCameras[cameraId].aspect = ImageRatios[cameraId];
+
+        // Configure the background plane facing the camera
+        if (cameraBackground == null)
+        {
+          cameraBackground = GameObject.CreatePrimitive(PrimitiveType.Quad);
+          cameraBackground.name = "CameraBackground";
+          cameraBackground.transform.parent = this.transform;
+          cameraBackground.transform.rotation = Quaternion.identity;
+        }
+
+        var cameraBackgroundRenderer = cameraBackground.GetComponent<Renderer>();
+        cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
+        cameraBackgroundRenderer.material.mainTexture = ImageTextures[cameraId];
+
+        // Estimate background plane position relative to the camera, considering the first link in remarks: here x=0.5*ImageWidth and y=0.5*ImageHeight
+        // (center of the camera projection), w=Z=cameraBackgroundDistance and we are looking for X=posX and Y=posY
+        float posX = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
+        float posY = (0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance;
+        cameraBackground.transform.position = new Vector3(posX, -posY, cameraBackgroundDistance); // c=-1 for posY is because OpenCV (u=0, v=0) camera coordinates origin is top-left, but bottom-left in Unity (see https://docs.unity3d.com/ScriptReference/Camera.html)
+
+        // Estimate background plane scale, using the same equations used for fov but here we are looking for w=scaleX and h=scaleY
+        float scaleX = 2f * cameraBackgroundDistance * Mathf.Tan(fovX * Mathf.Deg2Rad / 2f);
+        float scaleY = 2f * cameraBackgroundDistance * Mathf.Tan(fovY * Mathf.Deg2Rad / 2f);
+        cameraBackground.transform.localScale = new Vector3(scaleX, scaleY, 1);
+      }
+
       private void InitUndistortRectifyMap(int cameraId, Cv.Mat rotationMatrix, Cv.Mat newCameraMatrix)
       {
         // Init the undistort rectify maps
@@ -489,7 +543,7 @@ namespace ArucoUnity
           else if (UndistortionType == UndistortionType.OmnidirLonglati)      { flags = Cv.Omnidir.Rectifify.Longlati; }
           else if (UndistortionType == UndistortionType.OmnidirStereographic) { flags = Cv.Omnidir.Rectifify.Stereographic; }
 
-          // If no newCameraMatrix, inititalize it with the recommended values
+          // If no newCameraMatrix, inititalize it with the recommended values by this tutorial : https://docs.opencv.org/3.3.1/dd/d12/tutorial_omnidir_calib_main.html
           if (newCameraMatrix.Total() == 0)
           {
             double width = ImageTextures[cameraId].width, height = ImageTextures[cameraId].height;
