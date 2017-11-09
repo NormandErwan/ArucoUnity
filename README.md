@@ -1,15 +1,15 @@
 # ArUco Unity
 
 OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module adapted for Unity 5.
-The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and
-[ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) are also included.
+The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) are also included.
 
-This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)
- and was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
+This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)  was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
 
-## Usage
+## Installation
 
 Download the [latest build release](https://github.com/enormand/aruco-unity/releases), or see the Build section. Import the package in your Unity project.
+
+## Usage
 
 ### Marker tracking
 
@@ -90,6 +90,22 @@ The documentation of available online:
 - The library: [https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html](https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html)
 - The Unity package: [https://enormand.github.io/aruco-unity/group__aruco__unity__package.html](https://enormand.github.io/aruco-unity/group__aruco__unity__package.html)
 
+## Contributions
+
+If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
+Some features or corrections to do:
+
+- Add an extended tracking
+- Write the tests for the library with Google Test
+- Write the tests for the Unity package
+- Replace the library with one of the following open-source project (should be compatible with Unity and at least OpenCV 3.3):
+  - [EmguCV](http://www.emgu.com)
+  - [OpenCvSharp](https://github.com/shimat/opencvsharp)
+  - [OpenCV.NET](https://bitbucket.org/horizongir/opencv.net)
+- Add the autoscale feature to ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker (see this [ArUco sample](https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203))
+- Fix the crash that occur when calling ArucoUnity.Plugin.Cv.au_cv_Exception_delete(System.IntPtr)
+
 ## Licenses
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
@@ -97,5 +113,8 @@ See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD
 See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. ArUco Unity makes use of the
 following projects:
 
-- [OpenCV](http://opencv.org/) and the [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) extra modules.
+- [OpenCV](http://opencv.org/) with the following modules:
+  - [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco)
+  - [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)
+  - [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 - [Google Test](https://github.com/google/googletest)
