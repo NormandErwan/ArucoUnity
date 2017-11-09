@@ -27,7 +27,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The file path to load the camera parameters.")]
-      private string cameraParametersFilePath = "ArucoUnity/Calibrations/calibration.xml";
+      private string cameraParametersFilePath = "ArucoUnity/Calibrations/<calibration_file>.xml";
 
       // ArucoCamera properties implementation
 

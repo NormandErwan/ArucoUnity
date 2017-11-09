@@ -101,8 +101,7 @@ MonoBehaviour:
   autoUndistortWithCameraParameters: 1
   undistortionType: 0
   webcamId: 0
-  cameraParametersFilePath: ArucoUnity/Calibrations/USB Camera - 2017-10-27_19-20-12.xml
-  preserveAspectRatio: 1
+  cameraParametersFilePath: ArucoUnity/Calibrations/<calibration_file>.xml
 --- !u!124 &124768575578751554
 Behaviour:
   m_ObjectHideFlags: 1
