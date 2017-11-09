@@ -113,6 +113,12 @@ namespace ArucoUnity
         return image;
       }
 
+      public override string GenerateName()
+      {
+        return "ArUcoUnity_DiamondMarker_" + Dictionary.Name + "_Ids_" + Ids[0] + "_" + Ids[1] + "_" + Ids[2] + "_" + Ids[3] + "_SquareSize_"
+          + SquareSideLength + "_MarkerSize_" + MarkerSideLength;
+      }
+
       protected override void AdjustGameObjectScale()
       {
         float sideLength = SquareNumberPerSide * SquareSideLength;

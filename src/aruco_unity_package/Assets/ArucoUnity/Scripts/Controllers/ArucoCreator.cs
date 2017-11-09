@@ -79,7 +79,7 @@ namespace ArucoUnity
       {
         if (ImageFilename == null || ImageFilename.Length == 0)
         {
-          ImageFilename = GenerateImageFilename();
+          ImageFilename = ArucoObject.GenerateName();
         }
 
         string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
@@ -90,46 +90,6 @@ namespace ArucoUnity
 
         string imageFilePath = outputFolderPath + ImageFilename;
         File.WriteAllBytes(imageFilePath, ImageTexture.EncodeToPNG());
-      }
-
-      /// <summary>
-      /// Returns a generated filemame with the <see cref="ArucoObject"/> properties.
-      /// </summary>
-      public virtual string GenerateImageFilename()
-      {
-        string imageFilename = "ArUcoUnity_";
-
-        ArucoMarker marker = ArucoObject as ArucoMarker;
-        if (marker != null)
-        {
-          imageFilename += "Marker_" + marker.Dictionary.Name + "_Id_" + marker.MarkerId;
-        }
-
-        ArucoGridBoard gridBoard = ArucoObject as ArucoGridBoard;
-        if (gridBoard != null)
-        {
-          imageFilename += "GridBoard_" + gridBoard.Dictionary.Name + "_X_" + gridBoard.MarkersNumberX + "_Y_" + gridBoard.MarkersNumberY
-            + "_MarkerSize_" + gridBoard.MarkerSideLength;
-        }
-
-        ArucoCharucoBoard charucoBoard = ArucoObject as ArucoCharucoBoard;
-        if (charucoBoard != null)
-        {
-          imageFilename += "ChArUcoBoard_" + charucoBoard.Dictionary.Name + "_X_" + charucoBoard.SquaresNumberX
-            + "_Y_" + charucoBoard.SquaresNumberY + "_SquareSize_" + charucoBoard.SquareSideLength
-            + "_MarkerSize_" + charucoBoard.MarkerSideLength;
-        }
-
-        ArucoDiamond diamond = ArucoObject as ArucoDiamond;
-        if (diamond != null && diamond.Ids.Length == 4)
-        {
-          imageFilename += "DiamondMarker_" + diamond.Dictionary.Name + "_Ids_" + diamond.Ids[0] + "_" + diamond.Ids[1] + "_" + diamond.Ids[2] + "_"
-            + diamond.Ids[3] + "_SquareSize_" + diamond.SquareSideLength + "_MarkerSize_" + diamond.MarkerSideLength;
-        }
-
-        imageFilename += ".png";
-
-        return imageFilename;
       }
     }
   }

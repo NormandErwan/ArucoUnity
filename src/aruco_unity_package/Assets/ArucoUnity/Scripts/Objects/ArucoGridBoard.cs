@@ -117,6 +117,11 @@ namespace ArucoUnity
         return image;
       }
 
+      public override string GenerateName()
+      {
+        return "ArUcoUnity_GridBoard_" + Dictionary.Name + "_X_" + MarkersNumberX + "_Y_" + MarkersNumberY + "_MarkerSize_" + MarkerSideLength;
+      }
+
       protected override void UpdateBoard()
       {
 #if UNITY_EDITOR

@@ -139,6 +139,11 @@ namespace ArucoUnity
       public abstract Cv.Mat Draw();
 
       /// <summary>
+      /// Returns a generated name depending on the value of the properties.
+      /// </summary>
+      public abstract string GenerateName();
+
+      /// <summary>
       /// Adjusts the scale to <see cref="MarkerSideLength"/> length.
       /// </summary>
       protected abstract void AdjustGameObjectScale();

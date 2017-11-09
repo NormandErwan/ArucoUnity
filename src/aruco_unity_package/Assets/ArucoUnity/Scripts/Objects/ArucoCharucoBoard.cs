@@ -127,6 +127,12 @@ namespace ArucoUnity
         return image;
       }
 
+      public override string GenerateName()
+      {
+        return "ArUcoUnity_ChArUcoBoard_" + Dictionary.Name + "_X_" + SquaresNumberX + "_Y_" + SquaresNumberY + "_SquareSize_" + SquareSideLength
+            + "_MarkerSize_" + MarkerSideLength;
+      }
+
       protected override void UpdateBoard()
       {
 #if UNITY_EDITOR
