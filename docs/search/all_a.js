@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['marginssize',['MarginsSize',['../class_aruco_unity_1_1_objects_1_1_aruco_board.html#ac4002763f52a443907ee99a5dc65be16',1,'ArucoUnity::Objects::ArucoBoard']]],
-  ['markerborderbits',['MarkerBorderBits',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae19feccc4100675e53a1225e92e15c0c',1,'ArucoUnity.Objects.ArucoObject.MarkerBorderBits()'],['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#ace170878e7b55088dd3d9ab22293fe83',1,'ArucoUnity.Plugin.Aruco.DetectorParameters.MarkerBorderBits()']]],
+  ['marginslength',['MarginsLength',['../class_aruco_unity_1_1_objects_1_1_aruco_board.html#a794d907f73d6cc33b061bbfd2e144eaf',1,'ArucoUnity::Objects::ArucoBoard']]],
+  ['markerborderbits',['MarkerBorderBits',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#a9c7631b0716444e84667ef8330aca66c',1,'ArucoUnity.Objects.ArucoObject.MarkerBorderBits()'],['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#ace170878e7b55088dd3d9ab22293fe83',1,'ArucoUnity.Plugin.Aruco.DetectorParameters.MarkerBorderBits()']]],
   ['markercorners',['MarkerCorners',['../class_aruco_unity_1_1_controllers_1_1_aruco_calibrator.html#aceca6eb87d4a75199ca15bb1a7e67f87',1,'ArucoUnity.Controllers.ArucoCalibrator.MarkerCorners()'],['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html#a51b952f881714839bbc96b12d55d9501',1,'ArucoUnity.Controllers.ObjectTrackers.ArucoMarkerTracker.MarkerCorners()'],['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_charuco_board.html#a3ab5d0abfc9065a4a83392b74e6ac237',1,'ArucoUnity.Plugin.Aruco.CharucoBoard.MarkerCorners()']]],
   ['markercornerscurrentimage',['MarkerCornersCurrentImage',['../class_aruco_unity_1_1_controllers_1_1_aruco_calibrator.html#ac3083bee125e707763375b06b15c9f88',1,'ArucoUnity::Controllers::ArucoCalibrator']]],
   ['markerid',['MarkerId',['../class_aruco_unity_1_1_objects_1_1_aruco_marker.html#ae6208aaaeac8465df43d090aaf3bf649',1,'ArucoUnity::Objects::ArucoMarker']]],
@@ -27,6 +27,7 @@ var searchData=
   ['maxerroneousbitsinborderrate',['MaxErroneousBitsInBorderRate',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#a8b841a486c612340f7b678cf2ed18caa',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
   ['maxiter',['MaxIter',['../class_aruco_unity_1_1_plugin_1_1_cv_1_1_term_criteria.html#a6eb2a86e2de94b4e5a8ed5ac90ab44beabbf52264f7a6e91c48a242f95aeed3db',1,'ArucoUnity::Plugin::Cv::TermCriteria']]],
   ['maxmarkerperimeterrate',['MaxMarkerPerimeterRate',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#a7ca8fdc5042961c9d81d257066774025',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
+  ['meterstopixels300ppp',['metersToPixels300ppp',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#a8221ef369ab051c00dee8d5409fe7acb',1,'ArucoUnity::Objects::ArucoObject']]],
   ['mincornerdistancerate',['MinCornerDistanceRate',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#aeb1edeb56e95c942858ecc95e6310121',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
   ['mindistancetoborder',['MinDistanceToBorder',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#a0bd0a217c6530927d01bacc6f1d147af',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
   ['minmarkerdistancerate',['MinMarkerDistanceRate',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#ab7e8cf5b570fb7f34e613a8fd9bf015a',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],

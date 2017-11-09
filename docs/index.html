@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ArUco Unity
-   &#160;<span id="projectnumber">1.1.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">OpenCV&#39;s ArUco Marker Detection module adapted for Unity 5.</div>
   </td>
@@ -65,19 +65,22 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>OpenCV's <a href="http://docs.opencv.org/master/d9/d6a/group__aruco.html">ArUco</a> Marker Detection module adapted for Unity 5. The OpenCV's calibration modules <a href="http://docs.opencv.org/master/d9/d0c/group__calib3d.html">cablid3d</a> and <a href="http://docs.opencv.org/master/d3/ddc/group__ccalib.html">ccalib</a> are also included.</p>
-<p>This project has been developed as part of the master thesis of <a href="https://ca.linkedin.com/in/normanderwan">Erwan Normand</a> and was supported by the <a href="https://www.etsmtl.ca/">ÉTS - École de Technologie Supérieure</a>.</p>
+<p>This project has been developed as part of the master thesis of <a href="https://ca.linkedin.com/in/normanderwan">Erwan Normand</a> was supported by the <a href="https://www.etsmtl.ca/">ÉTS - École de Technologie Supérieure</a>.</p>
+<h2>Installation</h2>
+<p>Download the <a href="https://github.com/enormand/aruco-unity/releases">latest build release</a>, or see the Build section. Import the package in your Unity project.</p>
 <h2>Usage</h2>
-<p>Download the latest build release, or see the Build section. Import the package in your Unity project.</p>
-<h2>Marker tracking</h2>
+<h3>Marker tracking</h3>
 <ul>
 <li>Open the <code>Assets/ArucoUnity/Scenes/Tracking</code> scene.</li>
 <li>Configure the <code>Undistortion Type</code> and the <code>Camera Id</code> properties of the <code>ArucoCameraWebcam</code> in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. <code>ArucoUnity/Calibrations/&lt;calibration_file&gt;.xml</code>).</li>
 <li>Make sure the <code>ArucoCamera</code> property of the <code>ArucoTracker</code> object is linked to the <code>ArucoCameraWebcam</code> object configured earlier.</li>
-<li>Create an empty object and add it an <code>ArucoMarker</code> script and configure it according to the printed marker you want to track. Add 3D content as a child of this object.</li>
+<li>Create an empty object and add it an <code>ArucoMarker</code> script and configure it according to the printed marker you want to track.</li>
+<li>Add 3D content as a child of the ArucoMarker object.</li>
+<li>Add optionaly a <code>ArucoObjectDisplayer</code> script to the ArucoMarker object if you want to visualize the ArUco object.</li>
 <li>Add this object to the <code>Aruco Objects</code> list property of the <code>ArucoTracker</code> object.</li>
-<li>Run the scene. The <code>ArucoTracker</code> will place any detected marker in the <code>Aruco Objects</code> list relative to the camera of the <code>ArucoCamera</code> property.</li>
+<li>Run the scene. The <code>ArucoTracker</code> will place (position, rotation, scale) any detected marker in the <code>Aruco Objects</code> list relative to the camera property.</li>
 </ul>
-<h2>Camera calibration</h2>
+<h3>Camera calibration</h3>
 <ul>
 <li>Open the <code>Assets/ArucoUnity/Scenes/Calibration</code>.</li>
 <li>Configure the <code>Undistortion Type</code> and the <code>Camera Id</code> properties of the <code>ArucoCameraWebcam</code> in the scene. The <code>CameraParametersFilePath</code> is optional: it will be filled automatically.</li>
@@ -85,7 +88,7 @@ $(function() {
 <li>Configure the <code>Calibration Board</code> used by the prefab according to the board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.</li>
 <li>Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the 'Calibrate' button is triggered.</li>
 </ul>
-<h2>Marker creation</h2>
+<h3>Marker creation</h3>
 <p>Open and run the the <code>Assets/ArucoUnity/Scenes/Creation</code> scene. It demonstrates the creation of two different markers, one grid board, one ChArUco board and one diamond marker.</p>
 <h2>Build</h2>
 <h3>Dependencies</h3>
@@ -106,17 +109,39 @@ $(function() {
 <li>The library: <a href="https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html">https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html</a></li>
 <li>The Unity package: <a href="https://enormand.github.io/aruco-unity/group__aruco__unity__package.html">https://enormand.github.io/aruco-unity/group__aruco__unity__package.html</a></li>
 </ul>
+<h2>Contributions</h2>
+<p>If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.</p>
+<p>Some features or corrections to do:</p>
+<ul>
+<li>Add an extended tracking</li>
+<li>Write the tests for the library with Google Test</li>
+<li>Write the tests for the Unity package</li>
+<li>Replace the library with one of the following open-source project (should be compatible with Unity and at least OpenCV 3.3):<ul>
+<li><a href="http://www.emgu.com">EmguCV</a></li>
+<li><a href="https://github.com/shimat/opencvsharp">OpenCvSharp</a></li>
+<li><a href="https://bitbucket.org/horizongir/opencv.net">OpenCV.NET</a></li>
+</ul>
+</li>
+<li>Add the autoscale feature to <a class="el" href="class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html">ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker</a> (see this <a href="https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203">ArUco sample</a>)</li>
+<li>Fix the crash that occur when calling ArucoUnity.Plugin.Cv.au_cv_Exception_delete(System.IntPtr)</li>
+<li>Build the library for Windows 32 bits, Linux, Mac, Android, iOS, UWP</li>
+</ul>
 <h2>Licenses</h2>
 <p>See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).</p>
 <p>See the <a href="3rdparty/">3rdparty folder</a> for licenses of the third-party dependencies. ArUco Unity makes use of the following projects:</p>
 <ul>
-<li><a href="http://opencv.org/">OpenCV</a> and the <a href="https://github.com/opencv/opencv_contrib/tree/master/modules/aruco">ArUco</a>, <a href="http://docs.opencv.org/master/d9/d0c/group__calib3d.html">cablid3d</a> and <a href="http://docs.opencv.org/master/d3/ddc/group__ccalib.html">ccalib</a> extra modules.</li>
+<li><a href="http://opencv.org/">OpenCV</a> with the following modules:<ul>
+<li><a href="https://github.com/opencv/opencv_contrib/tree/master/modules/aruco">ArUco</a></li>
+<li><a href="http://docs.opencv.org/master/d9/d0c/group__calib3d.html">cablid3d</a></li>
+<li><a href="http://docs.opencv.org/master/d3/ddc/group__ccalib.html">ccalib</a></li>
+</ul>
+</li>
 <li><a href="https://github.com/google/googletest">Google Test</a> </li>
 </ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 27 2017 18:10:36 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 8 2017 20:58:39 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ArUco Unity
-   &#160;<span id="projectnumber">1.1.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">OpenCV&#39;s ArUco Marker Detection module adapted for Unity 5.</div>
   </td>
@@ -65,6 +65,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
@@ -80,74 +81,184 @@ $(function() {
 
 <p>Inherits <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a>.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a503d2a83daa4923d52f861aaa285db23"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html">Cv.Mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a503d2a83daa4923d52f861aaa285db23">Draw</a> ()</td></tr>
+<tr class="memdesc:a503d2a83daa4923d52f861aaa285db23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the image of the ArUco object. In editor it should returns null and no exception if the object is incorrectly configured.  <a href="#a503d2a83daa4923d52f861aaa285db23">More...</a><br /></td></tr>
+<tr class="separator:a503d2a83daa4923d52f861aaa285db23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a80963814c32706c71dcd4f34b6b0d"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a51a80963814c32706c71dcd4f34b6b0d">GenerateName</a> ()</td></tr>
+<tr class="memdesc:a51a80963814c32706c71dcd4f34b6b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a generated name depending on the value of the properties.  <a href="#a51a80963814c32706c71dcd4f34b6b0d">More...</a><br /></td></tr>
+<tr class="separator:a51a80963814c32706c71dcd4f34b6b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6871c32072512d535c7c7d03e00825e0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a6871c32072512d535c7c7d03e00825e0">GetArucoHashCode</a> (int[] ids)</td></tr>
+<tr class="memitem:a6871c32072512d535c7c7d03e00825e0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a6871c32072512d535c7c7d03e00825e0">GetArucoHashCode</a> (int[] <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a9195d2f515d6e8aebd4ca7e52af4b1c8">ids</a>)</td></tr>
 <tr class="memdesc:a6871c32072512d535c7c7d03e00825e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the hash code of a ChArUco diamond marker.  <a href="#a6871c32072512d535c7c7d03e00825e0">More...</a><br /></td></tr>
 <tr class="separator:a6871c32072512d535c7c7d03e00825e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:ae61c632f713c2926d58ab589da2f5c30"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#ae61c632f713c2926d58ab589da2f5c30">OnValidate</a> ()</td></tr>
+<tr class="memdesc:ae61c632f713c2926d58ab589da2f5c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a7b2b909cad24be398623b070598e0f0b" title="Calls UpdateProperties and the PropertyUpdated event. ">OnPropertyUpdated()</a> in editor mode.  <a href="#ae61c632f713c2926d58ab589da2f5c30">More...</a><br /></td></tr>
+<tr class="separator:ae61c632f713c2926d58ab589da2f5c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e51f2bed941af81b986f045b3c83949"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a2e51f2bed941af81b986f045b3c83949">AdjustGameObjectScale</a> ()</td></tr>
+<tr class="memdesc:a2e51f2bed941af81b986f045b3c83949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts the scale to <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a995d65fea54bca4080ead6325e033bbc" title="Gets or sets the side length of each marker. In pixels for Creators. In meters for Trackers and Calib...">MarkerSideLength</a> length.  <a href="#a2e51f2bed941af81b986f045b3c83949">More...</a><br /></td></tr>
+<tr class="separator:a2e51f2bed941af81b986f045b3c83949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5d830afc51ab903ba79701be06344c9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#aa5d830afc51ab903ba79701be06344c9">UpdateArucoHashCode</a> ()</td></tr>
-<tr class="memdesc:aa5d830afc51ab903ba79701be06344c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the ArUco hash code of the object.  <a href="#aa5d830afc51ab903ba79701be06344c9">More...</a><br /></td></tr>
+<tr class="memdesc:aa5d830afc51ab903ba79701be06344c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the ArUco hash code of the object.  <a href="#aa5d830afc51ab903ba79701be06344c9">More...</a><br /></td></tr>
 <tr class="separator:aa5d830afc51ab903ba79701be06344c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2122f8eee1ddf0acef19766468c2f0c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a2122f8eee1ddf0acef19766468c2f0c7">OnValidate</a> ()</td></tr>
-<tr class="memdesc:a2122f8eee1ddf0acef19766468c2f0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the ids array to its fixed size in the editor.  <a href="#a2122f8eee1ddf0acef19766468c2f0c7">More...</a><br /></td></tr>
-<tr class="separator:a2122f8eee1ddf0acef19766468c2f0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a></td></tr>
 <tr class="memitem:a4cd57d3103f51152a907a88a7aec7434 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a4cd57d3103f51152a907a88a7aec7434">Awake</a> ()</td></tr>
-<tr class="memdesc:a4cd57d3103f51152a907a88a7aec7434 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the properties.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a4cd57d3103f51152a907a88a7aec7434">More...</a><br /></td></tr>
+<tr class="memdesc:a4cd57d3103f51152a907a88a7aec7434 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aa0121865ea9dbcc5dd691cf1203abdfa" title="Initializes the properties and calls the UpdateArucoHashCode and AdjustGameObjectScale methods...">UpdateProperties()</a>.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a4cd57d3103f51152a907a88a7aec7434">More...</a><br /></td></tr>
 <tr class="separator:a4cd57d3103f51152a907a88a7aec7434 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a019a538c54ff0ad7d715c9ca216ebdc9 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a019a538c54ff0ad7d715c9ca216ebdc9">OnPropertyUpdating</a> ()</td></tr>
-<tr class="memdesc:a019a538c54ff0ad7d715c9ca216ebdc9 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the event <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae3a8155c979b8ef4fc0a5653a2eac2b0" title="Executed before a property is going to be updated. ">PropertyUpdating</a>.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a019a538c54ff0ad7d715c9ca216ebdc9">More...</a><br /></td></tr>
-<tr class="separator:a019a538c54ff0ad7d715c9ca216ebdc9 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27603819c412a58a967ae9fd3634d259 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a27603819c412a58a967ae9fd3634d259">OnPropertyUpdated</a> ()</td></tr>
-<tr class="memdesc:a27603819c412a58a967ae9fd3634d259 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the event <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aef408433dc24c35cf373e0cef0467f8b" title="Executed after a property has been updated. ">PropertyUpdated</a>.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a27603819c412a58a967ae9fd3634d259">More...</a><br /></td></tr>
-<tr class="separator:a27603819c412a58a967ae9fd3634d259 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe5cea2fba6a5f2326904beae1ffc20 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#acbe5cea2fba6a5f2326904beae1ffc20">OnPropertyUpdating</a> ()</td></tr>
+<tr class="memdesc:acbe5cea2fba6a5f2326904beae1ffc20 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the event <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a251867eab18867f3cd4046dfc80e9197" title="Executed before a property is going to be updated. ">PropertyUpdating</a>.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#acbe5cea2fba6a5f2326904beae1ffc20">More...</a><br /></td></tr>
+<tr class="separator:acbe5cea2fba6a5f2326904beae1ffc20 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2b909cad24be398623b070598e0f0b inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a7b2b909cad24be398623b070598e0f0b">OnPropertyUpdated</a> ()</td></tr>
+<tr class="memdesc:a7b2b909cad24be398623b070598e0f0b inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aa0121865ea9dbcc5dd691cf1203abdfa" title="Initializes the properties and calls the UpdateArucoHashCode and AdjustGameObjectScale methods...">UpdateProperties</a> and the <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a2599b77f6d64eef17fc4f7a32e2bfe01" title="Executed after a property has been updated. ">PropertyUpdated</a> event.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a7b2b909cad24be398623b070598e0f0b">More...</a><br /></td></tr>
+<tr class="separator:a7b2b909cad24be398623b070598e0f0b inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0121865ea9dbcc5dd691cf1203abdfa inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aa0121865ea9dbcc5dd691cf1203abdfa">UpdateProperties</a> ()</td></tr>
+<tr class="memdesc:aa0121865ea9dbcc5dd691cf1203abdfa inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the properties and calls the <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#abb8a6742a71ad79cae968bcbac936ef0" title="Updates the ArUco hash code of the object. ">UpdateArucoHashCode</a> and <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#add0a4e76e1239ef773e9cf4f3164070c" title="Adjusts the scale to MarkerSideLength length. ">AdjustGameObjectScale</a> methods.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aa0121865ea9dbcc5dd691cf1203abdfa">More...</a><br /></td></tr>
+<tr class="separator:aa0121865ea9dbcc5dd691cf1203abdfa inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3448a5f09f0f5bd829601e8ff2663683 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a3448a5f09f0f5bd829601e8ff2663683">GetInPixels</a> (float propertyValue)</td></tr>
+<tr class="memdesc:a3448a5f09f0f5bd829601e8ff2663683 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value as an int, with a conversion from meters to pixels if the property value is less than 10.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a3448a5f09f0f5bd829601e8ff2663683">More...</a><br /></td></tr>
+<tr class="separator:a3448a5f09f0f5bd829601e8ff2663683 inherit pro_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a9a472343216055c8b66a9dafc0a55c50"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a9a472343216055c8b66a9dafc0a55c50">IdsLength</a> = 4</td></tr>
-<tr class="memdesc:a9a472343216055c8b66a9dafc0a55c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ChArUco diamond marker is composed of four markers.  <a href="#a9a472343216055c8b66a9dafc0a55c50">More...</a><br /></td></tr>
-<tr class="separator:a9a472343216055c8b66a9dafc0a55c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335f5b0af5b0f43cea9f9e9caa356f51"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a335f5b0af5b0f43cea9f9e9caa356f51">SquareNumberPerSide</a> = 3</td></tr>
+<tr class="memdesc:a335f5b0af5b0f43cea9f9e9caa356f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ChArUco diamond marker is composed of 3x3 squares(3 per side).  <a href="#a335f5b0af5b0f43cea9f9e9caa356f51">More...</a><br /></td></tr>
+<tr class="separator:a335f5b0af5b0f43cea9f9e9caa356f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9195d2f515d6e8aebd4ca7e52af4b1c8"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a9195d2f515d6e8aebd4ca7e52af4b1c8">ids</a></td></tr>
+<tr class="separator:a9195d2f515d6e8aebd4ca7e52af4b1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_aruco_unity_1_1_objects_1_1_aruco_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_aruco_unity_1_1_objects_1_1_aruco_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a></td></tr>
+<tr class="memitem:a8221ef369ab051c00dee8d5409fe7acb inherit pro_attribs_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a8221ef369ab051c00dee8d5409fe7acb">metersToPixels300ppp</a> = 100f * 300f / 2.54f</td></tr>
+<tr class="separator:a8221ef369ab051c00dee8d5409fe7acb inherit pro_attribs_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aea7d3664222a097061e07bb694d3bd5c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#aea7d3664222a097061e07bb694d3bd5c">SquareSideLength</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aea7d3664222a097061e07bb694d3bd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.  <a href="#aea7d3664222a097061e07bb694d3bd5c">More...</a><br /></td></tr>
+<tr class="memdesc:aea7d3664222a097061e07bb694d3bd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.  <a href="#aea7d3664222a097061e07bb694d3bd5c">More...</a><br /></td></tr>
 <tr class="separator:aea7d3664222a097061e07bb694d3bd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544b014647470fb90df1ca922b9c3c1e"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_diamond.html#a544b014647470fb90df1ca922b9c3c1e">Ids</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a544b014647470fb90df1ca922b9c3c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The four ids of the four markers of the diamond.  <a href="#a544b014647470fb90df1ca922b9c3c1e">More...</a><br /></td></tr>
+<tr class="memdesc:a544b014647470fb90df1ca922b9c3c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the four ids of the four markers of the diamond.  <a href="#a544b014647470fb90df1ca922b9c3c1e">More...</a><br /></td></tr>
 <tr class="separator:a544b014647470fb90df1ca922b9c3c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_aruco_unity_1_1_objects_1_1_aruco_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a></td></tr>
 <tr class="memitem:ad72d74821fbae85276b8348263d19021 inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ad72d74821fbae85276b8348263d19021">ArucoHashCode</a><code> [get, protected set]</code></td></tr>
 <tr class="separator:ad72d74821fbae85276b8348263d19021 inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93b149455619ac8c7d81a0aa9c27577d inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_plugin_1_1_aruco_1_1_dictionary.html">Aruco.Dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a93b149455619ac8c7d81a0aa9c27577d">Dictionary</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a93b149455619ac8c7d81a0aa9c27577d inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dictionary to use.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a93b149455619ac8c7d81a0aa9c27577d">More...</a><br /></td></tr>
+<tr class="memdesc:a93b149455619ac8c7d81a0aa9c27577d inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the dictionary to use.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a93b149455619ac8c7d81a0aa9c27577d">More...</a><br /></td></tr>
 <tr class="separator:a93b149455619ac8c7d81a0aa9c27577d inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a995d65fea54bca4080ead6325e033bbc inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a995d65fea54bca4080ead6325e033bbc">MarkerSideLength</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a995d65fea54bca4080ead6325e033bbc inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a995d65fea54bca4080ead6325e033bbc">More...</a><br /></td></tr>
+<tr class="memdesc:a995d65fea54bca4080ead6325e033bbc inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the side length of each marker. In pixels for Creators. In meters for Trackers and Calibrators.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a995d65fea54bca4080ead6325e033bbc">More...</a><br /></td></tr>
 <tr class="separator:a995d65fea54bca4080ead6325e033bbc inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19feccc4100675e53a1225e92e15c0c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae19feccc4100675e53a1225e92e15c0c">MarkerBorderBits</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae19feccc4100675e53a1225e92e15c0c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bits in marker borders (default: 1). Used by Creators.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae19feccc4100675e53a1225e92e15c0c">More...</a><br /></td></tr>
-<tr class="separator:ae19feccc4100675e53a1225e92e15c0c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7631b0716444e84667ef8330aca66c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a9c7631b0716444e84667ef8330aca66c">MarkerBorderBits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9c7631b0716444e84667ef8330aca66c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of bits in marker borders (default: 1). Used by Creators.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a9c7631b0716444e84667ef8330aca66c">More...</a><br /></td></tr>
+<tr class="separator:a9c7631b0716444e84667ef8330aca66c inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4de9cccf1106e164271015f00c1181 inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a3b4de9cccf1106e164271015f00c1181">DisplayInEditor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a3b4de9cccf1106e164271015f00c1181 inherit properties_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_aruco_unity_1_1_objects_1_1_aruco_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a></td></tr>
-<tr class="memitem:a1d49386c93869a45d495b4405afb7801 inherit pub_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a1d49386c93869a45d495b4405afb7801">ArucoObjectEventHandler</a> (<a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoObject</a> arucoObject)</td></tr>
-<tr class="separator:a1d49386c93869a45d495b4405afb7801 inherit pub_methods_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td colspan="2" onclick="javascript:toggleInherit('events_class_aruco_unity_1_1_objects_1_1_aruco_object')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoUnity.Objects.ArucoObject</a></td></tr>
-<tr class="memitem:ae3a8155c979b8ef4fc0a5653a2eac2b0 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a1d49386c93869a45d495b4405afb7801">ArucoObjectEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae3a8155c979b8ef4fc0a5653a2eac2b0">PropertyUpdating</a> = delegate { }</td></tr>
-<tr class="memdesc:ae3a8155c979b8ef4fc0a5653a2eac2b0 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed before a property is going to be updated.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae3a8155c979b8ef4fc0a5653a2eac2b0">More...</a><br /></td></tr>
-<tr class="separator:ae3a8155c979b8ef4fc0a5653a2eac2b0 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef408433dc24c35cf373e0cef0467f8b inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a1d49386c93869a45d495b4405afb7801">ArucoObjectEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aef408433dc24c35cf373e0cef0467f8b">PropertyUpdated</a> = delegate { }</td></tr>
-<tr class="memdesc:aef408433dc24c35cf373e0cef0467f8b inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed after a property has been updated.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aef408433dc24c35cf373e0cef0467f8b">More...</a><br /></td></tr>
-<tr class="separator:aef408433dc24c35cf373e0cef0467f8b inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a251867eab18867f3cd4046dfc80e9197 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a251867eab18867f3cd4046dfc80e9197">PropertyUpdating</a> = delegate { }</td></tr>
+<tr class="memdesc:a251867eab18867f3cd4046dfc80e9197 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed before a property is going to be updated.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a251867eab18867f3cd4046dfc80e9197">More...</a><br /></td></tr>
+<tr class="separator:a251867eab18867f3cd4046dfc80e9197 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2599b77f6d64eef17fc4f7a32e2bfe01 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html">ArucoObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a2599b77f6d64eef17fc4f7a32e2bfe01">PropertyUpdated</a> = delegate { }</td></tr>
+<tr class="memdesc:a2599b77f6d64eef17fc4f7a32e2bfe01 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed after a property has been updated.  <a href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a2599b77f6d64eef17fc4f7a32e2bfe01">More...</a><br /></td></tr>
+<tr class="separator:a2599b77f6d64eef17fc4f7a32e2bfe01 inherit events_class_aruco_unity_1_1_objects_1_1_aruco_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Describes an ChArUco diamond marker. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2e51f2bed941af81b986f045b3c83949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e51f2bed941af81b986f045b3c83949">&#9670;&nbsp;</a></span>AdjustGameObjectScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void ArucoUnity.Objects.ArucoDiamond.AdjustGameObjectScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adjusts the scale to <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a995d65fea54bca4080ead6325e033bbc" title="Gets or sets the side length of each marker. In pixels for Creators. In meters for Trackers and Calib...">MarkerSideLength</a> length. </p>
+
+<p>Implements <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#add0a4e76e1239ef773e9cf4f3164070c">ArucoUnity.Objects.ArucoObject</a>.</p>
+
+</div>
+</div>
+<a id="a503d2a83daa4923d52f861aaa285db23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503d2a83daa4923d52f861aaa285db23">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html">Cv.Mat</a> ArucoUnity.Objects.ArucoDiamond.Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the image of the ArUco object. In editor it should returns null and no exception if the object is incorrectly configured. </p>
+<dl class="section return"><dt>Returns</dt><dd>The image of the ArUco object.</dd></dl>
+
+<p>Implements <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#ae015f2d62d52c08636ec8ef76f316d15">ArucoUnity.Objects.ArucoObject</a>.</p>
+
+</div>
+</div>
+<a id="a51a80963814c32706c71dcd4f34b6b0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a80963814c32706c71dcd4f34b6b0d">&#9670;&nbsp;</a></span>GenerateName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string ArucoUnity.Objects.ArucoDiamond.GenerateName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a generated name depending on the value of the properties. </p>
+
+<p>Implements <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a682928a91c70c5cfcf311cfc7396eb16">ArucoUnity.Objects.ArucoObject</a>.</p>
+
+</div>
+</div>
 <a id="a6871c32072512d535c7c7d03e00825e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6871c32072512d535c7c7d03e00825e0">&#9670;&nbsp;</a></span>GetArucoHashCode()</h2>
 
@@ -183,8 +294,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2122f8eee1ddf0acef19766468c2f0c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2122f8eee1ddf0acef19766468c2f0c7">&#9670;&nbsp;</a></span>OnValidate()</h2>
+<a id="ae61c632f713c2926d58ab589da2f5c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61c632f713c2926d58ab589da2f5c30">&#9670;&nbsp;</a></span>OnValidate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +304,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ArucoUnity.Objects.ArucoDiamond.OnValidate </td>
+          <td class="memname">override void ArucoUnity.Objects.ArucoDiamond.OnValidate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -206,7 +317,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Keep the ids array to its fixed size in the editor. </p>
+<p>Calls <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#a7b2b909cad24be398623b070598e0f0b" title="Calls UpdateProperties and the PropertyUpdated event. ">OnPropertyUpdated()</a> in editor mode. </p>
+
+<p>Reimplemented from <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#aa72990a8dcdd11a3bbfb30c341bf5453">ArucoUnity.Objects.ArucoObject</a>.</p>
 
 </div>
 </div>
@@ -233,15 +346,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Update the ArUco hash code of the object. </p>
+<p>Updates the ArUco hash code of the object. </p>
 
 <p>Implements <a class="el" href="class_aruco_unity_1_1_objects_1_1_aruco_object.html#abb8a6742a71ad79cae968bcbac936ef0">ArucoUnity.Objects.ArucoObject</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9a472343216055c8b66a9dafc0a55c50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a472343216055c8b66a9dafc0a55c50">&#9670;&nbsp;</a></span>IdsLength</h2>
+<a id="a9195d2f515d6e8aebd4ca7e52af4b1c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9195d2f515d6e8aebd4ca7e52af4b1c8">&#9670;&nbsp;</a></span>ids</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int ArucoUnity.Objects.ArucoDiamond.IdsLength = 4</td>
+          <td class="memname">int [] ArucoUnity.Objects.ArucoDiamond.ids</td>
         </tr>
       </table>
   </td>
@@ -260,7 +373,29 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A ChArUco diamond marker is composed of four markers. </p>
+</div>
+</div>
+<a id="a335f5b0af5b0f43cea9f9e9caa356f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335f5b0af5b0f43cea9f9e9caa356f51">&#9670;&nbsp;</a></span>SquareNumberPerSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ArucoUnity.Objects.ArucoDiamond.SquareNumberPerSide = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A ChArUco diamond marker is composed of 3x3 squares(3 per side). </p>
 
 </div>
 </div>
@@ -285,7 +420,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The four ids of the four markers of the diamond. </p>
+<p>Gets or sets the four ids of the four markers of the diamond. </p>
 
 </div>
 </div>
@@ -309,17 +444,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The side length of each square. In pixels for Creators. In meters for Trackers and Calibrators. </p>
+<p>Gets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/an15400/Documents/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Objects/<a class="el" href="_aruco_diamond_8cs.html">ArucoDiamond.cs</a></li>
+<li>C:/Users/an15400/Documents/Maitrise/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Objects/<a class="el" href="_aruco_diamond_8cs.html">ArucoDiamond.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 27 2017 18:10:34 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 8 2017 20:58:38 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

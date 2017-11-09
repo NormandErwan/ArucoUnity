@@ -14,6 +14,8 @@ var searchData=
   ['diamondtvecs',['DiamondTvecs',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_diamond_tracker.html#a0721cc51d195454a4b26c5d8a4298359',1,'ArucoUnity::Controllers::ObjectTrackers::ArucoDiamondTracker']]],
   ['dictionary',['Dictionary',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#a93b149455619ac8c7d81a0aa9c27577d',1,'ArucoUnity.Objects.ArucoObject.Dictionary()'],['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_board.html#a2ec3b5a240c7ae1c3396247f4153a893',1,'ArucoUnity.Plugin.Aruco.Board.Dictionary()']]],
   ['displayimages',['DisplayImages',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#afc60386803b56f1af3047965aaa19713',1,'ArucoUnity::Cameras::ArucoCamera']]],
+  ['displayineditor',['DisplayInEditor',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#a3b4de9cccf1106e164271015f00c1181',1,'ArucoUnity::Objects::ArucoObject']]],
+  ['displayinplaymode',['DisplayInPlayMode',['../class_aruco_unity_1_1_controllers_1_1_aruco_object_displayer.html#ac16a8318dc7adf417af3fd7787ee0a9a',1,'ArucoUnity::Controllers::ArucoObjectDisplayer']]],
   ['distcoeffs',['DistCoeffs',['../class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a8dabb4f520ea6449b63384b8038c21a1',1,'ArucoUnity::Cameras::Parameters::CameraParameters']]],
   ['distcoeffstype',['DistCoeffsType',['../class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#ac4439978352fc2da9fd543f762c37089',1,'ArucoUnity::Cameras::Parameters::CameraParameters']]],
   ['distcoeffsvalues',['DistCoeffsValues',['../class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#acde6549673fc8e3438637d0969914f6f',1,'ArucoUnity::Cameras::Parameters::CameraParameters']]],
@@ -21,6 +23,5 @@ var searchData=
   ['drawdetectedcharucomarkers',['DrawDetectedCharucoMarkers',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a1b71f1628970315bf8dbfbd4113cef0a',1,'ArucoUnity::Controllers::ArucoTracker']]],
   ['drawdetecteddiamonds',['DrawDetectedDiamonds',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#aae66af6021ffdaa2a3ab1414c7927e8f',1,'ArucoUnity::Controllers::ArucoTracker']]],
   ['drawdetectedmarkers',['DrawDetectedMarkers',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#a9c108cd41f64895ccbc7414cb1362035',1,'ArucoUnity::Controllers::ArucoTracker']]],
-  ['drawimage',['DrawImage',['../class_aruco_unity_1_1_controllers_1_1_aruco_creator.html#aa3ca1e4907793fc6f7b2756fcd523e14',1,'ArucoUnity::Controllers::ArucoCreator']]],
   ['drawrejectedcandidates',['DrawRejectedCandidates',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html#ae49c6b80208ccc37dc851892061222ee',1,'ArucoUnity::Controllers::ArucoTracker']]]
 ];

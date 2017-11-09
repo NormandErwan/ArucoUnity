@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ArUco Unity
-   &#160;<span id="projectnumber">1.1.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">OpenCV&#39;s ArUco Marker Detection module adapted for Unity 5.</div>
   </td>
@@ -89,11 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aec8f2a96ac4124618531150a5c9f61c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiate the camera start and the associated webcam device.  <a href="#aec8f2a96ac4124618531150a5c9f61c1">More...</a><br /></td></tr>
 <tr class="separator:aec8f2a96ac4124618531150a5c9f61c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1296564712deb25c65deb45b4e2f77e3"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a1296564712deb25c65deb45b4e2f77e3">StopCameras</a> ()</td></tr>
-<tr class="memdesc:a1296564712deb25c65deb45b4e2f77e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the camera and the associated webcam device, and trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a0bf4fbadf1cf3b53a5de02e473998f9f" title="Executed when the camera system stops. ">ArucoCamera.Stopped</a> event.  <a href="#a1296564712deb25c65deb45b4e2f77e3">More...</a><br /></td></tr>
+<tr class="memdesc:a1296564712deb25c65deb45b4e2f77e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the camera and the associated webcam device, and trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ab33c374b9cf527482f3fdec4947e46d6" title="Executed when the camera system stops. ">ArucoCamera.Stopped</a> event.  <a href="#a1296564712deb25c65deb45b4e2f77e3">More...</a><br /></td></tr>
 <tr class="separator:a1296564712deb25c65deb45b4e2f77e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html">ArucoUnity.Cameras.ArucoCamera</a></td></tr>
-<tr class="memitem:a2b8bbf29a01f267e4c27a18cb6c5ad95 inherit pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a2b8bbf29a01f267e4c27a18cb6c5ad95">CameraEventHandler</a> ()</td></tr>
-<tr class="separator:a2b8bbf29a01f267e4c27a18cb6c5ad95 inherit pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820104d620935c3246962739e63ba317 inherit pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a820104d620935c3246962739e63ba317">Undistort</a> ()</td></tr>
 <tr class="memdesc:a820104d620935c3246962739e63ba317 inherit pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undistort the images according to the Utility.CameraParameters, if not null. <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a6f80b089ead8110e823288d4c81073b0" title="The images manipulated by OpenCV. ">Images</a> is immediatly updated. <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ImageTextures</a> will be updated at <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a1c13786bb7dfe8d96c358ceaaf71d27a" title="Apply the changes made on the Images during the frame to the ImageTextures. ">LateUpdate</a> from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a6f80b089ead8110e823288d4c81073b0" title="The images manipulated by OpenCV. ">Images</a>. It's time-consuming but it'ss often necessary for a well-aligned AR.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a820104d620935c3246962739e63ba317">More...</a><br /></td></tr>
 <tr class="separator:a820104d620935c3246962739e63ba317 inherit pub_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,14 +102,14 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a434c0cd22ebccc7df92c95edcbaba0ab"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a434c0cd22ebccc7df92c95edcbaba0ab">Update</a> ()</td></tr>
-<tr class="memdesc:a434c0cd22ebccc7df92c95edcbaba0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa2851055e9e02df5916f6c1d9a3721e4" title="Executed when the camera system starts. ">ArucoCamera.Started</a> event.  <a href="#a434c0cd22ebccc7df92c95edcbaba0ab">More...</a><br /></td></tr>
+<tr class="memdesc:a434c0cd22ebccc7df92c95edcbaba0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a9d5ab1ededbc929b646db6946cd95965" title="Executed when the camera system starts. ">ArucoCamera.Started</a> event.  <a href="#a434c0cd22ebccc7df92c95edcbaba0ab">More...</a><br /></td></tr>
 <tr class="separator:a434c0cd22ebccc7df92c95edcbaba0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a521fee3ec1108ac7969ef795157a7c8d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a521fee3ec1108ac7969ef795157a7c8d">UpdateCameraImages</a> ()</td></tr>
 <tr class="memdesc:a521fee3ec1108ac7969ef795157a7c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Once the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a4ee42779fd85eb27c218fe44d03ddfa1" title="The texture of the associated webcam. ">WebCamTexture</a> is started, update every frame the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a> and the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a063870d7b8d5023a086c05c3c9d39a29" title="The Images content. ">ArucoCamera.ImageDatas</a> with the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a4ee42779fd85eb27c218fe44d03ddfa1" title="The texture of the associated webcam. ">WebCamTexture</a> content.  <a href="#a521fee3ec1108ac7969ef795157a7c8d">More...</a><br /></td></tr>
 <tr class="separator:a521fee3ec1108ac7969ef795157a7c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc47775803fefcf854b8afcae27111fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#abc47775803fefcf854b8afcae27111fb">ConfigureImageCameraBackgrounds</a> ()</td></tr>
-<tr class="memdesc:abc47775803fefcf854b8afcae27111fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a>, the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#aabc2bc24a5a1c47fbccad6e99960f2ce" title="Camera that shot the ArucoCamera.ImageCameras in order to maintain the aspect ratio of ArucoCamera...">CameraBackground</a> and a facing plane of the CameraImage that will display the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a>.  <a href="#abc47775803fefcf854b8afcae27111fb">More...</a><br /></td></tr>
-<tr class="separator:abc47775803fefcf854b8afcae27111fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a3863dc4c1537bb086bfeb7b6e6d05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#aa9a3863dc4c1537bb086bfeb7b6e6d05">ConfigureCameraAndBackground</a> ()</td></tr>
+<tr class="memdesc:aa9a3863dc4c1537bb086bfeb7b6e6d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a>, the background that will display live webcam video through the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a>.  <a href="#aa9a3863dc4c1537bb086bfeb7b6e6d05">More...</a><br /></td></tr>
+<tr class="separator:aa9a3863dc4c1537bb086bfeb7b6e6d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html">ArucoUnity.Cameras.ArucoCamera</a></td></tr>
 <tr class="memitem:ade2bef84544fae097a5f0cdfb9135a20 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ade2bef84544fae097a5f0cdfb9135a20">Awake</a> ()</td></tr>
 <tr class="memdesc:ade2bef84544fae097a5f0cdfb9135a20 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the camera system state.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ade2bef84544fae097a5f0cdfb9135a20">More...</a><br /></td></tr>
@@ -126,16 +124,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a952705c0dc7a4ed21ac77f0d62c7f86f inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically stop the camera.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a952705c0dc7a4ed21ac77f0d62c7f86f">More...</a><br /></td></tr>
 <tr class="separator:a952705c0dc7a4ed21ac77f0d62c7f86f inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1852b67ec0eece02640a3ed43d1b822 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ad1852b67ec0eece02640a3ed43d1b822">OnStarted</a> ()</td></tr>
-<tr class="memdesc:ad1852b67ec0eece02640a3ed43d1b822 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa2851055e9e02df5916f6c1d9a3721e4" title="Executed when the camera system starts. ">Started</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ad1852b67ec0eece02640a3ed43d1b822">More...</a><br /></td></tr>
+<tr class="memdesc:ad1852b67ec0eece02640a3ed43d1b822 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a9d5ab1ededbc929b646db6946cd95965" title="Executed when the camera system starts. ">Started</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ad1852b67ec0eece02640a3ed43d1b822">More...</a><br /></td></tr>
 <tr class="separator:ad1852b67ec0eece02640a3ed43d1b822 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f6b151f30b40b8f9676df12e0006a6 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af6f6b151f30b40b8f9676df12e0006a6">OnStopped</a> ()</td></tr>
-<tr class="memdesc:af6f6b151f30b40b8f9676df12e0006a6 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a0bf4fbadf1cf3b53a5de02e473998f9f" title="Executed when the camera system stops. ">Stopped</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af6f6b151f30b40b8f9676df12e0006a6">More...</a><br /></td></tr>
+<tr class="memdesc:af6f6b151f30b40b8f9676df12e0006a6 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ab33c374b9cf527482f3fdec4947e46d6" title="Executed when the camera system stops. ">Stopped</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af6f6b151f30b40b8f9676df12e0006a6">More...</a><br /></td></tr>
 <tr class="separator:af6f6b151f30b40b8f9676df12e0006a6 inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e62136d2013b3392252d09b16cba5c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af1e62136d2013b3392252d09b16cba5c">OnConfigured</a> ()</td></tr>
-<tr class="memdesc:af1e62136d2013b3392252d09b16cba5c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a5135c222c88860678111bea98cfce5f8" title="Executed when the camera system is configured. ">Configured</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af1e62136d2013b3392252d09b16cba5c">More...</a><br /></td></tr>
+<tr class="memdesc:af1e62136d2013b3392252d09b16cba5c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aac1c156b1aef5efe00f2330f7c5e84d5" title="Executed when the camera system is configured. ">Configured</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#af1e62136d2013b3392252d09b16cba5c">More...</a><br /></td></tr>
 <tr class="separator:af1e62136d2013b3392252d09b16cba5c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ce1c3f4b77cdc667830e7786a2e4f0c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a1ce1c3f4b77cdc667830e7786a2e4f0c">OnImagesUpdated</a> ()</td></tr>
-<tr class="memdesc:a1ce1c3f4b77cdc667830e7786a2e4f0c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undistort the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a6f80b089ead8110e823288d4c81073b0" title="The images manipulated by OpenCV. ">Images</a> if required and execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a7071f465b9ac18aacd906f5097174c7d" title="Executed when the images has been updated. ">ImagesUpdated</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a1ce1c3f4b77cdc667830e7786a2e4f0c">More...</a><br /></td></tr>
+<tr class="memdesc:a1ce1c3f4b77cdc667830e7786a2e4f0c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undistort the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a6f80b089ead8110e823288d4c81073b0" title="The images manipulated by OpenCV. ">Images</a> if required and execute the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a4424d3169cf295e72dc816d044f96f09" title="Executed when the images has been updated. ">ImagesUpdated</a> action.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a1ce1c3f4b77cdc667830e7786a2e4f0c">More...</a><br /></td></tr>
 <tr class="separator:a1ce1c3f4b77cdc667830e7786a2e4f0c inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b9fb64cdb1e65ed672f10c0a369b1d inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa7b9fb64cdb1e65ed672f10c0a369b1d">InitializeMatImages</a> ()</td></tr>
 <tr class="memdesc:aa7b9fb64cdb1e65ed672f10c0a369b1d inherit pro_methods_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a6f80b089ead8110e823288d4c81073b0" title="The images manipulated by OpenCV. ">Images</a> property, the undistortion maps and the undistorded images.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa7b9fb64cdb1e65ed672f10c0a369b1d">More...</a><br /></td></tr>
@@ -143,8 +141,12 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ab1a4411cb60071df241c80f764b8f6a2"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#ab1a4411cb60071df241c80f764b8f6a2">cameraPlane</a></td></tr>
-<tr class="separator:ab1a4411cb60071df241c80f764b8f6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48fd20e4bc1124cedec8cdda89a27b1"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#ad48fd20e4bc1124cedec8cdda89a27b1">cameraBackgroundDistance</a> = 1f</td></tr>
+<tr class="separator:ad48fd20e4bc1124cedec8cdda89a27b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2288df93afab280310effa57812a30c9"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a2288df93afab280310effa57812a30c9">cameraBackground</a></td></tr>
+<tr class="separator:a2288df93afab280310effa57812a30c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c9b959dd0273a543ce278407c83f94"><td class="memItemLeft" align="right" valign="top">Renderer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a70c9b959dd0273a543ce278407c83f94">cameraBackgroundRenderer</a></td></tr>
+<tr class="separator:a70c9b959dd0273a543ce278407c83f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a8c0841e21da310ed18c1fd40bb77a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a4a8c0841e21da310ed18c1fd40bb77a6">startInitiated</a> = false</td></tr>
 <tr class="separator:a4a8c0841e21da310ed18c1fd40bb77a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2092aadc345965c4f3b870ec4a2ef6ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a2092aadc345965c4f3b870ec4a2ef6ef">cameraId</a> = 0</td></tr>
@@ -180,18 +182,12 @@ Properties</h2></td></tr>
 <tr class="memitem:acfa7f6f9b5b176e3e6618fd8070d2733"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#acfa7f6f9b5b176e3e6618fd8070d2733">CameraParametersFilePath</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:acfa7f6f9b5b176e3e6618fd8070d2733"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file path to load the camera parameters.  <a href="#acfa7f6f9b5b176e3e6618fd8070d2733">More...</a><br /></td></tr>
 <tr class="separator:acfa7f6f9b5b176e3e6618fd8070d2733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7fb7d3021fe1e555581dbaea0a114f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#ae7fb7d3021fe1e555581dbaea0a114f4">PreserveAspectRatio</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae7fb7d3021fe1e555581dbaea0a114f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preserve the aspect ratio of the webcam's image.  <a href="#ae7fb7d3021fe1e555581dbaea0a114f4">More...</a><br /></td></tr>
-<tr class="separator:ae7fb7d3021fe1e555581dbaea0a114f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afacbd7a859fee0b2013badfbaf2a2d99"><td class="memItemLeft" align="right" valign="top">WebCamDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#afacbd7a859fee0b2013badfbaf2a2d99">WebCamDevice</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:afacbd7a859fee0b2013badfbaf2a2d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The webcam to use.  <a href="#afacbd7a859fee0b2013badfbaf2a2d99">More...</a><br /></td></tr>
 <tr class="separator:afacbd7a859fee0b2013badfbaf2a2d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee42779fd85eb27c218fe44d03ddfa1"><td class="memItemLeft" align="right" valign="top">WebCamTexture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#a4ee42779fd85eb27c218fe44d03ddfa1">WebCamTexture</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a4ee42779fd85eb27c218fe44d03ddfa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The texture of the associated webcam.  <a href="#a4ee42779fd85eb27c218fe44d03ddfa1">More...</a><br /></td></tr>
 <tr class="separator:a4ee42779fd85eb27c218fe44d03ddfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabc2bc24a5a1c47fbccad6e99960f2ce"><td class="memItemLeft" align="right" valign="top">Camera&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#aabc2bc24a5a1c47fbccad6e99960f2ce">CameraBackground</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:aabc2bc24a5a1c47fbccad6e99960f2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera that shot the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a> in order to maintain the aspect ratio of <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a> on screen.  <a href="#aabc2bc24a5a1c47fbccad6e99960f2ce">More...</a><br /></td></tr>
-<tr class="separator:aabc2bc24a5a1c47fbccad6e99960f2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td colspan="2" onclick="javascript:toggleInherit('properties_class_aruco_unity_1_1_cameras_1_1_aruco_camera')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html">ArucoUnity.Cameras.ArucoCamera</a></td></tr>
 <tr class="memitem:ae60fb5d8771be6cb5bce10ffc2b3dcf3 inherit properties_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ae60fb5d8771be6cb5bce10ffc2b3dcf3">AutoStart</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ae60fb5d8771be6cb5bce10ffc2b3dcf3 inherit properties_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the camera system automatically after configured it.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ae60fb5d8771be6cb5bce10ffc2b3dcf3">More...</a><br /></td></tr>
@@ -242,18 +238,18 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td colspan="2" onclick="javascript:toggleInherit('events_class_aruco_unity_1_1_cameras_1_1_aruco_camera')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html">ArucoUnity.Cameras.ArucoCamera</a></td></tr>
-<tr class="memitem:a5135c222c88860678111bea98cfce5f8 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a2b8bbf29a01f267e4c27a18cb6c5ad95">CameraEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a5135c222c88860678111bea98cfce5f8">Configured</a> = delegate { }</td></tr>
-<tr class="memdesc:a5135c222c88860678111bea98cfce5f8 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system is configured.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a5135c222c88860678111bea98cfce5f8">More...</a><br /></td></tr>
-<tr class="separator:a5135c222c88860678111bea98cfce5f8 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2851055e9e02df5916f6c1d9a3721e4 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a2b8bbf29a01f267e4c27a18cb6c5ad95">CameraEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa2851055e9e02df5916f6c1d9a3721e4">Started</a> = delegate { }</td></tr>
-<tr class="memdesc:aa2851055e9e02df5916f6c1d9a3721e4 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system starts.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa2851055e9e02df5916f6c1d9a3721e4">More...</a><br /></td></tr>
-<tr class="separator:aa2851055e9e02df5916f6c1d9a3721e4 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf4fbadf1cf3b53a5de02e473998f9f inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a2b8bbf29a01f267e4c27a18cb6c5ad95">CameraEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a0bf4fbadf1cf3b53a5de02e473998f9f">Stopped</a> = delegate { }</td></tr>
-<tr class="memdesc:a0bf4fbadf1cf3b53a5de02e473998f9f inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system stops.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a0bf4fbadf1cf3b53a5de02e473998f9f">More...</a><br /></td></tr>
-<tr class="separator:a0bf4fbadf1cf3b53a5de02e473998f9f inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7071f465b9ac18aacd906f5097174c7d inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a2b8bbf29a01f267e4c27a18cb6c5ad95">CameraEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a7071f465b9ac18aacd906f5097174c7d">ImagesUpdated</a> = delegate { }</td></tr>
-<tr class="memdesc:a7071f465b9ac18aacd906f5097174c7d inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the images has been updated.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a7071f465b9ac18aacd906f5097174c7d">More...</a><br /></td></tr>
-<tr class="separator:a7071f465b9ac18aacd906f5097174c7d inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1c156b1aef5efe00f2330f7c5e84d5 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aac1c156b1aef5efe00f2330f7c5e84d5">Configured</a> = delegate { }</td></tr>
+<tr class="memdesc:aac1c156b1aef5efe00f2330f7c5e84d5 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system is configured.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aac1c156b1aef5efe00f2330f7c5e84d5">More...</a><br /></td></tr>
+<tr class="separator:aac1c156b1aef5efe00f2330f7c5e84d5 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5ab1ededbc929b646db6946cd95965 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a9d5ab1ededbc929b646db6946cd95965">Started</a> = delegate { }</td></tr>
+<tr class="memdesc:a9d5ab1ededbc929b646db6946cd95965 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system starts.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a9d5ab1ededbc929b646db6946cd95965">More...</a><br /></td></tr>
+<tr class="separator:a9d5ab1ededbc929b646db6946cd95965 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33c374b9cf527482f3fdec4947e46d6 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ab33c374b9cf527482f3fdec4947e46d6">Stopped</a> = delegate { }</td></tr>
+<tr class="memdesc:ab33c374b9cf527482f3fdec4947e46d6 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the camera system stops.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ab33c374b9cf527482f3fdec4947e46d6">More...</a><br /></td></tr>
+<tr class="separator:ab33c374b9cf527482f3fdec4947e46d6 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4424d3169cf295e72dc816d044f96f09 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a4424d3169cf295e72dc816d044f96f09">ImagesUpdated</a> = delegate { }</td></tr>
+<tr class="memdesc:a4424d3169cf295e72dc816d044f96f09 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed when the images has been updated.  <a href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a4424d3169cf295e72dc816d044f96f09">More...</a><br /></td></tr>
+<tr class="separator:a4424d3169cf295e72dc816d044f96f09 inherit events_class_aruco_unity_1_1_cameras_1_1_aruco_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages any connected webcam to the machine, retrieves and displays the camera's image every frame. Use one webcam at a time. Based on: <a href="http://answers.unity3d.com/answers/1155328/view.html">http://answers.unity3d.com/answers/1155328/view.html</a> </p>
@@ -287,8 +283,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abc47775803fefcf854b8afcae27111fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc47775803fefcf854b8afcae27111fb">&#9670;&nbsp;</a></span>ConfigureImageCameraBackgrounds()</h2>
+<a id="aa9a3863dc4c1537bb086bfeb7b6e6d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a3863dc4c1537bb086bfeb7b6e6d05">&#9670;&nbsp;</a></span>ConfigureCameraAndBackground()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +293,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ArucoUnity.Cameras.ArucoCameraWebcam.ConfigureImageCameraBackgrounds </td>
+          <td class="memname">void ArucoUnity.Cameras.ArucoCameraWebcam.ConfigureCameraAndBackground </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -310,7 +306,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Configure the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a>, the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera_webcam.html#aabc2bc24a5a1c47fbccad6e99960f2ce" title="Camera that shot the ArucoCamera.ImageCameras in order to maintain the aspect ratio of ArucoCamera...">CameraBackground</a> and a facing plane of the CameraImage that will display the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a>. </p>
+<p>Configure the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a>, the background that will display live webcam video through the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a>. </p>
+<p>See <a href="https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html">https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html</a> and <a href="https://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html#details">https://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html#details</a> for reference.</p>
 
 </div>
 </div>
@@ -366,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Stop the camera and the associated webcam device, and trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a0bf4fbadf1cf3b53a5de02e473998f9f" title="Executed when the camera system stops. ">ArucoCamera.Stopped</a> event. </p>
+<p>Stop the camera and the associated webcam device, and trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ab33c374b9cf527482f3fdec4947e46d6" title="Executed when the camera system stops. ">ArucoCamera.Stopped</a> event. </p>
 
 <p>Implements <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a45384ed929144e8b84c65d79e336e12d">ArucoUnity.Cameras.ArucoCamera</a>.</p>
 
@@ -395,7 +392,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#aa2851055e9e02df5916f6c1d9a3721e4" title="Executed when the camera system starts. ">ArucoCamera.Started</a> event. </p>
+<p>If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a9d5ab1ededbc929b646db6946cd95965" title="Executed when the camera system starts. ">ArucoCamera.Started</a> event. </p>
 
 <p>Reimplemented from <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a7c5d51cd4e009a91a8031018797217f8">ArucoUnity.Cameras.ArucoCamera</a>.</p>
 
@@ -431,8 +428,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2092aadc345965c4f3b870ec4a2ef6ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2092aadc345965c4f3b870ec4a2ef6ef">&#9670;&nbsp;</a></span>cameraId</h2>
+<a id="a2288df93afab280310effa57812a30c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2288df93afab280310effa57812a30c9">&#9670;&nbsp;</a></span>cameraBackground</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,7 +438,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ArucoUnity.Cameras.ArucoCameraWebcam.cameraId = 0</td>
+          <td class="memname">GameObject ArucoUnity.Cameras.ArucoCameraWebcam.cameraBackground</td>
         </tr>
       </table>
   </td>
@@ -453,8 +450,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1a4411cb60071df241c80f764b8f6a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1a4411cb60071df241c80f764b8f6a2">&#9670;&nbsp;</a></span>cameraPlane</h2>
+<a id="ad48fd20e4bc1124cedec8cdda89a27b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48fd20e4bc1124cedec8cdda89a27b1">&#9670;&nbsp;</a></span>cameraBackgroundDistance</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,7 +460,51 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GameObject ArucoUnity.Cameras.ArucoCameraWebcam.cameraPlane</td>
+          <td class="memname">const float ArucoUnity.Cameras.ArucoCameraWebcam.cameraBackgroundDistance = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70c9b959dd0273a543ce278407c83f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c9b959dd0273a543ce278407c83f94">&#9670;&nbsp;</a></span>cameraBackgroundRenderer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Renderer ArucoUnity.Cameras.ArucoCameraWebcam.cameraBackgroundRenderer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2092aadc345965c4f3b870ec4a2ef6ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2092aadc345965c4f3b870ec4a2ef6ef">&#9670;&nbsp;</a></span>cameraId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ArucoUnity.Cameras.ArucoCameraWebcam.cameraId = 0</td>
         </tr>
       </table>
   </td>
@@ -498,30 +539,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="aabc2bc24a5a1c47fbccad6e99960f2ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabc2bc24a5a1c47fbccad6e99960f2ce">&#9670;&nbsp;</a></span>CameraBackground</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Camera ArucoUnity.Cameras.ArucoCameraWebcam.CameraBackground</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Camera that shot the <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a8e08a08a5f9c2108d7d1f5ce4a8f2c0a" title="The Unity camera components. There is one for each physical camera (CameraNumber cameras). If DisplayImages is set, the ImageTextures will be set as background of these Unity cameras. ">ArucoCamera.ImageCameras</a> in order to maintain the aspect ratio of <a class="el" href="class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a324a2cb0a209270f18ef476fe9f78c7b" title="The image textures used by Unity. They are updated at LateUpdate from the OpenCV Images. ">ArucoCamera.ImageTextures</a> on screen. </p>
-
-</div>
-</div>
 <a id="a40caa41cc99b347a5d7de5f47b3923f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40caa41cc99b347a5d7de5f47b3923f3">&#9670;&nbsp;</a></span>CameraNumber</h2>
 
@@ -618,30 +635,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae7fb7d3021fe1e555581dbaea0a114f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7fb7d3021fe1e555581dbaea0a114f4">&#9670;&nbsp;</a></span>PreserveAspectRatio</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ArucoUnity.Cameras.ArucoCameraWebcam.PreserveAspectRatio</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Preserve the aspect ratio of the webcam's image. </p>
-
-</div>
-</div>
 <a id="afacbd7a859fee0b2013badfbaf2a2d99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afacbd7a859fee0b2013badfbaf2a2d99">&#9670;&nbsp;</a></span>WebCamDevice</h2>
 
@@ -715,12 +708,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/an15400/Documents/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Cameras/<a class="el" href="_aruco_camera_webcam_8cs.html">ArucoCameraWebcam.cs</a></li>
+<li>C:/Users/an15400/Documents/Maitrise/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Cameras/<a class="el" href="_aruco_camera_webcam_8cs.html">ArucoCameraWebcam.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 27 2017 18:10:33 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 8 2017 20:58:37 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

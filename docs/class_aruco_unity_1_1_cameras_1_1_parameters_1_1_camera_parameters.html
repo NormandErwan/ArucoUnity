@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ArUco Unity
-   &#160;<span id="projectnumber">1.1.0</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">OpenCV&#39;s ArUco Marker Detection module adapted for Unity 5.</div>
   </td>
@@ -89,6 +89,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb79d338cfcb4c7e0416c7d047a88a0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#aeb79d338cfcb4c7e0416c7d047a88a0f">SaveToXmlFile</a> (string cameraParametersFilePath)</td></tr>
 <tr class="memdesc:aeb79d338cfcb4c7e0416c7d047a88a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the camera parameters to a XML file.  <a href="#aeb79d338cfcb4c7e0416c7d047a88a0f">More...</a><br /></td></tr>
 <tr class="separator:aeb79d338cfcb4c7e0416c7d047a88a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca7d79e0974cddafa57776cacb7d6e3"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a1ca7d79e0974cddafa57776cacb7d6e3">GetCameraFocalLengths</a> (int cameraId)</td></tr>
+<tr class="memdesc:a1ca7d79e0974cddafa57776cacb7d6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the camera focal lengths, expressed in pixels units. Equals to  <a href="#a1ca7d79e0974cddafa57776cacb7d6e3">More...</a><br /></td></tr>
+<tr class="separator:a1ca7d79e0974cddafa57776cacb7d6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01e66257a3fc4da0690e3f7f800134d"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#aa01e66257a3fc4da0690e3f7f800134d">GetCameraPrincipalPoint</a> (int cameraId)</td></tr>
+<tr class="memdesc:aa01e66257a3fc4da0690e3f7f800134d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the camera principal point, expressed in pixels units. Equals to  <a href="#aa01e66257a3fc4da0690e3f7f800134d">More...</a><br /></td></tr>
+<tr class="separator:aa01e66257a3fc4da0690e3f7f800134d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -98,8 +104,6 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a16a49ae53da7cb18aaf2a397f0833e0d"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a16a49ae53da7cb18aaf2a397f0833e0d">imageHeights</a></td></tr>
-<tr class="separator:a16a49ae53da7cb18aaf2a397f0833e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053bc3d1d453467fe5ffd2abfa5f0dd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_plugin_1_1_cv_1_1_mat.html">Cv.Mat</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a053bc3d1d453467fe5ffd2abfa5f0dd4">cameraMatrices</a></td></tr>
 <tr class="separator:a053bc3d1d453467fe5ffd2abfa5f0dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -156,15 +160,6 @@ Properties</h2></td></tr>
 <tr class="memitem:afafaf43ce40a19386d8a667a21e3d14b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_stereo_camera_parameters.html">StereoCameraParameters</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#afafaf43ce40a19386d8a667a21e3d14b">StereoCameraParametersList</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:afafaf43ce40a19386d8a667a21e3d14b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_aruco_unity_1_1_cameras_1_1_parameters.html" title="Scripts to manage OpenCV&#39;s camera parameters from calibrations. ">Parameters</a> from stereo calibration on the camera system.  <a href="#afafaf43ce40a19386d8a667a21e3d14b">More...</a><br /></td></tr>
 <tr class="separator:afafaf43ce40a19386d8a667a21e3d14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b9409e2ff7f75954327fff5899dce59"><td class="memItemLeft" align="right" valign="top">Vector2 []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a6b9409e2ff7f75954327fff5899dce59">CameraFocalLengths</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:a6b9409e2ff7f75954327fff5899dce59"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera focal length expressed in pixels coordinates. Equals to CameraMatrices.AtDouble(0, 0) on the x-axis and to to CameraMatrices.AtDouble(1, 1) on the y-axis.  <a href="#a6b9409e2ff7f75954327fff5899dce59">More...</a><br /></td></tr>
-<tr class="separator:a6b9409e2ff7f75954327fff5899dce59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c1e3084a99745e8f9431bf0e5b45c86"><td class="memItemLeft" align="right" valign="top">Vector2 []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a7c1e3084a99745e8f9431bf0e5b45c86">CameraOpticalCenters</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:a7c1e3084a99745e8f9431bf0e5b45c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera optical center expressed in pixels coordinates. Equals to CameraMatrices.AtDouble(0, 2) on the x-axis and to CameraMatrices.AtDouble(1, 2) on the y-axis.  <a href="#a7c1e3084a99745e8f9431bf0e5b45c86">More...</a><br /></td></tr>
-<tr class="separator:a7c1e3084a99745e8f9431bf0e5b45c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecd8dabe2def1f966bd69a927505ec32"><td class="memItemLeft" align="right" valign="top">Vector3 []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#aecd8dabe2def1f966bd69a927505ec32">OpticalCenters</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:aecd8dabe2def1f966bd69a927505ec32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera optical center in the Unity world space.  <a href="#aecd8dabe2def1f966bd69a927505ec32">More...</a><br /></td></tr>
-<tr class="separator:aecd8dabe2def1f966bd69a927505ec32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a707bbf4685214822334f90a794ff4664"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aruco_unity_1_1_cameras_1_1_parameters_1_1_camera_parameters.html#a707bbf4685214822334f90a794ff4664">FilePath</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a707bbf4685214822334f90a794ff4664"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file path of the parameters.  <a href="#a707bbf4685214822334f90a794ff4664">More...</a><br /></td></tr>
 <tr class="separator:a707bbf4685214822334f90a794ff4664"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,6 +230,64 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1ca7d79e0974cddafa57776cacb7d6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca7d79e0974cddafa57776cacb7d6e3">&#9670;&nbsp;</a></span>GetCameraFocalLengths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 ArucoUnity.Cameras.Parameters.CameraParameters.GetCameraFocalLengths </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cameraId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the camera focal lengths, expressed in pixels units. Equals to </p>
+<p><code>F = (CameraMatrices[cameraId].AtDouble(0, 0), CameraMatrices[cameraId].AtDouble(1, 1))</code> </p>
+
+</div>
+</div>
+<a id="aa01e66257a3fc4da0690e3f7f800134d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa01e66257a3fc4da0690e3f7f800134d">&#9670;&nbsp;</a></span>GetCameraPrincipalPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 ArucoUnity.Cameras.Parameters.CameraParameters.GetCameraPrincipalPoint </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cameraId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the camera principal point, expressed in pixels units. Equals to </p>
+<p><code>C = (CameraMatrices[cameraId].AtDouble(0, 2), CameraMatrices[cameraId].AtDouble(1, 2))</code> </p>
+
+</div>
+</div>
 <a id="a6ced039037f2f188755c67763ea95f45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ced039037f2f188755c67763ea95f45">&#9670;&nbsp;</a></span>LoadFromXmlFile()</h2>
 
@@ -339,28 +392,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a16a49ae53da7cb18aaf2a397f0833e0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a49ae53da7cb18aaf2a397f0833e0d">&#9670;&nbsp;</a></span>imageHeights</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int [] ArucoUnity.Cameras.Parameters.CameraParameters.imageHeights</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a2610189a7c86fbe3877302a6aa96d643"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2610189a7c86fbe3877302a6aa96d643">&#9670;&nbsp;</a></span>CalibrationDateTime</h2>
@@ -407,30 +438,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The calibration flags used. </p>
-
-</div>
-</div>
-<a id="a6b9409e2ff7f75954327fff5899dce59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b9409e2ff7f75954327fff5899dce59">&#9670;&nbsp;</a></span>CameraFocalLengths</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector2 [] ArucoUnity.Cameras.Parameters.CameraParameters.CameraFocalLengths</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The camera focal length expressed in pixels coordinates. Equals to CameraMatrices.AtDouble(0, 0) on the x-axis and to to CameraMatrices.AtDouble(1, 1) on the y-axis. </p>
 
 </div>
 </div>
@@ -530,30 +537,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The number of the camera during the calibration. </p>
-
-</div>
-</div>
-<a id="a7c1e3084a99745e8f9431bf0e5b45c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c1e3084a99745e8f9431bf0e5b45c86">&#9670;&nbsp;</a></span>CameraOpticalCenters</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector2 [] ArucoUnity.Cameras.Parameters.CameraParameters.CameraOpticalCenters</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The camera optical center expressed in pixels coordinates. Equals to CameraMatrices.AtDouble(0, 2) on the x-axis and to CameraMatrices.AtDouble(1, 2) on the y-axis. </p>
 
 </div>
 </div>
@@ -803,30 +786,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="aecd8dabe2def1f966bd69a927505ec32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecd8dabe2def1f966bd69a927505ec32">&#9670;&nbsp;</a></span>OpticalCenters</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector3 [] ArucoUnity.Cameras.Parameters.CameraParameters.OpticalCenters</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The camera optical center in the Unity world space. </p>
-
-</div>
-</div>
 <a id="aa01c240ca37a365154408fd392f25744"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa01c240ca37a365154408fd392f25744">&#9670;&nbsp;</a></span>ReprojectionErrors</h2>
 
@@ -876,12 +835,12 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/an15400/Documents/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Cameras/Parameters/<a class="el" href="_camera_parameters_8cs.html">CameraParameters.cs</a></li>
+<li>C:/Users/an15400/Documents/Maitrise/aruco-unity/aruco-unity/src/aruco_unity_package/Assets/ArucoUnity/Scripts/Cameras/Parameters/<a class="el" href="_camera_parameters_8cs.html">CameraParameters.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 27 2017 18:10:33 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 8 2017 20:58:37 for ArUco Unity by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -6,7 +6,7 @@ var searchData=
   ['adaptivethreshwinsizestep',['AdaptiveThreshWinSizeStep',['../class_aruco_unity_1_1_plugin_1_1_aruco_1_1_detector_parameters.html#a90c59ea8f70cd1af8c531ca9c1595eb3',1,'ArucoUnity::Plugin::Aruco::DetectorParameters']]],
   ['arucocamera',['ArucoCamera',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_object_detector.html#a02752f35853cf5877a39b3e2ae1f24f1',1,'ArucoUnity::Controllers::Utility::ArucoObjectDetector']]],
   ['arucohashcode',['ArucoHashCode',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html#ad72d74821fbae85276b8348263d19021',1,'ArucoUnity::Objects::ArucoObject']]],
-  ['arucoobject',['ArucoObject',['../class_aruco_unity_1_1_controllers_1_1_aruco_creator.html#a8e7ae92e08ebadfdf0a851c5ad335686',1,'ArucoUnity::Controllers::ArucoCreator']]],
+  ['arucoobject',['ArucoObject',['../class_aruco_unity_1_1_controllers_1_1_aruco_object_displayer.html#afdd6d315122152d4826ab681474aae69',1,'ArucoUnity::Controllers::ArucoObjectDisplayer']]],
   ['arucoobjects',['ArucoObjects',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_objects_controller.html#acb6714319f302feae2d05b91e3396db4',1,'ArucoUnity::Controllers::Utility::ArucoObjectsController']]],
   ['autostart',['AutoStart',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#ae60fb5d8771be6cb5bce10ffc2b3dcf3',1,'ArucoUnity.Cameras.ArucoCamera.AutoStart()'],['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_object_detector.html#a17d28ec15b5e2ed4ad99830d96269286',1,'ArucoUnity.Controllers.Utility.ArucoObjectDetector.AutoStart()']]],
   ['autoundistortwithcameraparameters',['AutoUndistortWithCameraParameters',['../class_aruco_unity_1_1_cameras_1_1_aruco_camera.html#a03b54092ede68a706c124e00a2545db2',1,'ArucoUnity::Cameras::ArucoCamera']]],

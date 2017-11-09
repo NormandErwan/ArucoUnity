@@ -17,6 +17,7 @@ var searchData=
   ['arucomarkertracker',['ArucoMarkerTracker',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_marker_tracker.html',1,'ArucoUnity::Controllers::ObjectTrackers']]],
   ['arucoobject',['ArucoObject',['../class_aruco_unity_1_1_objects_1_1_aruco_object.html',1,'ArucoUnity::Objects']]],
   ['arucoobjectdetector',['ArucoObjectDetector',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_object_detector.html',1,'ArucoUnity::Controllers::Utility']]],
+  ['arucoobjectdisplayer',['ArucoObjectDisplayer',['../class_aruco_unity_1_1_controllers_1_1_aruco_object_displayer.html',1,'ArucoUnity::Controllers']]],
   ['arucoobjectscontroller',['ArucoObjectsController',['../class_aruco_unity_1_1_controllers_1_1_utility_1_1_aruco_objects_controller.html',1,'ArucoUnity::Controllers::Utility']]],
   ['arucoobjecttracker',['ArucoObjectTracker',['../class_aruco_unity_1_1_controllers_1_1_object_trackers_1_1_aruco_object_tracker.html',1,'ArucoUnity::Controllers::ObjectTrackers']]],
   ['arucotracker',['ArucoTracker',['../class_aruco_unity_1_1_controllers_1_1_aruco_tracker.html',1,'ArucoUnity::Controllers']]]
