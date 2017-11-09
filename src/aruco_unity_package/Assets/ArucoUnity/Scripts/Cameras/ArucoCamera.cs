@@ -509,7 +509,7 @@ namespace ArucoUnity
           cameraBackground = GameObject.CreatePrimitive(PrimitiveType.Quad);
           cameraBackground.name = "CameraBackground";
           cameraBackground.transform.SetParent(camera.transform);
-          cameraBackground.transform.rotation = Quaternion.identity;
+          cameraBackground.transform.localRotation = Quaternion.identity;
         }
 
         var cameraBackgroundRenderer = cameraBackground.GetComponent<Renderer>();
@@ -520,7 +520,7 @@ namespace ArucoUnity
         // (center of the camera projection), w=Z=cameraBackgroundDistance and we are looking for X=posX and Y=posY
         float posX = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
         float posY = (0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance;
-        cameraBackground.transform.position = new Vector3(posX, -posY, cameraBackgroundDistance); // c=-1 for posY is because OpenCV (u=0, v=0) camera coordinates origin is top-left, but bottom-left in Unity (see https://docs.unity3d.com/ScriptReference/Camera.html)
+        cameraBackground.transform.localPosition = new Vector3(posX, -posY, cameraBackgroundDistance); // c=-1 for posY is because OpenCV (u=0, v=0) camera coordinates origin is top-left, but bottom-left in Unity (see https://docs.unity3d.com/ScriptReference/Camera.html)
 
         // Estimate background plane scale, using the same equations used for fov but here we are looking for w=scaleX and h=scaleY
         float scaleX = 2f * cameraBackgroundDistance * Mathf.Tan(fovX * Mathf.Deg2Rad / 2f);
