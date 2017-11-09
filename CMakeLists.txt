@@ -5,7 +5,7 @@ set(ArucoUnity_PROJECT_NAME "${CMAKE_PROJECT_NAME}")
 
 # Version
 set(VERSION_MAJOR 1)
-set(VERSION_MINOR 1)
+set(VERSION_MINOR 2)
 set(VERSION_PATCH 0)
 set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
@@ -15,6 +15,10 @@ option(BUILD_TESTS "Build the tests." OFF)
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}" CACHE PATH "Install path prefix" FORCE)
+endif()
+
+if (NOT OpenCV_DIR)
+  set(OpenCV_DIR "${CMAKE_BINARY_DIR}/opencv/install" CACHE PATH "OpenCV install directory" FORCE)
 endif()
 
 set(PROJECT_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include" CACHE INTERNAL "The ArUco Unity library include directories.")

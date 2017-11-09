@@ -105,6 +105,7 @@ Some features or corrections to do:
   - [OpenCV.NET](https://bitbucket.org/horizongir/opencv.net)
 - Add the autoscale feature to ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker (see this [ArUco sample](https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203))
 - Fix the crash that occur when calling ArucoUnity.Plugin.Cv.au_cv_Exception_delete(System.IntPtr)
+- Build the library for Windows 32 bits, Linux, Mac, Android, iOS, UWP
 
 ## Licenses
 
