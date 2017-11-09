@@ -15,6 +15,10 @@ namespace ArucoUnity
     [ExecuteInEditMode]
     public abstract class ArucoObject : MonoBehaviour
     {
+      // Constants
+
+      protected const float metersToPixels300ppp = 100f * 300f / 2.54f;
+
       // Editor fields
 
       [SerializeField]
@@ -27,7 +31,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Number of bits in marker borders (default: 1). Used by Creators.")]
-      private int markerBorderBits;
+      private uint markerBorderBits;
 
       private bool displayInEditor = true;
 
@@ -78,7 +82,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the number of bits in marker borders (default: 1). Used by Creators.
       /// </summary>
-      public int MarkerBorderBits
+      public uint MarkerBorderBits
       {
         get { return markerBorderBits; }
         set
@@ -127,6 +131,12 @@ namespace ArucoUnity
       }
 
       // Methods
+      
+      /// <summary>
+      /// Returns the image of the ArUco object. In editor it should returns null and no exception if the object is incorrectly configured.
+      /// </summary>
+      /// <returns>The image of the ArUco object.</returns>
+      public abstract Cv.Mat Draw();
 
       /// <summary>
       /// Adjusts the scale to <see cref="MarkerSideLength"/> length.
@@ -162,6 +172,19 @@ namespace ArucoUnity
       {
         UpdateArucoHashCode();
         AdjustGameObjectScale();
+      }
+
+      /// <summary>
+      /// Returns a value as an int, with a conversion from meters to pixels if the property value is less than 10.
+      /// </summary>
+      protected int GetInPixels(float propertyValue)
+      {
+        int propertyValueInt = (int)propertyValue;
+        if (propertyValue > 0 && propertyValue < 10)
+        {
+          propertyValueInt = Mathf.RoundToInt(propertyValue * metersToPixels300ppp);
+        }
+        return propertyValueInt;
       }
     }
   }

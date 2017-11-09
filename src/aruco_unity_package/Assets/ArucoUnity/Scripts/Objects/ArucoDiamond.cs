@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArucoUnity.Plugin;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -84,17 +85,38 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
-      protected override void Awake()
+      protected override void OnValidate()
       {
         ids = new int[] { marker1Id, marker2Id, marker3Id, marker4Id };
-        base.Awake();
+        base.OnValidate();
       }
-
       // ArucoObject methods
+
+      public override Cv.Mat Draw()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (MarkerSideLength <= 0 || SquareSideLength <= 0
+          || SquareSideLength <= MarkerSideLength || Dictionary == null))
+        {
+          return null;
+        }
+#endif
+        Cv.Vec4i ids = new Cv.Vec4i();
+        for (int i = 0; i < Ids.Length; ++i)
+        {
+          ids.Set(i, Ids[i]);
+        }
+
+        Cv.Mat image;
+        Aruco.DrawCharucoDiamond(Dictionary, ids, GetInPixels(SquareSideLength), GetInPixels(MarkerSideLength), out image);
+
+        return image;
+      }
 
       protected override void AdjustGameObjectScale()
       {
-        transform.localScale = SquareNumberPerSide * SquareSideLength * Vector3.one;
+        float sideLength = SquareNumberPerSide * SquareSideLength;
+        transform.localScale = new Vector3(sideLength, SquareSideLength, sideLength);
       }
 
       protected override void UpdateArucoHashCode()

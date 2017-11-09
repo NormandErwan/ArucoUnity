@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 270237208}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -234,8 +234,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 270237207}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -150, y: 800, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -150, y: 0, z: 800}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -263,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 778615248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 1775526416}
@@ -304,8 +304,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 831758188}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -750, y: 800, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -750, y: 0, z: 800}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 831758190}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -376,7 +376,7 @@ MonoBehaviour:
   dictionaryName: 0
   markerSideLength: 160
   markerBorderBits: 1
-  marginsSize: 50
+  marginsLength: 0
   markersNumberX: 7
   markersNumberY: 5
   markerSeparation: 50
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1004230726}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -404,13 +404,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004230723}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -800, y: -500, z: 0}
-  m_LocalScale: {x: 1520, y: 1100, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -750, y: 0, z: -500}
+  m_LocalScale: {x: 1420, y: 160, z: 1000}
   m_Children: []
   m_Father: {fileID: 778615249}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1148141135
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   dictionaryName: 0
   markerSideLength: 120
   markerBorderBits: 1
-  marginsSize: 50
+  marginsLength: 0
   squaresNumberX: 7
   squaresNumberY: 5
   squareSideLength: 200
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1148141136}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -472,9 +472,9 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148141135}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 800, y: -500, z: 0}
-  m_LocalScale: {x: 1500, y: 1100, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: 750, y: 0, z: -500}
+  m_LocalScale: {x: 1400, y: 200, z: 1000}
   m_Children: []
   m_Father: {fileID: 778615249}
   m_RootOrder: 9
@@ -504,8 +504,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192287920}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1450, y: 400, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -1350, y: 0, z: 400}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1192287922}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -568,8 +568,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247465583}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -150, y: 400, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -150, y: 0, z: 400}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1247465585}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -632,9 +632,9 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264974610}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1175, y: 600, z: 0}
-  m_LocalScale: {x: 600, y: 600, z: 600}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: 1150, y: 0, z: 600}
+  m_LocalScale: {x: 600, y: 200, z: 600}
   m_Children: []
   m_Father: {fileID: 778615249}
   m_RootOrder: 7
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1264974612}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -701,9 +701,9 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1374276491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 425, y: 600, z: 0}
-  m_LocalScale: {x: 600, y: 600, z: 600}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: 350, y: 0, z: 600}
+  m_LocalScale: {x: 600, y: 200, z: 600}
   m_Children: []
   m_Father: {fileID: 778615249}
   m_RootOrder: 6
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1374276493}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -770,8 +770,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422556659}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -750, y: 400, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -750, y: 0, z: 400}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1422556661}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1775526415}
   - component: {fileID: 1775526414}
   m_Layer: 0
-  m_Name: Marker_Dict4x4_50_Id_0
+  m_Name: Marker_Dict4x4_50_Id_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -841,7 +841,7 @@ MonoBehaviour:
   dictionaryName: 0
   markerSideLength: 200
   markerBorderBits: 1
-  markerId: 0
+  markerId: 8
 --- !u!114 &1775526415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1775526414}
-  displayInGame: 1
+  displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
   optionalImageFilename: 
@@ -866,8 +866,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1775526413}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1450, y: 800, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0.000000059604638, w: 0}
+  m_LocalPosition: {x: -1350, y: 0, z: 800}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 778615249}
@@ -946,10 +946,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890850132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

@@ -24,7 +24,7 @@ namespace ArucoUnity
       private int markersNumberY;
 
       [SerializeField]
-      [Tooltip("Separation between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
+      [Tooltip("Separation length between two consecutive markers in the grid. In pixels for Creators. In meters for Trackers and Calibrators.")]
       private float markerSeparation;
 
       // Properties
@@ -80,9 +80,11 @@ namespace ArucoUnity
 
       protected override void AdjustGameObjectScale()
       {
-        imageSize.x = MarkersNumberX * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
-        imageSize.y = MarkersNumberY * (int)(MarkerSideLength + MarkerSeparation) - (int)MarkerSeparation + 2 * MarginsSize;
-        transform.localScale = new Vector3(imageSize.x, imageSize.y, 1);
+        ImageSize = new Vector2(
+          x: MarkersNumberX * (MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsLength,
+          y: MarkersNumberY * (MarkerSideLength + MarkerSeparation) - MarkerSeparation + 2 * MarginsLength
+        );
+        transform.localScale = new Vector3(ImageSize.x, MarkerSideLength, ImageSize.y);
       }
 
       protected override void UpdateArucoHashCode()
@@ -92,16 +94,40 @@ namespace ArucoUnity
 
       // ArucoBoard methods
 
+      public override Cv.Mat Draw()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (MarkersNumberX <= 0 || MarkersNumberY <= 0 || MarkerSideLength <= 0 
+          || MarkerSeparation <= 0 || MarkerBorderBits <= 0))
+        {
+          return null;
+        }
+#endif
+        int markerSideLength = GetInPixels(MarkerSideLength);
+        int markerSeparation = GetInPixels(MarkerSeparation);
+        Aruco.GridBoard board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, markerSideLength, markerSeparation, Dictionary);
+
+        Cv.Size imageSize = new Cv.Size();
+        imageSize.Width = GetInPixels(MarkersNumberX * (markerSideLength + markerSeparation) - markerSeparation + 2 * MarginsLength);
+        imageSize.Height = GetInPixels(MarkersNumberY * (markerSideLength + markerSeparation) - markerSeparation + 2 * MarginsLength);
+
+        Cv.Mat image;
+        board.Draw(imageSize, out image, MarginsLength, (int)MarkerBorderBits);
+
+        return image;
+      }
+
       protected override void UpdateBoard()
       {
 #if UNITY_EDITOR
-        if (MarkersNumberX <= 0 || MarkersNumberY <= 0 || MarkerSideLength <= 0)
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (MarkersNumberX <= 0 || MarkersNumberY <= 0 || MarkerSideLength <= 0
+          || MarkerSeparation <= 0))
         {
           return;
         }
 #endif
 
-        AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + markerSeparation);
+        AxisLength = 0.5f * (Mathf.Min(MarkersNumberX, MarkersNumberY) * (MarkerSideLength + MarkerSeparation) + MarkerSeparation);
         Board = Aruco.GridBoard.Create(MarkersNumberX, MarkersNumberY, MarkerSideLength, MarkerSeparation, Dictionary);
       }
 
@@ -121,8 +147,8 @@ namespace ArucoUnity
         hashCode = hashCode * 31 + typeof(ArucoGridBoard).GetHashCode();
         hashCode = hashCode * 31 + markersNumberX;
         hashCode = hashCode * 31 + markersNumberY;
-        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimetres
-        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimetres
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSideLength * 1000); // MarkerSideLength is not less than millimeters
+        hashCode = hashCode * 31 + Mathf.RoundToInt(markerSeparation * 1000); // MarkerSeparation is not less than millimeters
         return hashCode;
       }
     }

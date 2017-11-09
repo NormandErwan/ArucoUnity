@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Plugin;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -35,6 +36,20 @@ namespace ArucoUnity
       }
 
       // ArucoObject methods
+
+      public override Cv.Mat Draw()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (MarkerSideLength <= 0 || MarkerBorderBits == 0 || Dictionary == null))
+        {
+          return null;
+        }
+#endif
+        Cv.Mat image;
+        Dictionary.DrawMarker(MarkerId, GetInPixels(MarkerSideLength), out image, (int)MarkerBorderBits);
+
+        return image;
+      }
 
       protected override void AdjustGameObjectScale()
       {

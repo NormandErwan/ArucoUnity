@@ -90,9 +90,11 @@ namespace ArucoUnity
 
       protected override void AdjustGameObjectScale()
       {
-        imageSize.x = SquaresNumberX * (int)SquareSideLength + 2 * MarginsSize;
-        imageSize.y = SquaresNumberY * (int)SquareSideLength + 2 * MarginsSize;
-        transform.localScale = new Vector3(imageSize.x, imageSize.y, 1);
+        ImageSize = new Vector2(
+          x: SquaresNumberX * SquareSideLength + 2 * MarginsLength,
+          y: SquaresNumberY * SquareSideLength + 2 * MarginsLength
+        );
+        transform.localScale = new Vector3(ImageSize.x, SquareSideLength, ImageSize.y);
       }
 
       protected override void UpdateArucoHashCode()
@@ -102,10 +104,34 @@ namespace ArucoUnity
 
       // ArucoBoard methods
 
+      public override Cv.Mat Draw()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (SquaresNumberX <= 1 || SquaresNumberY <= 1 || SquareSideLength <= 0
+          || MarkerSideLength <= 0 || SquareSideLength <= MarkerSideLength || MarkerBorderBits <= 0))
+        {
+          return null;
+        }
+#endif
+        int squareSideLength = GetInPixels(SquareSideLength);
+        int markerSideLength = GetInPixels(MarkerSideLength);
+        Aruco.CharucoBoard board = Aruco.CharucoBoard.Create(SquaresNumberX, SquaresNumberY, squareSideLength, markerSideLength, Dictionary);
+
+        Cv.Size imageSize = new Cv.Size();
+        imageSize.Width = GetInPixels(SquaresNumberX * squareSideLength + 2 * MarginsLength);
+        imageSize.Height = GetInPixels(SquaresNumberY * squareSideLength + 2 * MarginsLength);
+
+        Cv.Mat image;
+        board.Draw(imageSize, out image, MarginsLength, (int)MarkerBorderBits);
+
+        return image;
+      }
+
       protected override void UpdateBoard()
       {
 #if UNITY_EDITOR
-        if (SquaresNumberX <= 0 || SquaresNumberY <= 0 || SquareSideLength <= 0 || MarkerSideLength <= 0)
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (SquaresNumberX <= 1 || SquaresNumberY <= 1 || SquareSideLength <= 0 
+          || MarkerSideLength <= 0 || SquareSideLength <= MarkerSideLength))
         {
           return;
         }

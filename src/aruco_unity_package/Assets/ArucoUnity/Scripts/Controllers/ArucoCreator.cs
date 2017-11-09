@@ -48,18 +48,10 @@ namespace ArucoUnity
       /// </summary>
       public string ImageFilename { get { return optionalImageFilename; } set { optionalImageFilename = value; } }
 
-      // MonoBehaviour methods
-
-      protected override void Awake()
-      {
-        base.Awake();
-        ImagePlane.transform.rotation = Quaternion.identity;
-      }
-
       // ArucoObjectDisplayer methods
 
       /// <summary>
-      /// Calls <see cref="Create"/>, <see cref="Display"/> and <see cref="Save"/>.
+      /// Calls <see cref="ArucoObjectDisplayer.Create"/>, <see cref="ArucoObjectDisplayer.Display"/> and <see cref="ArucoObjectDisplayer.Save"/>.
       /// </summary>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {

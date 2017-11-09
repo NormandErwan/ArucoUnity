@@ -12,10 +12,6 @@ namespace ArucoUnity
     [ExecuteInEditMode]
     public class ArucoObjectDisplayer : MonoBehaviour
     {
-      // Constants
-
-      protected const float metersToPixels300ppp = 100f * 300f / 2.54f;
-
       // Editor fields
 
       [SerializeField]
@@ -23,8 +19,8 @@ namespace ArucoUnity
       private ArucoObject arucoObject;
 
       [SerializeField]
-      [Tooltip("Display the image in game.")]
-      private bool displayInGame = false;
+      [Tooltip("Display the image in at start in play mode?")]
+      private bool displayInPlayMode = false;
 
       // Properties
 
@@ -33,27 +29,30 @@ namespace ArucoUnity
       /// </summary>
       protected ArucoObject ArucoObject { get { return arucoObject; } set { SetArucoObject(value); } }
 
-      protected bool DisplayInGame { get { return displayInGame; } set { displayInGame = value; } }
+      /// <summary>
+      /// Gets or sets if <see cref="ImagePlane"/> is visible at start in play mode.
+      /// </summary>
+      protected bool DisplayInPlayMode { get { return displayInPlayMode; } set { displayInPlayMode = value; } }
 
       /// <summary>
-      /// Get or sets the image of the <see cref="ArucoObject"/> to display.
+      /// Gets or sets the prefab of <see cref="ImagePlane"/>. If null, default will be loaded: `Prefabs/Resources/ArucoCreatorImagePlane`.
+      /// </summary>
+      public GameObject ImagePlanePrefab { get; set; }
+
+      /// <summary>
+      /// Gets the plane that display <see cref="ImageTexture"/>.
+      /// </summary>
+      public GameObject ImagePlane { get; protected set; }
+
+      /// <summary>
+      /// Gets the image of the <see cref="ArucoObject"/> to display.
       /// </summary>
       public Cv.Mat Image { get; protected set; }
 
       /// <summary>
-      /// Gets or sets the texture that contains <see cref="Image"/>.
+      /// Gets the texture that contains <see cref="Image"/>.
       /// </summary>
       public Texture2D ImageTexture { get; protected set; }
-
-      /// <summary>
-      /// Gets or sets the prefab of <see cref="ImagePlane"/>. Default is `ArucoCreatorImagePlane` in 'Prefabs/Resources'.
-      /// </summary>
-      public GameObject ImagePlanePrefab { get; protected set; }
-
-      /// <summary>
-      /// Gets or sets the plane that display <see cref="ImageTexture"/>.
-      /// </summary>
-      public GameObject ImagePlane { get; protected set; }
 
       // Variables
 
@@ -65,9 +64,159 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
+      /// Calls <see cref="SetArucoObject"/> to display the <see cref="ArucoObject"/> only in play mode.
+      /// </summary>
+      protected virtual void Start()
+      {
+#if UNITY_EDITOR
+        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+#endif
+          if (DisplayInPlayMode && ArucoObject)
+          {
+            var currentArucoObject = ArucoObject;
+            arucoObject = null;
+            SetArucoObject(currentArucoObject);
+          }
+          else
+          {
+            enabled = false;
+          }
+#if UNITY_EDITOR
+        }
+#endif
+      }
+
+      /// <summary>
+      /// Updates the display in the Unity Editor if arucoObject has been changed.
+      /// </summary>
+      protected virtual void Update()
+      {
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+          if (lastArucoObjectOnValidate != ArucoObject)
+          {
+            if (ArucoObject != null)
+            {
+              var currentArucoObject = ArucoObject;
+              arucoObject = lastArucoObjectOnValidate;
+              SetArucoObject(currentArucoObject);
+            }
+            else
+            {
+              Reset();
+            }
+            lastArucoObjectOnValidate = ArucoObject;
+          }
+        }
+#endif
+      }
+
+      /// <summary>
+      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
+      /// </summary>
+      protected virtual void OnDestroy()
+      {
+        if (ArucoObject != null)
+        {
+          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
+        }
+      }
+
+      /// <summary>
+      /// Shows <see cref="ImagePlane"/> and calls <see cref="SetArucoObject"/>.
+      /// </summary>
+      private void OnEnable()
+      {
+        InitializeImagePlane();
+        ImagePlane.SetActive(true);
+      }
+
+      /// <summary>
+      /// Hides <see cref="ImagePlane"/>.
+      /// </summary>
+      private void OnDisable()
+      {
+        ImagePlane.SetActive(false);
+
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+          Reset();
+        }
+#endif
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Creates <see cref="Image"/> and <see cref="ImageTexture"/> from <see cref="ArucoObject"/>.
+      /// </summary>
+      public virtual void Create()
+      {
+        Image = ArucoObject.Draw();
+
+        if (Image != null)
+        {
+          // Vertical flip to correctly display the image on the texture
+          int verticalFlipCode = 0;
+          Cv.Mat imageForTexture = Image.Clone();
+          Cv.Flip(imageForTexture, imageForTexture, verticalFlipCode);
+
+          // Load the image to the texture
+          int markerDataSize = (int)(Image.ElemSize() * Image.Total());
+          ImageTexture = new Texture2D(Image.Cols, Image.Rows, TextureFormat.RGB24, false);
+          ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
+          ImageTexture.Apply();
+        }
+        else
+        {
+          Reset();
+        }
+      }
+
+      /// <summary>
+      /// Updates <see cref="ImagePlane"/> with <see cref="ImageTexture"/>.
+      /// </summary>
+      public virtual void Display()
+      {
+        imagePlaneMaterial.mainTexture = ImageTexture;
+      }
+
+      /// <summary>
+      /// Resets <see cref="Image"/>, <see cref="ImageTexture"/> and <see cref="ImagePlane"/>.
+      /// </summary>
+      public virtual void Reset()
+      {
+        Image = null;
+        ImageTexture = null;
+        imagePlaneMaterial.mainTexture = null;
+      }
+
+      /// <summary>
+      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, and unsubscribes from the previous ArucoObject.
+      /// </summary>
+      protected virtual void SetArucoObject(ArucoObject arucoObject)
+      {
+        if (ArucoObject != null)
+        {
+          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
+        }
+
+        this.arucoObject = arucoObject;
+
+        if (ArucoObject != null)
+        {
+          ArucoObject_PropertyUpdated(ArucoObject);
+          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+        }
+      }
+
+      /// <summary>
       /// Initializes <see cref="ImagePlane"/>.
       /// </summary>
-      protected virtual void Awake()
+      protected virtual void InitializeImagePlane()
       {
         if (ImagePlanePrefab == null)
         {
@@ -105,177 +254,7 @@ namespace ArucoUnity
             imagePlaneMaterial = ImagePlane.GetComponent<Renderer>().material;
           }
 
-            ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
-        }
-      }
-
-      /// <summary>
-      /// Calls <see cref="SetArucoObject"/> to display the <see cref="ArucoObject"/>.
-      /// </summary>
-      protected virtual void Start()
-      {
-#if UNITY_EDITOR
-        if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-#endif
-          if (DisplayInGame && ArucoObject)
-          {
-            SetArucoObject(ArucoObject);
-          }
-          else
-          {
-            enabled = false;
-          }
-#if UNITY_EDITOR
-        }
-#endif
-      }
-
-      /// <summary>
-      /// Updates the display in the Unity Editor.
-      /// </summary>
-      protected virtual void Update()
-      {
-#if UNITY_EDITOR
-        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-          Awake();
-
-          if (lastArucoObjectOnValidate != ArucoObject)
-          {
-            var currentArucoObject = ArucoObject;
-            arucoObject = lastArucoObjectOnValidate;
-
-            SetArucoObject(currentArucoObject);
-            lastArucoObjectOnValidate = ArucoObject;
-          }
-        }
-#endif
-      }
-
-      /// <summary>
-      /// Unsubscribes from the <see cref="ArucoObject.PropertyUpdated"/> event.
-      /// </summary>
-      protected virtual void OnDestroy()
-      {
-        if (ArucoObject)
-        {
-          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
-        }
-      }
-
-      /// <summary>
-      /// Shows <see cref="ImagePlane"/>.
-      /// </summary>
-      private void OnEnable()
-      {
-        ImagePlane.SetActive(true);
-      }
-
-      /// <summary>
-      /// Hides <see cref="ImagePlane"/>.
-      /// </summary>
-      private void OnDisable()
-      {
-        ImagePlane.SetActive(false);
-      }
-
-      // Methods
-
-      /// <summary>
-      /// Creates <see cref="Image"/> and <see cref="ImageTexture"/> from <see cref="ArucoObject"/>.
-      /// </summary>
-      public virtual void Create()
-      {
-        Cv.Mat image = null;
-        ImageTexture = null;
-
-        // In case of a marker
-        ArucoMarker marker = ArucoObject as ArucoMarker;
-        if (marker != null && marker.Dictionary != null)
-        {
-          int markerSideLength = (int)marker.MarkerSideLength; // MarkerSideLength in pixels
-          if (marker.MarkerSideLength > 0 && marker.MarkerSideLength < 1) // MarkerSideLength in meters
-          {
-            markerSideLength = Mathf.RoundToInt(marker.MarkerSideLength * metersToPixels300ppp);
-          }
-          marker.Dictionary.DrawMarker(marker.MarkerId, markerSideLength, out image, marker.MarkerBorderBits);
-        }
-
-        // In case of a grid board
-        ArucoGridBoard arucoGridBoard = ArucoObject as ArucoGridBoard;
-        if (arucoGridBoard != null)
-        {
-          Aruco.GridBoard gridBoard = arucoGridBoard.Board as Aruco.GridBoard;
-          if (gridBoard != null)
-          {
-            gridBoard.Draw(arucoGridBoard.ImageSize, out image, arucoGridBoard.MarginsSize, arucoGridBoard.MarkerBorderBits);
-          }
-        }
-
-        // In case of a charuco board
-        ArucoCharucoBoard arucoCharucoBoard = ArucoObject as ArucoCharucoBoard;
-        if (arucoCharucoBoard != null)
-        {
-          Aruco.CharucoBoard charucoBoard = arucoCharucoBoard.Board as Aruco.CharucoBoard;
-          if (charucoBoard != null)
-          {
-            charucoBoard.Draw(arucoCharucoBoard.ImageSize, out image, arucoCharucoBoard.MarginsSize, arucoCharucoBoard.MarkerBorderBits);
-          }
-        }
-
-        // In case of a diamond
-        ArucoDiamond diamond = ArucoObject as ArucoDiamond;
-        if (diamond != null && diamond.Ids.Length == 4)
-        {
-          Cv.Vec4i ids = new Cv.Vec4i();
-          for (int i = 0; i < diamond.Ids.Length; ++i)
-          {
-            ids.Set(i, diamond.Ids[i]);
-          }
-          Aruco.DrawCharucoDiamond(diamond.Dictionary, ids, (int)diamond.SquareSideLength, (int)diamond.MarkerSideLength, out image);
-        }
-
-        // Set the properties
-        Image = image;
-        if (Image != null)
-        {
-          // Vertical flip to correctly display the image on the texture
-          int verticalFlipCode = 0;
-          Cv.Mat imageForTexture = Image.Clone();
-          Cv.Flip(imageForTexture, imageForTexture, verticalFlipCode);
-
-          // Load the image to the texture
-          int markerDataSize = (int)(Image.ElemSize() * Image.Total());
-          ImageTexture = new Texture2D(Image.Cols, Image.Rows, TextureFormat.RGB24, false);
-          ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
-          ImageTexture.Apply();
-        }
-      }
-
-      /// <summary>
-      /// Updates <see cref="ImagePlane"/> with <see cref="ImageTexture"/> if <see cref="DisplayImage"/> is true.
-      /// </summary>
-      public virtual void Display()
-      {
-        imagePlaneMaterial.mainTexture = ImageTexture;
-      }
-
-      /// <summary>
-      /// Subscribes to the <see cref="ArucoObject.PropertyUpdated"/> event, and unsubscribes from the previous ArucoObject.
-      /// </summary>
-      protected virtual void SetArucoObject(ArucoObject arucoObject)
-      {
-        if (ArucoObject != null)
-        {
-          ArucoObject.PropertyUpdated -= ArucoObject_PropertyUpdated;
-        }
-
-        this.arucoObject = arucoObject;
-        if (ArucoObject != null)
-        {
-          ArucoObject_PropertyUpdated(ArucoObject);
-          ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
+          ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
         }
       }
 

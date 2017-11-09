@@ -16,21 +16,21 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The size of the margins in pixels, used by Creators (default: 0).")]
-      private int marginsSize;
+      [Tooltip("The length of the margins around the board in pixels, used by Creators (default: 0).")]
+      private int marginsLength;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets the size of the margins in pixels (default: 0). Used by the Creators.
+      /// Gets or sets the length of the margins around the board in pixels, used by the Creators (default: 0).
       /// </summary>
-      public int MarginsSize
+      public int MarginsLength
       {
-        get { return marginsSize; }
+        get { return marginsLength; }
         set
         {
           OnPropertyUpdating();
-          marginsSize = value;
+          marginsLength = value;
           OnPropertyUpdated();
         }
       }
@@ -38,7 +38,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the image size for drawing the board.
       /// </summary>
-      public Cv.Size ImageSize { get; protected set; }
+      public Vector2 ImageSize { get; protected set; }
 
       /// <summary>
       /// Gets or sets the associated board from the ArucoUnity plugin library.
@@ -60,37 +60,25 @@ namespace ArucoUnity
       /// </summary>
       public Cv.Vec3d Tvec { get; set; }
 
-      // Variables
-
-      protected Vector2Int imageSize = Vector2Int.one;
-
       // MonoBehaviour methods
 
       /// <summary>
-      /// Calls <see cref="UpdateProperties"/>.
+      /// Calls <see cref="UpdateBoard"/>.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
-        UpdateProperties();
+        UpdateBoard();
       }
 
       // ArucoObject methods
 
       /// <summary>
-      /// Calls <see cref="ArucoObject.OnPropertyUpdated"/>, updates the <see cref="ImageSize"/> property and calls <see cref="UpdateBoard"/>.
+      /// Calls <see cref="ArucoObject.OnPropertyUpdated"/> and calls <see cref="UpdateBoard"/>.
       /// </summary>
       protected override void UpdateProperties()
       {
         base.UpdateProperties();
-
-        if (ImageSize == null)
-        {
-          ImageSize = new Cv.Size();
-        }
-        ImageSize.Width = imageSize.x;
-        ImageSize.Height = imageSize.y;
-
         UpdateBoard();
       }
 
