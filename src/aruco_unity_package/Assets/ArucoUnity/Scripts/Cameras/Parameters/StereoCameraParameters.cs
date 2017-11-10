@@ -1,6 +1,7 @@
 ﻿using ArucoUnity.Plugin;
 using System;
 using System.Xml.Serialization;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -138,6 +139,24 @@ namespace ArucoUnity
         TranslationVector = new Cv.Vec3d(TranslationVectorValues[0], TranslationVectorValues[1], TranslationVectorValues[2]);
         RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
         NewCameraMatrices = CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
+      }
+
+      /// <summary>
+      /// Gets the camera focal lengths, expressed in pixels units. Equals to
+      /// <code>F = (NewCameraMatrices[cameraId].AtDouble(0, 0), NewCameraMatrices[cameraId].AtDouble(1, 1))</code>
+      /// </summary>
+      public Vector2 GetCameraFocalLengths(int index)
+      {
+        return new Vector2((float)NewCameraMatrices[index].AtDouble(0, 0), (float)NewCameraMatrices[index].AtDouble(1, 1));
+      }
+
+      /// <summary>
+      /// Gets the camera principal point, expressed in pixels units. Equals to
+      /// <code>C = (NewCameraMatrices[cameraId].AtDouble(0, 2), NewCameraMatrices[cameraId].AtDouble(1, 2))</code>
+      /// </summary>
+      public Vector2 GetCameraPrincipalPoint(int index)
+      {
+        return new Vector2((float)NewCameraMatrices[index].AtDouble(0, 2), (float)NewCameraMatrices[index].AtDouble(1, 2));
       }
     }
   }
