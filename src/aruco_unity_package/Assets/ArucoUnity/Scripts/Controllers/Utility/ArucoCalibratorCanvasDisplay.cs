@@ -176,7 +176,7 @@ namespace ArucoUnity
           return;
         }
 
-        if (!arucoCalibrator.CalibrateAsyncRunning)
+        if (!arucoCalibrator.CalibrationRunning)
         {
           arucoCalibrator.CalibrateAsync();
           calibrateButtonText.text = "Stop calibration";
@@ -195,6 +195,7 @@ namespace ArucoUnity
       /// </summary>
       private void Calibrated()
       {
+        calibrateButtonText.text = "Calibrate";
         calibrationStatusText.text = "Calibration status : finished";
         UpdateCalibrationReprojectionErrorText();
       }
