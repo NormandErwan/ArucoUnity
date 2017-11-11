@@ -23,26 +23,32 @@ namespace ArucoUnity
       private Button addFrameButton;
 
       [SerializeField]
+      private Text framesForCalibrationText;
+
+      [SerializeField]
       private Button calibrateButton;
+
+      [SerializeField]
+      private Text calibrationStatusText;
 
       [SerializeField]
       private Button resetButton;
 
-      [SerializeField]
-      private Text framesForCalibrationText;
-
       // Variables
 
       private Text[] calibrationReprojectionErrorTexts;
+      private Text calibrateButtonText;
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Prepare the buttons and subscribe to ArucoCalibrator configured event to set the image display.
+      /// Prepares the buttons and subscribe to ArucoCalibrator configured event to set the image display.
       /// </summary>
       protected void Awake()
       {
-        // Deactivate the buttons
+        calibrateButtonText = calibrateButton.transform.GetChild(0).GetComponent<Text>();
+
+        // Configure the buttons
         addFrameButton.enabled = false;
         calibrateButton.enabled = false;
         resetButton.enabled = false;
@@ -53,15 +59,16 @@ namespace ArucoUnity
         resetButton.onClick.AddListener(ResetCalibration);
 
         // Suscribe to ArucoCalibrator events
-        arucoCalibrator.Configured += ConfigureUI;
         if (arucoCalibrator.IsConfigured)
         {
           ConfigureUI();
         }
+        arucoCalibrator.Configured += ConfigureUI;
+        arucoCalibrator.Calibrated += Calibrated;
       }
 
       /// <summary>
-      /// Configure the images display.
+      /// Configures the images display.
       /// </summary>
       protected void ConfigureUI()
       {
@@ -143,7 +150,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Add the images of the next frame for the calibration, and update the UI.
+      /// Adds the images of the next frame for the calibration, and update the UI.
       /// </summary>
       private void AddFrameForCalibration()
       {
@@ -160,7 +167,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calibrate and update the UI.
+      /// Calibrates and updates the UI.
       /// </summary>
       private void Calibrate()
       {
@@ -169,12 +176,31 @@ namespace ArucoUnity
           return;
         }
 
-        arucoCalibrator.Calibrate();
+        if (!arucoCalibrator.CalibrateAsyncRunning)
+        {
+          arucoCalibrator.CalibrateAsync();
+          calibrateButtonText.text = "Stop calibration";
+          calibrationStatusText.text = "Calibration status : running";
+        }
+        else
+        {
+          arucoCalibrator.CancelCalibrateAsync();
+          calibrateButtonText.text = "Calibrate";
+          calibrationStatusText.text = "Calibration status : stopped";
+        }
+      }
+
+      /// <summary>
+      /// Updates the UI with the calibration results.
+      /// </summary>
+      private void Calibrated()
+      {
+        calibrationStatusText.text = "Calibration status : finished";
         UpdateCalibrationReprojectionErrorText();
       }
 
       /// <summary>
-      /// Reset the calibration and update the UI.
+      /// Resets the calibration and update the UI.
       /// </summary>
       private void ResetCalibration()
       {
@@ -187,7 +213,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update the text of the number of images added for calibration.
+      /// Updates the text of the number of images added for calibration.
       /// </summary>
       void UpdateFramesForCalibrationText()
       {
@@ -196,7 +222,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Update text for of the calibration result.
+      /// Updates text for of the calibration result.
       /// </summary>
       private void UpdateCalibrationReprojectionErrorText()
       {
