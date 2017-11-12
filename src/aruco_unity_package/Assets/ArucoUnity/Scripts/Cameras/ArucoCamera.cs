@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Controllers.Utility;
 using ArucoUnity.Plugin;
 using System;
 using System.Collections.Generic;
@@ -315,7 +316,7 @@ namespace ArucoUnity
 
         // Update state
         IsConfigured = true;
-        OnConfigured();
+        Configured.Invoke();
 
         // AutoStart
         if (AutoStart)
@@ -333,23 +334,6 @@ namespace ArucoUnity
       /// Stops the camera system and calls <see cref="OnStopped"/>.
       /// </summary>
       public abstract void StopCameras();
-
-      /// <summary>
-      /// Undistorts the camera images. <see cref="Images"/> is immediatly updated. <see cref="ImageTextures"/> will be updated at
-      /// <see cref="LateUpdate"/> from <see cref="Images"/>. It's time-consuming but it's often necessary for a well-aligned AR.
-      /// </summary>
-      public virtual void Undistort()
-      {
-        for (int i = 0; i < CameraNumber; i++)
-        {
-          Cv.Remap(Images[i], Images[i], undistordedImageMaps[i][0], undistordedImageMaps[i][1], Cv.InterpolationFlags.Linear);
-        }
-      }
-
-      /// <summary>
-      /// Updates <see cref="ImageDatas"/> with the current frame images.
-      /// </summary>
-      protected abstract void UpdateCameraImages();
 
       /// <summary>
       /// Calls <see cref="InitializeImages"/>, <see cref="ConfigureUndistortion"/>, saves the state of <see cref="CameraParameters.CameraMatrices"/>
@@ -412,12 +396,9 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Executes the <see cref="Configured"/> action.
+      /// Updates <see cref="ImageDatas"/> with the current frame images and calls <see cref="OnImagesUpdated"/>.
       /// </summary>
-      protected void OnConfigured()
-      {
-        Configured();
-      }
+      protected abstract void UpdateCameraImages();
 
       /// <summary>
       /// Undistorts the <see cref="Images"/> if <see cref="AutoUndistortWithCameraParameters"/> is true, and execute the <see cref="ImagesUpdated"/>
@@ -445,30 +426,6 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Returns the OpenCV type equivalent to the format of the texture.
-      /// </summary>
-      /// <param name="textureFormat">The Unity texture format.</param>
-      /// <returns>The equivalent OpenCV type.</returns>
-      public Cv.Type ImageType(TextureFormat textureFormat)
-      {
-        Cv.Type type;
-        switch (textureFormat)
-        {
-          case TextureFormat.RGB24:
-            type = Cv.Type.CV_8UC3;
-            break;
-          case TextureFormat.BGRA32:
-          case TextureFormat.ARGB32:
-          case TextureFormat.RGBA32:
-            type = Cv.Type.CV_8UC4;
-            break;
-          default:
-            throw new ArgumentException("This type of texture is actually not supported: " + textureFormat + ".", "textureFormat");
-        }
-        return type;
-      }
-
-      /// <summary>
       /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/> and <see cref="ImageDatas"/> properties from the <see cref="ImageTextures"/>
       /// property.
       /// </summary>
@@ -476,7 +433,7 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          Images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, ImageType(ImageTextures[cameraId].format));
+          Images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, CvMatUtility.ImageType(ImageTextures[cameraId].format));
           ImageDataSizes[cameraId] = (int)(Images[cameraId].ElemSize() * Images[cameraId].Total());
           ImageDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
           Images[cameraId].DataByte = ImageDatas[cameraId];
@@ -521,64 +478,6 @@ namespace ArucoUnity
           Vector2 cameraF = CameraParameters.GetCameraFocalLengths(cameraId);
           float fovY = 2f * Mathf.Atan(0.5f * CameraParameters.ImageHeights[cameraId] / cameraF.y) * Mathf.Rad2Deg;
           ImageCameras[cameraId].fieldOfView = fovY;
-        }
-      }
-
-      /// <summary>
-      /// Configures the <see cref="ImageCameraBackgrounds"/> facing the cameras, according to the <see cref="CameraParameters"/> if set, otherwise
-      /// with default values.
-      /// </summary>
-      /// <param name="cameraBackgroundDistance">The camera-background distance.</param>
-      // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
-      // TODO: handle case of CameraParameters.FixAspectRatio != 0
-      protected virtual void ConfigureCameraBackgrounds(float cameraBackgroundDistance = defaultCameraBackgroundDistance)
-      {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          // Configure the background
-          if (ImageCameraBackgrounds[cameraId] == null)
-          {
-            ImageCameraBackgrounds[cameraId] = GameObject.CreatePrimitive(PrimitiveType.Quad);
-            ImageCameraBackgrounds[cameraId].name = "CameraBackground";
-            ImageCameraBackgrounds[cameraId].transform.SetParent(ImageCameras[cameraId].transform);
-            ImageCameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
-
-            var cameraBackgroundRenderer = ImageCameraBackgrounds[cameraId].GetComponent<Renderer>();
-            cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
-            cameraBackgroundRenderer.material.mainTexture = ImageTextures[cameraId];
-          }
-          ImageCameraBackgrounds[cameraId].SetActive(DisplayImages);
-
-          // Place background
-          Vector2 position = Vector2.zero;
-          Vector2 scale = Vector2.one;
-          if (CameraParameters != null)
-          {
-            float imageWidth = CameraParameters.ImageWidths[cameraId];
-            float imageHeight = CameraParameters.ImageHeights[cameraId];
-            Vector2 cameraF = CameraParameters.GetCameraFocalLengths(cameraId);
-            Vector2 cameraC = CameraParameters.GetCameraPrincipalPoint(cameraId);
-
-            // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
-            // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
-            position.x = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
-            position.y = -(0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance; // OpenCV(u = 0, v = 0) camera coordinates origin is top - left, but bottom-left in Unity
-
-            // Considering https://stackoverflow.com/a/41137160
-            // scale.x = 2 * cameraBackgroundDistance * tan(fovx / 2), fx = imageWidth / (2 * tan(fovx / 2)) = cameraF.x
-            scale.x = imageWidth / cameraF.x * cameraBackgroundDistance;
-            scale.y = imageHeight / cameraF.y * cameraBackgroundDistance;
-          }
-          else
-          {
-            // Default : place background centered on the camera and full size of the camera image
-            float aspectRatioFactor = Mathf.Min(ImageRatios[cameraId], 1f);
-            scale.y = 2 * cameraBackgroundDistance * aspectRatioFactor * Mathf.Tan(0.5f * ImageCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
-            scale.x = scale.y * ImageRatios[cameraId];
-          }
-
-          ImageCameraBackgrounds[cameraId].transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
-          ImageCameraBackgrounds[cameraId].transform.localScale = new Vector3(scale.x, scale.y, 1);
         }
       }
 
@@ -641,6 +540,76 @@ namespace ArucoUnity
         // Update camera intrinsic parameters for the undistorted images
         CameraParameters.CameraMatrices[cameraId] = newCameraMatrix;
         CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
+      }
+
+      /// <summary>
+      /// Configures the <see cref="ImageCameraBackgrounds"/> facing the cameras, according to the <see cref="CameraParameters"/> if set, otherwise
+      /// with default values.
+      /// </summary>
+      /// <param name="cameraBackgroundDistance">The camera-background distance.</param>
+      // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
+      // TODO: handle case of CameraParameters.FixAspectRatio != 0
+      protected virtual void ConfigureCameraBackgrounds(float cameraBackgroundDistance = defaultCameraBackgroundDistance)
+      {
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          // Configure the background
+          if (ImageCameraBackgrounds[cameraId] == null)
+          {
+            ImageCameraBackgrounds[cameraId] = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            ImageCameraBackgrounds[cameraId].name = "CameraBackground";
+            ImageCameraBackgrounds[cameraId].transform.SetParent(ImageCameras[cameraId].transform);
+            ImageCameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
+
+            var cameraBackgroundRenderer = ImageCameraBackgrounds[cameraId].GetComponent<Renderer>();
+            cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
+            cameraBackgroundRenderer.material.mainTexture = ImageTextures[cameraId];
+          }
+          ImageCameraBackgrounds[cameraId].SetActive(DisplayImages);
+
+          // Place background
+          Vector2 position = Vector2.zero;
+          Vector2 scale = Vector2.one;
+          if (CameraParameters != null)
+          {
+            float imageWidth = CameraParameters.ImageWidths[cameraId];
+            float imageHeight = CameraParameters.ImageHeights[cameraId];
+            Vector2 cameraF = CameraParameters.GetCameraFocalLengths(cameraId);
+            Vector2 cameraC = CameraParameters.GetCameraPrincipalPoint(cameraId);
+
+            // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
+            // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
+            position.x = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
+            position.y = -(0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance; // OpenCV(u = 0, v = 0) camera coordinates origin is top - left, but bottom-left in Unity
+
+            // Considering https://stackoverflow.com/a/41137160
+            // scale.x = 2 * cameraBackgroundDistance * tan(fovx / 2), fx = imageWidth / (2 * tan(fovx / 2)) = cameraF.x
+            scale.x = imageWidth / cameraF.x * cameraBackgroundDistance;
+            scale.y = imageHeight / cameraF.y * cameraBackgroundDistance;
+          }
+          else
+          {
+            // Default : place background centered on the camera and full size of the camera image
+            float aspectRatioFactor = Mathf.Min(ImageRatios[cameraId], 1f);
+            scale.y = 2 * cameraBackgroundDistance * aspectRatioFactor * Mathf.Tan(0.5f * ImageCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+            scale.x = scale.y * ImageRatios[cameraId];
+          }
+
+          ImageCameraBackgrounds[cameraId].transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
+          ImageCameraBackgrounds[cameraId].transform.localScale = new Vector3(scale.x, scale.y, 1);
+        }
+      }
+
+      /// <summary>
+      /// Undistorts the camera images. <see cref="Images"/> is immediatly updated. <see cref="ImageTextures"/> will be updated at
+      /// <see cref="LateUpdate"/> from <see cref="Images"/>. It's time-consuming but it's often necessary for a well-aligned AR.
+      /// </summary>
+      protected virtual void Undistort()
+      {
+        for (int i = 0; i < CameraNumber; i++)
+        {
+          Cv.Remap(Images[i], Images[i], undistordedImageMaps[i][0], undistordedImageMaps[i][1], Cv.InterpolationFlags.Linear);
+        }
       }
     }
   }

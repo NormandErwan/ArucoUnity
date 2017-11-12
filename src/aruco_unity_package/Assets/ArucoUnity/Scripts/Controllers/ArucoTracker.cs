@@ -244,7 +244,7 @@ namespace ArucoUnity
           trackingImagesData[cameraId] = new byte[ArucoCamera.ImageDataSizes[cameraId]];
 
           Texture2D imageTexture = ArucoCamera.ImageTextures[cameraId];
-          trackingImages[cameraId] = new Cv.Mat(imageTexture.height, imageTexture.width, ArucoCamera.ImageType(imageTexture.format));
+          trackingImages[cameraId] = new Cv.Mat(imageTexture.height, imageTexture.width, CvMatUtility.ImageType(imageTexture.format));
           trackingImages[cameraId].DataByte = trackingImagesData[cameraId];
         }
 
