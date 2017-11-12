@@ -37,11 +37,6 @@ namespace ArucoUnity
       /// </summary>
       public override string Name { get; protected set; }
 
-      /// <summary>
-      /// <see cref="ArucoCamera.ImageRatios"/>
-      /// </summary>
-      public override float[] ImageRatios { get { return new float[] { WebCamTexture.width / (float)WebCamTexture.height }; } }
-
       // Properties
 
       /// <summary>
@@ -151,7 +146,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stop the camera and the associated webcam device, and trigger the <see cref="ArucoCamera.Stopped"/> event.
+      /// Stop the camera and the associated webcam device.
       /// </summary>
       public override void StopCameras()
       {

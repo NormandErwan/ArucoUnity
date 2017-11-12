@@ -296,8 +296,9 @@ namespace ArucoUnity
         images = new Cv.Mat[CameraNumber];
         ImageDatas = new byte[CameraNumber][];
         ImageDataSizes = new int[CameraNumber];
-        ImageCameras = new Camera[CameraNumber];
         ImageTextures = new Texture2D[CameraNumber];
+        ImageRatios = new float[CameraNumber];
+        ImageCameras = new Camera[CameraNumber];
         ImageCameraBackgrounds = new GameObject[CameraNumber];
 
         cameraMatricesSave = new Cv.Mat[CameraNumber];
@@ -324,12 +325,12 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Start the camera system.
+      /// Starts the camera system, and calls <see cref="OnStarted"/> with initialized <see cref="ImageTextures"/>.
       /// </summary>
       public abstract void StartCameras();
 
       /// <summary>
-      /// Stop the camera system.
+      /// Stops the camera system and calls <see cref="OnStopped"/>.
       /// </summary>
       public abstract void StopCameras();
 
@@ -479,6 +480,7 @@ namespace ArucoUnity
           ImageDataSizes[cameraId] = (int)(Images[cameraId].ElemSize() * Images[cameraId].Total());
           ImageDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
           Images[cameraId].DataByte = ImageDatas[cameraId];
+          ImageRatios[cameraId] = ImageTextures[cameraId].width / ImageTextures[cameraId].height;
         }
       }
 
