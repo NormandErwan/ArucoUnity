@@ -66,7 +66,6 @@ namespace ArucoUnity
 
       // Variables
 
-      protected GameObject cameraBackground;
       protected bool startInitiated = false;
       protected int cameraId = 0;
 
@@ -92,8 +91,6 @@ namespace ArucoUnity
             {
               ImageCameras[cameraId] = GetComponent<Camera>();
             }
-            ConfigureCameraAndBackground(cameraId, ref cameraBackground);
-            cameraBackground.SetActive(DisplayImages);
 
             // Update state
             startInitiated = false;
