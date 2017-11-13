@@ -378,9 +378,9 @@ namespace ArucoUnity
         Aruco.CharucoBoard charucoBoard = CalibrationBoard.Board as Aruco.CharucoBoard;
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          if (charucoBoard == null && MarkerIds[cameraId].Size() < 1)
+          if (charucoBoard == null && MarkerIds[cameraId].Size() < 3)
           {
-            throw new Exception("Need at least one frame captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
+            throw new Exception("Need at least three frames captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
               + " to calibrate.");
           }
           else if (charucoBoard != null && MarkerIds[cameraId].Size() < 4)
