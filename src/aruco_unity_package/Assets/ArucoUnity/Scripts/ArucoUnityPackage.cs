@@ -29,7 +29,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages calibration flags.
     /// </summary>
-    namespace CalibrationControllers
+    namespace CalibrationFlagsControllers
     {
     }
 

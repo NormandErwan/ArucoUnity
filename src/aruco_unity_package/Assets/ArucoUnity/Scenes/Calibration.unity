@@ -204,25 +204,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 224846421818536470, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 114266367325783774, guid: d080de5c598acdf45a91e38030d550ca,
+        type: 2}
+      propertyPath: arucoCamera
+      value: 
+      objectReference: {fileID: 1148615330}
+    - target: {fileID: 224549871165791606, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 132.52228
+      value: 242.52228
       objectReference: {fileID: 0}
-    - target: {fileID: 224294546523888630, guid: d080de5c598acdf45a91e38030d550ca,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 231.74281
-      objectReference: {fileID: 0}
-    - target: {fileID: 224294546523888630, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 224497473602301546, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 282.52228
       objectReference: {fileID: 0}
-    - target: {fileID: 224825079955493656, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 224756276261241708, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12733.334
+      value: 172.52228
       objectReference: {fileID: 0}
     - target: {fileID: 224784881166543172, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
@@ -234,26 +234,26 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224756276261241708, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 224825079955493656, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 172.52228
+      value: 12733.334
       objectReference: {fileID: 0}
-    - target: {fileID: 224497473602301546, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 224294546523888630, guid: d080de5c598acdf45a91e38030d550ca,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 231.74281
+      objectReference: {fileID: 0}
+    - target: {fileID: 224294546523888630, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 282.52228
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224549871165791606, guid: d080de5c598acdf45a91e38030d550ca,
+    - target: {fileID: 224846421818536470, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 242.52228
+      value: 132.52228
       objectReference: {fileID: 0}
-    - target: {fileID: 114266367325783774, guid: d080de5c598acdf45a91e38030d550ca,
-        type: 2}
-      propertyPath: arucoCamera
-      value: 
-      objectReference: {fileID: 1148615330}
     - target: {fileID: 224825079955493656, guid: d080de5c598acdf45a91e38030d550ca,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -306,26 +306,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 224912019078854194, guid: 7134af46d2a7df94f90b8f82e266f1da,
+    - target: {fileID: 224463341789946650, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 488.5
+      value: 493.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224119622249375458, guid: 7134af46d2a7df94f90b8f82e266f1da,
+    - target: {fileID: 224906962821819200, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 528.5
+      propertyPath: m_LocalPosition.x
+      value: 231.74281
       objectReference: {fileID: 0}
-    - target: {fileID: 224919067351814216, guid: 7134af46d2a7df94f90b8f82e266f1da,
+    - target: {fileID: 114818963834943530, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 428.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224434604716398632, guid: 7134af46d2a7df94f90b8f82e266f1da,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -512.81537
-      objectReference: {fileID: 0}
+      propertyPath: arucoCamera
+      value: 
+      objectReference: {fileID: 1148615330}
     - target: {fileID: 224289300423306880, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -336,20 +331,25 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 12733.334
       objectReference: {fileID: 0}
-    - target: {fileID: 114818963834943530, guid: 7134af46d2a7df94f90b8f82e266f1da,
-        type: 2}
-      propertyPath: arucoCamera
-      value: 
-      objectReference: {fileID: 1148615330}
-    - target: {fileID: 224906962821819200, guid: 7134af46d2a7df94f90b8f82e266f1da,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 231.74281
-      objectReference: {fileID: 0}
-    - target: {fileID: 224463341789946650, guid: 7134af46d2a7df94f90b8f82e266f1da,
+    - target: {fileID: 224434604716398632, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 493.5
+      value: -512.81537
+      objectReference: {fileID: 0}
+    - target: {fileID: 224919067351814216, guid: 7134af46d2a7df94f90b8f82e266f1da,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 428.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224119622249375458, guid: 7134af46d2a7df94f90b8f82e266f1da,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 528.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912019078854194, guid: 7134af46d2a7df94f90b8f82e266f1da,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 488.5
       objectReference: {fileID: 0}
     - target: {fileID: 224948778248141352, guid: 7134af46d2a7df94f90b8f82e266f1da,
         type: 2}
@@ -402,35 +402,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 224598355844024384, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+    - target: {fileID: 114744008782543672, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+        type: 2}
+      propertyPath: arucoCamera
+      value: 
+      objectReference: {fileID: 1148615330}
+    - target: {fileID: 224350634129401222, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 488.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224499936071141312, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 528.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224082232123344416, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 428.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224941699534391072, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -59.999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 224941699534391072, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224579950589937000, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 12733.334
+      value: 493.5
       objectReference: {fileID: 0}
     - target: {fileID: 224106039124406314, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
         type: 2}
@@ -442,16 +422,36 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224350634129401222, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+    - target: {fileID: 224579950589937000, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 493.5
+      value: 12733.334
       objectReference: {fileID: 0}
-    - target: {fileID: 114744008782543672, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+    - target: {fileID: 224941699534391072, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
         type: 2}
-      propertyPath: arucoCamera
-      value: 
-      objectReference: {fileID: 1148615330}
+      propertyPath: m_LocalPosition.x
+      value: -59.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 224941699534391072, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224082232123344416, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 428.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224499936071141312, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 528.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224598355844024384, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 488.5
+      objectReference: {fileID: 0}
     - target: {fileID: 224579950589937000, guid: 2c8020f4b2ca738438ffc6d93a14b9cb,
         type: 2}
       propertyPath: m_LocalPosition.x

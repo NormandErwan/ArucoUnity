@@ -1,6 +1,6 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CalibrationControllers;
+using ArucoUnity.Controllers.CalibrationFlagsControllers;
 using ArucoUnity.Plugin;
 using System;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the stereo calibration.")]
-      private CalibrationController calibrationFlagsController;
+      private CalibrationFlagsController calibrationFlagsController;
 
       // Properties
 
@@ -45,7 +45,7 @@ namespace ArucoUnity
       /// <summary>
       /// The flags for the stereo calibration and rectification.
       /// </summary>
-      public CalibrationController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
+      public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
 
       /// <summary>
       /// New image resolution after rectification. When null (default) or (0,0) is passed, it is set to the original imageSize. Setting it to
@@ -55,9 +55,9 @@ namespace ArucoUnity
 
       // Variables
 
-      protected CalibrationPinholeController calibrationFlagsPinholeController;
-      protected CalibrationOmnidirController calibrationFlagsOmnidirController;
-      protected Cv.Size newImageSize = new Cv.Size();
+      CalibrationFlagsPinholeController calibrationFlagsPinholeController;
+      CalibrationFlagsOmnidirController calibrationFlagsOmnidirController;
+      Cv.Size newImageSize = new Cv.Size();
 
       // Methods
 
@@ -84,8 +84,8 @@ namespace ArucoUnity
         }
 
         // Check for the calibration flags
-        calibrationFlagsPinholeController = CalibrationFlagsController as CalibrationPinholeController;
-        calibrationFlagsOmnidirController = CalibrationFlagsController as CalibrationOmnidirController;
+        calibrationFlagsPinholeController = CalibrationFlagsController as CalibrationFlagsPinholeController;
+        calibrationFlagsOmnidirController = CalibrationFlagsController as CalibrationFlagsOmnidirController;
         if (CalibrationFlagsController == null
           || (calibrationFlagsPinholeController == null && calibrationFlagsOmnidirController == null))
         {
