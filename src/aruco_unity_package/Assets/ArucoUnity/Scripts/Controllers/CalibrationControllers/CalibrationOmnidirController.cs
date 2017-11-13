@@ -10,10 +10,10 @@ namespace ArucoUnity
   namespace Controllers.CalibrationControllers
   {
     /// <summary>
-    /// Manages flags for the calibration process of fisheye or omnidir cameras.
+    /// Manages the flags  the calibration, undistortion and rectification processes of fisheye and omnidir cameras.
     /// 
     /// See the OpenCV documentation for more information about these calibration flags:
-    /// http://docs.opencv.org/3.2.0/dd/d12/tutorial_omnidir_calib_main.html
+    /// http://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
     /// </summary>
     public class CalibrationOmnidirController : CalibrationController
     {
@@ -58,7 +58,7 @@ namespace ArucoUnity
       public bool FixCenter { get { return fixCenter; } set { fixCenter = value; } }
 
       /// <summary>
-      /// The calibration flags enum.
+      /// Gets or sets the calibration flags enum and keeps updated the flag properties.
       /// </summary>
       public Cv.Omnidir.Calib CalibrationFlags
       {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArucoUnity.Cameras.Parameters;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -9,7 +10,7 @@ namespace ArucoUnity
   namespace Controllers.CalibrationControllers
   {
     /// <summary>
-    /// Manages flags for the calibration process.
+    /// Manages the flags of the calibration, undistortion and rectification processes.
     /// </summary>
     public abstract class CalibrationController : MonoBehaviour
     {
@@ -17,24 +18,24 @@ namespace ArucoUnity
 
       [Header("Calibration flags")]
       [SerializeField]
-      [Tooltip("The CameraMatrix in the camera parameters has valid initial value that will be optimized by the calibration process.")]
+      [Tooltip("Use and optimize the initial values (fx, fy), (cx, cy) of the camera matrix during the calibration process.")]
       private bool useIntrinsicGuess = false;
 
       [SerializeField]
-      [Tooltip("The corresponding radial distortion coefficient is not changed during the calibration. If useIntrinsicGuess is set, the DistCoeffs"
-        + " values in the camera parameters are used. Otherwise, it is set to 0.")]
+      [Tooltip("The corresponding radial distortion coefficient is not changed during the calibration. If useIntrinsicGuess is set, the original" +
+        " DistCoeffs value in the camera parameters are used, otherwise it's to 0.")]
       private bool[] fixKDistorsionCoefficients;
 
       // Properties
 
       /// <summary>
-      /// The CameraMatrix in the camera parameters has valid initial value that will be optimized by the calibration process.
+      /// Gets or sets if the <see cref="CameraParameters.CameraMatrices"/> has valid initial value that will be optimized by the calibration process.
       /// </summary>
       public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
 
       /// <summary>
-      /// The corresponding radial distortion coefficient is not changed during the calibration. If useIntrinsicGuess is set, the DistCoeffs
-      /// values in the camera parameters are used. Otherwise, it is set to 0.
+      /// Gets or sets if the corresponding radial distortion coefficients are not changed during the calibration. If useIntrinsicGuess is set, the
+      /// original <see cref="CameraParameters.DistCoeffs"/> values in the camera parameters are used, otherwise they're set to 0.
       /// </summary>
       public bool[] FixKDistorsionCoefficients
       {
@@ -49,29 +50,29 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// The equivalent int of the calibration flags.
+      /// Gets or sets if the equivalent int, used by OpenCV, of the calibration flags.
       /// </summary>
       public abstract int CalibrationFlagsValue { get; set; }
 
       /// <summary>
-      /// The lenght of <see cref="FixKDistorsionCoefficients"/> array.
+      /// Gets the length of <see cref="FixKDistorsionCoefficients"/> array.
       /// </summary>
       protected abstract int FixKLength { get; }
 
       // Methods
 
       /// <summary>
-      /// Update the calibration flags from the property values.
+      /// Updates <see cref="CalibrationFlagsValue"/> from the flag properties.
       /// </summary>
       protected abstract void UpdateCalibrationFlags();
 
       /// <summary>
-      /// Update the property values from the calibration flags.
+      /// Updates the flag property values from <see cref="CalibrationFlagsValue"/>.
       /// </summary>
       protected abstract void UpdateCalibrationOptions();
 
       /// <summary>
-      /// Keep the <see cref="FixKDistorsionCoefficients"/> array to its fixed size in the editor.
+      /// Keeps the <see cref="FixKDistorsionCoefficients"/> array to its fixed length <see cref="FixKLength"/> in the editor.
       /// </summary>
       protected virtual void OnValidate()
       {

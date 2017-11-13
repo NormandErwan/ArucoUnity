@@ -10,10 +10,10 @@ namespace ArucoUnity
   namespace Controllers.CalibrationControllers
   {
     /// <summary>
-    /// Manages flags for the calibration process of pinhole cameras.
+    /// Manages the flags  the calibration, undistortion and rectification processes of pinhole cameras.
     /// 
-    /// See the OpenCV documentation for more information about these calibration flags:
-    /// http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d
+    /// See the OpenCV documentation for more information about these calibration processes:
+    /// http://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html
     /// </summary>
     public class CalibrationPinholeController : CalibrationController
     {
@@ -24,6 +24,7 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("The principal point (cx, cy) is not changed during the calibration.")]
       private bool fixPrincipalPoint = false;
 
       [SerializeField]
@@ -73,6 +74,9 @@ namespace ArucoUnity
 
       // Properties
 
+      /// <summary>
+      /// Gets or sets if the principal point (cx, cy) is not changed during the calibration.
+      /// </summary>
       public bool FixPrincipalPoint { get { return fixPrincipalPoint; } set { fixPrincipalPoint = value; } }
 
       public bool FixAspectRatio { get { return fixAspectRatio; } set { fixAspectRatio = value; } }
@@ -98,20 +102,20 @@ namespace ArucoUnity
       public bool SameFocalLength { get { return sameFocalLength; } set { sameFocalLength = value; } }
 
       /// <summary>
-      /// If true (default), the principal points of the images have the same pixel coordinates in the rectified views.
+      /// Gets or sets if the principal point of the images have the same pixel coordinates in the rectified views (true by default).
       /// </summary>
       public bool ZeroDisparity { get { return zeroDisparity; } set { zeroDisparity = value; } }
 
       /// <summary>
-      /// Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only valid
-      /// pixels are visible, 1 to shift the images so that no source image pixels are lost.
+      /// Gets or sets the free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so
+      /// that only valid pixels are visible, 1 to shift the images so that no source image pixels are lost.
       /// </summary>
       public double Skew { get { return skew; } set { skew = value; } }
 
       /// <summary>
-      /// The calibration flags enum.
+      /// Gets or sets the calibration flags enum and keeps updated the flag properties.
       /// </summary>
-      public Cv.Calib CalibrationFlags
+      public virtual Cv.Calib CalibrationFlags
       {
         get
         {
