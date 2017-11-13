@@ -1,6 +1,6 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CalibrationFlagsControllers;
+using ArucoUnity.Controllers.CalibrationControllers;
 using ArucoUnity.Controllers.Utility;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
@@ -38,8 +38,8 @@ namespace ArucoUnity
       private bool refineMarkersDetection = false;
 
       [SerializeField]
-      [Tooltip("The calibration flags to use.")]
-      private CalibrationFlagsController calibrationFlagsController;
+      [Tooltip("The calibration process to use.")]
+      private CalibrationController calibrationController;
 
       [SerializeField]
       [Tooltip("The folder for the calibration files, relative to the Application.persistentDataPath folder.")]
@@ -68,9 +68,9 @@ namespace ArucoUnity
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
       /// <summary>
-      /// Gets or sets the calibration flags to use.
+      /// Gets or sets the calibration process to use.
       /// </summary>
-      public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
+      public CalibrationController CalibrationController { get { return calibrationController; } set { calibrationController = value; } }
 
       /// <summary>
       /// Gets or sets the folder for the calibration files, relative to the Application.persistentDataPath folder.
@@ -147,8 +147,8 @@ namespace ArucoUnity
 
       // Variables
 
-      protected CalibrationFlagsPinholeController calibrationFlagsPinholeController;
-      protected CalibrationFlagsOmnidirController calibrationFlagsOmnidirController;
+      protected CalibrationPinholeController calibrationFlagsPinholeController;
+      protected CalibrationOmnidirController calibrationFlagsOmnidirController;
       protected Thread calibratingThread;
       protected string applicationPath;
 
@@ -186,9 +186,9 @@ namespace ArucoUnity
         }
 
         // Check for the calibration flags
-        calibrationFlagsPinholeController = CalibrationFlagsController as CalibrationFlagsPinholeController;
-        calibrationFlagsOmnidirController = CalibrationFlagsController as CalibrationFlagsOmnidirController;
-        if (CalibrationFlagsController == null 
+        calibrationFlagsPinholeController = CalibrationController as CalibrationPinholeController;
+        calibrationFlagsOmnidirController = CalibrationController as CalibrationOmnidirController;
+        if (CalibrationController == null 
           || (calibrationFlagsPinholeController == null && calibrationFlagsOmnidirController == null))
         {
           throw new ArgumentNullException("CalibrationFlagsController", "This property needs to be set to configure the calibrator.");
@@ -365,7 +365,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Calibrates each camera of the <see cref="ArucoObjectDetector.ArucoCamera"/> system using the detected markers added with
-      /// <see cref="AddCurrentFrameForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="CalibrationFlagsController"/> and save
+      /// <see cref="AddCurrentFrameForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="CalibrationController"/> and save
       /// the results on a calibration file. Stereo calibrations will be additionally executed on these results for every camera pair in
       /// <see cref="StereoCalibrationCameraPairs"/>.
       /// </summary>
@@ -414,7 +414,7 @@ namespace ArucoUnity
         {
           CameraParameters = new CameraParameters(ArucoCamera.CameraNumber)
           {
-            CalibrationFlagsValue = CalibrationFlagsController.CalibrationFlagsValue,
+            CalibrationFlagsValue = CalibrationController.CalibrationFlagsValue,
             FixAspectRatioValue = (calibrationFlagsPinholeController) ? calibrationFlagsPinholeController.FixAspectRatioValue : 0
           };
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)

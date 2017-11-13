@@ -6,12 +6,12 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.CalibrationFlagsControllers
+  namespace Controllers.CalibrationControllers
   {
     /// <summary>
     /// Manages flags for the calibration process.
     /// </summary>
-    public abstract class CalibrationFlagsController : MonoBehaviour
+    public abstract class CalibrationController : MonoBehaviour
     {
       // Editor fields
 

@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.CalibrationFlagsControllers
+  namespace Controllers.CalibrationControllers
   {
     /// <summary>
     /// Manages flags for the calibration process of fisheye or omnidir cameras.
@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// See the OpenCV documentation for more information about these calibration flags:
     /// http://docs.opencv.org/3.2.0/dd/d12/tutorial_omnidir_calib_main.html
     /// </summary>
-    public class CalibrationFlagsOmnidirController : CalibrationFlagsController
+    public class CalibrationOmnidirController : CalibrationController
     {
       // Editor fields
 

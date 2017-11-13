@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.CalibrationFlagsControllers
+  namespace Controllers.CalibrationControllers
   {
     /// <summary>
     /// Manages flags for the calibration process of pinhole cameras.
@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// See the OpenCV documentation for more information about these calibration flags:
     /// http://docs.opencv.org/3.2.0/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d
     /// </summary>
-    public class CalibrationFlagsPinholeController : CalibrationFlagsController
+    public class CalibrationPinholeController : CalibrationController
     {
       // Constants
 
