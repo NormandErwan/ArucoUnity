@@ -3,18 +3,17 @@ using ArucoUnity.Plugin;
 using System.Collections.Generic;
 using System.Threading;
 using ArucoUnity.Objects;
-using ArucoUnity.Controllers.ObjectTrackers;
-using ArucoUnity.Controllers.Utility;
+using ArucoUnity.Controllers.Utilities;
 
 namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.ObjectTrackers
   {
     /// <summary>
-    /// Detect ArUco objects, display detections and apply the estimated transform to associated gameObjects.
+    /// Detects <see cref="ArucoObject"/>, displays detections and applies the estimated transforms to gameObjects associated to the ArUco objects.
     /// 
     /// See the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
@@ -57,47 +56,48 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Apply refine strategy to detect more markers using the <see cref="ArucoBoard"/> in the <see cref="ArucoObjectsController.ArucoObjects"/> list.
+      /// Gets or sets if using refine strategy to detect more markers using the <see cref="ArucoBoard"/> in the
+      /// <see cref="ArucoObjectsController.ArucoObjects"/> list.
       /// </summary>
       public bool RefineDetectedMarkers { get { return refineDetectedMarkers; } set { refineDetectedMarkers = value; } }
 
       /// <summary>
-      /// Display the detected markers in the <see cref="ArucoObjectDetector.CameraImageTexture"/>.
+      /// Get or sets if displaying the detected markers in the <see cref="ArucoObjectDetector.CameraImageTexture"/>.
       /// </summary>
       public bool DrawDetectedMarkers { get { return drawDetectedMarkers; } set { drawDetectedMarkers = value; } }
 
       /// <summary>
-      /// Display the rejected markers candidates.
+      /// Get or sets if displaying the rejected markers candidates.
       /// </summary>
       public bool DrawRejectedCandidates { get { return drawRejectedCandidates; } set { drawRejectedCandidates = value; } }
 
       /// <summary>
-      /// Display the axes of the detected boards and diamonds.
+      /// Get or sets if displaying the axes of the detected boards and diamonds.
       /// </summary>
       public bool DrawAxes { get { return drawAxes; } set { drawAxes = value; } }
 
       /// <summary>
-      /// Display the markers of the detected ChArUco boards.
+      /// Get or sets if displaying the markers of the detected ChArUco boards.
       /// </summary>
       public bool DrawDetectedCharucoMarkers { get { return drawDetectedCharucoMarkers; } set { drawDetectedCharucoMarkers = value; } }
 
       /// <summary>
-      /// Display the detected diamonds.
+      /// Get or sets if displaying the detected diamonds.
       /// </summary>
       public bool DrawDetectedDiamonds { get { return drawDetectedDiamonds; } set { drawDetectedDiamonds = value; } }
 
       /// <summary>
-      /// Update the transforms of the detected ArUco objects.
+      /// Get or sets if updating the transforms of the detected ArUco objects.
       /// </summary>
       public bool UpdateTransforms { get { return updateTransforms; } set { updateTransforms = value; } }
 
       /// <summary>
-      /// Update the transforms of the detected ArUco objects relative to this camera.
+      /// Get or sets which camera the transforms of the detected ArUco objects are relative to.
       /// </summary>
       public int TransformsRelativeCameraId { get { return transformsRelativeCameraId; } set { transformsRelativeCameraId = value; } }
 
       /// <summary>
-      /// The tracker of ArUco markers used.
+      /// Gets the ArUco markers tracker used.
       /// </summary>
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
 
@@ -157,7 +157,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Unsuscribe from ArucoObjectController events, and abort the tracking thread.
+      /// Unsuscribes from ArucoObjectController events, and abort the tracking thread.
       /// </summary>
       protected override void OnDestroy()
       {
@@ -166,74 +166,22 @@ namespace ArucoUnity
         ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
       }
 
-      // ArucoObjectController methods
+      // ArucoCameraController methods
 
       /// <summary>
-      /// Activate the tracker associated with the <paramref name="arucoObject"/> and configure its gameObject.
+      /// Starts the tracking.
       /// </summary>
-      /// <param name="arucoObject">The added ArUco object.</param>
-      protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
+      public override void StartController()
       {
-        if (arucoObject.GetType() != typeof(ArucoMarker))
-        {
-          ArucoObjectTracker tracker = null;
-          if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
-          {
-            throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
-          }
-          else if (!tracker.IsActivated)
-          {
-            tracker.Activate(this);
-          }
-        }
+        base.StartController();
+        arucoCameraImagesUpdated = false;
+        trackingThread.Start();
       }
 
       /// <summary>
-      /// Deactivate the tracker associated with the <paramref name="arucoObject"/> if it was the last one of this type.
+      /// Initializes the properties, the ArUco object list, and the tracking images.
       /// </summary>
-      /// <param name="arucoObject">The removed</param>
-      protected virtual void ArucoObjectsController_ArucoObjectRemoved(ArucoObject arucoObject)
-      {
-        ArucoObjectTracker tracker = null;
-        if (arucoObject.GetType() == typeof(ArucoMarker) || !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
-        {
-          return;
-        }
-
-        if (tracker.IsActivated)
-        {
-          bool deactivateTracker = true;
-
-          // Try to find at leat one object of the same type as arucoObject
-          foreach (var arucoObjectDictionary in ArucoObjects)
-          {
-            foreach (var arucoObject2 in arucoObjectDictionary.Value)
-            {
-              if (arucoObject2.GetType() == arucoObject.GetType())
-              {
-                deactivateTracker = false;
-                break;
-              }
-            }
-            if (!deactivateTracker)
-            {
-              break;
-            }
-          }
-
-          if (deactivateTracker)
-          {
-            tracker.Deactivate();
-          }
-        }
-      }
-
-      // ArucoObjectDetector methods
-
-      /// <summary>
-      /// Initialize the properties, the ArUco object list, and the tracking images.
-      /// </summary>
-      protected override void PreConfigure()
+      protected override void Configure()
       {
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
         trackingImagesData = new byte[ArucoCamera.CameraNumber][];
@@ -252,17 +200,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Start the tracking.
-      /// </summary>
-      protected override void StartDetector()
-      {
-        base.StartDetector();
-        arucoCameraImagesUpdated = false;
-        trackingThread.Start();
-      }
-
-      /// <summary>
-      /// Draw the results of the detection and place each detected ArUco object on the <see cref="ArucoObjectsController.ArucoObjects"/> list, 
+      /// Draws the results of the detection and place each detected ArUco object on the <see cref="ArucoObjectsController.ArucoObjects"/> list, 
       /// according to the results of the tracking thread and re-throw the tracking thread exceptions.
       /// </summary>
       protected override void ArucoCamera_ImagesUpdated()
@@ -311,8 +249,70 @@ namespace ArucoUnity
           // Stop if there was an exception in the tracking thread
           if (e != null)
           {
-            StopDetector();
+            StopController();
             throw e;
+          }
+        }
+      }
+
+      // ArucoObjectController methods
+
+      /// <summary>
+      /// Activates the tracker associated with the <paramref name="arucoObject"/> and configure its gameObject.
+      /// </summary>
+      /// <param name="arucoObject">The added ArUco object.</param>
+      protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
+      {
+        if (arucoObject.GetType() != typeof(ArucoMarker))
+        {
+          ArucoObjectTracker tracker = null;
+          if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+          {
+            throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
+          }
+          else if (!tracker.IsActivated)
+          {
+            tracker.Activate(this);
+          }
+        }
+      }
+
+      /// <summary>
+      /// Deactivates the tracker associated with the <paramref name="arucoObject"/> if it was the last one of this type.
+      /// </summary>
+      /// <param name="arucoObject">The removed</param>
+      protected virtual void ArucoObjectsController_ArucoObjectRemoved(ArucoObject arucoObject)
+      {
+        ArucoObjectTracker tracker = null;
+        if (arucoObject.GetType() == typeof(ArucoMarker) || !additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
+        {
+          return;
+        }
+
+        if (tracker.IsActivated)
+        {
+          bool deactivateTracker = true;
+
+          // Try to find at leat one object of the same type as arucoObject
+          foreach (var arucoObjectDictionary in ArucoObjects)
+          {
+            foreach (var arucoObject2 in arucoObjectDictionary.Value)
+            {
+              if (arucoObject2.GetType() == arucoObject.GetType())
+              {
+                deactivateTracker = false;
+                break;
+              }
+            }
+            if (!deactivateTracker)
+            {
+              break;
+            }
+          }
+
+          if (deactivateTracker)
+          {
+            tracker.Deactivate();
           }
         }
       }
@@ -320,7 +320,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Hide all the ArUco objects.
+      /// Hides all the ArUco objects.
       /// </summary>
       public void DeactivateArucoObjects()
       {
@@ -334,7 +334,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect the ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
+      /// Detects the ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
       /// </summary>
       /// <param name="images">The images set.</param>
       public void Detect(Cv.Mat[] images)
@@ -361,7 +361,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect the ArUco objects on the current images of the <see cref="ArucoCamera"/> camera system.
+      /// Detects the ArUco objects on the current images of the <see cref="ArucoCamera"/> camera system.
       /// </summary>
       public void Detect()
       {
@@ -369,7 +369,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Estimate the gameObject's transform of each detected ArUco object of the <see cref="ArucoCamera"/> camera system.
+      /// Estimates the gameObject's transform of each detected ArUco object of the <see cref="ArucoCamera"/> camera system.
       /// </summary>
       public void EstimateTransforms()
       {
@@ -395,7 +395,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Draw the detected ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
+      /// Draws the detected ArUco objects for the <see cref="ArucoCamera"/> camera system, on a set of custom images.
       /// </summary>
       /// <param name="images">The images set.</param>
       public void Draw(Cv.Mat[] images)
@@ -422,7 +422,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Draw the detected ArUco objects of the <see cref="ArucoCamera"/> camera system on the current images of these cameras.
+      /// Draws the detected ArUco objects of the <see cref="ArucoCamera"/> camera system on the current images of these cameras.
       /// </summary>
       public void Draw()
       {
@@ -430,7 +430,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Place and orient the detected ArUco objects relative to the camera with the <see cref="TransformsRelativeCameraId"/> id.
+      /// Places and orients the detected ArUco objects relative to the camera with the <see cref="TransformsRelativeCameraId"/> id.
       /// </summary>
       public void Place()
       {
@@ -453,8 +453,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Detect and estimate the transforms of ArUco objects on the <see cref="ArucoObjectsController.ArucoObjects"/> list. Executed on a separated
-      /// tracking thread.
+      /// Detects and estimates the transforms of ArUco objects on the <see cref="ArucoObjectsController.ArucoObjects"/> list. Executed on a
+      /// separated tracking thread.
       /// </summary>
       protected void Track()
       {
