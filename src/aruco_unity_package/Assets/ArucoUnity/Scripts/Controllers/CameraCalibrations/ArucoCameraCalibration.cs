@@ -1,13 +1,9 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CalibrationFlagsControllers;
-using ArucoUnity.Controllers.Utility;
+using ArucoUnity.Controllers.CameraCalibrations.Flags;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading;
 using UnityEngine;
 
@@ -16,19 +12,18 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.CameraCalibrations
   {
     /// <summary>
-    /// Calibrate a <see cref="ArucoObjectDetector.ArucoCamera"/> camera system with a <see cref="ArucoBoard"/>, and save the calibration results in a file to be used
-    /// for tracking.
+    /// Calibrates a <see cref="ArucoObjectDetector.ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results in a file to be
+    /// used for <see cref="ArucoObject"/> tracking.
     /// 
     /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.2.0/da/d13/tutorial_aruco_calibration.html
     /// </summary>
-    public class ArucoCalibrator : ArucoObjectDetector
+    public abstract class ArucoCameraCalibration : ArucoObjectDetector
     {
       // Editor fields
 
-      [Header("Calibration")]
       [SerializeField]
       [Tooltip("The ArUco board to use for calibration.")]
       private ArucoBoard calibrationBoard;
@@ -38,22 +33,13 @@ namespace ArucoUnity
       private bool refineMarkersDetection = false;
 
       [SerializeField]
-      [Tooltip("The calibration flags to use.")]
-      private CalibrationFlagsController calibrationFlagsController;
-
-      [SerializeField]
-      [Tooltip("The folder for the calibration files, relative to the Application.persistentDataPath folder.")]
-      private string calibrationFolder = "ArucoUnity/Calibrations/";
-
-      [SerializeField]
-      [Tooltip("The xml calibration file to load as a guess, and where the calibration parameters will be saved. If empty, it will be generated"
-        + " automatically from the camera name and the current datetime.")]
-      private string calibrationFilename;
-
-      [Header("Stereo Calibration")]
-      [SerializeField]
       [Tooltip("The list of the camera pairs on which apply a stereo calibration.")]
-      private StereoCalibrationCameraPair[] stereoCalibrationCameraPairs;
+      private CameraPair[] stereoCalibrationCameraPairs;
+
+      [SerializeField]
+      [Tooltip("The camera parameters to use if CalibrationFlags.UseIntrinsicGuess is true. Otherwise, the camera parameters file will be generated" +
+        " from the camera name and the calibration datetime.")]
+      private CameraParametersController cameraParametersController;
 
       // Properties
 
@@ -68,25 +54,15 @@ namespace ArucoUnity
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
       /// <summary>
-      /// Gets or sets the calibration flags to use.
-      /// </summary>
-      public CalibrationFlagsController CalibrationFlagsController { get { return calibrationFlagsController; } set { calibrationFlagsController = value; } }
-
-      /// <summary>
-      /// Gets or sets the folder for the calibration files, relative to the Application.persistentDataPath folder.
-      /// </summary>
-      public string CalibrationFolder { get { return calibrationFolder; } set { calibrationFolder = value; } }
-
-      /// <summary>
-      /// Gets or sets the xml calibration file to load as a guess, and where the calibration parameters will be saved. The extension (.xml) is added
-      /// automatically. If empty, it will be generated automatically from the camera name and the current datetime.
-      /// </summary>
-      public string CalibrationFilename { get { return calibrationFilename; } set { calibrationFilename = value; } }
-
-      /// <summary>
       /// Gets or sets the list of the camera pairs on which apply a stereo calibration.
       /// </summary>
-      public StereoCalibrationCameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
+      public CameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
+
+      /// <summary>
+      /// Gets or sets the camera parameters to use if <see cref="CalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
+      /// file will be generated from the camera name and the calibration datetime.
+      /// </summary>
+      public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
 
       /// <summary>
       /// Gets the detected marker corners for each camera.
@@ -101,7 +77,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the images to use for the calibration.
       /// </summary>
-      public Std.VectorMat[] CameraImages { get; protected set; }
+      public Std.VectorMat[] CalibrationImages { get; protected set; }
 
       /// <summary>
       /// Gets the estimated rotation vector for each detected markers in each camera.
@@ -112,11 +88,6 @@ namespace ArucoUnity
       /// Gets the estimated translation vector for each detected markers in each camera.
       /// </summary>
       public Std.VectorVec3d[] Tvecs { get; protected set; }
-
-      /// <summary>
-      /// Gets the calibration results.
-      /// </summary>
-      public CameraParameters CameraParameters { get; protected set; }
 
       /// <summary>
       /// Gets the detected marker corners on the current images of each camera.
@@ -147,22 +118,15 @@ namespace ArucoUnity
 
       // Variables
 
-      protected CalibrationFlagsPinholeController calibrationFlagsPinholeController;
-      protected CalibrationFlagsOmnidirController calibrationFlagsOmnidirController;
       protected Thread calibratingThread;
       protected string applicationPath;
+      protected Cv.Size[] calibrationImageSizes;
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes variables.
+      /// Calls the <see cref="Calibrated"/> event when a calibration has just completed.
       /// </summary>
-      protected override void Awake()
-      {
-        base.Awake();
-        applicationPath = (Application.isEditor) ? Application.dataPath : Application.persistentDataPath;
-      }
-
       protected virtual void LateUpdate()
       {
         if (CalibrationRunning && IsCalibrated)
@@ -172,37 +136,17 @@ namespace ArucoUnity
         }
       }
 
-      // ArucoDetector Methods
+      // ArucoCameraController methods
 
       /// <summary>
       /// Checks if the properties are properly set and and reset the calibration.
       /// </summary>
-      protected override void PreConfigure()
+      protected override void Configure()
       {
         // Check for the board
         if (CalibrationBoard == null)
         {
           throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibrator.");
-        }
-
-        // Check for the calibration flags
-        calibrationFlagsPinholeController = CalibrationFlagsController as CalibrationFlagsPinholeController;
-        calibrationFlagsOmnidirController = CalibrationFlagsController as CalibrationFlagsOmnidirController;
-        if (CalibrationFlagsController == null 
-          || (calibrationFlagsPinholeController == null && calibrationFlagsOmnidirController == null))
-        {
-          throw new ArgumentNullException("CalibrationFlagsController", "This property needs to be set to configure the calibrator.");
-        }
-        else if (ArucoCamera.UndistortionType == UndistortionType.Pinhole && calibrationFlagsPinholeController == null)
-        {
-          throw new ArgumentException("CalibrationFlagsController", "The camera is set for the pinhole undistortion, but the calibration flags are"
-            + " not. Use CalibrationFlagsPinholeController instead.");
-        }
-        else if (new[] { UndistortionType.OmnidirPerspective, UndistortionType.OmnidirCylindrical, UndistortionType.OmnidirLonglati,
-          UndistortionType.OmnidirStereographic }.Contains(ArucoCamera.UndistortionType) && calibrationFlagsOmnidirController == null)
-        {
-          throw new ArgumentException("CalibrationFlagsController", "The camera is set for an omnidir undistortion, but the calibration flags are"
-            + " not. Use CalibrationFlagsOmnidirController instead.");
         }
 
         // Check for the stereo calibration properties
@@ -219,13 +163,8 @@ namespace ArucoUnity
       /// </summary>
       protected override void ArucoCamera_ImagesUpdated()
       {
-        if (!IsConfigured || !IsStarted)
-        {
-          return;
-        }
-
-        Detect();
-        Draw();
+        DetectMarkers();
+        DrawDetectedMarkers();
       }
 
       // Methods
@@ -237,12 +176,12 @@ namespace ArucoUnity
       {
         MarkerCorners = new Std.VectorVectorVectorPoint2f[ArucoCamera.CameraNumber];
         MarkerIds = new Std.VectorVectorInt[ArucoCamera.CameraNumber];
-        CameraImages = new Std.VectorMat[ArucoCamera.CameraNumber];
+        CalibrationImages = new Std.VectorMat[ArucoCamera.CameraNumber];
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           MarkerCorners[cameraId] = new Std.VectorVectorVectorPoint2f();
           MarkerIds[cameraId] = new Std.VectorVectorInt();
-          CameraImages[cameraId] = new Std.VectorMat();
+          CalibrationImages[cameraId] = new Std.VectorMat();
         }
         
         Rvecs = new Std.VectorVec3d[ArucoCamera.CameraNumber];
@@ -250,7 +189,8 @@ namespace ArucoUnity
         MarkerCornersCurrentImage = new Std.VectorVectorPoint2f[ArucoCamera.CameraNumber];
         MarkerIdsCurrentImage = new Std.VectorInt[ArucoCamera.CameraNumber];
 
-        CameraParameters = null;
+        calibrationImageSizes = new Cv.Size[ArucoCamera.CameraNumber];
+
         IsCalibrated = false;
       }
 
@@ -258,7 +198,7 @@ namespace ArucoUnity
       /// Detects the Aruco markers on the current images of the cameras and store the results in the <see cref="MarkerCornersCurrentImage"/> and
       /// <see cref="MarkerIdsCurrentImage"/> properties.
       /// </summary>
-      public virtual void Detect()
+      public virtual void DetectMarkers()
       {
         if (!IsConfigured)
         {
@@ -288,7 +228,7 @@ namespace ArucoUnity
       /// <summary>
       /// Draws the detected ArUco markers on the current images of the cameras.
       /// </summary>
-      public virtual void Draw()
+      public virtual void DrawDetectedMarkers()
       {
         if (!IsConfigured)
         {
@@ -330,7 +270,12 @@ namespace ArucoUnity
         {
           MarkerCorners[cameraId].PushBack(MarkerCornersCurrentImage[cameraId]);
           MarkerIds[cameraId].PushBack(MarkerIdsCurrentImage[cameraId]);
-          CameraImages[cameraId].PushBack(ArucoCamera.Images[cameraId]);
+          CalibrationImages[cameraId].PushBack(ArucoCamera.Images[cameraId].Clone());
+
+          if (calibrationImageSizes[cameraId] == null)
+          {
+            calibrationImageSizes[cameraId] = new Cv.Size(ArucoCamera.Images[cameraId].Size.Width, ArucoCamera.Images[cameraId].Size.Height);
+          }
         }
       }
 
@@ -365,7 +310,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Calibrates each camera of the <see cref="ArucoObjectDetector.ArucoCamera"/> system using the detected markers added with
-      /// <see cref="AddCurrentFrameForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="CalibrationFlagsController"/> and save
+      /// <see cref="AddCurrentFrameForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="ArucoCameraUndistortion"/> and save
       /// the results on a calibration file. Stereo calibrations will be additionally executed on these results for every camera pair in
       /// <see cref="StereoCalibrationCameraPairs"/>.
       /// </summary>
@@ -390,47 +335,8 @@ namespace ArucoUnity
           }
         }
 
-        // Load the camera parameters if they exist
-        string cameraParametersFilePath;
-        string cameraParametersFolderPath = Path.Combine(applicationPath, CalibrationFolder);
-        if (!Directory.Exists(cameraParametersFolderPath))
-        {
-          Directory.CreateDirectory(cameraParametersFolderPath);
-        }
-        if (CalibrationFilename != null && CalibrationFilename.Length > 0)
-        {
-          cameraParametersFilePath = cameraParametersFolderPath + CalibrationFilename;
-          CameraParameters = CameraParameters.LoadFromXmlFile(cameraParametersFilePath);
-
-          if (CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
-          {
-            throw new ArgumentException("The loaded camera parameters from the file '" + cameraParametersFilePath + "' is for a system with " +
-              CameraParameters.CameraNumber + " camera. But the current calibrating camera has " + ArucoCamera.CameraNumber + ". These numbers"
-              + " must be equal.", "CalibrationFilename");
-          }
-        }
-        // Or initialize the camera parameters
-        else
-        {
-          CameraParameters = new CameraParameters(ArucoCamera.CameraNumber)
-          {
-            CalibrationFlagsValue = CalibrationFlagsController.CalibrationFlagsValue,
-            FixAspectRatioValue = (calibrationFlagsPinholeController) ? calibrationFlagsPinholeController.FixAspectRatioValue : 0
-          };
-          for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
-          {
-            Cv.Size imageSize = ArucoCamera.Images[cameraId].Size;
-            CameraParameters.ImageHeights[cameraId] = imageSize.Height;
-            CameraParameters.ImageWidths[cameraId] = imageSize.Width;
-
-            double cameraMatrixAspectRatio = (calibrationFlagsPinholeController && calibrationFlagsPinholeController.FixAspectRatio) 
-              ? calibrationFlagsPinholeController.FixAspectRatioValue : 1.0;
-            CameraParameters.CameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F,
-              new double[9] { cameraMatrixAspectRatio, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
-            CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
-            CameraParameters.OmnidirXis[cameraId] = new Cv.Mat();
-          }
-        }
+        // Initialize and configure the camera parameters
+        InitializeCameraParameters();
 
         // Calibrate each camera
         Std.VectorVectorPoint3f[] objectPoints = new Std.VectorVectorPoint3f[ArucoCamera.CameraNumber];
@@ -454,25 +360,9 @@ namespace ArucoUnity
           imagePoints[cameraId] = boardImagePoints;
 
           // Calibrate the camera
-          Cv.Size imageSize = ArucoCamera.Images[cameraId].Size;
           Std.VectorVec3d rvecs, tvecs;
-          if (calibrationFlagsPinholeController)
-          {
-            CameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(boardObjectPoints, boardImagePoints, imageSize,
-              CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-              calibrationFlagsPinholeController.CalibrationFlags);
-          }
-          else if (calibrationFlagsOmnidirController)
-          {
-            CameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
-              CameraParameters.CameraMatrices[cameraId], CameraParameters.OmnidirXis[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs,
-              out tvecs, calibrationFlagsOmnidirController.CalibrationFlags);
-          }
-          else
-          {
-            rvecs = new Std.VectorVec3d();
-            tvecs = new Std.VectorVec3d();
-          }
+          Calibrate(cameraId, boardObjectPoints, boardImagePoints, calibrationImageSizes[cameraId], out rvecs,
+            out tvecs);
 
           // If the used board is a charuco board, refine the calibration
           if (charucoBoard != null)
@@ -485,7 +375,7 @@ namespace ArucoUnity
               // Interpolate charuco corners using camera parameters
               Std.VectorPoint2f charucoCorners;
               Std.VectorInt charucoIds;
-              Aruco.InterpolateCornersCharuco(MarkerCorners[cameraId].At(frame), MarkerIds[cameraId].At(frame), CameraImages[cameraId].At(frame),
+              Aruco.InterpolateCornersCharuco(MarkerCorners[cameraId].At(frame), MarkerIds[cameraId].At(frame), CalibrationImages[cameraId].At(frame),
                 charucoBoard, out charucoCorners, out charucoIds);
               charucoImagePoints.PushBack(charucoCorners);
 
@@ -502,18 +392,8 @@ namespace ArucoUnity
             objectPoints[cameraId] = boardObjectPoints;
 
             // Refine the calibration
-            if (calibrationFlagsPinholeController)
-            {
-              CameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(charucoObjectPoints, charucoImagePoints, imageSize,
-                CameraParameters.CameraMatrices[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-                calibrationFlagsPinholeController.CalibrationFlags);
-            }
-            else if (calibrationFlagsOmnidirController)
-            {
-              CameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(boardObjectPoints, boardImagePoints, imageSize,
-                CameraParameters.CameraMatrices[cameraId], CameraParameters.OmnidirXis[cameraId], CameraParameters.DistCoeffs[cameraId], out rvecs,
-                out tvecs, calibrationFlagsOmnidirController.CalibrationFlags);
-            }
+            Calibrate(cameraId, charucoObjectPoints, charucoImagePoints, calibrationImageSizes[cameraId], out rvecs,
+              out tvecs);
           }
 
           // Save calibration extrinsic parameters
@@ -522,27 +402,84 @@ namespace ArucoUnity
         }
 
         // If required, apply a stereo calibration and save the resuts in the camera parameters
-        CameraParameters.StereoCameraParametersList = new StereoCameraParameters[StereoCalibrationCameraPairs.Length];
+        var stereoCameraParameters = new StereoCameraParameters[StereoCalibrationCameraPairs.Length];
         for (int i = 0; i < StereoCalibrationCameraPairs.Length; i++)
         {
-          CameraParameters.StereoCameraParametersList[i] = StereoCalibrationCameraPairs[i].Calibrate(ArucoCamera, CameraParameters, objectPoints, imagePoints);
+          stereoCameraParameters[i] = new StereoCameraParameters()
+          {
+            CameraId1 = StereoCalibrationCameraPairs[i].CameraId1,
+            CameraId2 = StereoCalibrationCameraPairs[i].CameraId2,
+          };
+
+          StereoCalibrate(StereoCalibrationCameraPairs[i], objectPoints, imagePoints, calibrationImageSizes, stereoCameraParameters[i]);
         }
+        CameraParametersController.CameraParameters.StereoCameraParametersList = stereoCameraParameters;
 
         // Save the camera parameters
-        cameraParametersFilePath = cameraParametersFolderPath;
-        if (CalibrationFilename != null && CalibrationFilename.Length > 0)
-        {
-          cameraParametersFilePath += CalibrationFilename;
-        }
-        else
-        {
-          cameraParametersFilePath += ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xml";
-        }
-        CameraParameters.SaveToXmlFile(cameraParametersFilePath);
+        CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xml";
+        CameraParametersController.Save();
 
         // Update state
         IsCalibrated = true;
       }
+
+      /// <summary>
+      /// Initializes and configure the <see cref="CameraParametersController.CameraParameters"/>.
+      /// </summary>
+      /// <param name="calibrationFlags">The calibration flags that will be used in <see cref="Calibrate"/>.</param>
+      protected virtual void InitializeCameraParameters(CalibrationFlags calibrationFlags = null)
+      {
+        if (calibrationFlags != null)
+        {
+          if (calibrationFlags.UseIntrinsicGuess 
+            && (CameraParametersController.CameraParameters == null || CameraParametersController.CameraParameters.CameraMatrices == null))
+          {
+            throw new Exception("CalibrationFlags.UseIntrinsicGuess flag is set but CameraParameters is null or has no valid values. Set" +
+              " CameraParametersFilename or deactivate this flag.");
+          }
+          else
+          {
+            CameraParametersController.Initialize(ArucoCamera.CameraNumber);
+          }
+          CameraParametersController.CameraParameters.CalibrationFlagsValue = calibrationFlags.CalibrationFlagsValue;
+        }
+        else
+        {
+          CameraParametersController.Initialize(ArucoCamera.CameraNumber);
+        }
+
+        var cameraParameters = CameraParametersController.CameraParameters;
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        {
+          CameraParametersController.CameraParameters.ImageHeights[cameraId] = calibrationImageSizes[cameraId].Height;
+          CameraParametersController.CameraParameters.ImageWidths[cameraId] = calibrationImageSizes[cameraId].Width;
+        }
+      }
+
+      /// <summary>
+      /// Applies a calibration to a camera, saves the intrinsic parameters in <see cref="CameraParametersController.CameraParameters"/> and output
+      /// the extrinsic parameters.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to calibrate.</param>
+      /// <param name="objectPoints">The object points corresponding the imagePoints.</param>
+      /// <param name="imagePoints">The detected image points for this camera.</param>
+      /// <param name="imageSize">The size of the camera images.</param>
+      /// <param name="rvecs">Output rotations for each calibration images.</param>
+      /// <param name="tvecs">Output rotations for each calibration images.</param>
+      protected abstract void Calibrate(int cameraId, Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize,
+        out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs);
+
+      /// <summary>
+      /// Applies a calibration to a stereo camera pair and saves the extrinsincs parameters between the two cameras in the
+      /// <see cref="stereoCalibrationCameraPairs"/> argument.
+      /// </summary>
+      /// <param name="cameraPair">The camera pair to apply a stereo calibration.</param>
+      /// <param name="objectPoints">The object points of the camera pair.</param>
+      /// <param name="imagePoints">The detected image points of the camera pair.</param>
+      /// <param name="imageSizes">The size of the images of each camera in the camera pair.</param>
+      /// <param name="stereoCameraParameters">The parameters containing the results of the stereo calibration.</param>
+      protected abstract void StereoCalibrate(CameraPair cameraPair, Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints,
+        Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters);
     }
   }
 

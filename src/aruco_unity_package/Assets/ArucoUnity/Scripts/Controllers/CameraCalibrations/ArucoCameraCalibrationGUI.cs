@@ -7,14 +7,14 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.Utility
+  namespace Controllers.CameraCalibrations
   {
     public class ArucoCalibratorCanvasDisplay : MonoBehaviour
     {
       // Editor fields
 
       [SerializeField]
-      private ArucoCalibrator arucoCalibrator;
+      private ArucoCameraCalibration arucoCameraCalibration;
 
       [SerializeField]
       private RectTransform arucoCameraImagesRect;
@@ -42,7 +42,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Prepares the buttons and subscribe to ArucoCalibrator configured event to set the image display.
+      /// Prepares the buttons and subscribes to ArucoCalibrator started event to set the image display.
       /// </summary>
       protected void Awake()
       {
@@ -59,12 +59,21 @@ namespace ArucoUnity
         resetButton.onClick.AddListener(ResetCalibration);
 
         // Suscribe to ArucoCalibrator events
-        if (arucoCalibrator.IsConfigured)
+        if (arucoCameraCalibration.IsStarted)
         {
           ConfigureUI();
         }
-        arucoCalibrator.Configured += ConfigureUI;
-        arucoCalibrator.Calibrated += Calibrated;
+        arucoCameraCalibration.Started += ConfigureUI;
+        arucoCameraCalibration.Calibrated += Calibrated;
+      }
+
+      /// <summary>
+      /// Unsubscribes from ArucoCalibrator events.
+      /// </summary>
+      protected void OnDestroy()
+      {
+        arucoCameraCalibration.Started += ConfigureUI;
+        arucoCameraCalibration.Calibrated += Calibrated;
       }
 
       /// <summary>
@@ -78,7 +87,7 @@ namespace ArucoUnity
         resetButton.enabled = false;
 
         // Configure the images display
-        ArucoCamera arucoCamera = arucoCalibrator.ArucoCamera;
+        ArucoCamera arucoCamera = arucoCameraCalibration.ArucoCamera;
         calibrationReprojectionErrorTexts = new Text[arucoCamera.CameraNumber];
 
         // Configure the arucoCameraImagesRect as a grid of images
@@ -134,7 +143,7 @@ namespace ArucoUnity
           reproErrorRect.pivot = Vector2.zero;
           reproErrorRect.anchorMin = reproErrorRect.anchorMax = Vector2.zero;
           reproErrorRect.offsetMin = Vector2.one * 5; // Pos X and pos Y margins
-          reproErrorRect.offsetMax = new Vector2(70, 60); // width and Height
+          reproErrorRect.offsetMax = new Vector2(120, 60); // width and Height
           reproErrorRect.localScale = Vector3.one;
 
           Text reproErrorText = reproError.AddComponent<Text>();
@@ -154,12 +163,12 @@ namespace ArucoUnity
       /// </summary>
       private void AddFrameForCalibration()
       {
-        if (!arucoCalibrator.IsConfigured)
+        if (!arucoCameraCalibration.IsConfigured)
         {
           return;
         }
 
-        arucoCalibrator.AddCurrentFrameForCalibration();
+        arucoCameraCalibration.AddCurrentFrameForCalibration();
 
         calibrateButton.enabled = true;
         resetButton.enabled = true;
@@ -171,20 +180,20 @@ namespace ArucoUnity
       /// </summary>
       private void Calibrate()
       {
-        if (!arucoCalibrator.IsConfigured)
+        if (!arucoCameraCalibration.IsConfigured)
         {
           return;
         }
 
-        if (!arucoCalibrator.CalibrationRunning)
+        if (!arucoCameraCalibration.CalibrationRunning)
         {
-          arucoCalibrator.CalibrateAsync();
+          arucoCameraCalibration.CalibrateAsync();
           calibrateButtonText.text = "Stop calibration";
           calibrationStatusText.text = "Calibration status : running";
         }
         else
         {
-          arucoCalibrator.CancelCalibrateAsync();
+          arucoCameraCalibration.CancelCalibrateAsync();
           calibrateButtonText.text = "Calibrate";
           calibrationStatusText.text = "Calibration status : stopped";
         }
@@ -205,7 +214,7 @@ namespace ArucoUnity
       /// </summary>
       private void ResetCalibration()
       {
-        arucoCalibrator.ResetCalibration();
+        arucoCameraCalibration.ResetCalibration();
 
         calibrateButton.enabled = false;
         resetButton.enabled = false;
@@ -218,20 +227,23 @@ namespace ArucoUnity
       /// </summary>
       void UpdateFramesForCalibrationText()
       {
-        string frames = (arucoCalibrator.MarkerIds != null && arucoCalibrator.MarkerIds[0] != null) ? "" + arucoCalibrator.MarkerIds[0].Size() : "0";
+        string frames = (arucoCameraCalibration.MarkerIds != null && arucoCameraCalibration.MarkerIds[0] != null) ? "" + arucoCameraCalibration.MarkerIds[0].Size() : "0";
         framesForCalibrationText.text = "Frames for calibration: " + frames;
       }
 
       /// <summary>
-      /// Updates text for of the calibration result.
+      /// Updates text for of the calibration results.
       /// </summary>
       private void UpdateCalibrationReprojectionErrorText()
       {
-        for (int cameraId = 0; cameraId < arucoCalibrator.ArucoCamera.CameraNumber; cameraId++)
+        for (int cameraId = 0; cameraId < arucoCameraCalibration.ArucoCamera.CameraNumber; cameraId++)
         {
-          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCalibrator.ArucoCamera.CameraNumber + "\n"
-           + "Reprojection error: " 
-           + ((arucoCalibrator.CameraParameters != null) ? arucoCalibrator.CameraParameters.ReprojectionErrors[cameraId].ToString("F3") : "0.000");
+          double reprojectionError = (arucoCameraCalibration.CameraParametersController.CameraParameters != null)
+            ? arucoCameraCalibration.CameraParametersController.CameraParameters.ReprojectionErrors[cameraId]
+            : 0.0;
+
+          calibrationReprojectionErrorTexts[cameraId].text = "Camera " + (cameraId + 1) + "/" + arucoCameraCalibration.ArucoCamera.CameraNumber + "\n"
+           + "Reprojection error: " + reprojectionError.ToString("F3");
         }
       }
     }

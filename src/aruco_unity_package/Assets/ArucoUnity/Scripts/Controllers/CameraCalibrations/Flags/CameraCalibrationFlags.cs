@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras.Parameters;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -7,12 +6,12 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.CalibrationFlagsControllers
+  namespace Controllers.CameraCalibrations.Flags
   {
     /// <summary>
-    /// Manages the flags of the calibration, undistortion and rectification processes.
+    /// Manages the flags of the <see cref="ArucoCameraCalibration"/> process.
     /// </summary>
-    public abstract class CalibrationFlagsController : MonoBehaviour
+    public abstract class CalibrationFlags : MonoBehaviour
     {
       // Editor fields
 
@@ -29,18 +28,19 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets if the <see cref="CameraParameters.CameraMatrices"/> has valid initial value that will be optimized by the calibration process.
+      /// Gets or sets if the <see cref="Cameras.Parameters.CameraParameters.CameraMatrices"/> has valid initial value that will be optimized by the calibration process.
       /// </summary>
       public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
 
       /// <summary>
       /// Gets or sets if the corresponding radial distortion coefficients are not changed during the calibration. If useIntrinsicGuess is set, the
-      /// original <see cref="CameraParameters.DistCoeffs"/> values in the camera parameters are used, otherwise they're set to 0.
+      /// original <see cref="Cameras.Parameters.CameraParameters.DistCoeffs"/> values in the camera parameters are used, otherwise they're set to 0.
       /// </summary>
       public bool[] FixKDistorsionCoefficients
       {
         get { return fixKDistorsionCoefficients; }
-        set {
+        set
+        {
           if (value.Length == FixKLength)
           {
             fixKDistorsionCoefficients = value;
