@@ -98,44 +98,39 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The managed <see cref="DetectorParameters"/>.
+      /// Gets or sets the <see cref="DetectorParameters"/>.
       /// </summary>
-      public Aruco.DetectorParameters DetectorParameters
+      public Aruco.DetectorParameters DetectorParameters { get; set; }
+
+      // MonoBehaviour methods
+
+      /// <summary>
+      /// Initializes <see cref="DetectorParameters"/> from editor fields.
+      /// </summary>
+      protected virtual void Awake()
       {
-        get
-        {
-          if (detectorParameters == null)
-          {
-            detectorParameters = new Aruco.DetectorParameters();
-            DetectorParameters.AdaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
-            DetectorParameters.AdaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
-            DetectorParameters.AdaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
-            DetectorParameters.AdaptiveThreshConstant = adaptiveThreshConstant;
-            DetectorParameters.MinMarkerPerimeterRate = minMarkerPerimeterRate;
-            DetectorParameters.MaxMarkerPerimeterRate = maxMarkerPerimeterRate;
-            DetectorParameters.PolygonalApproxAccuracyRate = polygonalApproxAccuracyRate;
-            DetectorParameters.MinCornerDistanceRate = minCornerDistanceRate;
-            DetectorParameters.MinDistanceToBorder = minDistanceToBorder;
-            DetectorParameters.MinMarkerDistanceRate = minMarkerDistanceRate;
-            DetectorParameters.CornerRefinementMethod = cornerRefinementMethod;
-            DetectorParameters.CornerRefinementWinSize = cornerRefinementWinSize;
-            DetectorParameters.CornerRefinementMaxIterations = cornerRefinementMaxIterations;
-            DetectorParameters.CornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
-            DetectorParameters.MarkerBorderBits = markerBorderBits;
-            DetectorParameters.PerspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
-            DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
-            DetectorParameters.MaxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
-            DetectorParameters.MinOtsuStdDev = minOtsuStdDev;
-            DetectorParameters.ErrorCorrectionRate = errorCorrectionRate;
-          }
-          return detectorParameters;
-        }
-        set { detectorParameters = value; }
+        DetectorParameters = new Aruco.DetectorParameters();
+        DetectorParameters.AdaptiveThreshWinSizeMin = adaptiveThreshWinSizeMin;
+        DetectorParameters.AdaptiveThreshWinSizeMax = adaptiveThreshWinSizeMax;
+        DetectorParameters.AdaptiveThreshWinSizeStep = adaptiveThreshWinSizeStep;
+        DetectorParameters.AdaptiveThreshConstant = adaptiveThreshConstant;
+        DetectorParameters.MinMarkerPerimeterRate = minMarkerPerimeterRate;
+        DetectorParameters.MaxMarkerPerimeterRate = maxMarkerPerimeterRate;
+        DetectorParameters.PolygonalApproxAccuracyRate = polygonalApproxAccuracyRate;
+        DetectorParameters.MinCornerDistanceRate = minCornerDistanceRate;
+        DetectorParameters.MinDistanceToBorder = minDistanceToBorder;
+        DetectorParameters.MinMarkerDistanceRate = minMarkerDistanceRate;
+        DetectorParameters.CornerRefinementMethod = cornerRefinementMethod;
+        DetectorParameters.CornerRefinementWinSize = cornerRefinementWinSize;
+        DetectorParameters.CornerRefinementMaxIterations = cornerRefinementMaxIterations;
+        DetectorParameters.CornerRefinementMinAccuracy = cornerRefinementMinAccuracy;
+        DetectorParameters.MarkerBorderBits = markerBorderBits;
+        DetectorParameters.PerspectiveRemovePixelPerCell = perspectiveRemovePixelPerCell;
+        DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell = perspectiveRemoveIgnoredMarginPerCell;
+        DetectorParameters.MaxErroneousBitsInBorderRate = maxErroneousBitsInBorderRate;
+        DetectorParameters.MinOtsuStdDev = minOtsuStdDev;
+        DetectorParameters.ErrorCorrectionRate = errorCorrectionRate;
       }
-
-      // Variables
-
-      private Aruco.DetectorParameters detectorParameters;
     }
   }
 
