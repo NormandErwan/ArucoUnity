@@ -14,7 +14,10 @@ namespace ArucoUnity
         // Native functions
 
         [DllImport("ArucoUnity")]
-        static extern System.IntPtr au_cv_Size_new();
+        static extern System.IntPtr au_cv_Size_new1();
+
+        [DllImport("ArucoUnity")]
+        static extern System.IntPtr au_cv_Size_new2(int width, int height);
 
         [DllImport("ArucoUnity")]
         static extern void au_cv_Size_delete(System.IntPtr size);
@@ -36,7 +39,11 @@ namespace ArucoUnity
 
         // Constructors & destructor
 
-        public Size() : base(au_cv_Size_new())
+        public Size() : base(au_cv_Size_new1())
+        {
+        }
+
+        public Size(int width, int height) : base(au_cv_Size_new2(width, height))
         {
         }
 

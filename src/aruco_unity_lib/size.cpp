@@ -3,8 +3,12 @@
 extern "C" {
   // Constructors & Destructors
 
-  cv::Size* au_cv_Size_new() {
+  cv::Size* au_cv_Size_new1() {
     return new cv::Size();
+  }
+
+  cv::Size* au_cv_Size_new2(int width, int height) {
+      return new cv::Size(width, height);
   }
   
   void au_cv_Size_delete(cv::Size* size) {

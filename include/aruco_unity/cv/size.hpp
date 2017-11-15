@@ -15,7 +15,12 @@ extern "C" {
   //! @{
 
   //! \brief Creates an empty Size.
-  ARUCO_UNITY_API cv::Size* au_cv_Size_new();
+  ARUCO_UNITY_API cv::Size* au_cv_Size_new1();
+
+  //! \brief Creates a Size.
+  //! \param width The width value. 
+  //! \param height The height value. 
+  ARUCO_UNITY_API cv::Size* au_cv_Size_new2(int width, int height);
 
   //! \brief Deletes any Size.
   //! \param size The Size used.
