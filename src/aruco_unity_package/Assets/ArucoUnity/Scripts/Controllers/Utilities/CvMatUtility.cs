@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.Utility
+  namespace Controllers.Utilities
   {
     public class CvMatUtility : MonoBehaviour
     {
