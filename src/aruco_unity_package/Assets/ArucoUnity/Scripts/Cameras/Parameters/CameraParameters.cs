@@ -40,7 +40,7 @@ namespace ArucoUnity
         ImageHeights = new int[CameraNumber];
         ImageWidths = new int[CameraNumber];
         ReprojectionErrors = new double[CameraNumber];
-        CameraMatrices = new Cv.Mat[CameraNumber];
+        CameraMatrices = new CameraMatrix[CameraNumber];
         CameraMatricesValues = new double[CameraNumber][][];
         DistCoeffs = new Cv.Mat[CameraNumber];
         DistCoeffsValues = new double[CameraNumber][][];
@@ -91,7 +91,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatricesType"/> and 
       /// <see cref="CameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] CameraMatrices { get; set; }
+      public CameraMatrix[] CameraMatrices { get; set; }
 
       /// <summary>
       /// The camera matrix type of the calibration. Equals to <see cref="CameraMatrices.Type()"/> and automatically written when 
@@ -201,7 +201,7 @@ namespace ArucoUnity
         cameraParameters.FilePath = cameraParametersFilePath;
 
         // Populate non-serialized properties
-        cameraParameters.CameraMatrices = CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
+        cameraParameters.CameraMatrices = (CameraMatrix[])CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
         cameraParameters.DistCoeffs = CreateProperty(cameraParameters.DistCoeffsType, cameraParameters.DistCoeffsValues);
         cameraParameters.OmnidirXis = CreateProperty(cameraParameters.OmnidirXisType, cameraParameters.OmnidirXisValues);
 
@@ -258,24 +258,6 @@ namespace ArucoUnity
             writer.Close();
           }
         }
-      }
-
-      /// <summary>
-      /// Gets the camera focal lengths, expressed in pixels units. Equals to
-      /// <code>F = (CameraMatrices[cameraId].AtDouble(0, 0), CameraMatrices[cameraId].AtDouble(1, 1))</code>
-      /// </summary>
-      public Vector2 GetCameraFocalLengths(int cameraId)
-      {
-        return new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 0), (float)CameraMatrices[cameraId].AtDouble(1, 1));
-      }
-
-      /// <summary>
-      /// Gets the camera principal point, expressed in pixels units. Equals to
-      /// <code>C = (CameraMatrices[cameraId].AtDouble(0, 2), CameraMatrices[cameraId].AtDouble(1, 2))</code>
-      /// </summary>
-      public Vector2 GetCameraPrincipalPoint(int cameraId)
-      {
-        return new Vector2((float)CameraMatrices[cameraId].AtDouble(0, 2), (float)CameraMatrices[cameraId].AtDouble(1, 2));
       }
 
       /// <summary>

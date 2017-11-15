@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Plugin;
 using System;
 using System.Xml.Serialization;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -33,9 +32,14 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The ids of the two cameras of the stereo pair.
+      /// The id of first camera of the stereo pair.
       /// </summary>
-      public int[] CameraIds { get; set; }
+      public int CameraId1 { get; set; }
+
+      /// <summary>
+      /// The id of second camera of the stereo pair.
+      /// </summary>
+      public int CameraId2 { get; set; }
 
       /// <summary>
       /// The calibration flags used.
@@ -94,7 +98,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="NewCameraMatricesType"/> and 
       /// <see cref="NewCameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public Cv.Mat[] NewCameraMatrices { get; set; }
+      public CameraMatrix[] NewCameraMatrices { get; set; }
 
       /// <summary>
       /// The new camera matrix type of the calibration. Equals to <see cref="NewCameraMatrices.Type()"/> and automatically written when 
@@ -138,25 +142,7 @@ namespace ArucoUnity
         RotationVector = new Cv.Vec3d(RotationVectorValues[0], RotationVectorValues[1], RotationVectorValues[2]);
         TranslationVector = new Cv.Vec3d(TranslationVectorValues[0], TranslationVectorValues[1], TranslationVectorValues[2]);
         RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
-        NewCameraMatrices = CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
-      }
-
-      /// <summary>
-      /// Gets the camera focal lengths, expressed in pixels units. Equals to
-      /// <code>F = (NewCameraMatrices[cameraId].AtDouble(0, 0), NewCameraMatrices[cameraId].AtDouble(1, 1))</code>
-      /// </summary>
-      public Vector2 GetCameraFocalLengths(int index)
-      {
-        return new Vector2((float)NewCameraMatrices[index].AtDouble(0, 0), (float)NewCameraMatrices[index].AtDouble(1, 1));
-      }
-
-      /// <summary>
-      /// Gets the camera principal point, expressed in pixels units. Equals to
-      /// <code>C = (NewCameraMatrices[cameraId].AtDouble(0, 2), NewCameraMatrices[cameraId].AtDouble(1, 2))</code>
-      /// </summary>
-      public Vector2 GetCameraPrincipalPoint(int index)
-      {
-        return new Vector2((float)NewCameraMatrices[index].AtDouble(0, 2), (float)NewCameraMatrices[index].AtDouble(1, 2));
+        NewCameraMatrices = (CameraMatrix[])CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
       }
     }
   }
