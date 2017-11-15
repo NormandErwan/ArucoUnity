@@ -9,7 +9,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.Utility
+  namespace Controllers
   {
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.
@@ -25,37 +25,34 @@ namespace ArucoUnity
       // Events
 
       /// <summary>
-      /// When an ArUco object has been added to the list.
+      /// Called when an ArUco object has been added to the list.
       /// </summary>
       public event Action<ArucoObject> ArucoObjectAdded = delegate { };
 
       /// <summary>
-      /// When an ArUco object has been removed from the list.
+      /// Called when an ArUco object has been removed from the list.
       /// </summary>
       public event Action<ArucoObject> ArucoObjectRemoved = delegate { };
 
       /// <summary>
-      /// When a new dictionary among the ArUco objects has been added.
+      /// Called when a new dictionary among the ArUco objects has been added.
       /// </summary>
       public event Action<Aruco.Dictionary> DictionaryAdded = delegate { };
 
       /// <summary>
-      /// When a new dictionary is no more used by any ArUco objects.
+      /// Called when a new dictionary is no more used by any ArUco objects.
       /// </summary>
       public event Action<Aruco.Dictionary> DictionaryRemoved = delegate { };
 
       // Properties
 
       /// <summary>
-      /// The list of the ArUco objects to detect.
+      /// Gets the list of the ArUco objects to detect.
       /// </summary>
       public Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
 
-      /// <summary>
-      /// Initialize the properties.
-      /// </summary>
       protected override void Awake()
       {
         base.Awake();
@@ -63,7 +60,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Add to the <see cref="ArucoObjects"/> list the ArUco objects added from the editor array <see cref="arucoObjects"/>.
+      /// Adds to the <see cref="ArucoObjects"/> list the ArUco objects added from the editor field array <see cref="arucoObjects"/>.
       /// </summary>
       protected virtual void Start()
       {
@@ -76,7 +73,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Add an ArUco object to the <see cref="ArucoObjects"/> list.
+      /// Adds an ArUco object to the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The ArUco object to add.</param>
       public virtual void Add(ArucoObject arucoObject)
@@ -121,7 +118,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Remove an ArUco object to the <see cref="ArucoObjects"/> list.
+      /// Removes an ArUco object to the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The ArUco object to remove.</param>
       public virtual void Remove(ArucoObject arucoObject)
@@ -158,14 +155,14 @@ namespace ArucoUnity
         }
       }
 
-      // TODO: cache the results
       /// <summary>
-      /// Return a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="T"/> in a certain
+      /// Returns a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="T"/> in a certain
       /// <paramref name="dictionary"/>.
       /// </summary>
       /// <typeparam name="T">The type of the ArUco objects in the returned sublist.</typeparam>
       /// <param name="dictionary">The <see cref="Aruco.Dictionary" /> to use.</param>
       /// <returns>The sublist.</returns>
+      // TODO: cache the results
       public virtual HashSet<T> GetArucoObjects<T>(Aruco.Dictionary dictionary) where T : ArucoObject
       {
         if (!ArucoObjects.ContainsKey(dictionary))
@@ -186,7 +183,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Before the ArUco object's properties will be updated, remove it from the ArUco objects list.
+      /// Remove an ArucoObject from the <see cref="ArucoObjects"/> list, before the its properties will be updated.
       /// </summary>
       /// <param name="arucoObject">The updated ArUco object.</param>
       protected virtual void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
@@ -195,7 +192,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Add again the updated ArUco object.
+      /// Re-adds the updated ArUco object the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The updated ArUco object.</param>
       // TODO: find a more elegant way to adjust the aruco object list from the aruco object's dictionary and hashcode changes.
