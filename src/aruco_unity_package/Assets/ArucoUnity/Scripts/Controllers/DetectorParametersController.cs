@@ -9,7 +9,7 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Editor controller for the <see cref="Plugin.DetectorParameters"/>.
+    /// Editor controller for <see cref="Aruco.DetectorParameters"/>.
     /// </summary>
     public class DetectorParametersController : MonoBehaviour
     {
