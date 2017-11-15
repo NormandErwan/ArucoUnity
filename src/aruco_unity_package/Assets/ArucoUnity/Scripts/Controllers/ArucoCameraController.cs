@@ -77,34 +77,44 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stops automatically the controller if it has been started.
+      /// Calls <see cref="StopController"/> if it has been started and unsubscribes from <see cref="ArucoCamera"/> events.
       /// </summary>
       protected virtual void OnDestroy()
       {
-        if (IsConfigured || IsStarted)
+        if (IsConfigured)
         {
-          StopController();
+          ArucoCamera.Stopped -= ArucoCamera_Stopped;
+          arucoCamera.Started -= ArucoCamera_Started;
+
+          if (IsStarted)
+          {
+            StopController();
+          }
         }
       }
 
       // Methods
 
       /// <summary>
-      /// Starts the controller. <see cref="ArucoCamera"/> needs to be set.
+      /// Calls the <see cref="Started"/> event and subscribes to <see cref="ArucoCamera.ImagesUpdated"/>. The controller must be configured and
+      /// stopped.
       /// </summary>
       public virtual void StartController()
       {
         if (!IsConfigured || IsStarted)
         {
-          throw new Exception("Set ArucoCamera and stop the controller before start it.");
+          throw new Exception("Configure or stop the controller before start it.");
         }
 
         IsStarted = true;
         Started();
+
+        ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
       }
 
       /// <summary>
-      /// Stops the controller. It needs to have been configured and started before.
+      /// Calls the <see cref="Stopped"/> event and unsubscribes from <see cref="ArucoCamera.ImagesUpdated"/>. The controller must be configured and
+      /// started.
       /// </summary>
       public virtual void StopController()
       {
@@ -113,18 +123,21 @@ namespace ArucoUnity
           throw new Exception("Set ArucoCamera and start the controller before stop it.");
         }
 
+        ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
+
         IsStarted = false;
         Stopped();
       }
 
       /// <summary>
-      /// Configures the controller.
+      /// Configures the controller when <see cref="ArucoCamera.IsStarted"/> is set to true.
       /// </summary>
       protected abstract void Configure();
 
       /// <summary>
-      /// Subscribes to <see cref="ArucoCamera.Started"/>, <see cref="ArucoCamera.ImagesUpdated"/> and <see cref="ArucoCamera.Stopped"/> events,
-      /// and unsubscribes from the previous ArucoCamera. If <see cref="ArucoCamera.IsStarted"/> is true, calls <see cref="ArucoCamera_Started"/>.
+      /// Subscribes to the <see cref="ArucoCamera.Started"/> and <see cref="ArucoCamera.Stopped"/> events, and unsubscribes from the previous
+      /// ArucoCamera events. If <see cref="ArucoCamera.IsStarted"/> is true, also calls <see cref="ArucoCamera_Started"/>. The controller must be
+      /// stopped.
       /// </summary>
       /// <param name="arucoCamera">The new ArucoCamera to subscribes on.</param>
       protected virtual void SetArucoCamera(ArucoCamera arucoCamera)
@@ -140,7 +153,6 @@ namespace ArucoUnity
         // Unsubscribe from the previous ArucoCamera
         if (ArucoCamera != null)
         {
-          ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
           ArucoCamera.Started -= ArucoCamera_Started;
           ArucoCamera.Stopped -= ArucoCamera_Stopped;
         }
@@ -155,7 +167,6 @@ namespace ArucoUnity
           }
           ArucoCamera.Stopped += ArucoCamera_Stopped;
           arucoCamera.Started += ArucoCamera_Started;
-          arucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
         }
       }
 
@@ -178,13 +189,11 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls <see cref="Configure"/>, the <see cref="Configured"/> action and finally <see cref="StartController"/> if <see cref="AutoStart"/> is
-      /// true.
+      /// Calls <see cref="Configure"/>, the <see cref="Configured"/> action. If <see cref="AutoStart"/> is true, also calls <see cref="StartController"/>.
       /// </summary>
       private void ArucoCamera_Started()
       {
         Configure();
-
         IsConfigured = true;
         Configured();
 
