@@ -960,6 +960,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114852932360525986, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
+        type: 2}
+      propertyPath: webcamIds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4036374087783020, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
