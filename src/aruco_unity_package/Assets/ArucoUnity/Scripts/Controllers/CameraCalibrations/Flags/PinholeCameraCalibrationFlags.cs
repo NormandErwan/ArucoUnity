@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the <see cref="PinholeArucoCameraCalibration"/> process.
     /// </summary>
-    public class PinholeCalibrationFlags : CalibrationFlags
+    public class PinholeCameraCalibrationFlags : CameraCalibrationFlags
     {
       // Constants
 

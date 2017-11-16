@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the <see cref="OmnidirCalibrationController"/> process.
     /// </summary>
-    public class OmnidirCalibrationFlags : CalibrationFlags
+    public class OmnidirCameraCalibrationFlags : CameraCalibrationFlags
     {
       // Editor fields
 

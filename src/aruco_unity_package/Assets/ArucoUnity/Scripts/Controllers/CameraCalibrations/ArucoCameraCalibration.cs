@@ -59,7 +59,7 @@ namespace ArucoUnity
       public CameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
 
       /// <summary>
-      /// Gets or sets the camera parameters to use if <see cref="CalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
+      /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
       /// file will be generated from the camera name and the calibration datetime.
       /// </summary>
       public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
@@ -427,7 +427,7 @@ namespace ArucoUnity
       /// Initializes and configure the <see cref="CameraParametersController.CameraParameters"/>.
       /// </summary>
       /// <param name="calibrationFlags">The calibration flags that will be used in <see cref="Calibrate"/>.</param>
-      protected virtual void InitializeCameraParameters(CalibrationFlags calibrationFlags = null)
+      protected virtual void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags = null)
       {
         if (calibrationFlags != null)
         {

@@ -11,7 +11,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the <see cref="ArucoCameraCalibration"/> process.
     /// </summary>
-    public abstract class CalibrationFlags : MonoBehaviour
+    public abstract class CameraCalibrationFlags : MonoBehaviour
     {
       // Editor fields
 

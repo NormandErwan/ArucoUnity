@@ -34,11 +34,11 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the cameras calibration and the image rectification.")]
-      private OmnidirCalibrationFlags calibrationFlags;
+      private OmnidirCameraCalibrationFlags calibrationFlags;
 
       [SerializeField]
       [Tooltip("The flags for the stereo calibration of camera pairs.")]
-      private OmnidirCalibrationFlags stereoCalibrationFlags;
+      private OmnidirCameraCalibrationFlags stereoCalibrationFlags;
 
       [SerializeField]
       [Tooltip("The algorithm to use for the recitification of the images.")]
@@ -49,12 +49,12 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the flags for the cameras calibration and the image rectification.
       /// </summary>
-      public OmnidirCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
+      public OmnidirCameraCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
 
       /// <summary>
       /// Gets or sets the flags for the stereo calibration of camera pairs.
       /// </summary>
-      public OmnidirCalibrationFlags StereoCalibrationFlags { get { return stereoCalibrationFlags; } set { stereoCalibrationFlags = value; } }
+      public OmnidirCameraCalibrationFlags StereoCalibrationFlags { get { return stereoCalibrationFlags; } set { stereoCalibrationFlags = value; } }
 
       /// <summary>
       /// Gets or sets the algorithm to use for the rectification of the images. See this tutorial for illustrated examples:
@@ -74,7 +74,7 @@ namespace ArucoUnity
 
       // CalibrationController methods
 
-      protected override void InitializeCameraParameters(CalibrationFlags calibrationFlags)
+      protected override void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags)
       {
         base.InitializeCameraParameters(CalibrationFlags);
       }

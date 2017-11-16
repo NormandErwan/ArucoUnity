@@ -22,27 +22,27 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the cameras calibration.")]
-      private PinholeCalibrationFlags calibrationFlags;
+      private PinholeCameraCalibrationFlags calibrationFlags;
 
       [SerializeField]
       [Tooltip("The flags for the stereo calibration of camera pairs.")]
-      private PinholeCalibrationFlags stereoCalibrationFlags;
+      private PinholeCameraCalibrationFlags stereoCalibrationFlags;
 
       // Properties
 
       /// <summary>
       /// Gets or sets the flags for the cameras calibration.
       /// </summary>
-      public PinholeCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
+      public PinholeCameraCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
 
       /// <summary>
       /// Gets or sets the flags for the stereo calibration of camera pairs.
       /// </summary>
-      public PinholeCalibrationFlags StereoCalibrationFlags { get { return stereoCalibrationFlags; } set { stereoCalibrationFlags = value; } }
+      public PinholeCameraCalibrationFlags StereoCalibrationFlags { get { return stereoCalibrationFlags; } set { stereoCalibrationFlags = value; } }
 
       // CalibrationController methods
 
-      protected override void InitializeCameraParameters(CalibrationFlags calibrationFlags)
+      protected override void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags)
       {
         base.InitializeCameraParameters(CalibrationFlags);
 
