@@ -182,7 +182,7 @@ namespace ArucoUnity
       /// </summary>
       private void ArucoCamera_Stopped()
       {
-        if (IsConfigured || IsStarted)
+        if (IsConfigured && IsStarted)
         {
           StopController();
         }
