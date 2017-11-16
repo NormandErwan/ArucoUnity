@@ -55,8 +55,7 @@ namespace ArucoUnity
 
       // CalibrationController methods
 
-      protected override void ConfigureUndistortionRectification(Cv.Mat[] images, Camera[] imageCameras, int cameraId, Cv.Mat rectificationMatrix,
-        Cv.Mat newCameraMatrix)
+      protected override void ConfigureUndistortionRectification(int cameraId, Cv.Mat rectificationMatrix, Cv.Mat newCameraMatrix)
       {
         var cameraParameters = CameraParametersController.CameraParameters;
         float imageWidth = cameraParameters.ImageWidths[cameraId];
@@ -65,7 +64,7 @@ namespace ArucoUnity
         if (RectificationType == RectificationTypes.Perspective)
         {
           // Configure the rectified camera matrix from the camera's fov for perspective rectification
-          float cameraF = imageHeight / (2f * Mathf.Tan(imageCameras[cameraId].fieldOfView * Mathf.Deg2Rad / 2f));
+          float cameraF = imageHeight / (2f * Mathf.Tan(ArucoCamera.ImageCameras[cameraId].fieldOfView * Mathf.Deg2Rad / 2f));
           newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { cameraF, 0, imageWidth / 2, 0, cameraF, imageHeight / 2, 0, 0, 1 }).Clone();
         }
         else
@@ -77,7 +76,7 @@ namespace ArucoUnity
 
         // Configure the undistortion maps
         Cv.Omnidir.InitUndistortRectifyMap(cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
-          cameraParameters.OmnidirXis[cameraId], rectificationMatrix, newCameraMatrix, images[cameraId].Size, Cv.Type.CV_16SC2,
+          cameraParameters.OmnidirXis[cameraId], rectificationMatrix, newCameraMatrix, ArucoCamera.Images[cameraId].Size, Cv.Type.CV_16SC2,
           out UndistortionRectificationMaps[cameraId][0], out UndistortionRectificationMaps[cameraId][1], rectifyFlags[RectificationType]);
 
         RectifiedCameraMatrices[cameraId] = newCameraMatrix;

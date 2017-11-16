@@ -114,10 +114,8 @@ namespace ArucoUnity
         List<int> monoCameraIds = Enumerable.Range(0, cameraParameters.CameraNumber).ToList();
         foreach (var stereoCameraParameters in cameraParameters.StereoCameraParametersList)
         {
-          ConfigureUndistortionRectification(ArucoCamera.Images, ArucoCamera.ImageCameras, stereoCameraParameters.CameraId1,
-            stereoCameraParameters.RotationMatrices[0], stereoCameraParameters.NewCameraMatrices[0]);
-          ConfigureUndistortionRectification(ArucoCamera.Images, ArucoCamera.ImageCameras, stereoCameraParameters.CameraId2,
-            stereoCameraParameters.RotationMatrices[1], stereoCameraParameters.NewCameraMatrices[1]);
+          ConfigureUndistortionRectification(stereoCameraParameters.CameraId1, stereoCameraParameters.RotationMatrices[0], stereoCameraParameters.NewCameraMatrices[0]);
+          ConfigureUndistortionRectification(stereoCameraParameters.CameraId2, stereoCameraParameters.RotationMatrices[1], stereoCameraParameters.NewCameraMatrices[1]);
 
           monoCameraIds.Remove(stereoCameraParameters.CameraId1);
           monoCameraIds.Remove(stereoCameraParameters.CameraId2);
@@ -126,13 +124,11 @@ namespace ArucoUnity
         // Configure the undistortion maps for cameras not in a stereo pair
         foreach (int cameraId in monoCameraIds)
         {
-          ConfigureUndistortionRectification(ArucoCamera.Images, ArucoCamera.ImageCameras, cameraId, noRectificationMatrix,
-            cameraParameters.CameraMatrices[cameraId]);
+          ConfigureUndistortionRectification(cameraId, noRectificationMatrix, cameraParameters.CameraMatrices[cameraId]);
         }
       }
 
-      protected abstract void ConfigureUndistortionRectification(Cv.Mat[] images, Camera[] imageCameras, int cameraId, Cv.Mat rectificationMatrix,
-        Cv.Mat newCameraMatrix);
+      protected abstract void ConfigureUndistortionRectification(int cameraId, Cv.Mat rectificationMatrix, Cv.Mat newCameraMatrix);
 
       /// <summary>
       /// Undistorts and rectifies the <see cref="ArucoCamera.Images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming
