@@ -65,7 +65,7 @@ namespace ArucoUnity
         if (RectificationType == RectificationTypes.Perspective)
         {
           // Configure the rectified camera matrix from the camera's fov for perspective rectification
-          float cameraF = imageHeight / (2f * Mathf.Tan(imageCameras[cameraId].fieldOfView / 2f));
+          float cameraF = imageHeight / (2f * Mathf.Tan(imageCameras[cameraId].fieldOfView * Mathf.Deg2Rad / 2f));
           newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { cameraF, 0, imageWidth / 2, 0, cameraF, imageHeight / 2, 0, 0, 1 }).Clone();
         }
         else
