@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33356176765934348}
   - component: {fileID: 23136157643846576}
   m_Layer: 0
-  m_Name: ArucoCreatorImagePlane
+  m_Name: ArucoObjectDisplayerImagePlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

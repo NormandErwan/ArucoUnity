@@ -220,7 +220,7 @@ namespace ArucoUnity
       {
         if (ImagePlanePrefab == null)
         {
-          ImagePlanePrefab = Resources.Load("ArucoCreatorImagePlane") as GameObject;
+          ImagePlanePrefab = Resources.Load("ArucoObjectDisplayerImagePlane") as GameObject;
         }
 
         if (ImagePlane == null)
