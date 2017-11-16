@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -25,7 +24,7 @@ namespace ArucoUnity
 
       // Variables
 
-      protected ArucoTracker arucoTracker;
+      protected ArucoObjectsTracker arucoTracker;
       protected CameraParameters cameraParameters;
 
       // ArucoObjectsController related methods
@@ -51,10 +50,10 @@ namespace ArucoUnity
       /// <summary>
       /// Configure and activate the tracker.
       /// </summary>
-      public virtual void Activate(ArucoTracker arucoTracker)
+      public virtual void Activate(ArucoObjectsTracker arucoTracker)
       {
         this.arucoTracker = arucoTracker;
-        cameraParameters = arucoTracker.ArucoCamera.CameraParameters;
+        cameraParameters = arucoTracker.ArucoCameraUndistortion.CameraParametersController.CameraParameters;
         IsActivated = true;
 
         arucoTracker.DictionaryAdded += ArucoObjectsController_DictionaryAdded;
@@ -141,13 +140,10 @@ namespace ArucoUnity
       /// <param name="positionFactor">Factor on the position vector.</param>
       protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
-        GameObject arucoGameObject = arucoObject.gameObject;
-
-        arucoGameObject.transform.SetParent(arucoTracker.ArucoCamera.ImageCameras[cameraId].transform);
-        arucoGameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
-        arucoGameObject.transform.localRotation = rvec.ToRotation();
-
-        arucoGameObject.SetActive(true);
+        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCamera.ImageCameras[cameraId].transform);
+        arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
+        arucoObject.gameObject.transform.localRotation = rvec.ToRotation();
+        arucoObject.gameObject.SetActive(true);
       }
     }
   }

@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 124768575578751554}
   - component: {fileID: 81342151767876604}
   - component: {fileID: 114852932360525986}
+  - component: {fileID: 114074176353776514}
+  - component: {fileID: 114608506850049472}
+  - component: {fileID: 114075464021066384}
   m_Layer: 0
   m_Name: ArucoCameraWebcam
   m_TagString: MainCamera
@@ -85,6 +88,47 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841685483093218}
   m_Enabled: 1
+--- !u!114 &114074176353776514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841685483093218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7738781ca5c2448ae422808a2e830c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arucoCamera: {fileID: 114852932360525986}
+  autoStart: 1
+  arucoCameraUndistortion: {fileID: 114608506850049472}
+--- !u!114 &114075464021066384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841685483093218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraParametersFolderPath: ArucoUnity/CameraParameters/
+  cameraParametersFilename: 
+--- !u!114 &114608506850049472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841685483093218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e044568ea72405e49bf56df52f9d2b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arucoCamera: {fileID: 114852932360525986}
+  autoStart: 1
+  cameraParametersController: {fileID: 114075464021066384}
 --- !u!114 &114852932360525986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,11 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  displayImages: 1
-  autoUndistortWithCameraParameters: 1
-  undistortionType: 0
   webcamId: 0
-  cameraParametersFilePath: 
 --- !u!124 &124768575578751554
 Behaviour:
   m_ObjectHideFlags: 1

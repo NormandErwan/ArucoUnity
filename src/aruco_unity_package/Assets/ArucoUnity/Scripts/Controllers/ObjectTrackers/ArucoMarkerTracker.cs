@@ -14,9 +14,8 @@ namespace ArucoUnity
     {
       // Constants
 
-      protected const float EstimatePoseMarkerLength = 1f;
-
-      protected readonly Color RejectedMarkerCandidatesColor = new Color(100, 0, 255);
+      protected const float estimatePoseMarkerLength = 1f;
+      protected readonly Color rejectedMarkerCandidatesColor = new Color(100, 0, 255);
 
       // Properties
 
@@ -61,7 +60,6 @@ namespace ArucoUnity
           DetectedMarkers[cameraId].Add(dictionary, 0);
         }
       }
-
       
       protected override void ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary dictionary)
       {
@@ -78,7 +76,7 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      public override void Activate(ArucoTracker arucoTracker)
+      public override void Activate(ArucoObjectsTracker arucoTracker)
       {
         base.Activate(arucoTracker);
 
@@ -144,7 +142,7 @@ namespace ArucoUnity
 
         if (DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
         {
-          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], EstimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
+          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], estimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
             cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
         }
 
@@ -173,7 +171,7 @@ namespace ArucoUnity
               if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
               {
                 Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
-                  MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), EstimatePoseMarkerLength);
+                  MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), estimatePoseMarkerLength);
               }
             }
           }
@@ -196,7 +194,7 @@ namespace ArucoUnity
             int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
             if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
             {
-              float positionFactor = foundArucoObject.MarkerSideLength / EstimatePoseMarkerLength;
+              float positionFactor = foundArucoObject.MarkerSideLength / estimatePoseMarkerLength;
               PlaceArucoObject(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
                 cameraId, positionFactor);
               foundArucoObject.gameObject.transform.localScale = foundArucoObject.MarkerSideLength * Vector3.one; // TODO: move it to PlaceArucoObject?

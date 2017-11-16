@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Threading;
 using ArucoUnity.Objects;
 using ArucoUnity.Controllers.Utilities;
+using ArucoUnity.Controllers.CameraUndistortions;
+using ArucoUnity.Utilities;
 
 namespace ArucoUnity
 {
@@ -17,9 +19,13 @@ namespace ArucoUnity
     /// 
     /// See the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
-    public class ArucoTracker : ArucoObjectsController
+    public class ArucoObjectsTracker : ArucoObjectsController
     {
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("The undistortion process associated with the ArucoCamera.")]
+      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("Apply refine strategy to detect more markers using the boards in the Aruco Object list.")]
@@ -54,6 +60,11 @@ namespace ArucoUnity
       private int transformsRelativeCameraId;
 
       // Properties
+
+      /// <summary>
+      /// Gets or sets the Optional undistortion process associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 
       /// <summary>
       /// Gets or sets if using refine strategy to detect more markers using the <see cref="ArucoBoard"/> in the
@@ -192,7 +203,7 @@ namespace ArucoUnity
           trackingImagesData[cameraId] = new byte[ArucoCamera.ImageDataSizes[cameraId]];
 
           Texture2D imageTexture = ArucoCamera.ImageTextures[cameraId];
-          trackingImages[cameraId] = new Cv.Mat(imageTexture.height, imageTexture.width, CvMatUtility.ImageType(imageTexture.format));
+          trackingImages[cameraId] = new Cv.Mat(imageTexture.height, imageTexture.width, CvMatExtensions.ImageType(imageTexture.format));
           trackingImages[cameraId].DataByte = trackingImagesData[cameraId];
         }
 

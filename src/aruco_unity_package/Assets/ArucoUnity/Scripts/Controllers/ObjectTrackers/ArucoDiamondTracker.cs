@@ -55,7 +55,7 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      public override void Activate(ArucoTracker arucoTracker)
+      public override void Activate(ArucoObjectsTracker arucoTracker)
       {
         base.Activate(arucoTracker);
 
