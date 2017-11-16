@@ -3,7 +3,6 @@ using ArucoUnity.Plugin;
 using System.Collections.Generic;
 using System.Threading;
 using ArucoUnity.Objects;
-using ArucoUnity.Controllers.Utilities;
 using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Utilities;
 

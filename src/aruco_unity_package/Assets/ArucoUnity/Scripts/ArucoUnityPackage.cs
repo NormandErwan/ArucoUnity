@@ -29,7 +29,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages calibration flags.
     /// </summary>
-    namespace CalibrationFlagsControllers
+    namespace CalibrationControllers
     {
     }
 
@@ -37,13 +37,6 @@ namespace ArucoUnity
     /// Tracking scripts for the ArUco objects.
     /// </summary>
     namespace ObjectTrackers
-    {
-    }
-
-    /// <summary>
-    /// Utility scripts.
-    /// </summary>
-    namespace Utility
     {
     }
   }
@@ -59,6 +52,13 @@ namespace ArucoUnity
   /// Bindings to the ArUco Unity library.
   /// </summary>
   namespace Plugin
+  {
+  }
+  
+  /// <summary>
+  /// Utility scripts.
+  /// </summary>
+  namespace Utilities
   {
   }
 
