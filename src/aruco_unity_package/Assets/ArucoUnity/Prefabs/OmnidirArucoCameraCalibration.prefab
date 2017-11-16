@@ -30,7 +30,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4153927219464056
 Transform:
   m_ObjectHideFlags: 1
@@ -57,12 +57,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoCamera: {fileID: 0}
   autoStart: 1
-  detectorParametersController: {fileID: 0}
-  calibrationBoard: {fileID: 0}
+  detectorParametersController: {fileID: 114900348844413008}
+  calibrationBoard: {fileID: 114570367291400562}
   refineMarkersDetection: 0
   stereoCalibrationCameraPairs: []
-  cameraParametersController: {fileID: 0}
-  calibrationFlags: {fileID: 0}
+  cameraParametersController: {fileID: 114758305632993188}
+  calibrationFlags: {fileID: 114443927740565860}
   stereoCalibrationFlags: {fileID: 0}
   rectificationType: 1
 --- !u!114 &114443927740565860

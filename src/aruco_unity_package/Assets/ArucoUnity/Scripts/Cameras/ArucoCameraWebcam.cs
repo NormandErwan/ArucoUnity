@@ -11,7 +11,6 @@ namespace ArucoUnity
     /// Manages any connected webcam to the machine, retrieves and displays the camera's image every frame. Use one webcam at a time.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
-    [RequireComponent(typeof(Camera))]
     public class ArucoCameraWebcam : ArucoCamera
     {
       // Editor fields
@@ -72,10 +71,6 @@ namespace ArucoUnity
           {
             // Configure
             ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-            if (ImageCameras[cameraId] == null)
-            {
-              ImageCameras[cameraId] = GetComponent<Camera>();
-            }
 
             // Update state
             startInitiated = false;

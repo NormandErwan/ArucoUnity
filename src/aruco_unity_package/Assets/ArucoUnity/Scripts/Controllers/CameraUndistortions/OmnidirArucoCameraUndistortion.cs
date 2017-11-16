@@ -1,5 +1,6 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,11 +30,22 @@ namespace ArucoUnity
         Stereographic
       }
 
+      // Constants
+
+      protected const float minPerspectiveFov = 1f;
+      protected const float maxPerspectiveFov = 179f;
+
       // Editor fields
 
       [SerializeField]
       [Tooltip("The algorithm to use for the recitification of the images.")]
       private RectificationTypes rectificationType = RectificationTypes.Perspective;
+
+      [SerializeField]
+      [Tooltip("The desired field of view for the Unity cameras shooting the undistorted and rectified images.")]
+      [Range(1f, 179f)]
+      private float[] perspectiveDesiredFieldOfViews;
+
 
       // Properties
 
@@ -42,6 +54,11 @@ namespace ArucoUnity
       /// https://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
       /// </summary>
       public RectificationTypes RectificationType { get { return rectificationType; } set { rectificationType = value; } }
+
+      /// <summary>
+      /// Gets or sets the desired field of view for the Unity cameras shooting the undistorted and rectified images.
+      /// </summary>
+      public float[] PerspectiveDesiredFieldOfViews { get { return perspectiveDesiredFieldOfViews; } set { perspectiveDesiredFieldOfViews = value; } }
 
       // Variables
 
@@ -63,8 +80,14 @@ namespace ArucoUnity
 
         if (RectificationType == RectificationTypes.Perspective)
         {
+          if (PerspectiveDesiredFieldOfViews.Length != ArucoCamera.CameraNumber)
+          {
+            throw new Exception("The number of cameras for the perspective desired field of view must be equal to the number of cameras in" +
+              "ArucoCamera");
+          }
+
           // Configure the rectified camera matrix from the camera's fov for perspective rectification
-          float cameraF = imageHeight / (2f * Mathf.Tan(ArucoCamera.ImageCameras[cameraId].fieldOfView * Mathf.Deg2Rad / 2f));
+          float cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveDesiredFieldOfViews[cameraId] * Mathf.Deg2Rad));
           newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { cameraF, 0, imageWidth / 2, 0, cameraF, imageHeight / 2, 0, 0, 1 }).Clone();
         }
         else

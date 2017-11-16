@@ -23,6 +23,10 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("The displayer of the ArucoCamera.")]
+      private ArucoCameraDisplayer arucoCameraDisplayer;
+
+      [SerializeField]
       [Tooltip("The undistortion process associated with the ArucoCamera.")]
       private ArucoCameraUndistortion arucoCameraUndistortion;
 
@@ -61,7 +65,12 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets the Optional undistortion process associated with the ArucoCamera.
+      /// Gets or sets the displayer of the ArucoCamera.
+      /// </summary>
+      public ArucoCameraDisplayer ArucoCameraDisplayer { get { return arucoCameraDisplayer; } set { arucoCameraDisplayer = value; } }
+
+      /// <summary>
+      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
       public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 

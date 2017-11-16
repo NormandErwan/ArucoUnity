@@ -46,7 +46,7 @@ namespace ArucoUnity
       public Cv.Mat UndistortedDistCoeffs { get { return noDistCoeffs; } }
 
       /// <summary>
-      /// Gets the undistortion and rectification images transformation map of each camera (two map per camera).
+      /// Gets the undistortion and rectification images transformation map of each camera (two maps per camera).
       /// </summary>
       public Cv.Mat[][] UndistortionRectificationMaps { get; protected set; }
 
@@ -84,8 +84,7 @@ namespace ArucoUnity
       {
         if (CameraParametersController.CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
         {
-          throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras" +
-            "in ArucoCamera");
+          throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras in ArucoCamera");
         }
         InitializeUndistortionRectification();
       }

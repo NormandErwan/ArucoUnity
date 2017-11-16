@@ -1,6 +1,7 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Utilities;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -11,9 +12,9 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Creates planes displaying each <see cref="ArucoCamera.Images"/> as background of it corresponding <see cref="ArucoCamera.ImageCameras"/>. If
-    /// <see cref="ArucoCamera.CalibrationController"/> is set, the background is configured to makes the tracked
-    /// <see cref="Objects.ArucoObject"/> aligned with their corresponding 3D content.
+    /// Creates planes displaying each <see cref="ArucoCamera.Images"/> as background of it corresponding <see cref="Cameras"/>. If
+    /// <see cref="ArucoCameraUndistortion"/> is set, the background is configured to makes the tracked <see cref="Objects.ArucoObject"/> aligned
+    /// with their corresponding 3D content.
     /// </summary>
     public class ArucoCameraDisplayer : ArucoCameraController
     {
@@ -24,25 +25,35 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("The Unity virtual camera that will shoot the images of the physical cameras. Must be equal to ArucoCamera.CameraNumber.")]
+      private Camera[] cameras;
+
+      [SerializeField]
       [Tooltip("Optional undistortion process associated with the ArucoCamera.")]
       private ArucoCameraUndistortion arucoCameraUndistortion;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets the Optional undistortion process associated with the ArucoCamera.
+      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
       public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 
       /// <summary>
-      /// Gets the planes displaying the <see cref="ArucoCamera.Images"/> as background of the <see cref="ArucoCamera.ImageCameras"/>.
+      /// Gets or sets the Unity virtual cameras that will shoot the images of the physical cameras. There is one for each physical camera 
+      /// (<see cref="ArucoCamera.CameraNumber"/> cameras).
       /// </summary>
-      public GameObject[] ImageCameraBackgrounds { get; protected set; }
+      public Camera[] Cameras { get { return cameras; }set { cameras = value; } }
+
+      /// <summary>
+      /// Gets the planes displaying the <see cref="ArucoCamera.Images"/> as background of the <see cref="Cameras"/>.
+      /// </summary>
+      public GameObject[] CameraBackgrounds { get; protected set; }
 
       // ArucoCameraController methods
 
       /// <summary>
-      /// Configures the <see cref="ImageCameraBackgrounds"/> according to the <see cref="ArucoCamera.CalibrationController"/> if set otherwise
+      /// Configures the <see cref="CameraBackgrounds"/> according to the <see cref="ArucoCamera.CalibrationController"/> if set otherwise
       /// with default values.
       /// </summary>
       // TODO: handle case of CameraParameters.ImageHeight != ImageTexture.height or CameraParameters.ImageWidth != ImageTexture.width
@@ -51,25 +62,8 @@ namespace ArucoUnity
       {
         base.StartController();
 
-        ImageCameraBackgrounds = new GameObject[ArucoCamera.CameraNumber];
-
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          // Configure the background
-          if (ImageCameraBackgrounds[cameraId] == null)
-          {
-            ImageCameraBackgrounds[cameraId] = GameObject.CreatePrimitive(PrimitiveType.Quad);
-            ImageCameraBackgrounds[cameraId].name = "CameraBackground";
-            ImageCameraBackgrounds[cameraId].transform.SetParent(ArucoCamera.ImageCameras[cameraId].transform);
-            ImageCameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
-
-            var cameraBackgroundRenderer = ImageCameraBackgrounds[cameraId].GetComponent<Renderer>();
-            cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
-            cameraBackgroundRenderer.material.mainTexture = ArucoCamera.ImageTextures[cameraId];
-          }
-          ImageCameraBackgrounds[cameraId].SetActive(true);
-
-          // Place background
           Vector2 position = Vector2.zero;
           Vector2 scale = Vector2.one;
           if (ArucoCameraUndistortion != null && ArucoCameraUndistortion.IsStarted)
@@ -78,6 +72,10 @@ namespace ArucoUnity
             float imageHeight = ArucoCameraUndistortion.CameraParametersController.CameraParameters.ImageHeights[cameraId];
             Vector2 cameraF = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
             Vector2 cameraC = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
+
+            // Configure the camera
+            float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
+            Cameras[cameraId].fieldOfView = fovY;
 
             // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
             // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
@@ -91,25 +89,27 @@ namespace ArucoUnity
           }
           else
           {
-            // Default : place background centered on the camera and full size of the camera image
+            // Default placement of the background: centered on the camera and full size of the camera image
             float aspectRatioFactor = Mathf.Min(ArucoCamera.ImageRatios[cameraId], 1f);
-            scale.y = 2 * cameraBackgroundDistance * aspectRatioFactor * Mathf.Tan(0.5f * ArucoCamera.ImageCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+            scale.y = 2 * cameraBackgroundDistance * aspectRatioFactor * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad);
             scale.x = scale.y * ArucoCamera.ImageRatios[cameraId];
           }
 
-          ImageCameraBackgrounds[cameraId].transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
-          ImageCameraBackgrounds[cameraId].transform.localScale = new Vector3(scale.x, scale.y, 1);
+          // Place and scale the background
+          CameraBackgrounds[cameraId].transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
+          CameraBackgrounds[cameraId].transform.localScale = new Vector3(scale.x, scale.y, 1);
+          CameraBackgrounds[cameraId].SetActive(true);
         }
       }
 
       /// <summary>
-      /// Deactivates the <see cref="ImageCameraBackgrounds"/>.
+      /// Deactivates the <see cref="CameraBackgrounds"/>.
       /// </summary>
       public override void StopController()
       {
         base.StopController();
 
-        foreach (var cameraBackground in ImageCameraBackgrounds)
+        foreach (var cameraBackground in CameraBackgrounds)
         {
           if (cameraBackground != null)
           {
@@ -120,6 +120,28 @@ namespace ArucoUnity
 
       protected override void Configure()
       {
+        if (Cameras.Length != ArucoCamera.CameraNumber)
+        {
+          throw new Exception("The number of cameras in the displayer must be equal to the number of cameras in ArucoCamera");
+        }
+
+        // Configure the background
+        CameraBackgrounds = new GameObject[ArucoCamera.CameraNumber];
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        {
+          if (CameraBackgrounds[cameraId] == null)
+          {
+            CameraBackgrounds[cameraId] = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            CameraBackgrounds[cameraId].name = "CameraBackground";
+            CameraBackgrounds[cameraId].transform.SetParent(Cameras[cameraId].transform);
+            CameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
+            CameraBackgrounds[cameraId].SetActive(false);
+
+            var cameraBackgroundRenderer = CameraBackgrounds[cameraId].GetComponent<Renderer>();
+            cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
+            cameraBackgroundRenderer.material.mainTexture = ArucoCamera.ImageTextures[cameraId];
+          }
+        }
       }
     }
   }

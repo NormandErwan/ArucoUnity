@@ -117,12 +117,6 @@ namespace ArucoUnity
       public Texture2D[] ImageTextures { get; protected set; }
 
       /// <summary>
-      /// Gets the Unity virtual cameras. There is one for each physical camera (<see cref="CameraNumber"/> cameras). If <see cref="DisplayImages"/>
-      /// is set, the <see cref="ImageTextures"/> will be set as background of these Unity cameras.
-      /// </summary>
-      public Camera[] ImageCameras { get; protected set; }
-
-      /// <summary>
       /// Gets if the camera system is configured.
       /// </summary>
       public bool IsConfigured { get; protected set; }
@@ -221,7 +215,6 @@ namespace ArucoUnity
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];
         ImageTextures = new Texture2D[CameraNumber];
-        ImageCameras = new Camera[CameraNumber];
 
         // Configure the flip codes to transfer images from Unity to OpenCV and vice-versa
         // The raw bytes from a Texture to a Mat and from a Mat to a Texture needs to be vertically flipped to be in the correct orientation
