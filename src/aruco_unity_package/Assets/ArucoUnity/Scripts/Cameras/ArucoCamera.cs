@@ -209,6 +209,11 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Configure()
       {
+        if (CameraNumber <= 0)
+        {
+          throw new Exception("It must have at least one camera.");
+        }
+
         // Initialize the properties and variables
         images = new Cv.Mat[CameraNumber];
         ImageDatas = new byte[CameraNumber][];
