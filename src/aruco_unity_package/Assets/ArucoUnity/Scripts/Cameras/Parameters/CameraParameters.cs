@@ -39,7 +39,7 @@ namespace ArucoUnity
         ImageHeights = new int[CameraNumber];
         ImageWidths = new int[CameraNumber];
         ReprojectionErrors = new double[CameraNumber];
-        CameraMatrices = new CameraMatrix[CameraNumber];
+        CameraMatrices = new Cv.Mat[CameraNumber];
         CameraMatricesValues = new double[CameraNumber][][];
         DistCoeffs = new Cv.Mat[CameraNumber];
         DistCoeffsValues = new double[CameraNumber][][];
@@ -90,7 +90,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's serialized with the <see cref="CameraMatricesType"/> and 
       /// <see cref="CameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public CameraMatrix[] CameraMatrices { get; set; }
+      public Cv.Mat[] CameraMatrices { get; set; }
 
       /// <summary>
       /// The camera matrix type of the calibration. Equals to <see cref="CameraMatrices.Type()"/> and automatically written when 
@@ -200,7 +200,7 @@ namespace ArucoUnity
         cameraParameters.FilePath = cameraParametersFilePath;
 
         // Populate non-serialized properties
-        cameraParameters.CameraMatrices = (CameraMatrix[])CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
+        cameraParameters.CameraMatrices = CreateProperty(cameraParameters.CameraMatricesType, cameraParameters.CameraMatricesValues);
         cameraParameters.DistCoeffs = CreateProperty(cameraParameters.DistCoeffsType, cameraParameters.DistCoeffsValues);
         cameraParameters.OmnidirXis = CreateProperty(cameraParameters.OmnidirXisType, cameraParameters.OmnidirXisValues);
 
@@ -292,7 +292,7 @@ namespace ArucoUnity
       {
         int cameraNumber = propertyValues.Length;
 
-        Cv.Mat[] property = new Cv.Mat[cameraNumber];
+        var property = new Cv.Mat[cameraNumber];
         for (int cameraId = 0; cameraId < cameraNumber; cameraId++)
         {
           int rows = propertyValues[cameraId].Length,

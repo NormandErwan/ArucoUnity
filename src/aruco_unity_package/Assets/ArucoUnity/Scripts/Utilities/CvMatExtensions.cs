@@ -7,10 +7,28 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers.Utilities
+  namespace Utilities
   {
-    public class CvMatUtility : MonoBehaviour
+    public static class CvMatExtensions
     {
+      /// <summary>
+      /// Gets the camera focal lengths in a camera matrix, expressed in pixels units. Equals to
+      /// <code>F = (AtDouble(0, 0), AtDouble(1, 1))</code>
+      /// </summary>
+      public static Vector2 GetCameraFocalLengths(this Cv.Mat mat)
+      {
+        return new Vector2((float)mat.AtDouble(0, 0), (float)mat.AtDouble(1, 1));
+      }
+
+      /// <summary>
+      /// Gets the camera principal point in a camera matrix, expressed in pixels units. Equals to
+      /// <code>C = (AtDouble(0, 2), AtDouble(1, 2))</code>
+      /// </summary>
+      public static Vector2 GetCameraPrincipalPoint(this Cv.Mat mat)
+      {
+        return new Vector2((float)mat.AtDouble(0, 2), (float)mat.AtDouble(1, 2));
+      }
+
       /// <summary>
       /// Returns the OpenCV type equivalent to a texture format.
       /// </summary>

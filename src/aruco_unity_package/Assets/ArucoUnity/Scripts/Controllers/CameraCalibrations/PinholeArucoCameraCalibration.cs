@@ -50,7 +50,7 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
           {
-            CameraParametersController.CameraParameters.CameraMatrices[cameraId] = (CameraMatrix)new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
+            CameraParametersController.CameraParameters.CameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
               CalibrationFlags.FixAspectRatioValue, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
           }
           CameraParametersController.CameraParameters.FixAspectRatioValue = CalibrationFlags.FixAspectRatioValue;
@@ -93,7 +93,7 @@ namespace ArucoUnity
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;
         stereoCameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
-        stereoCameraParameters.NewCameraMatrices = new CameraMatrix[] { (CameraMatrix)newCameraMatrix1, (CameraMatrix)newCameraMatrix2 };
+        stereoCameraParameters.NewCameraMatrices = new Cv.Mat[] { newCameraMatrix1, newCameraMatrix2 };
         stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.CalibrationFlagsValue;
       }
     }

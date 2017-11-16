@@ -98,7 +98,7 @@ namespace ArucoUnity
       /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="NewCameraMatricesType"/> and 
       /// <see cref="NewCameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
-      public CameraMatrix[] NewCameraMatrices { get; set; }
+      public Cv.Mat[] NewCameraMatrices { get; set; }
 
       /// <summary>
       /// The new camera matrix type of the calibration. Equals to <see cref="NewCameraMatrices.Type()"/> and automatically written when 
@@ -142,7 +142,7 @@ namespace ArucoUnity
         RotationVector = new Cv.Vec3d(RotationVectorValues[0], RotationVectorValues[1], RotationVectorValues[2]);
         TranslationVector = new Cv.Vec3d(TranslationVectorValues[0], TranslationVectorValues[1], TranslationVectorValues[2]);
         RotationMatrices = CameraParameters.CreateProperty(RotationMatricesType, RotationMatricesValues);
-        NewCameraMatrices = (CameraMatrix[])CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
+        NewCameraMatrices = CameraParameters.CreateProperty(NewCameraMatricesType, NewCameraMatricesValues);
       }
     }
   }
