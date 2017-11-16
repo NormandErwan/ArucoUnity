@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Controllers.ObjectDisplayers
   {
     /// <summary>
     /// Create and display images of an ArUco object ready to be printed.
@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// See the OpenCV documentation for more information about the marker creation (second section of the following tutorial):
     /// http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
-    public class ArucoCreator : ArucoObjectDisplayer
+    public class ArucoObjectCreator : ArucoObjectDisplayer
     {
       // Editor fields
 
