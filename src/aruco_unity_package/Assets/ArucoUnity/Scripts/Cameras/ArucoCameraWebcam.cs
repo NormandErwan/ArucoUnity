@@ -1,5 +1,4 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -21,10 +20,6 @@ namespace ArucoUnity
       [Tooltip("The id of the webcam to use.")]
       private int webcamId = 0;
 
-      [SerializeField]
-      [Tooltip("The file path to load the camera parameters.")]
-      private string cameraParametersFilePath;
-
       // ArucoCamera properties implementation
 
       /// <summary>
@@ -43,11 +38,6 @@ namespace ArucoUnity
       /// The id of the webcam to use.
       /// </summary>
       public int WebcamId { get { return webcamId; } set { webcamId = value; } }
-
-      /// <summary>
-      /// The file path to load the camera parameters.
-      /// </summary>
-      public string CameraParametersFilePath { get { return cameraParametersFilePath; } set { cameraParametersFilePath = value; } }
 
       /// <summary>
       /// The webcam to use.
@@ -122,13 +112,6 @@ namespace ArucoUnity
         WebCamDevice = webcamDevices[WebcamId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
         Name = webcamDevices[WebcamId].name;
-
-        // Try to load the camera parameters
-        if (CameraParametersFilePath != null && CameraParametersFilePath.Length > 0)
-        {
-          string fullCameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, CameraParametersFilePath);
-          CameraParameters = Parameters.CameraParameters.LoadFromXmlFile(fullCameraParametersFilePath);
-        }
 
         base.Configure();
       }
