@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Controllers.CameraCalibrations
   {
-    public class ArucoCalibratorCanvasDisplay : MonoBehaviour
+    public class ArucoCameraCalibrationGUI : MonoBehaviour
     {
       // Editor fields
 
