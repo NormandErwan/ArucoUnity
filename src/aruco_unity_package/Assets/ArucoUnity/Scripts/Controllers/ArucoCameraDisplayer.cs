@@ -43,7 +43,13 @@ namespace ArucoUnity
       /// Gets or sets the Unity virtual cameras that will shoot the images of the physical cameras. There is one for each physical camera 
       /// (<see cref="ArucoCamera.CameraNumber"/> cameras).
       /// </summary>
-      public Camera[] Cameras { get { return cameras; }set { cameras = value; } }
+      public Camera[] Cameras { get { return cameras; } set { cameras = value; } }
+
+      /// <summary>
+      /// Gets or sets the prefab of the <see cref="CameraBackgrounds"/>. If null, default will be loaded:
+      /// `Prefabs/Resources/ArucoCameraImagePlane.prefab`.
+      /// </summary>
+      public GameObject CameraBackgroundsPrefab { get; set; }
 
       /// <summary>
       /// Gets the planes displaying the <see cref="ArucoCamera.Images"/> as background of the <see cref="Cameras"/>.
@@ -126,20 +132,20 @@ namespace ArucoUnity
         }
 
         // Configure the background
+        if (CameraBackgroundsPrefab == null)
+        {
+          CameraBackgroundsPrefab = Resources.Load("ArucoCameraDisplayerBackground") as GameObject;
+        }
+
         CameraBackgrounds = new GameObject[ArucoCamera.CameraNumber];
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           if (CameraBackgrounds[cameraId] == null)
           {
-            CameraBackgrounds[cameraId] = GameObject.CreatePrimitive(PrimitiveType.Quad);
-            CameraBackgrounds[cameraId].name = "CameraBackground";
-            CameraBackgrounds[cameraId].transform.SetParent(Cameras[cameraId].transform);
+            CameraBackgrounds[cameraId] = Instantiate(CameraBackgroundsPrefab, Cameras[cameraId].transform);
             CameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
+            CameraBackgrounds[cameraId].GetComponent<Renderer>().material.mainTexture = ArucoCamera.ImageTextures[cameraId];
             CameraBackgrounds[cameraId].SetActive(false);
-
-            var cameraBackgroundRenderer = CameraBackgrounds[cameraId].GetComponent<Renderer>();
-            cameraBackgroundRenderer.material = Resources.Load("UnlitImage") as Material;
-            cameraBackgroundRenderer.material.mainTexture = ArucoCamera.ImageTextures[cameraId];
           }
         }
       }

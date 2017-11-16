@@ -35,7 +35,8 @@ namespace ArucoUnity
       protected bool DisplayInPlayMode { get { return displayInPlayMode; } set { displayInPlayMode = value; } }
 
       /// <summary>
-      /// Gets or sets the prefab of <see cref="ImagePlane"/>. If null, default will be loaded: `Prefabs/Resources/ArucoCreatorImagePlane`.
+      /// Gets or sets the prefab of <see cref="ImagePlane"/>. If null, default will be loaded:
+      /// `Prefabs/Resources/ArucoCreatorImagePlane.prefab`.
       /// </summary>
       public GameObject ImagePlanePrefab { get; set; }
 
