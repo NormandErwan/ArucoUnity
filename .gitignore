@@ -3,6 +3,7 @@
 *.unitypackage
 **/Assets/ArucoUnity/Images*
 **/Assets/ArucoUnity/Calibrations*
+**/Assets/ArucoUnity/CameraParameters*
 **/Assets/ArucoUnity/Plugins*
 docs/Doxyfile
 
