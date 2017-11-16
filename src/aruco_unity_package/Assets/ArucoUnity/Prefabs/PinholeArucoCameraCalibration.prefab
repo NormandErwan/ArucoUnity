@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1379392284713990}
+  m_IsPrefabParent: 1
+--- !u!1 &1379392284713990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4443830380264692}
+  - component: {fileID: 114208106215188584}
+  - component: {fileID: 114479760342518650}
+  - component: {fileID: 114982271962214258}
+  - component: {fileID: 114381304389912768}
+  - component: {fileID: 114022596497341778}
+  m_Layer: 0
+  m_Name: PinholeArucoCameraCalibration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4443830380264692
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.255, y: 0.03, z: 0.17999999}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114022596497341778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44099b4ed8318e845a10ed126f62bbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useIntrinsicGuess: 0
+  fixKDistorsionCoefficients: 000000000000
+  fixPrincipalPoint: 0
+  fixAspectRatio: 0
+  fixAspectRatioValue: 1
+  zeroTangentialDistorsion: 0
+  rationalModel: 0
+  thinPrismModel: 0
+  fixS1_S2_S3_S4: 0
+  tiltedModel: 0
+  fixTauxTauy: 0
+  fixFocalLength: 0
+  fixIntrinsic: 0
+  sameFocalLength: 0
+  zeroDisparity: 1
+  skew: -1
+--- !u!114 &114208106215188584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8936dfef56ecc642bce8962a9434dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arucoCamera: {fileID: 0}
+  autoStart: 1
+  detectorParametersController: {fileID: 114479760342518650}
+  calibrationBoard: {fileID: 114982271962214258}
+  refineMarkersDetection: 0
+  stereoCalibrationCameraPairs: []
+  cameraParametersController: {fileID: 114381304389912768}
+  calibrationFlags: {fileID: 114022596497341778}
+  stereoCalibrationFlags: {fileID: 0}
+--- !u!114 &114381304389912768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraParametersFolderPath: ArucoUnity/CameraParameters/
+  cameraParametersFilename: 
+--- !u!114 &114479760342518650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ed676394d8639429b6c76f63c37c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adaptiveThreshWinSizeMin: 3
+  adaptiveThreshWinSizeMax: 23
+  adaptiveThreshWinSizeStep: 10
+  adaptiveThreshConstant: 7
+  minMarkerPerimeterRate: 0.03
+  maxMarkerPerimeterRate: 4
+  polygonalApproxAccuracyRate: 0.03
+  minCornerDistanceRate: 0.05
+  minDistanceToBorder: 3
+  minMarkerDistanceRate: 0.05
+  cornerRefinementMethod: 0
+  cornerRefinementWinSize: 5
+  cornerRefinementMaxIterations: 30
+  cornerRefinementMinAccuracy: 0.1
+  markerBorderBits: 1
+  perspectiveRemovePixelPerCell: 8
+  perspectiveRemoveIgnoredMarginPerCell: 0.13
+  maxErroneousBitsInBorderRate: 0.35
+  minOtsuStdDev: 5
+  errorCorrectionRate: 0.6
+--- !u!114 &114982271962214258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379392284713990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dictionaryName: 0
+  markerSideLength: 0.03
+  markerBorderBits: 1
+  marginsLength: 0
+  markersNumberX: 7
+  markersNumberY: 5
+  markerSeparation: 0.0075
