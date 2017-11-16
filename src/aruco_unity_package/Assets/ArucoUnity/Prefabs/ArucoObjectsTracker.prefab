@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114704470919034220}
   - component: {fileID: 114710025698078358}
   m_Layer: 0
-  m_Name: ArucoTracker
+  m_Name: ArucoObjectsTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,9 +53,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arucoCamera: {fileID: 0}
-  detectorParametersController: {fileID: 114710025698078358}
   autoStart: 1
+  detectorParametersController: {fileID: 114710025698078358}
   arucoObjects: []
+  arucoCameraUndistortion: {fileID: 0}
   refineDetectedMarkers: 1
   drawDetectedMarkers: 1
   drawRejectedCandidates: 0
