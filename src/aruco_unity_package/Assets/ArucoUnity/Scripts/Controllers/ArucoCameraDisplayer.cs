@@ -95,10 +95,17 @@ namespace ArucoUnity
           }
           else
           {
-            // Default placement of the background: centered on the camera and full size of the camera image
-            float aspectRatioFactor = Mathf.Min(ArucoCamera.ImageRatios[cameraId], 1f);
-            scale.y = 2 * cameraBackgroundDistance * aspectRatioFactor * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad);
-            scale.x = scale.y * ArucoCamera.ImageRatios[cameraId];
+            // Default placement of the background: centered and scaled on the unity camera
+            if (Cameras[cameraId].aspect < ArucoCamera.ImageRatios[cameraId])
+            {
+              scale.x = 2f * cameraBackgroundDistance * Cameras[cameraId].aspect * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+              scale.y = scale.x / ArucoCamera.ImageRatios[cameraId];
+            }
+            else
+            {
+              scale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+              scale.x = scale.y * ArucoCamera.ImageRatios[cameraId];
+            }
           }
 
           // Place and scale the background
@@ -145,6 +152,7 @@ namespace ArucoUnity
             CameraBackgrounds[cameraId] = Instantiate(CameraBackgroundsPrefab, Cameras[cameraId].transform);
             CameraBackgrounds[cameraId].transform.localRotation = Quaternion.identity;
             CameraBackgrounds[cameraId].GetComponent<Renderer>().material.mainTexture = ArucoCamera.ImageTextures[cameraId];
+            CameraBackgrounds[cameraId].layer = Cameras[cameraId].gameObject.layer;
             CameraBackgrounds[cameraId].SetActive(false);
           }
         }
