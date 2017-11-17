@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  webcamId: 0
+  webcamIds: 
 --- !u!114 &114605675417830844
 MonoBehaviour:
   m_ObjectHideFlags: 1
