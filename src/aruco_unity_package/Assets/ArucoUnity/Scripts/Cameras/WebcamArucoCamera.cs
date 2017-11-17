@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// Manages any connected webcam to the machine, retrieves and displays the camera's image every frame. Use one webcam at a time.
     /// Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
-    public class ArucoCameraWebcam : ArucoCamera
+    public class WebcamArucoCamera : ArucoCamera
     {
       // Editor fields
 

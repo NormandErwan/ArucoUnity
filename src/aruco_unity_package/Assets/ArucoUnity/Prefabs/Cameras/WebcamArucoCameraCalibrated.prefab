@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4717857363603584}
   - component: {fileID: 20289876372786864}
-  - component: {fileID: 124258638801261522}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: BackgroundCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +40,7 @@ GameObject:
   - component: {fileID: 114608506850049472}
   - component: {fileID: 114075464021066384}
   m_Layer: 0
-  m_Name: ArucoCameraWebcamUndistorted
+  m_Name: WebcamArucoCameraCalibrated
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,10 +164,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   webcamIds: 00000000
---- !u!124 &124258638801261522
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632761699528614}
-  m_Enabled: 1

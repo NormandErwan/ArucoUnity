@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114156721105013080}
   - component: {fileID: 114605675417830844}
   m_Layer: 0
-  m_Name: ArucoCameraWebcam
+  m_Name: WebcamArucoCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
