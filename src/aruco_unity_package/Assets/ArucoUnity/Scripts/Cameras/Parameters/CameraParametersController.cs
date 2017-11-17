@@ -45,6 +45,11 @@ namespace ArucoUnity
       /// </summary>
       public CameraParameters CameraParameters { get; protected set; }
 
+      // Variables
+
+      string dataPath;
+      string outputFolderPath;
+
       // MonoBehaviour methods
 
       /// <summary>
@@ -52,6 +57,8 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
+        dataPath = (Application.isEditor) ? Application.dataPath : Application.persistentDataPath;
+
         SetCameraParametersFilePath(CameraParametersFolderPath, CameraParametersFilename);
         if (CameraParametersFilePath != null)
         {
@@ -68,14 +75,12 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)
       {
-        CameraParameters = null;
         CameraParametersFilePath = null;
-
         if (cameraParametersFolderPath != null && cameraParametersFolderPath.Length > 0 && cameraParametersFilename != null
           && cameraParametersFilename.Length > 0)
         {
-          CameraParametersFilePath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, cameraParametersFolderPath);
-          CameraParametersFilePath = Path.Combine(CameraParametersFilePath, cameraParametersFilename);
+          outputFolderPath = Path.Combine(dataPath, cameraParametersFolderPath);
+          CameraParametersFilePath = Path.Combine(outputFolderPath, cameraParametersFilename);
         }
       }
 
@@ -104,9 +109,9 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Save()
       {
-        if (!Directory.Exists(CameraParametersFolderPath))
+        if (!Directory.Exists(outputFolderPath))
         {
-          Directory.CreateDirectory(CameraParametersFolderPath);
+          Directory.CreateDirectory(outputFolderPath);
         }
         CameraParameters.SaveToXmlFile(CameraParametersFilePath);
       }

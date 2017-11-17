@@ -118,9 +118,11 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Thread calibratingThread;
       protected string applicationPath;
       protected Cv.Size[] calibrationImageSizes;
+      protected Thread calibratingThread;
+      protected Mutex calibratingMutex = new Mutex();
+      protected Exception calibratingException;
 
       // MonoBehaviour methods
 
@@ -129,7 +131,27 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void LateUpdate()
       {
-        if (CalibrationRunning && IsCalibrated)
+        Exception e = null;
+        bool calibrationDone = false;
+        calibratingMutex.WaitOne();
+        {
+          e = calibratingException;
+          calibratingException = null;
+
+          calibrationDone = CalibrationRunning && IsCalibrated;
+        }
+        calibratingMutex.ReleaseMutex();
+
+        // Check for exception in calibrating thread
+        if (e != null)
+        {
+          calibratingThread.Abort();
+          CalibrationRunning = false;
+          throw e;
+        }
+
+        // Check for calibration done
+        if (calibrationDone)
         {
           CalibrationRunning = false;
           Calibrated.Invoke();
@@ -284,14 +306,32 @@ namespace ArucoUnity
       /// </summary>
       public virtual void CalibrateAsync()
       {
-        if (CalibrationRunning == true)
+        bool calibrationRunning = false;
+        calibratingMutex.WaitOne();
+        {
+          calibrationRunning = CalibrationRunning;
+        }
+        calibratingMutex.ReleaseMutex();
+
+        if (calibrationRunning)
         {
           throw new Exception("A calibration is already running. Wait its completion or call CancelCalibrateAsync() before starting a new calibration.");
         }
 
         calibratingThread = new Thread(() =>
         {
-          Calibrate();
+          try
+          {
+            Calibrate();
+          }
+          catch (Exception e)
+          {
+            calibratingMutex.WaitOne();
+            {
+              calibratingException = e;
+            }
+            calibratingMutex.ReleaseMutex();
+          }
         });
         calibratingThread.IsBackground = true;
         calibratingThread.Start();
@@ -302,7 +342,14 @@ namespace ArucoUnity
       /// </summary>
       public virtual void CancelCalibrateAsync()
       {
-        if (CalibrationRunning)
+        bool calibrationRunning = false;
+        calibratingMutex.WaitOne();
+        {
+          calibrationRunning = CalibrationRunning;
+        }
+        calibratingMutex.ReleaseMutex();
+
+        if (calibrationRunning)
         {
           calibratingThread.Abort();
         }
@@ -316,8 +363,12 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Calibrate()
       {
-        IsCalibrated = false;
-        CalibrationRunning = true;
+        calibratingMutex.WaitOne();
+        {
+          IsCalibrated = false;
+          CalibrationRunning = true;
+        }
+        calibratingMutex.ReleaseMutex();
 
         // Check if there is enough captured frames for calibration
         Aruco.CharucoBoard charucoBoard = CalibrationBoard.Board as Aruco.CharucoBoard;
@@ -420,7 +471,11 @@ namespace ArucoUnity
         CameraParametersController.Save();
 
         // Update state
-        IsCalibrated = true;
+        calibratingMutex.WaitOne();
+        {
+          IsCalibrated = true;
+        }
+        calibratingMutex.ReleaseMutex();
       }
 
       /// <summary>
@@ -429,26 +484,27 @@ namespace ArucoUnity
       /// <param name="calibrationFlags">The calibration flags that will be used in <see cref="Calibrate"/>.</param>
       protected virtual void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags = null)
       {
-        if (calibrationFlags != null)
+        if (calibrationFlags != null && calibrationFlags.UseIntrinsicGuess)
         {
-          if (calibrationFlags.UseIntrinsicGuess 
-            && (CameraParametersController.CameraParameters == null || CameraParametersController.CameraParameters.CameraMatrices == null))
+          if (CameraParametersController.CameraParameters == null || CameraParametersController.CameraParameters.CameraMatrices == null)
           {
             throw new Exception("CalibrationFlags.UseIntrinsicGuess flag is set but CameraParameters is null or has no valid values. Set" +
               " CameraParametersFilename or deactivate this flag.");
           }
-          else
-          {
-            CameraParametersController.Initialize(ArucoCamera.CameraNumber);
-          }
-          CameraParametersController.CameraParameters.CalibrationFlagsValue = calibrationFlags.CalibrationFlagsValue;
         }
         else
         {
           CameraParametersController.Initialize(ArucoCamera.CameraNumber);
+          for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+          {
+            CameraParametersController.CameraParameters.CameraMatrices[cameraId] = new Cv.Mat();
+            CameraParametersController.CameraParameters.DistCoeffs[cameraId] = new Cv.Mat();
+            CameraParametersController.CameraParameters.OmnidirXis[cameraId] = new Cv.Mat();
+          }
         }
 
-        var cameraParameters = CameraParametersController.CameraParameters;
+        CameraParametersController.CameraParameters.CalibrationFlagsValue = (calibrationFlags != null) ? calibrationFlags.CalibrationFlagsValue : default(int);
+
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           CameraParametersController.CameraParameters.ImageHeights[cameraId] = calibrationImageSizes[cameraId].Height;

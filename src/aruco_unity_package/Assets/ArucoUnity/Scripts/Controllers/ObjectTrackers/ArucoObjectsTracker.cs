@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Controllers.CameraUndistortions;
+using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
+using ArucoUnity.Utilities;
+using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Threading;
-using ArucoUnity.Objects;
-using ArucoUnity.Controllers.CameraUndistortions;
-using ArucoUnity.Utilities;
 
 namespace ArucoUnity
 {
@@ -122,7 +123,7 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Dictionary<System.Type, ArucoObjectTracker> additionalTrackers;
+      protected Dictionary<Type, ArucoObjectTracker> additionalTrackers;
 
       protected bool arucoCameraImagesUpdated;
       protected Cv.Mat[] trackingImages;
@@ -130,7 +131,7 @@ namespace ArucoUnity
       protected byte[][] arucoCameraImageCopyData;
       protected Thread trackingThread;
       protected Mutex trackingMutex;
-      protected System.Exception trackingException;
+      protected Exception trackingException;
 
       // MonoBehaviour methods
 
@@ -143,7 +144,7 @@ namespace ArucoUnity
 
         // Initialize the trackers
         MarkerTracker = new ArucoMarkerTracker();
-        additionalTrackers = new Dictionary<System.Type, ArucoObjectTracker>()
+        additionalTrackers = new Dictionary<Type, ArucoObjectTracker>()
         {
           { typeof(ArucoGridBoard), new ArucoGridBoardTracker() },
           { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
@@ -163,7 +164,7 @@ namespace ArucoUnity
               trackingMutex.ReleaseMutex();
             }
           }
-          catch (System.Exception e)
+          catch (Exception e)
           {
             trackingException = e;
             trackingMutex.ReleaseMutex();
@@ -226,7 +227,7 @@ namespace ArucoUnity
       {
         if (IsConfigured && IsStarted)
         {
-          System.Exception e = null;
+          Exception e = null;
 
           // Check for exception in the tracking thread, or transfer images data with the tracking thread
           trackingMutex.WaitOne();
@@ -245,13 +246,13 @@ namespace ArucoUnity
                 // Copy the current images of the camera for the tracking thread
                 for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
                 {
-                  System.Array.Copy(ArucoCamera.ImageDatas[cameraId], arucoCameraImageCopyData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
+                  Array.Copy(ArucoCamera.ImageDatas[cameraId], arucoCameraImageCopyData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
                 }
 
                 // Copy back the previous images use by the tracking thread (for synchronization of the images with the tranforms of the tracked objects
                 for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
                 {
-                  System.Array.Copy(trackingImagesData[cameraId], ArucoCamera.ImageDatas[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
+                  Array.Copy(trackingImagesData[cameraId], ArucoCamera.ImageDatas[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
                 }
 
                 // Update the transforms of the tracked objects
@@ -287,7 +288,7 @@ namespace ArucoUnity
           ArucoObjectTracker tracker = null;
           if (!additionalTrackers.TryGetValue(arucoObject.GetType(), out tracker))
           {
-            throw new System.ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
+            throw new ArgumentException("No tracker found for the type '" + arucoObject.GetType() + "'.", "arucoObject");
           }
           else if (!tracker.IsActivated)
           {
@@ -482,7 +483,7 @@ namespace ArucoUnity
           arucoCameraImagesUpdated = false;
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
           {
-            System.Array.Copy(arucoCameraImageCopyData[cameraId], trackingImagesData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
+            Array.Copy(arucoCameraImageCopyData[cameraId], trackingImagesData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
           }
 
           Detect(trackingImages);
