@@ -102,7 +102,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 1
   m_ForceIntoRT: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
-  cameraParametersFilename: USB Camera - 2017-10-27_19-20-12.xml
+  cameraParametersFilename: 
 --- !u!114 &114608506850049472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  webcamIds: 
+  webcamIds: 00000000
 --- !u!124 &124258638801261522
 Behaviour:
   m_ObjectHideFlags: 1
