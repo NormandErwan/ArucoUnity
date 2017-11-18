@@ -1,6 +1,8 @@
 ﻿using ArucoUnity.Plugin;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace ArucoUnity
@@ -257,6 +259,20 @@ namespace ArucoUnity
             writer.Close();
           }
         }
+      }
+
+      /// <summary>
+      /// Returns the ids of the camera not in a stereo camera parameters.
+      /// </summary>
+      public int[] GetMonoCameraIds()
+      {
+        List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList();
+        foreach (var stereoCameraParameters in StereoCameraParametersList)
+        {
+          monoCameraIds.Remove(stereoCameraParameters.CameraId1);
+          monoCameraIds.Remove(stereoCameraParameters.CameraId2);
+        }
+        return monoCameraIds.ToArray();
       }
 
       /// <summary>

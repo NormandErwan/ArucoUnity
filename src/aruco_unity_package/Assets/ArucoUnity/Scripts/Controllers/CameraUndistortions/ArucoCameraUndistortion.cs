@@ -109,19 +109,15 @@ namespace ArucoUnity
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
 
-        // Configure the undistortion maps for the cameras with stereo calibration results first
-        List<int> monoCameraIds = Enumerable.Range(0, cameraParameters.CameraNumber).ToList();
+        // Configure the undistortion maps for the cameras with stereo calibration
         foreach (var stereoCameraParameters in cameraParameters.StereoCameraParametersList)
         {
           ConfigureUndistortionRectification(stereoCameraParameters.CameraId1, stereoCameraParameters.RotationMatrices[0], stereoCameraParameters.NewCameraMatrices[0]);
           ConfigureUndistortionRectification(stereoCameraParameters.CameraId2, stereoCameraParameters.RotationMatrices[1], stereoCameraParameters.NewCameraMatrices[1]);
-
-          monoCameraIds.Remove(stereoCameraParameters.CameraId1);
-          monoCameraIds.Remove(stereoCameraParameters.CameraId2);
         }
 
         // Configure the undistortion maps for cameras not in a stereo pair
-        foreach (int cameraId in monoCameraIds)
+        foreach (int cameraId in cameraParameters.GetMonoCameraIds())
         {
           ConfigureUndistortionRectification(cameraId, noRectificationMatrix, cameraParameters.CameraMatrices[cameraId]);
         }
