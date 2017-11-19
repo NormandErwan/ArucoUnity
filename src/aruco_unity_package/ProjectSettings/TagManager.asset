@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - ArucoCamera
-  - 
-  - 
+  - ArucoCameraBackground
+  - ArucoCameraLeftEye
+  - ArucoCameraRightEye
   - 
   - 
   - 

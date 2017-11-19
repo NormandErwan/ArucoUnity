@@ -112,11 +112,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &109493990
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 673697667}
+    m_Modifications:
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073335226387322, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129361774640916, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+      propertyPath: m_Name
+      value: ArucoCameraDisplay0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c83c279927eb8e24ab42463f3528f5da, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &345027830 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114852932360525986, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
     type: 2}
-  m_PrefabInternal: {fileID: 1578749948}
+  m_PrefabInternal: {fileID: 1500296527}
   m_Script: {fileID: 11500000, guid: 43b2fc42ec749de4fa54b3fc1163f23d, type: 3}
 --- !u!1 &373694447
 GameObject:
@@ -345,7 +391,7 @@ Prefab:
     - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
         type: 2}
       propertyPath: arucoObjects.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4105970446323926, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -420,6 +466,11 @@ Prefab:
     - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
         type: 2}
       propertyPath: arucoCameraDisplayer
+      value: 
+      objectReference: {fileID: 1726051525}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoCameraDisplayController
       value: 
       objectReference: {fileID: 1726051525}
     m_RemovedComponents: []
@@ -572,6 +623,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631958616}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &673697667 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4036374087783020, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1500296527}
 --- !u!1 &773210887
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +1009,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1131435816}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1578749948
+--- !u!1001 &1500296527
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -997,6 +1053,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114075464021066384, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
+        type: 2}
+      propertyPath: cameraParametersFilename
+      value: Logitech HD Webcam C270 - 2017-11-17_12-54-45.xml
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec, type: 2}
   m_IsPrefabParent: 0
@@ -1004,7 +1065,7 @@ Prefab:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114608506850049472, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
     type: 2}
-  m_PrefabInternal: {fileID: 1578749948}
+  m_PrefabInternal: {fileID: 1500296527}
   m_Script: {fileID: 11500000, guid: e044568ea72405e49bf56df52f9d2b57, type: 3}
 --- !u!1 &1644300903
 GameObject:
@@ -1099,7 +1160,7 @@ MeshFilter:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114074176353776514, guid: a4f06c218f0d0ae4caf2c2a0bd52d4ec,
     type: 2}
-  m_PrefabInternal: {fileID: 1578749948}
+  m_PrefabInternal: {fileID: 1500296527}
   m_Script: {fileID: 11500000, guid: ba7738781ca5c2448ae422808a2e830c, type: 3}
 --- !u!1 &1772982384
 GameObject:

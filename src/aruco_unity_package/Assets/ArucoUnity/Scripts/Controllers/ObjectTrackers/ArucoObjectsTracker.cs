@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Controllers.CameraUndistortions;
+﻿using ArucoUnity.Controllers.CameraDisplays;
+using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;
@@ -24,8 +25,8 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The displayer of the ArucoCamera.")]
-      private ArucoCameraDisplayer arucoCameraDisplayer;
+      [Tooltip("The display controller associated with the ArucoCamera.")]
+      private ArucoCameraDisplayController arucoCameraDisplayController;
 
       [SerializeField]
       [Tooltip("The undistortion process associated with the ArucoCamera.")]
@@ -66,9 +67,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets the displayer of the ArucoCamera.
+      /// Gets or sets display controller associated with the ArucoCamera.
       /// </summary>
-      public ArucoCameraDisplayer ArucoCameraDisplayer { get { return arucoCameraDisplayer; } set { arucoCameraDisplayer = value; } }
+      public ArucoCameraDisplayController ArucoCameraDisplayController { get { return arucoCameraDisplayController; } set { arucoCameraDisplayController = value; } }
 
       /// <summary>
       /// Gets or sets the optional undistortion process associated with the ArucoCamera.

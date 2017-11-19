@@ -202,6 +202,11 @@ namespace ArucoUnity
         StopCameras();
       }
 
+      /// <summary>
+      /// Sets <see cref="CameraNumber"/>.
+      /// </summary>
+      protected abstract void OnValidate();
+
       // Methods
 
       /// <summary>

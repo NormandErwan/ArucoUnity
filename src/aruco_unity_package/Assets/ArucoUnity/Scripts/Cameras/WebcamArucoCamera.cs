@@ -78,6 +78,11 @@ namespace ArucoUnity
         base.Update();
       }
 
+      protected override void OnValidate()
+      {
+        CameraNumber = WebcamIds.Length;
+      }
+
       // ArucoCamera methods
 
       /// <summary>
