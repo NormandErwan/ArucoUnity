@@ -147,7 +147,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configure the camera system at start if <see cref="AutoStart"/> is true.
+      /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
       /// </summary>
       protected virtual void Start()
       {
@@ -204,9 +204,42 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Configure the cameras and the properties, then calls <see cref="StartCameras"/> if <see cref="AutoStart"/> is true.
+      /// Configures the cameras, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>.
       /// </summary>
       public virtual void Configure()
+      {
+        if (IsStarted)
+        {
+          throw new Exception("Stop the cameras before configure them.");
+        }
+      }
+
+      /// <summary>
+      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>.
+      /// </summary>
+      public virtual void StartCameras()
+      {
+        if (!IsConfigured || IsStarted)
+        {
+          throw new Exception("Configure and stop the cameras before start them.");
+        }
+      }
+
+      /// <summary>
+      /// Stops the camera system and calls <see cref="OnStopped"/>.
+      /// </summary>
+      public virtual void StopCameras()
+      {
+        if (!IsConfigured || !IsStarted)
+        {
+          throw new Exception("Configure and start the cameras before stop them.");
+        }
+      }
+
+      /// <summary>
+      /// Configures the properties, then calls <see cref="StartCameras"/> if <see cref="AutoStart"/> is true.
+      /// </summary>
+      protected void OnConfigured()
       {
         if (CameraNumber <= 0)
         {
@@ -244,7 +277,7 @@ namespace ArucoUnity
 
         // Update state
         IsConfigured = true;
-        Configured.Invoke();
+        Configured();
 
         // AutoStart
         if (AutoStart)
@@ -252,16 +285,6 @@ namespace ArucoUnity
           StartCameras();
         }
       }
-
-      /// <summary>
-      /// Starts the camera system, and calls <see cref="OnStarted"/> with initialized <see cref="ImageTextures"/>.
-      /// </summary>
-      public abstract void StartCameras();
-
-      /// <summary>
-      /// Stops the camera system and calls <see cref="OnStopped"/>.
-      /// </summary>
-      public abstract void StopCameras();
 
       /// <summary>
       /// Calls <see cref="InitializeImages"/> and the <see cref="Started"/> event.
@@ -301,15 +324,17 @@ namespace ArucoUnity
           }
         }
 
+        // Undistort images
         UndistortRectifyImages();
 
+        // Update state
         imagesUpdatedThisFrame = true;
         ImagesUpdated();
       }
 
       /// <summary>
-      /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/> and <see cref="ImageDatas"/> properties from the <see cref="ImageTextures"/>
-      /// property.
+      /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/> and <see cref="ImageDatas"/> properties from the
+      /// <see cref="ImageTextures"/> property.
       /// </summary>
       protected virtual void InitializeImages()
       {

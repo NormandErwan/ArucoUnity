@@ -9,8 +9,7 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Manages any connected webcam to the machine, retrieves and displays the camera's image every frame. Use one webcam at a time.
-    /// Based on: http://answers.unity3d.com/answers/1155328/view.html
+    /// Captures image of one webcam every frame. Based on: http://answers.unity3d.com/answers/1155328/view.html
     /// </summary>
     public class WebcamArucoCamera : ArucoCamera
     {
@@ -20,13 +19,11 @@ namespace ArucoUnity
       [Tooltip("The id of the webcam to use.")]
       private int webcamId;
 
-      // ArucoCamera properties implementation
+      // Properties
 
-      public override int CameraNumber { get; protected set; }
+      public override int CameraNumber { get { return 1; } protected set { } }
 
       public override string Name { get; protected set; }
-
-      // Properties
 
       /// <summary>
       /// Gets or sets the id of the webcam to use.
@@ -83,10 +80,7 @@ namespace ArucoUnity
       /// </summary>
       public override void Configure()
       {
-        if (IsStarted || startInitiated)
-        {
-          return;
-        }
+        base.Configure();
 
         // Reset state
         startInitiated = false;
@@ -98,7 +92,7 @@ namespace ArucoUnity
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
         Name = WebCamDevice.name;
         
-        base.Configure();
+        OnConfigured();
       }
 
       /// <summary>
@@ -106,11 +100,14 @@ namespace ArucoUnity
       /// </summary>
       public override void StartCameras()
       {
-        if (IsConfigured && !IsStarted && !startInitiated)
+        base.StartCameras();
+        if (startInitiated)
         {
-          WebCamTexture.Play();
-          startInitiated = true;
+          throw new Exception("Cameras have already been started.");
         }
+
+        WebCamTexture.Play();
+        startInitiated = true;
       }
 
       /// <summary>
@@ -118,12 +115,15 @@ namespace ArucoUnity
       /// </summary>
       public override void StopCameras()
       {
-        if (IsConfigured && (IsStarted || startInitiated))
+        base.StopCameras();
+        if (startInitiated)
         {
-          WebCamTexture.Stop();
-          startInitiated = false;
-          OnStopped();
+          throw new Exception("Configure and start the cameras before stop them.");
         }
+
+        WebCamTexture.Stop();
+        startInitiated = false;
+        OnStopped();
       }
 
       /// <summary>

@@ -103,7 +103,7 @@ namespace ArucoUnity
       {
         if (!IsConfigured || IsStarted)
         {
-          throw new Exception("Configure or stop the controller before start it.");
+          throw new Exception("Set ArucoCamera and stop the controller before start it.");
         }
 
         IsStarted = true;
