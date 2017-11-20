@@ -140,7 +140,7 @@ namespace ArucoUnity
       /// <param name="positionFactor">Factor on the position vector.</param>
       protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
-        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCameraDisplayController.ArucoCameraDisplays[cameraId].Camera.transform);
+        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCameraDisplay.Camera.transform);
         arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
         arucoObject.gameObject.transform.localRotation = rvec.ToRotation();
         arucoObject.gameObject.SetActive(true);

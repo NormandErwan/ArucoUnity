@@ -11,8 +11,7 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Capture and display every frame the images of any camera system with a fixed number of cameras to use for calibration or ArUco object
-    /// tracking. Each camera of the system is associated with a Unity camera that shots as background the current captured frame.
+    /// Captures every frame the images of any camera system.
     /// </summary>
     /// <remarks>
     /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
@@ -201,11 +200,6 @@ namespace ArucoUnity
       {
         StopCameras();
       }
-
-      /// <summary>
-      /// Sets <see cref="CameraNumber"/>.
-      /// </summary>
-      protected abstract void OnValidate();
 
       // Methods
 

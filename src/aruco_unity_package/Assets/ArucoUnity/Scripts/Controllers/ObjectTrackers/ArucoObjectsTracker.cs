@@ -7,6 +7,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using ArucoUnity.Cameras;
 
 namespace ArucoUnity
 {
@@ -20,13 +21,13 @@ namespace ArucoUnity
     /// 
     /// See the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
-    public class ArucoObjectsTracker : ArucoObjectsController
+    public class ArucoObjectsTracker : ArucoObjectsController<ArucoCamera>
     {
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The display controller associated with the ArucoCamera.")]
-      private ArucoCameraDisplayController arucoCameraDisplayController;
+      [Tooltip("The camera display associated with the ArucoCamera.")]
+      private ArucoCameraDisplay arucoCameraDisplay;
 
       [SerializeField]
       [Tooltip("The undistortion process associated with the ArucoCamera.")]
@@ -67,9 +68,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets display controller associated with the ArucoCamera.
+      /// Gets or sets the camera display associated with the ArucoCamera.
       /// </summary>
-      public ArucoCameraDisplayController ArucoCameraDisplayController { get { return arucoCameraDisplayController; } set { arucoCameraDisplayController = value; } }
+      public ArucoCameraDisplay ArucoCameraDisplay { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
 
       /// <summary>
       /// Gets or sets the optional undistortion process associated with the ArucoCamera.

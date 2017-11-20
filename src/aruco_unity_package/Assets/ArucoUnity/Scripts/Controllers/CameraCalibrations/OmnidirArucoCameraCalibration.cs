@@ -88,22 +88,22 @@ namespace ArucoUnity
           out tvecs, CalibrationFlags.CalibrationFlags);
       }
 
-      protected override void StereoCalibrate(CameraPair cameraPair, Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints,
-        Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters)
+      protected override void StereoCalibrate(int cameraId1, int cameraId2, Std.VectorVectorPoint3f[] objectPoints,
+        Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters)
       {
         var cameraParameters = CameraParametersController.CameraParameters;
-        var cameraMatrix1 = cameraParameters.CameraMatrices[cameraPair.CameraId1];
-        var distCoeffs1 = cameraParameters.DistCoeffs[cameraPair.CameraId1];
-        var xi1 = cameraParameters.OmnidirXis[cameraPair.CameraId1];
-        var cameraMatrix2 = cameraParameters.CameraMatrices[cameraPair.CameraId2];
-        var distCoeffs2 = cameraParameters.DistCoeffs[cameraPair.CameraId2];
-        var xi2 = cameraParameters.OmnidirXis[cameraPair.CameraId2];
+        var cameraMatrix1 = cameraParameters.CameraMatrices[cameraId1];
+        var distCoeffs1 = cameraParameters.DistCoeffs[cameraId1];
+        var xi1 = cameraParameters.OmnidirXis[cameraId1];
+        var cameraMatrix2 = cameraParameters.CameraMatrices[cameraId2];
+        var distCoeffs2 = cameraParameters.DistCoeffs[cameraId2];
+        var xi2 = cameraParameters.OmnidirXis[cameraId2];
 
         // Estimates transformation between the two cameras
         Cv.Vec3d rvec, tvec;
         Cv.Mat rvecsCamera1, tvecsCamera1;
-        stereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[cameraPair.CameraId1], imagePoints[cameraPair.CameraId1],
-          imagePoints[cameraPair.CameraId2], imageSizes[cameraPair.CameraId1], imageSizes[cameraPair.CameraId2], cameraMatrix1, xi1, distCoeffs1,
+        stereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1],
+          imagePoints[cameraId2], imageSizes[cameraId1], imageSizes[cameraId2], cameraMatrix1, xi1, distCoeffs1,
           cameraMatrix2, xi2, distCoeffs2, out rvec, out tvec, out rvecsCamera1, out tvecsCamera1, CalibrationFlags.CalibrationFlags);
 
         // Computes rectification transforms

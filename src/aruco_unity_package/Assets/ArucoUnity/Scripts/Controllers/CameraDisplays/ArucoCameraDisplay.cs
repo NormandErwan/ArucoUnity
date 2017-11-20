@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Plugin;
+using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Utilities;
 using UnityEngine;
 
@@ -15,13 +14,17 @@ namespace ArucoUnity
     /// Manages a Unity virual augmented reality camera that shoot 3D content aligned with the <see cref="ArucoCamera.Images"/> from one physical
     /// camera displayed as background.
     /// </summary>
-    public class ArucoCameraDisplay : MonoBehaviour
+    public class ArucoCameraDisplay : ArucoCameraController<ArucoCamera>
     {
       // Constants
 
       protected const float cameraBackgroundDistance = 1f;
 
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("Optional undistortion process associated with the ArucoCamera.")]
+      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the background.")]
@@ -38,6 +41,11 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
+      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
+
+      /// <summary>
       /// Gets or sets the Unity virtual camera that will shoot the 3D content aligned with the <see cref="Background"/>.
       /// </summary>
       public Camera Camera { get { return camera; } set { camera = value; } }
@@ -52,21 +60,52 @@ namespace ArucoUnity
       /// </summary>
       public GameObject Background { get { return background; } set { background = value; } }
 
+      // Variables
+
+      protected int cameraId = 0;
+
+      // ArucoCameraController methods
+
+      /// <summary>
+      /// Calls <see cref="ConfigureCamerasBackground"/> the <see cref="SetDisplayActive(bool)"/> to activate the display.
+      /// </summary>
+      public override void StartController()
+      {
+        base.StartController();
+        ConfigureCamerasBackground();
+        SetDisplayActive(true);
+      }
+
+      /// <summary>
+      /// Deactivates the display with <see cref="SetDisplayActive(bool)"/>.
+      /// </summary>
+      public override void StopController()
+      {
+        base.StopController();
+        SetDisplayActive(false);
+      }
+
+      protected override void Configure()
+      {
+      }
+
       // Methods
 
       /// <summary>
-      /// Configures the properties according to the <see cref="ArucoCamera.CalibrationController"/> if set otherwise with default values.
+      /// Configures <see cref="Camera"/>, <see cref="BackgroundCamera"/> and <see cref="Background"/> according to the
+      /// <see cref="ArucoCameraUndistortion"/> if set otherwise with default values.
       /// </summary>
-      public virtual void Configure(int cameraId, ArucoCamera arucoCamera, CameraParameters cameraParameters = null, Cv.Mat[] RectifiedCameraMatrices = null)
+      protected virtual void ConfigureCamerasBackground()
       {
         Vector2 position = Vector2.zero;
         Vector2 scale = Vector2.one;
-        if (cameraParameters != null && RectifiedCameraMatrices != null)
+        if (ArucoCameraUndistortion != null)
         {
+          var cameraParameters = ArucoCameraUndistortion.CameraParametersController.CameraParameters;
           float imageWidth = cameraParameters.ImageWidths[cameraId];
           float imageHeight = cameraParameters.ImageHeights[cameraId];
-          Vector2 cameraF = RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
-          Vector2 cameraC = RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
+          Vector2 cameraF = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
+          Vector2 cameraC = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
 
           // Configure the cameras
           float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
@@ -86,22 +125,33 @@ namespace ArucoUnity
         else
         {
           // Default placement of the background: centered and scaled on the unity camera
-          if (BackgroundCamera.aspect < arucoCamera.ImageRatios[cameraId])
+          if (BackgroundCamera.aspect < ArucoCamera.ImageRatios[cameraId])
           {
             scale.x = 2f * cameraBackgroundDistance * BackgroundCamera.aspect * Mathf.Tan(0.5f * BackgroundCamera.fieldOfView * Mathf.Deg2Rad);
-            scale.y = scale.x / arucoCamera.ImageRatios[cameraId];
+            scale.y = scale.x / ArucoCamera.ImageRatios[cameraId];
           }
           else
           {
             scale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * BackgroundCamera.fieldOfView * Mathf.Deg2Rad);
-            scale.x = scale.y * arucoCamera.ImageRatios[cameraId];
+            scale.x = scale.y * ArucoCamera.ImageRatios[cameraId];
           }
         }
 
         // Configures the background
         Background.transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
         Background.transform.localScale = new Vector3(scale.x, scale.y, 1);
-        Background.GetComponent<Renderer>().material.mainTexture = arucoCamera.ImageTextures[cameraId];
+        Background.GetComponent<Renderer>().material.mainTexture = ArucoCamera.ImageTextures[cameraId];
+      }
+
+      /// <summary>
+      /// Activates or deactivates <see cref="Camera"/>, <see cref="BackgroundCamera"/> and <see cref="Background"/>.
+      /// </summary>
+      /// <param name="value">True to activate, false to deactivate.</param>
+      protected virtual void SetDisplayActive(bool value)
+      {
+        Camera.gameObject.SetActive(value);
+        BackgroundCamera.gameObject.SetActive(value);
+        Background.gameObject.SetActive(value);
       }
     }
   }

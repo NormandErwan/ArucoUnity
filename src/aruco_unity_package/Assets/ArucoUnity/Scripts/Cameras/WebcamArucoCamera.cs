@@ -17,8 +17,8 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The ids of the webcams to use.")]
-      private int[] webcamIds;
+      [Tooltip("The id of the webcam to use.")]
+      private int webcamId;
 
       // ArucoCamera properties implementation
 
@@ -31,21 +31,22 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the id of the webcam to use.
       /// </summary>
-      public int[] WebcamIds { get { return webcamIds; } set { webcamIds = value; } }
+      public int WebcamIds { get { return webcamId; } set { webcamId = value; } }
 
       /// <summary>
       /// Gets the used webcam.
       /// </summary>
-      public WebCamDevice[] WebCamDevices { get; protected set; }
+      public WebCamDevice WebCamDevice { get; protected set; }
 
       /// <summary>
       /// Gets the textures of the used webcams.
       /// </summary>
-      public WebCamTexture[] WebCamTextures { get; protected set; }
+      public WebCamTexture WebCamTexture { get; protected set; }
 
       // Variables
 
       protected bool startInitiated = false;
+      protected int cameraId = 0;
 
       // MonoBehaviour methods
 
@@ -57,17 +58,14 @@ namespace ArucoUnity
       {
         if (startInitiated)
         {
-          if (WebCamTextures[0].width < 100) // Wait the WebCamTexture initialization
+          if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
           {
             return;
           }
           else
           {
             // Configure
-            for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-            {
-              ImageTextures[cameraId] = new Texture2D(WebCamTextures[cameraId].width, WebCamTextures[cameraId].height, TextureFormat.RGB24, false);
-            }
+            ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
 
             // Update state
             startInitiated = false;
@@ -76,11 +74,6 @@ namespace ArucoUnity
         }
 
         base.Update();
-      }
-
-      protected override void OnValidate()
-      {
-        CameraNumber = WebcamIds.Length;
       }
 
       // ArucoCamera methods
@@ -99,29 +92,11 @@ namespace ArucoUnity
         startInitiated = false;
         IsConfigured = false;
 
-        // Initializes the properties
-        CameraNumber = WebcamIds.Length;
-        WebCamDevices = new WebCamDevice[CameraNumber];
-        WebCamTextures = new WebCamTexture[CameraNumber];
-        Name = "";
-
-        // Try to load the webcams
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          int webcamId = WebcamIds[cameraId];
-          if (WebCamTexture.devices.Length <= webcamId)
-          {
-            throw new ArgumentException("The webcam with the id '" + WebcamIds + "' is not found.", "WebcamId");
-          }
-          WebCamDevices[cameraId] = WebCamTexture.devices[webcamId];
-          WebCamTextures[cameraId] = new WebCamTexture(WebCamDevices[cameraId].name);
-
-          if (cameraId > 0)
-          {
-            Name += "+";
-          }
-          Name += WebCamDevices[cameraId].name;
-        }
+        // Try to load the webcam
+        CameraNumber = 1;
+        WebCamDevice = WebCamTexture.devices[webcamId];
+        WebCamTexture = new WebCamTexture(WebCamDevice.name);
+        Name = WebCamDevice.name;
         
         base.Configure();
       }
@@ -133,10 +108,7 @@ namespace ArucoUnity
       {
         if (IsConfigured && !IsStarted && !startInitiated)
         {
-          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-          {
-            WebCamTextures[cameraId].Play();
-          }
+          WebCamTexture.Play();
           startInitiated = true;
         }
       }
@@ -148,26 +120,20 @@ namespace ArucoUnity
       {
         if (IsConfigured && (IsStarted || startInitiated))
         {
-          for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-          {
-            WebCamTextures[cameraId].Stop();
-          }
+          WebCamTexture.Stop();
           startInitiated = false;
           OnStopped();
         }
       }
 
       /// <summary>
-      /// Once the <see cref="WebCamTextures"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> and the
-      /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTextures"/> content.
+      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> and the
+      /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTexture"/> content.
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          ImageTextures[cameraId].SetPixels32(WebCamTextures[cameraId].GetPixels32());
-          Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
-        }
+        ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
+        Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
 
         OnImagesUpdated();
       }

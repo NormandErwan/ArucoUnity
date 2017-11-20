@@ -10,7 +10,7 @@ namespace ArucoUnity
   namespace Cameras.Parameters
   {
     /// <summary>
-    /// Manage the camera parameters of a camera pair from a stereo calibration.
+    /// Manages the camera parameters of a stereo camera calibration.
     /// </summary>
     [Serializable]
     public class StereoCameraParameters
@@ -22,7 +22,7 @@ namespace ArucoUnity
       // Constructors
 
       /// <summary>
-      /// Create an empty StereoCameraParameters.
+      /// Creates an empty StereoCameraParameters.
       /// </summary>
       /// <remarks>This constructor is needed for the serialization.</remarks>
       public StereoCameraParameters()
@@ -32,62 +32,62 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// The id of first camera of the stereo pair.
-      /// </summary>
-      public int CameraId1 { get; set; }
-
-      /// <summary>
-      /// The id of second camera of the stereo pair.
-      /// </summary>
-      public int CameraId2 { get; set; }
-
-      /// <summary>
-      /// The calibration flags used.
+      /// Gets or sets the stereo calibration flags used.
       /// </summary>
       public int CalibrationFlagsValue { get; set; }
 
       /// <summary>
-      /// The rotation matrix between the first and the second camera coordinate systems.
+      /// Gets or sets the rotation matrix between the first and the second camera coordinate systems.
       /// </summary>
       /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="RotationVectorValues"/> property.</remarks>
       [XmlIgnore]
       public Cv.Vec3d RotationVector { get; set; }
 
+      /// <summary>
+      /// Gets or sets the rotation matrix values between the coordinate systems of the cameras. Equals to the <see cref="RotationVector"/>
+      /// content and automatically written when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
       public double[] RotationVectorValues { get; set; }
 
       /// <summary>
-      /// The translation vector between the coordinate systems of the cameras. 
+      /// Gets or sets the translation vector between the coordinate systems of the cameras.
       /// </summary>
       /// <remarks>When <see cref="UpdateSerializedProperties"/> is called, it's copied to the <see cref="TranslationVectorValues"/>
       /// property.</remarks>
       [XmlIgnore]
       public Cv.Vec3d TranslationVector { get; set; }
 
+      /// <summary>
+      /// Gets or sets the translation vector values between the coordinate systems of the cameras. Equals to the <see cref="TranslationVector"/>
+      /// content and automatically written when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// </summary>
+      /// <remarks>This property is be public for the serialization.</remarks>
       public double[] TranslationVectorValues { get; set; }
 
       /// <summary>
-      /// The average re-projection error of the calibration.
+      /// Gets or sets the average re-projection error of the calibration.
       /// </summary>
       public double ReprojectionError { get; set; }
 
       /// <summary>
-      /// The rotation matrix (rectification transform) for the two cameras of the stereo pair.
+      /// Gets or sets the rotation matrix (rectification transform) for the two cameras of the stereo pair.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="RotationMatricesType"/> and 
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="RotationMatricesType"/> and
       /// <see cref="RotationMatricesValues"/> properties.</remarks>
       [XmlIgnore]
       public Cv.Mat[] RotationMatrices { get; set; }
 
       /// <summary>
-      /// The rotation matrix type of the calibration. Equals to <see cref="RotationMatrices.Type()"/> and automatically written when 
+      /// Gets or sets the rotation matrix type of the calibration. Equals to <see cref="RotationMatrices.Type()"/> and automatically written when
       /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
       public Cv.Type RotationMatricesType { get; set; }
 
       /// <summary>
-      /// The xi parameter values of the calibration. Equals to the <see cref="RotationMatrices"/> content and automatically written when 
-      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// Gets or sets the xi parameter values of the calibration. Equals to the <see cref="RotationMatrices"/> content and automatically written
+      /// when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
       public double[][][] RotationMatricesValues { get; set; }
@@ -95,13 +95,13 @@ namespace ArucoUnity
       /// <summary>
       /// Projection matrix in the new (rectified) coordinate systems for the two cameras of the stereo pair.
       /// </summary>
-      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="NewCameraMatricesType"/> and 
+      /// <remarks>When <see cref="SaveToXmlFile(string)"/> is called, it's copied to the <see cref="NewCameraMatricesType"/> and
       /// <see cref="NewCameraMatricesValues"/> properties.</remarks>
       [XmlIgnore]
       public Cv.Mat[] NewCameraMatrices { get; set; }
 
       /// <summary>
-      /// The new camera matrix type of the calibration. Equals to <see cref="NewCameraMatrices.Type()"/> and automatically written when 
+      /// Gets or sets the new camera matrix type of the calibration. Equals to <see cref="NewCameraMatrices.Type()"/> and automatically written when
       /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
@@ -109,8 +109,8 @@ namespace ArucoUnity
       public Cv.Type NewCameraMatricesType { get; set; }
 
       /// <summary>
-      /// The new camera matrix values of the calibration. Equals to the <see cref="NewCameraMatrices"/> content and automatically written when 
-      /// <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+      /// Gets or sets the new camera matrix values of the calibration. Equals to the <see cref="NewCameraMatrices"/> content and automatically
+      /// written when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
       /// </summary>
       /// <remarks>This property is be public for the serialization.</remarks>
       public double[][][] NewCameraMatricesValues { get; set; }
@@ -118,7 +118,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Update the serialized properties from the non serialized properties.
+      /// Updates the serialized properties from the non serialized properties.
       /// </summary>
       public void UpdateSerializedProperties()
       {
@@ -135,7 +135,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Initialize the non serialized properties from the serialized properties.
+      /// Initializes the non serialized properties from the serialized properties.
       /// </summary>
       public void UpdateNonSerializedProperties()
       {

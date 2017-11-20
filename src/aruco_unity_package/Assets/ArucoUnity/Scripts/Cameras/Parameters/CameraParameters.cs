@@ -153,9 +153,9 @@ namespace ArucoUnity
       public double[][][] OmnidirXisValues { get; set; }
 
       /// <summary>
-      /// Parameters from stereo calibration on the camera system.
+      /// Parameters from possible stereo calibration on the camera system.
       /// </summary>
-      public StereoCameraParameters[] StereoCameraParametersList { get; set; }
+      public StereoCameraParameters StereoCameraParameters { get; set; }
 
       /// <summary>
       /// The file path of the parameters.
@@ -207,9 +207,9 @@ namespace ArucoUnity
         cameraParameters.OmnidirXis = CreateProperty(cameraParameters.OmnidirXisType, cameraParameters.OmnidirXisValues);
 
         // Populate non-serialized properties of the stereo camera parameters
-        foreach (var currentStereoCameraParameters in cameraParameters.StereoCameraParametersList)
+        if (cameraParameters.StereoCameraParameters != null)
         {
-          currentStereoCameraParameters.UpdateNonSerializedProperties();
+          cameraParameters.StereoCameraParameters.UpdateNonSerializedProperties();
         }
 
         return cameraParameters;
@@ -235,9 +235,9 @@ namespace ArucoUnity
         UpdatePropertyValues(OmnidirXis, OmnidirXisValues);
 
         // Update properties for serialization of the stereo camera parameters
-        foreach (var currentStereoCameraParameters in StereoCameraParametersList)
+        if (StereoCameraParameters != null)
         {
-          currentStereoCameraParameters.UpdateSerializedProperties();
+          StereoCameraParameters.UpdateSerializedProperties();
         }
 
         // Try to serialize the object and save it to the file
@@ -259,20 +259,6 @@ namespace ArucoUnity
             writer.Close();
           }
         }
-      }
-
-      /// <summary>
-      /// Returns the ids of the camera not in a stereo camera parameters.
-      /// </summary>
-      public int[] GetMonoCameraIds()
-      {
-        List<int> monoCameraIds = Enumerable.Range(0, CameraNumber).ToList();
-        foreach (var stereoCameraParameters in StereoCameraParametersList)
-        {
-          monoCameraIds.Remove(stereoCameraParameters.CameraId1);
-          monoCameraIds.Remove(stereoCameraParameters.CameraId2);
-        }
-        return monoCameraIds.ToArray();
       }
 
       /// <summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ArucoUnity.Plugin;
 using ArucoUnity.Objects;
 using System;
+using ArucoUnity.Cameras;
 
 namespace ArucoUnity
 {
@@ -14,7 +15,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.
     /// </summary>
-    public abstract class ArucoObjectsController : ArucoObjectDetector
+    public abstract class ArucoObjectsController<T> : ArucoObjectDetector<T> where T : ArucoCamera
     {
       // Editor fields
 

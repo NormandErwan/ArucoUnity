@@ -1,8 +1,6 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using System;
 
@@ -16,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public abstract class ArucoCameraUndistortion : ArucoCameraController
+    public abstract class ArucoCameraUndistortion : ArucoCameraController<ArucoCamera>
     {
       // Constants
 
@@ -86,6 +84,11 @@ namespace ArucoUnity
         {
           throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras in ArucoCamera");
         }
+        if (ArucoCamera is StereoArucoCamera && CameraParametersController.CameraParameters.StereoCameraParameters == null)
+        {
+          throw new Exception("The camera parameters must contains a valid StereoCameraParameters to undistort and rectify a StereoArucoCamera.");
+        }
+
         InitializeUndistortionRectification();
       }
 
@@ -99,6 +102,7 @@ namespace ArucoUnity
       protected virtual void InitializeUndistortionRectification()
       {
         var cameraParameters = CameraParametersController.CameraParameters;
+        var stereoCameraParameters = cameraParameters.StereoCameraParameters;
 
         // Initialize the undistortion maps and rectified camera matrices
         RectifiedCameraMatrices = new Cv.Mat[cameraParameters.CameraNumber];
@@ -109,17 +113,18 @@ namespace ArucoUnity
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
 
-        // Configure the undistortion maps for the cameras with stereo calibration
-        foreach (var stereoCameraParameters in cameraParameters.StereoCameraParametersList)
+        // Configure the undistortion maps
+        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
         {
-          ConfigureUndistortionRectification(stereoCameraParameters.CameraId1, stereoCameraParameters.RotationMatrices[0], stereoCameraParameters.NewCameraMatrices[0]);
-          ConfigureUndistortionRectification(stereoCameraParameters.CameraId2, stereoCameraParameters.RotationMatrices[1], stereoCameraParameters.NewCameraMatrices[1]);
-        }
-
-        // Configure the undistortion maps for cameras not in a stereo pair
-        foreach (int cameraId in cameraParameters.GetMonoCameraIds())
-        {
-          ConfigureUndistortionRectification(cameraId, noRectificationMatrix, cameraParameters.CameraMatrices[cameraId]);
+          if (stereoCameraParameters != null)
+          {
+            ConfigureUndistortionRectification(cameraId, stereoCameraParameters.RotationMatrices[cameraId],
+              stereoCameraParameters.NewCameraMatrices[cameraId]);
+          }
+          else
+          {
+            ConfigureUndistortionRectification(cameraId, noRectificationMatrix, cameraParameters.CameraMatrices[cameraId]);
+          }
         }
       }
 

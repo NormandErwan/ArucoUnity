@@ -12,13 +12,13 @@ namespace ArucoUnity
     /// <summary>
     /// Generic configurable controller that make use of one <see cref="Cameras.ArucoCamera"/>.
     /// </summary>
-    public abstract class ArucoCameraController : MonoBehaviour
+    public abstract class ArucoCameraController<T> : MonoBehaviour where T : ArucoCamera
     {
       // Editor fields
 
       [SerializeField]
       [Tooltip("The camera system to use.")]
-      private ArucoCamera arucoCamera;
+      private T arucoCamera;
 
       [SerializeField]
       [Tooltip("Start automatically when the configuration is done. Call alternatively StartDetector().")]
@@ -46,7 +46,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the camera system to use. Set calls <see cref="SetArucoCamera(ArucoCamera)"/>.
       /// </summary>
-      public ArucoCamera ArucoCamera { get { return arucoCamera; } set { SetArucoCamera(value); } }
+      public T ArucoCamera { get { return arucoCamera; } set { SetArucoCamera(value); } }
 
       /// <summary>
       /// Gets or sets if starting automatically when the <see cref="Configure"/> is called. Start manually by calling <see cref="StartController"/>.
@@ -140,7 +140,7 @@ namespace ArucoUnity
       /// stopped.
       /// </summary>
       /// <param name="arucoCamera">The new ArucoCamera to subscribes on.</param>
-      protected virtual void SetArucoCamera(ArucoCamera arucoCamera)
+      protected virtual void SetArucoCamera(T arucoCamera)
       {
         if (IsStarted)
         {

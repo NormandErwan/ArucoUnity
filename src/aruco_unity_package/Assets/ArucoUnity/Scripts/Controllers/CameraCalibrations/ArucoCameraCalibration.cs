@@ -15,12 +15,13 @@ namespace ArucoUnity
   namespace Controllers.CameraCalibrations
   {
     /// <summary>
-    /// Calibrates a <see cref="ArucoObjectDetector.ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results in a file to be
-    /// used for <see cref="ArucoObject"/> tracking.
+    /// Calibrates a <see cref="ArucoCamera"/> or a <see cref="StereoArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results
+    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsTracker"/> for <see cref="ArucoObject"/> tracking.
     /// 
-    /// See the OpenCV documentation for more information about the calibration: http://docs.opencv.org/3.2.0/da/d13/tutorial_aruco_calibration.html
+    /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
+    /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
     /// </summary>
-    public abstract class ArucoCameraCalibration : ArucoObjectDetector
+    public abstract class ArucoCameraCalibration : ArucoObjectDetector<ArucoCamera>
     {
       // Editor fields
 
@@ -31,10 +32,6 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("Use a refine algorithm to find not detected markers based on the already detected and the board layout (if using a board).")]
       private bool refineMarkersDetection = false;
-
-      [SerializeField]
-      [Tooltip("The list of the camera pairs on which apply a stereo calibration.")]
-      private CameraPair[] stereoCalibrationCameraPairs;
 
       [SerializeField]
       [Tooltip("The camera parameters to use if CalibrationFlags.UseIntrinsicGuess is true. Otherwise, the camera parameters file will be generated" +
@@ -52,11 +49,6 @@ namespace ArucoUnity
       /// Gets or sets if need to use a refine algorithm to find not detected markers based on the already detected and the board layout.
       /// </summary>
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
-
-      /// <summary>
-      /// Gets or sets the list of the camera pairs on which apply a stereo calibration.
-      /// </summary>
-      public CameraPair[] StereoCalibrationCameraPairs { get { return stereoCalibrationCameraPairs; } set { stereoCalibrationCameraPairs = value; } }
 
       /// <summary>
       /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
@@ -118,6 +110,7 @@ namespace ArucoUnity
 
       // Variables
 
+      protected int stereoCameraId1 = 0, stereoCameraId2 = 1;
       protected string applicationPath;
       protected Cv.Size[] calibrationImageSizes;
       protected Thread calibratingThread;
@@ -161,7 +154,7 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// Checks if the properties are properly set and and reset the calibration.
+      /// Checks if <see cref="CalibrationBoard"/> is set and calls <see cref="ResetCalibration"/>.
       /// </summary>
       protected override void Configure()
       {
@@ -169,12 +162,6 @@ namespace ArucoUnity
         if (CalibrationBoard == null)
         {
           throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibrator.");
-        }
-
-        // Check for the stereo calibration properties
-        foreach (var stereoCameraPair in StereoCalibrationCameraPairs)
-        {
-          stereoCameraPair.PropertyCheck(ArucoCamera);
         }
 
         ResetCalibration();
@@ -452,22 +439,17 @@ namespace ArucoUnity
           Tvecs[cameraId] = tvecs;
         }
 
-        // If required, apply a stereo calibration and save the resuts in the camera parameters
-        var stereoCameraParameters = new StereoCameraParameters[StereoCalibrationCameraPairs.Length];
-        for (int i = 0; i < StereoCalibrationCameraPairs.Length; i++)
+        // If ArucoCamera is a stereo camera, apply a stereo calibration and save the resuts in the camera parameters
+        if (ArucoCamera is StereoArucoCamera)
         {
-          stereoCameraParameters[i] = new StereoCameraParameters()
-          {
-            CameraId1 = StereoCalibrationCameraPairs[i].CameraId1,
-            CameraId2 = StereoCalibrationCameraPairs[i].CameraId2,
-          };
-
-          StereoCalibrate(StereoCalibrationCameraPairs[i], objectPoints, imagePoints, calibrationImageSizes, stereoCameraParameters[i]);
+          CameraParametersController.CameraParameters.StereoCameraParameters = new StereoCameraParameters();
+          StereoCalibrate(stereoCameraId1, stereoCameraId2, objectPoints, imagePoints, calibrationImageSizes,
+            CameraParametersController.CameraParameters.StereoCameraParameters);
         }
-        CameraParametersController.CameraParameters.StereoCameraParametersList = stereoCameraParameters;
 
         // Save the camera parameters
-        CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - " + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xml";
+        CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - "
+          + CameraParametersController.CameraParameters.CalibrationDateTime + ".xml";
         CameraParametersController.Save();
 
         // Update state
@@ -526,16 +508,17 @@ namespace ArucoUnity
         out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs);
 
       /// <summary>
-      /// Applies a calibration to a stereo camera pair and saves the extrinsincs parameters between the two cameras in the
+      /// Applies a stereo calibration to a stereo camera and saves the extrinsincs parameters between the two cameras in the
       /// <see cref="stereoCalibrationCameraPairs"/> argument.
       /// </summary>
-      /// <param name="cameraPair">The camera pair to apply a stereo calibration.</param>
+      /// <param name="cameraId1">The id of first camera in the camera pair to calibrate.</param>
+      /// <param name="cameraId2">The id of second camera in the camera pair to calibrate.</param>
       /// <param name="objectPoints">The object points of the camera pair.</param>
       /// <param name="imagePoints">The detected image points of the camera pair.</param>
       /// <param name="imageSizes">The size of the images of each camera in the camera pair.</param>
       /// <param name="stereoCameraParameters">The parameters containing the results of the stereo calibration.</param>
-      protected abstract void StereoCalibrate(CameraPair cameraPair, Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints,
-        Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters);
+      protected abstract void StereoCalibrate(int cameraId1, int cameraId2, Std.VectorVectorPoint3f[] objectPoints,
+        Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters);
     }
   }
 
