@@ -76,7 +76,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnValidate()
       {
-        if (fixKDistorsionCoefficients.Length != FixKLength)
+        if (fixKDistorsionCoefficients != null && fixKDistorsionCoefficients.Length != FixKLength)
         {
           Array.Resize(ref fixKDistorsionCoefficients, FixKLength);
         }

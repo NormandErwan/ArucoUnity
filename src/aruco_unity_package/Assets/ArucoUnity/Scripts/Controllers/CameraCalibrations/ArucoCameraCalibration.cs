@@ -283,6 +283,7 @@ namespace ArucoUnity
 
           if (calibrationImageSizes[cameraId] == null)
           {
+            print(ArucoCamera.Images[cameraId].Size.Width + "+" + ArucoCamera.Images[cameraId].Size.Height);
             calibrationImageSizes[cameraId] = new Cv.Size(ArucoCamera.Images[cameraId].Size.Width, ArucoCamera.Images[cameraId].Size.Height);
           }
         }
