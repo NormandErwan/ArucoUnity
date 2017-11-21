@@ -212,6 +212,9 @@ namespace ArucoUnity
         {
           throw new Exception("Stop the cameras before configure them.");
         }
+
+        // Reset state
+        IsConfigured = false;
       }
 
       /// <summary>

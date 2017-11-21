@@ -84,10 +84,8 @@ namespace ArucoUnity
 
         // Reset state
         startInitiated = false;
-        IsConfigured = false;
 
         // Try to load the webcam
-        CameraNumber = 1;
         WebCamDevice = WebCamTexture.devices[webcamId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
         Name = WebCamDevice.name;
