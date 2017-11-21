@@ -301,4 +301,4 @@ MonoBehaviour:
   arucoCameraUndistortion: {fileID: 114522793529101426}
   camera: {fileID: 20452962843750572}
   backgroundCamera: {fileID: 20017792066165246}
-  background: {fileID: 1612154402523488}
+  background: {fileID: 23646749236801090}

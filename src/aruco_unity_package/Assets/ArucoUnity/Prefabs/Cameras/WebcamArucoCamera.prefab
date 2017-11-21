@@ -259,7 +259,7 @@ MonoBehaviour:
   arucoCameraUndistortion: {fileID: 0}
   camera: {fileID: 20727044533785904}
   backgroundCamera: {fileID: 20164004177903186}
-  background: {fileID: 1649337208224828}
+  background: {fileID: 23193199916444832}
 --- !u!114 &114439970468321140
 MonoBehaviour:
   m_ObjectHideFlags: 1

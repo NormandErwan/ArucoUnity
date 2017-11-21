@@ -397,8 +397,8 @@ MonoBehaviour:
   camera: {fileID: 20835266167833388}
   leftBackgroundCamera: {fileID: 20655050989381444}
   rightBackgroundCamera: {fileID: 20703914980058696}
-  leftBackground: {fileID: 1087018393852244}
-  rightBackground: {fileID: 1330951321782946}
+  leftBackground: {fileID: 23965010733995140}
+  rightBackground: {fileID: 23985639186133034}
 --- !u!114 &114778648834828408
 MonoBehaviour:
   m_ObjectHideFlags: 1
