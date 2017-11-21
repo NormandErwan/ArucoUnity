@@ -50,9 +50,18 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Cv.Mat noRectificationMatrix = new Cv.Mat();
-      protected Cv.Mat noDistCoeffs = new Cv.Mat();
+      protected Cv.Mat noRectificationMatrix;
+      protected Cv.Mat noDistCoeffs;
       protected string cameraParametersFilePath;
+
+      // MonoBehaviour methods
+
+      protected override void Awake()
+      {
+        base.Awake();
+        noRectificationMatrix = new Cv.Mat();
+        noDistCoeffs = new Cv.Mat();
+      }
 
       // ArucoCameraController methods
 
