@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - ArucoCameraBackground
-  - ArucoCameraLeftEye
-  - ArucoCameraRightEye
+  - ArucoCameraStereoBackground1
+  - ArucoCameraStereoBackground2
   - 
   - 
   - 

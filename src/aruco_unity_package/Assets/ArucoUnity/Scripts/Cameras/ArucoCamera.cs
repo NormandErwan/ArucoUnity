@@ -204,7 +204,8 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Configures the cameras, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>.
+      /// Configures the cameras, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>. The cameras must be stopped before
+      /// configured.
       /// </summary>
       public virtual void Configure()
       {
@@ -218,7 +219,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>.
+      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>. The cameras must be configured and
+      /// stopped before being started.
       /// </summary>
       public virtual void StartCameras()
       {
@@ -229,7 +231,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stops the camera system and calls <see cref="OnStopped"/>.
+      /// Stops the camera system and calls <see cref="OnStopped"/>. The cameras must be configured and started before being stopped.
       /// </summary>
       public virtual void StopCameras()
       {

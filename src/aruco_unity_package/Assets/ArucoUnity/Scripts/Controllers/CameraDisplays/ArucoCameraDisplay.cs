@@ -18,7 +18,7 @@ namespace ArucoUnity
     {
       // Constants
 
-      protected const float cameraBackgroundDistance = 1f;
+      public const float cameraBackgroundDistance = 1f;
 
       // Editor fields
 
@@ -91,55 +91,68 @@ namespace ArucoUnity
 
       // Methods
 
+      public static void DefaultConfigureBackground(int cameraId, ArucoCamera arucoCamera, Camera backgroundCamera, GameObject background)
+      {
+        Vector3 localScale = Vector3.one;
+        if (backgroundCamera.aspect < arucoCamera.ImageRatios[cameraId])
+        {
+          localScale.x = 2f * cameraBackgroundDistance * backgroundCamera.aspect * Mathf.Tan(0.5f * backgroundCamera.fieldOfView * Mathf.Deg2Rad);
+          localScale.y = localScale.x / arucoCamera.ImageRatios[cameraId];
+        }
+        else
+        {
+          localScale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * backgroundCamera.fieldOfView * Mathf.Deg2Rad);
+          localScale.x = localScale.y * arucoCamera.ImageRatios[cameraId];
+        }
+
+        background.transform.localPosition = new Vector3(0, 0, cameraBackgroundDistance);
+        background.transform.localScale = localScale;
+      }
+
       /// <summary>
       /// Configures <see cref="Camera"/>, <see cref="BackgroundCamera"/> and <see cref="Background"/> according to the
       /// <see cref="ArucoCameraUndistortion"/> if set otherwise with default values.
       /// </summary>
       protected virtual void ConfigureCamerasBackground()
       {
-        Vector2 position = Vector2.zero;
-        Vector2 scale = Vector2.one;
+        // Configure background and camera
         if (ArucoCameraUndistortion != null)
         {
+          // Initialize
+          Vector3 localPosition = new Vector3(0, 0, cameraBackgroundDistance);
+          Vector3 localScale = Vector3.one;
+
           var cameraParameters = ArucoCameraUndistortion.CameraParametersController.CameraParameters;
           float imageWidth = cameraParameters.ImageWidths[cameraId];
           float imageHeight = cameraParameters.ImageHeights[cameraId];
           Vector2 cameraF = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
           Vector2 cameraC = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
 
-          // Configure the cameras
+          // Configure the cameras fov
           float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
           Camera.fieldOfView = fovY;
           BackgroundCamera.fieldOfView = fovY;
 
           // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
           // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
-          position.x = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
-          position.y = -(0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity
+          localPosition.x = (0.5f * imageWidth - cameraC.x) / cameraF.x * cameraBackgroundDistance;
+          localPosition.y = -(0.5f * imageHeight - cameraC.y) / cameraF.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity
 
           // Considering https://stackoverflow.com/a/41137160
           // scale.x = 2 * cameraBackgroundDistance * tan(fovx / 2), cameraF.x = imageWidth / (2 * tan(fovx / 2))
-          scale.x = imageWidth / cameraF.x * cameraBackgroundDistance;
-          scale.y = imageHeight / cameraF.y * cameraBackgroundDistance;
+          localScale.x = imageWidth / cameraF.x * cameraBackgroundDistance;
+          localScale.y = imageHeight / cameraF.y * cameraBackgroundDistance;
+
+          // Place and scale the background
+          Background.transform.localPosition = localPosition;
+          Background.transform.localScale = localScale;
         }
         else
         {
-          // Default placement of the background: centered and scaled on the unity camera
-          if (BackgroundCamera.aspect < ArucoCamera.ImageRatios[cameraId])
-          {
-            scale.x = 2f * cameraBackgroundDistance * BackgroundCamera.aspect * Mathf.Tan(0.5f * BackgroundCamera.fieldOfView * Mathf.Deg2Rad);
-            scale.y = scale.x / ArucoCamera.ImageRatios[cameraId];
-          }
-          else
-          {
-            scale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * BackgroundCamera.fieldOfView * Mathf.Deg2Rad);
-            scale.x = scale.y * ArucoCamera.ImageRatios[cameraId];
-          }
+          DefaultConfigureBackground(cameraId, ArucoCamera, BackgroundCamera, Background);
         }
 
-        // Configures the background
-        Background.transform.localPosition = new Vector3(position.x, position.y, cameraBackgroundDistance);
-        Background.transform.localScale = new Vector3(scale.x, scale.y, 1);
+        // Sets the background texture
         Background.GetComponent<Renderer>().material.mainTexture = ArucoCamera.ImageTextures[cameraId];
       }
 

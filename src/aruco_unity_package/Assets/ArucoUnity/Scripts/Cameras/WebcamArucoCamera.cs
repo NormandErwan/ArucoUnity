@@ -28,7 +28,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the id of the webcam to use.
       /// </summary>
-      public int WebcamIds { get { return webcamId; } set { webcamId = value; } }
+      public int WebcamId { get { return webcamId; } set { webcamId = value; } }
 
       /// <summary>
       /// Gets the used webcam.
@@ -36,7 +36,7 @@ namespace ArucoUnity
       public WebCamDevice WebCamDevice { get; protected set; }
 
       /// <summary>
-      /// Gets the textures of the used webcams.
+      /// Gets the texture of the used webcam.
       /// </summary>
       public WebCamTexture WebCamTexture { get; protected set; }
 
@@ -48,8 +48,8 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// If the camera has been started, wait for Unity to start the webcam to initialize the textures, the Unity camera backgrounds and to trigger
-      /// the <see cref="ArucoCamera.Started"/> event.
+      /// If the camera has been started, waits for Unity to start the webcam to initialize the <see cref="ImageTextures"/> and to
+      /// call the <see cref="ArucoCamera.Started"/> event.
       /// </summary>
       protected override void Update()
       {
@@ -76,7 +76,7 @@ namespace ArucoUnity
       // ArucoCamera methods
 
       /// <summary>
-      /// Configure the webcam and its properties with the id <see cref="WebcamIds"/>. The camera needs to be stopped before configured.
+      /// Configures the webcam and the properties with the id <see cref="WebcamId"/>.
       /// </summary>
       public override void Configure()
       {
@@ -86,7 +86,7 @@ namespace ArucoUnity
         startInitiated = false;
 
         // Try to load the webcam
-        WebCamDevice = WebCamTexture.devices[webcamId];
+        WebCamDevice = WebCamTexture.devices[WebcamId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
         Name = WebCamDevice.name;
         
@@ -94,14 +94,14 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Initiate the camera start and the associated webcam device.
+      /// Initiates the camera start and the associated webcam device.
       /// </summary>
       public override void StartCameras()
       {
         base.StartCameras();
         if (startInitiated)
         {
-          throw new Exception("Cameras have already been started.");
+          throw new Exception("Camera has already been started.");
         }
 
         WebCamTexture.Play();
@@ -109,23 +109,18 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stop the camera and the associated webcam device.
+      /// Stops the camera and the associated webcam device.
       /// </summary>
       public override void StopCameras()
       {
         base.StopCameras();
-        if (startInitiated)
-        {
-          throw new Exception("Configure and start the cameras before stop them.");
-        }
-
         WebCamTexture.Stop();
         startInitiated = false;
         OnStopped();
       }
 
       /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, update every frame the <see cref="ArucoCamera.ImageTextures"/> and the
+      /// Once the <see cref="WebCamTexture"/> is started, updates every frame the <see cref="ArucoCamera.ImageTextures"/> and the
       /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTexture"/> content.
       /// </summary>
       protected override void UpdateCameraImages()
