@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoCamera: {fileID: 114393126318706844}
   autoStart: 1
-  arucoCameraUndistortion: {fileID: 0}
+  arucoCameraUndistortion: {fileID: 114522793529101426}
   camera: {fileID: 20452962843750572}
   backgroundCamera: {fileID: 20017792066165246}
   background: {fileID: 1612154402523488}
