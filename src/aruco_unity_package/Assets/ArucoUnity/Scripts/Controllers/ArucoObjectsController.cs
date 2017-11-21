@@ -157,24 +157,24 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Returns a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="T"/> in a certain
+      /// Returns a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="TU"/> in a certain
       /// <paramref name="dictionary"/>.
       /// </summary>
-      /// <typeparam name="T">The type of the ArUco objects in the returned sublist.</typeparam>
+      /// <typeparam name="U">The type of the ArUco objects in the returned sublist.</typeparam>
       /// <param name="dictionary">The <see cref="Aruco.Dictionary" /> to use.</param>
       /// <returns>The sublist.</returns>
       // TODO: cache the results
-      public virtual HashSet<T> GetArucoObjects<T>(Aruco.Dictionary dictionary) where T : ArucoObject
+      public virtual HashSet<U> GetArucoObjects<U>(Aruco.Dictionary dictionary) where U : ArucoObject
       {
         if (!ArucoObjects.ContainsKey(dictionary))
         {
           throw new ArgumentException("This dictionary is not found.", "dictionary");
         }
 
-        HashSet<T> arucoTObjectsCollection = new HashSet<T>();
+        HashSet<U> arucoTObjectsCollection = new HashSet<U>();
         foreach (var arucoObject in ArucoObjects[dictionary])
         {
-          T arucoTObject = arucoObject.Value as T;
+          U arucoTObject = arucoObject.Value as U;
           if (arucoTObject != null)
           {
             arucoTObjectsCollection.Add(arucoTObject);
