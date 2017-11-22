@@ -50,7 +50,6 @@ namespace ArucoUnity
       // Variables
 
       protected bool startInitiated = false;
-      protected int cameraId1 = 0, cameraId2 = 1;
 
       // MonoBehaviour methods
 
@@ -72,15 +71,15 @@ namespace ArucoUnity
       {
         if (startInitiated)
         {
-          if (WebCamTextures[cameraId1].width < 100 || WebCamTextures[cameraId2].width < 100) // Wait the WebCamTexture initialization
+          if (WebCamTextures[CameraId1].width < 100 || WebCamTextures[CameraId2].width < 100) // Wait the WebCamTexture initialization
           {
             return;
           }
           else
           {
             // Configure
-            ImageTextures[cameraId1] = new Texture2D(WebCamTextures[cameraId1].width, WebCamTextures[cameraId1].height, TextureFormat.RGB24, false);
-            ImageTextures[cameraId2] = new Texture2D(WebCamTextures[cameraId2].width, WebCamTextures[cameraId2].height, TextureFormat.RGB24, false);
+            ImageTextures[CameraId1] = new Texture2D(WebCamTextures[CameraId1].width, WebCamTextures[CameraId1].height, TextureFormat.RGB24, false);
+            ImageTextures[CameraId2] = new Texture2D(WebCamTextures[CameraId2].width, WebCamTextures[CameraId2].height, TextureFormat.RGB24, false);
 
             // Update state
             startInitiated = false;
@@ -104,11 +103,11 @@ namespace ArucoUnity
         startInitiated = false;
 
         // Try to load the webcam
-        WebCamDevices[cameraId1] = WebCamTexture.devices[WebcamId1];
-        WebCamDevices[cameraId2] = WebCamTexture.devices[WebcamId2];
-        WebCamTextures[cameraId1] = new WebCamTexture(WebCamDevices[cameraId1].name);
-        WebCamTextures[cameraId2] = new WebCamTexture(WebCamDevices[cameraId2].name);
-        Name = WebCamDevices[cameraId1].name + "+" + WebCamDevices[cameraId2].name;
+        WebCamDevices[CameraId1] = WebCamTexture.devices[WebcamId1];
+        WebCamDevices[CameraId2] = WebCamTexture.devices[WebcamId2];
+        WebCamTextures[CameraId1] = new WebCamTexture(WebCamDevices[CameraId1].name);
+        WebCamTextures[CameraId2] = new WebCamTexture(WebCamDevices[CameraId2].name);
+        Name = WebCamDevices[CameraId1].name + "+" + WebCamDevices[CameraId2].name;
 
         OnConfigured();
       }
@@ -124,8 +123,8 @@ namespace ArucoUnity
           throw new Exception("Cameras have already been started.");
         }
 
-        WebCamTextures[cameraId1].Play();
-        WebCamTextures[cameraId2].Play();
+        WebCamTextures[CameraId1].Play();
+        WebCamTextures[CameraId2].Play();
         startInitiated = true;
       }
 
@@ -135,8 +134,8 @@ namespace ArucoUnity
       public override void StopCameras()
       {
         base.StopCameras();
-        WebCamTextures[cameraId1].Stop();
-        WebCamTextures[cameraId2].Stop();
+        WebCamTextures[CameraId1].Stop();
+        WebCamTextures[CameraId2].Stop();
         startInitiated = false;
         OnStopped();
       }
