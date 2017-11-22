@@ -231,7 +231,7 @@ namespace ArucoUnity
           newImageSize.CppPtr, validPixROI.CppPtr, centerPrincipalPoint, exception.CppPtr);
 
         exception.Check();
-        return new Mat(newCameraMatrixPtr);
+        return (newCameraMatrixPtr != System.IntPtr.Zero) ? new Mat(newCameraMatrixPtr) : null;
       }
 
       public static Mat GetOptimalNewCameraMatrix(Mat cameraMatrix, Mat distCoeffs, Size imageSize, double scalingFactor, Size newImageSize)

@@ -86,6 +86,9 @@ extern "C" {
       cv::Mat newCameraMatrix = cv::getOptimalNewCameraMatrix(*cameraMatrix, *distCoeffs, *imageSize, scalingFactor, *newImageSize, validPixROI,
         centerPrincipalPoint);
       return new cv::Mat(newCameraMatrix.clone());
-    } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
+    } catch (const cv::Exception& e) { 
+      ARUCO_UNITY_COPY_EXCEPTION(exception, e);
+      return NULL;
+    }
   }
 }
