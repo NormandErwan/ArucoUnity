@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Controllers.CameraCalibrations.Flags;
 using ArucoUnity.Plugin;
 using UnityEngine;
@@ -66,9 +67,11 @@ namespace ArucoUnity
           CalibrationFlags.CalibrationFlags);
       }
 
-      protected override void StereoCalibrate(int cameraId1, int cameraId2, Std.VectorVectorPoint3f[] objectPoints,
-        Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters)
+      protected override void StereoCalibrate(Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes,
+        StereoCameraParameters stereoCameraParameters)
       {
+        int cameraId1 = StereoArucoCamera.CameraId1;
+        int cameraId2 = StereoArucoCamera.CameraId2;
         var cameraParameters = CameraParametersController.CameraParameters;
         var cameraMatrix1 = cameraParameters.CameraMatrices[cameraId1];
         var distCoeffs1 = cameraParameters.DistCoeffs[cameraId1];
@@ -76,24 +79,14 @@ namespace ArucoUnity
         var distCoeffs2 = cameraParameters.DistCoeffs[cameraId2];
         var imageSize = imageSizes[cameraId1];
 
-        // Estimates transformation between the two cameras 
         Cv.Vec3d rvec, tvec;
         Cv.Mat essentialMatrix, fundamentalMatrix;
         stereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1], imagePoints[cameraId2],
-          cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec,
-          out essentialMatrix, out fundamentalMatrix, CalibrationFlags.CalibrationFlags);
+          cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec, out essentialMatrix, out fundamentalMatrix,
+          CalibrationFlags.CalibrationFlags);
 
-        // Computes rectification transforms
-        Cv.Mat rotationMatrix1, rotationMatrix2, newCameraMatrix1, newCameraMatrix2, Q;
-        Cv.StereoRectifyFlags stereoRectifyFlags = StereoCalibrationFlags.ZeroDisparity ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
-        Cv.StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rvec, tvec, out rotationMatrix1,
-          out rotationMatrix2, out newCameraMatrix1, out newCameraMatrix2, out Q, stereoRectifyFlags, StereoCalibrationFlags.Skew, imageSize);
-
-        // Save the camera parameters
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;
-        stereoCameraParameters.RotationMatrices = new Cv.Mat[] { rotationMatrix1, rotationMatrix2 };
-        stereoCameraParameters.NewCameraMatrices = new Cv.Mat[] { newCameraMatrix1, newCameraMatrix2 };
         stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.CalibrationFlagsValue;
       }
     }

@@ -58,17 +58,6 @@ namespace ArucoUnity
       [SerializeField]
       private bool sameFocalLength = false;
 
-      [Header("Stereo rectification flags")]
-      [SerializeField]
-      [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views.")]
-      private bool zeroDisparity = true;
-
-      [SerializeField]
-      [Tooltip("Free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so that only"
-        + " valid pixels are visible, 1 to shift the images so that no source image pixels are lost.")]
-      [Range(-1,1)]
-      private double skew = -1;
-
       // Properties
 
       /// <summary>
@@ -97,17 +86,6 @@ namespace ArucoUnity
       public bool FixIntrinsic { get { return fixIntrinsic; } set { fixIntrinsic = value; } }
 
       public bool SameFocalLength { get { return sameFocalLength; } set { sameFocalLength = value; } }
-
-      /// <summary>
-      /// Gets or sets if the principal point of the images have the same pixel coordinates in the rectified views (true by default).
-      /// </summary>
-      public bool ZeroDisparity { get { return zeroDisparity; } set { zeroDisparity = value; } }
-
-      /// <summary>
-      /// Gets or sets the free scaling parameter (alpha coefficient) between 0 and 1, or -1 (default) for default scaling: 0 to zoom the images so
-      /// that only valid pixels are visible, 1 to shift the images so that no source image pixels are lost.
-      /// </summary>
-      public double Skew { get { return skew; } set { skew = value; } }
 
       /// <summary>
       /// Gets or sets the calibration flags enum and keeps updated the flag properties.

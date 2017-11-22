@@ -34,9 +34,14 @@ namespace ArucoUnity
       public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
 
       /// <summary>
-      /// Gets the camera matrices of the undistorted and rectified images of each camera.
+      /// Gets the new camera matrices of the undistorted and rectified images of each camera.
       /// </summary>
       public Cv.Mat[] RectifiedCameraMatrices { get; protected set; }
+
+      /// <summary>
+      /// Gets the rectification rotation matrices of each camera to make both camera image planes the same plane, in case of a stereo camera.
+      /// </summary>
+      public Cv.Mat[] RectificationMatrices { get; protected set; }
 
       /// <summary>
       /// Gets the distorsion coefficients of the undistorted and rectified images of each camera.
@@ -104,40 +109,23 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Initializes the undistortion and rectification of each camera image, sets the rectified camera matrices to 
-      /// <see cref="RectifiedCameraMatrices"/> and the undistorted distorsion coefficients to <see cref="UndistortedDistCoeffs"/>.
+      /// Initializes the <see cref="RectifiedCameraMatrices"/> and the <see cref="UndistortionRectificationMaps"/> of each camera image, and sets
+      /// the undistorted distorsion coefficients to <see cref="UndistortedDistCoeffs"/>.
       /// </summary>
       // TODO: scale if there is a difference between camera image size and camera parameters image size (during calibration)
       protected virtual void InitializeUndistortionRectification()
       {
         var cameraParameters = CameraParametersController.CameraParameters;
-        var stereoCameraParameters = cameraParameters.StereoCameraParameters;
-
-        // Initialize the undistortion maps and rectified camera matrices
+        
         RectifiedCameraMatrices = new Cv.Mat[cameraParameters.CameraNumber];
+        RectificationMatrices = new Cv.Mat[cameraParameters.CameraNumber];
         UndistortionRectificationMaps = new Cv.Mat[cameraParameters.CameraNumber][];
         for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
         {
-          RectifiedCameraMatrices[cameraId] = cameraParameters.CameraMatrices[cameraId].Clone();
+          RectifiedCameraMatrices[cameraId] = new Cv.Mat();
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
-
-        // Configure the undistortion maps
-        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
-        {
-          if (stereoCameraParameters != null)
-          {
-            ConfigureUndistortionRectification(cameraId, stereoCameraParameters.RotationMatrices[cameraId],
-              stereoCameraParameters.NewCameraMatrices[cameraId]);
-          }
-          else
-          {
-            ConfigureUndistortionRectification(cameraId, noRectificationMatrix, cameraParameters.CameraMatrices[cameraId]);
-          }
-        }
       }
-
-      protected abstract void ConfigureUndistortionRectification(int cameraId, Cv.Mat rectificationMatrix, Cv.Mat newCameraMatrix);
 
       /// <summary>
       /// Undistorts and rectifies the <see cref="ArucoCamera.Images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming

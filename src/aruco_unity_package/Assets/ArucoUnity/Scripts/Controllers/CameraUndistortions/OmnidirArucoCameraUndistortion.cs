@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using System;
 using System.Collections.Generic;
@@ -72,37 +73,59 @@ namespace ArucoUnity
 
       // CalibrationController methods
 
-      protected override void ConfigureUndistortionRectification(int cameraId, Cv.Mat rectificationMatrix, Cv.Mat newCameraMatrix)
+      protected override void InitializeUndistortionRectification()
       {
-        var cameraParameters = CameraParametersController.CameraParameters;
-        float imageWidth = cameraParameters.ImageWidths[cameraId];
-        float imageHeight = cameraParameters.ImageHeights[cameraId];
+        base.InitializeUndistortionRectification();
 
-        if (RectificationType == RectificationTypes.Perspective)
+        var cameraParameters = CameraParametersController.CameraParameters;
+        var stereoCameraParameters = cameraParameters.StereoCameraParameters;
+
+        // Initializes rectified camera matrices
+        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
         {
-          if (PerspectiveDesiredFieldOfViews.Length != ArucoCamera.CameraNumber)
+          float imageWidth = cameraParameters.ImageWidths[cameraId];
+          float imageHeight = cameraParameters.ImageHeights[cameraId];
+
+          // Initializes the rectified camera matrix from the camera's fov for perspective rectification
+          if (RectificationType == RectificationTypes.Perspective)
           {
-            throw new Exception("The number of cameras for the perspective desired field of view must be equal to the number of cameras in" +
-              "ArucoCamera");
+            if (PerspectiveDesiredFieldOfViews.Length != ArucoCamera.CameraNumber)
+            {
+              throw new Exception("The number of cameras for the perspective desired field of view must be equal to the number of cameras in" +
+                "ArucoCamera");
+            }
+
+            float cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveDesiredFieldOfViews[cameraId] * Mathf.Deg2Rad));
+            RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { cameraF, 0, imageWidth / 2, 0, cameraF, imageHeight / 2, 0, 0, 1 }).Clone();
+          }
+          else
+          {
+            // Initializes the rectified camera matrix with the recommended values by this tutorial for other rectification types:
+            // https://docs.opencv.org/3.3.1/dd/d12/tutorial_omnidir_calib_main.html
+            RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { imageWidth / 3.1415, 0, 0, 0, imageHeight / 3.1415, 0, 0, 0, 1 }).Clone();
           }
 
-          // Configure the rectified camera matrix from the camera's fov for perspective rectification
-          float cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveDesiredFieldOfViews[cameraId] * Mathf.Deg2Rad));
-          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { cameraF, 0, imageWidth / 2, 0, cameraF, imageHeight / 2, 0, 0, 1 }).Clone();
+          RectificationMatrices[cameraId] = noRectificationMatrix;
         }
-        else
+
+        // Initializes the undistortion maps
+        if (stereoCameraParameters == null)
         {
-          // Configure the rectified camera matrix with the recommended values by this tutorial for other rectification types:
-          // https://docs.opencv.org/3.3.1/dd/d12/tutorial_omnidir_calib_main.html
-          newCameraMatrix = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] { imageWidth / 3.1415, 0, 0, 0, imageHeight / 3.1415, 0, 0, 0, 1 }).Clone();
+          Cv.Mat rectificationMatrix1, rectificationMatrix2;
+          Cv.Omnidir.StereoRectify(stereoCameraParameters.RotationVector, stereoCameraParameters.TranslationVector, out rectificationMatrix1,
+            out rectificationMatrix2);
+
+          RectificationMatrices[StereoArucoCamera.CameraId1] = rectificationMatrix1;
+          RectificationMatrices[StereoArucoCamera.CameraId2] = rectificationMatrix2;
         }
 
-        // Configure the undistortion maps
-        Cv.Omnidir.InitUndistortRectifyMap(cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
-          cameraParameters.OmnidirXis[cameraId], rectificationMatrix, newCameraMatrix, ArucoCamera.Images[cameraId].Size, Cv.Type.CV_16SC2,
-          out UndistortionRectificationMaps[cameraId][0], out UndistortionRectificationMaps[cameraId][1], rectifyFlags[RectificationType]);
-
-        RectifiedCameraMatrices[cameraId] = newCameraMatrix;
+        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
+        {
+          Cv.Omnidir.InitUndistortRectifyMap(cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+            cameraParameters.OmnidirXis[cameraId], RectificationMatrices[cameraId], RectifiedCameraMatrices[cameraId],
+            ArucoCamera.Images[cameraId].Size, Cv.Type.CV_16SC2, out UndistortionRectificationMaps[cameraId][0],
+            out UndistortionRectificationMaps[cameraId][1], rectifyFlags[RectificationType]);
+        }
       }
     }
   }

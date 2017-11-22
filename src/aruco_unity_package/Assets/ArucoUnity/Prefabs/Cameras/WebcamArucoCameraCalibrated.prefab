@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoadFile: 1
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
   cameraParametersFilename: 
 --- !u!114 &114393126318706844
@@ -285,6 +286,8 @@ MonoBehaviour:
   arucoCamera: {fileID: 114393126318706844}
   autoStart: 1
   cameraParametersController: {fileID: 114034833319431376}
+  rectificationScalingFactor: 1
+  stereoRectificationDisparity: 1
 --- !u!114 &114661154812564508
 MonoBehaviour:
   m_ObjectHideFlags: 1

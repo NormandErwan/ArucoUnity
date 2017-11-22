@@ -109,8 +109,7 @@ namespace ArucoUnity
       public event Action Calibrated = delegate { };
 
       // Variables
-
-      protected int stereoCameraId1 = 0, stereoCameraId2 = 1;
+      
       protected string applicationPath;
       protected Cv.Size[] calibrationImageSizes;
       protected Thread calibratingThread;
@@ -444,8 +443,7 @@ namespace ArucoUnity
         if (ArucoCamera is StereoArucoCamera)
         {
           CameraParametersController.CameraParameters.StereoCameraParameters = new StereoCameraParameters();
-          StereoCalibrate(stereoCameraId1, stereoCameraId2, objectPoints, imagePoints, calibrationImageSizes,
-            CameraParametersController.CameraParameters.StereoCameraParameters);
+          StereoCalibrate(objectPoints, imagePoints, calibrationImageSizes, CameraParametersController.CameraParameters.StereoCameraParameters);
         }
 
         // Save the camera parameters
@@ -512,14 +510,12 @@ namespace ArucoUnity
       /// Applies a stereo calibration to a stereo camera and saves the extrinsincs parameters between the two cameras in the
       /// <see cref="stereoCalibrationCameraPairs"/> argument.
       /// </summary>
-      /// <param name="cameraId1">The id of first camera in the camera pair to calibrate.</param>
-      /// <param name="cameraId2">The id of second camera in the camera pair to calibrate.</param>
       /// <param name="objectPoints">The object points of the camera pair.</param>
       /// <param name="imagePoints">The detected image points of the camera pair.</param>
       /// <param name="imageSizes">The size of the images of each camera in the camera pair.</param>
       /// <param name="stereoCameraParameters">The parameters containing the results of the stereo calibration.</param>
-      protected abstract void StereoCalibrate(int cameraId1, int cameraId2, Std.VectorVectorPoint3f[] objectPoints,
-        Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes, StereoCameraParameters stereoCameraParameters);
+      protected abstract void StereoCalibrate(Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes,
+        StereoCameraParameters stereoCameraParameters);
     }
   }
 
