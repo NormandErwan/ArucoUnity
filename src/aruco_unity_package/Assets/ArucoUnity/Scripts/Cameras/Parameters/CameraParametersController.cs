@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -16,6 +17,10 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("Automatically load the camera parameters file at the first frame.")]
+      private bool autoLoadFile = true;
+
+      [SerializeField]
       [Tooltip("The folder of the camera parameters file, relative to the Application.persistentDataPath folder.")]
       private string cameraParametersFolderPath = "ArucoUnity/CameraParameters/";
 
@@ -24,6 +29,11 @@ namespace ArucoUnity
       private string cameraParametersFilename;
 
       // Properties
+
+      /// <summary>
+      /// Gets or sets if automatically load the camera parameters file at the first frame.
+      /// </summary>
+      public bool AutoLoadFile { get { return autoLoadFile; } set { autoLoadFile = value; } }
 
       /// <summary>
       /// Gets or sets the folder of the camera parameters files, relative to the <see cref="Application.persistentDataPath"/> folder.
@@ -60,8 +70,12 @@ namespace ArucoUnity
         dataPath = (Application.isEditor) ? Application.dataPath : Application.persistentDataPath;
 
         SetCameraParametersFilePath(CameraParametersFolderPath, CameraParametersFilename);
-        if (CameraParametersFilePath != null)
+        if (AutoLoadFile)
         {
+          if (CameraParametersFilePath.Length == 0)
+          {
+            throw new Exception("Cant't load the camera parameters file: CameraParametersFolderPath and CameraParametersFilename must be set.");
+          }
           Load();
         }
       }
@@ -75,9 +89,9 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)
       {
-        CameraParametersFilePath = null;
-        if (cameraParametersFolderPath != null && cameraParametersFolderPath.Length > 0 && cameraParametersFilename != null
-          && cameraParametersFilename.Length > 0)
+        CameraParametersFilePath = "";
+        if (cameraParametersFolderPath != null && cameraParametersFolderPath.Length > 0 
+          && cameraParametersFilename != null && cameraParametersFilename.Length > 0)
         {
           outputFolderPath = Path.Combine(dataPath, cameraParametersFolderPath);
           CameraParametersFilePath = Path.Combine(outputFolderPath, cameraParametersFilename);
