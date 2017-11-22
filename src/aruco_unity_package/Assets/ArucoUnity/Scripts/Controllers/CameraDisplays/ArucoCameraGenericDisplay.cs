@@ -85,8 +85,11 @@ namespace ArucoUnity
       {
         if (ArucoCameraUndistortion != null)
         {
-          AutoStart = false;
-          ArucoCameraUndistortion.Started += StartController;
+          if (!ArucoCameraUndistortion.IsStarted && AutoStart)
+          {
+            AutoStart = false;
+            ArucoCameraUndistortion.Started += StartController;
+          }
         }
       }
 
