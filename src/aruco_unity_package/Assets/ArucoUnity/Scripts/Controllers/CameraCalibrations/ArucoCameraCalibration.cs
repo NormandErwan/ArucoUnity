@@ -282,7 +282,6 @@ namespace ArucoUnity
 
           if (calibrationImageSizes[cameraId] == null)
           {
-            print(ArucoCamera.Images[cameraId].Size.Width + "+" + ArucoCamera.Images[cameraId].Size.Height);
             calibrationImageSizes[cameraId] = new Cv.Size(ArucoCamera.Images[cameraId].Size.Width, ArucoCamera.Images[cameraId].Size.Height);
           }
         }
@@ -448,7 +447,7 @@ namespace ArucoUnity
 
         // Save the camera parameters
         CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - "
-          + CameraParametersController.CameraParameters.CalibrationDateTime + ".xml";
+          + CameraParametersController.CameraParameters.CalibrationDateTime.ToString("yyyy-dd-M--HH-mm-ss") + ".xml";
         CameraParametersController.Save();
 
         // Update state

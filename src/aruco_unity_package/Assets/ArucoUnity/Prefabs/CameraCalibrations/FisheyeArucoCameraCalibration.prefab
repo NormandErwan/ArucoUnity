@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoadFile: 0
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
   cameraParametersFilename: 
 --- !u!114 &114432680992671530
@@ -140,7 +141,6 @@ MonoBehaviour:
   detectorParametersController: {fileID: 114084451966531234}
   calibrationBoard: {fileID: 114641391735444262}
   refineMarkersDetection: 0
-  stereoCalibrationCameraPairs: []
   cameraParametersController: {fileID: 114267519724550610}
   calibrationFlags: {fileID: 114432680992671530}
   stereoCalibrationFlags: {fileID: 0}

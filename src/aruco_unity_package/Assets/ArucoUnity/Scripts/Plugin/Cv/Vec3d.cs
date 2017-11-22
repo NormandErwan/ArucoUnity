@@ -69,7 +69,8 @@ namespace ArucoUnity
         }
 
         /// <summary>
-        /// Converts the Vec3d as an OpenCV's rotation vector to a Quaternion. Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
+        /// Converts the Vec3d as an OpenCV's rotation vector to a Quaternion.
+        /// Based on: http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/
         /// </summary>
         /// <returns>The converted quaternion.</returns>
         public Quaternion ToRotation()

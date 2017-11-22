@@ -53,7 +53,7 @@ namespace ArucoUnity
       private bool fixFocalLength = false;
 
       [SerializeField]
-      private bool fixIntrinsic = false;
+      private bool fixIntrinsic = true;
 
       [SerializeField]
       private bool sameFocalLength = false;

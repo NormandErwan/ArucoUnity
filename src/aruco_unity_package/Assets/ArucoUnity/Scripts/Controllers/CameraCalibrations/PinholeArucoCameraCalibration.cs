@@ -63,8 +63,7 @@ namespace ArucoUnity
       {
         var cameraParameters = CameraParametersController.CameraParameters;
         cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints, imagePoints, imageSize,
-          cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-          CalibrationFlags.CalibrationFlags);
+          cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags.CalibrationFlags);
       }
 
       protected override void StereoCalibrate(Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes,
@@ -80,10 +79,11 @@ namespace ArucoUnity
         var imageSize = imageSizes[cameraId1];
 
         Cv.Vec3d rvec, tvec;
-        Cv.Mat essentialMatrix, fundamentalMatrix;
+        Cv.Mat rotationMatrix, essentialMatrix, fundamentalMatrix;
         stereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1], imagePoints[cameraId2],
-          cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rvec, out tvec, out essentialMatrix, out fundamentalMatrix,
+          cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rotationMatrix, out tvec, out essentialMatrix, out fundamentalMatrix,
           CalibrationFlags.CalibrationFlags);
+        Cv.Rodrigues(rotationMatrix, out rvec);
 
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;

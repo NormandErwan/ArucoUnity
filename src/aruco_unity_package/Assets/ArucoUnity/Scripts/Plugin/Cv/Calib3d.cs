@@ -57,7 +57,10 @@ namespace ArucoUnity
         double aspectRatio, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
-      static extern void au_cv_calib3d_Rodrigues(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr exception);
+      static extern void au_cv_calib3d_Rodrigues1(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr exception);
+
+      [DllImport("ArucoUnity")]
+      static extern void au_cv_calib3d_Rodrigues2(System.IntPtr rotationMatrix, out System.IntPtr rotationVector, System.IntPtr exception);
 
       [DllImport("ArucoUnity")]
       static extern double au_cv_calib3d_stereoCalibrate(System.IntPtr objectPoints, System.IntPtr imagePoints1, System.IntPtr imagePoints2,
@@ -139,23 +142,32 @@ namespace ArucoUnity
       public static void Rodrigues(Vec3d rotationVector, out Mat rotationMatrix)
       {
         Exception exception = new Exception();
-        System.IntPtr rotationMatPtr;
-        au_cv_calib3d_Rodrigues(rotationVector.CppPtr, out rotationMatPtr, exception.CppPtr);
-        rotationMatrix = new Mat(rotationMatPtr);
+        System.IntPtr rotationMatrixPtr;
+        au_cv_calib3d_Rodrigues1(rotationVector.CppPtr, out rotationMatrixPtr, exception.CppPtr);
+        rotationMatrix = new Mat(rotationMatrixPtr);
+        exception.Check();
+      }
+
+      public static void Rodrigues(Mat rotationMatrix, out Vec3d rotationVector)
+      {
+        Exception exception = new Exception();
+        System.IntPtr rotationVectorPtr;
+        au_cv_calib3d_Rodrigues2(rotationMatrix.CppPtr, out rotationVectorPtr, exception.CppPtr);
+        rotationVector = new Vec3d(rotationVectorPtr);
         exception.Check();
       }
 
       public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
-        Std.VectorVectorPoint2f imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, out Vec3d rvec,
-        out Vec3d tvec, out Mat essentialMatrix, out Mat fundamentalMatrix, Calib flags, TermCriteria criteria)
+        Std.VectorVectorPoint2f imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize,
+        out Mat rotationMatrix, out Vec3d tvec, out Mat essentialMatrix, out Mat fundamentalMatrix, Calib flags, TermCriteria criteria)
       {
         Exception exception = new Exception();
-        System.IntPtr rvecPtr, tvecPtr, essentialMatrixPtr, fundamentalMatrixPtr;
+        System.IntPtr rotationMatrixPtr, tvecPtr, essentialMatrixPtr, fundamentalMatrixPtr;
 
         double error = au_cv_calib3d_stereoCalibrate(objectPoints.CppPtr, imagePoints1.CppPtr, imagePoints2.CppPtr, cameraMatrix1.CppPtr,
-          distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr, out rvecPtr, out tvecPtr, out essentialMatrixPtr,
+          distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr, out rotationMatrixPtr, out tvecPtr, out essentialMatrixPtr,
           out fundamentalMatrixPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
-        rvec = new Vec3d(rvecPtr);
+        rotationMatrix = new Mat(rotationMatrixPtr);
         tvec = new Vec3d(tvecPtr);
         essentialMatrix = new Mat(essentialMatrixPtr);
         fundamentalMatrix = new Mat(fundamentalMatrixPtr);
@@ -165,24 +177,25 @@ namespace ArucoUnity
       }
 
       public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
-        Std.VectorVectorPoint2f imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, out Vec3d rvec,
-        out Vec3d tvec, out Mat essentialMatrix, out Mat fundamentalMatrix, Calib flags = Calib.FixIntrinsic)
+        Std.VectorVectorPoint2f imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize,
+        out Mat rotationMatrix, out Vec3d tvec, out Mat essentialMatrix, out Mat fundamentalMatrix, Calib flags = Calib.FixIntrinsic)
       {
         TermCriteria criteria = new TermCriteria(TermCriteria.Type.Count | TermCriteria.Type.Eps, 30, 1e-6);
         return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize,
-          out rvec, out tvec, out essentialMatrix, out fundamentalMatrix, flags, criteria);
+          out rotationMatrix, out tvec, out essentialMatrix, out fundamentalMatrix, flags, criteria);
       }
 
-      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Vec3d rvec, Vec3d tvec,
-        out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2, out Mat disparityMatrix,
-        StereoRectifyFlags flags, double scalingFactor, Size newImageSize, Rect validPixROI1, Rect validPixROI2)
+      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat rotationMatrix,
+        Vec3d tvec, out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2,
+        out Mat disparityMatrix, StereoRectifyFlags flags, double scalingFactor, Size newImageSize, Rect validPixROI1, Rect validPixROI2)
       {
         Exception exception = new Exception();
         System.IntPtr rectificationMatrix1Ptr, rectificationMatrix2Ptr, projectionMatrix1Ptr, projectionMatrix2Ptr, disparityMatrixPtr;
 
         au_cv_calib3d_stereoRectify(cameraMatrix1.CppPtr, distCoeffs1.CppPtr, cameraMatrix2.CppPtr, distCoeffs2.CppPtr, imageSize.CppPtr,
-          rvec.CppPtr, tvec.CppPtr, out rectificationMatrix1Ptr, out rectificationMatrix2Ptr, out projectionMatrix1Ptr, out projectionMatrix2Ptr,
-          out disparityMatrixPtr, (int)flags, scalingFactor, newImageSize.CppPtr, validPixROI1.CppPtr, validPixROI2.CppPtr, exception.CppPtr);
+          rotationMatrix.CppPtr, tvec.CppPtr, out rectificationMatrix1Ptr, out rectificationMatrix2Ptr, out projectionMatrix1Ptr,
+          out projectionMatrix2Ptr, out disparityMatrixPtr, (int)flags, scalingFactor, newImageSize.CppPtr, validPixROI1.CppPtr,
+          validPixROI2.CppPtr, exception.CppPtr);
         rectificationMatrix1 = new Mat(rectificationMatrix1Ptr);
         rectificationMatrix2 = new Mat(rectificationMatrix2Ptr);
         projectionMatrix1 = new Mat(projectionMatrix1Ptr);
@@ -192,32 +205,32 @@ namespace ArucoUnity
         exception.Check();
       }
 
-      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Vec3d rvec, Vec3d tvec,
-        out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2, out Mat disparityMatrix,
-        StereoRectifyFlags flags, double scalingFactor, Size newImageSize, Rect validPixROI1)
+      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat rotationMatrix,
+        Vec3d tvec, out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2,
+        out Mat disparityMatrix, StereoRectifyFlags flags, double scalingFactor, Size newImageSize, Rect validPixROI1)
       {
         Rect validPixROI2 = new Rect();
-        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out rectificationMatrix1,
+        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rotationMatrix, tvec, out rectificationMatrix1,
           out rectificationMatrix2, out projectionMatrix1, out projectionMatrix2, out disparityMatrix, flags, scalingFactor, newImageSize,
           validPixROI1, validPixROI2);
       }
 
-      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Vec3d rvec, Vec3d tvec,
-        out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2, out Mat disparityMatrix,
-        StereoRectifyFlags flags, double scalingFactor, Size newImageSize)
+      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat rotationMatrix,
+        Vec3d tvec, out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2,
+        out Mat disparityMatrix, StereoRectifyFlags flags, double scalingFactor, Size newImageSize)
       {
         Rect validPixROI1 = new Rect();
-        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out rectificationMatrix1,
+        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rotationMatrix, tvec, out rectificationMatrix1,
           out rectificationMatrix2, out projectionMatrix1, out projectionMatrix2, out disparityMatrix, flags, scalingFactor, newImageSize,
           validPixROI1);
       }
 
-      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Vec3d rvec, Vec3d tvec,
-        out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2, out Mat disparityMatrix,
-        StereoRectifyFlags flags = StereoRectifyFlags.ZeroDisparity, double scalingFactor = -1)
+      public static void StereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat rotationMatrix,
+        Vec3d tvec, out Mat rectificationMatrix1, out Mat rectificationMatrix2, out Mat projectionMatrix1, out Mat projectionMatrix2,
+        out Mat disparityMatrix, StereoRectifyFlags flags = StereoRectifyFlags.ZeroDisparity, double scalingFactor = -1)
       {
         Size newImageSize = new Size();
-        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, tvec, tvec, out rectificationMatrix1,
+        StereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, rotationMatrix, tvec, out rectificationMatrix1,
           out rectificationMatrix2, out projectionMatrix1, out projectionMatrix2, out disparityMatrix, flags, scalingFactor, newImageSize);
       }
 

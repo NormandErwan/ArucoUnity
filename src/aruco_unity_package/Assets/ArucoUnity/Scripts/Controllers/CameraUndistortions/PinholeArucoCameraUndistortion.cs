@@ -69,13 +69,14 @@ namespace ArucoUnity
           int cameraId1 = StereoArucoCamera.CameraId1;
           int cameraId2 = StereoArucoCamera.CameraId2;
 
-          Cv.Mat rectificationMatrix1, rectificationMatrix2, newCameraMatrix1, newCameraMatrix2, disparityMatrix;
+          Cv.Mat rotationMatrix, rectificationMatrix1, rectificationMatrix2, newCameraMatrix1, newCameraMatrix2, disparityMatrix;
           Cv.StereoRectifyFlags stereoRectifyFlags = StereoRectificationDisparity ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
 
+          Cv.Rodrigues(stereoCameraParameters.RotationVector, out rotationMatrix);
           Cv.StereoRectify(cameraParameters.CameraMatrices[cameraId1], cameraParameters.DistCoeffs[cameraId1],
-            cameraParameters.CameraMatrices[cameraId2], cameraParameters.DistCoeffs[cameraId2], ArucoCamera.Images[cameraId1].Size,
-            stereoCameraParameters.RotationVector, stereoCameraParameters.TranslationVector, out rectificationMatrix1, out rectificationMatrix2,
-            out newCameraMatrix1, out newCameraMatrix2, out disparityMatrix, stereoRectifyFlags, rectificationScalingFactor);
+            cameraParameters.CameraMatrices[cameraId2], cameraParameters.DistCoeffs[cameraId2], ArucoCamera.Images[cameraId1].Size, rotationMatrix,
+            stereoCameraParameters.TranslationVector, out rectificationMatrix1, out rectificationMatrix2, out newCameraMatrix1, out newCameraMatrix2,
+            out disparityMatrix, stereoRectifyFlags, rectificationScalingFactor);
 
           RectifiedCameraMatrices[cameraId1] = newCameraMatrix1;
           RectifiedCameraMatrices[cameraId2] = newCameraMatrix2;
