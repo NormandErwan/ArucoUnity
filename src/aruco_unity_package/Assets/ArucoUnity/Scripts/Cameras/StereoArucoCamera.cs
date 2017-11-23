@@ -10,6 +10,10 @@
     /// </summary>
     public abstract class StereoArucoCamera : ArucoCamera
     {
+      // IArucoCamera properties
+
+      public override int CameraNumber { get { return 2; } }
+
       // Properties
 
       /// <summary>
@@ -21,11 +25,6 @@
       /// Gets the id of the second camera.
       /// </summary>
       public static int CameraId2 { get { return 1; } }
-
-      /// <summary>
-      /// Gets the number of cameras in the system.
-      /// </summary>
-      public override int CameraNumber { get { return 2; } protected set { } }
     }
   }
 

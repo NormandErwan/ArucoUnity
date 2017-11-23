@@ -19,11 +19,13 @@ namespace ArucoUnity
       [Tooltip("The id of the webcam to use.")]
       private int webcamId;
 
-      // Properties
+      // IArucoCamera properties
 
-      public override int CameraNumber { get { return 1; } protected set { } }
+      public override int CameraNumber { get { return 1; } }
 
       public override string Name { get; protected set; }
+
+      // Properties
 
       /// <summary>
       /// Gets or sets the id of the webcam to use.
@@ -33,12 +35,12 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the used webcam.
       /// </summary>
-      public WebCamDevice WebCamDevice { get; protected set; }
+      public WebCamDevice WebCamDevice { get; private set; }
 
       /// <summary>
       /// Gets the texture of the used webcam.
       /// </summary>
-      public WebCamTexture WebCamTexture { get; protected set; }
+      public WebCamTexture WebCamTexture { get; private set; }
 
       // Variables
 

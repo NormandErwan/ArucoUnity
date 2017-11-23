@@ -11,14 +11,14 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures every frame the images of any camera system.
+    /// Captures the image frames of a camera system.
     /// </summary>
     /// <remarks>
     /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
     /// <see cref="WebcamArucoCamera"/> as example. You will need to implement <see cref="StartCameras"/>, <see cref="StopCameras"/>,
     /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.
     /// </remarks>
-    public abstract class ArucoCamera : MonoBehaviour
+    public abstract class ArucoCamera : MonoBehaviour, IArucoCamera
     {
       // Constants
 
@@ -30,106 +30,43 @@ namespace ArucoUnity
       [Tooltip("Start the cameras automatically after configured it. Call StartCameras() alternatively.")]
       private bool autoStart = true;
 
-      // Events
+      // IArucoCamera events
 
-      /// <summary>
-      /// Called when the camera system is configured.
-      /// </summary>
       public event Action Configured = delegate { };
-
-      /// <summary>
-      /// Called when the camera system starts.
-      /// </summary>
       public event Action Started = delegate { };
-
-      /// <summary>
-      /// Called when the camera system stops.
-      /// </summary>
       public event Action Stopped = delegate { };
-
-      /// <summary>
-      /// Called when the images has been updated.
-      /// </summary>
       public event Action ImagesUpdated = delegate { };
-
-      /// <summary>
-      /// Callback to undistort the <see cref="Images"/>.
-      /// </summary>
       public event Action UndistortRectifyImages = delegate { };
 
-      // Properties
+      // IArucoCamera properties
 
-      /// <summary>
-      /// Gets or sets if automatically start the camera system after configured it. Call StartCameras() alternatively.
-      /// </summary>
       public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
 
-      /// <summary>
-      /// Gets the number of cameras in the system.
-      /// </summary>
-      public abstract int CameraNumber { get; protected set; }
-
-      /// <summary>
-      /// Gets the name of the camera system used.
-      /// </summary>
+      public abstract int CameraNumber { get; }
       public abstract string Name { get; protected set; }
-
-      /// <summary>
-      /// Gets or sets the current images frame manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
-      /// </summary>
-      public virtual Cv.Mat[] Images
-      {
-        get
-        {
-          return images;
-        }
-        set
-        {
-          if (images != null && value != null && value.Length == CameraNumber)
-          {
-            for (int i = 0; i < CameraNumber; i++)
-            {
-              images[i] = value[i];
-            }
-          }
-        }
-      }
-
-      /// <summary>
-      /// Gets the <see cref="Images"/> content.
-      /// </summary>
-      public byte[][] ImageDatas { get; protected set; }
-
-      /// <summary>
-      /// Gets the size of each image in <see cref="ImageDatas"/>.
-      /// </summary>
-      public int[] ImageDataSizes { get; protected set; }
-
-      /// <summary>
-      /// Gets the <see cref="Images"/> ratios.
-      /// </summary>
-      public float[] ImageRatios { get; protected set; }
 
       /// <summary>
       /// Gets the the current images frame manipulated by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
       /// </summary>
-      public Texture2D[] ImageTextures { get; protected set; }
+      public Texture2D[] ImageTextures { get; private set; }
 
       /// <summary>
-      /// Gets if the camera system is configured.
+      /// Gets or sets the current images frame manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
       /// </summary>
-      public bool IsConfigured { get; protected set; }
+      public virtual Cv.Mat[] Images { get; private set; }
 
-      /// <summary>
-      /// Gets if the camera system is started.
-      /// </summary>
-      public bool IsStarted { get; protected set; }
+      public byte[][] ImageDatas { get; private set; }
+      public int[] ImageDataSizes { get; private set; }
+      public float[] ImageRatios { get; private set; }
+
+      public bool IsConfigured { get; private set; }
+      public bool IsStarted { get; private set; }
+
+      // Properties
 
       // Variables
 
-      protected Cv.Mat[] images;
       protected bool imagesUpdatedThisFrame = false;
-
       protected bool flipHorizontallyImages = false,
                      flipVerticallyImages = false;
       protected int? preDetectflipCode, // Convert the images from Unity's left-handed coordinate system to OpenCV's right-handed coordinate system
@@ -204,8 +141,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Configures the cameras, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>. The cameras must be stopped before
-      /// configured.
+      /// Configures the camera system, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>. It must be stopped.
       /// </summary>
       public virtual void Configure()
       {
@@ -214,13 +150,12 @@ namespace ArucoUnity
           throw new Exception("Stop the cameras before configure them.");
         }
 
-        // Reset state
         IsConfigured = false;
       }
 
       /// <summary>
-      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>. The cameras must be configured and
-      /// stopped before being started.
+      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>. It must be configured and
+      /// stopped.
       /// </summary>
       public virtual void StartCameras()
       {
@@ -231,7 +166,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Stops the camera system and calls <see cref="OnStopped"/>. The cameras must be configured and started before being stopped.
+      /// Stops the camera system and calls <see cref="OnStopped"/>. It must be configured and started.
       /// </summary>
       public virtual void StopCameras()
       {
@@ -242,7 +177,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Configures the properties, then calls <see cref="StartCameras"/> if <see cref="AutoStart"/> is true.
+      /// Configures the all the images related properties, calls the <see cref="Configured"/> event, and calls <see cref="StartCameras"/> if
+      /// <see cref="AutoStart"/> is true.
       /// </summary>
       protected void OnConfigured()
       {
@@ -252,7 +188,7 @@ namespace ArucoUnity
         }
 
         // Initialize the properties and variables
-        images = new Cv.Mat[CameraNumber];
+        Images = new Cv.Mat[CameraNumber];
         ImageDatas = new byte[CameraNumber][];
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];

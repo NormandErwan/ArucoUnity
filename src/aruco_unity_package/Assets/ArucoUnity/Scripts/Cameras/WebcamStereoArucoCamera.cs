@@ -23,9 +23,11 @@ namespace ArucoUnity
       [Tooltip("The id of the second webcam to use.")]
       private int webcamId2;
 
-      // Properties
+      // IArucoCamera properties
 
       public override string Name { get; protected set; }
+
+      // Properties
 
       /// <summary>
       /// Gets or sets the id of the first webcam to use.
@@ -40,12 +42,12 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the used webcams.
       /// </summary>
-      public WebCamDevice[] WebCamDevices { get; protected set; }
+      public WebCamDevice[] WebCamDevices { get; private set; }
 
       /// <summary>
       /// Gets the textures of the used webcams.
       /// </summary>
-      public WebCamTexture[] WebCamTextures { get; protected set; }
+      public WebCamTexture[] WebCamTextures { get; private set; }
 
       // Variables
 
@@ -107,7 +109,7 @@ namespace ArucoUnity
         WebCamDevices[CameraId2] = WebCamTexture.devices[WebcamId2];
         WebCamTextures[CameraId1] = new WebCamTexture(WebCamDevices[CameraId1].name);
         WebCamTextures[CameraId2] = new WebCamTexture(WebCamDevices[CameraId2].name);
-        Name = WebCamDevices[CameraId1].name + "+" + WebCamDevices[CameraId2].name;
+        Name = "'" + WebCamDevices[CameraId1].name + "'+'" + WebCamDevices[CameraId2].name + "'";
 
         OnConfigured();
       }
