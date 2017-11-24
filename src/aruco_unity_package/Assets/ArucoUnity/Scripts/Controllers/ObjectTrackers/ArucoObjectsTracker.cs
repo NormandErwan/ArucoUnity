@@ -79,19 +79,18 @@ namespace ArucoUnity
       protected byte[][] trackingImagesData;
       protected byte[][] arucoCameraImageCopyData;
       protected Thread trackingThread;
-      protected Mutex trackingMutex;
+      protected Mutex trackingMutex = new Mutex();
       protected Exception trackingException;
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes the trackers list and the tracking thread and susbcribe to events from ArucoObjectController for every ArUco object added or removed.
+      /// Initializes the trackers list.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
-
-        // Initialize the trackers
+        
         MarkerTracker = new ArucoMarkerTracker();
         additionalTrackers = new Dictionary<Type, ArucoObjectTracker>()
         {
@@ -99,30 +98,6 @@ namespace ArucoUnity
           { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
           { typeof(ArucoDiamond), new ArucoDiamondTracker() }
         };
-
-        // Initialize the tracking thread
-        trackingMutex = new Mutex();
-        trackingThread = new Thread(() =>
-        {
-          try
-          {
-            while (IsConfigured && IsStarted)
-            {
-              trackingMutex.WaitOne();
-              Track();
-              trackingMutex.ReleaseMutex();
-            }
-          }
-          catch (Exception e)
-          {
-            trackingException = e;
-            trackingMutex.ReleaseMutex();
-          }
-        });
-
-        // Susbcribe to events from ArucoObjectController
-        ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
-        ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
       }
 
       /// <summary>
@@ -132,16 +107,6 @@ namespace ArucoUnity
       {
         base.Start();
         CameraParameters = cameraParametersController.CameraParameters;
-      }
-
-      /// <summary>
-      /// Unsuscribes from ArucoObjectController events, and abort the tracking thread.
-      /// </summary>
-      protected override void OnDestroy()
-      {
-        base.OnDestroy();
-        ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
-        ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
       }
 
       // ArucoCameraController methods
@@ -170,36 +135,75 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Starts the tracking.
+      /// Activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
+      /// <see cref="ArucoObjectsController{T}.ArucoObjectRemoved"/> events and starts the tracking thread.
       /// </summary>
       public override void StartController()
       {
         base.StartController();
 
         MarkerTracker.Activate(this, ArucoCamera, CameraParameters);
+        foreach (var arucoObjectDictionary in ArucoObjects)
+        {
+          foreach (var arucoObject in arucoObjectDictionary.Value)
+          {
+            ArucoObjectsController_ArucoObjectAdded(arucoObject.Value);
+          }
+        }
+
+        ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
+        ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
 
         arucoCameraImagesUpdated = false;
         ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
+
+        trackingThread = new Thread(() =>
+        {
+          try
+          {
+            while (IsConfigured && IsStarted)
+            {
+              trackingMutex.WaitOne();
+              Track();
+              trackingMutex.ReleaseMutex();
+            }
+          }
+          catch (Exception e)
+          {
+            trackingException = e;
+            trackingMutex.ReleaseMutex();
+          }
+        });
         trackingThread.Start();
 
         OnStarted();
       }
 
       /// <summary>
-      /// Stops the tracking.
+      /// Unsuscribes from ArucoObjectController events, deactivates the trackers and abort the tracking thread and stops the tracking thread.
       /// </summary>
       public override void StopController()
       {
         base.StopController();
 
+        ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
+        ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
+
         MarkerTracker.Deactivate();
+        foreach (var tracker in additionalTrackers)
+        {
+          if (tracker.Value.IsActivated)
+          {
+            tracker.Value.Deactivate();
+          }
+        }
 
         OnStopped();
       }
 
       /// <summary>
-      /// Draws the results of the detection and place each detected ArUco object on the <see cref="ArucoObjectsController.ArucoObjects"/> list, 
-      /// according to the results of the tracking thread and re-throw the tracking thread exceptions.
+      /// Draws the results of the detection and place each detected ArUco object according to the results of the tracking thread and re-throw the
+      /// tracking thread exceptions.
       /// </summary>
       protected virtual void ArucoCamera_ImagesUpdated()
       {
@@ -393,8 +397,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Detects and estimates the transforms of ArUco objects on the <see cref="ArucoObjectsController.ArucoObjects"/> list. Executed on a
-      /// separated tracking thread.
+      /// Detects and estimates the transforms of the detected ArUco objects. Executed on a separated tracking thread.
       /// </summary>
       protected void Track()
       {

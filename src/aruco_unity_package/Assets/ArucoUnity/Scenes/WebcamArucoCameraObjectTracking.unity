@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 476211938}
   - component: {fileID: 476211937}
   m_Layer: 0
-  m_Name: ArUcoUnity_GridBoard_Dict4x4_50_X_7_Y_5_MarkerSize_160 (1)
+  m_Name: ArUcoUnity_GridBoard_Dict4x4_50_X_2_Y_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ Prefab:
     - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
         type: 2}
       propertyPath: arucoObjects.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4105970446323926, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -770,6 +770,11 @@ Prefab:
       propertyPath: arucoObjects.Array.data[0]
       value: 
       objectReference: {fileID: 887812763}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 476211938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
   m_IsPrefabParent: 0
@@ -784,7 +789,7 @@ GameObject:
   - component: {fileID: 910886726}
   - component: {fileID: 910886725}
   m_Layer: 0
-  m_Name: ArUcoUnity_GridBoard_Dict4x4_50_X_7_Y_5_MarkerSize_160
+  m_Name: ArUcoUnity_GridBoard_Dict4x4_50_X_7_Y_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
