@@ -101,9 +101,9 @@ namespace ArucoUnity
       {
         base.Configure();
 
-        if (ArucoCameraDisplay == null || CameraParameters == null)
+        if (CameraParameters == null)
         {
-          throw new Exception("ArucoCameraDisplay and CameraParameters must be set to configure the tracker.");
+          throw new Exception("CameraParameters must be set to configure the tracker.");
         }
 
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
