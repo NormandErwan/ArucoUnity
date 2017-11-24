@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Controllers.CameraDisplays;
+﻿using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Controllers.CameraDisplays;
 using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
@@ -18,14 +19,14 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets the camera display associated with the ArucoCamera.
+      /// Gets or sets the optional camera display associated with the ArucoCamera.
       /// </summary>
-      IArucoCameraDisplay ArucoCameraDisplay { get; }
+      IArucoCameraDisplay ArucoCameraDisplay { get; set; }
 
       /// <summary>
-      /// Gets the optional undistortion process associated with the ArucoCamera.
+      /// Gets or sets the camera parameters associated with the ArucoCamera.
       /// </summary>
-      IArucoCameraUndistortion ArucoCameraUndistortion { get; }
+      CameraParameters CameraParameters { get; set; }
 
       /// <summary>
       /// Gets or sets if using refine strategy to detect more markers using the <see cref="ArucoBoard"/> in the
@@ -57,12 +58,6 @@ namespace ArucoUnity
       /// Get or sets if displaying each detected <see cref="ArucoDiamond"/>.
       /// </summary>
       bool DrawDetectedDiamonds { get; set; }
-
-      /// <summary>
-      /// Get or sets if automatically updating the transforms of each detected <see cref="ArucoObject"/>. Manually calls
-      /// <see cref="UpdateTransforms"/> instead.
-      /// </summary>
-      bool AutoUpdateTransforms { get; set; }
 
       /// <summary>
       /// Gets the ArUco markers tracker used.
@@ -104,7 +99,7 @@ namespace ArucoUnity
       void EstimateTransforms();
 
       /// <summary>
-      /// Updates transforms of each detected <see cref="ArucoObject"/>.
+      /// Updates transforms of each detected <see cref="ArucoObject"/>. <see cref="ArucoCameraDisplay"/> must be set.
       /// </summary>
       void UpdateTransforms();
     }

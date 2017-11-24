@@ -16,7 +16,7 @@ namespace ArucoUnity
   {
     /// <summary>
     /// Calibrates a <see cref="ArucoCamera"/> or a <see cref="StereoArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results
-    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsGenericTracker"/> for <see cref="ArucoObject"/> tracking.
+    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsTracker"/> for <see cref="ArucoObject"/> tracking.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
     /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html

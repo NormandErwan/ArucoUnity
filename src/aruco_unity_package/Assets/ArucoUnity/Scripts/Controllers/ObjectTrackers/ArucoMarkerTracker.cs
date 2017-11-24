@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System.Collections.Generic;
@@ -77,9 +78,9 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      public override void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera)
+      public override void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera, CameraParameters cameraParameters)
       {
-        base.Activate(arucoTracker, arucoCamera);
+        base.Activate(arucoTracker, arucoCamera, cameraParameters);
 
         // Initialize the properties and the ArUco objects
         MarkerCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoCamera.CameraNumber];

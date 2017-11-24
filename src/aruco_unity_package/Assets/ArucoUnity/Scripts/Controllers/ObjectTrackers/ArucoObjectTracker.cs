@@ -53,11 +53,11 @@ namespace ArucoUnity
       /// <summary>
       /// Configure and activate the tracker.
       /// </summary>
-      public virtual void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera)
+      public virtual void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera, CameraParameters cameraParameters)
       {
         this.arucoTracker = arucoTracker;
         this.arucoCamera = arucoCamera;
-        cameraParameters = arucoTracker.ArucoCameraUndistortion.CameraParametersController.CameraParameters;
+        this.cameraParameters = cameraParameters;
         IsActivated = true;
 
         arucoTracker.DictionaryAdded += ArucoObjectsController_DictionaryAdded;
@@ -75,6 +75,7 @@ namespace ArucoUnity
 
         IsActivated = false;
         arucoTracker = null;
+        arucoCamera = null;
         cameraParameters = null;
       }
 
