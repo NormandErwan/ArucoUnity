@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Controllers.CameraDisplays;
-using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;

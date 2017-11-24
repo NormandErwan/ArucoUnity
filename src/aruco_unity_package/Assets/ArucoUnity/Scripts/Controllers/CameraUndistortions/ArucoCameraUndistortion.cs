@@ -90,6 +90,8 @@ namespace ArucoUnity
       /// </summary>
       public override void Configure()
       {
+        base.Configure();
+
         // Check properties
         if (CameraParameters == null)
         {
@@ -104,6 +106,11 @@ namespace ArucoUnity
         if (ArucoCameraDisplay != null)
         {
           ArucoCameraDisplay.ArucoCameraUndistortion = this;
+          if (ArucoCameraDisplay.IsStarted)
+          {
+            ArucoCameraDisplay.StopController();
+            ArucoCameraDisplay.Configure();
+          }
         }
         if (ArucoObjectsTracker != null)
         {
