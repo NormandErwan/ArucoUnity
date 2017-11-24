@@ -58,10 +58,6 @@ namespace ArucoUnity
       [Tooltip("Update automatically the transforms of the detected ArUco objects.")]
       private bool autoUpdateTransforms = true;
 
-      [SerializeField]
-      [Tooltip("Update the transforms of the detected ArUco objects relative to this camera.")]
-      private int transformsRelativeCameraId;
-
       // IArucoObjectsTracker properties
 
       public IArucoCameraDisplay ArucoCameraDisplay { get; set; }
@@ -73,10 +69,6 @@ namespace ArucoUnity
       public bool DrawDetectedCharucoMarkers { get { return drawDetectedCharucoMarkers; } set { drawDetectedCharucoMarkers = value; } }
       public bool DrawDetectedDiamonds { get { return drawDetectedDiamonds; } set { drawDetectedDiamonds = value; } }
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
-
-      // Properties
-
-      public int TransformsRelativeCameraId { get { return transformsRelativeCameraId; } set { transformsRelativeCameraId = value; } }
 
       // Variables
 
@@ -422,14 +414,17 @@ namespace ArucoUnity
           throw new Exception("The tracker must be configured before tracking ArUco objects.");
         }
 
-        foreach (var arucoObjectDictionary in ArucoObjects)
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          MarkerTracker.UpdateTransforms(TransformsRelativeCameraId, arucoObjectDictionary.Key);
-          foreach (var tracker in additionalTrackers)
+          foreach (var arucoObjectDictionary in ArucoObjects)
           {
-            if (tracker.Value.IsActivated)
+            MarkerTracker.UpdateTransforms(cameraId, arucoObjectDictionary.Key);
+            foreach (var tracker in additionalTrackers)
             {
-              tracker.Value.UpdateTransforms(TransformsRelativeCameraId, arucoObjectDictionary.Key);
+              if (tracker.Value.IsActivated)
+              {
+                tracker.Value.UpdateTransforms(cameraId, arucoObjectDictionary.Key);
+              }
             }
           }
         }
