@@ -50,10 +50,6 @@ namespace ArucoUnity
       [Tooltip("Display the detected diamonds.")]
       private bool drawDetectedDiamonds = true;
 
-      [SerializeField]
-      [Tooltip("Update automatically the transforms of the detected ArUco objects.")]
-      private bool autoUpdateTransforms = true;
-
       // IArucoObjectsTracker properties
 
       public IArucoCameraDisplay ArucoCameraDisplay { get; set; }
