@@ -110,7 +110,8 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria, out Mat idx)
+          Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Calib flags,
+          TermCriteria criteria, out Mat idx)
         {
           Exception exception = new Exception();
           System.IntPtr rvecPtr, tvecPtr, rvecsLPtr, tvecsLPtr, idxPtr;
@@ -120,8 +121,8 @@ namespace ArucoUnity
             out tvecPtr, out rvecsLPtr, out tvecsLPtr, (int)flags, criteria.CppPtr, out idxPtr, exception.CppPtr);
           rvec = new Vec3d(rvecPtr);
           tvec = new Vec3d(tvecPtr);
-          rvecsL = new Mat(rvecsLPtr);
-          tvecsL = new Mat(tvecsLPtr);
+          rvecsL = new Std.VectorVec3d(rvecsLPtr);
+          tvecsL = new Std.VectorVec3d(tvecsLPtr);
           idx = new Mat(idxPtr);
 
           exception.Check();
@@ -130,7 +131,7 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags, TermCriteria criteria)
+          Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Calib flags, TermCriteria criteria)
         {
           Mat idx;
           return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, imageSize1, imageSize2, cameraMatrix1, xi1, distCoeffs1, cameraMatrix2,
@@ -139,7 +140,7 @@ namespace ArucoUnity
 
         public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1,
           Std.VectorVectorPoint2f imagePoints2, Size imageSize1, Size imageSize2, Mat cameraMatrix1, Mat xi1, Mat distCoeffs1, Mat cameraMatrix2,
-           Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Mat rvecsL, out Mat tvecsL, Calib flags)
+          Mat xi2, Mat distCoeffs2, out Vec3d rvec, out Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Calib flags)
         {
           TermCriteria criteria = new TermCriteria(TermCriteria.Type.Count | TermCriteria.Type.Eps, 200, EPSILON);
           return StereoCalibrate(objectPoints, imagePoints1, imagePoints2, imageSize1, imageSize2, cameraMatrix1, xi1, distCoeffs1, cameraMatrix2,

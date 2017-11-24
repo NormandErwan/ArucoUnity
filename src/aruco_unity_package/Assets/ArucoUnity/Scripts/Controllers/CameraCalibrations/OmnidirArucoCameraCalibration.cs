@@ -83,10 +83,18 @@ namespace ArucoUnity
       protected override void Calibrate(int cameraId, Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize,
         out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs)
       {
-        var cameraParameters = CameraParametersController.CameraParameters;
-        cameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(objectPoints, imagePoints, imageSize,
-          cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs,
-          out tvecs, CalibrationFlags.CalibrationFlags);
+        if (ArucoCamera is StereoArucoCamera)
+        {
+          rvecs = null;
+          tvecs = null;
+        }
+        else
+        {
+          var cameraParameters = CameraParametersController.CameraParameters;
+          cameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(objectPoints, imagePoints, imageSize,
+            cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs,
+            out tvecs, CalibrationFlags.CalibrationFlags);
+        }
       }
 
       protected override void StereoCalibrate(Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes,
@@ -103,10 +111,13 @@ namespace ArucoUnity
         var xi2 = cameraParameters.OmnidirXis[cameraId2];
 
         Cv.Vec3d rvec, tvec;
-        Cv.Mat rvecsCamera1, tvecsCamera1;
+        Std.VectorVec3d rvecsCamera1, tvecsCamera1;
         stereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1],
           imagePoints[cameraId2], imageSizes[cameraId1], imageSizes[cameraId2], cameraMatrix1, xi1, distCoeffs1,
           cameraMatrix2, xi2, distCoeffs2, out rvec, out tvec, out rvecsCamera1, out tvecsCamera1, CalibrationFlags.CalibrationFlags);
+
+        Rvecs[StereoArucoCamera.CameraId1] = rvecsCamera1;
+        Tvecs[StereoArucoCamera.CameraId1] = tvecsCamera1;
 
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;

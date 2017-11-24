@@ -26,11 +26,12 @@ extern "C" {
   double au_cv_ccalib_omnidir_stereoCalibrate(std::vector<std::vector<cv::Point3f>>* objectPoints, 
     std::vector<std::vector<cv::Point2f>>* imagePoints1, std::vector<std::vector<cv::Point2f>>* imagePoints2, cv::Size* imageSize1,
     cv::Size* imageSize2, cv::Mat* cameraMatrix1, cv::Mat xi1, cv::Mat* distCoeffs1, cv::Mat* cameraMatrix2, cv::Mat* xi2, cv::Mat* distCoeffs2,
-    cv::Vec3d** rvec, cv::Vec3d** tvec, cv::Mat** rvecsL, cv::Mat** tvecsL, int flags, cv::TermCriteria* criteria, cv::Mat** idx,
+    cv::Vec3d** rvec, cv::Vec3d** tvec, std::vector<cv::Vec3d>** rvecsL, std::vector<cv::Vec3d>** tvecsL, int flags, cv::TermCriteria* criteria, cv::Mat** idx,
     cv::Exception* exception) {
     double error = 0;
     try {
-      *rvec = new cv::Vec3d(), *tvec = new cv::Vec3d(), *rvecsL = new cv::Mat(), *tvecsL = new cv::Mat(), *idx = new cv::Mat();
+      *rvec = new cv::Vec3d(), *tvec = new cv::Vec3d(), *rvecsL = new std::vector<cv::Vec3d>(), *tvecsL = new std::vector<cv::Vec3d>(),
+        *idx = new cv::Mat();
       error = cv::omnidir::stereoCalibrate(*objectPoints, *imagePoints1, *imagePoints2, *imageSize1, *imageSize2, *cameraMatrix1, *xi2, *distCoeffs1,
         *cameraMatrix2, *xi2, *distCoeffs2, **rvec, **tvec, **rvecsL, **tvecsL, flags, *criteria, **idx);
     } catch (const cv::Exception& e) { ARUCO_UNITY_COPY_EXCEPTION(exception, e); }
