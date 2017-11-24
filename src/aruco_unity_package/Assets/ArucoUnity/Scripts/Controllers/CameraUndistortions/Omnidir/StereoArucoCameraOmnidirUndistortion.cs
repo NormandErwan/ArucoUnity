@@ -3,6 +3,7 @@ using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Controllers.CameraDisplays;
 using ArucoUnity.Plugin;
 using System;
+using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -36,7 +37,18 @@ namespace ArucoUnity
         // Initializes RectifiedCameraMatrices
         if (RectificationType == RectificationTypes.Perspective)
         {
-          // TODO
+          for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
+          {
+            float imageWidth = CameraParameters.ImageWidths[cameraId];
+            float imageHeight = CameraParameters.ImageHeights[cameraId];
+
+            float cameraF = ArucoCameraDisplay.Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * ArucoCameraDisplay.Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
+            RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
+              cameraF, 0, CameraParameters.ImageWidths[cameraId] / 2,
+              0, cameraF, CameraParameters.ImageHeights[cameraId] / 2,
+              0, 0, 1
+            }).Clone();
+          }
         }
         else
         {
