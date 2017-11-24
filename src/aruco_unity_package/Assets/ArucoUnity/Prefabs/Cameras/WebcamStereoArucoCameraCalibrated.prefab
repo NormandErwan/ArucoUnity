@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114992423418060336}
   - component: {fileID: 114473537779293404}
   - component: {fileID: 114125049629224730}
+  - component: {fileID: 114332799581564012}
   m_Layer: 0
   m_Name: WebcamStereoArucoCameraCalibrated
   m_TagString: Untagged
@@ -72,22 +73,6 @@ GameObject:
   - component: {fileID: 20908161906071312}
   m_Layer: 0
   m_Name: LeftCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1249126557999530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4971431211372174}
-  - component: {fileID: 114416203206328876}
-  m_Layer: 0
-  m_Name: StereoArucoCameraDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +195,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4971431211372174}
   - {fileID: 4944800623345314}
   - {fileID: 4544471706765170}
   m_Father: {fileID: 0}
@@ -255,7 +239,7 @@ Transform:
   - {fileID: 4632313790216404}
   - {fileID: 4031931371787320}
   m_Father: {fileID: 4377250107881252}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4632313790216404
 Transform:
@@ -283,7 +267,7 @@ Transform:
   - {fileID: 4420834919202464}
   - {fileID: 4958998451253402}
   m_Father: {fileID: 4377250107881252}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4958998451253402
 Transform:
@@ -298,19 +282,6 @@ Transform:
   - {fileID: 4225388037717354}
   m_Father: {fileID: 4944800623345314}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4971431211372174
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249126557999530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4377250107881252}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20695146548642492
 Camera:
@@ -548,12 +519,12 @@ MonoBehaviour:
   autoLoadFile: 1
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
   cameraParametersFilename: 
---- !u!114 &114416203206328876
+--- !u!114 &114332799581564012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249126557999530}
+  m_GameObject: {fileID: 1207513600271448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3648ba3f74da4164db2b440ad0fbe471, type: 3}
@@ -562,6 +533,7 @@ MonoBehaviour:
   arucoCamera: {fileID: 114992423418060336}
   autoStart: 1
   arucoCameraUndistortion: {fileID: 114473537779293404}
+  arucoObjectsTracker: {fileID: 0}
   leftEye: {fileID: 4944800623345314}
   rightEye: {fileID: 4544471706765170}
   leftCamera: {fileID: 20908161906071312}
@@ -585,7 +557,7 @@ MonoBehaviour:
   autoStart: 1
   cameraParametersController: {fileID: 114125049629224730}
   rectificationScalingFactor: 1
-  stereoRectificationDisparity: 1
+  stereoRectificationZeroDisparity: 1
 --- !u!114 &114992423418060336
 MonoBehaviour:
   m_ObjectHideFlags: 1

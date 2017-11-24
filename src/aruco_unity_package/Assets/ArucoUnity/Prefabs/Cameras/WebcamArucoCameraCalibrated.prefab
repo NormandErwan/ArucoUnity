@@ -36,9 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4388775592067208}
   - component: {fileID: 20452962843750572}
-  - component: {fileID: 114661154812564508}
   m_Layer: 0
-  m_Name: ArucoCameraDisplay
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,6 +71,7 @@ GameObject:
   - component: {fileID: 114393126318706844}
   - component: {fileID: 114522793529101426}
   - component: {fileID: 114034833319431376}
+  - component: {fileID: 114715581165667816}
   m_Layer: 0
   m_Name: WebcamArucoCameraCalibrated
   m_TagString: Untagged
@@ -287,13 +287,13 @@ MonoBehaviour:
   autoStart: 1
   cameraParametersController: {fileID: 114034833319431376}
   rectificationScalingFactor: 1
-  stereoRectificationDisparity: 1
---- !u!114 &114661154812564508
+  stereoRectificationZeroDisparity: 1
+--- !u!114 &114715581165667816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1354671515401654}
+  m_GameObject: {fileID: 1647954469300956}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
@@ -302,6 +302,7 @@ MonoBehaviour:
   arucoCamera: {fileID: 114393126318706844}
   autoStart: 1
   arucoCameraUndistortion: {fileID: 114522793529101426}
+  arucoObjectsTracker: {fileID: 0}
   camera: {fileID: 20452962843750572}
   backgroundCamera: {fileID: 20017792066165246}
   background: {fileID: 23646749236801090}

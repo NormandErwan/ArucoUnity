@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4288362277056124}
   - component: {fileID: 20727044533785904}
-  - component: {fileID: 114182499156388056}
   m_Layer: 0
-  m_Name: ArucoCameraDisplay
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4913347918360244}
   - component: {fileID: 114439970468321140}
+  - component: {fileID: 114750514242914752}
   m_Layer: 0
   m_Name: WebcamArucoCamera
   m_TagString: Untagged
@@ -243,23 +243,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649337208224828}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114182499156388056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1261977758904326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 114439970468321140}
-  autoStart: 1
-  arucoCameraUndistortion: {fileID: 0}
-  camera: {fileID: 20727044533785904}
-  backgroundCamera: {fileID: 20164004177903186}
-  background: {fileID: 23193199916444832}
 --- !u!114 &114439970468321140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,3 +256,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   webcamId: 0
+--- !u!114 &114750514242914752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1748105045091876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arucoCamera: {fileID: 114439970468321140}
+  autoStart: 1
+  arucoCameraUndistortion: {fileID: 0}
+  arucoObjectsTracker: {fileID: 0}
+  camera: {fileID: 20727044533785904}
+  backgroundCamera: {fileID: 20164004177903186}
+  background: {fileID: 23193199916444832}
