@@ -28,7 +28,7 @@ namespace ArucoUnity
       private string outputFolder = "ArucoUnity/Images/";
 
       [SerializeField]
-      [Tooltip("The saved image name. The extension (.png) is added automatically. If empty, it will be generated automatically from the ArUco object.")]
+      [Tooltip("The saved image name. If empty, it will be generated automatically from the ArUco object.")]
       private string optionalImageFilename;
 
       // Properties
@@ -79,7 +79,7 @@ namespace ArucoUnity
       {
         if (ImageFilename == null || ImageFilename.Length == 0)
         {
-          ImageFilename = ArucoObject.GenerateName();
+          ImageFilename = ArucoObject.GenerateName() + ".png";
         }
 
         string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
