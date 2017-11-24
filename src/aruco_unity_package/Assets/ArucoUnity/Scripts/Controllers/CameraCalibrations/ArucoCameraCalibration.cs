@@ -157,6 +157,8 @@ namespace ArucoUnity
       /// </summary>
       public override void Configure()
       {
+        base.Configure();
+
         if (CalibrationBoard == null)
         {
           throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibrator.");
