@@ -335,20 +335,10 @@ namespace ArucoUnity
           throw new Exception("The tracker must be configured before tracking ArUco objects.");
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        ExecuteOnActivatedTrackers((tracker, cameraId, dictionary) =>
         {
-          foreach (var arucoObjectDictionary in ArucoObjects)
-          {
-            MarkerTracker.Detect(cameraId, arucoObjectDictionary.Key, images[cameraId]);
-            foreach (var tracker in additionalTrackers)
-            {
-              if (tracker.Value.IsActivated)
-              {
-                tracker.Value.Detect(cameraId, arucoObjectDictionary.Key, images[cameraId]);
-              }
-            }
-          }
-        }
+          tracker.Detect(cameraId, dictionary, images[cameraId]);
+        });
       }
 
       public void Detect()
@@ -363,20 +353,10 @@ namespace ArucoUnity
           throw new Exception("The tracker must be configured before tracking ArUco objects.");
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        ExecuteOnActivatedTrackers((tracker, cameraId, dictionary) =>
         {
-          foreach (var arucoObjectDictionary in ArucoObjects)
-          {
-            MarkerTracker.Draw(cameraId, arucoObjectDictionary.Key, images[cameraId]);
-            foreach (var tracker in additionalTrackers)
-            {
-              if (tracker.Value.IsActivated)
-              {
-                tracker.Value.Draw(cameraId, arucoObjectDictionary.Key, images[cameraId]);
-              }
-            }
-          }
-        }
+          tracker.Draw(cameraId, dictionary, images[cameraId]);
+        });
       }
 
       public void Draw()
@@ -391,20 +371,10 @@ namespace ArucoUnity
           throw new Exception("The tracker must be configured before tracking ArUco objects.");
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        ExecuteOnActivatedTrackers((tracker, cameraId, dictionary) =>
         {
-          foreach (var arucoObjectDictionary in ArucoObjects)
-          {
-            MarkerTracker.EstimateTransforms(cameraId, arucoObjectDictionary.Key);
-            foreach (var tracker in additionalTrackers)
-            {
-              if (tracker.Value.IsActivated)
-              {
-                tracker.Value.EstimateTransforms(cameraId, arucoObjectDictionary.Key);
-              }
-            }
-          }
-        }
+          tracker.EstimateTransforms(cameraId, dictionary);
+        });
       }
 
       public void UpdateTransforms()
@@ -414,20 +384,10 @@ namespace ArucoUnity
           throw new Exception("The tracker must be configured before tracking ArUco objects.");
         }
 
-        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        ExecuteOnActivatedTrackers((tracker, cameraId, dictionary) =>
         {
-          foreach (var arucoObjectDictionary in ArucoObjects)
-          {
-            MarkerTracker.UpdateTransforms(cameraId, arucoObjectDictionary.Key);
-            foreach (var tracker in additionalTrackers)
-            {
-              if (tracker.Value.IsActivated)
-              {
-                tracker.Value.UpdateTransforms(cameraId, arucoObjectDictionary.Key);
-              }
-            }
-          }
-        }
+          tracker.UpdateTransforms(cameraId, dictionary);
+        });
       }
 
       // Methods
@@ -449,6 +409,27 @@ namespace ArucoUnity
           Detect(trackingImages);
           EstimateTransforms();
           Draw(trackingImages);
+        }
+      }
+
+      /// <summary>
+      /// Executes an <paramref name="actionOnTracker"/> on all the activated <see cref="ArucoObjectTracker"/>.
+      /// </summary>
+      protected void ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, int, Aruco.Dictionary> actionOnTracker)
+      {
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
+        {
+          foreach (var arucoObjectDictionary in ArucoObjects)
+          {
+            actionOnTracker(MarkerTracker, cameraId, arucoObjectDictionary.Key);
+            foreach (var tracker in additionalTrackers)
+            {
+              if (tracker.Value.IsActivated)
+              {
+                actionOnTracker(tracker.Value, cameraId, arucoObjectDictionary.Key);
+              }
+            }
+          }
         }
       }
     }
