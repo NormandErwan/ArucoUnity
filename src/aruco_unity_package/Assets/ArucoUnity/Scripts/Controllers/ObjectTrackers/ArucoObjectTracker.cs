@@ -1,6 +1,8 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
+using System;
 
 namespace ArucoUnity
 {
@@ -24,7 +26,8 @@ namespace ArucoUnity
 
       // Variables
 
-      protected ArucoObjectsTracker arucoTracker;
+      protected IArucoObjectsTracker arucoTracker;
+      protected IArucoCamera arucoCamera;
       protected CameraParameters cameraParameters;
 
       // ArucoObjectsController related methods
@@ -50,9 +53,10 @@ namespace ArucoUnity
       /// <summary>
       /// Configure and activate the tracker.
       /// </summary>
-      public virtual void Activate(ArucoObjectsTracker arucoTracker)
+      public virtual void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera)
       {
         this.arucoTracker = arucoTracker;
+        this.arucoCamera = arucoCamera;
         cameraParameters = arucoTracker.ArucoCameraUndistortion.CameraParametersController.CameraParameters;
         IsActivated = true;
 
@@ -81,10 +85,7 @@ namespace ArucoUnity
       /// <param name="dictionary">The dictionary to use for the detection.</param>
       public virtual void Detect(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (IsActivated)
-        {
-          Detect(cameraId, dictionary, arucoTracker.ArucoCamera.Images[cameraId]);
-        }
+        Detect(cameraId, dictionary, arucoCamera.Images[cameraId]);
       }
 
       /// <summary>
@@ -93,14 +94,13 @@ namespace ArucoUnity
       /// <param name="cameraId">The id of the camera.</param>
       /// <param name="dictionary">The dictionary to use for the detection.</param>
       /// <param name="dictionary">The image to use for the detection.</param>
-      public abstract void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
-
-      /// <summary>
-      /// Estimate the gameObject's transform of each detected ArUco object.
-      /// </summary>
-      /// <param name="cameraId">The id of the camera to use.</param>
-      /// <param name="dictionary">The dictionary to use.</param>
-      public abstract void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary);
+      public virtual void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
+      {
+        if (!IsActivated)
+        {
+          throw new Exception("Activate the tracker before detecting ArUco objects.");
+        }
+      }
 
       /// <summary>
       /// Draw the detected ArUco objects on the current image of a camera.
@@ -109,10 +109,7 @@ namespace ArucoUnity
       /// <param name="dictionary">The dictionary to use.</param>
       public virtual void Draw(int cameraId, Aruco.Dictionary dictionary)
       {
-        if (IsActivated)
-        {
-          Draw(cameraId, dictionary, arucoTracker.ArucoCamera.Images[cameraId]);
-        }
+        Draw(cameraId, dictionary, arucoCamera.Images[cameraId]);
       }
 
       /// <summary>
@@ -121,14 +118,39 @@ namespace ArucoUnity
       /// <param name="cameraId">The id of the camera to use.</param>
       /// <param name="dictionary">The dictionary to use.</param>
       /// <param name="image">Draw on this image.</param>
-      public abstract void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image);
+      public virtual void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
+      {
+        if (!IsActivated)
+        {
+          throw new Exception("Activate the tracker before drawing ArUco objects.");
+        }
+      }
+
+      /// <summary>
+      /// Estimate the gameObject's transform of each detected ArUco object.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to use.</param>
+      /// <param name="dictionary">The dictionary to use.</param>
+      public virtual void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
+      {
+        if (!IsActivated)
+        {
+          throw new Exception("Activate the tracker before estimating transforms of ArUco objects.");
+        }
+      }
 
       /// <summary>
       /// Place and orient the detected ArUco objects relative to a camera.
       /// </summary>
       /// <param name="cameraId">The id of the camera to use.</param>
       /// <param name="dictionary">The dictionary to use.</param>
-      public abstract void Place(int cameraId, Aruco.Dictionary dictionary);
+      public virtual void UpdateTransforms(int cameraId, Aruco.Dictionary dictionary)
+      {
+        if (!IsActivated)
+        {
+          throw new Exception("Activate the tracker before updating transforms of ArUco objects.");
+        }
+      }
 
       /// <summary>
       /// Update the gameObject's transform of an ArUco object.
@@ -138,9 +160,9 @@ namespace ArucoUnity
       /// <param name="tvec">The estimated translation vector of the ArUco object.</param>
       /// <param name="cameraId">The id of the camera to use. The gameObject is placed and oriented relative to this camera.</param>
       /// <param name="positionFactor">Factor on the position vector.</param>
-      protected void PlaceArucoObject(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
+      protected void UpdateTransform(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
-        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCameraDisplay.Camera.transform);
+        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCameraDisplay.Cameras[cameraId].transform);
         arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
         arucoObject.gameObject.transform.localRotation = rvec.ToRotation();
         arucoObject.gameObject.SetActive(true);

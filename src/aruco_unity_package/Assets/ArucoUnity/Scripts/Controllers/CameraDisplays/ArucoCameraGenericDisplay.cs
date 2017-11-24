@@ -12,9 +12,9 @@ namespace ArucoUnity
     /// <summary>
     /// Manages Unity virual cameras that shoot 3D content aligned with the <see cref="ArucoCamera.Images"/> displayed as background. It creates the
     /// augmented reality effect by the images from the physical cameras and the <see cref="Objects.ArucoObject"/> tracked by
-    /// <see cref="ObjectTrackers.ArucoObjectsTracker"/>.
+    /// <see cref="ObjectTrackers.ArucoObjectsGenericTracker"/>.
     /// </summary>
-    public class ArucoCameraGenericDisplay<T> : ArucoCameraController<T> where T : ArucoCamera
+    public class ArucoCameraGenericDisplay<T> : ArucoCameraController<T>, IArucoCameraDisplay where T : ArucoCamera
     {
       // Constants
 
@@ -26,6 +26,13 @@ namespace ArucoUnity
       [Tooltip("Optional undistortion process associated with the ArucoCamera.")]
       private ArucoCameraUndistortion arucoCameraUndistortion;
 
+      // IArucoCameraDisplay properties
+
+      IArucoCameraUndistortion IArucoCameraDisplay.ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
+      public Camera[] Cameras { get; set; }
+      public Camera[] BackgroundCameras { get; set; }
+      public Renderer[] Backgrounds { get; set; }
+
       // Properties
 
       /// <summary>
@@ -33,26 +40,43 @@ namespace ArucoUnity
       /// </summary>
       public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 
-      /// <summary>
-      /// Gets or sets the Unity virtual camera that will shoot the <see cref="Backgrounds"/>.
-      /// </summary>
-      public Camera[] BackgroundCameras { get; set; }
-
-      /// <summary>
-      /// Gets or sets the backgrounds displaying the <see cref="ArucoCamera.Images"/> of the corresponding physical camera in ArucoCamera.
-      /// </summary>
-      public Renderer[] Backgrounds { get; set; }
-
       // MonoBehaviour methods
 
       protected override void Awake()
       {
         base.Awake();
-        BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
-        Backgrounds = new Renderer[ArucoCamera.CameraNumber];
+
+        if (Cameras == null)
+        {
+          Cameras = new Camera[ArucoCamera.CameraNumber];
+        }
+        if (BackgroundCameras == null)
+        {
+          BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
+        }
+        if (Backgrounds == null)
+        {
+          Backgrounds = new Renderer[ArucoCamera.CameraNumber];
+        }
       }
 
       // ArucoCameraController methods
+
+      /// <summary>
+      /// If <see cref="ArucoCameraUndistortion"/> is set, wait is started before starting this display.
+      /// </summary>
+      public override void Configure()
+      {
+        if (ArucoCameraUndistortion != null)
+        {
+          if (!ArucoCameraUndistortion.IsStarted && AutoStart)
+          {
+            AutoStart = false;
+            ArucoCameraUndistortion.Started += StartController;
+          }
+        }
+        OnConfigured();
+      }
 
       /// <summary>
       /// Calls <see cref="ConfigureCamerasBackground"/> the <see cref="SetDisplayActive(bool)"/> to activate the display.
@@ -62,6 +86,7 @@ namespace ArucoUnity
         base.StartController();
         ConfigureCamerasBackground();
         SetDisplayActive(true);
+        OnStarted();
       }
 
       /// <summary>
@@ -76,21 +101,8 @@ namespace ArucoUnity
         {
           ArucoCameraUndistortion.Started -= StartController;
         }
-      }
 
-      /// <summary>
-      /// If <see cref="ArucoCameraUndistortion"/> is set, wait is started before starting this display.
-      /// </summary>
-      protected override void Configure()
-      {
-        if (ArucoCameraUndistortion != null)
-        {
-          if (!ArucoCameraUndistortion.IsStarted && AutoStart)
-          {
-            AutoStart = false;
-            ArucoCameraUndistortion.Started += StartController;
-          }
-        }
+        OnStopped();
       }
 
       // Methods
@@ -125,6 +137,7 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
+          Cameras[cameraId].gameObject.SetActive(value);
           BackgroundCameras[cameraId].gameObject.SetActive(value);
           Backgrounds[cameraId].gameObject.SetActive(value);
         }

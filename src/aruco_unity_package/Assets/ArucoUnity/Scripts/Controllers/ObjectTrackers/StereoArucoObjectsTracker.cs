@@ -9,22 +9,22 @@ namespace ArucoUnity
 
   namespace Controllers.ObjectTrackers
   {
-    public class ArucoObjectsTracker : ArucoObjectsGenericTracker<ArucoCamera>
+    public class StereoArucoObjectsTracker : ArucoObjectsGenericTracker<StereoArucoCamera>
     {
       // Editor fields
 
       [SerializeField]
       [Tooltip("The camera display associated with the ArucoCamera.")]
-      private ArucoCameraDisplay arucoCameraDisplay;
+      private StereoArucoCameraDisplay stereoArucoCameraDisplay;
 
       // Properties
-      
-      public override ArucoCameraGenericDisplay<ArucoCamera> ArucoCameraDisplay { get { return arucoCameraDisplay; } }
+
+      public override ArucoCameraGenericDisplay<StereoArucoCamera> ArucoCameraDisplay { get { return stereoArucoCameraDisplay; } }
 
       /// <summary>
       /// Gets or sets the camera display associated with the ArucoCamera.
       /// </summary>
-      public ArucoCameraDisplay ArucoCameraDisplayConcrete { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
+      public StereoArucoCameraDisplay StereoArucoCameraDisplay { get { return stereoArucoCameraDisplay; } set { stereoArucoCameraDisplay = value; } }
     }
   }
 

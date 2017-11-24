@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras;
-using ArucoUnity.Controllers.CameraUndistortions;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -17,59 +16,90 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the background.")]
-      private new Camera camera;
+      [Tooltip("The container of the leftCamera and the leftBackgroundCamera.")]
+      private Transform leftEye;
 
       [SerializeField]
-      [Tooltip("The Unity virtual camera that will shoot the background.")]
+      [Tooltip("The container of the rightCamera and the rightBackgroundCamera.")]
+      private Transform rightEye;
+
+      [SerializeField]
+      [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the left background.")]
+      private Camera leftCamera;
+
+      [SerializeField]
+      [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the right background.")]
+      private Camera rightCamera;
+
+      [SerializeField]
+      [Tooltip("The Unity virtual camera that will shoot the left eye background.")]
       private Camera leftBackgroundCamera;
 
       [SerializeField]
-      [Tooltip("The Unity virtual camera that will shoot the background.")]
+      [Tooltip("The Unity virtual camera that will shoot the right eye background.")]
       private Camera rightBackgroundCamera;
 
       [SerializeField]
-      [Tooltip("The background displaying the image of the corresponding physical camera in ArucoCamera.")]
+      [Tooltip("The background displaying the image of the left physical camera in ArucoCamera.")]
       private Renderer leftBackground;
 
       [SerializeField]
-      [Tooltip("The background displaying the image of the corresponding physical camera in ArucoCamera.")]
+      [Tooltip("The background displaying the image of the right physical camera in ArucoCamera.")]
       private Renderer rightBackground;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets the Unity virtual stereo camera that will shoot the 3D content without the backgrounds.
+      /// Gets or sets the containers of the <see cref="ArucoCameraGenericDisplay{T}.Cameras"/> and the
+      /// <see cref="ArucoCameraGenericDisplay{T}.BackgroundCameras"/>.
       /// </summary>
-      public Camera Camera { get { return camera; } set { camera = value; } }
-
-      // Variables
-
-      protected int leftCameraId = 0, rightCameraId = 1;
+      public Transform[] Eyes { get; set; }
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populates <see cref="BackgroundCameras"/> and <see cref="Backgrounds"/> from editor fields if they are set.
+      /// Populates <see cref="ArucoCameraGenericDisplay{T}.Cameras"/>, <see cref="ArucoCameraGenericDisplay{T}.BackgroundCameras"/> and
+      /// <see cref="ArucoCameraGenericDisplay{T}.Backgrounds"/> from editor fields if they are set.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
+        if (Eyes == null)
+        {
+          Eyes = new Transform[ArucoCamera.CameraNumber];
+        }
+        if (leftEye != null)
+        {
+          Eyes[StereoArucoCamera.CameraId1] = leftEye;
+        }
+        if (rightEye != null)
+        {
+          Eyes[StereoArucoCamera.CameraId2] = rightEye;
+        }
+
+        if (leftCamera != null)
+        {
+          Cameras[StereoArucoCamera.CameraId1] = leftCamera;
+        }
+        if (rightCamera != null)
+        {
+          Cameras[StereoArucoCamera.CameraId2] = rightCamera;
+        }
         if (leftBackgroundCamera != null)
         {
-          BackgroundCameras[leftCameraId] = leftBackgroundCamera;
+          BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
         }
         if (rightBackgroundCamera != null)
         {
-          BackgroundCameras[rightCameraId] = rightBackgroundCamera;
+          BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
         }
         if (leftBackground != null)
         {
-          Backgrounds[leftCameraId] = leftBackground;
+          Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
         }
         if (rightBackground != null)
         {
-          Backgrounds[rightCameraId] = rightBackground;
+          Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
         }
       }
 
@@ -79,13 +109,12 @@ namespace ArucoUnity
       {
         base.ConfigureCamerasBackground();
 
-        // TODO
-      }
+        if (ArucoCameraUndistortion != null)
+        {
+          var stereoCameraParameters = ArucoCameraUndistortion.CameraParametersController.CameraParameters.StereoCameraParameters;
 
-      protected override void SetDisplayActive(bool value)
-      {
-        base.SetDisplayActive(value);
-        Camera.gameObject.SetActive(value);
+          Eyes[StereoArucoCamera.CameraId1].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
+        }
       }
     }
   }

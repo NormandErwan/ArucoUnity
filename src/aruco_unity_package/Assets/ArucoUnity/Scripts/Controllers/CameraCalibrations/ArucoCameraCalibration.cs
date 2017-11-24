@@ -16,7 +16,7 @@ namespace ArucoUnity
   {
     /// <summary>
     /// Calibrates a <see cref="ArucoCamera"/> or a <see cref="StereoArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results
-    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsTracker"/> for <see cref="ArucoObject"/> tracking.
+    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsGenericTracker"/> for <see cref="ArucoObject"/> tracking.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
     /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
@@ -155,21 +155,41 @@ namespace ArucoUnity
       /// <summary>
       /// Checks if <see cref="CalibrationBoard"/> is set and calls <see cref="ResetCalibration"/>.
       /// </summary>
-      protected override void Configure()
+      public override void Configure()
       {
-        // Check for the board
         if (CalibrationBoard == null)
         {
           throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibrator.");
         }
 
         ResetCalibration();
+        OnConfigured();
+      }
+
+      /// <summary>
+      /// Susbcribes to <see cref="ArucoCamera.UndistortRectifyImages"/>.
+      /// </summary>
+      public override void StartController()
+      {
+        base.StartController();
+        ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
+        OnStarted();
+      }
+
+      /// <summary>
+      /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
+      /// </summary>
+      public override void StopController()
+      {
+        base.StopController();
+        ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
+        OnStopped();
       }
 
       /// <summary>
       /// Detects and draw the ArUco markers on the current images of the cameras.
       /// </summary>
-      protected override void ArucoCamera_ImagesUpdated()
+      protected virtual void ArucoCamera_ImagesUpdated()
       {
         DetectMarkers();
         DrawDetectedMarkers();

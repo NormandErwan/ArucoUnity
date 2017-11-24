@@ -11,9 +11,9 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Detects ArUco objects for a <see cref="Cameras.ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
+    /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
     /// </summary>
-    public abstract class ArucoObjectDetector<T> : ArucoCameraController<T> where T : ArucoCamera
+    public abstract class ArucoObjectDetector<T> : ArucoCameraController<T>, IHasDetectorParameter where T : ArucoCamera
     {
       // Editor fields
 
@@ -28,19 +28,14 @@ namespace ArucoUnity
       /// </summary>
       public Aruco.DetectorParameters DetectorParameters { get; set; }
 
-      // MonoBehaviour methods
-
-      protected override void Awake()
-      {
-        base.Awake();
-
-        DetectorParameters = detectorParametersController.DetectorParameters;
-      }
-
       // ArucoCameraController methods
 
-      protected override void Configure()
+      public override void Configure()
       {
+        base.Configure();
+
+        DetectorParameters = detectorParametersController.DetectorParameters;
+
         if (DetectorParameters == null)
         {
           throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");

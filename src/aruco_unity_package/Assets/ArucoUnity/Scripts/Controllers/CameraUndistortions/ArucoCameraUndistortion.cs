@@ -14,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public abstract class ArucoCameraUndistortion : ArucoCameraController<ArucoCamera>
+    public abstract class ArucoCameraUndistortion : ArucoCameraController<ArucoCamera>, IArucoCameraUndistortion
     {
       // Constants
 
@@ -26,31 +26,12 @@ namespace ArucoUnity
       [Tooltip("The camera parameters to use.")]
       private CameraParametersController cameraParametersController;
 
-      // Properties
+      // IArucoCameraUndistortion properties
 
-      /// <summary>
-      /// Gets or sets the camera parameters to use.
-      /// </summary>
       public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
-
-      /// <summary>
-      /// Gets the new camera matrices of the undistorted and rectified images of each camera.
-      /// </summary>
       public Cv.Mat[] RectifiedCameraMatrices { get; protected set; }
-
-      /// <summary>
-      /// Gets the rectification rotation matrices of each camera to make both camera image planes the same plane, in case of a stereo camera.
-      /// </summary>
       public Cv.Mat[] RectificationMatrices { get; protected set; }
-
-      /// <summary>
-      /// Gets the distorsion coefficients of the undistorted and rectified images of each camera.
-      /// </summary>
       public Cv.Mat UndistortedDistCoeffs { get { return noDistCoeffs; } }
-
-      /// <summary>
-      /// Gets the undistortion and rectification images transformation map of each camera (two maps per camera).
-      /// </summary>
       public Cv.Mat[][] UndistortionRectificationMaps { get; protected set; }
 
       // Variables
@@ -71,28 +52,10 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// Susbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
-      /// </summary>
-      public override void StartController()
-      {
-        base.StartController();
-        ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
-      }
-
-      /// <summary>
-      /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
-      /// </summary>
-      public override void StopController()
-      {
-        base.StopController();
-        ArucoCamera.UndistortRectifyImages -= ArucoCamera_UndistortRectifyImages;
-      }
-
-      /// <summary>
-      /// Checks if <see cref="CameraParameters.CameraNumber"/> == <see cref="ArucoCamera.CameraNumber"/>, calls
+      /// Checks if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/> are equals and calls
       /// <see cref="InitializeUndistortionRectification(Cv.Mat[], Camera[])"/>.
       /// </summary>
-      protected override void Configure()
+      public override void Configure()
       {
         if (CameraParametersController.CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
         {
@@ -104,6 +67,27 @@ namespace ArucoUnity
         }
 
         InitializeUndistortionRectification();
+        OnConfigured();
+      }
+
+      /// <summary>
+      /// Susbcribes to <see cref="ArucoCamera.UndistortRectifyImages"/>.
+      /// </summary>
+      public override void StartController()
+      {
+        base.StartController();
+        ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
+        OnStarted();
+      }
+
+      /// <summary>
+      /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
+      /// </summary>
+      public override void StopController()
+      {
+        base.StopController();
+        ArucoCamera.UndistortRectifyImages -= ArucoCamera_UndistortRectifyImages;
+        OnStopped();
       }
 
       // Methods

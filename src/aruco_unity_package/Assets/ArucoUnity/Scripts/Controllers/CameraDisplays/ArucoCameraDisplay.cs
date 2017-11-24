@@ -29,13 +29,6 @@ namespace ArucoUnity
       [Tooltip("The background displaying the image of the corresponding physical camera in ArucoCamera.")]
       private Renderer background;
 
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the Unity virtual camera that will shoot the 3D content aligned with the <see cref="Background"/>.
-      /// </summary>
-      public Camera Camera { get { return camera; } set { camera = value; } }
-
       // Variables
 
       protected int cameraId = 0;
@@ -48,6 +41,10 @@ namespace ArucoUnity
       protected override void Awake()
       {
         base.Awake();
+        if (camera != null)
+        {
+          Cameras[cameraId] = camera;
+        }
         if (backgroundCamera != null)
         {
           BackgroundCameras[cameraId] = backgroundCamera;
@@ -75,7 +72,7 @@ namespace ArucoUnity
 
           // Configure the cameras fov
           float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
-          Camera.fieldOfView = fovY;
+          Cameras[cameraId].fieldOfView = fovY;
           BackgroundCameras[cameraId].fieldOfView = fovY;
 
           // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
@@ -92,12 +89,6 @@ namespace ArucoUnity
           Backgrounds[cameraId].transform.localPosition = new Vector3(localPositionX, localPositionY, cameraBackgroundDistance);
           Backgrounds[cameraId].transform.localScale = new Vector3(localScaleX, localScaleY, 1);
         }
-      }
-
-      protected override void SetDisplayActive(bool value)
-      {
-        base.SetDisplayActive(value);
-        Camera.gameObject.SetActive(value);
       }
     }
   }

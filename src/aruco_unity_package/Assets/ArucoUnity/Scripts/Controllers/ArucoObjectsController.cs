@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.
     /// </summary>
-    public abstract class ArucoObjectsController<T> : ArucoObjectDetector<T> where T : ArucoCamera
+    public abstract class ArucoObjectsController<T> : ArucoObjectDetector<T>, IArucoObjectsController where T : ArucoCamera
     {
       // Editor fields
 
@@ -23,37 +23,22 @@ namespace ArucoUnity
       [Tooltip("The list of the ArUco objects to detect.")]
       private ArucoObject[] arucoObjects;
 
-      // Events
+      // IArucoObjectsController events
 
-      /// <summary>
-      /// Called when an ArUco object has been added to the list.
-      /// </summary>
       public event Action<ArucoObject> ArucoObjectAdded = delegate { };
-
-      /// <summary>
-      /// Called when an ArUco object has been removed from the list.
-      /// </summary>
       public event Action<ArucoObject> ArucoObjectRemoved = delegate { };
-
-      /// <summary>
-      /// Called when a new dictionary among the ArUco objects has been added.
-      /// </summary>
       public event Action<Aruco.Dictionary> DictionaryAdded = delegate { };
-
-      /// <summary>
-      /// Called when a new dictionary is no more used by any ArUco objects.
-      /// </summary>
       public event Action<Aruco.Dictionary> DictionaryRemoved = delegate { };
 
-      // Properties
+      // IArucoObjectsController Properties
 
-      /// <summary>
-      /// Gets the list of the ArUco objects to detect.
-      /// </summary>
       public Dictionary<Aruco.Dictionary, Dictionary<int, ArucoObject>> ArucoObjects { get; protected set; }
 
       // MonoBehaviour methods
 
+      /// <summary>
+      /// Initializes the properties.
+      /// </summary>
       protected override void Awake()
       {
         base.Awake();
@@ -71,12 +56,8 @@ namespace ArucoUnity
         }
       }
 
-      // Methods
+      // IArucoObjectsController Methods
 
-      /// <summary>
-      /// Adds an ArUco object to the <see cref="ArucoObjects"/> list.
-      /// </summary>
-      /// <param name="arucoObject">The ArUco object to add.</param>
       public virtual void Add(ArucoObject arucoObject)
       {
         // Make sure the object is started and initialized
@@ -118,10 +99,6 @@ namespace ArucoUnity
         ArucoObjectAdded(arucoObject);
       }
 
-      /// <summary>
-      /// Removes an ArUco object to the <see cref="ArucoObjects"/> list.
-      /// </summary>
-      /// <param name="arucoObject">The ArUco object to remove.</param>
       public virtual void Remove(ArucoObject arucoObject)
       {
         // Find the list with the same dictionary than the ArUco object to remove
@@ -156,14 +133,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// Returns a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="TU"/> in a certain
-      /// <paramref name="dictionary"/>.
-      /// </summary>
-      /// <typeparam name="U">The type of the ArUco objects in the returned sublist.</typeparam>
-      /// <param name="dictionary">The <see cref="Aruco.Dictionary" /> to use.</param>
-      /// <returns>The sublist.</returns>
-      // TODO: cache the results
       public virtual HashSet<U> GetArucoObjects<U>(Aruco.Dictionary dictionary) where U : ArucoObject
       {
         if (!ArucoObjects.ContainsKey(dictionary))
@@ -171,6 +140,7 @@ namespace ArucoUnity
           throw new ArgumentException("This dictionary is not found.", "dictionary");
         }
 
+        // TODO: cache the results
         HashSet<U> arucoTObjectsCollection = new HashSet<U>();
         foreach (var arucoObject in ArucoObjects[dictionary])
         {
@@ -182,6 +152,8 @@ namespace ArucoUnity
         }
         return arucoTObjectsCollection;
       }
+
+      // Methods
 
       /// <summary>
       /// Remove an ArucoObject from the <see cref="ArucoObjects"/> list, before the its properties will be updated.

@@ -14,6 +14,8 @@ namespace ArucoUnity
 
       public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
+        base.Detect(cameraId, dictionary, image);
+
         ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
 
         if (arucoTracker.RefineDetectedMarkers && arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0)
@@ -27,8 +29,24 @@ namespace ArucoUnity
         }
       }
 
+      public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
+      {
+        base.Draw(cameraId, dictionary, image);
+
+        foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
+        {
+          if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.Rvec != null)
+          {
+            Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+              arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
+          }
+        }
+      }
+
       public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
+        base.EstimateTransforms(cameraId, dictionary);
+
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
           Cv.Vec3d rvec = null, tvec = null;
@@ -47,25 +65,15 @@ namespace ArucoUnity
         }
       }
 
-      public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
+      public override void UpdateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
-        foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
-        {
-          if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.Rvec != null)
-          {
-            Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
-              arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
-          }
-        }
-      }
+        base.UpdateTransforms(cameraId, dictionary);
 
-      public override void Place(int cameraId, Aruco.Dictionary dictionary)
-      {
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
           if (arucoGridBoard.Rvec != null)
           {
-            PlaceArucoObject(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
+            UpdateTransform(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
           }
         }
       }

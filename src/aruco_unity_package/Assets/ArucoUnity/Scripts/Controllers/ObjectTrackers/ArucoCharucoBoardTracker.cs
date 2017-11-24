@@ -14,6 +14,8 @@ namespace ArucoUnity
 
       public override void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
+        base.Detect(cameraId, dictionary, image);
+
         ArucoMarkerTracker markerTracker = arucoTracker.MarkerTracker;
 
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
@@ -33,13 +35,13 @@ namespace ArucoUnity
             if (cameraParameters == null)
             {
                Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
-                markerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId],
+                markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
                 (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds);
             }
             else
             {
               Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
-                markerTracker.MarkerIds[cameraId][dictionary], arucoTracker.ArucoCamera.Images[cameraId],
+                markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
                 (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, cameraParameters.CameraMatrices[cameraId],
                 cameraParameters.DistCoeffs[cameraId]);
             }
@@ -50,28 +52,10 @@ namespace ArucoUnity
         }
       }
 
-      public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
-      {
-        foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
-        {
-          Cv.Vec3d rvec = null, tvec = null;
-          bool validTransform = false;
-
-          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
-          {
-            validTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
-            (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec,
-            out tvec);
-          }
-
-          arucoCharucoBoard.Rvec = rvec;
-          arucoCharucoBoard.Tvec = tvec;
-          arucoCharucoBoard.ValidTransform = validTransform;
-        }
-      }
-
       public override void Draw(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
       {
+        base.Draw(cameraId, dictionary, image);
+
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
           if (arucoCharucoBoard.DetectedIds.Size() > 0)
@@ -90,13 +74,37 @@ namespace ArucoUnity
         }
       }
 
-      public override void Place(int cameraId, Aruco.Dictionary dictionary)
+      public override void EstimateTransforms(int cameraId, Aruco.Dictionary dictionary)
       {
+        base.EstimateTransforms(cameraId, dictionary);
+
+        foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
+        {
+          Cv.Vec3d rvec = null, tvec = null;
+          bool validTransform = false;
+
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
+          {
+            validTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
+            (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec,
+            out tvec);
+          }
+
+          arucoCharucoBoard.Rvec = rvec;
+          arucoCharucoBoard.Tvec = tvec;
+          arucoCharucoBoard.ValidTransform = validTransform;
+        }
+      }
+
+      public override void UpdateTransforms(int cameraId, Aruco.Dictionary dictionary)
+      {
+        base.UpdateTransforms(cameraId, dictionary);
+
         foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
         {
           if (arucoCharucoBoard.Rvec != null)
           {
-            PlaceArucoObject(arucoCharucoBoard, arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, cameraId);
+            UpdateTransform(arucoCharucoBoard, arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, cameraId);
           }
         }
       }
