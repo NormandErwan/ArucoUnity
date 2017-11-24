@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
 
 namespace ArucoUnity
 {
@@ -11,14 +10,9 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="Cameras.IArucoCamera.Images"/>.
     /// </summary>
-    public interface IArucoCameraUndistortion : IArucoCameraController
+    public interface IArucoCameraUndistortion : IArucoCameraController, IHasCameraParameters
     {
       // Properties
-
-      /// <summary>
-      /// Gets or sets the camera parameters to use.
-      /// </summary>
-      CameraParametersController CameraParametersController { get; set; }
 
       /// <summary>
       /// Gets the new camera matrices of the undistorted and rectified images of each camera.

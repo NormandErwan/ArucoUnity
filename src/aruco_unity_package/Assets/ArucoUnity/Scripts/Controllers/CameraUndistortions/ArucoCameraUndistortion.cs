@@ -1,5 +1,7 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Controllers.CameraDisplays;
+using ArucoUnity.Controllers.ObjectTrackers;
 using ArucoUnity.Plugin;
 using UnityEngine;
 using System;
@@ -14,7 +16,9 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public abstract class ArucoCameraUndistortion : ArucoCameraController<ArucoCamera>, IArucoCameraUndistortion
+    public abstract class ArucoCameraUndistortion<T, U> : ArucoCameraController<T>, IArucoCameraUndistortion 
+      where T : ArucoCamera
+      where U : ArucoCameraGenericDisplay<T>
     {
       // Constants
 
@@ -23,50 +27,103 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The camera parameters to use.")]
-      private CameraParametersController cameraParametersController;
+      [Tooltip("The camera parameters associated with the ArucoCamera.")]
+      private CameraParametersController CameraParametersController;
+
+      [SerializeField]
+      [Tooltip("The ArucoCamera display.")]
+      private U arucoCameraDisplay;
+
+      [SerializeField]
+      [Tooltip("Optional ArUco tracker. Detected ArUco object will be displayed and aligned with the physical camera images.")]
+      private ArucoObjectsTracker arucoObjectsTracker;
 
       // IArucoCameraUndistortion properties
 
-      public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
+      public CameraParameters CameraParameters { get; set; }
       public Cv.Mat[] RectifiedCameraMatrices { get; protected set; }
       public Cv.Mat[] RectificationMatrices { get; protected set; }
       public Cv.Mat UndistortedDistCoeffs { get { return noDistCoeffs; } }
       public Cv.Mat[][] UndistortionRectificationMaps { get; protected set; }
 
+      // Properties
+
+      /// <summary>
+      /// Gets or sets the ArucoCamera display.
+      /// </summary>
+      public U ArucoCameraDisplay { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
+
+      /// <summary>
+      /// Gets or sets the optional ArUco object tracker associated with the ArucoCamera. Detected ArUco object will be displayed and aligned with
+      /// the physical camera images.
+      /// </summary>
+      public ArucoObjectsTracker ArucoObjectsTracker { get { return arucoObjectsTracker; } set { arucoObjectsTracker = value; } }
+
       // Variables
 
       protected Cv.Mat noRectificationMatrix;
       protected Cv.Mat noDistCoeffs;
-      protected string cameraParametersFilePath;
+      protected string CameraParametersFilePath;
 
       // MonoBehaviour methods
 
-      protected override void Awake()
+      /// <summary>
+      /// Initializes the properties.
+      /// </summary>
+      protected virtual void Start()
       {
-        base.Awake();
         noRectificationMatrix = new Cv.Mat();
         noDistCoeffs = new Cv.Mat();
+
+        if (CameraParameters == null && CameraParametersController != null)
+        {
+          CameraParameters = CameraParametersController.CameraParameters;
+        }
       }
 
       // ArucoCameraController methods
 
       /// <summary>
-      /// Checks if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/> are equals and calls
-      /// <see cref="InitializeUndistortionRectification(Cv.Mat[], Camera[])"/>.
+      /// Checks if <see cref="CameraParameters"/> is set, if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/>
+      /// are equals, configures <see cref="ArucoCameraDisplay"/> and <see cref="ArucoObjectsTracker"/> if set and calls
+      /// <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/>.
       /// </summary>
       public override void Configure()
       {
-        if (CameraParametersController.CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
+        // Check properties
+        if (CameraParameters == null)
+        {
+          throw new Exception("CameraParameters must be set to undistort the ArucoCamera images.");
+        }
+        if (CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
         {
           throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras in ArucoCamera");
         }
-        if (ArucoCamera is StereoArucoCamera && CameraParametersController.CameraParameters.StereoCameraParameters == null)
+
+        // Configure ArucoCameraDisplay and ArucoObjectsTracker
+        if (ArucoCameraDisplay != null)
         {
-          throw new Exception("The camera parameters must contains a valid StereoCameraParameters to undistort and rectify a StereoArucoCamera.");
+          ArucoCameraDisplay.ArucoCameraUndistortion = this;
+        }
+        if (ArucoObjectsTracker != null)
+        {
+          ArucoObjectsTracker.ArucoCameraDisplay = ArucoCameraDisplay;
+          ArucoObjectsTracker.CameraParameters = CameraParameters;
         }
 
-        InitializeUndistortionRectification();
+        // Initializes properties
+        RectifiedCameraMatrices = new Cv.Mat[CameraParameters.CameraNumber];
+        RectificationMatrices = new Cv.Mat[CameraParameters.CameraNumber];
+        UndistortionRectificationMaps = new Cv.Mat[CameraParameters.CameraNumber][];
+        for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
+        {
+          RectifiedCameraMatrices[cameraId] = new Cv.Mat();
+          UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
+        }
+
+        InitializeRectification();
+        InitializeUndistortionMaps();
+
         OnConfigured();
       }
 
@@ -93,36 +150,27 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Initializes the <see cref="RectifiedCameraMatrices"/> and the <see cref="UndistortionRectificationMaps"/> of each camera image, and sets
-      /// the undistorted distorsion coefficients to <see cref="UndistortedDistCoeffs"/>.
-      /// </summary>
-      // TODO: scale if there is a difference between camera image size and camera parameters image size (during calibration)
-      protected virtual void InitializeUndistortionRectification()
-      {
-        var cameraParameters = CameraParametersController.CameraParameters;
-        
-        RectifiedCameraMatrices = new Cv.Mat[cameraParameters.CameraNumber];
-        RectificationMatrices = new Cv.Mat[cameraParameters.CameraNumber];
-        UndistortionRectificationMaps = new Cv.Mat[cameraParameters.CameraNumber][];
-        for (int cameraId = 0; cameraId < cameraParameters.CameraNumber; cameraId++)
-        {
-          RectifiedCameraMatrices[cameraId] = new Cv.Mat();
-          UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
-        }
-      }
-
-      /// <summary>
       /// Undistorts and rectifies the <see cref="ArucoCamera.Images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming
       /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with the 3D content.
       /// </summary>
       protected virtual void ArucoCamera_UndistortRectifyImages()
       {
-        for (int cameraId = 0; cameraId < CameraParametersController.CameraParameters.CameraNumber; cameraId++)
+        for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
         {
           Cv.Remap(ArucoCamera.Images[cameraId], ArucoCamera.Images[cameraId], UndistortionRectificationMaps[cameraId][0],
             UndistortionRectificationMaps[cameraId][1], Cv.InterpolationFlags.Linear);
         }
       }
+
+      /// <summary>
+      /// Initializes the <see cref="RectificationMatrices"/> of each camera image.
+      /// </summary>
+      protected abstract void InitializeRectification();
+
+      /// <summary>
+      /// Initializes the <see cref="UndistortionRectificationMaps"/> of each camera image.
+      /// </summary>
+      protected abstract void InitializeUndistortionMaps();
     }
   }
 

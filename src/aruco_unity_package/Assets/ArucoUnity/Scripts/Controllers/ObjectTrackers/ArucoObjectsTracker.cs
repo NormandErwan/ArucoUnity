@@ -27,10 +27,6 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The optional camera parameters associated with the ArucoCamera")]
-      private CameraParametersController cameraParametersController;
-
-      [SerializeField]
       [Tooltip("Apply refine strategy to detect more markers using the boards in the Aruco Object list.")]
       private bool refineDetectedMarkers = true;
 
@@ -100,15 +96,6 @@ namespace ArucoUnity
         };
       }
 
-      /// <summary>
-      /// Initializes the <see cref="CameraParameters"/> from the equivalent editor field if set.
-      /// </summary>
-      protected override void Start()
-      {
-        base.Start();
-        CameraParameters = cameraParametersController.CameraParameters;
-      }
-
       // ArucoCameraController methods
 
       /// <summary>
@@ -117,6 +104,11 @@ namespace ArucoUnity
       public override void Configure()
       {
         base.Configure();
+
+        if (ArucoCameraDisplay == null || CameraParameters == null)
+        {
+          throw new Exception("ArucoCameraDisplay and CameraParameters must be set to configure the tracker.");
+        }
 
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
         trackingImagesData = new byte[ArucoCamera.CameraNumber][];

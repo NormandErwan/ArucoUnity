@@ -111,9 +111,11 @@ namespace ArucoUnity
 
         if (ArucoCameraUndistortion != null)
         {
-          var stereoCameraParameters = ArucoCameraUndistortion.CameraParametersController.CameraParameters.StereoCameraParameters;
+          var stereoCameraParameters = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters;
 
           Eyes[StereoArucoCamera.CameraId1].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
+
+          // TODO rotation
         }
       }
     }

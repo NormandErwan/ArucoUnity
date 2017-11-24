@@ -64,7 +64,7 @@ namespace ArucoUnity
         if (ArucoCameraUndistortion != null)
         {
           // Initialize
-          var cameraParameters = ArucoCameraUndistortion.CameraParametersController.CameraParameters;
+          var cameraParameters = ArucoCameraUndistortion.CameraParameters;
           float imageWidth = cameraParameters.ImageWidths[cameraId];
           float imageHeight = cameraParameters.ImageHeights[cameraId];
           Vector2 cameraF = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();

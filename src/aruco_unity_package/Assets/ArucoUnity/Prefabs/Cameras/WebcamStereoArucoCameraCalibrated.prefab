@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4377250107881252}
   - component: {fileID: 114992423418060336}
-  - component: {fileID: 114473537779293404}
+  - component: {fileID: 114987818737337706}
   - component: {fileID: 114125049629224730}
   - component: {fileID: 114332799581564012}
   m_Layer: 0
@@ -532,8 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoCamera: {fileID: 114992423418060336}
   autoStart: 1
-  arucoCameraUndistortion: {fileID: 114473537779293404}
-  arucoObjectsTracker: {fileID: 0}
   leftEye: {fileID: 4944800623345314}
   rightEye: {fileID: 4544471706765170}
   leftCamera: {fileID: 20908161906071312}
@@ -542,7 +540,7 @@ MonoBehaviour:
   rightBackgroundCamera: {fileID: 20888377950689166}
   leftBackground: {fileID: 23072473483236818}
   rightBackground: {fileID: 23896255257067098}
---- !u!114 &114473537779293404
+--- !u!114 &114987818737337706
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -550,14 +548,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207513600271448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e044568ea72405e49bf56df52f9d2b57, type: 3}
+  m_Script: {fileID: 11500000, guid: 41d0d6a753fcd62488e22edc074f8ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arucoCamera: {fileID: 114992423418060336}
   autoStart: 1
-  cameraParametersController: {fileID: 114125049629224730}
+  CameraParametersController: {fileID: 114125049629224730}
+  arucoCameraDisplay: {fileID: 114332799581564012}
+  arucoObjectsTracker: {fileID: 0}
   rectificationScalingFactor: 1
-  stereoRectificationZeroDisparity: 1
+  rectificationZeroDisparity: 1
 --- !u!114 &114992423418060336
 MonoBehaviour:
   m_ObjectHideFlags: 1

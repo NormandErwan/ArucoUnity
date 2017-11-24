@@ -8,7 +8,7 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Contains a <see cref="DetectorParameters"/>.
+    /// Contains a <see cref="Aruco.DetectorParameters"/>.
     /// </summary>
     public interface IHasDetectorParameter
     {

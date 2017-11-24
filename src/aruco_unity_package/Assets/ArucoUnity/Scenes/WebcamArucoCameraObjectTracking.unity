@@ -1270,16 +1270,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114034833319431376, guid: 74c9e29e9d222a4438669336303acc9a,
-        type: 2}
-      propertyPath: cameraParametersFilename
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114715581165667816, guid: 74c9e29e9d222a4438669336303acc9a,
+    - target: {fileID: 114522793529101426, guid: 74c9e29e9d222a4438669336303acc9a,
         type: 2}
       propertyPath: arucoObjectsTracker
       value: 
       objectReference: {fileID: 1918690322}
+    - target: {fileID: 114034833319431376, guid: 74c9e29e9d222a4438669336303acc9a,
+        type: 2}
+      propertyPath: cameraParametersFilename
+      value: USB Camera - 2017-11-11_18-41-10.xml
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393126318706844, guid: 74c9e29e9d222a4438669336303acc9a,
+        type: 2}
+      propertyPath: webcamId
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74c9e29e9d222a4438669336303acc9a, type: 2}
   m_IsPrefabParent: 0

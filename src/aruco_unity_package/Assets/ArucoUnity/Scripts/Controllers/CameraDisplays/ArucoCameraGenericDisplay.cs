@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Controllers.CameraUndistortions;
-using ArucoUnity.Controllers.ObjectTrackers;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -21,20 +20,8 @@ namespace ArucoUnity
 
       public const float cameraBackgroundDistance = 1f;
 
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("Optional undistortion process associated with the ArucoCamera.")]
-      private ArucoCameraUndistortion arucoCameraUndistortion;
-
-      [SerializeField]
-      [Tooltip("Optional ArUco tracker. Detected ArUco object will be displayed and aligned with the physical camera images.")]
-      private ArucoObjectsTracker arucoObjectsTracker;
-
       // IArucoCameraDisplay properties
 
-      IArucoCameraUndistortion IArucoCameraDisplay.ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
-      IArucoObjectsTracker IArucoCameraDisplay.ArucoObjectsTracker { get { return arucoObjectsTracker; } }
       public Camera[] Cameras { get; set; }
       public Camera[] BackgroundCameras { get; set; }
       public Renderer[] Backgrounds { get; set; }
@@ -44,13 +31,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
-      public ArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional <see cref="Objects.ArucoObject"/> tracker associated with the ArucoCamera. Detected ArUco object will be
-      /// displayed and aligned with the physical camera images.
-      /// </summary>
-      public ArucoObjectsTracker ArucoObjectsTracker { get { return arucoObjectsTracker; } set { arucoObjectsTracker = value; } }
+      public IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
 
       // MonoBehaviour methods
 
@@ -75,8 +56,7 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// Configures <see cref="ArucoObjectsTracker"/> and if <see cref="ArucoCameraUndistortion"/> is set, wait is started before starting this
-      /// display.
+      /// If <see cref="ArucoCameraUndistortion"/> is set, wait is started before starting this display.
       /// </summary>
       public override void Configure()
       {
@@ -87,10 +67,6 @@ namespace ArucoUnity
             AutoStart = false;
             ArucoCameraUndistortion.Started += StartController;
           }
-        }
-        if (ArucoObjectsTracker != null)
-        {
-          ArucoObjectsTracker.ArucoCameraDisplay = this;
         }
         OnConfigured();
       }
