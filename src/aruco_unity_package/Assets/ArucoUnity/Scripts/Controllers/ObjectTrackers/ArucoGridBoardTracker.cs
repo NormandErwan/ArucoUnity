@@ -69,11 +69,17 @@ namespace ArucoUnity
       {
         base.UpdateTransforms(cameraId, dictionary);
 
+        // Update transform of each tracked board
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
           if (arucoGridBoard.Rvec != null)
           {
             UpdateTransform(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
+
+            // Adjust the estimated coordinates
+            arucoGridBoard.transform.localPosition 
+              += arucoGridBoard.transform.right * arucoGridBoard.transform.localScale.x / 2
+              + arucoGridBoard.transform.forward * arucoGridBoard.transform.localScale.z / 2;
           }
         }
       }
