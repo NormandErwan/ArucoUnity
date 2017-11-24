@@ -29,7 +29,7 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views. Only applied if" +
         "using a stereo camera.")]
-      private bool stereoRectificationDisparity = true;
+      private bool stereoRectificationZeroDisparity = true;
 
       // Properties
 
@@ -43,7 +43,7 @@ namespace ArucoUnity
       /// Gets or sets if the principal point of the images have the same pixel coordinates in the rectified views (true by default). Only applied if
       /// using a stereo camera.
       /// </summary>
-      public bool StereoRectificationDisparity { get { return stereoRectificationDisparity; } set { stereoRectificationDisparity = value; } }
+      public bool StereoRectificationZeroDisparity { get { return stereoRectificationZeroDisparity; } set { stereoRectificationZeroDisparity = value; } }
 
       // ArucoCameraUndistortion methods
 
@@ -70,7 +70,7 @@ namespace ArucoUnity
           int cameraId2 = StereoArucoCamera.CameraId2;
 
           Cv.Mat rotationMatrix, rectificationMatrix1, rectificationMatrix2, newCameraMatrix1, newCameraMatrix2, disparityMatrix;
-          Cv.StereoRectifyFlags stereoRectifyFlags = StereoRectificationDisparity ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
+          Cv.StereoRectifyFlags stereoRectifyFlags = StereoRectificationZeroDisparity ? Cv.StereoRectifyFlags.ZeroDisparity : 0;
 
           Cv.Rodrigues(stereoCameraParameters.RotationVector, out rotationMatrix);
           Cv.StereoRectify(cameraParameters.CameraMatrices[cameraId1], cameraParameters.DistCoeffs[cameraId1],
