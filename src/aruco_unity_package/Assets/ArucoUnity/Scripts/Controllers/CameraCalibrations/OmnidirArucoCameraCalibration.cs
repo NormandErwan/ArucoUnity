@@ -2,7 +2,6 @@
 using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Controllers.CameraCalibrations.Flags;
 using ArucoUnity.Plugin;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -20,17 +19,6 @@ namespace ArucoUnity
     /// </summary>
     public class OmnidirArucoCameraCalibration : ArucoCameraCalibration
     {
-      /// <summary>
-      /// The different algorithms to use for the undistortion of the images.
-      /// </summary>
-      public enum RectificationTypes
-      {
-        Perspective,
-        Cylindrical,
-        LongitudeLatitude,
-        Stereographic
-      }
-
       // Editor fields
 
       [SerializeField]
@@ -40,10 +28,6 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("The flags for the stereo calibration of camera pairs.")]
       private OmnidirCameraCalibrationFlags stereoCalibrationFlags;
-
-      [SerializeField]
-      [Tooltip("The algorithm to use for the recitification of the images.")]
-      private RectificationTypes rectificationType = RectificationTypes.Perspective;
 
       // Properties
 
@@ -57,28 +41,7 @@ namespace ArucoUnity
       /// </summary>
       public OmnidirCameraCalibrationFlags StereoCalibrationFlags { get { return stereoCalibrationFlags; } set { stereoCalibrationFlags = value; } }
 
-      /// <summary>
-      /// Gets or sets the algorithm to use for the rectification of the images. See this tutorial for illustrated examples:
-      /// https://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
-      /// </summary>
-      public RectificationTypes RectificationType { get { return rectificationType; } set { rectificationType = value; } }
-
-      // Variables
-
-      protected Dictionary<RectificationTypes, Cv.Omnidir.Rectifify> rectifyFlags = new Dictionary<RectificationTypes, Cv.Omnidir.Rectifify>()
-      {
-        { RectificationTypes.Perspective,       Cv.Omnidir.Rectifify.Perspective },
-        { RectificationTypes.Cylindrical,       Cv.Omnidir.Rectifify.Cylindrical },
-        { RectificationTypes.LongitudeLatitude, Cv.Omnidir.Rectifify.Longlati },
-        { RectificationTypes.Stereographic,     Cv.Omnidir.Rectifify.Stereographic }
-      };
-
-      // CalibrationController methods
-
-      protected override void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags)
-      {
-        base.InitializeCameraParameters(CalibrationFlags);
-      }
+      // ArucoCameraCalibration methods
 
       protected override void Calibrate(int cameraId, Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize,
         out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs)
