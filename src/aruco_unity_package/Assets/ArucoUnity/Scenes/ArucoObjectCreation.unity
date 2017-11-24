@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 1374276494}
   - component: {fileID: 1374276493}
   m_Layer: 0
-  m_Name: DiamondMarker_Dict4x4_50_Ids_1_2_3_13_SquareSize_200_MarkerSize_120
+  m_Name: DiamondMarker_Dict4x4_50_Ids_36_37_38_39_SquareSize_200_MarkerSize_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,10 +724,10 @@ MonoBehaviour:
   markerSideLength: 120
   markerBorderBits: 0
   squareSideLength: 200
-  marker1Id: 1
-  marker2Id: 2
-  marker3Id: 3
-  marker4Id: 4
+  marker1Id: 36
+  marker2Id: 37
+  marker3Id: 38
+  marker4Id: 39
 --- !u!114 &1374276494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1775526415}
   - component: {fileID: 1775526414}
   m_Layer: 0
-  m_Name: Marker_Dict4x4_50_Id_8
+  m_Name: Marker_Dict4x4_50_Id_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -841,7 +841,7 @@ MonoBehaviour:
   dictionaryName: 0
   markerSideLength: 200
   markerBorderBits: 1
-  markerId: 8
+  markerId: 35
 --- !u!114 &1775526415
 MonoBehaviour:
   m_ObjectHideFlags: 0
