@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Controllers.CameraCalibrations.Flags;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
@@ -15,7 +14,7 @@ namespace ArucoUnity
   namespace Controllers.CameraCalibrations
   {
     /// <summary>
-    /// Calibrates a <see cref="ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
+    /// Calibrates a <see cref="Cameras.IArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
     /// <see cref="CameraParametersController"/>.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
@@ -371,6 +370,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Calibrate()
       {
+        // Update state
         calibratingMutex.WaitOne();
         {
           IsCalibrated = false;
@@ -394,78 +394,50 @@ namespace ArucoUnity
           }
         }
 
-        // Initialize and configure the camera parameters
-        InitializeCameraParameters();
+        InitializeCameraParameters(); // Initialize and configure the camera parameters
 
-        // Calibrate each camera
-        Std.VectorVectorPoint3f[] objectPoints = new Std.VectorVectorPoint3f[ArucoCamera.CameraNumber];
+        // Get objet and image calibration points from detected ids and corners
         Std.VectorVectorPoint2f[] imagePoints = new Std.VectorVectorPoint2f[ArucoCamera.CameraNumber];
+        Std.VectorVectorPoint3f[] objectPoints = new Std.VectorVectorPoint3f[ArucoCamera.CameraNumber];
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          // Get objet and image calibration points from detected ids and corners
-          Std.VectorVectorPoint3f boardObjectPoints = new Std.VectorVectorPoint3f();
-          Std.VectorVectorPoint2f boardImagePoints = new Std.VectorVectorPoint2f();
           uint frameCount = MarkerCorners[cameraId].Size();
           for (uint frame = 0; frame < frameCount; frame++)
           {
-            Std.VectorPoint3f frameObjectPoints;
             Std.VectorPoint2f frameImagePoints;
-            Aruco.GetBoardObjectAndImagePoints(CalibrationBoard.Board, MarkerCorners[cameraId].At(frame), MarkerIds[cameraId].At(frame),
-              out frameObjectPoints, out frameImagePoints);
-            boardObjectPoints.PushBack(frameObjectPoints);
-            boardImagePoints.PushBack(frameImagePoints);
-          }
-          objectPoints[cameraId] = boardObjectPoints;
-          imagePoints[cameraId] = boardImagePoints;
+            Std.VectorPoint3f frameObjectPoints;
 
-          // Calibrate the camera
-          Std.VectorVec3d rvecs, tvecs;
-          Calibrate(cameraId, boardObjectPoints, boardImagePoints, calibrationImageSizes[cameraId], out rvecs,
-            out tvecs);
-
-          // If the used board is a charuco board, refine the calibration
-          if (charucoBoard != null)
-          {
-            // Prepare data to refine the calibration
-            Std.VectorVectorPoint3f charucoObjectPoints = new Std.VectorVectorPoint3f();
-            Std.VectorVectorPoint2f charucoImagePoints = new Std.VectorVectorPoint2f();
-            for (uint frame = 0; frame < frameCount; frame++)
+            if (charucoBoard == null)
             {
-              // Interpolate charuco corners using camera parameters
-              Std.VectorPoint2f charucoCorners;
+              // Using a grid board
+              Aruco.GetBoardObjectAndImagePoints(CalibrationBoard.Board, MarkerCorners[cameraId].At(frame), MarkerIds[cameraId].At(frame),
+                out frameObjectPoints, out frameImagePoints);
+            }
+            else
+            {
+              // Using a charuco board
               Std.VectorInt charucoIds;
               Aruco.InterpolateCornersCharuco(MarkerCorners[cameraId].At(frame), MarkerIds[cameraId].At(frame), CalibrationImages[cameraId].At(frame),
-                charucoBoard, out charucoCorners, out charucoIds);
-              charucoImagePoints.PushBack(charucoCorners);
+                charucoBoard, out frameImagePoints, out charucoIds);
 
               // Join the object points corresponding to the detected markers
-              charucoObjectPoints.PushBack(new Std.VectorPoint3f());
+              frameObjectPoints = new Std.VectorPoint3f();
               uint markerCount = charucoIds.Size();
               for (uint marker = 0; marker < markerCount; marker++)
               {
                 uint pointId = (uint)charucoIds.At(marker);
                 Cv.Point3f objectPoint = charucoBoard.ChessboardCorners.At(pointId);
-                charucoObjectPoints.At(frame).PushBack(objectPoint);
+                frameObjectPoints.PushBack(objectPoint);
               }
             }
-            objectPoints[cameraId] = boardObjectPoints;
 
-            // Refine the calibration
-            Calibrate(cameraId, charucoObjectPoints, charucoImagePoints, calibrationImageSizes[cameraId], out rvecs,
-              out tvecs);
+            imagePoints[cameraId].PushBack(frameImagePoints);
+            objectPoints[cameraId].PushBack(frameObjectPoints);
           }
-
-          // Save calibration extrinsic parameters
-          Rvecs[cameraId] = rvecs;
-          Tvecs[cameraId] = tvecs;
         }
 
-        // If ArucoCamera is a stereo camera, apply a stereo calibration and save the resuts in the camera parameters
-        if (ArucoCamera is StereoArucoCamera)
-        {
-          CameraParametersController.CameraParameters.StereoCameraParameters = new StereoCameraParameters();
-          StereoCalibrate(objectPoints, imagePoints, calibrationImageSizes, CameraParametersController.CameraParameters.StereoCameraParameters);
-        }
+        // Calibrate the Aruco camera
+        Calibrate(imagePoints, objectPoints);
 
         // Save the camera parameters
         CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - "
@@ -515,28 +487,12 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Applies a calibration to a camera, saves the intrinsic parameters in <see cref="CameraParametersController.CameraParameters"/> and output
-      /// the extrinsic parameters.
+      /// Applies a calibration to the <see cref="ArucoCameraController.ArucoCamera"/>, set the extrinsic camera parameters to <see cref="Rvecs"/>
+      /// and <see cref="Tvecs"/> and saves the camera parameters in <see cref="CameraParametersController.CameraParameters"/>.
       /// </summary>
-      /// <param name="cameraId">The id of the camera to calibrate.</param>
-      /// <param name="objectPoints">The object points corresponding the imagePoints.</param>
-      /// <param name="imagePoints">The detected image points for this camera.</param>
-      /// <param name="imageSize">The size of the camera images.</param>
-      /// <param name="rvecs">Output rotations for each calibration images.</param>
-      /// <param name="tvecs">Output rotations for each calibration images.</param>
-      protected abstract void Calibrate(int cameraId, Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize,
-        out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs);
-
-      /// <summary>
-      /// Applies a stereo calibration to a stereo camera and saves the extrinsincs parameters between the two cameras in the
-      /// <see cref="stereoCalibrationCameraPairs"/> argument.
-      /// </summary>
-      /// <param name="objectPoints">The object points of the camera pair.</param>
-      /// <param name="imagePoints">The detected image points of the camera pair.</param>
-      /// <param name="imageSizes">The size of the images of each camera in the camera pair.</param>
-      /// <param name="stereoCameraParameters">The parameters containing the results of the stereo calibration.</param>
-      protected abstract void StereoCalibrate(Std.VectorVectorPoint3f[] objectPoints, Std.VectorVectorPoint2f[] imagePoints, Cv.Size[] imageSizes,
-        StereoCameraParameters stereoCameraParameters);
+      /// <param name="imagePoints">The detected image points of each camera.</param>
+      /// <param name="objectPoints">The corresponding object points of each camera.</param>
+      protected abstract void Calibrate(Std.VectorVectorPoint2f[] imagePoints, Std.VectorVectorPoint3f[] objectPoints);
     }
   }
 

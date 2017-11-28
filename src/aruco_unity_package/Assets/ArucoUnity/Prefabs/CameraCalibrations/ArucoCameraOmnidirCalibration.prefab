@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114570367291400562}
   - component: {fileID: 114758305632993188}
   m_Layer: 0
-  m_Name: OmnidirArucoCameraCalibration
+  m_Name: ArucoCameraOmnidirCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,15 +132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6859419089da74a90f9ad6387a7983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 0}
   autoStart: 1
   detectorParametersController: {fileID: 114900348844413008}
   calibrationBoard: {fileID: 114570367291400562}
   refineMarkersDetection: 0
   cameraParametersController: {fileID: 114758305632993188}
+  arucoCamera: {fileID: 0}
   calibrationFlags: {fileID: 114068656867377812}
-  stereoCalibrationFlags: {fileID: 114978887673625444}
-  rectificationType: 0
 --- !u!114 &114570367291400562
 MonoBehaviour:
   m_ObjectHideFlags: 1
