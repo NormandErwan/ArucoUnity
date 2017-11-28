@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -11,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Configurable and startable controller.
     /// </summary>
-    public abstract class ConfigurableController : IConfigurableController
+    public abstract class ConfigurableController : MonoBehaviour, IConfigurableController
     {
       // Editor fields
 
@@ -21,15 +22,22 @@ namespace ArucoUnity
 
       // IConfigurableController events
 
+      public event Action Ready = delegate { };
       public event Action Configured = delegate { };
       public event Action Started = delegate { };
       public event Action Stopped = delegate { };
 
       // IConfigurableController properties
 
-      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
-      public bool IsConfigured { get; protected set; }
-      public bool IsStarted { get; protected set; }
+      public bool AutoStart { get { return autoStart; } set { SetAutoStart(value); } }
+      public bool IsReady { get; private set; }
+      public bool IsConfigured { get; private set; }
+      public bool IsStarted { get; private set; }
+      public List<IConfigurableController> ControllerDependencies { get; protected set; }
+
+      // Variables
+
+      private Dictionary<IConfigurableController, Action> dependencyStartedCallbacks;
 
       // MonoBehaviour methods
 
@@ -38,8 +46,22 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
+        if (ControllerDependencies == null)
+        {
+          ControllerDependencies = new List<IConfigurableController>();
+        }
+        dependencyStartedCallbacks = new Dictionary<IConfigurableController, Action>();
+
         IsConfigured = false;
         IsStarted = false;
+      }
+
+      /// <summary>
+      /// Calls <see cref="SetAutoStart(bool)"/>.
+      /// </summary>
+      protected virtual void Start()
+      {
+        SetAutoStart(AutoStart);
       }
 
       /// <summary>
@@ -47,7 +69,7 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void OnDestroy()
       {
-        if (IsConfigured && IsStarted)
+        if (IsStarted)
         {
           StopController();
         }
@@ -56,7 +78,7 @@ namespace ArucoUnity
       // IArucoCameraController methods
 
       /// <summary>
-      /// Configures the controller and calls <see cref="OnConfigured"/>. The controller must be stopped.
+      /// Configures the controller and calls <see cref="OnConfigured"/>. Properties must be set and the controller must be stopped.
       /// </summary>
       public virtual void Configure()
       {
@@ -66,6 +88,7 @@ namespace ArucoUnity
         }
 
         IsConfigured = false;
+        IsReady = false;
       }
 
       /// <summary>
@@ -73,7 +96,7 @@ namespace ArucoUnity
       /// </summary>
       public virtual void StartController()
       {
-        if (!IsConfigured || IsStarted)
+        if (!IsConfigured || !IsReady || IsStarted)
         {
           throw new Exception("Configure and stop the controller before start it.");
         }
@@ -91,15 +114,61 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls the <see cref="Configured"/> event, and calls <see cref="StartController"/> if <see cref="AutoStart"/> is true.
+      /// Calls the <see cref="Configured"/> event, and configure.
       /// </summary>
       protected virtual void OnConfigured()
       {
-        // Update state
+        // Remove the previous controller dependency callbacks
+        foreach (var controller in dependencyStartedCallbacks)
+        {
+          if (controller.Key != null)
+          {
+            controller.Key.Started -= controller.Value;
+            controller.Key.Stopped -= Controller_Stopped;
+          }
+        }
+        dependencyStartedCallbacks.Clear();
+
+        // Add a callback for each controller not started
+        foreach (var controller in ControllerDependencies)
+        {
+          if (!controller.IsStarted)
+          {
+            // When the controller has started, remove the callback and start this current controller if not waiting for any other controller to start
+            Action controller_Started = () =>
+            {
+              dependencyStartedCallbacks.Remove(controller);
+              if (dependencyStartedCallbacks.Count == 0)
+              {
+                OnReady();
+              }
+            };
+
+            dependencyStartedCallbacks.Add(controller, controller_Started);
+            controller.Started += controller_Started;
+            controller.Stopped += Controller_Stopped;
+          }
+        }
+
+        // Configured
         IsConfigured = true;
         Configured();
 
-        // AutoStart
+        // Ready if no dependencies or if they are all started
+        if (dependencyStartedCallbacks.Count == 0)
+        {
+          OnReady();
+        }
+      }
+
+      /// <summary>
+      /// Calls the <see cref="Ready"/> event, and calls <see cref="StartController"/> if <see cref="AutoStart"/> is true.
+      /// </summary>
+      protected virtual void OnReady()
+      {
+        IsReady = true;
+        Ready();
+
         if (AutoStart)
         {
           StartController();
@@ -122,6 +191,31 @@ namespace ArucoUnity
       {
         IsStarted = false;
         Stopped();
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
+      /// </summary>
+      private void SetAutoStart(bool value)
+      {
+        autoStart = value;
+        if (AutoStart)
+        {
+          Configure();
+        }
+      }
+
+      /// <summary>
+      /// Calls <see cref="StopController"/> if it has been configured and started when a dependecy controller has stopped.
+      /// </summary>
+      private void Controller_Stopped()
+      {
+        if (IsStarted)
+        {
+          StopController();
+        }
       }
     }
   }

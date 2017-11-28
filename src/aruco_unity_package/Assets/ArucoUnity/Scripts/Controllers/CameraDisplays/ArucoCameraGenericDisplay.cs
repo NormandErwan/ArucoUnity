@@ -56,17 +56,14 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// If <see cref="ArucoCameraUndistortion"/> is set, wait is started before starting this display.
+      /// Adds <see cref="ArucoCameraUndistortion"/> in <see cref="ControllerDependencies"/> if set and calls <see cref="OnConfigured"/>.
       /// </summary>
       public override void Configure()
       {
+        base.Configure();
         if (ArucoCameraUndistortion != null)
         {
-          if (!ArucoCameraUndistortion.IsStarted && AutoStart)
-          {
-            AutoStart = false;
-            ArucoCameraUndistortion.Started += StartController;
-          }
+          ControllerDependencies.Add(ArucoCameraUndistortion);
         }
         OnConfigured();
       }
@@ -89,12 +86,6 @@ namespace ArucoUnity
       {
         base.StopController();
         SetDisplayActive(false);
-
-        if (ArucoCameraUndistortion != null)
-        {
-          ArucoCameraUndistortion.Started -= StartController;
-        }
-
         OnStopped();
       }
 

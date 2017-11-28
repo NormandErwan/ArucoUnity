@@ -25,12 +25,6 @@ namespace ArucoUnity
 
       protected readonly int? dontFlipCode = null;
 
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("Start the cameras automatically after configured it. Call StartCameras() alternatively.")]
-      private bool autoStart = true;
-
       // IArucoCamera events
 
       public event Action ImagesUpdated = delegate { };
@@ -64,17 +58,6 @@ namespace ArucoUnity
                      postDetectflipCode; // Convert back the images
 
       // MonoBehaviour methods
-
-      /// <summary>
-      /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
-      /// </summary>
-      protected virtual void Start()
-      {
-        if (AutoStart)
-        {
-          Configure();
-        }
-      }
 
       /// <summary>
       /// Update <see cref="Images"/> with the new frame images.

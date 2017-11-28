@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArucoUnity
 {
@@ -15,9 +16,14 @@ namespace ArucoUnity
       // Events
 
       /// <summary>
-      /// Called when the controller has been configured.
+      /// Called when the controller is configured.
       /// </summary>
       event Action Configured;
+
+      /// <summary>
+      /// Called when the controller is ready to be started, when all <see cref="ControllerDependencies"/> have been started. 
+      /// </summary>
+      event Action Ready;
 
       /// <summary>
       /// Called when the controller is started.
@@ -32,8 +38,8 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets if configuring and starting automatically when the controller is created. Configure manually by calling
-      /// <see cref="Configure"/> and start manually by calling <see cref="StartController"/>.
+      /// Gets or sets if configuring and starting automatically when set to true and when each controller in <see cref="ControllerDependencies"/>
+      /// has started. Configure manually by calling <see cref="Configure"/> and start manually by calling <see cref="StartController"/>.
       /// </summary>
       bool AutoStart { get; set; }
 
@@ -43,19 +49,30 @@ namespace ArucoUnity
       bool IsConfigured { get; }
 
       /// <summary>
+      /// Gets if the controller is ready to be started when all <see cref="ControllerDependencies"/> have been started.
+      /// </summary>
+      bool IsReady { get; }
+
+      /// <summary>
       /// Gets if the controller is started.
       /// </summary>
       bool IsStarted { get; }
 
+      /// <summary>
+      /// List of dependency controllers that must have started before starting this controller, and that trigger stopping this controller when
+      /// at least one of them stops.
+      /// </summary>
+      List<IConfigurableController> ControllerDependencies { get; }
+
       // Methods
 
       /// <summary>
-      /// Configures the controller and calls the <see cref="Configured"/> event. It must be stopped.
+      /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the controller must be stopped.
       /// </summary>
       void Configure();
 
       /// <summary>
-      /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured and stopped.
+      /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and stopped.
       /// </summary>
       void StartController();
 
