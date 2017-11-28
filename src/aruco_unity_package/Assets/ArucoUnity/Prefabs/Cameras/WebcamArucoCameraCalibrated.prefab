@@ -283,12 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e044568ea72405e49bf56df52f9d2b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 114393126318706844}
   autoStart: 1
   CameraParametersController: {fileID: 114034833319431376}
-  arucoCameraDisplay: {fileID: 114715581165667816}
-  arucoObjectsTracker: {fileID: 0}
   rectificationScalingFactor: 1
+  arucoCamera: {fileID: 114393126318706844}
 --- !u!114 &114715581165667816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,8 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 114393126318706844}
   autoStart: 1
+  arucoCamera: {fileID: 114393126318706844}
+  arucoCameraUndistortion: {fileID: 114522793529101426}
   camera: {fileID: 20452962843750572}
   backgroundCamera: {fileID: 20017792066165246}
   background: {fileID: 23646749236801090}

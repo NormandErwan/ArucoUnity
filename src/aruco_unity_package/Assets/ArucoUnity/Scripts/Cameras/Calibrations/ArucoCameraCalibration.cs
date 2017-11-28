@@ -402,6 +402,9 @@ namespace ArucoUnity
         Std.VectorVectorPoint3f[] objectPoints = new Std.VectorVectorPoint3f[ArucoCamera.CameraNumber];
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
+          imagePoints[cameraId] = new Std.VectorVectorPoint2f();
+          objectPoints[cameraId] = new Std.VectorVectorPoint3f();
+
           uint frameCount = MarkerCorners[cameraId].Size();
           for (uint frame = 0; frame < frameCount; frame++)
           {

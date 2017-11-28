@@ -528,10 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3648ba3f74da4164db2b440ad0fbe471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 114778648834828408}
   autoStart: 1
+  stereoArucoCamera: {fileID: 114778648834828408}
   arucoCameraUndistortion: {fileID: 0}
-  arucoObjectsTracker: {fileID: 0}
   leftEye: {fileID: 4041434532156738}
   rightEye: {fileID: 4387147391419430}
   leftCamera: {fileID: 20349722883832606}
