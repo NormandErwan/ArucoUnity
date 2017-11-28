@@ -49,11 +49,11 @@ namespace ArucoUnity
       /// </summary>
       protected override void Start()
       {
-        base.Start();
         foreach (ArucoObject arucoObject in arucoObjects)
         {
           Add(arucoObject);
         }
+        base.Start();
       }
 
       // IArucoObjectsController Methods
