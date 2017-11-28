@@ -20,7 +20,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
-      IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
+      IArucoCameraUndistortion ArucoCameraUndistortion { get; }
 
       /// <summary>
       /// Gets or sets the Unity virtual camera that will shoot the 3D content aligned with the <see cref="Background"/>.

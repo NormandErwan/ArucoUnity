@@ -78,9 +78,9 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      public override void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera, CameraParameters cameraParameters)
+      public override void Activate(IArucoObjectsTracker arucoTracker)
       {
-        base.Activate(arucoTracker, arucoCamera, cameraParameters);
+        base.Activate(arucoTracker);
 
         // Initialize the properties and the ArUco objects
         MarkerCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoCamera.CameraNumber];

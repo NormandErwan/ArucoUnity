@@ -1,7 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CameraDisplays;
-using ArucoUnity.Controllers.ObjectTrackers;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using UnityEngine;
 using System;
@@ -16,9 +13,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>.
     /// </summary>
-    public abstract class ArucoCameraUndistortion<T, U> : ArucoCameraController<T>, IArucoCameraUndistortion 
-      where T : ArucoCamera
-      where U : ArucoCameraGenericDisplay<T>
+    public abstract class ArucoCameraUndistortion : ArucoCameraController, IArucoCameraUndistortion
     {
       // Constants
 
@@ -30,14 +25,6 @@ namespace ArucoUnity
       [Tooltip("The camera parameters associated with the ArucoCamera.")]
       private CameraParametersController CameraParametersController;
 
-      [SerializeField]
-      [Tooltip("The ArucoCamera display.")]
-      private U arucoCameraDisplay;
-
-      [SerializeField]
-      [Tooltip("Optional ArUco tracker. Detected ArUco object will be displayed and aligned with the physical camera images.")]
-      private ArucoObjectsTracker arucoObjectsTracker;
-
       // IArucoCameraUndistortion properties
 
       public CameraParameters CameraParameters { get; set; }
@@ -45,19 +32,6 @@ namespace ArucoUnity
       public Cv.Mat[] RectificationMatrices { get; protected set; }
       public Cv.Mat UndistortedDistCoeffs { get { return noDistCoeffs; } }
       public Cv.Mat[][] UndistortionRectificationMaps { get; protected set; }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the ArucoCamera display.
-      /// </summary>
-      public U ArucoCameraDisplay { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional ArUco object tracker associated with the ArucoCamera. Detected ArUco object will be displayed and aligned with
-      /// the physical camera images.
-      /// </summary>
-      public ArucoObjectsTracker ArucoObjectsTracker { get { return arucoObjectsTracker; } set { arucoObjectsTracker = value; } }
 
       // Variables
 
@@ -70,7 +44,7 @@ namespace ArucoUnity
       /// <summary>
       /// Initializes the properties.
       /// </summary>
-      protected virtual void Start()
+      protected override void Start()
       {
         noRectificationMatrix = new Cv.Mat();
         noDistCoeffs = new Cv.Mat();
@@ -79,14 +53,15 @@ namespace ArucoUnity
         {
           CameraParameters = CameraParametersController.CameraParameters;
         }
+
+        base.Start();
       }
 
       // ArucoCameraController methods
 
       /// <summary>
       /// Checks if <see cref="CameraParameters"/> is set, if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/>
-      /// are equals, configures <see cref="ArucoCameraDisplay"/> and <see cref="ArucoObjectsTracker"/> if set and calls
-      /// <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/>.
+      /// are equals and calls <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/>.
       /// </summary>
       public override void Configure()
       {
@@ -102,23 +77,7 @@ namespace ArucoUnity
           throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras in ArucoCamera");
         }
 
-        // Configure ArucoCameraDisplay and ArucoObjectsTracker
-        if (ArucoCameraDisplay != null)
-        {
-          ArucoCameraDisplay.ArucoCameraUndistortion = this;
-          if (ArucoCameraDisplay.IsStarted)
-          {
-            ArucoCameraDisplay.StopController();
-            ArucoCameraDisplay.Configure();
-          }
-        }
-        if (ArucoObjectsTracker != null)
-        {
-          ArucoObjectsTracker.ArucoCameraDisplay = ArucoCameraDisplay;
-          ArucoObjectsTracker.CameraParameters = CameraParameters;
-        }
-
-        // Initializes properties
+        // Initialize properties
         RectifiedCameraMatrices = new Cv.Mat[CameraParameters.CameraNumber];
         RectificationMatrices = new Cv.Mat[CameraParameters.CameraNumber];
         UndistortionRectificationMaps = new Cv.Mat[CameraParameters.CameraNumber][];

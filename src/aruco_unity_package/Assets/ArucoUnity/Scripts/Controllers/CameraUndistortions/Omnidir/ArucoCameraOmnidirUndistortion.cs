@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CameraDisplays;
 using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
@@ -15,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraOmnidirUndistortion<T> : ArucoCameraGenericOmnidirUndistortion<ArucoCamera, ArucoCameraDisplay>
+    public class ArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion
     {
       // Constants
 
@@ -25,11 +24,24 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private ArucoCamera arucoCamera;
+
+      [SerializeField]
       [Tooltip("The desired field of view for the Unity cameras shooting the undistorted and rectified images.")]
       [Range(1f, 179f)]
       private float[] perspectiveDesiredFieldOfViews;
 
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
+
       // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
 
       /// <summary>
       /// Gets or sets the desired field of view for the Unity cameras shooting the undistorted and rectified images.

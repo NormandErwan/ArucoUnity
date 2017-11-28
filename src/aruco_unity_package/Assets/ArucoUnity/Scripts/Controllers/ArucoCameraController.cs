@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -9,26 +8,13 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Generic configurable controller using a <see cref="Cameras.ArucoCamera"/> that auto-start when the ArucoCamera is started.
+    /// Generic configurable controller using a <see cref="ArucoCamera"/> as starting dependency.
     /// </summary>
-    public abstract class ArucoCameraController<T> : ConfigurableController, IArucoCameraController where T : ArucoCamera
+    public abstract class ArucoCameraController : ConfigurableController, IArucoCameraController
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private T arucoCamera;
-
       // IArucoCameraController properties
 
-      IArucoCamera IArucoCameraController.ArucoCamera { get { return ArucoCamera; } }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use. Setting calls <see cref="SetArucoCamera(ArucoCamera)"/>.
-      /// </summary>
-      public T ArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
+      public abstract IArucoCamera ArucoCamera { get; }
 
       // MonoBehaviour methods
 

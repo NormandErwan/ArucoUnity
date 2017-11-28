@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Controllers.CameraUndistortions;
+﻿using ArucoUnity.Controllers.CameraUndistortions;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -10,11 +9,11 @@ namespace ArucoUnity
   namespace Controllers.CameraDisplays
   {
     /// <summary>
-    /// Manages Unity virual cameras that shoot 3D content aligned with the <see cref="ArucoCamera.Images"/> displayed as background. It creates the
+    /// Manages Unity virual cameras that shoot 3D content aligned with the <see cref="IArucoCamera.Images"/> displayed as background. It creates the
     /// augmented reality effect by the images from the physical cameras and the <see cref="Objects.ArucoObject"/> tracked by
     /// <see cref="ObjectTrackers.ArucoObjectsTracker"/>.
     /// </summary>
-    public class ArucoCameraGenericDisplay<T> : ArucoCameraController<T>, IArucoCameraDisplay where T : ArucoCamera
+    public abstract class ArucoCameraGenericDisplay : ArucoCameraController, IArucoCameraDisplay
     {
       // Constants
 
@@ -31,7 +30,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
-      public IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
+      public abstract IArucoCameraUndistortion ArucoCameraUndistortion { get; }
 
       // MonoBehaviour methods
 

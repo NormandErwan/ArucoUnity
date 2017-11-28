@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CameraDisplays;
 using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
@@ -15,8 +14,25 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion<StereoArucoCamera, StereoArucoCameraDisplay>
+    public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion
     {
+      // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private StereoArucoCamera stereoArucoCamera;
+
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
+
+      // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
+
       // ArucoCameraController methods
 
       public override void Configure()
@@ -42,7 +58,8 @@ namespace ArucoUnity
             float imageWidth = CameraParameters.ImageWidths[cameraId];
             float imageHeight = CameraParameters.ImageHeights[cameraId];
 
-            float cameraF = ArucoCameraDisplay.Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * ArucoCameraDisplay.Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
+            // TODO: fix
+            float cameraF = CameraParameters.ImageWidths[cameraId] / 2;//ArucoCameraDisplay.Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * ArucoCameraDisplay.Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
             RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
               cameraF, 0, CameraParameters.ImageWidths[cameraId] / 2,
               0, cameraF, CameraParameters.ImageHeights[cameraId] / 2,

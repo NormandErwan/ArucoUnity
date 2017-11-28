@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Controllers.CameraUndistortions;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -11,9 +12,17 @@ namespace ArucoUnity
     /// <summary>
     /// Displays a <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraDisplay : ArucoCameraGenericDisplay<StereoArucoCamera>
+    public class StereoArucoCameraDisplay : ArucoCameraGenericDisplay
     {
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private StereoArucoCamera stereoArucoCamera;
+
+      [SerializeField]
+      [Tooltip("The optional undistortion process associated with the ArucoCamera.")]
+      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The container of the leftCamera and the leftBackgroundCamera.")]
@@ -47,7 +56,25 @@ namespace ArucoUnity
       [Tooltip("The background displaying the image of the right physical camera in ArucoCamera.")]
       private Renderer rightBackground;
 
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
+
+      // ArucoCameraGenericDisplay properties
+
+      public override IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
+
       // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
+
+      /// <summary>
+      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 
       /// <summary>
       /// Gets or sets the containers of the <see cref="ArucoCameraGenericDisplay{T}.Cameras"/> and the

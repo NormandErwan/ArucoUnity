@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Utilities;
 using UnityEngine;
 
@@ -12,9 +13,17 @@ namespace ArucoUnity
     /// <summary>
     /// Displays a mono <see cref="ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraDisplay : ArucoCameraGenericDisplay<ArucoCamera>
+    public class ArucoCameraDisplay : ArucoCameraGenericDisplay
     {
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private ArucoCamera arucoCamera;
+
+      [SerializeField]
+      [Tooltip("The optional undistortion process associated with the ArucoCamera.")]
+      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the background.")]
@@ -27,6 +36,26 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("The background displaying the image of the corresponding physical camera in ArucoCamera.")]
       private Renderer background;
+
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
+
+      // ArucoCameraGenericDisplay properties
+
+      public override IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
+
+      // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
+
+      /// <summary>
+      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
 
       // Variables
 

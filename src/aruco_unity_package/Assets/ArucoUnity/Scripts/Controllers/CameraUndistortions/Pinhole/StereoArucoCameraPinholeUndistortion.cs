@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras;
 using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers.CameraDisplays;
 using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
@@ -15,16 +14,29 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the undistortion and rectification process of pinhole <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion<StereoArucoCamera, StereoArucoCameraDisplay>
+    public class StereoArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion
     {
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private StereoArucoCamera stereoArucoCamera;
 
       [SerializeField]
       [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views. Only applied if" +
         "using a stereo camera.")]
       private bool rectificationZeroDisparity = true;
 
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
+
       // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
 
       /// <summary>
       /// Gets or sets if the principal point of the images have the same pixel coordinates in the rectified views (true by default). Only applied if

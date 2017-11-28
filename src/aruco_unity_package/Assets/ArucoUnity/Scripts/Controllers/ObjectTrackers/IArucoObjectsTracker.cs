@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Controllers.CameraDisplays;
+using ArucoUnity.Controllers.CameraUndistortions;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -11,14 +12,19 @@ namespace ArucoUnity
     /// <summary>
     /// 
     /// </summary>
-    public interface IArucoObjectsTracker : IArucoObjectsController, IHasDetectorParameter, IHasCameraParameters
+    public interface IArucoObjectsTracker : IArucoCameraController, IArucoObjectsController, IHasDetectorParameter
     {
       // Properties
 
       /// <summary>
+      /// Gets the undistortion process associated with the ArucoCamera.
+      /// </summary>
+      IArucoCameraUndistortion ArucoCameraUndistortion { get; }
+
+      /// <summary>
       /// Gets or sets the optional camera display associated with the ArucoCamera.
       /// </summary>
-      IArucoCameraDisplay ArucoCameraDisplay { get; set; }
+      IArucoCameraDisplay ArucoCameraDisplay { get; }
 
       /// <summary>
       /// Gets or sets if using refine strategy to detect more markers using the <see cref="ArucoBoard"/> in the

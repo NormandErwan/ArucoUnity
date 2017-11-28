@@ -22,6 +22,10 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private ArucoCamera arucoCamera;
+
+      [SerializeField]
       [Tooltip("The flags for the cameras calibration and the image rectification.")]
       private OmnidirCameraCalibrationFlags calibrationFlags;
 
@@ -29,7 +33,16 @@ namespace ArucoUnity
       [Tooltip("The flags for the stereo calibration of camera pairs.")]
       private OmnidirCameraCalibrationFlags stereoCalibrationFlags;
 
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
+
       // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
 
       /// <summary>
       /// Gets or sets the flags for the cameras calibration and the image rectification.

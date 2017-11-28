@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using ArucoUnity.Plugin;
 using ArucoUnity.Objects;
 using System;
-using ArucoUnity.Cameras;
 
 namespace ArucoUnity
 {
@@ -15,7 +14,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.
     /// </summary>
-    public abstract class ArucoObjectsController<T> : ArucoObjectDetector<T>, IArucoObjectsController where T : ArucoCamera
+    public abstract class ArucoObjectsController : ArucoObjectDetector, IArucoObjectsController
     {
       // Editor fields
 
@@ -48,8 +47,9 @@ namespace ArucoUnity
       /// <summary>
       /// Adds to the <see cref="ArucoObjects"/> list the ArUco objects added from the editor field array <see cref="arucoObjects"/>.
       /// </summary>
-      protected virtual void Start()
+      protected override void Start()
       {
+        base.Start();
         foreach (ArucoObject arucoObject in arucoObjects)
         {
           Add(arucoObject);

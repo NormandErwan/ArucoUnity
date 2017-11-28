@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
     /// </summary>
-    public abstract class ArucoObjectDetector<T> : ArucoCameraController<T>, IHasDetectorParameter where T : ArucoCamera
+    public abstract class ArucoObjectDetector : ArucoCameraController, IHasDetectorParameter
     {
       // Editor fields
 

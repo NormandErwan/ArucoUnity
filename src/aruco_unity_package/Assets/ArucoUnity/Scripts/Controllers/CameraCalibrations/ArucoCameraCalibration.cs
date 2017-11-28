@@ -15,13 +15,13 @@ namespace ArucoUnity
   namespace Controllers.CameraCalibrations
   {
     /// <summary>
-    /// Calibrates a <see cref="ArucoCamera"/> or a <see cref="StereoArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibration results
-    /// in a file to use in <see cref="ObjectTrackers.ArucoObjectsTracker"/> for <see cref="ArucoObject"/> tracking.
+    /// Calibrates a <see cref="ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
+    /// <see cref="CameraParametersController"/>.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
     /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
     /// </summary>
-    public abstract class ArucoCameraCalibration : ArucoObjectDetector<ArucoCamera>
+    public abstract class ArucoCameraCalibration : ArucoObjectDetector
     {
       // Editor fields
 

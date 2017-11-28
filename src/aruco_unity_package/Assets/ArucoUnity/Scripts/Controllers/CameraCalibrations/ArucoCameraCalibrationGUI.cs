@@ -87,7 +87,7 @@ namespace ArucoUnity
         resetButton.enabled = false;
 
         // Configure the images display
-        ArucoCamera arucoCamera = arucoCameraCalibration.ArucoCamera;
+        var arucoCamera = arucoCameraCalibration.ArucoCamera;
         calibrationReprojectionErrorTexts = new Text[arucoCamera.CameraNumber];
 
         // Configure the arucoCameraImagesRect as a grid of images

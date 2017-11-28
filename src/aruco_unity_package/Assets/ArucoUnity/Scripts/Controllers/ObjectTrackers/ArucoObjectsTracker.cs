@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Controllers.CameraUndistortions;
 
 namespace ArucoUnity
 {
@@ -21,9 +21,21 @@ namespace ArucoUnity
     /// 
     /// See the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html
     /// </summary>
-    public class ArucoObjectsTracker : ArucoObjectsController<ArucoCamera>, IArucoObjectsTracker
+    public class ArucoObjectsTracker : ArucoObjectsController, IArucoObjectsTracker
     {
       // Editor fields
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private ArucoCamera arucoCamera;
+
+      [SerializeField]
+      [Tooltip("The undistortion process associated with the ArucoCamera.")]
+      private ArucoCameraUndistortion arucoCameraUndistortion;
+
+      [SerializeField]
+      [Tooltip("The optional camera display associated with the ArucoCamera.")]
+      private ArucoCameraDisplay arucoCameraDisplay;
 
       [SerializeField]
       [Tooltip("Apply refine strategy to detect more markers using the boards in the Aruco Object list.")]
@@ -49,10 +61,14 @@ namespace ArucoUnity
       [Tooltip("Display the detected diamonds.")]
       private bool drawDetectedDiamonds = true;
 
+      // ArucoCameraController properties
+
+      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
+
       // IArucoObjectsTracker properties
 
-      public IArucoCameraDisplay ArucoCameraDisplay { get; set; }
-      public CameraParameters CameraParameters { get; set; }
+      public IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
+      public IArucoCameraDisplay ArucoCameraDisplay { get { return arucoCameraDisplay; } }
       public bool RefineDetectedMarkers { get { return refineDetectedMarkers; } set { refineDetectedMarkers = value; } }
       public bool DrawDetectedMarkers { get { return drawDetectedMarkers; } set { drawDetectedMarkers = value; } }
       public bool DrawRejectedCandidates { get { return drawRejectedCandidates; } set { drawRejectedCandidates = value; } }
@@ -94,17 +110,20 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// Initializes the properties, the ArUco object list, and the tracking images.
+      /// Setups controller dependencies and initializes the tracking.
       /// </summary>
       public override void Configure()
       {
         base.Configure();
 
-        if (CameraParameters == null)
+        // Setup controller dependencies
+        ControllerDependencies.Add(ArucoCameraUndistortion);
+        if (ArucoCameraDisplay != null)
         {
-          throw new Exception("CameraParameters must be set to configure the tracker.");
+          ControllerDependencies.Add(ArucoCameraDisplay);
         }
 
+        // Initialize the tracking
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
         trackingImagesData = new byte[ArucoCamera.CameraNumber][];
         arucoCameraImageCopyData = new byte[ArucoCamera.CameraNumber][];
@@ -129,7 +148,8 @@ namespace ArucoUnity
       {
         base.StartController();
 
-        MarkerTracker.Activate(this, ArucoCamera, CameraParameters);
+        // Activate the trackers
+        MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
           foreach (var arucoObject in arucoObjectDictionary.Value)
@@ -138,12 +158,14 @@ namespace ArucoUnity
           }
         }
 
+        // Subscribes to ArucoObjectsController and ArucoCamera events
         ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
 
         arucoCameraImagesUpdated = false;
         ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
 
+        // Start the tracking thread
         trackingThread = new Thread(() =>
         {
           try
@@ -261,7 +283,7 @@ namespace ArucoUnity
           }
           else if (!tracker.IsActivated)
           {
-            tracker.Activate(this, ArucoCamera, CameraParameters);
+            tracker.Activate(this);
           }
         }
       }

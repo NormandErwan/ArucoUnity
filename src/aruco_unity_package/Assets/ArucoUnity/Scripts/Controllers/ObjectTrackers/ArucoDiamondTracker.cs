@@ -57,9 +57,9 @@ namespace ArucoUnity
 
       // ArucoObjectTracker methods
 
-      public override void Activate(IArucoObjectsTracker arucoTracker, IArucoCamera arucoCamera, CameraParameters cameraParameters)
+      public override void Activate(IArucoObjectsTracker arucoTracker)
       {
-        base.Activate(arucoTracker, arucoCamera, cameraParameters);
+        base.Activate(arucoTracker);
 
         DiamondCorners = new Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[arucoCamera.CameraNumber];
         DiamondIds = new Dictionary<Aruco.Dictionary, Std.VectorVec4i>[arucoCamera.CameraNumber];
