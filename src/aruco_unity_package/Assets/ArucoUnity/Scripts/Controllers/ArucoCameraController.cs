@@ -10,9 +10,9 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Generic configurable controller using a <see cref="Cameras.ArucoCamera"/>.
+    /// Generic configurable controller using a <see cref="Cameras.ArucoCamera"/> that auto-start when the ArucoCamera is started.
     /// </summary>
-    public abstract class ArucoCameraController<T> : MonoBehaviour, IArucoCameraController where T : ArucoCamera
+    public abstract class ArucoCameraController<T> : ConfigurableController, IArucoCameraController where T : ArucoCamera
     {
       // Editor fields
 
@@ -20,22 +20,9 @@ namespace ArucoUnity
       [Tooltip("The camera system to use.")]
       private T arucoCamera;
 
-      [SerializeField]
-      [Tooltip("Start automatically when the configuration is done. Call alternatively StartDetector().")]
-      private bool autoStart = true;
-
-      // IArucoCameraController events
-
-      public event Action Configured = delegate { };
-      public event Action Started = delegate { };
-      public event Action Stopped = delegate { };
-
       // IArucoCameraController properties
 
       IArucoCamera IArucoCameraController.ArucoCamera { get { return ArucoCamera; } }
-      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
-      public bool IsConfigured { get; protected set; }
-      public bool IsStarted { get; protected set; }
 
       // Properties
 
@@ -46,104 +33,27 @@ namespace ArucoUnity
 
       // MonoBehaviour methods
 
-      /// <summary>
-      /// Initializes the properties.
-      /// </summary>
-      protected virtual void Awake()
+      protected override void Awake()
       {
-        IsConfigured = false;
-        IsStarted = false;
-
+        base.Awake();
         ArucoCamera = arucoCamera;
       }
 
       /// <summary>
-      /// Calls <see cref="StopController"/> if it has been started and unsubscribes from <see cref="ArucoCamera"/> events.
+      /// Unsubscribes from the <see cref="ArucoCamera"/> events.
       /// </summary>
-      protected virtual void OnDestroy()
+      protected override void OnDestroy()
       {
+        base.OnDestroy();
+
         if (IsConfigured)
         {
           ArucoCamera.Stopped -= ArucoCamera_Stopped;
           arucoCamera.Started -= ArucoCamera_Started;
-
-          if (IsStarted)
-          {
-            StopController();
-          }
         }
       }
 
-      // IArucoCameraController methods
-
-      /// <summary>
-      /// Configures the controller and calls <see cref="OnConfigured"/>. It must be stopped.
-      /// </summary>
-      public virtual void Configure()
-      {
-        if (IsStarted)
-        {
-          throw new Exception("Stop the controller before configure it.");
-        }
-
-        IsConfigured = false;
-      }
-
-      /// <summary>
-      /// Starts the controller and calls <see cref="OnStarted"/>. The controller must be configured and stopped.
-      /// </summary>
-      public virtual void StartController()
-      {
-        if (!IsConfigured || IsStarted)
-        {
-          throw new Exception("Configure and stop the controller before start it.");
-        }
-      }
-
-      /// <summary>
-      /// Stops the controller and calls <see cref="OnStopped"/>. The controller must be configured and started.
-      /// </summary>
-      public virtual void StopController()
-      {
-        if (!IsConfigured || !IsStarted)
-        {
-          throw new Exception("Configure and start the controller before stop it.");
-        }
-      }
-
-      /// <summary>
-      /// Calls the <see cref="Configured"/> event, and calls <see cref="StartController"/> if <see cref="AutoStart"/> is true.
-      /// </summary>
-      protected void OnConfigured()
-      {
-        // Update state
-        IsConfigured = true;
-        Configured();
-
-        // AutoStart
-        if (AutoStart)
-        {
-          StartController();
-        }
-      }
-
-      /// <summary>
-      /// Calls the <see cref="Started"/> event.
-      /// </summary>
-      protected void OnStarted()
-      {
-        IsStarted = true;
-        Started();
-      }
-
-      /// <summary>
-      /// Calls the <see cref="Stopped"/> event.
-      /// </summary>
-      protected void OnStopped()
-      {
-        IsStarted = false;
-        Stopped();
-      }
+      // Methods
 
       /// <summary>
       /// Subscribes to the <see cref="ArucoCamera.Started"/> and <see cref="ArucoCamera.Stopped"/> events, and unsubscribes from the previous

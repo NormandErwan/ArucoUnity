@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Plugin;
+﻿using ArucoUnity.Controllers;
+using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;
 using System;
 using UnityEngine;
@@ -15,10 +16,10 @@ namespace ArucoUnity
     /// </summary>
     /// <remarks>
     /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
-    /// <see cref="WebcamArucoCamera"/> as example. You will need to implement <see cref="StartCameras"/>, <see cref="StopCameras"/>,
+    /// <see cref="WebcamArucoCamera"/> as example. You will need to implement <see cref="StartController"/>, <see cref="StopController"/>,
     /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.
     /// </remarks>
-    public abstract class ArucoCamera : MonoBehaviour, IArucoCamera
+    public abstract class ArucoCamera : ConfigurableController, IArucoCamera
     {
       // Constants
 
@@ -32,15 +33,10 @@ namespace ArucoUnity
 
       // IArucoCamera events
 
-      public event Action Configured = delegate { };
-      public event Action Started = delegate { };
-      public event Action Stopped = delegate { };
       public event Action ImagesUpdated = delegate { };
       public event Action UndistortRectifyImages = delegate { };
 
       // IArucoCamera properties
-
-      public bool AutoStart { get { return autoStart; } set { autoStart = value; } }
 
       public abstract int CameraNumber { get; }
       public abstract string Name { get; protected set; }
@@ -59,11 +55,6 @@ namespace ArucoUnity
       public int[] ImageDataSizes { get; private set; }
       public float[] ImageRatios { get; private set; }
 
-      public bool IsConfigured { get; private set; }
-      public bool IsStarted { get; private set; }
-
-      // Properties
-
       // Variables
 
       protected bool imagesUpdatedThisFrame = false;
@@ -73,15 +64,6 @@ namespace ArucoUnity
                      postDetectflipCode; // Convert back the images
 
       // MonoBehaviour methods
-
-      /// <summary>
-      /// Initialize the camera system state.
-      /// </summary>
-      protected virtual void Awake()
-      {
-        IsConfigured = false;
-        IsStarted = false;
-      }
 
       /// <summary>
       /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
@@ -130,57 +112,13 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// Automatically stop the camera.
-      /// </summary>
-      protected virtual void OnDestroy()
-      {
-        StopCameras();
-      }
-
       // Methods
 
       /// <summary>
-      /// Configures the camera system, sets <see cref="CameraNumber"/> and calls <see cref="OnConfigured"/>. It must be stopped.
-      /// </summary>
-      public virtual void Configure()
-      {
-        if (IsStarted)
-        {
-          throw new Exception("Stop the cameras before configure them.");
-        }
-
-        IsConfigured = false;
-      }
-
-      /// <summary>
-      /// Starts the camera system, initialize the <see cref="ImageTextures"/> and calls <see cref="OnStarted"/>. It must be configured and
-      /// stopped.
-      /// </summary>
-      public virtual void StartCameras()
-      {
-        if (!IsConfigured || IsStarted)
-        {
-          throw new Exception("Configure and stop the cameras before start them.");
-        }
-      }
-
-      /// <summary>
-      /// Stops the camera system and calls <see cref="OnStopped"/>. It must be configured and started.
-      /// </summary>
-      public virtual void StopCameras()
-      {
-        if (!IsConfigured || !IsStarted)
-        {
-          throw new Exception("Configure and start the cameras before stop them.");
-        }
-      }
-
-      /// <summary>
-      /// Configures the all the images related properties, calls the <see cref="Configured"/> event, and calls <see cref="StartCameras"/> if
+      /// Configures the all the images related properties, calls the <see cref="Configured"/> event, and calls <see cref="StartController"/> if
       /// <see cref="AutoStart"/> is true.
       /// </summary>
-      protected void OnConfigured()
+      protected override void OnConfigured()
       {
         if (CameraNumber <= 0)
         {
@@ -216,34 +154,16 @@ namespace ArucoUnity
           postDetectflipCode = Cv.bothAxesFlipCode;
         }
 
-        // Update state
-        IsConfigured = true;
-        Configured();
-
-        // AutoStart
-        if (AutoStart)
-        {
-          StartCameras();
-        }
+        base.OnConfigured();
       }
 
       /// <summary>
       /// Calls <see cref="InitializeImages"/> and the <see cref="Started"/> event.
       /// </summary>
-      protected void OnStarted()
+      protected override void OnStarted()
       {
         InitializeImages();
-        IsStarted = true;
-        Started();
-      }
-
-      /// <summary>
-      /// Calls the <see cref="Stopped"/> event.
-      /// </summary>
-      protected void OnStopped()
-      {
-        IsStarted = false;
-        Stopped();
+        base.OnStarted();
       }
 
       /// <summary>

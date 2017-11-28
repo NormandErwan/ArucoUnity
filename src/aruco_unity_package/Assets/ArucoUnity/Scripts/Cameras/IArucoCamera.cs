@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Plugin;
+﻿using ArucoUnity.Controllers;
+using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
 
@@ -12,24 +13,9 @@ namespace ArucoUnity
     /// <summary>
     /// Captures the image frames of a camera system.
     /// </summary>
-    public interface IArucoCamera
+    public interface IArucoCamera : IConfigurableController
     {
       // Events
-
-      /// <summary>
-      /// Called when the camera system has been configured.
-      /// </summary>
-      event Action Configured;
-
-      /// <summary>
-      /// Called when the camera system is started.
-      /// </summary>
-      event Action Started;
-
-      /// <summary>
-      /// Called when the camera system is stopped.
-      /// </summary>
-      event Action Stopped;
 
       /// <summary>
       /// Called when the images has been updated.
@@ -42,12 +28,6 @@ namespace ArucoUnity
       event Action UndistortRectifyImages;
 
       // Properties
-
-      /// <summary>
-      /// Gets or sets if automatically start the camera system when <see cref="Configure"/> is call. Manually start by calling
-      /// <see cref="StartCameras"/>.
-      /// </summary>
-      bool AutoStart { get; set; }
 
       /// <summary>
       /// Gets the number of cameras in the system.
@@ -83,33 +63,6 @@ namespace ArucoUnity
       /// Gets the <see cref="Images"/> ratios.
       /// </summary>
       float[] ImageRatios { get; }
-
-      /// <summary>
-      /// Gets if the camera system is configured.
-      /// </summary>
-      bool IsConfigured { get; }
-
-      /// <summary>
-      /// Gets if the camera system is started.
-      /// </summary>
-      bool IsStarted { get; }
-
-      // Methods
-
-      /// <summary>
-      /// Configures the camera system and calls the <see cref="Configured"/> event. It must be stopped.
-      /// </summary>
-      void Configure();
-
-      /// <summary>
-      /// Starts the camera system, initializes the <see cref="Images"/> and calls the <see cref="Started"/> event. It must be configured and stopped.
-      /// </summary>
-      void StartCameras();
-
-      /// <summary>
-      /// Stops the camera system and calls the <see cref="Stopped"/> event. It must be configured and started.
-      /// </summary>
-      void StopCameras();
     }
   }
 

@@ -98,9 +98,9 @@ namespace ArucoUnity
       /// <summary>
       /// Initiates the camera start and the associated webcam device.
       /// </summary>
-      public override void StartCameras()
+      public override void StartController()
       {
-        base.StartCameras();
+        base.StartController();
         if (startInitiated)
         {
           throw new Exception("Camera has already been started.");
@@ -113,9 +113,9 @@ namespace ArucoUnity
       /// <summary>
       /// Stops the camera and the associated webcam device.
       /// </summary>
-      public override void StopCameras()
+      public override void StopController()
       {
-        base.StopCameras();
+        base.StopController();
         WebCamTexture.Stop();
         startInitiated = false;
         OnStopped();
