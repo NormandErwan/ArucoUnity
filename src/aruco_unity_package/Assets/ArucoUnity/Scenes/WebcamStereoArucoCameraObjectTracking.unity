@@ -187,6 +187,16 @@ Prefab:
       propertyPath: arucoObjects.Array.data[2]
       value: 
       objectReference: {fileID: 606566499}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoCameraUndistortion
+      value: 
+      objectReference: {fileID: 1657442085}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoCameraDisplay
+      value: 
+      objectReference: {fileID: 1657442086}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
   m_IsPrefabParent: 0
@@ -934,9 +944,26 @@ Prefab:
       propertyPath: arucoObjectsTracker
       value: 
       objectReference: {fileID: 240276386}
+    - target: {fileID: 114125049629224730, guid: 942eb6e885d3e5a4c8fece8e915aaeec,
+        type: 2}
+      propertyPath: cameraParametersFilename
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 942eb6e885d3e5a4c8fece8e915aaeec, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1657442085 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114987818737337706, guid: 942eb6e885d3e5a4c8fece8e915aaeec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1657442084}
+  m_Script: {fileID: 11500000, guid: 41d0d6a753fcd62488e22edc074f8ac1, type: 3}
+--- !u!114 &1657442086 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114332799581564012, guid: 942eb6e885d3e5a4c8fece8e915aaeec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1657442084}
+  m_Script: {fileID: 11500000, guid: 3648ba3f74da4164db2b440ad0fbe471, type: 3}
 --- !u!1 &1772982384
 GameObject:
   m_ObjectHideFlags: 0

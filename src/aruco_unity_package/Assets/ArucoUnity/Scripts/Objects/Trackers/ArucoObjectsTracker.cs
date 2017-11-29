@@ -35,7 +35,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The optional camera display associated with the ArucoCamera.")]
-      private ArucoCameraDisplay arucoCameraDisplay;
+      private ArucoCameraGenericDisplay arucoCameraDisplay;
 
       [SerializeField]
       [Tooltip("Apply refine strategy to detect more markers using the boards in the Aruco Object list.")]
@@ -77,6 +77,23 @@ namespace ArucoUnity
       public bool DrawDetectedDiamonds { get { return drawDetectedDiamonds; } set { drawDetectedDiamonds = value; } }
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
 
+      // Properties
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
+
+      /// <summary>
+      /// Gets or sets the undistortion process associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
+
+      /// <summary>
+      /// Gets or sets the optional camera display associated with the ArucoCamera.
+      /// </summary>
+      public ArucoCameraGenericDisplay ConcreteArucoCameraDisplay { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
+
       // Variables
 
       protected Dictionary<Type, ArucoObjectTracker> additionalTrackers;
@@ -110,18 +127,28 @@ namespace ArucoUnity
       // ArucoCameraController methods
 
       /// <summary>
-      /// Setups controller dependencies and initializes the tracking.
+      /// Setups controller dependencies.
       /// </summary>
       public override void Configure()
       {
         base.Configure();
 
-        // Setup controller dependencies
         ControllerDependencies.Add(ArucoCameraUndistortion);
         if (ArucoCameraDisplay != null)
         {
           ControllerDependencies.Add(ArucoCameraDisplay);
         }
+
+        OnConfigured();
+      }
+
+      /// <summary>
+      /// Initializes the tracking, Activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
+      /// <see cref="ArucoObjectsController{T}.ArucoObjectRemoved"/> events and starts the tracking thread.
+      /// </summary>
+      public override void StartController()
+      {
+        base.StartController();
 
         // Initialize the tracking
         trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
@@ -136,17 +163,6 @@ namespace ArucoUnity
           trackingImages[cameraId] = new Cv.Mat(imageTexture.height, imageTexture.width, CvMatExtensions.ImageType(imageTexture.format));
           trackingImages[cameraId].DataByte = trackingImagesData[cameraId];
         }
-
-        OnConfigured();
-      }
-
-      /// <summary>
-      /// Activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
-      /// <see cref="ArucoObjectsController{T}.ArucoObjectRemoved"/> events and starts the tracking thread.
-      /// </summary>
-      public override void StartController()
-      {
-        base.StartController();
 
         // Activate the trackers
         MarkerTracker.Activate(this);

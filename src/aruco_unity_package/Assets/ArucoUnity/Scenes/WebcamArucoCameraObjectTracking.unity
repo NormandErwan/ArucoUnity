@@ -718,6 +718,25 @@ Prefab:
       propertyPath: arucoObjects.Array.data[2]
       value: 
       objectReference: {fileID: 606566499}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoCameraUndistortion
+      value: 
+      objectReference: {fileID: 1994956401}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: arucoCameraDisplay
+      value: 
+      objectReference: {fileID: 1994956399}
+    - target: {fileID: 1807315793213710, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704470919034220, guid: 59dab6b4111ee0849bb667a5a1d298e5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59dab6b4111ee0849bb667a5a1d298e5, type: 2}
   m_IsPrefabParent: 0
@@ -1139,10 +1158,10 @@ Prefab:
       propertyPath: cameraParametersFilename
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114393126318706844, guid: 74c9e29e9d222a4438669336303acc9a,
+    - target: {fileID: 114522793529101426, guid: 74c9e29e9d222a4438669336303acc9a,
         type: 2}
-      propertyPath: webcamId
-      value: 0
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74c9e29e9d222a4438669336303acc9a, type: 2}
@@ -1153,9 +1172,21 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1994956397}
   m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
+--- !u!114 &1994956399 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114715581165667816, guid: 74c9e29e9d222a4438669336303acc9a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1994956397}
+  m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
 --- !u!114 &1994956400 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114393126318706844, guid: 74c9e29e9d222a4438669336303acc9a,
     type: 2}
   m_PrefabInternal: {fileID: 1994956397}
   m_Script: {fileID: 11500000, guid: 43b2fc42ec749de4fa54b3fc1163f23d, type: 3}
+--- !u!114 &1994956401 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114522793529101426, guid: 74c9e29e9d222a4438669336303acc9a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1994956397}
+  m_Script: {fileID: 11500000, guid: e044568ea72405e49bf56df52f9d2b57, type: 3}

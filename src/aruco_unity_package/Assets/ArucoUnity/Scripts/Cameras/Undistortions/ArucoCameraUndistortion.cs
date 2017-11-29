@@ -62,7 +62,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Checks if <see cref="CameraParameters"/> is set, if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/>
-      /// are equals and calls <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/>.
+      /// are equals.
       /// </summary>
       public override void Configure()
       {
@@ -88,19 +88,22 @@ namespace ArucoUnity
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
 
-        InitializeRectification();
-        InitializeUndistortionMaps();
-
         OnConfigured();
       }
 
       /// <summary>
-      /// Susbcribes to <see cref="ArucoCamera.UndistortRectifyImages"/>.
+      /// Calls <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/> and susbcribes to
+      /// <see cref="ArucoCamera.UndistortRectifyImages"/>.
       /// </summary>
       public override void StartController()
       {
         base.StartController();
+
+        InitializeRectification();
+        InitializeUndistortionMaps();
+
         ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
+
         OnStarted();
       }
 
