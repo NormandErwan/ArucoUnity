@@ -1,5 +1,6 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
 using ArucoUnity.Controllers;
+using ArucoUnity.Utilities;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -22,9 +23,9 @@ namespace ArucoUnity
 
       // IArucoCameraDisplay properties
 
-      public Camera[] Cameras { get; set; }
-      public Camera[] BackgroundCameras { get; set; }
-      public Renderer[] Backgrounds { get; set; }
+      public virtual Camera[] Cameras { get; protected set; }
+      public virtual Camera[] BackgroundCameras { get; protected set; }
+      public virtual Renderer[] Backgrounds { get; protected set; }
 
       // Properties
 
@@ -32,26 +33,6 @@ namespace ArucoUnity
       /// Gets or sets the optional undistortion process associated with the ArucoCamera.
       /// </summary>
       public abstract IArucoCameraUndistortion ArucoCameraUndistortion { get; }
-
-      // MonoBehaviour methods
-
-      protected override void Awake()
-      {
-        base.Awake();
-
-        if (Cameras == null)
-        {
-          Cameras = new Camera[ArucoCamera.CameraNumber];
-        }
-        if (BackgroundCameras == null)
-        {
-          BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
-        }
-        if (Backgrounds == null)
-        {
-          Backgrounds = new Renderer[ArucoCamera.CameraNumber];
-        }
-      }
 
       // ArucoCameraController methods
 
@@ -103,18 +84,26 @@ namespace ArucoUnity
           Backgrounds[cameraId].material.mainTexture = ArucoCamera.ImageTextures[cameraId];
         }
 
-        // Default background configuration is ArucoCameraUndistortion is null
+        // Cameras and background configurations
         if (ArucoCameraUndistortion == null)
+        {
+          ConfigureDefaultBackgrounds();
+        }
+        else
         {
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
           {
-            DefaultConfigureBackground(cameraId);
+            if (Cameras[cameraId].stereoTargetEye == StereoTargetEyeMask.None)
+            {
+              ConfigureRectifiedCamera(cameraId);
+            }
+            ConfigureRectifiedBackground(cameraId);
           }
         }
       }
 
       /// <summary>
-      /// Activates or deactivates <see cref="BackgroundCameras"/> and <see cref="Backgrounds"/>.
+      /// Activates or deactivates the <see cref="Cameras"/>, the <see cref="BackgroundCameras"/> and the <see cref="Backgrounds"/>.
       /// </summary>
       /// <param name="value">True to activate, false to deactivate.</param>
       protected virtual void SetDisplayActive(bool value)
@@ -128,24 +117,73 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Place the background centered in front of the background camera scaled to fit in the camera view.
+      /// Places the <see cref="Backgrounds"/> in front of the corresponding <see cref="BackgroundCameras"/> centered and scaled to fit in the
+      /// camera view.
       /// </summary>
-      protected virtual void DefaultConfigureBackground(int cameraId)
+      protected virtual void ConfigureDefaultBackgrounds()
       {
-        Vector3 localScale = Vector3.one;
-        if (BackgroundCameras[cameraId].aspect < ArucoCamera.ImageRatios[cameraId])
+        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          localScale.x = 2f * cameraBackgroundDistance * BackgroundCameras[cameraId].aspect * Mathf.Tan(0.5f * BackgroundCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
-          localScale.y = localScale.x / ArucoCamera.ImageRatios[cameraId];
-        }
-        else
-        {
-          localScale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * BackgroundCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
-          localScale.x = localScale.y * ArucoCamera.ImageRatios[cameraId];
-        }
+          Vector3 localScale = Vector3.one;
+          if (BackgroundCameras[cameraId].aspect < ArucoCamera.ImageRatios[cameraId])
+          {
+            localScale.x = 2f * cameraBackgroundDistance * BackgroundCameras[cameraId].aspect * Mathf.Tan(0.5f * BackgroundCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+            localScale.y = localScale.x / ArucoCamera.ImageRatios[cameraId];
+          }
+          else
+          {
+            localScale.y = 2f * cameraBackgroundDistance * Mathf.Tan(0.5f * BackgroundCameras[cameraId].fieldOfView * Mathf.Deg2Rad);
+            localScale.x = localScale.y * ArucoCamera.ImageRatios[cameraId];
+          }
 
-        Backgrounds[cameraId].transform.localPosition = new Vector3(0, 0, cameraBackgroundDistance);
-        Backgrounds[cameraId].transform.localScale = localScale;
+          Backgrounds[cameraId].transform.localPosition = new Vector3(0, 0, cameraBackgroundDistance);
+          Backgrounds[cameraId].transform.localScale = localScale;
+        }
+      }
+
+      /// <summary>
+      /// Configures the field of view of a <see cref="Cameras"/> according to the vertical focal length of the corresponding rectified camera matrix
+      /// in <see cref="ArucoCameraUndistortion.RectifiedCameraMatrices"/>.
+      /// </summary>
+      /// <param name="cameraId">The id of the camera to configure.</param>
+      protected virtual void ConfigureRectifiedCamera(int cameraId)
+      {
+        float imageHeight = ArucoCameraUndistortion.CameraParameters.ImageHeights[cameraId];
+        Vector2 cameraF = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
+
+        float fovY = 2f * Mathf.Atan(0.5f * imageHeight / cameraF.y) * Mathf.Rad2Deg;
+        Cameras[cameraId].fieldOfView = fovY;
+        BackgroundCameras[cameraId].fieldOfView = fovY;
+      }
+
+      /// <summary>
+      /// Places a <see cref="Backgrounds"/> in front of the corresponding <see cref="BackgroundCameras"/> centered with the principal point of the
+      /// corresponding rectified camera matrix in <see cref="ArucoCameraUndistortion.RectifiedCameraMatrices"/> and scaled to fit in the field of
+      /// view calculated from the focal lengths of the rectified camera matrix.
+      /// </summary>
+      /// <param name="cameraId">The id of the background and the background camera to configure.</param>
+      protected virtual void ConfigureRectifiedBackground(int cameraId)
+      {
+        float imageWidth = ArucoCameraUndistortion.CameraParameters.ImageWidths[cameraId];
+        float imageHeight = ArucoCameraUndistortion.CameraParameters.ImageHeights[cameraId];
+        Vector2 focalLengths = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
+        Vector2 principalPoint = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
+
+        // TODO: use focal length of the unity camera instead
+
+        // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
+        // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
+        float localPositionX = (0.5f * imageWidth - principalPoint.x) / focalLengths.x * cameraBackgroundDistance;
+        float localPositionY = -(0.5f * imageHeight - principalPoint.y) / focalLengths.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity
+
+        // Considering https://stackoverflow.com/a/41137160
+        // scale.x = 2 * cameraBackgroundDistance * tan(fovx / 2), cameraF.x = imageWidth / (2 * tan(fovx / 2))
+        float localScaleX = imageWidth / focalLengths.x * cameraBackgroundDistance;
+        float localScaleY = imageHeight / focalLengths.y * cameraBackgroundDistance;
+
+        // Place and scale the background
+        Backgrounds[cameraId].transform.localPosition = new Vector3(localPositionX, localPositionY, cameraBackgroundDistance);
+        Backgrounds[cameraId].transform.localScale = new Vector3(localScaleX, localScaleY, 1);
       }
     }
   }

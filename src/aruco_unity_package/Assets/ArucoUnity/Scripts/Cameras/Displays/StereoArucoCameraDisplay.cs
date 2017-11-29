@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Undistortions;
+﻿using ArucoUnity.Cameras.Undistortions;
 using UnityEngine;
 
 namespace ArucoUnity
@@ -85,53 +84,32 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populates <see cref="ArucoCameraGenericDisplay{T}.Cameras"/>, <see cref="ArucoCameraGenericDisplay{T}.BackgroundCameras"/> and
-      /// <see cref="ArucoCameraGenericDisplay{T}.Backgrounds"/> from editor fields if they are set.
+      /// Populates <see cref="Eyes"/>, <see cref="ArucoCameraGenericDisplay.Cameras"/>, <see cref="ArucoCameraGenericDisplay.BackgroundCameras"/>
+      /// and <see cref="ArucoCameraGenericDisplay.Backgrounds"/> from editor fields.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
-        if (Eyes == null)
-        {
-          Eyes = new Transform[ArucoCamera.CameraNumber];
-        }
-        if (leftEye != null)
-        {
-          Eyes[StereoArucoCamera.CameraId1] = leftEye;
-        }
-        if (rightEye != null)
-        {
-          Eyes[StereoArucoCamera.CameraId2] = rightEye;
-        }
+        Eyes = new Transform[ArucoCamera.CameraNumber];
+        Eyes[StereoArucoCamera.CameraId1] = leftEye;
+        Eyes[StereoArucoCamera.CameraId2] = rightEye;
 
-        if (leftCamera != null)
-        {
-          Cameras[StereoArucoCamera.CameraId1] = leftCamera;
-        }
-        if (rightCamera != null)
-        {
-          Cameras[StereoArucoCamera.CameraId2] = rightCamera;
-        }
-        if (leftBackgroundCamera != null)
-        {
-          BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
-        }
-        if (rightBackgroundCamera != null)
-        {
-          BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
-        }
-        if (leftBackground != null)
-        {
-          Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
-        }
-        if (rightBackground != null)
-        {
-          Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
-        }
+        Cameras[StereoArucoCamera.CameraId1] = leftCamera;
+        Cameras[StereoArucoCamera.CameraId2] = rightCamera;
+
+        BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
+        BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
+
+        Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
+        Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
       }
 
       // Methods
 
+      /// <summary>
+      /// Applies the translation and the rotation between the first and the second camera to the first camera if
+      /// <see cref="ArucoCameraUndistortion"/> is set.
+      /// </summary>
       protected override void ConfigureCamerasBackground()
       {
         base.ConfigureCamerasBackground();
@@ -139,9 +117,7 @@ namespace ArucoUnity
         if (ArucoCameraUndistortion != null)
         {
           var stereoCameraParameters = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters;
-
           Eyes[StereoArucoCamera.CameraId1].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
-
           // TODO rotation
         }
       }
