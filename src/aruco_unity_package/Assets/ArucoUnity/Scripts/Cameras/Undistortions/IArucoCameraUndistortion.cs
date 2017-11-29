@@ -28,7 +28,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the distorsion coefficients of the undistorted and rectified images of each camera.
       /// </summary>
-      Cv.Mat UndistortedDistCoeffs { get; }
+      Cv.Mat[] UndistortedDistCoeffs { get; }
 
       /// <summary>
       /// Gets the undistortion and rectification images transformation map of each camera (two maps per camera).

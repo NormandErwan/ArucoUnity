@@ -31,7 +31,7 @@ namespace ArucoUnity
       public CameraParameters CameraParameters { get; set; }
       public Cv.Mat[] RectifiedCameraMatrices { get; protected set; }
       public Cv.Mat[] RectificationMatrices { get; protected set; }
-      public Cv.Mat UndistortedDistCoeffs { get { return noDistCoeffs; } }
+      public Cv.Mat[] UndistortedDistCoeffs { get; private set; }
       public Cv.Mat[][] UndistortionRectificationMaps { get; protected set; }
 
       // Variables
@@ -81,10 +81,11 @@ namespace ArucoUnity
         // Initialize properties
         RectifiedCameraMatrices = new Cv.Mat[CameraParameters.CameraNumber];
         RectificationMatrices = new Cv.Mat[CameraParameters.CameraNumber];
+        UndistortedDistCoeffs = new Cv.Mat[CameraParameters.CameraNumber];
         UndistortionRectificationMaps = new Cv.Mat[CameraParameters.CameraNumber][];
         for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
         {
-          RectifiedCameraMatrices[cameraId] = new Cv.Mat();
+          UndistortedDistCoeffs[cameraId] = noDistCoeffs;
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
 

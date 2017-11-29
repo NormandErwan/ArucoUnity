@@ -1,5 +1,5 @@
 ﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
+using ArucoUnity.Cameras.Undistortions;
 using ArucoUnity.Plugin;
 using System;
 
@@ -27,7 +27,7 @@ namespace ArucoUnity
 
       protected IArucoObjectsTracker arucoTracker;
       protected IArucoCamera arucoCamera;
-      protected CameraParameters cameraParameters;
+      protected IArucoCameraUndistortion undistortion;
 
       // ArucoObjectsController related methods
 
@@ -56,7 +56,7 @@ namespace ArucoUnity
       {
         this.arucoTracker = arucoTracker;
         arucoCamera = arucoTracker.ArucoCamera;
-        cameraParameters = arucoTracker.ArucoCameraUndistortion.CameraParameters;
+        undistortion = arucoTracker.ArucoCameraUndistortion;
         IsActivated = true;
 
         arucoTracker.DictionaryAdded += ArucoObjectsController_DictionaryAdded;
@@ -73,9 +73,6 @@ namespace ArucoUnity
         arucoTracker.DictionaryRemoved -= ArucoObjectsController_DictionaryRemoved;
 
         IsActivated = false;
-        arucoTracker = null;
-        arucoCamera = null;
-        cameraParameters = null;
       }
 
       /// <summary>

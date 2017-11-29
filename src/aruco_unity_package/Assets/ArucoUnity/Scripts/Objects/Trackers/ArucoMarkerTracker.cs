@@ -151,7 +151,7 @@ namespace ArucoUnity
           }
 
           // Draw axes of detected tracked markers
-          if (arucoTracker.DrawAxes && cameraParameters != null && MarkerRvecs[cameraId][dictionary] != null)
+          if (arucoTracker.DrawAxes && undistortion != null && MarkerRvecs[cameraId][dictionary] != null)
           {
             for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
             {
@@ -159,7 +159,7 @@ namespace ArucoUnity
               int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
               if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
               {
-                Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+                Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
                   MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), estimatePoseMarkerLength);
               }
             }
@@ -179,10 +179,10 @@ namespace ArucoUnity
 
         Std.VectorVec3d rvecs = null, tvecs = null;
 
-        if (DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
+        if (DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
         {
-          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], estimatePoseMarkerLength, cameraParameters.CameraMatrices[cameraId],
-            cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs);
+          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], estimatePoseMarkerLength, undistortion.RectifiedCameraMatrices[cameraId],
+            undistortion.UndistortedDistCoeffs[cameraId], out rvecs, out tvecs);
         }
 
         MarkerRvecs[cameraId][dictionary] = rvecs;

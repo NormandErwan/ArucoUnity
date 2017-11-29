@@ -35,9 +35,9 @@ namespace ArucoUnity
 
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
-          if (arucoTracker.DrawAxes && cameraParameters != null && arucoGridBoard.Rvec != null)
+          if (arucoTracker.DrawAxes && undistortion != null && arucoGridBoard.Rvec != null)
           {
-            Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+            Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
               arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
           }
         }
@@ -52,11 +52,11 @@ namespace ArucoUnity
           Cv.Vec3d rvec = null, tvec = null;
           int markersUsedForEstimation = 0;
 
-          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
           {
             markersUsedForEstimation = Aruco.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, cameraParameters.CameraMatrices[cameraId],
-              cameraParameters.DistCoeffs[cameraId], out rvec, out tvec);
+              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, undistortion.RectifiedCameraMatrices[cameraId],
+              undistortion.UndistortedDistCoeffs[cameraId], out rvec, out tvec);
           }
 
           arucoGridBoard.Rvec = rvec;

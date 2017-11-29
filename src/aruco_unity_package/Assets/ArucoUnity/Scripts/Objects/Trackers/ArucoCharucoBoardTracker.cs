@@ -32,7 +32,7 @@ namespace ArucoUnity
 
           if (markerTracker.DetectedMarkers[cameraId][dictionary] > 0)
           {
-            if (cameraParameters == null)
+            if (undistortion == null)
             {
                Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
                 markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
@@ -42,8 +42,8 @@ namespace ArucoUnity
             {
               Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
                 markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
-                (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, cameraParameters.CameraMatrices[cameraId],
-                cameraParameters.DistCoeffs[cameraId]);
+                (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, undistortion.RectifiedCameraMatrices[cameraId],
+                undistortion.UndistortedDistCoeffs[cameraId]);
             }
           }
 
@@ -65,9 +65,9 @@ namespace ArucoUnity
               Aruco.DrawDetectedCornersCharuco(image, arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
             }
 
-            if (arucoTracker.DrawAxes && cameraParameters != null && arucoCharucoBoard.Rvec != null)
+            if (arucoTracker.DrawAxes && undistortion != null && arucoCharucoBoard.Rvec != null)
             {
-              Aruco.DrawAxis(image, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+              Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
                 arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
             }
           }
@@ -83,11 +83,11 @@ namespace ArucoUnity
           Cv.Vec3d rvec = null, tvec = null;
           bool validTransform = false;
 
-          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && cameraParameters != null)
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
           {
             validTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
-            (Aruco.CharucoBoard)arucoCharucoBoard.Board, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvec,
-            out tvec);
+            (Aruco.CharucoBoard)arucoCharucoBoard.Board, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
+            out rvec, out tvec);
           }
 
           arucoCharucoBoard.Rvec = rvec;
