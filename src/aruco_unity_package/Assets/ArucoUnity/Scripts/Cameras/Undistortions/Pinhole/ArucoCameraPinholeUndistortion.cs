@@ -37,12 +37,6 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
         {
-          var c = CameraParameters;
-          var cm = CameraParameters.CameraMatrices[cameraId];
-          var d = CameraParameters.DistCoeffs[cameraId];
-          var i = ArucoCamera.Images[cameraId];
-          var si = ArucoCamera.Images[cameraId].Size;
-
           RectifiedCameraMatrices[cameraId] = Cv.GetOptimalNewCameraMatrix(CameraParameters.CameraMatrices[cameraId],
             CameraParameters.DistCoeffs[cameraId], ArucoCamera.Images[cameraId].Size, RectificationScalingFactor);
           RectificationMatrices[cameraId] = noRectificationMatrix;

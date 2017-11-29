@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="StereoArucoCamera"/>.
+    /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="Cameras.StereoArucoCamera"/>.
     /// </summary>
     public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion
     {
@@ -46,36 +45,16 @@ namespace ArucoUnity
 
       // ArucoCameraUndistortion methods
 
+      /// <summary>
+      /// Initializes <see cref="RectificationMatrices"/> with the stereo camera parameters.
+      /// </summary>
       protected override void InitializeRectification()
       {
-        var stereoCameraParameters = CameraParameters.StereoCameraParameters;
+        base.InitializeRectification();
 
-        // Initializes RectifiedCameraMatrices
-        if (RectificationType == RectificationTypes.Perspective)
-        {
-          for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
-          {
-            float imageWidth = CameraParameters.ImageWidths[cameraId];
-            float imageHeight = CameraParameters.ImageHeights[cameraId];
-
-            // TODO: fix
-            float cameraF = CameraParameters.ImageWidths[cameraId] / 2;//ArucoCameraDisplay.Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * ArucoCameraDisplay.Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
-            RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
-              cameraF, 0, CameraParameters.ImageWidths[cameraId] / 2,
-              0, cameraF, CameraParameters.ImageHeights[cameraId] / 2,
-              0, 0, 1
-            }).Clone();
-          }
-        }
-        else
-        {
-          base.InitializeRectification(); // Initalizes RectifiedCameraMatrices with default values for other types
-        }
-
-        // Initializes RectificationMatrices
         Cv.Mat rectificationMatrix1, rectificationMatrix2;
-        Cv.Omnidir.StereoRectify(stereoCameraParameters.RotationVector, stereoCameraParameters.TranslationVector, out rectificationMatrix1,
-          out rectificationMatrix2);
+        Cv.Omnidir.StereoRectify(CameraParameters.StereoCameraParameters.RotationVector, CameraParameters.StereoCameraParameters.TranslationVector,
+          out rectificationMatrix1, out rectificationMatrix2);
 
         RectificationMatrices[StereoArucoCamera.CameraId1] = rectificationMatrix1;
         RectificationMatrices[StereoArucoCamera.CameraId2] = rectificationMatrix2;

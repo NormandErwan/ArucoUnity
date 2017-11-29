@@ -19,13 +19,13 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private StereoArucoCamera stereoArucoCamera;
-
-      [SerializeField]
       [Tooltip("If true (default), the principal points of the images have the same pixel coordinates in the rectified views. Only applied if" +
         "using a stereo camera.")]
       private bool rectificationZeroDisparity = true;
+
+      [SerializeField]
+      [Tooltip("The camera system to use.")]
+      private StereoArucoCamera stereoArucoCamera;
 
       // ArucoCameraController properties
 
@@ -34,15 +34,15 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
-
-      /// <summary>
       /// Gets or sets if the principal point of the images have the same pixel coordinates in the rectified views (true by default). Only applied if
       /// using a stereo camera.
       /// </summary>
       public bool RectificationZeroDisparity { get { return rectificationZeroDisparity; } set { rectificationZeroDisparity = value; } }
+
+      /// <summary>
+      /// Gets or sets the camera system to use.
+      /// </summary>
+      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
 
       // Variables
 
