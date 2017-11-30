@@ -25,7 +25,6 @@ namespace ArucoUnity
       {
         base.Configure();
         ControllerDependencies.Add(ArucoCamera);
-        OnConfigured();
       }
     }
   }
