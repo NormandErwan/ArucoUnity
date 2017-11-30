@@ -1,5 +1,7 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
+using ArucoUnity.Utilities;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -94,12 +96,15 @@ namespace ArucoUnity
         Eyes[StereoArucoCamera.CameraId1] = leftEye;
         Eyes[StereoArucoCamera.CameraId2] = rightEye;
 
+        Cameras = new Camera[ArucoCamera.CameraNumber];
         Cameras[StereoArucoCamera.CameraId1] = leftCamera;
         Cameras[StereoArucoCamera.CameraId2] = rightCamera;
 
+        BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
         BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
         BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
 
+        Backgrounds = new Renderer[ArucoCamera.CameraNumber];
         Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
         Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
       }
@@ -116,9 +121,18 @@ namespace ArucoUnity
 
         if (ArucoCameraUndistortion != null)
         {
+          // TODO: fix position and rotation
           var stereoCameraParameters = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters;
-          Eyes[StereoArucoCamera.CameraId1].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
-          // TODO rotation
+          //Eyes[StereoArucoCamera.CameraId2].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
+
+          // Adjust the stereo convergence of the background camera to the focal length
+          if (XRSettings.enabled)
+          {
+            BackgroundCameras[StereoArucoCamera.CameraId1].stereoConvergence =
+              ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId1].GetCameraFocalLengths().x;
+            BackgroundCameras[StereoArucoCamera.CameraId2].stereoConvergence =
+              ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId2].GetCameraFocalLengths().x;
+          }
         }
       }
     }

@@ -2,6 +2,7 @@
 using ArucoUnity.Controllers;
 using ArucoUnity.Utilities;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -93,7 +94,7 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
           {
-            if (Cameras[cameraId].stereoTargetEye == StereoTargetEyeMask.None)
+            if (!XRSettings.enabled || Cameras[cameraId].stereoTargetEye == StereoTargetEyeMask.None)
             {
               ConfigureRectifiedCamera(cameraId);
             }
@@ -166,20 +167,18 @@ namespace ArucoUnity
       {
         float imageWidth = ArucoCameraUndistortion.CameraParameters.ImageWidths[cameraId];
         float imageHeight = ArucoCameraUndistortion.CameraParameters.ImageHeights[cameraId];
-        Vector2 focalLengths = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
+        Vector2 focalLength = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
         Vector2 principalPoint = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
-
-        // TODO: use focal length of the unity camera instead
 
         // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
         // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
-        float localPositionX = (0.5f * imageWidth - principalPoint.x) / focalLengths.x * cameraBackgroundDistance;
-        float localPositionY = -(0.5f * imageHeight - principalPoint.y) / focalLengths.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity
+        float localPositionX = (0.5f * imageWidth - principalPoint.x) / focalLength.x * cameraBackgroundDistance;
+        float localPositionY = -(0.5f * imageHeight - principalPoint.y) / focalLength.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity
 
         // Considering https://stackoverflow.com/a/41137160
         // scale.x = 2 * cameraBackgroundDistance * tan(fovx / 2), cameraF.x = imageWidth / (2 * tan(fovx / 2))
-        float localScaleX = imageWidth / focalLengths.x * cameraBackgroundDistance;
-        float localScaleY = imageHeight / focalLengths.y * cameraBackgroundDistance;
+        float localScaleX = imageWidth / focalLength.x * cameraBackgroundDistance;
+        float localScaleY = imageHeight / focalLength.y * cameraBackgroundDistance;
 
         // Place and scale the background
         Backgrounds[cameraId].transform.localPosition = new Vector3(localPositionX, localPositionY, cameraBackgroundDistance);

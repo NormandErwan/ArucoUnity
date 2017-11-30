@@ -3,6 +3,7 @@ using ArucoUnity.Plugin;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -102,8 +103,8 @@ namespace ArucoUnity
 
       /// <summary>
       /// Initializes the <see cref="RectifiedCameraMatrices"/> using the <see cref="PerspectiveFieldOfViews"/> values for perspective rectification
-      /// or uses the recommended values for other rectification types: https://docs.opencv.org/3.3.1/dd/d12/tutorial_omnidir_calib_main.html.
-      /// Initializes the <see cref="RectificationMatrices"/> to identity matrix.
+      /// or uses the recommended values: https://docs.opencv.org/3.3.1/dd/d12/tutorial_omnidir_calib_main.html. Initializes the
+      /// <see cref="RectificationMatrices"/> to identity matrix.
       /// </summary>
       protected override void InitializeRectification()
       {
@@ -114,7 +115,17 @@ namespace ArucoUnity
 
           if (RectificationType == RectificationTypes.Perspective)
           {
-            float cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
+            float cameraF;
+            if (XRSettings.enabled)
+            {
+              // TODO: get the fov of the rendering camera instead?
+              cameraF = XRSettings.eyeTextureHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
+            }
+            else
+            {
+              cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
+            }
+
             RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
               cameraF, 0, imageWidth / 2,
               0, cameraF, imageHeight / 2,
