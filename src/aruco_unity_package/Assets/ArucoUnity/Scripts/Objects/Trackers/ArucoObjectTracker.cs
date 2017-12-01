@@ -159,8 +159,8 @@ namespace ArucoUnity
       /// <param name="positionFactor">Factor on the position vector.</param>
       protected void UpdateTransform(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
       {
-        arucoObject.gameObject.transform.SetParent(arucoTracker.ArucoCameraDisplay.Cameras[cameraId].transform);
-        arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor;
+        arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor
+          + arucoTracker.ArucoCameraDisplay.Cameras[cameraId].transform.position;
         arucoObject.gameObject.transform.localRotation = rvec.ToRotation();
         arucoObject.gameObject.SetActive(true);
       }
