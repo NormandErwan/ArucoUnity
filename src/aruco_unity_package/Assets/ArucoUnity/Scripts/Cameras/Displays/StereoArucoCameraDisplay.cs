@@ -112,8 +112,7 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Applies the translation and the rotation between the first and the second camera to the first camera if
-      /// <see cref="ArucoCameraUndistortion"/> is set.
+      /// Applies the translation between the physical cameras to the virtual cameras if <see cref="ArucoCameraUndistortion"/> is set.
       /// </summary>
       protected override void ConfigureCamerasBackground()
       {
@@ -121,9 +120,10 @@ namespace ArucoUnity
 
         if (ArucoCameraUndistortion != null)
         {
-          // TODO: fix position and rotation
+          // Place the virtual cameras in the same placement than the physical cameras
           var stereoCameraParameters = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters;
-          //Eyes[StereoArucoCamera.CameraId2].transform.localPosition = stereoCameraParameters.TranslationVector.ToPosition();
+          Eyes[StereoArucoCamera.CameraId1].transform.localPosition += stereoCameraParameters.TranslationVector.ToPosition() / 2;
+          Eyes[StereoArucoCamera.CameraId2].transform.localPosition -= stereoCameraParameters.TranslationVector.ToPosition() / 2;
 
           // Adjust the stereo convergence of the background camera to the focal length
           if (XRSettings.enabled)
