@@ -83,6 +83,10 @@ namespace ArucoUnity
       /// </summary>
       public Transform[] Eyes { get; set; }
 
+      // Variables
+
+      protected Vector3 backgroundsPositionOffset;
+
       // MonoBehaviour methods
 
       /// <summary>
@@ -109,31 +113,28 @@ namespace ArucoUnity
         Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
       }
 
-      // Methods
+      // IArucoCameraDisplay methods
+
+      public override void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
+      {
+        base.PlaceArucoObject(arucoObject, cameraId, localPosition, localRotation);
+
+        float direction = (cameraId == StereoArucoCamera.CameraId1) ? 1 : -1;
+        arucoObject.transform.position += direction * backgroundsPositionOffset / 2 * localPosition.z;
+      }
+
+      // ArucoCameraDisplay methods
 
       /// <summary>
-      /// Applies the translation between the physical cameras to the virtual cameras if <see cref="ArucoCameraUndistortion"/> is set.
+      /// Place the virtual cameras in the same placement than the physical cameras.
       /// </summary>
-      protected override void ConfigureCamerasBackground()
+      /// <param name="cameraId">The id of the camera to configure.</param>
+      protected override void ConfigureRectifiedCamera(int cameraId)
       {
-        base.ConfigureCamerasBackground();
+        base.ConfigureRectifiedCamera(cameraId);
 
-        if (ArucoCameraUndistortion != null)
-        {
-          // Place the virtual cameras in the same placement than the physical cameras
-          var stereoCameraParameters = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters;
-          Eyes[StereoArucoCamera.CameraId1].transform.localPosition += stereoCameraParameters.TranslationVector.ToPosition() / 2;
-          Eyes[StereoArucoCamera.CameraId2].transform.localPosition -= stereoCameraParameters.TranslationVector.ToPosition() / 2;
-
-          // Adjust the stereo convergence of the background camera to the focal length
-          if (XRSettings.enabled)
-          {
-            BackgroundCameras[StereoArucoCamera.CameraId1].stereoConvergence =
-              ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId1].GetCameraFocalLengths().x;
-            BackgroundCameras[StereoArucoCamera.CameraId2].stereoConvergence =
-              ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId2].GetCameraFocalLengths().x;
-          }
-        }
+        float direction = (cameraId == StereoArucoCamera.CameraId1) ? 1 : -1;
+        Eyes[cameraId].transform.localPosition += backgroundsPositionOffset / 2;
       }
     }
   }

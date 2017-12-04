@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Displays;
 using ArucoUnity.Cameras.Undistortions;
 using ArucoUnity.Plugin;
 using System;
@@ -27,7 +28,8 @@ namespace ArucoUnity
 
       protected IArucoObjectsTracker arucoTracker;
       protected IArucoCamera arucoCamera;
-      protected IArucoCameraUndistortion undistortion;
+      protected IArucoCameraUndistortion arucoCameraUndistortion;
+      protected IArucoCameraDisplay arucoCameraDisplay;
 
       // ArucoObjectsController related methods
 
@@ -56,7 +58,8 @@ namespace ArucoUnity
       {
         this.arucoTracker = arucoTracker;
         arucoCamera = arucoTracker.ArucoCamera;
-        undistortion = arucoTracker.ArucoCameraUndistortion;
+        arucoCameraUndistortion = arucoTracker.ArucoCameraUndistortion;
+        arucoCameraDisplay = arucoTracker.ArucoCameraDisplay;
         IsActivated = true;
 
         arucoTracker.DictionaryAdded += ArucoObjectsController_DictionaryAdded;
@@ -147,22 +150,6 @@ namespace ArucoUnity
         {
           throw new Exception("Activate the tracker before updating transforms of ArUco objects.");
         }
-      }
-
-      /// <summary>
-      /// Update the gameObject's transform of an ArUco object.
-      /// </summary>
-      /// <param name="arucoObject">The ArUco object to place.</param>
-      /// <param name="rvec">The estimated rotation vector of the ArUco object.</param>
-      /// <param name="tvec">The estimated translation vector of the ArUco object.</param>
-      /// <param name="cameraId">The id of the camera to use. The gameObject is placed and oriented relative to this camera.</param>
-      /// <param name="positionFactor">Factor on the position vector.</param>
-      protected void UpdateTransform(ArucoObject arucoObject, Cv.Vec3d rvec, Cv.Vec3d tvec, int cameraId, float positionFactor = 1f)
-      {
-        arucoObject.gameObject.transform.localPosition = tvec.ToPosition() * positionFactor
-          + arucoTracker.ArucoCameraDisplay.Cameras[cameraId].transform.position;
-        arucoObject.gameObject.transform.localRotation = rvec.ToRotation();
-        arucoObject.gameObject.SetActive(true);
       }
     }
   }

@@ -59,7 +59,7 @@ namespace ArucoUnity
           DetectedMarkers[cameraId].Add(dictionary, 0);
         }
       }
-      
+
       protected override void ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary dictionary)
       {
         for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
@@ -151,7 +151,7 @@ namespace ArucoUnity
           }
 
           // Draw axes of detected tracked markers
-          if (arucoTracker.DrawAxes && undistortion != null && MarkerRvecs[cameraId][dictionary] != null)
+          if (arucoTracker.DrawAxes && arucoCameraUndistortion != null && MarkerRvecs[cameraId][dictionary] != null)
           {
             for (uint i = 0; i < DetectedMarkers[cameraId][dictionary]; i++)
             {
@@ -159,7 +159,7 @@ namespace ArucoUnity
               int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
               if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
               {
-                Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
+                Aruco.DrawAxis(image, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId], arucoCameraUndistortion.UndistortedDistCoeffs[cameraId],
                   MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i), estimatePoseMarkerLength);
               }
             }
@@ -179,10 +179,10 @@ namespace ArucoUnity
 
         Std.VectorVec3d rvecs = null, tvecs = null;
 
-        if (DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
+        if (DetectedMarkers[cameraId][dictionary] > 0 && arucoCameraUndistortion != null)
         {
-          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], estimatePoseMarkerLength, undistortion.RectifiedCameraMatrices[cameraId],
-            undistortion.UndistortedDistCoeffs[cameraId], out rvecs, out tvecs);
+          Aruco.EstimatePoseSingleMarkers(MarkerCorners[cameraId][dictionary], estimatePoseMarkerLength, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId],
+            arucoCameraUndistortion.UndistortedDistCoeffs[cameraId], out rvecs, out tvecs);
         }
 
         MarkerRvecs[cameraId][dictionary] = rvecs;
@@ -202,9 +202,10 @@ namespace ArucoUnity
             if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
             {
               float positionFactor = foundArucoObject.MarkerSideLength / estimatePoseMarkerLength;
-              UpdateTransform(foundArucoObject, MarkerRvecs[cameraId][dictionary].At(i), MarkerTvecs[cameraId][dictionary].At(i),
-                cameraId, positionFactor);
-              foundArucoObject.gameObject.transform.localScale = foundArucoObject.MarkerSideLength * Vector3.one;
+              arucoCameraDisplay.PlaceArucoObject(foundArucoObject.transform, cameraId,
+                MarkerTvecs[cameraId][dictionary].At(i).ToPosition() * positionFactor,
+                MarkerRvecs[cameraId][dictionary].At(i).ToRotation());
+              foundArucoObject.transform.localScale = foundArucoObject.MarkerSideLength * Vector3.one;
             }
           }
         }

@@ -35,9 +35,9 @@ namespace ArucoUnity
 
         foreach (var arucoGridBoard in arucoTracker.GetArucoObjects<ArucoGridBoard>(dictionary))
         {
-          if (arucoTracker.DrawAxes && undistortion != null && arucoGridBoard.Rvec != null)
+          if (arucoTracker.DrawAxes && arucoCameraUndistortion != null && arucoGridBoard.Rvec != null)
           {
-            Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
+            Aruco.DrawAxis(image, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId], arucoCameraUndistortion.UndistortedDistCoeffs[cameraId],
               arucoGridBoard.Rvec, arucoGridBoard.Tvec, arucoGridBoard.AxisLength);
           }
         }
@@ -52,11 +52,11 @@ namespace ArucoUnity
           Cv.Vec3d rvec = null, tvec = null;
           int markersUsedForEstimation = 0;
 
-          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && arucoCameraUndistortion != null)
           {
             markersUsedForEstimation = Aruco.EstimatePoseBoard(arucoTracker.MarkerTracker.MarkerCorners[cameraId][dictionary],
-              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, undistortion.RectifiedCameraMatrices[cameraId],
-              undistortion.UndistortedDistCoeffs[cameraId], out rvec, out tvec);
+              arucoTracker.MarkerTracker.MarkerIds[cameraId][dictionary], arucoGridBoard.Board, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId],
+              arucoCameraUndistortion.UndistortedDistCoeffs[cameraId], out rvec, out tvec);
           }
 
           arucoGridBoard.Rvec = rvec;
@@ -74,12 +74,12 @@ namespace ArucoUnity
         {
           if (arucoGridBoard.Rvec != null)
           {
-            UpdateTransform(arucoGridBoard, arucoGridBoard.Rvec, arucoGridBoard.Tvec, cameraId);
-
             // Adjust the estimated coordinates
-            arucoGridBoard.transform.localPosition 
-              += arucoGridBoard.transform.right * arucoGridBoard.transform.localScale.x / 2
+            var position = arucoGridBoard.Tvec.ToPosition()
+              + arucoGridBoard.transform.right * arucoGridBoard.transform.localScale.x / 2
               + arucoGridBoard.transform.forward * arucoGridBoard.transform.localScale.z / 2;
+
+            arucoCameraDisplay.PlaceArucoObject(arucoGridBoard.transform, cameraId, position, arucoGridBoard.Rvec.ToRotation());
           }
         }
       }

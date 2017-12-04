@@ -1,8 +1,8 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
 using ArucoUnity.Controllers;
 using ArucoUnity.Utilities;
+using System;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -51,12 +51,12 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls <see cref="ConfigureCamerasBackground"/> the <see cref="SetDisplayActive(bool)"/> to activate the display.
+      /// Calls <see cref="ConfigureDisplay"/> the <see cref="SetDisplayActive(bool)"/> to activate the display.
       /// </summary>
       public override void StartController()
       {
         base.StartController();
-        ConfigureCamerasBackground();
+        ConfigureDisplay();
         SetDisplayActive(true);
         OnStarted();
       }
@@ -71,13 +71,27 @@ namespace ArucoUnity
         OnStopped();
       }
 
+      // IArucoCameraDisplay methods
+
+      public virtual void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
+      {
+        var parent = arucoObject.transform.parent;
+        arucoObject.transform.SetParent(Cameras[cameraId].transform);
+
+        arucoObject.transform.localPosition = localPosition;
+        arucoObject.transform.localRotation = localRotation;
+
+        arucoObject.transform.SetParent(parent);
+        arucoObject.gameObject.SetActive(true);
+      }
+
       // Methods
 
       /// <summary>
       /// Configures the <see cref="BackgroundCameras"/> and the <see cref="Backgrounds"/> according to the
       /// <see cref="ArucoCameraUndistortion"/> if set otherwise with default values.
       /// </summary>
-      protected virtual void ConfigureCamerasBackground()
+      protected virtual void ConfigureDisplay()
       {
         // Sets the background texture
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
@@ -94,10 +108,7 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
           {
-            if (!XRSettings.enabled || Cameras[cameraId].stereoTargetEye == StereoTargetEyeMask.None)
-            {
-              ConfigureRectifiedCamera(cameraId);
-            }
+            ConfigureRectifiedCamera(cameraId);
             ConfigureRectifiedBackground(cameraId);
           }
         }
@@ -144,7 +155,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Configures the field of view of a <see cref="Cameras"/> according to the vertical focal length of the corresponding rectified camera matrix
-      /// in <see cref="ArucoCameraUndistortion.RectifiedCameraMatrices"/>.
+      /// in <see cref="ArucoCameraUndistortion.RectifiedCameraMatrices"/>. If the camera targets an eye in VR mode, Unity has already configured it.
       /// </summary>
       /// <param name="cameraId">The id of the camera to configure.</param>
       protected virtual void ConfigureRectifiedCamera(int cameraId)

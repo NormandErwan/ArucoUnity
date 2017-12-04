@@ -32,18 +32,18 @@ namespace ArucoUnity
 
           if (markerTracker.DetectedMarkers[cameraId][dictionary] > 0)
           {
-            if (undistortion == null)
+            if (arucoCameraUndistortion == null)
             {
-               Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
-                markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
-                (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds);
+              Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
+               markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
+               (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds);
             }
             else
             {
               Aruco.InterpolateCornersCharuco(markerTracker.MarkerCorners[cameraId][dictionary],
                 markerTracker.MarkerIds[cameraId][dictionary], arucoCamera.Images[cameraId],
-                (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, undistortion.RectifiedCameraMatrices[cameraId],
-                undistortion.UndistortedDistCoeffs[cameraId]);
+                (Aruco.CharucoBoard)arucoCharucoBoard.Board, out charucoCorners, out charucoIds, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId],
+                arucoCameraUndistortion.UndistortedDistCoeffs[cameraId]);
             }
           }
 
@@ -65,9 +65,9 @@ namespace ArucoUnity
               Aruco.DrawDetectedCornersCharuco(image, arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds);
             }
 
-            if (arucoTracker.DrawAxes && undistortion != null && arucoCharucoBoard.Rvec != null)
+            if (arucoTracker.DrawAxes && arucoCameraUndistortion != null && arucoCharucoBoard.Rvec != null)
             {
-              Aruco.DrawAxis(image, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
+              Aruco.DrawAxis(image, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId], arucoCameraUndistortion.UndistortedDistCoeffs[cameraId],
                 arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, arucoCharucoBoard.AxisLength);
             }
           }
@@ -83,10 +83,10 @@ namespace ArucoUnity
           Cv.Vec3d rvec = null, tvec = null;
           bool validTransform = false;
 
-          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && undistortion != null)
+          if (arucoTracker.MarkerTracker.DetectedMarkers[cameraId][dictionary] > 0 && arucoCameraUndistortion != null)
           {
             validTransform = Aruco.EstimatePoseCharucoBoard(arucoCharucoBoard.DetectedCorners, arucoCharucoBoard.DetectedIds,
-            (Aruco.CharucoBoard)arucoCharucoBoard.Board, undistortion.RectifiedCameraMatrices[cameraId], undistortion.UndistortedDistCoeffs[cameraId],
+            (Aruco.CharucoBoard)arucoCharucoBoard.Board, arucoCameraUndistortion.RectifiedCameraMatrices[cameraId], arucoCameraUndistortion.UndistortedDistCoeffs[cameraId],
             out rvec, out tvec);
           }
 
@@ -104,7 +104,8 @@ namespace ArucoUnity
         {
           if (arucoCharucoBoard.Rvec != null)
           {
-            UpdateTransform(arucoCharucoBoard, arucoCharucoBoard.Rvec, arucoCharucoBoard.Tvec, cameraId);
+            arucoCameraDisplay.PlaceArucoObject(arucoCharucoBoard.transform, cameraId, arucoCharucoBoard.Tvec.ToPosition(),
+              arucoCharucoBoard.Rvec.ToRotation());
           }
         }
       }
