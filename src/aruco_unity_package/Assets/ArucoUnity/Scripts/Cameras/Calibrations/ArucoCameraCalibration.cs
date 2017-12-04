@@ -161,7 +161,7 @@ namespace ArucoUnity
 
         if (CalibrationBoard == null)
         {
-          throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibrator.");
+          throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibration controller.");
         }
 
         ResetCalibration();
@@ -232,7 +232,7 @@ namespace ArucoUnity
       {
         if (!IsConfigured)
         {
-          return;
+          throw new Exception("Configure the calibration controller before detect markers.");
         }
 
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
@@ -262,7 +262,7 @@ namespace ArucoUnity
       {
         if (!IsConfigured)
         {
-          return;
+          throw new Exception("Configure the calibration controller before drawing detected markers.");
         }
 
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
@@ -281,16 +281,22 @@ namespace ArucoUnity
       {
         if (!IsConfigured)
         {
-          return;
+          throw new Exception("Configure the calibration controller before adding the current frame for calibration.");
         }
 
         // Check for validity
+        uint markerIdsNumber = (MarkerIdsCurrentImage[0] != null) ? MarkerIdsCurrentImage[0].Size() : 0;
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           if (MarkerIdsCurrentImage[cameraId] == null || MarkerIdsCurrentImage[cameraId].Size() < 1)
           {
             throw new Exception("No markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
-              + " current images for calibration. It requires at least one marker detected.");
+              + " current images for the calibration. At least one marker detected is required for calibrating the camera.");
+          }
+
+          if (markerIdsNumber != MarkerIdsCurrentImage[cameraId].Size())
+          {
+            throw new Exception("The cameras must have detected the same number of markers to add the current images for the calibration.");
           }
         }
 
@@ -314,6 +320,11 @@ namespace ArucoUnity
       /// </summary>
       public virtual void CalibrateAsync()
       {
+        if (!IsConfigured)
+        {
+          throw new Exception("Configure the calibration controller before starting the async calibration.");
+        }
+
         bool calibrationRunning = false;
         calibratingMutex.WaitOne();
         {
@@ -350,6 +361,11 @@ namespace ArucoUnity
       /// </summary>
       public virtual void CancelCalibrateAsync()
       {
+        if (!IsConfigured)
+        {
+          throw new Exception("Configure the calibration controller before starting or canceling the calibration.");
+        }
+
         bool calibrationRunning = false;
         calibratingMutex.WaitOne();
         {
@@ -357,10 +373,12 @@ namespace ArucoUnity
         }
         calibratingMutex.ReleaseMutex();
 
-        if (calibrationRunning)
+        if (!calibrationRunning)
         {
-          calibratingThread.Abort();
+          throw new Exception("Start the async calibration before canceling it.");
         }
+
+        calibratingThread.Abort();
       }
 
       /// <summary>
@@ -371,6 +389,11 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Calibrate()
       {
+        if (!IsConfigured)
+        {
+          throw new Exception("Configure the calibration controller before starting the calibration.");
+        }
+
         // Update state
         calibratingMutex.WaitOne();
         {
