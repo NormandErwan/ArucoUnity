@@ -100,7 +100,7 @@ namespace ArucoUnity
         arucoObject.transform.position += direction * backgroundsPositionOffset / 2;
       }
 
-      // Methods
+      // ArucoCameraDisplay methods
 
       /// <summary>
       /// Configure the backgrounds for VR mode.

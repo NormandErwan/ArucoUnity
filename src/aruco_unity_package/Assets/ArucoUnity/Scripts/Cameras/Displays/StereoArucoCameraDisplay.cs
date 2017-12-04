@@ -125,6 +125,14 @@ namespace ArucoUnity
 
       // ArucoCameraDisplay methods
 
+      protected override void ConfigureDisplay()
+      {
+        backgroundsPositionOffset = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters.TranslationVector.ToPosition();
+        base.ConfigureDisplay();
+      }
+
+      // ArucoCameraDisplay methods
+
       /// <summary>
       /// Place the virtual cameras in the same placement than the physical cameras.
       /// </summary>
