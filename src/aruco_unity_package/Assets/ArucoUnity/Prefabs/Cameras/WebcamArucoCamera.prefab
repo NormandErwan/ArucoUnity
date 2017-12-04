@@ -267,10 +267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26a913db0c57924296019074a504016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arucoCamera: {fileID: 114439970468321140}
   autoStart: 1
+  arucoCamera: {fileID: 114439970468321140}
   arucoCameraUndistortion: {fileID: 0}
-  arucoObjectsTracker: {fileID: 0}
-  camera: {fileID: 20727044533785904}
-  backgroundCamera: {fileID: 20164004177903186}
-  background: {fileID: 23193199916444832}
+  cameras:
+  - {fileID: 20727044533785904}
+  backgroundCameras:
+  - {fileID: 20164004177903186}
+  backgrounds:
+  - {fileID: 23193199916444832}

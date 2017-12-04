@@ -301,6 +301,9 @@ MonoBehaviour:
   autoStart: 1
   arucoCamera: {fileID: 114393126318706844}
   arucoCameraUndistortion: {fileID: 114522793529101426}
-  camera: {fileID: 20452962843750572}
-  backgroundCamera: {fileID: 20017792066165246}
-  background: {fileID: 23646749236801090}
+  cameras:
+  - {fileID: 20452962843750572}
+  backgroundCameras:
+  - {fileID: 20017792066165246}
+  backgrounds:
+  - {fileID: 23646749236801090}
