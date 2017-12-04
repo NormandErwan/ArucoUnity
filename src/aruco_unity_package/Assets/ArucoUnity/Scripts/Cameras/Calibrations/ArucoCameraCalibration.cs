@@ -445,7 +445,7 @@ namespace ArucoUnity
 
         // Save the camera parameters
         CameraParametersController.CameraParametersFilename = ArucoCamera.Name + " - "
-          + CameraParametersController.CameraParameters.CalibrationDateTime.ToString("yyyy-dd-M--HH-mm-ss") + ".xml";
+          + CameraParametersController.CameraParameters.CalibrationDateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".xml";
         CameraParametersController.Save();
 
         // Update state
