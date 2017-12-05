@@ -268,15 +268,16 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void PlaceImagePlane()
       {
-        ImagePlane.transform.localPosition = Vector3.zero;
-        ImagePlane.transform.forward = -transform.up; // Rotated up
-
         if (ArucoObject != null)
         {
+          var scale = ArucoObject.GetGameObjectScale();
+
           ImagePlane.transform.SetParent(null);
-          ImagePlane.transform.localScale = ArucoObject.GetGameObjectScale();
+          ImagePlane.transform.localScale = new Vector3(scale.x, scale.z, scale.y); // Because it's rotated up
           ImagePlane.transform.SetParent(transform);
         }
+        ImagePlane.transform.localPosition = Vector3.zero;
+        ImagePlane.transform.forward = -transform.up; // Rotated up
       }
 
       /// <summary>
