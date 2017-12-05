@@ -119,10 +119,10 @@ namespace ArucoUnity
           + SquareSideLength + "_MarkerSize_" + MarkerSideLength;
       }
 
-      protected override void AdjustGameObjectScale()
+      public override Vector3 GetGameObjectScale()
       {
         float sideLength = SquareNumberPerSide * SquareSideLength;
-        transform.localScale = new Vector3(sideLength, SquareSideLength, sideLength);
+        return new Vector3(sideLength, SquareSideLength, sideLength);
       }
 
       protected override void UpdateArucoHashCode()

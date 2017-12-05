@@ -57,7 +57,7 @@ namespace ArucoUnity
       /// <summary>
       /// The number of the camera during the calibration.
       /// </summary>
-      public int CameraNumber { get; protected set; }
+      public int CameraNumber { get; set; }
 
       /// <summary>
       /// The image height during the calibration.

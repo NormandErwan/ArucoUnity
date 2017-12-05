@@ -88,13 +88,13 @@ namespace ArucoUnity
 
       // ArucoObject methods
 
-      protected override void AdjustGameObjectScale()
+      public override Vector3 GetGameObjectScale()
       {
         ImageSize = new Vector2(
           x: SquaresNumberX * SquareSideLength + 2 * MarginsLength,
           y: SquaresNumberY * SquareSideLength + 2 * MarginsLength
         );
-        transform.localScale = new Vector3(ImageSize.x, SquareSideLength, ImageSize.y);
+        return new Vector3(ImageSize.x, SquareSideLength, ImageSize.y);
       }
 
       protected override void UpdateArucoHashCode()

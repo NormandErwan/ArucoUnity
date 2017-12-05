@@ -110,6 +110,8 @@ namespace ArucoUnity
             lastArucoObjectOnValidate = ArucoObject;
           }
         }
+
+        PlaceImagePlane();
 #endif
       }
 
@@ -130,6 +132,7 @@ namespace ArucoUnity
       private void OnEnable()
       {
         InitializeImagePlane();
+        PlaceImagePlane();
         ImagePlane.SetActive(true);
       }
 
@@ -218,13 +221,16 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void InitializeImagePlane()
       {
+        // Loads the prefab
         if (ImagePlanePrefab == null)
         {
           ImagePlanePrefab = Resources.Load("ArucoObjectDisplayerImagePlane") as GameObject;
         }
 
+        // Creates the image plane if null
         if (ImagePlane == null)
         {
+          // Finds or creates the image plane gameObject
           var imagePlaneTransform = transform.Find(ImagePlanePrefab.name);
           if (imagePlaneTransform != null)
           {
@@ -234,11 +240,9 @@ namespace ArucoUnity
           {
             ImagePlane = Instantiate(ImagePlanePrefab, transform);
             ImagePlane.name = ImagePlanePrefab.name;
-            ImagePlane.transform.localPosition = Vector3.zero;
-            ImagePlane.transform.forward = -transform.up; // Rotated up
-            ImagePlane.transform.localScale = Vector3.one;
           }
 
+          // Updates the image plane material
 #if UNITY_EDITOR
           if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
 #else
@@ -254,7 +258,24 @@ namespace ArucoUnity
             imagePlaneMaterial = ImagePlane.GetComponent<Renderer>().material;
           }
 
+          // Don't save in the scene : dynamically generated
           ImagePlane.hideFlags = HideFlags.DontSaveInEditor;
+        }
+      }
+
+      /// <summary>
+      /// Places, rotates and scales the image plane.
+      /// </summary>
+      protected virtual void PlaceImagePlane()
+      {
+        ImagePlane.transform.localPosition = Vector3.zero;
+        ImagePlane.transform.forward = -transform.up; // Rotated up
+
+        if (ArucoObject != null)
+        {
+          ImagePlane.transform.SetParent(null);
+          ImagePlane.transform.localScale = ArucoObject.GetGameObjectScale();
+          ImagePlane.transform.SetParent(transform);
         }
       }
 

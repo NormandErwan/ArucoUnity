@@ -144,9 +144,9 @@ namespace ArucoUnity
       public abstract string GenerateName();
 
       /// <summary>
-      /// Adjusts the scale to <see cref="MarkerSideLength"/> length.
+      /// Gets the scale to <see cref="MarkerSideLength"/> length.
       /// </summary>
-      protected abstract void AdjustGameObjectScale();
+      public abstract Vector3 GetGameObjectScale();
 
       /// <summary>
       /// Updates the ArUco hash code of the object.
@@ -171,12 +171,11 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Initializes the properties and calls the <see cref="UpdateArucoHashCode"/> and <see cref="AdjustGameObjectScale"/> methods.
+      /// Initializes the properties and calls the <see cref="UpdateArucoHashCode"/> method.
       /// </summary>
       protected virtual void UpdateProperties()
       {
         UpdateArucoHashCode();
-        AdjustGameObjectScale();
       }
 
       /// <summary>

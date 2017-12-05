@@ -56,9 +56,9 @@ namespace ArucoUnity
         return "ArUcoUnity_Marker_" + Dictionary.Name + "_Id_" + MarkerId;
       }
 
-      protected override void AdjustGameObjectScale()
+      public override Vector3 GetGameObjectScale()
       {
-        transform.localScale = MarkerSideLength * Vector3.one;
+        return MarkerSideLength * Vector3.one;
       }
 
       protected override void UpdateArucoHashCode()
