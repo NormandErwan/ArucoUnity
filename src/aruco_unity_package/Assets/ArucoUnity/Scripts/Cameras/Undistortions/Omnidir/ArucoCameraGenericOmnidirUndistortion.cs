@@ -115,20 +115,10 @@ namespace ArucoUnity
 
           if (RectificationType == RectificationTypes.Perspective)
           {
-            float cameraF;
-            if (XRSettings.enabled)
-            {
-              // TODO: get the fov of the rendering camera instead?
-              cameraF = XRSettings.eyeTextureHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
-            }
-            else
-            {
-              cameraF = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
-            }
-
+            float cameraFocalLength = imageHeight / (2f * Mathf.Tan(0.5f * PerspectiveFieldOfViews[cameraId] * Mathf.Deg2Rad));
             RectifiedCameraMatrices[cameraId] = new Cv.Mat(3, 3, Cv.Type.CV_64F, new double[9] {
-              cameraF, 0, imageWidth / 2,
-              0, cameraF, imageHeight / 2,
+              cameraFocalLength, 0, imageWidth / 2,
+              0, cameraFocalLength, imageHeight / 2,
               0, 0, 1
             }).Clone();
           }

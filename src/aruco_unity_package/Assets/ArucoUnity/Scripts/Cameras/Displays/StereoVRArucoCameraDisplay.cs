@@ -67,6 +67,7 @@ namespace ArucoUnity
       // Variables
 
       protected Vector3 backgroundsPositionOffset;
+      protected float arucoObjectPlacementZFactor = 1f;
 
       // MonoBehaviour methods
 
@@ -94,10 +95,16 @@ namespace ArucoUnity
 
       public override void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
       {
-        base.PlaceArucoObject(arucoObject, cameraId, localPosition, localRotation);
+        var parent = arucoObject.transform.parent;
+        arucoObject.transform.SetParent(Cameras[cameraId].transform);
 
         float direction = (cameraId == StereoArucoCamera.CameraId1) ? 1 : -1;
-        arucoObject.transform.position += direction * backgroundsPositionOffset / 2;
+        arucoObject.transform.localPosition = new Vector3(localPosition.x, localPosition.y, arucoObjectPlacementZFactor * localPosition.z)
+          + direction * backgroundsPositionOffset / 2;
+        arucoObject.transform.localRotation = localRotation;
+
+        arucoObject.transform.SetParent(parent);
+        arucoObject.gameObject.SetActive(true);
       }
 
       // ArucoCameraDisplay methods
@@ -130,6 +137,26 @@ namespace ArucoUnity
       /// </summary>
       protected override void ConfigureRectifiedCamera(int cameraId)
       {
+      }
+
+      protected virtual void ConfigureRectifiedBackground(int cameraId)
+      {
+        float imageWidth = ArucoCameraUndistortion.CameraParameters.ImageWidths[cameraId];
+        float imageHeight = ArucoCameraUndistortion.CameraParameters.ImageHeights[cameraId];
+        Vector2 focalLength = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
+        Vector2 principalPoint = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
+
+        float cameraFocalLength = Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
+        arucoObjectPlacementZFactor = cameraFocalLength / focalLength.y;
+
+        float localPositionX = (0.5f * imageWidth - principalPoint.x) / cameraFocalLength * cameraBackgroundDistance;
+        float localPositionY = -(0.5f * imageHeight - principalPoint.y) / cameraFocalLength * cameraBackgroundDistance;
+
+        float localScaleX = imageWidth / cameraFocalLength * cameraBackgroundDistance;
+        float localScaleY = imageHeight / cameraFocalLength * cameraBackgroundDistance;
+
+        Backgrounds[cameraId].transform.localPosition = new Vector3(0f, 0f, cameraBackgroundDistance);
+        Backgrounds[cameraId].transform.localScale = new Vector3(localScaleX, localScaleY, 1f);
       }
     }
   }
