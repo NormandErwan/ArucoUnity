@@ -201,11 +201,9 @@ namespace ArucoUnity
             int detectedMarkerHashCode = ArucoMarker.GetArucoHashCode(MarkerIds[cameraId][dictionary].At(i));
             if (arucoTracker.ArucoObjects[dictionary].TryGetValue(detectedMarkerHashCode, out foundArucoObject))
             {
-              float positionFactor = foundArucoObject.MarkerSideLength / estimatePoseMarkerLength;
-              arucoCameraDisplay.PlaceArucoObject(foundArucoObject.transform, cameraId,
-                MarkerTvecs[cameraId][dictionary].At(i).ToPosition() * positionFactor,
+              var localPosition = MarkerTvecs[cameraId][dictionary].At(i).ToPosition() * foundArucoObject.MarkerSideLength / estimatePoseMarkerLength;
+              arucoCameraDisplay.PlaceArucoObject(foundArucoObject.transform, cameraId, localPosition,
                 MarkerRvecs[cameraId][dictionary].At(i).ToRotation());
-              foundArucoObject.transform.localScale = foundArucoObject.MarkerSideLength * Vector3.one;
             }
           }
         }
