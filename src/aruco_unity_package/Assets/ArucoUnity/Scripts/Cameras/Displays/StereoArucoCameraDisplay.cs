@@ -127,7 +127,10 @@ namespace ArucoUnity
 
       protected override void ConfigureDisplay()
       {
-        backgroundsPositionOffset = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters.TranslationVector.ToPosition();
+        if (ArucoCameraUndistortion != null)
+        {
+          backgroundsPositionOffset = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters.TranslationVector.ToPosition();
+        }
         base.ConfigureDisplay();
       }
 
