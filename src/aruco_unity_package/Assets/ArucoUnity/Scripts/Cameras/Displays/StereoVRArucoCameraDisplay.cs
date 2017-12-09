@@ -67,6 +67,7 @@ namespace ArucoUnity
       // Variables
 
       protected Vector3 backgroundsPositionOffset;
+      protected float cameraFocalLength;
       protected float arucoObjectPlacementZFactor = 1f;
 
       // MonoBehaviour methods
@@ -125,28 +126,31 @@ namespace ArucoUnity
           Backgrounds[StereoArucoCamera.CameraId2].transform.localPosition -= backgroundsPositionOffset / 2;
 
           // Adjust the stereo convergence of the background camera to the focal length
-          BackgroundCameras[StereoArucoCamera.CameraId1].stereoConvergence =
-            ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId1].GetCameraFocalLengths().x;
-          BackgroundCameras[StereoArucoCamera.CameraId2].stereoConvergence =
-            ArucoCameraUndistortion.RectifiedCameraMatrices[StereoArucoCamera.CameraId2].GetCameraFocalLengths().x;
+          BackgroundCameras[StereoArucoCamera.CameraId1].stereoConvergence = cameraFocalLength;
+          BackgroundCameras[StereoArucoCamera.CameraId2].stereoConvergence = cameraFocalLength;
         }
       }
 
       /// <summary>
-      /// Cancel the base class configuration of the virtual cameras as Unity already handles them.
+      /// Cancels the base class configuration of the virtual cameras as Unity already handles them.
       /// </summary>
       protected override void ConfigureRectifiedCamera(int cameraId)
       {
       }
 
-      protected virtual void ConfigureRectifiedBackground(int cameraId)
+      /// <summary>
+      /// Places the <see cref="ArucoCameraGenericDisplay.Backgrounds"/> taking account of the difference of the focal length between the VR
+      /// <see cref="ArucoCameraGenericDisplay.Cameras"/> and from <see cref="ArucoCameraUndistortion.RectificationMatrices"/>.
+      /// </summary>
+      /// <param name="cameraId">The id of the background and the background camera to configure.</param>
+      protected override void ConfigureRectifiedBackground(int cameraId)
       {
         float imageWidth = ArucoCameraUndistortion.CameraParameters.ImageWidths[cameraId];
         float imageHeight = ArucoCameraUndistortion.CameraParameters.ImageHeights[cameraId];
         Vector2 focalLength = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
         Vector2 principalPoint = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
 
-        float cameraFocalLength = Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
+        cameraFocalLength = Cameras[cameraId].pixelHeight / (2f * Mathf.Tan(0.5f * Cameras[cameraId].fieldOfView * Mathf.Deg2Rad));
         arucoObjectPlacementZFactor = cameraFocalLength / focalLength.y;
 
         float localPositionX = (0.5f * imageWidth - principalPoint.x) / cameraFocalLength * cameraBackgroundDistance;

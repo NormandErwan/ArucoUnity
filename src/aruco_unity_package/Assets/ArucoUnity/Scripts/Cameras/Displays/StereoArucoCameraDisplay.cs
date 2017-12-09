@@ -85,7 +85,7 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Vector3 backgroundsPositionOffset;
+      protected Vector3 backgroundsPositionOffset = Vector3.zero;
 
       // MonoBehaviour methods
 
