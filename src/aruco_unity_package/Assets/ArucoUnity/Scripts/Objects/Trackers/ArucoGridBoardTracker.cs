@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Objects;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
 
 namespace ArucoUnity
 {
@@ -76,8 +75,8 @@ namespace ArucoUnity
           {
             // Adjust the estimated coordinates
             var position = arucoGridBoard.Tvec.ToPosition()
-              + arucoGridBoard.transform.right * arucoGridBoard.transform.localScale.x / 2
-              + arucoGridBoard.transform.forward * arucoGridBoard.transform.localScale.z / 2;
+              + arucoGridBoard.transform.right * arucoGridBoard.GetGameObjectScale().x / 2
+              + arucoGridBoard.transform.forward * arucoGridBoard.GetGameObjectScale().z / 2;
 
             arucoCameraDisplay.PlaceArucoObject(arucoGridBoard.transform, cameraId, position, arucoGridBoard.Rvec.ToRotation());
           }
