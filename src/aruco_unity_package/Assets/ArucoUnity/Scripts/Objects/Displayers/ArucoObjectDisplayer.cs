@@ -9,6 +9,7 @@ namespace ArucoUnity
   namespace Objects.Displayers
   {
     [ExecuteInEditMode]
+    // TODO: preserve the children objects of the ImagePlane
     public class ArucoObjectDisplayer : MonoBehaviour
     {
       // Editor fields
