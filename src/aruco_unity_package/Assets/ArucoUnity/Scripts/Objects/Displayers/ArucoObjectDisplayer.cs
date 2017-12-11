@@ -109,9 +109,9 @@ namespace ArucoUnity
             }
             lastArucoObjectOnValidate = ArucoObject;
           }
-        }
 
-        PlaceImagePlane();
+          PlaceImagePlane();
+        }
 #endif
       }
 
@@ -131,9 +131,14 @@ namespace ArucoUnity
       /// </summary>
       private void OnEnable()
       {
-        InitializeImagePlane();
-        PlaceImagePlane();
-        ImagePlane.SetActive(true);
+#if UNITY_EDITOR
+        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && ArucoObject)
+        {
+          Create();
+          Display();
+          ImagePlane.SetActive(true);
+        }
+#endif
       }
 
       /// <summary>
@@ -141,11 +146,10 @@ namespace ArucoUnity
       /// </summary>
       private void OnDisable()
       {
-        ImagePlane.SetActive(false);
-
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
+          ImagePlane.SetActive(false);
           Reset();
         }
 #endif
@@ -184,6 +188,8 @@ namespace ArucoUnity
       /// </summary>
       public virtual void Display()
       {
+        InitializeImagePlane();
+        PlaceImagePlane();
         imagePlaneMaterial.mainTexture = ImageTexture;
       }
 
