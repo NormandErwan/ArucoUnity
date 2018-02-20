@@ -44,7 +44,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the current images frame manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
       /// </summary>
-      public virtual Cv.Mat[] Images { get { return imageBuffers[currentBuffer]; } }
+      public Cv.Mat[] Images { get { return imageBuffers[currentBuffer]; } }
 
       public byte[][] ImageDatas { get { return imageDataBuffers[currentBuffer]; } }
       public int[] ImageDataSizes { get; private set; }
