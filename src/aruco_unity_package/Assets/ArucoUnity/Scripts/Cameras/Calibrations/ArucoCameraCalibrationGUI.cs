@@ -72,8 +72,8 @@ namespace ArucoUnity
       /// </summary>
       protected void OnDestroy()
       {
-        arucoCameraCalibration.Started += ConfigureUI;
-        arucoCameraCalibration.Calibrated += Calibrated;
+        arucoCameraCalibration.Started -= ConfigureUI;
+        arucoCameraCalibration.Calibrated -= Calibrated;
       }
 
       /// <summary>
@@ -112,7 +112,7 @@ namespace ArucoUnity
         // Configure the cells of the grid of images
         for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
         {
-          int cellCol = cameraId % gridCols; // Range : 0 to (gridCols - 1), images from left ot right
+          int cellCol = cameraId % gridCols; // Range : 0 to (gridCols - 1), images from left to right
           int cellRow = (gridRows - 1) - (cameraId / gridCols); // Range : (gridRows - 1) to 0, images from top to bottom
 
           // Create a cell on the grid for each camera image
@@ -225,7 +225,7 @@ namespace ArucoUnity
       /// <summary>
       /// Updates the text of the number of images added for calibration.
       /// </summary>
-      void UpdateFramesForCalibrationText()
+      private void UpdateFramesForCalibrationText()
       {
         string frames = (arucoCameraCalibration.MarkerIds != null && arucoCameraCalibration.MarkerIds[0] != null) ? "" + arucoCameraCalibration.MarkerIds[0].Size() : "0";
         framesForCalibrationText.text = "Frames for calibration: " + frames;
