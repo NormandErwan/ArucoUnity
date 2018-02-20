@@ -44,6 +44,7 @@ namespace ArucoUnity
 
       // Variables
 
+      protected Texture2D webcamTexture2D;
       protected bool startInitiated = false;
       protected int cameraId = 0;
 
@@ -65,6 +66,7 @@ namespace ArucoUnity
           {
             // Configure
             ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+            webcamTexture2D = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
 
             // Update state
             startInitiated = false;
@@ -127,9 +129,8 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        NextImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
-        Array.Copy(NextImageTextures[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
-
+        webcamTexture2D.SetPixels32(WebCamTexture.GetPixels32());
+        Array.Copy(webcamTexture2D.GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
         OnImagesUpdated();
       }
     }

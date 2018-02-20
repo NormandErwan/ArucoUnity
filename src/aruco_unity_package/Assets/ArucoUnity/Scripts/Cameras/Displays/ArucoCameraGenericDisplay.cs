@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
 using ArucoUnity.Controllers;
 using ArucoUnity.Utilities;
-using System;
 using UnityEngine;
 
 namespace ArucoUnity

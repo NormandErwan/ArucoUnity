@@ -121,14 +121,14 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Undistorts and rectifies the <see cref="ArucoCamera.Images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming
+      /// Undistorts and rectifies the <paramref name="images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming
       /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with the 3D content.
       /// </summary>
-      protected virtual void ArucoCamera_UndistortRectifyImages()
+      protected virtual void ArucoCamera_UndistortRectifyImages(Cv.Mat[] images)
       {
         for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
         {
-          Cv.Remap(ArucoCamera.Images[cameraId], ArucoCamera.Images[cameraId], UndistortionRectificationMaps[cameraId][0],
+          Cv.Remap(images[cameraId], images[cameraId], UndistortionRectificationMaps[cameraId][0],
             UndistortionRectificationMaps[cameraId][1], Cv.InterpolationFlags.Linear);
         }
       }

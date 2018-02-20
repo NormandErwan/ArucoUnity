@@ -18,14 +18,14 @@ namespace ArucoUnity
       // Events
 
       /// <summary>
-      /// Called when the images has been updated.
+      /// Called when the <see cref="Images"/> have been updated.
       /// </summary>
       event Action ImagesUpdated;
 
       /// <summary>
-      /// Callback to undistort the <see cref="Images"/>.
+      /// Callback to undistort and rectify the images in parameters.
       /// </summary>
-      event Action UndistortRectifyImages;
+      event Action<Cv.Mat[]> UndistortRectifyImages;
 
       // Properties
 
@@ -40,12 +40,12 @@ namespace ArucoUnity
       string Name { get; }
 
       /// <summary>
-      /// Gets the the current image frames manipulated by Unity. There are <see cref="CameraNumber"/> images: one for each camera.
+      /// Gets the the current images manipulated by Unity. There are <see cref="CameraNumber"/> images: one for each camera.
       /// </summary>
       Texture2D[] ImageTextures { get; }
 
       /// <summary>
-      /// Gets or sets the current image frames manipulated by OpenCV. There are <see cref="CameraNumber"/> images: one for each camera.
+      /// Gets or sets the current images manipulated by OpenCV. There are <see cref="CameraNumber"/> images: one for each camera.
       /// </summary>
       Cv.Mat[] Images { get; }
 
@@ -55,12 +55,12 @@ namespace ArucoUnity
       byte[][] ImageDatas { get; }
 
       /// <summary>
-      /// Gets the size of each image in <see cref="ImageDatas"/>.
+      /// Gets the size of each <see cref="ImageDatas"/>.
       /// </summary>
       int[] ImageDataSizes { get; }
 
       /// <summary>
-      /// Gets the <see cref="Images"/> ratios.
+      /// Gets the ratios of each <see cref="Images"/>.
       /// </summary>
       float[] ImageRatios { get; }
     }
