@@ -97,14 +97,7 @@ namespace ArucoUnity
       // Variables
 
       protected Dictionary<Type, ArucoObjectTracker> additionalTrackers;
-
-      protected bool arucoCameraImagesUpdated;
-      protected Cv.Mat[] trackingImages;
-      protected byte[][] trackingImagesData;
-      protected byte[][] arucoCameraImageCopyData;
-      protected Thread trackingThread;
-      protected Mutex trackingMutex = new Mutex();
-      protected Exception trackingException;
+      protected ArucoCameraSeparateThread trackingThread;
 
       // MonoBehaviour methods
 
@@ -143,28 +136,13 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Initializes the tracking, Activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
+      /// Initializes the tracking, activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
       /// <see cref="ArucoObjectsController{T}.ArucoObjectRemoved"/> events and starts the tracking thread.
       /// </summary>
       public override void StartController()
       {
         base.StartController();
-
-        // Initialize the tracking
-        trackingImages = new Cv.Mat[ArucoCamera.CameraNumber];
-        trackingImagesData = new byte[ArucoCamera.CameraNumber][];
-        arucoCameraImageCopyData = new byte[ArucoCamera.CameraNumber][];
-        for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
-        {
-          arucoCameraImageCopyData[cameraId] = new byte[ArucoCamera.ImageDataSizes[cameraId]];
-          trackingImagesData[cameraId] = new byte[ArucoCamera.ImageDataSizes[cameraId]];
-
-          trackingImages[cameraId] = new Cv.Mat(ArucoCamera.ImageTextures[cameraId].height, ArucoCamera.ImageTextures[cameraId].width,
-            CvMatExtensions.ImageType(ArucoCamera.ImageTextures[cameraId].format));
-          trackingImages[cameraId].DataByte = trackingImagesData[cameraId];
-        }
-
-        // Activate the trackers
+        
         MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
@@ -173,32 +151,12 @@ namespace ArucoUnity
             ArucoObjectsController_ArucoObjectAdded(arucoObject.Value);
           }
         }
-
-        // Subscribes to ArucoObjectsController and ArucoCamera events
+        
         ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
 
-        arucoCameraImagesUpdated = false;
-        ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
-
-        // Start the tracking thread
-        trackingThread = new Thread(() =>
-        {
-          try
-          {
-            while (IsConfigured && IsStarted)
-            {
-              trackingMutex.WaitOne();
-              Track();
-              trackingMutex.ReleaseMutex();
-            }
-          }
-          catch (Exception e)
-          {
-            trackingException = e;
-            trackingMutex.ReleaseMutex();
-          }
-        });
+        trackingThread = new ArucoCameraSeparateThread(ArucoCamera, UpdateArucoObjects, TrackArucoObjects,
+          () => { StopController(); });
         trackingThread.Start();
 
         OnStarted();
@@ -210,6 +168,8 @@ namespace ArucoUnity
       public override void StopController()
       {
         base.StopController();
+
+        trackingThread.Stop();
 
         ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
@@ -224,62 +184,6 @@ namespace ArucoUnity
         }
 
         OnStopped();
-      }
-
-      /// <summary>
-      /// Draws the results of the detection and place each detected ArUco object according to the results of the tracking thread and re-throw the
-      /// tracking thread exceptions.
-      /// </summary>
-      protected virtual void ArucoCamera_ImagesUpdated()
-      {
-        if (IsConfigured && IsStarted)
-        {
-          Exception e = null;
-
-          // Check for exception in the tracking thread, or transfer images data with the tracking thread
-          trackingMutex.WaitOne();
-          {
-            if (trackingException != null)
-            {
-              e = trackingException;
-              trackingException = null;
-            }
-            else
-            {
-              if (!arucoCameraImagesUpdated)
-              {
-                arucoCameraImagesUpdated = true;
-
-                // Copy the current images of the camera for the tracking thread
-                for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
-                {
-                  Array.Copy(ArucoCamera.ImageDatas[cameraId], arucoCameraImageCopyData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
-                }
-
-                // Copy back the previous images use by the tracking thread (for synchronization of the images with the tranforms of the tracked objects
-                for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
-                {
-                  Array.Copy(trackingImagesData[cameraId], ArucoCamera.ImageDatas[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
-                }
-
-                // Update the transforms of the tracked objects
-                DeactivateArucoObjects();
-                if (ArucoCameraDisplay != null)
-                {
-                  UpdateTransforms();
-                }
-              }
-            }
-          }
-          trackingMutex.ReleaseMutex();
-
-          // Stop if there was an exception in the tracking thread
-          if (e != null)
-          {
-            StopController();
-            throw e;
-          }
-        }
       }
 
       // ArucoObjectController methods
@@ -424,19 +328,22 @@ namespace ArucoUnity
       /// <summary>
       /// Detects and estimates the transforms of the detected ArUco objects. Executed on a separated tracking thread.
       /// </summary>
-      protected void Track()
+      protected void TrackArucoObjects()
       {
-        if (arucoCameraImagesUpdated)
-        {
-          arucoCameraImagesUpdated = false;
-          for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
-          {
-            Array.Copy(arucoCameraImageCopyData[cameraId], trackingImagesData[cameraId], ArucoCamera.ImageDataSizes[cameraId]);
-          }
+        Detect(trackingThread.Images);
+        EstimateTransforms();
+        Draw(trackingThread.Images);
+      }
 
-          Detect(trackingImages);
-          EstimateTransforms();
-          Draw(trackingImages);
+      /// <summary>
+      /// Calls <see cref="DeactivateArucoObjects"/> and <see cref="UpdateTransforms"/>.
+      /// </summary>
+      protected void UpdateArucoObjects()
+      {
+        DeactivateArucoObjects();
+        if (ArucoCameraDisplay != null)
+        {
+          UpdateTransforms();
         }
       }
 
