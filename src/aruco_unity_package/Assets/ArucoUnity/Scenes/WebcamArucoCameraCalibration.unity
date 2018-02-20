@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -258,6 +259,46 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 220.28305
+      objectReference: {fileID: 0}
+    - target: {fileID: 224089052195935730, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224089052195935730, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224354081902056526, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224354081902056526, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224870151546417610, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224870151546417610, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224190136141352184, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224190136141352184, guid: 7d56e1e25cfe0d746a30e519e829f8e6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d56e1e25cfe0d746a30e519e829f8e6, type: 2}
@@ -454,6 +495,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
