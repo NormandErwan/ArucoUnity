@@ -127,8 +127,8 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        ImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
-        Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
+        NextImageTextures[cameraId].SetPixels32(WebCamTexture.GetPixels32());
+        Array.Copy(NextImageTextures[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
 
         OnImagesUpdated();
       }

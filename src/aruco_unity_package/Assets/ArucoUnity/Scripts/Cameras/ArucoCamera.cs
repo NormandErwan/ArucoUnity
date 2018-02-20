@@ -24,6 +24,7 @@ namespace ArucoUnity
       // Constants
 
       protected readonly int? dontFlipCode = null;
+      private const int buffersCount = 2;
 
       // IArucoCamera events
 
@@ -38,18 +39,27 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the the current images frame manipulated by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
       /// </summary>
-      public Texture2D[] ImageTextures { get; private set; }
+      public Texture2D[] ImageTextures { get { return imageTexturesBuffers[currentBuffer]; } }
 
       /// <summary>
       /// Gets or sets the current images frame manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
       /// </summary>
-      public virtual Cv.Mat[] Images { get; private set; }
+      public virtual Cv.Mat[] Images { get { return imageBuffers[currentBuffer]; } }
 
-      public byte[][] ImageDatas { get; private set; }
+      public byte[][] ImageDatas { get { return imageDataBuffers[currentBuffer]; } }
       public int[] ImageDataSizes { get; private set; }
       public float[] ImageRatios { get; private set; }
 
+      protected Texture2D[] NextImageTextures { get { return imageTexturesBuffers[NextBuffer()]; } }
+      protected virtual Cv.Mat[] NextImages { get { return imageBuffers[NextBuffer()]; } }
+      protected byte[][] NextImageDatas { get { return imageDataBuffers[NextBuffer()]; } }
+
       // Variables
+
+      protected uint currentBuffer = 0;
+      protected Texture2D[][] imageTexturesBuffers = new Texture2D[buffersCount][];
+      protected Cv.Mat[][] imageBuffers = new Cv.Mat[buffersCount][];
+      protected byte[][][] imageDataBuffers = new byte[buffersCount][][];
 
       protected bool imagesUpdatedThisFrame = false;
       protected bool flipHorizontallyImages = false,
@@ -60,7 +70,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Update <see cref="Images"/> with the new frame images.
+      /// Updates <see cref="Images"/> with the new frame images.
       /// </summary>
       protected virtual void Update()
       {
@@ -72,7 +82,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Apply the changes made on the <see cref="Images"/> during the frame to the <see cref="ImageTextures"/>.
+      /// Applies the changes made on the <see cref="Images"/> during the frame to the <see cref="ImageTextures"/>.
       /// </summary>
       protected virtual void LateUpdate()
       {
@@ -86,13 +96,15 @@ namespace ArucoUnity
           // Flip the Images if needed and load them to the textures
           if (postDetectflipCode != null)
           {
-            Cv.Flip(Images[cameraId], Images[cameraId], (int)postDetectflipCode);
+            Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)postDetectflipCode);
           }
 
           // Load the Images to the ImageTextures
-          ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
-          ImageTextures[cameraId].Apply(false);
+          NextImageTextures[cameraId].LoadRawTextureData(NextImages[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
+          NextImageTextures[cameraId].Apply(false);
         }
+
+        currentBuffer = NextBuffer();
       }
 
       // Methods
@@ -108,12 +120,16 @@ namespace ArucoUnity
           throw new Exception("It must have at least one camera.");
         }
 
-        // Initialize the properties and variables
-        Images = new Cv.Mat[CameraNumber];
-        ImageDatas = new byte[CameraNumber][];
+        // Initialize the properties
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];
-        ImageTextures = new Texture2D[CameraNumber];
+
+        for (int bufferId = 0; bufferId < buffersCount; bufferId++)
+        {
+          imageBuffers[bufferId] = new Cv.Mat[CameraNumber];
+          imageTexturesBuffers[bufferId] = new Texture2D[CameraNumber];
+          imageDataBuffers[bufferId] = new byte[CameraNumber][];
+        }
 
         // Configure the flip codes to transfer images from Unity to OpenCV and vice-versa
         // The raw bytes from a Texture to a Mat and from a Mat to a Texture needs to be vertically flipped to be in the correct orientation
@@ -155,6 +171,14 @@ namespace ArucoUnity
       protected abstract void UpdateCameraImages();
 
       /// <summary>
+      /// Returns the index of the next buffer.
+      /// </summary>
+      protected uint NextBuffer()
+      {
+        return (currentBuffer + 1) % buffersCount;
+      }
+
+      /// <summary>
       /// Calls the <see cref="UndistortRectifyImages"/> and <see cref="ImagesUpdated"/> events.
       /// </summary>
       protected void OnImagesUpdated()
@@ -164,7 +188,7 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
-            Cv.Flip(Images[cameraId], Images[cameraId], (int)preDetectflipCode);
+            Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)preDetectflipCode);
           }
         }
 
@@ -184,11 +208,23 @@ namespace ArucoUnity
       {
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          Images[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, CvMatExtensions.ImageType(ImageTextures[cameraId].format));
+          for (int bufferId = 0; bufferId < buffersCount; bufferId++)
+          {
+            if (bufferId != currentBuffer)
+            {
+              imageTexturesBuffers[bufferId][cameraId] = new Texture2D(ImageTextures[cameraId].width, ImageTextures[cameraId].height, ImageTextures[cameraId].format, false);
+            }
+            imageBuffers[bufferId][cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width, CvMatExtensions.ImageType(ImageTextures[cameraId].format));
+          }
+
           ImageDataSizes[cameraId] = (int)(Images[cameraId].ElemSize() * Images[cameraId].Total());
-          ImageDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
-          Images[cameraId].DataByte = ImageDatas[cameraId];
           ImageRatios[cameraId] = ImageTextures[cameraId].width / (float)ImageTextures[cameraId].height;
+
+          for (int bufferId = 0; bufferId < buffersCount; bufferId++)
+          {
+            imageDataBuffers[bufferId][cameraId] = new byte[ImageDataSizes[cameraId]];
+            imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];
+          }
         }
       }
     }
