@@ -16,7 +16,7 @@ namespace ArucoUnity
       public const int MAT_DEPTH_MAX = DEPTH_MAX - 1;
       public const double EPSILON = 2.2204460492503131e-016;
 
-      public const int hotizontalFlipCode = 1;
+      public const int horizontalFlipCode = 1;
       public const int verticalFlipCode = 0;
       public const int bothAxesFlipCode = -1;
 

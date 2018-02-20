@@ -134,7 +134,7 @@ namespace ArucoUnity
         }
         else if (flipHorizontallyImages && flipVerticallyImages)
         {
-          imagesFlipCode = Cv.hotizontalFlipCode; // Don't flip vertically because the image textures are already vertically flipped
+          imagesFlipCode = Cv.horizontalFlipCode; // Don't flip vertically because the image textures are already vertically flipped
         }
 
         base.OnConfigured();
