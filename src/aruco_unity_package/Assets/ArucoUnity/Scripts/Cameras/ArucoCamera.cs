@@ -59,6 +59,9 @@ namespace ArucoUnity
       protected Cv.Mat[][] imageBuffers = new Cv.Mat[buffersCount][];
       protected byte[][][] imageDataBuffers = new byte[buffersCount][][];
 
+      protected Cv.Mat[] imageToTextures;
+      protected byte[][] imageToTextureDatas;
+
       protected bool imagesUpdatedThisFrame = false;
       protected bool flipHorizontallyImages = false,
                      flipVerticallyImages = false;
@@ -88,10 +91,9 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
-            Cv.Flip(Images[cameraId], Images[cameraId], Cv.verticalFlipCode);
-            ImageTextures[cameraId].LoadRawTextureData(Images[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
+            Cv.Flip(Images[cameraId], imageToTextures[cameraId], Cv.verticalFlipCode);
+            ImageTextures[cameraId].LoadRawTextureData(imageToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
             ImageTextures[cameraId].Apply(false);
-            Cv.Flip(Images[cameraId], Images[cameraId], Cv.verticalFlipCode);
           }
           currentBuffer = NextBuffer();
         }
@@ -113,6 +115,9 @@ namespace ArucoUnity
         ImageTextures = new Texture2D[CameraNumber];
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];
+
+        imageToTextures = new Cv.Mat[CameraNumber];
+        imageToTextureDatas = new byte[CameraNumber][];
 
         for (int bufferId = 0; bufferId < buffersCount; bufferId++)
         {
@@ -206,6 +211,11 @@ namespace ArucoUnity
             imageDataBuffers[bufferId][cameraId] = new byte[ImageDataSizes[cameraId]];
             imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];
           }
+
+          imageToTextures[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width,
+              CvMatExtensions.ImageType(ImageTextures[cameraId].format));
+          imageToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
+          imageToTextures[cameraId].DataByte = imageToTextureDatas[cameraId];
         }
       }
     }
