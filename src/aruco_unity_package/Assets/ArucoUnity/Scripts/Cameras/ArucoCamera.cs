@@ -59,8 +59,8 @@ namespace ArucoUnity
       protected Cv.Mat[][] imageBuffers = new Cv.Mat[buffersCount][];
       protected byte[][][] imageDataBuffers = new byte[buffersCount][][];
 
-      protected Cv.Mat[] imageToTextures;
-      protected byte[][] imageToTextureDatas;
+      protected Cv.Mat[] imagesToTextures;
+      protected byte[][] imagesToTextureDatas;
 
       protected bool imagesUpdatedThisFrame = false;
       protected bool flipHorizontallyImages = false,
@@ -91,8 +91,8 @@ namespace ArucoUnity
         {
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
-            Cv.Flip(Images[cameraId], imageToTextures[cameraId], Cv.verticalFlipCode);
-            ImageTextures[cameraId].LoadRawTextureData(imageToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
+            Cv.Flip(Images[cameraId], imagesToTextures[cameraId], Cv.verticalFlipCode);
+            ImageTextures[cameraId].LoadRawTextureData(imagesToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
             ImageTextures[cameraId].Apply(false);
           }
           currentBuffer = NextBuffer();
@@ -116,8 +116,8 @@ namespace ArucoUnity
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];
 
-        imageToTextures = new Cv.Mat[CameraNumber];
-        imageToTextureDatas = new byte[CameraNumber][];
+        imagesToTextures = new Cv.Mat[CameraNumber];
+        imagesToTextureDatas = new byte[CameraNumber][];
 
         for (int bufferId = 0; bufferId < buffersCount; bufferId++)
         {
@@ -172,7 +172,6 @@ namespace ArucoUnity
       /// </summary>
       protected void OnImagesUpdated()
       {
-        // Flip the images if needed
         if (imagesFlipCode != null)
         {
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
@@ -180,11 +179,8 @@ namespace ArucoUnity
             Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)imagesFlipCode);
           }
         }
-
-        // Undistort images
         UndistortRectifyImages(NextImages);
 
-        // Update state
         imagesUpdatedThisFrame = true;
         ImagesUpdated();
       }
@@ -212,10 +208,10 @@ namespace ArucoUnity
             imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];
           }
 
-          imageToTextures[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width,
+          imagesToTextures[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width,
               CvMatExtensions.ImageType(ImageTextures[cameraId].format));
-          imageToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
-          imageToTextures[cameraId].DataByte = imageToTextureDatas[cameraId];
+          imagesToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
+          imagesToTextures[cameraId].DataByte = imagesToTextureDatas[cameraId];
         }
       }
     }
