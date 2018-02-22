@@ -155,8 +155,8 @@ namespace ArucoUnity
         ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
 
-        trackingThread = new ArucoCameraSeparateThread(ArucoCamera, UpdateArucoObjects, TrackArucoObjects,
-          () => { StopController(); });
+        ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
+        trackingThread = new ArucoCameraSeparateThread(ArucoCamera, TrackArucoObjects);
         trackingThread.Start();
 
         OnStarted();
@@ -170,6 +170,7 @@ namespace ArucoUnity
         base.StopController();
 
         trackingThread.Stop();
+        ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
 
         ArucoObjectAdded -= ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved -= ArucoObjectsController_ArucoObjectRemoved;
@@ -326,25 +327,37 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Detects and estimates the transforms of the detected ArUco objects. Executed on a separated tracking thread.
+      /// Calls <see cref="DeactivateArucoObjects"/> and <see cref="UpdateTransforms"/>.
       /// </summary>
-      protected void TrackArucoObjects()
+      protected void ArucoCamera_ImagesUpdated()
       {
-        Detect(trackingThread.Images);
-        EstimateTransforms();
-        Draw(trackingThread.Images);
+        try
+        {
+          trackingThread.Update(ArucoCamera.ImageDatas);
+          if (trackingThread.ImagesUpdated)
+          {
+            DeactivateArucoObjects();
+            if (ArucoCameraDisplay != null)
+            {
+              UpdateTransforms();
+            }
+          }
+        }
+        catch (Exception e)
+        {
+          StopController();
+          throw e;
+        }
       }
 
       /// <summary>
-      /// Calls <see cref="DeactivateArucoObjects"/> and <see cref="UpdateTransforms"/>.
+      /// Detects and estimates the transforms of the detected ArUco objects. Executed on a separated tracking thread.
       /// </summary>
-      protected void UpdateArucoObjects()
+      protected void TrackArucoObjects(Cv.Mat[] images)
       {
-        DeactivateArucoObjects();
-        if (ArucoCameraDisplay != null)
-        {
-          UpdateTransforms();
-        }
+        Detect(images);
+        EstimateTransforms();
+        Draw(images);
       }
 
       /// <summary>

@@ -12,55 +12,57 @@ namespace ArucoUnity
   {
     public class ArucoCameraSeparateThread
     {
+      // Constants
+
+      private const int buffersCount = 2;
+
       // Constructor
 
-      public ArucoCameraSeparateThread(IArucoCamera arucoCamera, Action imagesUpdated, Action threadWork, Action threadException)
+      public ArucoCameraSeparateThread(IArucoCamera arucoCamera, Action<Cv.Mat[]> threadWork)
       {
         this.arucoCamera = arucoCamera;
-        this.imagesUpdated = imagesUpdated;
         this.threadWork = threadWork;
-        this.threadException = threadException;
 
-        Images = new Cv.Mat[arucoCamera.CameraNumber];
-        ImagesData = new byte[arucoCamera.CameraNumber][];
-        arucoCameraImageCopyData = new byte[arucoCamera.CameraNumber][];
-        for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
+        for (int bufferId = 0; bufferId < buffersCount; bufferId++)
         {
-          ImagesData[cameraId] = new byte[arucoCamera.ImageDataSizes[cameraId]];
-          arucoCameraImageCopyData[cameraId] = new byte[arucoCamera.ImageDataSizes[cameraId]];
+          imageBuffers[bufferId] = new Cv.Mat[arucoCamera.CameraNumber];
+          imageDataBuffers[bufferId] = new byte[arucoCamera.CameraNumber][];
 
-          Images[cameraId] = new Cv.Mat(arucoCamera.ImageTextures[cameraId].height, arucoCamera.ImageTextures[cameraId].width,
-            CvMatExtensions.ImageType(arucoCamera.ImageTextures[cameraId].format));
-          Images[cameraId].DataByte = ImagesData[cameraId];
+          for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
+          {
+            imageBuffers[bufferId][cameraId] = new Cv.Mat(arucoCamera.ImageTextures[cameraId].height, arucoCamera.ImageTextures[cameraId].width,
+              CvMatExtensions.ImageType(arucoCamera.ImageTextures[cameraId].format));
+
+            imageDataBuffers[bufferId][cameraId] = new byte[arucoCamera.ImageDataSizes[cameraId]];
+            imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];
+          }
         }
       }
 
       // Properties
 
       public bool IsStarted { get; protected set; }
-      public Cv.Mat[] Images { get; protected set; }
-      public byte[][] ImagesData { get; protected set; }
+      public bool ImagesUpdated { get; protected set; }
 
       // Variables
 
       protected IArucoCamera arucoCamera;
-      protected Action imagesUpdated;
-      protected Action threadWork;
-      protected Action threadException;
+      protected Action<Cv.Mat[]> threadWork;
+
+      protected uint currentBuffer = 0;
+      protected Cv.Mat[][] imageBuffers = new Cv.Mat[buffersCount][];
+      protected byte[][][] imageDataBuffers = new byte[buffersCount][][];
 
       protected Thread thread;
       protected Mutex mutex = new Mutex();
       protected Exception exception;
-
-      protected byte[][] arucoCameraImageCopyData;
-      protected bool arucoCameraImagesUpdated = false;
 
       // Methods
 
       public void Start()
       {
         IsStarted = true;
-        arucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
+        ImagesUpdated = false;
 
         thread = new Thread(() =>
         {
@@ -69,14 +71,10 @@ namespace ArucoUnity
             while (IsStarted)
             {
               mutex.WaitOne();
-              if (arucoCameraImagesUpdated)
+              if (ImagesUpdated)
               {
-                arucoCameraImagesUpdated = false;
-                for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
-                {
-                  Array.Copy(arucoCameraImageCopyData[cameraId], ImagesData[cameraId], arucoCamera.ImageDataSizes[cameraId]);
-                }
-                threadWork();
+                ImagesUpdated = false;
+                threadWork(imageBuffers[currentBuffer]);
               }
               mutex.ReleaseMutex();
             }
@@ -92,14 +90,13 @@ namespace ArucoUnity
 
       public void Stop()
       {
-        arucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
         IsStarted = false;
       }
 
       /// <summary>
-      /// Swaps the <see cref="ArucoCamera.Images"/> with the copy used by the thread, and re-throw the thread exceptions.
+      /// Swaps the images with the copy used by the thread, and re-throw the thread exceptions.
       /// </summary>
-      protected void ArucoCamera_ImagesUpdated()
+      public void Update(byte[][] imageDatas)
       {
         if (IsStarted)
         {
@@ -112,15 +109,15 @@ namespace ArucoUnity
             e = exception;
             exception = null;
           }
-          else if (!arucoCameraImagesUpdated)
+          else if (!ImagesUpdated)
           {
-            arucoCameraImagesUpdated = true;
+            ImagesUpdated = true;
             for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
             {
-              Array.Copy(arucoCamera.ImageDatas[cameraId], arucoCameraImageCopyData[cameraId], arucoCamera.ImageDataSizes[cameraId]);
-              Array.Copy(ImagesData[cameraId], arucoCamera.ImageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              Array.Copy(imageDatas[cameraId], imageDataBuffers[NextBuffer()][cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              Array.Copy(imageDataBuffers[currentBuffer][cameraId], imageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
             }
-            imagesUpdated();
+            currentBuffer = NextBuffer();
           }
 
           mutex.ReleaseMutex();
@@ -128,10 +125,17 @@ namespace ArucoUnity
           if (e != null)
           {
             Stop();
-            threadException();
             throw e;
           }
         }
+      }
+
+      /// <summary>
+      /// Returns the index of the next buffer.
+      /// </summary>
+      protected uint NextBuffer()
+      {
+        return (currentBuffer + 1) % buffersCount;
       }
     }
   }
