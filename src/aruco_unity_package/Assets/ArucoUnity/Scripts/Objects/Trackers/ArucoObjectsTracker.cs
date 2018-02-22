@@ -327,7 +327,8 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Calls <see cref="DeactivateArucoObjects"/> and <see cref="UpdateTransforms"/>.
+      /// Updates the tracking thread with <see cref="ArucoCamera.ImageDatas"/>, calls <see cref="DeactivateArucoObjects"/>
+      /// and <see cref="UpdateTransforms"/> and stops if there was an exception from this thread.
       /// </summary>
       protected void ArucoCamera_ImagesUpdated()
       {

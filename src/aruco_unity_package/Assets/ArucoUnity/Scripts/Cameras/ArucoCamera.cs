@@ -29,7 +29,7 @@ namespace ArucoUnity
       // IArucoCamera events
 
       public event Action ImagesUpdated = delegate { };
-      public event Action<Cv.Mat[]> UndistortRectifyImages = delegate { };
+      public event Action<Cv.Mat[], byte[][]> UndistortRectifyImages = delegate { };
 
       // IArucoCamera properties
 
@@ -168,7 +168,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls the <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/> and <see cref="ImagesUpdated"/>.
+      /// Calls <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/> and <see cref="ImagesUpdated"/>.
       /// </summary>
       protected void OnImagesUpdated()
       {
@@ -179,7 +179,7 @@ namespace ArucoUnity
             Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)imagesFlipCode);
           }
         }
-        UndistortRectifyImages(NextImages);
+        UndistortRectifyImages(NextImages, NextImageDatas);
 
         imagesUpdatedThisFrame = true;
         ImagesUpdated();

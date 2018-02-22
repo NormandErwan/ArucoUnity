@@ -25,7 +25,7 @@ namespace ArucoUnity
       /// <summary>
       /// Callback to undistort and rectify the images in parameters.
       /// </summary>
-      event Action<Cv.Mat[]> UndistortRectifyImages;
+      event Action<Cv.Mat[], byte[][]> UndistortRectifyImages;
 
       // Properties
 

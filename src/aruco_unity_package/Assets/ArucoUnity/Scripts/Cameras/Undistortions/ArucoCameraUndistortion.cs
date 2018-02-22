@@ -3,6 +3,7 @@ using ArucoUnity.Controllers;
 using ArucoUnity.Plugin;
 using UnityEngine;
 using System;
+using ArucoUnity.Utilities;
 
 namespace ArucoUnity
 {
@@ -12,7 +13,8 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>.
+    /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>. It's a time-consuming
+    /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with the 3D content.
     /// </summary>
     public abstract class ArucoCameraUndistortion : ArucoCameraController, IArucoCameraUndistortion
     {
@@ -39,6 +41,7 @@ namespace ArucoUnity
       protected Cv.Mat noRectificationMatrix;
       protected Cv.Mat noDistCoeffs;
       protected string CameraParametersFilePath;
+      protected ArucoCameraSeparateThread remapThread;
 
       // MonoBehaviour methods
 
@@ -104,6 +107,8 @@ namespace ArucoUnity
         InitializeUndistortionMaps();
 
         ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
+        remapThread = new ArucoCameraSeparateThread(ArucoCamera, UndistortRectifyImages);
+        remapThread.Start();
 
         OnStarted();
       }
@@ -114,6 +119,7 @@ namespace ArucoUnity
       public override void StopController()
       {
         base.StopController();
+        remapThread.Stop();
         ArucoCamera.UndistortRectifyImages -= ArucoCamera_UndistortRectifyImages;
         OnStopped();
       }
@@ -121,10 +127,25 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Undistorts and rectifies the <paramref name="images"/> using <see cref="UndistortionRectificationMaps"/>. It's a time-consuming
-      /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with the 3D content.
+      /// Updates the undistortion thread with the <paramref name="images"/> and stops if there was an exception from this thread.
       /// </summary>
-      protected virtual void ArucoCamera_UndistortRectifyImages(Cv.Mat[] images)
+      protected virtual void ArucoCamera_UndistortRectifyImages(Cv.Mat[] images, byte[][] imageDatas)
+      {
+        try
+        {
+          remapThread.Update(imageDatas);
+        }
+        catch (Exception e)
+        {
+          StopController();
+          throw e;
+        }
+      }
+
+      /// <summary>
+      /// Undistorts and rectifies the <paramref name="images"/> using <see cref="UndistortionRectificationMaps"/> on a separate thread.
+      /// </summary>
+      protected virtual void UndistortRectifyImages(Cv.Mat[] images)
       {
         for (int cameraId = 0; cameraId < CameraParameters.CameraNumber; cameraId++)
         {
