@@ -22,6 +22,7 @@ namespace ArucoUnity
       {
         this.arucoCamera = arucoCamera;
         this.threadWork = threadWork;
+        CopyBackImages = false;
 
         for (int bufferId = 0; bufferId < buffersCount; bufferId++)
         {
@@ -41,6 +42,7 @@ namespace ArucoUnity
 
       // Properties
 
+      public bool CopyBackImages { get; set; }
       public bool IsStarted { get; protected set; }
       public bool ImagesUpdated { get; protected set; }
 
@@ -133,9 +135,12 @@ namespace ArucoUnity
               }
             }
 
-            for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
+            if (CopyBackImages)
             {
-              Array.Copy(imageDataBuffers[PreviousBuffer()][cameraId], cameraImageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
+              {
+                Array.Copy(imageDataBuffers[PreviousBuffer()][cameraId], cameraImageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              }
             }
 
             if (threadUpdated)

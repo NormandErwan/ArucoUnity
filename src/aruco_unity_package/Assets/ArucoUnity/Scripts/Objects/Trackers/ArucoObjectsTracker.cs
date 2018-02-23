@@ -7,7 +7,6 @@ using ArucoUnity.Utilities;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace ArucoUnity
 {
@@ -142,7 +141,7 @@ namespace ArucoUnity
       public override void StartController()
       {
         base.StartController();
-        
+
         MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
         {
@@ -151,12 +150,15 @@ namespace ArucoUnity
             ArucoObjectsController_ArucoObjectAdded(arucoObject.Value);
           }
         }
-        
+
         ArucoObjectAdded += ArucoObjectsController_ArucoObjectAdded;
         ArucoObjectRemoved += ArucoObjectsController_ArucoObjectRemoved;
 
         ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
-        trackingThread = new ArucoCameraSeparateThread(ArucoCamera, TrackArucoObjects);
+        trackingThread = new ArucoCameraSeparateThread(ArucoCamera, TrackArucoObjects)
+        {
+          CopyBackImages = DrawDetectedMarkers || DrawRejectedCandidates || DrawAxes || DrawDetectedCharucoMarkers || DrawDetectedDiamonds
+        };
         trackingThread.Start();
 
         OnStarted();
@@ -358,7 +360,10 @@ namespace ArucoUnity
       {
         Detect(images);
         EstimateTransforms();
-        Draw(images);
+        if (trackingThread.CopyBackImages)
+        {
+          Draw(images);
+        }
       }
 
       /// <summary>

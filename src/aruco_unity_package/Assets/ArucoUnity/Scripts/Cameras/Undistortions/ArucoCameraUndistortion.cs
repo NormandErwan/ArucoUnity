@@ -107,7 +107,7 @@ namespace ArucoUnity
         InitializeUndistortionMaps();
 
         ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
-        remapThread = new ArucoCameraSeparateThread(ArucoCamera, UndistortRectifyImages);
+        remapThread = new ArucoCameraSeparateThread(ArucoCamera, UndistortRectifyImages) { CopyBackImages = true };
         remapThread.Start();
 
         OnStarted();
