@@ -14,7 +14,7 @@ namespace ArucoUnity
     {
       // Constants
 
-      private const int buffersCount = 2;
+      private const int buffersCount = 3;
 
       // Constructor
 
@@ -55,7 +55,8 @@ namespace ArucoUnity
 
       protected Thread thread;
       protected Mutex mutex = new Mutex();
-      protected Exception exception;
+      protected Exception threadException, exception;
+      protected bool threadUpdated, imagesUpdated;
 
       // Methods
 
@@ -71,17 +72,27 @@ namespace ArucoUnity
             while (IsStarted)
             {
               mutex.WaitOne();
-              if (ImagesUpdated)
               {
-                ImagesUpdated = false;
-                threadWork(imageBuffers[currentBuffer]);
+                imagesUpdated = ImagesUpdated;
               }
               mutex.ReleaseMutex();
+
+              if (imagesUpdated)
+              {
+                threadWork(imageBuffers[currentBuffer]);
+
+                mutex.WaitOne();
+                {
+                  currentBuffer = NextBuffer();
+                  ImagesUpdated = false;
+                }
+                mutex.ReleaseMutex();
+              }
             }
           }
           catch (Exception e)
           {
-            exception = e;
+            threadException = e;
             mutex.ReleaseMutex();
           }
         });
@@ -96,36 +107,45 @@ namespace ArucoUnity
       /// <summary>
       /// Swaps the images with the copy used by the thread, and re-throw the thread exceptions.
       /// </summary>
-      public void Update(byte[][] imageDatas)
+      public void Update(byte[][] cameraImageDatas)
       {
         if (IsStarted)
         {
-          Exception e = null;
-
           mutex.WaitOne();
+          {
+            exception = threadException;
+            threadUpdated = !ImagesUpdated;
+          }
+          mutex.ReleaseMutex();
 
           if (exception != null)
           {
-            e = exception;
-            exception = null;
+            Stop();
+            throw exception;
           }
-          else if (!ImagesUpdated)
+          else
           {
-            ImagesUpdated = true;
+            if (threadUpdated)
+            {
+              for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
+              {
+                Array.Copy(cameraImageDatas[cameraId], imageDataBuffers[NextBuffer()][cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              }
+            }
+
             for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
             {
-              Array.Copy(imageDatas[cameraId], imageDataBuffers[NextBuffer()][cameraId], arucoCamera.ImageDataSizes[cameraId]);
-              Array.Copy(imageDataBuffers[currentBuffer][cameraId], imageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
+              Array.Copy(imageDataBuffers[PreviousBuffer()][cameraId], cameraImageDatas[cameraId], arucoCamera.ImageDataSizes[cameraId]);
             }
-            currentBuffer = NextBuffer();
-          }
 
-          mutex.ReleaseMutex();
-
-          if (e != null)
-          {
-            Stop();
-            throw e;
+            if (threadUpdated)
+            {
+              mutex.WaitOne();
+              {
+                ImagesUpdated = true;
+              }
+              mutex.ReleaseMutex();
+            }
           }
         }
       }
@@ -136,6 +156,14 @@ namespace ArucoUnity
       protected uint NextBuffer()
       {
         return (currentBuffer + 1) % buffersCount;
+      }
+
+      /// <summary>
+      /// Returns the index of the previous buffer.
+      /// </summary>
+      protected uint PreviousBuffer()
+      {
+        return (currentBuffer + buffersCount - 1) % buffersCount;
       }
     }
   }
