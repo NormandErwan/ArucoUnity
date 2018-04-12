@@ -27,8 +27,7 @@ the provided CMake project by running the following commands:
 
 ```bash
 cd <aruco_unity_directory>
-mkdir -p build/opencv/
-cd <aruco_unity_directory>/build/opencv/
+mkdir -p build/opencv/ && cd build/opencv/
 cmake -DCMAKE_INSTALL_PREFIX=install/ -G <generator-name> ../../3rdparty/opencv_contrib/
 cmake --build . --config Release
 ```
