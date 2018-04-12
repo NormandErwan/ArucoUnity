@@ -1,7 +1,7 @@
 # ArUco Unity
 
-OpenCV's [ArUco](http://docs.opencv.org/3.3.1/d9/d6a/group__aruco.html) Marker Detection module adapted for Unity 5.
-The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/3.3.1/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/3.3.1/d3/ddc/group__ccalib.html) are also included.
+OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module adapted for Unity 5.
+The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) are also included.
 
 This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)  was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
 
@@ -11,7 +11,7 @@ Download the [latest build release](https://github.com/enormand/aruco-unity/rele
 
 ## Usage
 
-If you're not familiar with ArUco markers, read first this [OpenCV tutorial](https://docs.opencv.org/3.3.1/d5/dae/tutorial_aruco_detection.html).
+If you're not familiar with ArUco markers, **read first** this [OpenCV tutorial](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
 
 ### 1. Marker creation
 
@@ -22,7 +22,7 @@ board, one ChArUco board and two diamond markers.
 
 ### 2. Camera calibration
 
-Marker tracking requires to calibrate the camera. If you're not familiar with camera calibration, read this [OpenCV tutorial](https://docs.opencv.org/3.3.1/d4/d94/tutorial_camera_calibration.html).
+Marker tracking requires to calibrate the camera. If you're not familiar with camera calibration, read this [OpenCV tutorial](https://docs.opencv.org/master/d4/d94/tutorial_camera_calibration.html).
 
 Use the Calibration scene:
 
@@ -37,7 +37,7 @@ Use the Calibration scene:
 
 ### 3. Marker tracking
 
-The Tracking scene is configured to track the objects generated in the Creation scene.
+The Tracking scene is configured to track the objects generated in the Creation scene. You need to **calibrate your camera first** (see the Camera calibration sub-section above).
 
 - Open the `Assets/ArucoUnity/Scenes/Tracking` scene.
 - Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `ArucoUnity/Calibrations/<calibration_file>.xml`).
@@ -57,7 +57,8 @@ the provided CMake project by running the following commands:
 
 ```bash
 cd <aruco_unity_directory>
-mkdir build/ && mkdir build/opencv/ && cd build/opencv/
+mkdir -p build/opencv/
+cd <aruco_unity_directory>/build/opencv/
 cmake -DCMAKE_INSTALL_PREFIX=install/ -G <generator-name> ../../3rdparty/opencv_contrib/
 cmake --build . --config Release
 ```
@@ -77,15 +78,13 @@ cmake -DCMAKE_INSTALL_PREFIX=.. -DOpenCV_DIR=../../build/opencv/install/ -G <gen
 cmake --build . --config Release --target INSTALL
 ```
 
-The installation will copy the library into the `<aruco_unity_directory>/bin`, `<aruco_unity_directory>/lib` and `<aruco_unity_directory>/src/aruco_unity_package/Assets/Plugins` folders. It will also copy the OpenCV libraries. Make sure Unity is closed during the
-installation, unless the build will fail.
+The installation will copy the library into the `<aruco_unity_directory>/bin`, `<aruco_unity_directory>/lib` and `<aruco_unity_directory>/src/aruco_unity_package/Assets/Plugins` folders. It will also copy the OpenCV libraries. Make sure Unity is closed during the installation, unless the build will fail.
 
 ### Export the ArucoUnity package
 
 Open `<aruco_unity_directory>/src/aruco_unity_package` folder in Unity. There should be no errors on the Console panel.
 
-On the Project panel, select the ArucoUnity folder. Make a right clik on it, select "Export package", then the "Export"
-button on the opened window.
+A new entry named "ArUco Unity" is in the menu bar. Open it and select "Export package".
 
 ## Tests
 
@@ -110,20 +109,6 @@ The documentation is available online:
 
 If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
-Some features or corrections to do:
-
-- Add an extended tracking
-- Add the autoscale feature to ArucoUnity.Controllers.ObjectTrackers.ArucoDiamondTracker (see this [ArUco sample](https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203))
-- Write the tests for the library with Google Test
-- Write the tests for the Unity package
-- Replace the library with one of the following open-source project (should be compatible with Unity and at least OpenCV 3.3):
-  - [EmguCV](http://www.emgu.com)
-  - [OpenCvSharp](https://github.com/shimat/opencvsharp)
-  - [OpenCV.NET](https://bitbucket.org/horizongir/opencv.net)
-- Write a wiki with more detailed information and gifs about building, architecture and how using the package
-- Fix the crash that occur when calling ArucoUnity.Plugin.Cv.au_cv_Exception_delete(System.IntPtr)
-- Build the library for Windows x86, Linux, Mac, Android, iOS, UWP
-
 ## Licenses
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
@@ -133,6 +118,6 @@ following projects:
 
 - [OpenCV](http://opencv.org/) with the following modules:
   - [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco)
-  - [cablid3d](http://docs.opencv.org/3.3.1/d9/d0c/group__calib3d.html)
-  - [ccalib](http://docs.opencv.org/3.3.1/d3/ddc/group__ccalib.html)
+  - [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)
+  - [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 - [Google Test](https://github.com/google/googletest)
