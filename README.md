@@ -1,9 +1,10 @@
 # ArUco Unity
 
-OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module adapted for Unity 5.
-The OpenCV's calibration modules [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html) are also included.
+Easily track in real time position and orientation of ArUco markers, bringing augmented reality to your Unity project. Standard mono cameras such as webcams, stereo cameras and fisheye lenses are supported.
 
-This project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)  was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
+It uses underhood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
+
+This first version of this project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)  was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
 
 ## Installation
 
@@ -11,42 +12,11 @@ Download the [latest build release](https://github.com/enormand/aruco-unity/rele
 
 ## Usage
 
-If you're not familiar with ArUco markers, **read first** this [OpenCV tutorial](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
+Please read the wiki:
 
-### 1. Marker creation
-
-Before track the markers, you need to create, print and place them in the environment.
-
-Open and run the the `Assets/ArucoUnity/Scenes/Creation` scene for a working example. It demonstrates the creation of six different markers, one grid
-board, one ChArUco board and two diamond markers.
-
-### 2. Camera calibration
-
-Marker tracking requires to calibrate the camera. If you're not familiar with camera calibration, read this [OpenCV tutorial](https://docs.opencv.org/master/d4/d94/tutorial_camera_calibration.html).
-
-Use the Calibration scene:
-
-- Open the `Assets/ArucoUnity/Scenes/Calibration`.
-- Configure the following properties of the `ArucoCameraWebcam` GameObject:
-  - The `Undistortion Type`: "Pinhole" by default.
-  - The `Camera Id`: "0" by default if you have only one camera.
-  - The `CameraParametersFilePath` is optional: it will be filled automatically.
-- Activate the "ArucoCalibrator" GameObject corresponding to the selected `Undistortion Type`: "ArucoCalibratorPinhole" by default.
-- Configure the `Calibration Board` used by the activated "ArucoCalibrator" according to the physical board you're going to use to calibrate your camera. Create a board with the Creation scene if you don't have any and print the generated image.
-- Run the scene and interact with the UI to calibrate your camera. The calibration file will be automatically created and saved when the "Calibrate" button is triggered.
-
-### 3. Marker tracking
-
-The Tracking scene is configured to track the objects generated in the Creation scene. You need to **calibrate your camera first** (see the Camera calibration sub-section above).
-
-- Open the `Assets/ArucoUnity/Scenes/Tracking` scene.
-- Configure the `Undistortion Type` and the `Camera Id` properties of the `ArucoCameraWebcam` in the scene. If you have calibrated your camera, indicate the calibration file path (e.g. `ArucoUnity/Calibrations/<calibration_file>.xml`).
-- Make sure the `ArucoCamera` property of the `ArucoTracker` object is linked to the `ArucoCameraWebcam` object configured earlier.
-- Create an empty object and add it an `ArucoMarker` script and configure it according to the printed marker you want to track.
-- Add 3D content as a child of the ArucoMarker object.
-- Add optionaly a `ArucoObjectDisplayer` script to the ArucoMarker object if you want to visualize the ArUco object.
-- Add this object to the `Aruco Objects` list property of the `ArucoTracker` object.
-- Run the scene. The `ArucoTracker` will place (position, rotation, scale) any detected marker in the `Aruco Objects` list relative to the camera property.
+1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/Marker-Creation)
+1. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
+1. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
 
 ## Build
 
@@ -109,6 +79,10 @@ The documentation is available online:
 
 If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
+## Support
+
+<a href="https://www.buymeacoffee.com/h48VU3fny" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 ## Licenses
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
@@ -121,3 +95,7 @@ following projects:
   - [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)
   - [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 - [Google Test](https://github.com/google/googletest)
+
+The OpenCV's Aruco module implements this paper:
+
+> Garrido-Jurado, S., Muñoz-Salinas, R., Madrid-Cuevas, F. J., & Marín-Jiménez, M. J. (2014). Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6), 2280-2292.
