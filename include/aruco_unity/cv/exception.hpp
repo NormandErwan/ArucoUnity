@@ -37,7 +37,8 @@ extern "C" {
   //! \return Returns the error description and the context as a text string.
   //! \param exception The Exception used.
   //! \param what The error description.
-  ARUCO_UNITY_API void au_cv_Exception_what(cv::Exception* exception, char* what);
+  //! \param whatLength The max length of the error description.
+  ARUCO_UNITY_API void au_cv_Exception_what(cv::Exception* exception, char* what, int whatLength);
 
   //! @} Functions
 

@@ -12,6 +12,10 @@ namespace ArucoUnity
     {
       public class Exception : Utility.HandleCppPtr
       {
+        // Constants
+
+        private const int WhatLength = 1024;
+
         // Native functions
 
         [DllImport("ArucoUnity")]
@@ -21,7 +25,7 @@ namespace ArucoUnity
         static extern void au_cv_Exception_delete(System.IntPtr exception);
 
         [DllImport("ArucoUnity")]
-        static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb);
+        static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb, int sbLength);
 
         [DllImport("ArucoUnity")]
         static extern int au_cv_Exception_getCode(System.IntPtr exception);
@@ -34,7 +38,7 @@ namespace ArucoUnity
 
         public Exception() : base(au_cv_Exception_new())
         {
-          sb = new StringBuilder(1024);
+          sb = new StringBuilder(WhatLength);
         }
 
         protected override void DeleteCppPtr()
@@ -53,7 +57,7 @@ namespace ArucoUnity
 
         public string What()
         {
-          au_cv_Exception_what(CppPtr, sb);
+          au_cv_Exception_what(CppPtr, sb, WhatLength);
           return sb.ToString();
         }
 

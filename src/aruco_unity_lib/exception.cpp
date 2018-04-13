@@ -1,4 +1,5 @@
 #include "aruco_unity/cv/exception.hpp"
+#include <cstring>
 
 extern "C" {
   // Constructors & Destructors
@@ -13,8 +14,8 @@ extern "C" {
 
   // Functions
 
-  void au_cv_Exception_what(cv::Exception* exception, char* what) {
-    std::strcpy(what, exception->what());
+  void au_cv_Exception_what(cv::Exception* exception, char* what, int whatLength) {
+    strcpy_s(what, whatLength, exception->what());
   }
 
   // Variables
