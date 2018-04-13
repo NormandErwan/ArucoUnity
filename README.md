@@ -14,58 +14,13 @@ Download the [latest build release](https://github.com/enormand/aruco-unity/rele
 
 Please read the wiki:
 
-1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/Marker-Creation)
+1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/1.-Marker-Creation)
 1. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
 1. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
 
 ## Build
 
-### OpenCV dependency
-
-You will need to provide a build of OpenCV (minimum version: 3.3.0) with the ArUco and ccalib contrib modules. As these two modules are not included in the official OpenCV releases, we need to build it on our own. You can build
-the provided CMake project by running the following commands:
-
-```bash
-cd <aruco_unity_directory>
-mkdir -p build/opencv/ && cd build/opencv/
-cmake -DCMAKE_INSTALL_PREFIX=install/ -G <generator-name> ../../3rdparty/opencv_contrib/
-cmake --build . --config Release
-```
-
-If you're not familiar with CMake generators, see this [list of generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) to set the generator-name variable above.
-On Windows, it can be "Visual Studio 15 2017 Win64".
-
-Alternatively, you can follow the [opencv_contrib instructions](https://github.com/opencv/opencv_contrib).
-
-### Build the ArUco Unity library
-
-Configure the building solution of the ArUco Unity library, compile and install it by running the following commands:
-
-```bash
-cd <aruco_unity_directory>/build/
-cmake -DCMAKE_INSTALL_PREFIX=.. -DOpenCV_DIR=../../build/opencv/install/ -G <generator-name> ..
-cmake --build . --config Release --target INSTALL
-```
-
-The installation will copy the library into the `<aruco_unity_directory>/bin`, `<aruco_unity_directory>/lib` and `<aruco_unity_directory>/src/aruco_unity_package/Assets/Plugins` folders. It will also copy the OpenCV libraries. Make sure Unity is closed during the installation, unless the build will fail.
-
-### Export the ArucoUnity package
-
-Open `<aruco_unity_directory>/src/aruco_unity_package` folder in Unity. There should be no errors on the Console panel.
-
-A new entry named "ArUco Unity" is in the menu bar. Open it and select "Export package".
-
-## Tests
-
-If you want to build and execute the tests, run the following commands:
-
-```bash
-cd <aruco_unity_directory>/build/
-cmake -DBUILD_TESTS=ON ..
-ctest
-```
-
-The Google Test dependency will be automatically built. All tests should pass.
+Read the [Build](https://github.com/NormandErwan/aruco-unity/wiki/Build) wiki page.
 
 ## Documentation
 
@@ -80,7 +35,7 @@ If you'd like to contribute, please fork the repository and use a feature branch
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/h48VU3fny" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://www.buymeacoffee.com/h48VU3fny" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## Licenses
 
