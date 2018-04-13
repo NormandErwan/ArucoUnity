@@ -16,7 +16,7 @@ Download the [latest build release](https://github.com/enormand/aruco-unity/rele
 
 Please read the wiki:
 
-1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/1.-Marker-Creation)
+1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/1.-Markers-Creation)
 2. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
 3. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
 
