@@ -150,7 +150,10 @@ namespace ArucoUnity
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
-          ImagePlane.SetActive(false);
+          if (ImagePlane != null)
+          {
+            ImagePlane.SetActive(false);
+          }
           Reset();
         }
 #endif
@@ -201,7 +204,10 @@ namespace ArucoUnity
       {
         Image = null;
         ImageTexture = null;
-        imagePlaneMaterial.mainTexture = null;
+        if (imagePlaneMaterial != null)
+        {
+          imagePlaneMaterial.mainTexture = null;
+        }
       }
 
       /// <summary>
@@ -275,16 +281,19 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void PlaceImagePlane()
       {
-        if (ArucoObject != null)
+        if (ImagePlane != null)
         {
-          var scale = ArucoObject.GetGameObjectScale();
+          if (ArucoObject != null)
+          {
+            var scale = ArucoObject.GetGameObjectScale();
 
-          ImagePlane.transform.SetParent(null);
-          ImagePlane.transform.localScale = new Vector3(scale.x, scale.z, scale.y); // Because it's rotated up
-          ImagePlane.transform.SetParent(transform);
+            ImagePlane.transform.SetParent(null);
+            ImagePlane.transform.localScale = new Vector3(scale.x, scale.z, scale.y); // Because it's rotated up
+            ImagePlane.transform.SetParent(transform);
+          }
+          ImagePlane.transform.localPosition = Vector3.zero;
+          ImagePlane.transform.forward = -transform.up; // Rotated up
         }
-        ImagePlane.transform.localPosition = Vector3.zero;
-        ImagePlane.transform.forward = -transform.up; // Rotated up
       }
 
       /// <summary>
