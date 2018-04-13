@@ -16,6 +16,10 @@ namespace ArucoUnity
     /// </summary>
     public class ArucoObjectCreator : ArucoObjectDisplayer
     {
+      // Constants
+
+      public const float pixelsToMetersFactor = 0.001f;
+
       // Editor fields
 
       [SerializeField]
@@ -67,6 +71,16 @@ namespace ArucoUnity
 #if UNITY_EDITOR
         }
 #endif
+      }
+
+      protected override void PlaceImagePlane()
+      {
+        base.PlaceImagePlane();
+        if (ImagePlane != null && ArucoObject != null)
+        {
+          var scale = ArucoObject.GetGameObjectScale();
+          ImagePlane.transform.localScale = pixelsToMetersFactor * new Vector3(scale.x, scale.z, scale.y);
+        }
       }
 
       // Methods
