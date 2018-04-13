@@ -2,7 +2,7 @@
 
 Bring augmented reality to your Unity project by tracking position and orientation of [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
 
-![Demonstration](https://raw.githubusercontent.com/NormandErwan/aruco-unity/master/docs/images/extended_phone_screen.jpg)
+![Demonstration](https://raw.githubusercontent.com/NormandErwan/aruco-unity/master/docs/images/extended_phone_screen.gif)
 
 *The markers tracking allow to extend the phone's screen.*
 
