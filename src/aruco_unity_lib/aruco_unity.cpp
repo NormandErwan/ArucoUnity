@@ -75,7 +75,7 @@ extern "C" {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(**img, **img, CV_GRAY2RGB);
+    cv::cvtColor(**img, **img, cv::COLOR_GRAY2RGB);
   }
 
   void au_drawDetectedCornersCharuco(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds, cv::Scalar* cornerColor,

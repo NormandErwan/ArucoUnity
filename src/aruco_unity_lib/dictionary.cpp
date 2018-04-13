@@ -28,7 +28,7 @@ extern "C" {
     try {
       *img = new cv::Mat();
       dictionary->get()->drawMarker(id, sidePixels, **img, borderBits);
-      cv::cvtColor(**img, **img, CV_GRAY2RGB);
+      cv::cvtColor(**img, **img, cv::COLOR_GRAY2RGB);
     } catch (const cv::Exception& e) {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;

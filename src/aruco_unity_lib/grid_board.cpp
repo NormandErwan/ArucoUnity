@@ -20,7 +20,7 @@ extern "C" {
       ARUCO_UNITY_COPY_EXCEPTION(exception, e);
       return;
     };
-    cv::cvtColor(**img, **img, CV_GRAY2RGB);
+    cv::cvtColor(**img, **img, cv::COLOR_GRAY2RGB);
   }
 
   cv::Size* au_GridBoard_getGridSize(cv::Ptr<cv::aruco::GridBoard>* gridBoard) {
