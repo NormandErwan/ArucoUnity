@@ -1,10 +1,12 @@
 # ArUco Unity
 
-Easily track in real time position and orientation of ArUco markers, bringing augmented reality to your Unity project. Standard mono cameras such as webcams, stereo cameras and fisheye lenses are supported.
+Bring augmented reality to your Unity project by tracking position and orientation of [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
+
+![Demonstration](https://raw.githubusercontent.com/NormandErwan/aruco-unity/master/docs/images/extended_phone_screen.jpg)
+
+*The markers tracking allow to extend the phone's screen.*
 
 It uses underhood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
-
-This first version of this project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan)  was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
 
 ## Installation
 
@@ -15,8 +17,8 @@ Download the [latest build release](https://github.com/enormand/aruco-unity/rele
 Please read the wiki:
 
 1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/1.-Marker-Creation)
-1. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
-1. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
+2. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
+3. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
 
 ## Build
 
@@ -35,7 +37,9 @@ If you'd like to contribute, please fork the repository and use a feature branch
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/h48VU3fny" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+This first version of this project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan) was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/). I'm developing the second version on my own.
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoffee.com/h48VU3fny)
 
 ## Licenses
 
