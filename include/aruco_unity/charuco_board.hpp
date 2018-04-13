@@ -84,7 +84,7 @@ extern "C" {
 
   //! \brief Returns the nearest marker corners.
   //! \param charucoBoard The CharucoBoard used.
-  ARUCO_UNITY_API std::vector<std::vector<int>> au_CharucoBoard_getNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard);
+  ARUCO_UNITY_API std::vector<std::vector<int>>* au_CharucoBoard_getNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard);
 
   //! \brief Sets the nearest marker corners.
   //! \param charucoBoard The CharucoBoard used.
@@ -94,7 +94,7 @@ extern "C" {
 
   //! \brief Returns the nearest marker idx.
   //! \param charucoBoard The CharucoBoard used.
-  ARUCO_UNITY_API std::vector<std::vector<int>> au_CharucoBoard_getNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard);
+  ARUCO_UNITY_API std::vector<std::vector<int>>* au_CharucoBoard_getNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard);
 
   //! \brief Sets the nearest marker idx.
   //! \param charucoBoard The CharucoBoard used.

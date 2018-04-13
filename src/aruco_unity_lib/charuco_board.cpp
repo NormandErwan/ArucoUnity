@@ -59,16 +59,16 @@ extern "C" {
     charucoBoard->get()->chessboardCorners = std::vector<cv::Point3f>(*chessboardCorners);
   }
 
-  std::vector<std::vector<int>> au_CharucoBoard_getNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
-    return charucoBoard->get()->nearestMarkerCorners;
+  std::vector<std::vector<int>>* au_CharucoBoard_getNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
+    return &(charucoBoard->get()->nearestMarkerCorners);
   }
 
   void au_CharucoBoard_setNearestMarkerCorners(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, std::vector<std::vector<int>>* nearestMarkerCorners) {
     charucoBoard->get()->nearestMarkerCorners = std::vector<std::vector<int>>(*nearestMarkerCorners);
   }
 
-  std::vector<std::vector<int>> au_CharucoBoard_getNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
-    return charucoBoard->get()->nearestMarkerIdx;
+  std::vector<std::vector<int>>* au_CharucoBoard_getNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard) {
+    return &(charucoBoard->get()->nearestMarkerIdx);
   }
 
   void au_CharucoBoard_setNearestMarkerIdx(cv::Ptr<cv::aruco::CharucoBoard>* charucoBoard, std::vector<std::vector<int>>* nearestMarkerIdx) {
