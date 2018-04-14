@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_EXCEPTION_HPP__
-#define __ARUCO_UNITY_EXCEPTION_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_EXCEPTION_HPP__
+#define __ARUCO_UNITY_PLUGIN_EXCEPTION_HPP__
 
 #include <opencv2/core.hpp>
 #include "aruco_unity/utility/exports.hpp"

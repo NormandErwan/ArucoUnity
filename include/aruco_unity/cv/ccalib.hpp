@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_CCALIB_HPP__
-#define __ARUCO_UNITY_CCALIB_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_CCALIB_HPP__
+#define __ARUCO_UNITY_PLUGIN_CCALIB_HPP__
 
 #include <opencv2/ccalib/omnidir.hpp>
 #include "aruco_unity/utility/exports.hpp"

@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_EXPORTS_HPP__
-#define __ARUCO_UNITY_EXPORTS_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_EXPORTS_HPP__
+#define __ARUCO_UNITY_PLUGIN_EXPORTS_HPP__
 
 #ifdef WIN32
   #ifdef ArucoUnity_EXPORTS

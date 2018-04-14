@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_DETECTOR_PARAMETERS_HPP__
-#define __ARUCO_UNITY_DETECTOR_PARAMETERS_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_DETECTOR_PARAMETERS_HPP__
+#define __ARUCO_UNITY_PLUGIN_DETECTOR_PARAMETERS_HPP__
 
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/utility/exports.hpp"

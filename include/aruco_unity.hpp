@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_HPP__
-#define __ARUCO_UNITY_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_HPP__
+#define __ARUCO_UNITY_PLUGIN_HPP__
 
 #include <opencv2/aruco.hpp>
 #include <opencv2/aruco/charuco.hpp>

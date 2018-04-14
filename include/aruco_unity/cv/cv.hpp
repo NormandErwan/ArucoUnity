@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_CV_HPP__
-#define __ARUCO_UNITY_CV_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_CV_HPP__
+#define __ARUCO_UNITY_PLUGIN_CV_HPP__
 
 //! @addtogroup aruco_unity_lib
 //! @{

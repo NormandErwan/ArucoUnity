@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_CHARUCO_BOARD_HPP__
-#define __ARUCO_UNITY_CHARUCO_BOARD_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_CHARUCO_BOARD_HPP__
+#define __ARUCO_UNITY_PLUGIN_CHARUCO_BOARD_HPP__
 
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/utility/exports.hpp"

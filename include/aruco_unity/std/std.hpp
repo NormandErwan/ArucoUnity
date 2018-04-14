@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_STD_HPP__
-#define __ARUCO_UNITY_STD_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_STD_HPP__
+#define __ARUCO_UNITY_PLUGIN_STD_HPP__
 
 //! @addtogroup aruco_unity_lib
 //! @{

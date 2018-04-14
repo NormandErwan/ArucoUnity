@@ -1,5 +1,5 @@
-#ifndef __ARUCO_UNITY_DICTIONARY_HPP__
-#define __ARUCO_UNITY_DICTIONARY_HPP__
+#ifndef __ARUCO_UNITY_PLUGIN_DICTIONARY_HPP__
+#define __ARUCO_UNITY_PLUGIN_DICTIONARY_HPP__
 
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/utility/exports.hpp"
