@@ -5,9 +5,9 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "ArUco Unity"
+PROJECT_NAME           = "Aruco Unity"
 PROJECT_NUMBER         = @VERSION@
-PROJECT_BRIEF          = "OpenCV's ArUco Marker Detection module adapted for Unity 5."
+PROJECT_BRIEF          = "Bring augmented reality to your Unity project by tracking ArUco markers in real time."
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = @DOXYGEN_OUTPUT_DIRECTORY@
 CREATE_SUBDIRS         = NO
