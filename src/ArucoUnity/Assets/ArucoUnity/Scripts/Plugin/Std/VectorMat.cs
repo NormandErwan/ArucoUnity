@@ -13,22 +13,22 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_std_vectorMat_new();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_std_vectorMat_delete(System.IntPtr vector);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_std_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern unsafe System.IntPtr* au_std_vectorMat_data(System.IntPtr vector);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_std_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern uint au_std_vectorMat_size(System.IntPtr vector);
 
         // Constructors & destructor

@@ -13,42 +13,42 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_CharucoBoard_delete(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_CharucoBoard_draw(System.IntPtr charucoBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize,
           int borderBits, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_CharucoBoard_getChessboardSize(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_CharucoBoard_getMarkerLength(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_CharucoBoard_getSquareLength(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_CharucoBoard_create(int squaresX, int squaresY, float squareLength, float markerLength,
           System.IntPtr dictionary, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_CharucoBoard_getChessboardCorners(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_CharucoBoard_setChessboardCorners(System.IntPtr charucoBoard, System.IntPtr chessboardCorners);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_CharucoBoard_getNearestMarkerCorners(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_CharucoBoard_setNearestMarkerCorners(System.IntPtr charucoBoard, System.IntPtr nearestMarkerCorners);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_CharucoBoard_getNearestMarkerIdx(System.IntPtr charucoBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_CharucoBoard_setNearestMarkerIdx(System.IntPtr charucoBoard, System.IntPtr nearestMarkerIdx);
 
         // Constructors & destructor

@@ -13,23 +13,23 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_GridBoard_delete(System.IntPtr gridBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_GridBoard_draw(System.IntPtr gridBoard, System.IntPtr outSize, out System.IntPtr img, int marginSize, int borderBits,
           System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_GridBoard_getGridSize(System.IntPtr gridBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_GridBoard_getMarkerLength(System.IntPtr gridBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_GridBoard_getMarkerSeparation(System.IntPtr gridBoard);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_GridBoard_create(int markersX, int markersY, float markerLength, float markerSeparation,
           System.IntPtr dictionary, int firstMarker, System.IntPtr exception);
 

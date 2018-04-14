@@ -36,27 +36,27 @@ namespace ArucoUnity
 
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_cv_ccalib_omnidir_calibrate(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
           System.IntPtr cameraMatrix, System.IntPtr xi, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
           System.IntPtr criteria, out System.IntPtr idx, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_ccalib_omnidir_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr xi,
           System.IntPtr R, System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, int flags,
           System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_cv_ccalib_omnidir_stereoCalibrate(System.IntPtr objectPoints, System.IntPtr imagePoints1, System.IntPtr imagePoints2,
           System.IntPtr imageSize1, System.IntPtr imageSize2, System.IntPtr cameraMatrix1, System.IntPtr xi1, System.IntPtr distCoeffs1,
            System.IntPtr cameraMatrix2, System.IntPtr xi2, System.IntPtr distCoeffs2, out System.IntPtr rvec, out System.IntPtr tvec,
            out System.IntPtr rvecsL, out System.IntPtr tvecsL, int flags, System.IntPtr criteria, out System.IntPtr idx, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_ccalib_omnidir_stereoRectify(System.IntPtr rvec, System.IntPtr tvec, out System.IntPtr R1, out System.IntPtr R2,
           System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_ccalib_omnidir_undistortImage(System.IntPtr distorted, out System.IntPtr undistorted, System.IntPtr cameraMatrix,
           System.IntPtr distCoeffs, System.IntPtr xi, int flags, System.IntPtr newCameraMatrix, System.IntPtr newSize, System.IntPtr R,
           System.IntPtr exception);

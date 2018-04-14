@@ -43,7 +43,7 @@ namespace ArucoUnity
 
       // Native functions
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_core_flip(System.IntPtr src, System.IntPtr dst, int flipCode, System.IntPtr exception);
 
       // Static methods

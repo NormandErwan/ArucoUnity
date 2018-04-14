@@ -14,10 +14,10 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_Scalar_new(double v0, double v1, double v2);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Scalar_delete(System.IntPtr scalar);
 
         // Constructors & destructor

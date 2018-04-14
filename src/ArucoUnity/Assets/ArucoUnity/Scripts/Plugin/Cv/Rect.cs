@@ -13,37 +13,37 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_Rect_new1();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_Rect_new2(int x, int y, int width, int height);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Rect_delete(System.IntPtr Rect);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_Rect_getX(System.IntPtr Rect);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Rect_setX(System.IntPtr Rect, int x);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_Rect_getY(System.IntPtr Rect);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Rect_setY(System.IntPtr Rect, int y);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_Rect_getWidth(System.IntPtr Rect);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Rect_setWidth(System.IntPtr Rect, int width);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_Rect_getHeight(System.IntPtr Rect);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Rect_setHeight(System.IntPtr Rect, int height);
 
         // Constructors & destructor

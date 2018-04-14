@@ -22,31 +22,31 @@ namespace ArucoUnity
 
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_TermCriteria_new1();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_TermCriteria_new2(int type, int maxCount, double epsilon);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_TermCriteria_delete(System.IntPtr termCriteria);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_cv_TermCriteria_getEpsilon(System.IntPtr termCriteria);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_TermCriteria_setEpsilon(System.IntPtr termCriteria, double epsilon);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_TermCriteria_getMaxCount(System.IntPtr termCriteria);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_TermCriteria_setMaxCount(System.IntPtr termCriteria, int maxCount);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_cv_TermCriteria_getType(System.IntPtr termCriteria);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_TermCriteria_setType(System.IntPtr termCriteria, int type);
 
         // Constructors & destructor

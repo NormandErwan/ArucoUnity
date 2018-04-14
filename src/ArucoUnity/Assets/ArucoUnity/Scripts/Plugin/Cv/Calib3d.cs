@@ -41,40 +41,40 @@ namespace ArucoUnity
 
       // Native functions
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern double au_cv_calib3d_calibrateCamera1(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
         System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs,
         System.IntPtr stdDeviationsIntrinsics, System.IntPtr stdDeviationsExtrinsics, System.IntPtr perViewErrors, int flags,
         System.IntPtr criteria, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern double au_cv_calib3d_calibrateCamera2(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
         System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags, System.IntPtr criteria,
         System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern System.IntPtr au_cv_calib3d_initCameraMatrix2D(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
         double aspectRatio, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_calib3d_Rodrigues1(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_calib3d_Rodrigues2(System.IntPtr rotationMatrix, out System.IntPtr rotationVector, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern double au_cv_calib3d_stereoCalibrate(System.IntPtr objectPoints, System.IntPtr imagePoints1, System.IntPtr imagePoints2,
         System.IntPtr cameraMatrix1, System.IntPtr distCoeffs1, System.IntPtr cameraMatrix2, System.IntPtr distCoeffs2, System.IntPtr imageSize,
         out System.IntPtr R, out System.IntPtr T, out System.IntPtr E, out System.IntPtr F, int flags, System.IntPtr criteria,
         System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_calib3d_stereoRectify(System.IntPtr cameraMatrix1, System.IntPtr distCoeffs1, System.IntPtr cameraMatrix2,
         System.IntPtr distCoeffs2, System.IntPtr imageSize, System.IntPtr R, System.IntPtr T, out System.IntPtr R1, out System.IntPtr R2,
         out System.IntPtr P1, out System.IntPtr P2, out System.IntPtr Q, int flags, double alpha, System.IntPtr newImageSize,
         System.IntPtr validPixROI1, System.IntPtr validPixROI2, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern System.IntPtr au_cv_calib3d_getOptimalNewCameraMatrix(System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
         System.IntPtr imageSize, double scalingFactor, System.IntPtr newImageSize, System.IntPtr validPixROI, bool centerPrincipalPoint,
         System.IntPtr exception);

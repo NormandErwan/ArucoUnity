@@ -14,28 +14,28 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_cv_Point3f_new();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Point3f_delete(System.IntPtr point3f);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_cv_Point3f_getX(System.IntPtr point3f);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Point3f_setX(System.IntPtr point3f, float x);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_cv_Point3f_getY(System.IntPtr point3f);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Point3f_setY(System.IntPtr point3f, float y);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern float au_cv_Point3f_getZ(System.IntPtr point3f);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_cv_Point3f_setZ(System.IntPtr point3f, float z);
 
         // Constructors & destructor

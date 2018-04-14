@@ -45,15 +45,15 @@ namespace ArucoUnity
 
       // Native functions
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_imgproc_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr R,
         System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_imgproc_remap(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
         int borderType, System.IntPtr borderValue, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_cv_imgproc_undistort(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
         System.IntPtr distCoeffs, System.IntPtr newCameraMatrix, System.IntPtr exception);
 

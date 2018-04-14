@@ -13,110 +13,110 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_DetectorParameters_create();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_delete(System.IntPtr parameters);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getAdaptiveThreshWinSizeMin(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setAdaptiveThreshWinSizeMin(System.IntPtr parameters, int adaptiveThreshWinSizeMin);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getAdaptiveThreshWinSizeMax(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setAdaptiveThreshWinSizeMax(System.IntPtr parameters, int adaptiveThreshWinSizeMax);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getAdaptiveThreshWinSizeStep(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setAdaptiveThreshWinSizeStep(System.IntPtr parameters, int adaptiveThreshWinSizeStep);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getAdaptiveThreshConstant(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setAdaptiveThreshConstant(System.IntPtr parameters, double adaptiveThreshConstant);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMinMarkerPerimeterRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMinMarkerPerimeterRate(System.IntPtr parameters, double minMarkerPerimeterRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMaxMarkerPerimeterRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMaxMarkerPerimeterRate(System.IntPtr parameters, double maxMarkerPerimeterRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getPolygonalApproxAccuracyRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setPolygonalApproxAccuracyRate(System.IntPtr parameters, double polygonalApproxAccuracyRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMinCornerDistanceRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMinCornerDistanceRate(System.IntPtr parameters, double minCornerDistanceRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getMinDistanceToBorder(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMinDistanceToBorder(System.IntPtr parameters, int minDistanceToBorder);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMinMarkerDistanceRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMinMarkerDistanceRate(System.IntPtr parameters, double minMarkerDistanceRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getCornerRefinementMethod(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setCornerRefinementMethod(System.IntPtr parameters, int cornerRefinementMethod);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getCornerRefinementWinSize(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setCornerRefinementWinSize(System.IntPtr parameters, int cornerRefinementWinSize);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getCornerRefinementMaxIterations(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setCornerRefinementMaxIterations(System.IntPtr parameters, int cornerRefinementMaxIterations);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getCornerRefinementMinAccuracy(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setCornerRefinementMinAccuracy(System.IntPtr parameters, double cornerRefinementMinAccuracy);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getMarkerBorderBits(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMarkerBorderBits(System.IntPtr parameters, int markerBorderBits);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_DetectorParameters_getPerspectiveRemovePixelPerCell(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setPerspectiveRemovePixelPerCell(System.IntPtr parameters, int perspectiveRemovePixelPerCell);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getPerspectiveRemoveIgnoredMarginPerCell(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setPerspectiveRemoveIgnoredMarginPerCell(System.IntPtr parameters, double perspectiveRemoveIgnoredMarginPerCell);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMaxErroneousBitsInBorderRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMaxErroneousBitsInBorderRate(System.IntPtr parameters, double maxErroneousBitsInBorderRate);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getMinOtsuStdDev(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setMinOtsuStdDev(System.IntPtr parameters, double minOtsuStdDev);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern double au_DetectorParameters_getErrorCorrectionRate(System.IntPtr parameters);
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_DetectorParameters_setErrorCorrectionRate(System.IntPtr parameters, double errorCorrectionRate);
 
         public DetectorParameters() : base(au_DetectorParameters_create())

@@ -13,25 +13,25 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_std_vectorDouble_new();
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_std_vectorDouble_delete(System.IntPtr vector);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern int au_std_vectorDouble_at(System.IntPtr vector, uint pos, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern unsafe double* au_std_vectorDouble_data(System.IntPtr vector);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_std_vectorDouble_push_back(System.IntPtr vector, double value);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_std_vectorDouble_reserve(System.IntPtr vector, uint new_cap, System.IntPtr exception);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern uint au_std_vectorDouble_size(System.IntPtr vector);
 
         // Constructors & destructor

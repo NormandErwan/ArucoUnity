@@ -13,22 +13,22 @@ namespace ArucoUnity
       {
         // Native functions
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_Board_setDictionary(System.IntPtr board, System.IntPtr dictionary);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_Board_getIds(System.IntPtr board);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_Board_setIds(System.IntPtr board, System.IntPtr ids);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern System.IntPtr au_Board_getObjPoints(System.IntPtr board);
 
-        [DllImport("ArucoUnity")]
+        [DllImport("ArucoUnityPlugin")]
         static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
 
         // Constructors

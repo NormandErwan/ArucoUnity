@@ -41,73 +41,73 @@ namespace ArucoUnity
 
       // Native functions
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern double au_calibrateCameraAruco(System.IntPtr corners, System.IntPtr ids, System.IntPtr counter, System.IntPtr board,
       System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
       System.IntPtr criteria, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern double au_calibrateCameraCharuco(System.IntPtr charucoCorners, System.IntPtr charucoIds, System.IntPtr board,
         System.IntPtr imageSize, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
         System.IntPtr criteria, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_detectCharucoDiamond(System.IntPtr image, System.IntPtr markerCorners, System.IntPtr markerIds,
         float squareMarkerLengthRate, out System.IntPtr diamondCorners, out System.IntPtr diamondIds, System.IntPtr cameraMatrix,
         System.IntPtr distCoeffs, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_detectMarkers(System.IntPtr image, System.IntPtr dictionary, out System.IntPtr corners, out System.IntPtr ids,
         System.IntPtr parameters, out System.IntPtr rejectedImgPoints, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_drawAxis(System.IntPtr image, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr rvec,
         System.IntPtr tvec, float length, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_drawCharucoDiamond(System.IntPtr dictionary, System.IntPtr ids, int squareLength, int markerLength,
         out System.IntPtr img, int marginSize, int borderBits, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_drawDetectedCornersCharuco(System.IntPtr image, System.IntPtr charucoCorners, System.IntPtr charucoIds,
         System.IntPtr cornerColor, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_drawDetectedDiamonds(System.IntPtr image, System.IntPtr diamondCorners, System.IntPtr diamondIds,
         System.IntPtr borderColor, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_drawDetectedMarkers(System.IntPtr image, System.IntPtr corners, System.IntPtr ids, System.IntPtr borderColor,
         System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern int au_estimatePoseBoard(System.IntPtr corners, System.IntPtr ids, System.IntPtr board, System.IntPtr cameraMatrix,
         System.IntPtr distCoeffs, out System.IntPtr rvec, out System.IntPtr tvec, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern bool au_estimatePoseCharucoBoard(System.IntPtr charucoCorners, System.IntPtr charucoIds, System.IntPtr board,
         System.IntPtr cameraMatrix, System.IntPtr distCoeffs, out System.IntPtr rvec, out System.IntPtr tvec, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_estimatePoseSingleMarkers(System.IntPtr corners, float markerLength, System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
         out System.IntPtr rvecs, out System.IntPtr tvecs, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern System.IntPtr au_generateCustomDictionary(int nMarkers, int markerSize, System.IntPtr baseDictionary, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_getBoardObjectAndImagePoints(System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
         out System.IntPtr objPoints, out System.IntPtr imgPoints, System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern System.IntPtr au_getPredefinedDictionary(PredefinedDictionaryName name);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern int au_interpolateCornersCharuco(System.IntPtr markerCorners, System.IntPtr markerIds, System.IntPtr image, System.IntPtr board,
         out System.IntPtr charucoCorners, out System.IntPtr charucoIds, System.IntPtr cameraMatrix, System.IntPtr distCoeffs,
         System.IntPtr exception);
 
-      [DllImport("ArucoUnity")]
+      [DllImport("ArucoUnityPlugin")]
       static extern void au_refineDetectedMarkers(System.IntPtr image, System.IntPtr board, System.IntPtr detectedCorners, System.IntPtr detectedIds,
         System.IntPtr rejectedCorners, System.IntPtr cameraMatrix, System.IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate,
         bool checkAllOrders, System.IntPtr recoveredIdxs, System.IntPtr parameters, System.IntPtr exception);
