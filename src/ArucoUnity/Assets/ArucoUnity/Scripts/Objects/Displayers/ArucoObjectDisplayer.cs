@@ -19,7 +19,7 @@ namespace ArucoUnity
       private ArucoObject arucoObject;
 
       [SerializeField]
-      [Tooltip("Display the image in at start in play mode?")]
+      [Tooltip("Display the image in play mode.")]
       private bool displayInPlayMode = false;
 
       // Properties
@@ -30,7 +30,7 @@ namespace ArucoUnity
       protected ArucoObject ArucoObject { get { return arucoObject; } set { SetArucoObject(value); } }
 
       /// <summary>
-      /// Gets or sets if <see cref="ImagePlane"/> is visible at start in play mode.
+      /// Gets or sets if <see cref="ImagePlane"/> is displayed in play mode.
       /// </summary>
       protected bool DisplayInPlayMode { get { return displayInPlayMode; } set { displayInPlayMode = value; } }
 
@@ -89,7 +89,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Updates the display in the Unity Editor if arucoObject has been changed.
+      /// Updates the display in the Unity Editor if <see cref="ArucoObject"/> has been changed.
       /// </summary>
       protected virtual void Update()
       {

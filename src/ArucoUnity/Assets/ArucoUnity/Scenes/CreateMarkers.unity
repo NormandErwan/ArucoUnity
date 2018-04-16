@@ -227,7 +227,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!4 &270237210
 Transform:
   m_ObjectHideFlags: 0
@@ -305,7 +306,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1004230723
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dictionaryName: 0
-  markerSideLength: 156.52
+  markerSideLength: 120
   markerBorderBits: 1
   marginsLength: 0
   markersNumberX: 7
@@ -359,7 +361,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!4 &1004230729
 Transform:
   m_ObjectHideFlags: 0
@@ -427,7 +430,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!4 &1148141138
 Transform:
   m_ObjectHideFlags: 0
@@ -505,7 +509,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1247465583
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +574,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1264974610
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +644,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1374276491
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +714,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1422556659
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +779,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: 
 --- !u!1 &1775526413
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +829,8 @@ MonoBehaviour:
   displayInPlayMode: 1
   saveImage: 1
   outputFolder: ArucoUnity/Images/
-  optionalImageFilename: 
+  automaticFilename: 1
+  imageFilename: ArUcoUnity_Marker_Dict4x4_50_Id_0
 --- !u!4 &1775526416
 Transform:
   m_ObjectHideFlags: 0
@@ -909,10 +919,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890850132}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1, y: 2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

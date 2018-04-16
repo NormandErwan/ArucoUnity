@@ -23,42 +23,56 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("Save the created image.")]
-      private bool saveImage = false;
+      [Tooltip("Save the image in play mode.")]
+      private bool saveImage = true;
 
       [SerializeField]
-      [Tooltip("The output folder for the saved image, relative to the Application.persistentDataPath folder.")]
+      [Tooltip("The output folder for the image, relative to the Application.persistentDataPath folder.")]
       private string outputFolder = "ArucoUnity/Images/";
 
       [SerializeField]
-      [Tooltip("The saved image name. If empty, it will be generated automatically from the ArUco object.")]
-      private string optionalImageFilename;
+      [Tooltip("Set automatically the image filename based from the ArUco object's property values.")]
+      private bool automaticFilename = true;
+
+      [SerializeField]
+      [Tooltip("The name of the image, without the extension (.png added automatically).")]
+      private string imageFilename;
 
       // Properties
 
       /// <summary>
-      /// Save the image.
+      /// Gets or sets if the <see cref="ArucoObjectDisplayer.ImageTexture"/> is saved in play mode.
       /// </summary>
       public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
 
       /// <summary>
-      /// The output folder for the saved image, relative to the Application.persistentDataPath folder (default: ArucoUnity/Images/).
+      /// Gets or sets the output folder for the image, relative to the Application.persistentDataPath folder
+      /// (default: ArucoUnity/Images/).
       /// </summary>
       public string OutputFolder { get { return outputFolder; } set { outputFolder = value; } }
 
       /// <summary>
-      /// The saved image name. The extension (.png) is added automatically. If null, it will be generated automatically.
+      /// Gets or sets the name of the image, without the extension (.png added automatically). If null, it will be
+      /// generated automatically.
       /// </summary>
-      public string ImageFilename { get { return optionalImageFilename; } set { optionalImageFilename = value; } }
+      public string ImageFilename { get { return imageFilename; } set { imageFilename = value; } }
 
       // ArucoObjectDisplayer methods
 
       /// <summary>
-      /// Calls <see cref="ArucoObjectDisplayer.Create"/>, <see cref="ArucoObjectDisplayer.Display"/> and <see cref="ArucoObjectDisplayer.Save"/>.
+      /// Calls <see cref="ArucoObjectDisplayer.Create"/>, <see cref="ArucoObjectDisplayer.Display"/> and
+      /// <see cref="ArucoObjectDisplayer.Save"/>.
       /// </summary>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
         base.ArucoObject_PropertyUpdated(arucoObject);
+
+#if UNITY_EDITOR
+        if (automaticFilename)
+        {
+          ImageFilename = ArucoObject.GenerateName();
+        }
+#endif
 
 #if UNITY_EDITOR
         if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
@@ -86,7 +100,8 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Save the <see cref="ImageTexture"/> on a image file in the <see cref="OutputFolder"/> with <see cref="ImageFilename"/> as filename.
+      /// Save the <see cref="ImageTexture"/> on a image file in the <see cref="OutputFolder"/> with
+      /// <see cref="ImageFilename"/> as filename.
       /// </summary>
       public virtual void Save()
       {
@@ -95,7 +110,8 @@ namespace ArucoUnity
           ImageFilename = ArucoObject.GenerateName() + ".png";
         }
 
-        string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath : Application.persistentDataPath, OutputFolder);
+        string outputFolderPath = Path.Combine((Application.isEditor) ? Application.dataPath
+          : Application.persistentDataPath, OutputFolder);
         if (!Directory.Exists(outputFolderPath))
         {
           Directory.CreateDirectory(outputFolderPath);
