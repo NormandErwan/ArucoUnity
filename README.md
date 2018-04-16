@@ -46,15 +46,20 @@ This first version of this project has been developed as part of the master thes
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
 
-See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. ArUco Unity makes use of the
+See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. Aruco Unity makes use of the
 following projects:
 
-- [OpenCV](http://opencv.org/) with the following modules:
-  - [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco)
-  - [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)
-  - [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
+- [OpenCV](http://opencv.org/) with the following modules: [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html), [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 - [Google Test](https://github.com/google/googletest)
+
+## References
 
 The OpenCV's Aruco module implements this paper:
 
 > Garrido-Jurado, S., Muñoz-Salinas, R., Madrid-Cuevas, F. J., & Marín-Jiménez, M. J. (2014). Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6), 2280-2292.
+
+The fisheye calibration operated with the OpenCV's ccalib module is based on these papers:
+
+> Mei, C., & Rives, P. (2007, April). Single view point omnidirectional camera calibration from planar grids. In Robotics and Automation, 2007 IEEE International Conference on (pp. 3945-3950). IEEE.
+
+> Li, B., Heng, L., Koser, K., & Pollefeys, M. (2013, November). A multiple-camera system calibration toolbox using a feature descriptor-based calibration pattern. In Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on (pp. 1301-1307). IEEE.
