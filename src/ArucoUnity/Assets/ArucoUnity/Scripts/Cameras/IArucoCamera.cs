@@ -11,7 +11,7 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures the image frames of a camera system.
+    /// Captures images of a camera.
     /// </summary>
     public interface IArucoCamera : IConfigurableController
     {

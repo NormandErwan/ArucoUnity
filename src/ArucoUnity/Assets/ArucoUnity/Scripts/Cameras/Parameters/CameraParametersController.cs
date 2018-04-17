@@ -17,7 +17,7 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("Automatically load the camera parameters file at the first frame.")]
+      [Tooltip("Automatically load the camera parameters file at start.")]
       private bool autoLoadFile = true;
 
       [SerializeField]
@@ -25,13 +25,13 @@ namespace ArucoUnity
       private string cameraParametersFolderPath = "ArucoUnity/CameraParameters/";
 
       [SerializeField]
-      [Tooltip("The xml file corresponding to the camera parameters.")]
+      [Tooltip("The xml file where to load and save the camera parameters.")]
       private string cameraParametersFilename;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets if automatically load the camera parameters file at the first frame.
+      /// Gets or sets if automatically load the camera parameters file at start.
       /// </summary>
       public bool AutoLoadFile { get { return autoLoadFile; } set { autoLoadFile = value; } }
 

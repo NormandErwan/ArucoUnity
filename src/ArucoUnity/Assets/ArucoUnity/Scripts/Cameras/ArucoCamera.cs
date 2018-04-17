@@ -12,7 +12,7 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures the image frames of a camera system.
+    /// Captures images of a camera.
     /// </summary>
     /// <remarks>
     /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
@@ -37,12 +37,12 @@ namespace ArucoUnity
       public abstract string Name { get; protected set; }
 
       /// <summary>
-      /// Gets the the current images frame manipulated by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
+      /// Gets the the current camera images manipulated by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
       /// </summary>
       public Texture2D[] ImageTextures { get; private set; }
 
       /// <summary>
-      /// Gets or sets the current images frame manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
+      /// Gets or sets the current camera images manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
       /// </summary>
       public Cv.Mat[] Images { get { return imageBuffers[currentBuffer]; } }
 

@@ -6,7 +6,7 @@
   namespace Cameras
   {
     /// <summary>
-    /// Captures every frame the images of stereo camera system.
+    /// Captures images of stereo camera.
     /// </summary>
     public abstract class StereoArucoCamera : ArucoCamera
     {

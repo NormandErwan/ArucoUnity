@@ -20,10 +20,10 @@ namespace ArucoUnity
       private RectTransform arucoCameraImagesRect;
 
       [SerializeField]
-      private Button addFrameButton;
+      private Button addImagesButton;
 
       [SerializeField]
-      private Text framesForCalibrationText;
+      private Text imagesCountText;
 
       [SerializeField]
       private Button calibrateButton;
@@ -49,12 +49,12 @@ namespace ArucoUnity
         calibrateButtonText = calibrateButton.transform.GetChild(0).GetComponent<Text>();
 
         // Configure the buttons
-        addFrameButton.enabled = false;
+        addImagesButton.enabled = false;
         calibrateButton.enabled = false;
         resetButton.enabled = false;
 
         // Bind the button clicks
-        addFrameButton.onClick.AddListener(AddFrameForCalibration);
+        addImagesButton.onClick.AddListener(AddImagesForCalibration);
         calibrateButton.onClick.AddListener(Calibrate);
         resetButton.onClick.AddListener(ResetCalibration);
 
@@ -82,7 +82,7 @@ namespace ArucoUnity
       protected void ConfigureUI()
       {
         // Configure the buttons
-        addFrameButton.enabled = true;
+        addImagesButton.enabled = true;
         calibrateButton.enabled = false;
         resetButton.enabled = false;
 
@@ -154,25 +154,25 @@ namespace ArucoUnity
         }
 
         // Configure the text
-        UpdateFramesForCalibrationText();
+        UpdateImagesCountText();
         UpdateCalibrationReprojectionErrorText();
       }
 
       /// <summary>
-      /// Adds the images of the next frame for the calibration, and update the UI.
+      /// Adds the current images to the calibration, and update the UI.
       /// </summary>
-      private void AddFrameForCalibration()
+      private void AddImagesForCalibration()
       {
         if (!arucoCameraCalibration.IsConfigured)
         {
           return;
         }
 
-        arucoCameraCalibration.AddCurrentFrameForCalibration();
+        arucoCameraCalibration.AddCurrentImagesForCalibration();
 
         calibrateButton.enabled = true;
         resetButton.enabled = true;
-        UpdateFramesForCalibrationText();
+        UpdateImagesCountText();
       }
 
       /// <summary>
@@ -218,17 +218,17 @@ namespace ArucoUnity
 
         calibrateButton.enabled = false;
         resetButton.enabled = false;
-        UpdateFramesForCalibrationText();
+        UpdateImagesCountText();
         UpdateCalibrationReprojectionErrorText();
       }
 
       /// <summary>
       /// Updates the text of the number of images added for calibration.
       /// </summary>
-      private void UpdateFramesForCalibrationText()
+      private void UpdateImagesCountText()
       {
-        string frames = (arucoCameraCalibration.MarkerIds != null && arucoCameraCalibration.MarkerIds[0] != null) ? "" + arucoCameraCalibration.MarkerIds[0].Size() : "0";
-        framesForCalibrationText.text = "Frames for calibration: " + frames;
+        string imagesCount = (arucoCameraCalibration.MarkerIds != null && arucoCameraCalibration.MarkerIds[0] != null) ? "" + arucoCameraCalibration.MarkerIds[0].Size() : "0";
+        imagesCountText.text = "Images count: " + imagesCount;
       }
 
       /// <summary>

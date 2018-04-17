@@ -9,7 +9,7 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures image frames of two webcam cameras.
+    /// Captures image of a stereoscopic webcam.
     /// </summary>
     public class WebcamStereoArucoCamera : StereoArucoCamera
     {

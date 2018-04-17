@@ -31,7 +31,7 @@ namespace ArucoUnity
       private string outputFolder = "ArucoUnity/Images/";
 
       [SerializeField]
-      [Tooltip("Set automatically the image filename based from the ArUco object's property values.")]
+      [Tooltip("Set automatically the image filename based on the Aruco object's property values.")]
       private bool automaticFilename = true;
 
       [SerializeField]
