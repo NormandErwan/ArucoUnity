@@ -43,7 +43,7 @@ namespace ArucoUnity
 
         protected override void DeleteCppPtr()
         {
-          //au_cv_Exception_delete(cvPtr); // TODO: fix the crash that occur when calling this function
+          //au_cv_Exception_delete(cvPtr);
         }
 
         // Properties

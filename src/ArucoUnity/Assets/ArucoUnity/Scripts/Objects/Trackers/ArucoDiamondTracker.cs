@@ -153,7 +153,6 @@ namespace ArucoUnity
       {
         base.EstimateTransforms(cameraId, dictionary);
 
-        // TODO: add autoscale feature (see: https://github.com/opencv/opencv_contrib/blob/master/modules/aruco/samples/detect_diamonds.cpp#L203)
         Std.VectorVec3d diamondRvecs = null, diamondTvecs = null;
 
         if (DetectedDiamonds[cameraId][dictionary] > 0 && arucoCameraUndistortion != null)

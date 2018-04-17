@@ -146,7 +146,6 @@ namespace ArucoUnity
           // Draw all the detected markers
           if (arucoTracker.DrawDetectedMarkers)
           {
-            // TODO: draw only markers in ArucoObjects list + add option to draw all the detected markers
             Aruco.DrawDetectedMarkers(image, MarkerCorners[cameraId][dictionary], MarkerIds[cameraId][dictionary]);
           }
 

@@ -140,7 +140,6 @@ namespace ArucoUnity
           throw new ArgumentException("This dictionary is not found.", "dictionary");
         }
 
-        // TODO: cache the results
         HashSet<U> arucoTObjectsCollection = new HashSet<U>();
         foreach (var arucoObject in ArucoObjects[dictionary])
         {
@@ -168,7 +167,6 @@ namespace ArucoUnity
       /// Re-adds the updated ArUco object the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The updated ArUco object.</param>
-      // TODO: find a more elegant way to adjust the aruco object list from the aruco object's dictionary and hashcode changes.
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
         Add(arucoObject);
