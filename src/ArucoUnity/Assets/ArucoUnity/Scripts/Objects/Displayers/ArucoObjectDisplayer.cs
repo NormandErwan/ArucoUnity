@@ -9,7 +9,6 @@ namespace ArucoUnity
   namespace Objects.Displayers
   {
     [ExecuteInEditMode]
-    // TODO: preserve the children objects of the ImagePlane
     public class ArucoObjectDisplayer : MonoBehaviour
     {
       // Editor fields
@@ -137,7 +136,6 @@ namespace ArucoUnity
         {
           Create();
           Display();
-          ImagePlane.SetActive(true);
         }
 #endif
       }
@@ -194,7 +192,9 @@ namespace ArucoUnity
       {
         InitializeImagePlane();
         PlaceImagePlane();
+
         imagePlaneMaterial.mainTexture = ImageTexture;
+        ImagePlane.SetActive(true);
       }
 
       /// <summary>
