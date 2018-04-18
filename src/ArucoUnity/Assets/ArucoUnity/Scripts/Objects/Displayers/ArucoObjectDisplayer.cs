@@ -77,6 +77,7 @@ namespace ArucoUnity
             var currentArucoObject = ArucoObject;
             arucoObject = null;
             SetArucoObject(currentArucoObject);
+            UpdateImage();
           }
           else
           {
@@ -302,7 +303,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls <see cref="ImagePlane"/>.
+      /// Calls <see cref="UpdateImage"/>.
       /// </summary>
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
