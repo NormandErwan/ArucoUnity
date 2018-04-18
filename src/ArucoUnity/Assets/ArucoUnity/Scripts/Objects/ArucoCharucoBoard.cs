@@ -108,7 +108,7 @@ namespace ArucoUnity
       {
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && (SquaresNumberX <= 1 || SquaresNumberY <= 1 || SquareSideLength <= 0
-          || MarkerSideLength <= 0 || SquareSideLength <= MarkerSideLength || MarkerBorderBits <= 0))
+          || MarkerSideLength <= 0 || SquareSideLength <= MarkerSideLength || MarkerBorderBits <= 0 || Dictionary == null))
         {
           return null;
         }
