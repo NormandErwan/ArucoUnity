@@ -4,33 +4,33 @@ Bring augmented reality to your Unity project by tracking position and orientati
 
 It uses under the hood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
 
-![Demo 1](https://raw.githubusercontent.com/NormandErwan/aruco-unity/master/docs/images/ar_roll_a_ball.gif)
-![Demo 2](https://raw.githubusercontent.com/NormandErwan/aruco-unity/master/docs/images/extended_phone_screen.gif)
+![Demo 1](https://raw.githubusercontent.com/NormandErwan/ArucoUnity/master/docs/images/ar_roll_a_ball.gif)
+![Demo 2](https://raw.githubusercontent.com/NormandErwan/ArucoUnity/master/docs/images/extended_phone_screen.gif)
 
 *Left: AR [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial). Right: The markers tracking allow to extend the phone's screen.*
 
 ## Installation
 
-Download the [latest build release](https://github.com/enormand/aruco-unity/releases), or see the Build section. Import the package in your Unity project.
+Download the [latest build release](https://github.com/enormand/ArucoUnity/releases), or see the Build section. Import the package in your Unity project.
 
 ## Usage
 
 Please read the wiki:
 
-1. [Marker Creation](https://github.com/NormandErwan/aruco-unity/wiki/1.-Markers-Creation)
-2. [Camera Calibration](https://github.com/NormandErwan/aruco-unity/wiki/2.-Camera-Calibration)
-3. [Marker Tracking](https://github.com/NormandErwan/aruco-unity/wiki/3.-Marker-Tracking)
+1. [Marker Creation](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Marker-Creation)
+2. [Camera Calibration](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Camera-Calibration)
+3. [Marker Tracking](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Marker-Tracking)
 
 ## Build
 
-Read the [Build](https://github.com/NormandErwan/aruco-unity/wiki/Build) wiki page.
+Read the [Build](https://github.com/NormandErwan/ArucoUnity/wiki/Build) wiki page.
 
 ## Documentation
 
 The documentation is available online:
 
-- The library: [https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html](https://enormand.github.io/aruco-unity/group__aruco__unity__lib.html)
-- The Unity package: [https://enormand.github.io/aruco-unity/group__aruco__unity__package.html](https://enormand.github.io/aruco-unity/group__aruco__unity__package.html)
+- The library: [https://normanderwan.github.io/ArucoUnity/group__aruco__unity__lib.html](https://normanderwan.github.io/ArucoUnity/group__aruco__unity__lib.html)
+- The Unity package: [https://normanderwan.github.io/ArucoUnity/group__aruco__unity__package.html](https://normanderwan.github.io/ArucoUnity/group__aruco__unity__package.html)
 
 ## Contributions
 
