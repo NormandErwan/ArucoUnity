@@ -24,7 +24,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("Save the image in play mode.")]
-      private bool saveImage = true;
+      private bool autoSaveInPlayMode = true;
 
       [SerializeField]
       [Tooltip("The output folder for the image, relative to the Application.persistentDataPath folder.")]
@@ -41,9 +41,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets if the <see cref="ArucoObjectDisplayer.ImageTexture"/> is saved in play mode.
+      /// Gets or sets if the <see cref="ArucoObjectDisplayer.ImageTexture"/> is automatically saved in play mode.
       /// </summary>
-      public bool SaveImage { get { return saveImage; } set { saveImage = value; } }
+      public bool AutoSaveImage { get { return autoSaveInPlayMode; } set { autoSaveInPlayMode = value; } }
 
       /// <summary>
       /// Gets or sets the output folder for the image, relative to the Application.persistentDataPath folder
@@ -60,12 +60,12 @@ namespace ArucoUnity
       // ArucoObjectDisplayer methods
 
       /// <summary>
-      /// Calls <see cref="ArucoObjectDisplayer.CreateImage"/>, <see cref="ArucoObjectDisplayer.Display"/> and
-      /// <see cref="ArucoObjectDisplayer.Save"/>.
+      /// Calls <see cref="ArucoObjectDisplayer.UpdateImage"/> then <see cref="SaveImage"/> if <see cref="AutoSaveImage"/>
+      /// is set. Also set <see cref="ImageFilename"/> in the editor.
       /// </summary>
-      protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
+      protected override void UpdateImage()
       {
-        base.ArucoObject_PropertyUpdated(arucoObject);
+        base.UpdateImage();
 
 #if UNITY_EDITOR
         if (automaticFilename)
@@ -78,9 +78,9 @@ namespace ArucoUnity
         if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
 #endif
-          if (SaveImage)
+          if (AutoSaveImage)
           {
-            Save();
+            SaveImage();
           }
 #if UNITY_EDITOR
         }
@@ -103,9 +103,9 @@ namespace ArucoUnity
       /// Save the <see cref="ImageTexture"/> on a image file in the <see cref="OutputFolder"/> with
       /// <see cref="ImageFilename"/> as filename.
       /// </summary>
-      public virtual void Save()
+      public virtual void SaveImage()
       {
-        if (ImageFilename == null || ImageFilename.Length == 0)
+        if (automaticFilename || ImageFilename == null || ImageFilename.Length == 0)
         {
           ImageFilename = ArucoObject.GenerateName() + ".png";
         }
