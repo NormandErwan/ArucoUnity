@@ -60,7 +60,7 @@ namespace ArucoUnity
       // ArucoObjectDisplayer methods
 
       /// <summary>
-      /// Calls <see cref="ArucoObjectDisplayer.Create"/>, <see cref="ArucoObjectDisplayer.Display"/> and
+      /// Calls <see cref="ArucoObjectDisplayer.CreateImage"/>, <see cref="ArucoObjectDisplayer.Display"/> and
       /// <see cref="ArucoObjectDisplayer.Save"/>.
       /// </summary>
       protected override void ArucoObject_PropertyUpdated(ArucoObject arucoObject)

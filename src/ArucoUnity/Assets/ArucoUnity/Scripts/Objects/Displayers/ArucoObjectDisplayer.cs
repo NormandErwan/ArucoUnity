@@ -88,7 +88,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Updates the display in the Unity Editor if <see cref="ArucoObject"/> has been changed.
+      /// Updates the display in the editor if <see cref="ArucoObject"/> has been changed.
       /// </summary>
       protected virtual void Update()
       {
@@ -105,12 +105,22 @@ namespace ArucoUnity
             }
             else
             {
-              Reset();
+              ResetImage();
             }
             lastArucoObjectOnValidate = ArucoObject;
           }
 
-          PlaceImagePlane();
+          // The Aruco Object may initialize after the displayer, so we can display the image the frame after
+          if (ArucoObject != null && Image == null)
+          {
+            UpdateImage();
+          }
+
+          // Keep the image plane at the same position
+          if (ImagePlane != null)
+          {
+            PlaceImagePlane();
+          }
         }
 #endif
       }
@@ -127,32 +137,14 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Shows <see cref="ImagePlane"/> and calls <see cref="SetArucoObject"/>.
-      /// </summary>
-      private void OnEnable()
-      {
-#if UNITY_EDITOR
-        if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && ArucoObject)
-        {
-          Create();
-          Display();
-        }
-#endif
-      }
-
-      /// <summary>
-      /// Hides <see cref="ImagePlane"/>.
+      /// Calls <see cref="ResetImage"/> in the editor.
       /// </summary>
       private void OnDisable()
       {
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         {
-          if (ImagePlane != null)
-          {
-            ImagePlane.SetActive(false);
-          }
-          Reset();
+          ResetImage();
         }
 #endif
       }
@@ -162,7 +154,7 @@ namespace ArucoUnity
       /// <summary>
       /// Creates <see cref="Image"/> and <see cref="ImageTexture"/> from <see cref="ArucoObject"/>.
       /// </summary>
-      public virtual void Create()
+      public virtual void CreateImage()
       {
         Image = ArucoObject.Draw();
 
@@ -179,16 +171,12 @@ namespace ArucoUnity
           ImageTexture.LoadRawTextureData(imageForTexture.DataIntPtr, markerDataSize);
           ImageTexture.Apply();
         }
-        else
-        {
-          Reset();
-        }
       }
 
       /// <summary>
       /// Updates <see cref="ImagePlane"/> with <see cref="ImageTexture"/>.
       /// </summary>
-      public virtual void Display()
+      public virtual void DisplayImage()
       {
         InitializeImagePlane();
         PlaceImagePlane();
@@ -200,13 +188,34 @@ namespace ArucoUnity
       /// <summary>
       /// Resets <see cref="Image"/>, <see cref="ImageTexture"/> and <see cref="ImagePlane"/>.
       /// </summary>
-      public virtual void Reset()
+      public virtual void ResetImage()
       {
         Image = null;
         ImageTexture = null;
         if (imagePlaneMaterial != null)
         {
           imagePlaneMaterial.mainTexture = null;
+        }
+        if (ImagePlane != null)
+        {
+          ImagePlane.SetActive(false);
+        }
+      }
+
+      /// <summary>
+      /// Calls <see cref="CreateImage"/> then <see cref="DisplayImage"/> if <see cref="Image"/> has been created or
+      /// <see cref="ResetImage"/>.
+      /// </summary>
+      protected virtual void UpdateImage()
+      {
+        CreateImage();
+        if (Image != null)
+        {
+          DisplayImage();
+        }
+        else
+        {
+          ResetImage();
         }
       }
 
@@ -224,7 +233,6 @@ namespace ArucoUnity
 
         if (ArucoObject != null)
         {
-          ArucoObject_PropertyUpdated(ArucoObject);
           ArucoObject.PropertyUpdated += ArucoObject_PropertyUpdated;
         }
       }
@@ -281,28 +289,24 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void PlaceImagePlane()
       {
-        if (ImagePlane != null)
+        if (ArucoObject != null)
         {
-          if (ArucoObject != null)
-          {
-            var scale = ArucoObject.GetGameObjectScale();
+          var scale = ArucoObject.GetGameObjectScale();
 
-            ImagePlane.transform.SetParent(null);
-            ImagePlane.transform.localScale = new Vector3(scale.x, scale.z, scale.y); // Because it's rotated up
-            ImagePlane.transform.SetParent(transform);
-          }
-          ImagePlane.transform.localPosition = Vector3.zero;
-          ImagePlane.transform.forward = -transform.up; // Rotated up
+          ImagePlane.transform.SetParent(null);
+          ImagePlane.transform.localScale = new Vector3(scale.x, scale.z, scale.y); // Because it's rotated up
+          ImagePlane.transform.SetParent(transform);
         }
+        ImagePlane.transform.localPosition = Vector3.zero;
+        ImagePlane.transform.forward = -transform.up; // Rotated up
       }
 
       /// <summary>
-      /// Calls <see cref="Create"/> and <see cref="Display"/>.
+      /// Calls <see cref="ImagePlane"/>.
       /// </summary>
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
-        Create();
-        Display();
+        UpdateImage();
       }
     }
   }
