@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -225,10 +225,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 270237208}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_Marker_Dict5x5_50_Id_0
 --- !u!4 &270237210
 Transform:
   m_ObjectHideFlags: 0
@@ -304,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 831758190}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_Marker_Dict4x4_1000_Id_999
 --- !u!1 &1004230723
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,10 +359,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1004230726}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_GridBoard_Dict4x4_50_X_7_Y_5_MarkerSize_120
 --- !u!4 &1004230729
 Transform:
   m_ObjectHideFlags: 0
@@ -428,10 +428,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1148141136}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_ChArUcoBoard_Dict4x4_50_X_7_Y_5_SquareSize_200_MarkerSize_120
 --- !u!4 &1148141138
 Transform:
   m_ObjectHideFlags: 0
@@ -507,10 +507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1192287922}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_Marker_Dict6x6_50_Id_0
 --- !u!1 &1247465583
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,10 +572,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1247465585}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_Marker_DictArucoOriginal_Id_0
 --- !u!1 &1264974610
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,10 +642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1264974612}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_DiamondMarker_Dict5x5_50_Ids_1_2_3_4_SquareSize_200_MarkerSize_150
 --- !u!1 &1374276491
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,10 +712,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1374276493}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_DiamondMarker_Dict4x4_50_Ids_36_37_38_39_SquareSize_200_MarkerSize_120
 --- !u!1 &1422556659
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,10 +777,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1422556661}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
-  imageFilename: 
+  imageFilename: ArUcoUnity_Marker_Dict7x7_50_Id_0
 --- !u!1 &1775526413
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arucoObject: {fileID: 1775526414}
   displayInPlayMode: 1
-  saveImage: 1
+  autoSaveInPlayMode: 1
   outputFolder: ArucoUnity/Images/
   automaticFilename: 1
   imageFilename: ArUcoUnity_Marker_Dict4x4_50_Id_0
@@ -905,7 +905,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
