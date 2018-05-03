@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -6,13 +7,13 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Pinhole
+  namespace Calibration.Pinhole
   {
     /// <summary>
     /// Calibrates a <see cref="ArucoCamera"/> using the pinhole camera model with a <see cref="Objects.ArucoBoard"/> and
     /// saves the calibrated camera parameters in a file managed by <see cref="CameraParametersController"/>.
     /// </summary>
-    public abstract class ArucoCameraGenericPinholeCalibration<T> : ArucoCameraCalibrationGeneric<T, PinholeCalibrationFlags>
+    public abstract class PinholeCameraCalibrationBase<T> : ArucoCameraCalibrationGeneric<T, PinholeCalibrationFlags>
       where T : ArucoCamera
     {
       protected override void InitializeCameraParameters()

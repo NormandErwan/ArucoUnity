@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -6,11 +7,10 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Pinhole
+  namespace Calibration.Pinhole
   {
-    public class StereoArucoCameraPinholeCalibration : ArucoCameraGenericPinholeCalibration<StereoArucoCamera>
+    public class StereoArucoCameraPinholeCalibration : PinholeCameraCalibrationBase<StereoArucoCamera>
     {
-
       // ArucoCameraCalibration methods
 
       protected override void Calibrate(Std.VectorVectorPoint2f[] imagePoints, Std.VectorVectorPoint3f[] objectPoints)

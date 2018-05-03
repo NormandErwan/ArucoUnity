@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using ArucoUnity.Cameras;
+using UnityEngine;
 
 namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations
+  namespace Calibration
   {
     public abstract class ArucoCameraCalibrationGeneric<T, U> : ArucoCameraCalibration
       where T : ArucoCamera 

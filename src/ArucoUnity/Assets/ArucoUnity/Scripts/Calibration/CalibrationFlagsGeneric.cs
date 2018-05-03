@@ -5,7 +5,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations
+  namespace Calibration
   {
     /// <summary>
     /// Manages the flags of the <see cref="ArucoCameraCalibration"/> process. Generic class to use in scripts.

@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -6,9 +7,9 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Omnidir
+  namespace Calibration.Omnidir
   {
-    public class StereoArucoCameraOmnidirCalibration : ArucoCameraCalibrationGeneric<StereoArucoCamera, OmnidirCalibrationFlags>
+    public class StereoOmnidirCameraCalibration : ArucoCameraCalibrationGeneric<StereoArucoCamera, OmnidirCalibrationFlags>
     {
       // ArucoCameraCalibration methods
 

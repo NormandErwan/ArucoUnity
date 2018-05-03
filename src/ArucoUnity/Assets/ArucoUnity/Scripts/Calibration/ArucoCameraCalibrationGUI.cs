@@ -6,7 +6,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations
+  namespace Calibration
   {
     public class ArucoCameraCalibrationGUI : MonoBehaviour
     {

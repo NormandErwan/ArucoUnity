@@ -7,10 +7,10 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Pinhole
+  namespace Calibration.Pinhole
   {
     /// <summary>
-    /// Manages the flags of the <see cref="PinholeArucoCameraCalibration"/> process.
+    /// Manages the flags of the pinhole camera process.
     /// </summary>
     public class PinholeCalibrationFlags : CalibrationFlagsGeneric<Cv.Calib>
     {

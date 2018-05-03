@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -6,9 +7,9 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Omnidir
+  namespace Calibration.Pinhole
   {
-    public class ArucoCameraOmnidirCalibration : ArucoCameraCalibrationGeneric<ArucoCamera, OmnidirCalibrationFlags>
+    public class PinholeCameraCalibration : PinholeCameraCalibrationBase<ArucoCamera>
     {
       // ArucoCameraCalibration methods
 
@@ -18,9 +19,9 @@ namespace ArucoUnity
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
           Std.VectorVec3d rvecs, tvecs;
-          cameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(objectPoints[cameraId], imagePoints[cameraId],
-            calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId],
-            cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs, calibrationFlags.Flags);
+          cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints[cameraId], imagePoints[cameraId],
+            calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+            out rvecs, out tvecs, calibrationFlags.Flags);
 
           Rvecs[cameraId] = rvecs;
           Tvecs[cameraId] = tvecs;

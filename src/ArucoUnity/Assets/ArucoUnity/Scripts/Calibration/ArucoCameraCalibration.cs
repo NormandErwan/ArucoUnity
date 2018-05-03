@@ -11,14 +11,16 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations
+  namespace Calibration
   {
     /// <summary>
-    /// Calibrates a <see cref="ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
-    /// <see cref="CameraParametersController"/>. Base class to reference in editor fields.
+    /// Calibrates a <see cref="Cameras.ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera
+    /// parameters in a file managed by <see cref="Cameras.Parameters.CameraParametersController"/>. Base class to
+    /// reference in editor fields.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
-    /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
+    /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and
+    /// https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
     /// </summary>
     public abstract class ArucoCameraCalibration : ArucoObjectDetector
     {
