@@ -14,8 +14,8 @@ namespace ArucoUnity
   namespace Cameras.Calibrations
   {
     /// <summary>
-    /// Calibrates a <see cref="IArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
-    /// <see cref="CameraParametersController"/>.
+    /// Calibrates a <see cref="ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera parameters in a file managed by
+    /// <see cref="CameraParametersController"/>. Base class to reference in editor fields.
     /// 
     /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
     /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
@@ -33,8 +33,8 @@ namespace ArucoUnity
       private bool refineMarkersDetection = false;
 
       [SerializeField]
-      [Tooltip("The camera parameters to use if CalibrationFlags.UseIntrinsicGuess is true. Otherwise, the camera parameters file will be generated" +
-        " from the camera name and the calibration datetime.")]
+      [Tooltip("The camera parameters to use if CalibrationFlags.UseIntrinsicGuess is true. Otherwise, the camera" +
+        " parameters file will be generated from the camera name and the calibration datetime.")]
       private CameraParametersController cameraParametersController;
 
       // Properties
@@ -50,10 +50,15 @@ namespace ArucoUnity
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
       /// <summary>
-      /// Gets or sets the camera parameters to use if <see cref="CalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
+      /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
       /// file will be generated from the camera name and the calibration datetime.
       /// </summary>
       public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
+
+      /// <summary>
+      /// Gets or sets the flags for the cameras calibration.
+      /// </summary>
+      public CalibrationFlags CalibrationFlags { get; set; }
 
       /// <summary>
       /// Gets the detected marker corners for each camera.
@@ -108,7 +113,7 @@ namespace ArucoUnity
       public event Action Calibrated = delegate { };
 
       // Variables
-      
+
       protected string applicationPath;
       protected Cv.Size[] calibrationImageSizes;
       protected Thread calibratingThread;
@@ -212,7 +217,7 @@ namespace ArucoUnity
           MarkerIds[cameraId] = new Std.VectorVectorInt();
           CalibrationImages[cameraId] = new Std.VectorMat();
         }
-        
+
         Rvecs = new Std.VectorVec3d[ArucoCamera.CameraNumber];
         Tvecs = new Std.VectorVec3d[ArucoCamera.CameraNumber];
         MarkerCornersCurrentImage = new Std.VectorVectorPoint2f[ArucoCamera.CameraNumber];
@@ -481,15 +486,14 @@ namespace ArucoUnity
       /// <summary>
       /// Initializes and configure the <see cref="CameraParametersController.CameraParameters"/>.
       /// </summary>
-      /// <param name="calibrationFlags">The calibration flags that will be used in <see cref="Calibrate"/>.</param>
-      protected virtual void InitializeCameraParameters(CalibrationFlags calibrationFlags = null)
+      protected virtual void InitializeCameraParameters()
       {
-        if (calibrationFlags != null && calibrationFlags.UseIntrinsicGuess)
+        if (CalibrationFlags != null && CalibrationFlags.UseIntrinsicGuess)
         {
           if (CameraParametersController.CameraParameters == null || CameraParametersController.CameraParameters.CameraMatrices == null)
           {
-            throw new Exception("CalibrationFlags.UseIntrinsicGuess flag is set but CameraParameters is null or has no valid values. Set" +
-              " CameraParametersFilename or deactivate this flag.");
+            throw new Exception("CalibrationFlags.UseIntrinsicGuess flag is set but CameraParameters is null or has no" +
+              " valid values. Set CameraParametersFilename or deactivate this flag.");
           }
         }
         else
@@ -503,7 +507,7 @@ namespace ArucoUnity
           }
         }
 
-        CameraParametersController.CameraParameters.CalibrationFlagsValue = (calibrationFlags != null) ? calibrationFlags.Value : default(int);
+        CameraParametersController.CameraParameters.CalibrationFlagsValue = (CalibrationFlags != null) ? CalibrationFlags.Value : default(int);
 
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {

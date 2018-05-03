@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -9,33 +8,8 @@ namespace ArucoUnity
 
   namespace Cameras.Calibrations.Pinhole
   {
-    public class ArucoCameraPinholeCalibration : ArucoCameraGenericPinholeCalibration
+    public class ArucoCameraPinholeCalibration : ArucoCameraGenericPinholeCalibration<ArucoCamera>
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private ArucoCamera arucoCamera;
-
-      [SerializeField]
-      [Tooltip("The flags for the cameras calibration.")]
-      private PinholeCalibrationFlags calibrationFlags;
-
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
-
-      // ArucoCameraGenericPinholeCalibration properties
-
-      public override PinholeCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
-
       // ArucoCameraCalibration methods
 
       protected override void Calibrate(Std.VectorVectorPoint2f[] imagePoints, Std.VectorVectorPoint3f[] objectPoints)
@@ -45,8 +19,8 @@ namespace ArucoUnity
         {
           Std.VectorVec3d rvecs, tvecs;
           cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints[cameraId], imagePoints[cameraId],
-            calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-            CalibrationFlags.Flags);
+            calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+            out rvecs, out tvecs, calibrationFlags.Flags);
 
           Rvecs[cameraId] = rvecs;
           Tvecs[cameraId] = tvecs;
