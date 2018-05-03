@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114570367291400562}
   - component: {fileID: 114758305632993188}
   m_Layer: 0
-  m_Name: ArucoCameraOmnidirCalibration
+  m_Name: OmnidirCameraCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

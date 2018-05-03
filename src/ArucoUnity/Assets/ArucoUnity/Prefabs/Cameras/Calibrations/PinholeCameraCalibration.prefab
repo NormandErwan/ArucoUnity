@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114381304389912768}
   - component: {fileID: 114472875458148954}
   m_Layer: 0
-  m_Name: ArucoCameraPinholeCalibration
+  m_Name: PinholeCameraCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

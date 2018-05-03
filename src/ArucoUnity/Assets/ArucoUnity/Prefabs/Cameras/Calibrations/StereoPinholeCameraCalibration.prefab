@@ -9,34 +9,34 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1796862874369070}
+  m_RootGameObject: {fileID: 1063750291374120}
   m_IsPrefabParent: 1
---- !u!1 &1796862874369070
+--- !u!1 &1063750291374120
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4771018156846152}
-  - component: {fileID: 114717443885570236}
-  - component: {fileID: 114566421423305350}
-  - component: {fileID: 114005857447522778}
-  - component: {fileID: 114562014380628764}
-  - component: {fileID: 114202863759725284}
+  - component: {fileID: 4646850064639340}
+  - component: {fileID: 114854326495929632}
+  - component: {fileID: 114659781309666906}
+  - component: {fileID: 114115187692802280}
+  - component: {fileID: 114304372869992102}
+  - component: {fileID: 114591552896006750}
   m_Layer: 0
-  m_Name: StereoArucoCameraOmnidirCalibration
+  m_Name: StereoPinholeCameraCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4771018156846152
+--- !u!4 &4646850064639340
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
+  m_GameObject: {fileID: 1063750291374120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.255, y: 0.03, z: 0.17999999}
@@ -44,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114005857447522778
+--- !u!114 &114115187692802280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
+  m_GameObject: {fileID: 1063750291374120}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
@@ -62,30 +62,12 @@ MonoBehaviour:
   markersNumberX: 7
   markersNumberY: 5
   markerSeparation: 0.0075
---- !u!114 &114202863759725284
+--- !u!114 &114304372869992102
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useIntrinsicGuess: 0
-  fixKDistorsionCoefficients: 0000
-  fixSkew: 0
-  fixP: 0000
-  fixXi: 0
-  fixGamma: 0
-  fixCenter: 0
---- !u!114 &114562014380628764
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
+  m_GameObject: {fileID: 1063750291374120}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 840bd5ba574119a4480742f7e43829df, type: 3}
@@ -94,12 +76,37 @@ MonoBehaviour:
   autoLoadFile: 0
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
   cameraParametersFilename: 
---- !u!114 &114566421423305350
+--- !u!114 &114591552896006750
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
+  m_GameObject: {fileID: 1063750291374120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44099b4ed8318e845a10ed126f62bbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useIntrinsicGuess: 0
+  fixKDistorsionCoefficients: 000000000000
+  fixPrincipalPoint: 0
+  fixAspectRatio: 0
+  fixAspectRatioValue: 1
+  zeroTangentialDistorsion: 0
+  rationalModel: 0
+  thinPrismModel: 0
+  fixS1_S2_S3_S4: 0
+  tiltedModel: 0
+  fixTauxTauy: 0
+  fixFocalLength: 0
+  fixIntrinsic: 1
+  sameFocalLength: 0
+--- !u!114 &114659781309666906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063750291374120}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91ed676394d8639429b6c76f63c37c18, type: 3}
@@ -125,21 +132,21 @@ MonoBehaviour:
   maxErroneousBitsInBorderRate: 0.35
   minOtsuStdDev: 5
   errorCorrectionRate: 0.6
---- !u!114 &114717443885570236
+--- !u!114 &114854326495929632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
+  m_GameObject: {fileID: 1063750291374120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66674f2448052d4eaf3e9159a923d7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 64bcf1901ac9fc44d9bf16ca10a527bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  detectorParametersController: {fileID: 114566421423305350}
-  calibrationBoard: {fileID: 114005857447522778}
+  detectorParametersController: {fileID: 114659781309666906}
+  calibrationBoard: {fileID: 114115187692802280}
   refineMarkersDetection: 0
-  cameraParametersController: {fileID: 114562014380628764}
+  cameraParametersController: {fileID: 114304372869992102}
   arucoCamera: {fileID: 0}
-  calibrationFlags: {fileID: 114202863759725284}
+  calibrationFlags: {fileID: 114591552896006750}
