@@ -12,17 +12,9 @@ namespace ArucoUnity
     /// <summary>
     /// Displays a mono <see cref="ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraDisplay : ArucoCameraGenericDisplay
+    public class MonoArucoCameraDisplay : ArucoCameraDisplayGeneric<ArucoCamera, ArucoCameraUndistortion>
     {
       // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private ArucoCamera arucoCamera;
-
-      [SerializeField]
-      [Tooltip("The optional undistortion process associated with the ArucoCamera.")]
-      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The Unity virtual camera that will shoot the 3D content aligned with the background.")]
@@ -36,34 +28,15 @@ namespace ArucoUnity
       [Tooltip("The background displaying the image of the corresponding physical camera in ArucoCamera.")]
       private Renderer[] backgrounds;
 
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
-
       // ArucoCameraGenericDisplay properties
 
-      public override IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
       public override Camera[] Cameras { get { return cameras; } protected set { cameras = value; } }
       public override Camera[] BackgroundCameras { get { return backgroundCameras; } protected set { backgroundCameras = value; } }
       public override Renderer[] Backgrounds { get { return backgrounds; } protected set { backgrounds = value; } }
 
-      // Properties
-
       /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
-      /// </summary>
-      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
-
-      // MonoBehaviour methods
-
-      /// <summary>
-      /// Resizes the length of the <see cref="cameras"/>, <see cref="backgroundCameras"/> and <see cref="backgrounds"/> editor fields to
-      /// <see cref="ArucoCamera.CameraNumber"/> if differents.
+      /// Resizes the length of the <see cref="cameras"/>, <see cref="backgroundCameras"/> and <see cref="backgrounds"/>
+      /// editor fields to <see cref="ArucoCamera.CameraNumber"/> if different.
       /// </summary>
       protected virtual void OnValidate()
       {

@@ -12,17 +12,9 @@ namespace ArucoUnity
     /// <summary>
     /// Displays a <see cref="StereoArucoCamera"/> in a VR HMD.
     /// </summary>
-    public class StereoVRArucoCameraDisplay : ArucoCameraGenericDisplay
+    public class StereoVRArucoCameraDisplay : ArucoCameraDisplayGeneric<StereoArucoCamera, ArucoCameraUndistortion>
     {
       // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private StereoArucoCamera stereoArucoCamera;
-
-      [SerializeField]
-      [Tooltip("The optional undistortion process associated with the ArucoCamera.")]
-      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The Unity stereo VR virtual camera that will shoot the 3D content aligned with the backgrounds.")]
@@ -44,26 +36,6 @@ namespace ArucoUnity
       [Tooltip("The background displaying the image of the right physical camera in ArucoCamera.")]
       private Renderer rightBackground;
 
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
-
-      // ArucoCameraGenericDisplay properties
-
-      public override IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
-      /// </summary>
-      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
-
       // Variables
 
       protected Vector3 backgroundsPositionOffset;
@@ -73,8 +45,8 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populates <see cref="Eyes"/>, <see cref="ArucoCameraGenericDisplay.Cameras"/>, <see cref="ArucoCameraGenericDisplay.BackgroundCameras"/>
-      /// and <see cref="ArucoCameraGenericDisplay.Backgrounds"/> from editor fields.
+      /// Populates <see cref="Eyes"/>, <see cref="ArucoCameraDisplayGeneric.Cameras"/>, <see cref="ArucoCameraDisplayGeneric.BackgroundCameras"/>
+      /// and <see cref="ArucoCameraDisplayGeneric.Backgrounds"/> from editor fields if not nulls.
       /// </summary>
       protected override void Awake()
       {
@@ -115,9 +87,9 @@ namespace ArucoUnity
       /// </summary>
       protected override void ConfigureDisplay()
       {
-        backgroundsPositionOffset = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters.TranslationVector.ToPosition();
-
         base.ConfigureDisplay();
+
+        backgroundsPositionOffset = ArucoCameraUndistortion.CameraParameters.StereoCameraParameters.TranslationVector.ToPosition();
 
         if (ArucoCameraUndistortion != null)
         {
@@ -139,8 +111,8 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Places the <see cref="ArucoCameraGenericDisplay.Backgrounds"/> taking account of the difference of the focal length between the VR
-      /// <see cref="ArucoCameraGenericDisplay.Cameras"/> and from <see cref="ArucoCameraUndistortion.RectificationMatrices"/>.
+      /// Places the <see cref="ArucoCameraDisplayGeneric.Backgrounds"/> taking account of the difference of the focal length between the VR
+      /// <see cref="ArucoCameraDisplayGeneric.Cameras"/> and from <see cref="ArucoCameraUndistortion.RectificationMatrices"/>.
       /// </summary>
       /// <param name="cameraId">The id of the background and the background camera to configure.</param>
       protected override void ConfigureRectifiedBackground(int cameraId)

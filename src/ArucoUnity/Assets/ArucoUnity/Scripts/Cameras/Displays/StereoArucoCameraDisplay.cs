@@ -1,7 +1,5 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
-using ArucoUnity.Utilities;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -13,17 +11,9 @@ namespace ArucoUnity
     /// <summary>
     /// Displays a <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraDisplay : ArucoCameraGenericDisplay
+    public class StereoArucoCameraDisplay : ArucoCameraDisplayGeneric<StereoArucoCamera, ArucoCameraUndistortion>
     {
       // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private StereoArucoCamera stereoArucoCamera;
-
-      [SerializeField]
-      [Tooltip("The optional undistortion process associated with the ArucoCamera.")]
-      private ArucoCameraUndistortion arucoCameraUndistortion;
 
       [SerializeField]
       [Tooltip("The container of the leftCamera and the leftBackgroundCamera.")]
@@ -57,31 +47,13 @@ namespace ArucoUnity
       [Tooltip("The background displaying the image of the right physical camera in ArucoCamera.")]
       private Renderer rightBackground;
 
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
-
-      // ArucoCameraGenericDisplay properties
-
-      public override IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
-
       // Properties
 
       /// <summary>
-      /// Gets or sets the camera system to use.
+      /// Gets or sets the containers of the <see cref="ArucoCameraDisplayGeneric{T}.Cameras"/> and the
+      /// <see cref="ArucoCameraDisplayGeneric{T}.BackgroundCameras"/>.
       /// </summary>
-      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional undistortion process associated with the ArucoCamera.
-      /// </summary>
-      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
-
-      /// <summary>
-      /// Gets or sets the containers of the <see cref="ArucoCameraGenericDisplay{T}.Cameras"/> and the
-      /// <see cref="ArucoCameraGenericDisplay{T}.BackgroundCameras"/>.
-      /// </summary>
-      public Transform[] Eyes { get; set; }
+      public Transform[] Eyes { get; protected set; }
 
       // Variables
 
@@ -90,12 +62,14 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Populates <see cref="Eyes"/>, <see cref="ArucoCameraGenericDisplay.Cameras"/>, <see cref="ArucoCameraGenericDisplay.BackgroundCameras"/>
-      /// and <see cref="ArucoCameraGenericDisplay.Backgrounds"/> from editor fields.
+      /// Sets <see cref="Controllers.ArucoCameraController.ArucoCamera"/>, <see cref="MonoArucoCameraDisplay.ArucoCameraUndistortion"/>,
+      /// <see cref="Eyes"/>, <see cref="ArucoCameraDisplayGeneric.Cameras"/>, <see cref="ArucoCameraDisplayGeneric.BackgroundCameras"/>
+      /// and <see cref="ArucoCameraDisplayGeneric.Backgrounds"/> from editor fields if not nulls.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
+
         Eyes = new Transform[ArucoCamera.CameraNumber];
         Eyes[StereoArucoCamera.CameraId1] = leftEye;
         Eyes[StereoArucoCamera.CameraId2] = rightEye;
