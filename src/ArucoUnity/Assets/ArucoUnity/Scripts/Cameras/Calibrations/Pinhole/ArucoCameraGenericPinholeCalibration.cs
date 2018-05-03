@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Cameras.Calibrations.Flags;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -20,11 +19,11 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the flags for the cameras calibration.
       /// </summary>
-      public abstract PinholeCameraCalibrationFlags CalibrationFlags { get; set; }
+      public abstract PinholeCalibrationFlags CalibrationFlags { get; set; }
 
       // ArucoCameraCalibration methods
 
-      protected override void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags)
+      protected override void InitializeCameraParameters(CalibrationFlags calibrationFlags)
       {
         base.InitializeCameraParameters(CalibrationFlags);
 

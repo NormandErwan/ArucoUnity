@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the <see cref="PinholeArucoCameraCalibration"/> process.
     /// </summary>
-    public class PinholeCameraCalibrationFlags : CameraCalibrationFlags
+    public class PinholeCalibrationFlags : CalibrationFlagsGeneric<Cv.Calib>
     {
       // Constants
 
@@ -87,58 +87,31 @@ namespace ArucoUnity
 
       public bool SameFocalLength { get { return sameFocalLength; } set { sameFocalLength = value; } }
 
-      /// <summary>
-      /// Gets or sets the calibration flags enum and keeps updated the flag properties.
-      /// </summary>
-      public virtual Cv.Calib CalibrationFlags
-      {
-        get
-        {
-          UpdateCalibrationFlags();
-          return calibrationFlags;
-        }
-        set
-        {
-          calibrationFlags = value;
-          UpdateCalibrationOptions();
-        }
-      }
-
-      public override int CalibrationFlagsValue
-      {
-        get { return (int)CalibrationFlags; }
-        set { CalibrationFlags = (Cv.Calib)value; }
-      }
-
       protected override int FixKLength { get { return 6; } }
-
-      // Variables
-
-      private Cv.Calib calibrationFlags;
 
       // Methods
 
       protected override void UpdateCalibrationFlags()
       {
-        calibrationFlags = 0;
-        if (UseIntrinsicGuess)             { calibrationFlags |= Cv.Calib.UseIntrinsicGuess; }
-        if (FixPrincipalPoint)             { calibrationFlags |= Cv.Calib.FixPrincipalPoint; }
-        if (FixKDistorsionCoefficients[0]) { calibrationFlags |= Cv.Calib.FixK1; }
-        if (FixKDistorsionCoefficients[1]) { calibrationFlags |= Cv.Calib.FixK2; }
-        if (FixKDistorsionCoefficients[2]) { calibrationFlags |= Cv.Calib.FixK3; }
-        if (FixKDistorsionCoefficients[3]) { calibrationFlags |= Cv.Calib.FixK4; }
-        if (FixKDistorsionCoefficients[4]) { calibrationFlags |= Cv.Calib.FixK5; }
-        if (FixKDistorsionCoefficients[5]) { calibrationFlags |= Cv.Calib.FixK6; }
-        if (FixAspectRatio)                { calibrationFlags |= Cv.Calib.FixAspectRatio; }
-        if (ZeroTangentialDistorsion)      { calibrationFlags |= Cv.Calib.ZeroTangentDist; }
-        if (RationalModel)                 { calibrationFlags |= Cv.Calib.RationalModel; }
-        if (ThinPrismModel)                { calibrationFlags |= Cv.Calib.ThinPrismModel; }
-        if (FixS1_S2_S3_S4)                { calibrationFlags |= Cv.Calib.FixS1S2S3S4; }
-        if (TiltedModel)                   { calibrationFlags |= Cv.Calib.TiltedModel; }
-        if (FixTauxTauy)                   { calibrationFlags |= Cv.Calib.FixTauxTauy; }
-        if (FixFocalLength)                { calibrationFlags |= Cv.Calib.FixFocalLength; }
-        if (FixIntrinsic)                  { calibrationFlags |= Cv.Calib.FixIntrinsic; }
-        if (SameFocalLength)               { calibrationFlags |= Cv.Calib.SameFocalLength; }
+        flags = 0;
+        if (UseIntrinsicGuess)             { flags |= Cv.Calib.UseIntrinsicGuess; }
+        if (FixPrincipalPoint)             { flags |= Cv.Calib.FixPrincipalPoint; }
+        if (FixKDistorsionCoefficients[0]) { flags |= Cv.Calib.FixK1; }
+        if (FixKDistorsionCoefficients[1]) { flags |= Cv.Calib.FixK2; }
+        if (FixKDistorsionCoefficients[2]) { flags |= Cv.Calib.FixK3; }
+        if (FixKDistorsionCoefficients[3]) { flags |= Cv.Calib.FixK4; }
+        if (FixKDistorsionCoefficients[4]) { flags |= Cv.Calib.FixK5; }
+        if (FixKDistorsionCoefficients[5]) { flags |= Cv.Calib.FixK6; }
+        if (FixAspectRatio)                { flags |= Cv.Calib.FixAspectRatio; }
+        if (ZeroTangentialDistorsion)      { flags |= Cv.Calib.ZeroTangentDist; }
+        if (RationalModel)                 { flags |= Cv.Calib.RationalModel; }
+        if (ThinPrismModel)                { flags |= Cv.Calib.ThinPrismModel; }
+        if (FixS1_S2_S3_S4)                { flags |= Cv.Calib.FixS1S2S3S4; }
+        if (TiltedModel)                   { flags |= Cv.Calib.TiltedModel; }
+        if (FixTauxTauy)                   { flags |= Cv.Calib.FixTauxTauy; }
+        if (FixFocalLength)                { flags |= Cv.Calib.FixFocalLength; }
+        if (FixIntrinsic)                  { flags |= Cv.Calib.FixIntrinsic; }
+        if (SameFocalLength)               { flags |= Cv.Calib.SameFocalLength; }
       }
 
       protected override void UpdateCalibrationOptions()

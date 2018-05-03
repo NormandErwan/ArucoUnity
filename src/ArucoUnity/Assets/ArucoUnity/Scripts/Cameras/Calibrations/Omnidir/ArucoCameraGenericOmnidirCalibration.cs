@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras.Calibrations.Flags;
-
-namespace ArucoUnity
+﻿namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
@@ -18,7 +16,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets the flags for the camera calibration.
       /// </summary>
-      public abstract OmnidirCameraCalibrationFlags CalibrationFlags { get; set; }
+      public abstract OmnidirCalibrationFlags CalibrationFlags { get; set; }
     }
   }
 

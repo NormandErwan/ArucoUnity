@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the <see cref="OmnidirCalibrationController"/> process.
     /// </summary>
-    public class OmnidirCameraCalibrationFlags : CameraCalibrationFlags
+    public class OmnidirCalibrationFlags : CalibrationFlagsGeneric<Cv.Omnidir.Calib>
     {
       // Editor fields
 
@@ -54,51 +54,24 @@ namespace ArucoUnity
 
       public bool FixCenter { get { return fixCenter; } set { fixCenter = value; } }
 
-      /// <summary>
-      /// Gets or sets the calibration flags enum and keeps updated the flag properties.
-      /// </summary>
-      public Cv.Omnidir.Calib CalibrationFlags
-      {
-        get
-        {
-          UpdateCalibrationFlags();
-          return calibrationFlags;
-        }
-        set
-        {
-          calibrationFlags = value;
-          UpdateCalibrationOptions();
-        }
-      }
-
-      public override int CalibrationFlagsValue
-      {
-        get { return (int)CalibrationFlags; }
-        set { CalibrationFlags = (Cv.Omnidir.Calib)value; }
-      }
-
       protected override int FixKLength { get { return 2; } }
 
-      protected virtual int FixPLength { get { return 2; } set { } }
-
-      // Variables
-
-      private Cv.Omnidir.Calib calibrationFlags;
+      protected int FixPLength { get { return 2; } }
 
       // Methods
 
       protected override void UpdateCalibrationFlags()
       {
-        calibrationFlags = 0;
-        if (UseIntrinsicGuess)             { calibrationFlags |= Cv.Omnidir.Calib.UseGuess; }
-        if (FixSkew)                       { calibrationFlags |= Cv.Omnidir.Calib.FixSkew; }
-        if (FixKDistorsionCoefficients[0]) { calibrationFlags |= Cv.Omnidir.Calib.FixK1; }
-        if (FixKDistorsionCoefficients[1]) { calibrationFlags |= Cv.Omnidir.Calib.FixK2; }
-        if (FixP[0])                       { calibrationFlags |= Cv.Omnidir.Calib.FixP1; }
-        if (FixP[1])                       { calibrationFlags |= Cv.Omnidir.Calib.FixP2; }
-        if (FixXi)                         { calibrationFlags |= Cv.Omnidir.Calib.FixXi; }
-        if (FixGamma)                      { calibrationFlags |= Cv.Omnidir.Calib.FixGamma; }
-        if (FixCenter)                     { calibrationFlags |= Cv.Omnidir.Calib.FixCenter; }
+        flags = 0;
+        if (UseIntrinsicGuess)             { flags |= Cv.Omnidir.Calib.UseGuess; }
+        if (FixSkew)                       { flags |= Cv.Omnidir.Calib.FixSkew; }
+        if (FixKDistorsionCoefficients[0]) { flags |= Cv.Omnidir.Calib.FixK1; }
+        if (FixKDistorsionCoefficients[1]) { flags |= Cv.Omnidir.Calib.FixK2; }
+        if (FixP[0])                       { flags |= Cv.Omnidir.Calib.FixP1; }
+        if (FixP[1])                       { flags |= Cv.Omnidir.Calib.FixP2; }
+        if (FixXi)                         { flags |= Cv.Omnidir.Calib.FixXi; }
+        if (FixGamma)                      { flags |= Cv.Omnidir.Calib.FixGamma; }
+        if (FixCenter)                     { flags |= Cv.Omnidir.Calib.FixCenter; }
       }
 
       protected override void UpdateCalibrationOptions()
@@ -118,7 +91,7 @@ namespace ArucoUnity
       {
         base.OnValidate();
 
-        if (fixP.Length != FixPLength)
+        if (fixP != null && fixP.Length != FixPLength)
         {
           Array.Resize(ref fixP, FixPLength);
         }

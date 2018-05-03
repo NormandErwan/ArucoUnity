@@ -9,9 +9,9 @@ namespace ArucoUnity
   namespace Cameras.Calibrations
   {
     /// <summary>
-    /// Manages the flags of the <see cref="ArucoCameraCalibration"/> process.
+    /// Manages the flags of the <see cref="ArucoCameraCalibration"/> process. Base class to reference in editor fields.
     /// </summary>
-    public abstract class CameraCalibrationFlags : MonoBehaviour
+    public abstract class CalibrationFlags : MonoBehaviour
     {
       // Editor fields
 
@@ -21,20 +21,22 @@ namespace ArucoUnity
       private bool useIntrinsicGuess = false;
 
       [SerializeField]
-      [Tooltip("The corresponding radial distortion coefficient is not changed during the calibration. If useIntrinsicGuess is set, the original" +
-        " DistCoeffs value in the camera parameters are used, otherwise it's to 0.")]
+      [Tooltip("The corresponding radial distortion coefficient is not changed during the calibration. If useIntrinsicGuess" +
+        " is set, the original DistCoeffs value in the camera parameters are used, otherwise it's to 0.")]
       private bool[] fixKDistorsionCoefficients;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets if the <see cref="Cameras.Parameters.CameraParameters.CameraMatrices"/> has valid initial value that will be optimized by the calibration process.
+      /// Gets or sets if the <see cref="Parameters.CameraParameters.CameraMatrices"/> has valid initial value that will
+      /// be optimized by the calibration process.
       /// </summary>
       public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
 
       /// <summary>
-      /// Gets or sets if the corresponding radial distortion coefficients are not changed during the calibration. If useIntrinsicGuess is set, the
-      /// original <see cref="Cameras.Parameters.CameraParameters.DistCoeffs"/> values in the camera parameters are used, otherwise they're set to 0.
+      /// Gets or sets if the corresponding radial distortion coefficients are not changed during the calibration.
+      /// If useIntrinsicGuess is set, the original <see cref="Parameters.CameraParameters.DistCoeffs"/> values in the
+      /// camera parameters are used, otherwise they're set to 0.
       /// </summary>
       public bool[] FixKDistorsionCoefficients
       {
@@ -52,7 +54,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets or sets if the equivalent int, used by OpenCV, of the calibration flags.
       /// </summary>
-      public abstract int CalibrationFlagsValue { get; set; }
+      public abstract int Value { get; set; }
 
       /// <summary>
       /// Gets the length of <see cref="FixKDistorsionCoefficients"/> array.
@@ -62,12 +64,12 @@ namespace ArucoUnity
       // Methods
 
       /// <summary>
-      /// Updates <see cref="CalibrationFlagsValue"/> from the flag properties.
+      /// Updates <see cref="Value"/> from the flag properties.
       /// </summary>
       protected abstract void UpdateCalibrationFlags();
 
       /// <summary>
-      /// Updates the flag property values from <see cref="CalibrationFlagsValue"/>.
+      /// Updates the flag property values from <see cref="Value"/>.
       /// </summary>
       protected abstract void UpdateCalibrationOptions();
 

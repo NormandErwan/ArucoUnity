@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Cameras.Calibrations.Flags;
 using ArucoUnity.Objects;
 using ArucoUnity.Plugin;
 using System;
@@ -51,7 +50,7 @@ namespace ArucoUnity
       public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
       /// <summary>
-      /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
+      /// Gets or sets the camera parameters to use if <see cref="CalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
       /// file will be generated from the camera name and the calibration datetime.
       /// </summary>
       public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
@@ -483,7 +482,7 @@ namespace ArucoUnity
       /// Initializes and configure the <see cref="CameraParametersController.CameraParameters"/>.
       /// </summary>
       /// <param name="calibrationFlags">The calibration flags that will be used in <see cref="Calibrate"/>.</param>
-      protected virtual void InitializeCameraParameters(CameraCalibrationFlags calibrationFlags = null)
+      protected virtual void InitializeCameraParameters(CalibrationFlags calibrationFlags = null)
       {
         if (calibrationFlags != null && calibrationFlags.UseIntrinsicGuess)
         {
@@ -504,7 +503,7 @@ namespace ArucoUnity
           }
         }
 
-        CameraParametersController.CameraParameters.CalibrationFlagsValue = (calibrationFlags != null) ? calibrationFlags.CalibrationFlagsValue : default(int);
+        CameraParametersController.CameraParameters.CalibrationFlagsValue = (calibrationFlags != null) ? calibrationFlags.Value : default(int);
 
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {

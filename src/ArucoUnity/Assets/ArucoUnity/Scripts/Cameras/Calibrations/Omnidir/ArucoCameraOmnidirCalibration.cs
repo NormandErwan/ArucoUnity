@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Cameras.Calibrations.Flags;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using UnityEngine;
 
@@ -21,7 +19,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the camera calibration.")]
-      private OmnidirCameraCalibrationFlags calibrationFlags;
+      private OmnidirCalibrationFlags calibrationFlags;
 
       // ArucoCameraController properties
 
@@ -29,7 +27,7 @@ namespace ArucoUnity
 
       // ArucoCameraGenericOmnidirCalibration properties
 
-      public override OmnidirCameraCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
+      public override OmnidirCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
 
       // Properties
 
@@ -48,7 +46,7 @@ namespace ArucoUnity
           Std.VectorVec3d rvecs, tvecs;
           cameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(objectPoints[cameraId], imagePoints[cameraId],
             calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId],
-            cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags.CalibrationFlags);
+            cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs, CalibrationFlags.Flags);
 
           Rvecs[cameraId] = rvecs;
           Tvecs[cameraId] = tvecs;

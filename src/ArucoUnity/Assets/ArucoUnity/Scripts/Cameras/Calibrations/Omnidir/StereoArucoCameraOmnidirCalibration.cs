@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Cameras.Calibrations.Flags;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using UnityEngine;
 
@@ -21,7 +19,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the camera calibration.")]
-      private OmnidirCameraCalibrationFlags calibrationFlags;
+      private OmnidirCalibrationFlags calibrationFlags;
 
       // ArucoCameraController properties
 
@@ -29,7 +27,7 @@ namespace ArucoUnity
 
       // ArucoCameraGenericOmnidirCalibration properties
 
-      public override OmnidirCameraCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
+      public override OmnidirCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
 
       // Properties
 
@@ -58,14 +56,14 @@ namespace ArucoUnity
         Std.VectorVec3d rvecsCamera1, tvecsCamera1;
         stereoCameraParameters.ReprojectionError = Cv.Omnidir.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1],
           imagePoints[cameraId2], calibrationImageSizes[cameraId1], calibrationImageSizes[cameraId2], cameraMatrix1, xi1, distCoeffs1,
-          cameraMatrix2, xi2, distCoeffs2, out rvec, out tvec, out rvecsCamera1, out tvecsCamera1, CalibrationFlags.CalibrationFlags);
+          cameraMatrix2, xi2, distCoeffs2, out rvec, out tvec, out rvecsCamera1, out tvecsCamera1, CalibrationFlags.Flags);
 
         Rvecs[StereoArucoCamera.CameraId1] = rvecsCamera1;
         Tvecs[StereoArucoCamera.CameraId1] = tvecsCamera1;
 
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;
-        stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.CalibrationFlagsValue;
+        stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.Value;
         cameraParameters.StereoCameraParameters = stereoCameraParameters;
       }
     }

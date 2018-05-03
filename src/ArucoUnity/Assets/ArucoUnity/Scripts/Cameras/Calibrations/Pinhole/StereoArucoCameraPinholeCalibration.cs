@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Cameras.Calibrations.Flags;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using UnityEngine;
 
@@ -21,7 +19,7 @@ namespace ArucoUnity
 
       [SerializeField]
       [Tooltip("The flags for the cameras calibration.")]
-      private PinholeCameraCalibrationFlags calibrationFlags;
+      private PinholeCalibrationFlags calibrationFlags;
 
       // ArucoCameraController properties
 
@@ -29,7 +27,7 @@ namespace ArucoUnity
 
       // ArucoCameraGenericPinholeCalibration properties
 
-      public override PinholeCameraCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
+      public override PinholeCalibrationFlags CalibrationFlags { get { return calibrationFlags; } set { calibrationFlags = value; } }
 
       // Properties
 
@@ -49,7 +47,7 @@ namespace ArucoUnity
           Std.VectorVec3d rvecs, tvecs;
           cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints[cameraId], imagePoints[cameraId],
             calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs,
-            CalibrationFlags.CalibrationFlags);
+            CalibrationFlags.Flags);
 
           Rvecs[cameraId] = rvecs;
           Tvecs[cameraId] = tvecs;
@@ -70,12 +68,12 @@ namespace ArucoUnity
         Cv.Mat rotationMatrix, essentialMatrix, fundamentalMatrix;
         stereoCameraParameters.ReprojectionError = Cv.StereoCalibrate(objectPoints[cameraId1], imagePoints[cameraId1], imagePoints[cameraId2],
           cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, out rotationMatrix, out tvec, out essentialMatrix, out fundamentalMatrix,
-          CalibrationFlags.CalibrationFlags);
+          CalibrationFlags.Flags);
         Cv.Rodrigues(rotationMatrix, out rvec);
 
         stereoCameraParameters.RotationVector = rvec;
         stereoCameraParameters.TranslationVector = tvec;
-        stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.CalibrationFlagsValue;
+        stereoCameraParameters.CalibrationFlagsValue = CalibrationFlags.Value;
         cameraParameters.StereoCameraParameters = stereoCameraParameters;
       }
     }
