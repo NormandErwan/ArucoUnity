@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4646850064639340}
   - component: {fileID: 114854326495929632}
   - component: {fileID: 114659781309666906}
-  - component: {fileID: 114115187692802280}
   - component: {fileID: 114304372869992102}
   - component: {fileID: 114591552896006750}
   m_Layer: 0
@@ -44,24 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114115187692802280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1063750291374120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dictionaryName: 0
-  markerSideLength: 0.03
-  markerBorderBits: 1
-  marginsLength: 0
-  markersNumberX: 7
-  markersNumberY: 5
-  markerSeparation: 0.0075
 --- !u!114 &114304372869992102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   detectorParametersController: {fileID: 114659781309666906}
-  calibrationBoard: {fileID: 114115187692802280}
+  calibrationBoard: {fileID: 0}
   refineMarkersDetection: 0
   cameraParametersController: {fileID: 114304372869992102}
   arucoCamera: {fileID: 0}

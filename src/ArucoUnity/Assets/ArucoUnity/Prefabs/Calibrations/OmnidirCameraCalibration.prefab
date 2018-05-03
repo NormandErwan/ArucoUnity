@@ -11,38 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1831836218230788}
   m_IsPrefabParent: 1
---- !u!1 &1327752025722154
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4420265091930484}
-  - component: {fileID: 114978887673625444}
-  m_Layer: 0
-  m_Name: StereoCameraCalibrationFlags
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1329944216170378
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4632311676546812}
-  - component: {fileID: 114068656867377812}
-  m_Layer: 0
-  m_Name: CameraCalibrationFlags
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1831836218230788
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,8 +21,8 @@ GameObject:
   - component: {fileID: 4153927219464056}
   - component: {fileID: 114218203924508940}
   - component: {fileID: 114900348844413008}
-  - component: {fileID: 114570367291400562}
   - component: {fileID: 114758305632993188}
+  - component: {fileID: 114449972534273376}
   m_Layer: 0
   m_Name: OmnidirCameraCalibration
   m_TagString: Untagged
@@ -71,56 +39,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.255, y: 0.03, z: 0.17999999}
-  m_Children:
-  - {fileID: 4632311676546812}
-  - {fileID: 4420265091930484}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4420265091930484
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1327752025722154}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
-  m_Children: []
-  m_Father: {fileID: 4153927219464056}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4632311676546812
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329944216170378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4153927219464056}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114068656867377812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329944216170378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useIntrinsicGuess: 0
-  fixKDistorsionCoefficients: 0000
-  fixSkew: 0
-  fixP: 0000
-  fixXi: 0
-  fixGamma: 0
-  fixCenter: 0
 --- !u!114 &114218203924508940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,12 +56,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   detectorParametersController: {fileID: 114900348844413008}
-  calibrationBoard: {fileID: 114570367291400562}
+  calibrationBoard: {fileID: 0}
   refineMarkersDetection: 0
   cameraParametersController: {fileID: 114758305632993188}
   arucoCamera: {fileID: 0}
-  calibrationFlags: {fileID: 114068656867377812}
---- !u!114 &114570367291400562
+  calibrationFlags: {fileID: 114449972534273376}
+--- !u!114 &114449972534273376
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -147,16 +69,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831836218230788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dictionaryName: 0
-  markerSideLength: 0.03
-  markerBorderBits: 1
-  marginsLength: 0
-  markersNumberX: 7
-  markersNumberY: 5
-  markerSeparation: 0.0075
+  useIntrinsicGuess: 0
+  fixKDistorsionCoefficients: 0000
+  fixSkew: 0
+  fixP: 0000
+  fixXi: 0
+  fixGamma: 0
+  fixCenter: 0
 --- !u!114 &114758305632993188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,21 +124,3 @@ MonoBehaviour:
   maxErroneousBitsInBorderRate: 0.35
   minOtsuStdDev: 5
   errorCorrectionRate: 0.6
---- !u!114 &114978887673625444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1327752025722154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useIntrinsicGuess: 1
-  fixKDistorsionCoefficients: 0000
-  fixSkew: 0
-  fixP: 0000
-  fixXi: 0
-  fixGamma: 0
-  fixCenter: 0

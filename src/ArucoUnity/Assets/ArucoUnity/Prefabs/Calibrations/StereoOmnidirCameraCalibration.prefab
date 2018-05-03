@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4771018156846152}
   - component: {fileID: 114717443885570236}
   - component: {fileID: 114566421423305350}
-  - component: {fileID: 114005857447522778}
   - component: {fileID: 114562014380628764}
   - component: {fileID: 114202863759725284}
   m_Layer: 0
@@ -44,24 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114005857447522778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796862874369070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dictionaryName: 0
-  markerSideLength: 0.03
-  markerBorderBits: 1
-  marginsLength: 0
-  markersNumberX: 7
-  markersNumberY: 5
-  markerSeparation: 0.0075
 --- !u!114 &114202863759725284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useIntrinsicGuess: 0
+  useIntrinsicGuess: 1
   fixKDistorsionCoefficients: 0000
   fixSkew: 0
   fixP: 0000
@@ -138,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   detectorParametersController: {fileID: 114566421423305350}
-  calibrationBoard: {fileID: 114005857447522778}
+  calibrationBoard: {fileID: 0}
   refineMarkersDetection: 0
   cameraParametersController: {fileID: 114562014380628764}
   arucoCamera: {fileID: 0}
