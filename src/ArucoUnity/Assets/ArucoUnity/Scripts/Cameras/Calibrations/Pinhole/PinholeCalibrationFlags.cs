@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Flags
+  namespace Cameras.Calibrations.Pinhole
   {
     /// <summary>
     /// Manages the flags of the <see cref="PinholeArucoCameraCalibration"/> process.

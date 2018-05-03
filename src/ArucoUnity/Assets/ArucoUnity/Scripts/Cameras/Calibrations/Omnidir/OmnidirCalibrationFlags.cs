@@ -7,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Cameras.Calibrations.Flags
+  namespace Cameras.Calibrations.Omnidir
   {
     /// <summary>
     /// Manages the flags of the <see cref="OmnidirCalibrationController"/> process.
