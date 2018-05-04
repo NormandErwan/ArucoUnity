@@ -58,7 +58,7 @@ namespace ArucoUnity
       {
         this.arucoTracker = arucoTracker;
         arucoCamera = arucoTracker.ArucoCamera;
-        arucoCameraUndistortion = arucoTracker.ArucoCameraUndistortion;
+        arucoCameraUndistortion = arucoTracker.ArucoCameraDisplay.ArucoCameraUndistortion;
         arucoCameraDisplay = arucoTracker.ArucoCameraDisplay;
         IsActivated = true;
 

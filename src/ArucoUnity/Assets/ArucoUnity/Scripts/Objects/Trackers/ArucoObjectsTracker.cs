@@ -1,6 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Controllers;
-using ArucoUnity.Cameras.Undistortions;
+﻿using ArucoUnity.Controllers;
 using ArucoUnity.Cameras.Displays;
 using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;
@@ -25,16 +23,8 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private ArucoCamera arucoCamera;
-
-      [SerializeField]
-      [Tooltip("The undistortion process associated with the ArucoCamera.")]
-      private ArucoCameraUndistortion arucoCameraUndistortion;
-
-      [SerializeField]
       [Tooltip("The optional camera display associated with the ArucoCamera.")]
-      private ArucoCameraGenericDisplay arucoCameraDisplay;
+      private ArucoCameraDisplay arucoCameraDisplay;
 
       [SerializeField]
       [Tooltip("Apply refine strategy to detect more markers using the boards in the Aruco Object list.")]
@@ -60,14 +50,9 @@ namespace ArucoUnity
       [Tooltip("Display the detected diamonds.")]
       private bool drawDetectedDiamonds = true;
 
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
-
       // IArucoObjectsTracker properties
 
-      public IArucoCameraUndistortion ArucoCameraUndistortion { get { return arucoCameraUndistortion; } }
-      public IArucoCameraDisplay ArucoCameraDisplay { get { return arucoCameraDisplay; } }
+      public IArucoCameraDisplay ArucoCameraDisplay { get; set; }
       public bool RefineDetectedMarkers { get { return refineDetectedMarkers; } set { refineDetectedMarkers = value; } }
       public bool DrawDetectedMarkers { get { return drawDetectedMarkers; } set { drawDetectedMarkers = value; } }
       public bool DrawRejectedCandidates { get { return drawRejectedCandidates; } set { drawRejectedCandidates = value; } }
@@ -75,23 +60,6 @@ namespace ArucoUnity
       public bool DrawDetectedCharucoMarkers { get { return drawDetectedCharucoMarkers; } set { drawDetectedCharucoMarkers = value; } }
       public bool DrawDetectedDiamonds { get { return drawDetectedDiamonds; } set { drawDetectedDiamonds = value; } }
       public ArucoMarkerTracker MarkerTracker { get; protected set; }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
-
-      /// <summary>
-      /// Gets or sets the undistortion process associated with the ArucoCamera.
-      /// </summary>
-      public ArucoCameraUndistortion ConcreteArucoCameraUndistortion { get { return arucoCameraUndistortion; } set { arucoCameraUndistortion = value; } }
-
-      /// <summary>
-      /// Gets or sets the optional camera display associated with the ArucoCamera.
-      /// </summary>
-      public ArucoCameraGenericDisplay ConcreteArucoCameraDisplay { get { return arucoCameraDisplay; } set { arucoCameraDisplay = value; } }
 
       // Variables
 
@@ -101,7 +69,7 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes the trackers list.
+      /// Initializes the trackers list and sets <see cref="ArucoCameraDisplay"/> from editor field if not null.
       /// </summary>
       protected override void Awake()
       {
@@ -114,6 +82,11 @@ namespace ArucoUnity
           { typeof(ArucoCharucoBoard), new ArucoCharucoBoardTracker() },
           { typeof(ArucoDiamond), new ArucoDiamondTracker() }
         };
+
+        if (arucoCameraDisplay != null)
+        {
+          ArucoCameraDisplay = arucoCameraDisplay;
+        }
       }
 
       // ArucoCameraController methods
@@ -125,10 +98,10 @@ namespace ArucoUnity
       {
         base.Configure();
 
-        ControllerDependencies.Add(ArucoCameraUndistortion);
         if (ArucoCameraDisplay != null)
         {
-          ControllerDependencies.Add(ArucoCameraDisplay);
+          AddDependency(ArucoCameraDisplay);
+          ArucoCamera = ArucoCameraDisplay.ArucoCamera;
         }
 
         OnConfigured();
