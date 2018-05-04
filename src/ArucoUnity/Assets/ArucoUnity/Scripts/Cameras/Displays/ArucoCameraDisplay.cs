@@ -44,7 +44,7 @@ namespace ArucoUnity
         base.Configure();
         if (ArucoCameraUndistortion != null)
         {
-          ControllerDependencies.Add(ArucoCameraUndistortion);
+          AddDependency(ArucoCameraUndistortion);
         }
         OnConfigured();
       }

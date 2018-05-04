@@ -9,7 +9,8 @@ namespace ArucoUnity
   namespace Controllers
   {
     /// <summary>
-    /// Configurable and startable controller.
+    /// Configurable and startable controller. It can have other configurable controllers as dependencies. They must
+    /// have started before starting this controller. They stop this controller when at least one of them stops.
     /// </summary>
     public interface IConfigurableController
     {
@@ -21,7 +22,7 @@ namespace ArucoUnity
       event Action Configured;
 
       /// <summary>
-      /// Called when the controller is ready to be started, when all <see cref="ControllerDependencies"/> have been started. 
+      /// Called when the controller is ready to be started, when all dependencies have been started.
       /// </summary>
       event Action Ready;
 
@@ -38,8 +39,8 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets if configuring and starting automatically when set to true and when each controller in <see cref="ControllerDependencies"/>
-      /// has started. Configure manually by calling <see cref="Configure"/> and start manually by calling <see cref="StartController"/>.
+      /// Gets or sets if configuring and starting automatically when when all dependencies have started. Manually
+      /// configure and start by calling <see cref="Configure"/> and <see cref="StartController"/>.
       /// </summary>
       bool AutoStart { get; set; }
 
@@ -49,7 +50,7 @@ namespace ArucoUnity
       bool IsConfigured { get; }
 
       /// <summary>
-      /// Gets if the controller is ready to be started when all <see cref="ControllerDependencies"/> have been started.
+      /// Gets if the controller is ready to be started when all dependencies have started.
       /// </summary>
       bool IsReady { get; }
 
@@ -58,21 +59,32 @@ namespace ArucoUnity
       /// </summary>
       bool IsStarted { get; }
 
-      /// <summary>
-      /// List of dependency controllers that must have started before starting this controller, and that trigger stopping this controller when
-      /// at least one of them stops.
-      /// </summary>
-      List<IConfigurableController> ControllerDependencies { get; }
-
       // Methods
+      
+      /// <summary>
+      /// Add a new dependency.
+      /// </summary>
+      void AddDependency(IConfigurableController controller);
 
       /// <summary>
-      /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the controller must be stopped.
+      /// Remove a dependency.
+      /// </summary>
+      void RemoveDependency(IConfigurableController controller);
+
+      /// <summary>
+      /// Gets the list of the dependencies.
+      /// </summary>
+      List<IConfigurableController> GetDependencies();
+
+      /// <summary>
+      /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the
+      /// controller must be stopped.
       /// </summary>
       void Configure();
 
       /// <summary>
-      /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and stopped.
+      /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and
+      /// stopped.
       /// </summary>
       void StartController();
 

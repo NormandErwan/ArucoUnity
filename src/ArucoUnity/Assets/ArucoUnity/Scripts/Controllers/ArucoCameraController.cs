@@ -26,7 +26,7 @@ namespace ArucoUnity
         base.Configure();
         if (ArucoCamera != null)
         {
-          ControllerDependencies.Add(ArucoCamera);
+          AddDependency(ArucoCamera);
         }
       }
     }

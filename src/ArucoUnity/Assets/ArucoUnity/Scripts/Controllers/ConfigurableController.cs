@@ -33,11 +33,11 @@ namespace ArucoUnity
       public bool IsReady { get; private set; }
       public bool IsConfigured { get; private set; }
       public bool IsStarted { get; private set; }
-      public List<IConfigurableController> ControllerDependencies { get; protected set; }
 
       // Variables
 
-      private Dictionary<IConfigurableController, Action> dependencyStartedCallbacks;
+      private List<IConfigurableController> dependencies = new List<IConfigurableController>();
+      private int dependencyWaitStarts;
 
       // MonoBehaviour methods
 
@@ -46,12 +46,6 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void Awake()
       {
-        if (ControllerDependencies == null)
-        {
-          ControllerDependencies = new List<IConfigurableController>();
-        }
-        dependencyStartedCallbacks = new Dictionary<IConfigurableController, Action>();
-
         IsConfigured = false;
         IsStarted = false;
       }
@@ -77,9 +71,21 @@ namespace ArucoUnity
 
       // IArucoCameraController methods
 
-      /// <summary>
-      /// Configures the controller and calls <see cref="OnConfigured"/>. Properties must be set and the controller must be stopped.
-      /// </summary>
+      public void AddDependency(IConfigurableController controller)
+      {
+        dependencies.Add(controller);
+      }
+
+      public void RemoveDependency(IConfigurableController controller)
+      {
+        dependencies.Remove(controller);
+      }
+
+      public List<IConfigurableController> GetDependencies()
+      {
+        return new List<IConfigurableController>(dependencies);
+      }
+
       public virtual void Configure()
       {
         if (IsStarted)
@@ -91,9 +97,6 @@ namespace ArucoUnity
         IsReady = false;
       }
 
-      /// <summary>
-      /// Starts the controller and calls <see cref="OnStarted"/>. The controller must be configured and stopped.
-      /// </summary>
       public virtual void StartController()
       {
         if (!IsConfigured || !IsReady || IsStarted)
@@ -102,9 +105,6 @@ namespace ArucoUnity
         }
       }
 
-      /// <summary>
-      /// Stops the controller and calls <see cref="OnStopped"/>. The controller must be configured and started.
-      /// </summary>
       public virtual void StopController()
       {
         if (!IsConfigured || !IsStarted)
@@ -113,41 +113,23 @@ namespace ArucoUnity
         }
       }
 
+      // Properties
+
       /// <summary>
       /// Calls the <see cref="Configured"/> event, and configure.
       /// </summary>
       protected virtual void OnConfigured()
       {
-        // Remove the previous controller dependency callbacks
-        foreach (var controller in dependencyStartedCallbacks)
-        {
-          if (controller.Key != null)
-          {
-            controller.Key.Started -= controller.Value;
-            controller.Key.Stopped -= Controller_Stopped;
-          }
-        }
-        dependencyStartedCallbacks.Clear();
+        dependencyWaitStarts = dependencies.Count;
 
-        // Add a callback for each controller not started
-        foreach (var controller in ControllerDependencies)
+        // Add callbacks to dependencies
+        foreach (var controller in dependencies)
         {
           if (!controller.IsStarted)
           {
-            // When the controller has started, remove the callback and start this current controller if not waiting for any other controller to start
-            Action controller_Started = () =>
-            {
-              dependencyStartedCallbacks.Remove(controller);
-              if (dependencyStartedCallbacks.Count == 0)
-              {
-                OnReady();
-              }
-            };
-
-            dependencyStartedCallbacks.Add(controller, controller_Started);
-            controller.Started += controller_Started;
-            controller.Stopped += Controller_Stopped;
+            controller.Started += Controller_Started;
           }
+          controller.Stopped += Controller_Stopped;
         }
 
         // Configured
@@ -155,7 +137,7 @@ namespace ArucoUnity
         Configured();
 
         // Ready if no dependencies or if they are all started
-        if (dependencyStartedCallbacks.Count == 0)
+        if (dependencyWaitStarts == 0)
         {
           OnReady();
         }
@@ -208,7 +190,19 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Calls <see cref="StopController"/> if it has been configured and started when a dependecy controller has stopped.
+      /// Calls <see cref="OnReady"/> if all the <see cref="dependencies"/> have started.
+      /// </summary>
+      private void Controller_Started()
+      {
+        dependencyWaitStarts--;
+        if (dependencyWaitStarts == 0)
+        {
+          OnReady();
+        }
+      }
+
+      /// <summary>
+      /// Calls <see cref="StopController"/> if it has been configured and started and the dependency has stopped.
       /// </summary>
       private void Controller_Stopped()
       {
