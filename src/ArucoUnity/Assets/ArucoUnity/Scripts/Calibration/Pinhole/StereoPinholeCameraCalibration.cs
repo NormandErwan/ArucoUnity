@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Calibration.Pinhole
   {
-    public class StereoArucoCameraPinholeCalibration : PinholeCameraCalibrationBase<StereoArucoCamera>
+    public class StereoPinholeCameraCalibration : PinholeCameraCalibrationBase<StereoArucoCamera>
     {
       // ArucoCameraCalibration methods
 
