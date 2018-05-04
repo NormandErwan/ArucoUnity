@@ -8,7 +8,7 @@
     /// <summary>
     /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="Cameras.ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion<ArucoCamera>
+    public class OmnidirCameraUndistortion : OmnidirCameraUndistortionGeneric<ArucoCamera>
     {
     }
   }

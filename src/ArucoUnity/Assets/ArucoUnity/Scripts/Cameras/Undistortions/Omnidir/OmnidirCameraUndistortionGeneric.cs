@@ -17,7 +17,7 @@ namespace ArucoUnity
     /// See the OpenCV's ccalib module documentation for more information:
     /// http://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
     /// </summary>
-    public abstract class ArucoCameraGenericOmnidirUndistortion<T> : ArucoCameraUndistortionGeneric<T>
+    public abstract class OmnidirCameraUndistortionGeneric<T> : ArucoCameraUndistortionGeneric<T>
       where T : ArucoCamera
     {
       /// <summary>

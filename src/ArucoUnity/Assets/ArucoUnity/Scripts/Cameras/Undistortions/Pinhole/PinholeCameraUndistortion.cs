@@ -11,7 +11,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the undistortion and rectification process for pinhole <see cref="ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion<ArucoCamera>
+    public class PinholeCameraUndistortion : PinholeCameraUndistortionGeneric<ArucoCamera>
     {
       // ArucoCameraUndistortion methods
 

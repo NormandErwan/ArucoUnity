@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// See the OpenCV's calibd module documentation for more information:
     /// http://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html
     /// </summary>
-    public abstract class ArucoCameraGenericPinholeUndistortion<T> : ArucoCameraUndistortionGeneric<T>
+    public abstract class PinholeCameraUndistortionGeneric<T> : ArucoCameraUndistortionGeneric<T>
       where T : ArucoCamera
     {
       // Editor fields

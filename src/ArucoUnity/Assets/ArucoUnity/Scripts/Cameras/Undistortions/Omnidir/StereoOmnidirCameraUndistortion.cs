@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion<StereoArucoCamera>
+    public class StereoOmnidirCameraUndistortion : OmnidirCameraUndistortionGeneric<StereoArucoCamera>
     {
       // ArucoCameraController methods
 
