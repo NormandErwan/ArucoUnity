@@ -235,13 +235,13 @@ namespace ArucoUnity
       }
 
       public static Mat GetOptimalNewCameraMatrix(Mat cameraMatrix, Mat distCoeffs, Size imageSize, double scalingFactor, Size newImageSize,
-        Rect validPixROI, bool centerPrincipalPoint = false)
+        Rect validPixRoi, bool centerPrincipalPoint = false)
       {
         Exception exception = new Exception();
         System.IntPtr newCameraMatrixPtr;
 
         newCameraMatrixPtr = au_cv_calib3d_getOptimalNewCameraMatrix(cameraMatrix.CppPtr, distCoeffs.CppPtr, imageSize.CppPtr, scalingFactor,
-          newImageSize.CppPtr, validPixROI.CppPtr, centerPrincipalPoint, exception.CppPtr);
+          newImageSize.CppPtr, validPixRoi.CppPtr, centerPrincipalPoint, exception.CppPtr);
 
         exception.Check();
         return (newCameraMatrixPtr != System.IntPtr.Zero) ? new Mat(newCameraMatrixPtr) : null;
