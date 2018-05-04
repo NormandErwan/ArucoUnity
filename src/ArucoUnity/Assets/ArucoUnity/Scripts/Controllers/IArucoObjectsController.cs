@@ -50,13 +50,13 @@ namespace ArucoUnity
       /// Adds an ArUco object to the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The ArUco object to add.</param>
-      void Add(ArucoObject arucoObject);
+      void AddArucoObject(ArucoObject arucoObject);
 
       /// <summary>
       /// Removes an ArUco object to the <see cref="ArucoObjects"/> list.
       /// </summary>
       /// <param name="arucoObject">The ArUco object to remove.</param>
-      void Remove(ArucoObject arucoObject);
+      void RemoveArucoObject(ArucoObject arucoObject);
 
       /// <summary>
       /// Returns a sublist from <see cref="ArucoObjects"/> of ArUco objects of a precise type <typeparamref name="U"/> in a certain

@@ -51,14 +51,14 @@ namespace ArucoUnity
       {
         foreach (ArucoObject arucoObject in arucoObjects)
         {
-          Add(arucoObject);
+          AddArucoObject(arucoObject);
         }
         base.Start();
       }
 
       // IArucoObjectsController Methods
 
-      public virtual void Add(ArucoObject arucoObject)
+      public virtual void AddArucoObject(ArucoObject arucoObject)
       {
         // Make sure the object is started and initialized
         arucoObject.gameObject.SetActive(true);
@@ -99,7 +99,7 @@ namespace ArucoUnity
         ArucoObjectAdded(arucoObject);
       }
 
-      public virtual void Remove(ArucoObject arucoObject)
+      public virtual void RemoveArucoObject(ArucoObject arucoObject)
       {
         // Find the list with the same dictionary than the ArUco object to remove
         Dictionary<int, ArucoObject> arucoObjectsCollection = null;
@@ -160,7 +160,7 @@ namespace ArucoUnity
       /// <param name="arucoObject">The updated ArUco object.</param>
       protected virtual void ArucoObject_PropertyUpdating(ArucoObject arucoObject)
       {
-        Remove(arucoObject);
+        RemoveArucoObject(arucoObject);
       }
 
       /// <summary>
@@ -169,7 +169,7 @@ namespace ArucoUnity
       /// <param name="arucoObject">The updated ArUco object.</param>
       protected virtual void ArucoObject_PropertyUpdated(ArucoObject arucoObject)
       {
-        Add(arucoObject);
+        AddArucoObject(arucoObject);
       }
     }
   }
