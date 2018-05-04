@@ -1,6 +1,5 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -10,27 +9,10 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process of pinhole <see cref="ArucoCamera"/>.
+    /// Manages the undistortion and rectification process for pinhole <see cref="ArucoCamera"/>.
     /// </summary>
-    public class ArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion
+    public class ArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion<ArucoCamera>
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private ArucoCamera arucoCamera;
-
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return arucoCamera; } }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public ArucoCamera ConcreteArucoCamera { get { return arucoCamera; } set { arucoCamera = value; } }
-
       // ArucoCameraUndistortion methods
 
       protected override void InitializeRectification()

@@ -15,9 +15,9 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets the camera system to use.
+      /// Gets or sets the camera to use.
       /// </summary>
-      IArucoCamera ArucoCamera { get; }
+      IArucoCamera ArucoCamera { get; set; }
     }
   }
 

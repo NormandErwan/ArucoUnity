@@ -14,7 +14,8 @@ namespace ArucoUnity
   {
     /// <summary>
     /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>. It's a time-consuming
-    /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with the 3D content.
+    /// operation but it's necessary for cameras with an important distorsion for a good alignement of the images with
+    /// the 3D content. Base class to reference in editor fields.
     /// </summary>
     public abstract class ArucoCameraUndistortion : ArucoCameraController, IArucoCameraUndistortion
     {
@@ -38,8 +39,8 @@ namespace ArucoUnity
 
       // Variables
 
-      protected Cv.Mat noRectificationMatrix;
-      protected Cv.Mat noDistCoeffs;
+      protected Cv.Mat noRectificationMatrix = new Cv.Mat();
+      protected Cv.Mat noDistCoeffs = new Cv.Mat();
       protected string CameraParametersFilePath;
       protected ArucoCameraSeparateThread remapThread;
 
@@ -50,9 +51,6 @@ namespace ArucoUnity
       /// </summary>
       protected override void Start()
       {
-        noRectificationMatrix = new Cv.Mat();
-        noDistCoeffs = new Cv.Mat();
-
         if (CameraParameters == null && CameraParametersController != null)
         {
           CameraParameters = CameraParametersController.CameraParameters;

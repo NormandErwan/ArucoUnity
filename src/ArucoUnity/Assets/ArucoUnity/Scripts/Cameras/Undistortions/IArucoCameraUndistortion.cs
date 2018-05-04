@@ -9,7 +9,7 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the processes of undistortion and rectification of <see cref="Cameras.IArucoCamera.Images"/>.
+    /// Manages the processes of undistortion and rectification of <see cref="IArucoCamera.Images"/>.
     /// </summary>
     public interface IArucoCameraUndistortion : IArucoCameraController, IHasCameraParameters
     {
@@ -21,7 +21,8 @@ namespace ArucoUnity
       Cv.Mat[] RectifiedCameraMatrices { get; }
 
       /// <summary>
-      /// Gets the rectification rotation matrices of each camera to make both camera image planes the same plane, in case of a stereo camera.
+      /// Gets the rectification rotation matrices of each camera to make both camera image planes the same plane, in
+      /// case of a stereo camera.
       /// </summary>
       Cv.Mat[] RectificationMatrices { get; }
 

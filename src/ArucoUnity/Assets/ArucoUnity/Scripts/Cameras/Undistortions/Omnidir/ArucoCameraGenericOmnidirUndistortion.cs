@@ -3,7 +3,6 @@ using ArucoUnity.Plugin;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace ArucoUnity
 {
@@ -13,12 +12,13 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="IArucoCamera"/>.
+    /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="IArucoCamera"/>.
     /// 
     /// See the OpenCV's ccalib module documentation for more information:
     /// http://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
     /// </summary>
-    public abstract class ArucoCameraGenericOmnidirUndistortion : ArucoCameraUndistortion
+    public abstract class ArucoCameraGenericOmnidirUndistortion<T> : ArucoCameraUndistortionGeneric<T>
+      where T : ArucoCamera
     {
       /// <summary>
       /// The different algorithms to use for the undistortion of the images.

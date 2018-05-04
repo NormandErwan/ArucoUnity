@@ -24,17 +24,17 @@ namespace ArucoUnity
       IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
 
       /// <summary>
-      /// Gets or sets the Unity virtual camera that will shoot the 3D content aligned with the <see cref="Background"/>.
+      /// Gets the Unity virtual camera that will shoot the 3D content aligned with the <see cref="Background"/>.
       /// </summary>
       Camera[] Cameras { get; }
 
       /// <summary>
-      /// Gets or sets the Unity virtual camera that will shoot the <see cref="Backgrounds"/>.
+      /// Gets the Unity virtual camera that will shoot the <see cref="Backgrounds"/>.
       /// </summary>
       Camera[] BackgroundCameras { get; }
 
       /// <summary>
-      /// Gets or sets the backgrounds displaying the <see cref="IArucoCamera.Images"/> of the corresponding physical camera in ArucoCamera.
+      /// Gets the backgrounds displaying the <see cref="IArucoCamera.Images"/> of the corresponding physical camera in ArucoCamera.
       /// </summary>
       Renderer[] Backgrounds { get; }
 

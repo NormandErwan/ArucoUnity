@@ -29,12 +29,14 @@ namespace ArucoUnity
 
       // ArucoCameraController methods
 
+      /// <summary>
+      /// Checks if <see cref="DetectorParameters"/> is set.
+      /// </summary>
       public override void Configure()
       {
         base.Configure();
 
         DetectorParameters = detectorParametersController.DetectorParameters;
-
         if (DetectorParameters == null)
         {
           throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");

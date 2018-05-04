@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
@@ -12,9 +11,9 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process of pinhole <see cref="StereoArucoCamera"/>.
+    /// Manages the undistortion and rectification process for pinhole <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion
+    public class StereoArucoCameraPinholeUndistortion : ArucoCameraGenericPinholeUndistortion<StereoArucoCamera>
     {
       // Editor fields
 
@@ -23,14 +22,6 @@ namespace ArucoUnity
         "using a stereo camera.")]
       private bool rectificationZeroDisparity = true;
 
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private StereoArucoCamera stereoArucoCamera;
-
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
-
       // Properties
 
       /// <summary>
@@ -38,11 +29,6 @@ namespace ArucoUnity
       /// using a stereo camera.
       /// </summary>
       public bool RectificationZeroDisparity { get { return rectificationZeroDisparity; } set { rectificationZeroDisparity = value; } }
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
 
       // Variables
 

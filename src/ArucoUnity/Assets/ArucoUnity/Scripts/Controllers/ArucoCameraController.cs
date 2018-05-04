@@ -14,7 +14,7 @@ namespace ArucoUnity
     {
       // IArucoCameraController properties
 
-      public abstract IArucoCamera ArucoCamera { get; }
+      public IArucoCamera ArucoCamera { get; set; }
 
       // MonoBehaviour methods
 
@@ -24,7 +24,10 @@ namespace ArucoUnity
       public override void Configure()
       {
         base.Configure();
-        ControllerDependencies.Add(ArucoCamera);
+        if (ArucoCamera != null)
+        {
+          ControllerDependencies.Add(ArucoCamera);
+        }
       }
     }
   }

@@ -1,7 +1,6 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 using System;
-using UnityEngine;
 
 namespace ArucoUnity
 {
@@ -11,27 +10,10 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process of fisheye and omnidir <see cref="Cameras.StereoArucoCamera"/>.
+    /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="StereoArucoCamera"/>.
     /// </summary>
-    public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion
+    public class StereoArucoCameraOmnidirUndistortion : ArucoCameraGenericOmnidirUndistortion<StereoArucoCamera>
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera system to use.")]
-      private StereoArucoCamera stereoArucoCamera;
-
-      // ArucoCameraController properties
-
-      public override IArucoCamera ArucoCamera { get { return stereoArucoCamera; } }
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the camera system to use.
-      /// </summary>
-      public StereoArucoCamera StereoArucoCamera { get { return stereoArucoCamera; } set { stereoArucoCamera = value; } }
-
       // ArucoCameraController methods
 
       public override void Configure()
