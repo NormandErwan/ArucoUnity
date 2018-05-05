@@ -1,4 +1,4 @@
-﻿using ArucoUnity.Controllers;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity

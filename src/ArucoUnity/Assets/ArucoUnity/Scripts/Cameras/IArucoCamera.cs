@@ -1,5 +1,5 @@
-﻿using ArucoUnity.Controllers;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
+using ArucoUnity.Utilities;
 using System;
 using UnityEngine;
 

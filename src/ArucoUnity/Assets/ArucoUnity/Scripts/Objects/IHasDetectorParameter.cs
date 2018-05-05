@@ -5,7 +5,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Objects
   {
     /// <summary>
     /// Contains a <see cref="Aruco.DetectorParameters"/>.

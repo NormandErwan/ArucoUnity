@@ -1,11 +1,11 @@
-﻿using ArucoUnity.Cameras;
+﻿using ArucoUnity.Utilities;
 
 namespace ArucoUnity
 {
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Cameras
   {
     /// <summary>
     /// Configurable controller using a <see cref="IArucoCamera"/>.

@@ -1,6 +1,5 @@
-﻿using ArucoUnity.Cameras.Displays;
-using ArucoUnity.Cameras.Undistortions;
-using ArucoUnity.Controllers;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Cameras.Displays;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity
@@ -29,7 +28,7 @@ namespace ArucoUnity
       bool RefineDetectedMarkers { get; set; }
 
       /// <summary>
-      /// Get or sets if displaying the detected <see cref="ArucoMarker"/> in the <see cref="Cameras.IArucoCamera.ImageTextures"/>.
+      /// Get or sets if displaying the detected <see cref="ArucoMarker"/> in the <see cref="IArucoCamera.ImageTextures"/>.
       /// </summary>
       bool DrawDetectedMarkers { get; set; }
 
@@ -72,7 +71,7 @@ namespace ArucoUnity
       void Detect(Cv.Mat[] images);
 
       /// <summary>
-      /// Detects the ArUco objects on the current <see cref="Cameras.IArucoCamera.Images"/>.
+      /// Detects the ArUco objects on the current <see cref="IArucoCamera.Images"/>.
       /// </summary>
       void Detect();
 
@@ -83,12 +82,12 @@ namespace ArucoUnity
       void Draw(Cv.Mat[] images);
 
       /// <summary>
-      /// Draws each detected <see cref="ArucoObject"/> on the <see cref="Cameras.IArucoCamera.Images"/>.
+      /// Draws each detected <see cref="ArucoObject"/> on the <see cref="IArucoCamera.Images"/>.
       /// </summary>
       void Draw();
 
       /// <summary>
-      /// Estimates the transforms of each detected <see cref="ArucoObject"/> on the current <see cref="Cameras.IArucoCamera.Images"/>.
+      /// Estimates the transforms of each detected <see cref="ArucoObject"/> on the current <see cref="IArucoCamera.Images"/>.
       /// </summary>
       void EstimateTransforms();
 

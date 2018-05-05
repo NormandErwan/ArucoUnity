@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using ArucoUnity.Plugin;
-using ArucoUnity.Objects;
 using System;
 
 namespace ArucoUnity
@@ -8,7 +7,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Objects
   {
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/>.

@@ -1,4 +1,5 @@
-﻿using ArucoUnity.Plugin;
+﻿using ArucoUnity.Cameras;
+using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Objects
   {
     /// <summary>
     /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.

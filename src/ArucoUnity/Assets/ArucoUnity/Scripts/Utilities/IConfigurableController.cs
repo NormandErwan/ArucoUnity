@@ -6,7 +6,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Utilities
   {
     /// <summary>
     /// Configurable and startable controller. It can have other configurable controllers as dependencies. They must

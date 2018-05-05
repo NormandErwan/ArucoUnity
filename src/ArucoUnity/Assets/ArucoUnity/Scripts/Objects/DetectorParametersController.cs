@@ -6,12 +6,12 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Controllers
+  namespace Objects
   {
     /// <summary>
     /// Editor controller for <see cref="Aruco.DetectorParameters"/>.
     /// </summary>
-    public class DetectorParametersController : MonoBehaviour
+    public class DetectorParametersController : MonoBehaviour, IHasDetectorParameter
     {
       // Editor fields
 
