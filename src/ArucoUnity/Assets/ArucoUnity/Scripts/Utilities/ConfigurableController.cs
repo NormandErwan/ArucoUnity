@@ -22,10 +22,10 @@ namespace ArucoUnity
 
       // IConfigurableController events
 
-      public event Action Ready = delegate { };
-      public event Action Configured = delegate { };
-      public event Action Started = delegate { };
-      public event Action Stopped = delegate { };
+      public event Action<IConfigurableController> Ready = delegate { };
+      public event Action<IConfigurableController> Configured = delegate { };
+      public event Action<IConfigurableController> Started = delegate { };
+      public event Action<IConfigurableController> Stopped = delegate { };
 
       // IConfigurableController properties
 
@@ -36,8 +36,8 @@ namespace ArucoUnity
 
       // Variables
 
-      private List<IConfigurableController> dependencies = new List<IConfigurableController>();
-      private int dependencyWaitStarts;
+      private HashSet<IConfigurableController> dependencies = new HashSet<IConfigurableController>();
+      private HashSet<IConfigurableController> stoppedDependencies = new HashSet<IConfigurableController>();
 
       // MonoBehaviour methods
 
@@ -71,14 +71,35 @@ namespace ArucoUnity
 
       // IArucoCameraController methods
 
-      public void AddDependency(IConfigurableController controller)
+      public void AddDependency(IConfigurableController dependency)
       {
-        dependencies.Add(controller);
+        if (IsStarted)
+        {
+          throw new Exception("Stop the controller before updating the dependencies.");
+        }
+
+        dependencies.Add(dependency);
+        if (!dependency.IsStarted)
+        {
+          stoppedDependencies.Add(dependency);
+        }
+
+        dependency.Started += Dependency_Started;
+        dependency.Stopped += Dependency_Stopped;
       }
 
-      public void RemoveDependency(IConfigurableController controller)
+      public void RemoveDependency(IConfigurableController dependency)
       {
-        dependencies.Remove(controller);
+        if (IsStarted)
+        {
+          throw new Exception("Stop the controller before updating the dependencies.");
+        }
+
+        dependencies.Remove(dependency);
+        stoppedDependencies.Remove(dependency);
+
+        dependency.Started -= Dependency_Started;
+        dependency.Stopped -= Dependency_Stopped;
       }
 
       public List<IConfigurableController> GetDependencies()
@@ -86,7 +107,7 @@ namespace ArucoUnity
         return new List<IConfigurableController>(dependencies);
       }
 
-      public virtual void Configure()
+      public void ConfigureController()
       {
         if (IsStarted)
         {
@@ -95,120 +116,127 @@ namespace ArucoUnity
 
         IsConfigured = false;
         IsReady = false;
+
+        Configuring();
+        OnConfigured();
       }
 
-      public virtual void StartController()
+      public void StartController()
       {
         if (!IsConfigured || !IsReady || IsStarted)
         {
           throw new Exception("Configure and stop the controller before start it.");
         }
+
+        Starting();
+        OnStarted();
       }
 
-      public virtual void StopController()
+      public void StopController()
       {
         if (!IsConfigured || !IsStarted)
         {
           throw new Exception("Configure and start the controller before stop it.");
         }
+
+        Stopping();
+        OnStopped();
       }
 
-      // Properties
+      // Methods
+
+      protected virtual void Configuring()
+      {
+      }
 
       /// <summary>
-      /// Calls the <see cref="Configured"/> event, and configure.
+      /// Sets <see cref="IsConfigured"/> to true, calls <see cref="Configured"/> and if all dependencies started calls
+      /// <see cref="OnReady"/>.
       /// </summary>
       protected virtual void OnConfigured()
       {
-        dependencyWaitStarts = dependencies.Count;
-
-        // Add callbacks to dependencies
-        foreach (var controller in dependencies)
-        {
-          if (!controller.IsStarted)
-          {
-            controller.Started += Controller_Started;
-          }
-          controller.Stopped += Controller_Stopped;
-        }
-
-        // Configured
         IsConfigured = true;
-        Configured();
+        Configured(this);
 
-        // Ready if no dependencies or if they are all started
-        if (dependencyWaitStarts == 0)
+        if (stoppedDependencies.Count == 0)
         {
           OnReady();
         }
       }
 
-      /// <summary>
-      /// Calls the <see cref="Ready"/> event, and calls <see cref="StartController"/> if <see cref="AutoStart"/> is true.
-      /// </summary>
-      protected virtual void OnReady()
+      protected virtual void Starting()
       {
-        IsReady = true;
-        Ready();
-
-        if (AutoStart)
-        {
-          StartController();
-        }
       }
 
       /// <summary>
-      /// Calls the <see cref="Started"/> event.
+      /// Sets <see cref="IsStarted"/> to true and calls <see cref="Started"/>.
       /// </summary>
       protected virtual void OnStarted()
       {
         IsStarted = true;
-        Started();
+        Started(this);
+      }
+
+      protected virtual void Stopping()
+      {
       }
 
       /// <summary>
-      /// Calls the <see cref="Stopped"/> event.
+      /// Sets <see cref="IsStarted"/> to false and calls <see cref="Stopped"/>.
       /// </summary>
       protected virtual void OnStopped()
       {
         IsStarted = false;
-        Stopped();
+        Stopped(this);
       }
 
-      // Methods
-
       /// <summary>
-      /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
+      /// Calls <see cref="ConfigureController"/> if <see cref="AutoStart"/> is true.
       /// </summary>
       private void SetAutoStart(bool value)
       {
         autoStart = value;
         if (AutoStart)
         {
-          Configure();
+          ConfigureController();
         }
       }
 
       /// <summary>
-      /// Calls <see cref="OnReady"/> if all the <see cref="dependencies"/> have started.
+      /// Calls <see cref="OnReady"/> if the controller is configured and all the dependencies are started.
       /// </summary>
-      private void Controller_Started()
+      private void Dependency_Started(IConfigurableController dependency)
       {
-        dependencyWaitStarts--;
-        if (dependencyWaitStarts == 0)
+        stoppedDependencies.Remove(dependency);
+        if (IsConfigured && stoppedDependencies.Count == 0)
         {
           OnReady();
         }
       }
 
       /// <summary>
-      /// Calls <see cref="StopController"/> if it has been configured and started and the dependency has stopped.
+      /// Calls <see cref="StopController"/> if the controller is started.
       /// </summary>
-      private void Controller_Stopped()
+      private void Dependency_Stopped(IConfigurableController dependency)
       {
+        stoppedDependencies.Add(dependency);
         if (IsStarted)
         {
           StopController();
+        }
+      }
+
+      /// <summary>
+      /// Calls the <see cref="Ready"/> event, and calls <see cref="StartController"/> if <see cref="AutoStart"/> is true.
+      /// </summary>
+      private void OnReady()
+      {
+        IsReady = true;
+        Ready(this);
+
+        if (AutoStart)
+        {
+          StartController();
         }
       }
     }

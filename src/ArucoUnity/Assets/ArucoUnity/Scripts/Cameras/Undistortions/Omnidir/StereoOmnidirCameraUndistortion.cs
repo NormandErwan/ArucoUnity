@@ -14,15 +14,21 @@ namespace ArucoUnity
     /// </summary>
     public class StereoOmnidirCameraUndistortion : OmnidirCameraUndistortionGeneric<StereoArucoCamera>
     {
-      // ArucoCameraController methods
+      // Variables
 
-      public override void Configure()
+      StereoCameraParameters stereoCameraParameters;
+
+      // ConfigurableController methods
+
+      protected override void Configuring()
       {
-        if (CameraParameters.StereoCameraParameters == null)
+        base.Configuring();
+
+        stereoCameraParameters = CameraParameters.StereoCameraParameters;
+        if (stereoCameraParameters == null)
         {
           throw new Exception("The camera parameters must contains a valid StereoCameraParameters to undistort and rectify a StereoArucoCamera.");
         }
-        base.Configure();
       }
 
       // ArucoCameraUndistortion methods
@@ -35,7 +41,7 @@ namespace ArucoUnity
         base.InitializeRectification();
 
         Cv.Mat rectificationMatrix1, rectificationMatrix2;
-        Cv.Omnidir.StereoRectify(CameraParameters.StereoCameraParameters.RotationVector, CameraParameters.StereoCameraParameters.TranslationVector,
+        Cv.Omnidir.StereoRectify(stereoCameraParameters.RotationVector, stereoCameraParameters.TranslationVector,
           out rectificationMatrix1, out rectificationMatrix2);
 
         RectificationMatrices[StereoArucoCamera.CameraId1] = rectificationMatrix1;

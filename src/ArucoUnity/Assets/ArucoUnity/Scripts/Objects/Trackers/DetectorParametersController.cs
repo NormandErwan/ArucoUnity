@@ -6,7 +6,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Objects
+  namespace Objects.Trackers
   {
     /// <summary>
     /// Editor controller for <see cref="Aruco.DetectorParameters"/>.

@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Utilities;
+using System;
 
 namespace ArucoUnity
 {
@@ -16,18 +17,20 @@ namespace ArucoUnity
 
       public IArucoCamera ArucoCamera { get; set; }
 
-      // MonoBehaviour methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Adds <see cref="ArucoCamera"/> in <see cref="ControllerDependencies"/> and calls <see cref="OnConfigured"/>.
+      /// Adds <see cref="ArucoCamera"/> as dependency.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
-        if (ArucoCamera != null)
+        base.Configuring();
+
+        if (ArucoCamera == null)
         {
-          AddDependency(ArucoCamera);
+          throw new ArgumentNullException("ArucoCamera", "This property needs to be set for the configuration.");
         }
+        AddDependency(ArucoCamera);
       }
     }
   }

@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
-using ArucoUnity.Controllers;
 using ArucoUnity.Utilities;
 using UnityEngine;
 
@@ -34,40 +33,37 @@ namespace ArucoUnity
       /// </summary>
       public IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Adds <see cref="ArucoCameraUndistortion"/> in <see cref="ControllerDependencies"/> if set and calls <see cref="OnConfigured"/>.
+      /// Adds <see cref="ArucoCameraUndistortion"/> as dependency if set.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
+        base.Configuring();
         if (ArucoCameraUndistortion != null)
         {
           AddDependency(ArucoCameraUndistortion);
         }
-        OnConfigured();
       }
 
       /// <summary>
       /// Calls <see cref="ConfigureDisplay"/> the <see cref="SetDisplayActive(bool)"/> to activate the display.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
         ConfigureDisplay();
         SetDisplayActive(true);
-        OnStarted();
       }
 
       /// <summary>
       /// Deactivates the display with <see cref="SetDisplayActive(bool)"/>.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
         SetDisplayActive(false);
-        OnStopped();
       }
 
       // IArucoCameraDisplay methods

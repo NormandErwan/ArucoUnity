@@ -77,32 +77,28 @@ namespace ArucoUnity
         base.Update();
       }
 
-      // ArucoCamera methods
+      // ConfigurableController methods
 
       /// <summary>
       /// Configures the webcam and the properties with the id <see cref="WebcamId"/>.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
+        base.Configuring();
 
-        // Reset state
         startInitiated = false;
 
-        // Try to load the webcam
         WebCamDevice = WebCamTexture.devices[WebcamId];
         WebCamTexture = new WebCamTexture(WebCamDevice.name);
         Name = WebCamDevice.name;
-        
-        OnConfigured();
       }
 
       /// <summary>
       /// Initiates the camera start and the associated webcam device.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
         if (startInitiated)
         {
           throw new Exception("Camera has already been started.");
@@ -113,15 +109,27 @@ namespace ArucoUnity
       }
 
       /// <summary>
+      /// Calls <see cref="Utilities.ConfigurableController.OnStarted"/> only if the webcam started.
+      /// </summary>
+      protected override void OnStarted()
+      {
+        if (!startInitiated)
+        {
+          base.OnStarted();
+        }
+      }
+
+      /// <summary>
       /// Stops the camera and the associated webcam device.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
         WebCamTexture.Stop();
         startInitiated = false;
-        OnStopped();
       }
+
+      // ArucoCamera methods
 
       /// <summary>
       /// Once the <see cref="WebCamTexture"/> is started, updates every frame the <see cref="ArucoCamera.ImageTextures"/> and the

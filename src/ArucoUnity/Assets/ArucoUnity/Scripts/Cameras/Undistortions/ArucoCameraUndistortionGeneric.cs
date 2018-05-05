@@ -20,10 +20,10 @@ namespace ArucoUnity
       [Tooltip("The camera to use.")]
       private T arucoCamera;
 
-      // Properties
+      // MonoBehaviour properties
 
       /// <summary>
-      /// Sets <see cref="Controllers.ArucoCameraController.ArucoCamera"/> with editor field if not null.
+      /// Sets <see cref="ArucoCameraController.ArucoCamera"/> with editor field if not null.
       /// </summary>
       protected override void Awake()
       {

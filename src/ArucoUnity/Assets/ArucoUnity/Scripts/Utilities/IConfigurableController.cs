@@ -19,28 +19,28 @@ namespace ArucoUnity
       /// <summary>
       /// Called when the controller is configured.
       /// </summary>
-      event Action Configured;
+      event Action<IConfigurableController> Configured;
 
       /// <summary>
-      /// Called when the controller is ready to be started, when all dependencies have been started.
+      /// Called when the controller is configured and ready to be started, when all its dependencies started.
       /// </summary>
-      event Action Ready;
+      event Action<IConfigurableController> Ready;
 
       /// <summary>
       /// Called when the controller is started.
       /// </summary>
-      event Action Started;
+      event Action<IConfigurableController> Started;
 
       /// <summary>
       /// Called when the controller is stopped.
       /// </summary>
-      event Action Stopped;
+      event Action<IConfigurableController> Stopped;
 
       // Properties
 
       /// <summary>
-      /// Gets or sets if configuring and starting automatically when when all dependencies have started. Manually
-      /// configure and start by calling <see cref="Configure"/> and <see cref="StartController"/>.
+      /// Gets or sets if configuring and starting automatically when when all dependencies started. Manually
+      /// configure and start by calling <see cref="ConfigureController"/> and <see cref="StartController"/>.
       /// </summary>
       bool AutoStart { get; set; }
 
@@ -60,16 +60,16 @@ namespace ArucoUnity
       bool IsStarted { get; }
 
       // Methods
-      
-      /// <summary>
-      /// Add a new dependency.
-      /// </summary>
-      void AddDependency(IConfigurableController controller);
 
       /// <summary>
-      /// Remove a dependency.
+      /// Add a new dependency. The controller must be stopped.
       /// </summary>
-      void RemoveDependency(IConfigurableController controller);
+      void AddDependency(IConfigurableController dependency);
+
+      /// <summary>
+      /// Remove a dependency. The controller must be stopped.
+      /// </summary>
+      void RemoveDependency(IConfigurableController dependency);
 
       /// <summary>
       /// Gets the list of the dependencies.
@@ -80,7 +80,7 @@ namespace ArucoUnity
       /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the
       /// controller must be stopped.
       /// </summary>
-      void Configure();
+      void ConfigureController();
 
       /// <summary>
       /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and

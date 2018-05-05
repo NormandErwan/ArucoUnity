@@ -92,34 +92,31 @@ namespace ArucoUnity
         base.Update();
       }
 
-      // ArucoCamera methods
+      // ConfigurableController methods
 
       /// <summary>
       /// Configures the webcams and the properties with the ids <see cref="WebcamId1"/> and <see cref="WebcamId2"/>.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
+        base.Configuring();
 
-        // Reset state
         startInitiated = false;
 
-        // Try to load the webcam
         WebCamDevices[CameraId1] = WebCamTexture.devices[WebcamId1];
         WebCamDevices[CameraId2] = WebCamTexture.devices[WebcamId2];
         WebCamTextures[CameraId1] = new WebCamTexture(WebCamDevices[CameraId1].name);
         WebCamTextures[CameraId2] = new WebCamTexture(WebCamDevices[CameraId2].name);
         Name = "'" + WebCamDevices[CameraId1].name + "'+'" + WebCamDevices[CameraId2].name + "'";
-
-        OnConfigured();
       }
 
       /// <summary>
       /// Initiates the cameras start and the associated webcam devices.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
+
         if (startInitiated)
         {
           throw new Exception("Cameras have already been started.");
@@ -131,16 +128,28 @@ namespace ArucoUnity
       }
 
       /// <summary>
+      /// Calls <see cref="Utilities.ConfigurableController.OnStarted"/> only if the webcams started.
+      /// </summary>
+      protected override void OnStarted()
+      {
+        if (!startInitiated)
+        {
+          base.OnStarted();
+        }
+      }
+
+      /// <summary>
       /// Stops the cameras and the associated webcam devices.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
         WebCamTextures[CameraId1].Stop();
         WebCamTextures[CameraId2].Stop();
         startInitiated = false;
-        OnStopped();
       }
+
+      // ArucoCamera methods
 
       /// <summary>
       /// Once the <see cref="WebCamTexture"/> is started, updates every frame the <see cref="ArucoCamera.ImageTextures"/> and the

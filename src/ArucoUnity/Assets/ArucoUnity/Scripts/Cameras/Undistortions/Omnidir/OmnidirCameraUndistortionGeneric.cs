@@ -12,7 +12,7 @@ namespace ArucoUnity
   namespace Cameras.Undistortions
   {
     /// <summary>
-    /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="IArucoCamera"/>.
+    /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="ArucoCamera"/>.
     /// 
     /// See the OpenCV's ccalib module documentation for more information:
     /// http://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
@@ -83,20 +83,19 @@ namespace ArucoUnity
         }
       }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Throw exceptions if <see cref="PerspectiveFieldOfViews"/> length is different than <see cref="ArucoCamera.CameraNumber"/>.
+      /// Throw exception if <see cref="PerspectiveFieldOfViews"/> length is different than <see cref="ArucoCamera.CameraNumber"/>.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
+        base.Configuring();
         if (PerspectiveFieldOfViews.Length != ArucoCamera.CameraNumber)
         {
           throw new Exception("The number of cameras for the perspective desired field of view must be equal to the number of cameras in" +
             "ArucoCamera");
         }
-
-        base.Configure();
       }
 
       // ArucoCameraUndistortion methods

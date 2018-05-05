@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Controllers;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;
 using System;
 using UnityEngine;
@@ -99,14 +98,15 @@ namespace ArucoUnity
         }
       }
 
-      // Methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Configures the all the images related properties, calls the <see cref="Configured"/> event, and calls <see cref="StartController"/> if
-      /// <see cref="AutoStart"/> is true.
+      /// Configures all the images related properties.
       /// </summary>
-      protected override void OnConfigured()
+      protected override void Configuring()
       {
+        base.Configuring();
+
         if (CameraNumber <= 0)
         {
           throw new Exception("It must have at least one camera.");
@@ -141,18 +141,18 @@ namespace ArucoUnity
         {
           imagesFlipCode = Cv.horizontalFlipCode; // Don't flip vertically because the image textures are already vertically flipped
         }
-
-        base.OnConfigured();
       }
 
       /// <summary>
-      /// Calls <see cref="InitializeImages"/> and the <see cref="Started"/> event.
+      /// Calls <see cref="InitializeImages"/>.
       /// </summary>
-      protected override void OnStarted()
+      protected override void Starting()
       {
+        base.Starting();
         InitializeImages();
-        base.OnStarted();
       }
+
+      // Methods
 
       /// <summary>
       /// Updates <see cref="NextImage"/> with the new camera images and calls <see cref="OnImagesUpdated"/>.

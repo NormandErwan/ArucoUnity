@@ -34,16 +34,17 @@ namespace ArucoUnity
 
       StereoCameraParameters stereoCameraParameters;
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
-      public override void Configure()
+      protected override void Configuring()
       {
+        base.Configuring();
+
         stereoCameraParameters = CameraParameters.StereoCameraParameters;
         if (stereoCameraParameters == null)
         {
           throw new Exception("The camera parameters must contains a valid StereoCameraParameters to undistort and rectify a StereoArucoCamera.");
         }
-        base.Configure();
       }
 
       // ArucoCameraUndistortion methods

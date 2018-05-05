@@ -8,7 +8,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Objects
+  namespace Objects.Trackers
   {
     /// <summary>
     /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
@@ -28,14 +28,14 @@ namespace ArucoUnity
       /// </summary>
       public Aruco.DetectorParameters DetectorParameters { get; set; }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
       /// Checks if <see cref="DetectorParameters"/> is set.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
+        base.Configuring();
 
         DetectorParameters = detectorParametersController.DetectorParameters;
         if (DetectorParameters == null)

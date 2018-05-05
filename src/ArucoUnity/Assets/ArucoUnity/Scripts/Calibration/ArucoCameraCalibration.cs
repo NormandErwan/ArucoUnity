@@ -1,10 +1,10 @@
 ﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
+using ArucoUnity.Objects.Trackers;
 using ArucoUnity.Plugin;
 using System;
 using System.Threading;
 using UnityEngine;
-using ArucoUnity.Controllers;
 
 namespace ArucoUnity
 {
@@ -156,51 +156,37 @@ namespace ArucoUnity
         }
       }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
       /// Checks if <see cref="CalibrationBoard"/> is set and calls <see cref="ResetCalibration"/>.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
-
+        base.Configuring();
         if (CalibrationBoard == null)
         {
           throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibration controller.");
         }
-
         ResetCalibration();
-        OnConfigured();
       }
 
       /// <summary>
       /// Susbcribes to <see cref="ArucoCamera.UndistortRectifyImages"/>.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
         ArucoCamera.ImagesUpdated += ArucoCamera_ImagesUpdated;
-        OnStarted();
       }
 
       /// <summary>
       /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
         ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
-        OnStopped();
-      }
-
-      /// <summary>
-      /// Detects and draw the ArUco markers on the current images of the cameras.
-      /// </summary>
-      protected virtual void ArucoCamera_ImagesUpdated()
-      {
-        DetectMarkers();
-        DrawDetectedMarkers();
       }
 
       // Methods
@@ -483,6 +469,15 @@ namespace ArucoUnity
           IsCalibrated = true;
         }
         calibratingMutex.ReleaseMutex();
+      }
+
+      /// <summary>
+      /// Detects and draw the ArUco markers on the current images of the cameras.
+      /// </summary>
+      protected virtual void ArucoCamera_ImagesUpdated()
+      {
+        DetectMarkers();
+        DrawDetectedMarkers();
       }
 
       /// <summary>

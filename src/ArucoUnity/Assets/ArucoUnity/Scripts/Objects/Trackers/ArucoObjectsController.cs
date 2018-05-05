@@ -8,7 +8,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Objects
+  namespace Objects.Trackers
   {
     /// <summary>
     /// Manages a list of <see cref="ArucoObject"/> to detect for a <see cref="ArucoCamera"/> camera system.

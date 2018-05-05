@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Controllers;
 using ArucoUnity.Plugin;
 using UnityEngine;
 using System;
@@ -59,27 +58,24 @@ namespace ArucoUnity
         base.Start();
       }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Checks if <see cref="CameraParameters"/> is set, if <see cref="CameraParameters.CameraNumber"/> and <see cref="ArucoCamera.CameraNumber"/>
-      /// are equals.
+      /// Initializes the properties from <see cref="CameraParameters"/>.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
-
-        // Check properties
+        base.Configuring();
+        
         if (CameraParameters == null)
         {
-          throw new Exception("CameraParameters must be set to undistort the ArucoCamera images.");
+          throw new ArgumentNullException("CameraParameters", "This property needs to be set for the configuration.");
         }
         if (CameraParameters.CameraNumber != ArucoCamera.CameraNumber)
         {
           throw new Exception("The number of cameras in CameraParameters must be equal to the number of cameras in ArucoCamera");
         }
-
-        // Initialize properties
+        
         RectifiedCameraMatrices = new Cv.Mat[CameraParameters.CameraNumber];
         RectificationMatrices = new Cv.Mat[CameraParameters.CameraNumber];
         UndistortedDistCoeffs = new Cv.Mat[CameraParameters.CameraNumber];
@@ -89,17 +85,15 @@ namespace ArucoUnity
           UndistortedDistCoeffs[cameraId] = noDistCoeffs;
           UndistortionRectificationMaps[cameraId] = new Cv.Mat[undistortionCameraMapsNumber];
         }
-
-        OnConfigured();
       }
 
       /// <summary>
       /// Calls <see cref="InitializeRectification"/> and <see cref="InitializeUndistortionMaps"/> and susbcribes to
       /// <see cref="ArucoCamera.UndistortRectifyImages"/>.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
 
         InitializeRectification();
         InitializeUndistortionMaps();
@@ -107,19 +101,16 @@ namespace ArucoUnity
         ArucoCamera.UndistortRectifyImages += ArucoCamera_UndistortRectifyImages;
         remapThread = new ArucoCameraSeparateThread(ArucoCamera, UndistortRectifyImages) { CopyBackImages = true };
         remapThread.Start();
-
-        OnStarted();
       }
 
       /// <summary>
       /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
         remapThread.Stop();
         ArucoCamera.UndistortRectifyImages -= ArucoCamera_UndistortRectifyImages;
-        OnStopped();
       }
 
       // Methods

@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Controllers;
-using ArucoUnity.Cameras.Displays;
+﻿using ArucoUnity.Cameras.Displays;
 using ArucoUnity.Plugin;
 using ArucoUnity.Utilities;
 using UnityEngine;
@@ -11,7 +10,7 @@ namespace ArucoUnity
   /// \addtogroup aruco_unity_package
   /// \{
 
-  namespace Objects.Trackers
+  namespace Objects.Trackers.Trackers
   {
     /// <summary>
     /// Detects <see cref="ArucoObject"/>, displays detections and applies the estimated transforms to gameObjects associated to the ArUco objects.
@@ -23,7 +22,7 @@ namespace ArucoUnity
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The optional camera display associated with the ArucoCamera.")]
+      [Tooltip("The display associated with the camera.")]
       private ArucoCameraDisplay arucoCameraDisplay;
 
       [SerializeField]
@@ -89,31 +88,31 @@ namespace ArucoUnity
         }
       }
 
-      // ArucoCameraController methods
+      // ConfigurableController methods
 
       /// <summary>
-      /// Setups controller dependencies.
+      /// Add <see cref="ArucoCameraDisplay"/> as dependency.
       /// </summary>
-      public override void Configure()
+      protected override void Configuring()
       {
-        base.Configure();
-
-        if (ArucoCameraDisplay != null)
+        if (ArucoCameraDisplay == null)
         {
-          AddDependency(ArucoCameraDisplay);
-          ArucoCamera = ArucoCameraDisplay.ArucoCamera;
+          throw new ArgumentNullException("ArucoCameraDisplay", "This property needs to be set for the configuration.");
         }
 
-        OnConfigured();
+        ArucoCamera = ArucoCameraDisplay.ArucoCamera;
+        AddDependency(ArucoCameraDisplay);
+
+        base.Configuring();
       }
 
       /// <summary>
       /// Initializes the tracking, activates the trackers, susbcribes to the <see cref="ArucoObjectsController{T}.ArucoObjectAdded"/> and
       /// <see cref="ArucoObjectsController{T}.ArucoObjectRemoved"/> events and starts the tracking thread.
       /// </summary>
-      public override void StartController()
+      protected override void Starting()
       {
-        base.StartController();
+        base.Starting();
 
         MarkerTracker.Activate(this);
         foreach (var arucoObjectDictionary in ArucoObjects)
@@ -133,16 +132,14 @@ namespace ArucoUnity
           CopyBackImages = DrawDetectedMarkers || DrawRejectedCandidates || DrawAxes || DrawDetectedCharucoMarkers || DrawDetectedDiamonds
         };
         trackingThread.Start();
-
-        OnStarted();
       }
 
       /// <summary>
       /// Unsuscribes from ArucoObjectController events, deactivates the trackers and abort the tracking thread and stops the tracking thread.
       /// </summary>
-      public override void StopController()
+      protected override void Stopping()
       {
-        base.StopController();
+        base.Stopping();
 
         trackingThread.Stop();
         ArucoCamera.ImagesUpdated -= ArucoCamera_ImagesUpdated;
@@ -158,8 +155,6 @@ namespace ArucoUnity
             tracker.Value.Deactivate();
           }
         }
-
-        OnStopped();
       }
 
       // ArucoObjectController methods
