@@ -43,12 +43,6 @@ namespace ArucoUnity
       // Variables
 
       protected T flags;
-
-      private void Start()
-      {
-        print(Flags);
-        print(Value);
-      }
     }
   }
 
