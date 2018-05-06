@@ -42,7 +42,7 @@ namespace ArucoUnity
       /// <summary>
       /// Gets the the current images manipulated by Unity. There are <see cref="CameraNumber"/> images: one for each camera.
       /// </summary>
-      Texture2D[] ImageTextures { get; }
+      Texture2D[] Textures { get; }
 
       /// <summary>
       /// Gets or sets the current images manipulated by OpenCV. There are <see cref="CameraNumber"/> images: one for each camera.

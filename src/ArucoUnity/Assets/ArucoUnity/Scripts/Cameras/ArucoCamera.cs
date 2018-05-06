@@ -35,16 +35,8 @@ namespace ArucoUnity
       public abstract int CameraNumber { get; }
       public abstract string Name { get; protected set; }
 
-      /// <summary>
-      /// Gets the the current camera images manipulated by Unity. They are updated at <see cref="LateUpdate"/> from the OpenCV <see cref="Images"/>.
-      /// </summary>
-      public Texture2D[] ImageTextures { get; private set; }
-
-      /// <summary>
-      /// Gets or sets the current camera images manipulated by OpenCV. They are updated at <see cref="UpdateCameraImages"/>.
-      /// </summary>
+      public Texture2D[] Textures { get; private set; }
       public Cv.Mat[] Images { get { return imageBuffers[currentBuffer]; } }
-
       public byte[][] ImageDatas { get { return imageDataBuffers[currentBuffer]; } }
       public int[] ImageDataSizes { get; private set; }
       public float[] ImageRatios { get; private set; }
@@ -81,7 +73,7 @@ namespace ArucoUnity
       }
 
       /// <summary>
-      /// Applies the changes made on the <see cref="Images"/> during the frame to the <see cref="ImageTextures"/>
+      /// Applies the changes made on the <see cref="Images"/> during the frame to the <see cref="Textures"/>
       /// then swaps <see cref="Images"/> and <see cref="ImageDatas"/> with <see cref="NextImages"/> and <see cref="NextImageDatas"/>.
       /// </summary>
       protected virtual void LateUpdate()
@@ -91,8 +83,8 @@ namespace ArucoUnity
           for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
           {
             Cv.Flip(Images[cameraId], imagesToTextures[cameraId], Cv.verticalFlipCode);
-            ImageTextures[cameraId].LoadRawTextureData(imagesToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
-            ImageTextures[cameraId].Apply(false);
+            Textures[cameraId].LoadRawTextureData(imagesToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
+            Textures[cameraId].Apply(false);
           }
           currentBuffer = NextBuffer();
         }
@@ -112,7 +104,7 @@ namespace ArucoUnity
           throw new Exception("It must have at least one camera.");
         }
 
-        ImageTextures = new Texture2D[CameraNumber];
+        Textures = new Texture2D[CameraNumber];
         ImageDataSizes = new int[CameraNumber];
         ImageRatios = new float[CameraNumber];
 
@@ -146,10 +138,10 @@ namespace ArucoUnity
       /// <summary>
       /// Calls <see cref="InitializeImages"/>.
       /// </summary>
-      protected override void Starting()
+      protected override void OnStarted()
       {
-        base.Starting();
         InitializeImages();
+        base.OnStarted();
       }
 
       // Methods
@@ -187,7 +179,7 @@ namespace ArucoUnity
 
       /// <summary>
       /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/>, <see cref="ImageDatas"/>, <see cref="NextImages"/>,
-      /// <see cref="NextImageTextures"/> and <see cref="NextImageDatas"/> properties from the <see cref="ImageTextures"/> property.
+      /// <see cref="NextImageTextures"/> and <see cref="NextImageDatas"/> properties from the <see cref="Textures"/> property.
       /// </summary>
       protected virtual void InitializeImages()
       {
@@ -195,12 +187,12 @@ namespace ArucoUnity
         {
           for (int bufferId = 0; bufferId < buffersCount; bufferId++)
           {
-            imageBuffers[bufferId][cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width,
-              CvMatExtensions.ImageType(ImageTextures[cameraId].format));
+            imageBuffers[bufferId][cameraId] = new Cv.Mat(Textures[cameraId].height, Textures[cameraId].width,
+              CvMatExtensions.ImageType(Textures[cameraId].format));
           }
 
           ImageDataSizes[cameraId] = (int)(Images[cameraId].ElemSize() * Images[cameraId].Total());
-          ImageRatios[cameraId] = ImageTextures[cameraId].width / (float)ImageTextures[cameraId].height;
+          ImageRatios[cameraId] = Textures[cameraId].width / (float)Textures[cameraId].height;
 
           for (int bufferId = 0; bufferId < buffersCount; bufferId++)
           {
@@ -208,8 +200,8 @@ namespace ArucoUnity
             imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];
           }
 
-          imagesToTextures[cameraId] = new Cv.Mat(ImageTextures[cameraId].height, ImageTextures[cameraId].width,
-              CvMatExtensions.ImageType(ImageTextures[cameraId].format));
+          imagesToTextures[cameraId] = new Cv.Mat(Textures[cameraId].height, Textures[cameraId].width,
+              CvMatExtensions.ImageType(Textures[cameraId].format));
           imagesToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
           imagesToTextures[cameraId].DataByte = imagesToTextureDatas[cameraId];
         }

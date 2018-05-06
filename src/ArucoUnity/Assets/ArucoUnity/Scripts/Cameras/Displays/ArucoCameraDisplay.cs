@@ -91,7 +91,7 @@ namespace ArucoUnity
         // Sets the background texture
         for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
         {
-          Backgrounds[cameraId].material.mainTexture = ArucoCamera.ImageTextures[cameraId];
+          Backgrounds[cameraId].material.mainTexture = ArucoCamera.Textures[cameraId];
         }
 
         // Cameras and background configurations

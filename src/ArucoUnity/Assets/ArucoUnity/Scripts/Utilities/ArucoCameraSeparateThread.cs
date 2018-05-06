@@ -31,8 +31,8 @@ namespace ArucoUnity
 
           for (int cameraId = 0; cameraId < arucoCamera.CameraNumber; cameraId++)
           {
-            imageBuffers[bufferId][cameraId] = new Cv.Mat(arucoCamera.ImageTextures[cameraId].height, arucoCamera.ImageTextures[cameraId].width,
-              CvMatExtensions.ImageType(arucoCamera.ImageTextures[cameraId].format));
+            imageBuffers[bufferId][cameraId] = new Cv.Mat(arucoCamera.Textures[cameraId].height, arucoCamera.Textures[cameraId].width,
+              CvMatExtensions.ImageType(arucoCamera.Textures[cameraId].format));
 
             imageDataBuffers[bufferId][cameraId] = new byte[arucoCamera.ImageDataSizes[cameraId]];
             imageBuffers[bufferId][cameraId].DataByte = imageDataBuffers[bufferId][cameraId];

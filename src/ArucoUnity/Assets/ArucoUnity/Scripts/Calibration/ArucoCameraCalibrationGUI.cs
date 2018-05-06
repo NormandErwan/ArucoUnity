@@ -130,7 +130,7 @@ namespace ArucoUnity
           cellDisplay.transform.localScale = Vector3.one;
 
           RawImage cellDisplayImage = cellDisplay.AddComponent<RawImage>();
-          cellDisplayImage.texture = arucoCamera.ImageTextures[cameraId];
+          cellDisplayImage.texture = arucoCamera.Textures[cameraId];
 
           AspectRatioFitter cellDisplayFitter = cellDisplay.AddComponent<AspectRatioFitter>(); // Fit the image inside the cell
           cellDisplayFitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;

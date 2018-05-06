@@ -28,7 +28,7 @@ namespace ArucoUnity
       bool RefineDetectedMarkers { get; set; }
 
       /// <summary>
-      /// Get or sets if displaying the detected <see cref="ArucoMarker"/> in the <see cref="IArucoCamera.ImageTextures"/>.
+      /// Get or sets if displaying the detected <see cref="ArucoMarker"/> in the <see cref="IArucoCamera.Textures"/>.
       /// </summary>
       bool DrawDetectedMarkers { get; set; }
 
