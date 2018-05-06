@@ -9,10 +9,14 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures images of a webcam. Based on: http://answers.unity3d.com/answers/1155328/view.html
+    /// Captures images of a webcam.
     /// </summary>
     public class WebcamArucoCamera : ArucoCamera
     {
+      // Constants
+
+      protected const int cameraId = 0;
+
       // Editor fields
 
       [SerializeField]
@@ -28,118 +32,89 @@ namespace ArucoUnity
       // Properties
 
       /// <summary>
-      /// Gets or sets the id of the webcam to use.
+      /// Gets or set the id of the webcam to use.
       /// </summary>
       public int WebcamId { get { return webcamId; } set { webcamId = value; } }
 
       /// <summary>
-      /// Gets the used webcam.
+      /// Gets the controller of the webcam to use.
       /// </summary>
-      public WebCamDevice WebCamDevice { get; private set; }
-
-      /// <summary>
-      /// Gets the texture of the used webcam.
-      /// </summary>
-      public WebCamTexture WebCamTexture { get; private set; }
-
-      // Variables
-
-      protected Texture2D webcamTexture2D;
-      protected bool startInitiated = false;
-      protected int cameraId = 0;
+      public WebcamController WebcamController { get; private set; }
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// If the camera has been started, waits for Unity to start the webcam to initialize the <see cref="ImageTextures"/> and to
-      /// call the <see cref="ArucoCamera.Started"/> event.
+      /// Initializes <see cref="WebcamController"/> and subscribes to.
       /// </summary>
-      protected override void Update()
+      protected override void Awake()
       {
-        if (startInitiated)
-        {
-          if (WebCamTexture.width < 100) // Wait the WebCamTexture initialization
-          {
-            return;
-          }
-          else
-          {
-            // Configure
-            ImageTextures[cameraId] = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
-            webcamTexture2D = new Texture2D(WebCamTexture.width, WebCamTexture.height, TextureFormat.RGB24, false);
+        base.Awake();
+        WebcamController = gameObject.AddComponent<WebcamController>();
+        WebcamController.Started += WebcamController_Started;
+      }
 
-            // Update state
-            startInitiated = false;
-            OnStarted();
-          }
-        }
-
-        base.Update();
+      /// <summary>
+      /// Unsubscribes to <see cref="WebcamController"/>.
+      /// </summary>
+      protected override void OnDestroy()
+      {
+        base.OnDestroy();
+        WebcamController.Started -= WebcamController_Started;
       }
 
       // ConfigurableController methods
 
       /// <summary>
-      /// Configures the webcam and the properties with the id <see cref="WebcamId"/>.
+      /// Calls <see cref="WebcamController.Configure"/> and sets <see cref="Name"/>.
       /// </summary>
       protected override void Configuring()
       {
         base.Configuring();
 
-        startInitiated = false;
+        WebcamController.Ids.Clear();
+        WebcamController.Ids.Add(WebcamId);
+        WebcamController.Configure();
 
-        WebCamDevice = WebCamTexture.devices[WebcamId];
-        WebCamTexture = new WebCamTexture(WebCamDevice.name);
-        Name = WebCamDevice.name;
+        Name = WebcamController.Devices[cameraId].name;
       }
 
       /// <summary>
-      /// Initiates the camera start and the associated webcam device.
+      /// Calls <see cref="WebcamController.StartWebcams"/>.
       /// </summary>
       protected override void Starting()
       {
         base.Starting();
-        if (startInitiated)
-        {
-          throw new Exception("Camera has already been started.");
-        }
-
-        WebCamTexture.Play();
-        startInitiated = true;
+        WebcamController.StartWebcams();
       }
 
       /// <summary>
-      /// Calls <see cref="Utilities.ConfigurableController.OnStarted"/> only if the webcam started.
+      /// Blocks parent <see cref="OnStarted"/> until <see cref="WebcamController.IsStarted"/>.
       /// </summary>
       protected override void OnStarted()
       {
-        if (!startInitiated)
-        {
-          base.OnStarted();
-        }
-      }
-
-      /// <summary>
-      /// Stops the camera and the associated webcam device.
-      /// </summary>
-      protected override void Stopping()
-      {
-        base.Stopping();
-        WebCamTexture.Stop();
-        startInitiated = false;
       }
 
       // ArucoCamera methods
 
       /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, updates every frame the <see cref="ArucoCamera.ImageTextures"/> and the
-      /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTexture"/> content.
+      /// Copy current webcam images to <see cref="ArucoCamera.NextImages"/>.
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        webcamTexture2D.SetPixels32(WebCamTexture.GetPixels32());
-        Array.Copy(webcamTexture2D.GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
+        Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
         OnImagesUpdated();
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Configures <see cref="ArucoCamera.Textures"/> and calls parent <see cref="OnStarted"/>.
+      /// </summary>
+      protected virtual void WebcamController_Started(WebcamController webcamController)
+      {
+        var webcamTexture = WebcamController.Textures2D[cameraId];
+        Textures[cameraId] = new Texture2D(webcamTexture.width, webcamTexture.height, webcamTexture.format, false);
+        base.OnStarted();
       }
     }
   }

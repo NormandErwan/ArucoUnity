@@ -40,129 +40,90 @@ namespace ArucoUnity
       public int WebcamId2 { get { return webcamId2; } set { webcamId2 = value; } }
 
       /// <summary>
-      /// Gets the used webcams.
+      /// Gets the controller of the webcam to use.
       /// </summary>
-      public WebCamDevice[] WebCamDevices { get; private set; }
-
-      /// <summary>
-      /// Gets the textures of the used webcams.
-      /// </summary>
-      public WebCamTexture[] WebCamTextures { get; private set; }
-
-      // Variables
-
-      protected bool startInitiated = false;
+      public WebcamController WebcamController { get; private set; }
 
       // MonoBehaviour methods
 
       /// <summary>
-      /// Initializes the properties.
+      /// Initializes <see cref="WebcamController"/> and subscribes to.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
-        WebCamDevices = new WebCamDevice[CameraNumber];
-        WebCamTextures = new WebCamTexture[CameraNumber];
+        WebcamController = gameObject.AddComponent<WebcamController>();
+        WebcamController.Started += WebcamController_Started;
       }
 
       /// <summary>
-      /// If the cameras has been started, waits for Unity to start the webcam to initialize the <see cref="ImageTextures"/> and to
-      /// call the <see cref="ArucoCamera.Started"/> event.
+      /// Unsubscribes to <see cref="WebcamController"/>.
       /// </summary>
-      protected override void Update()
+      protected override void OnDestroy()
       {
-        if (startInitiated)
-        {
-          if (WebCamTextures[CameraId1].width < 100 || WebCamTextures[CameraId2].width < 100) // Wait the WebCamTexture initialization
-          {
-            return;
-          }
-          else
-          {
-            // Configure
-            ImageTextures[CameraId1] = new Texture2D(WebCamTextures[CameraId1].width, WebCamTextures[CameraId1].height, TextureFormat.RGB24, false);
-            ImageTextures[CameraId2] = new Texture2D(WebCamTextures[CameraId2].width, WebCamTextures[CameraId2].height, TextureFormat.RGB24, false);
-
-            // Update state
-            startInitiated = false;
-            OnStarted();
-          }
-        }
-
-        base.Update();
+        base.OnDestroy();
+        WebcamController.Started -= WebcamController_Started;
       }
 
       // ConfigurableController methods
 
       /// <summary>
-      /// Configures the webcams and the properties with the ids <see cref="WebcamId1"/> and <see cref="WebcamId2"/>.
+      /// Calls <see cref="WebcamController.Configure"/> and sets <see cref="Name"/>.
       /// </summary>
       protected override void Configuring()
       {
         base.Configuring();
 
-        startInitiated = false;
+        WebcamController.Ids.Clear();
+        WebcamController.Ids.AddRange(new int[] { WebcamId1, WebcamId2 });
+        WebcamController.Configure();
 
-        WebCamDevices[CameraId1] = WebCamTexture.devices[WebcamId1];
-        WebCamDevices[CameraId2] = WebCamTexture.devices[WebcamId2];
-        WebCamTextures[CameraId1] = new WebCamTexture(WebCamDevices[CameraId1].name);
-        WebCamTextures[CameraId2] = new WebCamTexture(WebCamDevices[CameraId2].name);
-        Name = "'" + WebCamDevices[CameraId1].name + "'+'" + WebCamDevices[CameraId2].name + "'";
+        Name = "'" + WebcamController.Devices[CameraId1].name + "'+'" + WebcamController.Devices[CameraId2].name + "'";
       }
 
       /// <summary>
-      /// Initiates the cameras start and the associated webcam devices.
+      /// Calls <see cref="WebcamController.StartWebcams"/>.
       /// </summary>
       protected override void Starting()
       {
         base.Starting();
-
-        if (startInitiated)
-        {
-          throw new Exception("Cameras have already been started.");
-        }
-
-        WebCamTextures[CameraId1].Play();
-        WebCamTextures[CameraId2].Play();
-        startInitiated = true;
+        WebcamController.StartWebcams();
       }
 
       /// <summary>
-      /// Calls <see cref="Utilities.ConfigurableController.OnStarted"/> only if the webcams started.
+      /// Blocks parent <see cref="OnStarted"/> until <see cref="WebcamController.IsStarted"/>.
       /// </summary>
       protected override void OnStarted()
       {
-        if (!startInitiated)
-        {
-          base.OnStarted();
-        }
-      }
-
-      /// <summary>
-      /// Stops the cameras and the associated webcam devices.
-      /// </summary>
-      protected override void Stopping()
-      {
-        base.Stopping();
-        WebCamTextures[CameraId1].Stop();
-        WebCamTextures[CameraId2].Stop();
-        startInitiated = false;
       }
 
       // ArucoCamera methods
 
       /// <summary>
-      /// Once the <see cref="WebCamTexture"/> is started, updates every frame the <see cref="ArucoCamera.ImageTextures"/> and the
-      /// <see cref="ArucoCamera.ImageDatas"/> with the <see cref="WebCamTexture"/> content.
+      /// Copy current webcam images to <see cref="ArucoCamera.NextImages"/>.
       /// </summary>
       protected override void UpdateCameraImages()
       {
         for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
         {
-          ImageTextures[cameraId].SetPixels32(WebCamTextures[cameraId].GetPixels32());
-          Array.Copy(ImageTextures[cameraId].GetRawTextureData(), ImageDatas[cameraId], ImageDataSizes[cameraId]);
+          Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
         }
         OnImagesUpdated();
+      }
+
+      // Methods
+
+      /// <summary>
+      /// Configures <see cref="ArucoCamera.Textures"/> and calls parent <see cref="OnStarted"/>.
+      /// </summary>
+      protected virtual void WebcamController_Started(WebcamController webcamController)
+      {
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          var webcamTexture = WebcamController.Textures2D[cameraId];
+          Textures[cameraId] = new Texture2D(webcamTexture.width, webcamTexture.height, webcamTexture.format, false);
+        }
+        base.OnStarted();
       }
     }
   }
