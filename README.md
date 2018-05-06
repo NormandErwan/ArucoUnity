@@ -15,15 +15,15 @@ Download the [latest build release](https://github.com/enormand/ArucoUnity/relea
 
 ## Usage
 
-Please read the wiki:
+A typical workflow with Aruco Unity is:
 
-1. [Marker Creation](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Marker-Creation)
-2. [Camera Calibration](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Camera-Calibration)
-3. [Marker Tracking](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Marker-Tracking)
+1. Create and print some markers: see the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) wiki page.
+2. Calibrate your camera using a calibration board: see the [Calibrate a Camera](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera) wiki page.
+3. Track your markers: see the [Track Markers](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Track-Markers) wiki page.
 
 ## Build
 
-Read the [Build](https://github.com/NormandErwan/ArucoUnity/wiki/Build) wiki page.
+Read the [Build From Sources](https://github.com/NormandErwan/ArucoUnity/wiki/Build-From-Sources) wiki page.
 
 ## Documentation
 
@@ -34,7 +34,9 @@ The documentation is available online:
 
 ## Contributions
 
-If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+If you have any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
+
+If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome.
 
 ## Support
 
