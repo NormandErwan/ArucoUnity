@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras.Undistortions;
-using ArucoUnity.Controllers;
 using UnityEngine;
 
 namespace ArucoUnity

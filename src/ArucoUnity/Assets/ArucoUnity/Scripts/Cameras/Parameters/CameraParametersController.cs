@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Editor controller for <see cref="CameraParameters"/>.
     /// </summary>
-    public class CameraParametersController : MonoBehaviour
+    public class CameraParametersController : MonoBehaviour, IHasCameraParameters
     {
       // Editor fields
 
@@ -27,6 +27,13 @@ namespace ArucoUnity
       [SerializeField]
       [Tooltip("The xml file where to load and save the camera parameters.")]
       private string cameraParametersFilename;
+
+      // IHasCameraParameters properties
+
+      /// <summary>
+      /// Gets or sets the camera parameters.
+      /// </summary>
+      public CameraParameters CameraParameters { get; set; }
 
       // Properties
 
@@ -49,11 +56,6 @@ namespace ArucoUnity
       /// Gets the file path to the camera parameters.
       /// </summary>
       public string CameraParametersFilePath { get; protected set; }
-
-      /// <summary>
-      /// Gets the camera parameters.
-      /// </summary>
-      public CameraParameters CameraParameters { get; protected set; }
 
       // Variables
 
