@@ -17,9 +17,9 @@ Download the [latest build release](https://github.com/enormand/ArucoUnity/relea
 
 A typical workflow with Aruco Unity is:
 
-1. Create and print some markers: see the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) wiki page.
-2. Calibrate your camera using a calibration board: see the [Calibrate a Camera](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera) wiki page.
-3. Track your markers: see the [Track Markers](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Track-Markers) wiki page.
+1. Create and print some markers: read the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) wiki page.
+2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera) wiki page.
+3. Track your markers: read the [Track Markers](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Track-Markers) wiki page.
 
 ## Build
 
@@ -34,9 +34,13 @@ The documentation is available online:
 
 ## Contributions
 
-If you have any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
-
-If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome.
+- For any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
+- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. The project is described in details in the [Aruco Unity Architecture](https://github.com/NormandErwan/ArucoUnity/wiki/ArucoUnity-Architecture) wiki page.
+- To better understand the algorithms used in the OpenCV modules, read these tutorials:
+  - [Detection of ArUco Markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)
+  - [Calibration with ArUco and ChArUco](https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html)
+  - [Camera calibration With OpenCV](https://docs.opencv.org/master/d4/d94/tutorial_camera_calibration.html)
+  - [Omnidirectional Cameara [*sic*] Calibration](https://docs.opencv.org/master/dd/d12/tutorial_omnidir_calib_main.html)
 
 ## Support
 
