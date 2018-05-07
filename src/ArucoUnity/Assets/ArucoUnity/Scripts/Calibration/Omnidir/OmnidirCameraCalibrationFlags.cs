@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the omnidir calibration process.
     /// </summary>
-    public class OmnidirCalibrationFlags : CalibrationFlagsGeneric<Cv.Omnidir.Calib>
+    public class OmnidirCameraCalibrationFlags : CalibrationFlagsGeneric<Cv.Omnidir.Calib>
     {
       // Editor fields
 

@@ -12,7 +12,7 @@ namespace ArucoUnity
     /// <summary>
     /// Manages the flags of the pinhole camera process.
     /// </summary>
-    public class PinholeCalibrationFlags : CalibrationFlagsGeneric<Cv.Calib>
+    public class PinholeCameraCalibrationFlags : CalibrationFlagsGeneric<Cv.Calib>
     {
       // Constants
 

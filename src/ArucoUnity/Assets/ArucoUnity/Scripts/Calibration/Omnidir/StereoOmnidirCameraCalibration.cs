@@ -9,7 +9,7 @@ namespace ArucoUnity
 
   namespace Calibration.Omnidir
   {
-    public class StereoOmnidirCameraCalibration : ArucoCameraCalibrationGeneric<StereoArucoCamera, OmnidirCalibrationFlags>
+    public class StereoOmnidirCameraCalibration : ArucoCameraCalibrationGeneric<StereoArucoCamera, OmnidirCameraCalibrationFlags>
     {
       // ArucoCameraCalibration methods
 
