@@ -11,40 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1379392284713990}
   m_IsPrefabParent: 1
---- !u!1 &1170318035305824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4453737775022218}
-  - component: {fileID: 114750041812361894}
-  - component: {fileID: 114449851405056872}
-  m_Layer: 0
-  m_Name: ArucoCharucoBoard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1249243802618606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4442041073465878}
-  - component: {fileID: 114411196751466740}
-  - component: {fileID: 114670635446003464}
-  m_Layer: 0
-  m_Name: ArucoGridBoard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1379392284713990
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,19 +30,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4442041073465878
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249243802618606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4443830380264692}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4443830380264692
 Transform:
   m_ObjectHideFlags: 1
@@ -86,24 +39,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.255, y: 0.03, z: 0.17999999}
-  m_Children:
-  - {fileID: 4442041073465878}
-  - {fileID: 4453737775022218}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4453737775022218
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170318035305824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4443830380264692}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114208106215188584
 MonoBehaviour:
@@ -118,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   detectorParametersController: {fileID: 114479760342518650}
-  calibrationBoard: {fileID: 114750041812361894}
+  calibrationBoard: {fileID: 0}
   refineMarkersDetection: 0
   cameraParametersController: {fileID: 114381304389912768}
   arucoCamera: {fileID: 0}
@@ -137,37 +75,6 @@ MonoBehaviour:
   autoLoadFile: 0
   cameraParametersFolderPath: ArucoUnity/CameraParameters/
   cameraParametersFilename: 
---- !u!114 &114411196751466740
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249243802618606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66515f6201048442966d413775d221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dictionaryName: 0
-  markerSideLength: 0.03
-  markerBorderBits: 1
-  marginsLength: 0
-  markersNumberX: 7
-  markersNumberY: 5
-  markerSeparation: 0.0075
---- !u!114 &114449851405056872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170318035305824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b8644fbc5335334e944b09d5c8da57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arucoObject: {fileID: 114750041812361894}
-  displayInPlayMode: 0
 --- !u!114 &114472875458148954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,34 +131,3 @@ MonoBehaviour:
   maxErroneousBitsInBorderRate: 0.35
   minOtsuStdDev: 5
   errorCorrectionRate: 0.6
---- !u!114 &114670635446003464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249243802618606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b8644fbc5335334e944b09d5c8da57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arucoObject: {fileID: 114411196751466740}
-  displayInPlayMode: 0
---- !u!114 &114750041812361894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170318035305824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bd3bf3f4a191c04bb36564300e2e048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dictionaryName: 0
-  markerSideLength: 0.02
-  markerBorderBits: 1
-  marginsLength: 0
-  squaresNumberX: 7
-  squaresNumberY: 5
-  squareSideLength: 0.03
