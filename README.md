@@ -27,10 +27,7 @@ Read the [Build From Sources](https://github.com/NormandErwan/ArucoUnity/wiki/Bu
 
 ## Documentation
 
-The documentation is available online:
-
-- The library: [https://normanderwan.github.io/ArucoUnity/group__aruco__unity__lib.html](https://normanderwan.github.io/ArucoUnity/group__aruco__unity__lib.html)
-- The Unity package: [https://normanderwan.github.io/ArucoUnity/group__aruco__unity__package.html](https://normanderwan.github.io/ArucoUnity/group__aruco__unity__package.html)
+The documentation is available online: [https://normanderwan.github.io](https://normanderwan.github.io).
 
 ## Contributions
 
@@ -52,11 +49,7 @@ This first version of this project has been developed as part of the master thes
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
 
-See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. Aruco Unity makes use of the
-following projects:
-
-- [OpenCV](http://opencv.org/) with the following modules: [ArUco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html), [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
-- [Google Test](https://github.com/google/googletest)
+See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. Aruco Unity makes use of [OpenCV](http://opencv.org/) with the following modules: [aruco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html), [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 
 ## References
 
