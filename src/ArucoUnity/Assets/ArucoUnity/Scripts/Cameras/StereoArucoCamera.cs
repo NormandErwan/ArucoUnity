@@ -10,9 +10,13 @@
     /// </summary>
     public abstract class StereoArucoCamera : ArucoCamera
     {
+      // Constants
+
+      public const int StereoCameraNumber = 2;
+
       // IArucoCamera properties
 
-      public override int CameraNumber { get { return 2; } }
+      public override int CameraNumber { get { return StereoCameraNumber; } }
 
       // Properties
 

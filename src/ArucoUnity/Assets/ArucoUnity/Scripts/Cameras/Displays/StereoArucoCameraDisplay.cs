@@ -62,27 +62,27 @@ namespace ArucoUnity
       // MonoBehaviour methods
 
       /// <summary>
-      /// Sets <see cref="Controllers.ArucoCameraController.ArucoCamera"/>, <see cref="MonoArucoCameraDisplay.ArucoCameraUndistortion"/>,
-      /// <see cref="Eyes"/>, <see cref="ArucoCameraDisplayGeneric.Cameras"/>, <see cref="ArucoCameraDisplayGeneric.BackgroundCameras"/>
-      /// and <see cref="ArucoCameraDisplayGeneric.Backgrounds"/> from editor fields if not nulls.
+      /// Sets <see cref="Eyes"/>, <see cref="ArucoCameraDisplayGeneric.Cameras"/>,
+      /// <see cref="ArucoCameraDisplayGeneric.BackgroundCameras"/> and
+      /// <see cref="ArucoCameraDisplayGeneric.Backgrounds"/> from editor fields if not nulls.
       /// </summary>
       protected override void Awake()
       {
         base.Awake();
 
-        Eyes = new Transform[ArucoCamera.CameraNumber];
+        Eyes = new Transform[StereoArucoCamera.StereoCameraNumber];
         Eyes[StereoArucoCamera.CameraId1] = leftEye;
         Eyes[StereoArucoCamera.CameraId2] = rightEye;
 
-        Cameras = new Camera[ArucoCamera.CameraNumber];
+        Cameras = new Camera[StereoArucoCamera.StereoCameraNumber];
         Cameras[StereoArucoCamera.CameraId1] = leftCamera;
         Cameras[StereoArucoCamera.CameraId2] = rightCamera;
 
-        BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
+        BackgroundCameras = new Camera[StereoArucoCamera.StereoCameraNumber];
         BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
         BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
 
-        Backgrounds = new Renderer[ArucoCamera.CameraNumber];
+        Backgrounds = new Renderer[StereoArucoCamera.StereoCameraNumber];
         Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
         Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
       }

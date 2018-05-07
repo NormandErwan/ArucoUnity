@@ -52,14 +52,14 @@ namespace ArucoUnity
       {
         base.Awake();
 
-        Cameras = new Camera[ArucoCamera.CameraNumber];
+        Cameras = new Camera[StereoArucoCamera.StereoCameraNumber];
         Cameras[StereoArucoCamera.CameraId1] = Cameras[StereoArucoCamera.CameraId2] = stereoVRCamera;
 
-        BackgroundCameras = new Camera[ArucoCamera.CameraNumber];
+        BackgroundCameras = new Camera[StereoArucoCamera.StereoCameraNumber];
         BackgroundCameras[StereoArucoCamera.CameraId1] = leftBackgroundCamera;
         BackgroundCameras[StereoArucoCamera.CameraId2] = rightBackgroundCamera;
 
-        Backgrounds = new Renderer[ArucoCamera.CameraNumber];
+        Backgrounds = new Renderer[StereoArucoCamera.StereoCameraNumber];
         Backgrounds[StereoArucoCamera.CameraId1] = leftBackground;
         Backgrounds[StereoArucoCamera.CameraId2] = rightBackground;
       }
