@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114125049629224730}
   - component: {fileID: 114332799581564012}
   m_Layer: 0
-  m_Name: WebcamStereoArucoCameraCalibrated
+  m_Name: StereoArucoWebcamCalibrated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  arucoCamera: {fileID: 114992423418060336}
+  arucoCamera: {fileID: 0}
   arucoCameraUndistortion: {fileID: 114987818737337706}
   leftEye: {fileID: 4944800623345314}
   rightEye: {fileID: 4544471706765170}

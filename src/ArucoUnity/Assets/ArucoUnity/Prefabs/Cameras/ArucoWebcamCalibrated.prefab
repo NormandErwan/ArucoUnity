@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114034833319431376}
   - component: {fileID: 114715581165667816}
   m_Layer: 0
-  m_Name: WebcamArucoCameraCalibrated
+  m_Name: ArucoWebcamCalibrated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,6 +165,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -200,6 +201,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -217,6 +219,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a937e1f0eb227c44ebbdf6578da8c572, type: 2}
   m_StaticBatchInfo:
@@ -285,8 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   CameraParametersController: {fileID: 114034833319431376}
+  arucoCamera: {fileID: 0}
   rectificationScalingFactor: 1
-  arucoCamera: {fileID: 114393126318706844}
 --- !u!114 &114715581165667816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  arucoCamera: {fileID: 114393126318706844}
+  arucoCamera: {fileID: 0}
   arucoCameraUndistortion: {fileID: 114522793529101426}
   cameras:
   - {fileID: 20452962843750572}
