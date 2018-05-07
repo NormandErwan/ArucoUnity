@@ -9,32 +9,35 @@ namespace ArucoUnity
   namespace Cameras
   {
     /// <summary>
-    /// Captures images of a webcam.
+    /// Captures image of a stereoscopic webcam.
     /// </summary>
-    public class WebcamArucoCamera : ArucoCamera
+    public class StereoArucoWebcam : StereoArucoCamera
     {
-      // Constants
-
-      protected const int cameraId = 0;
-
       // Editor fields
 
       [SerializeField]
-      [Tooltip("The id of the webcam to use.")]
-      private int webcamId;
+      [Tooltip("The id of the first webcam to use.")]
+      private int webcamId1;
+
+      [SerializeField]
+      [Tooltip("The id of the second webcam to use.")]
+      private int webcamId2;
 
       // IArucoCamera properties
-
-      public override int CameraNumber { get { return 1; } }
 
       public override string Name { get; protected set; }
 
       // Properties
 
       /// <summary>
-      /// Gets or set the id of the webcam to use.
+      /// Gets or sets the id of the first webcam to use.
       /// </summary>
-      public int WebcamId { get { return webcamId; } set { webcamId = value; } }
+      public int WebcamId1 { get { return webcamId1; } set { webcamId1 = value; } }
+
+      /// <summary>
+      /// Gets or sets the id of the second webcam to use.
+      /// </summary>
+      public int WebcamId2 { get { return webcamId2; } set { webcamId2 = value; } }
 
       /// <summary>
       /// Gets the controller of the webcam to use.
@@ -72,10 +75,10 @@ namespace ArucoUnity
         base.Configuring();
 
         WebcamController.Ids.Clear();
-        WebcamController.Ids.Add(WebcamId);
+        WebcamController.Ids.AddRange(new int[] { WebcamId1, WebcamId2 });
         WebcamController.Configure();
 
-        Name = WebcamController.Devices[cameraId].name;
+        Name = "'" + WebcamController.Devices[CameraId1].name + "'+'" + WebcamController.Devices[CameraId2].name + "'";
       }
 
       /// <summary>
@@ -101,7 +104,10 @@ namespace ArucoUnity
       /// </summary>
       protected override void UpdateCameraImages()
       {
-        Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
+        }
         OnImagesUpdated();
       }
 
@@ -112,8 +118,11 @@ namespace ArucoUnity
       /// </summary>
       protected virtual void WebcamController_Started(WebcamController webcamController)
       {
-        var webcamTexture = WebcamController.Textures2D[cameraId];
-        Textures[cameraId] = new Texture2D(webcamTexture.width, webcamTexture.height, webcamTexture.format, false);
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          var webcamTexture = WebcamController.Textures2D[cameraId];
+          Textures[cameraId] = new Texture2D(webcamTexture.width, webcamTexture.height, webcamTexture.format, false);
+        }
         base.OnStarted();
       }
     }

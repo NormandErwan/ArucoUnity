@@ -15,7 +15,7 @@ namespace ArucoUnity
     /// </summary>
     /// <remarks>
     /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
-    /// <see cref="WebcamArucoCamera"/> as example. You will need to implement <see cref="StartController"/>, <see cref="StopController"/>,
+    /// <see cref="ArucoWebcam"/> as example. You will need to implement <see cref="StartController"/>, <see cref="StopController"/>,
     /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.
     /// </remarks>
     public abstract class ArucoCamera : ConfigurableController, IArucoCamera

@@ -314,6 +314,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -349,6 +350,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -384,6 +386,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -419,6 +422,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -436,6 +440,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a937e1f0eb227c44ebbdf6578da8c572, type: 2}
   m_StaticBatchInfo:
@@ -470,6 +475,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a937e1f0eb227c44ebbdf6578da8c572, type: 2}
   m_StaticBatchInfo:
@@ -531,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  stereoArucoCamera: {fileID: 114992423418060336}
+  arucoCamera: {fileID: 114992423418060336}
   arucoCameraUndistortion: {fileID: 114987818737337706}
   leftEye: {fileID: 4944800623345314}
   rightEye: {fileID: 4544471706765170}
@@ -554,9 +560,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   CameraParametersController: {fileID: 114125049629224730}
+  arucoCamera: {fileID: 114992423418060336}
   rectificationScalingFactor: 1
   rectificationZeroDisparity: 1
-  stereoArucoCamera: {fileID: 114992423418060336}
 --- !u!114 &114992423418060336
 MonoBehaviour:
   m_ObjectHideFlags: 1
