@@ -1,4 +1,4 @@
-﻿using ArucoUnity.Cameras.Parameters;
+﻿  using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
 using ArucoUnity.Objects.Trackers;
 using ArucoUnity.Plugin;
@@ -10,8 +10,8 @@ namespace ArucoUnity.Calibration
 {
   /// <summary>
   /// Calibrates a <see cref="Cameras.ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera
-  /// parameters in a file managed by <see cref="Cameras.Parameters.ArucoCameraParametersController"/>. Base class to
-  /// reference in editor fields.
+  /// parameters in a file managed by <see cref="ArucoCameraParametersController"/>. Base class to reference in editor
+  /// fields.
   /// 
   /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
   /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and
@@ -26,7 +26,8 @@ namespace ArucoUnity.Calibration
     private ArucoBoard calibrationBoard;
 
     [SerializeField]
-    [Tooltip("Use a refine algorithm to find not detected markers based on the already detected and the board layout (if using a board).")]
+    [Tooltip("Use a refine algorithm to find not detected markers based on the already detected and the board layout" +
+      " (if using a board).")]
     private bool refineMarkersDetection = false;
 
     [SerializeField]
@@ -42,15 +43,17 @@ namespace ArucoUnity.Calibration
     public ArucoBoard CalibrationBoard { get { return calibrationBoard; } set { calibrationBoard = value; } }
 
     /// <summary>
-    /// Gets or sets if need to use a refine algorithm to find not detected markers based on the already detected and the board layout.
+    /// Gets or sets if need to use a refine algorithm to find not detected markers based on the already detected and
+    /// the board layout.
     /// </summary>
     public bool RefineMarkersDetection { get { return refineMarkersDetection; } set { refineMarkersDetection = value; } }
 
     /// <summary>
-    /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
-    /// file will be generated from the camera name and the calibration datetime.
+    /// Gets or sets the camera parameters to use if <see cref="CalibrationFlags.UseIntrinsicGuess"/> is true.
+    /// Otherwise, the camera parameters file will be generated from the camera name and the calibration datetime.
     /// </summary>
-    public ArucoCameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
+    public ArucoCameraParametersController CameraParametersController { get { return cameraParametersController; }
+      set { cameraParametersController = value; } }
 
     /// <summary>
     /// Gets or sets the flags for the cameras calibration.
@@ -161,13 +164,14 @@ namespace ArucoUnity.Calibration
       base.Configuring();
       if (CalibrationBoard == null)
       {
-        throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the calibration controller.");
+        throw new ArgumentNullException("CalibrationBoard", "This property needs to be set to configure the" +
+          " calibration controller.");
       }
       ResetCalibration();
     }
 
     /// <summary>
-    /// Susbcribes to <see cref="ArucoCamera.UndistortRectifyImages"/>.
+    /// Susbcribes to <see cref="Cameras.ArucoCamera.UndistortRectifyImages"/>.
     /// </summary>
     protected override void Starting()
     {
@@ -176,7 +180,7 @@ namespace ArucoUnity.Calibration
     }
 
     /// <summary>
-    /// Unsusbcribes from <see cref="ArucoCamera.UndistortRectifyImages"/>.
+    /// Unsusbcribes from <see cref="Cameras.ArucoCamera.UndistortRectifyImages"/>.
     /// </summary>
     protected override void Stopping()
     {
@@ -212,8 +216,8 @@ namespace ArucoUnity.Calibration
     }
 
     /// <summary>
-    /// Detects the Aruco markers on the current images of the cameras and store the results in the <see cref="MarkerCornersCurrentImage"/> and
-    /// <see cref="MarkerIdsCurrentImage"/> properties.
+    /// Detects the Aruco markers on the current images of the cameras and store the results in the
+    /// <see cref="MarkerCornersCurrentImage"/> and <see cref="MarkerIdsCurrentImage"/> properties.
     /// </summary>
     public virtual void DetectMarkers()
     {
@@ -229,15 +233,16 @@ namespace ArucoUnity.Calibration
 
         Cv.Mat image = ArucoCamera.Images[cameraId];
 
-        Aruco.DetectMarkers(image, CalibrationBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters, out rejectedCandidateCorners);
+        Aruco.DetectMarkers(image, CalibrationBoard.Dictionary, out markerCorners, out markerIds, DetectorParameters,
+          out rejectedCandidateCorners);
 
         MarkerCornersCurrentImage[cameraId] = markerCorners;
         MarkerIdsCurrentImage[cameraId] = markerIds;
 
         if (RefineMarkersDetection)
         {
-          Aruco.RefineDetectedMarkers(image, CalibrationBoard.Board, MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId],
-            rejectedCandidateCorners);
+          Aruco.RefineDetectedMarkers(image, CalibrationBoard.Board, MarkerCornersCurrentImage[cameraId],
+            MarkerIdsCurrentImage[cameraId], rejectedCandidateCorners);
         }
       }
     }
@@ -256,7 +261,8 @@ namespace ArucoUnity.Calibration
       {
         if (MarkerIdsCurrentImage[cameraId] != null && MarkerIdsCurrentImage[cameraId].Size() > 0)
         {
-          Aruco.DrawDetectedMarkers(ArucoCamera.Images[cameraId], MarkerCornersCurrentImage[cameraId], MarkerIdsCurrentImage[cameraId]);
+          Aruco.DrawDetectedMarkers(ArucoCamera.Images[cameraId], MarkerCornersCurrentImage[cameraId],
+            MarkerIdsCurrentImage[cameraId]);
         }
       }
     }
@@ -277,13 +283,15 @@ namespace ArucoUnity.Calibration
       {
         if (MarkerIdsCurrentImage[cameraId] == null || MarkerIdsCurrentImage[cameraId].Size() < 1)
         {
-          throw new Exception("No markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber + " to add the"
-            + " current images for the calibration. At least one marker detected is required for calibrating the camera.");
+          throw new Exception("No markers detected for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber +
+            " to add the current images for the calibration. At least one marker detected is required for" +
+            " calibrating the camera.");
         }
 
         if (markerIdsNumber != MarkerIdsCurrentImage[cameraId].Size())
         {
-          throw new Exception("The cameras must have detected the same number of markers to add the current images for the calibration.");
+          throw new Exception("The cameras must have detected the same number of markers to add the current images" +
+            " for the calibration.");
         }
       }
 
@@ -297,7 +305,8 @@ namespace ArucoUnity.Calibration
 
         if (calibrationImageSizes[cameraId] == null)
         {
-          calibrationImageSizes[cameraId] = new Cv.Size(ArucoCamera.Images[cameraId].Size.Width, ArucoCamera.Images[cameraId].Size.Height);
+          calibrationImageSizes[cameraId] = new Cv.Size(ArucoCamera.Images[cameraId].Size.Width,
+            ArucoCamera.Images[cameraId].Size.Height);
         }
       }
     }
@@ -321,7 +330,8 @@ namespace ArucoUnity.Calibration
 
       if (calibrationRunning)
       {
-        throw new Exception("A calibration is already running. Wait its completion or call CancelCalibrateAsync() before starting a new calibration.");
+        throw new Exception("A calibration is already running. Wait its completion or call CancelCalibrateAsync()" +
+          " before starting a new calibration.");
       }
 
       calibratingThread = new Thread(() =>
@@ -369,10 +379,10 @@ namespace ArucoUnity.Calibration
     }
 
     /// <summary>
-    /// Calibrates each camera of the <see cref="ArucoObjectDetector.ArucoCamera"/> system using the detected markers added with
-    /// <see cref="AddCurrentImagesForCalibration()"/>, the <see cref="ArucoCameraParameters"/>, the <see cref="ArucoCameraUndistortion"/> and save
-    /// the results on a calibration file. Stereo calibrations will be additionally executed on these results for every camera pair in
-    /// <see cref="StereoCalibrationCameraPairs"/>.
+    /// Calibrates each mono camera in <see cref="Cameras.ArucoCameraController.ArucoCamera"/> using the detected
+    /// markers added with <see cref="AddCurrentImagesForCalibration()"/>, the <see cref="ArucoCameraParameters"/>, the
+    /// <see cref="Cameras.Undistortions.ArucoCameraUndistortion"/> and save the results on a calibration file. Stereo
+    /// calibrations will be additionally executed on these results for every camera pair.
     /// </summary>
     public virtual void Calibrate()
     {
@@ -395,13 +405,13 @@ namespace ArucoUnity.Calibration
       {
         if (charucoBoard == null && MarkerIds[cameraId].Size() < 3)
         {
-          throw new Exception("Need at least three images captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
-            + " to calibrate.");
+          throw new Exception("Need at least three images captured for the camera " + (cameraId + 1) + "/" +
+            ArucoCamera.CameraNumber + " to calibrate.");
         }
         else if (charucoBoard != null && MarkerIds[cameraId].Size() < 4)
         {
-          throw new Exception("Need at least four images captured for the camera " + (cameraId + 1) + "/" + ArucoCamera.CameraNumber
-            + " to calibrate with a ChAruco board.");
+          throw new Exception("Need at least four images captured for the camera " + (cameraId + 1) + "/" +
+            ArucoCamera.CameraNumber + " to calibrate with a ChAruco board.");
         }
       }
 
@@ -424,15 +434,15 @@ namespace ArucoUnity.Calibration
           if (charucoBoard == null)
           {
             // Using a grid board
-            Aruco.GetBoardObjectAndImagePoints(CalibrationBoard.Board, MarkerCorners[cameraId].At(imageId), MarkerIds[cameraId].At(imageId),
-              out currentObjectPoints, out currentImagePoints);
+            Aruco.GetBoardObjectAndImagePoints(CalibrationBoard.Board, MarkerCorners[cameraId].At(imageId),
+              MarkerIds[cameraId].At(imageId), out currentObjectPoints, out currentImagePoints);
           }
           else
           {
             // Using a charuco board
             Std.VectorInt charucoIds;
-            Aruco.InterpolateCornersCharuco(MarkerCorners[cameraId].At(imageId), MarkerIds[cameraId].At(imageId), CalibrationImages[cameraId].At(imageId),
-              charucoBoard, out currentImagePoints, out charucoIds);
+            Aruco.InterpolateCornersCharuco(MarkerCorners[cameraId].At(imageId), MarkerIds[cameraId].At(imageId),
+              CalibrationImages[cameraId].At(imageId), charucoBoard, out currentImagePoints, out charucoIds);
 
             // Join the object points corresponding to the detected markers
             currentObjectPoints = new Std.VectorPoint3f();
@@ -499,7 +509,8 @@ namespace ArucoUnity.Calibration
         }
       }
 
-      CameraParametersController.CameraParameters.CalibrationFlagsValue = (CalibrationFlags != null) ? CalibrationFlags.Value : default(int);
+      CameraParametersController.CameraParameters.CalibrationFlagsValue =
+        (CalibrationFlags != null) ? CalibrationFlags.Value : default(int);
 
       for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
       {
@@ -509,8 +520,9 @@ namespace ArucoUnity.Calibration
     }
 
     /// <summary>
-    /// Applies a calibration to the <see cref="ArucoCameraController.ArucoCamera"/>, set the extrinsic camera parameters to <see cref="Rvecs"/>
-    /// and <see cref="Tvecs"/> and saves the camera parameters in <see cref="ArucoCameraParametersController.CameraParameters"/>.
+    /// Applies a calibration to the <see cref="Cameras.ArucoCameraController.ArucoCamera"/>, set the extrinsic camera
+    /// parameters to <see cref="Rvecs"/> and <see cref="Tvecs"/> and saves the camera parameters in
+    /// <see cref="ArucoCameraParametersController.CameraParameters"/>.
     /// </summary>
     /// <param name="imagePoints">The detected image points of each camera.</param>
     /// <param name="objectPoints">The corresponding object points of each camera.</param>

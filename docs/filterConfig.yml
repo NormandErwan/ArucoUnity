@@ -1,0 +1,16 @@
+apiRules:
+- exclude:
+    uidRegex: ^UnityEngine\.MonoBehaviour
+    type: Type
+- exclude:
+    uidRegex: ^UnityEngine\.Behaviour
+    type: Type
+- exclude:
+    uidRegex: ^UnityEngine\.Component
+    type: Type
+- exclude:
+    uidRegex: ^UnityEngine\.Object
+    type: Type
+- exclude:
+    uidRegex: ^System\.Object
+    type: Type

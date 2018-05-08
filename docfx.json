@@ -1,0 +1,43 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "ArucoUnity.csproj" ]
+        }
+      ],
+      "dest": "docs/api/",
+      "filter": "docs/filterConfig.yml"
+    }
+  ],
+  "build": {
+    "globalMetadata":
+    {
+      "_appTitle": "Aruco Unity documentation",
+      "_appFooter": "<a href=\"https://github.com/NormandErwan/ArucoUnity\">Aruco Unity</a> - <a href=\"https://twitter.com/NormandErwan\">Erwan Normand</a>",
+      "_enableSearch": true
+    },
+    "content": [
+      {
+        "src": "docs/api/",
+        "dest": "api",
+        "files": [ "*.yml" ]
+      },
+      {
+        "src": "docs/articles/",
+        "dest": "articles",
+        "files": [ "toc.yml", "*.md" ]
+      },
+      {
+        "src": "docs",
+        "files": [ "toc.yml", "index.md" ]
+      }
+    ],
+    "resources": [
+      {
+        "files": [ "images/**" ]
+      }
+    ],
+    "dest": "docs"
+  }
+}

@@ -9,9 +9,9 @@ namespace ArucoUnity.Cameras
   /// Captures images of a camera.
   /// </summary>
   /// <remarks>
-  /// If you want to use a custom physical camera not supported by Unity, you need to derive this class. See
-  /// <see cref="ArucoWebcam"/> as example. You will need to implement <see cref="StartController"/>, <see cref="StopController"/>,
-  /// <see cref="Configure"/> and to set <see cref="ImageDatas"/> when <see cref="UpdateCameraImages"/> is called.
+  /// To add a new camera, you need to derive this class. See <see cref="ArucoWebcam"/> as example. You need to
+  /// implement <see cref="ConfigurableController.Configuring"/>, <see cref="ConfigurableController.Starting"/>,
+  /// and <see cref="UpdateCameraImagesInternal"/>.
   /// </remarks>
   public abstract class ArucoCamera : ConfigurableController, IArucoCamera
   {
@@ -56,7 +56,7 @@ namespace ArucoUnity.Cameras
     // MonoBehaviour methods
 
     /// <summary>
-    /// Calls <see cref="UpdateCameraImages"> if configured and started.
+    /// Calls <see cref="UpdateCameraImages"/> if configured and started.
     /// </summary>
     protected virtual void Update()
     {
@@ -69,7 +69,8 @@ namespace ArucoUnity.Cameras
 
     /// <summary>
     /// Applies the changes made on the <see cref="Images"/> during the frame to the <see cref="Textures"/>
-    /// then swaps <see cref="Images"/> and <see cref="ImageDatas"/> with <see cref="NextImages"/> and <see cref="NextImageDatas"/>.
+    /// then swaps <see cref="Images"/> and <see cref="ImageDatas"/> with <see cref="NextImages"/> and
+    /// <see cref="NextImageDatas"/>.
     /// </summary>
     protected virtual void LateUpdate()
     {
@@ -126,7 +127,7 @@ namespace ArucoUnity.Cameras
       }
       else if (flipHorizontallyImages && flipVerticallyImages)
       {
-        imagesFlipCode = Cv.horizontalFlipCode; // Don't flip vertically because the image textures are already vertically flipped
+        imagesFlipCode = Cv.horizontalFlipCode; // Image textures are already vertically flipped
       }
     }
 
@@ -174,8 +175,9 @@ namespace ArucoUnity.Cameras
     }
 
     /// <summary>
-    /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/>, <see cref="ImageDatas"/>, <see cref="NextImages"/>,
-    /// <see cref="NextImageTextures"/> and <see cref="NextImageDatas"/> properties from the <see cref="Textures"/> property.
+    /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/>, <see cref="ImageDatas"/>,
+    /// <see cref="NextImages"/>, <see cref="NextImageTextures"/> and <see cref="NextImageDatas"/> properties from the
+    /// <see cref="Textures"/> property.
     /// </summary>
     protected virtual void InitializeImages()
     {

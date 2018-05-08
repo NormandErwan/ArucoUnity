@@ -23,15 +23,15 @@ namespace ArucoUnity.Calibration
     // Properties
 
     /// <summary>
-    /// Gets or sets if the <see cref="Parameters.CameraParameters.CameraMatrices"/> has valid initial value that will
-    /// be optimized by the calibration process.
+    /// Gets or sets if the <see cref="Cameras.Parameters.ArucoCameraParameters.CameraMatrices"/> has valid initial
+    /// value that will be optimized by the calibration process.
     /// </summary>
     public bool UseIntrinsicGuess { get { return useIntrinsicGuess; } set { useIntrinsicGuess = value; } }
 
     /// <summary>
     /// Gets or sets if the corresponding radial distortion coefficients are not changed during the calibration.
-    /// If useIntrinsicGuess is set, the original <see cref="Parameters.CameraParameters.DistCoeffs"/> values in the
-    /// camera parameters are used, otherwise they're set to 0.
+    /// If useIntrinsicGuess is set, the original <see cref="Cameras.Parameters.ArucoCameraParameters.DistCoeffs"/>
+    /// values in the camera parameters are used, otherwise they're set to 0.
     /// </summary>
     public bool[] FixKDistorsionCoefficients
     {

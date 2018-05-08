@@ -1,6 +1,6 @@
 # Aruco Unity
 
-Bring augmented reality to your Unity project by tracking position and orientation of [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
+Bring augmented reality to Unity by tracking [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
 
 It uses under the hood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
 
@@ -17,13 +17,13 @@ Download the [latest build release](https://github.com/enormand/ArucoUnity/relea
 
 A typical workflow with Aruco Unity is:
 
-1. Create and print some markers: read the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) wiki page.
-2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera) wiki page.
-3. Track your markers: read the [Track Markers](https://github.com/NormandErwan/ArucoUnity/wiki/3.-Track-Markers) wiki page.
+1. Create and print some markers: read the [Create Markers](https://normanderwan.github.io/create-markers) documentation page.
+2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://normanderwan.github.io/calibrate-a-camera) documentation page.
+3. Track your markers: read the [Track Markers](https://normanderwan.github.io/track-markers) documentation page.
 
 ## Build
 
-Read the [Build From Sources](https://github.com/NormandErwan/ArucoUnity/wiki/Build-From-Sources) wiki page.
+Read the [Build From Sources](https://normanderwan.github.io/build-from-sources) documentation page.
 
 ## Documentation
 
@@ -32,7 +32,7 @@ The documentation is available online: [https://normanderwan.github.io](https://
 ## Contributions
 
 - For any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
-- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. The project is described in details in the [Aruco Unity Architecture](https://github.com/NormandErwan/ArucoUnity/wiki/ArucoUnity-Architecture) wiki page.
+- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. Also read the [Aruco Unity Architecture](https://normanderwan.github.io/aruco-unity-architecture) and [Build From Sources](https://normanderwan.github.io/build-from-sources) documentation pages.
 - To better understand the algorithms used in the OpenCV modules, read these tutorials:
   - [Detection of ArUco Markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)
   - [Calibration with ArUco and ChArUco](https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html)
@@ -49,7 +49,7 @@ This first version of this project has been developed as part of the master thes
 
 See the [LICENSE](LICENSE) file for license rights and limitations (3-clause BSD license).
 
-See the [3rdparty folder](3rdparty/) for licenses of the third-party dependencies. Aruco Unity makes use of [OpenCV](http://opencv.org/) with the following modules: [aruco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html), [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
+See the [ArucoUnityPlugin/3rdparty/ folder](ArucoUnityPlugin/3rdparty/) for licenses of the third-party dependencies. Aruco Unity makes use of [OpenCV](http://opencv.org/) with the following modules: [aruco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco), [cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html), [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)
 
 ## References
 
