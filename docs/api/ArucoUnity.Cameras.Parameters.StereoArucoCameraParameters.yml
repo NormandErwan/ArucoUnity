@@ -1,0 +1,555 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  id: StereoArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  children:
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CameraNumber
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties
+  - ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  langs:
+  - csharp
+  - vb
+  name: StereoArucoCameraParameters
+  nameWithType: StereoArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoArucoCameraParameters
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nManages the camera parameters of a stereo camera calibration.\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class StereoArucoCameraParameters
+    content.vb: >-
+      <Serializable>
+
+      Public Class StereoArucoCameraParameters
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CameraNumber
+  commentId: F:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CameraNumber
+  id: CameraNumber
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CameraNumber
+  nameWithType: StereoArucoCameraParameters.CameraNumber
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CameraNumber
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CameraNumber
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  syntax:
+    content: public const int CameraNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const CameraNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor
+  commentId: M:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: StereoArucoCameraParameters()
+  nameWithType: StereoArucoCameraParameters.StereoArucoCameraParameters()
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.StereoArucoCameraParameters()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nCreates an empty StereoCameraParameters.\n"
+  remarks: This constructor is needed for the serialization.
+  example: []
+  syntax:
+    content: public StereoArucoCameraParameters()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+  id: CalibrationFlagsValue
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CalibrationFlagsValue
+  nameWithType: StereoArucoCameraParameters.CalibrationFlagsValue
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CalibrationFlagsValue
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the stereo calibration flags used.\n"
+  example: []
+  syntax:
+    content: public int CalibrationFlagsValue { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CalibrationFlagsValue As Integer
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  id: RotationVector
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: RotationVector
+  nameWithType: StereoArucoCameraParameters.RotationVector
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: RotationVector
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 37
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the rotation vector between the first and the second camera coordinate systems.\n"
+  remarks: When <xref href="ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties" data-throw-if-not-resolved="false"></xref> is called, it&apos;s copied to the <xref href="ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues" data-throw-if-not-resolved="false"></xref> property.
+  example: []
+  syntax:
+    content: public Cv.Vec3d RotationVector { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    content.vb: Public Property RotationVector As Cv.Vec3d
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  id: RotationVectorValues
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: RotationVectorValues
+  nameWithType: StereoArucoCameraParameters.RotationVectorValues
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: RotationVectorValues
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the rotation matrix values between the coordinate systems of the cameras. Equals to the <xref href=\"ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector\" data-throw-if-not-resolved=\"false\"></xref>\ncontent and automatically written when <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public double[] RotationVectorValues { get; set; }
+    parameters: []
+    return:
+      type: System.Double[]
+    content.vb: Public Property RotationVectorValues As Double()
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  id: TranslationVector
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: TranslationVector
+  nameWithType: StereoArucoCameraParameters.TranslationVector
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: TranslationVector
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 52
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the translation vector between the coordinate systems of the cameras.\n"
+  remarks: >-
+    When <xref href="ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties" data-throw-if-not-resolved="false"></xref> is called, it&apos;s copied to the <xref href="ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues" data-throw-if-not-resolved="false"></xref>
+
+    property.
+  example: []
+  syntax:
+    content: public Cv.Vec3d TranslationVector { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    content.vb: Public Property TranslationVector As Cv.Vec3d
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  id: TranslationVectorValues
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: TranslationVectorValues
+  nameWithType: StereoArucoCameraParameters.TranslationVectorValues
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: TranslationVectorValues
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 60
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the translation vector values between the coordinate systems of the cameras. Equals to the <xref href=\"ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector\" data-throw-if-not-resolved=\"false\"></xref>\ncontent and automatically written when <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public double[] TranslationVectorValues { get; set; }
+    parameters: []
+    return:
+      type: System.Double[]
+    content.vb: Public Property TranslationVectorValues As Double()
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+  id: ReprojectionError
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ReprojectionError
+  nameWithType: StereoArucoCameraParameters.ReprojectionError
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ReprojectionError
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 65
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nGets or sets the average re-projection error of the calibration.\n"
+  example: []
+  syntax:
+    content: public double ReprojectionError { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ReprojectionError As Double
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  commentId: M:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  id: UpdateSerializedProperties
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: UpdateSerializedProperties()
+  nameWithType: StereoArucoCameraParameters.UpdateSerializedProperties()
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateSerializedProperties
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 72
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nUpdates the serialized properties from the non serialized properties.\n"
+  example: []
+  syntax:
+    content: public void UpdateSerializedProperties()
+    content.vb: Public Sub UpdateSerializedProperties
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties
+  commentId: M:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties
+  id: UpdateNonSerializedProperties
+  parent: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: UpdateNonSerializedProperties()
+  nameWithType: StereoArucoCameraParameters.UpdateNonSerializedProperties()
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateNonSerializedProperties
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
+    startLine: 81
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nInitializes the non serialized properties from the serialized properties.\n"
+  example: []
+  syntax:
+    content: public void UpdateNonSerializedProperties()
+    content.vb: Public Sub UpdateNonSerializedProperties
+  overload: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Cameras.Parameters
+  commentId: N:ArucoUnity.Cameras.Parameters
+  isExternal: false
+  name: ArucoUnity.Cameras.Parameters
+  nameWithType: ArucoUnity.Cameras.Parameters
+  fullName: ArucoUnity.Cameras.Parameters
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor
+  isExternal: false
+  name: StereoArucoCameraParameters
+  nameWithType: StereoArucoCameraParameters.StereoArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.StereoArucoCameraParameters
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+  isExternal: false
+  name: CalibrationFlagsValue
+  nameWithType: StereoArucoCameraParameters.CalibrationFlagsValue
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  commentId: M:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  isExternal: false
+  name: RotationVector
+  nameWithType: StereoArucoCameraParameters.RotationVector
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+- uid: ArucoUnity.Plugin.Cv.Vec3d
+  commentId: T:ArucoUnity.Plugin.Cv.Vec3d
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Cv.Vec3d
+  nameWithType: Cv.Vec3d
+  fullName: ArucoUnity.Plugin.Cv.Vec3d
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  isExternal: false
+  name: RotationVectorValues
+  nameWithType: StereoArucoCameraParameters.RotationVectorValues
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+- uid: System.Double[]
+  name: Double[]
+  nameWithType: Double[]
+  fullName: System.Double[]
+  nameWithType.vb: Double()
+  fullName.vb: System.Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  isExternal: false
+  name: TranslationVector
+  nameWithType: StereoArucoCameraParameters.TranslationVector
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  isExternal: false
+  name: TranslationVectorValues
+  nameWithType: StereoArucoCameraParameters.TranslationVectorValues
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+  isExternal: false
+  name: ReprojectionError
+  nameWithType: StereoArucoCameraParameters.ReprojectionError
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  isExternal: false
+  name: UpdateSerializedProperties
+  nameWithType: StereoArucoCameraParameters.UpdateSerializedProperties
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties
+  isExternal: false
+  name: UpdateNonSerializedProperties
+  nameWithType: StereoArucoCameraParameters.UpdateNonSerializedProperties
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties

@@ -1,0 +1,1601 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Maitrise/Prototype/ArucoUnity",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.ArucoCameraCalibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibration.html",
+          "hash": "ev/mHVZJHVDRjGb64QJdZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html",
+          "hash": "o0qgfy8lNbz1j28ZDV0C8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html",
+          "hash": "8ETn8lybmfE6MeYGmdOvag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.CalibrationFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.CalibrationFlags.html",
+          "hash": "SUOUxyyqme90nDzeB2mwpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.CalibrationFlagsGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.CalibrationFlagsGeneric-1.html",
+          "hash": "3ffnrWXGc1anv4DIzvfinw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html",
+          "hash": "n9xiX8AxcNuedtifdC/vDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.html",
+          "hash": "2S0BeP0b2jDzOfx4CB+JHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html",
+          "hash": "bXmDb7RfrUb69oGlH/gIwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Omnidir.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Omnidir.html",
+          "hash": "o708VB78GYq7IxBo/7sNKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html",
+          "hash": "Grn+iPlPdHzLPbEZmg95dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase-1.html",
+          "hash": "PvElajE9lujRK2pmVRz27Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html",
+          "hash": "hA4vMgNq03q8f15Xt98Xxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html",
+          "hash": "K1CtbD/vNEE08j5sSqmQYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.Pinhole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.Pinhole.html",
+          "hash": "1ebbhYeu6FEDwPhQtmfF/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Calibration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Calibration.html",
+          "hash": "LHqBmC9VTtNIlKJmlE9QZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.ArucoCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.ArucoCamera.html",
+          "hash": "/vHIfVKdb2xLHT99qiK41A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.ArucoCameraController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.ArucoCameraController.html",
+          "hash": "HQ/e+CxWyILG5XAsL1C29w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.ArucoWebcam.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.ArucoWebcam.html",
+          "hash": "h1ICke6ZCU87FKf6qJyvqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.ArucoCameraDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.ArucoCameraDisplay.html",
+          "hash": "Tq/s6Ej7R/+2iWPBd2mw/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric-2.html",
+          "hash": "fyyKRaq5f7TCVD2TMFIHyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.IArucoCameraDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.IArucoCameraDisplay.html",
+          "hash": "Y7o/ekm2b1rO7yNvcLNLrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay.html",
+          "hash": "pLPIWOB9H+Kw14p8ubuDxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay.html",
+          "hash": "QDBRhWWqBZwnyYcCSLNFsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay.html",
+          "hash": "yeG3V4XJ2uq8DUMV04i1/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Displays.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Displays.html",
+          "hash": "lVS4SyrCjEelaOim5q64qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.IArucoCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.IArucoCamera.html",
+          "hash": "wBHVxkuonLieTx54DE7Qig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.IArucoCameraController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.IArucoCameraController.html",
+          "hash": "HZh45rJBpl9slAwsCwxKcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Parameters.ArucoCameraParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html",
+          "hash": "wOWtiBEyd3+QyNaly7hJPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html",
+          "hash": "xH22tvXCXiidp24BWCfZ8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html",
+          "hash": "91Mwk88exJkX8llgharXFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.html",
+          "hash": "+dbTWrMJLohZkQNj2fAiwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Parameters.html",
+          "hash": "QlITupTaamqyo7BfoyvoVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.StereoArucoCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.StereoArucoCamera.html",
+          "hash": "Hv0FmHheo4YVIscwORMFng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.StereoArucoWebcam.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.StereoArucoWebcam.html",
+          "hash": "JN6SWE5pc9Rq/kYTAhHzSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html",
+          "hash": "J2LBauyyxCZiY01n9vHl5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html",
+          "hash": "itFsuWfPWnn1/K/5to2BSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html",
+          "hash": "StrjEmvXrGJ6/mop9cMuhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion.html",
+          "hash": "KL+cVH1BHubbz/1s6vdZCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.RectificationTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.RectificationTypes.html",
+          "hash": "XAO4nFsuIqWgGT4UpCQPeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html",
+          "hash": "XRJuBPdMJkBzJhJLjvXF9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.html",
+          "hash": "49GPZgIfaKFvvxF2897y7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric-1.html",
+          "hash": "eZbNHMXrD5h8lR3Rh8rDZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.html",
+          "hash": "cRMxVapSA3tlAwXl3O46CA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.html",
+          "hash": "N+OMAGj111gJZFtDaM2vpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.Undistortions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.Undistortions.html",
+          "hash": "fl7eoMXel4mqijv7CjbNJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.WebcamController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.WebcamController.html",
+          "hash": "+NkGLf3Jz0xYgfgfeA+SRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Cameras.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Cameras.html",
+          "hash": "5RS5d+PLpS4wmKCicenTFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoBoard.html",
+          "hash": "gVZBUgHJjVKlG8EozgtPYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoCharucoBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoCharucoBoard.html",
+          "hash": "f7GNeQqBs95KC4RSo8bPXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoDiamond.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoDiamond.html",
+          "hash": "wO+sNtUvU+J7/oHGaucLXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoGridBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoGridBoard.html",
+          "hash": "G5okXMdyhPfpTt7NMgAZ2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoMarker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoMarker.html",
+          "hash": "ajKs0Ob2SvZ5hK6TlnliJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.ArucoObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.ArucoObject.html",
+          "hash": "SZqYDtsGKvRALW7GMkmu7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.html",
+          "hash": "oBbzEg1ySR0Izgv9gCU+qQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html",
+          "hash": "YEpIl7jS1Ft0DRYfAc5YPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Displayers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Displayers.html",
+          "hash": "n9WRfztFfv1mW85TiNiPEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html",
+          "hash": "h2frtnMQflVVt/pZAmuxsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html",
+          "hash": "SZZm2RSk8x8Dp55/8TU9uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html",
+          "hash": "ioNV/vsZDSbWlfuy0LtmiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html",
+          "hash": "CvfmPItFiLtvMN7Eat23fA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoObjectDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectDetector.html",
+          "hash": "mAHv+xEMkQZL/o+8OnwnGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html",
+          "hash": "iDUJsGEdGjUseAXdgPTY8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoObjectsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html",
+          "hash": "PdCNhRQ2n7jPQ0bKaDjeEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html",
+          "hash": "74Don3rgSUWAX0v/dqPAOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.DetectorParametersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.DetectorParametersController.html",
+          "hash": "QMFLmQxcrCAPGL40Uriw+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.IArucoObjectsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html",
+          "hash": "BS/agg97hX+BDW5alfAjCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html",
+          "hash": "Rz5nikn2MFpx+g2KpOIDYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.IHasDetectorParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.IHasDetectorParameter.html",
+          "hash": "4MkeSFe++gF/tNveGFPnfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.Trackers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.Trackers.html",
+          "hash": "Xj0mH0FArLZWe/pX3djQcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Objects.html",
+          "hash": "28YF3RUR285bb4dECoDyUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.Board.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.Board.html",
+          "hash": "90iCCzgPxMdh7to5O+y29A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.CharucoBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.CharucoBoard.html",
+          "hash": "u4TBhvwL1VSiJ8jZUhP/+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.CornerRefineMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.CornerRefineMethod.html",
+          "hash": "84lX7WY8pHE9jhquKx7e8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.DetectorParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.DetectorParameters.html",
+          "hash": "9o9EvYJC/hiE9XBxCDigQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.Dictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.Dictionary.html",
+          "hash": "M/szJlnm9FlZLcxplbaRNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.GridBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.GridBoard.html",
+          "hash": "XQ/bJsgwrceypJuQVQCofg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.html",
+          "hash": "UzdHuf7N5VbDUKTl63e03g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Aruco.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Aruco.html",
+          "hash": "jCJZojDVO9a1cO1ayr9XvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.BorderTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.BorderTypes.html",
+          "hash": "eA6eFN74AbH44mkWZ2WilQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Calib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Calib.html",
+          "hash": "GFGopSncY2IkwRXxFCXtbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Exception.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Exception.html",
+          "hash": "VgymkgheqyumfnW3u0YNsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.InterpolationFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.InterpolationFlags.html",
+          "hash": "6vB0OgJrgppfwRAmQ5n9Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Mat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Mat.html",
+          "hash": "4C1amO/6iO4ts6dbac1hZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Omnidir.Calib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.Calib.html",
+          "hash": "ZqHNlUGiTWvicRz773JMnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Omnidir.Rectifify.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.Rectifify.html",
+          "hash": "yEqXklxRTuEekupQazir1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Omnidir.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.html",
+          "hash": "sIUrm5cm8dJWYEX2LbkgyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Point2f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Point2f.html",
+          "hash": "DNAo1i6+6PNKOn8gKEWhFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Point3f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Point3f.html",
+          "hash": "AJb4aCfAYWwbX9bz1Y0e2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Rect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Rect.html",
+          "hash": "g8ckwPxRGJFPbFJdRtr9Kw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Scalar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Scalar.html",
+          "hash": "1IYQAlMwhxC6VDz9pp2R8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Size.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Size.html",
+          "hash": "z49NOsNmiOxDXjQIQUjvUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.StereoRectifyFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.StereoRectifyFlags.html",
+          "hash": "p3IQ7ypFQP2Hkvf85wCUmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.TermCriteria.Type.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.TermCriteria.Type.html",
+          "hash": "mUOtDMqTka4M0T2I8b1jvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.TermCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.TermCriteria.html",
+          "hash": "xlh/r9EqfRa5UJzyWBh9jA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Type.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Type.html",
+          "hash": "t/i0BiBz3CZK2ElJIqxUdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Vec3d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Vec3d.html",
+          "hash": "x9W8+JQ2Vzeaf8sbs/Uh+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.Vec4i.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.Vec4i.html",
+          "hash": "XzMPenL7sAo0BrNX+S448Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Cv.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Cv.html",
+          "hash": "ePrAmsPW0P5H+FwqYiMaAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorDouble.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorDouble.html",
+          "hash": "4gi3PjEEF0A3KJlIt0eoOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorInt.html",
+          "hash": "8CscteWprLw1HQdVmLBTsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorMat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorMat.html",
+          "hash": "uYT9gdAEmiNdzES7XdzzGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorPoint2f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorPoint2f.html",
+          "hash": "oQ/3+yCxLP0RGVlpXPUpBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorPoint3f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorPoint3f.html",
+          "hash": "CE/g6rOHelNFVG/gIfKYnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVec3d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVec3d.html",
+          "hash": "Afhw07zAxpK1kxhrw8HCEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVec4i.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVec4i.html",
+          "hash": "NEhei9sZZFMcJa1i55T3ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVectorInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorInt.html",
+          "hash": "PUcSm9+AQ1VMmZ1IPA1U5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html",
+          "hash": "5EXnNxycKF192y9dtMbn4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html",
+          "hash": "t3XpN42+HrxKdBPPGxSbRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html",
+          "hash": "SCmJdL0F19lkk5oQBRrlog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Std.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Std.html",
+          "hash": "905rL/R9FO1I13Mm2V1gxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Utility.DeleteResponsibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Utility.DeleteResponsibility.html",
+          "hash": "tQLNwZg8NTgQPp92R9Ybmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Utility.HandleCppPtr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Utility.HandleCppPtr.html",
+          "hash": "FPkAFNDKQOF5oyIJWQskcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.Utility.html",
+          "hash": "IJFHCaJhRoD/pTT/3BCXAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Plugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Plugin.html",
+          "hash": "VPEa+lM5W0HgwvtpGdeLMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Utilities.ArucoCameraSeparateThread.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html",
+          "hash": "trNIAwGhLGNzja6TKNVWSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Utilities.ConfigurableController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Utilities.ConfigurableController.html",
+          "hash": "m+nEJAFJE/eWbhOP9dgrjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Utilities.CvMatExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Utilities.CvMatExtensions.html",
+          "hash": "IA7GCgaJVGagUb3/RG8x3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Utilities.IConfigurableController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Utilities.IConfigurableController.html",
+          "hash": "+R9pUKiUkLE5Ly6e8Qs+yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/ArucoUnity.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ArucoUnity.Utilities.html",
+          "hash": "7Qk8ChdOjmld0GJZtVBaMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "fo1eApS9XEFW6Cvgn824Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/aruco-unity-architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/aruco-unity-architecture.html",
+          "hash": "Tdn3GisMLvwjxf+EXuZkEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/build-from-sources.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/build-from-sources.html",
+          "hash": "VXdl2fe7OiQbbp0Rp4Dzpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/calibrate-a-camera.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/calibrate-a-camera.html",
+          "hash": "VAKnjTsPUbpd/ZZm6o0/dA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/create-markers.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/create-markers.html",
+          "hash": "mLqR4H48UBPB+CweE6Zx8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "AzMm3pHLR5mVbMwc+pxxIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/track-markers.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/track-markers.html",
+          "hash": "LdjBHWQrsQKm9O6MZi9A6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "sDTDEYLDz1q9ElzwKihyxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "4bgOP+wpAN/WED5w4OnTeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

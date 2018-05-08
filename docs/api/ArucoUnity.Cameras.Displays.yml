@@ -1,0 +1,109 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Displays
+  commentId: N:ArucoUnity.Cameras.Displays
+  id: ArucoUnity.Cameras.Displays
+  children:
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  - ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay
+  - ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay
+  - ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ArucoUnity.Cameras.Displays
+  nameWithType: ArucoUnity.Cameras.Displays
+  fullName: ArucoUnity.Cameras.Displays
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  isExternal: false
+  name: ArucoCameraDisplay
+  nameWithType: ArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+  commentId: T:ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+  isExternal: false
+  name: ArucoCameraDisplayGeneric<T, U>
+  nameWithType: ArucoCameraDisplayGeneric<T, U>
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric<T, U>
+  nameWithType.vb: ArucoCameraDisplayGeneric(Of T, U)
+  fullName.vb: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric(Of T, U)
+  name.vb: ArucoCameraDisplayGeneric(Of T, U)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+    name: ArucoCameraDisplayGeneric
+    nameWithType: ArucoCameraDisplayGeneric
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: U
+    nameWithType: U
+    fullName: U
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+    name: ArucoCameraDisplayGeneric
+    nameWithType: ArucoCameraDisplayGeneric
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: U
+    nameWithType: U
+    fullName: U
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  isExternal: false
+  name: IArucoCameraDisplay
+  nameWithType: IArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay
+  isExternal: false
+  name: MonoArucoCameraDisplay
+  nameWithType: MonoArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay
+  isExternal: false
+  name: StereoArucoCameraDisplay
+  nameWithType: StereoArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay
+  isExternal: false
+  name: StereoVRArucoCameraDisplay
+  nameWithType: StereoVRArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays
+  commentId: N:ArucoUnity.Cameras.Displays
+  isExternal: false
+  name: ArucoUnity.Cameras.Displays
+  nameWithType: ArucoUnity.Cameras.Displays
+  fullName: ArucoUnity.Cameras.Displays

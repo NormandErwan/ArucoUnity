@@ -1,0 +1,478 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Std.VectorDouble
+  commentId: T:ArucoUnity.Plugin.Std.VectorDouble
+  id: Std.VectorDouble
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Std.VectorDouble.#ctor
+  - ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Std.VectorDouble.At(System.UInt32)
+  - ArucoUnity.Plugin.Std.VectorDouble.Data
+  - ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr
+  - ArucoUnity.Plugin.Std.VectorDouble.PushBack(System.Double)
+  - ArucoUnity.Plugin.Std.VectorDouble.Reserve(System.UInt32)
+  - ArucoUnity.Plugin.Std.VectorDouble.Size
+  langs:
+  - csharp
+  - vb
+  name: Std.VectorDouble
+  nameWithType: Std.VectorDouble
+  fullName: ArucoUnity.Plugin.Std.VectorDouble
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: VectorDouble
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class VectorDouble : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class VectorDouble
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: VectorDouble()
+  nameWithType: Std.VectorDouble.VectorDouble()
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorDouble()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Std.VectorDouble.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: VectorDouble(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Std.VectorDouble.VectorDouble(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 37
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorDouble(IntPtr vectorDoublePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: vectorDoublePtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(vectorDoublePtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Std.VectorDouble.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Std.VectorDouble.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 42
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Std.VectorDouble.At(System.UInt32)
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.At(System.UInt32)
+  id: At(System.UInt32)
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: At(UInt32)
+  nameWithType: Std.VectorDouble.At(UInt32)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.At(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: At
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public double At(uint pos)
+    parameters:
+    - id: pos
+      type: System.UInt32
+    return:
+      type: System.Double
+    content.vb: Public Function At(pos As UInteger) As Double
+  overload: ArucoUnity.Plugin.Std.VectorDouble.At*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Data
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.Data
+  id: Data
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: Data()
+  nameWithType: Std.VectorDouble.Data()
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Data()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Data
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 57
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public double[] Data()
+    return:
+      type: System.Double[]
+    content.vb: Public Function Data As Double()
+  overload: ArucoUnity.Plugin.Std.VectorDouble.Data*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.PushBack(System.Double)
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.PushBack(System.Double)
+  id: PushBack(System.Double)
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: PushBack(Double)
+  nameWithType: Std.VectorDouble.PushBack(Double)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.PushBack(System.Double)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: PushBack
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 71
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void PushBack(double value)
+    parameters:
+    - id: value
+      type: System.Double
+    content.vb: Public Sub PushBack(value As Double)
+  overload: ArucoUnity.Plugin.Std.VectorDouble.PushBack*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Reserve(System.UInt32)
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.Reserve(System.UInt32)
+  id: Reserve(System.UInt32)
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: Reserve(UInt32)
+  nameWithType: Std.VectorDouble.Reserve(UInt32)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Reserve(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Reserve
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 76
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void Reserve(uint newCap)
+    parameters:
+    - id: newCap
+      type: System.UInt32
+    content.vb: Public Sub Reserve(newCap As UInteger)
+  overload: ArucoUnity.Plugin.Std.VectorDouble.Reserve*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Size
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.Size
+  id: Size
+  parent: ArucoUnity.Plugin.Std.VectorDouble
+  langs:
+  - csharp
+  - vb
+  name: Size()
+  nameWithType: Std.VectorDouble.Size()
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Size()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Size
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorDouble.cs
+    startLine: 83
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public uint Size()
+    return:
+      type: System.UInt32
+    content.vb: Public Function Size As UInteger
+  overload: ArucoUnity.Plugin.Std.VectorDouble.Size*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.#ctor
+  isExternal: false
+  name: VectorDouble
+  nameWithType: Std.VectorDouble.VectorDouble
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr
+  isExternal: false
+  name: DeleteCppPtr
+  nameWithType: Std.VectorDouble.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Std.VectorDouble.At*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.At
+  isExternal: false
+  name: At
+  nameWithType: Std.VectorDouble.At
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.At
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Data*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.Data
+  isExternal: false
+  name: Data
+  nameWithType: Std.VectorDouble.Data
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Data
+- uid: System.Double[]
+  name: Double[]
+  nameWithType: Double[]
+  fullName: System.Double[]
+  nameWithType.vb: Double()
+  fullName.vb: System.Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Plugin.Std.VectorDouble.PushBack*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.PushBack
+  isExternal: false
+  name: PushBack
+  nameWithType: Std.VectorDouble.PushBack
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.PushBack
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Reserve*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.Reserve
+  isExternal: false
+  name: Reserve
+  nameWithType: Std.VectorDouble.Reserve
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Reserve
+- uid: ArucoUnity.Plugin.Std.VectorDouble.Size*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorDouble.Size
+  isExternal: false
+  name: Size
+  nameWithType: Std.VectorDouble.Size
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.Size

@@ -1,0 +1,245 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Utilities.CvMatExtensions
+  commentId: T:ArucoUnity.Utilities.CvMatExtensions
+  id: CvMatExtensions
+  parent: ArucoUnity.Utilities
+  children:
+  - ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  - ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  - ArucoUnity.Utilities.CvMatExtensions.ImageType(UnityEngine.TextureFormat)
+  langs:
+  - csharp
+  - vb
+  name: CvMatExtensions
+  nameWithType: CvMatExtensions
+  fullName: ArucoUnity.Utilities.CvMatExtensions
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CvMatExtensions
+    path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Utilities
+  syntax:
+    content: public static class CvMatExtensions
+    content.vb: Public Module CvMatExtensions
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  id: GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  isExtensionMethod: true
+  parent: ArucoUnity.Utilities.CvMatExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetCameraFocalLengths(Cv.Mat)
+  nameWithType: CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: GetCameraFocalLengths
+    path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Utilities
+  summary: "\nGets the camera focal lengths in a camera matrix, expressed in pixels units. Equals to\n<pre><code>F = (AtDouble(0, 0), AtDouble(1, 1))</code></pre>\n"
+  example: []
+  syntax:
+    content: public static Vector2 GetCameraFocalLengths(this Cv.Mat mat)
+    parameters:
+    - id: mat
+      type: ArucoUnity.Plugin.Cv.Mat
+    return:
+      type: UnityEngine.Vector2
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetCameraFocalLengths(mat As Cv.Mat) As Vector2
+  overload: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  id: GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  isExtensionMethod: true
+  parent: ArucoUnity.Utilities.CvMatExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetCameraPrincipalPoint(Cv.Mat)
+  nameWithType: CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: GetCameraPrincipalPoint
+    path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Utilities
+  summary: "\nGets the camera principal point in a camera matrix, expressed in pixels units. Equals to\n<pre><code>C = (AtDouble(0, 2), AtDouble(1, 2))</code></pre>\n"
+  example: []
+  syntax:
+    content: public static Vector2 GetCameraPrincipalPoint(this Cv.Mat mat)
+    parameters:
+    - id: mat
+      type: ArucoUnity.Plugin.Cv.Mat
+    return:
+      type: UnityEngine.Vector2
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetCameraPrincipalPoint(mat As Cv.Mat) As Vector2
+  overload: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: ArucoUnity.Utilities.CvMatExtensions.ImageType(UnityEngine.TextureFormat)
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.ImageType(UnityEngine.TextureFormat)
+  id: ImageType(UnityEngine.TextureFormat)
+  parent: ArucoUnity.Utilities.CvMatExtensions
+  langs:
+  - csharp
+  - vb
+  name: ImageType(TextureFormat)
+  nameWithType: CvMatExtensions.ImageType(TextureFormat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.ImageType(UnityEngine.TextureFormat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ImageType
+    path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Utilities
+  summary: "\nReturns the OpenCV type equivalent to a texture format.\n"
+  example: []
+  syntax:
+    content: public static Cv.Type ImageType(TextureFormat textureFormat)
+    parameters:
+    - id: textureFormat
+      type: UnityEngine.TextureFormat
+      description: The Unity texture format.
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+      description: The equivalent OpenCV type.
+    content.vb: Public Shared Function ImageType(textureFormat As TextureFormat) As Cv.Type
+  overload: ArucoUnity.Utilities.CvMatExtensions.ImageType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  isExternal: false
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths*
+  commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
+  isExternal: false
+  name: GetCameraFocalLengths
+  nameWithType: CvMatExtensions.GetCameraFocalLengths
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
+- uid: ArucoUnity.Plugin.Cv.Mat
+  commentId: T:ArucoUnity.Plugin.Cv.Mat
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Cv.Mat
+  nameWithType: Cv.Mat
+  fullName: ArucoUnity.Plugin.Cv.Mat
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: false
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint*
+  commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint
+  isExternal: false
+  name: GetCameraPrincipalPoint
+  nameWithType: CvMatExtensions.GetCameraPrincipalPoint
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint
+- uid: ArucoUnity.Utilities.CvMatExtensions.ImageType*
+  commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.ImageType
+  isExternal: false
+  name: ImageType
+  nameWithType: CvMatExtensions.ImageType
+  fullName: ArucoUnity.Utilities.CvMatExtensions.ImageType
+- uid: UnityEngine.TextureFormat
+  commentId: T:UnityEngine.TextureFormat
+  parent: UnityEngine
+  isExternal: true
+  name: TextureFormat
+  nameWithType: TextureFormat
+  fullName: UnityEngine.TextureFormat
+- uid: ArucoUnity.Plugin.Cv.Type
+  commentId: T:ArucoUnity.Plugin.Cv.Type
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Cv.Type
+  nameWithType: Cv.Type
+  fullName: ArucoUnity.Plugin.Cv.Type

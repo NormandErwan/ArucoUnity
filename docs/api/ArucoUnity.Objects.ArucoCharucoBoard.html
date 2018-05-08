@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ArucoCharucoBoard
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ArucoCharucoBoard
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.35.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Objects.ArucoCharucoBoard">
+  
+  
+  <h1 id="ArucoUnity_Objects_ArucoCharucoBoard" data-uid="ArucoUnity.Objects.ArucoCharucoBoard" class="text-break">Class ArucoCharucoBoard
+  </h1>
+  <div class="markdown level0 summary"><p>Describes a ChArUco board.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a></div>
+    <div class="level6"><a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a></div>
+    <div class="level7"><span class="xref">ArucoCharucoBoard</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_MarginsLength">ArucoBoard.MarginsLength</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_ImageSize">ArucoBoard.ImageSize</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_Board">ArucoBoard.Board</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_AxisLength">ArucoBoard.AxisLength</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_Rvec">ArucoBoard.Rvec</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_Tvec">ArucoBoard.Tvec</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_Awake">ArucoBoard.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_UpdateProperties">ArucoBoard.UpdateProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_metersToPixels300ppp">ArucoObject.metersToPixels300ppp</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_PropertyUpdating">ArucoObject.PropertyUpdating</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_PropertyUpdated">ArucoObject.PropertyUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_ArucoHashCode">ArucoObject.ArucoHashCode</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_Dictionary">ArucoObject.Dictionary</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_MarkerSideLength">ArucoObject.MarkerSideLength</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_MarkerBorderBits">ArucoObject.MarkerBorderBits</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_DisplayInEditor">ArucoObject.DisplayInEditor</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnValidate">ArucoObject.OnValidate()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnPropertyUpdating">ArucoObject.OnPropertyUpdating()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnPropertyUpdated">ArucoObject.OnPropertyUpdated()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GetInPixels_System_Single_">ArucoObject.GetInPixels(Single)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Objects.html">ArucoUnity.Objects</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ArucoUnity_Objects_ArucoCharucoBoard_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ArucoCharucoBoard : ArucoBoard</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_DetectedCorners.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L72">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_DetectedCorners_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_DetectedCorners" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners">DetectedCorners</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of the detected marker by the tracker the last frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorPoint2f DetectedCorners { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_DetectedIds.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L77">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_DetectedIds_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_DetectedIds" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds">DetectedIds</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of the ids of the detected marker by the tracker the last frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorInt DetectedIds { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_SquareSideLength.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L58">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_SquareSideLength_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_SquareSideLength" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength">SquareSideLength</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SquareSideLength { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberX.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L30">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberX_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberX" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX">SquaresNumberX</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of squares in the X direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SquaresNumberX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberY.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L44">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberY_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_SquaresNumberY" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY">SquaresNumberY</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of squares in the Y direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SquaresNumberY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_ValidTransform.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L82">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_ValidTransform_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_ValidTransform" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform">ValidTransform</h4>
+  <div class="markdown level1 summary"><p>Gets or sets if the transform of the board has been correctly estimated by the tracker the last frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ValidTransform { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_Draw.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.Draw%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L102">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_Draw_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.Draw*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_Draw" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.Draw">Draw()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Cv.Mat Draw()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_Draw">ArucoObject.Draw()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_GenerateName.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.GenerateName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L125">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_GenerateName_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GenerateName*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_GenerateName" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GenerateName">GenerateName()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GenerateName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GenerateName">ArucoObject.GenerateName()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_GetArucoHashCode_System_Int32_System_Int32_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32%2CSystem.Int32%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L155">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_GetArucoHashCode_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_GetArucoHashCode_System_Int32_System_Int32_System_Single_System_Single_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32,System.Int32,System.Single,System.Single)">GetArucoHashCode(Int32, Int32, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Computes the hash code of a ChAruco board.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">squaresNumberX</span></td>
+        <td><p>The number of squares in the X direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">squaresNumberY</span></td>
+        <td><p>The number of squares in the Y direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">markerSideLength</span></td>
+        <td><p>The side length of each marker.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">squareSideLength</span></td>
+        <td><p>The side length of each square.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The calculated ArUco hash code.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_GetGameObjectScale.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L86">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_GetGameObjectScale_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_GetGameObjectScale" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale">GetGameObjectScale()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3 GetGameObjectScale()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GetGameObjectScale">ArucoObject.GetGameObjectScale()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_UpdateArucoHashCode.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L95">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_UpdateArucoHashCode_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_UpdateArucoHashCode" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode">UpdateArucoHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateArucoHashCode()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_UpdateArucoHashCode">ArucoObject.UpdateArucoHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard_UpdateBoard.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L131">View Source</a>
+  </span>
+  <a id="ArucoUnity_Objects_ArucoCharucoBoard_UpdateBoard_" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoCharucoBoard_UpdateBoard" data-uid="ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard">UpdateBoard()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateBoard()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_UpdateBoard">ArucoBoard.UpdateBoard()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_ArucoCharucoBoard.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.ArucoCharucoBoard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

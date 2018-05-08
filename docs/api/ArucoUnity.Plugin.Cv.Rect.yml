@@ -1,0 +1,454 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Rect
+  commentId: T:ArucoUnity.Plugin.Cv.Rect
+  id: Cv.Rect
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Rect.#ctor
+  - ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  - ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
+  - ArucoUnity.Plugin.Cv.Rect.Height
+  - ArucoUnity.Plugin.Cv.Rect.Width
+  - ArucoUnity.Plugin.Cv.Rect.X
+  - ArucoUnity.Plugin.Cv.Rect.Y
+  langs:
+  - csharp
+  - vb
+  name: Cv.Rect
+  nameWithType: Cv.Rect
+  fullName: ArucoUnity.Plugin.Cv.Rect
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Rect
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class Rect : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class Rect
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Rect()
+  nameWithType: Cv.Rect.Rect()
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Rect()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Cv.Rect.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Rect(Int32, Int32, Int32, Int32)
+  nameWithType: Cv.Rect.Rect(Int32, Int32, Int32, Int32)
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.Int32, System.Int32, System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Rect(int x, int y, int width, int height)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    content.vb: Public Sub New(x As Integer, y As Integer, width As Integer, height As Integer)
+  overload: ArucoUnity.Plugin.Cv.Rect.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Rect(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Cv.Rect.Rect(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 53
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Rect(IntPtr RectPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: RectPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(RectPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Cv.Rect.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Cv.Rect.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 58
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Cv.Rect.X
+  commentId: P:ArucoUnity.Plugin.Cv.Rect.X
+  id: X
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Cv.Rect.X
+  fullName: ArucoUnity.Plugin.Cv.Rect.X
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: X
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 65
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int X { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property X As Integer
+  overload: ArucoUnity.Plugin.Cv.Rect.X*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.Y
+  commentId: P:ArucoUnity.Plugin.Cv.Rect.Y
+  id: Y
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Cv.Rect.Y
+  fullName: ArucoUnity.Plugin.Cv.Rect.Y
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Y
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 71
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int Y { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Y As Integer
+  overload: ArucoUnity.Plugin.Cv.Rect.Y*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.Width
+  commentId: P:ArucoUnity.Plugin.Cv.Rect.Width
+  id: Width
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Cv.Rect.Width
+  fullName: ArucoUnity.Plugin.Cv.Rect.Width
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Width
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 77
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int Width { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Width As Integer
+  overload: ArucoUnity.Plugin.Cv.Rect.Width*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Rect.Height
+  commentId: P:ArucoUnity.Plugin.Cv.Rect.Height
+  id: Height
+  parent: ArucoUnity.Plugin.Cv.Rect
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Cv.Rect.Height
+  fullName: ArucoUnity.Plugin.Cv.Rect.Height
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Height
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
+    startLine: 83
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int Height { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Height As Integer
+  overload: ArucoUnity.Plugin.Cv.Rect.Height*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.#ctor
+  isExternal: false
+  name: Rect
+  nameWithType: Cv.Rect.Rect
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
+  isExternal: false
+  name: DeleteCppPtr
+  nameWithType: Cv.Rect.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Cv.Rect.X*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.X
+  isExternal: false
+  name: X
+  nameWithType: Cv.Rect.X
+  fullName: ArucoUnity.Plugin.Cv.Rect.X
+- uid: ArucoUnity.Plugin.Cv.Rect.Y*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Y
+  isExternal: false
+  name: Y
+  nameWithType: Cv.Rect.Y
+  fullName: ArucoUnity.Plugin.Cv.Rect.Y
+- uid: ArucoUnity.Plugin.Cv.Rect.Width*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Width
+  isExternal: false
+  name: Width
+  nameWithType: Cv.Rect.Width
+  fullName: ArucoUnity.Plugin.Cv.Rect.Width
+- uid: ArucoUnity.Plugin.Cv.Rect.Height*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Height
+  isExternal: false
+  name: Height
+  nameWithType: Cv.Rect.Height
+  fullName: ArucoUnity.Plugin.Cv.Rect.Height

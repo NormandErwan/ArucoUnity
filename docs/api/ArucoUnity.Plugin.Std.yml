@@ -1,0 +1,57 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Std
+  commentId: T:ArucoUnity.Plugin.Std
+  id: Std
+  parent: ArucoUnity.Plugin
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Std
+  nameWithType: Std
+  fullName: ArucoUnity.Plugin.Std
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Std
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
+    startLine: 4
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static class Std
+    content.vb: Public Module Std
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

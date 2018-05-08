@@ -1,0 +1,436 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f
+  commentId: T:ArucoUnity.Plugin.Std.VectorPoint2f
+  id: Std.VectorPoint2f
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
+  - ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Std.VectorPoint2f.At(System.UInt32)
+  - ArucoUnity.Plugin.Std.VectorPoint2f.Data
+  - ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr
+  - ArucoUnity.Plugin.Std.VectorPoint2f.PushBack(ArucoUnity.Plugin.Cv.Point2f)
+  - ArucoUnity.Plugin.Std.VectorPoint2f.Size
+  langs:
+  - csharp
+  - vb
+  name: Std.VectorPoint2f
+  nameWithType: Std.VectorPoint2f
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: VectorPoint2f
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 6
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class VectorPoint2f : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class VectorPoint2f
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: VectorPoint2f()
+  nameWithType: Std.VectorPoint2f.VectorPoint2f()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorPoint2f()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: VectorPoint2f(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Std.VectorPoint2f.VectorPoint2f(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorPoint2f(IntPtr vectorPoint2fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: vectorPoint2fPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(vectorPoint2fPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Std.VectorPoint2f.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.At(System.UInt32)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.At(System.UInt32)
+  id: At(System.UInt32)
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: At(UInt32)
+  nameWithType: Std.VectorPoint2f.At(UInt32)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.At(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: At
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 46
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Cv.Point2f At(uint pos)
+    parameters:
+    - id: pos
+      type: System.UInt32
+    return:
+      type: ArucoUnity.Plugin.Cv.Point2f
+    content.vb: Public Function At(pos As UInteger) As Cv.Point2f
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.At*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.Data
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.Data
+  id: Data
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: Data()
+  nameWithType: Std.VectorPoint2f.Data()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.Data()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Data
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Cv.Point2f[] Data()
+    return:
+      type: ArucoUnity.Plugin.Cv.Point2f[]
+    content.vb: Public Function Data As Cv.Point2f()
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.Data*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.PushBack(ArucoUnity.Plugin.Cv.Point2f)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.PushBack(ArucoUnity.Plugin.Cv.Point2f)
+  id: PushBack(ArucoUnity.Plugin.Cv.Point2f)
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: PushBack(Cv.Point2f)
+  nameWithType: Std.VectorPoint2f.PushBack(Cv.Point2f)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.PushBack(ArucoUnity.Plugin.Cv.Point2f)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: PushBack
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 68
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void PushBack(Cv.Point2f value)
+    parameters:
+    - id: value
+      type: ArucoUnity.Plugin.Cv.Point2f
+    content.vb: Public Sub PushBack(value As Cv.Point2f)
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.PushBack*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.Size
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.Size
+  id: Size
+  parent: ArucoUnity.Plugin.Std.VectorPoint2f
+  langs:
+  - csharp
+  - vb
+  name: Size()
+  nameWithType: Std.VectorPoint2f.Size()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.Size()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Size
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint2f.cs
+    startLine: 73
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public uint Size()
+    return:
+      type: System.UInt32
+    content.vb: Public Function Size As UInteger
+  overload: ArucoUnity.Plugin.Std.VectorPoint2f.Size*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
+  isExternal: false
+  name: VectorPoint2f
+  nameWithType: Std.VectorPoint2f.VectorPoint2f
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  isExternal: false
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr
+  isExternal: false
+  name: DeleteCppPtr
+  nameWithType: Std.VectorPoint2f.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.At*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.At
+  isExternal: false
+  name: At
+  nameWithType: Std.VectorPoint2f.At
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.At
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: ArucoUnity.Plugin.Cv.Point2f
+  commentId: T:ArucoUnity.Plugin.Cv.Point2f
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Cv.Point2f
+  nameWithType: Cv.Point2f
+  fullName: ArucoUnity.Plugin.Cv.Point2f
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.Data*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.Data
+  isExternal: false
+  name: Data
+  nameWithType: Std.VectorPoint2f.Data
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.Data
+- uid: ArucoUnity.Plugin.Cv.Point2f[]
+  name: Cv.Point2f[]
+  nameWithType: Cv.Point2f[]
+  fullName: ArucoUnity.Plugin.Cv.Point2f[]
+  nameWithType.vb: Cv.Point2f()
+  fullName.vb: ArucoUnity.Plugin.Cv.Point2f()
+  name.vb: Cv.Point2f()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Point2f
+    name: Cv.Point2f
+    nameWithType: Cv.Point2f
+    fullName: ArucoUnity.Plugin.Cv.Point2f
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Point2f
+    name: Cv.Point2f
+    nameWithType: Cv.Point2f
+    fullName: ArucoUnity.Plugin.Cv.Point2f
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.PushBack*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.PushBack
+  isExternal: false
+  name: PushBack
+  nameWithType: Std.VectorPoint2f.PushBack
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.PushBack
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.Size*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint2f.Size
+  isExternal: false
+  name: Size
+  nameWithType: Std.VectorPoint2f.Size
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.Size

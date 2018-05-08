@@ -1,0 +1,1008 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.WebcamController
+  commentId: T:ArucoUnity.Cameras.WebcamController
+  id: WebcamController
+  parent: ArucoUnity.Cameras
+  children:
+  - ArucoUnity.Cameras.WebcamController.Awake
+  - ArucoUnity.Cameras.WebcamController.Configure
+  - ArucoUnity.Cameras.WebcamController.Devices
+  - ArucoUnity.Cameras.WebcamController.Ids
+  - ArucoUnity.Cameras.WebcamController.IsConfigured
+  - ArucoUnity.Cameras.WebcamController.IsStarted
+  - ArucoUnity.Cameras.WebcamController.Started
+  - ArucoUnity.Cameras.WebcamController.starting
+  - ArucoUnity.Cameras.WebcamController.StartingAsync
+  - ArucoUnity.Cameras.WebcamController.StartWebcams
+  - ArucoUnity.Cameras.WebcamController.Stopping
+  - ArucoUnity.Cameras.WebcamController.Textures
+  - ArucoUnity.Cameras.WebcamController.Textures2D
+  - ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  langs:
+  - csharp
+  - vb
+  name: WebcamController
+  nameWithType: WebcamController
+  fullName: ArucoUnity.Cameras.WebcamController
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: WebcamController
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGet images from multiple webcams. Based on: http://answers.unity3d.com/answers/1155328/view.html\n"
+  example: []
+  syntax:
+    content: 'public class WebcamController : MonoBehaviour'
+    content.vb: >-
+      Public Class WebcamController
+          Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Cameras.WebcamController.Started
+  commentId: F:ArucoUnity.Cameras.WebcamController.Started
+  id: Started
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Started
+  nameWithType: WebcamController.Started
+  fullName: ArucoUnity.Cameras.WebcamController.Started
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Started
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nCalled when the webcams started.\n"
+  example: []
+  syntax:
+    content: public Action<WebcamController> Started
+    return:
+      type: System.Action{ArucoUnity.Cameras.WebcamController}
+    content.vb: Public Started As Action(Of WebcamController)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.WebcamController.Ids
+  commentId: P:ArucoUnity.Cameras.WebcamController.Ids
+  id: Ids
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Ids
+  nameWithType: WebcamController.Ids
+  fullName: ArucoUnity.Cameras.WebcamController.Ids
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Ids
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets or sets the ids of the webcams to use.\n"
+  example: []
+  syntax:
+    content: public List<int> Ids { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public ReadOnly Property Ids As List(Of Integer)
+  overload: ArucoUnity.Cameras.WebcamController.Ids*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.Devices
+  commentId: P:ArucoUnity.Cameras.WebcamController.Devices
+  id: Devices
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Devices
+  nameWithType: WebcamController.Devices
+  fullName: ArucoUnity.Cameras.WebcamController.Devices
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Devices
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets the used webcams.\n"
+  example: []
+  syntax:
+    content: public List<WebCamDevice> Devices { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UnityEngine.WebCamDevice}
+    content.vb: Public ReadOnly Property Devices As List(Of WebCamDevice)
+  overload: ArucoUnity.Cameras.WebcamController.Devices*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.Textures
+  commentId: P:ArucoUnity.Cameras.WebcamController.Textures
+  id: Textures
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Textures
+  nameWithType: WebcamController.Textures
+  fullName: ArucoUnity.Cameras.WebcamController.Textures
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Textures
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets the textures of the used webcams.\n"
+  example: []
+  syntax:
+    content: public List<WebCamTexture> Textures { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UnityEngine.WebCamTexture}
+    content.vb: Public ReadOnly Property Textures As List(Of WebCamTexture)
+  overload: ArucoUnity.Cameras.WebcamController.Textures*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.Textures2D
+  commentId: P:ArucoUnity.Cameras.WebcamController.Textures2D
+  id: Textures2D
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Textures2D
+  nameWithType: WebcamController.Textures2D
+  fullName: ArucoUnity.Cameras.WebcamController.Textures2D
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Textures2D
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets <xref href=\"ArucoUnity.Cameras.WebcamController.Textures\" data-throw-if-not-resolved=\"false\"></xref> converted in Texture2D.\n"
+  example: []
+  syntax:
+    content: public List<Texture2D> Textures2D { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UnityEngine.Texture2D}
+    content.vb: Public ReadOnly Property Textures2D As List(Of Texture2D)
+  overload: ArucoUnity.Cameras.WebcamController.Textures2D*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  commentId: P:ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  id: Textures2DFormat
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Textures2DFormat
+  nameWithType: WebcamController.Textures2DFormat
+  fullName: ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Textures2DFormat
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets or sets the format of <xref href=\"ArucoUnity.Cameras.WebcamController.Textures2D\" data-throw-if-not-resolved=\"false\"></xref>, by default <xref href=\"UnityEngine.TextureFormat.RGB24\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public TextureFormat Textures2DFormat { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.TextureFormat
+    content.vb: Public Property Textures2DFormat As TextureFormat
+  overload: ArucoUnity.Cameras.WebcamController.Textures2DFormat*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.WebcamController.IsConfigured
+  commentId: P:ArucoUnity.Cameras.WebcamController.IsConfigured
+  id: IsConfigured
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: IsConfigured
+  nameWithType: WebcamController.IsConfigured
+  fullName: ArucoUnity.Cameras.WebcamController.IsConfigured
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: IsConfigured
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 59
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets if the controller is configured.\n"
+  example: []
+  syntax:
+    content: public bool IsConfigured { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsConfigured As Boolean
+  overload: ArucoUnity.Cameras.WebcamController.IsConfigured*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.IsStarted
+  commentId: P:ArucoUnity.Cameras.WebcamController.IsStarted
+  id: IsStarted
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: IsStarted
+  nameWithType: WebcamController.IsStarted
+  fullName: ArucoUnity.Cameras.WebcamController.IsStarted
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: IsStarted
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 64
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets if the webcams started.\n"
+  example: []
+  syntax:
+    content: public bool IsStarted { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsStarted As Boolean
+  overload: ArucoUnity.Cameras.WebcamController.IsStarted*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.WebcamController.starting
+  commentId: F:ArucoUnity.Cameras.WebcamController.starting
+  id: starting
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: starting
+  nameWithType: WebcamController.starting
+  fullName: ArucoUnity.Cameras.WebcamController.starting
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: starting
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 68
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  syntax:
+    content: protected bool starting
+    return:
+      type: System.Boolean
+    content.vb: Protected starting As Boolean
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Cameras.WebcamController.Awake
+  commentId: M:ArucoUnity.Cameras.WebcamController.Awake
+  id: Awake
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: WebcamController.Awake()
+  fullName: ArucoUnity.Cameras.WebcamController.Awake()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Awake
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 77
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nInitializes the properties.\n"
+  example: []
+  syntax:
+    content: protected void Awake()
+    content.vb: Protected Sub Awake
+  overload: ArucoUnity.Cameras.WebcamController.Awake*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Cameras.WebcamController.Configure
+  commentId: M:ArucoUnity.Cameras.WebcamController.Configure
+  id: Configure
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Configure()
+  nameWithType: WebcamController.Configure()
+  fullName: ArucoUnity.Cameras.WebcamController.Configure()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Configure
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 92
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nConfigures <xref href=\"ArucoUnity.Cameras.WebcamController.Devices\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ArucoUnity.Cameras.WebcamController.Textures\" data-throw-if-not-resolved=\"false\"></xref> from <xref href=\"ArucoUnity.Cameras.WebcamController.Ids\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Configure()
+    content.vb: Public Sub Configure
+  overload: ArucoUnity.Cameras.WebcamController.Configure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.WebcamController.StartWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StartWebcams
+  id: StartWebcams
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: StartWebcams()
+  nameWithType: WebcamController.StartWebcams()
+  fullName: ArucoUnity.Cameras.WebcamController.StartWebcams()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StartWebcams
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 112
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nStarts the webcams.\n"
+  example: []
+  syntax:
+    content: public void StartWebcams()
+    content.vb: Public Sub StartWebcams
+  overload: ArucoUnity.Cameras.WebcamController.StartWebcams*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.WebcamController.Stopping
+  commentId: M:ArucoUnity.Cameras.WebcamController.Stopping
+  id: Stopping
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: Stopping()
+  nameWithType: WebcamController.Stopping()
+  fullName: ArucoUnity.Cameras.WebcamController.Stopping()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Stopping
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 124
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nStops the webcams.\n"
+  example: []
+  syntax:
+    content: public void Stopping()
+    content.vb: Public Sub Stopping
+  overload: ArucoUnity.Cameras.WebcamController.Stopping*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.WebcamController.StartingAsync
+  commentId: M:ArucoUnity.Cameras.WebcamController.StartingAsync
+  id: StartingAsync
+  parent: ArucoUnity.Cameras.WebcamController
+  langs:
+  - csharp
+  - vb
+  name: StartingAsync()
+  nameWithType: WebcamController.StartingAsync()
+  fullName: ArucoUnity.Cameras.WebcamController.StartingAsync()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StartingAsync
+    path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
+    startLine: 149
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nWaits for Unity to start the webcams to set <xref href=\"ArucoUnity.Cameras.WebcamController.Textures2D\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"ArucoUnity.Cameras.WebcamController.Textures\" data-throw-if-not-resolved=\"false\"></xref> and call\n<see cref=\"!:ConfigurableController.OnStarted\"></see>.\n"
+  example: []
+  syntax:
+    content: protected IEnumerator StartingAsync()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Protected Function StartingAsync As IEnumerator
+  overload: ArucoUnity.Cameras.WebcamController.StartingAsync*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  isExternal: false
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: false
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Action{ArucoUnity.Cameras.WebcamController}
+  commentId: T:System.Action{ArucoUnity.Cameras.WebcamController}
+  parent: System
+  definition: System.Action`1
+  name: Action<WebcamController>
+  nameWithType: Action<WebcamController>
+  fullName: System.Action<ArucoUnity.Cameras.WebcamController>
+  nameWithType.vb: Action(Of WebcamController)
+  fullName.vb: System.Action(Of ArucoUnity.Cameras.WebcamController)
+  name.vb: Action(Of WebcamController)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArucoUnity.Cameras.WebcamController
+    name: WebcamController
+    nameWithType: WebcamController
+    fullName: ArucoUnity.Cameras.WebcamController
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArucoUnity.Cameras.WebcamController
+    name: WebcamController
+    nameWithType: WebcamController
+    fullName: ArucoUnity.Cameras.WebcamController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.Ids*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Ids
+  isExternal: false
+  name: Ids
+  nameWithType: WebcamController.Ids
+  fullName: ArucoUnity.Cameras.WebcamController.Ids
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: ArucoUnity.Cameras.WebcamController.Devices*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Devices
+  isExternal: false
+  name: Devices
+  nameWithType: WebcamController.Devices
+  fullName: ArucoUnity.Cameras.WebcamController.Devices
+- uid: System.Collections.Generic.List{UnityEngine.WebCamDevice}
+  commentId: T:System.Collections.Generic.List{UnityEngine.WebCamDevice}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<WebCamDevice>
+  nameWithType: List<WebCamDevice>
+  fullName: System.Collections.Generic.List<UnityEngine.WebCamDevice>
+  nameWithType.vb: List(Of WebCamDevice)
+  fullName.vb: System.Collections.Generic.List(Of UnityEngine.WebCamDevice)
+  name.vb: List(Of WebCamDevice)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UnityEngine.WebCamDevice
+    name: WebCamDevice
+    nameWithType: WebCamDevice
+    fullName: UnityEngine.WebCamDevice
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UnityEngine.WebCamDevice
+    name: WebCamDevice
+    nameWithType: WebCamDevice
+    fullName: UnityEngine.WebCamDevice
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.Textures*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures
+  isExternal: false
+  name: Textures
+  nameWithType: WebcamController.Textures
+  fullName: ArucoUnity.Cameras.WebcamController.Textures
+- uid: System.Collections.Generic.List{UnityEngine.WebCamTexture}
+  commentId: T:System.Collections.Generic.List{UnityEngine.WebCamTexture}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<WebCamTexture>
+  nameWithType: List<WebCamTexture>
+  fullName: System.Collections.Generic.List<UnityEngine.WebCamTexture>
+  nameWithType.vb: List(Of WebCamTexture)
+  fullName.vb: System.Collections.Generic.List(Of UnityEngine.WebCamTexture)
+  name.vb: List(Of WebCamTexture)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UnityEngine.WebCamTexture
+    name: WebCamTexture
+    nameWithType: WebCamTexture
+    fullName: UnityEngine.WebCamTexture
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UnityEngine.WebCamTexture
+    name: WebCamTexture
+    nameWithType: WebCamTexture
+    fullName: UnityEngine.WebCamTexture
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.Textures
+  commentId: P:ArucoUnity.Cameras.WebcamController.Textures
+- uid: ArucoUnity.Cameras.WebcamController.Textures2D*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2D
+  isExternal: false
+  name: Textures2D
+  nameWithType: WebcamController.Textures2D
+  fullName: ArucoUnity.Cameras.WebcamController.Textures2D
+- uid: System.Collections.Generic.List{UnityEngine.Texture2D}
+  commentId: T:System.Collections.Generic.List{UnityEngine.Texture2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Texture2D>
+  nameWithType: List<Texture2D>
+  fullName: System.Collections.Generic.List<UnityEngine.Texture2D>
+  nameWithType.vb: List(Of Texture2D)
+  fullName.vb: System.Collections.Generic.List(Of UnityEngine.Texture2D)
+  name.vb: List(Of Texture2D)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    nameWithType: Texture2D
+    fullName: UnityEngine.Texture2D
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    nameWithType: Texture2D
+    fullName: UnityEngine.Texture2D
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.Textures2D
+  commentId: P:ArucoUnity.Cameras.WebcamController.Textures2D
+- uid: UnityEngine.TextureFormat.RGB24
+  commentId: F:UnityEngine.TextureFormat.RGB24
+- uid: ArucoUnity.Cameras.WebcamController.Textures2DFormat*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  isExternal: false
+  name: Textures2DFormat
+  nameWithType: WebcamController.Textures2DFormat
+  fullName: ArucoUnity.Cameras.WebcamController.Textures2DFormat
+- uid: UnityEngine.TextureFormat
+  commentId: T:UnityEngine.TextureFormat
+  parent: UnityEngine
+  isExternal: true
+  name: TextureFormat
+  nameWithType: TextureFormat
+  fullName: UnityEngine.TextureFormat
+- uid: ArucoUnity.Cameras.WebcamController.IsConfigured*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.IsConfigured
+  isExternal: false
+  name: IsConfigured
+  nameWithType: WebcamController.IsConfigured
+  fullName: ArucoUnity.Cameras.WebcamController.IsConfigured
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Cameras.WebcamController.IsStarted*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.IsStarted
+  isExternal: false
+  name: IsStarted
+  nameWithType: WebcamController.IsStarted
+  fullName: ArucoUnity.Cameras.WebcamController.IsStarted
+- uid: ArucoUnity.Cameras.WebcamController.Awake*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Awake
+  isExternal: false
+  name: Awake
+  nameWithType: WebcamController.Awake
+  fullName: ArucoUnity.Cameras.WebcamController.Awake
+- uid: ArucoUnity.Cameras.WebcamController.Devices
+  commentId: P:ArucoUnity.Cameras.WebcamController.Devices
+- uid: ArucoUnity.Cameras.WebcamController.Ids
+  commentId: P:ArucoUnity.Cameras.WebcamController.Ids
+- uid: ArucoUnity.Cameras.WebcamController.Configure*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Configure
+  isExternal: false
+  name: Configure
+  nameWithType: WebcamController.Configure
+  fullName: ArucoUnity.Cameras.WebcamController.Configure
+- uid: ArucoUnity.Cameras.WebcamController.StartWebcams*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.StartWebcams
+  isExternal: false
+  name: StartWebcams
+  nameWithType: WebcamController.StartWebcams
+  fullName: ArucoUnity.Cameras.WebcamController.StartWebcams
+- uid: ArucoUnity.Cameras.WebcamController.Stopping*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.Stopping
+  isExternal: false
+  name: Stopping
+  nameWithType: WebcamController.Stopping
+  fullName: ArucoUnity.Cameras.WebcamController.Stopping
+- uid: ArucoUnity.Cameras.WebcamController.StartingAsync*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.StartingAsync
+  isExternal: false
+  name: StartingAsync
+  nameWithType: WebcamController.StartingAsync
+  fullName: ArucoUnity.Cameras.WebcamController.StartingAsync
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections

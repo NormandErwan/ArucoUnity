@@ -1,0 +1,333 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  id: Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
+  langs:
+  - csharp
+  - vb
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: HandleCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public abstract class HandleCppPtr
+    content.vb: Public MustInherit Class HandleCppPtr
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - ArucoUnity.Plugin.Aruco.Board
+  - ArucoUnity.Plugin.Aruco.DetectorParameters
+  - ArucoUnity.Plugin.Aruco.Dictionary
+  - ArucoUnity.Plugin.Cv.Exception
+  - ArucoUnity.Plugin.Cv.Mat
+  - ArucoUnity.Plugin.Cv.Point2f
+  - ArucoUnity.Plugin.Cv.Point3f
+  - ArucoUnity.Plugin.Cv.Rect
+  - ArucoUnity.Plugin.Cv.Scalar
+  - ArucoUnity.Plugin.Cv.Size
+  - ArucoUnity.Plugin.Cv.TermCriteria
+  - ArucoUnity.Plugin.Cv.Vec3d
+  - ArucoUnity.Plugin.Cv.Vec4i
+  - ArucoUnity.Plugin.Std.VectorDouble
+  - ArucoUnity.Plugin.Std.VectorInt
+  - ArucoUnity.Plugin.Std.VectorMat
+  - ArucoUnity.Plugin.Std.VectorPoint2f
+  - ArucoUnity.Plugin.Std.VectorPoint3f
+  - ArucoUnity.Plugin.Std.VectorVec3d
+  - ArucoUnity.Plugin.Std.VectorVec4i
+  - ArucoUnity.Plugin.Std.VectorVectorInt
+  - ArucoUnity.Plugin.Std.VectorVectorPoint2f
+  - ArucoUnity.Plugin.Std.VectorVectorPoint3f
+  - ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: HandleCppPtr(Utility.DeleteResponsibility)
+  nameWithType: Utility.HandleCppPtr.HandleCppPtr(Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr(ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public HandleCppPtr(Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: HandleCppPtr(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Utility.HandleCppPtr.HandleCppPtr(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public HandleCppPtr(IntPtr cppPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: cppPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(cppPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
+  id: Finalize
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: Utility.HandleCppPtr.Finalize()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Finalize
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  id: DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteResponsibility
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 38
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Utility.DeleteResponsibility DeleteResponsibility { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Property DeleteResponsibility As Utility.DeleteResponsibility
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  id: CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 40
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public IntPtr CppPtr { get; set; }
+    parameters: []
+    return:
+      type: System.IntPtr
+    content.vb: Public Property CppPtr As IntPtr
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 52
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected abstract void DeleteCppPtr()
+    content.vb: Protected MustOverride Sub DeleteCppPtr
+  overload: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  isExternal: false
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor
+  isExternal: false
+  name: HandleCppPtr
+  nameWithType: Utility.HandleCppPtr.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  isExternal: false
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize*
+  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
+  isExternal: false
+  name: Finalize
+  nameWithType: Utility.HandleCppPtr.Finalize
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility*
+  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  isExternal: false
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  isExternal: false
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  isExternal: false
+  name: DeleteCppPtr
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr

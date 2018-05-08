@@ -1,0 +1,213 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Undistortions
+  commentId: N:ArucoUnity.Cameras.Undistortions
+  id: ArucoUnity.Cameras.Undistortions
+  children:
+  - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
+  - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  - ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
+  - ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
+  - ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
+  - ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
+  - ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
+  - ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
+  - ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: ArucoUnity.Cameras.Undistortions
+  nameWithType: ArucoUnity.Cameras.Undistortions
+  fullName: ArucoUnity.Cameras.Undistortions
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Undistortions
+  isExternal: false
+  name: ArucoCameraUndistortion
+  nameWithType: ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
+  commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
+  isExternal: false
+  name: ArucoCameraUndistortionGeneric<T>
+  nameWithType: ArucoCameraUndistortionGeneric<T>
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric<T>
+  nameWithType.vb: ArucoCameraUndistortionGeneric(Of T)
+  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric(Of T)
+  name.vb: ArucoCameraUndistortionGeneric(Of T)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
+    name: ArucoCameraUndistortionGeneric
+    nameWithType: ArucoCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
+    name: ArucoCameraUndistortionGeneric
+    nameWithType: ArucoCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Undistortions
+  isExternal: false
+  name: IArucoCameraUndistortion
+  nameWithType: IArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
+  isExternal: false
+  name: OmnidirCameraUndistortion
+  nameWithType: OmnidirCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
+  commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
+  isExternal: false
+  name: OmnidirCameraUndistortionGeneric<T>
+  nameWithType: OmnidirCameraUndistortionGeneric<T>
+  fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>
+  nameWithType.vb: OmnidirCameraUndistortionGeneric(Of T)
+  fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T)
+  name.vb: OmnidirCameraUndistortionGeneric(Of T)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
+    name: OmnidirCameraUndistortionGeneric
+    nameWithType: OmnidirCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
+    name: OmnidirCameraUndistortionGeneric
+    nameWithType: OmnidirCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
+  commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
+  parent: ArucoUnity.Cameras.Undistortions
+  isExternal: false
+  name: OmnidirCameraUndistortionGeneric.RectificationTypes<>
+  nameWithType: OmnidirCameraUndistortionGeneric.RectificationTypes<>
+  fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes<>
+  nameWithType.vb: OmnidirCameraUndistortionGeneric.RectificationTypes(Of )
+  fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes(Of )
+  name.vb: OmnidirCameraUndistortionGeneric.RectificationTypes(Of )
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
+    name: OmnidirCameraUndistortionGeneric.RectificationTypes
+    nameWithType: OmnidirCameraUndistortionGeneric.RectificationTypes
+    fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
+    name: OmnidirCameraUndistortionGeneric.RectificationTypes
+    nameWithType: OmnidirCameraUndistortionGeneric.RectificationTypes
+    fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
+  isExternal: false
+  name: StereoOmnidirCameraUndistortion
+  nameWithType: StereoOmnidirCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
+  isExternal: false
+  name: PinholeCameraUndistortion
+  nameWithType: PinholeCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
+  commentId: T:ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
+  isExternal: false
+  name: PinholeCameraUndistortionGeneric<T>
+  nameWithType: PinholeCameraUndistortionGeneric<T>
+  fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric<T>
+  nameWithType.vb: PinholeCameraUndistortionGeneric(Of T)
+  fullName.vb: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric(Of T)
+  name.vb: PinholeCameraUndistortionGeneric(Of T)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
+    name: PinholeCameraUndistortionGeneric
+    nameWithType: PinholeCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
+    name: PinholeCameraUndistortionGeneric
+    nameWithType: PinholeCameraUndistortionGeneric
+    fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
+  isExternal: false
+  name: StereoPinholeCameraUndistortion
+  nameWithType: StereoPinholeCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions
+  commentId: N:ArucoUnity.Cameras.Undistortions
+  isExternal: false
+  name: ArucoUnity.Cameras.Undistortions
+  nameWithType: ArucoUnity.Cameras.Undistortions
+  fullName: ArucoUnity.Cameras.Undistortions
