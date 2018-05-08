@@ -142,20 +142,21 @@ namespace ArucoUnity.Cameras
     // Methods
 
     /// <summary>
-    /// Updates <see cref="NextImage"/> with the new camera images and calls <see cref="OnImagesUpdated"/>.
+    /// Calls <see cref="UpdateCameraImagesInternal"/> then <see cref="OnImagesUpdated"/>.
     /// </summary>
-    protected abstract void UpdateCameraImages();
-
-    /// <summary>
-    /// Returns the index of the next buffer.
-    /// </summary>
-    protected uint NextBuffer()
+    protected void UpdateCameraImages()
     {
-      return (currentBuffer + 1) % buffersCount;
+      UpdateCameraImagesInternal();
+      OnImagesUpdated();
     }
 
     /// <summary>
-    /// Calls <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/> and <see cref="ImagesUpdated"/>.
+    /// Updates <see cref="NextImage"/> with the new camera images.
+    /// </summary>
+    protected abstract void UpdateCameraImagesInternal();
+
+    /// <summary>
+    /// Calls <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/> then <see cref="ImagesUpdated"/>.
     /// </summary>
     protected void OnImagesUpdated()
     {
@@ -200,6 +201,14 @@ namespace ArucoUnity.Cameras
         imagesToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
         imagesToTextures[cameraId].DataByte = imagesToTextureDatas[cameraId];
       }
+    }
+
+    /// <summary>
+    /// Returns the index of the next buffer.
+    /// </summary>
+    private uint NextBuffer()
+    {
+      return (currentBuffer + 1) % buffersCount;
     }
   }
 }

@@ -97,13 +97,12 @@ namespace ArucoUnity.Cameras
     /// <summary>
     /// Copy current webcam images to <see cref="ArucoCamera.NextImages"/>.
     /// </summary>
-    protected override void UpdateCameraImages()
+    protected override void UpdateCameraImagesInternal()
     {
       for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
       {
         Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
       }
-      OnImagesUpdated();
     }
 
     // Methods
