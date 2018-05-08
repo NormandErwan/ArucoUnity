@@ -8,7 +8,7 @@ namespace ArucoUnity.Cameras.Parameters
   /// Manages the camera parameters of a stereo camera calibration.
   /// </summary>
   [Serializable]
-  public class StereoCameraParameters
+  public class StereoArucoCameraParameters
   {
     // Const
 
@@ -20,7 +20,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// Creates an empty StereoCameraParameters.
     /// </summary>
     /// <remarks>This constructor is needed for the serialization.</remarks>
-    public StereoCameraParameters()
+    public StereoArucoCameraParameters()
     {
     }
 
@@ -40,7 +40,7 @@ namespace ArucoUnity.Cameras.Parameters
 
     /// <summary>
     /// Gets or sets the rotation matrix values between the coordinate systems of the cameras. Equals to the <see cref="RotationVector"/>
-    /// content and automatically written when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+    /// content and automatically written when <see cref="ArucoCameraParameters.SaveToXmlFile(string)"/> is called.
     /// </summary>
     /// <remarks>This property is be public for the serialization.</remarks>
     public double[] RotationVectorValues { get; set; }
@@ -55,7 +55,7 @@ namespace ArucoUnity.Cameras.Parameters
 
     /// <summary>
     /// Gets or sets the translation vector values between the coordinate systems of the cameras. Equals to the <see cref="TranslationVector"/>
-    /// content and automatically written when <see cref="CameraParameters.SaveToXmlFile(string)"/> is called.
+    /// content and automatically written when <see cref="ArucoCameraParameters.SaveToXmlFile(string)"/> is called.
     /// </summary>
     /// <remarks>This property is be public for the serialization.</remarks>
     public double[] TranslationVectorValues { get; set; }

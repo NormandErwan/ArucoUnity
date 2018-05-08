@@ -32,7 +32,7 @@ namespace ArucoUnity.Calibration.Pinhole
       var distCoeffs2 = cameraParameters.DistCoeffs[cameraId2];
       var imageSize = calibrationImageSizes[cameraId1];
 
-      var stereoCameraParameters = new StereoCameraParameters();
+      var stereoCameraParameters = new StereoArucoCameraParameters();
 
       Cv.Vec3d rvec, tvec;
       Cv.Mat rotationMatrix, essentialMatrix, fundamentalMatrix;

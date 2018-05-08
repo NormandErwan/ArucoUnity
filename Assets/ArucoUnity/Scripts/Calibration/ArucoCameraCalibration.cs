@@ -10,7 +10,7 @@ namespace ArucoUnity.Calibration
 {
   /// <summary>
   /// Calibrates a <see cref="Cameras.ArucoCamera"/> with a <see cref="ArucoBoard"/> and saves the calibrated camera
-  /// parameters in a file managed by <see cref="Cameras.Parameters.CameraParametersController"/>. Base class to
+  /// parameters in a file managed by <see cref="Cameras.Parameters.ArucoCameraParametersController"/>. Base class to
   /// reference in editor fields.
   /// 
   /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
@@ -32,7 +32,7 @@ namespace ArucoUnity.Calibration
     [SerializeField]
     [Tooltip("The camera parameters to use if CalibrationFlags.UseIntrinsicGuess is true. Otherwise, the camera" +
       " parameters file will be generated from the camera name and the calibration datetime.")]
-    private CameraParametersController cameraParametersController;
+    private ArucoCameraParametersController cameraParametersController;
 
     // Properties
 
@@ -50,7 +50,7 @@ namespace ArucoUnity.Calibration
     /// Gets or sets the camera parameters to use if <see cref="CameraCalibrationFlags.UseIntrinsicGuess"/> is true. Otherwise, the camera parameters
     /// file will be generated from the camera name and the calibration datetime.
     /// </summary>
-    public CameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
+    public ArucoCameraParametersController CameraParametersController { get { return cameraParametersController; } set { cameraParametersController = value; } }
 
     /// <summary>
     /// Gets or sets the flags for the cameras calibration.
@@ -370,7 +370,7 @@ namespace ArucoUnity.Calibration
 
     /// <summary>
     /// Calibrates each camera of the <see cref="ArucoObjectDetector.ArucoCamera"/> system using the detected markers added with
-    /// <see cref="AddCurrentImagesForCalibration()"/>, the <see cref="CameraParameters"/>, the <see cref="ArucoCameraUndistortion"/> and save
+    /// <see cref="AddCurrentImagesForCalibration()"/>, the <see cref="ArucoCameraParameters"/>, the <see cref="ArucoCameraUndistortion"/> and save
     /// the results on a calibration file. Stereo calibrations will be additionally executed on these results for every camera pair in
     /// <see cref="StereoCalibrationCameraPairs"/>.
     /// </summary>
@@ -476,7 +476,7 @@ namespace ArucoUnity.Calibration
     }
 
     /// <summary>
-    /// Initializes and configure the <see cref="CameraParametersController.CameraParameters"/>.
+    /// Initializes and configure the <see cref="ArucoCameraParametersController.CameraParameters"/>.
     /// </summary>
     protected virtual void InitializeCameraParameters()
     {
@@ -510,7 +510,7 @@ namespace ArucoUnity.Calibration
 
     /// <summary>
     /// Applies a calibration to the <see cref="ArucoCameraController.ArucoCamera"/>, set the extrinsic camera parameters to <see cref="Rvecs"/>
-    /// and <see cref="Tvecs"/> and saves the camera parameters in <see cref="CameraParametersController.CameraParameters"/>.
+    /// and <see cref="Tvecs"/> and saves the camera parameters in <see cref="ArucoCameraParametersController.CameraParameters"/>.
     /// </summary>
     /// <param name="imagePoints">The detected image points of each camera.</param>
     /// <param name="objectPoints">The corresponding object points of each camera.</param>

@@ -21,11 +21,11 @@ namespace ArucoUnity.Cameras.Undistortions
 
     [SerializeField]
     [Tooltip("The camera parameters associated with the ArucoCamera.")]
-    private CameraParametersController CameraParametersController;
+    private ArucoCameraParametersController CameraParametersController;
 
     // IArucoCameraUndistortion properties
 
-    public CameraParameters CameraParameters { get; set; }
+    public ArucoCameraParameters CameraParameters { get; set; }
     public Cv.Mat[] RectifiedCameraMatrices { get; protected set; }
     public Cv.Mat[] RectificationMatrices { get; protected set; }
     public Cv.Mat[] UndistortedDistCoeffs { get; private set; }

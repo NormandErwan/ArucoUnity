@@ -1,15 +1,15 @@
 ﻿namespace ArucoUnity.Cameras.Parameters
 {
   /// <summary>
-  /// Contains a <see cref="Parameters.CameraParameters"/>.
+  /// Contains a <see cref="Parameters.ArucoCameraParameters"/>.
   /// </summary>
-  public interface IHasCameraParameters
+  public interface IHasArucoCameraParameters
   {
     // Properties
 
     /// <summary>
     /// Gets or sets the <see cref="IArucoCamera"/> camera parameters.
     /// </summary>
-    CameraParameters CameraParameters { get; set; }
+    ArucoCameraParameters CameraParameters { get; set; }
   }
 }

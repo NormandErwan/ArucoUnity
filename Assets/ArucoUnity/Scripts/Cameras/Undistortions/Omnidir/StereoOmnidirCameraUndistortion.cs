@@ -11,7 +11,7 @@ namespace ArucoUnity.Cameras.Undistortions
   {
     // Variables
 
-    StereoCameraParameters stereoCameraParameters;
+    StereoArucoCameraParameters stereoCameraParameters;
 
     // ConfigurableController methods
 

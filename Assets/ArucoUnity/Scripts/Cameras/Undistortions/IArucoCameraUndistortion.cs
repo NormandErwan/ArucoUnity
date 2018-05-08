@@ -6,7 +6,7 @@ namespace ArucoUnity.Cameras.Undistortions
   /// <summary>
   /// Manages the processes of undistortion and rectification of <see cref="IArucoCamera.Images"/>.
   /// </summary>
-  public interface IArucoCameraUndistortion : IArucoCameraController, IHasCameraParameters
+  public interface IArucoCameraUndistortion : IArucoCameraController, IHasArucoCameraParameters
   {
     // Properties
 

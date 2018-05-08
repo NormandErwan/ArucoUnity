@@ -9,7 +9,7 @@ namespace ArucoUnity.Cameras.Parameters
   /// Manage the camera parameters from a calibration.
   /// </summary>
   [Serializable]
-  public class CameraParameters
+  public class ArucoCameraParameters
   {
     // Constructors
 
@@ -17,7 +17,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// Create an empty CameraParameters and set <see cref="CalibrationDateTime"/> to now.
     /// </summary>
     /// <remarks>This constructor is needed for the serialization.</remarks>
-    public CameraParameters()
+    public ArucoCameraParameters()
     {
     }
 
@@ -26,7 +26,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// </summary>
     /// <param name="camerasNumber">The number of camera in the camera system. Must be equal to the number of cameras of the related
     /// <see cref="ArucoCamera"/>.</param>
-    public CameraParameters(int camerasNumber)
+    public ArucoCameraParameters(int camerasNumber)
     {
       CalibrationDateTime = DateTime.Now;
       CameraNumber = camerasNumber;
@@ -148,7 +148,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// <summary>
     /// Parameters from possible stereo calibration on the camera system.
     /// </summary>
-    public StereoCameraParameters StereoCameraParameters { get; set; }
+    public StereoArucoCameraParameters StereoCameraParameters { get; set; }
 
     /// <summary>
     /// The file path of the parameters.
@@ -168,17 +168,17 @@ namespace ArucoUnity.Cameras.Parameters
     /// <param name="cameraParametersFilePath">The file path to load.</param>
     /// <exception cref="ArgumentException">If the camera parameters couldn't be loaded because of a wrong file path.</exception>
     /// <returns>The CameraParameters loaded from the XML file or null if the file coulnd't be loaded.</returns>
-    public static CameraParameters LoadFromXmlFile(string cameraParametersFilePath)
+    public static ArucoCameraParameters LoadFromXmlFile(string cameraParametersFilePath)
     {
-      CameraParameters cameraParameters = null;
+      ArucoCameraParameters cameraParameters = null;
 
       // Try to load the file and deserialize it
       StreamReader reader = null;
       try
       {
         reader = new StreamReader(cameraParametersFilePath);
-        XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
-        cameraParameters = serializer.Deserialize(reader) as CameraParameters;
+        XmlSerializer serializer = new XmlSerializer(typeof(ArucoCameraParameters));
+        cameraParameters = serializer.Deserialize(reader) as ArucoCameraParameters;
       }
       catch (Exception ex)
       {
@@ -238,7 +238,7 @@ namespace ArucoUnity.Cameras.Parameters
       try
       {
         writer = new StreamWriter(cameraParametersFilePath);
-        XmlSerializer serializer = new XmlSerializer(typeof(CameraParameters));
+        XmlSerializer serializer = new XmlSerializer(typeof(ArucoCameraParameters));
         serializer.Serialize(writer, this);
       }
       catch

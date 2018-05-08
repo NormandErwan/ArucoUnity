@@ -20,7 +20,7 @@ namespace ArucoUnity.Calibration.Omnidir
       var distCoeffs2 = cameraParameters.DistCoeffs[cameraId2];
       var xi2 = cameraParameters.OmnidirXis[cameraId2];
 
-      var stereoCameraParameters = new StereoCameraParameters();
+      var stereoCameraParameters = new StereoArucoCameraParameters();
 
       Cv.Vec3d rvec, tvec;
       Std.VectorVec3d rvecsCamera1, tvecsCamera1;

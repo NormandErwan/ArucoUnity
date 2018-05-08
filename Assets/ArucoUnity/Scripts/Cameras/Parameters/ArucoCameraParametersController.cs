@@ -7,7 +7,7 @@ namespace ArucoUnity.Cameras.Parameters
   /// <summary>
   /// Editor controller for <see cref="CameraParameters"/>.
   /// </summary>
-  public class CameraParametersController : MonoBehaviour, IHasCameraParameters
+  public class ArucoCameraParametersController : MonoBehaviour, IHasArucoCameraParameters
   {
     // Editor fields
 
@@ -28,7 +28,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// <summary>
     /// Gets or sets the camera parameters.
     /// </summary>
-    public CameraParameters CameraParameters { get; set; }
+    public ArucoCameraParameters CameraParameters { get; set; }
 
     // Properties
 
@@ -98,24 +98,24 @@ namespace ArucoUnity.Cameras.Parameters
     // Methods
 
     /// <summary>
-    /// Initializes <see cref="CameraParameters"/> with <see cref="CameraParameters.CameraParameters(int)"/>
+    /// Initializes <see cref="CameraParameters"/> with <see cref="ArucoCameraParameters.ArucoCameraParameters(int)"/>
     /// </summary>
     /// <param name="cameraNumber">The number of cameras in the calibrated camera system.</param>
     public virtual void Initialize(int cameraNumber)
     {
-      CameraParameters = new CameraParameters(cameraNumber);
+      CameraParameters = new ArucoCameraParameters(cameraNumber);
     }
 
     /// <summary>
-    /// Initializes <see cref="CameraParameters"/> with <see cref="CameraParameters.LoadFromXmlFile(string)"/>.
+    /// Initializes <see cref="CameraParameters"/> with <see cref="ArucoCameraParameters.LoadFromXmlFile(string)"/>.
     /// </summary>
     public virtual void Load()
     {
-      CameraParameters = CameraParameters.LoadFromXmlFile(CameraParametersFilePath);
+      CameraParameters = ArucoCameraParameters.LoadFromXmlFile(CameraParametersFilePath);
     }
 
     /// <summary>
-    /// Calls <see cref="CameraParameters.SaveToXmlFile(string)"/> with <see cref="CameraParametersFolderPath"/>. Also creates the
+    /// Calls <see cref="ArucoCameraParameters.SaveToXmlFile(string)"/> with <see cref="CameraParametersFolderPath"/>. Also creates the
     /// <see cref="CameraParametersFolderPath"/> folder before if necessary.
     /// </summary>
     public virtual void Save()

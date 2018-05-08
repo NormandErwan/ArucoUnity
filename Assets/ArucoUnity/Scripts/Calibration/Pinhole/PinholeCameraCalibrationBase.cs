@@ -6,7 +6,7 @@ namespace ArucoUnity.Calibration.Pinhole
 {
   /// <summary>
   /// Calibrates a <see cref="ArucoCamera"/> using the pinhole camera model with a <see cref="Objects.ArucoBoard"/> and
-  /// saves the calibrated camera parameters in a file managed by <see cref="CameraParametersController"/>.
+  /// saves the calibrated camera parameters in a file managed by <see cref="ArucoCameraParametersController"/>.
   /// </summary>
   public abstract class PinholeCameraCalibrationBase<T> : ArucoCameraCalibrationGeneric<T, PinholeCameraCalibrationFlags>
     where T : ArucoCamera
