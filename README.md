@@ -11,28 +11,28 @@ It uses under the hood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a
 
 ## Installation
 
-Download the [latest build release](https://github.com/enormand/ArucoUnity/releases), or see the Build section. Import the package in your Unity project.
+Download the [latest build release](https://github.com/NormandErwan/ArucoUnity/releases), or see the Build section. Import the package in your Unity project.
 
 ## Usage
 
 A typical workflow with Aruco Unity is:
 
-1. Create and print some markers: read the [Create Markers](https://normanderwan.github.io/create-markers) documentation page.
-2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://normanderwan.github.io/calibrate-a-camera) documentation page.
-3. Track your markers: read the [Track Markers](https://normanderwan.github.io/track-markers) documentation page.
+1. Create and print some markers: read the [Create Markers](https://normanderwan.github.io/ArucoUnity/articles/create-markers.html) documentation page.
+2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/articles/calibrate-a-camera.html) documentation page.
+3. Track your markers: read the [Track Markers](https://normanderwan.github.io/ArucoUnity/articles/track-markers.html) documentation page.
 
 ## Build
 
-Read the [Build From Sources](https://normanderwan.github.io/build-from-sources) documentation page.
+Read the [Build From Sources](https://normanderwan.github.io/ArucoUnity/articles/build-from-sources.html) documentation page.
 
 ## Documentation
 
-The documentation is available online: [https://normanderwan.github.io](https://normanderwan.github.io).
+The documentation is available online: [https://normanderwan.github.io/ArucoUnity/](https://normanderwan.github.io/ArucoUnity/).
 
 ## Contributions
 
 - For any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
-- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. Also read the [Aruco Unity Architecture](https://normanderwan.github.io/aruco-unity-architecture) and [Build From Sources](https://normanderwan.github.io/build-from-sources) documentation pages.
+- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. Also read the [Aruco Unity Architecture](https://normanderwan.github.io/ArucoUnity/articles/aruco-unity-architecture.html) documentation page.
 - To better understand the algorithms used in the OpenCV modules, read these tutorials:
   - [Detection of ArUco Markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)
   - [Calibration with ArUco and ChArUco](https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html)
