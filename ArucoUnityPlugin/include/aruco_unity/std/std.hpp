@@ -1,7 +1,7 @@
 #ifndef __ARUCO_UNITY_PLUGIN_STD_HPP__
 #define __ARUCO_UNITY_PLUGIN_STD_HPP__
 
-//! @addtogroup aruco_unity_lib
+//! @addtogroup aruco_unity_plugin
 //! @{
 
 //! @defgroup std C interfaces for classes of the C++ Standard Library
@@ -19,6 +19,6 @@
 //!   @defgroup vector_vector_vector_point2f std::vector<std::vector<std::vector<cv::Point3f>>>
 //! @} std
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif

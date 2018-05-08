@@ -3,48 +3,40 @@ using ArucoUnity.Plugin;
 using System;
 using UnityEngine;
 
-namespace ArucoUnity
+namespace ArucoUnity.Objects.Trackers
 {
-  /// \addtogroup aruco_unity_package
-  /// \{
-
-  namespace Objects.Trackers
+  /// <summary>
+  /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
+  /// </summary>
+  public abstract class ArucoObjectDetector : ArucoCameraController, IHasDetectorParameter
   {
+    // Editor fields
+
+    [SerializeField]
+    [Tooltip("The parameters to use for the marker detection.")]
+    private DetectorParametersController detectorParametersController;
+
+    // Properties
+
     /// <summary>
-    /// Detects ArUco objects for a <see cref="ArucoCamera"/> camera system according to <see cref="DetectorParameters"/>.
+    /// Gets or sets the parameters to use for the detection.
     /// </summary>
-    public abstract class ArucoObjectDetector : ArucoCameraController, IHasDetectorParameter
+    public Aruco.DetectorParameters DetectorParameters { get; set; }
+
+    // ConfigurableController methods
+
+    /// <summary>
+    /// Checks if <see cref="DetectorParameters"/> is set.
+    /// </summary>
+    protected override void Configuring()
     {
-      // Editor fields
+      base.Configuring();
 
-      [SerializeField]
-      [Tooltip("The parameters to use for the marker detection.")]
-      private DetectorParametersController detectorParametersController;
-
-      // Properties
-
-      /// <summary>
-      /// Gets or sets the parameters to use for the detection.
-      /// </summary>
-      public Aruco.DetectorParameters DetectorParameters { get; set; }
-
-      // ConfigurableController methods
-
-      /// <summary>
-      /// Checks if <see cref="DetectorParameters"/> is set.
-      /// </summary>
-      protected override void Configuring()
+      DetectorParameters = detectorParametersController.DetectorParameters;
+      if (DetectorParameters == null)
       {
-        base.Configuring();
-
-        DetectorParameters = detectorParametersController.DetectorParameters;
-        if (DetectorParameters == null)
-        {
-          throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");
-        }
+        throw new ArgumentNullException("DetectorParameters", "This property needs to be set for the configuration.");
       }
     }
   }
-
-  /// \} aruco_unity_package
 }

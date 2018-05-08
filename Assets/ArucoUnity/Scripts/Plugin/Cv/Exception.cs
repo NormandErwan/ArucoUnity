@@ -1,76 +1,68 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ArucoUnity
+namespace ArucoUnity.Plugin
 {
-  /// \addtogroup aruco_unity_package
-  /// \{
-
-  namespace Plugin
+  public static partial class Cv
   {
-    public static partial class Cv
+    public class Exception : Utility.HandleCppPtr
     {
-      public class Exception : Utility.HandleCppPtr
+      // Constants
+
+      private const int WhatLength = 1024;
+
+      // Native functions
+
+      [DllImport("ArucoUnityPlugin")]
+      static extern System.IntPtr au_cv_Exception_new();
+
+      [DllImport("ArucoUnityPlugin")]
+      static extern void au_cv_Exception_delete(System.IntPtr exception);
+
+      [DllImport("ArucoUnityPlugin")]
+      static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb, int sbLength);
+
+      [DllImport("ArucoUnityPlugin")]
+      static extern int au_cv_Exception_getCode(System.IntPtr exception);
+
+      // Variables
+
+      private StringBuilder sb;
+
+      // Constructor & Destructor
+
+      public Exception() : base(au_cv_Exception_new())
       {
-        // Constants
+        sb = new StringBuilder(WhatLength);
+      }
 
-        private const int WhatLength = 1024;
+      protected override void DeleteCppPtr()
+      {
+        //au_cv_Exception_delete(cvPtr); // TODO: fix
+      }
 
-        // Native functions
+      // Properties
 
-        [DllImport("ArucoUnityPlugin")]
-        static extern System.IntPtr au_cv_Exception_new();
+      public int Code
+      {
+        get { return au_cv_Exception_getCode(CppPtr); }
+      }
 
-        [DllImport("ArucoUnityPlugin")]
-        static extern void au_cv_Exception_delete(System.IntPtr exception);
+      // Methods
 
-        [DllImport("ArucoUnityPlugin")]
-        static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb, int sbLength);
+      public string What()
+      {
+        au_cv_Exception_what(CppPtr, sb, WhatLength);
+        return sb.ToString();
+      }
 
-        [DllImport("ArucoUnityPlugin")]
-        static extern int au_cv_Exception_getCode(System.IntPtr exception);
-
-        // Variables
-
-        private StringBuilder sb;
-
-        // Constructor & Destructor
-
-        public Exception() : base(au_cv_Exception_new())
+      public void Check()
+      {
+        if (Code != 0)
         {
-          sb = new StringBuilder(WhatLength);
-        }
-
-        protected override void DeleteCppPtr()
-        {
-          //au_cv_Exception_delete(cvPtr);
-        }
-
-        // Properties
-
-        public int Code
-        {
-          get { return au_cv_Exception_getCode(CppPtr); }
-        }
-
-        // Methods
-
-        public string What()
-        {
-          au_cv_Exception_what(CppPtr, sb, WhatLength);
-          return sb.ToString();
-        }
-
-        public void Check()
-        {
-          if (Code != 0)
-          {
-            throw new System.Exception(What());
-          }
+          throw new System.Exception(What());
         }
       }
     }
   }
-
-  /// \} aruco_unity_package
 }

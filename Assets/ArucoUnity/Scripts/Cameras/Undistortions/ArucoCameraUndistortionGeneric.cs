@@ -1,40 +1,32 @@
 ﻿using UnityEngine;
 
-namespace ArucoUnity
+namespace ArucoUnity.Cameras.Undistortions
 {
-  /// \addtogroup aruco_unity_package
-  /// \{
-
-  namespace Cameras.Undistortions
+  /// <summary>
+  /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>. Generic class to
+  /// inherit, not the base class.
+  /// </summary>
+  public abstract class ArucoCameraUndistortionGeneric<T> : ArucoCameraUndistortion, IArucoCameraUndistortion
+    where T : ArucoCamera
   {
+    // Editor fields
+
+    [SerializeField]
+    [Tooltip("The camera to use.")]
+    private T arucoCamera;
+
+    // MonoBehaviour properties
+
     /// <summary>
-    /// Manages the processes of undistortion and rectification of <see cref="ArucoCamera.Images"/>. Generic class to
-    /// inherit, not the base class.
+    /// Sets <see cref="ArucoCameraController.ArucoCamera"/> with editor field if not null.
     /// </summary>
-    public abstract class ArucoCameraUndistortionGeneric<T> : ArucoCameraUndistortion, IArucoCameraUndistortion
-      where T : ArucoCamera
+    protected override void Awake()
     {
-      // Editor fields
-
-      [SerializeField]
-      [Tooltip("The camera to use.")]
-      private T arucoCamera;
-
-      // MonoBehaviour properties
-
-      /// <summary>
-      /// Sets <see cref="ArucoCameraController.ArucoCamera"/> with editor field if not null.
-      /// </summary>
-      protected override void Awake()
+      base.Awake();
+      if (arucoCamera != null)
       {
-        base.Awake();
-        if (arucoCamera != null)
-        {
-          ArucoCamera = arucoCamera;
-        }
+        ArucoCamera = arucoCamera;
       }
     }
   }
-
-  /// \} aruco_unity_package
 }

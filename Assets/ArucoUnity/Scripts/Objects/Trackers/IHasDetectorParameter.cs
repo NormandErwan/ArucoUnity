@@ -1,23 +1,15 @@
 ﻿using ArucoUnity.Plugin;
 
-namespace ArucoUnity
+namespace ArucoUnity.Objects.Trackers
 {
-  /// \addtogroup aruco_unity_package
-  /// \{
-
-  namespace Objects.Trackers
+  /// <summary>
+  /// Contains a <see cref="Aruco.DetectorParameters"/>.
+  /// </summary>
+  public interface IHasDetectorParameter
   {
     /// <summary>
-    /// Contains a <see cref="Aruco.DetectorParameters"/>.
+    /// Gets or sets the parameters to use for the detection.
     /// </summary>
-    public interface IHasDetectorParameter
-    {
-      /// <summary>
-      /// Gets or sets the parameters to use for the detection.
-      /// </summary>
-      Aruco.DetectorParameters DetectorParameters { get; set; }
-    }
+    Aruco.DetectorParameters DetectorParameters { get; set; }
   }
-
-  /// \} aruco_unity_package
 }

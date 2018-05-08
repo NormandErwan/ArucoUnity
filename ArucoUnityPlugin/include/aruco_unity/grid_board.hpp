@@ -4,7 +4,7 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup aruco_unity_lib
+//! @addtogroup aruco_unity_plugin
 //! @{
 
 //! @defgroup grid_board GridBoard
@@ -73,6 +73,6 @@ extern "C" {
 
 //! @} grid_board
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif

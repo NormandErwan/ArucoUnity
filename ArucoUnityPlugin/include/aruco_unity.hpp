@@ -5,15 +5,15 @@
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/utility/exports.hpp"
 
-//! @defgroup aruco_unity_lib ArUco Unity library
-//! \brief C interface for the OpenCV's ArUco Marker Detection extra module.
+//! @defgroup aruco_unity_plugin ArucoUnityPlugin
+//! \brief C interface for the OpenCV's ArUco Marker Detection module.
 //!
-//! See the OpenCV documentation for more information about its ArUco Marker Detection extra module:
+//! See the OpenCV documentation for more information about its ArUco Marker Detection module:
 //! http://docs.opencv.org/3.2.0/d9/d6a/group__aruco.html
 //! @{
 
 extern "C" {
-  //! \brief Calibrate a camera using aruco markers
+  //! \brief Calibrate a camera using aruco markers.
   //!
   //! \param corners Vector of detected marker corners in all frames. The corners should have the same format returned by detectMarkers
   //! (\see au_detectMarkers1).
@@ -36,7 +36,7 @@ extern "C" {
     const cv::Ptr<cv::aruco::Board>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs,
     std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
   
-  //! \brief Calibrate a camera using Charuco corners
+  //! \brief Calibrate a camera using Charuco corners.
   //!
   //! \param charucoCorners Vector of detected charuco corners per frame.
   //! \param charucoIds List of identifiers for each corner in charucoCorners per frame.
@@ -56,7 +56,7 @@ extern "C" {
     const cv::Ptr<cv::aruco::CharucoBoard>* board, cv::Size* imageSize, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, std::vector<cv::Mat>** rvecs,
     std::vector<cv::Mat>** tvecs, int flags, cv::TermCriteria* criteria, cv::Exception* exception);
 
-  //! \brief Detect ChArUco Diamond markers
+  //! \brief Detect ChArUco Diamond markers.
   //!
   //! \param image Input image necessary for corner subpixel.
   //! \param markerCorners List of detected marker corners from detectMarkers function.
@@ -95,7 +95,7 @@ extern "C" {
     std::vector<int>** ids, const cv::Ptr<cv::aruco::DetectorParameters>* parameters, std::vector<std::vector<cv::Point2f>>** rejectedImgPoints,
     cv::Exception* exception);
 
-  //! \brief Draw coordinate system axis from pose estimation. 
+  //! \brief Draw coordinate system axis from pose estimation.
   //!
   //! \param image Input/output image.
   //! \param cameraMatrix Input 3x3 floating-point camera matrix.
@@ -138,7 +138,7 @@ extern "C" {
   ARUCO_UNITY_API void au_drawDetectedCornersCharuco(cv::Mat* image, std::vector<cv::Point2f>* charucoCorners, std::vector<int>* charucoIds,
     cv::Scalar* cornerColor, cv::Exception* exception);
 
-  //! \brief Draw a set of detected ChArUco Diamond markers
+  //! \brief Draw a set of detected ChArUco Diamond markers.
   //!
   //! \param image Input/output image.
   //! \param diamondCorners Positions of diamond corners in the same format returned by detectCharucoDiamond().
@@ -184,7 +184,7 @@ extern "C" {
     const cv::Ptr<cv::aruco::Board>* board, cv::Mat* cameraMatrix, cv::Mat* distCoeffs, cv::Vec3d** rvec, cv::Vec3d** tvec,
     cv::Exception* exception);
 
-  //! \brief Pose estimation for a ChArUco board given some of their corners
+  //! \brief Pose estimation for a ChArUco board given some of their corners.
   //!
   //! \param charucoCorners Vector of detected charuco corners.
   //! \param charucoIds List of identifiers for each corner in charucoCorners.
@@ -242,7 +242,7 @@ extern "C" {
   //! \return The Dictionary.
   ARUCO_UNITY_API cv::Ptr<cv::aruco::Dictionary>* au_getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME name);
 
-  //! \brief Interpolate position of ChArUco board corners
+  //! \brief Interpolate position of ChArUco board corners.
   //!
   //! \param markerCorners Vector of already detected markers corners.
   //! \param markerIds List of identifiers for each marker in corners.
@@ -280,7 +280,7 @@ extern "C" {
   //! \param parameters Marker detection parameters.
   //! \param exception The first exception threw by any trigerred CV_ASSERT.
   //!
-  //! See the OpenCV documentation for more information: 
+  //! See the OpenCV documentation for more information:
   //! http://docs.opencv.org/3.2.0/d9/d6a/group__aruco.html#ga90374a799f1da566e5de16f277b12463
   ARUCO_UNITY_API void au_refineDetectedMarkers(cv::Mat* image, const cv::Ptr<cv::aruco::Board>* board,
     std::vector<std::vector<cv::Point2f>>* detectedCorners, std::vector<int>* detectedIds, std::vector<std::vector<cv::Point2f>>* rejectedCorners,
@@ -288,6 +288,6 @@ extern "C" {
     std::vector<int>* recoveredIdxs, const cv::Ptr<cv::aruco::DetectorParameters>* parameters, cv::Exception* exception);
 }
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif

@@ -4,7 +4,7 @@
 #include <opencv2/aruco/charuco.hpp>
 #include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup aruco_unity_lib
+//! @addtogroup aruco_unity_plugin
 //! @{
 
 //! @defgroup charuco_board CharucoBoard
@@ -107,6 +107,6 @@ extern "C" {
 
 //! @} charuco_board
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif

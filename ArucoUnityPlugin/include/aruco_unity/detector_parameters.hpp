@@ -4,7 +4,7 @@
 #include <opencv2/aruco.hpp>
 #include "aruco_unity/utility/exports.hpp"
 
-//! @addtogroup aruco_unity_lib
+//! @addtogroup aruco_unity_plugin
 //! @{
 
 //! @defgroup detector_parameters DetectorParameters
@@ -242,6 +242,6 @@ extern "C" {
 
 //! @} detector_parameters
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef __ARUCO_UNITY_PLUGIN_CV_HPP__
 #define __ARUCO_UNITY_PLUGIN_CV_HPP__
 
-//! @addtogroup aruco_unity_lib
+//! @addtogroup aruco_unity_plugin
 //! @{
 
 //! @defgroup cv C interfaces for classes and modules of the OpenCV library
@@ -22,6 +22,6 @@
 //!   @defgroup vec4i Vec4i class
 //! @} cv
 
-//! @} aruco_unity_lib
+//! @} aruco_unity_plugin
 
 #endif
