@@ -20,7 +20,7 @@ items:
       repo: git@github.com:NormandErwan/ArucoUnity.git
     id: PinholeCameraUndistortion
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Pinhole/PinholeCameraUndistortion.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras.Undistortions
@@ -111,7 +111,7 @@ items:
       repo: git@github.com:NormandErwan/ArucoUnity.git
     id: InitializeRectification
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Pinhole/PinholeCameraUndistortion.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras.Undistortions

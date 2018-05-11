@@ -87,7 +87,7 @@
 <p>Most of the cameras we use today on our smartphones or laptops are called in Aruco Unity pinhole cameras (camera using a <a href="https://en.wikipedia.org/wiki/Rectilinear_lens">rectilinear lens</a>) in contrast with cameras using a <a href="https://en.wikipedia.org/wiki/Fisheye_lens">fisheye lens</a>. So if you want to calibrate your webcam or smartphone, read this section.</p>
 <ul>
 <li>Make a calibration board.<ol>
-<li>Create a charuco board or a grid board. See the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers">Create Markers</a> wiki page for details.</li>
+<li>Create a charuco board or a grid board. See the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers">Create Markers</a> page for details.</li>
 <li>Print the generated image on paper. Stick it on a hard cardboard: the paper must remains as flat as possible during the calibration (<em>Fig.1</em>).</li>
 </ol>
 </li>
@@ -95,7 +95,7 @@
 <p><img src="https://docs.opencv.org/master/charucocalibration.png" alt="Calibration board">
 <em>Fig.1: Different viewpoints of a charuco calibration board. From OpenCV: <a href="https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html">https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html</a></em></p>
 <ul>
-<li>Open the <code>Assets/ArucoUnity/Scenes/Calibrate.unity</code> scene.</li>
+<li>Open the <code>Assets/ArucoUnity/Scenes/CalibrateCamera.unity</code> scene.</li>
 <li>Configure the <code>ArucoWebcam</code> game object (<em>Fig.2</em>).<ul>
 <li>Set the <code>WebcamId</code> to select the camera you want to use. The first camera&#39;s id is <code>0</code>. You can list the available webcams with <a href="https://docs.unity3d.com/ScriptReference/WebCamTexture-devices.html">WebCamTexture.devices</a>.</li>
 <li><code>MonoArucoCameraDisplay.AutoStart</code> is uncheck because the video stream is displayed by the <code>ArucoCameraCalibrationGUI</code> object.</li>
@@ -107,7 +107,7 @@
 <ul>
 <li>Configure the calibration board on the <code>PinholeCameraCalibration</code> game object (<em>Fig.3</em>).<ul>
 <li>Set the <code>CalibrationBoard</code> with a charuco board or a grid board. Both are already created in the scene to help you.</li>
-<li>Configure the calibration board object by measuring the one you just printed. Units are in meters. The <code>ArucoObjectDisplayer</code> helps you visualize the configured board to see if it&#39;s match with the printed one. Don&#39;t switch x and y values.</li>
+<li>Configure the calibration board object by measuring the one you just printed : units are in meters this time. The <code>ArucoObjectDisplayer</code> helps you visualize the configured board to see if it&#39;s match with the printed one. Don&#39;t switch x and y values.</li>
 </ul>
 </li>
 <li>Optionally adjust parameters on the <code>PinholeCameraCalibration</code> game object.<ul>
@@ -135,7 +135,7 @@
 <ul>
 <li>Make a calibration board.</li>
 <li>Open the <code>Assets/ArucoUnity/Scenes/CalibrateCamera.unity</code> scene.</li>
-<li>Configure the camera.<ol>
+<li>Configure the camera:<ol>
 <li>Deactivate the <code>ArucoWebcam</code> game object.</li>
 <li>Drag <code>Assets/ArucoUnity/Prefabs/Cameras/StereoArucoWebcam.prefab</code> into the scene.</li>
 <li>Set <code>StereoArucoWebcam.WebcamId1</code>, <code>StereoArucoWebcam.WebcamId2</code> and uncheck <code>StereoArucoCameraDisplay.AutoStart</code> (<em>Fig.5</em>).</li>
@@ -145,7 +145,7 @@
 <p><img src="../images/stereo_calibration_aruco_webcam.jpg" alt="Calibration camera configuration"></p>
 <p><em>Fig.5: Stereo webcam configured to use the first (id1=<code>0</code>) and the second webcam (id2=<code>1</code>)</em></p>
 <ul>
-<li>Configure the calibration.<ol>
+<li>Configure the calibration:<ol>
 <li>Deactivate the <code>PinholeCameraCalibration</code> game object.</li>
 <li>Drag <code>Assets/ArucoUnity/Prefabs/Calibration/StereoPinholeCameraCalibration.prefab</code> into the scene.</li>
 <li>Set <code>StereoPinholeCameraCalibration.ArucoCamera</code> with <code>StereoArucoWebcam</code> (<em>Fig.6</em>).</li>

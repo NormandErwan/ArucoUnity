@@ -13,13 +13,13 @@ To understand the algorithms used, read these tutorials: [Calibration with ArUco
 Most of the cameras we use today on our smartphones or laptops are called in Aruco Unity pinhole cameras (camera using a [rectilinear lens](https://en.wikipedia.org/wiki/Rectilinear_lens)) in contrast with cameras using a [fisheye lens](https://en.wikipedia.org/wiki/Fisheye_lens). So if you want to calibrate your webcam or smartphone, read this section.
 
 - Make a calibration board.
-  1. Create a charuco board or a grid board. See the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) wiki page for details.
+  1. Create a charuco board or a grid board. See the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) page for details.
   2. Print the generated image on paper. Stick it on a hard cardboard: the paper must remains as flat as possible during the calibration (*Fig.1*).
 
 ![Calibration board](https://docs.opencv.org/master/charucocalibration.png)
 *Fig.1: Different viewpoints of a charuco calibration board. From OpenCV: [https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html](https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html)*
 
-- Open the `Assets/ArucoUnity/Scenes/Calibrate.unity` scene.
+- Open the `Assets/ArucoUnity/Scenes/CalibrateCamera.unity` scene.
 - Configure the `ArucoWebcam` game object (*Fig.2*).
   - Set the `WebcamId` to select the camera you want to use. The first camera's id is `0`. You can list the available webcams with [WebCamTexture.devices](https://docs.unity3d.com/ScriptReference/WebCamTexture-devices.html).
   - `MonoArucoCameraDisplay.AutoStart` is uncheck because the video stream is displayed by the `ArucoCameraCalibrationGUI` object.
@@ -30,7 +30,7 @@ Most of the cameras we use today on our smartphones or laptops are called in Aru
 
 - Configure the calibration board on the `PinholeCameraCalibration` game object (*Fig.3*).
   - Set the `CalibrationBoard` with a charuco board or a grid board. Both are already created in the scene to help you.
-  - Configure the calibration board object by measuring the one you just printed. Units are in meters. The `ArucoObjectDisplayer` helps you visualize the configured board to see if it's match with the printed one. Don't switch x and y values.
+  - Configure the calibration board object by measuring the one you just printed : units are in meters this time. The `ArucoObjectDisplayer` helps you visualize the configured board to see if it's match with the printed one. Don't switch x and y values.
 - Optionally adjust parameters on the `PinholeCameraCalibration` game object.
   - Set the output camera parameters file with `CameraParametersController`. The folder is relative to [persistentDataPath](https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html) in builds or to the "Asset" folder of your projet in the editor. If the filename is empty, it will be automatically generated from the Aruco camera used.
   - Configure the board detection with `DetectorParametersController` parameters. They are described on the Detector Parameters section of the [ArUco camera calibration tutorial](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
@@ -56,7 +56,7 @@ The process is the same as in the [Calibrate a camera](https://github.com/Norman
 
 - Make a calibration board.
 - Open the `Assets/ArucoUnity/Scenes/CalibrateCamera.unity` scene.
-- Configure the camera.
+- Configure the camera:
    1. Deactivate the `ArucoWebcam` game object.
    2. Drag `Assets/ArucoUnity/Prefabs/Cameras/StereoArucoWebcam.prefab` into the scene.
    3. Set `StereoArucoWebcam.WebcamId1`, `StereoArucoWebcam.WebcamId2` and uncheck `StereoArucoCameraDisplay.AutoStart` (*Fig.5*).
@@ -65,7 +65,7 @@ The process is the same as in the [Calibrate a camera](https://github.com/Norman
 
 *Fig.5: Stereo webcam configured to use the first (id1=`0`) and the second webcam (id2=`1`)*
 
-- Configure the calibration.
+- Configure the calibration:
   1. Deactivate the `PinholeCameraCalibration` game object.
   2. Drag `Assets/ArucoUnity/Prefabs/Calibration/StereoPinholeCameraCalibration.prefab` into the scene.
   3. Set `StereoPinholeCameraCalibration.ArucoCamera` with `StereoArucoWebcam` (*Fig.6*).

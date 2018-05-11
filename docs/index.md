@@ -6,7 +6,7 @@ See the [README](https://github.com/NormandErwan/ArucoUnity/blob/master/README.m
 
 A typical workflow with Aruco Unity is:
 
-1. Create and print some markers: read the [Create Markers](articles/create-markers.html) page.
+1. Create and print markers: read the [Create Markers](articles/create-markers.html) page.
 2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](articles/calibrate-a-camera.html) page.
 3. Track your markers: read the [Track Markers](articles/track-markers.html) page.
 

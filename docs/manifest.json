@@ -498,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.html",
-          "hash": "49GPZgIfaKFvvxF2897y7g=="
+          "hash": "zA/98trx2Rf0xAbMunpP8g=="
         }
       },
       "is_incremental": false,
@@ -1488,7 +1488,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/calibrate-a-camera.html",
-          "hash": "VAKnjTsPUbpd/ZZm6o0/dA=="
+          "hash": "d8QBXRiLhioZ/DHBbypQ5g=="
         }
       },
       "is_incremental": false,
@@ -1522,12 +1522,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "docs/articles/track-markers.md",
       "output": {
         ".html": {
           "relative_path": "articles/track-markers.html",
-          "hash": "LdjBHWQrsQKm9O6MZi9A6A=="
+          "hash": "vQi3wdb7ZFGrcGZcLqfdHQ=="
         }
       },
       "is_incremental": false,
@@ -1542,7 +1545,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "sDTDEYLDz1q9ElzwKihyxA=="
+          "hash": "I84mBdH29w+z2GQRDQ/Ygg=="
         }
       },
       "is_incremental": false,
@@ -1554,7 +1557,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "4bgOP+wpAN/WED5w4OnTeQ=="
+          "hash": "0Ocls7/an51dMe0vJbYRvQ=="
         }
       },
       "is_incremental": false,

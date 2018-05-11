@@ -4,8 +4,8 @@ Bring augmented reality to Unity by tracking [ArUco markers](https://docs.opencv
 
 It uses under the hood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
 
-![Demo 1](https://raw.githubusercontent.com/NormandErwan/ArucoUnity/master/docs/images/ar_roll_a_ball.gif)
-![Demo 2](https://raw.githubusercontent.com/NormandErwan/ArucoUnity/master/docs/images/extended_phone_screen.gif)
+![Demo 1](docs/images/ar_roll_a_ball.gif)
+![Demo 2](docs/images/extended_phone_screen.gif)
 
 *Left: AR [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial). Right: The markers tracking allow to extend the phone's screen.*
 
