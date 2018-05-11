@@ -1,5 +1,4 @@
-﻿using ArucoUnity.Cameras.Parameters;
-using ArucoUnity.Plugin;
+﻿using ArucoUnity.Plugin;
 
 namespace ArucoUnity.Cameras.Undistortions
 {
