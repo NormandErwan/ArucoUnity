@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   CameraParametersController: {fileID: 114034833319431376}
-  arucoCamera: {fileID: 0}
+  arucoCamera: {fileID: 114393126318706844}
   rectificationScalingFactor: 1
 --- !u!114 &114715581165667816
 MonoBehaviour:
