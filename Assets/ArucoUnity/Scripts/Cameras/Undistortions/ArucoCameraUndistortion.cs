@@ -35,6 +35,7 @@ namespace ArucoUnity.Cameras.Undistortions
 
     protected Cv.Mat noRectificationMatrix = new Cv.Mat();
     protected Cv.Mat noDistCoeffs = new Cv.Mat();
+    protected Cv.Rect noROI = new Cv.Rect();
     protected string CameraParametersFilePath;
     protected ArucoCameraSeparateThread remapThread;
 
