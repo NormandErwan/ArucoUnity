@@ -2,7 +2,7 @@
 
 Bring augmented reality to Unity by tracking [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
 
-It uses under the hood the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
+It uses the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html) Marker Detection module and the OpenCV's camera calibration modules [calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html) and [ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html).
 
 ![Demo 1](docs/images/ar_roll_a_ball.gif)
 ![Demo 2](docs/images/extended_phone_screen.gif)
@@ -32,16 +32,13 @@ The documentation is available online: [https://normanderwan.github.io/ArucoUnit
 ## Contributions
 
 - For any question or comment, please [open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new).
-- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. Also read the [Aruco Unity Architecture](https://normanderwan.github.io/ArucoUnity/articles/aruco-unity-architecture.html) documentation page.
-- To better understand the algorithms used in the OpenCV modules, read these tutorials:
-  - [Detection of ArUco Markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)
-  - [Calibration with ArUco and ChArUco](https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html)
-  - [Camera calibration With OpenCV](https://docs.opencv.org/master/d4/d94/tutorial_camera_calibration.html)
-  - [Omnidirectional Cameara [*sic*] Calibration](https://docs.opencv.org/master/dd/d12/tutorial_omnidir_calib_main.html)
+- If you'd like to contribute, please [fork the repository](https://github.com/NormandErwan/ArucoUnity/fork) and use a feature branch. Pull requests are warmly welcome. Also see the Developing section of the [documentation homepage](https://normanderwan.github.io/ArucoUnity).
 
 ## Support
 
-This first version of this project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan) was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/). I'm developing the second version on my own.
+The first version of this project has been developed as part of the master thesis of [Erwan Normand](https://ca.linkedin.com/in/normanderwan) and was supported by the [ÉTS - École de Technologie Supérieure](https://www.etsmtl.ca/).
+
+I'm developing the second version on my own.
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoffee.com/h48VU3fny)
 
