@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CameraParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArucoCameraParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CalibrationDateTime>2018-05-07T15:08:23.2461442+02:00</CalibrationDateTime>
   <CameraNumber>2</CameraNumber>
   <ImageHeights>
@@ -93,4 +93,4 @@
     </TranslationVectorValues>
     <ReprojectionError>0.30436502472872112</ReprojectionError>
   </StereoCameraParameters>
-</CameraParameters>
+</ArucoCameraParameters>
