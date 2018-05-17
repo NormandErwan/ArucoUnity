@@ -83,6 +83,15 @@ namespace ArucoUnity.Cameras
     }
 
     /// <summary>
+    /// Calls <see cref="WebcamController.StopWebcams"/>.
+    /// </summary>
+    protected override void Stopping()
+    {
+      base.Stopping();
+      WebcamController.StopWebcams();
+    }
+
+    /// <summary>
     /// Blocks parent <see cref="OnStarted"/> until <see cref="WebcamController.IsStarted"/>.
     /// </summary>
     protected override void OnStarted()

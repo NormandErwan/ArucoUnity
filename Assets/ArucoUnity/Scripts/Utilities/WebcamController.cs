@@ -122,7 +122,7 @@ namespace ArucoUnity.Cameras
     /// <summary>
     /// Stops the webcams.
     /// </summary>
-    public void Stopping()
+    public void StopWebcams()
     {
       if (!IsConfigured || !IsStarted)
       {
