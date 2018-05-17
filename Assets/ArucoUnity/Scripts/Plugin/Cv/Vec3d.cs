@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -10,16 +11,16 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Vec3d_new(double v0, double v1, double v2);
+      static extern IntPtr au_cv_Vec3d_new(double v0, double v1, double v2);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Vec3d_delete(System.IntPtr vec3d);
+      static extern void au_cv_Vec3d_delete(IntPtr vec3d);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern double au_cv_Vec3d_get(System.IntPtr vec3d, int i, System.IntPtr exception);
+      static extern double au_cv_Vec3d_get(IntPtr vec3d, int i, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Vec3d_set(System.IntPtr vec3d, int i, double value, System.IntPtr exception);
+      static extern void au_cv_Vec3d_set(IntPtr vec3d, int i, double value, IntPtr exception);
 
       // Constructors & destructor
 
@@ -27,7 +28,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Vec3d(System.IntPtr vec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Vec3d(IntPtr vec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vec3dPtr, deleteResponsibility)
       {
       }

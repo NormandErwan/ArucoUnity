@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -9,25 +10,25 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorInt_new();
+      static extern IntPtr au_std_vectorInt_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorInt_delete(System.IntPtr vector);
+      static extern void au_std_vectorInt_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_std_vectorInt_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern int au_std_vectorInt_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe int* au_std_vectorInt_data(System.IntPtr vector);
+      static extern unsafe int* au_std_vectorInt_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorInt_push_back(System.IntPtr vector, int value);
+      static extern void au_std_vectorInt_push_back(IntPtr vector, int value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorInt_reserve(System.IntPtr vector, uint new_cap, System.IntPtr exception);
+      static extern void au_std_vectorInt_reserve(IntPtr vector, uint new_cap, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorInt_size(System.IntPtr vector);
+      static extern uint au_std_vectorInt_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -35,7 +36,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorInt(System.IntPtr vectorIntPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorInt(IntPtr vectorIntPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorIntPtr, deleteResponsibility)
       {
       }

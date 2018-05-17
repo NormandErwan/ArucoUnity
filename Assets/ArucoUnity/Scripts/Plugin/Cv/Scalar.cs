@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace ArucoUnity.Plugin
@@ -10,10 +11,10 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Scalar_new(double v0, double v1, double v2);
+      static extern IntPtr au_cv_Scalar_new(double v0, double v1, double v2);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Scalar_delete(System.IntPtr scalar);
+      static extern void au_cv_Scalar_delete(IntPtr scalar);
 
       // Constructors & destructor
 

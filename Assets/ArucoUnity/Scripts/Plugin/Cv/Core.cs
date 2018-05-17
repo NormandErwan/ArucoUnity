@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -39,7 +40,7 @@ namespace ArucoUnity.Plugin
     // Native functions
 
     [DllImport("ArucoUnityPlugin")]
-    static extern void au_cv_core_flip(System.IntPtr src, System.IntPtr dst, int flipCode, System.IntPtr exception);
+    static extern void au_cv_core_flip(IntPtr src, IntPtr dst, int flipCode, IntPtr exception);
 
     // Static methods
 

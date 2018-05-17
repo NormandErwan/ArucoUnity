@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,22 +10,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorMat_new();
+      static extern IntPtr au_std_vectorMat_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorMat_delete(System.IntPtr vector);
+      static extern void au_std_vectorMat_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorMat_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern IntPtr au_std_vectorMat_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe System.IntPtr* au_std_vectorMat_data(System.IntPtr vector);
+      static extern unsafe IntPtr* au_std_vectorMat_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorMat_push_back(System.IntPtr vector, System.IntPtr value);
+      static extern void au_std_vectorMat_push_back(IntPtr vector, IntPtr value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorMat_size(System.IntPtr vector);
+      static extern uint au_std_vectorMat_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -32,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorMat(System.IntPtr vectorMatPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorMat(IntPtr vectorMatPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorMatPtr, deleteResponsibility)
       {
       }
@@ -54,7 +55,7 @@ namespace ArucoUnity.Plugin
 
       public unsafe Cv.Mat[] Data()
       {
-        System.IntPtr* dataPtr = au_std_vectorMat_data(CppPtr);
+        IntPtr* dataPtr = au_std_vectorMat_data(CppPtr);
         uint size = Size();
 
         Cv.Mat[] data = new Cv.Mat[size];

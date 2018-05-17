@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,28 +10,28 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Size_new1();
+      static extern IntPtr au_cv_Size_new1();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Size_new2(int width, int height);
+      static extern IntPtr au_cv_Size_new2(int width, int height);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Size_delete(System.IntPtr size);
+      static extern void au_cv_Size_delete(IntPtr size);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Size_area(System.IntPtr size);
+      static extern int au_cv_Size_area(IntPtr size);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Size_getHeight(System.IntPtr size);
+      static extern int au_cv_Size_getHeight(IntPtr size);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Size_setHeight(System.IntPtr size, int height);
+      static extern void au_cv_Size_setHeight(IntPtr size, int height);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Size_getWidth(System.IntPtr size);
+      static extern int au_cv_Size_getWidth(IntPtr size);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Size_setWidth(System.IntPtr size, int width);
+      static extern void au_cv_Size_setWidth(IntPtr size, int width);
 
       // Constructors & destructor
 
@@ -42,7 +43,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Size(System.IntPtr sizePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Size(IntPtr sizePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(sizePtr, deleteResponsibility)
       {
       }

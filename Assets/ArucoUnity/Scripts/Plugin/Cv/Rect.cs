@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,37 +10,37 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Rect_new1();
+      static extern IntPtr au_cv_Rect_new1();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Rect_new2(int x, int y, int width, int height);
+      static extern IntPtr au_cv_Rect_new2(int x, int y, int width, int height);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Rect_delete(System.IntPtr Rect);
+      static extern void au_cv_Rect_delete(IntPtr Rect);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Rect_getX(System.IntPtr Rect);
+      static extern int au_cv_Rect_getX(IntPtr Rect);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Rect_setX(System.IntPtr Rect, int x);
+      static extern void au_cv_Rect_setX(IntPtr Rect, int x);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Rect_getY(System.IntPtr Rect);
+      static extern int au_cv_Rect_getY(IntPtr Rect);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Rect_setY(System.IntPtr Rect, int y);
+      static extern void au_cv_Rect_setY(IntPtr Rect, int y);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Rect_getWidth(System.IntPtr Rect);
+      static extern int au_cv_Rect_getWidth(IntPtr Rect);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Rect_setWidth(System.IntPtr Rect, int width);
+      static extern void au_cv_Rect_setWidth(IntPtr Rect, int width);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Rect_getHeight(System.IntPtr Rect);
+      static extern int au_cv_Rect_getHeight(IntPtr Rect);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Rect_setHeight(System.IntPtr Rect, int height);
+      static extern void au_cv_Rect_setHeight(IntPtr Rect, int height);
 
       // Constructors & destructor
 
@@ -51,7 +52,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Rect(System.IntPtr RectPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Rect(IntPtr RectPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(RectPtr, deleteResponsibility)
       {
       }

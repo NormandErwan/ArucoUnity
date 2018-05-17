@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity.Calibration.Omnidir

@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,22 +10,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorPoint3f_new();
+      static extern IntPtr au_std_vectorPoint3f_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorPoint3f_delete(System.IntPtr vector);
+      static extern void au_std_vectorPoint3f_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorPoint3f_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern IntPtr au_std_vectorPoint3f_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe System.IntPtr* au_std_vectorPoint3f_data(System.IntPtr vector);
+      static extern unsafe IntPtr* au_std_vectorPoint3f_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorPoint3f_push_back(System.IntPtr vector, System.IntPtr value);
+      static extern void au_std_vectorPoint3f_push_back(IntPtr vector, IntPtr value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorPoint3f_size(System.IntPtr vector);
+      static extern uint au_std_vectorPoint3f_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -32,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorPoint3f(System.IntPtr vectorPoint3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorPoint3f(IntPtr vectorPoint3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorPoint3fPtr, deleteResponsibility)
       {
       }
@@ -54,7 +55,7 @@ namespace ArucoUnity.Plugin
 
       public unsafe Cv.Point3f[] Data()
       {
-        System.IntPtr* dataPtr = au_std_vectorPoint3f_data(CppPtr);
+        IntPtr* dataPtr = au_std_vectorPoint3f_data(CppPtr);
         uint size = Size();
 
         Cv.Point3f[] data = new Cv.Point3f[size];

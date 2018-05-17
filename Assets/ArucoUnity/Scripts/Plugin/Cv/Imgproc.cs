@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -41,16 +42,16 @@ namespace ArucoUnity.Plugin
     // Native functions
 
     [DllImport("ArucoUnityPlugin")]
-    static extern void au_cv_imgproc_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr R,
-      System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, System.IntPtr exception);
+    static extern void au_cv_imgproc_initUndistortRectifyMap(IntPtr cameraMatrix, IntPtr distCoeffs, IntPtr R,
+      IntPtr newCameraMatrix, IntPtr size, int m1type, out IntPtr map1, out IntPtr map2, IntPtr exception);
 
     [DllImport("ArucoUnityPlugin")]
-    static extern void au_cv_imgproc_remap(System.IntPtr src, System.IntPtr dst, System.IntPtr map1, System.IntPtr map2, int interpolation,
-      int borderType, System.IntPtr borderValue, System.IntPtr exception);
+    static extern void au_cv_imgproc_remap(IntPtr src, IntPtr dst, IntPtr map1, IntPtr map2, int interpolation,
+      int borderType, IntPtr borderValue, IntPtr exception);
 
     [DllImport("ArucoUnityPlugin")]
-    static extern void au_cv_imgproc_undistort(System.IntPtr rotationVector, out System.IntPtr rotationMatrix, System.IntPtr cameraMatrix,
-      System.IntPtr distCoeffs, System.IntPtr newCameraMatrix, System.IntPtr exception);
+    static extern void au_cv_imgproc_undistort(IntPtr rotationVector, out IntPtr rotationMatrix, IntPtr cameraMatrix,
+      IntPtr distCoeffs, IntPtr newCameraMatrix, IntPtr exception);
 
     // Methods
 
@@ -58,7 +59,7 @@ namespace ArucoUnity.Plugin
       out Mat map2)
     {
       Exception exception = new Exception();
-      System.IntPtr map1Ptr, map2Ptr;
+      IntPtr map1Ptr, map2Ptr;
 
       au_cv_imgproc_initUndistortRectifyMap(cameraMatrix.CppPtr, distCoeffs.CppPtr, R.CppPtr, newCameraMatrix.CppPtr, size.CppPtr, (int)m1type,
         out map1Ptr, out map2Ptr, exception.CppPtr);
@@ -85,7 +86,7 @@ namespace ArucoUnity.Plugin
     public static void Undistort(Mat inputImage, out Mat outputImage, Mat cameraMatrix, Mat distCoeffs, Mat newCameraMatrix)
     {
       Exception exception = new Exception();
-      System.IntPtr outputImagePtr;
+      IntPtr outputImagePtr;
 
       au_cv_imgproc_undistort(inputImage.CppPtr, out outputImagePtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, newCameraMatrix.CppPtr,
         exception.CppPtr);

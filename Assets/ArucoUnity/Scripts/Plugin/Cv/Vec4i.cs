@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,16 +10,16 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Vec4i_new();
+      static extern IntPtr au_cv_Vec4i_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Vec4i_delete(System.IntPtr vec4i);
+      static extern void au_cv_Vec4i_delete(IntPtr vec4i);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Vec4i_get(System.IntPtr vec4i, int i, System.IntPtr exception);
+      static extern int au_cv_Vec4i_get(IntPtr vec4i, int i, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Vec4i_set(System.IntPtr vec4i, int i, int value, System.IntPtr exception);
+      static extern void au_cv_Vec4i_set(IntPtr vec4i, int i, int value, IntPtr exception);
 
       // Constructors & destructor
 
@@ -26,7 +27,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Vec4i(System.IntPtr vec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Vec4i(IntPtr vec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vec4iPtr, deleteResponsibility)
       {
       }

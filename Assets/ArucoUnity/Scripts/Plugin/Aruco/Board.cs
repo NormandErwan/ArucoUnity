@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,26 +10,26 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Board_getDictionary(System.IntPtr board);
+      static extern IntPtr au_Board_getDictionary(IntPtr board);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Board_setDictionary(System.IntPtr board, System.IntPtr dictionary);
+      static extern void au_Board_setDictionary(IntPtr board, IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Board_getIds(System.IntPtr board);
+      static extern IntPtr au_Board_getIds(IntPtr board);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Board_setIds(System.IntPtr board, System.IntPtr ids);
+      static extern void au_Board_setIds(IntPtr board, IntPtr ids);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Board_getObjPoints(System.IntPtr board);
+      static extern IntPtr au_Board_getObjPoints(IntPtr board);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Board_setObjPoints(System.IntPtr board, System.IntPtr objPoints);
+      static extern void au_Board_setObjPoints(IntPtr board, IntPtr objPoints);
 
       // Constructors
 
-      internal Board(System.IntPtr boardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal Board(IntPtr boardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
           : base(boardPtr, deleteResponsibility)
       {
       }

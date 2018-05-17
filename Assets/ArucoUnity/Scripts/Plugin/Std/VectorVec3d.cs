@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,22 +10,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVec3d_new();
+      static extern IntPtr au_std_vectorVec3d_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVec3d_delete(System.IntPtr vector);
+      static extern void au_std_vectorVec3d_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVec3d_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern IntPtr au_std_vectorVec3d_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe System.IntPtr* au_std_vectorVec3d_data(System.IntPtr vector);
+      static extern unsafe IntPtr* au_std_vectorVec3d_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVec3d_push_back(System.IntPtr vector, System.IntPtr value);
+      static extern void au_std_vectorVec3d_push_back(IntPtr vector, IntPtr value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorVec3d_size(System.IntPtr vector);
+      static extern uint au_std_vectorVec3d_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -32,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorVec3d(System.IntPtr vectorVec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorVec3d(IntPtr vectorVec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorVec3dPtr, deleteResponsibility)
       {
       }
@@ -54,7 +55,7 @@ namespace ArucoUnity.Plugin
 
       public unsafe Cv.Vec3d[] Data()
       {
-        System.IntPtr* dataPtr = au_std_vectorVec3d_data(CppPtr);
+        IntPtr* dataPtr = au_std_vectorVec3d_data(CppPtr);
         uint size = Size();
 
         Cv.Vec3d[] data = new Cv.Vec3d[size];

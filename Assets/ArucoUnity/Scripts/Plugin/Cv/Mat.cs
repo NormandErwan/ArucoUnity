@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -9,76 +10,76 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_new1();
+      static extern IntPtr au_cv_Mat_new1();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_new2(int rows, int cols, int type);
+      static extern IntPtr au_cv_Mat_new2(int rows, int cols, int type);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_new3(System.IntPtr size, int type);
+      static extern IntPtr au_cv_Mat_new3(IntPtr size, int type);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_new8_uchar(int rows, int cols, int type, byte[] data);
+      static extern IntPtr au_cv_Mat_new8_uchar(int rows, int cols, int type, byte[] data);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_new8_double(int rows, int cols, int type, double[] data);
+      static extern IntPtr au_cv_Mat_new8_double(int rows, int cols, int type, double[] data);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_delete(System.IntPtr mat);
+      static extern void au_cv_Mat_delete(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Mat_at_int_get(System.IntPtr mat, int i0, int i1, System.IntPtr exception);
+      static extern int au_cv_Mat_at_int_get(IntPtr mat, int i0, int i1, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_at_int_set(System.IntPtr mat, int i0, int i1, int value, System.IntPtr exception);
+      static extern void au_cv_Mat_at_int_set(IntPtr mat, int i0, int i1, int value, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern double au_cv_Mat_at_double_get(System.IntPtr mat, int i0, int i1, System.IntPtr exception);
+      static extern double au_cv_Mat_at_double_get(IntPtr mat, int i0, int i1, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_at_double_set(System.IntPtr mat, int i0, int i1, double value, System.IntPtr exception);
+      static extern void au_cv_Mat_at_double_set(IntPtr mat, int i0, int i1, double value, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Mat_channels(System.IntPtr mat);
+      static extern int au_cv_Mat_channels(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_clone(System.IntPtr mat);
+      static extern IntPtr au_cv_Mat_clone(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_create(System.IntPtr mat, int rows, int cols, int type, System.IntPtr exception);
+      static extern void au_cv_Mat_create(IntPtr mat, int rows, int cols, int type, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_cv_Mat_total(System.IntPtr mat);
+      static extern uint au_cv_Mat_total(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Mat_type(System.IntPtr mat);
+      static extern int au_cv_Mat_type(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_cv_Mat_elemSize(System.IntPtr mat);
+      static extern uint au_cv_Mat_elemSize(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_cv_Mat_elemSize1(System.IntPtr mat);
+      static extern uint au_cv_Mat_elemSize1(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Mat_getCols(System.IntPtr mat);
+      static extern int au_cv_Mat_getCols(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_getData_void(System.IntPtr mat);
+      static extern IntPtr au_cv_Mat_getData_void(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_setData_void(System.IntPtr mat, System.IntPtr data);
+      static extern void au_cv_Mat_setData_void(IntPtr mat, IntPtr data);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern byte[] au_cv_Mat_getData_uchar(System.IntPtr mat);
+      static extern byte[] au_cv_Mat_getData_uchar(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Mat_setData_uchar(System.IntPtr mat, byte[] data);
+      static extern void au_cv_Mat_setData_uchar(IntPtr mat, byte[] data);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Mat_getRows(System.IntPtr mat);
+      static extern int au_cv_Mat_getRows(IntPtr mat);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Mat_getSize(System.IntPtr mat);
+      static extern IntPtr au_cv_Mat_getSize(IntPtr mat);
 
       // Constructors & destructor
 
@@ -102,7 +103,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      internal Mat(System.IntPtr matPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal Mat(IntPtr matPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(matPtr, deleteResponsibility)
       {
       }
@@ -119,7 +120,7 @@ namespace ArucoUnity.Plugin
         get { return au_cv_Mat_getCols(CppPtr); }
       }
 
-      public System.IntPtr DataIntPtr
+      public IntPtr DataIntPtr
       {
         get { return au_cv_Mat_getData_void(CppPtr); }
         set { au_cv_Mat_setData_void(CppPtr, value); }

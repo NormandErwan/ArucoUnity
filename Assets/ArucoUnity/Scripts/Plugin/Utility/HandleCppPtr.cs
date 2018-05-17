@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -16,11 +17,11 @@ namespace ArucoUnity.Plugin
 
       public HandleCppPtr(DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
-        CppPtr = System.IntPtr.Zero;
+        CppPtr = IntPtr.Zero;
         DeleteResponsibility = deleteResponsibility;
       }
 
-      public HandleCppPtr(System.IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
+      public HandleCppPtr(IntPtr cppPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
       {
         CppPtr = cppPtr;
         DeleteResponsibility = deleteResponsibility;
@@ -38,7 +39,7 @@ namespace ArucoUnity.Plugin
 
       public DeleteResponsibility DeleteResponsibility { get; set; }
 
-      public System.IntPtr CppPtr
+      public IntPtr CppPtr
       {
         get { return handle.Handle; }
         set { handle = new HandleRef(this, value); }

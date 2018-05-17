@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -9,22 +10,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVectorPoint2f_new();
+      static extern IntPtr au_std_vectorVectorPoint2f_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVectorPoint2f_delete(System.IntPtr vector);
+      static extern void au_std_vectorVectorPoint2f_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVectorPoint2f_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern IntPtr au_std_vectorVectorPoint2f_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe System.IntPtr* au_std_vectorVectorPoint2f_data(System.IntPtr vector);
+      static extern unsafe IntPtr* au_std_vectorVectorPoint2f_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVectorPoint2f_push_back(System.IntPtr vector, System.IntPtr value);
+      static extern void au_std_vectorVectorPoint2f_push_back(IntPtr vector, IntPtr value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorVectorPoint2f_size(System.IntPtr vector);
+      static extern uint au_std_vectorVectorPoint2f_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -32,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorVectorPoint2f(System.IntPtr vectorVectorPoint2fPtr,
+      public VectorVectorPoint2f(IntPtr vectorVectorPoint2fPtr,
         Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorVectorPoint2fPtr, deleteResponsibility)
       {
@@ -56,7 +57,7 @@ namespace ArucoUnity.Plugin
 
       public unsafe VectorPoint2f[] Data()
       {
-        System.IntPtr* dataPtr = au_std_vectorVectorPoint2f_data(CppPtr);
+        IntPtr* dataPtr = au_std_vectorVectorPoint2f_data(CppPtr);
         uint size = Size();
 
         VectorPoint2f[] data = new VectorPoint2f[size];

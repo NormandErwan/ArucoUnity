@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -10,28 +11,28 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Point3f_new();
+      static extern IntPtr au_cv_Point3f_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point3f_delete(System.IntPtr point3f);
+      static extern void au_cv_Point3f_delete(IntPtr point3f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern float au_cv_Point3f_getX(System.IntPtr point3f);
+      static extern float au_cv_Point3f_getX(IntPtr point3f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point3f_setX(System.IntPtr point3f, float x);
+      static extern void au_cv_Point3f_setX(IntPtr point3f, float x);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern float au_cv_Point3f_getY(System.IntPtr point3f);
+      static extern float au_cv_Point3f_getY(IntPtr point3f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point3f_setY(System.IntPtr point3f, float y);
+      static extern void au_cv_Point3f_setY(IntPtr point3f, float y);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern float au_cv_Point3f_getZ(System.IntPtr point3f);
+      static extern float au_cv_Point3f_getZ(IntPtr point3f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point3f_setZ(System.IntPtr point3f, float z);
+      static extern void au_cv_Point3f_setZ(IntPtr point3f, float z);
 
       // Constructors & destructor
 
@@ -39,7 +40,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Point3f(System.IntPtr point3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Point3f(IntPtr point3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(point3fPtr, deleteResponsibility)
       {
       }

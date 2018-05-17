@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace ArucoUnity.Plugin
@@ -14,16 +15,16 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Exception_new();
+      static extern IntPtr au_cv_Exception_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Exception_delete(System.IntPtr exception);
+      static extern void au_cv_Exception_delete(IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Exception_what(System.IntPtr exception, StringBuilder sb, int sbLength);
+      static extern void au_cv_Exception_what(IntPtr exception, StringBuilder sb, int sbLength);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_Exception_getCode(System.IntPtr exception);
+      static extern int au_cv_Exception_getCode(IntPtr exception);
 
       // Variables
 

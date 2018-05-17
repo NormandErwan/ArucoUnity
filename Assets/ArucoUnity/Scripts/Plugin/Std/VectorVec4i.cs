@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -9,22 +10,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVec4i_new();
+      static extern IntPtr au_std_vectorVec4i_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVec4i_delete(System.IntPtr vector);
+      static extern void au_std_vectorVec4i_delete(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_std_vectorVec4i_at(System.IntPtr vector, uint pos, System.IntPtr exception);
+      static extern IntPtr au_std_vectorVec4i_at(IntPtr vector, uint pos, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern unsafe System.IntPtr* au_std_vectorVec4i_data(System.IntPtr vector);
+      static extern unsafe IntPtr* au_std_vectorVec4i_data(IntPtr vector);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_std_vectorVec4i_push_back(System.IntPtr vector, System.IntPtr value);
+      static extern void au_std_vectorVec4i_push_back(IntPtr vector, IntPtr value);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern uint au_std_vectorVec4i_size(System.IntPtr vector);
+      static extern uint au_std_vectorVec4i_size(IntPtr vector);
 
       // Constructors & destructor
 
@@ -32,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorVec4i(System.IntPtr vectorVec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorVec4i(IntPtr vectorVec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(vectorVec4iPtr, deleteResponsibility)
       {
       }
@@ -54,7 +55,7 @@ namespace ArucoUnity.Plugin
 
       public unsafe Cv.Vec4i[] Data()
       {
-        System.IntPtr* dataPtr = au_std_vectorVec4i_data(CppPtr);
+        IntPtr* dataPtr = au_std_vectorVec4i_data(CppPtr);
         uint size = Size();
 
         Cv.Vec4i[] data = new Cv.Vec4i[size];

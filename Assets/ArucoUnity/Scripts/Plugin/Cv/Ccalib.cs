@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -32,29 +33,29 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern double au_cv_ccalib_omnidir_calibrate(System.IntPtr objectPoints, System.IntPtr imagePoints, System.IntPtr imageSize,
-        System.IntPtr cameraMatrix, System.IntPtr xi, System.IntPtr distCoeffs, out System.IntPtr rvecs, out System.IntPtr tvecs, int flags,
-        System.IntPtr criteria, out System.IntPtr idx, System.IntPtr exception);
+      static extern double au_cv_ccalib_omnidir_calibrate(IntPtr objectPoints, IntPtr imagePoints, IntPtr imageSize,
+        IntPtr cameraMatrix, IntPtr xi, IntPtr distCoeffs, out IntPtr rvecs, out IntPtr tvecs, int flags,
+        IntPtr criteria, out IntPtr idx, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_ccalib_omnidir_initUndistortRectifyMap(System.IntPtr cameraMatrix, System.IntPtr distCoeffs, System.IntPtr xi,
-        System.IntPtr R, System.IntPtr newCameraMatrix, System.IntPtr size, int m1type, out System.IntPtr map1, out System.IntPtr map2, int flags,
-        System.IntPtr exception);
+      static extern void au_cv_ccalib_omnidir_initUndistortRectifyMap(IntPtr cameraMatrix, IntPtr distCoeffs, IntPtr xi,
+        IntPtr R, IntPtr newCameraMatrix, IntPtr size, int m1type, out IntPtr map1, out IntPtr map2, int flags,
+        IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern double au_cv_ccalib_omnidir_stereoCalibrate(System.IntPtr objectPoints, System.IntPtr imagePoints1, System.IntPtr imagePoints2,
-        System.IntPtr imageSize1, System.IntPtr imageSize2, System.IntPtr cameraMatrix1, System.IntPtr xi1, System.IntPtr distCoeffs1,
-         System.IntPtr cameraMatrix2, System.IntPtr xi2, System.IntPtr distCoeffs2, out System.IntPtr rvec, out System.IntPtr tvec,
-         out System.IntPtr rvecsL, out System.IntPtr tvecsL, int flags, System.IntPtr criteria, out System.IntPtr idx, System.IntPtr exception);
+      static extern double au_cv_ccalib_omnidir_stereoCalibrate(IntPtr objectPoints, IntPtr imagePoints1, IntPtr imagePoints2,
+        IntPtr imageSize1, IntPtr imageSize2, IntPtr cameraMatrix1, IntPtr xi1, IntPtr distCoeffs1,
+         IntPtr cameraMatrix2, IntPtr xi2, IntPtr distCoeffs2, out IntPtr rvec, out IntPtr tvec,
+         out IntPtr rvecsL, out IntPtr tvecsL, int flags, IntPtr criteria, out IntPtr idx, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_ccalib_omnidir_stereoRectify(System.IntPtr rvec, System.IntPtr tvec, out System.IntPtr R1, out System.IntPtr R2,
-        System.IntPtr exception);
+      static extern void au_cv_ccalib_omnidir_stereoRectify(IntPtr rvec, IntPtr tvec, out IntPtr R1, out IntPtr R2,
+        IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_ccalib_omnidir_undistortImage(System.IntPtr distorted, out System.IntPtr undistorted, System.IntPtr cameraMatrix,
-        System.IntPtr distCoeffs, System.IntPtr xi, int flags, System.IntPtr newCameraMatrix, System.IntPtr newSize, System.IntPtr R,
-        System.IntPtr exception);
+      static extern void au_cv_ccalib_omnidir_undistortImage(IntPtr distorted, out IntPtr undistorted, IntPtr cameraMatrix,
+        IntPtr distCoeffs, IntPtr xi, int flags, IntPtr newCameraMatrix, IntPtr newSize, IntPtr R,
+        IntPtr exception);
 
       // Static methods
 
@@ -63,7 +64,7 @@ namespace ArucoUnity.Plugin
         out Mat idx)
       {
         Exception exception = new Exception();
-        System.IntPtr rvecsPtr, tvecsPtr, idxPtr;
+        IntPtr rvecsPtr, tvecsPtr, idxPtr;
 
         double error = au_cv_ccalib_omnidir_calibrate(objectPoints.CppPtr, imagePoints.CppPtr, imageSize.CppPtr, cameraMatrix.CppPtr,
           xi.CppPtr, distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, out idxPtr, exception.CppPtr);
@@ -93,7 +94,7 @@ namespace ArucoUnity.Plugin
         out Mat map1, out Mat map2, Rectifify flags)
       {
         Exception exception = new Exception();
-        System.IntPtr map1Ptr, map2Ptr;
+        IntPtr map1Ptr, map2Ptr;
 
         au_cv_ccalib_omnidir_initUndistortRectifyMap(cameraMatrix.CppPtr, distCoeffs.CppPtr, xi.CppPtr, R.CppPtr, newCameraMatrix.CppPtr, size.CppPtr,
           (int)m1type, out map1Ptr, out map2Ptr, (int)flags, exception.CppPtr);
@@ -109,7 +110,7 @@ namespace ArucoUnity.Plugin
         TermCriteria criteria, out Mat idx)
       {
         Exception exception = new Exception();
-        System.IntPtr rvecPtr, tvecPtr, rvecsLPtr, tvecsLPtr, idxPtr;
+        IntPtr rvecPtr, tvecPtr, rvecsLPtr, tvecsLPtr, idxPtr;
 
         double error = au_cv_ccalib_omnidir_stereoCalibrate(objectPoints.CppPtr, imagePoints1.CppPtr, imagePoints2.CppPtr, imageSize1.CppPtr,
           imageSize2.CppPtr, cameraMatrix1.CppPtr, xi1.CppPtr, distCoeffs1.CppPtr, cameraMatrix2.CppPtr, xi2.CppPtr, distCoeffs2.CppPtr, out rvecPtr,
@@ -145,7 +146,7 @@ namespace ArucoUnity.Plugin
       public static void StereoRectify(Vec3d rvec, Vec3d tvec, out Mat R1, out Mat R2)
       {
         Exception exception = new Exception();
-        System.IntPtr R1Ptr, R2Ptr;
+        IntPtr R1Ptr, R2Ptr;
 
         au_cv_ccalib_omnidir_stereoRectify(rvec.CppPtr, tvec.CppPtr, out R1Ptr, out R2Ptr, exception.CppPtr);
         R1 = new Mat(R1Ptr);
@@ -158,7 +159,7 @@ namespace ArucoUnity.Plugin
         Mat newCameraMatrix, Size newSize, Mat R)
       {
         Exception exception = new Exception();
-        System.IntPtr undistortedPtr;
+        IntPtr undistortedPtr;
 
         au_cv_ccalib_omnidir_undistortImage(distorted.CppPtr, out undistortedPtr, cameraMatrix.CppPtr, distCoeffs.CppPtr, xi.CppPtr, (int)flags,
           newCameraMatrix.CppPtr, newSize.CppPtr, R.CppPtr, exception.CppPtr);

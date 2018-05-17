@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace ArucoUnity.Plugin
@@ -10,22 +11,22 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_Point2f_new();
+      static extern IntPtr au_cv_Point2f_new();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point2f_delete(System.IntPtr point2f);
+      static extern void au_cv_Point2f_delete(IntPtr point2f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern float au_cv_Point2f_getX(System.IntPtr point2f);
+      static extern float au_cv_Point2f_getX(IntPtr point2f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point2f_setX(System.IntPtr point2f, float x);
+      static extern void au_cv_Point2f_setX(IntPtr point2f, float x);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern float au_cv_Point2f_getY(System.IntPtr point2f);
+      static extern float au_cv_Point2f_getY(IntPtr point2f);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_Point2f_setY(System.IntPtr point2f, float y);
+      static extern void au_cv_Point2f_setY(IntPtr point2f, float y);
 
       // Constructors & destructor
 
@@ -33,7 +34,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Point2f(System.IntPtr point2fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Point2f(IntPtr point2fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(point2fPtr, deleteResponsibility)
       {
       }

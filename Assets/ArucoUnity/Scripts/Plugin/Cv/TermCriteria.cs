@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
@@ -18,31 +19,31 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_TermCriteria_new1();
+      static extern IntPtr au_cv_TermCriteria_new1();
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_cv_TermCriteria_new2(int type, int maxCount, double epsilon);
+      static extern IntPtr au_cv_TermCriteria_new2(int type, int maxCount, double epsilon);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_TermCriteria_delete(System.IntPtr termCriteria);
+      static extern void au_cv_TermCriteria_delete(IntPtr termCriteria);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern double au_cv_TermCriteria_getEpsilon(System.IntPtr termCriteria);
+      static extern double au_cv_TermCriteria_getEpsilon(IntPtr termCriteria);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_TermCriteria_setEpsilon(System.IntPtr termCriteria, double epsilon);
+      static extern void au_cv_TermCriteria_setEpsilon(IntPtr termCriteria, double epsilon);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_TermCriteria_getMaxCount(System.IntPtr termCriteria);
+      static extern int au_cv_TermCriteria_getMaxCount(IntPtr termCriteria);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_TermCriteria_setMaxCount(System.IntPtr termCriteria, int maxCount);
+      static extern void au_cv_TermCriteria_setMaxCount(IntPtr termCriteria, int maxCount);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_cv_TermCriteria_getType(System.IntPtr termCriteria);
+      static extern int au_cv_TermCriteria_getType(IntPtr termCriteria);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_cv_TermCriteria_setType(System.IntPtr termCriteria, int type);
+      static extern void au_cv_TermCriteria_setType(IntPtr termCriteria, int type);
 
       // Constructors & destructor
 

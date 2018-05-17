@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
@@ -9,46 +10,46 @@ namespace ArucoUnity.Plugin
       // Native functions
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Dictionary_new1(System.IntPtr bytesList, int markerSize, int maxCorrectionBits);
+      static extern IntPtr au_Dictionary_new1(IntPtr bytesList, int markerSize, int maxCorrectionBits);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Dictionary_new2(System.IntPtr dictionary);
+      static extern IntPtr au_Dictionary_new2(IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Dictionary_delete(System.IntPtr dictionary);
+      static extern void au_Dictionary_delete(IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Dictionary_drawMarker(System.IntPtr dictionary, int id, int sidePixels, out System.IntPtr img, int borderBits, System.IntPtr exception);
+      static extern void au_Dictionary_drawMarker(IntPtr dictionary, int id, int sidePixels, out IntPtr img, int borderBits, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_Dictionary_getDistanceToId(System.IntPtr dictionary, System.IntPtr bits, int id, bool allRotations, System.IntPtr exception);
+      static extern int au_Dictionary_getDistanceToId(IntPtr dictionary, IntPtr bits, int id, bool allRotations, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern bool au_Dictionary_identify(System.IntPtr dictionary, System.IntPtr onlyBits, out int idx, out int rotation, double maxCorrectionRate, System.IntPtr exception);
+      static extern bool au_Dictionary_identify(IntPtr dictionary, IntPtr onlyBits, out int idx, out int rotation, double maxCorrectionRate, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Dictionary_getBitsFromByteList(System.IntPtr byteList, int markerSize, System.IntPtr exception);
+      static extern IntPtr au_Dictionary_getBitsFromByteList(IntPtr byteList, int markerSize, IntPtr exception);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Dictionary_getByteListFromBits(System.IntPtr bits);
+      static extern IntPtr au_Dictionary_getByteListFromBits(IntPtr bits);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern System.IntPtr au_Dictionary_getBytesList(System.IntPtr dictionary);
+      static extern IntPtr au_Dictionary_getBytesList(IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Dictionary_setBytesList(System.IntPtr dictionary, System.IntPtr bytesList);
+      static extern void au_Dictionary_setBytesList(IntPtr dictionary, IntPtr bytesList);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_Dictionary_getMarkerSize(System.IntPtr dictionary);
+      static extern int au_Dictionary_getMarkerSize(IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Dictionary_setMarkerSize(System.IntPtr dictionary, int markerSize);
+      static extern void au_Dictionary_setMarkerSize(IntPtr dictionary, int markerSize);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern int au_Dictionary_getMaxCorrectionBits(System.IntPtr dictionary);
+      static extern int au_Dictionary_getMaxCorrectionBits(IntPtr dictionary);
 
       [DllImport("ArucoUnityPlugin")]
-      static extern void au_Dictionary_setMaxCorrectionBits(System.IntPtr dictionary, int maxCorrectionBits);
+      static extern void au_Dictionary_setMaxCorrectionBits(IntPtr dictionary, int maxCorrectionBits);
 
       // Constructors & destructor
 
@@ -65,7 +66,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      internal Dictionary(System.IntPtr dictionaryPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal Dictionary(IntPtr dictionaryPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
         : base(dictionaryPtr, deleteResponsibility)
       {
       }
@@ -107,7 +108,7 @@ namespace ArucoUnity.Plugin
         return bits;
       }
 
-      static public Cv.Mat GetByteListFromBits(System.IntPtr bits)
+      static public Cv.Mat GetByteListFromBits(IntPtr bits)
       {
         return new Cv.Mat(au_Dictionary_getByteListFromBits(bits));
       }
@@ -117,7 +118,7 @@ namespace ArucoUnity.Plugin
       public void DrawMarker(int id, int sidePixels, out Cv.Mat img, int borderBits)
       {
         Cv.Exception exception = new Cv.Exception();
-        System.IntPtr imgPtr;
+        IntPtr imgPtr;
 
         au_Dictionary_drawMarker(CppPtr, id, sidePixels, out imgPtr, borderBits, exception.CppPtr);
         img = new Cv.Mat(imgPtr);
