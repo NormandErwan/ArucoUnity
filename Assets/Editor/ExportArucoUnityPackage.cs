@@ -14,7 +14,11 @@ public static class ExportArucoUnityPackage
       "Assets/ArucoUnity/Scripts",
       "Assets/ArucoUnity/Scenes",
       "Assets/ArucoUnity/Textures",
-      "ProjectSettings/TagManager.asset"
+      "ProjectSettings/TagManager.asset",
+      "Assets/csc.rsp",
+      "Assets/gmcs.rsp",
+      "Assets/mcs.rsp",
+      "Assets/smcs.rsp"
     };
     AssetDatabase.ExportPackage(projectContent, "ArucoUnity.unitypackage", ExportPackageOptions.Interactive | ExportPackageOptions.Recurse);
   }
