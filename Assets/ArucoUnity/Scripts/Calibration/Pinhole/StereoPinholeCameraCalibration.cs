@@ -16,7 +16,7 @@ namespace ArucoUnity.Calibration.Pinhole
       {
         Std.VectorVec3d rvecs, tvecs;
         cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints[cameraId], imagePoints[cameraId],
-          calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+          ArucoCamera.Images[cameraId].Size, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
           out rvecs, out tvecs, calibrationFlags.Flags);
 
         Rvecs[cameraId] = rvecs;
@@ -30,7 +30,7 @@ namespace ArucoUnity.Calibration.Pinhole
       var distCoeffs1 = cameraParameters.DistCoeffs[cameraId1];
       var cameraMatrix2 = cameraParameters.CameraMatrices[cameraId2];
       var distCoeffs2 = cameraParameters.DistCoeffs[cameraId2];
-      var imageSize = calibrationImageSizes[cameraId1];
+      var imageSize = ArucoCamera.Images[cameraId1].Size;
 
       var stereoCameraParameters = new StereoArucoCameraParameters();
 

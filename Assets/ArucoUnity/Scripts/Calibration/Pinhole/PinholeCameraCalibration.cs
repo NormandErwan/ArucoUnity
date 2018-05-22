@@ -1,5 +1,4 @@
 ﻿using ArucoUnity.Cameras;
-using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Plugin;
 
 namespace ArucoUnity.Calibration.Pinhole
@@ -15,7 +14,7 @@ namespace ArucoUnity.Calibration.Pinhole
       {
         Std.VectorVec3d rvecs, tvecs;
         cameraParameters.ReprojectionErrors[cameraId] = Cv.CalibrateCamera(objectPoints[cameraId], imagePoints[cameraId],
-          calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
+          ArucoCamera.Images[cameraId].Size, cameraParameters.CameraMatrices[cameraId], cameraParameters.DistCoeffs[cameraId],
           out rvecs, out tvecs, calibrationFlags.Flags);
 
         Rvecs[cameraId] = rvecs;

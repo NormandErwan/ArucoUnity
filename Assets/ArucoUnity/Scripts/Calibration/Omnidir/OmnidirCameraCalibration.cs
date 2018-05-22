@@ -14,7 +14,7 @@ namespace ArucoUnity.Calibration.Omnidir
       {
         Std.VectorVec3d rvecs, tvecs;
         cameraParameters.ReprojectionErrors[cameraId] = Cv.Omnidir.Calibrate(objectPoints[cameraId], imagePoints[cameraId],
-          calibrationImageSizes[cameraId], cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId],
+          ArucoCamera.Images[cameraId].Size, cameraParameters.CameraMatrices[cameraId], cameraParameters.OmnidirXis[cameraId],
           cameraParameters.DistCoeffs[cameraId], out rvecs, out tvecs, calibrationFlags.Flags);
 
         Rvecs[cameraId] = rvecs;

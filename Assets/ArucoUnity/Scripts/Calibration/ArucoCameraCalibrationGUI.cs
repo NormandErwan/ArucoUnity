@@ -163,7 +163,7 @@ namespace ArucoUnity.Calibration
         return;
       }
 
-      arucoCameraCalibration.AddCurrentImagesForCalibration();
+      arucoCameraCalibration.AddImages();
 
       calibrateButton.enabled = true;
       resetButton.enabled = true;
@@ -222,7 +222,7 @@ namespace ArucoUnity.Calibration
     /// </summary>
     private void UpdateImagesCountText()
     {
-      string imagesCount = (arucoCameraCalibration.MarkerIds != null && arucoCameraCalibration.MarkerIds[0] != null) ? "" + arucoCameraCalibration.MarkerIds[0].Size() : "0";
+      string imagesCount = (arucoCameraCalibration.AllMarkerIds != null && arucoCameraCalibration.AllMarkerIds[0] != null) ? "" + arucoCameraCalibration.AllMarkerIds[0].Size() : "0";
       imagesCountText.text = "Images count: " + imagesCount;
     }
 

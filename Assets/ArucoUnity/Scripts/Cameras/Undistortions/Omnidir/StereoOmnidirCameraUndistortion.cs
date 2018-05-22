@@ -36,12 +36,8 @@ namespace ArucoUnity.Cameras.Undistortions
     {
       base.InitializeRectification();
 
-      Cv.Mat rectificationMatrix1, rectificationMatrix2;
       Cv.Omnidir.StereoRectify(stereoCameraParameters.RotationVector, stereoCameraParameters.TranslationVector,
-        out rectificationMatrix1, out rectificationMatrix2);
-
-      RectificationMatrices[StereoArucoCamera.CameraId1] = rectificationMatrix1;
-      RectificationMatrices[StereoArucoCamera.CameraId2] = rectificationMatrix2;
+        out RectificationMatrices[StereoArucoCamera.CameraId1], out RectificationMatrices[StereoArucoCamera.CameraId2]);
     }
   }
 }
