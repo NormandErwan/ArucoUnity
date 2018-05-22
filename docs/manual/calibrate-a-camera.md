@@ -13,7 +13,7 @@ To understand the algorithms used, read these tutorials: [Calibration with ArUco
 Most of the cameras we use today on our smartphones or laptops are called in Aruco Unity pinhole cameras (camera using a [rectilinear lens](https://en.wikipedia.org/wiki/Rectilinear_lens)) in contrast with cameras using a [fisheye lens](https://en.wikipedia.org/wiki/Fisheye_lens). So if you want to calibrate your webcam or smartphone, read this section.
 
 - Make a calibration board.
-  1. Create a charuco board or a grid board. See the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) page for details.
+  1. Create a charuco board or a grid board. See the [Create Markers](create-markers.html) page for details.
   2. Print the generated image on paper. Stick it on a hard cardboard: the paper must remains as flat as possible during the calibration (*Fig.1*).
 
 ![Calibration board](https://docs.opencv.org/master/charucocalibration.png)
@@ -52,7 +52,7 @@ Most of the cameras we use today on our smartphones or laptops are called in Aru
 
 ## Calibrate a stereoscopic camera
 
-The process is the same as in the [Calibrate a camera](https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera/_edit#calibrate-a-camera) section but we use differents camera and calibration scripts.
+The process is the same as in the [Calibrate a camera](#calibrate-a-camera-1) section but we use differents camera and calibration scripts.
 
 - Make a calibration board.
 - Open the `Assets/ArucoUnity/Scenes/CalibrateCamera.unity` scene.

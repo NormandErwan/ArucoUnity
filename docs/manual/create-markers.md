@@ -41,7 +41,7 @@ Open the `Assets/ArucoUnity/Scenes/CreateMarkers.unity` scene to visualize the A
 
 *Example of a grid board with the corresponding configuration.*
 
-The process is the same as in the [marker](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Markers-Creation/_edit#marker) subsection.
+The process is the same as in the [marker](#marker) subsection.
 
 The additional configurable parameters are:
 
@@ -55,7 +55,7 @@ The additional configurable parameters are:
 
 *Example of a charuco board with the corresponding configuration.*
 
-The process is the same as in the [marker](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Markers-Creation/_edit#marker) subsection.
+The process is the same as in the [marker](#marker) subsection.
 
 The additional configurable parameters are:
 
@@ -70,7 +70,7 @@ The additional configurable parameters are:
 
 *Example of a diamond marker with the corresponding configuration.*
 
-The process is the same as in the [marker](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Markers-Creation/_edit#marker) subsection.
+The process is the same as in the [marker](#marker) subsection.
 
 The additional configurable parameters are:
 

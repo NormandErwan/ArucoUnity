@@ -17,13 +17,13 @@ Download the [latest build release](https://github.com/NormandErwan/ArucoUnity/r
 
 A typical workflow with Aruco Unity is:
 
-1. Create and print some markers: read the [Create Markers](https://normanderwan.github.io/ArucoUnity/articles/create-markers.html) documentation page.
-2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/articles/calibrate-a-camera.html) documentation page.
-3. Track your markers: read the [Track Markers](https://normanderwan.github.io/ArucoUnity/articles/track-markers.html) documentation page.
+1. Create and print some markers: read the [Create Markers](https://normanderwan.github.io/ArucoUnity/manual/create-markers.html) documentation page.
+2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html) documentation page.
+3. Track your markers: read the [Track Markers](https://normanderwan.github.io/ArucoUnity/manual/track-markers.html) documentation page.
 
 ## Build
 
-Read the [Build From Sources](https://normanderwan.github.io/ArucoUnity/articles/build-from-sources.html) documentation page.
+Read the [Build From Sources](https://normanderwan.github.io/ArucoUnity/manual/build-from-sources.html) documentation page.
 
 ## Documentation
 

@@ -24,8 +24,8 @@
         "files": [ "*.yml" ]
       },
       {
-        "src": "docs/articles/",
-        "dest": "articles",
+        "src": "docs/manual/",
+        "dest": "manual",
         "files": [ "toc.yml", "*.md" ]
       },
       {

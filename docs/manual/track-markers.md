@@ -1,8 +1,8 @@
 # Track Markers
 
-First, make sure you have calibrated your camera: read the [Calibrate a Camera](articles/calibrate-a-camera.html) page.
+First, make sure you have calibrated your camera: read the [Calibrate a Camera](calibrate-a-camera.html) page.
 
-- Create, print and place in the environment the aruco objects you want to track. Read the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) page for details.
+- Create, print and place in the environment the aruco objects you want to track. Read the [Create Markers](create-markers.html) page for details.
 - Open the `Assets/ArucoUnity/Scenes/TrackMarkers.unity` scene.
 - Configure the camera:
   1. For a webcam, use the `ArucoWebcamCalibrated` object already in the scene. Otherwise, drag the prefab corresponding to your camera : `Assets/ArucoUnity/Prefabs/Cameras/<CameraType>Calibrated.prefab`.

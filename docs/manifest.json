@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibration.html",
-          "hash": "ev/mHVZJHVDRjGb64QJdZQ=="
+          "hash": "mtVJVqRC6MGvpmdlvPuf2Q=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html",
-          "hash": "o0qgfy8lNbz1j28ZDV0C8w=="
+          "hash": "8EJprgS3pecoqo/xYq/i6w=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html",
-          "hash": "8ETn8lybmfE6MeYGmdOvag=="
+          "hash": "FSEuozzUOgmq9g37EjiKoA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.CalibrationFlags.html",
-          "hash": "SUOUxyyqme90nDzeB2mwpw=="
+          "hash": "SupPLFCqfGFLch+o8lu37g=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.CalibrationFlagsGeneric-1.html",
-          "hash": "3ffnrWXGc1anv4DIzvfinw=="
+          "hash": "owoYW8Jgq4cqzmJRPJfU2Q=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html",
-          "hash": "n9xiX8AxcNuedtifdC/vDQ=="
+          "hash": "xeLonJLmifgwxxN/Ni9aXg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.html",
-          "hash": "2S0BeP0b2jDzOfx4CB+JHA=="
+          "hash": "s3pHCzFXfklNObyHaTWVyw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html",
-          "hash": "bXmDb7RfrUb69oGlH/gIwA=="
+          "hash": "MNsBzGNA8qtkSt+7LDyDqw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Omnidir.html",
-          "hash": "o708VB78GYq7IxBo/7sNKw=="
+          "hash": "RPmuOXd1L43ESMow3hkN/g=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html",
-          "hash": "Grn+iPlPdHzLPbEZmg95dw=="
+          "hash": "ger+ie1mDqNRO8qG70JwKQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase-1.html",
-          "hash": "PvElajE9lujRK2pmVRz27Q=="
+          "hash": "YU2t8i2W9DFVvIS61Ne/+g=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html",
-          "hash": "hA4vMgNq03q8f15Xt98Xxg=="
+          "hash": "honwJvxyVX8of+tBCMW4rQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html",
-          "hash": "K1CtbD/vNEE08j5sSqmQYA=="
+          "hash": "odUUCYxPE5FWU/Se0WLXdA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.Pinhole.html",
-          "hash": "1ebbhYeu6FEDwPhQtmfF/w=="
+          "hash": "KWbeO6E6RTWbZI+klSo4Ug=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Calibration.html",
-          "hash": "LHqBmC9VTtNIlKJmlE9QZw=="
+          "hash": "cdOhcHmoDSiHy9uEiUDZJg=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.ArucoCamera.html",
-          "hash": "/vHIfVKdb2xLHT99qiK41A=="
+          "hash": "n36qOeBnFB/j5gHIWeOtvg=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.ArucoCameraController.html",
-          "hash": "HQ/e+CxWyILG5XAsL1C29w=="
+          "hash": "rFWRLEO2r+A0XHTzGj1j7Q=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.ArucoWebcam.html",
-          "hash": "h1ICke6ZCU87FKf6qJyvqg=="
+          "hash": "8fvwPtYMpdYGy505fK+WHA=="
         }
       },
       "is_incremental": false,
@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.ArucoCameraDisplay.html",
-          "hash": "Tq/s6Ej7R/+2iWPBd2mw/w=="
+          "hash": "NknzZkqtV3qXV7F+gTNL0A=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric-2.html",
-          "hash": "fyyKRaq5f7TCVD2TMFIHyw=="
+          "hash": "aJdFhdOR/9igziO+x3wEqw=="
         }
       },
       "is_incremental": false,
@@ -258,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.IArucoCameraDisplay.html",
-          "hash": "Y7o/ekm2b1rO7yNvcLNLrw=="
+          "hash": "WtS5bxuHvNy4x+zBzVNqWA=="
         }
       },
       "is_incremental": false,
@@ -270,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.MonoArucoCameraDisplay.html",
-          "hash": "pLPIWOB9H+Kw14p8ubuDxQ=="
+          "hash": "xgxrQiUADAh32YHH3vEdWQ=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.StereoArucoCameraDisplay.html",
-          "hash": "QDBRhWWqBZwnyYcCSLNFsQ=="
+          "hash": "OAcsSYhu9TOsKEGFN+RtMw=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.StereoVRArucoCameraDisplay.html",
-          "hash": "yeG3V4XJ2uq8DUMV04i1/g=="
+          "hash": "0KX7U06SOYhszabHcAYWHw=="
         }
       },
       "is_incremental": false,
@@ -306,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Displays.html",
-          "hash": "lVS4SyrCjEelaOim5q64qw=="
+          "hash": "C2JPogJhwKSoNo5STznU5w=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.IArucoCamera.html",
-          "hash": "wBHVxkuonLieTx54DE7Qig=="
+          "hash": "dYfSAXOnadYNp0TDYG0Igw=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.IArucoCameraController.html",
-          "hash": "HZh45rJBpl9slAwsCwxKcg=="
+          "hash": "pe44ZQAuRZ7BB1HyvOLprA=="
         }
       },
       "is_incremental": false,
@@ -342,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html",
-          "hash": "wOWtiBEyd3+QyNaly7hJPw=="
+          "hash": "NVfT85o84/2XR0eIl31kbw=="
         }
       },
       "is_incremental": false,
@@ -354,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html",
-          "hash": "xH22tvXCXiidp24BWCfZ8w=="
+          "hash": "4nn8nENNBCd00rrFsMe6SA=="
         }
       },
       "is_incremental": false,
@@ -366,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html",
-          "hash": "91Mwk88exJkX8llgharXFA=="
+          "hash": "Ohnxz6vfWmCuqXu7OxmRNg=="
         }
       },
       "is_incremental": false,
@@ -378,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.html",
-          "hash": "+dbTWrMJLohZkQNj2fAiwg=="
+          "hash": "v6EZjiTQOTPIuEA99EjPHw=="
         }
       },
       "is_incremental": false,
@@ -390,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Parameters.html",
-          "hash": "QlITupTaamqyo7BfoyvoVQ=="
+          "hash": "r/fOM0attDCByY6Uc20/3Q=="
         }
       },
       "is_incremental": false,
@@ -402,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.StereoArucoCamera.html",
-          "hash": "Hv0FmHheo4YVIscwORMFng=="
+          "hash": "YHpkeIo1cJtB57EQCshBbA=="
         }
       },
       "is_incremental": false,
@@ -414,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.StereoArucoWebcam.html",
-          "hash": "JN6SWE5pc9Rq/kYTAhHzSA=="
+          "hash": "Bq26bdE3qswsv1Un7cg1xg=="
         }
       },
       "is_incremental": false,
@@ -426,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html",
-          "hash": "J2LBauyyxCZiY01n9vHl5A=="
+          "hash": "negdBldiunTdp7e9WtelDA=="
         }
       },
       "is_incremental": false,
@@ -438,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html",
-          "hash": "itFsuWfPWnn1/K/5to2BSQ=="
+          "hash": "qfdrKZnzaDF+0fbweR5Pgw=="
         }
       },
       "is_incremental": false,
@@ -450,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html",
-          "hash": "StrjEmvXrGJ6/mop9cMuhg=="
+          "hash": "hutqKAGREe5Zq3hMY6CAxQ=="
         }
       },
       "is_incremental": false,
@@ -462,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion.html",
-          "hash": "KL+cVH1BHubbz/1s6vdZCg=="
+          "hash": "aL0z6wL2tzHikg1z2D+HhQ=="
         }
       },
       "is_incremental": false,
@@ -474,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.RectificationTypes.html",
-          "hash": "XAO4nFsuIqWgGT4UpCQPeg=="
+          "hash": "C9/376/fpGdn2QaeDUd8Gw=="
         }
       },
       "is_incremental": false,
@@ -486,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html",
-          "hash": "XRJuBPdMJkBzJhJLjvXF9w=="
+          "hash": "HJRV+JtkTv01XchpBZtJDQ=="
         }
       },
       "is_incremental": false,
@@ -498,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.html",
-          "hash": "zA/98trx2Rf0xAbMunpP8g=="
+          "hash": "aanPSo4HMLY1DPJYaMbcyw=="
         }
       },
       "is_incremental": false,
@@ -510,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric-1.html",
-          "hash": "eZbNHMXrD5h8lR3Rh8rDZQ=="
+          "hash": "fxPBHiG3kuh5NzUr2vJb5A=="
         }
       },
       "is_incremental": false,
@@ -522,7 +522,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.html",
-          "hash": "cRMxVapSA3tlAwXl3O46CA=="
+          "hash": "byGkJTTFbR7sMYc/LXmkcQ=="
         }
       },
       "is_incremental": false,
@@ -534,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.html",
-          "hash": "N+OMAGj111gJZFtDaM2vpQ=="
+          "hash": "6FNw3lWS5bWlWihdpdTUKg=="
         }
       },
       "is_incremental": false,
@@ -546,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.Undistortions.html",
-          "hash": "fl7eoMXel4mqijv7CjbNJQ=="
+          "hash": "UuyBCfO0HFYzEn+Dj0EpDQ=="
         }
       },
       "is_incremental": false,
@@ -558,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.WebcamController.html",
-          "hash": "+NkGLf3Jz0xYgfgfeA+SRA=="
+          "hash": "5bBABiAc32z28Eo+oJ+qaQ=="
         }
       },
       "is_incremental": false,
@@ -570,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Cameras.html",
-          "hash": "5RS5d+PLpS4wmKCicenTFg=="
+          "hash": "1Bxoh2SgjmjrJkbjQ1GSkA=="
         }
       },
       "is_incremental": false,
@@ -582,7 +582,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoBoard.html",
-          "hash": "gVZBUgHJjVKlG8EozgtPYw=="
+          "hash": "4jFxlIaAh4cTOscc8f9LUg=="
         }
       },
       "is_incremental": false,
@@ -594,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoCharucoBoard.html",
-          "hash": "f7GNeQqBs95KC4RSo8bPXQ=="
+          "hash": "kvpHZG08Mfhl/s6dMq5Olg=="
         }
       },
       "is_incremental": false,
@@ -606,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoDiamond.html",
-          "hash": "wO+sNtUvU+J7/oHGaucLXQ=="
+          "hash": "YcypNUrYYOz4+yD+a6c47A=="
         }
       },
       "is_incremental": false,
@@ -618,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoGridBoard.html",
-          "hash": "G5okXMdyhPfpTt7NMgAZ2g=="
+          "hash": "FgtQL99NRZcg2nYAlV2A4Q=="
         }
       },
       "is_incremental": false,
@@ -630,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoMarker.html",
-          "hash": "ajKs0Ob2SvZ5hK6TlnliJw=="
+          "hash": "zOH8aqcj5IRqUS1oB1DM+w=="
         }
       },
       "is_incremental": false,
@@ -642,7 +642,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.ArucoObject.html",
-          "hash": "SZqYDtsGKvRALW7GMkmu7A=="
+          "hash": "wMXv5CI2NGmvJGQMXmN79Q=="
         }
       },
       "is_incremental": false,
@@ -654,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.html",
-          "hash": "oBbzEg1ySR0Izgv9gCU+qQ=="
+          "hash": "A14UMFLAPqy+GNA2k8+0fg=="
         }
       },
       "is_incremental": false,
@@ -666,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html",
-          "hash": "YEpIl7jS1Ft0DRYfAc5YPw=="
+          "hash": "mRvnPK5k5W7THTrDs7TGtQ=="
         }
       },
       "is_incremental": false,
@@ -678,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Displayers.html",
-          "hash": "n9WRfztFfv1mW85TiNiPEQ=="
+          "hash": "LyqmIkr0CbtLKrmumhRubQ=="
         }
       },
       "is_incremental": false,
@@ -690,7 +690,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html",
-          "hash": "h2frtnMQflVVt/pZAmuxsw=="
+          "hash": "tqLr/B93CXZqzGhMEC9rMQ=="
         }
       },
       "is_incremental": false,
@@ -702,7 +702,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html",
-          "hash": "SZZm2RSk8x8Dp55/8TU9uA=="
+          "hash": "Rca5U3hFTO50qbcWb4nMQw=="
         }
       },
       "is_incremental": false,
@@ -714,7 +714,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html",
-          "hash": "ioNV/vsZDSbWlfuy0LtmiA=="
+          "hash": "VuZAUiaM1zyelemzOFYeZQ=="
         }
       },
       "is_incremental": false,
@@ -726,7 +726,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html",
-          "hash": "CvfmPItFiLtvMN7Eat23fA=="
+          "hash": "sSTy3GfaqyrNIttoiZuC7Q=="
         }
       },
       "is_incremental": false,
@@ -738,7 +738,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectDetector.html",
-          "hash": "mAHv+xEMkQZL/o+8OnwnGA=="
+          "hash": "EDMlIsFrl7NEoAH2ts4VVg=="
         }
       },
       "is_incremental": false,
@@ -750,7 +750,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html",
-          "hash": "iDUJsGEdGjUseAXdgPTY8A=="
+          "hash": "BHKivbOX7fgchZF4GAIywQ=="
         }
       },
       "is_incremental": false,
@@ -762,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html",
-          "hash": "PdCNhRQ2n7jPQ0bKaDjeEg=="
+          "hash": "AvWs5z32DF3gwShE5HNDeg=="
         }
       },
       "is_incremental": false,
@@ -774,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html",
-          "hash": "74Don3rgSUWAX0v/dqPAOA=="
+          "hash": "veTPStgIaaxmGBgsXteo1Q=="
         }
       },
       "is_incremental": false,
@@ -786,7 +786,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.DetectorParametersController.html",
-          "hash": "QMFLmQxcrCAPGL40Uriw+g=="
+          "hash": "XFHzGZ/4C7TK83XVwiP0vg=="
         }
       },
       "is_incremental": false,
@@ -798,7 +798,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html",
-          "hash": "BS/agg97hX+BDW5alfAjCA=="
+          "hash": "sOzIUHPzvNrvcFIOkStrLw=="
         }
       },
       "is_incremental": false,
@@ -810,7 +810,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html",
-          "hash": "Rz5nikn2MFpx+g2KpOIDYw=="
+          "hash": "hUY5yJmlL7hyAUScl/ejoA=="
         }
       },
       "is_incremental": false,
@@ -822,7 +822,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.IHasDetectorParameter.html",
-          "hash": "4MkeSFe++gF/tNveGFPnfA=="
+          "hash": "jW1EBxB1uRdZGxKktZcpyQ=="
         }
       },
       "is_incremental": false,
@@ -834,7 +834,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.Trackers.html",
-          "hash": "Xj0mH0FArLZWe/pX3djQcA=="
+          "hash": "50BL9GkjqZgfub1t8IvZJg=="
         }
       },
       "is_incremental": false,
@@ -846,7 +846,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Objects.html",
-          "hash": "28YF3RUR285bb4dECoDyUw=="
+          "hash": "YoB69Fs0bCtjd7k7vxHhHA=="
         }
       },
       "is_incremental": false,
@@ -858,7 +858,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.Board.html",
-          "hash": "90iCCzgPxMdh7to5O+y29A=="
+          "hash": "mVSXuFpfiYc448Xo1WddpQ=="
         }
       },
       "is_incremental": false,
@@ -870,7 +870,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.CharucoBoard.html",
-          "hash": "u4TBhvwL1VSiJ8jZUhP/+g=="
+          "hash": "90q5gp+sHroBAaH18ty6gA=="
         }
       },
       "is_incremental": false,
@@ -882,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.CornerRefineMethod.html",
-          "hash": "84lX7WY8pHE9jhquKx7e8g=="
+          "hash": "uLxAiP7aNpyJpTNA/dkbPA=="
         }
       },
       "is_incremental": false,
@@ -894,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.DetectorParameters.html",
-          "hash": "9o9EvYJC/hiE9XBxCDigQw=="
+          "hash": "qbgg192Iqy1TTVjPPHkOMQ=="
         }
       },
       "is_incremental": false,
@@ -906,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.Dictionary.html",
-          "hash": "M/szJlnm9FlZLcxplbaRNw=="
+          "hash": "lmVvhF1E7n2d6Owxr20w/A=="
         }
       },
       "is_incremental": false,
@@ -918,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.GridBoard.html",
-          "hash": "XQ/bJsgwrceypJuQVQCofg=="
+          "hash": "OclfgU5TaFKm49ggEAdKXQ=="
         }
       },
       "is_incremental": false,
@@ -930,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.html",
-          "hash": "UzdHuf7N5VbDUKTl63e03g=="
+          "hash": "fo9ePRMrm0Il8BOq+u3wDQ=="
         }
       },
       "is_incremental": false,
@@ -942,7 +942,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Aruco.html",
-          "hash": "jCJZojDVO9a1cO1ayr9XvA=="
+          "hash": "mJlQV0jXHUVZzRgaNhClRg=="
         }
       },
       "is_incremental": false,
@@ -954,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.BorderTypes.html",
-          "hash": "eA6eFN74AbH44mkWZ2WilQ=="
+          "hash": "tqxdqo6fjsMBEPgGw9yrvw=="
         }
       },
       "is_incremental": false,
@@ -966,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Calib.html",
-          "hash": "GFGopSncY2IkwRXxFCXtbA=="
+          "hash": "uqP8axms9O/+dg4PvIpmdw=="
         }
       },
       "is_incremental": false,
@@ -978,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Exception.html",
-          "hash": "VgymkgheqyumfnW3u0YNsg=="
+          "hash": "l994naxrYlE4wjcS/J32lA=="
         }
       },
       "is_incremental": false,
@@ -990,7 +990,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.InterpolationFlags.html",
-          "hash": "6vB0OgJrgppfwRAmQ5n9Lg=="
+          "hash": "s0+/QxVV8tkNXGNwm63GYw=="
         }
       },
       "is_incremental": false,
@@ -1002,7 +1002,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Mat.html",
-          "hash": "4C1amO/6iO4ts6dbac1hZw=="
+          "hash": "dSZEbWXd1V2i7hvBgzKWLA=="
         }
       },
       "is_incremental": false,
@@ -1014,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.Calib.html",
-          "hash": "ZqHNlUGiTWvicRz773JMnw=="
+          "hash": "usgT5zJhapIsvbUlpFP/0w=="
         }
       },
       "is_incremental": false,
@@ -1026,7 +1026,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.Rectifify.html",
-          "hash": "yEqXklxRTuEekupQazir1A=="
+          "hash": "Tr4tNf6HsHKA4/5syxHLRw=="
         }
       },
       "is_incremental": false,
@@ -1038,7 +1038,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Omnidir.html",
-          "hash": "sIUrm5cm8dJWYEX2LbkgyQ=="
+          "hash": "9z5XOVx5m/x9xJpxOOZAVA=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Point2f.html",
-          "hash": "DNAo1i6+6PNKOn8gKEWhFg=="
+          "hash": "nXB5cK4SU7dRqgPpH+t5ZA=="
         }
       },
       "is_incremental": false,
@@ -1062,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Point3f.html",
-          "hash": "AJb4aCfAYWwbX9bz1Y0e2Q=="
+          "hash": "PzY9ajD3dGs6tJQFTD1yGg=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1074,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Rect.html",
-          "hash": "g8ckwPxRGJFPbFJdRtr9Kw=="
+          "hash": "VKuKO1Kx9aqCEaD8xmDKvQ=="
         }
       },
       "is_incremental": false,
@@ -1086,7 +1086,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Scalar.html",
-          "hash": "1IYQAlMwhxC6VDz9pp2R8w=="
+          "hash": "wNNuawITxkM4iZvhHPny5Q=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1098,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Size.html",
-          "hash": "z49NOsNmiOxDXjQIQUjvUw=="
+          "hash": "PKXeI2pQxyQraENORKp+wA=="
         }
       },
       "is_incremental": false,
@@ -1110,7 +1110,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.StereoRectifyFlags.html",
-          "hash": "p3IQ7ypFQP2Hkvf85wCUmw=="
+          "hash": "jywpm5oAomakxw73GPR7ZA=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.TermCriteria.Type.html",
-          "hash": "mUOtDMqTka4M0T2I8b1jvw=="
+          "hash": "R45LVG6AwZaYyAjZS6d+8w=="
         }
       },
       "is_incremental": false,
@@ -1134,7 +1134,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.TermCriteria.html",
-          "hash": "xlh/r9EqfRa5UJzyWBh9jA=="
+          "hash": "AYNGA61sWHXh4z5PjECqjg=="
         }
       },
       "is_incremental": false,
@@ -1146,7 +1146,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Type.html",
-          "hash": "t/i0BiBz3CZK2ElJIqxUdg=="
+          "hash": "AEeDgdCWdpUwJZo0AIhLaA=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Vec3d.html",
-          "hash": "x9W8+JQ2Vzeaf8sbs/Uh+w=="
+          "hash": "O0kV+4oc9rS7SCr7hbwAvA=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.Vec4i.html",
-          "hash": "XzMPenL7sAo0BrNX+S448Q=="
+          "hash": "e8nHrrzcFzzdEPsW6+IblA=="
         }
       },
       "is_incremental": false,
@@ -1182,7 +1182,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Cv.html",
-          "hash": "ePrAmsPW0P5H+FwqYiMaAA=="
+          "hash": "KqHfS16ekq5zVG+vK39Tgw=="
         }
       },
       "is_incremental": false,
@@ -1194,7 +1194,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorDouble.html",
-          "hash": "4gi3PjEEF0A3KJlIt0eoOg=="
+          "hash": "uHtFWz0lFuSXnhQIQVAf6w=="
         }
       },
       "is_incremental": false,
@@ -1206,7 +1206,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorInt.html",
-          "hash": "8CscteWprLw1HQdVmLBTsg=="
+          "hash": "ylMOiyX4aH3ss2VUNzFK1w=="
         }
       },
       "is_incremental": false,
@@ -1218,7 +1218,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorMat.html",
-          "hash": "uYT9gdAEmiNdzES7XdzzGw=="
+          "hash": "ybvS7dou5Q3jnyvpXlGKHA=="
         }
       },
       "is_incremental": false,
@@ -1230,7 +1230,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorPoint2f.html",
-          "hash": "oQ/3+yCxLP0RGVlpXPUpBA=="
+          "hash": "xiQuKzRM6j/YEAd5Eayskg=="
         }
       },
       "is_incremental": false,
@@ -1242,7 +1242,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorPoint3f.html",
-          "hash": "CE/g6rOHelNFVG/gIfKYnQ=="
+          "hash": "jA/RcaksujBkErkQ2IIQ+w=="
         }
       },
       "is_incremental": false,
@@ -1254,7 +1254,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVec3d.html",
-          "hash": "Afhw07zAxpK1kxhrw8HCEA=="
+          "hash": "HvRZh+NSzzexzJwsFxoheA=="
         }
       },
       "is_incremental": false,
@@ -1266,7 +1266,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVec4i.html",
-          "hash": "NEhei9sZZFMcJa1i55T3ig=="
+          "hash": "6S9UhlXp4mdt7Cwzk4QJcw=="
         }
       },
       "is_incremental": false,
@@ -1278,7 +1278,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorInt.html",
-          "hash": "PUcSm9+AQ1VMmZ1IPA1U5A=="
+          "hash": "oufWW+lAEcLJ9SJOuL5wAw=="
         }
       },
       "is_incremental": false,
@@ -1290,7 +1290,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html",
-          "hash": "5EXnNxycKF192y9dtMbn4A=="
+          "hash": "exd/9XWJ4al51Wpp/lEe2A=="
         }
       },
       "is_incremental": false,
@@ -1302,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html",
-          "hash": "t3XpN42+HrxKdBPPGxSbRQ=="
+          "hash": "sgyr2DA0fUAPztG2fPGPZg=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html",
-          "hash": "SCmJdL0F19lkk5oQBRrlog=="
+          "hash": "BuLAuOGMLSdI6i4VkncjnQ=="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Std.html",
-          "hash": "905rL/R9FO1I13Mm2V1gxw=="
+          "hash": "lYD5cuYy8/rQ4Z9QqW8VvA=="
         }
       },
       "is_incremental": false,
@@ -1338,7 +1338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Utility.DeleteResponsibility.html",
-          "hash": "tQLNwZg8NTgQPp92R9Ybmw=="
+          "hash": "UPUnRAh+TUzRKpQK1bLxiw=="
         }
       },
       "is_incremental": false,
@@ -1350,7 +1350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Utility.HandleCppPtr.html",
-          "hash": "FPkAFNDKQOF5oyIJWQskcw=="
+          "hash": "xXnIT0VXbOv+P8bxVgiOPw=="
         }
       },
       "is_incremental": false,
@@ -1362,7 +1362,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.Utility.html",
-          "hash": "IJFHCaJhRoD/pTT/3BCXAA=="
+          "hash": "ZzxoTLwEbcnrb/q/ee8xIA=="
         }
       },
       "is_incremental": false,
@@ -1374,7 +1374,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Plugin.html",
-          "hash": "VPEa+lM5W0HgwvtpGdeLMQ=="
+          "hash": "GcVcLf1gsAY5tE2yLvbKIA=="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html",
-          "hash": "trNIAwGhLGNzja6TKNVWSA=="
+          "hash": "pe1l3DmT2YTTUh2/DGbrOA=="
         }
       },
       "is_incremental": false,
@@ -1398,7 +1398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Utilities.ConfigurableController.html",
-          "hash": "m+nEJAFJE/eWbhOP9dgrjQ=="
+          "hash": "Vbo8QrDHpTQhVFXSW+Yt+w=="
         }
       },
       "is_incremental": false,
@@ -1410,7 +1410,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Utilities.CvMatExtensions.html",
-          "hash": "IA7GCgaJVGagUb3/RG8x3w=="
+          "hash": "4zQVjnXvkkZjUf8f0Zsg+w=="
         }
       },
       "is_incremental": false,
@@ -1422,7 +1422,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Utilities.IConfigurableController.html",
-          "hash": "+R9pUKiUkLE5Ly6e8Qs+yQ=="
+          "hash": "qq/Yk/Wu7+qG8pldzN+Z/A=="
         }
       },
       "is_incremental": false,
@@ -1434,7 +1434,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ArucoUnity.Utilities.html",
-          "hash": "7Qk8ChdOjmld0GJZtVBaMw=="
+          "hash": "yPovAtzFkUZppScUGGnTyQ=="
         }
       },
       "is_incremental": false,
@@ -1453,12 +1453,27 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
-      "source_relative_path": "docs/articles/aruco-unity-architecture.md",
+      "source_relative_path": "docs/index.md",
       "output": {
         ".html": {
-          "relative_path": "articles/aruco-unity-architecture.html",
-          "hash": "Tdn3GisMLvwjxf+EXuZkEQ=="
+          "relative_path": "index.html",
+          "hash": "pZC+JbBiH3OLVOXjsNPrQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/aruco-unity-architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/aruco-unity-architecture.html",
+          "hash": "HWCEmEAOs2/E170dk6880g=="
         }
       },
       "is_incremental": false,
@@ -1469,11 +1484,11 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
-      "source_relative_path": "docs/articles/build-from-sources.md",
+      "source_relative_path": "docs/manual/build-from-sources.md",
       "output": {
         ".html": {
-          "relative_path": "articles/build-from-sources.html",
-          "hash": "VXdl2fe7OiQbbp0Rp4Dzpw=="
+          "relative_path": "manual/build-from-sources.html",
+          "hash": "PbgR6mxCjLwSr4wEZBRQaA=="
         }
       },
       "is_incremental": false,
@@ -1484,11 +1499,11 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
-      "source_relative_path": "docs/articles/calibrate-a-camera.md",
+      "source_relative_path": "docs/manual/calibrate-a-camera.md",
       "output": {
         ".html": {
-          "relative_path": "articles/calibrate-a-camera.html",
-          "hash": "d8QBXRiLhioZ/DHBbypQ5g=="
+          "relative_path": "manual/calibrate-a-camera.html",
+          "hash": "A3+6BY7tVdgzihUuYg6jsg=="
         }
       },
       "is_incremental": false,
@@ -1499,11 +1514,11 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
-      "source_relative_path": "docs/articles/create-markers.md",
+      "source_relative_path": "docs/manual/create-markers.md",
       "output": {
         ".html": {
-          "relative_path": "articles/create-markers.html",
-          "hash": "mLqR4H48UBPB+CweE6Zx8A=="
+          "relative_path": "manual/create-markers.html",
+          "hash": "GkNl/sHJX4b1HdEXb5NuSA=="
         }
       },
       "is_incremental": false,
@@ -1511,10 +1526,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "docs/articles/toc.yml",
+      "source_relative_path": "docs/manual/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "articles/toc.html",
+          "relative_path": "manual/toc.html",
           "hash": "AzMm3pHLR5mVbMwc+pxxIA=="
         }
       },
@@ -1526,26 +1541,11 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
-      "source_relative_path": "docs/articles/track-markers.md",
+      "source_relative_path": "docs/manual/track-markers.md",
       "output": {
         ".html": {
-          "relative_path": "articles/track-markers.html",
-          "hash": "vQi3wdb7ZFGrcGZcLqfdHQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "docs/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "index.html",
-          "hash": "I84mBdH29w+z2GQRDQ/Ygg=="
+          "relative_path": "manual/track-markers.html",
+          "hash": "LY/ORTziOWFxVHa9N2cB4A=="
         }
       },
       "is_incremental": false,
@@ -1557,7 +1557,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "0Ocls7/an51dMe0vJbYRvQ=="
+          "hash": "QYXkmVfyeli11ABVIldmKQ=="
         }
       },
       "is_incremental": false,
@@ -1573,14 +1573,14 @@
       "processors": {
         "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         }

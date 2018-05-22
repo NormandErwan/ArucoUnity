@@ -8,7 +8,7 @@
     <title>Track Markers | Aruco Unity documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Track Markers | Aruco Unity documentation ">
-    <meta name="generator" content="docfx 2.35.4.0">
+    <meta name="generator" content="docfx 2.36.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -79,14 +79,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="track-markers">Track Markers</h1>
 
-<p>First, make sure you have calibrated your camera: read the <a href="articles/calibrate-a-camera.html">Calibrate a Camera</a> page.</p>
-<p>To track markers, aruco boards or aruco diamonds, you need to create and print them and to calibrate your camera: read the [Create Markers]((articles/track-markers.html) and <a href="articles/calibrate-a-camera.html">Calibrate a Camera</a> pages.</p>
+<p>First, make sure you have calibrated your camera: read the <a href="calibrate-a-camera.html">Calibrate a Camera</a> page.</p>
 <ul>
-<li>Create, print and place in the environment the aruco objects you want to track. Read the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers">Create Markers</a> page for details.</li>
+<li>Create, print and place in the environment the aruco objects you want to track. Read the <a href="create-markers.html">Create Markers</a> page for details.</li>
 <li>Open the <code>Assets/ArucoUnity/Scenes/TrackMarkers.unity</code> scene.</li>
 <li>Configure the camera:<ol>
 <li>For a webcam, use the <code>ArucoWebcamCalibrated</code> object already in the scene. Otherwise, drag the prefab corresponding to your camera : <code>Assets/ArucoUnity/Prefabs/Cameras/&lt;CameraType&gt;Calibrated.prefab</code>.</li>
-<li>Fill <code>ArucoCameraParametersController.CameraParametersFilename</code> with the camera parameters XML file from the calibration of the camera (<em>Fig.1</em>).</li>
+<li>Fill <code>CameraParametersFilename</code> with the camera parameters XML file from the calibration of the camera (<em>Fig.1</em>).</li>
 </ol>
 </li>
 </ul>
@@ -103,9 +102,9 @@
 <p><img src="../images/track_markers_marker.jpg" alt="Marker configuration"></p>
 <p><em>Fig.2: <code>ArucoMarker</code> configured to track a physical aruco marker with a 5.4 cm side length. The <code>ArucoObjectDisplayer</code> helps to visualize in the editor the physical object that will be tracked.</em></p>
 <ul>
-<li>Configure the tracker:<ol>
-<li>Drag all the aruco objects to track in <code>ArucoObjectsTracker.ArucoObjects</code>.</li>
-<li>Set <code>ArucoObjectsTracker.ArucoCameraDisplay</code> with the camera prefab you use (<em>Fig.3</em>).</li>
+<li>Configure the tracker <code>ArucoObjectsTracker</code>:<ol>
+<li>Drag all the aruco objects to track in <code>ArucoObjects</code>.</li>
+<li>Set <code>ArucoCameraDisplay</code> with the camera prefab you use (<em>Fig.3</em>).</li>
 </ol>
 </li>
 </ul>
@@ -115,7 +114,7 @@
 <li>Run the scene! The <code>ArucoTracker</code> will place (position, rotation, scale) any detected aruco object in the <code>ArucoObjects</code> list relative to the camera (<em>Fig.4</em>).</li>
 </ul>
 <p><img src="../images/ar_roll_a_ball.gif" alt="AR roll a ball"></p>
-<p><em>Fig.4: <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial">Roll a ball</a> set as child of an aruco board: it follows the board movements.</em></p>
+<p><em>Fig.4: <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial">Roll a ball</a> set as child of an aruco board: the game follows the board movements.</em></p>
 </article>
           </div>
           
@@ -124,7 +123,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/docs/articles/track-markers.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Normanderwan/ArucoUnity/blob/master/docs/manual/track-markers.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
