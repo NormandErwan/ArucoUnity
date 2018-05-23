@@ -11,7 +11,7 @@ namespace ArucoUnity.Cameras
   /// <remarks>
   /// To add a new camera, you need to derive this class. See <see cref="ArucoWebcam"/> as example. You need to
   /// implement <see cref="ConfigurableController.Configuring"/>, <see cref="ConfigurableController.Starting"/>,
-  /// and <see cref="UpdateCameraImagesInternal"/>.
+  /// and <see cref="UpdatingImages"/>.
   /// </remarks>
   public abstract class ArucoCamera : ConfigurableController, IArucoCamera
   {
@@ -56,40 +56,23 @@ namespace ArucoUnity.Cameras
     // MonoBehaviour methods
 
     /// <summary>
-    /// Calls <see cref="UpdateCameraImages"/> if configured and started.
+    /// When configured and started, calls <see cref="UpdatingImages"/> then <see cref="OnImagesUpdated"/>.
     /// </summary>
     protected virtual void Update()
     {
       if (IsConfigured && IsStarted)
       {
-        imagesUpdatedThisFrame = false;
-        UpdateCameraImages();
-      }
-    }
-
-    /// <summary>
-    /// Applies the changes made on the <see cref="Images"/> during the frame to the <see cref="Textures"/>
-    /// then swaps <see cref="Images"/> and <see cref="ImageDatas"/> with <see cref="NextImages"/> and
-    /// <see cref="NextImageDatas"/>.
-    /// </summary>
-    protected virtual void LateUpdate()
-    {
-      if (IsConfigured && IsStarted && imagesUpdatedThisFrame)
-      {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        if (UpdatingImages())
         {
-          Cv.Flip(Images[cameraId], imagesToTextures[cameraId], Cv.verticalFlipCode);
-          Textures[cameraId].LoadRawTextureData(imagesToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
-          Textures[cameraId].Apply(false);
+          OnImagesUpdated();
         }
-        currentBuffer = NextBuffer();
       }
     }
 
     // ConfigurableController methods
 
     /// <summary>
-    /// Configures all the images related properties.
+    /// Configures the properties.
     /// </summary>
     protected override void Configuring()
     {
@@ -132,54 +115,11 @@ namespace ArucoUnity.Cameras
     }
 
     /// <summary>
-    /// Calls <see cref="InitializeImages"/>.
-    /// </summary>
-    protected override void OnStarted()
-    {
-      InitializeImages();
-      base.OnStarted();
-    }
-
-    // Methods
-
-    /// <summary>
-    /// Calls <see cref="UpdateCameraImagesInternal"/> then <see cref="OnImagesUpdated"/>.
-    /// </summary>
-    protected void UpdateCameraImages()
-    {
-      UpdateCameraImagesInternal();
-      OnImagesUpdated();
-    }
-
-    /// <summary>
-    /// Updates <see cref="NextImage"/> with the new camera images.
-    /// </summary>
-    protected abstract void UpdateCameraImagesInternal();
-
-    /// <summary>
-    /// Calls <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/> then <see cref="ImagesUpdated"/>.
-    /// </summary>
-    protected void OnImagesUpdated()
-    {
-      if (imagesFlipCode != null)
-      {
-        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
-        {
-          Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)imagesFlipCode);
-        }
-      }
-      UndistortRectifyImages(NextImages, NextImageDatas);
-
-      imagesUpdatedThisFrame = true;
-      ImagesUpdated();
-    }
-
-    /// <summary>
     /// Initializes the <see cref="Images"/>, <see cref="ImageDataSizes"/>, <see cref="ImageDatas"/>,
     /// <see cref="NextImages"/>, <see cref="NextImageTextures"/> and <see cref="NextImageDatas"/> properties from the
     /// <see cref="Textures"/> property.
     /// </summary>
-    protected virtual void InitializeImages()
+    protected override void OnStarted()
     {
       for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
       {
@@ -202,6 +142,46 @@ namespace ArucoUnity.Cameras
             CvMatExtensions.ImageType(Textures[cameraId].format));
         imagesToTextureDatas[cameraId] = new byte[ImageDataSizes[cameraId]];
         imagesToTextures[cameraId].DataByte = imagesToTextureDatas[cameraId];
+      }
+
+      base.OnStarted();
+    }
+
+    // Methods
+
+    /// <summary>
+    /// Updates <see cref="NextImages"/> with the new camera images.
+    /// </summary>
+    /// <returns>If <see cref="NextImages"/> have been updated.</returns>
+    protected abstract bool UpdatingImages();
+
+    /// <summary>
+    /// Calls <see cref="UndistortRectifyImages"/> with the <see cref="NextImages"/>, swaps <see cref="Images"/> and
+    /// <see cref="ImageDatas"/>, the calls <see cref="ImagesUpdated"/> and applies the changes made on the
+    /// <see cref="Images"/> to the <see cref="Textures"/>.
+    /// </summary>
+    protected void OnImagesUpdated()
+    {
+      // Undistort next images
+      if (imagesFlipCode != dontFlipCode)
+      {
+        for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+        {
+          Cv.Flip(NextImages[cameraId], NextImages[cameraId], (int)imagesFlipCode);
+        }
+      }
+      UndistortRectifyImages(NextImages, NextImageDatas);
+
+      // Swap images
+      currentBuffer = NextBuffer();
+      ImagesUpdated();
+
+      // Update Textures with Images
+      for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
+      {
+        Cv.Flip(Images[cameraId], imagesToTextures[cameraId], Cv.verticalFlipCode);
+        Textures[cameraId].LoadRawTextureData(imagesToTextures[cameraId].DataIntPtr, ImageDataSizes[cameraId]);
+        Textures[cameraId].Apply(false);
       }
     }
 

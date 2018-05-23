@@ -86,7 +86,7 @@ namespace ArucoUnity.Cameras
     }
 
     /// <summary>
-    /// Blocks parent <see cref="OnStarted"/> until <see cref="WebcamController.IsStarted"/>.
+    /// Blocks <see cref="ArucoCamera.OnStarted"/> until <see cref="WebcamController.IsStarted"/>.
     /// </summary>
     protected override void OnStarted()
     {
@@ -97,18 +97,19 @@ namespace ArucoUnity.Cameras
     /// <summary>
     /// Copy current webcam images to <see cref="ArucoCamera.NextImages"/>.
     /// </summary>
-    protected override void UpdateCameraImagesInternal()
+    protected override bool UpdatingImages()
     {
       for (int cameraId = 0; cameraId < CameraNumber; cameraId++)
       {
         Array.Copy(WebcamController.Textures2D[cameraId].GetRawTextureData(), NextImageDatas[cameraId], ImageDataSizes[cameraId]);
       }
+      return true;
     }
 
     // Methods
 
     /// <summary>
-    /// Configures <see cref="ArucoCamera.Textures"/> and calls parent <see cref="OnStarted"/>.
+    /// Configures <see cref="ArucoCamera.Textures"/> and calls <see cref="ArucoCamera.OnStarted"/>.
     /// </summary>
     protected virtual void WebcamController_Started(WebcamController webcamController)
     {
