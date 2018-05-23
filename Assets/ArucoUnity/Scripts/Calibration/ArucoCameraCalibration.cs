@@ -218,9 +218,9 @@ namespace ArucoUnity.Calibration
     /// </summary>
     public virtual void DetectMarkers()
     {
-      if (!IsConfigured)
+      if (!IsConfigured || !IsStarted)
       {
-        throw new Exception("Configure the calibration controller before detect markers.");
+        throw new Exception("Configure and start the calibration controller before detect markers.");
       }
 
       for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
@@ -247,9 +247,9 @@ namespace ArucoUnity.Calibration
     /// </summary>
     public virtual void DrawDetectedMarkers()
     {
-      if (!IsConfigured)
+      if (!IsConfigured || !IsStarted)
       {
-        throw new Exception("Configure the calibration controller before drawing detected markers.");
+        throw new Exception("Configure and start the calibration controller before drawing detected markers.");
       }
 
       for (int cameraId = 0; cameraId < ArucoCamera.CameraNumber; cameraId++)
