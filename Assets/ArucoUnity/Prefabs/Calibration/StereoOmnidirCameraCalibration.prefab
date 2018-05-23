@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfa914475d82db49b6f0d7f57d13438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useIntrinsicGuess: 1
+  useIntrinsicGuess: 0
   fixKDistorsionCoefficients: 0000
   fixSkew: 0
   fixP: 0000
