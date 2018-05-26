@@ -160,7 +160,7 @@ namespace ArucoUnity.Cameras
     /// <see cref="ImageDatas"/>, the calls <see cref="ImagesUpdated"/> and applies the changes made on the
     /// <see cref="Images"/> to the <see cref="Textures"/>.
     /// </summary>
-    protected void OnImagesUpdated()
+    protected virtual void OnImagesUpdated()
     {
       // Undistort next images
       if (imagesFlipCode != dontFlipCode)
