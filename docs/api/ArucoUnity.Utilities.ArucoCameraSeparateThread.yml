@@ -36,7 +36,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCameraSeparateThread
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 7
@@ -69,7 +69,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 15
@@ -107,7 +107,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CopyBackImages
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 39
@@ -142,7 +142,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsStarted
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 40
@@ -179,7 +179,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImagesUpdated
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 41
@@ -216,7 +216,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: arucoCamera
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 45
@@ -247,7 +247,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: threadWork
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 46
@@ -278,7 +278,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: currentBuffer
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 48
@@ -309,7 +309,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: imageBuffers
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 49
@@ -340,7 +340,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: imageDataBuffers
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 50
@@ -371,7 +371,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: thread
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 52
@@ -402,7 +402,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: mutex
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 53
@@ -433,7 +433,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: threadException
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 54
@@ -464,7 +464,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: exception
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 54
@@ -495,7 +495,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: threadUpdated
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 55
@@ -526,7 +526,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: imagesUpdated
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 55
@@ -557,7 +557,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Start
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 59
@@ -587,7 +587,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stop
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 98
@@ -617,7 +617,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Update
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 106
@@ -655,7 +655,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: NextBuffer
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 155
@@ -689,7 +689,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PreviousBuffer
     path: Assets/ArucoUnity/Scripts/Utilities/ArucoCameraSeparateThread.cs
     startLine: 163
@@ -711,7 +711,6 @@ items:
 references:
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
@@ -724,20 +723,18 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor
-  isExternal: false
   name: ArucoCameraSeparateThread
   nameWithType: ArucoCameraSeparateThread.ArucoCameraSeparateThread
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread
 - uid: ArucoUnity.Cameras.IArucoCamera
   commentId: T:ArucoUnity.Cameras.IArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCamera
   nameWithType: IArucoCamera
   fullName: ArucoUnity.Cameras.IArucoCamera
@@ -791,7 +788,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
@@ -836,7 +832,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.CopyBackImages*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.CopyBackImages
-  isExternal: false
   name: CopyBackImages
   nameWithType: ArucoCameraSeparateThread.CopyBackImages
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.CopyBackImages
@@ -849,13 +844,11 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.IsStarted*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.IsStarted
-  isExternal: false
   name: IsStarted
   nameWithType: ArucoCameraSeparateThread.IsStarted
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.IsStarted
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.ImagesUpdated*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.ImagesUpdated
-  isExternal: false
   name: ImagesUpdated
   nameWithType: ArucoCameraSeparateThread.ImagesUpdated
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ImagesUpdated
@@ -867,6 +860,7 @@ references:
   nameWithType: UInt32
   fullName: System.UInt32
 - uid: ArucoUnity.Plugin.Cv.Mat[][]
+  isExternal: true
   name: Cv.Mat[][]
   nameWithType: Cv.Mat[][]
   fullName: ArucoUnity.Plugin.Cv.Mat[][]
@@ -896,6 +890,7 @@ references:
     nameWithType: ()
     fullName: ()
 - uid: System.Byte[][][]
+  isExternal: true
   name: Byte[][][]
   nameWithType: Byte[][][]
   fullName: System.Byte[][][]
@@ -941,7 +936,7 @@ references:
   fullName: System.Threading.Thread
 - uid: System.Threading
   commentId: N:System.Threading
-  isExternal: false
+  isExternal: true
   name: System.Threading
   nameWithType: System.Threading
   fullName: System.Threading
@@ -961,23 +956,21 @@ references:
   fullName: System.Exception
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.Start*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.Start
-  isExternal: false
   name: Start
   nameWithType: ArucoCameraSeparateThread.Start
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.Start
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.Stop*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.Stop
-  isExternal: false
   name: Stop
   nameWithType: ArucoCameraSeparateThread.Stop
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.Stop
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.Update*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.Update
-  isExternal: false
   name: Update
   nameWithType: ArucoCameraSeparateThread.Update
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.Update
 - uid: System.Byte[][]
+  isExternal: true
   name: Byte[][]
   nameWithType: Byte[][]
   fullName: System.Byte[][]
@@ -1010,13 +1003,11 @@ references:
     fullName: ()
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.NextBuffer*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.NextBuffer
-  isExternal: false
   name: NextBuffer
   nameWithType: ArucoCameraSeparateThread.NextBuffer
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.NextBuffer
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.PreviousBuffer*
   commentId: Overload:ArucoUnity.Utilities.ArucoCameraSeparateThread.PreviousBuffer
-  isExternal: false
   name: PreviousBuffer
   nameWithType: ArucoCameraSeparateThread.PreviousBuffer
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.PreviousBuffer

@@ -17,7 +17,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/IHasArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IHasArucoCameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/IHasArucoCameraParameters.cs
     startLine: 5
@@ -50,7 +50,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/IHasArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/IHasArucoCameraParameters.cs
     startLine: 12
@@ -73,32 +73,27 @@ references:
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoCameraParameters
   nameWithType: ArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
 - uid: ArucoUnity.Cameras.IArucoCamera
   commentId: T:ArucoUnity.Cameras.IArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCamera
   nameWithType: IArucoCamera
   fullName: ArucoUnity.Cameras.IArucoCamera
 - uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters*
   commentId: Overload:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
-  isExternal: false
   name: CameraParameters
   nameWithType: IHasArucoCameraParameters.CameraParameters
   fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras

@@ -32,7 +32,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoMarkerTracker
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 6
@@ -76,7 +76,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: estimatePoseMarkerLength
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 10
@@ -109,7 +109,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: rejectedMarkerCandidatesColor
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 11
@@ -142,7 +142,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectedMarkers
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 15
@@ -179,7 +179,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerCorners
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 20
@@ -218,7 +218,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerIds
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 25
@@ -257,7 +257,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RejectedCandidateCorners
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 30
@@ -296,7 +296,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerRvecs
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 35
@@ -335,7 +335,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerTvecs
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 40
@@ -374,7 +374,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectsController_DictionaryAdded
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 44
@@ -410,7 +410,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectsController_DictionaryRemoved
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 57
@@ -446,7 +446,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Activate
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 72
@@ -482,7 +482,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Deactivate
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 107
@@ -515,7 +515,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Detect
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 119
@@ -555,7 +555,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Draw
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 134
@@ -595,7 +595,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: EstimateTransforms
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 169
@@ -633,7 +633,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateTransforms
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoMarkerTracker.cs
     startLine: 185
@@ -659,7 +659,6 @@ items:
 references:
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
@@ -673,42 +672,36 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectTracker
   nameWithType: ArucoObjectTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: IsActivated
   nameWithType: ArucoObjectTracker.IsActivated
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoTracker
   nameWithType: ArucoObjectTracker.arucoTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCamera
   nameWithType: ArucoObjectTracker.arucoCamera
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCameraUndistortion
   nameWithType: ArucoObjectTracker.arucoCameraUndistortion
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCameraDisplay
   nameWithType: ArucoObjectTracker.arucoCameraDisplay
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
@@ -820,7 +813,7 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
@@ -840,17 +833,17 @@ references:
   fullName: UnityEngine.Color
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.DetectedMarkers*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.DetectedMarkers
-  isExternal: false
   name: DetectedMarkers
   nameWithType: ArucoMarkerTracker.DetectedMarkers
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.DetectedMarkers
 - uid: System.Collections.Generic.Dictionary{ArucoUnity.Plugin.Aruco.Dictionary,System.Int32}[]
+  isExternal: true
   name: Dictionary<Aruco.Dictionary, Int32>[]
   nameWithType: Dictionary<Aruco.Dictionary, Int32>[]
   fullName: System.Collections.Generic.Dictionary<ArucoUnity.Plugin.Aruco.Dictionary, System.Int32>[]
@@ -913,13 +906,14 @@ references:
     fullName: ()
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  isExternal: true
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerCorners*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerCorners
-  isExternal: false
   name: MarkerCorners
   nameWithType: ArucoMarkerTracker.MarkerCorners
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerCorners
 - uid: System.Collections.Generic.Dictionary{ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorVectorPoint2f}[]
+  isExternal: true
   name: Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[]
   nameWithType: Dictionary<Aruco.Dictionary, Std.VectorVectorPoint2f>[]
   fullName: System.Collections.Generic.Dictionary<ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Std.VectorVectorPoint2f>[]
@@ -980,11 +974,11 @@ references:
     fullName: ()
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerIds*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerIds
-  isExternal: false
   name: MarkerIds
   nameWithType: ArucoMarkerTracker.MarkerIds
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerIds
 - uid: System.Collections.Generic.Dictionary{ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorInt}[]
+  isExternal: true
   name: Dictionary<Aruco.Dictionary, Std.VectorInt>[]
   nameWithType: Dictionary<Aruco.Dictionary, Std.VectorInt>[]
   fullName: System.Collections.Generic.Dictionary<ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Std.VectorInt>[]
@@ -1045,17 +1039,16 @@ references:
     fullName: ()
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.RejectedCandidateCorners*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.RejectedCandidateCorners
-  isExternal: false
   name: RejectedCandidateCorners
   nameWithType: ArucoMarkerTracker.RejectedCandidateCorners
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.RejectedCandidateCorners
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerRvecs*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerRvecs
-  isExternal: false
   name: MarkerRvecs
   nameWithType: ArucoMarkerTracker.MarkerRvecs
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerRvecs
 - uid: System.Collections.Generic.Dictionary{ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorVec3d}[]
+  isExternal: true
   name: Dictionary<Aruco.Dictionary, Std.VectorVec3d>[]
   nameWithType: Dictionary<Aruco.Dictionary, Std.VectorVec3d>[]
   fullName: System.Collections.Generic.Dictionary<ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Std.VectorVec3d>[]
@@ -1116,14 +1109,12 @@ references:
     fullName: ()
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerTvecs*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerTvecs
-  isExternal: false
   name: MarkerTvecs
   nameWithType: ArucoMarkerTracker.MarkerTvecs
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.MarkerTvecs
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
@@ -1159,27 +1150,23 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
-  isExternal: false
   name: ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
@@ -1215,14 +1202,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved
-  isExternal: false
   name: ArucoObjectsController_DictionaryRemoved
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: Activate(IArucoObjectsTracker)
   nameWithType: ArucoObjectTracker.Activate(IArucoObjectsTracker)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
@@ -1258,21 +1243,18 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Activate*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Activate
-  isExternal: false
   name: Activate
   nameWithType: ArucoMarkerTracker.Activate
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Activate
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
   commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IArucoObjectsTracker
   nameWithType: IArucoObjectsTracker
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: Deactivate()
   nameWithType: ArucoObjectTracker.Deactivate()
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate()
@@ -1300,7 +1282,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Deactivate*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Deactivate
-  isExternal: false
   name: Deactivate
   nameWithType: ArucoMarkerTracker.Deactivate
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Deactivate
@@ -1373,7 +1354,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect
-  isExternal: false
   name: Detect
   nameWithType: ArucoMarkerTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect
@@ -1387,7 +1367,6 @@ references:
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
@@ -1460,7 +1439,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw
-  isExternal: false
   name: Draw
   nameWithType: ArucoMarkerTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw
@@ -1519,7 +1497,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms
-  isExternal: false
   name: EstimateTransforms
   nameWithType: ArucoMarkerTracker.EstimateTransforms
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms
@@ -1578,7 +1555,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms
-  isExternal: false
   name: UpdateTransforms
   nameWithType: ArucoMarkerTracker.UpdateTransforms
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms

@@ -18,7 +18,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectorParametersController
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
     startLine: 8
@@ -62,7 +62,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectorParameters
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
     startLine: 97
@@ -101,7 +101,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
     startLine: 104
@@ -124,13 +124,11 @@ references:
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters
   commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.DetectorParameters
   nameWithType: Aruco.DetectorParameters
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
@@ -172,46 +170,42 @@ references:
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
   commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IHasDetectorParameter
   nameWithType: IHasDetectorParameter
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
   commentId: P:ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  isExternal: true
 - uid: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters*
   commentId: Overload:ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
-  isExternal: false
   name: DetectorParameters
   nameWithType: DetectorParametersController.DetectorParameters
   fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
   commentId: P:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
   parent: ArucoUnity.Objects.Trackers.IHasDetectorParameter
-  isExternal: false
   name: DetectorParameters
   nameWithType: IHasDetectorParameter.DetectorParameters
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
 - uid: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake*
   commentId: Overload:ArucoUnity.Objects.Trackers.DetectorParametersController.Awake
-  isExternal: false
   name: Awake
   nameWithType: DetectorParametersController.Awake
   fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake

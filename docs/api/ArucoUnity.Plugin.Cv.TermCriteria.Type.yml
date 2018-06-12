@@ -19,10 +19,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Type
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -50,10 +50,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Count
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -82,10 +82,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MaxIter
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -114,10 +114,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Eps
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/TermCriteria.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -134,14 +134,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Cv.TermCriteria.Type
   commentId: T:ArucoUnity.Plugin.Cv.TermCriteria.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.TermCriteria.Type
   nameWithType: Cv.TermCriteria.Type
   fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type

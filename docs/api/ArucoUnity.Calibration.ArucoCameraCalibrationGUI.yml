@@ -19,7 +19,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCameraCalibrationGUI
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
     startLine: 6
@@ -58,7 +58,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
     startLine: 41
@@ -90,7 +90,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnDestroy
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
     startLine: 67
@@ -122,7 +122,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ConfigureUI
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibrationGUI.cs
     startLine: 76
@@ -145,7 +145,6 @@ items:
 references:
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration
@@ -186,44 +185,39 @@ references:
   fullName: UnityEngine.MonoBehaviour
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
-  isExternal: false
   name: Awake
   nameWithType: ArucoCameraCalibrationGUI.Awake
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
-  isExternal: false
   name: OnDestroy
   nameWithType: ArucoCameraCalibrationGUI.OnDestroy
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI
-  isExternal: false
   name: ConfigureUI
   nameWithType: ArucoCameraCalibrationGUI.ConfigureUI
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities

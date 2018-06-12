@@ -19,10 +19,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Board
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -64,10 +64,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dictionary
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -99,10 +99,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Ids
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -134,10 +134,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ObjPoints
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Board.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -157,7 +157,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -171,28 +170,24 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -220,46 +215,40 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Aruco.Board.Dictionary*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Board.Dictionary
-  isExternal: false
   name: Dictionary
   nameWithType: Aruco.Board.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Board.Dictionary
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Plugin.Aruco.Board.Ids*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Board.Ids
-  isExternal: false
   name: Ids
   nameWithType: Aruco.Board.Ids
   fullName: ArucoUnity.Plugin.Aruco.Board.Ids
 - uid: ArucoUnity.Plugin.Std.VectorInt
   commentId: T:ArucoUnity.Plugin.Std.VectorInt
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorInt
   nameWithType: Std.VectorInt
   fullName: ArucoUnity.Plugin.Std.VectorInt
 - uid: ArucoUnity.Plugin.Aruco.Board.ObjPoints*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Board.ObjPoints
-  isExternal: false
   name: ObjPoints
   nameWithType: Aruco.Board.ObjPoints
   fullName: ArucoUnity.Plugin.Aruco.Board.ObjPoints
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint3f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorPoint3f
   nameWithType: Std.VectorVectorPoint3f
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f

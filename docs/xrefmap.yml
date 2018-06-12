@@ -13,19 +13,45 @@ references:
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibration
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration
   nameWithType: ArucoCameraCalibration
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  name: AddCurrentImagesForCalibration()
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddCurrentImagesForCalibration
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration()
-  nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration*
-  name: AddCurrentImagesForCalibration
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddCurrentImagesForCalibration_
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  name: AddImages()
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddImages
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages()
+  nameWithType: ArucoCameraCalibration.AddImages()
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages*
+  name: AddImages
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddImages_
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
   isSpec: "True"
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  nameWithType: ArucoCameraCalibration.AddImages
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  name: AllMarkerCorners
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerCorners
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  nameWithType: ArucoCameraCalibration.AllMarkerCorners
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners*
+  name: AllMarkerCorners
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerCorners_
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  isSpec: "True"
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  nameWithType: ArucoCameraCalibration.AllMarkerCorners
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  name: AllMarkerIds
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerIds
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  nameWithType: ArucoCameraCalibration.AllMarkerIds
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds*
+  name: AllMarkerIds
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerIds_
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  isSpec: "True"
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  nameWithType: ArucoCameraCalibration.AllMarkerIds
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.applicationPath
   name: applicationPath
   href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_applicationPath
@@ -130,25 +156,6 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags
   nameWithType: ArucoCameraCalibration.CalibrationFlags
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  name: CalibrationImages
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationImages
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  nameWithType: ArucoCameraCalibration.CalibrationImages
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages*
-  name: CalibrationImages
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationImages_
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  isSpec: "True"
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  nameWithType: ArucoCameraCalibration.CalibrationImages
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  name: calibrationImageSizes
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_calibrationImageSizes
-  commentId: F:ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  nameWithType: ArucoCameraCalibration.calibrationImageSizes
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
   name: CalibrationRunning
   href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationRunning
@@ -227,6 +234,19 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers
   nameWithType: ArucoCameraCalibration.DrawDetectedMarkers
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  name: Images
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Images
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  nameWithType: ArucoCameraCalibration.Images
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Images*
+  name: Images
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Images_
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  isSpec: "True"
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  nameWithType: ArucoCameraCalibration.Images
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters
   name: InitializeCameraParameters()
   href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters
@@ -279,19 +299,6 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
   nameWithType: ArucoCameraCalibration.MarkerCorners
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  name: MarkerCornersCurrentImage
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCornersCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerCornersCurrentImage
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage*
-  name: MarkerCornersCurrentImage
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCornersCurrentImage_
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  isSpec: "True"
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerCornersCurrentImage
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
   name: MarkerIds
   href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIds
@@ -305,19 +312,6 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
   nameWithType: ArucoCameraCalibration.MarkerIds
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  name: MarkerIdsCurrentImage
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIdsCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerIdsCurrentImage
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage*
-  name: MarkerIdsCurrentImage
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIdsCurrentImage_
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  isSpec: "True"
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerIdsCurrentImage
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection
   name: RefineMarkersDetection
   href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_RefineMarkersDetection
@@ -1242,32 +1236,6 @@ references:
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
   fullName: ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
   nameWithType: ArucoCamera.imagesUpdatedThisFrame
-- uid: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  name: InitializeImages()
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_InitializeImages
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  fullName: ArucoUnity.Cameras.ArucoCamera.InitializeImages()
-  nameWithType: ArucoCamera.InitializeImages()
-- uid: ArucoUnity.Cameras.ArucoCamera.InitializeImages*
-  name: InitializeImages
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_InitializeImages_
-  commentId: Overload:ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  nameWithType: ArucoCamera.InitializeImages
-- uid: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  name: LateUpdate()
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_LateUpdate
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  fullName: ArucoUnity.Cameras.ArucoCamera.LateUpdate()
-  nameWithType: ArucoCamera.LateUpdate()
-- uid: ArucoUnity.Cameras.ArucoCamera.LateUpdate*
-  name: LateUpdate
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_LateUpdate_
-  commentId: Overload:ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  nameWithType: ArucoCamera.LateUpdate
 - uid: ArucoUnity.Cameras.ArucoCamera.Name
   name: Name
   href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Name
@@ -1365,32 +1333,19 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.ArucoCamera.Update
   nameWithType: ArucoCamera.Update
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  name: UpdateCameraImages()
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdateCameraImages
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages()
-  nameWithType: ArucoCamera.UpdateCameraImages()
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages*
-  name: UpdateCameraImages
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdateCameraImages_
-  commentId: Overload:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
+- uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  name: UpdatingImages()
+  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages()
+  nameWithType: ArucoCamera.UpdatingImages()
+- uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages*
+  name: UpdatingImages
+  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages_
+  commentId: Overload:ArucoUnity.Cameras.ArucoCamera.UpdatingImages
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  nameWithType: ArucoCamera.UpdateCameraImages
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  name: UpdateCameraImagesInternal()
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdateCameraImagesInternal
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal()
-  nameWithType: ArucoCamera.UpdateCameraImagesInternal()
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal*
-  name: UpdateCameraImagesInternal
-  href: api/ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdateCameraImagesInternal_
-  commentId: Overload:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  nameWithType: ArucoCamera.UpdateCameraImagesInternal
+  fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  nameWithType: ArucoCamera.UpdatingImages
 - uid: ArucoUnity.Cameras.ArucoCameraController
   name: ArucoCameraController
   href: api/ArucoUnity.Cameras.ArucoCameraController.html
@@ -1526,19 +1481,32 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.ArucoWebcam.Starting
   nameWithType: ArucoWebcam.Starting
-- uid: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  name: UpdateCameraImagesInternal()
-  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_UpdateCameraImagesInternal
-  commentId: M:ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal()
-  nameWithType: ArucoWebcam.UpdateCameraImagesInternal()
-- uid: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal*
-  name: UpdateCameraImagesInternal
-  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_UpdateCameraImagesInternal_
-  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping
+  name: Stopping()
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_Stopping
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Stopping
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping()
+  nameWithType: ArucoWebcam.Stopping()
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping*
+  name: Stopping
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_Stopping_
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Stopping
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  nameWithType: ArucoWebcam.UpdateCameraImagesInternal
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping
+  nameWithType: ArucoWebcam.Stopping
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  name: UpdatingImages()
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages()
+  nameWithType: ArucoWebcam.UpdatingImages()
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages*
+  name: UpdatingImages
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_UpdatingImages_
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  isSpec: "True"
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  nameWithType: ArucoWebcam.UpdatingImages
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController
   name: WebcamController
   href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_WebcamController
@@ -2930,19 +2898,19 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.StereoArucoWebcam.Starting
   nameWithType: StereoArucoWebcam.Starting
-- uid: ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal
-  name: UpdateCameraImagesInternal()
-  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_UpdateCameraImagesInternal
-  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal
-  fullName: ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal()
-  nameWithType: StereoArucoWebcam.UpdateCameraImagesInternal()
-- uid: ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal*
-  name: UpdateCameraImagesInternal
-  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_UpdateCameraImagesInternal_
-  commentId: Overload:ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal
+- uid: ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages
+  name: UpdatingImages()
+  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_UpdatingImages
+  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages
+  fullName: ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages()
+  nameWithType: StereoArucoWebcam.UpdatingImages()
+- uid: ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages*
+  name: UpdatingImages
+  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_UpdatingImages_
+  commentId: Overload:ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.StereoArucoWebcam.UpdateCameraImagesInternal
-  nameWithType: StereoArucoWebcam.UpdateCameraImagesInternal
+  fullName: ArucoUnity.Cameras.StereoArucoWebcam.UpdatingImages
+  nameWithType: StereoArucoWebcam.UpdatingImages
 - uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController
   name: WebcamController
   href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_WebcamController
@@ -3093,6 +3061,12 @@ references:
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
   nameWithType: ArucoCameraUndistortion.noRectificationMatrix
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
+  name: noROI
+  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_noROI
+  commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
+  nameWithType: ArucoCameraUndistortion.noROI
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectificationMatrices
   name: RectificationMatrices
   href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_RectificationMatrices
@@ -3739,19 +3713,19 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.WebcamController.StartWebcams
   nameWithType: WebcamController.StartWebcams
-- uid: ArucoUnity.Cameras.WebcamController.Stopping
-  name: Stopping()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Stopping
-  commentId: M:ArucoUnity.Cameras.WebcamController.Stopping
-  fullName: ArucoUnity.Cameras.WebcamController.Stopping()
-  nameWithType: WebcamController.Stopping()
-- uid: ArucoUnity.Cameras.WebcamController.Stopping*
-  name: Stopping
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Stopping_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Stopping
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams
+  name: StopWebcams()
+  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StopWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StopWebcams
+  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams()
+  nameWithType: WebcamController.StopWebcams()
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams*
+  name: StopWebcams
+  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StopWebcams_
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.StopWebcams
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Stopping
-  nameWithType: WebcamController.Stopping
+  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams
+  nameWithType: WebcamController.StopWebcams
 - uid: ArucoUnity.Cameras.WebcamController.Textures
   name: Textures
   href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures

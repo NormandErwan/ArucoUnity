@@ -29,10 +29,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dictionary
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -68,10 +68,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -105,10 +105,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -135,10 +135,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -168,10 +168,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 72
+    startLine: 73
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -201,10 +201,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: BytesList
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -236,10 +236,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerSize
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -271,10 +271,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MaxCorrectionBits
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -306,10 +306,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Name
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 97
+    startLine: 98
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -341,10 +341,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetBitsFromByteList
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 101
+    startLine: 102
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -380,10 +380,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetByteListFromBits
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 109
+    startLine: 110
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -417,10 +417,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawMarker
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 116
+    startLine: 117
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -459,10 +459,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetDistanceToId
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -500,10 +500,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Identify
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Dictionary.cs
-    startLine: 135
+    startLine: 136
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -534,7 +534,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -548,40 +547,35 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.#ctor
-  isExternal: false
   name: Dictionary
   nameWithType: Aruco.Dictionary.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.Dictionary
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
@@ -595,14 +589,12 @@ references:
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -630,50 +622,42 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Aruco.Dictionary.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.BytesList*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.BytesList
-  isExternal: false
   name: BytesList
   nameWithType: Aruco.Dictionary.BytesList
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.BytesList
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.MarkerSize*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.MarkerSize
-  isExternal: false
   name: MarkerSize
   nameWithType: Aruco.Dictionary.MarkerSize
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.MarkerSize
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.MaxCorrectionBits*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.MaxCorrectionBits
-  isExternal: false
   name: MaxCorrectionBits
   nameWithType: Aruco.Dictionary.MaxCorrectionBits
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.MaxCorrectionBits
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.Name*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.Name
-  isExternal: false
   name: Name
   nameWithType: Aruco.Dictionary.Name
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.Name
 - uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   commentId: T:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.PredefinedDictionaryName
   nameWithType: Aruco.PredefinedDictionaryName
   fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.GetBitsFromByteList*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.GetBitsFromByteList
-  isExternal: false
   name: GetBitsFromByteList
   nameWithType: Aruco.Dictionary.GetBitsFromByteList
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetBitsFromByteList
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits
-  isExternal: false
   name: GetByteListFromBits
   nameWithType: Aruco.Dictionary.GetByteListFromBits
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits
@@ -686,13 +670,11 @@ references:
   fullName: System.IntPtr
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.DrawMarker*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.DrawMarker
-  isExternal: false
   name: DrawMarker
   nameWithType: Aruco.Dictionary.DrawMarker
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.DrawMarker
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.GetDistanceToId*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.GetDistanceToId
-  isExternal: false
   name: GetDistanceToId
   nameWithType: Aruco.Dictionary.GetDistanceToId
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetDistanceToId
@@ -705,7 +687,6 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.Identify*
   commentId: Overload:ArucoUnity.Plugin.Aruco.Dictionary.Identify
-  isExternal: false
   name: Identify
   nameWithType: Aruco.Dictionary.Identify
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.Identify

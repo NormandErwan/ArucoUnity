@@ -82,7 +82,7 @@ namespace ArucoUnity.Cameras.Parameters
     /// <summary>
     /// Sets <see cref="CameraParametersFilePath"/> and tries to load <see cref="CameraParameters"/> from this file if
     /// <see cref="CameraParametersFolderPath"/> and <see cref="CameraParametersFilename"/> are set, otherwise set
-    /// <see cref="CameraParametersFilePath"/> and <see cref="<see cref="CameraParameters"/> to null.
+    /// <see cref="CameraParametersFilePath"/> and <see cref="CameraParameters"/> to null.
     /// </summary>
     protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)
     {

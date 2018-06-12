@@ -35,7 +35,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectDisplayer
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 5
@@ -85,7 +85,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 23
@@ -122,7 +122,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DisplayInPlayMode
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 28
@@ -159,7 +159,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImagePlanePrefab
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 34
@@ -196,7 +196,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImagePlane
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 39
@@ -235,7 +235,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Image
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 44
@@ -274,7 +274,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImageTexture
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 49
@@ -313,7 +313,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: lastArucoObjectOnValidate
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 54
@@ -344,7 +344,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: imagePlaneMaterial
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 56
@@ -375,7 +375,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Start
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 63
@@ -409,7 +409,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Update
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 88
@@ -443,7 +443,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnDestroy
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 126
@@ -477,7 +477,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CreateImage
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 152
@@ -511,7 +511,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DisplayImage
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 174
@@ -545,7 +545,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ResetImage
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 186
@@ -579,7 +579,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateImage
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 204
@@ -613,7 +613,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SetArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 220
@@ -650,7 +650,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InitializeImagePlane
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 238
@@ -684,7 +684,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PlaceImagePlane
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 285
@@ -718,7 +718,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObject_PropertyUpdated
     path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectDisplayer.cs
     startLine: 302
@@ -743,7 +743,6 @@ items:
 references:
 - uid: ArucoUnity.Objects.Displayers
   commentId: N:ArucoUnity.Objects.Displayers
-  isExternal: false
   name: ArucoUnity.Objects.Displayers
   nameWithType: ArucoUnity.Objects.Displayers
   fullName: ArucoUnity.Objects.Displayers
@@ -784,45 +783,40 @@ references:
   fullName: UnityEngine.MonoBehaviour
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObjectDisplayer.ArucoObject
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
   commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: ImagePlane
   nameWithType: ArucoObjectDisplayer.ImagePlane
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
-  isExternal: false
   name: DisplayInPlayMode
   nameWithType: ArucoObjectDisplayer.DisplayInPlayMode
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
@@ -836,13 +830,11 @@ references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
   commentId: T:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
   parent: ArucoUnity.Objects.Displayers
-  isExternal: false
   name: ArucoObjectDisplayer
   nameWithType: ArucoObjectDisplayer
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
-  isExternal: false
   name: ImagePlanePrefab
   nameWithType: ArucoObjectDisplayer.ImagePlanePrefab
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
@@ -856,52 +848,44 @@ references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
   commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: ImageTexture
   nameWithType: ArucoObjectDisplayer.ImageTexture
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
-  isExternal: false
   name: ImagePlane
   nameWithType: ArucoObjectDisplayer.ImagePlane
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
   commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObjectDisplayer.ArucoObject
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
-  isExternal: false
   name: Image
   nameWithType: ArucoObjectDisplayer.Image
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
   commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: Image
   nameWithType: ArucoObjectDisplayer.Image
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
-  isExternal: false
   name: ImageTexture
   nameWithType: ArucoObjectDisplayer.ImageTexture
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
@@ -922,7 +906,6 @@ references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
   commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: SetArucoObject(ArucoObject)
   nameWithType: ArucoObjectDisplayer.SetArucoObject(ArucoObject)
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -958,51 +941,43 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
-  isExternal: false
   name: Start
   nameWithType: ArucoObjectDisplayer.Start
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
-  isExternal: false
   name: Update
   nameWithType: ArucoObjectDisplayer.Update
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
 - uid: ArucoUnity.Objects.ArucoObject.PropertyUpdated
   commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdated
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: PropertyUpdated
   nameWithType: ArucoObject.PropertyUpdated
   fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdated
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
-  isExternal: false
   name: OnDestroy
   nameWithType: ArucoObjectDisplayer.OnDestroy
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
-  isExternal: false
   name: CreateImage
   nameWithType: ArucoObjectDisplayer.CreateImage
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
-  isExternal: false
   name: DisplayImage
   nameWithType: ArucoObjectDisplayer.DisplayImage
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
-  isExternal: false
   name: ResetImage
   nameWithType: ArucoObjectDisplayer.ResetImage
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
   commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: CreateImage()
   nameWithType: ArucoObjectDisplayer.CreateImage()
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage()
@@ -1031,7 +1006,6 @@ references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
   commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: DisplayImage()
   nameWithType: ArucoObjectDisplayer.DisplayImage()
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage()
@@ -1060,7 +1034,6 @@ references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
   commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: ResetImage()
   nameWithType: ArucoObjectDisplayer.ResetImage()
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage()
@@ -1088,32 +1061,27 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
-  isExternal: false
   name: UpdateImage
   nameWithType: ArucoObjectDisplayer.UpdateImage
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject
-  isExternal: false
   name: SetArucoObject
   nameWithType: ArucoObjectDisplayer.SetArucoObject
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
-  isExternal: false
   name: InitializeImagePlane
   nameWithType: ArucoObjectDisplayer.InitializeImagePlane
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
-  isExternal: false
   name: PlaceImagePlane
   nameWithType: ArucoObjectDisplayer.PlaceImagePlane
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
   commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
   parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
-  isExternal: false
   name: UpdateImage()
   nameWithType: ArucoObjectDisplayer.UpdateImage()
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage()
@@ -1141,7 +1109,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated*
   commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated
-  isExternal: false
   name: ArucoObject_PropertyUpdated
   nameWithType: ArucoObjectDisplayer.ArucoObject_PropertyUpdated
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated

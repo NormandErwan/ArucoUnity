@@ -23,45 +23,38 @@ references:
 - uid: ArucoUnity.Objects.ArucoBoard
   commentId: T:ArucoUnity.Objects.ArucoBoard
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoBoard
   nameWithType: ArucoBoard
   fullName: ArucoUnity.Objects.ArucoBoard
 - uid: ArucoUnity.Objects.ArucoCharucoBoard
   commentId: T:ArucoUnity.Objects.ArucoCharucoBoard
-  isExternal: false
   name: ArucoCharucoBoard
   nameWithType: ArucoCharucoBoard
   fullName: ArucoUnity.Objects.ArucoCharucoBoard
 - uid: ArucoUnity.Objects.ArucoDiamond
   commentId: T:ArucoUnity.Objects.ArucoDiamond
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoDiamond
   nameWithType: ArucoDiamond
   fullName: ArucoUnity.Objects.ArucoDiamond
 - uid: ArucoUnity.Objects.ArucoGridBoard
   commentId: T:ArucoUnity.Objects.ArucoGridBoard
-  isExternal: false
   name: ArucoGridBoard
   nameWithType: ArucoGridBoard
   fullName: ArucoUnity.Objects.ArucoGridBoard
 - uid: ArucoUnity.Objects.ArucoMarker
   commentId: T:ArucoUnity.Objects.ArucoMarker
-  isExternal: false
   name: ArucoMarker
   nameWithType: ArucoMarker
   fullName: ArucoUnity.Objects.ArucoMarker
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects

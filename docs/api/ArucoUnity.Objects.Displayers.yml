@@ -18,20 +18,17 @@ items:
 references:
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator
   commentId: T:ArucoUnity.Objects.Displayers.ArucoObjectCreator
-  isExternal: false
   name: ArucoObjectCreator
   nameWithType: ArucoObjectCreator
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
   commentId: T:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
   parent: ArucoUnity.Objects.Displayers
-  isExternal: false
   name: ArucoObjectDisplayer
   nameWithType: ArucoObjectDisplayer
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
 - uid: ArucoUnity.Objects.Displayers
   commentId: N:ArucoUnity.Objects.Displayers
-  isExternal: false
   name: ArucoUnity.Objects.Displayers
   nameWithType: ArucoUnity.Objects.Displayers
   fullName: ArucoUnity.Objects.Displayers

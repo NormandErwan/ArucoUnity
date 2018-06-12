@@ -21,10 +21,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Vec4i
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -60,10 +60,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -90,10 +90,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -125,10 +125,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -158,10 +158,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Get
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -193,10 +193,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Set
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec4i.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -216,7 +216,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -230,33 +229,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.#ctor
-  isExternal: false
   name: Vec4i
   nameWithType: Cv.Vec4i.Vec4i
   fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i
@@ -270,14 +265,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -305,13 +298,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Vec4i.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Vec4i.Get*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.Get
-  isExternal: false
   name: Get
   nameWithType: Cv.Vec4i.Get
   fullName: ArucoUnity.Plugin.Cv.Vec4i.Get
@@ -324,7 +315,6 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Plugin.Cv.Vec4i.Set*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.Set
-  isExternal: false
   name: Set
   nameWithType: Cv.Vec4i.Set
   fullName: ArucoUnity.Plugin.Cv.Vec4i.Set

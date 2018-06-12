@@ -17,12 +17,12 @@ items:
   type: Enum
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CornerRefineMethod
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 29
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 30
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -48,12 +48,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: None
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 31
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 32
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -80,12 +80,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Subpix
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 32
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 33
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -113,12 +113,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Contour
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 33
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 34
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -136,14 +136,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Aruco.CornerRefineMethod
   commentId: T:ArucoUnity.Plugin.Aruco.CornerRefineMethod
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.CornerRefineMethod
   nameWithType: Aruco.CornerRefineMethod
   fullName: ArucoUnity.Plugin.Aruco.CornerRefineMethod

@@ -23,10 +23,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Point3f
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -92,10 +92,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -127,10 +127,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: op_Implicit
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -167,10 +167,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -200,10 +200,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: X
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -235,10 +235,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Y
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -270,10 +270,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Z
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point3f.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -293,7 +293,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -307,33 +306,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Point3f.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.#ctor
-  isExternal: false
   name: Point3f
   nameWithType: Cv.Point3f.Point3f
   fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f
@@ -347,13 +342,11 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Cv.Point3f.op_Implicit*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.op_Implicit
-  isExternal: false
   name: Implicit
   nameWithType: Cv.Point3f.Implicit
   fullName: ArucoUnity.Plugin.Cv.Point3f.Implicit
@@ -363,7 +356,6 @@ references:
 - uid: ArucoUnity.Plugin.Cv.Point3f
   commentId: T:ArucoUnity.Plugin.Cv.Point3f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Point3f
   nameWithType: Cv.Point3f
   fullName: ArucoUnity.Plugin.Cv.Point3f
@@ -376,14 +368,13 @@ references:
   fullName: UnityEngine.Vector3
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -411,13 +402,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Point3f.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Point3f.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Point3f.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Point3f.X*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.X
-  isExternal: false
   name: X
   nameWithType: Cv.Point3f.X
   fullName: ArucoUnity.Plugin.Cv.Point3f.X
@@ -430,13 +419,11 @@ references:
   fullName: System.Single
 - uid: ArucoUnity.Plugin.Cv.Point3f.Y*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.Y
-  isExternal: false
   name: Y
   nameWithType: Cv.Point3f.Y
   fullName: ArucoUnity.Plugin.Cv.Point3f.Y
 - uid: ArucoUnity.Plugin.Cv.Point3f.Z*
   commentId: Overload:ArucoUnity.Plugin.Cv.Point3f.Z
-  isExternal: false
   name: Z
   nameWithType: Cv.Point3f.Z
   fullName: ArucoUnity.Plugin.Cv.Point3f.Z

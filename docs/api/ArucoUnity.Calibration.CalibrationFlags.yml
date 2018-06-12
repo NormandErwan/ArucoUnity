@@ -23,7 +23,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 8
@@ -68,7 +68,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UseIntrinsicGuess
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 28
@@ -105,7 +105,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixKDistorsionCoefficients
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 35
@@ -142,7 +142,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Value
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 51
@@ -181,7 +181,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixKLength
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 56
@@ -220,7 +220,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 63
@@ -254,7 +254,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationOptions
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 68
@@ -288,7 +288,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnValidate
     path: Assets/ArucoUnity/Scripts/Calibration/CalibrationFlags.cs
     startLine: 73
@@ -311,13 +311,11 @@ references:
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibration
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: ArucoCameraCalibration
   nameWithType: ArucoCameraCalibration
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration
@@ -358,21 +356,21 @@ references:
   fullName: UnityEngine.MonoBehaviour
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  isExternal: true
 - uid: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
-  isExternal: false
   name: UseIntrinsicGuess
   nameWithType: CalibrationFlags.UseIntrinsicGuess
   fullName: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
@@ -385,13 +383,14 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  isExternal: true
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
-  isExternal: false
   name: FixKDistorsionCoefficients
   nameWithType: CalibrationFlags.FixKDistorsionCoefficients
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
 - uid: System.Boolean[]
+  isExternal: true
   name: Boolean[]
   nameWithType: Boolean[]
   fullName: System.Boolean[]
@@ -418,7 +417,6 @@ references:
     fullName: ()
 - uid: ArucoUnity.Calibration.CalibrationFlags.Value*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.Value
-  isExternal: false
   name: Value
   nameWithType: CalibrationFlags.Value
   fullName: ArucoUnity.Calibration.CalibrationFlags.Value
@@ -432,52 +430,44 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKDistorsionCoefficients
   nameWithType: CalibrationFlags.FixKDistorsionCoefficients
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKLength*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.FixKLength
-  isExternal: false
   name: FixKLength
   nameWithType: CalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKLength
 - uid: ArucoUnity.Calibration.CalibrationFlags
   commentId: T:ArucoUnity.Calibration.CalibrationFlags
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: CalibrationFlags
   nameWithType: CalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags
 - uid: ArucoUnity.Calibration.CalibrationFlags.Value
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.Value
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: Value
   nameWithType: CalibrationFlags.Value
   fullName: ArucoUnity.Calibration.CalibrationFlags.Value
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
-  isExternal: false
   name: UpdateCalibrationFlags
   nameWithType: CalibrationFlags.UpdateCalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
-  isExternal: false
   name: UpdateCalibrationOptions
   nameWithType: CalibrationFlags.UpdateCalibrationOptions
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKLength
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKLength
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKLength
   nameWithType: CalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKLength
 - uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate*
   commentId: Overload:ArucoUnity.Calibration.CalibrationFlags.OnValidate
-  isExternal: false
   name: OnValidate
   nameWithType: CalibrationFlags.OnValidate
   fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate

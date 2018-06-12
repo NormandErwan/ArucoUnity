@@ -28,7 +28,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCharucoBoard
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 8
@@ -92,7 +92,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SquaresNumberX
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 29
@@ -129,7 +129,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SquaresNumberY
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 43
@@ -166,7 +166,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SquareSideLength
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 57
@@ -203,7 +203,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectedCorners
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 71
@@ -240,7 +240,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectedIds
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 76
@@ -277,7 +277,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ValidTransform
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 81
@@ -314,7 +314,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetGameObjectScale
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 85
@@ -349,7 +349,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateArucoHashCode
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 94
@@ -382,7 +382,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Draw
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 101
@@ -417,7 +417,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GenerateName
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 124
@@ -452,7 +452,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateBoard
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 130
@@ -485,7 +485,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetArucoHashCode
     path: Assets/ArucoUnity/Scripts/Objects/ArucoCharucoBoard.cs
     startLine: 154
@@ -523,7 +523,6 @@ items:
 references:
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
@@ -565,63 +564,54 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects.ArucoBoard
   commentId: T:ArucoUnity.Objects.ArucoBoard
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoBoard
   nameWithType: ArucoBoard
   fullName: ArucoUnity.Objects.ArucoBoard
 - uid: ArucoUnity.Objects.ArucoBoard.MarginsLength
   commentId: P:ArucoUnity.Objects.ArucoBoard.MarginsLength
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: MarginsLength
   nameWithType: ArucoBoard.MarginsLength
   fullName: ArucoUnity.Objects.ArucoBoard.MarginsLength
 - uid: ArucoUnity.Objects.ArucoBoard.ImageSize
   commentId: P:ArucoUnity.Objects.ArucoBoard.ImageSize
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: ImageSize
   nameWithType: ArucoBoard.ImageSize
   fullName: ArucoUnity.Objects.ArucoBoard.ImageSize
 - uid: ArucoUnity.Objects.ArucoBoard.Board
   commentId: P:ArucoUnity.Objects.ArucoBoard.Board
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: Board
   nameWithType: ArucoBoard.Board
   fullName: ArucoUnity.Objects.ArucoBoard.Board
 - uid: ArucoUnity.Objects.ArucoBoard.AxisLength
   commentId: P:ArucoUnity.Objects.ArucoBoard.AxisLength
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: AxisLength
   nameWithType: ArucoBoard.AxisLength
   fullName: ArucoUnity.Objects.ArucoBoard.AxisLength
 - uid: ArucoUnity.Objects.ArucoBoard.Rvec
   commentId: P:ArucoUnity.Objects.ArucoBoard.Rvec
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: Rvec
   nameWithType: ArucoBoard.Rvec
   fullName: ArucoUnity.Objects.ArucoBoard.Rvec
 - uid: ArucoUnity.Objects.ArucoBoard.Tvec
   commentId: P:ArucoUnity.Objects.ArucoBoard.Tvec
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: Tvec
   nameWithType: ArucoBoard.Tvec
   fullName: ArucoUnity.Objects.ArucoBoard.Tvec
 - uid: ArucoUnity.Objects.ArucoBoard.Awake
   commentId: M:ArucoUnity.Objects.ArucoBoard.Awake
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: Awake()
   nameWithType: ArucoBoard.Awake()
   fullName: ArucoUnity.Objects.ArucoBoard.Awake()
@@ -650,7 +640,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoBoard.UpdateProperties
   commentId: M:ArucoUnity.Objects.ArucoBoard.UpdateProperties
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: UpdateProperties()
   nameWithType: ArucoBoard.UpdateProperties()
   fullName: ArucoUnity.Objects.ArucoBoard.UpdateProperties()
@@ -679,63 +668,54 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
   commentId: F:ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: metersToPixels300ppp
   nameWithType: ArucoObject.metersToPixels300ppp
   fullName: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
 - uid: ArucoUnity.Objects.ArucoObject.PropertyUpdating
   commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdating
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: PropertyUpdating
   nameWithType: ArucoObject.PropertyUpdating
   fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdating
 - uid: ArucoUnity.Objects.ArucoObject.PropertyUpdated
   commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdated
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: PropertyUpdated
   nameWithType: ArucoObject.PropertyUpdated
   fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdated
 - uid: ArucoUnity.Objects.ArucoObject.ArucoHashCode
   commentId: P:ArucoUnity.Objects.ArucoObject.ArucoHashCode
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: ArucoHashCode
   nameWithType: ArucoObject.ArucoHashCode
   fullName: ArucoUnity.Objects.ArucoObject.ArucoHashCode
 - uid: ArucoUnity.Objects.ArucoObject.Dictionary
   commentId: P:ArucoUnity.Objects.ArucoObject.Dictionary
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: Dictionary
   nameWithType: ArucoObject.Dictionary
   fullName: ArucoUnity.Objects.ArucoObject.Dictionary
 - uid: ArucoUnity.Objects.ArucoObject.MarkerSideLength
   commentId: P:ArucoUnity.Objects.ArucoObject.MarkerSideLength
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: MarkerSideLength
   nameWithType: ArucoObject.MarkerSideLength
   fullName: ArucoUnity.Objects.ArucoObject.MarkerSideLength
 - uid: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
   commentId: P:ArucoUnity.Objects.ArucoObject.MarkerBorderBits
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: MarkerBorderBits
   nameWithType: ArucoObject.MarkerBorderBits
   fullName: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
 - uid: ArucoUnity.Objects.ArucoObject.DisplayInEditor
   commentId: P:ArucoUnity.Objects.ArucoObject.DisplayInEditor
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: DisplayInEditor
   nameWithType: ArucoObject.DisplayInEditor
   fullName: ArucoUnity.Objects.ArucoObject.DisplayInEditor
 - uid: ArucoUnity.Objects.ArucoObject.OnValidate
   commentId: M:ArucoUnity.Objects.ArucoObject.OnValidate
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnValidate()
   nameWithType: ArucoObject.OnValidate()
   fullName: ArucoUnity.Objects.ArucoObject.OnValidate()
@@ -764,7 +744,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
   commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnPropertyUpdating()
   nameWithType: ArucoObject.OnPropertyUpdating()
   fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating()
@@ -793,7 +772,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
   commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnPropertyUpdated()
   nameWithType: ArucoObject.OnPropertyUpdated()
   fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated()
@@ -860,19 +838,18 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
-  isExternal: false
   name: SquaresNumberX
   nameWithType: ArucoCharucoBoard.SquaresNumberX
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
@@ -885,13 +862,11 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
-  isExternal: false
   name: SquaresNumberY
   nameWithType: ArucoCharucoBoard.SquaresNumberY
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
-  isExternal: false
   name: SquareSideLength
   nameWithType: ArucoCharucoBoard.SquareSideLength
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
@@ -904,39 +879,33 @@ references:
   fullName: System.Single
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
-  isExternal: false
   name: DetectedCorners
   nameWithType: ArucoCharucoBoard.DetectedCorners
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
 - uid: ArucoUnity.Plugin.Std.VectorPoint2f
   commentId: T:ArucoUnity.Plugin.Std.VectorPoint2f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorPoint2f
   nameWithType: Std.VectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorPoint2f
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
-  isExternal: false
   name: DetectedIds
   nameWithType: ArucoCharucoBoard.DetectedIds
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
 - uid: ArucoUnity.Plugin.Std.VectorInt
   commentId: T:ArucoUnity.Plugin.Std.VectorInt
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorInt
   nameWithType: Std.VectorInt
   fullName: ArucoUnity.Plugin.Std.VectorInt
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
-  isExternal: false
   name: ValidTransform
   nameWithType: ArucoCharucoBoard.ValidTransform
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
@@ -950,7 +919,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
   commentId: M:ArucoUnity.Objects.ArucoObject.GetGameObjectScale
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: GetGameObjectScale()
   nameWithType: ArucoObject.GetGameObjectScale()
   fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale()
@@ -978,7 +946,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
-  isExternal: false
   name: GetGameObjectScale
   nameWithType: ArucoCharucoBoard.GetGameObjectScale
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
@@ -992,7 +959,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
   commentId: M:ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: UpdateArucoHashCode()
   nameWithType: ArucoObject.UpdateArucoHashCode()
   fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode()
@@ -1020,14 +986,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
-  isExternal: false
   name: UpdateArucoHashCode
   nameWithType: ArucoCharucoBoard.UpdateArucoHashCode
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
 - uid: ArucoUnity.Objects.ArucoObject.Draw
   commentId: M:ArucoUnity.Objects.ArucoObject.Draw
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: Draw()
   nameWithType: ArucoObject.Draw()
   fullName: ArucoUnity.Objects.ArucoObject.Draw()
@@ -1055,21 +1019,18 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.Draw*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.Draw
-  isExternal: false
   name: Draw
   nameWithType: ArucoCharucoBoard.Draw
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.Draw
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Objects.ArucoObject.GenerateName
   commentId: M:ArucoUnity.Objects.ArucoObject.GenerateName
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: GenerateName()
   nameWithType: ArucoObject.GenerateName()
   fullName: ArucoUnity.Objects.ArucoObject.GenerateName()
@@ -1097,7 +1058,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
-  isExternal: false
   name: GenerateName
   nameWithType: ArucoCharucoBoard.GenerateName
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
@@ -1111,7 +1071,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoBoard.UpdateBoard
   commentId: M:ArucoUnity.Objects.ArucoBoard.UpdateBoard
   parent: ArucoUnity.Objects.ArucoBoard
-  isExternal: false
   name: UpdateBoard()
   nameWithType: ArucoBoard.UpdateBoard()
   fullName: ArucoUnity.Objects.ArucoBoard.UpdateBoard()
@@ -1139,13 +1098,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
-  isExternal: false
   name: UpdateBoard
   nameWithType: ArucoCharucoBoard.UpdateBoard
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
 - uid: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode*
   commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode
-  isExternal: false
   name: GetArucoHashCode
   nameWithType: ArucoCharucoBoard.GetArucoHashCode
   fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode

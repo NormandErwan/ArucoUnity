@@ -23,10 +23,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: VectorVectorVectorPoint2f
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -92,10 +92,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -127,10 +127,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -160,10 +160,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: At
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -195,10 +195,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Data
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -227,10 +227,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PushBack
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -260,10 +260,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Size
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorVectorPoint2f.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -280,7 +280,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -294,33 +293,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor
-  isExternal: false
   name: VectorVectorVectorPoint2f
   nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f
@@ -334,14 +329,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -369,13 +362,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Std.VectorVectorVectorPoint2f.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.At*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.At
-  isExternal: false
   name: At
   nameWithType: Std.VectorVectorVectorPoint2f.At
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.At
@@ -389,17 +380,16 @@ references:
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint2f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorPoint2f
   nameWithType: Std.VectorVectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Data*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Data
-  isExternal: false
   name: Data
   nameWithType: Std.VectorVectorVectorPoint2f.Data
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Data
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f[]
+  isExternal: true
   name: Std.VectorVectorPoint2f[]
   nameWithType: Std.VectorVectorPoint2f[]
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f[]
@@ -424,13 +414,11 @@ references:
     fullName: ()
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.PushBack*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.PushBack
-  isExternal: false
   name: PushBack
   nameWithType: Std.VectorVectorVectorPoint2f.PushBack
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.PushBack
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Size*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Size
-  isExternal: false
   name: Size
   nameWithType: Std.VectorVectorVectorPoint2f.Size
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Size

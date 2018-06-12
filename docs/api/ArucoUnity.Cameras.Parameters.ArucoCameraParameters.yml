@@ -39,7 +39,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 10
@@ -84,7 +84,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 19
@@ -117,7 +117,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 28
@@ -156,7 +156,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationDateTime
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 49
@@ -193,7 +193,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraNumber
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 54
@@ -230,7 +230,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImageHeights
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 59
@@ -267,7 +267,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImageWidths
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 64
@@ -304,7 +304,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationFlagsValue
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 69
@@ -341,7 +341,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixAspectRatioValue
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 74
@@ -378,7 +378,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ReprojectionErrors
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 79
@@ -415,7 +415,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraMatrices
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 86
@@ -453,7 +453,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraMatricesType
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 94
@@ -491,7 +491,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraMatricesValues
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 101
@@ -529,7 +529,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DistCoeffs
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 108
@@ -567,7 +567,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DistCoeffsType
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 116
@@ -605,7 +605,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DistCoeffsValues
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 123
@@ -643,7 +643,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OmnidirXis
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 130
@@ -681,7 +681,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OmnidirXisType
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 138
@@ -719,7 +719,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OmnidirXisValues
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 145
@@ -757,7 +757,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoCameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 150
@@ -794,7 +794,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FilePath
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 155
@@ -833,7 +833,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: cameraMatrices
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 160
@@ -864,7 +864,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: LoadFromXmlFile
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 170
@@ -909,7 +909,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SaveToXmlFile
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
     startLine: 215
@@ -937,7 +937,6 @@ items:
 references:
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
@@ -950,22 +949,21 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor
-  isExternal: false
   name: ArucoCameraParameters
   nameWithType: ArucoCameraParameters.ArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ArucoCameraParameters
 - uid: ArucoUnity.Cameras.ArucoCamera
   commentId: T:ArucoUnity.Cameras.ArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCamera
@@ -978,13 +976,11 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
-  isExternal: false
   name: CalibrationDateTime
   nameWithType: ArucoCameraParameters.CalibrationDateTime
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
@@ -997,17 +993,16 @@ references:
   fullName: System.DateTime
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
-  isExternal: false
   name: CameraNumber
   nameWithType: ArucoCameraParameters.CameraNumber
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
-  isExternal: false
   name: ImageHeights
   nameWithType: ArucoCameraParameters.ImageHeights
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
 - uid: System.Int32[]
+  isExternal: true
   name: Int32[]
   nameWithType: Int32[]
   fullName: System.Int32[]
@@ -1034,19 +1029,16 @@ references:
     fullName: ()
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
-  isExternal: false
   name: ImageWidths
   nameWithType: ArucoCameraParameters.ImageWidths
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
-  isExternal: false
   name: CalibrationFlagsValue
   nameWithType: ArucoCameraParameters.CalibrationFlagsValue
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
-  isExternal: false
   name: FixAspectRatioValue
   nameWithType: ArucoCameraParameters.FixAspectRatioValue
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
@@ -1059,11 +1051,11 @@ references:
   fullName: System.Single
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
-  isExternal: false
   name: ReprojectionErrors
   nameWithType: ArucoCameraParameters.ReprojectionErrors
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
 - uid: System.Double[]
+  isExternal: true
   name: Double[]
   nameWithType: Double[]
   fullName: System.Double[]
@@ -1090,17 +1082,20 @@ references:
     fullName: ()
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
-  isExternal: false
   name: CameraMatrices
   nameWithType: ArucoCameraParameters.CameraMatrices
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
 - uid: ArucoUnity.Plugin.Cv.Mat[]
+  isExternal: true
   name: Cv.Mat[]
   nameWithType: Cv.Mat[]
   fullName: ArucoUnity.Plugin.Cv.Mat[]
@@ -1125,32 +1120,30 @@ references:
     fullName: ()
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
-  isExternal: false
   name: CameraMatricesType
   nameWithType: ArucoCameraParameters.CameraMatricesType
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
 - uid: ArucoUnity.Plugin.Cv.Type
   commentId: T:ArucoUnity.Plugin.Cv.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Type
   nameWithType: Cv.Type
   fullName: ArucoUnity.Plugin.Cv.Type
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
-  isExternal: false
   name: CameraMatricesValues
   nameWithType: ArucoCameraParameters.CameraMatricesValues
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
 - uid: System.Double[][][]
+  isExternal: true
   name: Double[][][]
   nameWithType: Double[][][]
   fullName: System.Double[][][]
@@ -1189,68 +1182,65 @@ references:
     fullName: ()
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
-  isExternal: false
   name: DistCoeffs
   nameWithType: ArucoCameraParameters.DistCoeffs
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
-  isExternal: false
   name: DistCoeffsType
   nameWithType: ArucoCameraParameters.DistCoeffsType
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
-  isExternal: false
   name: DistCoeffsValues
   nameWithType: ArucoCameraParameters.DistCoeffsValues
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
-  isExternal: false
   name: OmnidirXis
   nameWithType: ArucoCameraParameters.OmnidirXis
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
-  isExternal: false
   name: OmnidirXisType
   nameWithType: ArucoCameraParameters.OmnidirXisType
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
-  isExternal: false
   name: OmnidirXisValues
   nameWithType: ArucoCameraParameters.OmnidirXisValues
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
-  isExternal: false
   name: StereoCameraParameters
   nameWithType: ArucoCameraParameters.StereoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: StereoArucoCameraParameters
   nameWithType: StereoArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
-  isExternal: false
   name: FilePath
   nameWithType: ArucoCameraParameters.FilePath
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
@@ -1263,22 +1253,20 @@ references:
   fullName: System.String
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile
-  isExternal: false
   name: LoadFromXmlFile
   nameWithType: ArucoCameraParameters.LoadFromXmlFile
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoCameraParameters
   nameWithType: ArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile
-  isExternal: false
   name: SaveToXmlFile
   nameWithType: ArucoCameraParameters.SaveToXmlFile
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile

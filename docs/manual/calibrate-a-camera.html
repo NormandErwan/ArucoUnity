@@ -82,18 +82,18 @@
 <h2 id="motivation">Motivation</h2>
 <p>In order to be able to track markers you need to calibrate your camera, i.e. measure the camera parameters.</p>
 <p>The calibration process may seems long but it&#39;s only because there is lots of customization options. The principle is straightforward: (1) print a calibration board and (2) take images with your camera of the board in different positions and orientations. Aruco Unity will generate XML file containing the camera parameters.</p>
-<p>To understand the algorithms used, read these tutorials: <a href="https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html">Calibration with ArUco and ChArUco</a> and <a href="https://docs.opencv.org/master/d4/d94/tutorial_camera_calibration.html">Camera calibration With OpenCV</a>.</p>
+<p>To understand the algorithms used, read these tutorials: <a href="https://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html">Calibration with ArUco and ChArUco</a> and <a href="https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html">Camera calibration With OpenCV</a>.</p>
 <h2 id="calibrate-a-camera-1">Calibrate a camera</h2>
 <p>Most of the cameras we use today on our smartphones or laptops are called in Aruco Unity pinhole cameras (camera using a <a href="https://en.wikipedia.org/wiki/Rectilinear_lens">rectilinear lens</a>) in contrast with cameras using a <a href="https://en.wikipedia.org/wiki/Fisheye_lens">fisheye lens</a>. So if you want to calibrate your webcam or smartphone, read this section.</p>
 <ul>
 <li>Make a calibration board.<ol>
-<li>Create a charuco board or a grid board. See the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers">Create Markers</a> page for details.</li>
+<li>Create a charuco board or a grid board. See the <a href="create-markers.html">Create Markers</a> page for details.</li>
 <li>Print the generated image on paper. Stick it on a hard cardboard: the paper must remains as flat as possible during the calibration (<em>Fig.1</em>).</li>
 </ol>
 </li>
 </ul>
-<p><img src="https://docs.opencv.org/master/charucocalibration.png" alt="Calibration board">
-<em>Fig.1: Different viewpoints of a charuco calibration board. From OpenCV: <a href="https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html">https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html</a></em></p>
+<p><img src="https://docs.opencv.org/3.4/charucocalibration.png" alt="Calibration board">
+<em>Fig.1: Different viewpoints of a charuco calibration board. From OpenCV: <a href="https://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html">https://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html</a></em></p>
 <ul>
 <li>Open the <code>Assets/ArucoUnity/Scenes/CalibrateCamera.unity</code> scene.</li>
 <li>Configure the <code>ArucoWebcam</code> game object (<em>Fig.2</em>).<ul>
@@ -112,8 +112,8 @@
 </li>
 <li>Optionally adjust parameters on the <code>PinholeCameraCalibration</code> game object.<ul>
 <li>Set the output camera parameters file with <code>CameraParametersController</code>. The folder is relative to <a href="https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html">persistentDataPath</a> in builds or to the &quot;Asset&quot; folder of your projet in the editor. If the filename is empty, it will be automatically generated from the Aruco camera used.</li>
-<li>Configure the board detection with <code>DetectorParametersController</code> parameters. They are described on the Detector Parameters section of the <a href="https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html">ArUco camera calibration tutorial</a>.</li>
-<li>Configure the calibration flags with <code>PinholeCameraCalibrationFlags</code>. They are described on the <a href="https://docs.opencv.org/master/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d">calib3d::calibrateCamera() function</a> documentation.</li>
+<li>Configure the board detection with <code>DetectorParametersController</code> parameters. They are described on the Detector Parameters section of the <a href="https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html">ArUco camera calibration tutorial</a>.</li>
+<li>Configure the calibration flags with <code>PinholeCameraCalibrationFlags</code>. They are described on the <a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d">calib3d::calibrateCamera() function</a> documentation.</li>
 </ul>
 </li>
 </ul>
@@ -131,7 +131,7 @@
 <p><img src="../images/calibration_running.jpg" alt="Calibration scene running"></p>
 <p><em>Fig.4: Calibration scene running.</em></p>
 <h2 id="calibrate-a-stereoscopic-camera">Calibrate a stereoscopic camera</h2>
-<p>The process is the same as in the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/2.-Calibrate-a-Camera/_edit#calibrate-a-camera">Calibrate a camera</a> section but we use differents camera and calibration scripts.</p>
+<p>The process is the same as in the <a href="#calibrate-a-camera-1">Calibrate a camera</a> section but we use differents camera and calibration scripts.</p>
 <ul>
 <li>Make a calibration board.</li>
 <li>Open the <code>Assets/ArucoUnity/Scenes/CalibrateCamera.unity</code> scene.</li>
@@ -164,8 +164,10 @@
 <p><img src="../images/stereo_calibration_running.jpg" alt="Calibration scene running"></p>
 <p><em>Fig.8: Calibration scene running.</em></p>
 <h2 id="calibrate-a-fisheye-camera">Calibrate a fisheye camera</h2>
-<p>Follow the <a href="#calibrate-a-stereoscopic-camera">Calibrate a stereoscopic camera</a> section but use <code>OmnidirCameraCalibration</code> prefab for a monoscopic camera or <code>StereoOmnidirCameraCalibration</code> prefab for a stereoscopic camera.</p>
-<p>The algorithms used are described in this tutorial: <a href="https://docs.opencv.org/master/da/d13/tutorial_aruco_calibration.html">Calibration with ArUco and ChArUco</a>.</p>
+<p>Follow the <a href="#calibrate-a-stereoscopic-camera">Calibrate a stereoscopic camera</a> section but use <code>OmnidirCameraCalibration</code> prefab for a monoscopic camera or <code>StereoOmnidirCameraCalibration</code> prefab for a stereoscopic camera (<em>Fig.9</em>).</p>
+<p><img src="../images/stereo_fisheye_calibration_running.jpg" alt="Calibration scene running"></p>
+<p><em>Fig.9: Calibration scene running for a stereoscopic fisheye camera.</em></p>
+<p>The algorithms used are described in this tutorial: <a href="https://docs.opencv.org/3.4/dd/d12/tutorial_omnidir_calib_main.html">Omnidirectional Cameara [<em>sic</em>] Calibration</a>.</p>
 <h2 id="reuse-calibration-data">Reuse calibration data</h2>
 <p>You may already have calibrated your camera and want to directly reuse your calibration data. Aruco Unity doesn&#39;t use the YAML format used by OpenCV to store these data but use XML files. Therefore you need to create by hand calibration file for Aruco Unity.</p>
 <p>Make a copy of <code>Assets/ArucoUnity/CameraParameters/&lt;CameraType&gt;Example.xml</code> and transfer your calibration data.</p>

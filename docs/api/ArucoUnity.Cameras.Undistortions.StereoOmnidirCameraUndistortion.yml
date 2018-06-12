@@ -18,7 +18,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoOmnidirCameraUndistortion
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
     startLine: 9
@@ -66,6 +66,7 @@ items:
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noDistCoeffs
+  - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParametersFilePath
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.remapThread
   - ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Start
@@ -113,7 +114,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configuring
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
     startLine: 17
@@ -146,7 +147,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InitializeRectification
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/StereoOmnidirCameraUndistortion.cs
     startLine: 34
@@ -170,13 +171,11 @@ references:
 - uid: ArucoUnity.Cameras.StereoArucoCamera
   commentId: T:ArucoUnity.Cameras.StereoArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: StereoArucoCamera
   nameWithType: StereoArucoCamera
   fullName: ArucoUnity.Cameras.StereoArucoCamera
 - uid: ArucoUnity.Cameras.Undistortions
   commentId: N:ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoUnity.Cameras.Undistortions
   nameWithType: ArucoUnity.Cameras.Undistortions
   fullName: ArucoUnity.Cameras.Undistortions
@@ -218,21 +217,18 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController
   commentId: T:ArucoUnity.Utilities.ConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: ConfigurableController
   nameWithType: ConfigurableController
   fullName: ArucoUnity.Utilities.ConfigurableController
 - uid: ArucoUnity.Cameras.ArucoCameraController
   commentId: T:ArucoUnity.Cameras.ArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCameraController
   nameWithType: ArucoCameraController
   fullName: ArucoUnity.Cameras.ArucoCameraController
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoCameraUndistortion
   nameWithType: ArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
@@ -319,28 +315,24 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: IArucoCameraUndistortion
   nameWithType: IArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
 - uid: ArucoUnity.Cameras.IArucoCameraController
   commentId: T:ArucoUnity.Cameras.IArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCameraController
   nameWithType: IArucoCameraController
   fullName: ArucoUnity.Cameras.IArucoCameraController
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: IHasArucoCameraParameters
   nameWithType: IHasArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
@@ -485,77 +477,72 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.undistortionCameraMapsNumber
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.undistortionCameraMapsNumber
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: undistortionCameraMapsNumber
   nameWithType: ArucoCameraUndistortion.undistortionCameraMapsNumber
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.undistortionCameraMapsNumber
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParameters
   commentId: P:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParameters
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: CameraParameters
   nameWithType: ArucoCameraUndistortion.CameraParameters
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParameters
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectifiedCameraMatrices
   commentId: P:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectifiedCameraMatrices
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: RectifiedCameraMatrices
   nameWithType: ArucoCameraUndistortion.RectifiedCameraMatrices
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectifiedCameraMatrices
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectificationMatrices
   commentId: P:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectificationMatrices
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: RectificationMatrices
   nameWithType: ArucoCameraUndistortion.RectificationMatrices
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.RectificationMatrices
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortedDistCoeffs
   commentId: P:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortedDistCoeffs
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: UndistortedDistCoeffs
   nameWithType: ArucoCameraUndistortion.UndistortedDistCoeffs
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortedDistCoeffs
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
   commentId: P:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: UndistortionRectificationMaps
   nameWithType: ArucoCameraUndistortion.UndistortionRectificationMaps
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: noRectificationMatrix
   nameWithType: ArucoCameraUndistortion.noRectificationMatrix
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noRectificationMatrix
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noDistCoeffs
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noDistCoeffs
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: noDistCoeffs
   nameWithType: ArucoCameraUndistortion.noDistCoeffs
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noDistCoeffs
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
+  commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
+  parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
+  name: noROI
+  nameWithType: ArucoCameraUndistortion.noROI
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.noROI
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParametersFilePath
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParametersFilePath
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: CameraParametersFilePath
   nameWithType: ArucoCameraUndistortion.CameraParametersFilePath
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.CameraParametersFilePath
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.remapThread
   commentId: F:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.remapThread
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: remapThread
   nameWithType: ArucoCameraUndistortion.remapThread
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.remapThread
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Start
   commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Start
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: Start()
   nameWithType: ArucoCameraUndistortion.Start()
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Start()
@@ -584,7 +571,6 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Starting
   commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Starting
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: Starting()
   nameWithType: ArucoCameraUndistortion.Starting()
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Starting()
@@ -613,7 +599,6 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Stopping
   commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Stopping
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: Stopping()
   nameWithType: ArucoCameraUndistortion.Stopping()
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Stopping()
@@ -716,7 +701,6 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
   commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
   parent: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
-  isExternal: false
   name: UndistortRectifyImages(Cv.Mat[])
   nameWithType: ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
@@ -762,70 +746,60 @@ references:
 - uid: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   commentId: P:ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   parent: ArucoUnity.Cameras.ArucoCameraController
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCameraController.ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
 - uid: ArucoUnity.Utilities.ConfigurableController.Ready
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Ready
   nameWithType: ConfigurableController.Ready
   fullName: ArucoUnity.Utilities.ConfigurableController.Ready
 - uid: ArucoUnity.Utilities.ConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: ConfigurableController.Configured
   fullName: ArucoUnity.Utilities.ConfigurableController.Configured
 - uid: ArucoUnity.Utilities.ConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Started
   nameWithType: ConfigurableController.Started
   fullName: ArucoUnity.Utilities.ConfigurableController.Started
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: ConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
   commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AutoStart
   nameWithType: ConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
 - uid: ArucoUnity.Utilities.ConfigurableController.IsReady
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsReady
   nameWithType: ConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnDestroy()
   nameWithType: ConfigurableController.OnDestroy()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
@@ -854,7 +828,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AddDependency(IConfigurableController)
   nameWithType: ConfigurableController.AddDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -891,7 +864,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: RemoveDependency(IConfigurableController)
   nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -928,7 +900,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
   commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: GetDependencies()
   nameWithType: ConfigurableController.GetDependencies()
   fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
@@ -957,7 +928,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: ConfigureController()
   nameWithType: ConfigurableController.ConfigureController()
   fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
@@ -986,7 +956,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StartController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StartController()
   nameWithType: ConfigurableController.StartController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
@@ -1015,7 +984,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: ConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
@@ -1044,7 +1012,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnConfigured()
   nameWithType: ConfigurableController.OnConfigured()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
@@ -1073,7 +1040,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStarted()
   nameWithType: ConfigurableController.OnStarted()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted()
@@ -1102,7 +1068,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStopped()
   nameWithType: ConfigurableController.OnStopped()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
@@ -1130,31 +1095,28 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
-  isExternal: false
   name: ArucoCameraUndistortionGeneric<T>
   nameWithType: ArucoCameraUndistortionGeneric<T>
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric<T>
@@ -1191,7 +1153,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
   commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
-  isExternal: false
   name: OmnidirCameraUndistortionGeneric<T>
   nameWithType: OmnidirCameraUndistortionGeneric<T>
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>
@@ -1228,13 +1189,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.minPerspectiveFov
   commentId: F:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.minPerspectiveFov
-  isExternal: false
   name: minPerspectiveFov
   nameWithType: OmnidirCameraUndistortionGeneric<T>.minPerspectiveFov
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.minPerspectiveFov
@@ -1242,7 +1201,6 @@ references:
   fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T).minPerspectiveFov
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.maxPerspectiveFov
   commentId: F:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.maxPerspectiveFov
-  isExternal: false
   name: maxPerspectiveFov
   nameWithType: OmnidirCameraUndistortionGeneric<T>.maxPerspectiveFov
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.maxPerspectiveFov
@@ -1250,7 +1208,6 @@ references:
   fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T).maxPerspectiveFov
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationType
   commentId: P:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationType
-  isExternal: false
   name: RectificationType
   nameWithType: OmnidirCameraUndistortionGeneric<T>.RectificationType
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.RectificationType
@@ -1258,7 +1215,6 @@ references:
   fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T).RectificationType
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.PerspectiveFieldOfViews
   commentId: P:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.PerspectiveFieldOfViews
-  isExternal: false
   name: PerspectiveFieldOfViews
   nameWithType: OmnidirCameraUndistortionGeneric<T>.PerspectiveFieldOfViews
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.PerspectiveFieldOfViews
@@ -1266,7 +1222,6 @@ references:
   fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T).PerspectiveFieldOfViews
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.rectifyFlags
   commentId: F:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.rectifyFlags
-  isExternal: false
   name: rectifyFlags
   nameWithType: OmnidirCameraUndistortionGeneric<T>.rectifyFlags
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.rectifyFlags
@@ -1274,7 +1229,6 @@ references:
   fullName.vb: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric(Of T).rectifyFlags
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.OnValidate
   commentId: M:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.OnValidate
-  isExternal: false
   name: OnValidate()
   nameWithType: OmnidirCameraUndistortionGeneric<T>.OnValidate()
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.OnValidate()
@@ -1304,7 +1258,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeUndistortionMaps
   commentId: M:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeUndistortionMaps
-  isExternal: false
   name: InitializeUndistortionMaps()
   nameWithType: OmnidirCameraUndistortionGeneric<T>.InitializeUndistortionMaps()
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.InitializeUndistortionMaps()
@@ -1334,7 +1287,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1.Awake
   commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1.Awake
-  isExternal: false
   name: Awake()
   nameWithType: ArucoCameraUndistortionGeneric<T>.Awake()
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric<T>.Awake()
@@ -1395,13 +1347,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.Configuring*
   commentId: Overload:ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.Configuring
-  isExternal: false
   name: Configuring
   nameWithType: StereoOmnidirCameraUndistortion.Configuring
   fullName: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.Configuring
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.Configuring
   commentId: M:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.Configuring
-  isExternal: false
   name: Configuring()
   nameWithType: OmnidirCameraUndistortionGeneric<T>.Configuring()
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.Configuring()
@@ -1462,13 +1412,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.InitializeRectification*
   commentId: Overload:ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.InitializeRectification
-  isExternal: false
   name: InitializeRectification
   nameWithType: StereoOmnidirCameraUndistortion.InitializeRectification
   fullName: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.InitializeRectification
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeRectification
   commentId: M:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeRectification
-  isExternal: false
   name: InitializeRectification()
   nameWithType: OmnidirCameraUndistortionGeneric<T>.InitializeRectification()
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>.InitializeRectification()

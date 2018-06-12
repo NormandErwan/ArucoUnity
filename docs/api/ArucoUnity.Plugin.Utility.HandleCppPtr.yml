@@ -22,10 +22,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: HandleCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -82,10 +82,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -115,10 +115,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -150,10 +150,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Finalize
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -180,10 +180,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteResponsibility
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -215,10 +215,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -250,10 +250,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -270,7 +270,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -283,20 +282,18 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor
-  isExternal: false
   name: HandleCppPtr
   nameWithType: Utility.HandleCppPtr.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
@@ -309,25 +306,21 @@ references:
   fullName: System.IntPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize*
   commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
-  isExternal: false
   name: Finalize
   nameWithType: Utility.HandleCppPtr.Finalize
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility*
   commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr*
   commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr

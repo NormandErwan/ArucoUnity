@@ -28,10 +28,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Omnidir
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -122,10 +122,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 77
+    startLine: 78
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -180,10 +180,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -236,10 +236,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InitUndistortRectifyMap
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -292,10 +292,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoCalibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 105
+    startLine: 106
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -366,10 +366,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoCalibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -438,10 +438,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoCalibrate
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 135
+    startLine: 136
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -508,10 +508,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoRectify
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 144
+    startLine: 145
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -552,10 +552,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UndistortImage
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 156
+    startLine: 157
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -606,10 +606,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UndistortImage
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 169
+    startLine: 170
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -658,10 +658,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UndistortImage
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 176
+    startLine: 177
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -708,10 +708,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UndistortImage
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 183
+    startLine: 184
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -744,7 +744,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -757,62 +756,54 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Omnidir.Calibrate*
   commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.Calibrate
-  isExternal: false
   name: Calibrate
   nameWithType: Cv.Omnidir.Calibrate
   fullName: ArucoUnity.Plugin.Cv.Omnidir.Calibrate
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint3f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorPoint3f
   nameWithType: Std.VectorVectorPoint3f
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint2f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorPoint2f
   nameWithType: Std.VectorVectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f
 - uid: ArucoUnity.Plugin.Cv.Size
   commentId: T:ArucoUnity.Plugin.Cv.Size
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Size
   nameWithType: Cv.Size
   fullName: ArucoUnity.Plugin.Cv.Size
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin.Std.VectorVec3d
   commentId: T:ArucoUnity.Plugin.Std.VectorVec3d
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVec3d
   nameWithType: Std.VectorVec3d
   fullName: ArucoUnity.Plugin.Std.VectorVec3d
 - uid: ArucoUnity.Plugin.Cv.Omnidir.Calib
   commentId: T:ArucoUnity.Plugin.Cv.Omnidir.Calib
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Omnidir.Calib
   nameWithType: Cv.Omnidir.Calib
   fullName: ArucoUnity.Plugin.Cv.Omnidir.Calib
 - uid: ArucoUnity.Plugin.Cv.TermCriteria
   commentId: T:ArucoUnity.Plugin.Cv.TermCriteria
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.TermCriteria
   nameWithType: Cv.TermCriteria
   fullName: ArucoUnity.Plugin.Cv.TermCriteria
@@ -825,46 +816,39 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap*
   commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap
-  isExternal: false
   name: InitUndistortRectifyMap
   nameWithType: Cv.Omnidir.InitUndistortRectifyMap
   fullName: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap
 - uid: ArucoUnity.Plugin.Cv.Type
   commentId: T:ArucoUnity.Plugin.Cv.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Type
   nameWithType: Cv.Type
   fullName: ArucoUnity.Plugin.Cv.Type
 - uid: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
   commentId: T:ArucoUnity.Plugin.Cv.Omnidir.Rectifify
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Omnidir.Rectifify
   nameWithType: Cv.Omnidir.Rectifify
   fullName: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
 - uid: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate*
   commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate
-  isExternal: false
   name: StereoCalibrate
   nameWithType: Cv.Omnidir.StereoCalibrate
   fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate
 - uid: ArucoUnity.Plugin.Cv.Vec3d
   commentId: T:ArucoUnity.Plugin.Cv.Vec3d
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Vec3d
   nameWithType: Cv.Vec3d
   fullName: ArucoUnity.Plugin.Cv.Vec3d
 - uid: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify*
   commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.StereoRectify
-  isExternal: false
   name: StereoRectify
   nameWithType: Cv.Omnidir.StereoRectify
   fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify
 - uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
   commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage
-  isExternal: false
   name: UndistortImage
   nameWithType: Cv.Omnidir.UndistortImage
   fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage

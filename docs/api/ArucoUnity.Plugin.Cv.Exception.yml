@@ -21,10 +21,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Exception
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -60,10 +60,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -90,10 +90,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 38
+    startLine: 39
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -123,10 +123,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Code
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -158,10 +158,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: What
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -190,10 +190,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Check
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -208,7 +208,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -222,40 +221,35 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Exception.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Exception.#ctor
-  isExternal: false
   name: Exception
   nameWithType: Cv.Exception.Exception
   fullName: ArucoUnity.Plugin.Cv.Exception.Exception
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -283,13 +277,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Exception.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Exception.Code*
   commentId: Overload:ArucoUnity.Plugin.Cv.Exception.Code
-  isExternal: false
   name: Code
   nameWithType: Cv.Exception.Code
   fullName: ArucoUnity.Plugin.Cv.Exception.Code
@@ -302,7 +294,6 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Plugin.Cv.Exception.What*
   commentId: Overload:ArucoUnity.Plugin.Cv.Exception.What
-  isExternal: false
   name: What
   nameWithType: Cv.Exception.What
   fullName: ArucoUnity.Plugin.Cv.Exception.What
@@ -315,7 +306,6 @@ references:
   fullName: System.String
 - uid: ArucoUnity.Plugin.Cv.Exception.Check*
   commentId: Overload:ArucoUnity.Plugin.Cv.Exception.Check
-  isExternal: false
   name: Check
   nameWithType: Cv.Exception.Check
   fullName: ArucoUnity.Plugin.Cv.Exception.Check

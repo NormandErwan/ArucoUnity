@@ -38,10 +38,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Mat
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -80,10 +80,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -110,10 +110,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 88
+    startLine: 89
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -147,10 +147,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 92
+    startLine: 93
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -182,10 +182,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 96
+    startLine: 97
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -224,10 +224,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -266,10 +266,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 109
+    startLine: 110
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -299,10 +299,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Cols
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 116
+    startLine: 117
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -334,10 +334,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DataIntPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 121
+    startLine: 122
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -369,10 +369,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DataByte
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -404,10 +404,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Rows
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 133
+    startLine: 134
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -439,10 +439,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Size
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 138
+    startLine: 139
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -474,10 +474,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Channels
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 145
+    startLine: 146
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -506,10 +506,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Clone
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 150
+    startLine: 151
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -538,10 +538,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Create
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 155
+    startLine: 156
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -575,10 +575,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AtInt
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 162
+    startLine: 163
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -612,10 +612,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AtInt
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 170
+    startLine: 171
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -649,10 +649,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AtDouble
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 177
+    startLine: 178
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -686,10 +686,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AtDouble
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 185
+    startLine: 186
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -723,10 +723,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ElemSize
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 192
+    startLine: 193
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -755,10 +755,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ElemSize1
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 197
+    startLine: 198
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -787,10 +787,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Total
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 202
+    startLine: 203
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -819,10 +819,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Type
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Mat.cs
-    startLine: 207
+    startLine: 208
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -839,7 +839,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -853,21 +852,18 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
@@ -931,13 +927,12 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
   commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
-  isExternal: false
   name: GetCameraFocalLengths(Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
@@ -974,13 +969,11 @@ references:
 - uid: ArucoUnity.Utilities.CvMatExtensions
   commentId: T:ArucoUnity.Utilities.CvMatExtensions
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: CvMatExtensions
   nameWithType: CvMatExtensions
   fullName: ArucoUnity.Utilities.CvMatExtensions
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
   commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
-  isExternal: false
   name: GetCameraPrincipalPoint(Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
@@ -1016,13 +1009,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
 - uid: ArucoUnity.Plugin.Cv.Mat.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.#ctor
-  isExternal: false
   name: Mat
   nameWithType: Cv.Mat.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat.Mat
@@ -1036,18 +1027,17 @@ references:
 - uid: ArucoUnity.Plugin.Cv.Type
   commentId: T:ArucoUnity.Plugin.Cv.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Type
   nameWithType: Cv.Type
   fullName: ArucoUnity.Plugin.Cv.Type
 - uid: ArucoUnity.Plugin.Cv.Size
   commentId: T:ArucoUnity.Plugin.Cv.Size
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Size
   nameWithType: Cv.Size
   fullName: ArucoUnity.Plugin.Cv.Size
 - uid: System.Byte[]
+  isExternal: true
   name: Byte[]
   nameWithType: Byte[]
   fullName: System.Byte[]
@@ -1073,6 +1063,7 @@ references:
     nameWithType: ()
     fullName: ()
 - uid: System.Double[]
+  isExternal: true
   name: Double[]
   nameWithType: Double[]
   fullName: System.Double[]
@@ -1100,7 +1091,6 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -1128,19 +1118,16 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Mat.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Mat.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Mat.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Mat.Cols*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Cols
-  isExternal: false
   name: Cols
   nameWithType: Cv.Mat.Cols
   fullName: ArucoUnity.Plugin.Cv.Mat.Cols
 - uid: ArucoUnity.Plugin.Cv.Mat.DataIntPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.DataIntPtr
-  isExternal: false
   name: DataIntPtr
   nameWithType: Cv.Mat.DataIntPtr
   fullName: ArucoUnity.Plugin.Cv.Mat.DataIntPtr
@@ -1153,56 +1140,47 @@ references:
   fullName: System.IntPtr
 - uid: ArucoUnity.Plugin.Cv.Mat.DataByte*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.DataByte
-  isExternal: false
   name: DataByte
   nameWithType: Cv.Mat.DataByte
   fullName: ArucoUnity.Plugin.Cv.Mat.DataByte
 - uid: ArucoUnity.Plugin.Cv.Mat.Rows*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Rows
-  isExternal: false
   name: Rows
   nameWithType: Cv.Mat.Rows
   fullName: ArucoUnity.Plugin.Cv.Mat.Rows
 - uid: ArucoUnity.Plugin.Cv.Mat.Size*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Size
-  isExternal: false
   name: Size
   nameWithType: Cv.Mat.Size
   fullName: ArucoUnity.Plugin.Cv.Mat.Size
 - uid: ArucoUnity.Plugin.Cv.Mat.Channels*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Channels
-  isExternal: false
   name: Channels
   nameWithType: Cv.Mat.Channels
   fullName: ArucoUnity.Plugin.Cv.Mat.Channels
 - uid: ArucoUnity.Plugin.Cv.Mat.Clone*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Clone
-  isExternal: false
   name: Clone
   nameWithType: Cv.Mat.Clone
   fullName: ArucoUnity.Plugin.Cv.Mat.Clone
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin.Cv.Mat.Create*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Create
-  isExternal: false
   name: Create
   nameWithType: Cv.Mat.Create
   fullName: ArucoUnity.Plugin.Cv.Mat.Create
 - uid: ArucoUnity.Plugin.Cv.Mat.AtInt*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.AtInt
-  isExternal: false
   name: AtInt
   nameWithType: Cv.Mat.AtInt
   fullName: ArucoUnity.Plugin.Cv.Mat.AtInt
 - uid: ArucoUnity.Plugin.Cv.Mat.AtDouble*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.AtDouble
-  isExternal: false
   name: AtDouble
   nameWithType: Cv.Mat.AtDouble
   fullName: ArucoUnity.Plugin.Cv.Mat.AtDouble
@@ -1215,7 +1193,6 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Plugin.Cv.Mat.ElemSize*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.ElemSize
-  isExternal: false
   name: ElemSize
   nameWithType: Cv.Mat.ElemSize
   fullName: ArucoUnity.Plugin.Cv.Mat.ElemSize
@@ -1228,19 +1205,16 @@ references:
   fullName: System.UInt32
 - uid: ArucoUnity.Plugin.Cv.Mat.ElemSize1*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.ElemSize1
-  isExternal: false
   name: ElemSize1
   nameWithType: Cv.Mat.ElemSize1
   fullName: ArucoUnity.Plugin.Cv.Mat.ElemSize1
 - uid: ArucoUnity.Plugin.Cv.Mat.Total*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Total
-  isExternal: false
   name: Total
   nameWithType: Cv.Mat.Total
   fullName: ArucoUnity.Plugin.Cv.Mat.Total
 - uid: ArucoUnity.Plugin.Cv.Mat.Type*
   commentId: Overload:ArucoUnity.Plugin.Cv.Mat.Type
-  isExternal: false
   name: Type
   nameWithType: Cv.Mat.Type
   fullName: ArucoUnity.Plugin.Cv.Mat.Type

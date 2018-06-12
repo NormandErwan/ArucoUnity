@@ -5,7 +5,9 @@ items:
   id: ArucoCameraCalibration
   parent: ArucoUnity.Calibration
   children:
-  - ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+  - ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  - ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  - ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
   - ArucoUnity.Calibration.ArucoCameraCalibration.applicationPath
   - ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated
   - ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
@@ -17,21 +19,18 @@ items:
   - ArucoUnity.Calibration.ArucoCameraCalibration.calibratingThread
   - ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
   - ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags
-  - ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  - ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
   - ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
   - ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController
   - ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync
   - ArucoUnity.Calibration.ArucoCameraCalibration.Configuring
   - ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers
   - ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers
+  - ArucoUnity.Calibration.ArucoCameraCalibration.Images
   - ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters
   - ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
   - ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate
   - ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
-  - ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
   - ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
-  - ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
   - ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection
   - ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration
   - ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
@@ -49,7 +48,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCameraCalibration
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 19
@@ -125,7 +124,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationBoard
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 42
@@ -162,7 +161,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineMarkersDetection
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 48
@@ -199,7 +198,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParametersController
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 54
@@ -236,7 +235,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 60
@@ -258,23 +257,23 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
-  id: MarkerCorners
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  id: AllMarkerCorners
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: MarkerCorners
-  nameWithType: ArucoCameraCalibration.MarkerCorners
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+  name: AllMarkerCorners
+  nameWithType: ArucoCameraCalibration.AllMarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
   type: Property
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: MarkerCorners
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: AllMarkerCorners
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 65
   assemblies:
@@ -283,12 +282,12 @@ items:
   summary: "\nGets the detected marker corners for each camera.\n"
   example: []
   syntax:
-    content: public Std.VectorVectorVectorPoint2f[] MarkerCorners { get; protected set; }
+    content: public Std.VectorVectorVectorPoint2f[] AllMarkerCorners { get; protected set; }
     parameters: []
     return:
       type: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f[]
-    content.vb: Public Property MarkerCorners As Std.VectorVectorVectorPoint2f()
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners*
+    content.vb: Public Property AllMarkerCorners As Std.VectorVectorVectorPoint2f()
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners*
   modifiers.csharp:
   - public
   - get
@@ -297,23 +296,23 @@ items:
   - Public
   - Get
   - Protected Set
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
-  id: MarkerIds
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  id: AllMarkerIds
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: MarkerIds
-  nameWithType: ArucoCameraCalibration.MarkerIds
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+  name: AllMarkerIds
+  nameWithType: ArucoCameraCalibration.AllMarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
   type: Property
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: MarkerIds
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: AllMarkerIds
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 70
   assemblies:
@@ -322,12 +321,12 @@ items:
   summary: "\nGets the detected marker ids for each camera.\n"
   example: []
   syntax:
-    content: public Std.VectorVectorInt[] MarkerIds { get; protected set; }
+    content: public Std.VectorVectorInt[] AllMarkerIds { get; protected set; }
     parameters: []
     return:
       type: ArucoUnity.Plugin.Std.VectorVectorInt[]
-    content.vb: Public Property MarkerIds As Std.VectorVectorInt()
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds*
+    content.vb: Public Property AllMarkerIds As Std.VectorVectorInt()
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds*
   modifiers.csharp:
   - public
   - get
@@ -336,23 +335,23 @@ items:
   - Public
   - Get
   - Protected Set
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  id: CalibrationImages
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  id: Images
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: CalibrationImages
-  nameWithType: ArucoCameraCalibration.CalibrationImages
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
+  name: Images
+  nameWithType: ArucoCameraCalibration.Images
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Images
   type: Property
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: CalibrationImages
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: Images
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 75
   assemblies:
@@ -361,12 +360,12 @@ items:
   summary: "\nGets the images to use for the calibration.\n"
   example: []
   syntax:
-    content: public Std.VectorMat[] CalibrationImages { get; protected set; }
+    content: public Std.VectorMat[] Images { get; protected set; }
     parameters: []
     return:
       type: ArucoUnity.Plugin.Std.VectorMat[]
-    content.vb: Public Property CalibrationImages As Std.VectorMat()
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages*
+    content.vb: Public Property Images As Std.VectorMat()
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.Images*
   modifiers.csharp:
   - public
   - get
@@ -390,7 +389,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Rvecs
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 80
@@ -429,7 +428,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Tvecs
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 85
@@ -453,23 +452,23 @@ items:
   - Public
   - Get
   - Protected Set
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  id: MarkerCornersCurrentImage
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+  id: MarkerCorners
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: MarkerCornersCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerCornersCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
+  name: MarkerCorners
+  nameWithType: ArucoCameraCalibration.MarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
   type: Property
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: MarkerCornersCurrentImage
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: MarkerCorners
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 90
   assemblies:
@@ -478,12 +477,12 @@ items:
   summary: "\nGets the detected marker corners on the current images of each camera.\n"
   example: []
   syntax:
-    content: public Std.VectorVectorPoint2f[] MarkerCornersCurrentImage { get; protected set; }
+    content: public Std.VectorVectorPoint2f[] MarkerCorners { get; protected set; }
     parameters: []
     return:
       type: ArucoUnity.Plugin.Std.VectorVectorPoint2f[]
-    content.vb: Public Property MarkerCornersCurrentImage As Std.VectorVectorPoint2f()
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage*
+    content.vb: Public Property MarkerCorners As Std.VectorVectorPoint2f()
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners*
   modifiers.csharp:
   - public
   - get
@@ -492,23 +491,23 @@ items:
   - Public
   - Get
   - Protected Set
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  id: MarkerIdsCurrentImage
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+  id: MarkerIds
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: MarkerIdsCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerIdsCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
+  name: MarkerIds
+  nameWithType: ArucoCameraCalibration.MarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
   type: Property
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: MarkerIdsCurrentImage
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: MarkerIds
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 95
   assemblies:
@@ -517,12 +516,12 @@ items:
   summary: "\nGets the detected marker ids on the current images of each camera.\n"
   example: []
   syntax:
-    content: public Std.VectorInt[] MarkerIdsCurrentImage { get; protected set; }
+    content: public Std.VectorInt[] MarkerIds { get; protected set; }
     parameters: []
     return:
       type: ArucoUnity.Plugin.Std.VectorInt[]
-    content.vb: Public Property MarkerIdsCurrentImage As Std.VectorInt()
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage*
+    content.vb: Public Property MarkerIds As Std.VectorInt()
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds*
   modifiers.csharp:
   - public
   - get
@@ -546,7 +545,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsCalibrated
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 100
@@ -585,7 +584,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationRunning
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 105
@@ -624,7 +623,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrated
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 112
@@ -657,7 +656,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: applicationPath
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
     startLine: 116
@@ -669,37 +668,6 @@ items:
     return:
       type: System.String
     content.vb: Protected applicationPath As String
-  modifiers.csharp:
-  - protected
-  modifiers.vb:
-  - Protected
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  commentId: F:ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  id: calibrationImageSizes
-  parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  langs:
-  - csharp
-  - vb
-  name: calibrationImageSizes
-  nameWithType: ArucoCameraCalibration.calibrationImageSizes
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.calibrationImageSizes
-  type: Field
-  source:
-    remote:
-      path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-      branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: calibrationImageSizes
-    path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 117
-  assemblies:
-  - Assembly-CSharp
-  namespace: ArucoUnity.Calibration
-  syntax:
-    content: protected Cv.Size[] calibrationImageSizes
-    return:
-      type: ArucoUnity.Plugin.Cv.Size[]
-    content.vb: Protected calibrationImageSizes As Cv.Size()
   modifiers.csharp:
   - protected
   modifiers.vb:
@@ -719,10 +687,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: calibratingThread
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 118
+    startLine: 117
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -750,10 +718,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: calibratingMutex
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 119
+    startLine: 118
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -781,10 +749,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: calibratingException
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 120
+    startLine: 119
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -812,10 +780,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: LateUpdate
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 127
+    startLine: 126
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -846,10 +814,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configuring
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 161
+    startLine: 160
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -881,10 +849,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Starting
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 175
+    startLine: 174
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -916,10 +884,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stopping
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 184
+    startLine: 183
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -951,10 +919,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ResetCalibration
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 195
+    startLine: 194
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -985,14 +953,14 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectMarkers
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 221
+    startLine: 218
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
-  summary: "\nDetects the Aruco markers on the current images of the cameras and store the results in the\n<xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage\" data-throw-if-not-resolved=\"false\"></xref> properties.\n"
+  summary: "\nDetects the Aruco markers on the current images of the cameras and store the results in the\n<xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds\" data-throw-if-not-resolved=\"false\"></xref> properties.\n"
   example: []
   syntax:
     content: public virtual void DetectMarkers()
@@ -1019,10 +987,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedMarkers
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 252
+    startLine: 247
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1038,34 +1006,34 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  id: AddCurrentImagesForCalibration
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  id: AddImages
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
   langs:
   - csharp
   - vb
-  name: AddCurrentImagesForCalibration()
-  nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration()
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration()
+  name: AddImages()
+  nameWithType: ArucoCameraCalibration.AddImages()
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages()
   type: Method
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: AddCurrentImagesForCalibration
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: AddImages
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 272
+    startLine: 267
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
   summary: "\nAdds the current images of the cameras and the detected corners for the calibration.\n"
   example: []
   syntax:
-    content: public virtual void AddCurrentImagesForCalibration()
-    content.vb: Public Overridable Sub AddCurrentImagesForCalibration
-  overload: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration*
+    content: public virtual void AddImages()
+    content.vb: Public Overridable Sub AddImages
+  overload: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages*
   modifiers.csharp:
   - public
   - virtual
@@ -1087,10 +1055,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateAsync
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 316
+    startLine: 305
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1121,10 +1089,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CancelCalibrateAsync
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 358
+    startLine: 347
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1155,14 +1123,14 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrate
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 386
+    startLine: 375
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
-  summary: "\nCalibrates each mono camera in <xref href=\"ArucoUnity.Cameras.ArucoCameraController.ArucoCamera\" data-throw-if-not-resolved=\"false\"></xref> using the detected\nmarkers added with <xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration\" data-throw-if-not-resolved=\"false\"></xref>, the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters\" data-throw-if-not-resolved=\"false\"></xref>, the\n<xref href=\"ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion\" data-throw-if-not-resolved=\"false\"></xref> and save the results on a calibration file. Stereo\ncalibrations will be additionally executed on these results for every camera pair.\n"
+  summary: "\nCalibrates each mono camera in <xref href=\"ArucoUnity.Cameras.ArucoCameraController.ArucoCamera\" data-throw-if-not-resolved=\"false\"></xref> using the detected\nmarkers added with <xref href=\"ArucoUnity.Calibration.ArucoCameraCalibration.AddImages\" data-throw-if-not-resolved=\"false\"></xref>, the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters\" data-throw-if-not-resolved=\"false\"></xref>, the\n<xref href=\"ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion\" data-throw-if-not-resolved=\"false\"></xref> and save the results on a calibration file. Stereo\ncalibrations will be additionally executed on these results for every camera pair.\n"
   example: []
   syntax:
     content: public virtual void Calibrate()
@@ -1189,10 +1157,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCamera_ImagesUpdated
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 481
+    startLine: 470
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1223,10 +1191,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InitializeCameraParameters
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 490
+    startLine: 479
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1257,10 +1225,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Calibrate
     path: Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs
-    startLine: 528
+    startLine: 517
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Calibration
@@ -1290,27 +1258,23 @@ references:
 - uid: ArucoUnity.Cameras.ArucoCamera
   commentId: T:ArucoUnity.Cameras.ArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCamera
 - uid: ArucoUnity.Objects.ArucoBoard
   commentId: T:ArucoUnity.Objects.ArucoBoard
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoBoard
   nameWithType: ArucoBoard
   fullName: ArucoUnity.Objects.ArucoBoard
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController
   commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoCameraParametersController
   nameWithType: ArucoCameraParametersController
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration
@@ -1352,119 +1316,102 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController
   commentId: T:ArucoUnity.Utilities.ConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: ConfigurableController
   nameWithType: ConfigurableController
   fullName: ArucoUnity.Utilities.ConfigurableController
 - uid: ArucoUnity.Cameras.ArucoCameraController
   commentId: T:ArucoUnity.Cameras.ArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCameraController
   nameWithType: ArucoCameraController
   fullName: ArucoUnity.Cameras.ArucoCameraController
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectDetector
   nameWithType: ArucoObjectDetector
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
 - uid: ArucoUnity.Cameras.IArucoCameraController
   commentId: T:ArucoUnity.Cameras.IArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCameraController
   nameWithType: IArucoCameraController
   fullName: ArucoUnity.Cameras.IArucoCameraController
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
   commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IHasDetectorParameter
   nameWithType: IHasDetectorParameter
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
   commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
   parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
-  isExternal: false
   name: DetectorParameters
   nameWithType: ArucoObjectDetector.DetectorParameters
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
 - uid: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   commentId: P:ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   parent: ArucoUnity.Cameras.ArucoCameraController
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCameraController.ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
 - uid: ArucoUnity.Utilities.ConfigurableController.Ready
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Ready
   nameWithType: ConfigurableController.Ready
   fullName: ArucoUnity.Utilities.ConfigurableController.Ready
 - uid: ArucoUnity.Utilities.ConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: ConfigurableController.Configured
   fullName: ArucoUnity.Utilities.ConfigurableController.Configured
 - uid: ArucoUnity.Utilities.ConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Started
   nameWithType: ConfigurableController.Started
   fullName: ArucoUnity.Utilities.ConfigurableController.Started
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: ConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
   commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AutoStart
   nameWithType: ConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
 - uid: ArucoUnity.Utilities.ConfigurableController.IsReady
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsReady
   nameWithType: ConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.Awake
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Awake
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Awake()
   nameWithType: ConfigurableController.Awake()
   fullName: ArucoUnity.Utilities.ConfigurableController.Awake()
@@ -1493,7 +1440,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.Start
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Start
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Start()
   nameWithType: ConfigurableController.Start()
   fullName: ArucoUnity.Utilities.ConfigurableController.Start()
@@ -1522,7 +1468,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnDestroy()
   nameWithType: ConfigurableController.OnDestroy()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
@@ -1551,7 +1496,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AddDependency(IConfigurableController)
   nameWithType: ConfigurableController.AddDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1588,7 +1532,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: RemoveDependency(IConfigurableController)
   nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1625,7 +1568,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
   commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: GetDependencies()
   nameWithType: ConfigurableController.GetDependencies()
   fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
@@ -1654,7 +1596,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: ConfigureController()
   nameWithType: ConfigurableController.ConfigureController()
   fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
@@ -1683,7 +1624,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StartController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StartController()
   nameWithType: ConfigurableController.StartController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
@@ -1712,7 +1652,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: ConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
@@ -1741,7 +1680,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnConfigured()
   nameWithType: ConfigurableController.OnConfigured()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
@@ -1770,7 +1708,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStarted()
   nameWithType: ConfigurableController.OnStarted()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted()
@@ -1799,7 +1736,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStopped()
   nameWithType: ConfigurableController.OnStopped()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
@@ -1827,55 +1763,48 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
-  isExternal: false
   name: CalibrationBoard
   nameWithType: ArucoCameraCalibration.CalibrationBoard
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection
-  isExternal: false
   name: RefineMarkersDetection
   nameWithType: ArucoCameraCalibration.RefineMarkersDetection
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection
@@ -1889,36 +1818,32 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UseIntrinsicGuess
   nameWithType: CalibrationFlags.UseIntrinsicGuess
   fullName: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController
-  isExternal: false
   name: CameraParametersController
   nameWithType: ArucoCameraCalibration.CameraParametersController
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController
 - uid: ArucoUnity.Calibration.CalibrationFlags
   commentId: T:ArucoUnity.Calibration.CalibrationFlags
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: CalibrationFlags
   nameWithType: CalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags
-  isExternal: false
   name: CalibrationFlags
   nameWithType: ArucoCameraCalibration.CalibrationFlags
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
-  isExternal: false
-  name: MarkerCorners
-  nameWithType: ArucoCameraCalibration.MarkerCorners
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
+  name: AllMarkerCorners
+  nameWithType: ArucoCameraCalibration.AllMarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f[]
+  isExternal: true
   name: Std.VectorVectorVectorPoint2f[]
   nameWithType: Std.VectorVectorVectorPoint2f[]
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f[]
@@ -1941,13 +1866,13 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
-  isExternal: false
-  name: MarkerIds
-  nameWithType: ArucoCameraCalibration.MarkerIds
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
+  name: AllMarkerIds
+  nameWithType: ArucoCameraCalibration.AllMarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt[]
+  isExternal: true
   name: Std.VectorVectorInt[]
   nameWithType: Std.VectorVectorInt[]
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt[]
@@ -1970,13 +1895,13 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
-  isExternal: false
-  name: CalibrationImages
-  nameWithType: ArucoCameraCalibration.CalibrationImages
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationImages
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Images*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Images
+  name: Images
+  nameWithType: ArucoCameraCalibration.Images
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Images
 - uid: ArucoUnity.Plugin.Std.VectorMat[]
+  isExternal: true
   name: Std.VectorMat[]
   nameWithType: Std.VectorMat[]
   fullName: ArucoUnity.Plugin.Std.VectorMat[]
@@ -2001,11 +1926,11 @@ references:
     fullName: ()
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
-  isExternal: false
   name: Rvecs
   nameWithType: ArucoCameraCalibration.Rvecs
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
 - uid: ArucoUnity.Plugin.Std.VectorVec3d[]
+  isExternal: true
   name: Std.VectorVec3d[]
   nameWithType: Std.VectorVec3d[]
   fullName: ArucoUnity.Plugin.Std.VectorVec3d[]
@@ -2030,17 +1955,16 @@ references:
     fullName: ()
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs
-  isExternal: false
   name: Tvecs
   nameWithType: ArucoCameraCalibration.Tvecs
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  isExternal: false
-  name: MarkerCornersCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerCornersCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+  name: MarkerCorners
+  nameWithType: ArucoCameraCalibration.MarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f[]
+  isExternal: true
   name: Std.VectorVectorPoint2f[]
   nameWithType: Std.VectorVectorPoint2f[]
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f[]
@@ -2063,13 +1987,13 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  isExternal: false
-  name: MarkerIdsCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerIdsCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+  name: MarkerIds
+  nameWithType: ArucoCameraCalibration.MarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
 - uid: ArucoUnity.Plugin.Std.VectorInt[]
+  isExternal: true
   name: Std.VectorInt[]
   nameWithType: Std.VectorInt[]
   fullName: ArucoUnity.Plugin.Std.VectorInt[]
@@ -2095,7 +2019,6 @@ references:
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync
   commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: CalibrateAsync()
   nameWithType: ArucoCameraCalibration.CalibrateAsync()
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync()
@@ -2123,27 +2046,23 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
-  isExternal: false
   name: IsCalibrated
   nameWithType: ArucoCameraCalibration.IsCalibrated
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibration
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: ArucoCameraCalibration
   nameWithType: ArucoCameraCalibration
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
-  isExternal: false
   name: CalibrationRunning
   nameWithType: ArucoCameraCalibration.CalibrationRunning
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
   commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: IsCalibrated
   nameWithType: ArucoCameraCalibration.IsCalibrated
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated
@@ -2161,29 +2080,6 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: ArucoUnity.Plugin.Cv.Size[]
-  name: Cv.Size[]
-  nameWithType: Cv.Size[]
-  fullName: ArucoUnity.Plugin.Cv.Size[]
-  nameWithType.vb: Cv.Size()
-  fullName.vb: ArucoUnity.Plugin.Cv.Size()
-  name.vb: Cv.Size()
-  spec.csharp:
-  - uid: ArucoUnity.Plugin.Cv.Size
-    name: Cv.Size
-    nameWithType: Cv.Size
-    fullName: ArucoUnity.Plugin.Cv.Size
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  spec.vb:
-  - uid: ArucoUnity.Plugin.Cv.Size
-    name: Cv.Size
-    nameWithType: Cv.Size
-    fullName: ArucoUnity.Plugin.Cv.Size
-  - name: ()
-    nameWithType: ()
-    fullName: ()
 - uid: System.Threading.Thread
   commentId: T:System.Threading.Thread
   parent: System.Threading
@@ -2193,7 +2089,7 @@ references:
   fullName: System.Threading.Thread
 - uid: System.Threading
   commentId: N:System.Threading
-  isExternal: false
+  isExternal: true
   name: System.Threading
   nameWithType: System.Threading
   fullName: System.Threading
@@ -2214,27 +2110,23 @@ references:
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrated
   commentId: E:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrated
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: Calibrated
   nameWithType: ArucoCameraCalibration.Calibrated
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrated
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate
-  isExternal: false
   name: LateUpdate
   nameWithType: ArucoCameraCalibration.LateUpdate
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
   commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: CalibrationBoard
   nameWithType: ArucoCameraCalibration.CalibrationBoard
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration
   commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: ResetCalibration()
   nameWithType: ArucoCameraCalibration.ResetCalibration()
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration()
@@ -2263,7 +2155,6 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
   parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
-  isExternal: false
   name: Configuring()
   nameWithType: ArucoObjectDetector.Configuring()
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring()
@@ -2291,21 +2182,18 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Configuring*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Configuring
-  isExternal: false
   name: Configuring
   nameWithType: ArucoCameraCalibration.Configuring
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Configuring
 - uid: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
   commentId: E:ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: UndistortRectifyImages
   nameWithType: ArucoCamera.UndistortRectifyImages
   fullName: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
 - uid: ArucoUnity.Utilities.ConfigurableController.Starting
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Starting
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Starting()
   nameWithType: ConfigurableController.Starting()
   fullName: ArucoUnity.Utilities.ConfigurableController.Starting()
@@ -2333,14 +2221,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Starting*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Starting
-  isExternal: false
   name: Starting
   nameWithType: ArucoCameraCalibration.Starting
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Starting
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopping()
   nameWithType: ConfigurableController.Stopping()
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
@@ -2368,52 +2254,44 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Stopping*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Stopping
-  isExternal: false
   name: Stopping
   nameWithType: ArucoCameraCalibration.Stopping
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Stopping
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration
-  isExternal: false
   name: ResetCalibration
   nameWithType: ArucoCameraCalibration.ResetCalibration
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
-  name: MarkerCornersCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerCornersCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCornersCurrentImage
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
-  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
+  name: MarkerCorners
+  nameWithType: ArucoCameraCalibration.MarkerCorners
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
+  commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
-  name: MarkerIdsCurrentImage
-  nameWithType: ArucoCameraCalibration.MarkerIdsCurrentImage
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIdsCurrentImage
+  name: MarkerIds
+  nameWithType: ArucoCameraCalibration.MarkerIds
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers
-  isExternal: false
   name: DetectMarkers
   nameWithType: ArucoCameraCalibration.DetectMarkers
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers
-  isExternal: false
   name: DrawDetectedMarkers
   nameWithType: ArucoCameraCalibration.DrawDetectedMarkers
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration*
-  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  isExternal: false
-  name: AddCurrentImagesForCalibration
-  nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  name: AddImages
+  nameWithType: ArucoCameraCalibration.AddImages
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
   commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: Calibrate()
   nameWithType: ArucoCameraCalibration.Calibrate()
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate()
@@ -2441,35 +2319,31 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync
-  isExternal: false
   name: CalibrateAsync
   nameWithType: ArucoCameraCalibration.CalibrateAsync
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
   commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: CalibrationRunning
   nameWithType: ArucoCameraCalibration.CalibrationRunning
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync
-  isExternal: false
   name: CancelCalibrateAsync
   nameWithType: ArucoCameraCalibration.CancelCalibrateAsync
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
-  name: AddCurrentImagesForCalibration()
-  nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration()
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration()
+  name: AddImages()
+  nameWithType: ArucoCameraCalibration.AddImages()
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages()
   spec.csharp:
-  - uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-    name: AddCurrentImagesForCalibration
-    nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration
-    fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+  - uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+    name: AddImages
+    nameWithType: ArucoCameraCalibration.AddImages
+    fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
   - name: (
     nameWithType: (
     fullName: (
@@ -2477,10 +2351,10 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
-    name: AddCurrentImagesForCalibration
-    nameWithType: ArucoCameraCalibration.AddCurrentImagesForCalibration
-    fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddCurrentImagesForCalibration
+  - uid: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
+    name: AddImages
+    nameWithType: ArucoCameraCalibration.AddImages
+    fullName: ArucoUnity.Calibration.ArucoCameraCalibration.AddImages
   - name: (
     nameWithType: (
     fullName: (
@@ -2490,58 +2364,52 @@ references:
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoCameraParameters
   nameWithType: ArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoCameraUndistortion
   nameWithType: ArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
-  isExternal: false
   name: Calibrate
   nameWithType: ArucoCameraCalibration.Calibrate
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
 - uid: ArucoUnity.Cameras.Undistortions
   commentId: N:ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoUnity.Cameras.Undistortions
   nameWithType: ArucoUnity.Cameras.Undistortions
   fullName: ArucoUnity.Cameras.Undistortions
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated
-  isExternal: false
   name: ArucoCamera_ImagesUpdated
   nameWithType: ArucoCameraCalibration.ArucoCamera_ImagesUpdated
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
+  isExternal: true
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters*
   commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters
-  isExternal: false
   name: InitializeCameraParameters
   nameWithType: ArucoCameraCalibration.InitializeCameraParameters
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
   commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: Rvecs
   nameWithType: ArucoCameraCalibration.Rvecs
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs
   commentId: P:ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs
   parent: ArucoUnity.Calibration.ArucoCameraCalibration
-  isExternal: false
   name: Tvecs
   nameWithType: ArucoCameraCalibration.Tvecs
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f[]
+  isExternal: true
   name: Std.VectorVectorPoint3f[]
   nameWithType: Std.VectorVectorPoint3f[]
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f[]

@@ -18,10 +18,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteResponsibility
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -49,10 +49,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: "True"
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -81,10 +81,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: "False"
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -101,14 +101,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility

@@ -38,10 +38,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectorParameters
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -77,10 +77,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 116
+    startLine: 117
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -107,10 +107,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 120
+    startLine: 121
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -140,10 +140,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AdaptiveThreshWinSizeMin
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 125
+    startLine: 126
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -175,10 +175,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AdaptiveThreshWinSizeMax
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 131
+    startLine: 132
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -210,10 +210,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AdaptiveThreshWinSizeStep
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 137
+    startLine: 138
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -245,10 +245,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AdaptiveThreshConstant
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 143
+    startLine: 144
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -280,10 +280,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MinMarkerPerimeterRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 149
+    startLine: 150
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -315,10 +315,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MaxMarkerPerimeterRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 155
+    startLine: 156
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -350,10 +350,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PolygonalApproxAccuracyRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 161
+    startLine: 162
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -385,10 +385,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MinCornerDistanceRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 167
+    startLine: 168
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -420,10 +420,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MinDistanceToBorder
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 173
+    startLine: 174
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -455,10 +455,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MinMarkerDistanceRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 179
+    startLine: 180
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -490,10 +490,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CornerRefinementMethod
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 185
+    startLine: 186
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -525,10 +525,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CornerRefinementWinSize
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 191
+    startLine: 192
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -560,10 +560,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CornerRefinementMaxIterations
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 197
+    startLine: 198
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -595,10 +595,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CornerRefinementMinAccuracy
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 203
+    startLine: 204
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -630,10 +630,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerBorderBits
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 209
+    startLine: 210
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -665,10 +665,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PerspectiveRemovePixelPerCell
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 215
+    startLine: 216
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -700,10 +700,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PerspectiveRemoveIgnoredMarginPerCell
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 221
+    startLine: 222
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -735,10 +735,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MaxErroneousBitsInBorderRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 227
+    startLine: 228
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -770,10 +770,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MinOtsuStdDev
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 233
+    startLine: 234
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -805,10 +805,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ErrorCorrectionRate
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/DetectorParameters.cs
-    startLine: 239
+    startLine: 240
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -828,7 +828,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -842,40 +841,35 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.#ctor
-  isExternal: false
   name: DetectorParameters
   nameWithType: Aruco.DetectorParameters.DetectorParameters
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.DetectorParameters
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -903,13 +897,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Aruco.DetectorParameters.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMin*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMin
-  isExternal: false
   name: AdaptiveThreshWinSizeMin
   nameWithType: Aruco.DetectorParameters.AdaptiveThreshWinSizeMin
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMin
@@ -922,19 +914,16 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMax*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMax
-  isExternal: false
   name: AdaptiveThreshWinSizeMax
   nameWithType: Aruco.DetectorParameters.AdaptiveThreshWinSizeMax
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeMax
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeStep*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeStep
-  isExternal: false
   name: AdaptiveThreshWinSizeStep
   nameWithType: Aruco.DetectorParameters.AdaptiveThreshWinSizeStep
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshWinSizeStep
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshConstant*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshConstant
-  isExternal: false
   name: AdaptiveThreshConstant
   nameWithType: Aruco.DetectorParameters.AdaptiveThreshConstant
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.AdaptiveThreshConstant
@@ -947,104 +936,87 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerPerimeterRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerPerimeterRate
-  isExternal: false
   name: MinMarkerPerimeterRate
   nameWithType: Aruco.DetectorParameters.MinMarkerPerimeterRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerPerimeterRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MaxMarkerPerimeterRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MaxMarkerPerimeterRate
-  isExternal: false
   name: MaxMarkerPerimeterRate
   nameWithType: Aruco.DetectorParameters.MaxMarkerPerimeterRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MaxMarkerPerimeterRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.PolygonalApproxAccuracyRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.PolygonalApproxAccuracyRate
-  isExternal: false
   name: PolygonalApproxAccuracyRate
   nameWithType: Aruco.DetectorParameters.PolygonalApproxAccuracyRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.PolygonalApproxAccuracyRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MinCornerDistanceRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MinCornerDistanceRate
-  isExternal: false
   name: MinCornerDistanceRate
   nameWithType: Aruco.DetectorParameters.MinCornerDistanceRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MinCornerDistanceRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MinDistanceToBorder*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MinDistanceToBorder
-  isExternal: false
   name: MinDistanceToBorder
   nameWithType: Aruco.DetectorParameters.MinDistanceToBorder
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MinDistanceToBorder
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerDistanceRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerDistanceRate
-  isExternal: false
   name: MinMarkerDistanceRate
   nameWithType: Aruco.DetectorParameters.MinMarkerDistanceRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MinMarkerDistanceRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMethod*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMethod
-  isExternal: false
   name: CornerRefinementMethod
   nameWithType: Aruco.DetectorParameters.CornerRefinementMethod
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMethod
 - uid: ArucoUnity.Plugin.Aruco.CornerRefineMethod
   commentId: T:ArucoUnity.Plugin.Aruco.CornerRefineMethod
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.CornerRefineMethod
   nameWithType: Aruco.CornerRefineMethod
   fullName: ArucoUnity.Plugin.Aruco.CornerRefineMethod
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementWinSize*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementWinSize
-  isExternal: false
   name: CornerRefinementWinSize
   nameWithType: Aruco.DetectorParameters.CornerRefinementWinSize
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementWinSize
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMaxIterations*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMaxIterations
-  isExternal: false
   name: CornerRefinementMaxIterations
   nameWithType: Aruco.DetectorParameters.CornerRefinementMaxIterations
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMaxIterations
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMinAccuracy*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMinAccuracy
-  isExternal: false
   name: CornerRefinementMinAccuracy
   nameWithType: Aruco.DetectorParameters.CornerRefinementMinAccuracy
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.CornerRefinementMinAccuracy
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MarkerBorderBits*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MarkerBorderBits
-  isExternal: false
   name: MarkerBorderBits
   nameWithType: Aruco.DetectorParameters.MarkerBorderBits
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MarkerBorderBits
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemovePixelPerCell*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemovePixelPerCell
-  isExternal: false
   name: PerspectiveRemovePixelPerCell
   nameWithType: Aruco.DetectorParameters.PerspectiveRemovePixelPerCell
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemovePixelPerCell
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell
-  isExternal: false
   name: PerspectiveRemoveIgnoredMarginPerCell
   nameWithType: Aruco.DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.PerspectiveRemoveIgnoredMarginPerCell
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MaxErroneousBitsInBorderRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MaxErroneousBitsInBorderRate
-  isExternal: false
   name: MaxErroneousBitsInBorderRate
   nameWithType: Aruco.DetectorParameters.MaxErroneousBitsInBorderRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MaxErroneousBitsInBorderRate
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.MinOtsuStdDev*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.MinOtsuStdDev
-  isExternal: false
   name: MinOtsuStdDev
   nameWithType: Aruco.DetectorParameters.MinOtsuStdDev
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.MinOtsuStdDev
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters.ErrorCorrectionRate*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectorParameters.ErrorCorrectionRate
-  isExternal: false
   name: ErrorCorrectionRate
   nameWithType: Aruco.DetectorParameters.ErrorCorrectionRate
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters.ErrorCorrectionRate

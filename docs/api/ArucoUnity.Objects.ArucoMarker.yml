@@ -22,7 +22,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoMarker
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 8
@@ -79,7 +79,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: MarkerId
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 21
@@ -116,7 +116,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Draw
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 34
@@ -151,7 +151,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GenerateName
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 48
@@ -186,7 +186,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetGameObjectScale
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 53
@@ -221,7 +221,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateArucoHashCode
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 58
@@ -254,7 +254,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetArucoHashCode
     path: Assets/ArucoUnity/Scripts/Objects/ArucoMarker.cs
     startLine: 70
@@ -283,7 +283,6 @@ items:
 references:
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
@@ -325,70 +324,60 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
   commentId: F:ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: metersToPixels300ppp
   nameWithType: ArucoObject.metersToPixels300ppp
   fullName: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
 - uid: ArucoUnity.Objects.ArucoObject.PropertyUpdating
   commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdating
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: PropertyUpdating
   nameWithType: ArucoObject.PropertyUpdating
   fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdating
 - uid: ArucoUnity.Objects.ArucoObject.PropertyUpdated
   commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdated
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: PropertyUpdated
   nameWithType: ArucoObject.PropertyUpdated
   fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdated
 - uid: ArucoUnity.Objects.ArucoObject.ArucoHashCode
   commentId: P:ArucoUnity.Objects.ArucoObject.ArucoHashCode
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: ArucoHashCode
   nameWithType: ArucoObject.ArucoHashCode
   fullName: ArucoUnity.Objects.ArucoObject.ArucoHashCode
 - uid: ArucoUnity.Objects.ArucoObject.Dictionary
   commentId: P:ArucoUnity.Objects.ArucoObject.Dictionary
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: Dictionary
   nameWithType: ArucoObject.Dictionary
   fullName: ArucoUnity.Objects.ArucoObject.Dictionary
 - uid: ArucoUnity.Objects.ArucoObject.MarkerSideLength
   commentId: P:ArucoUnity.Objects.ArucoObject.MarkerSideLength
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: MarkerSideLength
   nameWithType: ArucoObject.MarkerSideLength
   fullName: ArucoUnity.Objects.ArucoObject.MarkerSideLength
 - uid: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
   commentId: P:ArucoUnity.Objects.ArucoObject.MarkerBorderBits
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: MarkerBorderBits
   nameWithType: ArucoObject.MarkerBorderBits
   fullName: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
 - uid: ArucoUnity.Objects.ArucoObject.DisplayInEditor
   commentId: P:ArucoUnity.Objects.ArucoObject.DisplayInEditor
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: DisplayInEditor
   nameWithType: ArucoObject.DisplayInEditor
   fullName: ArucoUnity.Objects.ArucoObject.DisplayInEditor
 - uid: ArucoUnity.Objects.ArucoObject.Awake
   commentId: M:ArucoUnity.Objects.ArucoObject.Awake
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: Awake()
   nameWithType: ArucoObject.Awake()
   fullName: ArucoUnity.Objects.ArucoObject.Awake()
@@ -417,7 +406,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.OnValidate
   commentId: M:ArucoUnity.Objects.ArucoObject.OnValidate
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnValidate()
   nameWithType: ArucoObject.OnValidate()
   fullName: ArucoUnity.Objects.ArucoObject.OnValidate()
@@ -446,7 +434,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
   commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnPropertyUpdating()
   nameWithType: ArucoObject.OnPropertyUpdating()
   fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating()
@@ -475,7 +462,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
   commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: OnPropertyUpdated()
   nameWithType: ArucoObject.OnPropertyUpdated()
   fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated()
@@ -504,7 +490,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.UpdateProperties
   commentId: M:ArucoUnity.Objects.ArucoObject.UpdateProperties
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: UpdateProperties()
   nameWithType: ArucoObject.UpdateProperties()
   fullName: ArucoUnity.Objects.ArucoObject.UpdateProperties()
@@ -571,19 +556,18 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Objects.ArucoMarker.MarkerId*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.MarkerId
-  isExternal: false
   name: MarkerId
   nameWithType: ArucoMarker.MarkerId
   fullName: ArucoUnity.Objects.ArucoMarker.MarkerId
@@ -597,7 +581,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.Draw
   commentId: M:ArucoUnity.Objects.ArucoObject.Draw
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: Draw()
   nameWithType: ArucoObject.Draw()
   fullName: ArucoUnity.Objects.ArucoObject.Draw()
@@ -625,27 +608,23 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoMarker.Draw*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.Draw
-  isExternal: false
   name: Draw
   nameWithType: ArucoMarker.Draw
   fullName: ArucoUnity.Objects.ArucoMarker.Draw
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Objects.ArucoObject.GenerateName
   commentId: M:ArucoUnity.Objects.ArucoObject.GenerateName
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: GenerateName()
   nameWithType: ArucoObject.GenerateName()
   fullName: ArucoUnity.Objects.ArucoObject.GenerateName()
@@ -673,7 +652,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoMarker.GenerateName*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.GenerateName
-  isExternal: false
   name: GenerateName
   nameWithType: ArucoMarker.GenerateName
   fullName: ArucoUnity.Objects.ArucoMarker.GenerateName
@@ -687,7 +665,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
   commentId: M:ArucoUnity.Objects.ArucoObject.GetGameObjectScale
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: GetGameObjectScale()
   nameWithType: ArucoObject.GetGameObjectScale()
   fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale()
@@ -715,7 +692,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoMarker.GetGameObjectScale*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.GetGameObjectScale
-  isExternal: false
   name: GetGameObjectScale
   nameWithType: ArucoMarker.GetGameObjectScale
   fullName: ArucoUnity.Objects.ArucoMarker.GetGameObjectScale
@@ -729,7 +705,6 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
   commentId: M:ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
   parent: ArucoUnity.Objects.ArucoObject
-  isExternal: false
   name: UpdateArucoHashCode()
   nameWithType: ArucoObject.UpdateArucoHashCode()
   fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode()
@@ -757,13 +732,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.ArucoMarker.UpdateArucoHashCode*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.UpdateArucoHashCode
-  isExternal: false
   name: UpdateArucoHashCode
   nameWithType: ArucoMarker.UpdateArucoHashCode
   fullName: ArucoUnity.Objects.ArucoMarker.UpdateArucoHashCode
 - uid: ArucoUnity.Objects.ArucoMarker.GetArucoHashCode*
   commentId: Overload:ArucoUnity.Objects.ArucoMarker.GetArucoHashCode
-  isExternal: false
   name: GetArucoHashCode
   nameWithType: ArucoMarker.GetArucoHashCode
   fullName: ArucoUnity.Objects.ArucoMarker.GetArucoHashCode

@@ -22,13 +22,11 @@ references:
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibration
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: ArucoCameraCalibration
   nameWithType: ArucoCameraCalibration
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGeneric`2
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibrationGeneric`2
-  isExternal: false
   name: ArucoCameraCalibrationGeneric<T, U>
   nameWithType: ArucoCameraCalibrationGeneric<T, U>
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGeneric<T, U>
@@ -77,20 +75,17 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
   commentId: T:ArucoUnity.Calibration.ArucoCameraCalibrationGUI
-  isExternal: false
   name: ArucoCameraCalibrationGUI
   nameWithType: ArucoCameraCalibrationGUI
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
 - uid: ArucoUnity.Calibration.CalibrationFlags
   commentId: T:ArucoUnity.Calibration.CalibrationFlags
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: CalibrationFlags
   nameWithType: CalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
   commentId: T:ArucoUnity.Calibration.CalibrationFlagsGeneric`1
-  isExternal: false
   name: CalibrationFlagsGeneric<T>
   nameWithType: CalibrationFlagsGeneric<T>
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>
@@ -127,7 +122,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration

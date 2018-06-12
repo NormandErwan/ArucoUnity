@@ -31,7 +31,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PinholeCameraCalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 9
@@ -81,7 +81,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixPrincipalPoint
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 60
@@ -118,7 +118,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixAspectRatio
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 62
@@ -153,7 +153,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixAspectRatioValue
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 64
@@ -188,7 +188,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ZeroTangentialDistorsion
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 66
@@ -223,7 +223,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RationalModel
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 68
@@ -258,7 +258,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ThinPrismModel
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 70
@@ -293,7 +293,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixS1_S2_S3_S4
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 72
@@ -328,7 +328,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: TiltedModel
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 74
@@ -363,7 +363,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixTauxTauy
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 76
@@ -398,7 +398,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixFocalLength
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 78
@@ -433,7 +433,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixIntrinsic
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 80
@@ -468,7 +468,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SameFocalLength
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 82
@@ -503,7 +503,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixKLength
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 84
@@ -541,7 +541,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 88
@@ -574,7 +574,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationOptions
     path: Assets/ArucoUnity/Scripts/Calibration/Pinhole/PinholeCameraCalibrationFlags.cs
     startLine: 111
@@ -595,7 +595,6 @@ items:
 references:
 - uid: ArucoUnity.Calibration.Pinhole
   commentId: N:ArucoUnity.Calibration.Pinhole
-  isExternal: false
   name: ArucoUnity.Calibration.Pinhole
   nameWithType: ArucoUnity.Calibration.Pinhole
   fullName: ArucoUnity.Calibration.Pinhole
@@ -637,7 +636,6 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags
   commentId: T:ArucoUnity.Calibration.CalibrationFlags
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: CalibrationFlags
   nameWithType: CalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags
@@ -711,21 +709,18 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UseIntrinsicGuess
   nameWithType: CalibrationFlags.UseIntrinsicGuess
   fullName: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKDistorsionCoefficients
   nameWithType: CalibrationFlags.FixKDistorsionCoefficients
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
 - uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.OnValidate
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: OnValidate()
   nameWithType: CalibrationFlags.OnValidate()
   fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate()
@@ -753,25 +748,23 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
   commentId: T:ArucoUnity.Calibration.CalibrationFlagsGeneric`1
-  isExternal: false
   name: CalibrationFlagsGeneric<T>
   nameWithType: CalibrationFlagsGeneric<T>
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>
@@ -808,7 +801,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
   commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
-  isExternal: false
   name: Value
   nameWithType: CalibrationFlagsGeneric<T>.Value
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Value
@@ -816,7 +808,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Value
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
   commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
-  isExternal: false
   name: Flags
   nameWithType: CalibrationFlagsGeneric<T>.Flags
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Flags
@@ -824,7 +815,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Flags
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
   commentId: F:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
-  isExternal: false
   name: flags
   nameWithType: CalibrationFlagsGeneric<T>.flags
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.flags
@@ -832,7 +822,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).flags
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixPrincipalPoint*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixPrincipalPoint
-  isExternal: false
   name: FixPrincipalPoint
   nameWithType: PinholeCameraCalibrationFlags.FixPrincipalPoint
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixPrincipalPoint
@@ -845,13 +834,11 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatio*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatio
-  isExternal: false
   name: FixAspectRatio
   nameWithType: PinholeCameraCalibrationFlags.FixAspectRatio
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatio
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatioValue*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatioValue
-  isExternal: false
   name: FixAspectRatioValue
   nameWithType: PinholeCameraCalibrationFlags.FixAspectRatioValue
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixAspectRatioValue
@@ -864,68 +851,57 @@ references:
   fullName: System.Single
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ZeroTangentialDistorsion*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ZeroTangentialDistorsion
-  isExternal: false
   name: ZeroTangentialDistorsion
   nameWithType: PinholeCameraCalibrationFlags.ZeroTangentialDistorsion
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ZeroTangentialDistorsion
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.RationalModel*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.RationalModel
-  isExternal: false
   name: RationalModel
   nameWithType: PinholeCameraCalibrationFlags.RationalModel
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.RationalModel
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ThinPrismModel*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ThinPrismModel
-  isExternal: false
   name: ThinPrismModel
   nameWithType: PinholeCameraCalibrationFlags.ThinPrismModel
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.ThinPrismModel
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixS1_S2_S3_S4*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixS1_S2_S3_S4
-  isExternal: false
   name: FixS1_S2_S3_S4
   nameWithType: PinholeCameraCalibrationFlags.FixS1_S2_S3_S4
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixS1_S2_S3_S4
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.TiltedModel*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.TiltedModel
-  isExternal: false
   name: TiltedModel
   nameWithType: PinholeCameraCalibrationFlags.TiltedModel
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.TiltedModel
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixTauxTauy*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixTauxTauy
-  isExternal: false
   name: FixTauxTauy
   nameWithType: PinholeCameraCalibrationFlags.FixTauxTauy
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixTauxTauy
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixFocalLength*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixFocalLength
-  isExternal: false
   name: FixFocalLength
   nameWithType: PinholeCameraCalibrationFlags.FixFocalLength
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixFocalLength
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixIntrinsic*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixIntrinsic
-  isExternal: false
   name: FixIntrinsic
   nameWithType: PinholeCameraCalibrationFlags.FixIntrinsic
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixIntrinsic
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.SameFocalLength*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.SameFocalLength
-  isExternal: false
   name: SameFocalLength
   nameWithType: PinholeCameraCalibrationFlags.SameFocalLength
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.SameFocalLength
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKLength
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKLength
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKLength
   nameWithType: CalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKLength
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixKLength*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixKLength
-  isExternal: false
   name: FixKLength
   nameWithType: PinholeCameraCalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.FixKLength
@@ -939,7 +915,6 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UpdateCalibrationFlags()
   nameWithType: CalibrationFlags.UpdateCalibrationFlags()
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags()
@@ -967,14 +942,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationFlags*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationFlags
-  isExternal: false
   name: UpdateCalibrationFlags
   nameWithType: PinholeCameraCalibrationFlags.UpdateCalibrationFlags
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationFlags
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UpdateCalibrationOptions()
   nameWithType: CalibrationFlags.UpdateCalibrationOptions()
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions()
@@ -1002,7 +975,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationOptions*
   commentId: Overload:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationOptions
-  isExternal: false
   name: UpdateCalibrationOptions
   nameWithType: PinholeCameraCalibrationFlags.UpdateCalibrationOptions
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.UpdateCalibrationOptions

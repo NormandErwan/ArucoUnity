@@ -23,10 +23,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Vec3d
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -99,10 +99,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -134,10 +134,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -167,10 +167,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Get
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -202,10 +202,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Set
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -237,10 +237,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ToPosition
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -272,10 +272,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ToRotation
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Vec3d.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -295,7 +295,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -309,33 +308,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.#ctor
-  isExternal: false
   name: Vec3d
   nameWithType: Cv.Vec3d.Vec3d
   fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d
@@ -356,14 +351,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -391,13 +384,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Vec3d.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Vec3d.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Vec3d.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Vec3d.Get*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.Get
-  isExternal: false
   name: Get
   nameWithType: Cv.Vec3d.Get
   fullName: ArucoUnity.Plugin.Cv.Vec3d.Get
@@ -410,13 +401,11 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Plugin.Cv.Vec3d.Set*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.Set
-  isExternal: false
   name: Set
   nameWithType: Cv.Vec3d.Set
   fullName: ArucoUnity.Plugin.Cv.Vec3d.Set
 - uid: ArucoUnity.Plugin.Cv.Vec3d.ToPosition*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.ToPosition
-  isExternal: false
   name: ToPosition
   nameWithType: Cv.Vec3d.ToPosition
   fullName: ArucoUnity.Plugin.Cv.Vec3d.ToPosition
@@ -429,13 +418,12 @@ references:
   fullName: UnityEngine.Vector3
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Plugin.Cv.Vec3d.ToRotation*
   commentId: Overload:ArucoUnity.Plugin.Cv.Vec3d.ToRotation
-  isExternal: false
   name: ToRotation
   nameWithType: Cv.Vec3d.ToRotation
   fullName: ArucoUnity.Plugin.Cv.Vec3d.ToRotation

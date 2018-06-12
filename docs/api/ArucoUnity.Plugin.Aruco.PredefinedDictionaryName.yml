@@ -31,12 +31,12 @@ items:
   type: Enum
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PredefinedDictionaryName
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 8
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 9
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,12 +62,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict4x4_50
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 10
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 11
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -94,12 +94,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict4x4_100
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 11
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 12
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -126,12 +126,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict4x4_250
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 12
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 13
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -158,12 +158,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict4x4_1000
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 13
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 14
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -190,12 +190,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict5x5_50
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 14
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 15
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -222,12 +222,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict5x5_100
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 15
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 16
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -254,12 +254,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict5x5_250
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 16
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 17
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -286,12 +286,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict5x5_1000
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 17
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 18
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -318,12 +318,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict6x6_50
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 18
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 19
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -350,12 +350,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict6x6_100
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 19
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 20
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -382,12 +382,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict6x6_250
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 20
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 21
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -414,12 +414,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict6x6_1000
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 21
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 22
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -446,12 +446,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict7x7_50
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 22
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 23
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -478,12 +478,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict7x7_100
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 23
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 24
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -510,12 +510,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict7x7_250
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 24
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 25
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -542,12 +542,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Dict7x7_1000
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 25
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 26
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -574,12 +574,12 @@ items:
   type: Field
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DictArucoOriginal
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 26
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 27
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -596,14 +596,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   commentId: T:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.PredefinedDictionaryName
   nameWithType: Aruco.PredefinedDictionaryName
   fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName

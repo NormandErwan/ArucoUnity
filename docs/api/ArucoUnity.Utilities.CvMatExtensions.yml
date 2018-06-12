@@ -19,7 +19,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CvMatExtensions
     path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
     startLine: 6
@@ -54,7 +54,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetCameraFocalLengths
     path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
     startLine: 12
@@ -97,7 +97,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetCameraPrincipalPoint
     path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
     startLine: 21
@@ -139,7 +139,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ImageType
     path: Assets/ArucoUnity/Scripts/Utilities/CvMatExtensions.cs
     startLine: 31
@@ -168,7 +168,6 @@ items:
 references:
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
@@ -181,20 +180,18 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths*
   commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
-  isExternal: false
   name: GetCameraFocalLengths
   nameWithType: CvMatExtensions.GetCameraFocalLengths
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
@@ -207,25 +204,22 @@ references:
   fullName: UnityEngine.Vector2
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint*
   commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint
-  isExternal: false
   name: GetCameraPrincipalPoint
   nameWithType: CvMatExtensions.GetCameraPrincipalPoint
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint
 - uid: ArucoUnity.Utilities.CvMatExtensions.ImageType*
   commentId: Overload:ArucoUnity.Utilities.CvMatExtensions.ImageType
-  isExternal: false
   name: ImageType
   nameWithType: CvMatExtensions.ImageType
   fullName: ArucoUnity.Utilities.CvMatExtensions.ImageType
@@ -239,7 +233,6 @@ references:
 - uid: ArucoUnity.Plugin.Cv.Type
   commentId: T:ArucoUnity.Plugin.Cv.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Type
   nameWithType: Cv.Type
   fullName: ArucoUnity.Plugin.Cv.Type

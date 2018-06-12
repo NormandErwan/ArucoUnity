@@ -19,10 +19,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Scalar
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -58,10 +58,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -95,10 +95,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: op_Implicit
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -135,10 +135,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Scalar.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -156,7 +156,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -170,33 +169,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Scalar.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Scalar.#ctor
-  isExternal: false
   name: Scalar
   nameWithType: Cv.Scalar.Scalar
   fullName: ArucoUnity.Plugin.Cv.Scalar.Scalar
@@ -209,7 +204,6 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Plugin.Cv.Scalar.op_Implicit*
   commentId: Overload:ArucoUnity.Plugin.Cv.Scalar.op_Implicit
-  isExternal: false
   name: Implicit
   nameWithType: Cv.Scalar.Implicit
   fullName: ArucoUnity.Plugin.Cv.Scalar.Implicit
@@ -226,20 +220,18 @@ references:
 - uid: ArucoUnity.Plugin.Cv.Scalar
   commentId: T:ArucoUnity.Plugin.Cv.Scalar
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Scalar
   nameWithType: Cv.Scalar
   fullName: ArucoUnity.Plugin.Cv.Scalar
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -267,7 +259,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Scalar.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Scalar.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Scalar.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Scalar.DeleteCppPtr

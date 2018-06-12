@@ -17,7 +17,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IHasDetectorParameter.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IHasDetectorParameter
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IHasDetectorParameter.cs
     startLine: 7
@@ -50,7 +50,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IHasDetectorParameter.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectorParameters
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IHasDetectorParameter.cs
     startLine: 12
@@ -73,25 +73,21 @@ references:
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters
   commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.DetectorParameters
   nameWithType: Aruco.DetectorParameters
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters*
   commentId: Overload:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
-  isExternal: false
   name: DetectorParameters
   nameWithType: IHasDetectorParameter.DetectorParameters
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters

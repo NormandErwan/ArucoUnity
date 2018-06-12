@@ -19,19 +19,16 @@ items:
 references:
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
   commentId: T:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
-  isExternal: false
   name: OmnidirCameraCalibration
   nameWithType: OmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
   commentId: T:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
-  isExternal: false
   name: OmnidirCameraCalibrationFlags
   nameWithType: OmnidirCameraCalibrationFlags
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
 - uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
   commentId: T:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
-  isExternal: false
   name: StereoOmnidirCameraCalibration
   nameWithType: StereoOmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration

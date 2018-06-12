@@ -23,10 +23,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: VectorVectorInt
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -92,10 +92,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -127,10 +127,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -160,10 +160,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: At
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -195,10 +195,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Data
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -227,10 +227,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: PushBack
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -260,10 +260,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Size
     path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorVectorInt.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -280,7 +280,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -294,33 +293,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor
-  isExternal: false
   name: VectorVectorInt
   nameWithType: Std.VectorVectorInt.VectorVectorInt
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt
@@ -334,14 +329,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -369,13 +362,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Std.VectorVectorInt.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.At*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.At
-  isExternal: false
   name: At
   nameWithType: Std.VectorVectorInt.At
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.At
@@ -389,17 +380,16 @@ references:
 - uid: ArucoUnity.Plugin.Std.VectorInt
   commentId: T:ArucoUnity.Plugin.Std.VectorInt
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorInt
   nameWithType: Std.VectorInt
   fullName: ArucoUnity.Plugin.Std.VectorInt
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.Data*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.Data
-  isExternal: false
   name: Data
   nameWithType: Std.VectorVectorInt.Data
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.Data
 - uid: ArucoUnity.Plugin.Std.VectorInt[]
+  isExternal: true
   name: Std.VectorInt[]
   nameWithType: Std.VectorInt[]
   fullName: ArucoUnity.Plugin.Std.VectorInt[]
@@ -424,13 +414,11 @@ references:
     fullName: ()
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.PushBack*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.PushBack
-  isExternal: false
   name: PushBack
   nameWithType: Std.VectorVectorInt.PushBack
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.PushBack
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.Size*
   commentId: Overload:ArucoUnity.Plugin.Std.VectorVectorInt.Size
-  isExternal: false
   name: Size
   nameWithType: Std.VectorVectorInt.Size
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.Size

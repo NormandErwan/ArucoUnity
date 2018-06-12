@@ -23,10 +23,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Size
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -92,10 +92,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -127,10 +127,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -162,10 +162,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -195,10 +195,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Height
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -230,10 +230,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Width
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 62
+    startLine: 63
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -265,10 +265,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Area
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Size.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -285,7 +285,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -299,33 +298,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Size.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Size.#ctor
-  isExternal: false
   name: Size
   nameWithType: Cv.Size.Size
   fullName: ArucoUnity.Plugin.Cv.Size.Size
@@ -346,14 +341,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -381,25 +374,21 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Size.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Size.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Size.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Size.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Size.Height*
   commentId: Overload:ArucoUnity.Plugin.Cv.Size.Height
-  isExternal: false
   name: Height
   nameWithType: Cv.Size.Height
   fullName: ArucoUnity.Plugin.Cv.Size.Height
 - uid: ArucoUnity.Plugin.Cv.Size.Width*
   commentId: Overload:ArucoUnity.Plugin.Cv.Size.Width
-  isExternal: false
   name: Width
   nameWithType: Cv.Size.Width
   fullName: ArucoUnity.Plugin.Cv.Size.Width
 - uid: ArucoUnity.Plugin.Cv.Size.Area*
   commentId: Overload:ArucoUnity.Plugin.Cv.Size.Area
-  isExternal: false
   name: Area
   nameWithType: Cv.Size.Area
   fullName: ArucoUnity.Plugin.Cv.Size.Area

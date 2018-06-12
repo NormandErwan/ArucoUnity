@@ -24,7 +24,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IArucoObjectsController
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 9
@@ -57,7 +57,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectAdded
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 16
@@ -86,7 +86,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectRemoved
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 21
@@ -115,7 +115,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DictionaryAdded
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 26
@@ -144,7 +144,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DictionaryRemoved
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 31
@@ -173,7 +173,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjects
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 38
@@ -208,7 +208,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AddArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 46
@@ -240,7 +240,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RemoveArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 52
@@ -272,7 +272,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetArucoObjects
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/IArucoObjectsController.cs
     startLine: 61
@@ -304,26 +304,22 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
   commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: ArucoObjects
   nameWithType: IArucoObjectsController.ArucoObjects
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
@@ -372,7 +368,6 @@ references:
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController
   commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsController
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IArucoObjectsController
   nameWithType: IArucoObjectsController
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController
@@ -417,7 +412,7 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
@@ -465,7 +460,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects*
   commentId: Overload:ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
-  isExternal: false
   name: ArucoObjects
   nameWithType: IArucoObjectsController.ArucoObjects
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
@@ -616,32 +610,28 @@ references:
     fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
-  isExternal: false
+  isExternal: true
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject*
   commentId: Overload:ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject
-  isExternal: false
   name: AddArucoObject
   nameWithType: IArucoObjectsController.AddArucoObject
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject*
   commentId: Overload:ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject
-  isExternal: false
   name: RemoveArucoObject
   nameWithType: IArucoObjectsController.RemoveArucoObject
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects*
   commentId: Overload:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects
-  isExternal: false
   name: GetArucoObjects
   nameWithType: IArucoObjectsController.GetArucoObjects
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects
@@ -687,7 +677,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin

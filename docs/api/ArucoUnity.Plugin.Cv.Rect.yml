@@ -24,10 +24,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Rect
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -63,10 +63,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -93,10 +93,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -132,10 +132,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -167,10 +167,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DeleteCppPtr
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -200,10 +200,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: X
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -235,10 +235,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Y
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -270,10 +270,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Width
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 77
+    startLine: 78
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -305,10 +305,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Height
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Rect.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -328,7 +328,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -342,33 +341,29 @@ references:
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr
   commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.HandleCppPtr
   nameWithType: Utility.HandleCppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteResponsibility
   nameWithType: Utility.HandleCppPtr.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: CppPtr
   nameWithType: Utility.HandleCppPtr.CppPtr
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Cv.Rect.#ctor*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.#ctor
-  isExternal: false
   name: Rect
   nameWithType: Cv.Rect.Rect
   fullName: ArucoUnity.Plugin.Cv.Rect.Rect
@@ -389,14 +384,12 @@ references:
 - uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
   commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Utility.DeleteResponsibility
   nameWithType: Utility.DeleteResponsibility
   fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
 - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
   parent: ArucoUnity.Plugin.Utility.HandleCppPtr
-  isExternal: false
   name: DeleteCppPtr()
   nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
   fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
@@ -424,31 +417,26 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
-  isExternal: false
   name: DeleteCppPtr
   nameWithType: Cv.Rect.DeleteCppPtr
   fullName: ArucoUnity.Plugin.Cv.Rect.DeleteCppPtr
 - uid: ArucoUnity.Plugin.Cv.Rect.X*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.X
-  isExternal: false
   name: X
   nameWithType: Cv.Rect.X
   fullName: ArucoUnity.Plugin.Cv.Rect.X
 - uid: ArucoUnity.Plugin.Cv.Rect.Y*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Y
-  isExternal: false
   name: Y
   nameWithType: Cv.Rect.Y
   fullName: ArucoUnity.Plugin.Cv.Rect.Y
 - uid: ArucoUnity.Plugin.Cv.Rect.Width*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Width
-  isExternal: false
   name: Width
   nameWithType: Cv.Rect.Width
   fullName: ArucoUnity.Plugin.Cv.Rect.Width
 - uid: ArucoUnity.Plugin.Cv.Rect.Height*
   commentId: Overload:ArucoUnity.Plugin.Cv.Rect.Height
-  isExternal: false
   name: Height
   nameWithType: Cv.Rect.Height
   fullName: ArucoUnity.Plugin.Cv.Rect.Height

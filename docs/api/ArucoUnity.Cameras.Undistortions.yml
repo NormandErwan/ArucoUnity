@@ -27,13 +27,11 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoCameraUndistortion
   nameWithType: ArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric`1
-  isExternal: false
   name: ArucoCameraUndistortionGeneric<T>
   nameWithType: ArucoCameraUndistortionGeneric<T>
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric<T>
@@ -71,19 +69,16 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: IArucoCameraUndistortion
   nameWithType: IArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
-  isExternal: false
   name: OmnidirCameraUndistortion
   nameWithType: OmnidirCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
   commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1
-  isExternal: false
   name: OmnidirCameraUndistortionGeneric<T>
   nameWithType: OmnidirCameraUndistortionGeneric<T>
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric<T>
@@ -121,7 +116,6 @@ references:
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
   commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: OmnidirCameraUndistortionGeneric.RectificationTypes<>
   nameWithType: OmnidirCameraUndistortionGeneric.RectificationTypes<>
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes<>
@@ -152,19 +146,16 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
-  isExternal: false
   name: StereoOmnidirCameraUndistortion
   nameWithType: StereoOmnidirCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
-  isExternal: false
   name: PinholeCameraUndistortion
   nameWithType: PinholeCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
   commentId: T:ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric`1
-  isExternal: false
   name: PinholeCameraUndistortionGeneric<T>
   nameWithType: PinholeCameraUndistortionGeneric<T>
   fullName: ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortionGeneric<T>
@@ -201,13 +192,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
   commentId: T:ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
-  isExternal: false
   name: StereoPinholeCameraUndistortion
   nameWithType: StereoPinholeCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion
 - uid: ArucoUnity.Cameras.Undistortions
   commentId: N:ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoUnity.Cameras.Undistortions
   nameWithType: ArucoUnity.Cameras.Undistortions
   fullName: ArucoUnity.Cameras.Undistortions

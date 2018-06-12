@@ -15,7 +15,7 @@ items:
   - ArucoUnity.Cameras.WebcamController.starting
   - ArucoUnity.Cameras.WebcamController.StartingAsync
   - ArucoUnity.Cameras.WebcamController.StartWebcams
-  - ArucoUnity.Cameras.WebcamController.Stopping
+  - ArucoUnity.Cameras.WebcamController.StopWebcams
   - ArucoUnity.Cameras.WebcamController.Textures
   - ArucoUnity.Cameras.WebcamController.Textures2D
   - ArucoUnity.Cameras.WebcamController.Textures2DFormat
@@ -30,7 +30,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WebcamController
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 10
@@ -71,7 +71,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Started
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 17
@@ -104,7 +104,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Ids
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 24
@@ -141,7 +141,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Devices
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 29
@@ -178,7 +178,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Textures
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 34
@@ -215,7 +215,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Textures2D
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 39
@@ -252,7 +252,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Textures2DFormat
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 54
@@ -289,7 +289,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsConfigured
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 59
@@ -326,7 +326,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsStarted
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 64
@@ -363,7 +363,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: starting
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 68
@@ -394,7 +394,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 77
@@ -426,7 +426,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configure
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 92
@@ -458,7 +458,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StartWebcams
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 112
@@ -475,23 +475,23 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: ArucoUnity.Cameras.WebcamController.Stopping
-  commentId: M:ArucoUnity.Cameras.WebcamController.Stopping
-  id: Stopping
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StopWebcams
+  id: StopWebcams
   parent: ArucoUnity.Cameras.WebcamController
   langs:
   - csharp
   - vb
-  name: Stopping()
-  nameWithType: WebcamController.Stopping()
-  fullName: ArucoUnity.Cameras.WebcamController.Stopping()
+  name: StopWebcams()
+  nameWithType: WebcamController.StopWebcams()
+  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams()
   type: Method
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: Stopping
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: StopWebcams
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 124
   assemblies:
@@ -500,9 +500,9 @@ items:
   summary: "\nStops the webcams.\n"
   example: []
   syntax:
-    content: public void Stopping()
-    content.vb: Public Sub Stopping
-  overload: ArucoUnity.Cameras.WebcamController.Stopping*
+    content: public void StopWebcams()
+    content.vb: Public Sub StopWebcams
+  overload: ArucoUnity.Cameras.WebcamController.StopWebcams*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -522,7 +522,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StartingAsync
     path: Assets/ArucoUnity/Scripts/Utilities/WebcamController.cs
     startLine: 149
@@ -544,7 +544,6 @@ items:
 references:
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
@@ -585,13 +584,13 @@ references:
   fullName: UnityEngine.MonoBehaviour
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
@@ -678,7 +677,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.WebcamController.Ids*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Ids
-  isExternal: false
   name: Ids
   nameWithType: WebcamController.Ids
   fullName: ArucoUnity.Cameras.WebcamController.Ids
@@ -767,13 +765,12 @@ references:
     fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
-  isExternal: false
+  isExternal: true
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
 - uid: ArucoUnity.Cameras.WebcamController.Devices*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Devices
-  isExternal: false
   name: Devices
   nameWithType: WebcamController.Devices
   fullName: ArucoUnity.Cameras.WebcamController.Devices
@@ -823,7 +820,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.WebcamController.Textures*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures
-  isExternal: false
   name: Textures
   nameWithType: WebcamController.Textures
   fullName: ArucoUnity.Cameras.WebcamController.Textures
@@ -873,9 +869,9 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.WebcamController.Textures
   commentId: P:ArucoUnity.Cameras.WebcamController.Textures
+  isExternal: true
 - uid: ArucoUnity.Cameras.WebcamController.Textures2D*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2D
-  isExternal: false
   name: Textures2D
   nameWithType: WebcamController.Textures2D
   fullName: ArucoUnity.Cameras.WebcamController.Textures2D
@@ -925,11 +921,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.WebcamController.Textures2D
   commentId: P:ArucoUnity.Cameras.WebcamController.Textures2D
+  isExternal: true
 - uid: UnityEngine.TextureFormat.RGB24
   commentId: F:UnityEngine.TextureFormat.RGB24
+  isExternal: true
 - uid: ArucoUnity.Cameras.WebcamController.Textures2DFormat*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2DFormat
-  isExternal: false
   name: Textures2DFormat
   nameWithType: WebcamController.Textures2DFormat
   fullName: ArucoUnity.Cameras.WebcamController.Textures2DFormat
@@ -942,7 +939,6 @@ references:
   fullName: UnityEngine.TextureFormat
 - uid: ArucoUnity.Cameras.WebcamController.IsConfigured*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.IsConfigured
-  isExternal: false
   name: IsConfigured
   nameWithType: WebcamController.IsConfigured
   fullName: ArucoUnity.Cameras.WebcamController.IsConfigured
@@ -955,41 +951,37 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Cameras.WebcamController.IsStarted*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.IsStarted
-  isExternal: false
   name: IsStarted
   nameWithType: WebcamController.IsStarted
   fullName: ArucoUnity.Cameras.WebcamController.IsStarted
 - uid: ArucoUnity.Cameras.WebcamController.Awake*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Awake
-  isExternal: false
   name: Awake
   nameWithType: WebcamController.Awake
   fullName: ArucoUnity.Cameras.WebcamController.Awake
 - uid: ArucoUnity.Cameras.WebcamController.Devices
   commentId: P:ArucoUnity.Cameras.WebcamController.Devices
+  isExternal: true
 - uid: ArucoUnity.Cameras.WebcamController.Ids
   commentId: P:ArucoUnity.Cameras.WebcamController.Ids
+  isExternal: true
 - uid: ArucoUnity.Cameras.WebcamController.Configure*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.Configure
-  isExternal: false
   name: Configure
   nameWithType: WebcamController.Configure
   fullName: ArucoUnity.Cameras.WebcamController.Configure
 - uid: ArucoUnity.Cameras.WebcamController.StartWebcams*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.StartWebcams
-  isExternal: false
   name: StartWebcams
   nameWithType: WebcamController.StartWebcams
   fullName: ArucoUnity.Cameras.WebcamController.StartWebcams
-- uid: ArucoUnity.Cameras.WebcamController.Stopping*
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Stopping
-  isExternal: false
-  name: Stopping
-  nameWithType: WebcamController.Stopping
-  fullName: ArucoUnity.Cameras.WebcamController.Stopping
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams*
+  commentId: Overload:ArucoUnity.Cameras.WebcamController.StopWebcams
+  name: StopWebcams
+  nameWithType: WebcamController.StopWebcams
+  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams
 - uid: ArucoUnity.Cameras.WebcamController.StartingAsync*
   commentId: Overload:ArucoUnity.Cameras.WebcamController.StartingAsync
-  isExternal: false
   name: StartingAsync
   nameWithType: WebcamController.StartingAsync
   fullName: ArucoUnity.Cameras.WebcamController.StartingAsync
@@ -1002,7 +994,7 @@ references:
   fullName: System.Collections.IEnumerator
 - uid: System.Collections
   commentId: N:System.Collections
-  isExternal: false
+  isExternal: true
   name: System.Collections
   nameWithType: System.Collections
   fullName: System.Collections

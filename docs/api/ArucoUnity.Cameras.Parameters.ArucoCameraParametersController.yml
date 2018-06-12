@@ -26,7 +26,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoCameraParametersController
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 9
@@ -70,7 +70,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 30
@@ -109,7 +109,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AutoLoadFile
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 37
@@ -146,7 +146,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParametersFolderPath
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 42
@@ -183,7 +183,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParametersFilename
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 47
@@ -220,7 +220,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraParametersFilePath
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 52
@@ -259,7 +259,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 64
@@ -293,13 +293,15 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: SetCameraParametersFilePath
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 86
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nSets <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath\" data-throw-if-not-resolved=\"false\"></xref> and tries to load <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters\" data-throw-if-not-resolved=\"false\"></xref> from this file if\n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename\" data-throw-if-not-resolved=\"false\"></xref> are set, otherwise set\n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters\" data-throw-if-not-resolved=\"false\"></xref> to null.\n"
+  example: []
   syntax:
     content: protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)
     parameters:
@@ -330,7 +332,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Initialize
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 103
@@ -368,7 +370,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Load
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 111
@@ -402,7 +404,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Save
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParametersController.cs
     startLine: 120
@@ -424,9 +426,9 @@ items:
 references:
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
@@ -468,45 +470,40 @@ references:
 - uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: IHasArucoCameraParameters
   nameWithType: IHasArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
-  isExternal: false
   name: CameraParameters
   nameWithType: ArucoCameraParametersController.CameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters
 - uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
   commentId: P:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
   parent: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
-  isExternal: false
   name: CameraParameters
   nameWithType: IHasArucoCameraParameters.CameraParameters
   fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
   parent: ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoCameraParameters
   nameWithType: ArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.AutoLoadFile*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.AutoLoadFile
-  isExternal: false
   name: AutoLoadFile
   nameWithType: ArucoCameraParametersController.AutoLoadFile
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.AutoLoadFile
@@ -519,9 +516,9 @@ references:
   fullName: System.Boolean
 - uid: UnityEngine.Application.persistentDataPath
   commentId: P:UnityEngine.Application.persistentDataPath
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  isExternal: false
   name: CameraParametersFolderPath
   nameWithType: ArucoCameraParametersController.CameraParametersFolderPath
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
@@ -534,41 +531,44 @@ references:
   fullName: System.String
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
-  isExternal: false
   name: CameraParametersFilename
   nameWithType: ArucoCameraParametersController.CameraParametersFilename
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  isExternal: false
   name: CameraParametersFilePath
   nameWithType: ArucoCameraParametersController.CameraParametersFilePath
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String,System.String)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String,System.String)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Load
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Load
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
   commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Awake*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Awake
-  isExternal: false
   name: Awake
   nameWithType: ArucoCameraParametersController.Awake
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Awake
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath
-  isExternal: false
   name: SetCameraParametersFilePath
   nameWithType: ArucoCameraParametersController.SetCameraParametersFilePath
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor(System.Int32)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor(System.Int32)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Initialize*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Initialize
-  isExternal: false
   name: Initialize
   nameWithType: ArucoCameraParametersController.Initialize
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Initialize
@@ -581,17 +581,17 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Load*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Load
-  isExternal: false
   name: Load
   nameWithType: ArucoCameraParametersController.Load
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Load
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save*
   commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save
-  isExternal: false
   name: Save
   nameWithType: ArucoCameraParametersController.Save
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save

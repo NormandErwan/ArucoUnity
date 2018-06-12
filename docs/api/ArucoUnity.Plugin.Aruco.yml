@@ -56,10 +56,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Aruco/GridBoard.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Aruco
     path: Assets/ArucoUnity/Scripts/Plugin/Aruco/GridBoard.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -88,12 +88,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraAruco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 111
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 112
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -148,12 +148,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraAruco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 127
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 128
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -206,12 +206,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraAruco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 134
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 135
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -260,12 +260,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraAruco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 141
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 142
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -309,12 +309,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 148
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 149
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -367,12 +367,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 164
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 165
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -423,12 +423,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 171
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 172
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -475,12 +475,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrateCameraCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 178
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 179
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -522,12 +522,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectCharucoDiamond
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 185
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 186
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -574,12 +574,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectCharucoDiamond
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 200
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 201
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -624,12 +624,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectCharucoDiamond
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 207
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 208
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -672,12 +672,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 214
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 215
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -720,12 +720,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 228
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 229
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -766,12 +766,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DetectMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 235
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 236
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -810,12 +810,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawAxis
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 241
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 242
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -855,12 +855,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawCharucoDiamond
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 247
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 248
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -905,12 +905,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 259
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 260
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -946,12 +946,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 266
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 267
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -985,12 +985,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 272
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 273
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1022,12 +1022,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedDiamonds
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 278
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 279
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1063,12 +1063,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedDiamonds
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 286
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 287
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1102,12 +1102,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedDiamonds
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 292
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 293
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1139,12 +1139,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 298
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 299
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1180,12 +1180,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 305
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 306
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1219,12 +1219,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DrawDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 311
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 312
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1256,12 +1256,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: EstimatePoseBoard
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 317
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 318
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1308,12 +1308,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: EstimatePoseCharucoBoard
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 332
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 333
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1360,12 +1360,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: EstimatePoseSingleMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 347
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 348
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1408,12 +1408,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GenerateCustomDictionary
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 361
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 362
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1449,12 +1449,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GenerateCustomDictionary
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 369
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 370
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1488,12 +1488,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetBoardObjectAndImagePoints
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 375
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 376
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1534,12 +1534,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetPredefinedDictionary
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 389
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 390
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1571,12 +1571,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InterpolateCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 396
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 397
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1625,12 +1625,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InterpolateCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 411
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 412
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1677,12 +1677,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InterpolateCornersCharuco
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 418
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 419
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1727,12 +1727,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 425
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 426
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1784,12 +1784,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 435
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 436
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1839,12 +1839,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 444
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 445
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1892,12 +1892,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 453
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 454
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1937,12 +1937,12 @@ items:
   type: Method
   source:
     remote:
-      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
+      path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RefineDetectedMarkers
-    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/ArucoUnity.cs
-    startLine: 460
+    path: Assets/ArucoUnity/Scripts/Plugin/Aruco/Aruco.cs
+    startLine: 461
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -1970,7 +1970,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -1983,69 +1982,60 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: ArucoUnity.Plugin.Aruco.CalibrateCameraAruco*
   commentId: Overload:ArucoUnity.Plugin.Aruco.CalibrateCameraAruco
-  isExternal: false
   name: CalibrateCameraAruco
   nameWithType: Aruco.CalibrateCameraAruco
   fullName: ArucoUnity.Plugin.Aruco.CalibrateCameraAruco
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint2f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorPoint2f
   nameWithType: Std.VectorVectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f
 - uid: ArucoUnity.Plugin.Std.VectorInt
   commentId: T:ArucoUnity.Plugin.Std.VectorInt
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorInt
   nameWithType: Std.VectorInt
   fullName: ArucoUnity.Plugin.Std.VectorInt
 - uid: ArucoUnity.Plugin.Aruco.Board
   commentId: T:ArucoUnity.Plugin.Aruco.Board
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Board
   nameWithType: Aruco.Board
   fullName: ArucoUnity.Plugin.Aruco.Board
 - uid: ArucoUnity.Plugin.Cv.Size
   commentId: T:ArucoUnity.Plugin.Cv.Size
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Size
   nameWithType: Cv.Size
   fullName: ArucoUnity.Plugin.Cv.Size
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin.Std.VectorMat
   commentId: T:ArucoUnity.Plugin.Std.VectorMat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorMat
   nameWithType: Std.VectorMat
   fullName: ArucoUnity.Plugin.Std.VectorMat
 - uid: ArucoUnity.Plugin.Cv.Calib
   commentId: T:ArucoUnity.Plugin.Cv.Calib
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Calib
   nameWithType: Cv.Calib
   fullName: ArucoUnity.Plugin.Cv.Calib
 - uid: ArucoUnity.Plugin.Cv.TermCriteria
   commentId: T:ArucoUnity.Plugin.Cv.TermCriteria
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.TermCriteria
   nameWithType: Cv.TermCriteria
   fullName: ArucoUnity.Plugin.Cv.TermCriteria
@@ -2058,27 +2048,23 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco*
   commentId: Overload:ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco
-  isExternal: false
   name: CalibrateCameraCharuco
   nameWithType: Aruco.CalibrateCameraCharuco
   fullName: ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt
   commentId: T:ArucoUnity.Plugin.Std.VectorVectorInt
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVectorInt
   nameWithType: Std.VectorVectorInt
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt
 - uid: ArucoUnity.Plugin.Aruco.CharucoBoard
   commentId: T:ArucoUnity.Plugin.Aruco.CharucoBoard
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.CharucoBoard
   nameWithType: Aruco.CharucoBoard
   fullName: ArucoUnity.Plugin.Aruco.CharucoBoard
 - uid: ArucoUnity.Plugin.Aruco.DetectCharucoDiamond*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectCharucoDiamond
-  isExternal: false
   name: DetectCharucoDiamond
   nameWithType: Aruco.DetectCharucoDiamond
   fullName: ArucoUnity.Plugin.Aruco.DetectCharucoDiamond
@@ -2092,53 +2078,45 @@ references:
 - uid: ArucoUnity.Plugin.Std.VectorVec4i
   commentId: T:ArucoUnity.Plugin.Std.VectorVec4i
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVec4i
   nameWithType: Std.VectorVec4i
   fullName: ArucoUnity.Plugin.Std.VectorVec4i
 - uid: ArucoUnity.Plugin.Aruco.DetectMarkers*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DetectMarkers
-  isExternal: false
   name: DetectMarkers
   nameWithType: Aruco.DetectMarkers
   fullName: ArucoUnity.Plugin.Aruco.DetectMarkers
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Plugin.Aruco.DetectorParameters
   commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.DetectorParameters
   nameWithType: Aruco.DetectorParameters
   fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
 - uid: ArucoUnity.Plugin.Aruco.DrawAxis*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DrawAxis
-  isExternal: false
   name: DrawAxis
   nameWithType: Aruco.DrawAxis
   fullName: ArucoUnity.Plugin.Aruco.DrawAxis
 - uid: ArucoUnity.Plugin.Cv.Vec3d
   commentId: T:ArucoUnity.Plugin.Cv.Vec3d
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Vec3d
   nameWithType: Cv.Vec3d
   fullName: ArucoUnity.Plugin.Cv.Vec3d
 - uid: ArucoUnity.Plugin.Aruco.DrawCharucoDiamond*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DrawCharucoDiamond
-  isExternal: false
   name: DrawCharucoDiamond
   nameWithType: Aruco.DrawCharucoDiamond
   fullName: ArucoUnity.Plugin.Aruco.DrawCharucoDiamond
 - uid: ArucoUnity.Plugin.Cv.Vec4i
   commentId: T:ArucoUnity.Plugin.Cv.Vec4i
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Vec4i
   nameWithType: Cv.Vec4i
   fullName: ArucoUnity.Plugin.Cv.Vec4i
@@ -2151,45 +2129,38 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco
-  isExternal: false
   name: DrawDetectedCornersCharuco
   nameWithType: Aruco.DrawDetectedCornersCharuco
   fullName: ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco
 - uid: ArucoUnity.Plugin.Std.VectorPoint2f
   commentId: T:ArucoUnity.Plugin.Std.VectorPoint2f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorPoint2f
   nameWithType: Std.VectorPoint2f
   fullName: ArucoUnity.Plugin.Std.VectorPoint2f
 - uid: ArucoUnity.Plugin.Cv.Scalar
   commentId: T:ArucoUnity.Plugin.Cv.Scalar
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Scalar
   nameWithType: Cv.Scalar
   fullName: ArucoUnity.Plugin.Cv.Scalar
 - uid: ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds
-  isExternal: false
   name: DrawDetectedDiamonds
   nameWithType: Aruco.DrawDetectedDiamonds
   fullName: ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds
 - uid: ArucoUnity.Plugin.Aruco.DrawDetectedMarkers*
   commentId: Overload:ArucoUnity.Plugin.Aruco.DrawDetectedMarkers
-  isExternal: false
   name: DrawDetectedMarkers
   nameWithType: Aruco.DrawDetectedMarkers
   fullName: ArucoUnity.Plugin.Aruco.DrawDetectedMarkers
 - uid: ArucoUnity.Plugin.Aruco.EstimatePoseBoard*
   commentId: Overload:ArucoUnity.Plugin.Aruco.EstimatePoseBoard
-  isExternal: false
   name: EstimatePoseBoard
   nameWithType: Aruco.EstimatePoseBoard
   fullName: ArucoUnity.Plugin.Aruco.EstimatePoseBoard
 - uid: ArucoUnity.Plugin.Aruco.EstimatePoseCharucoBoard*
   commentId: Overload:ArucoUnity.Plugin.Aruco.EstimatePoseCharucoBoard
-  isExternal: false
   name: EstimatePoseCharucoBoard
   nameWithType: Aruco.EstimatePoseCharucoBoard
   fullName: ArucoUnity.Plugin.Aruco.EstimatePoseCharucoBoard
@@ -2202,58 +2173,49 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Plugin.Aruco.EstimatePoseSingleMarkers*
   commentId: Overload:ArucoUnity.Plugin.Aruco.EstimatePoseSingleMarkers
-  isExternal: false
   name: EstimatePoseSingleMarkers
   nameWithType: Aruco.EstimatePoseSingleMarkers
   fullName: ArucoUnity.Plugin.Aruco.EstimatePoseSingleMarkers
 - uid: ArucoUnity.Plugin.Std.VectorVec3d
   commentId: T:ArucoUnity.Plugin.Std.VectorVec3d
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorVec3d
   nameWithType: Std.VectorVec3d
   fullName: ArucoUnity.Plugin.Std.VectorVec3d
 - uid: ArucoUnity.Plugin.Aruco.GenerateCustomDictionary*
   commentId: Overload:ArucoUnity.Plugin.Aruco.GenerateCustomDictionary
-  isExternal: false
   name: GenerateCustomDictionary
   nameWithType: Aruco.GenerateCustomDictionary
   fullName: ArucoUnity.Plugin.Aruco.GenerateCustomDictionary
 - uid: ArucoUnity.Plugin.Aruco.GetBoardObjectAndImagePoints*
   commentId: Overload:ArucoUnity.Plugin.Aruco.GetBoardObjectAndImagePoints
-  isExternal: false
   name: GetBoardObjectAndImagePoints
   nameWithType: Aruco.GetBoardObjectAndImagePoints
   fullName: ArucoUnity.Plugin.Aruco.GetBoardObjectAndImagePoints
 - uid: ArucoUnity.Plugin.Std.VectorPoint3f
   commentId: T:ArucoUnity.Plugin.Std.VectorPoint3f
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Std.VectorPoint3f
   nameWithType: Std.VectorPoint3f
   fullName: ArucoUnity.Plugin.Std.VectorPoint3f
 - uid: ArucoUnity.Plugin.Aruco.GetPredefinedDictionary*
   commentId: Overload:ArucoUnity.Plugin.Aruco.GetPredefinedDictionary
-  isExternal: false
   name: GetPredefinedDictionary
   nameWithType: Aruco.GetPredefinedDictionary
   fullName: ArucoUnity.Plugin.Aruco.GetPredefinedDictionary
 - uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   commentId: T:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.PredefinedDictionaryName
   nameWithType: Aruco.PredefinedDictionaryName
   fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
 - uid: ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco*
   commentId: Overload:ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco
-  isExternal: false
   name: InterpolateCornersCharuco
   nameWithType: Aruco.InterpolateCornersCharuco
   fullName: ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco
 - uid: ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*
   commentId: Overload:ArucoUnity.Plugin.Aruco.RefineDetectedMarkers
-  isExternal: false
   name: RefineDetectedMarkers
   nameWithType: Aruco.RefineDetectedMarkers
   fullName: ArucoUnity.Plugin.Aruco.RefineDetectedMarkers

@@ -26,7 +26,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StereoArucoCameraParameters
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 9
@@ -71,7 +71,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraNumber
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 14
@@ -104,7 +104,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: .ctor
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 22
@@ -137,7 +137,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CalibrationFlagsValue
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 31
@@ -174,7 +174,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RotationVector
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 37
@@ -212,7 +212,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RotationVectorValues
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 45
@@ -250,7 +250,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: TranslationVector
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 52
@@ -291,7 +291,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: TranslationVectorValues
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 60
@@ -329,7 +329,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ReprojectionError
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 65
@@ -366,7 +366,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateSerializedProperties
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 72
@@ -398,7 +398,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateNonSerializedProperties
     path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoStereoCameraParameters.cs
     startLine: 81
@@ -418,7 +418,6 @@ items:
 references:
 - uid: ArucoUnity.Cameras.Parameters
   commentId: N:ArucoUnity.Cameras.Parameters
-  isExternal: false
   name: ArucoUnity.Cameras.Parameters
   nameWithType: ArucoUnity.Cameras.Parameters
   fullName: ArucoUnity.Cameras.Parameters
@@ -431,7 +430,7 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
@@ -444,50 +443,49 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.#ctor
-  isExternal: false
   name: StereoArucoCameraParameters
   nameWithType: StereoArucoCameraParameters.StereoArucoCameraParameters
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.StereoArucoCameraParameters
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
-  isExternal: false
   name: CalibrationFlagsValue
   nameWithType: StereoArucoCameraParameters.CalibrationFlagsValue
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.CalibrationFlagsValue
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
   commentId: M:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
   commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
-  isExternal: false
   name: RotationVector
   nameWithType: StereoArucoCameraParameters.RotationVector
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
 - uid: ArucoUnity.Plugin.Cv.Vec3d
   commentId: T:ArucoUnity.Plugin.Cv.Vec3d
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Vec3d
   nameWithType: Cv.Vec3d
   fullName: ArucoUnity.Plugin.Cv.Vec3d
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
   commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVector
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
   commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
-  isExternal: false
   name: RotationVectorValues
   nameWithType: StereoArucoCameraParameters.RotationVectorValues
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.RotationVectorValues
 - uid: System.Double[]
+  isExternal: true
   name: Double[]
   nameWithType: Double[]
   fullName: System.Double[]
@@ -514,23 +512,22 @@ references:
     fullName: ()
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
   commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
-  isExternal: false
   name: TranslationVector
   nameWithType: StereoArucoCameraParameters.TranslationVector
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
   commentId: P:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVector
+  isExternal: true
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
-  isExternal: false
   name: TranslationVectorValues
   nameWithType: StereoArucoCameraParameters.TranslationVectorValues
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.TranslationVectorValues
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
-  isExternal: false
   name: ReprojectionError
   nameWithType: StereoArucoCameraParameters.ReprojectionError
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.ReprojectionError
@@ -543,13 +540,11 @@ references:
   fullName: System.Double
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
-  isExternal: false
   name: UpdateSerializedProperties
   nameWithType: StereoArucoCameraParameters.UpdateSerializedProperties
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateSerializedProperties
 - uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties*
   commentId: Overload:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties
-  isExternal: false
   name: UpdateNonSerializedProperties
   nameWithType: StereoArucoCameraParameters.UpdateNonSerializedProperties
   fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters.UpdateNonSerializedProperties

@@ -25,60 +25,51 @@ references:
 - uid: ArucoUnity.Cameras.ArucoCamera
   commentId: T:ArucoUnity.Cameras.ArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCamera
 - uid: ArucoUnity.Cameras.ArucoCameraController
   commentId: T:ArucoUnity.Cameras.ArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCameraController
   nameWithType: ArucoCameraController
   fullName: ArucoUnity.Cameras.ArucoCameraController
 - uid: ArucoUnity.Cameras.ArucoWebcam
   commentId: T:ArucoUnity.Cameras.ArucoWebcam
-  isExternal: false
   name: ArucoWebcam
   nameWithType: ArucoWebcam
   fullName: ArucoUnity.Cameras.ArucoWebcam
 - uid: ArucoUnity.Cameras.IArucoCamera
   commentId: T:ArucoUnity.Cameras.IArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCamera
   nameWithType: IArucoCamera
   fullName: ArucoUnity.Cameras.IArucoCamera
 - uid: ArucoUnity.Cameras.IArucoCameraController
   commentId: T:ArucoUnity.Cameras.IArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCameraController
   nameWithType: IArucoCameraController
   fullName: ArucoUnity.Cameras.IArucoCameraController
 - uid: ArucoUnity.Cameras.StereoArucoCamera
   commentId: T:ArucoUnity.Cameras.StereoArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: StereoArucoCamera
   nameWithType: StereoArucoCamera
   fullName: ArucoUnity.Cameras.StereoArucoCamera
 - uid: ArucoUnity.Cameras.StereoArucoWebcam
   commentId: T:ArucoUnity.Cameras.StereoArucoWebcam
-  isExternal: false
   name: StereoArucoWebcam
   nameWithType: StereoArucoWebcam
   fullName: ArucoUnity.Cameras.StereoArucoWebcam
 - uid: ArucoUnity.Cameras.WebcamController
   commentId: T:ArucoUnity.Cameras.WebcamController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: WebcamController
   nameWithType: WebcamController
   fullName: ArucoUnity.Cameras.WebcamController
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras

@@ -87,7 +87,7 @@ namespace ArucoUnity.Objects.Trackers
     /// </summary>
     /// <param name="cameraId">The id of the camera.</param>
     /// <param name="dictionary">The dictionary to use for the detection.</param>
-    /// <param name="dictionary">The image to use for the detection.</param>
+    /// <param name="image">The image to use for the detection.</param>
     public virtual void Detect(int cameraId, Aruco.Dictionary dictionary, Cv.Mat image)
     {
       if (!IsActivated)

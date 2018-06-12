@@ -16,10 +16,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Utility
     path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -38,7 +38,6 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -51,7 +50,7 @@ references:
   fullName: System.Object
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System

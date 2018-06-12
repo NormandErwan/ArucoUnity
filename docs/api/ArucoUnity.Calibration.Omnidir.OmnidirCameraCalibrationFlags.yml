@@ -26,7 +26,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OmnidirCameraCalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 9
@@ -75,7 +75,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixSkew
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 30
@@ -110,7 +110,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixP
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 32
@@ -145,7 +145,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixXi
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 45
@@ -180,7 +180,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixGamma
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 47
@@ -215,7 +215,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixCenter
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 49
@@ -250,7 +250,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixKLength
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 51
@@ -288,7 +288,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: FixPLength
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 53
@@ -323,7 +323,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationFlags
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 57
@@ -356,7 +356,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateCalibrationOptions
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 71
@@ -389,7 +389,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnValidate
     path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
     startLine: 84
@@ -410,7 +410,6 @@ items:
 references:
 - uid: ArucoUnity.Calibration.Omnidir
   commentId: N:ArucoUnity.Calibration.Omnidir
-  isExternal: false
   name: ArucoUnity.Calibration.Omnidir
   nameWithType: ArucoUnity.Calibration.Omnidir
   fullName: ArucoUnity.Calibration.Omnidir
@@ -452,7 +451,6 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags
   commentId: T:ArucoUnity.Calibration.CalibrationFlags
   parent: ArucoUnity.Calibration
-  isExternal: false
   name: CalibrationFlags
   nameWithType: CalibrationFlags
   fullName: ArucoUnity.Calibration.CalibrationFlags
@@ -526,38 +524,34 @@ references:
 - uid: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UseIntrinsicGuess
   nameWithType: CalibrationFlags.UseIntrinsicGuess
   fullName: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKDistorsionCoefficients
   nameWithType: CalibrationFlags.FixKDistorsionCoefficients
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Calibration
   commentId: N:ArucoUnity.Calibration
-  isExternal: false
   name: ArucoUnity.Calibration
   nameWithType: ArucoUnity.Calibration
   fullName: ArucoUnity.Calibration
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
   commentId: T:ArucoUnity.Calibration.CalibrationFlagsGeneric`1
-  isExternal: false
   name: CalibrationFlagsGeneric<T>
   nameWithType: CalibrationFlagsGeneric<T>
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>
@@ -594,7 +588,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
   commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
-  isExternal: false
   name: Value
   nameWithType: CalibrationFlagsGeneric<T>.Value
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Value
@@ -602,7 +595,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Value
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
   commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
-  isExternal: false
   name: Flags
   nameWithType: CalibrationFlagsGeneric<T>.Flags
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Flags
@@ -610,7 +602,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Flags
 - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
   commentId: F:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
-  isExternal: false
   name: flags
   nameWithType: CalibrationFlagsGeneric<T>.flags
   fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.flags
@@ -618,7 +609,6 @@ references:
   fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).flags
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
-  isExternal: false
   name: FixSkew
   nameWithType: OmnidirCameraCalibrationFlags.FixSkew
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
@@ -631,11 +621,11 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
-  isExternal: false
   name: FixP
   nameWithType: OmnidirCameraCalibrationFlags.FixP
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
 - uid: System.Boolean[]
+  isExternal: true
   name: Boolean[]
   nameWithType: Boolean[]
   fullName: System.Boolean[]
@@ -662,32 +652,27 @@ references:
     fullName: ()
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
-  isExternal: false
   name: FixXi
   nameWithType: OmnidirCameraCalibrationFlags.FixXi
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
-  isExternal: false
   name: FixGamma
   nameWithType: OmnidirCameraCalibrationFlags.FixGamma
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
-  isExternal: false
   name: FixCenter
   nameWithType: OmnidirCameraCalibrationFlags.FixCenter
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
 - uid: ArucoUnity.Calibration.CalibrationFlags.FixKLength
   commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKLength
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: FixKLength
   nameWithType: CalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.CalibrationFlags.FixKLength
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
-  isExternal: false
   name: FixKLength
   nameWithType: OmnidirCameraCalibrationFlags.FixKLength
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
@@ -700,14 +685,12 @@ references:
   fullName: System.Int32
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
-  isExternal: false
   name: FixPLength
   nameWithType: OmnidirCameraCalibrationFlags.FixPLength
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UpdateCalibrationFlags()
   nameWithType: CalibrationFlags.UpdateCalibrationFlags()
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags()
@@ -735,14 +718,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
-  isExternal: false
   name: UpdateCalibrationFlags
   nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
 - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: UpdateCalibrationOptions()
   nameWithType: CalibrationFlags.UpdateCalibrationOptions()
   fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions()
@@ -770,14 +751,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
-  isExternal: false
   name: UpdateCalibrationOptions
   nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
 - uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate
   commentId: M:ArucoUnity.Calibration.CalibrationFlags.OnValidate
   parent: ArucoUnity.Calibration.CalibrationFlags
-  isExternal: false
   name: OnValidate()
   nameWithType: CalibrationFlags.OnValidate()
   fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate()
@@ -805,7 +784,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate*
   commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate
-  isExternal: false
   name: OnValidate
   nameWithType: OmnidirCameraCalibrationFlags.OnValidate
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate

@@ -28,7 +28,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectsController
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 10
@@ -106,7 +106,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectAdded
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 20
@@ -139,7 +139,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjectRemoved
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 21
@@ -172,7 +172,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DictionaryAdded
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 22
@@ -205,7 +205,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: DictionaryRemoved
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 23
@@ -238,7 +238,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObjects
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 27
@@ -277,7 +277,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 34
@@ -312,7 +312,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Start
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 43
@@ -347,7 +347,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AddArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 54
@@ -384,7 +384,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RemoveArucoObject
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 95
@@ -421,7 +421,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetArucoObjects
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 129
@@ -467,7 +467,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObject_PropertyUpdating
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 154
@@ -505,7 +505,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoObject_PropertyUpdated
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectsController.cs
     startLine: 163
@@ -532,13 +532,11 @@ references:
 - uid: ArucoUnity.Objects.ArucoObject
   commentId: T:ArucoUnity.Objects.ArucoObject
   parent: ArucoUnity.Objects
-  isExternal: false
   name: ArucoObject
   nameWithType: ArucoObject
   fullName: ArucoUnity.Objects.ArucoObject
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
@@ -580,63 +578,54 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController
   commentId: T:ArucoUnity.Utilities.ConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: ConfigurableController
   nameWithType: ConfigurableController
   fullName: ArucoUnity.Utilities.ConfigurableController
 - uid: ArucoUnity.Cameras.ArucoCameraController
   commentId: T:ArucoUnity.Cameras.ArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCameraController
   nameWithType: ArucoCameraController
   fullName: ArucoUnity.Cameras.ArucoCameraController
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectDetector
   nameWithType: ArucoObjectDetector
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
 - uid: ArucoUnity.Cameras.IArucoCameraController
   commentId: T:ArucoUnity.Cameras.IArucoCameraController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCameraController
   nameWithType: IArucoCameraController
   fullName: ArucoUnity.Cameras.IArucoCameraController
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
   commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IHasDetectorParameter
   nameWithType: IHasDetectorParameter
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController
   commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsController
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IArucoObjectsController
   nameWithType: IArucoObjectsController
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
   commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
   parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
-  isExternal: false
   name: DetectorParameters
   nameWithType: ArucoObjectDetector.DetectorParameters
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
   parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
-  isExternal: false
   name: Configuring()
   nameWithType: ArucoObjectDetector.Configuring()
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring()
@@ -665,70 +654,60 @@ references:
 - uid: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   commentId: P:ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
   parent: ArucoUnity.Cameras.ArucoCameraController
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCameraController.ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
 - uid: ArucoUnity.Utilities.ConfigurableController.Ready
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Ready
   nameWithType: ConfigurableController.Ready
   fullName: ArucoUnity.Utilities.ConfigurableController.Ready
 - uid: ArucoUnity.Utilities.ConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: ConfigurableController.Configured
   fullName: ArucoUnity.Utilities.ConfigurableController.Configured
 - uid: ArucoUnity.Utilities.ConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Started
   nameWithType: ConfigurableController.Started
   fullName: ArucoUnity.Utilities.ConfigurableController.Started
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: ConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
   commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AutoStart
   nameWithType: ConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
 - uid: ArucoUnity.Utilities.ConfigurableController.IsReady
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsReady
   nameWithType: ConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnDestroy()
   nameWithType: ConfigurableController.OnDestroy()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
@@ -757,7 +736,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AddDependency(IConfigurableController)
   nameWithType: ConfigurableController.AddDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -794,7 +772,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: RemoveDependency(IConfigurableController)
   nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -831,7 +808,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
   commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: GetDependencies()
   nameWithType: ConfigurableController.GetDependencies()
   fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
@@ -860,7 +836,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: ConfigureController()
   nameWithType: ConfigurableController.ConfigureController()
   fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
@@ -889,7 +864,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StartController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StartController()
   nameWithType: ConfigurableController.StartController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
@@ -918,7 +892,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: ConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
@@ -947,7 +920,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnConfigured()
   nameWithType: ConfigurableController.OnConfigured()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
@@ -976,7 +948,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.Starting
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Starting
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Starting()
   nameWithType: ConfigurableController.Starting()
   fullName: ArucoUnity.Utilities.ConfigurableController.Starting()
@@ -1005,7 +976,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStarted()
   nameWithType: ConfigurableController.OnStarted()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted()
@@ -1034,7 +1004,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopping()
   nameWithType: ConfigurableController.Stopping()
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
@@ -1063,7 +1032,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStopped()
   nameWithType: ConfigurableController.OnStopped()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
@@ -1091,38 +1059,34 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects
   commentId: N:ArucoUnity.Objects
-  isExternal: false
   name: ArucoUnity.Objects
   nameWithType: ArucoUnity.Objects
   fullName: ArucoUnity.Objects
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectAdded
   commentId: E:ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectAdded
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: ArucoObjectAdded
   nameWithType: IArucoObjectsController.ArucoObjectAdded
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectAdded
@@ -1210,14 +1174,12 @@ references:
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectRemoved
   commentId: E:ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectRemoved
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: ArucoObjectRemoved
   nameWithType: IArucoObjectsController.ArucoObjectRemoved
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjectRemoved
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryAdded
   commentId: E:ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryAdded
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: DictionaryAdded
   nameWithType: IArucoObjectsController.DictionaryAdded
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryAdded
@@ -1266,20 +1228,17 @@ references:
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryRemoved
   commentId: E:ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryRemoved
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: DictionaryRemoved
   nameWithType: IArucoObjectsController.DictionaryRemoved
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.DictionaryRemoved
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
-  isExternal: false
   name: ArucoObjects
   nameWithType: ArucoObjectsController.ArucoObjects
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
   commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: ArucoObjects
   nameWithType: IArucoObjectsController.ArucoObjects
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.ArucoObjects
@@ -1430,14 +1389,13 @@ references:
     fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
-  isExternal: false
+  isExternal: true
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
 - uid: ArucoUnity.Utilities.ConfigurableController.Awake
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Awake
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Awake()
   nameWithType: ConfigurableController.Awake()
   fullName: ArucoUnity.Utilities.ConfigurableController.Awake()
@@ -1465,23 +1423,21 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
-  isExternal: false
   name: Awake
   nameWithType: ArucoObjectsController.Awake
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
   commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
   parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
-  isExternal: false
   name: ArucoObjects
   nameWithType: ArucoObjectsController.ArucoObjects
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.arucoObjects
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectsController.arucoObjects
+  isExternal: true
 - uid: ArucoUnity.Utilities.ConfigurableController.Start
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Start
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Start()
   nameWithType: ConfigurableController.Start()
   fullName: ArucoUnity.Utilities.ConfigurableController.Start()
@@ -1509,27 +1465,23 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
-  isExternal: false
   name: Start
   nameWithType: ArucoObjectsController.Start
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsController
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectsController
   nameWithType: ArucoObjectsController
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject
-  isExternal: false
   name: AddArucoObject
   nameWithType: ArucoObjectsController.AddArucoObject
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: AddArucoObject(ArucoObject)
   nameWithType: IArucoObjectsController.AddArucoObject(ArucoObject)
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -1565,14 +1517,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject
-  isExternal: false
   name: RemoveArucoObject
   nameWithType: ArucoObjectsController.RemoveArucoObject
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: RemoveArucoObject(ArucoObject)
   nameWithType: IArucoObjectsController.RemoveArucoObject(ArucoObject)
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -1608,14 +1558,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects
-  isExternal: false
   name: GetArucoObjects
   nameWithType: ArucoObjectsController.GetArucoObjects
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   parent: ArucoUnity.Objects.Trackers.IArucoObjectsController
-  isExternal: false
   name: GetArucoObjects<U>(Aruco.Dictionary)
   nameWithType: IArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
@@ -1655,7 +1603,6 @@ references:
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
@@ -1701,7 +1648,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -1746,13 +1692,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating
-  isExternal: false
   name: ArucoObject_PropertyUpdating
   nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdating
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated
-  isExternal: false
   name: ArucoObject_PropertyUpdated
   nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdated
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated

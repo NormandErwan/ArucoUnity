@@ -34,3 +34,5 @@ First, make sure you have calibrated your camera: read the [Calibrate a Camera](
 ![AR roll a ball](../images/ar_roll_a_ball.gif)
 
 *Fig.4: [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial) set as child of an aruco board: the game follows the board movements.*
+
+To understand the algorithm used, read this tutorial: [Detection of ArUco Markers](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html).

@@ -39,7 +39,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ConfigurableController
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 9
@@ -88,7 +88,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Ready
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 19
@@ -121,7 +121,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configured
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 20
@@ -154,7 +154,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Started
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 21
@@ -187,7 +187,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stopped
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 22
@@ -220,7 +220,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AutoStart
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 26
@@ -257,7 +257,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsReady
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 27
@@ -294,7 +294,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsConfigured
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 28
@@ -331,7 +331,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: IsStarted
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 29
@@ -368,7 +368,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 41
@@ -402,7 +402,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Start
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 50
@@ -436,7 +436,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnDestroy
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 58
@@ -470,7 +470,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: AddDependency
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 68
@@ -505,7 +505,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RemoveDependency
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 85
@@ -540,7 +540,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: GetDependencies
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 99
@@ -574,7 +574,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ConfigureController
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 104
@@ -606,7 +606,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StartController
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 118
@@ -638,7 +638,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: StopController
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 129
@@ -670,7 +670,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configuring
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 142
@@ -702,7 +702,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnConfigured
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 150
@@ -736,7 +736,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Starting
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 161
@@ -768,7 +768,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnStarted
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 168
@@ -802,7 +802,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stopping
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 174
@@ -834,7 +834,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnStopped
     path: Assets/ArucoUnity/Scripts/Utilities/ConfigurableController.cs
     startLine: 181
@@ -856,7 +856,6 @@ items:
 references:
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
@@ -898,26 +897,24 @@ references:
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities.IConfigurableController.Ready
   commentId: E:ArucoUnity.Utilities.IConfigurableController.Ready
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: Ready
   nameWithType: IConfigurableController.Ready
   fullName: ArucoUnity.Utilities.IConfigurableController.Ready
@@ -1005,34 +1002,29 @@ references:
 - uid: ArucoUnity.Utilities.IConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.IConfigurableController.Configured
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: IConfigurableController.Configured
   fullName: ArucoUnity.Utilities.IConfigurableController.Configured
 - uid: ArucoUnity.Utilities.IConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.IConfigurableController.Started
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: Started
   nameWithType: IConfigurableController.Started
   fullName: ArucoUnity.Utilities.IConfigurableController.Started
 - uid: ArucoUnity.Utilities.IConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.IConfigurableController.Stopped
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: IConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.IConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.AutoStart*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.AutoStart
-  isExternal: false
   name: AutoStart
   nameWithType: ConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
 - uid: ArucoUnity.Utilities.IConfigurableController.AutoStart
   commentId: P:ArucoUnity.Utilities.IConfigurableController.AutoStart
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: AutoStart
   nameWithType: IConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.IConfigurableController.AutoStart
@@ -1045,61 +1037,53 @@ references:
   fullName: System.Boolean
 - uid: ArucoUnity.Utilities.ConfigurableController.IsReady*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsReady
-  isExternal: false
   name: IsReady
   nameWithType: ConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.IConfigurableController.IsReady
   commentId: P:ArucoUnity.Utilities.IConfigurableController.IsReady
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: IsReady
   nameWithType: IConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.IConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.IConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.IConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: IConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.IConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsStarted
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.IConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.IConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: IConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.IConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.Awake*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Awake
-  isExternal: false
   name: Awake
   nameWithType: ConfigurableController.Awake
   fullName: ArucoUnity.Utilities.ConfigurableController.Awake
 - uid: ArucoUnity.Utilities.ConfigurableController.SetAutoStart(System.Boolean)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.SetAutoStart(System.Boolean)
+  isExternal: true
 - uid: ArucoUnity.Utilities.ConfigurableController.Start*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Start
-  isExternal: false
   name: Start
   nameWithType: ConfigurableController.Start
   fullName: ArucoUnity.Utilities.ConfigurableController.Start
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: ConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
@@ -1127,27 +1111,23 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnDestroy
-  isExternal: false
   name: OnDestroy
   nameWithType: ConfigurableController.OnDestroy
   fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy
 - uid: ArucoUnity.Utilities.ConfigurableController
   commentId: T:ArucoUnity.Utilities.ConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: ConfigurableController
   nameWithType: ConfigurableController
   fullName: ArucoUnity.Utilities.ConfigurableController
 - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.AddDependency
-  isExternal: false
   name: AddDependency
   nameWithType: ConfigurableController.AddDependency
   fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency
 - uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: AddDependency(IConfigurableController)
   nameWithType: IConfigurableController.AddDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1183,14 +1163,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.RemoveDependency
-  isExternal: false
   name: RemoveDependency
   nameWithType: ConfigurableController.RemoveDependency
   fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency
 - uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: RemoveDependency(IConfigurableController)
   nameWithType: IConfigurableController.RemoveDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1226,14 +1204,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.GetDependencies
-  isExternal: false
   name: GetDependencies
   nameWithType: ConfigurableController.GetDependencies
   fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies
 - uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
   commentId: M:ArucoUnity.Utilities.IConfigurableController.GetDependencies
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: GetDependencies()
   nameWithType: IConfigurableController.GetDependencies()
   fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies()
@@ -1342,20 +1318,18 @@ references:
     fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
-  isExternal: false
+  isExternal: true
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
 - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.ConfigureController
-  isExternal: false
   name: ConfigureController
   nameWithType: ConfigurableController.ConfigureController
   fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController
 - uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
   commentId: M:ArucoUnity.Utilities.IConfigurableController.ConfigureController
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: ConfigureController()
   nameWithType: IConfigurableController.ConfigureController()
   fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController()
@@ -1383,14 +1357,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.StartController*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.StartController
-  isExternal: false
   name: StartController
   nameWithType: ConfigurableController.StartController
   fullName: ArucoUnity.Utilities.ConfigurableController.StartController
 - uid: ArucoUnity.Utilities.IConfigurableController.StartController
   commentId: M:ArucoUnity.Utilities.IConfigurableController.StartController
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: StartController()
   nameWithType: IConfigurableController.StartController()
   fullName: ArucoUnity.Utilities.IConfigurableController.StartController()
@@ -1418,14 +1390,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.StopController
-  isExternal: false
   name: StopController
   nameWithType: ConfigurableController.StopController
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController
 - uid: ArucoUnity.Utilities.IConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.IConfigurableController.StopController
   parent: ArucoUnity.Utilities.IConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: IConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.IConfigurableController.StopController()
@@ -1453,74 +1423,64 @@ references:
     fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.Configuring*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Configuring
-  isExternal: false
   name: Configuring
   nameWithType: ConfigurableController.Configuring
   fullName: ArucoUnity.Utilities.ConfigurableController.Configuring
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: ConfigurableController.Configured
   fullName: ArucoUnity.Utilities.ConfigurableController.Configured
 - uid: ArucoUnity.Utilities.ConfigurableController.OnReady
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnReady
+  isExternal: true
 - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  isExternal: false
   name: OnConfigured
   nameWithType: ConfigurableController.OnConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.Starting*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Starting
-  isExternal: false
   name: Starting
   nameWithType: ConfigurableController.Starting
   fullName: ArucoUnity.Utilities.ConfigurableController.Starting
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Started
   nameWithType: ConfigurableController.Started
   fullName: ArucoUnity.Utilities.ConfigurableController.Started
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnStarted
-  isExternal: false
   name: OnStarted
   nameWithType: ConfigurableController.OnStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopping*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Stopping
-  isExternal: false
   name: Stopping
   nameWithType: ConfigurableController.Stopping
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: ConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped*
   commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnStopped
-  isExternal: false
   name: OnStopped
   nameWithType: ConfigurableController.OnStopped
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped

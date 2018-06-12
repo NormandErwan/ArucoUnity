@@ -31,10 +31,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Type
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -62,10 +62,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_8U
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -94,10 +94,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_8UC1
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -126,10 +126,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_8UC2
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -158,10 +158,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_8UC3
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -190,10 +190,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_8UC4
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -222,10 +222,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_16S
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -254,10 +254,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_16SC1
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -286,10 +286,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_16SC2
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -318,10 +318,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_16SC3
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -350,10 +350,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_16SC4
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -382,10 +382,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_64F
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -414,10 +414,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_64FC1
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -446,10 +446,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_64FC2
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -478,10 +478,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_64FC3
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -510,10 +510,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CV_64FC4
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -530,14 +530,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Cv.Type
   commentId: T:ArucoUnity.Plugin.Cv.Type
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Type
   nameWithType: Cv.Type
   fullName: ArucoUnity.Plugin.Cv.Type

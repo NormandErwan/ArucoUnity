@@ -20,7 +20,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: RectificationTypes
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
     startLine: 20
@@ -56,7 +56,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Perspective
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
     startLine: 22
@@ -90,7 +90,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Cylindrical
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
     startLine: 23
@@ -124,7 +124,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: LongitudeLatitude
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
     startLine: 24
@@ -158,7 +158,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stereographic
     path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs
     startLine: 25
@@ -180,14 +180,12 @@ items:
 references:
 - uid: ArucoUnity.Cameras.Undistortions
   commentId: N:ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: ArucoUnity.Cameras.Undistortions
   nameWithType: ArucoUnity.Cameras.Undistortions
   fullName: ArucoUnity.Cameras.Undistortions
 - uid: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
   commentId: T:ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationTypes
   parent: ArucoUnity.Cameras.Undistortions
-  isExternal: false
   name: OmnidirCameraUndistortionGeneric.RectificationTypes<>
   nameWithType: OmnidirCameraUndistortionGeneric.RectificationTypes<>
   fullName: ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric.RectificationTypes<>

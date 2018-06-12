@@ -20,7 +20,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoGridBoardTracker
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
     startLine: 4
@@ -68,7 +68,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Detect
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
     startLine: 8
@@ -108,7 +108,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Draw
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
     startLine: 25
@@ -148,7 +148,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: EstimateTransforms
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
     startLine: 39
@@ -186,7 +186,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: UpdateTransforms
     path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoGridBoardTracker.cs
     startLine: 61
@@ -212,7 +212,6 @@ items:
 references:
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers
@@ -226,49 +225,42 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectTracker
   nameWithType: ArucoObjectTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: IsActivated
   nameWithType: ArucoObjectTracker.IsActivated
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoTracker
   nameWithType: ArucoObjectTracker.arucoTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCamera
   nameWithType: ArucoObjectTracker.arucoCamera
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCamera
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCameraUndistortion
   nameWithType: ArucoObjectTracker.arucoCameraUndistortion
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: arucoCameraDisplay
   nameWithType: ArucoObjectTracker.arucoCameraDisplay
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraDisplay
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
@@ -305,7 +297,6 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
@@ -342,7 +333,6 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: Activate(IArucoObjectsTracker)
   nameWithType: ArucoObjectTracker.Activate(IArucoObjectsTracker)
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Activate(ArucoUnity.Objects.Trackers.IArucoObjectsTracker)
@@ -379,7 +369,6 @@ references:
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   parent: ArucoUnity.Objects.Trackers.ArucoObjectTracker
-  isExternal: false
   name: Deactivate()
   nameWithType: ArucoObjectTracker.Deactivate()
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate()
@@ -513,7 +502,7 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
@@ -586,7 +575,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect
-  isExternal: false
   name: Detect
   nameWithType: ArucoGridBoardTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect
@@ -600,20 +588,17 @@ references:
 - uid: ArucoUnity.Plugin.Aruco.Dictionary
   commentId: T:ArucoUnity.Plugin.Aruco.Dictionary
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Aruco.Dictionary
   nameWithType: Aruco.Dictionary
   fullName: ArucoUnity.Plugin.Aruco.Dictionary
 - uid: ArucoUnity.Plugin.Cv.Mat
   commentId: T:ArucoUnity.Plugin.Cv.Mat
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Mat
   nameWithType: Cv.Mat
   fullName: ArucoUnity.Plugin.Cv.Mat
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
@@ -686,7 +671,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw
-  isExternal: false
   name: Draw
   nameWithType: ArucoGridBoardTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw
@@ -745,7 +729,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms
-  isExternal: false
   name: EstimateTransforms
   nameWithType: ArucoGridBoardTracker.EstimateTransforms
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms
@@ -804,7 +787,6 @@ references:
     fullName: )
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms*
   commentId: Overload:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms
-  isExternal: false
   name: UpdateTransforms
   nameWithType: ArucoGridBoardTracker.UpdateTransforms
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms

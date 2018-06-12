@@ -24,10 +24,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: InterpolationFlags
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -57,10 +57,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Nearest
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -89,10 +89,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Linear
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -122,10 +122,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Cubic
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -155,10 +155,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Area
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -188,10 +188,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Lanczos4
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -221,10 +221,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Max
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -254,10 +254,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WarpFillOutliers
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -287,10 +287,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WarpInverseMap
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -308,14 +308,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Cv.InterpolationFlags
   commentId: T:ArucoUnity.Plugin.Cv.InterpolationFlags
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.InterpolationFlags
   nameWithType: Cv.InterpolationFlags
   fullName: ArucoUnity.Plugin.Cv.InterpolationFlags

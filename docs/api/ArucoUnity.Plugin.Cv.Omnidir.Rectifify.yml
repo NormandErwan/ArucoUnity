@@ -20,10 +20,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Rectifify
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -51,10 +51,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Perspective
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -83,10 +83,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Cylindrical
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -115,10 +115,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Longlati
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -147,10 +147,10 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Stereographic
     path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Plugin
@@ -167,14 +167,12 @@ items:
 references:
 - uid: ArucoUnity.Plugin
   commentId: N:ArucoUnity.Plugin
-  isExternal: false
   name: ArucoUnity.Plugin
   nameWithType: ArucoUnity.Plugin
   fullName: ArucoUnity.Plugin
 - uid: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
   commentId: T:ArucoUnity.Plugin.Cv.Omnidir.Rectifify
   parent: ArucoUnity.Plugin
-  isExternal: false
   name: Cv.Omnidir.Rectifify
   nameWithType: Cv.Omnidir.Rectifify
   fullName: ArucoUnity.Plugin.Cv.Omnidir.Rectifify

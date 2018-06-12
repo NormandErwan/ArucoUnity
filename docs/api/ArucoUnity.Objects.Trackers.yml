@@ -28,86 +28,73 @@ items:
 references:
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
-  isExternal: false
   name: ArucoCharucoBoardTracker
   nameWithType: ArucoCharucoBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoDiamondTracker
-  isExternal: false
   name: ArucoDiamondTracker
   nameWithType: ArucoDiamondTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
-  isExternal: false
   name: ArucoGridBoardTracker
   nameWithType: ArucoGridBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoMarkerTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoMarkerTracker
   nameWithType: ArucoMarkerTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectDetector
   nameWithType: ArucoObjectDetector
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsController
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectsController
   nameWithType: ArucoObjectsController
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsTracker
-  isExternal: false
   name: ArucoObjectsTracker
   nameWithType: ArucoObjectsTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
   commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoObjectTracker
   nameWithType: ArucoObjectTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
 - uid: ArucoUnity.Objects.Trackers.DetectorParametersController
   commentId: T:ArucoUnity.Objects.Trackers.DetectorParametersController
-  isExternal: false
   name: DetectorParametersController
   nameWithType: DetectorParametersController
   fullName: ArucoUnity.Objects.Trackers.DetectorParametersController
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController
   commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsController
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IArucoObjectsController
   nameWithType: IArucoObjectsController
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
   commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsTracker
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IArucoObjectsTracker
   nameWithType: IArucoObjectsTracker
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
 - uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
   commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
   parent: ArucoUnity.Objects.Trackers
-  isExternal: false
   name: IHasDetectorParameter
   nameWithType: IHasDetectorParameter
   fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
 - uid: ArucoUnity.Objects.Trackers
   commentId: N:ArucoUnity.Objects.Trackers
-  isExternal: false
   name: ArucoUnity.Objects.Trackers
   nameWithType: ArucoUnity.Objects.Trackers
   fullName: ArucoUnity.Objects.Trackers

@@ -13,7 +13,8 @@ items:
   - ArucoUnity.Cameras.ArucoWebcam.OnDestroy
   - ArucoUnity.Cameras.ArucoWebcam.OnStarted
   - ArucoUnity.Cameras.ArucoWebcam.Starting
-  - ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
+  - ArucoUnity.Cameras.ArucoWebcam.Stopping
+  - ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
   - ArucoUnity.Cameras.ArucoWebcam.WebcamController
   - ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
   - ArucoUnity.Cameras.ArucoWebcam.WebcamId
@@ -28,7 +29,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: ArucoWebcam
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 8
@@ -75,10 +76,7 @@ items:
   - ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
   - ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
   - ArucoUnity.Cameras.ArucoCamera.Update
-  - ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  - ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
   - ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
-  - ArucoUnity.Cameras.ArucoCamera.InitializeImages
   - ArucoUnity.Utilities.ConfigurableController.Ready
   - ArucoUnity.Utilities.ConfigurableController.Configured
   - ArucoUnity.Utilities.ConfigurableController.Started
@@ -95,7 +93,6 @@ items:
   - ArucoUnity.Utilities.ConfigurableController.StartController
   - ArucoUnity.Utilities.ConfigurableController.StopController
   - ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  - ArucoUnity.Utilities.ConfigurableController.Stopping
   - ArucoUnity.Utilities.ConfigurableController.OnStopped
   modifiers.csharp:
   - public
@@ -118,7 +115,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: cameraId
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 12
@@ -151,7 +148,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: CameraNumber
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 22
@@ -189,7 +186,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Name
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 24
@@ -229,7 +226,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WebcamId
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 31
@@ -266,7 +263,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WebcamController
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 36
@@ -303,7 +300,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Awake
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 43
@@ -338,7 +335,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnDestroy
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 53
@@ -373,7 +370,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Configuring
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 64
@@ -408,7 +405,7 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: Starting
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
     startLine: 78
@@ -422,6 +419,41 @@ items:
     content.vb: Protected Overrides Sub Starting
   overridden: ArucoUnity.Utilities.ConfigurableController.Starting
   overload: ArucoUnity.Cameras.ArucoWebcam.Starting*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Stopping
+  id: Stopping
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Stopping()
+  nameWithType: ArucoWebcam.Stopping()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
+      branch: master
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: Stopping
+    path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
+    startLine: 87
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras
+  summary: "\nCalls <xref href=\"ArucoUnity.Cameras.WebcamController.StopWebcams\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void Stopping()
+    content.vb: Protected Overrides Sub Stopping
+  overridden: ArucoUnity.Utilities.ConfigurableController.Stopping
+  overload: ArucoUnity.Cameras.ArucoWebcam.Stopping*
   modifiers.csharp:
   - protected
   - override
@@ -443,14 +475,14 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: OnStarted
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
-    startLine: 87
+    startLine: 96
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras
-  summary: "\nBlocks parent <xref href=\"ArucoUnity.Cameras.ArucoWebcam.OnStarted\" data-throw-if-not-resolved=\"false\"></xref> until <xref href=\"ArucoUnity.Cameras.WebcamController.IsStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nBlocks <xref href=\"ArucoUnity.Cameras.ArucoCamera.OnStarted\" data-throw-if-not-resolved=\"false\"></xref> until <xref href=\"ArucoUnity.Cameras.WebcamController.IsStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: protected override void OnStarted()
@@ -463,35 +495,37 @@ items:
   modifiers.vb:
   - Protected
   - Overrides
-- uid: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  commentId: M:ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  id: UpdateCameraImagesInternal
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  id: UpdatingImages
   parent: ArucoUnity.Cameras.ArucoWebcam
   langs:
   - csharp
   - vb
-  name: UpdateCameraImagesInternal()
-  nameWithType: ArucoWebcam.UpdateCameraImagesInternal()
-  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal()
+  name: UpdatingImages()
+  nameWithType: ArucoWebcam.UpdatingImages()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages()
   type: Method
   source:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
-    id: UpdateCameraImagesInternal
+      repo: git@github.com:Normanderwan/ArucoUnity.git
+    id: UpdatingImages
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
-    startLine: 96
+    startLine: 105
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras
   summary: "\nCopy current webcam images to <xref href=\"ArucoUnity.Cameras.ArucoCamera.NextImages\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: protected override void UpdateCameraImagesInternal()
-    content.vb: Protected Overrides Sub UpdateCameraImagesInternal
-  overridden: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  overload: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal*
+    content: protected override bool UpdatingImages()
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function UpdatingImages As Boolean
+  overridden: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  overload: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages*
   modifiers.csharp:
   - protected
   - override
@@ -513,14 +547,14 @@ items:
     remote:
       path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
       branch: master
-      repo: git@github.com:NormandErwan/ArucoUnity.git
+      repo: git@github.com:Normanderwan/ArucoUnity.git
     id: WebcamController_Started
     path: Assets/ArucoUnity/Scripts/Cameras/ArucoWebcam.cs
-    startLine: 106
+    startLine: 116
   assemblies:
   - Assembly-CSharp
   namespace: ArucoUnity.Cameras
-  summary: "\nConfigures <xref href=\"ArucoUnity.Cameras.ArucoCamera.Textures\" data-throw-if-not-resolved=\"false\"></xref> and calls parent <xref href=\"ArucoUnity.Cameras.ArucoWebcam.OnStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nConfigures <xref href=\"ArucoUnity.Cameras.ArucoCamera.Textures\" data-throw-if-not-resolved=\"false\"></xref> and calls <xref href=\"ArucoUnity.Cameras.ArucoCamera.OnStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: protected virtual void WebcamController_Started(WebcamController webcamController)
@@ -538,7 +572,6 @@ items:
 references:
 - uid: ArucoUnity.Cameras
   commentId: N:ArucoUnity.Cameras
-  isExternal: false
   name: ArucoUnity.Cameras
   nameWithType: ArucoUnity.Cameras
   fullName: ArucoUnity.Cameras
@@ -580,168 +613,144 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController
   commentId: T:ArucoUnity.Utilities.ConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: ConfigurableController
   nameWithType: ConfigurableController
   fullName: ArucoUnity.Utilities.ConfigurableController
 - uid: ArucoUnity.Cameras.ArucoCamera
   commentId: T:ArucoUnity.Cameras.ArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: ArucoCamera
   nameWithType: ArucoCamera
   fullName: ArucoUnity.Cameras.ArucoCamera
 - uid: ArucoUnity.Cameras.IArucoCamera
   commentId: T:ArucoUnity.Cameras.IArucoCamera
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: IArucoCamera
   nameWithType: IArucoCamera
   fullName: ArucoUnity.Cameras.IArucoCamera
 - uid: ArucoUnity.Utilities.IConfigurableController
   commentId: T:ArucoUnity.Utilities.IConfigurableController
   parent: ArucoUnity.Utilities
-  isExternal: false
   name: IConfigurableController
   nameWithType: IConfigurableController
   fullName: ArucoUnity.Utilities.IConfigurableController
 - uid: ArucoUnity.Cameras.ArucoCamera.dontFlipCode
   commentId: F:ArucoUnity.Cameras.ArucoCamera.dontFlipCode
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: dontFlipCode
   nameWithType: ArucoCamera.dontFlipCode
   fullName: ArucoUnity.Cameras.ArucoCamera.dontFlipCode
 - uid: ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
   commentId: E:ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: ImagesUpdated
   nameWithType: ArucoCamera.ImagesUpdated
   fullName: ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
 - uid: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
   commentId: E:ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: UndistortRectifyImages
   nameWithType: ArucoCamera.UndistortRectifyImages
   fullName: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
 - uid: ArucoUnity.Cameras.ArucoCamera.Textures
   commentId: P:ArucoUnity.Cameras.ArucoCamera.Textures
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: Textures
   nameWithType: ArucoCamera.Textures
   fullName: ArucoUnity.Cameras.ArucoCamera.Textures
 - uid: ArucoUnity.Cameras.ArucoCamera.Images
   commentId: P:ArucoUnity.Cameras.ArucoCamera.Images
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: Images
   nameWithType: ArucoCamera.Images
   fullName: ArucoUnity.Cameras.ArucoCamera.Images
 - uid: ArucoUnity.Cameras.ArucoCamera.ImageDatas
   commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageDatas
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: ImageDatas
   nameWithType: ArucoCamera.ImageDatas
   fullName: ArucoUnity.Cameras.ArucoCamera.ImageDatas
 - uid: ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
   commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: ImageDataSizes
   nameWithType: ArucoCamera.ImageDataSizes
   fullName: ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
 - uid: ArucoUnity.Cameras.ArucoCamera.ImageRatios
   commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageRatios
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: ImageRatios
   nameWithType: ArucoCamera.ImageRatios
   fullName: ArucoUnity.Cameras.ArucoCamera.ImageRatios
 - uid: ArucoUnity.Cameras.ArucoCamera.NextImages
   commentId: P:ArucoUnity.Cameras.ArucoCamera.NextImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: NextImages
   nameWithType: ArucoCamera.NextImages
   fullName: ArucoUnity.Cameras.ArucoCamera.NextImages
 - uid: ArucoUnity.Cameras.ArucoCamera.NextImageDatas
   commentId: P:ArucoUnity.Cameras.ArucoCamera.NextImageDatas
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: NextImageDatas
   nameWithType: ArucoCamera.NextImageDatas
   fullName: ArucoUnity.Cameras.ArucoCamera.NextImageDatas
 - uid: ArucoUnity.Cameras.ArucoCamera.currentBuffer
   commentId: F:ArucoUnity.Cameras.ArucoCamera.currentBuffer
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: currentBuffer
   nameWithType: ArucoCamera.currentBuffer
   fullName: ArucoUnity.Cameras.ArucoCamera.currentBuffer
 - uid: ArucoUnity.Cameras.ArucoCamera.imageBuffers
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imageBuffers
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imageBuffers
   nameWithType: ArucoCamera.imageBuffers
   fullName: ArucoUnity.Cameras.ArucoCamera.imageBuffers
 - uid: ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imageDataBuffers
   nameWithType: ArucoCamera.imageDataBuffers
   fullName: ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
 - uid: ArucoUnity.Cameras.ArucoCamera.imagesToTextures
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesToTextures
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imagesToTextures
   nameWithType: ArucoCamera.imagesToTextures
   fullName: ArucoUnity.Cameras.ArucoCamera.imagesToTextures
 - uid: ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imagesToTextureDatas
   nameWithType: ArucoCamera.imagesToTextureDatas
   fullName: ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
 - uid: ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imagesUpdatedThisFrame
   nameWithType: ArucoCamera.imagesUpdatedThisFrame
   fullName: ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
 - uid: ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
   commentId: F:ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: flipHorizontallyImages
   nameWithType: ArucoCamera.flipHorizontallyImages
   fullName: ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
 - uid: ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
   commentId: F:ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: flipVerticallyImages
   nameWithType: ArucoCamera.flipVerticallyImages
   fullName: ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
 - uid: ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
   commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: imagesFlipCode
   nameWithType: ArucoCamera.imagesFlipCode
   fullName: ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
 - uid: ArucoUnity.Cameras.ArucoCamera.Update
   commentId: M:ArucoUnity.Cameras.ArucoCamera.Update
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: Update()
   nameWithType: ArucoCamera.Update()
   fullName: ArucoUnity.Cameras.ArucoCamera.Update()
@@ -767,68 +776,9 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
-  name: LateUpdate()
-  nameWithType: ArucoCamera.LateUpdate()
-  fullName: ArucoUnity.Cameras.ArucoCamera.LateUpdate()
-  spec.csharp:
-  - uid: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-    name: LateUpdate
-    nameWithType: ArucoCamera.LateUpdate
-    fullName: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-    name: LateUpdate
-    nameWithType: ArucoCamera.LateUpdate
-    fullName: ArucoUnity.Cameras.ArucoCamera.LateUpdate
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
-  name: UpdateCameraImages()
-  nameWithType: ArucoCamera.UpdateCameraImages()
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages()
-  spec.csharp:
-  - uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-    name: UpdateCameraImages
-    nameWithType: ArucoCamera.UpdateCameraImages
-    fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-    name: UpdateCameraImages
-    nameWithType: ArucoCamera.UpdateCameraImages
-    fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImages
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
   commentId: M:ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: OnImagesUpdated()
   nameWithType: ArucoCamera.OnImagesUpdated()
   fullName: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated()
@@ -854,95 +804,57 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
-  name: InitializeImages()
-  nameWithType: ArucoCamera.InitializeImages()
-  fullName: ArucoUnity.Cameras.ArucoCamera.InitializeImages()
-  spec.csharp:
-  - uid: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-    name: InitializeImages
-    nameWithType: ArucoCamera.InitializeImages
-    fullName: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-    name: InitializeImages
-    nameWithType: ArucoCamera.InitializeImages
-    fullName: ArucoUnity.Cameras.ArucoCamera.InitializeImages
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.Ready
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Ready
   nameWithType: ConfigurableController.Ready
   fullName: ArucoUnity.Utilities.ConfigurableController.Ready
 - uid: ArucoUnity.Utilities.ConfigurableController.Configured
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Configured
   nameWithType: ConfigurableController.Configured
   fullName: ArucoUnity.Utilities.ConfigurableController.Configured
 - uid: ArucoUnity.Utilities.ConfigurableController.Started
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Started
   nameWithType: ConfigurableController.Started
   fullName: ArucoUnity.Utilities.ConfigurableController.Started
 - uid: ArucoUnity.Utilities.ConfigurableController.Stopped
   commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Stopped
   nameWithType: ConfigurableController.Stopped
   fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
 - uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
   commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AutoStart
   nameWithType: ConfigurableController.AutoStart
   fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
 - uid: ArucoUnity.Utilities.ConfigurableController.IsReady
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsReady
   nameWithType: ConfigurableController.IsReady
   fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
 - uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsConfigured
   nameWithType: ConfigurableController.IsConfigured
   fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
 - uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
   commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: IsStarted
   nameWithType: ConfigurableController.IsStarted
   fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
 - uid: ArucoUnity.Utilities.ConfigurableController.Start
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Start
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Start()
   nameWithType: ConfigurableController.Start()
   fullName: ArucoUnity.Utilities.ConfigurableController.Start()
@@ -971,7 +883,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: AddDependency(IConfigurableController)
   nameWithType: ConfigurableController.AddDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1008,7 +919,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: RemoveDependency(IConfigurableController)
   nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
   fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
@@ -1045,7 +955,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
   commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: GetDependencies()
   nameWithType: ConfigurableController.GetDependencies()
   fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
@@ -1074,7 +983,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: ConfigureController()
   nameWithType: ConfigurableController.ConfigureController()
   fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
@@ -1103,7 +1011,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StartController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StartController()
   nameWithType: ConfigurableController.StartController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
@@ -1132,7 +1039,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.StopController
   commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: StopController()
   nameWithType: ConfigurableController.StopController()
   fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
@@ -1161,7 +1067,6 @@ references:
 - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnConfigured()
   nameWithType: ConfigurableController.OnConfigured()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
@@ -1187,39 +1092,9 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArucoUnity.Utilities.ConfigurableController.Stopping
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
-  parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
-  name: Stopping()
-  nameWithType: ConfigurableController.Stopping()
-  fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
-  spec.csharp:
-  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
-    name: Stopping
-    nameWithType: ConfigurableController.Stopping
-    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
-    name: Stopping
-    nameWithType: ConfigurableController.Stopping
-    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnStopped()
   nameWithType: ConfigurableController.OnStopped()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
@@ -1247,19 +1122,18 @@ references:
     fullName: )
 - uid: System
   commentId: N:System
-  isExternal: false
+  isExternal: true
   name: System
   nameWithType: System
   fullName: System
 - uid: UnityEngine
   commentId: N:UnityEngine
-  isExternal: false
+  isExternal: true
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
 - uid: ArucoUnity.Utilities
   commentId: N:ArucoUnity.Utilities
-  isExternal: false
   name: ArucoUnity.Utilities
   nameWithType: ArucoUnity.Utilities
   fullName: ArucoUnity.Utilities
@@ -1273,26 +1147,22 @@ references:
 - uid: ArucoUnity.Cameras.ArucoCamera.CameraNumber
   commentId: P:ArucoUnity.Cameras.ArucoCamera.CameraNumber
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: CameraNumber
   nameWithType: ArucoCamera.CameraNumber
   fullName: ArucoUnity.Cameras.ArucoCamera.CameraNumber
 - uid: ArucoUnity.Cameras.ArucoWebcam.CameraNumber*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.CameraNumber
-  isExternal: false
   name: CameraNumber
   nameWithType: ArucoWebcam.CameraNumber
   fullName: ArucoUnity.Cameras.ArucoWebcam.CameraNumber
 - uid: ArucoUnity.Cameras.ArucoCamera.Name
   commentId: P:ArucoUnity.Cameras.ArucoCamera.Name
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: Name
   nameWithType: ArucoCamera.Name
   fullName: ArucoUnity.Cameras.ArucoCamera.Name
 - uid: ArucoUnity.Cameras.ArucoWebcam.Name*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Name
-  isExternal: false
   name: Name
   nameWithType: ArucoWebcam.Name
   fullName: ArucoUnity.Cameras.ArucoWebcam.Name
@@ -1305,29 +1175,26 @@ references:
   fullName: System.String
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamId*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamId
-  isExternal: false
   name: WebcamId
   nameWithType: ArucoWebcam.WebcamId
   fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamId
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamController
-  isExternal: false
   name: WebcamController
   nameWithType: ArucoWebcam.WebcamController
   fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController
 - uid: ArucoUnity.Cameras.WebcamController
   commentId: T:ArucoUnity.Cameras.WebcamController
   parent: ArucoUnity.Cameras
-  isExternal: false
   name: WebcamController
   nameWithType: WebcamController
   fullName: ArucoUnity.Cameras.WebcamController
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController
   commentId: P:ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  isExternal: true
 - uid: ArucoUnity.Utilities.ConfigurableController.Awake
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Awake
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Awake()
   nameWithType: ConfigurableController.Awake()
   fullName: ArucoUnity.Utilities.ConfigurableController.Awake()
@@ -1355,14 +1222,12 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.ArucoWebcam.Awake*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Awake
-  isExternal: false
   name: Awake
   nameWithType: ArucoWebcam.Awake
   fullName: ArucoUnity.Cameras.ArucoWebcam.Awake
 - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
   commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: OnDestroy()
   nameWithType: ConfigurableController.OnDestroy()
   fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
@@ -1390,18 +1255,18 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.ArucoWebcam.OnDestroy*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.OnDestroy
-  isExternal: false
   name: OnDestroy
   nameWithType: ArucoWebcam.OnDestroy
   fullName: ArucoUnity.Cameras.ArucoWebcam.OnDestroy
 - uid: ArucoUnity.Cameras.WebcamController.Configure
   commentId: M:ArucoUnity.Cameras.WebcamController.Configure
+  isExternal: true
 - uid: ArucoUnity.Cameras.ArucoWebcam.Name
   commentId: P:ArucoUnity.Cameras.ArucoWebcam.Name
+  isExternal: true
 - uid: ArucoUnity.Cameras.ArucoCamera.Configuring
   commentId: M:ArucoUnity.Cameras.ArucoCamera.Configuring
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: Configuring()
   nameWithType: ArucoCamera.Configuring()
   fullName: ArucoUnity.Cameras.ArucoCamera.Configuring()
@@ -1429,16 +1294,15 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.ArucoWebcam.Configuring*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Configuring
-  isExternal: false
   name: Configuring
   nameWithType: ArucoWebcam.Configuring
   fullName: ArucoUnity.Cameras.ArucoWebcam.Configuring
 - uid: ArucoUnity.Cameras.WebcamController.StartWebcams
   commentId: M:ArucoUnity.Cameras.WebcamController.StartWebcams
+  isExternal: true
 - uid: ArucoUnity.Utilities.ConfigurableController.Starting
   commentId: M:ArucoUnity.Utilities.ConfigurableController.Starting
   parent: ArucoUnity.Utilities.ConfigurableController
-  isExternal: false
   name: Starting()
   nameWithType: ConfigurableController.Starting()
   fullName: ArucoUnity.Utilities.ConfigurableController.Starting()
@@ -1466,18 +1330,48 @@ references:
     fullName: )
 - uid: ArucoUnity.Cameras.ArucoWebcam.Starting*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Starting
-  isExternal: false
   name: Starting
   nameWithType: ArucoWebcam.Starting
   fullName: ArucoUnity.Cameras.ArucoWebcam.Starting
-- uid: ArucoUnity.Cameras.ArucoWebcam.OnStarted
-  commentId: M:ArucoUnity.Cameras.ArucoWebcam.OnStarted
-- uid: ArucoUnity.Cameras.WebcamController.IsStarted
-  commentId: P:ArucoUnity.Cameras.WebcamController.IsStarted
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StopWebcams
+  isExternal: true
+- uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Stopping()
+  nameWithType: ConfigurableController.Stopping()
+  fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+    name: Stopping
+    nameWithType: ConfigurableController.Stopping
+    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+    name: Stopping
+    nameWithType: ConfigurableController.Stopping
+    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Stopping
+  name: Stopping
+  nameWithType: ArucoWebcam.Stopping
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping
 - uid: ArucoUnity.Cameras.ArucoCamera.OnStarted
   commentId: M:ArucoUnity.Cameras.ArucoCamera.OnStarted
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
   name: OnStarted()
   nameWithType: ArucoCamera.OnStarted()
   fullName: ArucoUnity.Cameras.ArucoCamera.OnStarted()
@@ -1503,24 +1397,25 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.IsStarted
+  commentId: P:ArucoUnity.Cameras.WebcamController.IsStarted
+  isExternal: true
 - uid: ArucoUnity.Cameras.ArucoWebcam.OnStarted*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.OnStarted
-  isExternal: false
   name: OnStarted
   nameWithType: ArucoWebcam.OnStarted
   fullName: ArucoUnity.Cameras.ArucoWebcam.OnStarted
-- uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
+- uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdatingImages
   parent: ArucoUnity.Cameras.ArucoCamera
-  isExternal: false
-  name: UpdateCameraImagesInternal()
-  nameWithType: ArucoCamera.UpdateCameraImagesInternal()
-  fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal()
+  name: UpdatingImages()
+  nameWithType: ArucoCamera.UpdatingImages()
+  fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages()
   spec.csharp:
-  - uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-    name: UpdateCameraImagesInternal
-    nameWithType: ArucoCamera.UpdateCameraImagesInternal
-    fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
+  - uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+    name: UpdatingImages
+    nameWithType: ArucoCamera.UpdatingImages
+    fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
   - name: (
     nameWithType: (
     fullName: (
@@ -1528,25 +1423,30 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
-    name: UpdateCameraImagesInternal
-    nameWithType: ArucoCamera.UpdateCameraImagesInternal
-    fullName: ArucoUnity.Cameras.ArucoCamera.UpdateCameraImagesInternal
+  - uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+    name: UpdatingImages
+    nameWithType: ArucoCamera.UpdatingImages
+    fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
   - name: (
     nameWithType: (
     fullName: (
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal*
-  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
-  isExternal: false
-  name: UpdateCameraImagesInternal
-  nameWithType: ArucoWebcam.UpdateCameraImagesInternal
-  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdateCameraImagesInternal
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  name: UpdatingImages
+  nameWithType: ArucoWebcam.UpdatingImages
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started*
   commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started
-  isExternal: false
   name: WebcamController_Started
   nameWithType: ArucoWebcam.WebcamController_Started
   fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started

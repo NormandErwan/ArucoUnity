@@ -20,13 +20,11 @@ items:
 references:
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
   commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
-  isExternal: false
   name: PinholeCameraCalibration
   nameWithType: PinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
   commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
-  isExternal: false
   name: PinholeCameraCalibrationBase<T>
   nameWithType: PinholeCameraCalibrationBase<T>
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase<T>
@@ -63,13 +61,11 @@ references:
     fullName: )
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
   commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
-  isExternal: false
   name: PinholeCameraCalibrationFlags
   nameWithType: PinholeCameraCalibrationFlags
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
 - uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
   commentId: T:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
-  isExternal: false
   name: StereoPinholeCameraCalibration
   nameWithType: StereoPinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
