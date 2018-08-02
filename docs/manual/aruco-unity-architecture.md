@@ -1,6 +1,6 @@
-# Aruco Unity Architecture
+# ArucoUnity Architecture
 
-Aruco Unity is made of three parts:
+ArucoUnity is made of three parts:
 
 1. A [plugin](https://github.com/NormandErwan/ArucoUnity/blob/master/ArucoUnityPlugin/) that wraps into a C interface the aruco, calib3d and ccalib modules of OpenCV.
 2. A C# interface ([ArucoUnity.Plugin namespace](https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Plugin/)) using the plugin to reproduce the OpenCV modules classes and functions.

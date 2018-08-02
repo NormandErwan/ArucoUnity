@@ -2,15 +2,15 @@
 
 ## Motivation
 
-Before tracking markers with your camera, you need to create, print and place them in the environment. You can use four type of ArUco objects: [markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html), [grid boards](https://docs.opencv.org/master/db/da9/tutorial_aruco_board_detection.html), [charuco boards](https://docs.opencv.org/master/df/d4a/tutorial_charuco_detection.html) and [diamond markers](https://docs.opencv.org/master/d5/d07/tutorial_charuco_diamond_detection.html).
+Before tracking markers with your camera, you need to create, print and place them in the environment. You can use four type of Aruco objects: [markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html), [grid boards](https://docs.opencv.org/master/db/da9/tutorial_aruco_board_detection.html), [charuco boards](https://docs.opencv.org/master/df/d4a/tutorial_charuco_detection.html) and [diamond markers](https://docs.opencv.org/master/d5/d07/tutorial_charuco_diamond_detection.html).
 
-![ArUco Objects](../images/aruco_objects.png)
+![Aruco Objects](../images/aruco_objects.png)
 
 *From left to right: a marker, a diamond marker, a grid board, a charuco board.*
 
 ## `CreateMarkers` scene
 
-Open the `Assets/ArucoUnity/Scenes/CreateMarkers.unity` scene to visualize the ArUco objects. Play this scene to create them. You can find the created images in `Assets/ArucoUnity/Images/`.
+Open the `Assets/ArucoUnity/Scenes/CreateMarkers.unity` scene to visualize the Aruco objects. Play this scene to create them. You can find the created images in `Assets/ArucoUnity/Images/`.
 
 ## Manual creation
 

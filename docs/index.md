@@ -1,18 +1,27 @@
-# Aruco Unity documentation
+# ArucoUnity documentation
 
-See the [README](https://github.com/NormandErwan/ArucoUnity/blob/master/README.md) in the repo for the project description.
+Bring augmented reality to Unity by tracking [ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html) in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.
+
+See the [README](https://github.com/NormandErwan/ArucoUnity/blob/master/README.md) for more details.
+
+![Demo 1](docs/images/ar_roll_a_ball.gif)
+![Demo 2](docs/images/extended_phone_screen.gif)
+
+*Left: AR [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial). Right: The markers tracking allows to extend the phone's screen.*
 
 ## Usage
 
-A typical workflow with Aruco Unity is:
+Download the [latest build release](https://github.com/NormandErwan/ArucoUnity/releases), or see the Build section. Import the package in your Unity project.
 
-1. Create and print markers: read the [Create Markers](manual/create-markers.html) page.
-2. Calibrate your camera using a calibration board: read the [Calibrate a Camera](manual/calibrate-a-camera.html) page.
-3. Track your markers: read the [Track Markers](manual/track-markers.html) page.
+A typical workflow with ArucoUnity is:
+
+1. [Create Markers](https://normanderwan.github.io/ArucoUnity/articles/create-markers.html), print and place them in the environment.
+2. [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/articles/calibrate-a-camera.html) using a calibration board.
+3. [Track Markers](https://normanderwan.github.io/ArucoUnity/articles/track-markers.html).
 
 ## Developing
 
-Read the [Aruco Unity Architecture](manual/aruco-unity-architecture.html), [Build From Sources](manual/build-from-sources.html) and [API Documentation](api/ArucoUnity.Calibration.html) pages.
+Read the [ArucoUnity Architecture](articles/aruco-unity-architecture.html), [Build From Sources](articles/build-from-sources.html) and [API Documentation](api/ArucoUnity.Calibration.html) pages.
 
 To better understand the algorithms used in the OpenCV modules, read these tutorials:
 

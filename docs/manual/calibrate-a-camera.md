@@ -4,13 +4,13 @@
 
 In order to be able to track markers you need to calibrate your camera, i.e. measure the camera parameters.
 
-The calibration process may seems long but it's only because there is lots of customization options. The principle is straightforward: (1) print a calibration board and (2) take images with your camera of the board in different positions and orientations. Aruco Unity will generate XML file containing the camera parameters.
+The calibration process may seems long but it's only because there is lots of customization options. The principle is straightforward: (1) print a calibration board and (2) take images with your camera of the board in different positions and orientations. ArucoUnity will generate XML file containing the camera parameters.
 
 To understand the algorithms used, read these tutorials: [Calibration with ArUco and ChArUco](https://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html) and [Camera calibration With OpenCV](https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html).
 
 ## Calibrate a camera
 
-Most of the cameras we use today on our smartphones or laptops are called in Aruco Unity pinhole cameras (camera using a [rectilinear lens](https://en.wikipedia.org/wiki/Rectilinear_lens)) in contrast with cameras using a [fisheye lens](https://en.wikipedia.org/wiki/Fisheye_lens). So if you want to calibrate your webcam or smartphone, read this section.
+Most of the cameras we use today on our smartphones or laptops are called in ArucoUnity pinhole cameras (camera using a [rectilinear lens](https://en.wikipedia.org/wiki/Rectilinear_lens)) in contrast with cameras using a [fisheye lens](https://en.wikipedia.org/wiki/Fisheye_lens). So if you want to calibrate your webcam or smartphone, read this section.
 
 - Make a calibration board.
   1. Create a charuco board or a grid board. See the [Create Markers](create-markers.html) page for details.
@@ -98,6 +98,6 @@ The algorithms used are described in this tutorial: [Omnidirectional Cameara [*s
 
 ## Reuse calibration data
 
-You may already have calibrated your camera and want to directly reuse your calibration data. Aruco Unity doesn't use the YAML format used by OpenCV to store these data but use XML files. Therefore you need to create by hand calibration file for Aruco Unity.
+You may already have calibrated your camera and want to directly reuse your calibration data. ArucoUnity doesn't use the YAML format used by OpenCV to store these data but use XML files. Therefore you need to create by hand calibration file for ArucoUnity.
 
 Make a copy of `Assets/ArucoUnity/CameraParameters/<CameraType>Example.xml` and transfer your calibration data.
