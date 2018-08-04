@@ -1,0 +1,16 @@
+image: Visual Studio 2017
+before_build: choco install unity -y
+build_script:
+  - ps: |
+        "C:\Program Files\Unity\Editor\Unity.exe" -quit -batchmode -nographics -silent-crashes -logFile .\unity_logs.txt -projectPath . -executeMethod ExportArucoUnityPackage.ExportPackageBatch
+        type unity_logs.txt
+artifacts:
+  - path: ArucoUnity.unitypackage
+    name: ArucoUnity-%APPVEYOR_REPO_TAG_NAME%.unitypackage
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: rAvGzxn8QfY9CapiOocIVsgDya7dnnh3bRzxAGDntS8axguyhTt1nyH7przrm3LF
+  artifact: ArucoUnity-%APPVEYOR_REPO_TAG_NAME%.unitypackage
+  on:
+    appveyor_repo_tag: true
