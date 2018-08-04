@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f
+  commentId: T:ArucoUnity.Plugin.Std.VectorPoint3f
+  id: Std.VectorPoint3f
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
+  - ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Std.VectorPoint3f.At(System.UInt32)
+  - ArucoUnity.Plugin.Std.VectorPoint3f.Data
+  - ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr
+  - ArucoUnity.Plugin.Std.VectorPoint3f.PushBack(ArucoUnity.Plugin.Cv.Point3f)
+  - ArucoUnity.Plugin.Std.VectorPoint3f.Size
+  langs:
+  - csharp
+  - vb
+  name: Std.VectorPoint3f
+  nameWithType: Std.VectorPoint3f
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: VectorPoint3f
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class VectorPoint3f : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class VectorPoint3f
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: VectorPoint3f()
+  nameWithType: Std.VectorPoint3f.VectorPoint3f()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorPoint3f()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: VectorPoint3f(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Std.VectorPoint3f.VectorPoint3f(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 35
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public VectorPoint3f(IntPtr vectorPoint3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: vectorPoint3fPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(vectorPoint3fPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Std.VectorPoint3f.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 40
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.At(System.UInt32)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.At(System.UInt32)
+  id: At(System.UInt32)
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: At(UInt32)
+  nameWithType: Std.VectorPoint3f.At(UInt32)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.At(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: At
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Cv.Point3f At(uint pos)
+    parameters:
+    - id: pos
+      type: System.UInt32
+    return:
+      type: ArucoUnity.Plugin.Cv.Point3f
+    content.vb: Public Function At(pos As UInteger) As Cv.Point3f
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.At*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.Data
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.Data
+  id: Data
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: Data()
+  nameWithType: Std.VectorPoint3f.Data()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.Data()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Data
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 55
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Cv.Point3f[] Data()
+    return:
+      type: ArucoUnity.Plugin.Cv.Point3f[]
+    content.vb: Public Function Data As Cv.Point3f()
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.Data*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.PushBack(ArucoUnity.Plugin.Cv.Point3f)
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.PushBack(ArucoUnity.Plugin.Cv.Point3f)
+  id: PushBack(ArucoUnity.Plugin.Cv.Point3f)
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: PushBack(Cv.Point3f)
+  nameWithType: Std.VectorPoint3f.PushBack(Cv.Point3f)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.PushBack(ArucoUnity.Plugin.Cv.Point3f)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: PushBack
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 69
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void PushBack(Cv.Point3f value)
+    parameters:
+    - id: value
+      type: ArucoUnity.Plugin.Cv.Point3f
+    content.vb: Public Sub PushBack(value As Cv.Point3f)
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.PushBack*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.Size
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.Size
+  id: Size
+  parent: ArucoUnity.Plugin.Std.VectorPoint3f
+  langs:
+  - csharp
+  - vb
+  name: Size()
+  nameWithType: Std.VectorPoint3f.Size()
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.Size()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Size
+    path: Assets/ArucoUnity/Scripts/Plugin/Std/VectorPoint3f.cs
+    startLine: 74
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public uint Size()
+    return:
+      type: System.UInt32
+    content.vb: Public Function Size As UInteger
+  overload: ArucoUnity.Plugin.Std.VectorPoint3f.Size*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
+  name: VectorPoint3f
+  nameWithType: Std.VectorPoint3f.VectorPoint3f
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr
+  name: DeleteCppPtr
+  nameWithType: Std.VectorPoint3f.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.At*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.At
+  name: At
+  nameWithType: Std.VectorPoint3f.At
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.At
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: ArucoUnity.Plugin.Cv.Point3f
+  commentId: T:ArucoUnity.Plugin.Cv.Point3f
+  parent: ArucoUnity.Plugin
+  name: Cv.Point3f
+  nameWithType: Cv.Point3f
+  fullName: ArucoUnity.Plugin.Cv.Point3f
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.Data*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.Data
+  name: Data
+  nameWithType: Std.VectorPoint3f.Data
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.Data
+- uid: ArucoUnity.Plugin.Cv.Point3f[]
+  isExternal: true
+  name: Cv.Point3f[]
+  nameWithType: Cv.Point3f[]
+  fullName: ArucoUnity.Plugin.Cv.Point3f[]
+  nameWithType.vb: Cv.Point3f()
+  fullName.vb: ArucoUnity.Plugin.Cv.Point3f()
+  name.vb: Cv.Point3f()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Point3f
+    name: Cv.Point3f
+    nameWithType: Cv.Point3f
+    fullName: ArucoUnity.Plugin.Cv.Point3f
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Point3f
+    name: Cv.Point3f
+    nameWithType: Cv.Point3f
+    fullName: ArucoUnity.Plugin.Cv.Point3f
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.PushBack*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.PushBack
+  name: PushBack
+  nameWithType: Std.VectorPoint3f.PushBack
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.PushBack
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.Size*
+  commentId: Overload:ArucoUnity.Plugin.Std.VectorPoint3f.Size
+  name: Size
+  nameWithType: Std.VectorPoint3f.Size
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.Size

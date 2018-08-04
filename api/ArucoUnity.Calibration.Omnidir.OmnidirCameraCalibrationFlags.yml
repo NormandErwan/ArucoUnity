@@ -1,0 +1,789 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  commentId: T:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  id: OmnidirCameraCalibrationFlags
+  parent: ArucoUnity.Calibration.Omnidir
+  children:
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+  - ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+  langs:
+  - csharp
+  - vb
+  name: OmnidirCameraCalibrationFlags
+  nameWithType: OmnidirCameraCalibrationFlags
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OmnidirCameraCalibrationFlags
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  summary: "\nManages the flags of the omnidir calibration process.\n"
+  example: []
+  syntax:
+    content: 'public class OmnidirCameraCalibrationFlags : CalibrationFlagsGeneric<Cv.Omnidir.Calib>'
+    content.vb: >-
+      Public Class OmnidirCameraCalibrationFlags
+          Inherits CalibrationFlagsGeneric(Of Cv.Omnidir.Calib)
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  - ArucoUnity.Calibration.CalibrationFlags
+  - ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  inheritedMembers:
+  - ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Value
+  - ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Flags
+  - ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.flags
+  - ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
+  - ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+  id: FixSkew
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixSkew
+  nameWithType: OmnidirCameraCalibrationFlags.FixSkew
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixSkew
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: public bool FixSkew { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FixSkew As Boolean
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+  id: FixP
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixP
+  nameWithType: OmnidirCameraCalibrationFlags.FixP
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixP
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: public bool[] FixP { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean[]
+    content.vb: Public Property FixP As Boolean()
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+  id: FixXi
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixXi
+  nameWithType: OmnidirCameraCalibrationFlags.FixXi
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixXi
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: public bool FixXi { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FixXi As Boolean
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+  id: FixGamma
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixGamma
+  nameWithType: OmnidirCameraCalibrationFlags.FixGamma
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixGamma
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: public bool FixGamma { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FixGamma As Boolean
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+  id: FixCenter
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixCenter
+  nameWithType: OmnidirCameraCalibrationFlags.FixCenter
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixCenter
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: public bool FixCenter { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FixCenter As Boolean
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+  id: FixKLength
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixKLength
+  nameWithType: OmnidirCameraCalibrationFlags.FixKLength
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixKLength
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 51
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: protected override int FixKLength { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Protected Overrides ReadOnly Property FixKLength As Integer
+  overridden: ArucoUnity.Calibration.CalibrationFlags.FixKLength
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength*
+  modifiers.csharp:
+  - protected
+  - override
+  - get
+  modifiers.vb:
+  - Protected
+  - Overrides
+  - ReadOnly
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+  commentId: P:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+  id: FixPLength
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: FixPLength
+  nameWithType: OmnidirCameraCalibrationFlags.FixPLength
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixPLength
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 53
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: protected int FixPLength { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Protected ReadOnly Property FixPLength As Integer
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+  id: UpdateCalibrationFlags
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: UpdateCalibrationFlags()
+  nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationFlags()
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateCalibrationFlags
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 57
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: protected override void UpdateCalibrationFlags()
+    content.vb: Protected Overrides Sub UpdateCalibrationFlags
+  overridden: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+  id: UpdateCalibrationOptions
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: UpdateCalibrationOptions()
+  nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationOptions()
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateCalibrationOptions
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 71
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: protected override void UpdateCalibrationOptions()
+    content.vb: Protected Overrides Sub UpdateCalibrationOptions
+  overridden: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate
+  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate
+  id: OnValidate
+  parent: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags
+  langs:
+  - csharp
+  - vb
+  name: OnValidate()
+  nameWithType: OmnidirCameraCalibrationFlags.OnValidate()
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OnValidate
+    path: Assets/ArucoUnity/Scripts/Calibration/Omnidir/OmnidirCameraCalibrationFlags.cs
+    startLine: 84
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Calibration.Omnidir
+  syntax:
+    content: protected override void OnValidate()
+    content.vb: Protected Overrides Sub OnValidate
+  overridden: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+  overload: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: ArucoUnity.Calibration.Omnidir
+  commentId: N:ArucoUnity.Calibration.Omnidir
+  name: ArucoUnity.Calibration.Omnidir
+  nameWithType: ArucoUnity.Calibration.Omnidir
+  fullName: ArucoUnity.Calibration.Omnidir
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: ArucoUnity.Calibration.CalibrationFlags
+  commentId: T:ArucoUnity.Calibration.CalibrationFlags
+  parent: ArucoUnity.Calibration
+  name: CalibrationFlags
+  nameWithType: CalibrationFlags
+  fullName: ArucoUnity.Calibration.CalibrationFlags
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  commentId: T:ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  parent: ArucoUnity.Calibration
+  definition: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+  name: CalibrationFlagsGeneric<Cv.Omnidir.Calib>
+  nameWithType: CalibrationFlagsGeneric<Cv.Omnidir.Calib>
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<ArucoUnity.Plugin.Cv.Omnidir.Calib>
+  nameWithType.vb: CalibrationFlagsGeneric(Of Cv.Omnidir.Calib)
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  name.vb: CalibrationFlagsGeneric(Of Cv.Omnidir.Calib)
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+    name: CalibrationFlagsGeneric
+    nameWithType: CalibrationFlagsGeneric
+    fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    name: Cv.Omnidir.Calib
+    nameWithType: Cv.Omnidir.Calib
+    fullName: ArucoUnity.Plugin.Cv.Omnidir.Calib
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+    name: CalibrationFlagsGeneric
+    nameWithType: CalibrationFlagsGeneric
+    fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    name: Cv.Omnidir.Calib
+    nameWithType: Cv.Omnidir.Calib
+    fullName: ArucoUnity.Plugin.Cv.Omnidir.Calib
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Value
+  commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Value
+  parent: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  definition: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
+  name: Value
+  nameWithType: CalibrationFlagsGeneric<Cv.Omnidir.Calib>.Value
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<ArucoUnity.Plugin.Cv.Omnidir.Calib>.Value
+  nameWithType.vb: CalibrationFlagsGeneric(Of Cv.Omnidir.Calib).Value
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of ArucoUnity.Plugin.Cv.Omnidir.Calib).Value
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Flags
+  commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.Flags
+  parent: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  definition: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
+  name: Flags
+  nameWithType: CalibrationFlagsGeneric<Cv.Omnidir.Calib>.Flags
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<ArucoUnity.Plugin.Cv.Omnidir.Calib>.Flags
+  nameWithType.vb: CalibrationFlagsGeneric(Of Cv.Omnidir.Calib).Flags
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of ArucoUnity.Plugin.Cv.Omnidir.Calib).Flags
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.flags
+  commentId: F:ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}.flags
+  parent: ArucoUnity.Calibration.CalibrationFlagsGeneric{ArucoUnity.Plugin.Cv.Omnidir.Calib}
+  definition: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
+  name: flags
+  nameWithType: CalibrationFlagsGeneric<Cv.Omnidir.Calib>.flags
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<ArucoUnity.Plugin.Cv.Omnidir.Calib>.flags
+  nameWithType.vb: CalibrationFlagsGeneric(Of Cv.Omnidir.Calib).flags
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of ArucoUnity.Plugin.Cv.Omnidir.Calib).flags
+- uid: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
+  commentId: P:ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: UseIntrinsicGuess
+  nameWithType: CalibrationFlags.UseIntrinsicGuess
+  fullName: ArucoUnity.Calibration.CalibrationFlags.UseIntrinsicGuess
+- uid: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
+  commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: FixKDistorsionCoefficients
+  nameWithType: CalibrationFlags.FixKDistorsionCoefficients
+  fullName: ArucoUnity.Calibration.CalibrationFlags.FixKDistorsionCoefficients
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: ArucoUnity.Calibration
+  commentId: N:ArucoUnity.Calibration
+  name: ArucoUnity.Calibration
+  nameWithType: ArucoUnity.Calibration
+  fullName: ArucoUnity.Calibration
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+  commentId: T:ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+  name: CalibrationFlagsGeneric<T>
+  nameWithType: CalibrationFlagsGeneric<T>
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>
+  nameWithType.vb: CalibrationFlagsGeneric(Of T)
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T)
+  name.vb: CalibrationFlagsGeneric(Of T)
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+    name: CalibrationFlagsGeneric
+    nameWithType: CalibrationFlagsGeneric
+    fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1
+    name: CalibrationFlagsGeneric
+    nameWithType: CalibrationFlagsGeneric
+    fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
+  commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Value
+  name: Value
+  nameWithType: CalibrationFlagsGeneric<T>.Value
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Value
+  nameWithType.vb: CalibrationFlagsGeneric(Of T).Value
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Value
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
+  commentId: P:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.Flags
+  name: Flags
+  nameWithType: CalibrationFlagsGeneric<T>.Flags
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.Flags
+  nameWithType.vb: CalibrationFlagsGeneric(Of T).Flags
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).Flags
+- uid: ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
+  commentId: F:ArucoUnity.Calibration.CalibrationFlagsGeneric`1.flags
+  name: flags
+  nameWithType: CalibrationFlagsGeneric<T>.flags
+  fullName: ArucoUnity.Calibration.CalibrationFlagsGeneric<T>.flags
+  nameWithType.vb: CalibrationFlagsGeneric(Of T).flags
+  fullName.vb: ArucoUnity.Calibration.CalibrationFlagsGeneric(Of T).flags
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+  name: FixSkew
+  nameWithType: OmnidirCameraCalibrationFlags.FixSkew
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixSkew
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+  name: FixP
+  nameWithType: OmnidirCameraCalibrationFlags.FixP
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixP
+- uid: System.Boolean[]
+  isExternal: true
+  name: Boolean[]
+  nameWithType: Boolean[]
+  fullName: System.Boolean[]
+  nameWithType.vb: Boolean()
+  fullName.vb: System.Boolean()
+  name.vb: Boolean()
+  spec.csharp:
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+  name: FixXi
+  nameWithType: OmnidirCameraCalibrationFlags.FixXi
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixXi
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+  name: FixGamma
+  nameWithType: OmnidirCameraCalibrationFlags.FixGamma
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixGamma
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+  name: FixCenter
+  nameWithType: OmnidirCameraCalibrationFlags.FixCenter
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixCenter
+- uid: ArucoUnity.Calibration.CalibrationFlags.FixKLength
+  commentId: P:ArucoUnity.Calibration.CalibrationFlags.FixKLength
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: FixKLength
+  nameWithType: CalibrationFlags.FixKLength
+  fullName: ArucoUnity.Calibration.CalibrationFlags.FixKLength
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+  name: FixKLength
+  nameWithType: OmnidirCameraCalibrationFlags.FixKLength
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixKLength
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+  name: FixPLength
+  nameWithType: OmnidirCameraCalibrationFlags.FixPLength
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.FixPLength
+- uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+  commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: UpdateCalibrationFlags()
+  nameWithType: CalibrationFlags.UpdateCalibrationFlags()
+  fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags()
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+    name: UpdateCalibrationFlags
+    nameWithType: CalibrationFlags.UpdateCalibrationFlags
+    fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+    name: UpdateCalibrationFlags
+    nameWithType: CalibrationFlags.UpdateCalibrationFlags
+    fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationFlags
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+  name: UpdateCalibrationFlags
+  nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationFlags
+- uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+  commentId: M:ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: UpdateCalibrationOptions()
+  nameWithType: CalibrationFlags.UpdateCalibrationOptions()
+  fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions()
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+    name: UpdateCalibrationOptions
+    nameWithType: CalibrationFlags.UpdateCalibrationOptions
+    fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+    name: UpdateCalibrationOptions
+    nameWithType: CalibrationFlags.UpdateCalibrationOptions
+    fullName: ArucoUnity.Calibration.CalibrationFlags.UpdateCalibrationOptions
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+  name: UpdateCalibrationOptions
+  nameWithType: OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.UpdateCalibrationOptions
+- uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+  commentId: M:ArucoUnity.Calibration.CalibrationFlags.OnValidate
+  parent: ArucoUnity.Calibration.CalibrationFlags
+  name: OnValidate()
+  nameWithType: CalibrationFlags.OnValidate()
+  fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate()
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+    name: OnValidate
+    nameWithType: CalibrationFlags.OnValidate
+    fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+    name: OnValidate
+    nameWithType: CalibrationFlags.OnValidate
+    fullName: ArucoUnity.Calibration.CalibrationFlags.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate*
+  commentId: Overload:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate
+  name: OnValidate
+  nameWithType: OmnidirCameraCalibrationFlags.OnValidate
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibrationFlags.OnValidate

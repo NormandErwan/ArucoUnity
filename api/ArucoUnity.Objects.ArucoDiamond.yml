@@ -1,0 +1,927 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.ArucoDiamond
+  commentId: T:ArucoUnity.Objects.ArucoDiamond
+  id: ArucoDiamond
+  parent: ArucoUnity.Objects
+  children:
+  - ArucoUnity.Objects.ArucoDiamond.Draw
+  - ArucoUnity.Objects.ArucoDiamond.GenerateName
+  - ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode(System.Int32[])
+  - ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale
+  - ArucoUnity.Objects.ArucoDiamond.ids
+  - ArucoUnity.Objects.ArucoDiamond.Ids
+  - ArucoUnity.Objects.ArucoDiamond.OnValidate
+  - ArucoUnity.Objects.ArucoDiamond.SquareNumberPerSide
+  - ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+  - ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode
+  langs:
+  - csharp
+  - vb
+  name: ArucoDiamond
+  nameWithType: ArucoDiamond
+  fullName: ArucoUnity.Objects.ArucoDiamond
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ArucoDiamond
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  summary: "\nDescribes an ChArUco diamond marker.\n"
+  example: []
+  syntax:
+    content: 'public class ArucoDiamond : ArucoObject'
+    content.vb: >-
+      Public Class ArucoDiamond
+          Inherits ArucoObject
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  - ArucoUnity.Objects.ArucoObject
+  inheritedMembers:
+  - ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  - ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  - ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  - ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  - ArucoUnity.Objects.ArucoObject.Dictionary
+  - ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  - ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  - ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  - ArucoUnity.Objects.ArucoObject.Awake
+  - ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - ArucoUnity.Objects.ArucoObject.UpdateProperties
+  - ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Objects.ArucoDiamond.SquareNumberPerSide
+  commentId: F:ArucoUnity.Objects.ArucoDiamond.SquareNumberPerSide
+  id: SquareNumberPerSide
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: SquareNumberPerSide
+  nameWithType: ArucoDiamond.SquareNumberPerSide
+  fullName: ArucoUnity.Objects.ArucoDiamond.SquareNumberPerSide
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: SquareNumberPerSide
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  summary: "\nA ChArUco diamond marker is composed of 3x3 squares(3 per side).\n"
+  example: []
+  syntax:
+    content: protected const int SquareNumberPerSide = 3
+    return:
+      type: System.Int32
+    content.vb: Protected Const SquareNumberPerSide As Integer = 3
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+- uid: ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+  commentId: P:ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+  id: SquareSideLength
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: SquareSideLength
+  nameWithType: ArucoDiamond.SquareSideLength
+  fullName: ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: SquareSideLength
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.\n"
+  example: []
+  syntax:
+    content: public float SquareSideLength { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property SquareSideLength As Single
+  overload: ArucoUnity.Objects.ArucoDiamond.SquareSideLength*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.ArucoDiamond.Ids
+  commentId: P:ArucoUnity.Objects.ArucoDiamond.Ids
+  id: Ids
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: Ids
+  nameWithType: ArucoDiamond.Ids
+  fullName: ArucoUnity.Objects.ArucoDiamond.Ids
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Ids
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 59
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the four ids of the four markers of the diamond.\n"
+  example: []
+  syntax:
+    content: public int[] Ids { get; set; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public Property Ids As Integer()
+  overload: ArucoUnity.Objects.ArucoDiamond.Ids*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.ArucoDiamond.ids
+  commentId: F:ArucoUnity.Objects.ArucoDiamond.ids
+  id: ids
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: ids
+  nameWithType: ArucoDiamond.ids
+  fullName: ArucoUnity.Objects.ArucoDiamond.ids
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ids
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 78
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: protected int[] ids
+    return:
+      type: System.Int32[]
+    content.vb: Protected ids As Integer()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Objects.ArucoDiamond.OnValidate
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.OnValidate
+  id: OnValidate
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: OnValidate()
+  nameWithType: ArucoDiamond.OnValidate()
+  fullName: ArucoUnity.Objects.ArucoDiamond.OnValidate()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OnValidate
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 82
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: protected override void OnValidate()
+    content.vb: Protected Overrides Sub OnValidate
+  overridden: ArucoUnity.Objects.ArucoObject.OnValidate
+  overload: ArucoUnity.Objects.ArucoDiamond.OnValidate*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoDiamond.Draw
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.Draw
+  id: Draw
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: ArucoDiamond.Draw()
+  fullName: ArucoUnity.Objects.ArucoDiamond.Draw()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Draw
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 89
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override Cv.Mat Draw()
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat
+    content.vb: Public Overrides Function Draw As Cv.Mat
+  overridden: ArucoUnity.Objects.ArucoObject.Draw
+  overload: ArucoUnity.Objects.ArucoDiamond.Draw*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoDiamond.GenerateName
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.GenerateName
+  id: GenerateName
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: GenerateName()
+  nameWithType: ArucoDiamond.GenerateName()
+  fullName: ArucoUnity.Objects.ArucoDiamond.GenerateName()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: GenerateName
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 110
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override string GenerateName()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GenerateName As String
+  overridden: ArucoUnity.Objects.ArucoObject.GenerateName
+  overload: ArucoUnity.Objects.ArucoDiamond.GenerateName*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale
+  id: GetGameObjectScale
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: GetGameObjectScale()
+  nameWithType: ArucoDiamond.GetGameObjectScale()
+  fullName: ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: GetGameObjectScale
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 116
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override Vector3 GetGameObjectScale()
+    return:
+      type: UnityEngine.Vector3
+    content.vb: Public Overrides Function GetGameObjectScale As Vector3
+  overridden: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  overload: ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode
+  id: UpdateArucoHashCode
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: UpdateArucoHashCode()
+  nameWithType: ArucoDiamond.UpdateArucoHashCode()
+  fullName: ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateArucoHashCode
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 122
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: protected override void UpdateArucoHashCode()
+    content.vb: Protected Overrides Sub UpdateArucoHashCode
+  overridden: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  overload: ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode(System.Int32[])
+  commentId: M:ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode(System.Int32[])
+  id: GetArucoHashCode(System.Int32[])
+  parent: ArucoUnity.Objects.ArucoDiamond
+  langs:
+  - csharp
+  - vb
+  name: GetArucoHashCode(Int32[])
+  nameWithType: ArucoDiamond.GetArucoHashCode(Int32[])
+  fullName: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode(System.Int32[])
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: GetArucoHashCode
+    path: Assets/ArucoUnity/Scripts/Objects/ArucoDiamond.cs
+    startLine: 137
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects
+  summary: "\nComputes the hash code of a ChArUco diamond marker.\n"
+  example: []
+  syntax:
+    content: public static int GetArucoHashCode(int[] ids)
+    parameters:
+    - id: ids
+      type: System.Int32[]
+      description: The list of ids of the four markers.
+    return:
+      type: System.Int32
+      description: The calculated ArUco hash code.
+    content.vb: Public Shared Function GetArucoHashCode(ids As Integer()) As Integer
+  overload: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode*
+  nameWithType.vb: ArucoDiamond.GetArucoHashCode(Int32())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode(System.Int32())
+  name.vb: GetArucoHashCode(Int32())
+references:
+- uid: ArucoUnity.Objects
+  commentId: N:ArucoUnity.Objects
+  name: ArucoUnity.Objects
+  nameWithType: ArucoUnity.Objects
+  fullName: ArucoUnity.Objects
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: ArucoUnity.Objects.ArucoObject
+  commentId: T:ArucoUnity.Objects.ArucoObject
+  parent: ArucoUnity.Objects
+  name: ArucoObject
+  nameWithType: ArucoObject
+  fullName: ArucoUnity.Objects.ArucoObject
+- uid: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  commentId: F:ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  parent: ArucoUnity.Objects.ArucoObject
+  name: metersToPixels300ppp
+  nameWithType: ArucoObject.metersToPixels300ppp
+  fullName: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+- uid: ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  parent: ArucoUnity.Objects.ArucoObject
+  name: PropertyUpdating
+  nameWithType: ArucoObject.PropertyUpdating
+  fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdating
+- uid: ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  parent: ArucoUnity.Objects.ArucoObject
+  name: PropertyUpdated
+  nameWithType: ArucoObject.PropertyUpdated
+  fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdated
+- uid: ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  commentId: P:ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  parent: ArucoUnity.Objects.ArucoObject
+  name: ArucoHashCode
+  nameWithType: ArucoObject.ArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoObject.ArucoHashCode
+- uid: ArucoUnity.Objects.ArucoObject.Dictionary
+  commentId: P:ArucoUnity.Objects.ArucoObject.Dictionary
+  parent: ArucoUnity.Objects.ArucoObject
+  name: Dictionary
+  nameWithType: ArucoObject.Dictionary
+  fullName: ArucoUnity.Objects.ArucoObject.Dictionary
+- uid: ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  commentId: P:ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  parent: ArucoUnity.Objects.ArucoObject
+  name: MarkerSideLength
+  nameWithType: ArucoObject.MarkerSideLength
+  fullName: ArucoUnity.Objects.ArucoObject.MarkerSideLength
+- uid: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  commentId: P:ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  parent: ArucoUnity.Objects.ArucoObject
+  name: MarkerBorderBits
+  nameWithType: ArucoObject.MarkerBorderBits
+  fullName: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+- uid: ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  commentId: P:ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  parent: ArucoUnity.Objects.ArucoObject
+  name: DisplayInEditor
+  nameWithType: ArucoObject.DisplayInEditor
+  fullName: ArucoUnity.Objects.ArucoObject.DisplayInEditor
+- uid: ArucoUnity.Objects.ArucoObject.Awake
+  commentId: M:ArucoUnity.Objects.ArucoObject.Awake
+  parent: ArucoUnity.Objects.ArucoObject
+  name: Awake()
+  nameWithType: ArucoObject.Awake()
+  fullName: ArucoUnity.Objects.ArucoObject.Awake()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.Awake
+    name: Awake
+    nameWithType: ArucoObject.Awake
+    fullName: ArucoUnity.Objects.ArucoObject.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.Awake
+    name: Awake
+    nameWithType: ArucoObject.Awake
+    fullName: ArucoUnity.Objects.ArucoObject.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnPropertyUpdating()
+  nameWithType: ArucoObject.OnPropertyUpdating()
+  fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+    name: OnPropertyUpdating
+    nameWithType: ArucoObject.OnPropertyUpdating
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+    name: OnPropertyUpdating
+    nameWithType: ArucoObject.OnPropertyUpdating
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnPropertyUpdated()
+  nameWithType: ArucoObject.OnPropertyUpdated()
+  fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+    name: OnPropertyUpdated
+    nameWithType: ArucoObject.OnPropertyUpdated
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+    name: OnPropertyUpdated
+    nameWithType: ArucoObject.OnPropertyUpdated
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.UpdateProperties
+  commentId: M:ArucoUnity.Objects.ArucoObject.UpdateProperties
+  parent: ArucoUnity.Objects.ArucoObject
+  name: UpdateProperties()
+  nameWithType: ArucoObject.UpdateProperties()
+  fullName: ArucoUnity.Objects.ArucoObject.UpdateProperties()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateProperties
+    name: UpdateProperties
+    nameWithType: ArucoObject.UpdateProperties
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateProperties
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateProperties
+    name: UpdateProperties
+    nameWithType: ArucoObject.UpdateProperties
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateProperties
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  commentId: M:ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  parent: ArucoUnity.Objects.ArucoObject
+  isExternal: true
+  name: GetInPixels(Single)
+  nameWithType: ArucoObject.GetInPixels(Single)
+  fullName: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+    name: GetInPixels
+    nameWithType: ArucoObject.GetInPixels
+    fullName: ArucoUnity.Objects.ArucoObject.GetInPixels
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+    name: GetInPixels
+    nameWithType: ArucoObject.GetInPixels
+    fullName: ArucoUnity.Objects.ArucoObject.GetInPixels
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Objects.ArucoDiamond.SquareSideLength*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+  name: SquareSideLength
+  nameWithType: ArucoDiamond.SquareSideLength
+  fullName: ArucoUnity.Objects.ArucoDiamond.SquareSideLength
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Objects.ArucoDiamond.Ids*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.Ids
+  name: Ids
+  nameWithType: ArucoDiamond.Ids
+  fullName: ArucoUnity.Objects.ArucoDiamond.Ids
+- uid: System.Int32[]
+  isExternal: true
+  name: Int32[]
+  nameWithType: Int32[]
+  fullName: System.Int32[]
+  nameWithType.vb: Int32()
+  fullName.vb: System.Int32()
+  name.vb: Int32()
+  spec.csharp:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Objects.ArucoObject.OnValidate
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnValidate
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnValidate()
+  nameWithType: ArucoObject.OnValidate()
+  fullName: ArucoUnity.Objects.ArucoObject.OnValidate()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnValidate
+    name: OnValidate
+    nameWithType: ArucoObject.OnValidate
+    fullName: ArucoUnity.Objects.ArucoObject.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnValidate
+    name: OnValidate
+    nameWithType: ArucoObject.OnValidate
+    fullName: ArucoUnity.Objects.ArucoObject.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoDiamond.OnValidate*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.OnValidate
+  name: OnValidate
+  nameWithType: ArucoDiamond.OnValidate
+  fullName: ArucoUnity.Objects.ArucoDiamond.OnValidate
+- uid: ArucoUnity.Objects.ArucoObject.Draw
+  commentId: M:ArucoUnity.Objects.ArucoObject.Draw
+  parent: ArucoUnity.Objects.ArucoObject
+  name: Draw()
+  nameWithType: ArucoObject.Draw()
+  fullName: ArucoUnity.Objects.ArucoObject.Draw()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.Draw
+    name: Draw
+    nameWithType: ArucoObject.Draw
+    fullName: ArucoUnity.Objects.ArucoObject.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.Draw
+    name: Draw
+    nameWithType: ArucoObject.Draw
+    fullName: ArucoUnity.Objects.ArucoObject.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoDiamond.Draw*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.Draw
+  name: Draw
+  nameWithType: ArucoDiamond.Draw
+  fullName: ArucoUnity.Objects.ArucoDiamond.Draw
+- uid: ArucoUnity.Plugin.Cv.Mat
+  commentId: T:ArucoUnity.Plugin.Cv.Mat
+  parent: ArucoUnity.Plugin
+  name: Cv.Mat
+  nameWithType: Cv.Mat
+  fullName: ArucoUnity.Plugin.Cv.Mat
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Objects.ArucoObject.GenerateName
+  commentId: M:ArucoUnity.Objects.ArucoObject.GenerateName
+  parent: ArucoUnity.Objects.ArucoObject
+  name: GenerateName()
+  nameWithType: ArucoObject.GenerateName()
+  fullName: ArucoUnity.Objects.ArucoObject.GenerateName()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GenerateName
+    name: GenerateName
+    nameWithType: ArucoObject.GenerateName
+    fullName: ArucoUnity.Objects.ArucoObject.GenerateName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GenerateName
+    name: GenerateName
+    nameWithType: ArucoObject.GenerateName
+    fullName: ArucoUnity.Objects.ArucoObject.GenerateName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoDiamond.GenerateName*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.GenerateName
+  name: GenerateName
+  nameWithType: ArucoDiamond.GenerateName
+  fullName: ArucoUnity.Objects.ArucoDiamond.GenerateName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  commentId: M:ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  parent: ArucoUnity.Objects.ArucoObject
+  name: GetGameObjectScale()
+  nameWithType: ArucoObject.GetGameObjectScale()
+  fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+    name: GetGameObjectScale
+    nameWithType: ArucoObject.GetGameObjectScale
+    fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+    name: GetGameObjectScale
+    nameWithType: ArucoObject.GetGameObjectScale
+    fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale
+  name: GetGameObjectScale
+  nameWithType: ArucoDiamond.GetGameObjectScale
+  fullName: ArucoUnity.Objects.ArucoDiamond.GetGameObjectScale
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  commentId: M:ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  parent: ArucoUnity.Objects.ArucoObject
+  name: UpdateArucoHashCode()
+  nameWithType: ArucoObject.UpdateArucoHashCode()
+  fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+    name: UpdateArucoHashCode
+    nameWithType: ArucoObject.UpdateArucoHashCode
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+    name: UpdateArucoHashCode
+    nameWithType: ArucoObject.UpdateArucoHashCode
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode
+  name: UpdateArucoHashCode
+  nameWithType: ArucoDiamond.UpdateArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoDiamond.UpdateArucoHashCode
+- uid: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode*
+  commentId: Overload:ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode
+  name: GetArucoHashCode
+  nameWithType: ArucoDiamond.GetArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoDiamond.GetArucoHashCode

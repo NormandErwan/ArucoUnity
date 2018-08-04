@@ -1,0 +1,311 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Exception
+  commentId: T:ArucoUnity.Plugin.Cv.Exception
+  id: Cv.Exception
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Exception.#ctor
+  - ArucoUnity.Plugin.Cv.Exception.Check
+  - ArucoUnity.Plugin.Cv.Exception.Code
+  - ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
+  - ArucoUnity.Plugin.Cv.Exception.What
+  langs:
+  - csharp
+  - vb
+  name: Cv.Exception
+  nameWithType: Cv.Exception
+  fullName: ArucoUnity.Plugin.Cv.Exception
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Exception
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class Exception : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class Exception
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Cv.Exception.#ctor
+  commentId: M:ArucoUnity.Plugin.Cv.Exception.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Cv.Exception
+  langs:
+  - csharp
+  - vb
+  name: Exception()
+  nameWithType: Cv.Exception.Exception()
+  fullName: ArucoUnity.Plugin.Cv.Exception.Exception()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Exception()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Cv.Exception.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Cv.Exception
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Cv.Exception.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Cv.Exception.Code
+  commentId: P:ArucoUnity.Plugin.Cv.Exception.Code
+  id: Code
+  parent: ArucoUnity.Plugin.Cv.Exception
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: Cv.Exception.Code
+  fullName: ArucoUnity.Plugin.Cv.Exception.Code
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Code
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 46
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int Code { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Code As Integer
+  overload: ArucoUnity.Plugin.Cv.Exception.Code*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Plugin.Cv.Exception.What
+  commentId: M:ArucoUnity.Plugin.Cv.Exception.What
+  id: What
+  parent: ArucoUnity.Plugin.Cv.Exception
+  langs:
+  - csharp
+  - vb
+  name: What()
+  nameWithType: Cv.Exception.What()
+  fullName: ArucoUnity.Plugin.Cv.Exception.What()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: What
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 53
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public string What()
+    return:
+      type: System.String
+    content.vb: Public Function What As String
+  overload: ArucoUnity.Plugin.Cv.Exception.What*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Exception.Check
+  commentId: M:ArucoUnity.Plugin.Cv.Exception.Check
+  id: Check
+  parent: ArucoUnity.Plugin.Cv.Exception
+  langs:
+  - csharp
+  - vb
+  name: Check()
+  nameWithType: Cv.Exception.Check()
+  fullName: ArucoUnity.Plugin.Cv.Exception.Check()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Check
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Exception.cs
+    startLine: 59
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void Check()
+    content.vb: Public Sub Check
+  overload: ArucoUnity.Plugin.Cv.Exception.Check*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Cv.Exception.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Exception.#ctor
+  name: Exception
+  nameWithType: Cv.Exception.Exception
+  fullName: ArucoUnity.Plugin.Cv.Exception.Exception
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
+  name: DeleteCppPtr
+  nameWithType: Cv.Exception.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Cv.Exception.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Cv.Exception.Code*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Exception.Code
+  name: Code
+  nameWithType: Cv.Exception.Code
+  fullName: ArucoUnity.Plugin.Cv.Exception.Code
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Plugin.Cv.Exception.What*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Exception.What
+  name: What
+  nameWithType: Cv.Exception.What
+  fullName: ArucoUnity.Plugin.Cv.Exception.What
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ArucoUnity.Plugin.Cv.Exception.Check*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Exception.Check
+  name: Check
+  nameWithType: Cv.Exception.Check
+  fullName: ArucoUnity.Plugin.Cv.Exception.Check

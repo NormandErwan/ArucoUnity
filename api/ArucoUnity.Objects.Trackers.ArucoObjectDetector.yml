@@ -1,0 +1,784 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  id: ArucoObjectDetector
+  parent: ArucoUnity.Objects.Trackers
+  children:
+  - ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  - ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  langs:
+  - csharp
+  - vb
+  name: ArucoObjectDetector
+  nameWithType: ArucoObjectDetector
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ArucoObjectDetector
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nDetects ArUco objects for a <xref href=\"ArucoUnity.Cameras.ArucoCamera\" data-throw-if-not-resolved=\"false\"></xref> camera system according to <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public abstract class ArucoObjectDetector : ArucoCameraController, IArucoCameraController, IConfigurableController, IHasDetectorParameter'
+    content.vb: >-
+      Public MustInherit Class ArucoObjectDetector
+          Inherits ArucoCameraController
+          Implements IArucoCameraController, IConfigurableController, IHasDetectorParameter
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  - ArucoUnity.Utilities.ConfigurableController
+  - ArucoUnity.Cameras.ArucoCameraController
+  derivedClasses:
+  - ArucoUnity.Calibration.ArucoCameraCalibration
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController
+  implements:
+  - ArucoUnity.Cameras.IArucoCameraController
+  - ArucoUnity.Utilities.IConfigurableController
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  inheritedMembers:
+  - ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  - ArucoUnity.Utilities.ConfigurableController.Ready
+  - ArucoUnity.Utilities.ConfigurableController.Configured
+  - ArucoUnity.Utilities.ConfigurableController.Started
+  - ArucoUnity.Utilities.ConfigurableController.Stopped
+  - ArucoUnity.Utilities.ConfigurableController.AutoStart
+  - ArucoUnity.Utilities.ConfigurableController.IsReady
+  - ArucoUnity.Utilities.ConfigurableController.IsConfigured
+  - ArucoUnity.Utilities.ConfigurableController.IsStarted
+  - ArucoUnity.Utilities.ConfigurableController.Awake
+  - ArucoUnity.Utilities.ConfigurableController.Start
+  - ArucoUnity.Utilities.ConfigurableController.OnDestroy
+  - ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.ConfigurableController.GetDependencies
+  - ArucoUnity.Utilities.ConfigurableController.ConfigureController
+  - ArucoUnity.Utilities.ConfigurableController.StartController
+  - ArucoUnity.Utilities.ConfigurableController.StopController
+  - ArucoUnity.Utilities.ConfigurableController.OnConfigured
+  - ArucoUnity.Utilities.ConfigurableController.Starting
+  - ArucoUnity.Utilities.ConfigurableController.OnStarted
+  - ArucoUnity.Utilities.ConfigurableController.Stopping
+  - ArucoUnity.Utilities.ConfigurableController.OnStopped
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  id: DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  langs:
+  - csharp
+  - vb
+  name: DetectorParameters
+  nameWithType: ArucoObjectDetector.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DetectorParameters
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nGets or sets the parameters to use for the detection.\n"
+  example: []
+  syntax:
+    content: public Aruco.DetectorParameters DetectorParameters { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Aruco.DetectorParameters
+    content.vb: Public Property DetectorParameters As Aruco.DetectorParameters
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters*
+  implements:
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  id: Configuring
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  langs:
+  - csharp
+  - vb
+  name: Configuring()
+  nameWithType: ArucoObjectDetector.Configuring()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Configuring
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nChecks if <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref> is set.\n"
+  example: []
+  syntax:
+    content: protected override void Configuring()
+    content.vb: Protected Overrides Sub Configuring
+  overridden: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: ArucoUnity.Cameras.ArucoCamera
+  commentId: T:ArucoUnity.Cameras.ArucoCamera
+  parent: ArucoUnity.Cameras
+  name: ArucoCamera
+  nameWithType: ArucoCamera
+  fullName: ArucoUnity.Cameras.ArucoCamera
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  name: DetectorParameters
+  nameWithType: ArucoObjectDetector.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers
+  commentId: N:ArucoUnity.Objects.Trackers
+  name: ArucoUnity.Objects.Trackers
+  nameWithType: ArucoUnity.Objects.Trackers
+  fullName: ArucoUnity.Objects.Trackers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: ArucoUnity.Utilities.ConfigurableController
+  commentId: T:ArucoUnity.Utilities.ConfigurableController
+  parent: ArucoUnity.Utilities
+  name: ConfigurableController
+  nameWithType: ConfigurableController
+  fullName: ArucoUnity.Utilities.ConfigurableController
+- uid: ArucoUnity.Cameras.ArucoCameraController
+  commentId: T:ArucoUnity.Cameras.ArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: ArucoCameraController
+  nameWithType: ArucoCameraController
+  fullName: ArucoUnity.Cameras.ArucoCameraController
+- uid: ArucoUnity.Cameras.IArucoCameraController
+  commentId: T:ArucoUnity.Cameras.IArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: ArucoUnity.Cameras.IArucoCameraController
+- uid: ArucoUnity.Utilities.IConfigurableController
+  commentId: T:ArucoUnity.Utilities.IConfigurableController
+  parent: ArucoUnity.Utilities
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: ArucoUnity.Utilities.IConfigurableController
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  parent: ArucoUnity.Objects.Trackers
+  name: IHasDetectorParameter
+  nameWithType: IHasDetectorParameter
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+- uid: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  commentId: P:ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  parent: ArucoUnity.Cameras.ArucoCameraController
+  name: ArucoCamera
+  nameWithType: ArucoCameraController.ArucoCamera
+  fullName: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+- uid: ArucoUnity.Utilities.ConfigurableController.Ready
+  commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Ready
+  nameWithType: ConfigurableController.Ready
+  fullName: ArucoUnity.Utilities.ConfigurableController.Ready
+- uid: ArucoUnity.Utilities.ConfigurableController.Configured
+  commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Configured
+  nameWithType: ConfigurableController.Configured
+  fullName: ArucoUnity.Utilities.ConfigurableController.Configured
+- uid: ArucoUnity.Utilities.ConfigurableController.Started
+  commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Started
+  nameWithType: ConfigurableController.Started
+  fullName: ArucoUnity.Utilities.ConfigurableController.Started
+- uid: ArucoUnity.Utilities.ConfigurableController.Stopped
+  commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Stopped
+  nameWithType: ConfigurableController.Stopped
+  fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
+- uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
+  commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: AutoStart
+  nameWithType: ConfigurableController.AutoStart
+  fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
+- uid: ArucoUnity.Utilities.ConfigurableController.IsReady
+  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: IsReady
+  nameWithType: ConfigurableController.IsReady
+  fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
+- uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
+  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: IsConfigured
+  nameWithType: ConfigurableController.IsConfigured
+  fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
+- uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
+  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: IsStarted
+  nameWithType: ConfigurableController.IsStarted
+  fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
+- uid: ArucoUnity.Utilities.ConfigurableController.Awake
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.Awake
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Awake()
+  nameWithType: ConfigurableController.Awake()
+  fullName: ArucoUnity.Utilities.ConfigurableController.Awake()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Awake
+    name: Awake
+    nameWithType: ConfigurableController.Awake
+    fullName: ArucoUnity.Utilities.ConfigurableController.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Awake
+    name: Awake
+    nameWithType: ConfigurableController.Awake
+    fullName: ArucoUnity.Utilities.ConfigurableController.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.Start
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.Start
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Start()
+  nameWithType: ConfigurableController.Start()
+  fullName: ArucoUnity.Utilities.ConfigurableController.Start()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Start
+    name: Start
+    nameWithType: ConfigurableController.Start
+    fullName: ArucoUnity.Utilities.ConfigurableController.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Start
+    name: Start
+    nameWithType: ConfigurableController.Start
+    fullName: ArucoUnity.Utilities.ConfigurableController.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: OnDestroy()
+  nameWithType: ConfigurableController.OnDestroy()
+  fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
+    name: OnDestroy
+    nameWithType: ConfigurableController.OnDestroy
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
+    name: OnDestroy
+    nameWithType: ConfigurableController.OnDestroy
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: AddDependency(IConfigurableController)
+  nameWithType: ConfigurableController.AddDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: ConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: ConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: RemoveDependency(IConfigurableController)
+  nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: ConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: ConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: GetDependencies()
+  nameWithType: ConfigurableController.GetDependencies()
+  fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: ConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: ConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: ConfigureController()
+  nameWithType: ConfigurableController.ConfigureController()
+  fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: ConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: ConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.StartController
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: StartController()
+  nameWithType: ConfigurableController.StartController()
+  fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.StartController
+    name: StartController
+    nameWithType: ConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.ConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.StartController
+    name: StartController
+    nameWithType: ConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.ConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.StopController
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: StopController()
+  nameWithType: ConfigurableController.StopController()
+  fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.StopController
+    name: StopController
+    nameWithType: ConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.ConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.StopController
+    name: StopController
+    nameWithType: ConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.ConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: OnConfigured()
+  nameWithType: ConfigurableController.OnConfigured()
+  fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
+    name: OnConfigured
+    nameWithType: ConfigurableController.OnConfigured
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
+    name: OnConfigured
+    nameWithType: ConfigurableController.OnConfigured
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.Starting
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.Starting
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Starting()
+  nameWithType: ConfigurableController.Starting()
+  fullName: ArucoUnity.Utilities.ConfigurableController.Starting()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Starting
+    name: Starting
+    nameWithType: ConfigurableController.Starting
+    fullName: ArucoUnity.Utilities.ConfigurableController.Starting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Starting
+    name: Starting
+    nameWithType: ConfigurableController.Starting
+    fullName: ArucoUnity.Utilities.ConfigurableController.Starting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStarted
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: OnStarted()
+  nameWithType: ConfigurableController.OnStarted()
+  fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
+    name: OnStarted
+    nameWithType: ConfigurableController.OnStarted
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
+    name: OnStarted
+    nameWithType: ConfigurableController.OnStarted
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: Stopping()
+  nameWithType: ConfigurableController.Stopping()
+  fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+    name: Stopping
+    nameWithType: ConfigurableController.Stopping
+    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.Stopping
+    name: Stopping
+    nameWithType: ConfigurableController.Stopping
+    fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
+  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
+  parent: ArucoUnity.Utilities.ConfigurableController
+  name: OnStopped()
+  nameWithType: ConfigurableController.OnStopped()
+  fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
+    name: OnStopped
+    nameWithType: ConfigurableController.OnStopped
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
+    name: OnStopped
+    nameWithType: ConfigurableController.OnStopped
+    fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  parent: ArucoUnity.Objects.Trackers
+  name: ArucoObjectDetector
+  nameWithType: ArucoObjectDetector
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  name: DetectorParameters
+  nameWithType: ArucoObjectDetector.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  name: DetectorParameters
+  nameWithType: IHasDetectorParameter.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+- uid: ArucoUnity.Plugin.Aruco.DetectorParameters
+  commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
+  parent: ArucoUnity.Plugin
+  name: Aruco.DetectorParameters
+  nameWithType: Aruco.DetectorParameters
+  fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  commentId: M:ArucoUnity.Cameras.ArucoCameraController.Configuring
+  parent: ArucoUnity.Cameras.ArucoCameraController
+  name: Configuring()
+  nameWithType: ArucoCameraController.Configuring()
+  fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+    name: Configuring
+    nameWithType: ArucoCameraController.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+    name: Configuring
+    nameWithType: ArucoCameraController.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  name: Configuring
+  nameWithType: ArucoObjectDetector.Configuring
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring

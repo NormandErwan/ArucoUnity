@@ -1,0 +1,541 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Type
+  commentId: T:ArucoUnity.Plugin.Cv.Type
+  id: Cv.Type
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Type.CV_16S
+  - ArucoUnity.Plugin.Cv.Type.CV_16SC1
+  - ArucoUnity.Plugin.Cv.Type.CV_16SC2
+  - ArucoUnity.Plugin.Cv.Type.CV_16SC3
+  - ArucoUnity.Plugin.Cv.Type.CV_16SC4
+  - ArucoUnity.Plugin.Cv.Type.CV_64F
+  - ArucoUnity.Plugin.Cv.Type.CV_64FC1
+  - ArucoUnity.Plugin.Cv.Type.CV_64FC2
+  - ArucoUnity.Plugin.Cv.Type.CV_64FC3
+  - ArucoUnity.Plugin.Cv.Type.CV_64FC4
+  - ArucoUnity.Plugin.Cv.Type.CV_8U
+  - ArucoUnity.Plugin.Cv.Type.CV_8UC1
+  - ArucoUnity.Plugin.Cv.Type.CV_8UC2
+  - ArucoUnity.Plugin.Cv.Type.CV_8UC3
+  - ArucoUnity.Plugin.Cv.Type.CV_8UC4
+  langs:
+  - csharp
+  - vb
+  name: Cv.Type
+  nameWithType: Cv.Type
+  fullName: ArucoUnity.Plugin.Cv.Type
+  type: Enum
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Type
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public enum Type
+    content.vb: Public Enum Type
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Cv.Type.CV_8U
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_8U
+  id: CV_8U
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_8U
+  nameWithType: Cv.Type.CV_8U
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_8U
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_8U
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_8U = 0
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_8UC1
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_8UC1
+  id: CV_8UC1
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_8UC1
+  nameWithType: Cv.Type.CV_8UC1
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_8UC1
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_8UC1
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_8UC1 = 0
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_8UC2
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_8UC2
+  id: CV_8UC2
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_8UC2
+  nameWithType: Cv.Type.CV_8UC2
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_8UC2
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_8UC2
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 24
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_8UC2 = 8
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_8UC3
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_8UC3
+  id: CV_8UC3
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_8UC3
+  nameWithType: Cv.Type.CV_8UC3
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_8UC3
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_8UC3
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_8UC3 = 16
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_8UC4
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_8UC4
+  id: CV_8UC4
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_8UC4
+  nameWithType: Cv.Type.CV_8UC4
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_8UC4
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_8UC4
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_8UC4 = 24
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_16S
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_16S
+  id: CV_16S
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_16S
+  nameWithType: Cv.Type.CV_16S
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_16S
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_16S
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_16S = 3
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_16SC1
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_16SC1
+  id: CV_16SC1
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_16SC1
+  nameWithType: Cv.Type.CV_16SC1
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_16SC1
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_16SC1
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_16SC1 = 3
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_16SC2
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_16SC2
+  id: CV_16SC2
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_16SC2
+  nameWithType: Cv.Type.CV_16SC2
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_16SC2
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_16SC2
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_16SC2 = 11
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_16SC3
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_16SC3
+  id: CV_16SC3
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_16SC3
+  nameWithType: Cv.Type.CV_16SC3
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_16SC3
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_16SC3
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_16SC3 = 19
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_16SC4
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_16SC4
+  id: CV_16SC4
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_16SC4
+  nameWithType: Cv.Type.CV_16SC4
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_16SC4
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_16SC4
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_16SC4 = 27
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_64F
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_64F
+  id: CV_64F
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_64F
+  nameWithType: Cv.Type.CV_64F
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_64F
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_64F
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_64F = 6
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_64FC1
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_64FC1
+  id: CV_64FC1
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_64FC1
+  nameWithType: Cv.Type.CV_64FC1
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_64FC1
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_64FC1
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_64FC1 = 6
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_64FC2
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_64FC2
+  id: CV_64FC2
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_64FC2
+  nameWithType: Cv.Type.CV_64FC2
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_64FC2
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_64FC2
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_64FC2 = 14
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_64FC3
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_64FC3
+  id: CV_64FC3
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_64FC3
+  nameWithType: Cv.Type.CV_64FC3
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_64FC3
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_64FC3
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 35
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_64FC3 = 22
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.Type.CV_64FC4
+  commentId: F:ArucoUnity.Plugin.Cv.Type.CV_64FC4
+  id: CV_64FC4
+  parent: ArucoUnity.Plugin.Cv.Type
+  langs:
+  - csharp
+  - vb
+  name: CV_64FC4
+  nameWithType: Cv.Type.CV_64FC4
+  fullName: ArucoUnity.Plugin.Cv.Type.CV_64FC4
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CV_64FC4
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Core.cs
+    startLine: 36
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: CV_64FC4 = 30
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Cv.Type
+  commentId: T:ArucoUnity.Plugin.Cv.Type
+  parent: ArucoUnity.Plugin
+  name: Cv.Type
+  nameWithType: Cv.Type
+  fullName: ArucoUnity.Plugin.Cv.Type

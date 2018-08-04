@@ -1,0 +1,810 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  commentId: T:ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  id: ArucoObjectCreator
+  parent: ArucoUnity.Objects.Displayers
+  children:
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.pixelsToMetersFactor
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  - ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage
+  langs:
+  - csharp
+  - vb
+  name: ArucoObjectCreator
+  nameWithType: ArucoObjectCreator
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ArucoObjectCreator
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nCreate and display images of an ArUco object ready to be printed.\n\nSee the OpenCV documentation for more information about the marker creation (second section of the following tutorial):\nhttp://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html\n"
+  example: []
+  syntax:
+    content: 'public class ArucoObjectCreator : ArucoObjectDisplayer'
+    content.vb: >-
+      Public Class ArucoObjectCreator
+          Inherits ArucoObjectDisplayer
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  inheritedMembers:
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.imagePlaneMaterial
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+  - ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.pixelsToMetersFactor
+  commentId: F:ArucoUnity.Objects.Displayers.ArucoObjectCreator.pixelsToMetersFactor
+  id: pixelsToMetersFactor
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: pixelsToMetersFactor
+  nameWithType: ArucoObjectCreator.pixelsToMetersFactor
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.pixelsToMetersFactor
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: pixelsToMetersFactor
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  syntax:
+    content: public const float pixelsToMetersFactor = 0.001F
+    return:
+      type: System.Single
+    content.vb: Public Const pixelsToMetersFactor As Single = 0.001F
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  id: AutoSaveImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: AutoSaveImage
+  nameWithType: ArucoObjectCreator.AutoSaveImage
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: AutoSaveImage
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 40
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nGets or sets if the <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture\" data-throw-if-not-resolved=\"false\"></xref> is automatically saved in play mode.\n"
+  example: []
+  syntax:
+    content: public bool AutoSaveImage { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutoSaveImage As Boolean
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  id: OutputFolder
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: OutputFolder
+  nameWithType: ArucoObjectCreator.OutputFolder
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OutputFolder
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 46
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nGets or sets the output folder for the image, relative to the Application.persistentDataPath folder\n(default: ArucoUnity/Images/).\n"
+  example: []
+  syntax:
+    content: public string OutputFolder { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputFolder As String
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  id: ImageFilename
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: ImageFilename
+  nameWithType: ArucoObjectCreator.ImageFilename
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ImageFilename
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 52
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nGets or sets the name of the image, without the extension (.png added automatically). If null, it will be\ngenerated automatically.\n"
+  example: []
+  syntax:
+    content: public string ImageFilename { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ImageFilename As String
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage
+  id: UpdateImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: UpdateImage()
+  nameWithType: ArucoObjectCreator.UpdateImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UpdateImage
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 60
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nCalls <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage\" data-throw-if-not-resolved=\"false\"></xref> then <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage\" data-throw-if-not-resolved=\"false\"></xref> if <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage\" data-throw-if-not-resolved=\"false\"></xref>\nis set. Also set <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename\" data-throw-if-not-resolved=\"false\"></xref> in the editor.\n"
+  example: []
+  syntax:
+    content: protected override void UpdateImage()
+    content.vb: Protected Overrides Sub UpdateImage
+  overridden: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane
+  id: PlaceImagePlane
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: PlaceImagePlane()
+  nameWithType: ArucoObjectCreator.PlaceImagePlane()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: PlaceImagePlane
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 84
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  syntax:
+    content: protected override void PlaceImagePlane()
+    content.vb: Protected Overrides Sub PlaceImagePlane
+  overridden: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  id: SaveImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectCreator
+  langs:
+  - csharp
+  - vb
+  name: SaveImage()
+  nameWithType: ArucoObjectCreator.SaveImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: SaveImage
+    path: Assets/ArucoUnity/Scripts/Objects/Displayers/ArucoObjectCreator.cs
+    startLine: 100
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Displayers
+  summary: "\nSave the <see cref=\"!:ImageTexture\"></see> on a image file in the <xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder\" data-throw-if-not-resolved=\"false\"></xref> with\n<xref href=\"ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename\" data-throw-if-not-resolved=\"false\"></xref> as filename.\n"
+  example: []
+  syntax:
+    content: public virtual void SaveImage()
+    content.vb: Public Overridable Sub SaveImage
+  overload: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: ArucoUnity.Objects.Displayers
+  commentId: N:ArucoUnity.Objects.Displayers
+  name: ArucoUnity.Objects.Displayers
+  nameWithType: ArucoUnity.Objects.Displayers
+  fullName: ArucoUnity.Objects.Displayers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  commentId: T:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  parent: ArucoUnity.Objects.Displayers
+  name: ArucoObjectDisplayer
+  nameWithType: ArucoObjectDisplayer
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ArucoObject
+  nameWithType: ArucoObjectDisplayer.ArucoObject
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: DisplayInPlayMode
+  nameWithType: ArucoObjectDisplayer.DisplayInPlayMode
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayInPlayMode
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ImagePlanePrefab
+  nameWithType: ArucoObjectDisplayer.ImagePlanePrefab
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlanePrefab
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ImagePlane
+  nameWithType: ArucoObjectDisplayer.ImagePlane
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImagePlane
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: Image
+  nameWithType: ArucoObjectDisplayer.Image
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Image
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ImageTexture
+  nameWithType: ArucoObjectDisplayer.ImageTexture
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ImageTexture
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  commentId: F:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: lastArucoObjectOnValidate
+  nameWithType: ArucoObjectDisplayer.lastArucoObjectOnValidate
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.imagePlaneMaterial
+  commentId: F:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.imagePlaneMaterial
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: imagePlaneMaterial
+  nameWithType: ArucoObjectDisplayer.imagePlaneMaterial
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.imagePlaneMaterial
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: Start()
+  nameWithType: ArucoObjectDisplayer.Start()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+    name: Start
+    nameWithType: ArucoObjectDisplayer.Start
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+    name: Start
+    nameWithType: ArucoObjectDisplayer.Start
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: Update()
+  nameWithType: ArucoObjectDisplayer.Update()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+    name: Update
+    nameWithType: ArucoObjectDisplayer.Update
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+    name: Update
+    nameWithType: ArucoObjectDisplayer.Update
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.Update
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: OnDestroy()
+  nameWithType: ArucoObjectDisplayer.OnDestroy()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+    name: OnDestroy
+    nameWithType: ArucoObjectDisplayer.OnDestroy
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+    name: OnDestroy
+    nameWithType: ArucoObjectDisplayer.OnDestroy
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: CreateImage()
+  nameWithType: ArucoObjectDisplayer.CreateImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+    name: CreateImage
+    nameWithType: ArucoObjectDisplayer.CreateImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+    name: CreateImage
+    nameWithType: ArucoObjectDisplayer.CreateImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.CreateImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: DisplayImage()
+  nameWithType: ArucoObjectDisplayer.DisplayImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+    name: DisplayImage
+    nameWithType: ArucoObjectDisplayer.DisplayImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+    name: DisplayImage
+    nameWithType: ArucoObjectDisplayer.DisplayImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.DisplayImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ResetImage()
+  nameWithType: ArucoObjectDisplayer.ResetImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+    name: ResetImage
+    nameWithType: ArucoObjectDisplayer.ResetImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+    name: ResetImage
+    nameWithType: ArucoObjectDisplayer.ResetImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ResetImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: SetArucoObject(ArucoObject)
+  nameWithType: ArucoObjectDisplayer.SetArucoObject(ArucoObject)
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: SetArucoObject
+    nameWithType: ArucoObjectDisplayer.SetArucoObject
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: SetArucoObject
+    nameWithType: ArucoObjectDisplayer.SetArucoObject
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.SetArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: InitializeImagePlane()
+  nameWithType: ArucoObjectDisplayer.InitializeImagePlane()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+    name: InitializeImagePlane
+    nameWithType: ArucoObjectDisplayer.InitializeImagePlane
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+    name: InitializeImagePlane
+    nameWithType: ArucoObjectDisplayer.InitializeImagePlane
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: ArucoObject_PropertyUpdated(ArucoObject)
+  nameWithType: ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoObject)
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdated
+    nameWithType: ArucoObjectDisplayer.ArucoObject_PropertyUpdated
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdated
+    nameWithType: ArucoObjectDisplayer.ArucoObject_PropertyUpdated
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.ArucoObject_PropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  name: AutoSaveImage
+  nameWithType: ArucoObjectCreator.AutoSaveImage
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  name: OutputFolder
+  nameWithType: ArucoObjectCreator.OutputFolder
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  name: ImageFilename
+  nameWithType: ArucoObjectCreator.ImageFilename
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: UpdateImage()
+  nameWithType: ArucoObjectDisplayer.UpdateImage()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+    name: UpdateImage
+    nameWithType: ArucoObjectDisplayer.UpdateImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+    name: UpdateImage
+    nameWithType: ArucoObjectDisplayer.UpdateImage
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.UpdateImage
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  isExternal: true
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage
+  isExternal: true
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename
+  isExternal: true
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage
+  name: UpdateImage
+  nameWithType: ArucoObjectCreator.UpdateImage
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+  commentId: M:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+  parent: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer
+  name: PlaceImagePlane()
+  nameWithType: ArucoObjectDisplayer.PlaceImagePlane()
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+    name: PlaceImagePlane
+    nameWithType: ArucoObjectDisplayer.PlaceImagePlane
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+    name: PlaceImagePlane
+    nameWithType: ArucoObjectDisplayer.PlaceImagePlane
+    fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.PlaceImagePlane
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane
+  name: PlaceImagePlane
+  nameWithType: ArucoObjectCreator.PlaceImagePlane
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  commentId: P:ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder
+  isExternal: true
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage*
+  commentId: Overload:ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage
+  name: SaveImage
+  nameWithType: ArucoObjectCreator.SaveImage
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage

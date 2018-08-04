@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StereoArucoCamera
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StereoArucoCamera
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.37.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Cameras.StereoArucoCamera">
+  
+  
+  <h1 id="ArucoUnity_Cameras_StereoArucoCamera" data-uid="ArucoUnity.Cameras.StereoArucoCamera" class="text-break">Class StereoArucoCamera
+  </h1>
+  <div class="markdown level0 summary"><p>Captures images of stereo camera.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html">ConfigurableController</a></div>
+    <div class="level6"><a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a></div>
+    <div class="level7"><span class="xref">StereoArucoCamera</span></div>
+      <div class="level8"><a class="xref" href="ArucoUnity.Cameras.StereoArucoWebcam.html">StereoArucoWebcam</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a></div>
+    <div><a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_dontFlipCode">ArucoCamera.dontFlipCode</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImagesUpdated">ArucoCamera.ImagesUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UndistortRectifyImages">ArucoCamera.UndistortRectifyImages</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Name">ArucoCamera.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Textures">ArucoCamera.Textures</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Images">ArucoCamera.Images</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageDatas">ArucoCamera.ImageDatas</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageDataSizes">ArucoCamera.ImageDataSizes</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageRatios">ArucoCamera.ImageRatios</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImages">ArucoCamera.NextImages</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImageDatas">ArucoCamera.NextImageDatas</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_currentBuffer">ArucoCamera.currentBuffer</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imageBuffers">ArucoCamera.imageBuffers</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imageDataBuffers">ArucoCamera.imageDataBuffers</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imagesToTextures">ArucoCamera.imagesToTextures</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imagesToTextureDatas">ArucoCamera.imagesToTextureDatas</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imagesUpdatedThisFrame">ArucoCamera.imagesUpdatedThisFrame</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_flipHorizontallyImages">ArucoCamera.flipHorizontallyImages</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_flipVerticallyImages">ArucoCamera.flipVerticallyImages</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_imagesFlipCode">ArucoCamera.imagesFlipCode</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Update">ArucoCamera.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Configuring">ArucoCamera.Configuring()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_OnStarted">ArucoCamera.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages">ArucoCamera.UpdatingImages()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_OnImagesUpdated">ArucoCamera.OnImagesUpdated()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Ready">ConfigurableController.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Configured">ConfigurableController.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Started">ConfigurableController.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopped">ConfigurableController.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AutoStart">ConfigurableController.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsReady">ConfigurableController.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsConfigured">ConfigurableController.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsStarted">ConfigurableController.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Awake">ConfigurableController.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Start">ConfigurableController.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnDestroy">ConfigurableController.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AddDependency_ArucoUnity_Utilities_IConfigurableController_">ConfigurableController.AddDependency(IConfigurableController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_RemoveDependency_ArucoUnity_Utilities_IConfigurableController_">ConfigurableController.RemoveDependency(IConfigurableController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_GetDependencies">ConfigurableController.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_ConfigureController">ConfigurableController.ConfigureController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StartController">ConfigurableController.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StopController">ConfigurableController.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnConfigured">ConfigurableController.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Starting">ConfigurableController.Starting()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopping">ConfigurableController.Stopping()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStopped">ConfigurableController.OnStopped()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.html">ArucoUnity.Cameras</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ArucoUnity_Cameras_StereoArucoCamera_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class StereoArucoCamera : ArucoCamera, IArucoCamera, IConfigurableController</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_StereoArucoCamera_StereoCameraNumber.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.StereoArucoCamera.StereoCameraNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/StereoArucoCamera.cs/#L10">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Cameras_StereoArucoCamera_StereoCameraNumber" data-uid="ArucoUnity.Cameras.StereoArucoCamera.StereoCameraNumber">StereoCameraNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int StereoCameraNumber = 2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_StereoArucoCamera_CameraId1.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.StereoArucoCamera.CameraId1%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/StereoArucoCamera.cs/#L21">View Source</a>
+  </span>
+  <a id="ArucoUnity_Cameras_StereoArucoCamera_CameraId1_" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraId1*"></a>
+  <h4 id="ArucoUnity_Cameras_StereoArucoCamera_CameraId1" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraId1">CameraId1</h4>
+  <div class="markdown level1 summary"><p>Gets the id of the first camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CameraId1 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_StereoArucoCamera_CameraId2.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.StereoArucoCamera.CameraId2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/StereoArucoCamera.cs/#L26">View Source</a>
+  </span>
+  <a id="ArucoUnity_Cameras_StereoArucoCamera_CameraId2_" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraId2*"></a>
+  <h4 id="ArucoUnity_Cameras_StereoArucoCamera_CameraId2" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraId2">CameraId2</h4>
+  <div class="markdown level1 summary"><p>Gets the id of the second camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CameraId2 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_StereoArucoCamera_CameraNumber.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.StereoArucoCamera.CameraNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/StereoArucoCamera.cs/#L14">View Source</a>
+  </span>
+  <a id="ArucoUnity_Cameras_StereoArucoCamera_CameraNumber_" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraNumber*"></a>
+  <h4 id="ArucoUnity_Cameras_StereoArucoCamera_CameraNumber" data-uid="ArucoUnity.Cameras.StereoArucoCamera.CameraNumber">CameraNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CameraNumber { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_CameraNumber">ArucoCamera.CameraNumber</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_StereoArucoCamera.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.StereoArucoCamera%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/StereoArucoCamera.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

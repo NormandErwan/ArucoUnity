@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController
+  commentId: T:ArucoUnity.Objects.Trackers.DetectorParametersController
+  id: DetectorParametersController
+  parent: ArucoUnity.Objects.Trackers
+  children:
+  - ArucoUnity.Objects.Trackers.DetectorParametersController.Awake
+  - ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  langs:
+  - csharp
+  - vb
+  name: DetectorParametersController
+  nameWithType: DetectorParametersController
+  fullName: ArucoUnity.Objects.Trackers.DetectorParametersController
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DetectorParametersController
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nEditor controller for <xref href=\"ArucoUnity.Plugin.Aruco.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class DetectorParametersController : MonoBehaviour, IHasDetectorParameter'
+    content.vb: >-
+      Public Class DetectorParametersController
+          Inherits MonoBehaviour
+          Implements IHasDetectorParameter
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+  implements:
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  id: DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.DetectorParametersController
+  langs:
+  - csharp
+  - vb
+  name: DetectorParameters
+  nameWithType: DetectorParametersController.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DetectorParameters
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+    startLine: 97
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nGets or sets the <xref href=\"ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Aruco.DetectorParameters DetectorParameters { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Aruco.DetectorParameters
+    content.vb: Public Property DetectorParameters As Aruco.DetectorParameters
+  overload: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters*
+  implements:
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake
+  commentId: M:ArucoUnity.Objects.Trackers.DetectorParametersController.Awake
+  id: Awake
+  parent: ArucoUnity.Objects.Trackers.DetectorParametersController
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: DetectorParametersController.Awake()
+  fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Awake
+    path: Assets/ArucoUnity/Scripts/Objects/Trackers/DetectorParametersController.cs
+    startLine: 104
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nInitializes <xref href=\"ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref> from editor fields.\n"
+  example: []
+  syntax:
+    content: protected virtual void Awake()
+    content.vb: Protected Overridable Sub Awake
+  overload: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: ArucoUnity.Plugin.Aruco.DetectorParameters
+  commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
+  parent: ArucoUnity.Plugin
+  name: Aruco.DetectorParameters
+  nameWithType: Aruco.DetectorParameters
+  fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers
+  commentId: N:ArucoUnity.Objects.Trackers
+  name: ArucoUnity.Objects.Trackers
+  nameWithType: ArucoUnity.Objects.Trackers
+  fullName: ArucoUnity.Objects.Trackers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  parent: ArucoUnity.Objects.Trackers
+  name: IHasDetectorParameter
+  nameWithType: IHasDetectorParameter
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  isExternal: true
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters*
+  commentId: Overload:ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+  name: DetectorParameters
+  nameWithType: DetectorParametersController.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  name: DetectorParameters
+  nameWithType: IHasDetectorParameter.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake*
+  commentId: Overload:ArucoUnity.Objects.Trackers.DetectorParametersController.Awake
+  name: Awake
+  nameWithType: DetectorParametersController.Awake
+  fullName: ArucoUnity.Objects.Trackers.DetectorParametersController.Awake

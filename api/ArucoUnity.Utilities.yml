@@ -1,0 +1,49 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  id: ArucoUnity.Utilities
+  children:
+  - ArucoUnity.Utilities.ArucoCameraSeparateThread
+  - ArucoUnity.Utilities.ConfigurableController
+  - ArucoUnity.Utilities.CvMatExtensions
+  - ArucoUnity.Utilities.IConfigurableController
+  langs:
+  - csharp
+  - vb
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: ArucoUnity.Utilities.ArucoCameraSeparateThread
+  commentId: T:ArucoUnity.Utilities.ArucoCameraSeparateThread
+  parent: ArucoUnity.Utilities
+  name: ArucoCameraSeparateThread
+  nameWithType: ArucoCameraSeparateThread
+  fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread
+- uid: ArucoUnity.Utilities.ConfigurableController
+  commentId: T:ArucoUnity.Utilities.ConfigurableController
+  parent: ArucoUnity.Utilities
+  name: ConfigurableController
+  nameWithType: ConfigurableController
+  fullName: ArucoUnity.Utilities.ConfigurableController
+- uid: ArucoUnity.Utilities.CvMatExtensions
+  commentId: T:ArucoUnity.Utilities.CvMatExtensions
+  parent: ArucoUnity.Utilities
+  name: CvMatExtensions
+  nameWithType: CvMatExtensions
+  fullName: ArucoUnity.Utilities.CvMatExtensions
+- uid: ArucoUnity.Utilities.IConfigurableController
+  commentId: T:ArucoUnity.Utilities.IConfigurableController
+  parent: ArucoUnity.Utilities
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: ArucoUnity.Utilities.IConfigurableController
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities

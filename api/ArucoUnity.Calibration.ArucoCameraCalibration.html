@@ -1,0 +1,1058 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ArucoCameraCalibration
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ArucoCameraCalibration
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.37.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration">
+  
+  
+  <h1 id="ArucoUnity_Calibration_ArucoCameraCalibration" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration" class="text-break">Class ArucoCameraCalibration
+  </h1>
+  <div class="markdown level0 summary"><p>Calibrates a <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a> with a <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a> and saves the calibrated camera
+parameters in a file managed by <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html">ArucoCameraParametersController</a>. Base class to reference in editor
+fields.</p>
+<p>See the OpenCV and the ArUco module documentations for more information about the calibration process:
+<a href="http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html">http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html</a> and
+<a href="https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html">https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html</a></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html">ConfigurableController</a></div>
+    <div class="level6"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level7"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html">ArucoObjectDetector</a></div>
+    <div class="level8"><span class="xref">ArucoCameraCalibration</span></div>
+      <div class="level9"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric&lt;T, U&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
+    <div><a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a></div>
+    <div><a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">ArucoObjectDetector.DetectorParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Ready">ConfigurableController.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Configured">ConfigurableController.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Started">ConfigurableController.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopped">ConfigurableController.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AutoStart">ConfigurableController.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsReady">ConfigurableController.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsConfigured">ConfigurableController.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsStarted">ConfigurableController.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Awake">ConfigurableController.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Start">ConfigurableController.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnDestroy">ConfigurableController.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AddDependency_ArucoUnity_Utilities_IConfigurableController_">ConfigurableController.AddDependency(IConfigurableController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_RemoveDependency_ArucoUnity_Utilities_IConfigurableController_">ConfigurableController.RemoveDependency(IConfigurableController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_GetDependencies">ConfigurableController.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_ConfigureController">ConfigurableController.ConfigureController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StartController">ConfigurableController.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StopController">ConfigurableController.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnConfigured">ConfigurableController.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStarted">ConfigurableController.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStopped">ConfigurableController.OnStopped()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Calibration.html">ArucoUnity.Calibration</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="ArucoUnity_Calibration_ArucoCameraCalibration_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ArucoCameraCalibration : ArucoObjectDetector, IArucoCameraController, IConfigurableController, IHasDetectorParameter</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_applicationPath.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.applicationPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L117">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_applicationPath" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.applicationPath">applicationPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string applicationPath</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_calibratingException.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.calibratingException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L120">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_calibratingException" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.calibratingException">calibratingException</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Exception calibratingException</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_calibratingMutex.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.calibratingMutex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L119">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_calibratingMutex" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.calibratingMutex">calibratingMutex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Mutex calibratingMutex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Mutex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_calibratingThread.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.calibratingThread%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L118">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_calibratingThread" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.calibratingThread">calibratingThread</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Thread calibratingThread</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Thread</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerCorners.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L66">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerCorners_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerCorners" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerCorners">AllMarkerCorners</h4>
+  <div class="markdown level1 summary"><p>Gets the detected marker corners for each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorVectorVectorPoint2f[] AllMarkerCorners { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html">Std.VectorVectorVectorPoint2f</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerIds.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L71">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerIds_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_AllMarkerIds" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AllMarkerIds">AllMarkerIds</h4>
+  <div class="markdown level1 summary"><p>Gets the detected marker ids for each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorVectorInt[] AllMarkerIds { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationBoard.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L43">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationBoard_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationBoard" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationBoard">CalibrationBoard</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the ArUco board to use for calibration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ArucoBoard CalibrationBoard { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationFlags.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L61">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationFlags_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationFlags" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationFlags">CalibrationFlags</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the flags for the cameras calibration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CalibrationFlags CalibrationFlags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Calibration.CalibrationFlags.html">CalibrationFlags</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationRunning.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L106">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationRunning_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationRunning" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrationRunning">CalibrationRunning</h4>
+  <div class="markdown level1 summary"><p>Gets if <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrateAsync">CalibrateAsync()</a> has been called and hasn&apos;t completed yet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CalibrationRunning { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CameraParametersController.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L55">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CameraParametersController_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CameraParametersController" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CameraParametersController">CameraParametersController</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the camera parameters to use if <a class="xref" href="ArucoUnity.Calibration.CalibrationFlags.html#ArucoUnity_Calibration_CalibrationFlags_UseIntrinsicGuess">UseIntrinsicGuess</a> is true.
+Otherwise, the camera parameters file will be generated from the camera name and the calibration datetime.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ArucoCameraParametersController CameraParametersController { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html">ArucoCameraParametersController</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Images.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Images%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L76">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Images_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Images*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Images" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Images">Images</h4>
+  <div class="markdown level1 summary"><p>Gets the images to use for the calibration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorMat[] Images { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_IsCalibrated.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L101">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_IsCalibrated_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_IsCalibrated" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.IsCalibrated">IsCalibrated</h4>
+  <div class="markdown level1 summary"><p>Gets if the last <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrateAsync">CalibrateAsync()</a> call has been a success.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCalibrated { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCorners.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L91">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCorners_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCorners" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.MarkerCorners">MarkerCorners</h4>
+  <div class="markdown level1 summary"><p>Gets the detected marker corners on the current images of each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorVectorPoint2f[] MarkerCorners { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIds.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L96">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIds_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIds" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.MarkerIds">MarkerIds</h4>
+  <div class="markdown level1 summary"><p>Gets the detected marker ids on the current images of each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorInt[] MarkerIds { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_RefineMarkersDetection.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L49">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_RefineMarkersDetection_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_RefineMarkersDetection" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.RefineMarkersDetection">RefineMarkersDetection</h4>
+  <div class="markdown level1 summary"><p>Gets or sets if need to use a refine algorithm to find not detected markers based on the already detected and
+the board layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RefineMarkersDetection { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Rvecs.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L81">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Rvecs_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Rvecs" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Rvecs">Rvecs</h4>
+  <div class="markdown level1 summary"><p>Gets the estimated rotation vector for each detected markers in each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorVec3d[] Rvecs { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Tvecs.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L86">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Tvecs_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Tvecs" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Tvecs">Tvecs</h4>
+  <div class="markdown level1 summary"><p>Gets the estimated translation vector for each detected markers in each camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Std.VectorVec3d[] Tvecs { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_AddImages.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.AddImages%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L268">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_AddImages_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AddImages*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_AddImages" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.AddImages">AddImages()</h4>
+  <div class="markdown level1 summary"><p>Adds the current images of the cameras and the detected corners for the calibration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AddImages()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_ArucoCamera_ImagesUpdated.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L471">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_ArucoCamera_ImagesUpdated_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_ArucoCamera_ImagesUpdated" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.ArucoCamera_ImagesUpdated">ArucoCamera_ImagesUpdated()</h4>
+  <div class="markdown level1 summary"><p>Detects and draw the ArUco markers on the current images of the cameras.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ArucoCamera_ImagesUpdated()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L376">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate">Calibrate()</h4>
+  <div class="markdown level1 summary"><p>Calibrates each mono camera in <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCamera</a> using the detected
+markers added with <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddImages">AddImages()</a>, the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html">ArucoCameraParameters</a>, the
+<a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a> and save the results on a calibration file. Stereo
+calibrations will be additionally executed on these results for every camera pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Calibrate()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f%5B%5D%2CArucoUnity.Plugin.Std.VectorVectorPoint3f%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L518">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])">Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</h4>
+  <div class="markdown level1 summary"><p>Applies a calibration to the <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCamera</a>, set the extrinsic camera
+parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Rvecs">Rvecs</a> and <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Tvecs">Tvecs</a> and saves the camera parameters in
+<a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Calibrate(Std.VectorVectorPoint2f[] imagePoints, Std.VectorVectorPoint3f[] objectPoints)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a>[]</td>
+        <td><span class="parametername">imagePoints</span></td>
+        <td><p>The detected image points of each camera.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint3f.html">Std.VectorVectorPoint3f</a>[]</td>
+        <td><span class="parametername">objectPoints</span></td>
+        <td><p>The corresponding object points of each camera.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CalibrateAsync.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L306">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrateAsync_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CalibrateAsync" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CalibrateAsync">CalibrateAsync()</h4>
+  <div class="markdown level1 summary"><p>Calls <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate">Calibrate()</a> in a background thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CalibrateAsync()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_CancelCalibrateAsync.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L348">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_CancelCalibrateAsync_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_CancelCalibrateAsync" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.CancelCalibrateAsync">CancelCalibrateAsync()</h4>
+  <div class="markdown level1 summary"><p>Stops the calibration if <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationRunning">CalibrationRunning</a> is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CancelCalibrateAsync()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Configuring.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Configuring%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L161">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Configuring_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Configuring*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Configuring" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Configuring">Configuring()</h4>
+  <div class="markdown level1 summary"><p>Checks if <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_CalibrationBoard">CalibrationBoard</a> is set and calls <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_ResetCalibration">ResetCalibration()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_Configuring">ArucoObjectDetector.Configuring()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_DetectMarkers.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L219">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_DetectMarkers_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_DetectMarkers" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers">DetectMarkers()</h4>
+  <div class="markdown level1 summary"><p>Detects the Aruco markers on the current images of the cameras and store the results in the
+<a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerCorners">MarkerCorners</a> and <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_MarkerIds">MarkerIds</a> properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DetectMarkers()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_DrawDetectedMarkers.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L248">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_DrawDetectedMarkers_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_DrawDetectedMarkers" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.DrawDetectedMarkers">DrawDetectedMarkers()</h4>
+  <div class="markdown level1 summary"><p>Draws the detected ArUco markers on the current images of the cameras.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DrawDetectedMarkers()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L480">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters">InitializeCameraParameters()</h4>
+  <div class="markdown level1 summary"><p>Initializes and configure the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void InitializeCameraParameters()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_LateUpdate.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L127">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_LateUpdate_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_LateUpdate" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.LateUpdate">LateUpdate()</h4>
+  <div class="markdown level1 summary"><p>Calls the <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrated">Calibrated</a> event when a calibration has just completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void LateUpdate()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_ResetCalibration.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L195">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_ResetCalibration_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_ResetCalibration" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.ResetCalibration">ResetCalibration()</h4>
+  <div class="markdown level1 summary"><p>Resets the properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ResetCalibration()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Starting.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Starting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L175">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Starting_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Starting*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Starting" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Starting">Starting()</h4>
+  <div class="markdown level1 summary"><p>Susbcribes to <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UndistortRectifyImages">UndistortRectifyImages</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Starting()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Starting">ConfigurableController.Starting()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Stopping.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Stopping%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L184">View Source</a>
+  </span>
+  <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Stopping_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Stopping*"></a>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Stopping" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Stopping">Stopping()</h4>
+  <div class="markdown level1 summary"><p>Unsusbcribes from <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UndistortRectifyImages">UndistortRectifyImages</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Stopping()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopping">ConfigurableController.Stopping()</a></div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration_Calibrated.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration.Calibrated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L113">View Source</a>
+  </span>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrated" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrated">Calibrated</h4>
+  <div class="markdown level1 summary"><p>Called when <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_IsCalibrated">IsCalibrated</a> is set to true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action Calibrated</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_ArucoCameraCalibration.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.ArucoCameraCalibration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibration/ArucoCameraCalibration.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

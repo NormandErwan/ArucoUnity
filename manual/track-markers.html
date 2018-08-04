@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Track Markers | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Track Markers | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.37.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="track-markers">Track Markers</h1>
+
+<p>First, make sure you have calibrated your camera: read the <a href="articles/calibrate-a-camera.html">Calibrate a Camera</a> page. You <strong>need to have a calibration file</strong> to track some aruco objects.</p>
+<p>Also, print and place in the environment the aruco objects you want to track. Read the <a href="https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers">Create Markers</a> page for details.</p>
+<p>To track your aruco objects:</p>
+<ul>
+<li>Open the <code>Assets/ArucoUnity/Scenes/TrackMarkers.unity</code> scene.</li>
+<li>Configure the camera:<ol>
+<li>For a webcam, use the <code>ArucoWebcamCalibrated</code> object already in the scene. Otherwise, drag the prefab corresponding to your camera : <code>Assets/ArucoUnity/Prefabs/Cameras/&lt;CameraType&gt;Calibrated.prefab</code>.</li>
+<li>Fill <code>CameraParametersFilename</code> with the camera parameters XML file from the calibration of the camera (<em>Fig.1</em>).</li>
+</ol>
+</li>
+</ul>
+<p><img src="../images/track_markers_camera.jpg" alt="Camera configuration"></p>
+<p><em>Fig.1: <code>ArucoWebcamCalibrated</code> configured with camera parameters from a calibration.</em></p>
+<ul>
+<li>Create each aruco objects to track:<ul>
+<li>Configure it with what you measure on the printed aruco object. Units are in meters for tracking, not in pixels.</li>
+<li>Use a <code>ArucoObjectDisplayer</code> to visualize the aruco object, not a ArucoObjectCreator.</li>
+<li>Simply add any game object as child of the aruco object e.g. the red cube in <em>Fig.2</em>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/track_markers_marker.jpg" alt="Marker configuration"></p>
+<p><em>Fig.2: <code>ArucoMarker</code> configured to track a physical aruco marker with a 5.4 cm side length. The <code>ArucoObjectDisplayer</code> helps to visualize in the editor the physical object that will be tracked.</em></p>
+<ul>
+<li>Configure the tracker <code>ArucoObjectsTracker</code>:<ol>
+<li>Drag all the aruco objects to track in <code>ArucoObjects</code>.</li>
+<li>Set <code>ArucoCameraDisplay</code> with the camera prefab you use (<em>Fig.3</em>).</li>
+</ol>
+</li>
+</ul>
+<p><img src="../images/track_markers_tracker.jpg" alt="Tracker configuration"></p>
+<p><em>Fig.3: <code>ArucoObjectsTracker</code> configured to track three objects for the <code>ArucoCameraCalibrated</code> we configured.</em></p>
+<ul>
+<li>Run the scene! The <code>ArucoTracker</code> will place (position, rotation, scale) any detected aruco object in the <code>ArucoObjects</code> list relative to the camera (<em>Fig.4</em>).</li>
+</ul>
+<p><img src="../images/ar_roll_a_ball.gif" alt="AR roll a ball"></p>
+<p><em>Fig.4: <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial">Roll a ball</a> set as child of an aruco board: the game follows the board movements.</em></p>
+<p>To understand the algorithm used, read this tutorial: <a href="https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html">Detection of ArUco Markers</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/gh-pages/docs/manual/track-markers.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

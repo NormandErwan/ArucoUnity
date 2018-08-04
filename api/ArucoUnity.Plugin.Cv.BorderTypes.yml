@@ -1,0 +1,319 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.BorderTypes
+  commentId: T:ArucoUnity.Plugin.Cv.BorderTypes
+  id: Cv.BorderTypes
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.BorderTypes.Constant
+  - ArucoUnity.Plugin.Cv.BorderTypes.Default
+  - ArucoUnity.Plugin.Cv.BorderTypes.Isolated
+  - ArucoUnity.Plugin.Cv.BorderTypes.Reflect
+  - ArucoUnity.Plugin.Cv.BorderTypes.Reflect101
+  - ArucoUnity.Plugin.Cv.BorderTypes.Replicate
+  - ArucoUnity.Plugin.Cv.BorderTypes.Transparent
+  - ArucoUnity.Plugin.Cv.BorderTypes.Wrap
+  langs:
+  - csharp
+  - vb
+  name: Cv.BorderTypes
+  nameWithType: Cv.BorderTypes
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes
+  type: Enum
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: BorderTypes
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  summary: "\nSee the OpenCV documentation for more information: \nhttp://docs.opencv.org/3.2.0/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5\n"
+  example: []
+  syntax:
+    content: public enum BorderTypes
+    content.vb: Public Enum BorderTypes
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Constant
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Constant
+  id: Constant
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Constant
+  nameWithType: Cv.BorderTypes.Constant
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Constant
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Constant
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Constant = 0
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Replicate
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Replicate
+  id: Replicate
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Replicate
+  nameWithType: Cv.BorderTypes.Replicate
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Replicate
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Replicate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Replicate = 1
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Reflect
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Reflect
+  id: Reflect
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Reflect
+  nameWithType: Cv.BorderTypes.Reflect
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Reflect
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Reflect
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Reflect = 2
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Wrap
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Wrap
+  id: Wrap
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Wrap
+  nameWithType: Cv.BorderTypes.Wrap
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Wrap
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Wrap
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 18
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Wrap = 3
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Reflect101
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Reflect101
+  id: Reflect101
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Reflect101
+  nameWithType: Cv.BorderTypes.Reflect101
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Reflect101
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Reflect101
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Reflect101 = 4
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Transparent
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Transparent
+  id: Transparent
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Transparent
+  nameWithType: Cv.BorderTypes.Transparent
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Transparent
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Transparent
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Transparent = 5
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Default
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Default
+  id: Default
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: Cv.BorderTypes.Default
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Default
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Default
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Default = 4
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.BorderTypes.Isolated
+  commentId: F:ArucoUnity.Plugin.Cv.BorderTypes.Isolated
+  id: Isolated
+  parent: ArucoUnity.Plugin.Cv.BorderTypes
+  langs:
+  - csharp
+  - vb
+  name: Isolated
+  nameWithType: Cv.BorderTypes.Isolated
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes.Isolated
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Isolated
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Imgproc.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  example: []
+  syntax:
+    content: Isolated = 16
+    return:
+      type: ArucoUnity.Plugin.Cv.BorderTypes
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Cv.BorderTypes
+  commentId: T:ArucoUnity.Plugin.Cv.BorderTypes
+  parent: ArucoUnity.Plugin
+  name: Cv.BorderTypes
+  nameWithType: Cv.BorderTypes
+  fullName: ArucoUnity.Plugin.Cv.BorderTypes

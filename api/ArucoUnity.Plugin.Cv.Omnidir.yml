@@ -1,0 +1,854 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Omnidir
+  commentId: T:ArucoUnity.Plugin.Cv.Omnidir
+  id: Cv.Omnidir
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  - ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  - ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  - ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Type,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  - ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  - ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  - ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  - ArucoUnity.Plugin.Cv.Omnidir.StereoRectify(ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@)
+  - ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  - ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat)
+  - ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size)
+  - ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat)
+  langs:
+  - csharp
+  - vb
+  name: Cv.Omnidir
+  nameWithType: Cv.Omnidir
+  fullName: ArucoUnity.Plugin.Cv.Omnidir
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Omnidir
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static class Omnidir
+    content.vb: Public Module Omnidir
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  id: Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, out Cv.Mat)
+  nameWithType: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, out Cv.Mat)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria, out ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Calibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 61
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat xi, Cv.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Cv.Omnidir.Calib flags, Cv.TermCriteria criteria, out Cv.Mat idx)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    - id: criteria
+      type: ArucoUnity.Plugin.Cv.TermCriteria
+    - id: idx
+      type: ArucoUnity.Plugin.Cv.Mat
+    return:
+      type: System.Double
+    content.vb: Public Shared Function Calibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints As Std.VectorVectorPoint2f, imageSize As Cv.Size, cameraMatrix As Cv.Mat, xi As Cv.Mat, distCoeffs As Cv.Mat, ByRef rvecs As Std.VectorVec3d, ByRef tvecs As Std.VectorVec3d, flags As Cv.Omnidir.Calib, criteria As Cv.TermCriteria, ByRef idx As Cv.Mat) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.Calibrate*
+  nameWithType.vb: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, ByRef Cv.Mat)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria, ByRef ArucoUnity.Plugin.Cv.Mat)
+  name.vb: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, ByRef Cv.Mat)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  id: Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  nameWithType: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Calibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 78
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat xi, Cv.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Cv.Omnidir.Calib flags, Cv.TermCriteria criteria)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    - id: criteria
+      type: ArucoUnity.Plugin.Cv.TermCriteria
+    return:
+      type: System.Double
+    content.vb: Public Shared Function Calibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints As Std.VectorVectorPoint2f, imageSize As Cv.Size, cameraMatrix As Cv.Mat, xi As Cv.Mat, distCoeffs As Cv.Mat, ByRef rvecs As Std.VectorVec3d, ByRef tvecs As Std.VectorVec3d, flags As Cv.Omnidir.Calib, criteria As Cv.TermCriteria) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.Calibrate*
+  nameWithType.vb: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria)
+  name.vb: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  id: Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib)
+  nameWithType: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Calibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 85
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double Calibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat xi, Cv.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs, Cv.Omnidir.Calib flags)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecs
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    return:
+      type: System.Double
+    content.vb: Public Shared Function Calibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints As Std.VectorVectorPoint2f, imageSize As Cv.Size, cameraMatrix As Cv.Mat, xi As Cv.Mat, distCoeffs As Cv.Mat, ByRef rvecs As Std.VectorVec3d, ByRef tvecs As Std.VectorVec3d, flags As Cv.Omnidir.Calib) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.Calibrate*
+  nameWithType.vb: Cv.Omnidir.Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  name.vb: Calibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Type,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Type,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  id: InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Type,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: InitUndistortRectifyMap(Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Size, Cv.Type, out Cv.Mat, out Cv.Mat, Cv.Omnidir.Rectifify)
+  nameWithType: Cv.Omnidir.InitUndistortRectifyMap(Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Size, Cv.Type, out Cv.Mat, out Cv.Mat, Cv.Omnidir.Rectifify)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Type, out ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: InitUndistortRectifyMap
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 92
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void InitUndistortRectifyMap(Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Mat xi, Cv.Mat R, Cv.Mat newCameraMatrix, Cv.Size size, Cv.Type m1type, out Cv.Mat map1, out Cv.Mat map2, Cv.Omnidir.Rectifify flags)
+    parameters:
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: R
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: newCameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: size
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: m1type
+      type: ArucoUnity.Plugin.Cv.Type
+    - id: map1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: map2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+    content.vb: Public Shared Sub InitUndistortRectifyMap(cameraMatrix As Cv.Mat, distCoeffs As Cv.Mat, xi As Cv.Mat, R As Cv.Mat, newCameraMatrix As Cv.Mat, size As Cv.Size, m1type As Cv.Type, ByRef map1 As Cv.Mat, ByRef map2 As Cv.Mat, flags As Cv.Omnidir.Rectifify)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap*
+  nameWithType.vb: Cv.Omnidir.InitUndistortRectifyMap(Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Size, Cv.Type, ByRef Cv.Mat, ByRef Cv.Mat, Cv.Omnidir.Rectifify)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap(ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Type, ByRef ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  name.vb: InitUndistortRectifyMap(Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Size, Cv.Type, ByRef Cv.Mat, ByRef Cv.Mat, Cv.Omnidir.Rectifify)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  id: StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria,ArucoUnity.Plugin.Cv.Mat@)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, out Cv.Mat)
+  nameWithType: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, out Cv.Mat)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria, out ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoCalibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 106
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1, Std.VectorVectorPoint2f imagePoints2, Cv.Size imageSize1, Cv.Size imageSize2, Cv.Mat cameraMatrix1, Cv.Mat xi1, Cv.Mat distCoeffs1, Cv.Mat cameraMatrix2, Cv.Mat xi2, Cv.Mat distCoeffs2, out Cv.Vec3d rvec, out Cv.Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Cv.Omnidir.Calib flags, Cv.TermCriteria criteria, out Cv.Mat idx)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints1
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imagePoints2
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize1
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: imageSize2
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: tvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: rvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    - id: criteria
+      type: ArucoUnity.Plugin.Cv.TermCriteria
+    - id: idx
+      type: ArucoUnity.Plugin.Cv.Mat
+    return:
+      type: System.Double
+    content.vb: Public Shared Function StereoCalibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints1 As Std.VectorVectorPoint2f, imagePoints2 As Std.VectorVectorPoint2f, imageSize1 As Cv.Size, imageSize2 As Cv.Size, cameraMatrix1 As Cv.Mat, xi1 As Cv.Mat, distCoeffs1 As Cv.Mat, cameraMatrix2 As Cv.Mat, xi2 As Cv.Mat, distCoeffs2 As Cv.Mat, ByRef rvec As Cv.Vec3d, ByRef tvec As Cv.Vec3d, ByRef rvecsL As Std.VectorVec3d, ByRef tvecsL As Std.VectorVec3d, flags As Cv.Omnidir.Calib, criteria As Cv.TermCriteria, ByRef idx As Cv.Mat) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate*
+  nameWithType.vb: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, ByRef Cv.Mat)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria, ByRef ArucoUnity.Plugin.Cv.Mat)
+  name.vb: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria, ByRef Cv.Mat)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  id: StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib,ArucoUnity.Plugin.Cv.TermCriteria)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  nameWithType: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoCalibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 127
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1, Std.VectorVectorPoint2f imagePoints2, Cv.Size imageSize1, Cv.Size imageSize2, Cv.Mat cameraMatrix1, Cv.Mat xi1, Cv.Mat distCoeffs1, Cv.Mat cameraMatrix2, Cv.Mat xi2, Cv.Mat distCoeffs2, out Cv.Vec3d rvec, out Cv.Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Cv.Omnidir.Calib flags, Cv.TermCriteria criteria)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints1
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imagePoints2
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize1
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: imageSize2
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: tvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: rvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    - id: criteria
+      type: ArucoUnity.Plugin.Cv.TermCriteria
+    return:
+      type: System.Double
+    content.vb: Public Shared Function StereoCalibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints1 As Std.VectorVectorPoint2f, imagePoints2 As Std.VectorVectorPoint2f, imageSize1 As Cv.Size, imageSize2 As Cv.Size, cameraMatrix1 As Cv.Mat, xi1 As Cv.Mat, distCoeffs1 As Cv.Mat, cameraMatrix2 As Cv.Mat, xi2 As Cv.Mat, distCoeffs2 As Cv.Mat, ByRef rvec As Cv.Vec3d, ByRef tvec As Cv.Vec3d, ByRef rvecsL As Std.VectorVec3d, ByRef tvecsL As Std.VectorVec3d, flags As Cv.Omnidir.Calib, criteria As Cv.TermCriteria) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate*
+  nameWithType.vb: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib, ArucoUnity.Plugin.Cv.TermCriteria)
+  name.vb: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib, Cv.TermCriteria)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  id: StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib)
+  nameWithType: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d, out Std.VectorVec3d, out Std.VectorVec3d, Cv.Omnidir.Calib)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Std.VectorVec3d, out ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoCalibrate
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 136
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static double StereoCalibrate(Std.VectorVectorPoint3f objectPoints, Std.VectorVectorPoint2f imagePoints1, Std.VectorVectorPoint2f imagePoints2, Cv.Size imageSize1, Cv.Size imageSize2, Cv.Mat cameraMatrix1, Cv.Mat xi1, Cv.Mat distCoeffs1, Cv.Mat cameraMatrix2, Cv.Mat xi2, Cv.Mat distCoeffs2, out Cv.Vec3d rvec, out Cv.Vec3d tvec, out Std.VectorVec3d rvecsL, out Std.VectorVec3d tvecsL, Cv.Omnidir.Calib flags)
+    parameters:
+    - id: objectPoints
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+    - id: imagePoints1
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imagePoints2
+      type: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+    - id: imageSize1
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: imageSize2
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: cameraMatrix1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs2
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: rvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: tvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: rvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: tvecsL
+      type: ArucoUnity.Plugin.Std.VectorVec3d
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Calib
+    return:
+      type: System.Double
+    content.vb: Public Shared Function StereoCalibrate(objectPoints As Std.VectorVectorPoint3f, imagePoints1 As Std.VectorVectorPoint2f, imagePoints2 As Std.VectorVectorPoint2f, imageSize1 As Cv.Size, imageSize2 As Cv.Size, cameraMatrix1 As Cv.Mat, xi1 As Cv.Mat, distCoeffs1 As Cv.Mat, cameraMatrix2 As Cv.Mat, xi2 As Cv.Mat, distCoeffs2 As Cv.Mat, ByRef rvec As Cv.Vec3d, ByRef tvec As Cv.Vec3d, ByRef rvecsL As Std.VectorVec3d, ByRef tvecsL As Std.VectorVec3d, flags As Cv.Omnidir.Calib) As Double
+  overload: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate*
+  nameWithType.vb: Cv.Omnidir.StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate(ArucoUnity.Plugin.Std.VectorVectorPoint3f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Std.VectorVectorPoint2f, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ByRef ArucoUnity.Plugin.Std.VectorVec3d, ArucoUnity.Plugin.Cv.Omnidir.Calib)
+  name.vb: StereoCalibrate(Std.VectorVectorPoint3f, Std.VectorVectorPoint2f, Std.VectorVectorPoint2f, Cv.Size, Cv.Size, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, ByRef Cv.Vec3d, ByRef Cv.Vec3d, ByRef Std.VectorVec3d, ByRef Std.VectorVec3d, Cv.Omnidir.Calib)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify(ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.StereoRectify(ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@)
+  id: StereoRectify(ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat@)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: StereoRectify(Cv.Vec3d, Cv.Vec3d, out Cv.Mat, out Cv.Mat)
+  nameWithType: Cv.Omnidir.StereoRectify(Cv.Vec3d, Cv.Vec3d, out Cv.Mat, out Cv.Mat)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify(ArucoUnity.Plugin.Cv.Vec3d, ArucoUnity.Plugin.Cv.Vec3d, out ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoRectify
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 145
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void StereoRectify(Cv.Vec3d rvec, Cv.Vec3d tvec, out Cv.Mat R1, out Cv.Mat R2)
+    parameters:
+    - id: rvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: tvec
+      type: ArucoUnity.Plugin.Cv.Vec3d
+    - id: R1
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: R2
+      type: ArucoUnity.Plugin.Cv.Mat
+    content.vb: Public Shared Sub StereoRectify(rvec As Cv.Vec3d, tvec As Cv.Vec3d, ByRef R1 As Cv.Mat, ByRef R2 As Cv.Mat)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify*
+  nameWithType.vb: Cv.Omnidir.StereoRectify(Cv.Vec3d, Cv.Vec3d, ByRef Cv.Mat, ByRef Cv.Mat)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify(ArucoUnity.Plugin.Cv.Vec3d, ArucoUnity.Plugin.Cv.Vec3d, ByRef ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat)
+  name.vb: StereoRectify(Cv.Vec3d, Cv.Vec3d, ByRef Cv.Mat, ByRef Cv.Mat)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat)
+  id: UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size, Cv.Mat)
+  nameWithType: Cv.Omnidir.UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size, Cv.Mat)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortImage
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 157
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void UndistortImage(Cv.Mat distorted, out Cv.Mat undistorted, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Mat xi, Cv.Omnidir.Rectifify flags, Cv.Mat newCameraMatrix, Cv.Size newSize, Cv.Mat R)
+    parameters:
+    - id: distorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: undistorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+    - id: newCameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: newSize
+      type: ArucoUnity.Plugin.Cv.Size
+    - id: R
+      type: ArucoUnity.Plugin.Cv.Mat
+    content.vb: Public Shared Sub UndistortImage(distorted As Cv.Mat, ByRef undistorted As Cv.Mat, cameraMatrix As Cv.Mat, distCoeffs As Cv.Mat, xi As Cv.Mat, flags As Cv.Omnidir.Rectifify, newCameraMatrix As Cv.Mat, newSize As Cv.Size, R As Cv.Mat)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
+  nameWithType.vb: Cv.Omnidir.UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size, Cv.Mat)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size, ArucoUnity.Plugin.Cv.Mat)
+  name.vb: UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size, Cv.Mat)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size)
+  id: UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Size)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size)
+  nameWithType: Cv.Omnidir.UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortImage
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 170
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void UndistortImage(Cv.Mat distorted, out Cv.Mat undistorted, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Mat xi, Cv.Omnidir.Rectifify flags, Cv.Mat newCameraMatrix, Cv.Size newSize)
+    parameters:
+    - id: distorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: undistorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+    - id: newCameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: newSize
+      type: ArucoUnity.Plugin.Cv.Size
+    content.vb: Public Shared Sub UndistortImage(distorted As Cv.Mat, ByRef undistorted As Cv.Mat, cameraMatrix As Cv.Mat, distCoeffs As Cv.Mat, xi As Cv.Mat, flags As Cv.Omnidir.Rectifify, newCameraMatrix As Cv.Mat, newSize As Cv.Size)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
+  nameWithType.vb: Cv.Omnidir.UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Size)
+  name.vb: UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat, Cv.Size)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat)
+  id: UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify,ArucoUnity.Plugin.Cv.Mat)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat)
+  nameWithType: Cv.Omnidir.UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortImage
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 177
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void UndistortImage(Cv.Mat distorted, out Cv.Mat undistorted, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Mat xi, Cv.Omnidir.Rectifify flags, Cv.Mat newCameraMatrix)
+    parameters:
+    - id: distorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: undistorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+    - id: newCameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    content.vb: Public Shared Sub UndistortImage(distorted As Cv.Mat, ByRef undistorted As Cv.Mat, cameraMatrix As Cv.Mat, distCoeffs As Cv.Mat, xi As Cv.Mat, flags As Cv.Omnidir.Rectifify, newCameraMatrix As Cv.Mat)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
+  nameWithType.vb: Cv.Omnidir.UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify, ArucoUnity.Plugin.Cv.Mat)
+  name.vb: UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify, Cv.Mat)
+- uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  commentId: M:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  id: UndistortImage(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  parent: ArucoUnity.Plugin.Cv.Omnidir
+  langs:
+  - csharp
+  - vb
+  name: UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify)
+  nameWithType: Cv.Omnidir.UndistortImage(Cv.Mat, out Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify)
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, out ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortImage
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Ccalib.cs
+    startLine: 184
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static void UndistortImage(Cv.Mat distorted, out Cv.Mat undistorted, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Mat xi, Cv.Omnidir.Rectifify flags)
+    parameters:
+    - id: distorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: undistorted
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: cameraMatrix
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: distCoeffs
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: xi
+      type: ArucoUnity.Plugin.Cv.Mat
+    - id: flags
+      type: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+    content.vb: Public Shared Sub UndistortImage(distorted As Cv.Mat, ByRef undistorted As Cv.Mat, cameraMatrix As Cv.Mat, distCoeffs As Cv.Mat, xi As Cv.Mat, flags As Cv.Omnidir.Rectifify)
+  overload: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
+  nameWithType.vb: Cv.Omnidir.UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage(ArucoUnity.Plugin.Cv.Mat, ByRef ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Mat, ArucoUnity.Plugin.Cv.Omnidir.Rectifify)
+  name.vb: UndistortImage(Cv.Mat, ByRef Cv.Mat, Cv.Mat, Cv.Mat, Cv.Mat, Cv.Omnidir.Rectifify)
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Calibrate*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.Calibrate
+  name: Calibrate
+  nameWithType: Cv.Omnidir.Calibrate
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Calibrate
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+  commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint3f
+  parent: ArucoUnity.Plugin
+  name: Std.VectorVectorPoint3f
+  nameWithType: Std.VectorVectorPoint3f
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+  commentId: T:ArucoUnity.Plugin.Std.VectorVectorPoint2f
+  parent: ArucoUnity.Plugin
+  name: Std.VectorVectorPoint2f
+  nameWithType: Std.VectorVectorPoint2f
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f
+- uid: ArucoUnity.Plugin.Cv.Size
+  commentId: T:ArucoUnity.Plugin.Cv.Size
+  parent: ArucoUnity.Plugin
+  name: Cv.Size
+  nameWithType: Cv.Size
+  fullName: ArucoUnity.Plugin.Cv.Size
+- uid: ArucoUnity.Plugin.Cv.Mat
+  commentId: T:ArucoUnity.Plugin.Cv.Mat
+  parent: ArucoUnity.Plugin
+  name: Cv.Mat
+  nameWithType: Cv.Mat
+  fullName: ArucoUnity.Plugin.Cv.Mat
+- uid: ArucoUnity.Plugin.Std.VectorVec3d
+  commentId: T:ArucoUnity.Plugin.Std.VectorVec3d
+  parent: ArucoUnity.Plugin
+  name: Std.VectorVec3d
+  nameWithType: Std.VectorVec3d
+  fullName: ArucoUnity.Plugin.Std.VectorVec3d
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Calib
+  commentId: T:ArucoUnity.Plugin.Cv.Omnidir.Calib
+  parent: ArucoUnity.Plugin
+  name: Cv.Omnidir.Calib
+  nameWithType: Cv.Omnidir.Calib
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Calib
+- uid: ArucoUnity.Plugin.Cv.TermCriteria
+  commentId: T:ArucoUnity.Plugin.Cv.TermCriteria
+  parent: ArucoUnity.Plugin
+  name: Cv.TermCriteria
+  nameWithType: Cv.TermCriteria
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap
+  name: InitUndistortRectifyMap
+  nameWithType: Cv.Omnidir.InitUndistortRectifyMap
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.InitUndistortRectifyMap
+- uid: ArucoUnity.Plugin.Cv.Type
+  commentId: T:ArucoUnity.Plugin.Cv.Type
+  parent: ArucoUnity.Plugin
+  name: Cv.Type
+  nameWithType: Cv.Type
+  fullName: ArucoUnity.Plugin.Cv.Type
+- uid: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+  commentId: T:ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+  parent: ArucoUnity.Plugin
+  name: Cv.Omnidir.Rectifify
+  nameWithType: Cv.Omnidir.Rectifify
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.Rectifify
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate
+  name: StereoCalibrate
+  nameWithType: Cv.Omnidir.StereoCalibrate
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoCalibrate
+- uid: ArucoUnity.Plugin.Cv.Vec3d
+  commentId: T:ArucoUnity.Plugin.Cv.Vec3d
+  parent: ArucoUnity.Plugin
+  name: Cv.Vec3d
+  nameWithType: Cv.Vec3d
+  fullName: ArucoUnity.Plugin.Cv.Vec3d
+- uid: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.StereoRectify
+  name: StereoRectify
+  nameWithType: Cv.Omnidir.StereoRectify
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.StereoRectify
+- uid: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Omnidir.UndistortImage
+  name: UndistortImage
+  nameWithType: Cv.Omnidir.UndistortImage
+  fullName: ArucoUnity.Plugin.Cv.Omnidir.UndistortImage

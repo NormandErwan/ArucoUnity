@@ -1,0 +1,668 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  id: IArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  children:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(UnityEngine.Transform,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)
+  langs:
+  - csharp
+  - vb
+  name: IArucoCameraDisplay
+  nameWithType: IArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  type: Interface
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: IArucoCameraDisplay
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nManages Unity virual cameras that shoot 3D content aligned with the <xref href=\"ArucoUnity.Cameras.IArucoCamera.Images\" data-throw-if-not-resolved=\"false\"></xref> displayed as background. It\ncreates the augmented reality effect by aligning the images from the physical cameras and the <xref href=\"ArucoUnity.Objects.ArucoObject\" data-throw-if-not-resolved=\"false\"></xref> tracked by\n<see cref=\"!:IArucoObjectsTracker\"></see>.\n"
+  example: []
+  syntax:
+    content: 'public interface IArucoCameraDisplay : IArucoCameraController, IConfigurableController'
+    content.vb: >-
+      Public Interface IArucoCameraDisplay
+          Inherits IArucoCameraController
+  inheritedMembers:
+  - ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  - ArucoUnity.Utilities.IConfigurableController.Configured
+  - ArucoUnity.Utilities.IConfigurableController.Ready
+  - ArucoUnity.Utilities.IConfigurableController.Started
+  - ArucoUnity.Utilities.IConfigurableController.Stopped
+  - ArucoUnity.Utilities.IConfigurableController.AutoStart
+  - ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  - ArucoUnity.Utilities.IConfigurableController.IsReady
+  - ArucoUnity.Utilities.IConfigurableController.IsStarted
+  - ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - ArucoUnity.Utilities.IConfigurableController.StartController
+  - ArucoUnity.Utilities.IConfigurableController.StopController
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  id: ArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraUndistortion
+  nameWithType: IArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ArucoCameraUndistortion
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 17
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nGets the optional undistortion process associated with the ArucoCamera.\n"
+  example: []
+  syntax:
+    content: IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+    content.vb: Property ArucoCameraUndistortion As IArucoCameraUndistortion
+  overload: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion*
+  modifiers.csharp:
+  - get
+  - set
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  id: Cameras
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Cameras
+  nameWithType: IArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Cameras
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 22
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nGets the Unity virtual camera that will shoot the 3D content aligned with the <see cref=\"!:Background\"></see>.\n"
+  example: []
+  syntax:
+    content: Camera[] Cameras { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Camera[]
+    content.vb: ReadOnly Property Cameras As Camera()
+  overload: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  id: BackgroundCameras
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: BackgroundCameras
+  nameWithType: IArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: BackgroundCameras
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nGets the Unity virtual camera that will shoot the <xref href=\"ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: Camera[] BackgroundCameras { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Camera[]
+    content.vb: ReadOnly Property BackgroundCameras As Camera()
+  overload: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  id: Backgrounds
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Backgrounds
+  nameWithType: IArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Backgrounds
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nGets the backgrounds displaying the <xref href=\"ArucoUnity.Cameras.IArucoCamera.Images\" data-throw-if-not-resolved=\"false\"></xref> of the corresponding physical camera in ArucoCamera.\n"
+  example: []
+  syntax:
+    content: Renderer[] Backgrounds { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Renderer[]
+    content.vb: ReadOnly Property Backgrounds As Renderer()
+  overload: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(UnityEngine.Transform,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(UnityEngine.Transform,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)
+  id: PlaceArucoObject(UnityEngine.Transform,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  nameWithType: IArucoCameraDisplay.PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(UnityEngine.Transform, System.Int32, UnityEngine.Vector3, UnityEngine.Quaternion)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: PlaceArucoObject
+    path: Assets/ArucoUnity/Scripts/Cameras/Displays/IArucoCameraDisplay.cs
+    startLine: 43
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nUpdates the transform of an ArUco object.\n"
+  example: []
+  syntax:
+    content: void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
+    parameters:
+    - id: arucoObject
+      type: UnityEngine.Transform
+      description: The transfomr to the ArUco object to place.
+    - id: cameraId
+      type: System.Int32
+      description: The id of the camera to use. The transform is placed and oriented relative to this camera.
+    - id: localPosition
+      type: UnityEngine.Vector3
+      description: The estimated translation of the transform relative to the camera.
+    - id: localRotation
+      type: UnityEngine.Quaternion
+      description: The estimated rotation of the transform relative to the camera.
+    content.vb: Sub PlaceArucoObject(arucoObject As Transform, cameraId As Integer, localPosition As Vector3, localRotation As Quaternion)
+  overload: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject*
+references:
+- uid: ArucoUnity.Cameras.IArucoCamera.Images
+  commentId: P:ArucoUnity.Cameras.IArucoCamera.Images
+  parent: ArucoUnity.Cameras.IArucoCamera
+  name: Images
+  nameWithType: IArucoCamera.Images
+  fullName: ArucoUnity.Cameras.IArucoCamera.Images
+- uid: ArucoUnity.Objects.ArucoObject
+  commentId: T:ArucoUnity.Objects.ArucoObject
+  parent: ArucoUnity.Objects
+  name: ArucoObject
+  nameWithType: ArucoObject
+  fullName: ArucoUnity.Objects.ArucoObject
+- uid: ArucoUnity.Cameras.Displays
+  commentId: N:ArucoUnity.Cameras.Displays
+  name: ArucoUnity.Cameras.Displays
+  nameWithType: ArucoUnity.Cameras.Displays
+  fullName: ArucoUnity.Cameras.Displays
+- uid: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  commentId: P:ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  parent: ArucoUnity.Cameras.IArucoCameraController
+  name: ArucoCamera
+  nameWithType: IArucoCameraController.ArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+- uid: ArucoUnity.Utilities.IConfigurableController.Configured
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Configured
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Configured
+  nameWithType: IConfigurableController.Configured
+  fullName: ArucoUnity.Utilities.IConfigurableController.Configured
+- uid: ArucoUnity.Utilities.IConfigurableController.Ready
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Ready
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Ready
+  nameWithType: IConfigurableController.Ready
+  fullName: ArucoUnity.Utilities.IConfigurableController.Ready
+- uid: ArucoUnity.Utilities.IConfigurableController.Started
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Started
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Started
+  nameWithType: IConfigurableController.Started
+  fullName: ArucoUnity.Utilities.IConfigurableController.Started
+- uid: ArucoUnity.Utilities.IConfigurableController.Stopped
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Stopped
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Stopped
+  nameWithType: IConfigurableController.Stopped
+  fullName: ArucoUnity.Utilities.IConfigurableController.Stopped
+- uid: ArucoUnity.Utilities.IConfigurableController.AutoStart
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.AutoStart
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: AutoStart
+  nameWithType: IConfigurableController.AutoStart
+  fullName: ArucoUnity.Utilities.IConfigurableController.AutoStart
+- uid: ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsConfigured
+  nameWithType: IConfigurableController.IsConfigured
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsConfigured
+- uid: ArucoUnity.Utilities.IConfigurableController.IsReady
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsReady
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsReady
+  nameWithType: IConfigurableController.IsReady
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsReady
+- uid: ArucoUnity.Utilities.IConfigurableController.IsStarted
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsStarted
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsStarted
+  nameWithType: IConfigurableController.IsStarted
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsStarted
+- uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: AddDependency(IConfigurableController)
+  nameWithType: IConfigurableController.AddDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: IConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: IConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: RemoveDependency(IConfigurableController)
+  nameWithType: IConfigurableController.RemoveDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: IConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: IConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: GetDependencies()
+  nameWithType: IConfigurableController.GetDependencies()
+  fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: IConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: IConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: ConfigureController()
+  nameWithType: IConfigurableController.ConfigureController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: IConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: IConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.StartController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.StartController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: StartController()
+  nameWithType: IConfigurableController.StartController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.StartController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StartController
+    name: StartController
+    nameWithType: IConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StartController
+    name: StartController
+    nameWithType: IConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.StopController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.StopController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: StopController()
+  nameWithType: IConfigurableController.StopController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.StopController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StopController
+    name: StopController
+    nameWithType: IConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StopController
+    name: StopController
+    nameWithType: IConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.IArucoCamera
+  commentId: T:ArucoUnity.Cameras.IArucoCamera
+  parent: ArucoUnity.Cameras
+  name: IArucoCamera
+  nameWithType: IArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCamera
+- uid: ArucoUnity.Objects
+  commentId: N:ArucoUnity.Objects
+  name: ArucoUnity.Objects
+  nameWithType: ArucoUnity.Objects
+  fullName: ArucoUnity.Objects
+- uid: ArucoUnity.Cameras.IArucoCameraController
+  commentId: T:ArucoUnity.Cameras.IArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: ArucoUnity.Cameras.IArucoCameraController
+- uid: ArucoUnity.Utilities.IConfigurableController
+  commentId: T:ArucoUnity.Utilities.IConfigurableController
+  parent: ArucoUnity.Utilities
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: ArucoUnity.Utilities.IConfigurableController
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion*
+  commentId: Overload:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  name: ArucoCameraUndistortion
+  nameWithType: IArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Undistortions
+  name: IArucoCameraUndistortion
+  nameWithType: IArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Undistortions
+  commentId: N:ArucoUnity.Cameras.Undistortions
+  name: ArucoUnity.Cameras.Undistortions
+  nameWithType: ArucoUnity.Cameras.Undistortions
+  fullName: ArucoUnity.Cameras.Undistortions
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras*
+  commentId: Overload:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  name: Cameras
+  nameWithType: IArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+- uid: UnityEngine.Camera[]
+  isExternal: true
+  name: Camera[]
+  nameWithType: Camera[]
+  fullName: UnityEngine.Camera[]
+  nameWithType.vb: Camera()
+  fullName.vb: UnityEngine.Camera()
+  name.vb: Camera()
+  spec.csharp:
+  - uid: UnityEngine.Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: UnityEngine.Camera
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: UnityEngine.Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: UnityEngine.Camera
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  name: Backgrounds
+  nameWithType: IArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras*
+  commentId: Overload:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  name: BackgroundCameras
+  nameWithType: IArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  name: IArucoCameraDisplay
+  nameWithType: IArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds*
+  commentId: Overload:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  name: Backgrounds
+  nameWithType: IArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+- uid: UnityEngine.Renderer[]
+  isExternal: true
+  name: Renderer[]
+  nameWithType: Renderer[]
+  fullName: UnityEngine.Renderer[]
+  nameWithType.vb: Renderer()
+  fullName.vb: UnityEngine.Renderer()
+  name.vb: Renderer()
+  spec.csharp:
+  - uid: UnityEngine.Renderer
+    name: Renderer
+    nameWithType: Renderer
+    fullName: UnityEngine.Renderer
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: UnityEngine.Renderer
+    name: Renderer
+    nameWithType: Renderer
+    fullName: UnityEngine.Renderer
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject*
+  commentId: Overload:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject
+  name: PlaceArucoObject
+  nameWithType: IArucoCameraDisplay.PlaceArucoObject
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject
+- uid: UnityEngine.Transform
+  commentId: T:UnityEngine.Transform
+  parent: UnityEngine
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: UnityEngine.Transform
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: UnityEngine.Quaternion
+  commentId: T:UnityEngine.Quaternion
+  parent: UnityEngine
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: UnityEngine.Quaternion
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

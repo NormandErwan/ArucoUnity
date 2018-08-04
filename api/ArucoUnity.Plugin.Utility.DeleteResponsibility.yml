@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  id: Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Utility.DeleteResponsibility.False
+  - ArucoUnity.Plugin.Utility.DeleteResponsibility.True
+  langs:
+  - csharp
+  - vb
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  type: Enum
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteResponsibility
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 7
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public enum DeleteResponsibility
+    content.vb: Public Enum DeleteResponsibility
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility.True
+  commentId: F:ArucoUnity.Plugin.Utility.DeleteResponsibility.True
+  id: "True"
+  parent: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  langs:
+  - csharp
+  - vb
+  name: "True"
+  nameWithType: Utility.DeleteResponsibility.True
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility.True
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: "True"
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 9
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: True = 0
+    return:
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility.False
+  commentId: F:ArucoUnity.Plugin.Utility.DeleteResponsibility.False
+  id: "False"
+  parent: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  langs:
+  - csharp
+  - vb
+  name: "False"
+  nameWithType: Utility.DeleteResponsibility.False
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility.False
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: "False"
+    path: Assets/ArucoUnity/Scripts/Plugin/Utility/HandleCppPtr.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: False = 1
+    return:
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility

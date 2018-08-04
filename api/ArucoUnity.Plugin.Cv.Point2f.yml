@@ -1,0 +1,436 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Point2f
+  commentId: T:ArucoUnity.Plugin.Cv.Point2f
+  id: Cv.Point2f
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Point2f.#ctor
+  - ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr
+  - ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector2
+  - ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector3
+  - ArucoUnity.Plugin.Cv.Point2f.X
+  - ArucoUnity.Plugin.Cv.Point2f.Y
+  langs:
+  - csharp
+  - vb
+  name: Cv.Point2f
+  nameWithType: Cv.Point2f
+  fullName: ArucoUnity.Plugin.Cv.Point2f
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Point2f
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class Point2f : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class Point2f
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: Point2f()
+  nameWithType: Cv.Point2f.Point2f()
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Point2f()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Cv.Point2f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: Point2f(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Cv.Point2f.Point2f(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 36
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Point2f(IntPtr point2fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: point2fPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(point2fPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Cv.Point2f.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector2
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector2
+  id: op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector2
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: Implicit(Cv.Point2f to Vector2)
+  nameWithType: Cv.Point2f.Implicit(Cv.Point2f to Vector2)
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Implicit(ArucoUnity.Plugin.Cv.Point2f to UnityEngine.Vector2)
+  type: Operator
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: op_Implicit
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 41
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static implicit operator Vector2(Cv.Point2f point2f)
+    parameters:
+    - id: point2f
+      type: ArucoUnity.Plugin.Cv.Point2f
+    return:
+      type: UnityEngine.Vector2
+    content.vb: Public Shared Widening Operator CType(point2f As Cv.Point2f) As Vector2
+  overload: ArucoUnity.Plugin.Cv.Point2f.op_Implicit*
+  nameWithType.vb: Cv.Point2f.Widening(Cv.Point2f to Vector2)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Point2f.Widening(ArucoUnity.Plugin.Cv.Point2f to UnityEngine.Vector2)
+  name.vb: Widening(Cv.Point2f to Vector2)
+- uid: ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector3
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector3
+  id: op_Implicit(ArucoUnity.Plugin.Cv.Point2f)~UnityEngine.Vector3
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: Implicit(Cv.Point2f to Vector3)
+  nameWithType: Cv.Point2f.Implicit(Cv.Point2f to Vector3)
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Implicit(ArucoUnity.Plugin.Cv.Point2f to UnityEngine.Vector3)
+  type: Operator
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: op_Implicit
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 46
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static implicit operator Vector3(Cv.Point2f point2f)
+    parameters:
+    - id: point2f
+      type: ArucoUnity.Plugin.Cv.Point2f
+    return:
+      type: UnityEngine.Vector3
+    content.vb: Public Shared Widening Operator CType(point2f As Cv.Point2f) As Vector3
+  overload: ArucoUnity.Plugin.Cv.Point2f.op_Implicit*
+  nameWithType.vb: Cv.Point2f.Widening(Cv.Point2f to Vector3)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ArucoUnity.Plugin.Cv.Point2f.Widening(ArucoUnity.Plugin.Cv.Point2f to UnityEngine.Vector3)
+  name.vb: Widening(Cv.Point2f to Vector3)
+- uid: ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Cv.Point2f.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr()
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DeleteCppPtr
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 51
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Cv.Point2f.X
+  commentId: P:ArucoUnity.Plugin.Cv.Point2f.X
+  id: X
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Cv.Point2f.X
+  fullName: ArucoUnity.Plugin.Cv.Point2f.X
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: X
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 58
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public float X { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property X As Single
+  overload: ArucoUnity.Plugin.Cv.Point2f.X*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Point2f.Y
+  commentId: P:ArucoUnity.Plugin.Cv.Point2f.Y
+  id: Y
+  parent: ArucoUnity.Plugin.Cv.Point2f
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Cv.Point2f.Y
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Y
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: Y
+    path: Assets/ArucoUnity/Scripts/Plugin/Cv/Point2f.cs
+    startLine: 64
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public float Y { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Y As Single
+  overload: ArucoUnity.Plugin.Cv.Point2f.Y*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Point2f.#ctor
+  name: Point2f
+  nameWithType: Cv.Point2f.Point2f
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Cv.Point2f.op_Implicit*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Point2f.op_Implicit
+  name: Implicit
+  nameWithType: Cv.Point2f.Implicit
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Implicit
+  nameWithType.vb: Cv.Point2f.Widening
+  fullName.vb: ArucoUnity.Plugin.Cv.Point2f.Widening
+  name.vb: Widening
+- uid: ArucoUnity.Plugin.Cv.Point2f
+  commentId: T:ArucoUnity.Plugin.Cv.Point2f
+  parent: ArucoUnity.Plugin
+  name: Cv.Point2f
+  nameWithType: Cv.Point2f
+  fullName: ArucoUnity.Plugin.Cv.Point2f
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr
+  name: DeleteCppPtr
+  nameWithType: Cv.Point2f.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Cv.Point2f.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Cv.Point2f.X*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Point2f.X
+  name: X
+  nameWithType: Cv.Point2f.X
+  fullName: ArucoUnity.Plugin.Cv.Point2f.X
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Plugin.Cv.Point2f.Y*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Point2f.Y
+  name: Y
+  nameWithType: Cv.Point2f.Y
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Y

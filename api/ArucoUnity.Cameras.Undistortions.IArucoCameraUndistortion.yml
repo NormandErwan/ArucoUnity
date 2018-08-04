@@ -1,0 +1,568 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  id: IArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Undistortions
+  children:
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  langs:
+  - csharp
+  - vb
+  name: IArucoCameraUndistortion
+  nameWithType: IArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  type: Interface
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: IArucoCameraUndistortion
+    path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+    startLine: 8
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nManages the processes of undistortion and rectification of <xref href=\"ArucoUnity.Cameras.IArucoCamera.Images\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public interface IArucoCameraUndistortion : IArucoCameraController, IConfigurableController, IHasArucoCameraParameters'
+    content.vb: >-
+      Public Interface IArucoCameraUndistortion
+          Inherits IArucoCameraController, IHasArucoCameraParameters
+  inheritedMembers:
+  - ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  - ArucoUnity.Utilities.IConfigurableController.Configured
+  - ArucoUnity.Utilities.IConfigurableController.Ready
+  - ArucoUnity.Utilities.IConfigurableController.Started
+  - ArucoUnity.Utilities.IConfigurableController.Stopped
+  - ArucoUnity.Utilities.IConfigurableController.AutoStart
+  - ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  - ArucoUnity.Utilities.IConfigurableController.IsReady
+  - ArucoUnity.Utilities.IConfigurableController.IsStarted
+  - ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  - ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - ArucoUnity.Utilities.IConfigurableController.StartController
+  - ArucoUnity.Utilities.IConfigurableController.StopController
+  - ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  id: RectifiedCameraMatrices
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: RectifiedCameraMatrices
+  nameWithType: IArucoCameraUndistortion.RectifiedCameraMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: RectifiedCameraMatrices
+    path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the new camera matrices of the undistorted and rectified images of each camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] RectifiedCameraMatrices { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property RectifiedCameraMatrices As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  id: RectificationMatrices
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: RectificationMatrices
+  nameWithType: IArucoCameraUndistortion.RectificationMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: RectificationMatrices
+    path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the rectification rotation matrices of each camera to make both camera image planes the same plane, in\ncase of a stereo camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] RectificationMatrices { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property RectificationMatrices As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  id: UndistortedDistCoeffs
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: UndistortedDistCoeffs
+  nameWithType: IArucoCameraUndistortion.UndistortedDistCoeffs
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortedDistCoeffs
+    path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the distorsion coefficients of the undistorted and rectified images of each camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] UndistortedDistCoeffs { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property UndistortedDistCoeffs As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  id: UndistortionRectificationMaps
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: UndistortionRectificationMaps
+  nameWithType: IArucoCameraUndistortion.UndistortionRectificationMaps
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: UndistortionRectificationMaps
+    path: Assets/ArucoUnity/Scripts/Cameras/Undistortions/IArucoCameraUndistortion.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the undistortion and rectification images transformation map of each camera (two maps per camera).\n"
+  example: []
+  syntax:
+    content: Cv.Mat[][] UndistortionRectificationMaps { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[][]
+    content.vb: ReadOnly Property UndistortionRectificationMaps As Cv.Mat()()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: ArucoUnity.Cameras.IArucoCamera.Images
+  commentId: P:ArucoUnity.Cameras.IArucoCamera.Images
+  parent: ArucoUnity.Cameras.IArucoCamera
+  name: Images
+  nameWithType: IArucoCamera.Images
+  fullName: ArucoUnity.Cameras.IArucoCamera.Images
+- uid: ArucoUnity.Cameras.Undistortions
+  commentId: N:ArucoUnity.Cameras.Undistortions
+  name: ArucoUnity.Cameras.Undistortions
+  nameWithType: ArucoUnity.Cameras.Undistortions
+  fullName: ArucoUnity.Cameras.Undistortions
+- uid: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  commentId: P:ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  parent: ArucoUnity.Cameras.IArucoCameraController
+  name: ArucoCamera
+  nameWithType: IArucoCameraController.ArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+- uid: ArucoUnity.Utilities.IConfigurableController.Configured
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Configured
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Configured
+  nameWithType: IConfigurableController.Configured
+  fullName: ArucoUnity.Utilities.IConfigurableController.Configured
+- uid: ArucoUnity.Utilities.IConfigurableController.Ready
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Ready
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Ready
+  nameWithType: IConfigurableController.Ready
+  fullName: ArucoUnity.Utilities.IConfigurableController.Ready
+- uid: ArucoUnity.Utilities.IConfigurableController.Started
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Started
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Started
+  nameWithType: IConfigurableController.Started
+  fullName: ArucoUnity.Utilities.IConfigurableController.Started
+- uid: ArucoUnity.Utilities.IConfigurableController.Stopped
+  commentId: E:ArucoUnity.Utilities.IConfigurableController.Stopped
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: Stopped
+  nameWithType: IConfigurableController.Stopped
+  fullName: ArucoUnity.Utilities.IConfigurableController.Stopped
+- uid: ArucoUnity.Utilities.IConfigurableController.AutoStart
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.AutoStart
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: AutoStart
+  nameWithType: IConfigurableController.AutoStart
+  fullName: ArucoUnity.Utilities.IConfigurableController.AutoStart
+- uid: ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsConfigured
+  nameWithType: IConfigurableController.IsConfigured
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsConfigured
+- uid: ArucoUnity.Utilities.IConfigurableController.IsReady
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsReady
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsReady
+  nameWithType: IConfigurableController.IsReady
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsReady
+- uid: ArucoUnity.Utilities.IConfigurableController.IsStarted
+  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsStarted
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: IsStarted
+  nameWithType: IConfigurableController.IsStarted
+  fullName: ArucoUnity.Utilities.IConfigurableController.IsStarted
+- uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: AddDependency(IConfigurableController)
+  nameWithType: IConfigurableController.AddDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: IConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: AddDependency
+    nameWithType: IConfigurableController.AddDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: RemoveDependency(IConfigurableController)
+  nameWithType: IConfigurableController.RemoveDependency(IConfigurableController)
+  fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: IConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
+    name: RemoveDependency
+    nameWithType: IConfigurableController.RemoveDependency
+    fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Utilities.IConfigurableController
+    name: IConfigurableController
+    nameWithType: IConfigurableController
+    fullName: ArucoUnity.Utilities.IConfigurableController
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: GetDependencies()
+  nameWithType: IConfigurableController.GetDependencies()
+  fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: IConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+    name: GetDependencies
+    nameWithType: IConfigurableController.GetDependencies
+    fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: ConfigureController()
+  nameWithType: IConfigurableController.ConfigureController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: IConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+    name: ConfigureController
+    nameWithType: IConfigurableController.ConfigureController
+    fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.StartController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.StartController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: StartController()
+  nameWithType: IConfigurableController.StartController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.StartController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StartController
+    name: StartController
+    nameWithType: IConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StartController
+    name: StartController
+    nameWithType: IConfigurableController.StartController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StartController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Utilities.IConfigurableController.StopController
+  commentId: M:ArucoUnity.Utilities.IConfigurableController.StopController
+  parent: ArucoUnity.Utilities.IConfigurableController
+  name: StopController()
+  nameWithType: IConfigurableController.StopController()
+  fullName: ArucoUnity.Utilities.IConfigurableController.StopController()
+  spec.csharp:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StopController
+    name: StopController
+    nameWithType: IConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Utilities.IConfigurableController.StopController
+    name: StopController
+    nameWithType: IConfigurableController.StopController
+    fullName: ArucoUnity.Utilities.IConfigurableController.StopController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  commentId: P:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  parent: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  name: CameraParameters
+  nameWithType: IHasArucoCameraParameters.CameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+- uid: ArucoUnity.Cameras.IArucoCamera
+  commentId: T:ArucoUnity.Cameras.IArucoCamera
+  parent: ArucoUnity.Cameras
+  name: IArucoCamera
+  nameWithType: IArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCamera
+- uid: ArucoUnity.Cameras.IArucoCameraController
+  commentId: T:ArucoUnity.Cameras.IArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: ArucoUnity.Cameras.IArucoCameraController
+- uid: ArucoUnity.Utilities.IConfigurableController
+  commentId: T:ArucoUnity.Utilities.IConfigurableController
+  parent: ArucoUnity.Utilities
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: ArucoUnity.Utilities.IConfigurableController
+- uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  name: IHasArucoCameraParameters
+  nameWithType: IHasArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: ArucoUnity.Utilities
+  commentId: N:ArucoUnity.Utilities
+  name: ArucoUnity.Utilities
+  nameWithType: ArucoUnity.Utilities
+  fullName: ArucoUnity.Utilities
+- uid: ArucoUnity.Cameras.Parameters
+  commentId: N:ArucoUnity.Cameras.Parameters
+  name: ArucoUnity.Cameras.Parameters
+  nameWithType: ArucoUnity.Cameras.Parameters
+  fullName: ArucoUnity.Cameras.Parameters
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  name: RectifiedCameraMatrices
+  nameWithType: IArucoCameraUndistortion.RectifiedCameraMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+- uid: ArucoUnity.Plugin.Cv.Mat[]
+  isExternal: true
+  name: Cv.Mat[]
+  nameWithType: Cv.Mat[]
+  fullName: ArucoUnity.Plugin.Cv.Mat[]
+  nameWithType.vb: Cv.Mat()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()
+  name.vb: Cv.Mat()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  name: RectificationMatrices
+  nameWithType: IArucoCameraUndistortion.RectificationMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  name: UndistortedDistCoeffs
+  nameWithType: IArucoCameraUndistortion.UndistortedDistCoeffs
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  name: UndistortionRectificationMaps
+  nameWithType: IArucoCameraUndistortion.UndistortionRectificationMaps
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+- uid: ArucoUnity.Plugin.Cv.Mat[][]
+  isExternal: true
+  name: Cv.Mat[][]
+  nameWithType: Cv.Mat[][]
+  fullName: ArucoUnity.Plugin.Cv.Mat[][]
+  nameWithType.vb: Cv.Mat()()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()()
+  name.vb: Cv.Mat()()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ()
+    nameWithType: ()
+    fullName: ()

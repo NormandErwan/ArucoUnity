@@ -1,0 +1,1272 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  id: ArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  children:
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor(System.Int32)
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.cameraMatrices
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  - ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraParameters
+  nameWithType: ArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  type: Class
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ArucoCameraParameters
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 10
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nManage the camera parameters from a calibration.\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ArucoCameraParameters
+    content.vb: >-
+      <Serializable>
+
+      Public Class ArucoCameraParameters
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraParameters()
+  nameWithType: ArucoCameraParameters.ArucoCameraParameters()
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ArucoCameraParameters()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 19
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nCreate an empty CameraParameters and set <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime\" data-throw-if-not-resolved=\"false\"></xref> to now.\n"
+  remarks: This constructor is needed for the serialization.
+  example: []
+  syntax:
+    content: public ArucoCameraParameters()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor(System.Int32)
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraParameters(Int32)
+  nameWithType: ArucoCameraParameters.ArucoCameraParameters(Int32)
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ArucoCameraParameters(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: .ctor
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 28
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nInitialize the properties.\n"
+  example: []
+  syntax:
+    content: public ArucoCameraParameters(int camerasNumber)
+    parameters:
+    - id: camerasNumber
+      type: System.Int32
+      description: >-
+        The number of camera in the camera system. Must be equal to the number of cameras of the related
+
+        <xref href="ArucoUnity.Cameras.ArucoCamera" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(camerasNumber As Integer)
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  id: CalibrationDateTime
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CalibrationDateTime
+  nameWithType: ArucoCameraParameters.CalibrationDateTime
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CalibrationDateTime
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe calibration date and time.\n"
+  example: []
+  syntax:
+    content: public DateTime CalibrationDateTime { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CalibrationDateTime As Date
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+  id: CameraNumber
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CameraNumber
+  nameWithType: ArucoCameraParameters.CameraNumber
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CameraNumber
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe number of the camera during the calibration.\n"
+  example: []
+  syntax:
+    content: public int CameraNumber { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CameraNumber As Integer
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+  id: ImageHeights
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ImageHeights
+  nameWithType: ArucoCameraParameters.ImageHeights
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ImageHeights
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 59
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe image height during the calibration.\n"
+  example: []
+  syntax:
+    content: public int[] ImageHeights { get; set; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public Property ImageHeights As Integer()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+  id: ImageWidths
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ImageWidths
+  nameWithType: ArucoCameraParameters.ImageWidths
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ImageWidths
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 64
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe image width during the calibration.\n"
+  example: []
+  syntax:
+    content: public int[] ImageWidths { get; set; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public Property ImageWidths As Integer()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+  id: CalibrationFlagsValue
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CalibrationFlagsValue
+  nameWithType: ArucoCameraParameters.CalibrationFlagsValue
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CalibrationFlagsValue
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 69
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe calibration flags used.\n"
+  example: []
+  syntax:
+    content: public int CalibrationFlagsValue { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CalibrationFlagsValue As Integer
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+  id: FixAspectRatioValue
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: FixAspectRatioValue
+  nameWithType: ArucoCameraParameters.FixAspectRatioValue
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FixAspectRatioValue
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 74
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nNon null if there is a fix image aspect ratio.\n"
+  example: []
+  syntax:
+    content: public float FixAspectRatioValue { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property FixAspectRatioValue As Single
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+  id: ReprojectionErrors
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: ReprojectionErrors
+  nameWithType: ArucoCameraParameters.ReprojectionErrors
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: ReprojectionErrors
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 79
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe average re-projection error of the calibration.\n"
+  example: []
+  syntax:
+    content: public double[] ReprojectionErrors { get; set; }
+    parameters: []
+    return:
+      type: System.Double[]
+    content.vb: Public Property ReprojectionErrors As Double()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  id: CameraMatrices
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CameraMatrices
+  nameWithType: ArucoCameraParameters.CameraMatrices
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CameraMatrices
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 86
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe camera matrices of the calibration.\n"
+  remarks: "When <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called, it&apos;s serialized with the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType\" data-throw-if-not-resolved=\"false\"></xref> and \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues\" data-throw-if-not-resolved=\"false\"></xref> properties."
+  example: []
+  syntax:
+    content: public Cv.Mat[] CameraMatrices { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Public Property CameraMatrices As Cv.Mat()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  id: CameraMatricesType
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CameraMatricesType
+  nameWithType: ArucoCameraParameters.CameraMatricesType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CameraMatricesType
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 94
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe camera matrix type of the calibration. Equals to <see cref=\"!:CameraMatrices.Type()\"></see> and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public Cv.Type CameraMatricesType { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+    content.vb: Public Property CameraMatricesType As Cv.Type
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  id: CameraMatricesValues
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: CameraMatricesValues
+  nameWithType: ArucoCameraParameters.CameraMatricesValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: CameraMatricesValues
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 101
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe camera matrix values of the calibration. Equals to the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices\" data-throw-if-not-resolved=\"false\"></xref> content and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public double[][][] CameraMatricesValues { get; set; }
+    parameters: []
+    return:
+      type: System.Double[][][]
+    content.vb: Public Property CameraMatricesValues As Double()()()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  id: DistCoeffs
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: DistCoeffs
+  nameWithType: ArucoCameraParameters.DistCoeffs
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DistCoeffs
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 108
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe distorsition coefficients of the calibration.\n"
+  remarks: "When <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called, it&apos;s serialized with the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType\" data-throw-if-not-resolved=\"false\"></xref> and \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues\" data-throw-if-not-resolved=\"false\"></xref> properties."
+  example: []
+  syntax:
+    content: public Cv.Mat[] DistCoeffs { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Public Property DistCoeffs As Cv.Mat()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  id: DistCoeffsType
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: DistCoeffsType
+  nameWithType: ArucoCameraParameters.DistCoeffsType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DistCoeffsType
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 116
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe distorsition coefficients type of the calibration. Equals to <see cref=\"!:DistCoeffs.Type()\"></see> and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public Cv.Type DistCoeffsType { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+    content.vb: Public Property DistCoeffsType As Cv.Type
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  id: DistCoeffsValues
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: DistCoeffsValues
+  nameWithType: ArucoCameraParameters.DistCoeffsValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: DistCoeffsValues
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 123
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe distorsition coefficients values of the calibration. Equals to the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs\" data-throw-if-not-resolved=\"false\"></xref> content and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public double[][][] DistCoeffsValues { get; set; }
+    parameters: []
+    return:
+      type: System.Double[][][]
+    content.vb: Public Property DistCoeffsValues As Double()()()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  id: OmnidirXis
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: OmnidirXis
+  nameWithType: ArucoCameraParameters.OmnidirXis
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OmnidirXis
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 130
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe xi parameter used in the omnidir calibration process (ccalib module).\n"
+  remarks: "When <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called, it&apos;s serialized with the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType\" data-throw-if-not-resolved=\"false\"></xref> and \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues\" data-throw-if-not-resolved=\"false\"></xref> properties."
+  example: []
+  syntax:
+    content: public Cv.Mat[] OmnidirXis { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Public Property OmnidirXis As Cv.Mat()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  id: OmnidirXisType
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: OmnidirXisType
+  nameWithType: ArucoCameraParameters.OmnidirXisType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OmnidirXisType
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 138
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe xi parameter type of the calibration. Equals to <see cref=\"!:OmnidirXis.Type()\"></see> and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public Cv.Type OmnidirXisType { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Type
+    content.vb: Public Property OmnidirXisType As Cv.Type
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  id: OmnidirXisValues
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: OmnidirXisValues
+  nameWithType: ArucoCameraParameters.OmnidirXisValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: OmnidirXisValues
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 145
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe xi parameter values of the calibration. Equals to the <xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis\" data-throw-if-not-resolved=\"false\"></xref> content and automatically written when \n<xref href=\"ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  remarks: This property is be public for the serialization.
+  example: []
+  syntax:
+    content: public double[][][] OmnidirXisValues { get; set; }
+    parameters: []
+    return:
+      type: System.Double[][][]
+    content.vb: Public Property OmnidirXisValues As Double()()()
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+  id: StereoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: StereoCameraParameters
+  nameWithType: ArucoCameraParameters.StereoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: StereoCameraParameters
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 150
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nParameters from possible stereo calibration on the camera system.\n"
+  example: []
+  syntax:
+    content: public StereoArucoCameraParameters StereoCameraParameters { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+    content.vb: Public Property StereoCameraParameters As StereoArucoCameraParameters
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+  id: FilePath
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: FilePath
+  nameWithType: ArucoCameraParameters.FilePath
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+  type: Property
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: FilePath
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 155
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nThe file path of the parameters.\n"
+  example: []
+  syntax:
+    content: public string FilePath { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FilePath As String
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.cameraMatrices
+  commentId: F:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.cameraMatrices
+  id: cameraMatrices
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: cameraMatrices
+  nameWithType: ArucoCameraParameters.cameraMatrices
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.cameraMatrices
+  type: Field
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: cameraMatrices
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 160
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  syntax:
+    content: protected Cv.Mat[] cameraMatrices
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Protected cameraMatrices As Cv.Mat()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
+  id: LoadFromXmlFile(System.String)
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: LoadFromXmlFile(String)
+  nameWithType: ArucoCameraParameters.LoadFromXmlFile(String)
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile(System.String)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: LoadFromXmlFile
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 170
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nCreate a new CameraParameters object from a previously saved camera parameters XML file.\n"
+  example: []
+  syntax:
+    content: public static ArucoCameraParameters LoadFromXmlFile(string cameraParametersFilePath)
+    parameters:
+    - id: cameraParametersFilePath
+      type: System.String
+      description: The file path to load.
+    return:
+      type: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+      description: The CameraParameters loaded from the XML file or null if the file coulnd&apos;t be loaded.
+    content.vb: Public Shared Function LoadFromXmlFile(cameraParametersFilePath As String) As ArucoCameraParameters
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: If the camera parameters couldn&apos;t be loaded because of a wrong file path.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  id: SaveToXmlFile(System.String)
+  parent: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  langs:
+  - csharp
+  - vb
+  name: SaveToXmlFile(String)
+  nameWithType: ArucoCameraParameters.SaveToXmlFile(String)
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  type: Method
+  source:
+    remote:
+      path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+      branch: master
+      repo: git@github.com:NormandErwan/ArucoUnity.git
+    id: SaveToXmlFile
+    path: Assets/ArucoUnity/Scripts/Cameras/Parameters/ArucoCameraParameters.cs
+    startLine: 215
+  assemblies:
+  - Assembly-CSharp
+  namespace: ArucoUnity.Cameras.Parameters
+  summary: "\nSave the camera parameters to a XML file.\n"
+  example: []
+  syntax:
+    content: public void SaveToXmlFile(string cameraParametersFilePath)
+    parameters:
+    - id: cameraParametersFilePath
+      type: System.String
+      description: The file path where to save the object.
+    content.vb: Public Sub SaveToXmlFile(cameraParametersFilePath As String)
+  overload: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: If the camera parameters couldn&apos;t be saved because of a wrong file path.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Cameras.Parameters
+  commentId: N:ArucoUnity.Cameras.Parameters
+  name: ArucoUnity.Cameras.Parameters
+  nameWithType: ArucoUnity.Cameras.Parameters
+  fullName: ArucoUnity.Cameras.Parameters
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.#ctor
+  name: ArucoCameraParameters
+  nameWithType: ArucoCameraParameters.ArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ArucoCameraParameters
+- uid: ArucoUnity.Cameras.ArucoCamera
+  commentId: T:ArucoUnity.Cameras.ArucoCamera
+  parent: ArucoUnity.Cameras
+  name: ArucoCamera
+  nameWithType: ArucoCamera
+  fullName: ArucoUnity.Cameras.ArucoCamera
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+  name: CalibrationDateTime
+  nameWithType: ArucoCameraParameters.CalibrationDateTime
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationDateTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+  name: CameraNumber
+  nameWithType: ArucoCameraParameters.CameraNumber
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraNumber
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+  name: ImageHeights
+  nameWithType: ArucoCameraParameters.ImageHeights
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageHeights
+- uid: System.Int32[]
+  isExternal: true
+  name: Int32[]
+  nameWithType: Int32[]
+  fullName: System.Int32[]
+  nameWithType.vb: Int32()
+  fullName.vb: System.Int32()
+  name.vb: Int32()
+  spec.csharp:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+  name: ImageWidths
+  nameWithType: ArucoCameraParameters.ImageWidths
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ImageWidths
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+  name: CalibrationFlagsValue
+  nameWithType: ArucoCameraParameters.CalibrationFlagsValue
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CalibrationFlagsValue
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+  name: FixAspectRatioValue
+  nameWithType: ArucoCameraParameters.FixAspectRatioValue
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FixAspectRatioValue
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+  name: ReprojectionErrors
+  nameWithType: ArucoCameraParameters.ReprojectionErrors
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.ReprojectionErrors
+- uid: System.Double[]
+  isExternal: true
+  name: Double[]
+  nameWithType: Double[]
+  fullName: System.Double[]
+  nameWithType.vb: Double()
+  fullName.vb: System.Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile(System.String)
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  name: CameraMatrices
+  nameWithType: ArucoCameraParameters.CameraMatrices
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+- uid: ArucoUnity.Plugin.Cv.Mat[]
+  isExternal: true
+  name: Cv.Mat[]
+  nameWithType: Cv.Mat[]
+  fullName: ArucoUnity.Plugin.Cv.Mat[]
+  nameWithType.vb: Cv.Mat()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()
+  name.vb: Cv.Mat()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+  name: CameraMatricesType
+  nameWithType: ArucoCameraParameters.CameraMatricesType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesType
+- uid: ArucoUnity.Plugin.Cv.Type
+  commentId: T:ArucoUnity.Plugin.Cv.Type
+  parent: ArucoUnity.Plugin
+  name: Cv.Type
+  nameWithType: Cv.Type
+  fullName: ArucoUnity.Plugin.Cv.Type
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatrices
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+  name: CameraMatricesValues
+  nameWithType: ArucoCameraParameters.CameraMatricesValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.CameraMatricesValues
+- uid: System.Double[][][]
+  isExternal: true
+  name: Double[][][]
+  nameWithType: Double[][][]
+  fullName: System.Double[][][]
+  nameWithType.vb: Double()()()
+  fullName.vb: System.Double()()()
+  name.vb: Double()()()
+  spec.csharp:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  name: DistCoeffs
+  nameWithType: ArucoCameraParameters.DistCoeffs
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+  name: DistCoeffsType
+  nameWithType: ArucoCameraParameters.DistCoeffsType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsType
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffs
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+  name: DistCoeffsValues
+  nameWithType: ArucoCameraParameters.DistCoeffsValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.DistCoeffsValues
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  name: OmnidirXis
+  nameWithType: ArucoCameraParameters.OmnidirXis
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+  name: OmnidirXisType
+  nameWithType: ArucoCameraParameters.OmnidirXisType
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisType
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXis
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+  name: OmnidirXisValues
+  nameWithType: ArucoCameraParameters.OmnidirXisValues
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.OmnidirXisValues
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+  name: StereoCameraParameters
+  nameWithType: ArucoCameraParameters.StereoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.StereoCameraParameters
+- uid: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  name: StereoArucoCameraParameters
+  nameWithType: StereoArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.StereoArucoCameraParameters
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+  name: FilePath
+  nameWithType: ArucoCameraParameters.FilePath
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.FilePath
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile
+  name: LoadFromXmlFile
+  nameWithType: ArucoCameraParameters.LoadFromXmlFile
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.LoadFromXmlFile
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  name: ArucoCameraParameters
+  nameWithType: ArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile*
+  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile
+  name: SaveToXmlFile
+  nameWithType: ArucoCameraParameters.SaveToXmlFile
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParameters.SaveToXmlFile
