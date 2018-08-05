@@ -11,17 +11,17 @@ It uses the OpenCV's [ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.h
 
 ## Usage
 
-Download the [latest build release](https://github.com/NormandErwan/ArucoUnity/releases), or see the Build section. Import the package in your Unity project.
+Download the [latest build release](https://github.com/NormandErwan/ArucoUnity/releases). Or see the [Developing section of the README.md](#developing). Then, import `ArucoUnity.package` in your Unity project.
 
 A typical workflow with ArucoUnity is:
 
-1. [Create Markers](https://normanderwan.github.io/ArucoUnity/articles/create-markers.html), print and place them in the environment.
-2. [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/articles/calibrate-a-camera.html) using a calibration board.
-3. [Track Markers](https://normanderwan.github.io/ArucoUnity/articles/track-markers.html).
+1. [Create Markers](https://normanderwan.github.io/ArucoUnity/manual/create-markers.html), print and place them in the environment.
+2. [Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html) using a calibration board.
+3. [Track Markers](https://normanderwan.github.io/ArucoUnity/manual/track-markers.html).
 
 ## Developing
 
-Read the [ArucoUnity Architecture](articles/aruco-unity-architecture.html), [Build From Sources](articles/build-from-sources.html) and [API Documentation](api/ArucoUnity.Calibration.html) pages.
+Read the [ArucoUnity Architecture](https://normanderwan.github.io/ArucoUnity/manual/aruco-unity-architecture.html), [Build From Sources](https://normanderwan.github.io/ArucoUnity/manual/build-from-sources.html) and [API Documentation](https://normanderwan.github.io/ArucoUnity/api/ArucoUnity.Calibration.html) pages.
 
 To better understand the algorithms used in the OpenCV modules, read these tutorials:
 

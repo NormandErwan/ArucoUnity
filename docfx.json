@@ -35,7 +35,7 @@
     ],
     "resources": [
       {
-        "files": [ "images/**" ]
+        "files": [ "docs/images/**" ]
       }
     ],
     "dest": "docs"
