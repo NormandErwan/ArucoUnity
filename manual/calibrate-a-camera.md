@@ -32,9 +32,13 @@ Most of the cameras we use today on our smartphones or laptops are called in Aru
   - Set the `CalibrationBoard` with a charuco board or a grid board. Both are already created in the scene to help you.
   - Configure the calibration board object by measuring the one you just printed : units are in meters this time. The `ArucoObjectDisplayer` helps you visualize the configured board to see if it's match with the printed one. Don't switch x and y values.
 - Optionally adjust parameters on the `PinholeCameraCalibration` game object.
-  - Set the output camera parameters file with `CameraParametersController`. The folder is relative to [persistentDataPath](https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html) in builds or to the "Asset" folder of your projet in the editor. If the filename is empty, it will be automatically generated from the Aruco camera used.
+  - Set the output camera parameters file with `CameraParametersController`:
+    - The folder is relative to [persistentDataPath](https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html) in builds or to the "Asset" folder of your projet in the editor.
+    - If the filename is empty, it will be automatically generated from the camera used.
+    - If you want to refine a previous calibration, set the filename of the camera parameters XML file (with the .xml extension).
   - Configure the board detection with `DetectorParametersController` parameters. They are described on the Detector Parameters section of the [ArUco camera calibration tutorial](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html).
   - Configure the calibration flags with `PinholeCameraCalibrationFlags`. They are described on the [calib3d::calibrateCamera() function](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga3207604e4b1a1758aa66acb6ed5aa65d) documentation.
+  - 
 
 ![Calibration configuration](../images/calibration_pinhole_camera.jpg)
 
