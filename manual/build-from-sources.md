@@ -14,7 +14,7 @@ mkdir -p ArucoUnityPlugin/build/opencv/
 
 ## Build OpenCV
 
-We need a build of OpenCV (minimum version: 3.3.0) with the calib3d module and the aruco and ccalib *contrib* modules. These two contrib modules are not included in the official OpenCV releases.
+We need a build of OpenCV (minimum version: 3.3, maximum: 3.4) with the calib3d module and the aruco and ccalib *contrib* modules. These two contrib modules are not included in the official OpenCV releases.
 
 A CMake project is already configured ready to be build. Run the following commands:
 
@@ -42,7 +42,7 @@ The installation will copy the plugin into the `bin/` and `lib/` folders. It wil
 
 On Linux the correct path to the `-DOpenCV_DIR` option above may be set to `build/opencv/install/share/OpenCV/`.
 
-## Export ArucoUnity
+## Export the ArucoUnity package
 
 Open the `ArucoUnity/` folder in Unity. No errors should be displayed in the Console panel.
 

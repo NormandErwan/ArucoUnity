@@ -8,7 +8,7 @@
     <title>Build From Sources | Aruco Unity documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Build From Sources | Aruco Unity documentation ">
-    <meta name="generator" content="docfx 2.37.2.0">
+    <meta name="generator" content="docfx 2.38.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,7 +86,7 @@
 git clone https://github.com/NormandErwan/ArucoUnityPlugin
 mkdir -p ArucoUnityPlugin/build/opencv/
 </code></pre><h2 id="build-opencv">Build OpenCV</h2>
-<p>We need a build of OpenCV (minimum version: 3.3.0) with the calib3d module and the aruco and ccalib <em>contrib</em> modules. These two contrib modules are not included in the official OpenCV releases.</p>
+<p>We need a build of OpenCV (minimum version: 3.3, maximum: 3.4) with the calib3d module and the aruco and ccalib <em>contrib</em> modules. These two contrib modules are not included in the official OpenCV releases.</p>
 <p>A CMake project is already configured ready to be build. Run the following commands:</p>
 <pre><code class="lang-bash">cd ArucoUnityPlugin/build/opencv/
 cmake -DCMAKE_INSTALL_PREFIX=install/ -G &lt;generator_name&gt; ../../3rdparty/opencv_contrib/
@@ -100,7 +100,7 @@ cmake -DCMAKE_INSTALL_PREFIX=.. -DOpenCV_DIR=build/opencv/install/ -DArucoUnity_
 cmake --build . --config Release --target INSTALL
 </code></pre><p>The installation will copy the plugin into the <code>bin/</code> and <code>lib/</code> folders. It will also copy the plugin and the OpenCV libraries to the <code>ArucoUnity/Assets/Plugins/&lt;platform&gt;</code> folder.</p>
 <p>On Linux the correct path to the <code>-DOpenCV_DIR</code> option above may be set to <code>build/opencv/install/share/OpenCV/</code>.</p>
-<h2 id="export-arucounity">Export ArucoUnity</h2>
+<h2 id="export-the-arucounity-package">Export the ArucoUnity package</h2>
 <p>Open the <code>ArucoUnity/</code> folder in Unity. No errors should be displayed in the Console panel.</p>
 <p>A new entry named &quot;ArucoUnity&quot; is in the menu bar. Open it and select &quot;Export package&quot;.</p>
 <p><img src="../images/export_package.jpg" alt="Export ArucoUnity package"></p>
