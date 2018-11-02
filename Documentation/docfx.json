@@ -3,11 +3,12 @@
     {
       "src": [
         {
-          "files": [ "ArucoUnity.csproj" ]
+          "src": "../Assets/",
+          "files": [ "**/*.cs" ]
         }
       ],
-      "dest": "Documentation/api/",
-      "filter": "Documentation/filterConfig.yml"
+      "dest": "api/",
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
@@ -19,25 +20,24 @@
     },
     "content": [
       {
-        "src": "Documentation/api/",
-        "dest": "api",
+        "src": "api/",
+        "dest": "api/",
         "files": [ "*.yml" ]
       },
       {
-        "src": "Documentation/manual/",
-        "dest": "manual",
+        "src": "manual/",
+        "dest": "manual/",
         "files": [ "toc.yml", "*.md" ]
       },
       {
-        "src": "Documentation",
         "files": [ "toc.yml", "index.md" ]
       }
     ],
     "resources": [
       {
-        "files": [ "Documentation/images/**" ]
+        "files": [ "images/*" ]
       }
     ],
-    "dest": "Documentation"
+    "dest": "../Documentation"
   }
 }
