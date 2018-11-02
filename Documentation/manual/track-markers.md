@@ -1,8 +1,8 @@
 # Track Markers
 
-First, make sure you have calibrated your camera: read the [Calibrate a Camera](articles/calibrate-a-camera.html) page. You **need to have a calibration file** to track some aruco objects.
+First, make sure you have calibrated your camera: read the [Calibrate a Camera](calibrate-a-camera.html) page. You **need to have a calibration file** to track some aruco objects.
 
-Also, print and place in the environment the aruco objects you want to track. Read the [Create Markers](https://github.com/NormandErwan/ArucoUnity/wiki/1.-Create-Markers) page for details.
+Also, print and place in the environment the aruco objects you want to track. Read the [Create Markers](create-markers.html) page for details.
 
 To track your aruco objects:
 
