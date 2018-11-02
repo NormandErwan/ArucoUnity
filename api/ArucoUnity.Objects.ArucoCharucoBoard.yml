@@ -1,0 +1,1016 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.ArucoCharucoBoard
+  commentId: T:ArucoUnity.Objects.ArucoCharucoBoard
+  id: ArucoCharucoBoard
+  parent: ArucoUnity.Objects
+  children:
+  - ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+  - ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+  - ArucoUnity.Objects.ArucoCharucoBoard.Draw
+  - ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
+  - ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32,System.Int32,System.Single,System.Single)
+  - ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
+  - ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+  - ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+  - ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+  - ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
+  - ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
+  - ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+  langs:
+  - csharp
+  - vb
+  name: ArucoCharucoBoard
+  nameWithType: ArucoCharucoBoard
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard
+  type: Class
+  source:
+    id: ArucoCharucoBoard
+    path: ''
+    startLine: 3681
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nDescribes a ChArUco board.\n"
+  example: []
+  syntax:
+    content: 'public class ArucoCharucoBoard : ArucoBoard'
+    content.vb: >-
+      Public Class ArucoCharucoBoard
+          Inherits ArucoBoard
+  inheritance:
+  - System.Object
+  - ArucoUnity.Objects.ArucoObject
+  - ArucoUnity.Objects.ArucoBoard
+  inheritedMembers:
+  - ArucoUnity.Objects.ArucoBoard.MarginsLength
+  - ArucoUnity.Objects.ArucoBoard.ImageSize
+  - ArucoUnity.Objects.ArucoBoard.Board
+  - ArucoUnity.Objects.ArucoBoard.AxisLength
+  - ArucoUnity.Objects.ArucoBoard.Rvec
+  - ArucoUnity.Objects.ArucoBoard.Tvec
+  - ArucoUnity.Objects.ArucoBoard.Awake
+  - ArucoUnity.Objects.ArucoBoard.UpdateProperties
+  - ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  - ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  - ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  - ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  - ArucoUnity.Objects.ArucoObject.Dictionary
+  - ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  - ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  - ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  - ArucoUnity.Objects.ArucoObject.OnValidate
+  - ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+  id: SquaresNumberX
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: SquaresNumberX
+  nameWithType: ArucoCharucoBoard.SquaresNumberX
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+  type: Property
+  source:
+    id: SquaresNumberX
+    path: ''
+    startLine: 3702
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the number of squares in the X direction.\n"
+  example: []
+  syntax:
+    content: public int SquaresNumberX { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SquaresNumberX As Integer
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+  id: SquaresNumberY
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: SquaresNumberY
+  nameWithType: ArucoCharucoBoard.SquaresNumberY
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+  type: Property
+  source:
+    id: SquaresNumberY
+    path: ''
+    startLine: 3716
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the number of squares in the Y direction.\n"
+  example: []
+  syntax:
+    content: public int SquaresNumberY { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SquaresNumberY As Integer
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+  id: SquareSideLength
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: SquareSideLength
+  nameWithType: ArucoCharucoBoard.SquareSideLength
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+  type: Property
+  source:
+    id: SquareSideLength
+    path: ''
+    startLine: 3730
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the side length of each square. In pixels for Creators. In meters for Trackers and Calibrators.\n"
+  example: []
+  syntax:
+    content: public float SquareSideLength { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property SquareSideLength As Single
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+  id: DetectedCorners
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: DetectedCorners
+  nameWithType: ArucoCharucoBoard.DetectedCorners
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+  type: Property
+  source:
+    id: DetectedCorners
+    path: ''
+    startLine: 3744
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the list of the detected marker by the tracker the last frame.\n"
+  example: []
+  syntax:
+    content: public Std.VectorPoint2f DetectedCorners { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Std.VectorPoint2f
+    content.vb: Public ReadOnly Property DetectedCorners As Std.VectorPoint2f
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+  id: DetectedIds
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: DetectedIds
+  nameWithType: ArucoCharucoBoard.DetectedIds
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+  type: Property
+  source:
+    id: DetectedIds
+    path: ''
+    startLine: 3749
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets the list of the ids of the detected marker by the tracker the last frame.\n"
+  example: []
+  syntax:
+    content: public Std.VectorInt DetectedIds { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Std.VectorInt
+    content.vb: Public ReadOnly Property DetectedIds As Std.VectorInt
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+  commentId: P:ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+  id: ValidTransform
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: ValidTransform
+  nameWithType: ArucoCharucoBoard.ValidTransform
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+  type: Property
+  source:
+    id: ValidTransform
+    path: ''
+    startLine: 3754
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nGets or sets if the transform of the board has been correctly estimated by the tracker the last frame.\n"
+  example: []
+  syntax:
+    content: public bool ValidTransform { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property ValidTransform As Boolean
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
+  id: GetGameObjectScale
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: GetGameObjectScale()
+  nameWithType: ArucoCharucoBoard.GetGameObjectScale()
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale()
+  type: Method
+  source:
+    id: GetGameObjectScale
+    path: ''
+    startLine: 3758
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override Vector3 GetGameObjectScale()
+    return:
+      type: Vector3
+    content.vb: Public Overrides Function GetGameObjectScale As Vector3
+  overridden: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
+  id: UpdateArucoHashCode
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: UpdateArucoHashCode()
+  nameWithType: ArucoCharucoBoard.UpdateArucoHashCode()
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode()
+  type: Method
+  source:
+    id: UpdateArucoHashCode
+    path: ''
+    startLine: 3767
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: protected override void UpdateArucoHashCode()
+    content.vb: Protected Overrides Sub UpdateArucoHashCode
+  overridden: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.Draw
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.Draw
+  id: Draw
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: ArucoCharucoBoard.Draw()
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.Draw()
+  type: Method
+  source:
+    id: Draw
+    path: ''
+    startLine: 3774
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override Cv.Mat Draw()
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat
+    content.vb: Public Overrides Function Draw As Cv.Mat
+  overridden: ArucoUnity.Objects.ArucoObject.Draw
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.Draw*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
+  id: GenerateName
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: GenerateName()
+  nameWithType: ArucoCharucoBoard.GenerateName()
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName()
+  type: Method
+  source:
+    id: GenerateName
+    path: ''
+    startLine: 3797
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: public override string GenerateName()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GenerateName As String
+  overridden: ArucoUnity.Objects.ArucoObject.GenerateName
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
+  id: UpdateBoard
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: UpdateBoard()
+  nameWithType: ArucoCharucoBoard.UpdateBoard()
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard()
+  type: Method
+  source:
+    id: UpdateBoard
+    path: ''
+    startLine: 3803
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  syntax:
+    content: protected override void UpdateBoard()
+    content.vb: Protected Overrides Sub UpdateBoard
+  overridden: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32,System.Int32,System.Single,System.Single)
+  commentId: M:ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32,System.Int32,System.Single,System.Single)
+  id: GetArucoHashCode(System.Int32,System.Int32,System.Single,System.Single)
+  parent: ArucoUnity.Objects.ArucoCharucoBoard
+  langs:
+  - csharp
+  - vb
+  name: GetArucoHashCode(Int32, Int32, Single, Single)
+  nameWithType: ArucoCharucoBoard.GetArucoHashCode(Int32, Int32, Single, Single)
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode(System.Int32, System.Int32, System.Single, System.Single)
+  type: Method
+  source:
+    id: GetArucoHashCode
+    path: ''
+    startLine: 3827
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects
+  summary: "\nComputes the hash code of a ChAruco board.\n"
+  example: []
+  syntax:
+    content: public static int GetArucoHashCode(int squaresNumberX, int squaresNumberY, float markerSideLength, float squareSideLength)
+    parameters:
+    - id: squaresNumberX
+      type: System.Int32
+      description: The number of squares in the X direction.
+    - id: squaresNumberY
+      type: System.Int32
+      description: The number of squares in the Y direction.
+    - id: markerSideLength
+      type: System.Single
+      description: The side length of each marker.
+    - id: squareSideLength
+      type: System.Single
+      description: The side length of each square.
+    return:
+      type: System.Int32
+      description: The calculated ArUco hash code.
+    content.vb: Public Shared Function GetArucoHashCode(squaresNumberX As Integer, squaresNumberY As Integer, markerSideLength As Single, squareSideLength As Single) As Integer
+  overload: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: ArucoUnity.Objects
+  commentId: N:ArucoUnity.Objects
+  name: ArucoUnity.Objects
+  nameWithType: ArucoUnity.Objects
+  fullName: ArucoUnity.Objects
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Objects.ArucoObject
+  commentId: T:ArucoUnity.Objects.ArucoObject
+  parent: ArucoUnity.Objects
+  name: ArucoObject
+  nameWithType: ArucoObject
+  fullName: ArucoUnity.Objects.ArucoObject
+- uid: ArucoUnity.Objects.ArucoBoard
+  commentId: T:ArucoUnity.Objects.ArucoBoard
+  parent: ArucoUnity.Objects
+  name: ArucoBoard
+  nameWithType: ArucoBoard
+  fullName: ArucoUnity.Objects.ArucoBoard
+- uid: ArucoUnity.Objects.ArucoBoard.MarginsLength
+  commentId: P:ArucoUnity.Objects.ArucoBoard.MarginsLength
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: MarginsLength
+  nameWithType: ArucoBoard.MarginsLength
+  fullName: ArucoUnity.Objects.ArucoBoard.MarginsLength
+- uid: ArucoUnity.Objects.ArucoBoard.ImageSize
+  commentId: P:ArucoUnity.Objects.ArucoBoard.ImageSize
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: ImageSize
+  nameWithType: ArucoBoard.ImageSize
+  fullName: ArucoUnity.Objects.ArucoBoard.ImageSize
+- uid: ArucoUnity.Objects.ArucoBoard.Board
+  commentId: P:ArucoUnity.Objects.ArucoBoard.Board
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: Board
+  nameWithType: ArucoBoard.Board
+  fullName: ArucoUnity.Objects.ArucoBoard.Board
+- uid: ArucoUnity.Objects.ArucoBoard.AxisLength
+  commentId: P:ArucoUnity.Objects.ArucoBoard.AxisLength
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: AxisLength
+  nameWithType: ArucoBoard.AxisLength
+  fullName: ArucoUnity.Objects.ArucoBoard.AxisLength
+- uid: ArucoUnity.Objects.ArucoBoard.Rvec
+  commentId: P:ArucoUnity.Objects.ArucoBoard.Rvec
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: Rvec
+  nameWithType: ArucoBoard.Rvec
+  fullName: ArucoUnity.Objects.ArucoBoard.Rvec
+- uid: ArucoUnity.Objects.ArucoBoard.Tvec
+  commentId: P:ArucoUnity.Objects.ArucoBoard.Tvec
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: Tvec
+  nameWithType: ArucoBoard.Tvec
+  fullName: ArucoUnity.Objects.ArucoBoard.Tvec
+- uid: ArucoUnity.Objects.ArucoBoard.Awake
+  commentId: M:ArucoUnity.Objects.ArucoBoard.Awake
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: Awake()
+  nameWithType: ArucoBoard.Awake()
+  fullName: ArucoUnity.Objects.ArucoBoard.Awake()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoBoard.Awake
+    name: Awake
+    nameWithType: ArucoBoard.Awake
+    fullName: ArucoUnity.Objects.ArucoBoard.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoBoard.Awake
+    name: Awake
+    nameWithType: ArucoBoard.Awake
+    fullName: ArucoUnity.Objects.ArucoBoard.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoBoard.UpdateProperties
+  commentId: M:ArucoUnity.Objects.ArucoBoard.UpdateProperties
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: UpdateProperties()
+  nameWithType: ArucoBoard.UpdateProperties()
+  fullName: ArucoUnity.Objects.ArucoBoard.UpdateProperties()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoBoard.UpdateProperties
+    name: UpdateProperties
+    nameWithType: ArucoBoard.UpdateProperties
+    fullName: ArucoUnity.Objects.ArucoBoard.UpdateProperties
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoBoard.UpdateProperties
+    name: UpdateProperties
+    nameWithType: ArucoBoard.UpdateProperties
+    fullName: ArucoUnity.Objects.ArucoBoard.UpdateProperties
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  commentId: F:ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+  parent: ArucoUnity.Objects.ArucoObject
+  name: metersToPixels300ppp
+  nameWithType: ArucoObject.metersToPixels300ppp
+  fullName: ArucoUnity.Objects.ArucoObject.metersToPixels300ppp
+- uid: ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdating
+  parent: ArucoUnity.Objects.ArucoObject
+  name: PropertyUpdating
+  nameWithType: ArucoObject.PropertyUpdating
+  fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdating
+- uid: ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  commentId: E:ArucoUnity.Objects.ArucoObject.PropertyUpdated
+  parent: ArucoUnity.Objects.ArucoObject
+  name: PropertyUpdated
+  nameWithType: ArucoObject.PropertyUpdated
+  fullName: ArucoUnity.Objects.ArucoObject.PropertyUpdated
+- uid: ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  commentId: P:ArucoUnity.Objects.ArucoObject.ArucoHashCode
+  parent: ArucoUnity.Objects.ArucoObject
+  name: ArucoHashCode
+  nameWithType: ArucoObject.ArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoObject.ArucoHashCode
+- uid: ArucoUnity.Objects.ArucoObject.Dictionary
+  commentId: P:ArucoUnity.Objects.ArucoObject.Dictionary
+  parent: ArucoUnity.Objects.ArucoObject
+  name: Dictionary
+  nameWithType: ArucoObject.Dictionary
+  fullName: ArucoUnity.Objects.ArucoObject.Dictionary
+- uid: ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  commentId: P:ArucoUnity.Objects.ArucoObject.MarkerSideLength
+  parent: ArucoUnity.Objects.ArucoObject
+  name: MarkerSideLength
+  nameWithType: ArucoObject.MarkerSideLength
+  fullName: ArucoUnity.Objects.ArucoObject.MarkerSideLength
+- uid: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  commentId: P:ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+  parent: ArucoUnity.Objects.ArucoObject
+  name: MarkerBorderBits
+  nameWithType: ArucoObject.MarkerBorderBits
+  fullName: ArucoUnity.Objects.ArucoObject.MarkerBorderBits
+- uid: ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  commentId: P:ArucoUnity.Objects.ArucoObject.DisplayInEditor
+  parent: ArucoUnity.Objects.ArucoObject
+  name: DisplayInEditor
+  nameWithType: ArucoObject.DisplayInEditor
+  fullName: ArucoUnity.Objects.ArucoObject.DisplayInEditor
+- uid: ArucoUnity.Objects.ArucoObject.OnValidate
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnValidate
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnValidate()
+  nameWithType: ArucoObject.OnValidate()
+  fullName: ArucoUnity.Objects.ArucoObject.OnValidate()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnValidate
+    name: OnValidate
+    nameWithType: ArucoObject.OnValidate
+    fullName: ArucoUnity.Objects.ArucoObject.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnValidate
+    name: OnValidate
+    nameWithType: ArucoObject.OnValidate
+    fullName: ArucoUnity.Objects.ArucoObject.OnValidate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnPropertyUpdating()
+  nameWithType: ArucoObject.OnPropertyUpdating()
+  fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+    name: OnPropertyUpdating
+    nameWithType: ArucoObject.OnPropertyUpdating
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+    name: OnPropertyUpdating
+    nameWithType: ArucoObject.OnPropertyUpdating
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  commentId: M:ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  parent: ArucoUnity.Objects.ArucoObject
+  name: OnPropertyUpdated()
+  nameWithType: ArucoObject.OnPropertyUpdated()
+  fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+    name: OnPropertyUpdated
+    nameWithType: ArucoObject.OnPropertyUpdated
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+    name: OnPropertyUpdated
+    nameWithType: ArucoObject.OnPropertyUpdated
+    fullName: ArucoUnity.Objects.ArucoObject.OnPropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  commentId: M:ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  parent: ArucoUnity.Objects.ArucoObject
+  isExternal: true
+  name: GetInPixels(Single)
+  nameWithType: ArucoObject.GetInPixels(Single)
+  fullName: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+    name: GetInPixels
+    nameWithType: ArucoObject.GetInPixels
+    fullName: ArucoUnity.Objects.ArucoObject.GetInPixels
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GetInPixels(System.Single)
+    name: GetInPixels
+    nameWithType: ArucoObject.GetInPixels
+    fullName: ArucoUnity.Objects.ArucoObject.GetInPixels
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+  name: SquaresNumberX
+  nameWithType: ArucoCharucoBoard.SquaresNumberX
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberX
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+  name: SquaresNumberY
+  nameWithType: ArucoCharucoBoard.SquaresNumberY
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquaresNumberY
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+  name: SquareSideLength
+  nameWithType: ArucoCharucoBoard.SquareSideLength
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.SquareSideLength
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+  name: DetectedCorners
+  nameWithType: ArucoCharucoBoard.DetectedCorners
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedCorners
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f
+  commentId: T:ArucoUnity.Plugin.Std.VectorPoint2f
+  parent: ArucoUnity.Plugin
+  name: Std.VectorPoint2f
+  nameWithType: Std.VectorPoint2f
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+  name: DetectedIds
+  nameWithType: ArucoCharucoBoard.DetectedIds
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.DetectedIds
+- uid: ArucoUnity.Plugin.Std.VectorInt
+  commentId: T:ArucoUnity.Plugin.Std.VectorInt
+  parent: ArucoUnity.Plugin
+  name: Std.VectorInt
+  nameWithType: Std.VectorInt
+  fullName: ArucoUnity.Plugin.Std.VectorInt
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+  name: ValidTransform
+  nameWithType: ArucoCharucoBoard.ValidTransform
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.ValidTransform
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  commentId: M:ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  parent: ArucoUnity.Objects.ArucoObject
+  name: GetGameObjectScale()
+  nameWithType: ArucoObject.GetGameObjectScale()
+  fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+    name: GetGameObjectScale
+    nameWithType: ArucoObject.GetGameObjectScale
+    fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+    name: GetGameObjectScale
+    nameWithType: ArucoObject.GetGameObjectScale
+    fullName: ArucoUnity.Objects.ArucoObject.GetGameObjectScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
+  name: GetGameObjectScale
+  nameWithType: ArucoCharucoBoard.GetGameObjectScale
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetGameObjectScale
+- uid: Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Vector3
+- uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  commentId: M:ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  parent: ArucoUnity.Objects.ArucoObject
+  name: UpdateArucoHashCode()
+  nameWithType: ArucoObject.UpdateArucoHashCode()
+  fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+    name: UpdateArucoHashCode
+    nameWithType: ArucoObject.UpdateArucoHashCode
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+    name: UpdateArucoHashCode
+    nameWithType: ArucoObject.UpdateArucoHashCode
+    fullName: ArucoUnity.Objects.ArucoObject.UpdateArucoHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
+  name: UpdateArucoHashCode
+  nameWithType: ArucoCharucoBoard.UpdateArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateArucoHashCode
+- uid: ArucoUnity.Objects.ArucoObject.Draw
+  commentId: M:ArucoUnity.Objects.ArucoObject.Draw
+  parent: ArucoUnity.Objects.ArucoObject
+  name: Draw()
+  nameWithType: ArucoObject.Draw()
+  fullName: ArucoUnity.Objects.ArucoObject.Draw()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.Draw
+    name: Draw
+    nameWithType: ArucoObject.Draw
+    fullName: ArucoUnity.Objects.ArucoObject.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.Draw
+    name: Draw
+    nameWithType: ArucoObject.Draw
+    fullName: ArucoUnity.Objects.ArucoObject.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.Draw*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.Draw
+  name: Draw
+  nameWithType: ArucoCharucoBoard.Draw
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.Draw
+- uid: ArucoUnity.Plugin.Cv.Mat
+  commentId: T:ArucoUnity.Plugin.Cv.Mat
+  parent: ArucoUnity.Plugin
+  name: Cv.Mat
+  nameWithType: Cv.Mat
+  fullName: ArucoUnity.Plugin.Cv.Mat
+- uid: ArucoUnity.Objects.ArucoObject.GenerateName
+  commentId: M:ArucoUnity.Objects.ArucoObject.GenerateName
+  parent: ArucoUnity.Objects.ArucoObject
+  name: GenerateName()
+  nameWithType: ArucoObject.GenerateName()
+  fullName: ArucoUnity.Objects.ArucoObject.GenerateName()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoObject.GenerateName
+    name: GenerateName
+    nameWithType: ArucoObject.GenerateName
+    fullName: ArucoUnity.Objects.ArucoObject.GenerateName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoObject.GenerateName
+    name: GenerateName
+    nameWithType: ArucoObject.GenerateName
+    fullName: ArucoUnity.Objects.ArucoObject.GenerateName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
+  name: GenerateName
+  nameWithType: ArucoCharucoBoard.GenerateName
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GenerateName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+  commentId: M:ArucoUnity.Objects.ArucoBoard.UpdateBoard
+  parent: ArucoUnity.Objects.ArucoBoard
+  name: UpdateBoard()
+  nameWithType: ArucoBoard.UpdateBoard()
+  fullName: ArucoUnity.Objects.ArucoBoard.UpdateBoard()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+    name: UpdateBoard
+    nameWithType: ArucoBoard.UpdateBoard
+    fullName: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+    name: UpdateBoard
+    nameWithType: ArucoBoard.UpdateBoard
+    fullName: ArucoUnity.Objects.ArucoBoard.UpdateBoard
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
+  name: UpdateBoard
+  nameWithType: ArucoCharucoBoard.UpdateBoard
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.UpdateBoard
+- uid: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode*
+  commentId: Overload:ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode
+  name: GetArucoHashCode
+  nameWithType: ArucoCharucoBoard.GetArucoHashCode
+  fullName: ArucoUnity.Objects.ArucoCharucoBoard.GetArucoHashCode

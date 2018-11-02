@@ -1,0 +1,1004 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  id: ArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  children:
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.cameraBackgroundDistance
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground(System.Int32)
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera(System.Int32)
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraDisplay
+  nameWithType: ArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  type: Class
+  source:
+    id: ArucoCameraDisplay
+    path: ''
+    startLine: 1928
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nManages Unity virual cameras that shoot 3D content aligned with the <xref href=\"ArucoUnity.Cameras.IArucoCamera.Images\" data-throw-if-not-resolved=\"false\"></xref> displayed\nas background. It creates the augmented reality effect by the images from the physical cameras and the\n<xref href=\"ArucoUnity.Objects.ArucoObject\" data-throw-if-not-resolved=\"false\"></xref> tracked by <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectsTracker\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public abstract class ArucoCameraDisplay : ArucoCameraController, IArucoCameraDisplay, IArucoCameraController, IConfigurableController'
+    content.vb: >-
+      Public MustInherit Class ArucoCameraDisplay
+          Inherits ArucoCameraController
+          Implements IArucoCameraDisplay, IArucoCameraController, IConfigurableController
+  inheritance:
+  - System.Object
+  - ArucoUnity.Cameras.ArucoCameraController
+  derivedClasses:
+  - ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric`2
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  - ArucoUnity.Cameras.IArucoCameraController
+  - IConfigurableController
+  inheritedMembers:
+  - ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.cameraBackgroundDistance
+  commentId: F:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.cameraBackgroundDistance
+  id: cameraBackgroundDistance
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: cameraBackgroundDistance
+  nameWithType: ArucoCameraDisplay.cameraBackgroundDistance
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.cameraBackgroundDistance
+  type: Field
+  source:
+    id: cameraBackgroundDistance
+    path: ''
+    startLine: 1932
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  syntax:
+    content: public const float cameraBackgroundDistance = 1F
+    return:
+      type: System.Single
+    content.vb: Public Const cameraBackgroundDistance As Single = 1F
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  id: Cameras
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Cameras
+  nameWithType: ArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  type: Property
+  source:
+    id: Cameras
+    path: ''
+    startLine: 1936
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  syntax:
+    content: public virtual Camera[] Cameras { get; protected set; }
+    parameters: []
+    return:
+      type: Camera[]
+    content.vb: Public Overridable Property Cameras As Camera()
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras*
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Overridable
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  id: BackgroundCameras
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: BackgroundCameras
+  nameWithType: ArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  type: Property
+  source:
+    id: BackgroundCameras
+    path: ''
+    startLine: 1937
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  syntax:
+    content: public virtual Camera[] BackgroundCameras { get; protected set; }
+    parameters: []
+    return:
+      type: Camera[]
+    content.vb: Public Overridable Property BackgroundCameras As Camera()
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras*
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Overridable
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  id: Backgrounds
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Backgrounds
+  nameWithType: ArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  type: Property
+  source:
+    id: Backgrounds
+    path: ''
+    startLine: 1938
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  syntax:
+    content: public virtual Renderer[] Backgrounds { get; protected set; }
+    parameters: []
+    return:
+      type: Renderer[]
+    content.vb: Public Overridable Property Backgrounds As Renderer()
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds*
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Overridable
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  id: ArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraUndistortion
+  nameWithType: ArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  type: Property
+  source:
+    id: ArucoCameraUndistortion
+    path: ''
+    startLine: 1945
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nGets or sets the optional undistortion process associated with the <xref href=\"ArucoUnity.Cameras.ArucoCameraController.ArucoCamera\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public IArucoCameraUndistortion ArucoCameraUndistortion { get; set; }
+    parameters: []
+    return:
+      type: IArucoCameraUndistortion
+    content.vb: Public Property ArucoCameraUndistortion As IArucoCameraUndistortion
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion*
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring
+  id: Configuring
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Configuring()
+  nameWithType: ArucoCameraDisplay.Configuring()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring()
+  type: Method
+  source:
+    id: Configuring
+    path: ''
+    startLine: 1952
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nAdds <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion\" data-throw-if-not-resolved=\"false\"></xref> as dependency if set.\n"
+  example: []
+  syntax:
+    content: protected override void Configuring()
+    content.vb: Protected Overrides Sub Configuring
+  overridden: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting
+  id: Starting
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Starting()
+  nameWithType: ArucoCameraDisplay.Starting()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting()
+  type: Method
+  source:
+    id: Starting
+    path: ''
+    startLine: 1964
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nCalls <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay\" data-throw-if-not-resolved=\"false\"></xref> the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> to activate the display.\n"
+  example: []
+  syntax:
+    content: protected override void Starting()
+    content.vb: Protected Overrides Sub Starting
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping
+  id: Stopping
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: Stopping()
+  nameWithType: ArucoCameraDisplay.Stopping()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping()
+  type: Method
+  source:
+    id: Stopping
+    path: ''
+    startLine: 1974
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nDeactivates the display with <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void Stopping()
+    content.vb: Protected Overrides Sub Stopping
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  id: PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  nameWithType: ArucoCameraDisplay.PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject(Transform, System.Int32, Vector3, Quaternion)
+  type: Method
+  source:
+    id: PlaceArucoObject
+    path: ''
+    startLine: 1982
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  syntax:
+    content: public virtual void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
+    parameters:
+    - id: arucoObject
+      type: Transform
+    - id: cameraId
+      type: System.Int32
+    - id: localPosition
+      type: Vector3
+    - id: localRotation
+      type: Quaternion
+    content.vb: Public Overridable Sub PlaceArucoObject(arucoObject As Transform, cameraId As Integer, localPosition As Vector3, localRotation As Quaternion)
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject*
+  implements:
+  - ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  id: ConfigureDisplay
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ConfigureDisplay()
+  nameWithType: ArucoCameraDisplay.ConfigureDisplay()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay()
+  type: Method
+  source:
+    id: ConfigureDisplay
+    path: ''
+    startLine: 2000
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nConfigures the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras\" data-throw-if-not-resolved=\"false\"></xref> and the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds\" data-throw-if-not-resolved=\"false\"></xref> according to the\n<xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion\" data-throw-if-not-resolved=\"false\"></xref> if set otherwise with default values.\n"
+  example: []
+  syntax:
+    content: protected virtual void ConfigureDisplay()
+    content.vb: Protected Overridable Sub ConfigureDisplay
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  id: SetDisplayActive(System.Boolean)
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetDisplayActive(Boolean)
+  nameWithType: ArucoCameraDisplay.SetDisplayActive(Boolean)
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  type: Method
+  source:
+    id: SetDisplayActive
+    path: ''
+    startLine: 2027
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nActivates or deactivates the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras\" data-throw-if-not-resolved=\"false\"></xref>, the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras\" data-throw-if-not-resolved=\"false\"></xref> and the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected virtual void SetDisplayActive(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True to activate, false to deactivate.
+    content.vb: Protected Overridable Sub SetDisplayActive(value As Boolean)
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds
+  id: ConfigureDefaultBackgrounds
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ConfigureDefaultBackgrounds()
+  nameWithType: ArucoCameraDisplay.ConfigureDefaultBackgrounds()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds()
+  type: Method
+  source:
+    id: ConfigureDefaultBackgrounds
+    path: ''
+    startLine: 2041
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nPlaces the <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds\" data-throw-if-not-resolved=\"false\"></xref> in front of the corresponding <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras\" data-throw-if-not-resolved=\"false\"></xref> centered and scaled to fit in the\ncamera view.\n"
+  example: []
+  syntax:
+    content: protected virtual void ConfigureDefaultBackgrounds()
+    content.vb: Protected Overridable Sub ConfigureDefaultBackgrounds
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera(System.Int32)
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera(System.Int32)
+  id: ConfigureRectifiedCamera(System.Int32)
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ConfigureRectifiedCamera(Int32)
+  nameWithType: ArucoCameraDisplay.ConfigureRectifiedCamera(Int32)
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera(System.Int32)
+  type: Method
+  source:
+    id: ConfigureRectifiedCamera
+    path: ''
+    startLine: 2067
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nConfigures the field of view of a <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras\" data-throw-if-not-resolved=\"false\"></xref> according to the vertical focal length of the corresponding rectified camera matrix\nin <see cref=\"!:ArucoCameraUndistortion.RectifiedCameraMatrices\"></see>. If the camera targets an eye in VR mode, Unity has already configured it.\n"
+  example: []
+  syntax:
+    content: protected virtual void ConfigureRectifiedCamera(int cameraId)
+    parameters:
+    - id: cameraId
+      type: System.Int32
+      description: The id of the camera to configure.
+    content.vb: Protected Overridable Sub ConfigureRectifiedCamera(cameraId As Integer)
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground(System.Int32)
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground(System.Int32)
+  id: ConfigureRectifiedBackground(System.Int32)
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  langs:
+  - csharp
+  - vb
+  name: ConfigureRectifiedBackground(Int32)
+  nameWithType: ArucoCameraDisplay.ConfigureRectifiedBackground(Int32)
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground(System.Int32)
+  type: Method
+  source:
+    id: ConfigureRectifiedBackground
+    path: ''
+    startLine: 2083
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Displays
+  summary: "\nPlaces a <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds\" data-throw-if-not-resolved=\"false\"></xref> in front of the corresponding <xref href=\"ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras\" data-throw-if-not-resolved=\"false\"></xref> centered with the principal point of the\ncorresponding rectified camera matrix in <see cref=\"!:ArucoCameraUndistortion.RectifiedCameraMatrices\"></see> and scaled to fit in the field of\nview calculated from the focal lengths of the rectified camera matrix.\n"
+  example: []
+  syntax:
+    content: protected virtual void ConfigureRectifiedBackground(int cameraId)
+    parameters:
+    - id: cameraId
+      type: System.Int32
+      description: The id of the background and the background camera to configure.
+    content.vb: Protected Overridable Sub ConfigureRectifiedBackground(cameraId As Integer)
+  overload: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: ArucoUnity.Cameras.IArucoCamera.Images
+  commentId: P:ArucoUnity.Cameras.IArucoCamera.Images
+  parent: ArucoUnity.Cameras.IArucoCamera
+  name: Images
+  nameWithType: IArucoCamera.Images
+  fullName: ArucoUnity.Cameras.IArucoCamera.Images
+- uid: ArucoUnity.Objects.ArucoObject
+  commentId: T:ArucoUnity.Objects.ArucoObject
+  parent: ArucoUnity.Objects
+  name: ArucoObject
+  nameWithType: ArucoObject
+  fullName: ArucoUnity.Objects.ArucoObject
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  name: ArucoObjectsTracker
+  nameWithType: ArucoObjectsTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+- uid: ArucoUnity.Cameras.Displays
+  commentId: N:ArucoUnity.Cameras.Displays
+  name: ArucoUnity.Cameras.Displays
+  nameWithType: ArucoUnity.Cameras.Displays
+  fullName: ArucoUnity.Cameras.Displays
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Cameras.ArucoCameraController
+  commentId: T:ArucoUnity.Cameras.ArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: ArucoCameraController
+  nameWithType: ArucoCameraController
+  fullName: ArucoUnity.Cameras.ArucoCameraController
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  name: IArucoCameraDisplay
+  nameWithType: IArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+- uid: ArucoUnity.Cameras.IArucoCameraController
+  commentId: T:ArucoUnity.Cameras.IArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: ArucoUnity.Cameras.IArucoCameraController
+- uid: IConfigurableController
+  isExternal: true
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: IConfigurableController
+- uid: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  commentId: P:ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+  parent: ArucoUnity.Cameras.ArucoCameraController
+  name: ArucoCamera
+  nameWithType: ArucoCameraController.ArucoCamera
+  fullName: ArucoUnity.Cameras.ArucoCameraController.ArucoCamera
+- uid: ArucoUnity.Cameras.IArucoCamera
+  commentId: T:ArucoUnity.Cameras.IArucoCamera
+  parent: ArucoUnity.Cameras
+  name: IArucoCamera
+  nameWithType: IArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCamera
+- uid: ArucoUnity.Objects
+  commentId: N:ArucoUnity.Objects
+  name: ArucoUnity.Objects
+  nameWithType: ArucoUnity.Objects
+  fullName: ArucoUnity.Objects
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  name: Cameras
+  nameWithType: ArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  name: Cameras
+  nameWithType: IArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Cameras
+- uid: Camera[]
+  isExternal: true
+  name: Camera[]
+  nameWithType: Camera[]
+  fullName: Camera[]
+  nameWithType.vb: Camera()
+  fullName.vb: Camera()
+  name.vb: Camera()
+  spec.csharp:
+  - uid: Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: Camera
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: Camera
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  name: BackgroundCameras
+  nameWithType: ArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  name: BackgroundCameras
+  nameWithType: IArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.BackgroundCameras
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  name: Backgrounds
+  nameWithType: ArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  name: Backgrounds
+  nameWithType: IArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.Backgrounds
+- uid: Renderer[]
+  isExternal: true
+  name: Renderer[]
+  nameWithType: Renderer[]
+  fullName: Renderer[]
+  nameWithType.vb: Renderer()
+  fullName.vb: Renderer()
+  name.vb: Renderer()
+  spec.csharp:
+  - uid: Renderer
+    name: Renderer
+    nameWithType: Renderer
+    fullName: Renderer
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Renderer
+    name: Renderer
+    nameWithType: Renderer
+    fullName: Renderer
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  name: ArucoCameraUndistortion
+  nameWithType: ArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  commentId: P:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  name: ArucoCameraUndistortion
+  nameWithType: IArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.ArucoCameraUndistortion
+- uid: IArucoCameraUndistortion
+  isExternal: true
+  name: IArucoCameraUndistortion
+  nameWithType: IArucoCameraUndistortion
+  fullName: IArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  name: ArucoCameraUndistortion
+  nameWithType: ArucoCameraDisplay.ArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ArucoCameraUndistortion
+- uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  commentId: M:ArucoUnity.Cameras.ArucoCameraController.Configuring
+  parent: ArucoUnity.Cameras.ArucoCameraController
+  name: Configuring()
+  nameWithType: ArucoCameraController.Configuring()
+  fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+    name: Configuring
+    nameWithType: ArucoCameraController.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCameraController.Configuring
+    name: Configuring
+    nameWithType: ArucoCameraController.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCameraController.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring
+  name: Configuring
+  nameWithType: ArucoCameraDisplay.Configuring
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Configuring
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  commentId: T:ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  parent: ArucoUnity.Cameras.Displays
+  name: ArucoCameraDisplay
+  nameWithType: ArucoCameraDisplay
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  name: ConfigureDisplay()
+  nameWithType: ArucoCameraDisplay.ConfigureDisplay()
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+    name: ConfigureDisplay
+    nameWithType: ArucoCameraDisplay.ConfigureDisplay
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+    name: ConfigureDisplay
+    nameWithType: ArucoCameraDisplay.ConfigureDisplay
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  commentId: M:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  isExternal: true
+  name: SetDisplayActive(Boolean)
+  nameWithType: ArucoCameraDisplay.SetDisplayActive(Boolean)
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+    name: SetDisplayActive
+    nameWithType: ArucoCameraDisplay.SetDisplayActive
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive(System.Boolean)
+    name: SetDisplayActive
+    nameWithType: ArucoCameraDisplay.SetDisplayActive
+    fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting
+  name: Starting
+  nameWithType: ArucoCameraDisplay.Starting
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Starting
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping
+  name: Stopping
+  nameWithType: ArucoCameraDisplay.Stopping
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Stopping
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject
+  name: PlaceArucoObject
+  nameWithType: ArucoCameraDisplay.PlaceArucoObject
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.PlaceArucoObject
+- uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  commentId: M:ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+  parent: ArucoUnity.Cameras.Displays.IArucoCameraDisplay
+  isExternal: true
+  name: PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  nameWithType: IArucoCameraDisplay.PlaceArucoObject(Transform, Int32, Vector3, Quaternion)
+  fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform, System.Int32, Vector3, Quaternion)
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+    name: PlaceArucoObject
+    nameWithType: IArucoCameraDisplay.PlaceArucoObject
+    fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject(Transform,System.Int32,Vector3,Quaternion)
+    name: PlaceArucoObject
+    nameWithType: IArucoCameraDisplay.PlaceArucoObject
+    fullName: ArucoUnity.Cameras.Displays.IArucoCameraDisplay.PlaceArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Vector3
+- uid: Quaternion
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: Quaternion
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  name: BackgroundCameras
+  nameWithType: ArucoCameraDisplay.BackgroundCameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.BackgroundCameras
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  name: Backgrounds
+  nameWithType: ArucoCameraDisplay.Backgrounds
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Backgrounds
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+  name: ConfigureDisplay
+  nameWithType: ArucoCameraDisplay.ConfigureDisplay
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDisplay
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  commentId: P:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+  parent: ArucoUnity.Cameras.Displays.ArucoCameraDisplay
+  name: Cameras
+  nameWithType: ArucoCameraDisplay.Cameras
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.Cameras
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive
+  name: SetDisplayActive
+  nameWithType: ArucoCameraDisplay.SetDisplayActive
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.SetDisplayActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds
+  name: ConfigureDefaultBackgrounds
+  nameWithType: ArucoCameraDisplay.ConfigureDefaultBackgrounds
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureDefaultBackgrounds
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera
+  name: ConfigureRectifiedCamera
+  nameWithType: ArucoCameraDisplay.ConfigureRectifiedCamera
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedCamera
+- uid: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground*
+  commentId: Overload:ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground
+  name: ConfigureRectifiedBackground
+  nameWithType: ArucoCameraDisplay.ConfigureRectifiedBackground
+  fullName: ArucoUnity.Cameras.Displays.ArucoCameraDisplay.ConfigureRectifiedBackground

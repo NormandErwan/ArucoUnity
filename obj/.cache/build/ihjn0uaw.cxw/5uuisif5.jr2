@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ArucoBoard
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ArucoBoard
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Objects.ArucoBoard">
+  
+  
+  <h1 id="ArucoUnity_Objects_ArucoBoard" data-uid="ArucoUnity.Objects.ArucoBoard" class="text-break">Class ArucoBoard
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Describes the shared properties of the ArUco boards.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a></div>
+    <div class="level2"><span class="xref">ArucoBoard</span></div>
+      <div class="level3"><a class="xref" href="ArucoUnity.Objects.ArucoCharucoBoard.html">ArucoCharucoBoard</a></div>
+      <div class="level3"><a class="xref" href="ArucoUnity.Objects.ArucoGridBoard.html">ArucoGridBoard</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_metersToPixels300ppp">ArucoObject.metersToPixels300ppp</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_PropertyUpdating">ArucoObject.PropertyUpdating</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_PropertyUpdated">ArucoObject.PropertyUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_ArucoHashCode">ArucoObject.ArucoHashCode</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_Dictionary">ArucoObject.Dictionary</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_MarkerSideLength">ArucoObject.MarkerSideLength</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_MarkerBorderBits">ArucoObject.MarkerBorderBits</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_DisplayInEditor">ArucoObject.DisplayInEditor</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnValidate">ArucoObject.OnValidate()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_Draw">ArucoObject.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GenerateName">ArucoObject.GenerateName()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GetGameObjectScale">ArucoObject.GetGameObjectScale()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_UpdateArucoHashCode">ArucoObject.UpdateArucoHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnPropertyUpdating">ArucoObject.OnPropertyUpdating()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnPropertyUpdated">ArucoObject.OnPropertyUpdated()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_GetInPixels_System_Single_">ArucoObject.GetInPixels(Single)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Objects.html">ArucoUnity.Objects</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Objects_ArucoBoard_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ArucoBoard : ArucoObject</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_AxisLength_" data-uid="ArucoUnity.Objects.ArucoBoard.AxisLength*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_AxisLength" data-uid="ArucoUnity.Objects.ArucoBoard.AxisLength">AxisLength</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the length of the axis lines when drawn on the board.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AxisLength { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_Board_" data-uid="ArucoUnity.Objects.ArucoBoard.Board*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_Board" data-uid="ArucoUnity.Objects.ArucoBoard.Board">Board</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the associated board from the ArucoUnity plugin library.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Aruco.Board Board { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_ImageSize_" data-uid="ArucoUnity.Objects.ArucoBoard.ImageSize*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_ImageSize" data-uid="ArucoUnity.Objects.ArucoBoard.ImageSize">ImageSize</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the image size for drawing the board.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ImageSize { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_MarginsLength_" data-uid="ArucoUnity.Objects.ArucoBoard.MarginsLength*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_MarginsLength" data-uid="ArucoUnity.Objects.ArucoBoard.MarginsLength">MarginsLength</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the length of the margins around the board in pixels, used by the Creators (default: 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MarginsLength { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_Rvec_" data-uid="ArucoUnity.Objects.ArucoBoard.Rvec*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_Rvec" data-uid="ArucoUnity.Objects.ArucoBoard.Rvec">Rvec</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the estimated rotation vector of the board when tracked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cv.Vec3d Rvec { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_Tvec_" data-uid="ArucoUnity.Objects.ArucoBoard.Tvec*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_Tvec" data-uid="ArucoUnity.Objects.ArucoBoard.Tvec">Tvec</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the estimated translation vector of the board when tracked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cv.Vec3d Tvec { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_Awake_" data-uid="ArucoUnity.Objects.ArucoBoard.Awake*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_Awake" data-uid="ArucoUnity.Objects.ArucoBoard.Awake">Awake()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Calls <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_UpdateBoard">UpdateBoard()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_Awake">ArucoObject.Awake()</a></div>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_UpdateBoard_" data-uid="ArucoUnity.Objects.ArucoBoard.UpdateBoard*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_UpdateBoard" data-uid="ArucoUnity.Objects.ArucoBoard.UpdateBoard">UpdateBoard()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Updates the <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_Board">Board</a> properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void UpdateBoard()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_ArucoBoard_UpdateProperties_" data-uid="ArucoUnity.Objects.ArucoBoard.UpdateProperties*"></a>
+  <h4 id="ArucoUnity_Objects_ArucoBoard_UpdateProperties" data-uid="ArucoUnity.Objects.ArucoBoard.UpdateProperties">UpdateProperties()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.ArucoBoard.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Calls <a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_OnPropertyUpdated">OnPropertyUpdated()</a> and calls <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html#ArucoUnity_Objects_ArucoBoard_UpdateBoard">UpdateBoard()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateProperties()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.ArucoObject.html#ArucoUnity_Objects_ArucoObject_UpdateProperties">ArucoObject.UpdateProperties()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

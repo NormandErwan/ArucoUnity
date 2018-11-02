@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StereoOmnidirCameraUndistortion
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StereoOmnidirCameraUndistortion
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion">
+  
+  
+  <h1 id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion" class="text-break">Class StereoOmnidirCameraUndistortion
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Manages the undistortion and rectification process for fisheye and omnidir <a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a></div>
+    <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html">ArucoCameraUndistortionGeneric</a>&lt;<a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a>&gt;</div>
+    <div class="level4"><a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html">OmnidirCameraUndistortionGeneric</a>&lt;<a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a>&gt;</div>
+    <div class="level5"><span class="xref">StereoOmnidirCameraUndistortion</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html">IArucoCameraUndistortion</a></div>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
+    <div><span class="xref">IConfigurableController</span></div>
+    <div><a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_minPerspectiveFov">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.minPerspectiveFov</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_maxPerspectiveFov">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.maxPerspectiveFov</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_RectificationType">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.RectificationType</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.PerspectiveFieldOfViews</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_rectifyFlags">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.rectifyFlags</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_OnValidate">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.OnValidate()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeUndistortionMaps">OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.InitializeUndistortionMaps()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortionGeneric_1_Awake">ArucoCameraUndistortionGeneric&lt;StereoArucoCamera&gt;.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_undistortionCameraMapsNumber">ArucoCameraUndistortion.undistortionCameraMapsNumber</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_CameraParameters">ArucoCameraUndistortion.CameraParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_RectifiedCameraMatrices">ArucoCameraUndistortion.RectifiedCameraMatrices</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_RectificationMatrices">ArucoCameraUndistortion.RectificationMatrices</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortedDistCoeffs">ArucoCameraUndistortion.UndistortedDistCoeffs</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortionRectificationMaps">ArucoCameraUndistortion.UndistortionRectificationMaps</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_noRectificationMatrix">ArucoCameraUndistortion.noRectificationMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_noDistCoeffs">ArucoCameraUndistortion.noDistCoeffs</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_noROI">ArucoCameraUndistortion.noROI</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_CameraParametersFilePath">ArucoCameraUndistortion.CameraParametersFilePath</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_remapThread">ArucoCameraUndistortion.remapThread</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Start">ArucoCameraUndistortion.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Starting">ArucoCameraUndistortion.Starting()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Stopping">ArucoCameraUndistortion.Stopping()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____">ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___">ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.Undistortions.html">ArucoUnity.Cameras.Undistortions</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class StereoOmnidirCameraUndistortion : OmnidirCameraUndistortionGeneric&lt;StereoArucoCamera&gt;, IArucoCameraUndistortion, IArucoCameraController, IConfigurableController, IHasArucoCameraParameters</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion_Configuring_" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.Configuring*"></a>
+  <h4 id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion_Configuring" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.Configuring">Configuring()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric&lt;ArucoUnity.Cameras.StereoArucoCamera&gt;.Configuring()</span></div>
+  
+  
+  <a id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion_InitializeRectification_" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.InitializeRectification*"></a>
+  <h4 id="ArucoUnity_Cameras_Undistortions_StereoOmnidirCameraUndistortion_InitializeRectification" data-uid="ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.InitializeRectification">InitializeRectification()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.Undistortions.StereoOmnidirCameraUndistortion.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Initializes <see cref="!:RectificationMatrices"></see> with the stereo camera parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void InitializeRectification()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric&lt;ArucoUnity.Cameras.StereoArucoCamera&gt;.InitializeRectification()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html">IArucoCameraUndistortion</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
+  </div>
+  <div>
+      <span class="xref">IConfigurableController</span>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

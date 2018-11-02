@@ -1,0 +1,535 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  commentId: T:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  id: Aruco.PredefinedDictionaryName
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_100
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_1000
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_250
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_50
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_100
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_1000
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_250
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_50
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_100
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_1000
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_250
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_50
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_100
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_1000
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_250
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_50
+  - ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.DictArucoOriginal
+  langs:
+  - csharp
+  - vb
+  name: Aruco.PredefinedDictionaryName
+  nameWithType: Aruco.PredefinedDictionaryName
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  type: Enum
+  source:
+    id: PredefinedDictionaryName
+    path: ''
+    startLine: 6464
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public enum PredefinedDictionaryName
+    content.vb: Public Enum PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_50
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_50
+  id: Dict4x4_50
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict4x4_50
+  nameWithType: Aruco.PredefinedDictionaryName.Dict4x4_50
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_50
+  type: Field
+  source:
+    id: Dict4x4_50
+    path: ''
+    startLine: 6466
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict4x4_50 = 0
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_100
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_100
+  id: Dict4x4_100
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict4x4_100
+  nameWithType: Aruco.PredefinedDictionaryName.Dict4x4_100
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_100
+  type: Field
+  source:
+    id: Dict4x4_100
+    path: ''
+    startLine: 6467
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict4x4_100 = 1
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_250
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_250
+  id: Dict4x4_250
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict4x4_250
+  nameWithType: Aruco.PredefinedDictionaryName.Dict4x4_250
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_250
+  type: Field
+  source:
+    id: Dict4x4_250
+    path: ''
+    startLine: 6468
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict4x4_250 = 2
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_1000
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_1000
+  id: Dict4x4_1000
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict4x4_1000
+  nameWithType: Aruco.PredefinedDictionaryName.Dict4x4_1000
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict4x4_1000
+  type: Field
+  source:
+    id: Dict4x4_1000
+    path: ''
+    startLine: 6469
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict4x4_1000 = 3
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_50
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_50
+  id: Dict5x5_50
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict5x5_50
+  nameWithType: Aruco.PredefinedDictionaryName.Dict5x5_50
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_50
+  type: Field
+  source:
+    id: Dict5x5_50
+    path: ''
+    startLine: 6470
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict5x5_50 = 4
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_100
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_100
+  id: Dict5x5_100
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict5x5_100
+  nameWithType: Aruco.PredefinedDictionaryName.Dict5x5_100
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_100
+  type: Field
+  source:
+    id: Dict5x5_100
+    path: ''
+    startLine: 6471
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict5x5_100 = 5
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_250
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_250
+  id: Dict5x5_250
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict5x5_250
+  nameWithType: Aruco.PredefinedDictionaryName.Dict5x5_250
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_250
+  type: Field
+  source:
+    id: Dict5x5_250
+    path: ''
+    startLine: 6472
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict5x5_250 = 6
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_1000
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_1000
+  id: Dict5x5_1000
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict5x5_1000
+  nameWithType: Aruco.PredefinedDictionaryName.Dict5x5_1000
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict5x5_1000
+  type: Field
+  source:
+    id: Dict5x5_1000
+    path: ''
+    startLine: 6473
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict5x5_1000 = 7
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_50
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_50
+  id: Dict6x6_50
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict6x6_50
+  nameWithType: Aruco.PredefinedDictionaryName.Dict6x6_50
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_50
+  type: Field
+  source:
+    id: Dict6x6_50
+    path: ''
+    startLine: 6474
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict6x6_50 = 8
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_100
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_100
+  id: Dict6x6_100
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict6x6_100
+  nameWithType: Aruco.PredefinedDictionaryName.Dict6x6_100
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_100
+  type: Field
+  source:
+    id: Dict6x6_100
+    path: ''
+    startLine: 6475
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict6x6_100 = 9
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_250
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_250
+  id: Dict6x6_250
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict6x6_250
+  nameWithType: Aruco.PredefinedDictionaryName.Dict6x6_250
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_250
+  type: Field
+  source:
+    id: Dict6x6_250
+    path: ''
+    startLine: 6476
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict6x6_250 = 10
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_1000
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_1000
+  id: Dict6x6_1000
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict6x6_1000
+  nameWithType: Aruco.PredefinedDictionaryName.Dict6x6_1000
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict6x6_1000
+  type: Field
+  source:
+    id: Dict6x6_1000
+    path: ''
+    startLine: 6477
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict6x6_1000 = 11
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_50
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_50
+  id: Dict7x7_50
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict7x7_50
+  nameWithType: Aruco.PredefinedDictionaryName.Dict7x7_50
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_50
+  type: Field
+  source:
+    id: Dict7x7_50
+    path: ''
+    startLine: 6478
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict7x7_50 = 12
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_100
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_100
+  id: Dict7x7_100
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict7x7_100
+  nameWithType: Aruco.PredefinedDictionaryName.Dict7x7_100
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_100
+  type: Field
+  source:
+    id: Dict7x7_100
+    path: ''
+    startLine: 6479
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict7x7_100 = 13
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_250
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_250
+  id: Dict7x7_250
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict7x7_250
+  nameWithType: Aruco.PredefinedDictionaryName.Dict7x7_250
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_250
+  type: Field
+  source:
+    id: Dict7x7_250
+    path: ''
+    startLine: 6480
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict7x7_250 = 14
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_1000
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_1000
+  id: Dict7x7_1000
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: Dict7x7_1000
+  nameWithType: Aruco.PredefinedDictionaryName.Dict7x7_1000
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.Dict7x7_1000
+  type: Field
+  source:
+    id: Dict7x7_1000
+    path: ''
+    startLine: 6481
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Dict7x7_1000 = 15
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.DictArucoOriginal
+  commentId: F:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.DictArucoOriginal
+  id: DictArucoOriginal
+  parent: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  langs:
+  - csharp
+  - vb
+  name: DictArucoOriginal
+  nameWithType: Aruco.PredefinedDictionaryName.DictArucoOriginal
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.DictArucoOriginal
+  type: Field
+  source:
+    id: DictArucoOriginal
+    path: ''
+    startLine: 6482
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: DictArucoOriginal = 16
+    return:
+      type: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  commentId: T:ArucoUnity.Plugin.Aruco.PredefinedDictionaryName
+  parent: ArucoUnity.Plugin
+  name: Aruco.PredefinedDictionaryName
+  nameWithType: Aruco.PredefinedDictionaryName
+  fullName: ArucoUnity.Plugin.Aruco.PredefinedDictionaryName

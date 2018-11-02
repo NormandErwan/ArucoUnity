@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.Vec4i
+  commentId: T:ArucoUnity.Plugin.Cv.Vec4i
+  id: Cv.Vec4i
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.Vec4i.#ctor
+  - ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  - ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
+  - ArucoUnity.Plugin.Cv.Vec4i.Get(System.Int32)
+  - ArucoUnity.Plugin.Cv.Vec4i.Set(System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: Cv.Vec4i
+  nameWithType: Cv.Vec4i
+  fullName: ArucoUnity.Plugin.Cv.Vec4i
+  type: Class
+  source:
+    id: Vec4i
+    path: ''
+    startLine: 9016
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: 'public class Vec4i : Utility.HandleCppPtr'
+    content.vb: >-
+      Public Class Vec4i
+          Inherits Utility.HandleCppPtr
+  inheritance:
+  - System.Object
+  - ArucoUnity.Plugin.Utility.HandleCppPtr
+  inheritedMembers:
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  - ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor
+  id: '#ctor'
+  parent: ArucoUnity.Plugin.Cv.Vec4i
+  langs:
+  - csharp
+  - vb
+  name: Vec4i()
+  nameWithType: Cv.Vec4i.Vec4i()
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i()
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 9034
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Vec4i()
+    content.vb: Public Sub New
+  overload: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  id: '#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)'
+  parent: ArucoUnity.Plugin.Cv.Vec4i
+  langs:
+  - csharp
+  - vb
+  name: Vec4i(IntPtr, Utility.DeleteResponsibility)
+  nameWithType: Cv.Vec4i.Vec4i(IntPtr, Utility.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 9038
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public Vec4i(IntPtr vec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+    parameters:
+    - id: vec4iPtr
+      type: System.IntPtr
+    - id: deleteResponsibility
+      type: ArucoUnity.Plugin.Utility.DeleteResponsibility
+    content.vb: Public Sub New(vec4iPtr As IntPtr, deleteResponsibility As Utility.DeleteResponsibility = Utility.DeleteResponsibility.True)
+  overload: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
+  id: DeleteCppPtr
+  parent: ArucoUnity.Plugin.Cv.Vec4i
+  langs:
+  - csharp
+  - vb
+  name: DeleteCppPtr()
+  nameWithType: Cv.Vec4i.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr()
+  type: Method
+  source:
+    id: DeleteCppPtr
+    path: ''
+    startLine: 9043
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: protected override void DeleteCppPtr()
+    content.vb: Protected Overrides Sub DeleteCppPtr
+  overridden: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  overload: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Plugin.Cv.Vec4i.Get(System.Int32)
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.Get(System.Int32)
+  id: Get(System.Int32)
+  parent: ArucoUnity.Plugin.Cv.Vec4i
+  langs:
+  - csharp
+  - vb
+  name: Get(Int32)
+  nameWithType: Cv.Vec4i.Get(Int32)
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Get(System.Int32)
+  type: Method
+  source:
+    id: Get
+    path: ''
+    startLine: 9050
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public int Get(int i)
+    parameters:
+    - id: i
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Function Get(i As Integer) As Integer
+  overload: ArucoUnity.Plugin.Cv.Vec4i.Get*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Plugin.Cv.Vec4i.Set(System.Int32,System.Int32)
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.Set(System.Int32,System.Int32)
+  id: Set(System.Int32,System.Int32)
+  parent: ArucoUnity.Plugin.Cv.Vec4i
+  langs:
+  - csharp
+  - vb
+  name: Set(Int32, Int32)
+  nameWithType: Cv.Vec4i.Set(Int32, Int32)
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Set(System.Int32, System.Int32)
+  type: Method
+  source:
+    id: Set
+    path: ''
+    startLine: 9058
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public void Set(int i, int value)
+    parameters:
+    - id: i
+      type: System.Int32
+    - id: value
+      type: System.Int32
+    content.vb: Public Sub Set(i As Integer, value As Integer)
+  overload: ArucoUnity.Plugin.Cv.Vec4i.Set*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
+  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
+  parent: ArucoUnity.Plugin
+  name: Utility.HandleCppPtr
+  nameWithType: Utility.HandleCppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteResponsibility
+  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: CppPtr
+  nameWithType: Utility.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.#ctor
+  name: Vec4i
+  nameWithType: Cv.Vec4i.Vec4i
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
+  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
+  parent: ArucoUnity.Plugin
+  name: Utility.DeleteResponsibility
+  nameWithType: Utility.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
+- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  parent: ArucoUnity.Plugin.Utility.HandleCppPtr
+  name: DeleteCppPtr()
+  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
+  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+    name: DeleteCppPtr
+    nameWithType: Utility.HandleCppPtr.DeleteCppPtr
+    fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
+  name: DeleteCppPtr
+  nameWithType: Cv.Vec4i.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.DeleteCppPtr
+- uid: ArucoUnity.Plugin.Cv.Vec4i.Get*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.Get
+  name: Get
+  nameWithType: Cv.Vec4i.Get
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Get
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Plugin.Cv.Vec4i.Set*
+  commentId: Overload:ArucoUnity.Plugin.Cv.Vec4i.Set
+  name: Set
+  nameWithType: Cv.Vec4i.Set
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Set

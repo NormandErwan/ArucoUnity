@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ArucoObjectCreator
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ArucoObjectCreator
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator">
+  
+  
+  <h1 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator" class="text-break">Class ArucoObjectCreator
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Create and display images of an ArUco object ready to be printed.</p>
+<p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="4" sourceendlinenumber="5">See the OpenCV documentation for more information about the marker creation (second section of the following tutorial):
+<a href="http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html" data-raw-source="http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html" sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="5" sourceendlinenumber="5">http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html</a></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html">ArucoObjectDisplayer</a></div>
+    <div class="level2"><span class="xref">ArucoObjectCreator</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ArucoObject">ArucoObjectDisplayer.ArucoObject</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_DisplayInPlayMode">ArucoObjectDisplayer.DisplayInPlayMode</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ImagePlanePrefab">ArucoObjectDisplayer.ImagePlanePrefab</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ImagePlane">ArucoObjectDisplayer.ImagePlane</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_Image">ArucoObjectDisplayer.Image</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ImageTexture">ArucoObjectDisplayer.ImageTexture</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_imagePlaneMaterial">ArucoObjectDisplayer.imagePlaneMaterial</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_Start">ArucoObjectDisplayer.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_Update">ArucoObjectDisplayer.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_OnDestroy">ArucoObjectDisplayer.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_CreateImage">ArucoObjectDisplayer.CreateImage()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_DisplayImage">ArucoObjectDisplayer.DisplayImage()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ResetImage">ArucoObjectDisplayer.ResetImage()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_SetArucoObject_ArucoUnity_Objects_ArucoObject_">ArucoObjectDisplayer.SetArucoObject(ArucoObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_InitializeImagePlane">ArucoObjectDisplayer.InitializeImagePlane()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ArucoObject_PropertyUpdated_ArucoUnity_Objects_ArucoObject_">ArucoObjectDisplayer.ArucoObject_PropertyUpdated(ArucoObject)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Objects.Displayers.html">ArucoUnity.Objects.Displayers</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ArucoObjectCreator : ArucoObjectDisplayer</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_pixelsToMetersFactor" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.pixelsToMetersFactor">pixelsToMetersFactor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float pixelsToMetersFactor = 0.001F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_AutoSaveImage_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_AutoSaveImage" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.AutoSaveImage">AutoSaveImage</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets if the <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_ImageTexture">ImageTexture</a> is automatically saved in play mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoSaveImage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_ImageFilename_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_ImageFilename" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.ImageFilename">ImageFilename</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Gets or sets the name of the image, without the extension (.png added automatically). If null, it will be
+generated automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ImageFilename { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_OutputFolder_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_OutputFolder" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.OutputFolder">OutputFolder</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Gets or sets the output folder for the image, relative to the Application.persistentDataPath folder
+(default: ArucoUnity/Images/).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputFolder { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_PlaceImagePlane_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_PlaceImagePlane" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.PlaceImagePlane">PlaceImagePlane()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void PlaceImagePlane()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_PlaceImagePlane">ArucoObjectDisplayer.PlaceImagePlane()</a></div>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_SaveImage_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_SaveImage" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.SaveImage">SaveImage()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Save the <see cref="!:ImageTexture"></see> on a image file in the <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectCreator.html#ArucoUnity_Objects_Displayers_ArucoObjectCreator_OutputFolder">OutputFolder</a> with
+<a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectCreator.html#ArucoUnity_Objects_Displayers_ArucoObjectCreator_ImageFilename">ImageFilename</a> as filename.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SaveImage()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_UpdateImage_" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage*"></a>
+  <h4 id="ArucoUnity_Objects_Displayers_ArucoObjectCreator_UpdateImage" data-uid="ArucoUnity.Objects.Displayers.ArucoObjectCreator.UpdateImage">UpdateImage()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Displayers.ArucoObjectCreator.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Calls <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_UpdateImage">UpdateImage()</a> then <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectCreator.html#ArucoUnity_Objects_Displayers_ArucoObjectCreator_SaveImage">SaveImage()</a> if <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectCreator.html#ArucoUnity_Objects_Displayers_ArucoObjectCreator_AutoSaveImage">AutoSaveImage</a>
+is set. Also set <a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectCreator.html#ArucoUnity_Objects_Displayers_ArucoObjectCreator_ImageFilename">ImageFilename</a> in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateImage()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_UpdateImage">ArucoObjectDisplayer.UpdateImage()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

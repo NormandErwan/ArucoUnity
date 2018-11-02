@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Utility
+  commentId: T:ArucoUnity.Plugin.Utility
+  id: Utility
+  parent: ArucoUnity.Plugin
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Utility
+  nameWithType: Utility
+  fullName: ArucoUnity.Plugin.Utility
+  type: Class
+  source:
+    id: Utility
+    path: ''
+    startLine: 9990
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public static class Utility
+    content.vb: Public Module Utility
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

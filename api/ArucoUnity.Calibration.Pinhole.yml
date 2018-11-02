@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Calibration.Pinhole
+  commentId: N:ArucoUnity.Calibration.Pinhole
+  id: ArucoUnity.Calibration.Pinhole
+  children:
+  - ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
+  - ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
+  - ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
+  - ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
+  langs:
+  - csharp
+  - vb
+  name: ArucoUnity.Calibration.Pinhole
+  nameWithType: ArucoUnity.Calibration.Pinhole
+  fullName: ArucoUnity.Calibration.Pinhole
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
+  commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
+  name: PinholeCameraCalibration
+  nameWithType: PinholeCameraCalibration
+  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
+- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
+  commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
+  name: PinholeCameraCalibrationBase<T>
+  nameWithType: PinholeCameraCalibrationBase<T>
+  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase<T>
+  nameWithType.vb: PinholeCameraCalibrationBase(Of T)
+  fullName.vb: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase(Of T)
+  name.vb: PinholeCameraCalibrationBase(Of T)
+  spec.csharp:
+  - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
+    name: PinholeCameraCalibrationBase
+    nameWithType: PinholeCameraCalibrationBase
+    fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1
+    name: PinholeCameraCalibrationBase
+    nameWithType: PinholeCameraCalibrationBase
+    fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
+  commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
+  name: PinholeCameraCalibrationFlags
+  nameWithType: PinholeCameraCalibrationFlags
+  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags
+- uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
+  commentId: T:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
+  name: StereoPinholeCameraCalibration
+  nameWithType: StereoPinholeCameraCalibration
+  fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration

@@ -1,0 +1,291 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  commentId: T:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  id: IArucoCameraUndistortion
+  parent: ArucoUnity.Cameras.Undistortions
+  children:
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  - ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  langs:
+  - csharp
+  - vb
+  name: IArucoCameraUndistortion
+  nameWithType: IArucoCameraUndistortion
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  type: Interface
+  source:
+    id: IArucoCameraUndistortion
+    path: ''
+    startLine: 3232
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nManages the processes of undistortion and rectification of <xref href=\"ArucoUnity.Cameras.IArucoCamera.Images\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public interface IArucoCameraUndistortion : IArucoCameraController, IConfigurableController, IHasArucoCameraParameters'
+    content.vb: >-
+      Public Interface IArucoCameraUndistortion
+          Inherits IArucoCameraController, IHasArucoCameraParameters
+  inheritedMembers:
+  - ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  - ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  id: RectifiedCameraMatrices
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: RectifiedCameraMatrices
+  nameWithType: IArucoCameraUndistortion.RectifiedCameraMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  type: Property
+  source:
+    id: RectifiedCameraMatrices
+    path: ''
+    startLine: 3239
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the new camera matrices of the undistorted and rectified images of each camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] RectifiedCameraMatrices { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property RectifiedCameraMatrices As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  id: RectificationMatrices
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: RectificationMatrices
+  nameWithType: IArucoCameraUndistortion.RectificationMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  type: Property
+  source:
+    id: RectificationMatrices
+    path: ''
+    startLine: 3245
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the rectification rotation matrices of each camera to make both camera image planes the same plane, in\ncase of a stereo camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] RectificationMatrices { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property RectificationMatrices As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  id: UndistortedDistCoeffs
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: UndistortedDistCoeffs
+  nameWithType: IArucoCameraUndistortion.UndistortedDistCoeffs
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  type: Property
+  source:
+    id: UndistortedDistCoeffs
+    path: ''
+    startLine: 3250
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the distorsion coefficients of the undistorted and rectified images of each camera.\n"
+  example: []
+  syntax:
+    content: Cv.Mat[] UndistortedDistCoeffs { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: ReadOnly Property UndistortedDistCoeffs As Cv.Mat()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  commentId: P:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  id: UndistortionRectificationMaps
+  parent: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion
+  langs:
+  - csharp
+  - vb
+  name: UndistortionRectificationMaps
+  nameWithType: IArucoCameraUndistortion.UndistortionRectificationMaps
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  type: Property
+  source:
+    id: UndistortionRectificationMaps
+    path: ''
+    startLine: 3255
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras.Undistortions
+  summary: "\nGets the undistortion and rectification images transformation map of each camera (two maps per camera).\n"
+  example: []
+  syntax:
+    content: Cv.Mat[][] UndistortionRectificationMaps { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Cv.Mat[][]
+    content.vb: ReadOnly Property UndistortionRectificationMaps As Cv.Mat()()
+  overload: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: ArucoUnity.Cameras.IArucoCamera.Images
+  commentId: P:ArucoUnity.Cameras.IArucoCamera.Images
+  parent: ArucoUnity.Cameras.IArucoCamera
+  name: Images
+  nameWithType: IArucoCamera.Images
+  fullName: ArucoUnity.Cameras.IArucoCamera.Images
+- uid: ArucoUnity.Cameras.Undistortions
+  commentId: N:ArucoUnity.Cameras.Undistortions
+  name: ArucoUnity.Cameras.Undistortions
+  nameWithType: ArucoUnity.Cameras.Undistortions
+  fullName: ArucoUnity.Cameras.Undistortions
+- uid: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  commentId: P:ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+  parent: ArucoUnity.Cameras.IArucoCameraController
+  name: ArucoCamera
+  nameWithType: IArucoCameraController.ArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCameraController.ArucoCamera
+- uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  commentId: P:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+  parent: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  name: CameraParameters
+  nameWithType: IHasArucoCameraParameters.CameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.CameraParameters
+- uid: ArucoUnity.Cameras.IArucoCamera
+  commentId: T:ArucoUnity.Cameras.IArucoCamera
+  parent: ArucoUnity.Cameras
+  name: IArucoCamera
+  nameWithType: IArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCamera
+- uid: ArucoUnity.Cameras.IArucoCameraController
+  commentId: T:ArucoUnity.Cameras.IArucoCameraController
+  parent: ArucoUnity.Cameras
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: ArucoUnity.Cameras.IArucoCameraController
+- uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  commentId: T:ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+  parent: ArucoUnity.Cameras.Parameters
+  name: IHasArucoCameraParameters
+  nameWithType: IHasArucoCameraParameters
+  fullName: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: ArucoUnity.Cameras.Parameters
+  commentId: N:ArucoUnity.Cameras.Parameters
+  name: ArucoUnity.Cameras.Parameters
+  nameWithType: ArucoUnity.Cameras.Parameters
+  fullName: ArucoUnity.Cameras.Parameters
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+  name: RectifiedCameraMatrices
+  nameWithType: IArucoCameraUndistortion.RectifiedCameraMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectifiedCameraMatrices
+- uid: ArucoUnity.Plugin.Cv.Mat[]
+  isExternal: true
+  name: Cv.Mat[]
+  nameWithType: Cv.Mat[]
+  fullName: ArucoUnity.Plugin.Cv.Mat[]
+  nameWithType.vb: Cv.Mat()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()
+  name.vb: Cv.Mat()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+  name: RectificationMatrices
+  nameWithType: IArucoCameraUndistortion.RectificationMatrices
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.RectificationMatrices
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+  name: UndistortedDistCoeffs
+  nameWithType: IArucoCameraUndistortion.UndistortedDistCoeffs
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortedDistCoeffs
+- uid: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps*
+  commentId: Overload:ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+  name: UndistortionRectificationMaps
+  nameWithType: IArucoCameraUndistortion.UndistortionRectificationMaps
+  fullName: ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.UndistortionRectificationMaps
+- uid: ArucoUnity.Plugin.Cv.Mat[][]
+  isExternal: true
+  name: Cv.Mat[][]
+  nameWithType: Cv.Mat[][]
+  fullName: ArucoUnity.Plugin.Cv.Mat[][]
+  nameWithType.vb: Cv.Mat()()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()()
+  name.vb: Cv.Mat()()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ()
+    nameWithType: ()
+    fullName: ()

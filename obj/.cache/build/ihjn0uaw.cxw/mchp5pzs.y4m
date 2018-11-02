@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ArucoUnity | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="ArucoUnity | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="arucounity" sourcefile="index.md" sourcestartlinenumber="1" sourceendlinenumber="1">ArucoUnity</h1>
+
+<p sourcefile="index.md" sourcestartlinenumber="3" sourceendlinenumber="3">Bring augmented reality to Unity by tracking <a href="https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html" data-raw-source="[ArUco markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)" sourcefile="index.md" sourcestartlinenumber="3" sourceendlinenumber="3">ArUco markers</a> in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.</p>
+<p sourcefile="index.md" sourcestartlinenumber="5" sourceendlinenumber="5">It uses the OpenCV&#39;s <a href="http://docs.opencv.org/master/d9/d6a/group__aruco.html" data-raw-source="[ArUco](http://docs.opencv.org/master/d9/d6a/group__aruco.html)" sourcefile="index.md" sourcestartlinenumber="5" sourceendlinenumber="5">ArUco</a> Marker Detection module and the OpenCV&#39;s camera calibration modules <a href="http://docs.opencv.org/master/d9/d0c/group__calib3d.html" data-raw-source="[calib3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)" sourcefile="index.md" sourcestartlinenumber="5" sourceendlinenumber="5">calib3d</a> and <a href="http://docs.opencv.org/master/d3/ddc/group__ccalib.html" data-raw-source="[ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)" sourcefile="index.md" sourcestartlinenumber="5" sourceendlinenumber="5">ccalib</a>.</p>
+<p sourcefile="index.md" sourcestartlinenumber="7" sourceendlinenumber="8"><img src="docs/images/ar_roll_a_ball.gif" alt="Demo 1" sourcefile="index.md" sourcestartlinenumber="7" sourceendlinenumber="7">
+<img src="docs/images/extended_phone_screen.gif" alt="Demo 2" sourcefile="index.md" sourcestartlinenumber="8" sourceendlinenumber="8"></p>
+<p sourcefile="index.md" sourcestartlinenumber="10" sourceendlinenumber="10"><em>Left: AR <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial" data-raw-source="[Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial)" sourcefile="index.md" sourcestartlinenumber="10" sourceendlinenumber="10">Roll a ball</a>. Right: The markers tracking allows to extend the phone&#39;s screen.</em></p>
+<h2 id="usage" sourcefile="index.md" sourcestartlinenumber="12" sourceendlinenumber="12">Usage</h2>
+<p sourcefile="index.md" sourcestartlinenumber="14" sourceendlinenumber="14">Download the <a href="https://github.com/NormandErwan/ArucoUnity/releases" data-raw-source="[latest build release](https://github.com/NormandErwan/ArucoUnity/releases)" sourcefile="index.md" sourcestartlinenumber="14" sourceendlinenumber="14">latest build release</a>. Or see the <a href="https://normanderwan.github.io/ArucoUnity/manualbuild-from-sources.html" data-raw-source="[Build From Sources](https://normanderwan.github.io/ArucoUnity/manualbuild-from-sources.html)" sourcefile="index.md" sourcestartlinenumber="14" sourceendlinenumber="14">Build From Sources</a> documentation page. Then, import <code>ArucoUnity.package</code> in your Unity project.</p>
+<p sourcefile="index.md" sourcestartlinenumber="16" sourceendlinenumber="16">A typical workflow with ArucoUnity is:</p>
+<ol sourcefile="index.md" sourcestartlinenumber="18" sourceendlinenumber="20">
+<li sourcefile="index.md" sourcestartlinenumber="18" sourceendlinenumber="18"><a href="https://normanderwan.github.io/ArucoUnity/manual/create-markers.html" data-raw-source="[Create Markers](https://normanderwan.github.io/ArucoUnity/manual/create-markers.html)" sourcefile="index.md" sourcestartlinenumber="18" sourceendlinenumber="18">Create Markers</a>, print and place them in the environment.</li>
+<li sourcefile="index.md" sourcestartlinenumber="19" sourceendlinenumber="19"><a href="https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html" data-raw-source="[Calibrate a Camera](https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html)" sourcefile="index.md" sourcestartlinenumber="19" sourceendlinenumber="19">Calibrate a Camera</a> using a calibration board.</li>
+<li sourcefile="index.md" sourcestartlinenumber="20" sourceendlinenumber="20"><a href="https://normanderwan.github.io/ArucoUnity/manual/track-markers.html" data-raw-source="[Track Markers](https://normanderwan.github.io/ArucoUnity/manual/track-markers.html)" sourcefile="index.md" sourcestartlinenumber="20" sourceendlinenumber="20">Track Markers</a>.</li>
+</ol>
+<h2 id="documentation" sourcefile="index.md" sourcestartlinenumber="22" sourceendlinenumber="22">Documentation</h2>
+<p sourcefile="index.md" sourcestartlinenumber="24" sourceendlinenumber="24">The documentation is available online: <a href="https://normanderwan.github.io/ArucoUnity" data-raw-source="[https://normanderwan.github.io/ArucoUnity/](https://normanderwan.github.io/ArucoUnity)" sourcefile="index.md" sourcestartlinenumber="24" sourceendlinenumber="24">https://normanderwan.github.io/ArucoUnity/</a>.</p>
+<h2 id="contributions" sourcefile="index.md" sourcestartlinenumber="26" sourceendlinenumber="26">Contributions</h2>
+<ul sourcefile="index.md" sourcestartlinenumber="28" sourceendlinenumber="29">
+<li sourcefile="index.md" sourcestartlinenumber="28" sourceendlinenumber="28">For any question or comment, please <a href="https://github.com/NormandErwan/ArucoUnity/issues/new" data-raw-source="[open a new issue](https://github.com/NormandErwan/ArucoUnity/issues/new)" sourcefile="index.md" sourcestartlinenumber="28" sourceendlinenumber="28">open a new issue</a>.</li>
+<li sourcefile="index.md" sourcestartlinenumber="29" sourceendlinenumber="29">If you&#39;d like to contribute, please <a href="https://github.com/NormandErwan/ArucoUnity/fork" data-raw-source="[fork the repository](https://github.com/NormandErwan/ArucoUnity/fork)" sourcefile="index.md" sourcestartlinenumber="29" sourceendlinenumber="29">fork the repository</a> and use a feature branch. Pull requests are warmly welcome. Also see the Developing section of the <a href="https://normanderwan.github.io/ArucoUnity" data-raw-source="[documentation homepage](https://normanderwan.github.io/ArucoUnity)" sourcefile="index.md" sourcestartlinenumber="29" sourceendlinenumber="29">documentation homepage</a>.</li>
+</ul>
+<h2 id="support" sourcefile="index.md" sourcestartlinenumber="31" sourceendlinenumber="31">Support</h2>
+<p sourcefile="index.md" sourcestartlinenumber="33" sourceendlinenumber="33">The first version of this project has been developed as part of the master thesis of <a href="https://linkedin.com/in/normanderwan" data-raw-source="[Erwan Normand](https://linkedin.com/in/normanderwan)" sourcefile="index.md" sourcestartlinenumber="33" sourceendlinenumber="33">Erwan Normand</a> and was supported by the <a href="https://www.etsmtl.ca" data-raw-source="[&#201;TS - &#201;cole de Technologie Sup&#233;rieure](https://www.etsmtl.ca)" sourcefile="index.md" sourcestartlinenumber="33" sourceendlinenumber="33">ÉTS - École de Technologie Supérieure</a>.</p>
+<p sourcefile="index.md" sourcestartlinenumber="35" sourceendlinenumber="35">I&#39;m developing the second version on my own. If this project helped you, please consider buying me a coffee in return :)</p>
+<p sourcefile="index.md" sourcestartlinenumber="37" sourceendlinenumber="37"><a href="https://www.buymeacoffee.com/h48VU3fny" data-raw-source="[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoffee.com/h48VU3fny)" sourcefile="index.md" sourcestartlinenumber="37" sourceendlinenumber="37"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" sourcefile="index.md" sourcestartlinenumber="37" sourceendlinenumber="37"></a></p>
+<h2 id="licenses" sourcefile="index.md" sourcestartlinenumber="39" sourceendlinenumber="39">Licenses</h2>
+<p sourcefile="index.md" sourcestartlinenumber="41" sourceendlinenumber="41">See the <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/LICENSE" data-raw-source="[LICENSE](https://github.com/NormandErwan/ArucoUnity/blob/master/LICENSE)" sourcefile="index.md" sourcestartlinenumber="41" sourceendlinenumber="41">LICENSE</a> file for license rights and limitations (3-clause BSD license).</p>
+<p sourcefile="index.md" sourcestartlinenumber="43" sourceendlinenumber="43">See <a href="https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty" data-raw-source="[https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty](https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty)" sourcefile="index.md" sourcestartlinenumber="43" sourceendlinenumber="43">https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty</a> for the OpenCV license. ArucoUnity uses the following modules: <a href="https://github.com/opencv/opencv_contrib/tree/master/modules/aruco" data-raw-source="[aruco](https://github.com/opencv/opencv_contrib/tree/master/modules/aruco)" sourcefile="index.md" sourcestartlinenumber="43" sourceendlinenumber="43">aruco</a>, <a href="http://docs.opencv.org/master/d9/d0c/group__calib3d.html" data-raw-source="[cablid3d](http://docs.opencv.org/master/d9/d0c/group__calib3d.html)" sourcefile="index.md" sourcestartlinenumber="43" sourceendlinenumber="43">cablid3d</a>, <a href="http://docs.opencv.org/master/d3/ddc/group__ccalib.html" data-raw-source="[ccalib](http://docs.opencv.org/master/d3/ddc/group__ccalib.html)" sourcefile="index.md" sourcestartlinenumber="43" sourceendlinenumber="43">ccalib</a></p>
+<h2 id="references" sourcefile="index.md" sourcestartlinenumber="45" sourceendlinenumber="45">References</h2>
+<p sourcefile="index.md" sourcestartlinenumber="47" sourceendlinenumber="47">The OpenCV&#39;s Aruco module implements this paper:</p>
+<blockquote sourcefile="index.md" sourcestartlinenumber="49" sourceendlinenumber="49"><p sourcefile="index.md" sourcestartlinenumber="49" sourceendlinenumber="49">Garrido-Jurado, S., Muñoz-Salinas, R., Madrid-Cuevas, F. J., &amp; Marín-Jiménez, M. J. (2014). Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6), 2280-2292.</p>
+</blockquote>
+<p sourcefile="index.md" sourcestartlinenumber="51" sourceendlinenumber="51">The fisheye calibration operated with the OpenCV&#39;s ccalib module is based on these papers:</p>
+<blockquote sourcefile="index.md" sourcestartlinenumber="53" sourceendlinenumber="53"><p sourcefile="index.md" sourcestartlinenumber="53" sourceendlinenumber="53">Mei, C., &amp; Rives, P. (2007, April). Single view point omnidirectional camera calibration from planar grids. In Robotics and Automation, 2007 IEEE International Conference on (pp. 3945-3950). IEEE.</p>
+<p sourcefile="index.md" sourcestartlinenumber="55" sourceendlinenumber="55">Li, B., Heng, L., Koser, K., &amp; Pollefeys, M. (2013, November). A multiple-camera system calibration toolbox using a feature descriptor-based calibration pattern. In Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on (pp. 1301-1307). IEEE.</p>
+</blockquote>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

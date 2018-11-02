@@ -1,0 +1,896 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Cameras.ArucoWebcam
+  commentId: T:ArucoUnity.Cameras.ArucoWebcam
+  id: ArucoWebcam
+  parent: ArucoUnity.Cameras
+  children:
+  - ArucoUnity.Cameras.ArucoWebcam.Awake
+  - ArucoUnity.Cameras.ArucoWebcam.cameraId
+  - ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+  - ArucoUnity.Cameras.ArucoWebcam.Configuring
+  - ArucoUnity.Cameras.ArucoWebcam.Name
+  - ArucoUnity.Cameras.ArucoWebcam.OnDestroy
+  - ArucoUnity.Cameras.ArucoWebcam.OnStarted
+  - ArucoUnity.Cameras.ArucoWebcam.Starting
+  - ArucoUnity.Cameras.ArucoWebcam.Stopping
+  - ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  - ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  - ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  - ArucoUnity.Cameras.ArucoWebcam.WebcamId
+  langs:
+  - csharp
+  - vb
+  name: ArucoWebcam
+  nameWithType: ArucoWebcam
+  fullName: ArucoUnity.Cameras.ArucoWebcam
+  type: Class
+  source:
+    id: ArucoWebcam
+    path: ''
+    startLine: 1570
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nCaptures images of a webcam.\n"
+  example: []
+  syntax:
+    content: 'public class ArucoWebcam : ArucoCamera, IArucoCamera, IConfigurableController'
+    content.vb: >-
+      Public Class ArucoWebcam
+          Inherits ArucoCamera
+          Implements IArucoCamera, IConfigurableController
+  inheritance:
+  - System.Object
+  - ArucoUnity.Cameras.ArucoCamera
+  implements:
+  - ArucoUnity.Cameras.IArucoCamera
+  - IConfigurableController
+  inheritedMembers:
+  - ArucoUnity.Cameras.ArucoCamera.dontFlipCode
+  - ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
+  - ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
+  - ArucoUnity.Cameras.ArucoCamera.Textures
+  - ArucoUnity.Cameras.ArucoCamera.Images
+  - ArucoUnity.Cameras.ArucoCamera.ImageDatas
+  - ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
+  - ArucoUnity.Cameras.ArucoCamera.ImageRatios
+  - ArucoUnity.Cameras.ArucoCamera.NextImages
+  - ArucoUnity.Cameras.ArucoCamera.NextImageDatas
+  - ArucoUnity.Cameras.ArucoCamera.currentBuffer
+  - ArucoUnity.Cameras.ArucoCamera.imageBuffers
+  - ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
+  - ArucoUnity.Cameras.ArucoCamera.imagesToTextures
+  - ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
+  - ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
+  - ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
+  - ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
+  - ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
+  - ArucoUnity.Cameras.ArucoCamera.Update
+  - ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Cameras.ArucoWebcam.cameraId
+  commentId: F:ArucoUnity.Cameras.ArucoWebcam.cameraId
+  id: cameraId
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: cameraId
+  nameWithType: ArucoWebcam.cameraId
+  fullName: ArucoUnity.Cameras.ArucoWebcam.cameraId
+  type: Field
+  source:
+    id: cameraId
+    path: ''
+    startLine: 1574
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  syntax:
+    content: protected const int cameraId = 0
+    return:
+      type: System.Int32
+    content.vb: Protected Const cameraId As Integer = 0
+  modifiers.csharp:
+  - protected
+  - const
+  modifiers.vb:
+  - Protected
+  - Const
+- uid: ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+  id: CameraNumber
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: CameraNumber
+  nameWithType: ArucoWebcam.CameraNumber
+  fullName: ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+  type: Property
+  source:
+    id: CameraNumber
+    path: ''
+    startLine: 1584
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  syntax:
+    content: public override int CameraNumber { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property CameraNumber As Integer
+  overridden: ArucoUnity.Cameras.ArucoCamera.CameraNumber
+  overload: ArucoUnity.Cameras.ArucoWebcam.CameraNumber*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: ArucoUnity.Cameras.ArucoWebcam.Name
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.Name
+  id: Name
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ArucoWebcam.Name
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Name
+  type: Property
+  source:
+    id: Name
+    path: ''
+    startLine: 1586
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  syntax:
+    content: public override string Name { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides Property Name As String
+  overridden: ArucoUnity.Cameras.ArucoCamera.Name
+  overload: ArucoUnity.Cameras.ArucoWebcam.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Overrides
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamId
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.WebcamId
+  id: WebcamId
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: WebcamId
+  nameWithType: ArucoWebcam.WebcamId
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamId
+  type: Property
+  source:
+    id: WebcamId
+    path: ''
+    startLine: 1593
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets or set the id of the webcam to use.\n"
+  example: []
+  syntax:
+    content: public int WebcamId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property WebcamId As Integer
+  overload: ArucoUnity.Cameras.ArucoWebcam.WebcamId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  id: WebcamController
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: WebcamController
+  nameWithType: ArucoWebcam.WebcamController
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  type: Property
+  source:
+    id: WebcamController
+    path: ''
+    startLine: 1598
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nGets the controller of the webcam to use.\n"
+  example: []
+  syntax:
+    content: public WebcamController WebcamController { get; }
+    parameters: []
+    return:
+      type: ArucoUnity.Cameras.WebcamController
+    content.vb: Public ReadOnly Property WebcamController As WebcamController
+  overload: ArucoUnity.Cameras.ArucoWebcam.WebcamController*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ArucoUnity.Cameras.ArucoWebcam.Awake
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Awake
+  id: Awake
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: ArucoWebcam.Awake()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Awake()
+  type: Method
+  source:
+    id: Awake
+    path: ''
+    startLine: 1605
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nInitializes <xref href=\"ArucoUnity.Cameras.ArucoWebcam.WebcamController\" data-throw-if-not-resolved=\"false\"></xref> and subscribes to.\n"
+  example: []
+  syntax:
+    content: protected override void Awake()
+    content.vb: Protected Overrides Sub Awake
+  overload: ArucoUnity.Cameras.ArucoWebcam.Awake*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.OnDestroy
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.OnDestroy
+  id: OnDestroy
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy()
+  nameWithType: ArucoWebcam.OnDestroy()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.OnDestroy()
+  type: Method
+  source:
+    id: OnDestroy
+    path: ''
+    startLine: 1615
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nUnsubscribes to <xref href=\"ArucoUnity.Cameras.ArucoWebcam.WebcamController\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void OnDestroy()
+    content.vb: Protected Overrides Sub OnDestroy
+  overload: ArucoUnity.Cameras.ArucoWebcam.OnDestroy*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.Configuring
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Configuring
+  id: Configuring
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Configuring()
+  nameWithType: ArucoWebcam.Configuring()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Configuring()
+  type: Method
+  source:
+    id: Configuring
+    path: ''
+    startLine: 1626
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nCalls <xref href=\"ArucoUnity.Cameras.WebcamController.Configure\" data-throw-if-not-resolved=\"false\"></xref> and sets <xref href=\"ArucoUnity.Cameras.ArucoWebcam.Name\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void Configuring()
+    content.vb: Protected Overrides Sub Configuring
+  overridden: ArucoUnity.Cameras.ArucoCamera.Configuring
+  overload: ArucoUnity.Cameras.ArucoWebcam.Configuring*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.Starting
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Starting
+  id: Starting
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Starting()
+  nameWithType: ArucoWebcam.Starting()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Starting()
+  type: Method
+  source:
+    id: Starting
+    path: ''
+    startLine: 1640
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nCalls <xref href=\"ArucoUnity.Cameras.WebcamController.StartWebcams\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void Starting()
+    content.vb: Protected Overrides Sub Starting
+  overload: ArucoUnity.Cameras.ArucoWebcam.Starting*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.Stopping
+  id: Stopping
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: Stopping()
+  nameWithType: ArucoWebcam.Stopping()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping()
+  type: Method
+  source:
+    id: Stopping
+    path: ''
+    startLine: 1649
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nCalls <xref href=\"ArucoUnity.Cameras.WebcamController.StopWebcams\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void Stopping()
+    content.vb: Protected Overrides Sub Stopping
+  overload: ArucoUnity.Cameras.ArucoWebcam.Stopping*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.OnStarted
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.OnStarted
+  id: OnStarted
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: OnStarted()
+  nameWithType: ArucoWebcam.OnStarted()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.OnStarted()
+  type: Method
+  source:
+    id: OnStarted
+    path: ''
+    startLine: 1658
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nBlocks <xref href=\"ArucoUnity.Cameras.ArucoCamera.OnStarted\" data-throw-if-not-resolved=\"false\"></xref> until <xref href=\"ArucoUnity.Cameras.WebcamController.IsStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override void OnStarted()
+    content.vb: Protected Overrides Sub OnStarted
+  overridden: ArucoUnity.Cameras.ArucoCamera.OnStarted
+  overload: ArucoUnity.Cameras.ArucoWebcam.OnStarted*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  id: UpdatingImages
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: UpdatingImages()
+  nameWithType: ArucoWebcam.UpdatingImages()
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages()
+  type: Method
+  source:
+    id: UpdatingImages
+    path: ''
+    startLine: 1667
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nCopy current webcam images to <xref href=\"ArucoUnity.Cameras.ArucoCamera.NextImages\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected override bool UpdatingImages()
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function UpdatingImages As Boolean
+  overridden: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  overload: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  id: WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  parent: ArucoUnity.Cameras.ArucoWebcam
+  langs:
+  - csharp
+  - vb
+  name: WebcamController_Started(WebcamController)
+  nameWithType: ArucoWebcam.WebcamController_Started(WebcamController)
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  type: Method
+  source:
+    id: WebcamController_Started
+    path: ''
+    startLine: 1678
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Cameras
+  summary: "\nConfigures <xref href=\"ArucoUnity.Cameras.ArucoCamera.Textures\" data-throw-if-not-resolved=\"false\"></xref> and calls <xref href=\"ArucoUnity.Cameras.ArucoCamera.OnStarted\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected virtual void WebcamController_Started(WebcamController webcamController)
+    parameters:
+    - id: webcamController
+      type: ArucoUnity.Cameras.WebcamController
+    content.vb: Protected Overridable Sub WebcamController_Started(webcamController As WebcamController)
+  overload: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: ArucoUnity.Cameras
+  commentId: N:ArucoUnity.Cameras
+  name: ArucoUnity.Cameras
+  nameWithType: ArucoUnity.Cameras
+  fullName: ArucoUnity.Cameras
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Cameras.ArucoCamera
+  commentId: T:ArucoUnity.Cameras.ArucoCamera
+  parent: ArucoUnity.Cameras
+  name: ArucoCamera
+  nameWithType: ArucoCamera
+  fullName: ArucoUnity.Cameras.ArucoCamera
+- uid: ArucoUnity.Cameras.IArucoCamera
+  commentId: T:ArucoUnity.Cameras.IArucoCamera
+  parent: ArucoUnity.Cameras
+  name: IArucoCamera
+  nameWithType: IArucoCamera
+  fullName: ArucoUnity.Cameras.IArucoCamera
+- uid: IConfigurableController
+  isExternal: true
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: IConfigurableController
+- uid: ArucoUnity.Cameras.ArucoCamera.dontFlipCode
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.dontFlipCode
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: dontFlipCode
+  nameWithType: ArucoCamera.dontFlipCode
+  fullName: ArucoUnity.Cameras.ArucoCamera.dontFlipCode
+- uid: ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
+  commentId: E:ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: ImagesUpdated
+  nameWithType: ArucoCamera.ImagesUpdated
+  fullName: ArucoUnity.Cameras.ArucoCamera.ImagesUpdated
+- uid: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
+  commentId: E:ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: UndistortRectifyImages
+  nameWithType: ArucoCamera.UndistortRectifyImages
+  fullName: ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages
+- uid: ArucoUnity.Cameras.ArucoCamera.Textures
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.Textures
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: Textures
+  nameWithType: ArucoCamera.Textures
+  fullName: ArucoUnity.Cameras.ArucoCamera.Textures
+- uid: ArucoUnity.Cameras.ArucoCamera.Images
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.Images
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: Images
+  nameWithType: ArucoCamera.Images
+  fullName: ArucoUnity.Cameras.ArucoCamera.Images
+- uid: ArucoUnity.Cameras.ArucoCamera.ImageDatas
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageDatas
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: ImageDatas
+  nameWithType: ArucoCamera.ImageDatas
+  fullName: ArucoUnity.Cameras.ArucoCamera.ImageDatas
+- uid: ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: ImageDataSizes
+  nameWithType: ArucoCamera.ImageDataSizes
+  fullName: ArucoUnity.Cameras.ArucoCamera.ImageDataSizes
+- uid: ArucoUnity.Cameras.ArucoCamera.ImageRatios
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.ImageRatios
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: ImageRatios
+  nameWithType: ArucoCamera.ImageRatios
+  fullName: ArucoUnity.Cameras.ArucoCamera.ImageRatios
+- uid: ArucoUnity.Cameras.ArucoCamera.NextImages
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.NextImages
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: NextImages
+  nameWithType: ArucoCamera.NextImages
+  fullName: ArucoUnity.Cameras.ArucoCamera.NextImages
+- uid: ArucoUnity.Cameras.ArucoCamera.NextImageDatas
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.NextImageDatas
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: NextImageDatas
+  nameWithType: ArucoCamera.NextImageDatas
+  fullName: ArucoUnity.Cameras.ArucoCamera.NextImageDatas
+- uid: ArucoUnity.Cameras.ArucoCamera.currentBuffer
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.currentBuffer
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: currentBuffer
+  nameWithType: ArucoCamera.currentBuffer
+  fullName: ArucoUnity.Cameras.ArucoCamera.currentBuffer
+- uid: ArucoUnity.Cameras.ArucoCamera.imageBuffers
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imageBuffers
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imageBuffers
+  nameWithType: ArucoCamera.imageBuffers
+  fullName: ArucoUnity.Cameras.ArucoCamera.imageBuffers
+- uid: ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imageDataBuffers
+  nameWithType: ArucoCamera.imageDataBuffers
+  fullName: ArucoUnity.Cameras.ArucoCamera.imageDataBuffers
+- uid: ArucoUnity.Cameras.ArucoCamera.imagesToTextures
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesToTextures
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imagesToTextures
+  nameWithType: ArucoCamera.imagesToTextures
+  fullName: ArucoUnity.Cameras.ArucoCamera.imagesToTextures
+- uid: ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imagesToTextureDatas
+  nameWithType: ArucoCamera.imagesToTextureDatas
+  fullName: ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas
+- uid: ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imagesUpdatedThisFrame
+  nameWithType: ArucoCamera.imagesUpdatedThisFrame
+  fullName: ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame
+- uid: ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: flipHorizontallyImages
+  nameWithType: ArucoCamera.flipHorizontallyImages
+  fullName: ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages
+- uid: ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: flipVerticallyImages
+  nameWithType: ArucoCamera.flipVerticallyImages
+  fullName: ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages
+- uid: ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
+  commentId: F:ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: imagesFlipCode
+  nameWithType: ArucoCamera.imagesFlipCode
+  fullName: ArucoUnity.Cameras.ArucoCamera.imagesFlipCode
+- uid: ArucoUnity.Cameras.ArucoCamera.Update
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.Update
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: Update()
+  nameWithType: ArucoCamera.Update()
+  fullName: ArucoUnity.Cameras.ArucoCamera.Update()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCamera.Update
+    name: Update
+    nameWithType: ArucoCamera.Update
+    fullName: ArucoUnity.Cameras.ArucoCamera.Update
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCamera.Update
+    name: Update
+    nameWithType: ArucoCamera.Update
+    fullName: ArucoUnity.Cameras.ArucoCamera.Update
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: OnImagesUpdated()
+  nameWithType: ArucoCamera.OnImagesUpdated()
+  fullName: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+    name: OnImagesUpdated
+    nameWithType: ArucoCamera.OnImagesUpdated
+    fullName: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+    name: OnImagesUpdated
+    nameWithType: ArucoCamera.OnImagesUpdated
+    fullName: ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ArucoUnity.Cameras.ArucoCamera.CameraNumber
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.CameraNumber
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: CameraNumber
+  nameWithType: ArucoCamera.CameraNumber
+  fullName: ArucoUnity.Cameras.ArucoCamera.CameraNumber
+- uid: ArucoUnity.Cameras.ArucoWebcam.CameraNumber*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+  name: CameraNumber
+  nameWithType: ArucoWebcam.CameraNumber
+  fullName: ArucoUnity.Cameras.ArucoWebcam.CameraNumber
+- uid: ArucoUnity.Cameras.ArucoCamera.Name
+  commentId: P:ArucoUnity.Cameras.ArucoCamera.Name
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: Name
+  nameWithType: ArucoCamera.Name
+  fullName: ArucoUnity.Cameras.ArucoCamera.Name
+- uid: ArucoUnity.Cameras.ArucoWebcam.Name*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Name
+  name: Name
+  nameWithType: ArucoWebcam.Name
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamId*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamId
+  name: WebcamId
+  nameWithType: ArucoWebcam.WebcamId
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamId
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  name: WebcamController
+  nameWithType: ArucoWebcam.WebcamController
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController
+- uid: ArucoUnity.Cameras.WebcamController
+  commentId: T:ArucoUnity.Cameras.WebcamController
+  parent: ArucoUnity.Cameras
+  name: WebcamController
+  nameWithType: WebcamController
+  fullName: ArucoUnity.Cameras.WebcamController
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.WebcamController
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoWebcam.Awake*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Awake
+  name: Awake
+  nameWithType: ArucoWebcam.Awake
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Awake
+- uid: ArucoUnity.Cameras.ArucoWebcam.OnDestroy*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.OnDestroy
+  name: OnDestroy
+  nameWithType: ArucoWebcam.OnDestroy
+  fullName: ArucoUnity.Cameras.ArucoWebcam.OnDestroy
+- uid: ArucoUnity.Cameras.WebcamController.Configure
+  commentId: M:ArucoUnity.Cameras.WebcamController.Configure
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoWebcam.Name
+  commentId: P:ArucoUnity.Cameras.ArucoWebcam.Name
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoCamera.Configuring
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.Configuring
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: Configuring()
+  nameWithType: ArucoCamera.Configuring()
+  fullName: ArucoUnity.Cameras.ArucoCamera.Configuring()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCamera.Configuring
+    name: Configuring
+    nameWithType: ArucoCamera.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCamera.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCamera.Configuring
+    name: Configuring
+    nameWithType: ArucoCamera.Configuring
+    fullName: ArucoUnity.Cameras.ArucoCamera.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.ArucoWebcam.Configuring*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Configuring
+  name: Configuring
+  nameWithType: ArucoWebcam.Configuring
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Configuring
+- uid: ArucoUnity.Cameras.WebcamController.StartWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StartWebcams
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoWebcam.Starting*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Starting
+  name: Starting
+  nameWithType: ArucoWebcam.Starting
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Starting
+- uid: ArucoUnity.Cameras.WebcamController.StopWebcams
+  commentId: M:ArucoUnity.Cameras.WebcamController.StopWebcams
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoWebcam.Stopping*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.Stopping
+  name: Stopping
+  nameWithType: ArucoWebcam.Stopping
+  fullName: ArucoUnity.Cameras.ArucoWebcam.Stopping
+- uid: ArucoUnity.Cameras.ArucoCamera.OnStarted
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.OnStarted
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: OnStarted()
+  nameWithType: ArucoCamera.OnStarted()
+  fullName: ArucoUnity.Cameras.ArucoCamera.OnStarted()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCamera.OnStarted
+    name: OnStarted
+    nameWithType: ArucoCamera.OnStarted
+    fullName: ArucoUnity.Cameras.ArucoCamera.OnStarted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCamera.OnStarted
+    name: OnStarted
+    nameWithType: ArucoCamera.OnStarted
+    fullName: ArucoUnity.Cameras.ArucoCamera.OnStarted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.WebcamController.IsStarted
+  commentId: P:ArucoUnity.Cameras.WebcamController.IsStarted
+  isExternal: true
+- uid: ArucoUnity.Cameras.ArucoWebcam.OnStarted*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.OnStarted
+  name: OnStarted
+  nameWithType: ArucoWebcam.OnStarted
+  fullName: ArucoUnity.Cameras.ArucoWebcam.OnStarted
+- uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  commentId: M:ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  parent: ArucoUnity.Cameras.ArucoCamera
+  name: UpdatingImages()
+  nameWithType: ArucoCamera.UpdatingImages()
+  fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages()
+  spec.csharp:
+  - uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+    name: UpdatingImages
+    nameWithType: ArucoCamera.UpdatingImages
+    fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+    name: UpdatingImages
+    nameWithType: ArucoCamera.UpdatingImages
+    fullName: ArucoUnity.Cameras.ArucoCamera.UpdatingImages
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+  name: UpdatingImages
+  nameWithType: ArucoWebcam.UpdatingImages
+  fullName: ArucoUnity.Cameras.ArucoWebcam.UpdatingImages
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started*
+  commentId: Overload:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started
+  name: WebcamController_Started
+  nameWithType: ArucoWebcam.WebcamController_Started
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IArucoObjectsTracker
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IArucoObjectsTracker
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker">
+  
+  
+  <h1 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker" class="text-break">Interface IArucoObjectsTracker
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_ArucoObjectAdded">IArucoObjectsController.ArucoObjectAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_ArucoObjectRemoved">IArucoObjectsController.ArucoObjectRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_DictionaryAdded">IArucoObjectsController.DictionaryAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_DictionaryRemoved">IArucoObjectsController.DictionaryRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_ArucoObjects">IArucoObjectsController.ArucoObjects</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_AddArucoObject_ArucoUnity_Objects_ArucoObject_">IArucoObjectsController.AddArucoObject(ArucoObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_RemoveArucoObject_ArucoUnity_Objects_ArucoObject_">IArucoObjectsController.RemoveArucoObject(ArucoObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_GetArucoObjects__1_ArucoUnity_Plugin_Aruco_Dictionary_">IArucoObjectsController.GetArucoObjects&lt;U&gt;(Aruco.Dictionary)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html#ArucoUnity_Objects_Trackers_IHasDetectorParameter_DetectorParameters">IHasDetectorParameter.DetectorParameters</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Objects.Trackers.html">ArucoUnity.Objects.Trackers</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IArucoObjectsTracker : IArucoCameraController, IArucoObjectsController, IHasDetectorParameter</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_ArucoCameraDisplay_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_ArucoCameraDisplay" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay">ArucoCameraDisplay</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets or sets the optional camera display associated with the ArucoCamera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IArucoCameraDisplay ArucoCameraDisplay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IArucoCameraDisplay</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawAxes_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawAxes" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes">DrawAxes</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Get or sets if displaying the axes of each detected <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a> and <a class="xref" href="ArucoUnity.Objects.ArucoDiamond.html">ArucoDiamond</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool DrawAxes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedCharucoMarkers_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedCharucoMarkers" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers">DrawDetectedCharucoMarkers</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Get or sets if displaying the markers of each detected <a class="xref" href="ArucoUnity.Objects.ArucoCharucoBoard.html">ArucoCharucoBoard</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool DrawDetectedCharucoMarkers { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedDiamonds_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedDiamonds" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds">DrawDetectedDiamonds</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Get or sets if displaying each detected <a class="xref" href="ArucoUnity.Objects.ArucoDiamond.html">ArucoDiamond</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool DrawDetectedDiamonds { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedMarkers_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawDetectedMarkers" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers">DrawDetectedMarkers</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Get or sets if displaying the detected <a class="xref" href="ArucoUnity.Objects.ArucoMarker.html">ArucoMarker</a> in the <see cref="!:IArucoCamera.Textures"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool DrawDetectedMarkers { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawRejectedCandidates_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DrawRejectedCandidates" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates">DrawRejectedCandidates</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Get or sets if displaying the rejected markers candidates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool DrawRejectedCandidates { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_MarkerTracker_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_MarkerTracker" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker">MarkerTracker</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Gets the ArUco markers tracker used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ArucoMarkerTracker MarkerTracker { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html">ArucoMarkerTracker</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_RefineDetectedMarkers_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_RefineDetectedMarkers" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers">RefineDetectedMarkers</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Gets or sets if using refine strategy to detect more markers using the <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a> in the
+<a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_ArucoObjects">ArucoObjects</a> list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool RefineDetectedMarkers { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DeactivateArucoObjects_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_DeactivateArucoObjects" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects">DeactivateArucoObjects()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Hides all the ArUco objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DeactivateArucoObjects()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect">Detect()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Detects the ArUco objects on the current <see cref="!:IArucoCamera.Images"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Detect()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_ArucoUnity_Plugin_Cv_Mat___" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])">Detect(Cv.Mat[])</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Detects the ArUco objects on a set of custom images.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Detect(Cv.Mat[] images)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="parametername">images</span></td>
+        <td><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="1" sourceendlinenumber="1">The images set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw">Draw()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Draws each detected <a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a> on the <see cref="!:IArucoCamera.Images"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_ArucoUnity_Plugin_Cv_Mat___" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])">Draw(Cv.Mat[])</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Draws each detected <a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a> on a set of custom images.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(Cv.Mat[] images)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="parametername">images</span></td>
+        <td><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="1" sourceendlinenumber="1">The images set to draw.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_EstimateTransforms_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_EstimateTransforms" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms">EstimateTransforms()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Estimates the transforms of each detected <a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a> on the current <see cref="!:IArucoCamera.Images"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void EstimateTransforms()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_UpdateTransforms_" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms*"></a>
+  <h4 id="ArucoUnity_Objects_Trackers_IArucoObjectsTracker_UpdateTransforms" data-uid="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms">UpdateTransforms()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Updates transforms of each detected <a class="xref" href="ArucoUnity.Objects.ArucoObject.html">ArucoObject</a>. <a class="xref" href="ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_ArucoCameraDisplay">ArucoCameraDisplay</a> must be set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdateTransforms()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

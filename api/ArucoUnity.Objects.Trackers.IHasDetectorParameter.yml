@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  id: IHasDetectorParameter
+  parent: ArucoUnity.Objects.Trackers
+  children:
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  langs:
+  - csharp
+  - vb
+  name: IHasDetectorParameter
+  nameWithType: IHasDetectorParameter
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  type: Interface
+  source:
+    id: IHasDetectorParameter
+    path: ''
+    startLine: 6447
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nContains a <xref href=\"ArucoUnity.Plugin.Aruco.DetectorParameters\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public interface IHasDetectorParameter
+    content.vb: Public Interface IHasDetectorParameter
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  id: DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  langs:
+  - csharp
+  - vb
+  name: DetectorParameters
+  nameWithType: IHasDetectorParameter.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  type: Property
+  source:
+    id: DetectorParameters
+    path: ''
+    startLine: 6452
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nGets or sets the parameters to use for the detection.\n"
+  example: []
+  syntax:
+    content: Aruco.DetectorParameters DetectorParameters { get; set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Plugin.Aruco.DetectorParameters
+    content.vb: Property DetectorParameters As Aruco.DetectorParameters
+  overload: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters*
+  modifiers.csharp:
+  - get
+  - set
+references:
+- uid: ArucoUnity.Plugin.Aruco.DetectorParameters
+  commentId: T:ArucoUnity.Plugin.Aruco.DetectorParameters
+  parent: ArucoUnity.Plugin
+  name: Aruco.DetectorParameters
+  nameWithType: Aruco.DetectorParameters
+  fullName: ArucoUnity.Plugin.Aruco.DetectorParameters
+- uid: ArucoUnity.Objects.Trackers
+  commentId: N:ArucoUnity.Objects.Trackers
+  name: ArucoUnity.Objects.Trackers
+  nameWithType: ArucoUnity.Objects.Trackers
+  fullName: ArucoUnity.Objects.Trackers
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters*
+  commentId: Overload:ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters
+  name: DetectorParameters
+  nameWithType: IHasDetectorParameter.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter.DetectorParameters

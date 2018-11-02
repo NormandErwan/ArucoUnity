@@ -1,0 +1,129 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  commentId: T:ArucoUnity.Plugin.Cv.TermCriteria.Type
+  id: Cv.TermCriteria.Type
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.TermCriteria.Type.Count
+  - ArucoUnity.Plugin.Cv.TermCriteria.Type.Eps
+  - ArucoUnity.Plugin.Cv.TermCriteria.Type.MaxIter
+  langs:
+  - csharp
+  - vb
+  name: Cv.TermCriteria.Type
+  nameWithType: Cv.TermCriteria.Type
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  type: Enum
+  source:
+    id: Type
+    path: ''
+    startLine: 8842
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public enum Type
+    content.vb: Public Enum Type
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Cv.TermCriteria.Type.Count
+  commentId: F:ArucoUnity.Plugin.Cv.TermCriteria.Type.Count
+  id: Count
+  parent: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: Cv.TermCriteria.Type.Count
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type.Count
+  type: Field
+  source:
+    id: Count
+    path: ''
+    startLine: 8844
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Count = 0
+    return:
+      type: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.TermCriteria.Type.MaxIter
+  commentId: F:ArucoUnity.Plugin.Cv.TermCriteria.Type.MaxIter
+  id: MaxIter
+  parent: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  langs:
+  - csharp
+  - vb
+  name: MaxIter
+  nameWithType: Cv.TermCriteria.Type.MaxIter
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type.MaxIter
+  type: Field
+  source:
+    id: MaxIter
+    path: ''
+    startLine: 8845
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: MaxIter = 0
+    return:
+      type: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ArucoUnity.Plugin.Cv.TermCriteria.Type.Eps
+  commentId: F:ArucoUnity.Plugin.Cv.TermCriteria.Type.Eps
+  id: Eps
+  parent: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  langs:
+  - csharp
+  - vb
+  name: Eps
+  nameWithType: Cv.TermCriteria.Type.Eps
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type.Eps
+  type: Field
+  source:
+    id: Eps
+    path: ''
+    startLine: 8846
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: Eps = 2
+    return:
+      type: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Cv.TermCriteria.Type
+  commentId: T:ArucoUnity.Plugin.Cv.TermCriteria.Type
+  parent: ArucoUnity.Plugin
+  name: Cv.TermCriteria.Type
+  nameWithType: Cv.TermCriteria.Type
+  fullName: ArucoUnity.Plugin.Cv.TermCriteria.Type

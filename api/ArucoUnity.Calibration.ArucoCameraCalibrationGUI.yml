@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  commentId: T:ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  id: ArucoCameraCalibrationGUI
+  parent: ArucoUnity.Calibration
+  children:
+  - ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
+  - ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+  - ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraCalibrationGUI
+  nameWithType: ArucoCameraCalibrationGUI
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  type: Class
+  source:
+    id: ArucoCameraCalibrationGUI
+    path: ''
+    startLine: 565
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Calibration
+  syntax:
+    content: 'public class ArucoCameraCalibrationGUI : MonoBehaviour'
+    content.vb: >-
+      Public Class ArucoCameraCalibrationGUI
+          Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
+  id: Awake
+  parent: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: ArucoCameraCalibrationGUI.Awake()
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake()
+  type: Method
+  source:
+    id: Awake
+    path: ''
+    startLine: 600
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Calibration
+  summary: "\nPrepares the buttons and subscribes to ArucoCalibrator started event to set the image display.\n"
+  example: []
+  syntax:
+    content: protected void Awake()
+    content.vb: Protected Sub Awake
+  overload: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
+  id: OnDestroy
+  parent: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy()
+  nameWithType: ArucoCameraCalibrationGUI.OnDestroy()
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy()
+  type: Method
+  source:
+    id: OnDestroy
+    path: ''
+    startLine: 626
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Calibration
+  summary: "\nUnsubscribes from ArucoCalibrator events.\n"
+  example: []
+  syntax:
+    content: protected void OnDestroy()
+    content.vb: Protected Sub OnDestroy
+  overload: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+  id: ConfigureUI(IConfigurableController)
+  parent: ArucoUnity.Calibration.ArucoCameraCalibrationGUI
+  langs:
+  - csharp
+  - vb
+  name: ConfigureUI(IConfigurableController)
+  nameWithType: ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+  type: Method
+  source:
+    id: ConfigureUI
+    path: ''
+    startLine: 635
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Calibration
+  summary: "\nConfigures the images display.\n"
+  example: []
+  syntax:
+    content: protected void ConfigureUI(IConfigurableController controller)
+    parameters:
+    - id: controller
+      type: IConfigurableController
+    content.vb: Protected Sub ConfigureUI(controller As IConfigurableController)
+  overload: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: ArucoUnity.Calibration
+  commentId: N:ArucoUnity.Calibration
+  name: ArucoUnity.Calibration
+  nameWithType: ArucoUnity.Calibration
+  fullName: ArucoUnity.Calibration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
+  name: Awake
+  nameWithType: ArucoCameraCalibrationGUI.Awake
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
+  name: OnDestroy
+  nameWithType: ArucoCameraCalibrationGUI.OnDestroy
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.OnDestroy
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI*
+  commentId: Overload:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI
+  name: ConfigureUI
+  nameWithType: ArucoCameraCalibrationGUI.ConfigureUI
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI
+- uid: IConfigurableController
+  isExternal: true
+  name: IConfigurableController
+  nameWithType: IConfigurableController
+  fullName: IConfigurableController

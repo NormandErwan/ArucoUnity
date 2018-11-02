@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  commentId: T:ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  id: Cv.StereoRectifyFlags
+  parent: ArucoUnity.Plugin
+  children:
+  - ArucoUnity.Plugin.Cv.StereoRectifyFlags.ZeroDisparity
+  langs:
+  - csharp
+  - vb
+  name: Cv.StereoRectifyFlags
+  nameWithType: Cv.StereoRectifyFlags
+  fullName: ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  type: Enum
+  source:
+    id: StereoRectifyFlags
+    path: ''
+    startLine: 7615
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: public enum StereoRectifyFlags
+    content.vb: Public Enum StereoRectifyFlags
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ArucoUnity.Plugin.Cv.StereoRectifyFlags.ZeroDisparity
+  commentId: F:ArucoUnity.Plugin.Cv.StereoRectifyFlags.ZeroDisparity
+  id: ZeroDisparity
+  parent: ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  langs:
+  - csharp
+  - vb
+  name: ZeroDisparity
+  nameWithType: Cv.StereoRectifyFlags.ZeroDisparity
+  fullName: ArucoUnity.Plugin.Cv.StereoRectifyFlags.ZeroDisparity
+  type: Field
+  source:
+    id: ZeroDisparity
+    path: ''
+    startLine: 7617
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Plugin
+  syntax:
+    content: ZeroDisparity = 1024
+    return:
+      type: ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ArucoUnity.Plugin
+  commentId: N:ArucoUnity.Plugin
+  name: ArucoUnity.Plugin
+  nameWithType: ArucoUnity.Plugin
+  fullName: ArucoUnity.Plugin
+- uid: ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  commentId: T:ArucoUnity.Plugin.Cv.StereoRectifyFlags
+  parent: ArucoUnity.Plugin
+  name: Cv.StereoRectifyFlags
+  nameWithType: Cv.StereoRectifyFlags
+  fullName: ArucoUnity.Plugin.Cv.StereoRectifyFlags

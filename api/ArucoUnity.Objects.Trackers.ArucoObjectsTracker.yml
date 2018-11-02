@@ -1,0 +1,1958 @@
+### YamlMime:ManagedReference
+items:
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  id: ArucoObjectsTracker
+  parent: ArucoUnity.Objects.Trackers
+  children:
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.additionalTrackers
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.trackingThread
+  - ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  langs:
+  - csharp
+  - vb
+  name: ArucoObjectsTracker
+  nameWithType: ArucoObjectsTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  type: Class
+  source:
+    id: ArucoObjectsTracker
+    path: ''
+    startLine: 5663
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nDetects <xref href=\"ArucoUnity.Objects.ArucoObject\" data-throw-if-not-resolved=\"false\"></xref>, displays detections and applies the estimated transforms to gameObjects associated to the ArUco objects.\n\nSee the OpenCV documentation for more information about the marker detection: http://docs.opencv.org/3.2.0/d5/dae/tutorial_aruco_detection.html\n"
+  example: []
+  syntax:
+    content: 'public class ArucoObjectsTracker : ArucoObjectsController, IArucoObjectsTracker, IArucoCameraController, IArucoObjectsController, IHasDetectorParameter'
+    content.vb: >-
+      Public Class ArucoObjectsTracker
+          Inherits ArucoObjectsController
+          Implements IArucoObjectsTracker, IArucoCameraController, IArucoObjectsController, IHasDetectorParameter
+  inheritance:
+  - System.Object
+  - ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  - IArucoCameraController
+  - ArucoUnity.Objects.Trackers.IArucoObjectsController
+  - ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  inheritedMembers:
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectAdded
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectRemoved
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryAdded
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryRemoved
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  - ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  id: ArucoCameraDisplay
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: ArucoCameraDisplay
+  nameWithType: ArucoObjectsTracker.ArucoCameraDisplay
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  type: Property
+  source:
+    id: ArucoCameraDisplay
+    path: ''
+    startLine: 5697
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public IArucoCameraDisplay ArucoCameraDisplay { get; set; }
+    parameters: []
+    return:
+      type: IArucoCameraDisplay
+    content.vb: Public Property ArucoCameraDisplay As IArucoCameraDisplay
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+  id: RefineDetectedMarkers
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: RefineDetectedMarkers
+  nameWithType: ArucoObjectsTracker.RefineDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+  type: Property
+  source:
+    id: RefineDetectedMarkers
+    path: ''
+    startLine: 5698
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool RefineDetectedMarkers { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property RefineDetectedMarkers As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+  id: DrawDetectedMarkers
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DrawDetectedMarkers
+  nameWithType: ArucoObjectsTracker.DrawDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+  type: Property
+  source:
+    id: DrawDetectedMarkers
+    path: ''
+    startLine: 5699
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool DrawDetectedMarkers { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawDetectedMarkers As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+  id: DrawRejectedCandidates
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DrawRejectedCandidates
+  nameWithType: ArucoObjectsTracker.DrawRejectedCandidates
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+  type: Property
+  source:
+    id: DrawRejectedCandidates
+    path: ''
+    startLine: 5700
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool DrawRejectedCandidates { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawRejectedCandidates As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+  id: DrawAxes
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DrawAxes
+  nameWithType: ArucoObjectsTracker.DrawAxes
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+  type: Property
+  source:
+    id: DrawAxes
+    path: ''
+    startLine: 5701
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool DrawAxes { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawAxes As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  id: DrawDetectedCharucoMarkers
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DrawDetectedCharucoMarkers
+  nameWithType: ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  type: Property
+  source:
+    id: DrawDetectedCharucoMarkers
+    path: ''
+    startLine: 5702
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool DrawDetectedCharucoMarkers { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawDetectedCharucoMarkers As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+  id: DrawDetectedDiamonds
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DrawDetectedDiamonds
+  nameWithType: ArucoObjectsTracker.DrawDetectedDiamonds
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+  type: Property
+  source:
+    id: DrawDetectedDiamonds
+    path: ''
+    startLine: 5703
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public bool DrawDetectedDiamonds { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawDetectedDiamonds As Boolean
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+  id: MarkerTracker
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: MarkerTracker
+  nameWithType: ArucoObjectsTracker.MarkerTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+  type: Property
+  source:
+    id: MarkerTracker
+    path: ''
+    startLine: 5704
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public ArucoMarkerTracker MarkerTracker { get; protected set; }
+    parameters: []
+    return:
+      type: ArucoUnity.Objects.Trackers.ArucoMarkerTracker
+    content.vb: Public Property MarkerTracker As ArucoMarkerTracker
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.additionalTrackers
+  commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.additionalTrackers
+  id: additionalTrackers
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: additionalTrackers
+  nameWithType: ArucoObjectsTracker.additionalTrackers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.additionalTrackers
+  type: Field
+  source:
+    id: additionalTrackers
+    path: ''
+    startLine: 5708
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: protected Dictionary<Type, ArucoObjectTracker> additionalTrackers
+    return:
+      type: Dictionary{System.Type,ArucoUnity.Objects.Trackers.ArucoObjectTracker}
+    content.vb: Protected additionalTrackers As Dictionary(Of Type, ArucoObjectTracker)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.trackingThread
+  commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.trackingThread
+  id: trackingThread
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: trackingThread
+  nameWithType: ArucoObjectsTracker.trackingThread
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.trackingThread
+  type: Field
+  source:
+    id: trackingThread
+    path: ''
+    startLine: 5709
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: protected ArucoCameraSeparateThread trackingThread
+    return:
+      type: ArucoCameraSeparateThread
+    content.vb: Protected trackingThread As ArucoCameraSeparateThread
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake
+  id: Awake
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: ArucoObjectsTracker.Awake()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake()
+  type: Method
+  source:
+    id: Awake
+    path: ''
+    startLine: 5716
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nInitializes the trackers list and sets <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay\" data-throw-if-not-resolved=\"false\"></xref> from editor field if not null.\n"
+  example: []
+  syntax:
+    content: protected override void Awake()
+    content.vb: Protected Overrides Sub Awake
+  overridden: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring
+  id: Configuring
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Configuring()
+  nameWithType: ArucoObjectsTracker.Configuring()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring()
+  type: Method
+  source:
+    id: Configuring
+    path: ''
+    startLine: 5739
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nAdd <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay\" data-throw-if-not-resolved=\"false\"></xref> as dependency.\n"
+  example: []
+  syntax:
+    content: protected override void Configuring()
+    content.vb: Protected Overrides Sub Configuring
+  overridden: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting
+  id: Starting
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Starting()
+  nameWithType: ArucoObjectsTracker.Starting()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting()
+  type: Method
+  source:
+    id: Starting
+    path: ''
+    startLine: 5756
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nInitializes the tracking, activates the trackers, susbcribes to the <see cref=\"!:ArucoObjectsController&lt;T>.ArucoObjectAdded\"></see> and\n<see cref=\"!:ArucoObjectsController&lt;T>.ArucoObjectRemoved\"></see> events and starts the tracking thread.\n"
+  example: []
+  syntax:
+    content: protected override void Starting()
+    content.vb: Protected Overrides Sub Starting
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
+  id: Stopping
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Stopping()
+  nameWithType: ArucoObjectsTracker.Stopping()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping()
+  type: Method
+  source:
+    id: Stopping
+    path: ''
+    startLine: 5783
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nUnsuscribes from ArucoObjectController events, deactivates the trackers and abort the tracking thread and stops the tracking thread.\n"
+  example: []
+  syntax:
+    content: protected override void Stopping()
+    content.vb: Protected Overrides Sub Stopping
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded(ArucoUnity.Objects.ArucoObject)
+  id: ArucoObjectsController_ArucoObjectAdded(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: ArucoObjectsController_ArucoObjectAdded(ArucoObject)
+  nameWithType: ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded(ArucoUnity.Objects.ArucoObject)
+  type: Method
+  source:
+    id: ArucoObjectsController_ArucoObjectAdded
+    path: ''
+    startLine: 5809
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nActivates the tracker associated with the <code data-dev-comment-type=\"paramref\" class=\"paramref\">arucoObject</code> and configure its gameObject.\n"
+  example: []
+  syntax:
+    content: protected virtual void ArucoObjectsController_ArucoObjectAdded(ArucoObject arucoObject)
+    parameters:
+    - id: arucoObject
+      type: ArucoUnity.Objects.ArucoObject
+      description: The added ArUco object.
+    content.vb: Protected Overridable Sub ArucoObjectsController_ArucoObjectAdded(arucoObject As ArucoObject)
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved(ArucoUnity.Objects.ArucoObject)
+  id: ArucoObjectsController_ArucoObjectRemoved(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: ArucoObjectsController_ArucoObjectRemoved(ArucoObject)
+  nameWithType: ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved(ArucoUnity.Objects.ArucoObject)
+  type: Method
+  source:
+    id: ArucoObjectsController_ArucoObjectRemoved
+    path: ''
+    startLine: 5829
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nDeactivates the tracker associated with the <code data-dev-comment-type=\"paramref\" class=\"paramref\">arucoObject</code> if it was the last one of this type.\n"
+  example: []
+  syntax:
+    content: protected virtual void ArucoObjectsController_ArucoObjectRemoved(ArucoObject arucoObject)
+    parameters:
+    - id: arucoObject
+      type: ArucoUnity.Objects.ArucoObject
+      description: The removed
+    content.vb: Protected Overridable Sub ArucoObjectsController_ArucoObjectRemoved(arucoObject As ArucoObject)
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  id: DeactivateArucoObjects
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: DeactivateArucoObjects()
+  nameWithType: ArucoObjectsTracker.DeactivateArucoObjects()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects()
+  type: Method
+  source:
+    id: DeactivateArucoObjects
+    path: ''
+    startLine: 5867
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void DeactivateArucoObjects()
+    content.vb: Public Sub DeactivateArucoObjects
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  id: Detect(ArucoUnity.Plugin.Cv.Mat[])
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Detect(Cv.Mat[])
+  nameWithType: ArucoObjectsTracker.Detect(Cv.Mat[])
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  type: Method
+  source:
+    id: Detect
+    path: ''
+    startLine: 5878
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void Detect(Cv.Mat[] images)
+    parameters:
+    - id: images
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Public Sub Detect(images As Cv.Mat())
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  nameWithType.vb: ArucoObjectsTracker.Detect(Cv.Mat())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
+  name.vb: Detect(Cv.Mat())
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
+  id: Detect
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Detect()
+  nameWithType: ArucoObjectsTracker.Detect()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect()
+  type: Method
+  source:
+    id: Detect
+    path: ''
+    startLine: 5891
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void Detect()
+    content.vb: Public Sub Detect
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  id: Draw(ArucoUnity.Plugin.Cv.Mat[])
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Draw(Cv.Mat[])
+  nameWithType: ArucoObjectsTracker.Draw(Cv.Mat[])
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  type: Method
+  source:
+    id: Draw
+    path: ''
+    startLine: 5896
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void Draw(Cv.Mat[] images)
+    parameters:
+    - id: images
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Public Sub Draw(images As Cv.Mat())
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  nameWithType.vb: ArucoObjectsTracker.Draw(Cv.Mat())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
+  name.vb: Draw(Cv.Mat())
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
+  id: Draw
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: ArucoObjectsTracker.Draw()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw()
+  type: Method
+  source:
+    id: Draw
+    path: ''
+    startLine: 5909
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void Draw()
+    content.vb: Public Sub Draw
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
+  id: EstimateTransforms
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: EstimateTransforms()
+  nameWithType: ArucoObjectsTracker.EstimateTransforms()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms()
+  type: Method
+  source:
+    id: EstimateTransforms
+    path: ''
+    startLine: 5914
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void EstimateTransforms()
+    content.vb: Public Sub EstimateTransforms
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  id: UpdateTransforms
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: UpdateTransforms()
+  nameWithType: ArucoObjectsTracker.UpdateTransforms()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms()
+  type: Method
+  source:
+    id: UpdateTransforms
+    path: ''
+    startLine: 5927
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  syntax:
+    content: public void UpdateTransforms()
+    content.vb: Public Sub UpdateTransforms
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms*
+  implements:
+  - ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+  id: ArucoCamera_ImagesUpdated
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: ArucoCamera_ImagesUpdated()
+  nameWithType: ArucoObjectsTracker.ArucoCamera_ImagesUpdated()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated()
+  type: Method
+  source:
+    id: ArucoCamera_ImagesUpdated
+    path: ''
+    startLine: 5946
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nUpdates the tracking thread with <see cref=\"!:ArucoCamera.ImageDatas\"></see>, calls <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects\" data-throw-if-not-resolved=\"false\"></xref>\nand <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms\" data-throw-if-not-resolved=\"false\"></xref> and stops if there was an exception from this thread.\n"
+  example: []
+  syntax:
+    content: protected void ArucoCamera_ImagesUpdated()
+    content.vb: Protected Sub ArucoCamera_ImagesUpdated
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  id: TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: TrackArucoObjects(Cv.Mat[])
+  nameWithType: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  type: Method
+  source:
+    id: TrackArucoObjects
+    path: ''
+    startLine: 5970
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nDetects and estimates the transforms of the detected ArUco objects. Executed on a separated tracking thread.\n"
+  example: []
+  syntax:
+    content: protected void TrackArucoObjects(Cv.Mat[] images)
+    parameters:
+    - id: images
+      type: ArucoUnity.Plugin.Cv.Mat[]
+    content.vb: Protected Sub TrackArucoObjects(images As Cv.Mat())
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects*
+  nameWithType.vb: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat())
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat())
+  name.vb: TrackArucoObjects(Cv.Mat())
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+  id: ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsTracker
+  langs:
+  - csharp
+  - vb
+  name: ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
+  nameWithType: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary>)
+  type: Method
+  source:
+    id: ExecuteOnActivatedTrackers
+    path: ''
+    startLine: 5983
+  assemblies:
+  - cs.temp.dll
+  namespace: ArucoUnity.Objects.Trackers
+  summary: "\nExecutes an <code data-dev-comment-type=\"paramref\" class=\"paramref\">actionOnTracker</code> on all the activated <xref href=\"ArucoUnity.Objects.Trackers.ArucoObjectTracker\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: protected void ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, int, Aruco.Dictionary> actionOnTracker)
+    parameters:
+    - id: actionOnTracker
+      type: System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary}
+    content.vb: Protected Sub ExecuteOnActivatedTrackers(actionOnTracker As Action(Of ArucoObjectTracker, Integer, Aruco.Dictionary))
+  overload: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers*
+  nameWithType.vb: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary))
+  name.vb: ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
+references:
+- uid: ArucoUnity.Objects.ArucoObject
+  commentId: T:ArucoUnity.Objects.ArucoObject
+  parent: ArucoUnity.Objects
+  name: ArucoObject
+  nameWithType: ArucoObject
+  fullName: ArucoUnity.Objects.ArucoObject
+- uid: ArucoUnity.Objects.Trackers
+  commentId: N:ArucoUnity.Objects.Trackers
+  name: ArucoUnity.Objects.Trackers
+  nameWithType: ArucoUnity.Objects.Trackers
+  fullName: ArucoUnity.Objects.Trackers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  parent: ArucoUnity.Objects.Trackers
+  name: ArucoObjectDetector
+  nameWithType: ArucoObjectDetector
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectsController
+  parent: ArucoUnity.Objects.Trackers
+  name: ArucoObjectsController
+  nameWithType: ArucoObjectsController
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  parent: ArucoUnity.Objects.Trackers
+  name: IArucoObjectsTracker
+  nameWithType: IArucoObjectsTracker
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+- uid: IArucoCameraController
+  commentId: '!:IArucoCameraController'
+  isExternal: true
+  name: IArucoCameraController
+  nameWithType: IArucoCameraController
+  fullName: IArucoCameraController
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsController
+  commentId: T:ArucoUnity.Objects.Trackers.IArucoObjectsController
+  parent: ArucoUnity.Objects.Trackers
+  name: IArucoObjectsController
+  nameWithType: IArucoObjectsController
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController
+- uid: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  commentId: T:ArucoUnity.Objects.Trackers.IHasDetectorParameter
+  parent: ArucoUnity.Objects.Trackers
+  name: IHasDetectorParameter
+  nameWithType: IHasDetectorParameter
+  fullName: ArucoUnity.Objects.Trackers.IHasDetectorParameter
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectAdded
+  commentId: E:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectAdded
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: ArucoObjectAdded
+  nameWithType: ArucoObjectsController.ArucoObjectAdded
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectAdded
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectRemoved
+  commentId: E:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectRemoved
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: ArucoObjectRemoved
+  nameWithType: ArucoObjectsController.ArucoObjectRemoved
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjectRemoved
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryAdded
+  commentId: E:ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryAdded
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: DictionaryAdded
+  nameWithType: ArucoObjectsController.DictionaryAdded
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryAdded
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryRemoved
+  commentId: E:ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryRemoved
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: DictionaryRemoved
+  nameWithType: ArucoObjectsController.DictionaryRemoved
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.DictionaryRemoved
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: ArucoObjects
+  nameWithType: ArucoObjectsController.ArucoObjects
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObjects
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: Start()
+  nameWithType: ArucoObjectsController.Start()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+    name: Start
+    nameWithType: ArucoObjectsController.Start
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+    name: Start
+    nameWithType: ArucoObjectsController.Start
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: AddArucoObject(ArucoObject)
+  nameWithType: ArucoObjectsController.AddArucoObject(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: AddArucoObject
+    nameWithType: ArucoObjectsController.AddArucoObject
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: AddArucoObject
+    nameWithType: ArucoObjectsController.AddArucoObject
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.AddArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: RemoveArucoObject(ArucoObject)
+  nameWithType: ArucoObjectsController.RemoveArucoObject(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: RemoveArucoObject
+    nameWithType: ArucoObjectsController.RemoveArucoObject
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
+    name: RemoveArucoObject
+    nameWithType: ArucoObjectsController.RemoveArucoObject
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: GetArucoObjects<U>(Aruco.Dictionary)
+  nameWithType: ArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
+  nameWithType.vb: ArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)(ArucoUnity.Plugin.Aruco.Dictionary)
+  name.vb: GetArucoObjects(Of U)(Aruco.Dictionary)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+    name: GetArucoObjects<U>
+    nameWithType: ArucoObjectsController.GetArucoObjects<U>
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Aruco.Dictionary
+    name: Aruco.Dictionary
+    nameWithType: Aruco.Dictionary
+    fullName: ArucoUnity.Plugin.Aruco.Dictionary
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+    name: GetArucoObjects(Of U)
+    nameWithType: ArucoObjectsController.GetArucoObjects(Of U)
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Aruco.Dictionary
+    name: Aruco.Dictionary
+    nameWithType: Aruco.Dictionary
+    fullName: ArucoUnity.Plugin.Aruco.Dictionary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: ArucoObject_PropertyUpdating(ArucoObject)
+  nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdating
+    nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdating
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdating
+    nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdating
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdating
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: ArucoObject_PropertyUpdated(ArucoObject)
+  nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoObject)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdated
+    nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdated
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated(ArucoUnity.Objects.ArucoObject)
+    name: ArucoObject_PropertyUpdated
+    nameWithType: ArucoObjectsController.ArucoObject_PropertyUpdated
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.ArucoObject_PropertyUpdated
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Objects.ArucoObject
+    name: ArucoObject
+    nameWithType: ArucoObject
+    fullName: ArucoUnity.Objects.ArucoObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  name: DetectorParameters
+  nameWithType: ArucoObjectDetector.DetectorParameters
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters
+- uid: ArucoUnity.Objects
+  commentId: N:ArucoUnity.Objects
+  name: ArucoUnity.Objects
+  nameWithType: ArucoUnity.Objects
+  fullName: ArucoUnity.Objects
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  name: ArucoCameraDisplay
+  nameWithType: ArucoObjectsTracker.ArucoCameraDisplay
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: ArucoCameraDisplay
+  nameWithType: IArucoObjectsTracker.ArucoCameraDisplay
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.ArucoCameraDisplay
+- uid: IArucoCameraDisplay
+  isExternal: true
+  name: IArucoCameraDisplay
+  nameWithType: IArucoCameraDisplay
+  fullName: IArucoCameraDisplay
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+  name: RefineDetectedMarkers
+  nameWithType: ArucoObjectsTracker.RefineDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.RefineDetectedMarkers
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: RefineDetectedMarkers
+  nameWithType: IArucoObjectsTracker.RefineDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.RefineDetectedMarkers
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+  name: DrawDetectedMarkers
+  nameWithType: ArucoObjectsTracker.DrawDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedMarkers
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DrawDetectedMarkers
+  nameWithType: IArucoObjectsTracker.DrawDetectedMarkers
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedMarkers
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+  name: DrawRejectedCandidates
+  nameWithType: ArucoObjectsTracker.DrawRejectedCandidates
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawRejectedCandidates
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DrawRejectedCandidates
+  nameWithType: IArucoObjectsTracker.DrawRejectedCandidates
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawRejectedCandidates
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+  name: DrawAxes
+  nameWithType: ArucoObjectsTracker.DrawAxes
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawAxes
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DrawAxes
+  nameWithType: IArucoObjectsTracker.DrawAxes
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawAxes
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  name: DrawDetectedCharucoMarkers
+  nameWithType: ArucoObjectsTracker.DrawDetectedCharucoMarkers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedCharucoMarkers
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DrawDetectedCharucoMarkers
+  nameWithType: IArucoObjectsTracker.DrawDetectedCharucoMarkers
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedCharucoMarkers
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+  name: DrawDetectedDiamonds
+  nameWithType: ArucoObjectsTracker.DrawDetectedDiamonds
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DrawDetectedDiamonds
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DrawDetectedDiamonds
+  nameWithType: IArucoObjectsTracker.DrawDetectedDiamonds
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DrawDetectedDiamonds
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+  name: MarkerTracker
+  nameWithType: ArucoObjectsTracker.MarkerTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.MarkerTracker
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker
+  commentId: P:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: MarkerTracker
+  nameWithType: IArucoObjectsTracker.MarkerTracker
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.MarkerTracker
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoMarkerTracker
+  parent: ArucoUnity.Objects.Trackers
+  name: ArucoMarkerTracker
+  nameWithType: ArucoMarkerTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker
+- uid: Dictionary{System.Type,ArucoUnity.Objects.Trackers.ArucoObjectTracker}
+  commentId: '!:Dictionary{System.Type,ArucoUnity.Objects.Trackers.ArucoObjectTracker}'
+  definition: Dictionary`2
+  name: Dictionary<Type, ArucoObjectTracker>
+  nameWithType: Dictionary<Type, ArucoObjectTracker>
+  fullName: Dictionary<System.Type, ArucoUnity.Objects.Trackers.ArucoObjectTracker>
+  nameWithType.vb: Dictionary(Of Type, ArucoObjectTracker)
+  fullName.vb: Dictionary(Of System.Type, ArucoUnity.Objects.Trackers.ArucoObjectTracker)
+  name.vb: Dictionary(Of Type, ArucoObjectTracker)
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+    name: ArucoObjectTracker
+    nameWithType: ArucoObjectTracker
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+    name: ArucoObjectTracker
+    nameWithType: ArucoObjectTracker
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Dictionary`2
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoCameraSeparateThread
+  isExternal: true
+  name: ArucoCameraSeparateThread
+  nameWithType: ArucoCameraSeparateThread
+  fullName: ArucoCameraSeparateThread
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  commentId: P:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCameraDisplay
+  isExternal: true
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectsController
+  name: Awake()
+  nameWithType: ArucoObjectsController.Awake()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+    name: Awake
+    nameWithType: ArucoObjectsController.Awake
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+    name: Awake
+    nameWithType: ArucoObjectsController.Awake
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.Awake
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake
+  name: Awake
+  nameWithType: ArucoObjectsTracker.Awake
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Awake
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  parent: ArucoUnity.Objects.Trackers.ArucoObjectDetector
+  name: Configuring()
+  nameWithType: ArucoObjectDetector.Configuring()
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+    name: Configuring
+    nameWithType: ArucoObjectDetector.Configuring
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+    name: Configuring
+    nameWithType: ArucoObjectDetector.Configuring
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring
+  name: Configuring
+  nameWithType: ArucoObjectsTracker.Configuring
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Configuring
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting
+  name: Starting
+  nameWithType: ArucoObjectsTracker.Starting
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Starting
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
+  name: Stopping
+  nameWithType: ArucoObjectsTracker.Stopping
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded
+  name: ArucoObjectsController_ArucoObjectAdded
+  nameWithType: ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectAdded
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved
+  name: ArucoObjectsController_ArucoObjectRemoved
+  nameWithType: ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoObjectsController_ArucoObjectRemoved
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  name: DeactivateArucoObjects
+  nameWithType: ArucoObjectsTracker.DeactivateArucoObjects
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: DeactivateArucoObjects()
+  nameWithType: IArucoObjectsTracker.DeactivateArucoObjects()
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+    name: DeactivateArucoObjects
+    nameWithType: IArucoObjectsTracker.DeactivateArucoObjects
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+    name: DeactivateArucoObjects
+    nameWithType: IArucoObjectsTracker.DeactivateArucoObjects
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.DeactivateArucoObjects
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
+  name: Detect
+  nameWithType: ArucoObjectsTracker.Detect
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: Detect(Cv.Mat[])
+  nameWithType: IArucoObjectsTracker.Detect(Cv.Mat[])
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  nameWithType.vb: IArucoObjectsTracker.Detect(Cv.Mat())
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
+  name.vb: Detect(Cv.Mat())
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+    name: Detect
+    nameWithType: IArucoObjectsTracker.Detect
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+    name: Detect
+    nameWithType: IArucoObjectsTracker.Detect
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Plugin.Cv.Mat[]
+  isExternal: true
+  name: Cv.Mat[]
+  nameWithType: Cv.Mat[]
+  fullName: ArucoUnity.Plugin.Cv.Mat[]
+  nameWithType.vb: Cv.Mat()
+  fullName.vb: ArucoUnity.Plugin.Cv.Mat()
+  name.vb: Cv.Mat()
+  spec.csharp:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: Detect()
+  nameWithType: IArucoObjectsTracker.Detect()
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+    name: Detect
+    nameWithType: IArucoObjectsTracker.Detect
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+    name: Detect
+    nameWithType: IArucoObjectsTracker.Detect
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
+  name: Draw
+  nameWithType: ArucoObjectsTracker.Draw
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: Draw(Cv.Mat[])
+  nameWithType: IArucoObjectsTracker.Draw(Cv.Mat[])
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  nameWithType.vb: IArucoObjectsTracker.Draw(Cv.Mat())
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
+  name.vb: Draw(Cv.Mat())
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+    name: Draw
+    nameWithType: IArucoObjectsTracker.Draw
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+    name: Draw
+    nameWithType: IArucoObjectsTracker.Draw
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ArucoUnity.Plugin.Cv.Mat
+    name: Cv.Mat
+    nameWithType: Cv.Mat
+    fullName: ArucoUnity.Plugin.Cv.Mat
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: Draw()
+  nameWithType: IArucoObjectsTracker.Draw()
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+    name: Draw
+    nameWithType: IArucoObjectsTracker.Draw
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+    name: Draw
+    nameWithType: IArucoObjectsTracker.Draw
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
+  name: EstimateTransforms
+  nameWithType: ArucoObjectsTracker.EstimateTransforms
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: EstimateTransforms()
+  nameWithType: IArucoObjectsTracker.EstimateTransforms()
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+    name: EstimateTransforms
+    nameWithType: IArucoObjectsTracker.EstimateTransforms
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+    name: EstimateTransforms
+    nameWithType: IArucoObjectsTracker.EstimateTransforms
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.EstimateTransforms
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  name: UpdateTransforms
+  nameWithType: ArucoObjectsTracker.UpdateTransforms
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+  parent: ArucoUnity.Objects.Trackers.IArucoObjectsTracker
+  name: UpdateTransforms()
+  nameWithType: IArucoObjectsTracker.UpdateTransforms()
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms()
+  spec.csharp:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+    name: UpdateTransforms
+    nameWithType: IArucoObjectsTracker.UpdateTransforms
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+    name: UpdateTransforms
+    nameWithType: IArucoObjectsTracker.UpdateTransforms
+    fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.UpdateTransforms
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.DeactivateArucoObjects
+  isExternal: true
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.UpdateTransforms
+  isExternal: true
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+  name: ArucoCamera_ImagesUpdated
+  nameWithType: ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ArucoCamera_ImagesUpdated
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects
+  name: TrackArucoObjects
+  nameWithType: ArucoObjectsTracker.TrackArucoObjects
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  commentId: T:ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  parent: ArucoUnity.Objects.Trackers
+  name: ArucoObjectTracker
+  nameWithType: ArucoObjectTracker
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers*
+  commentId: Overload:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers
+  name: ExecuteOnActivatedTrackers
+  nameWithType: ArucoObjectsTracker.ExecuteOnActivatedTrackers
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers
+- uid: System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary}
+  commentId: T:System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary}
+  parent: System
+  definition: System.Action`3
+  name: Action<ArucoObjectTracker, Int32, Aruco.Dictionary>
+  nameWithType: Action<ArucoObjectTracker, Int32, Aruco.Dictionary>
+  fullName: System.Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary>
+  nameWithType.vb: Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary)
+  fullName.vb: System.Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  name.vb: Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+    name: ArucoObjectTracker
+    nameWithType: ArucoObjectTracker
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ArucoUnity.Plugin.Aruco.Dictionary
+    name: Aruco.Dictionary
+    nameWithType: Aruco.Dictionary
+    fullName: ArucoUnity.Plugin.Aruco.Dictionary
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+    name: ArucoObjectTracker
+    nameWithType: ArucoObjectTracker
+    fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ArucoUnity.Plugin.Aruco.Dictionary
+    name: Aruco.Dictionary
+    nameWithType: Aruco.Dictionary
+    fullName: ArucoUnity.Plugin.Aruco.Dictionary
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )

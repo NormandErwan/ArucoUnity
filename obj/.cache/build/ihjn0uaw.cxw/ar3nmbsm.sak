@@ -1,0 +1,33 @@
+
+<div id="sidetoggle">
+  <div>
+    <div class="sidefilter">
+      <form class="toc-filter">
+        <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+      </form>
+    </div>
+    <div class="sidetoc">
+      <div class="toc" id="toc">
+          
+          <ul class="nav level1">
+                <li>
+                    <a href="create-markers.html" name="" title="Create Markers">Create Markers</a>
+                </li>
+                <li>
+                    <a href="calibrate-a-camera.html" name="" title="Calibrate a Camera">Calibrate a Camera</a>
+                </li>
+                <li>
+                    <a href="track-markers.html" name="" title="Track Markers">Track Markers</a>
+                </li>
+                <li>
+                    <a href="aruco-unity-architecture.html" name="" title="Aruco Unity Architecture">Aruco Unity Architecture</a>
+                </li>
+                <li>
+                    <a href="build-from-sources.html" name="" title="Build From Sources">Build From Sources</a>
+                </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

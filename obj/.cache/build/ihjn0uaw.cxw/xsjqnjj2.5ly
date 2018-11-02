@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ArucoCamera
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ArucoCamera
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Cameras.ArucoCamera">
+  
+  
+  <h1 id="ArucoUnity_Cameras_ArucoCamera" data-uid="ArucoUnity.Cameras.ArucoCamera" class="text-break">Class ArucoCamera
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Captures images of a camera.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ArucoCamera</span></div>
+      <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoWebcam.html">ArucoWebcam</a></div>
+      <div class="level2"><a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a></div>
+    <div><span class="xref">IConfigurableController</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.html">ArucoUnity.Cameras</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Cameras_ArucoCamera_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ArucoCamera : ConfigurableController, IArucoCamera, IConfigurableController</code></pre>
+  </div>
+  <h5 id="ArucoUnity_Cameras_ArucoCamera_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="4">To add a new camera, you need to derive this class. See <a class="xref" href="ArucoUnity.Cameras.ArucoWebcam.html">ArucoWebcam</a> as example. You need to
+implement <see cref="!:ConfigurableController.Configuring"></see>, <see cref="!:ConfigurableController.Starting"></see>,
+and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages">UpdatingImages()</a>.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_currentBuffer" data-uid="ArucoUnity.Cameras.ArucoCamera.currentBuffer">currentBuffer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected uint currentBuffer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_dontFlipCode" data-uid="ArucoUnity.Cameras.ArucoCamera.dontFlipCode">dontFlipCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly int? dontFlipCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_flipHorizontallyImages" data-uid="ArucoUnity.Cameras.ArucoCamera.flipHorizontallyImages">flipHorizontallyImages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool flipHorizontallyImages</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_flipVerticallyImages" data-uid="ArucoUnity.Cameras.ArucoCamera.flipVerticallyImages">flipVerticallyImages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool flipVerticallyImages</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imageBuffers" data-uid="ArucoUnity.Cameras.ArucoCamera.imageBuffers">imageBuffers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Cv.Mat[][] imageBuffers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[][]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imageDataBuffers" data-uid="ArucoUnity.Cameras.ArucoCamera.imageDataBuffers">imageDataBuffers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected byte[][][] imageDataBuffers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[][][]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imagesFlipCode" data-uid="ArucoUnity.Cameras.ArucoCamera.imagesFlipCode">imagesFlipCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int? imagesFlipCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imagesToTextureDatas" data-uid="ArucoUnity.Cameras.ArucoCamera.imagesToTextureDatas">imagesToTextureDatas</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected byte[][] imagesToTextureDatas</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[][]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imagesToTextures" data-uid="ArucoUnity.Cameras.ArucoCamera.imagesToTextures">imagesToTextures</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Cv.Mat[] imagesToTextures</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_imagesUpdatedThisFrame" data-uid="ArucoUnity.Cameras.ArucoCamera.imagesUpdatedThisFrame">imagesUpdatedThisFrame</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool imagesUpdatedThisFrame</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_CameraNumber_" data-uid="ArucoUnity.Cameras.ArucoCamera.CameraNumber*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_CameraNumber" data-uid="ArucoUnity.Cameras.ArucoCamera.CameraNumber">CameraNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int CameraNumber { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_ImageDatas_" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageDatas*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_ImageDatas" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageDatas">ImageDatas</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[][] ImageDatas { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[][]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_ImageDataSizes_" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageDataSizes*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_ImageDataSizes" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageDataSizes">ImageDataSizes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int[] ImageDataSizes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_ImageRatios_" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageRatios*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_ImageRatios" data-uid="ArucoUnity.Cameras.ArucoCamera.ImageRatios">ImageRatios</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] ImageRatios { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_Images_" data-uid="ArucoUnity.Cameras.ArucoCamera.Images*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_Images" data-uid="ArucoUnity.Cameras.ArucoCamera.Images">Images</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cv.Mat[] Images { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_Name_" data-uid="ArucoUnity.Cameras.ArucoCamera.Name*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_Name" data-uid="ArucoUnity.Cameras.ArucoCamera.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Name { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_NextImageDatas_" data-uid="ArucoUnity.Cameras.ArucoCamera.NextImageDatas*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_NextImageDatas" data-uid="ArucoUnity.Cameras.ArucoCamera.NextImageDatas">NextImageDatas</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected byte[][] NextImageDatas { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[][]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_NextImages_" data-uid="ArucoUnity.Cameras.ArucoCamera.NextImages*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_NextImages" data-uid="ArucoUnity.Cameras.ArucoCamera.NextImages">NextImages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Cv.Mat[] NextImages { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_Textures_" data-uid="ArucoUnity.Cameras.ArucoCamera.Textures*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_Textures" data-uid="ArucoUnity.Cameras.ArucoCamera.Textures">Textures</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D[] Textures { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture2D</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_Configuring_" data-uid="ArucoUnity.Cameras.ArucoCamera.Configuring*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_Configuring" data-uid="ArucoUnity.Cameras.ArucoCamera.Configuring">Configuring()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Configures the properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_OnImagesUpdated_" data-uid="ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_OnImagesUpdated" data-uid="ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated">OnImagesUpdated()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Calls <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UndistortRectifyImages">UndistortRectifyImages</a> with the <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImages">NextImages</a>, swaps <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Images">Images</a> and
+<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageDatas">ImageDatas</a>, the calls <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImagesUpdated">ImagesUpdated</a> and applies the changes made on the
+<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Images">Images</a> to the <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Textures">Textures</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnImagesUpdated()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_OnStarted_" data-uid="ArucoUnity.Cameras.ArucoCamera.OnStarted*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_OnStarted" data-uid="ArucoUnity.Cameras.ArucoCamera.OnStarted">OnStarted()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Initializes the <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Images">Images</a>, <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageDataSizes">ImageDataSizes</a>, <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_ImageDatas">ImageDatas</a>,
+<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImages">NextImages</a>, <see cref="!:NextImageTextures"></see> and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImageDatas">NextImageDatas</a> properties from the
+<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_Textures">Textures</a> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnStarted()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_Update_" data-uid="ArucoUnity.Cameras.ArucoCamera.Update*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_Update" data-uid="ArucoUnity.Cameras.ArucoCamera.Update">Update()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="2">When configured and started, calls <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages">UpdatingImages()</a> then <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_OnImagesUpdated">OnImagesUpdated()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+  </div>
+  
+  
+  <a id="ArucoUnity_Cameras_ArucoCamera_UpdatingImages_" data-uid="ArucoUnity.Cameras.ArucoCamera.UpdatingImages*"></a>
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_UpdatingImages" data-uid="ArucoUnity.Cameras.ArucoCamera.UpdatingImages">UpdatingImages()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Updates <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImages">NextImages</a> with the new camera images.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool UpdatingImages()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p sourcefile="api/ArucoUnity.Cameras.ArucoCamera.yml" sourcestartlinenumber="1" sourceendlinenumber="1">If <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_NextImages">NextImages</a> have been updated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_ImagesUpdated" data-uid="ArucoUnity.Cameras.ArucoCamera.ImagesUpdated">ImagesUpdated</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action ImagesUpdated</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="ArucoUnity_Cameras_ArucoCamera_UndistortRectifyImages" data-uid="ArucoUnity.Cameras.ArucoCamera.UndistortRectifyImages">UndistortRectifyImages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Cv.Mat[], byte[][]&gt; UndistortRectifyImages</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[], <span class="xref">System.Byte</span>[][]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a>
+  </div>
+  <div>
+      <span class="xref">IConfigurableController</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
