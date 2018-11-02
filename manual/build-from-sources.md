@@ -50,7 +50,7 @@ A new entry named "ArucoUnity" is in the menu bar. Open it and select "Export pa
 
 ![Export ArucoUnity package](../images/export_package.jpg)
 
-## Documentation
+## Generate Documentation
 
 Install the documentation generator [DocFX](http://dotnet.github.io/docfx/tutorial/docfx_getting_started.html).
 
@@ -58,8 +58,9 @@ Run the following commands:
 
 ```bash
 cd ArucoUnity/
-docfx
-docfx serve docs/
+cp README.md Documentation/index.md
+docfx Documentation/docfx.json
+docfx serve Documentation/
 ```
 
 Open the generated website on [http://localhost:8080](http://localhost:8080).
