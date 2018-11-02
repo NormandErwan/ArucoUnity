@@ -5,7 +5,19 @@
 **/Assets/ArucoUnity/Calibrations*
 **/Assets/ArucoUnity/CameraParameters*
 **/Assets/ArucoUnity/Plugins*
-docs/Doxyfile
+
+# Documentation
+
+docfx/
+Documentation/api/
+Documentation/fonts/
+Documentation/styles/
+Documentation/favicon.ico
+Documentation/index.*
+Documentation/logo.svg
+Documentation/manifest.json
+Documentation/search-stopwords.json
+Documentation/xrefmap.yml
 
 # OS and IDEs
 
@@ -55,12 +67,3 @@ sysinfo.txt
 ## Builds
 *.apk
 *.unitypackage
-
-# OS and IDEs
-
-*.sublime-*
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
