@@ -58,8 +58,8 @@ Run the following commands:
 
 ```bash
 cd ArucoUnity/
-docfx
-docfx serve docs/
+docfx Documentation/docfx.json
+docfx serve Documentation/
 ```
 
 Open the generated website on [http://localhost:8080](http://localhost:8080).
