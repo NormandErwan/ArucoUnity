@@ -6,8 +6,8 @@
           "files": [ "ArucoUnity.csproj" ]
         }
       ],
-      "dest": "docs/api/",
-      "filter": "docs/filterConfig.yml"
+      "dest": "Documentation/api/",
+      "filter": "Documentation/filterConfig.yml"
     }
   ],
   "build": {
@@ -19,25 +19,25 @@
     },
     "content": [
       {
-        "src": "docs/api/",
+        "src": "Documentation/api/",
         "dest": "api",
         "files": [ "*.yml" ]
       },
       {
-        "src": "docs/manual/",
+        "src": "Documentation/manual/",
         "dest": "manual",
         "files": [ "toc.yml", "*.md" ]
       },
       {
-        "src": "docs",
+        "src": "Documentation",
         "files": [ "toc.yml", "index.md" ]
       }
     ],
     "resources": [
       {
-        "files": [ "docs/images/**" ]
+        "files": [ "Documentation/images/**" ]
       }
     ],
-    "dest": "docs"
+    "dest": "Documentation"
   }
 }
