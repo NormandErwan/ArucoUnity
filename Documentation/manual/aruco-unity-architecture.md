@@ -2,9 +2,9 @@
 
 ArucoUnity is made of three parts:
 
-1. A [plugin](https://github.com/NormandErwan/ArucoUnity/blob/master/ArucoUnityPlugin/) that wraps into a C interface the aruco, calib3d and ccalib modules of OpenCV.
+1. A [plugin](https://github.com/NormandErwan/ArucoUnityPlugin/) that wraps into a C interface the aruco, calib3d and ccalib modules of OpenCV.
 2. A C# interface ([ArucoUnity.Plugin namespace](https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Plugin/)) using the plugin to reproduce the OpenCV modules classes and functions.
-3. [Unity scripts](~/api/) to calibrate cameras and to track markers directly in the editor with good performances.
+3. [Unity C# scripts](~/api/ArucoUnity.Calibration.yml) to calibrate cameras and to track markers directly in the editor with good performances.
 
 You can code directly with the OpenCV C# equivalent interface but we advise you to work with and extend the Unity scripts. The Unity scripts were originally one camera display and tracking script and one calibration script. For performances and to support multiple types of camera (fisheye, stereoscopic) we decoupled these scripts (*Fig.1*).
 

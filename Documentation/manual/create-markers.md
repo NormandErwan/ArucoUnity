@@ -2,7 +2,7 @@
 
 ## Motivation
 
-Before tracking markers with your camera, you need to create, print and place them in the environment. You can use four type of Aruco objects: [markers](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html), [grid boards](https://docs.opencv.org/master/db/da9/tutorial_aruco_board_detection.html), [charuco boards](https://docs.opencv.org/master/df/d4a/tutorial_charuco_detection.html) and [diamond markers](https://docs.opencv.org/master/d5/d07/tutorial_charuco_diamond_detection.html).
+Before tracking markers with your camera, you need to create, print and place them in the environment. You can use four type of Aruco objects: [markers](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html), [grid boards](https://docs.opencv.org/3.4/db/da9/tutorial_aruco_board_detection.html), [charuco boards](https://docs.opencv.org/3.4/df/d4a/tutorial_charuco_detection.html) and [diamond markers](https://docs.opencv.org/3.4/d5/d07/tutorial_charuco_diamond_detection.html).
 
 ![Aruco Objects](../images/aruco_objects.png)
 
@@ -22,7 +22,7 @@ Open the `Assets/ArucoUnity/Scenes/CreateMarkers.unity` scene to visualize the A
 
 1. Create an empty object.
 2. Add a `ArucoMarker` script. Configure it:
-     - Select a dictionary of markers. It determines the marker size (for example 4x4 bits) and had a size (for example 50 markers). A lower dictionary size is better to avoid detection errors. For more details, see "Markers and Dictionaries" and "Selection a dictionary" sections of this [tutorial](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html).
+     - Select a dictionary of markers. It determines the marker size (for example 4x4 bits) and had a size (for example 50 markers). A lower dictionary size is better to avoid detection errors. For more details, see "Markers and Dictionaries" and "Selection a dictionary" sections of this [tutorial](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html).
      - Set `MarkerSideLength` in pixels. It controls the image size.
      - Set `MarkerBorderBits` with a minimum of 1. It controls the width of the black border of the marker, helping its detection.
      - Set `MarkerId`, from 0 to the dictionary size.
@@ -51,7 +51,7 @@ The additional configurable parameters are:
 
 ### Charuco board
 
-![Create a charuco board](../images/create_charuco_board.jpg)
+![Create a charuco board](~/images/create_charuco_board.jpg)
 
 *Example of a charuco board with the corresponding configuration.*
 
@@ -66,7 +66,7 @@ The additional configurable parameters are:
 
 ### Diamond marker
 
-![Create a diamond marker](../images/create_diamond.jpg)
+![Create a diamond marker](~/images/create_diamond.jpg)
 
 *Example of a diamond marker with the corresponding configuration.*
 

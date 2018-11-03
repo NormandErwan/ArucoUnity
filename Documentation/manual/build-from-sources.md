@@ -2,7 +2,7 @@
 
 ## Preparation
 
-We clone two repository: ArucoUnity which contains the Unity project with C# scripts, and ArucoUnityPlugin which contains the C interface on the OpenCV modules.
+We clone two repository: ArucoUnity which contains the Unity project with C# scripts, and [ArucoUnityPlugin](https://github.com/NormandErwan/ArucoUnityPlugin/) which contains the C interface of the OpenCV modules (see [ArucoUnity Architecture](aruco-unity-architecture.md) for details).
 
 Run the following commands:
 
@@ -14,7 +14,7 @@ mkdir -p ArucoUnityPlugin/build/opencv/
 
 ## Build OpenCV
 
-We need a build of OpenCV (minimum version: 3.3, maximum: 3.4) with the calib3d module and the aruco and ccalib *contrib* modules. These two contrib modules are not included in the official OpenCV releases.
+We need a build of OpenCV (3.3 ⩽ version ⩽ 3.4) with the calib3d module and the aruco and ccalib *contrib* modules. These two contrib modules are not included in the official OpenCV releases.
 
 A CMake project is already configured ready to be build. Run the following commands:
 
@@ -48,7 +48,7 @@ Open the `ArucoUnity/` folder in Unity. No errors should be displayed in the Con
 
 A new entry named "ArucoUnity" is in the menu bar. Open it and select "Export package".
 
-![Export ArucoUnity package](../images/export_package.jpg)
+![Export ArucoUnity package](~/images/export_package.jpg)
 
 ## Generate Documentation
 
