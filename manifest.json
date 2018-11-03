@@ -1453,75 +1453,269 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
+      "type": "Resource",
+      "source_relative_path": "images/ar_roll_a_ball.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/ar_roll_a_ball.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/aruco_objects.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/aruco_objects.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/calibration_aruco_webcam.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/calibration_aruco_webcam.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/calibration_pinhole_camera.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/calibration_pinhole_camera.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/calibration_running.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/calibration_running.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create_charuco_board.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/create_charuco_board.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create_diamond.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/create_diamond.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create_grid_board.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/create_grid_board.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create_marker.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/create_marker.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/export_package.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/export_package.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/extended_phone_screen.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/extended_phone_screen.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/stereo_calibration_aruco_webcam.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/stereo_calibration_aruco_webcam.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/stereo_calibration_gui.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/stereo_calibration_gui.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/stereo_calibration_pinhole_camera.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/stereo_calibration_pinhole_camera.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/stereo_calibration_running.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/stereo_calibration_running.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/stereo_fisheye_calibration_running.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/stereo_fisheye_calibration_running.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/track_markers_camera.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/track_markers_camera.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/track_markers_marker.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/track_markers_marker.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/track_markers_tracker.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/track_markers_tracker.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "bHA/Q+tMxdUiQer8+hC0Tg=="
+          "hash": "oapwEPJ8GQEuOlKPM+yhWw=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "manual/aruco-unity-architecture.md",
       "output": {
         ".html": {
           "relative_path": "manual/aruco-unity-architecture.html",
-          "hash": "Mt/gHmhDto+9qcsNMsYeIA=="
+          "hash": "qRiBVlEwwU7JfoN0yg/e7w=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "manual/build-from-sources.md",
       "output": {
         ".html": {
           "relative_path": "manual/build-from-sources.html",
-          "hash": "ibMrET0d97z/tr+uBGU0lw=="
+          "hash": "MuaDHkqK9sn0d6iucAWpQA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "manual/calibrate-a-camera.md",
       "output": {
         ".html": {
           "relative_path": "manual/calibrate-a-camera.html",
-          "hash": "DwQbDhx3rAz3MX0KrLPXPQ=="
+          "hash": "ZlP71RoFHC40pcweLEp8RA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "manual/create-markers.md",
       "output": {
         ".html": {
           "relative_path": "manual/create-markers.html",
-          "hash": "jABI9f0mSF7d/gKcWeIHFw=="
+          "hash": "NxIQPLg2dyOTm25yZwLttA=="
         }
       },
       "is_incremental": false,
@@ -1540,15 +1734,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "manual/track-markers.md",
       "output": {
         ".html": {
           "relative_path": "manual/track-markers.html",
-          "hash": "QZqDnRGtl6TVY0nPFJ89QQ=="
+          "hash": "08mJjenocGFW+1xPaIaxpQ=="
         }
       },
       "is_incremental": false,
@@ -1575,6 +1766,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
@@ -1583,9 +1779,9 @@
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

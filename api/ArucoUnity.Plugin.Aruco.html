@@ -1,0 +1,2456 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Aruco
+   | Aruco Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Aruco
+   | Aruco Unity documentation ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Plugin.Aruco">
+  
+  
+  <h1 id="ArucoUnity_Plugin_Aruco" data-uid="ArucoUnity.Plugin.Aruco" class="text-break">Class Aruco
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Aruco</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Plugin.html">ArucoUnity.Plugin</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ArucoUnity_Plugin_Aruco_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Aruco</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat)">CalibrateCameraAruco(Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorInt, Aruco.Board, Cv.Size, Cv.Mat, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Aruco.Board board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@)">CalibrateCameraAruco(Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorInt, Aruco.Board, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Aruco.Board board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Cv_Calib_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Cv.Calib)">CalibrateCameraAruco(Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorInt, Aruco.Board, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat, out Std.VectorMat, Cv.Calib)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Aruco.Board board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = (Cv.Calib)0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">tvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Calib.html">Cv.Calib</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraAruco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Cv_Calib_ArucoUnity_Plugin_Cv_TermCriteria_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraAruco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Cv.Calib,ArucoUnity.Plugin.Cv.TermCriteria)">CalibrateCameraAruco(Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorInt, Aruco.Board, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat, out Std.VectorMat, Cv.Calib, Cv.TermCriteria)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Aruco.Board board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags, Cv.TermCriteria criteria)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">tvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Calib.html">Cv.Calib</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.TermCriteria.html">Cv.TermCriteria</a></td>
+        <td><span class="parametername">criteria</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVectorInt_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorInt,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat)">CalibrateCameraCharuco(Std.VectorVectorPoint2f, Std.VectorVectorInt, Aruco.CharucoBoard, Cv.Size, Cv.Mat, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, Aruco.CharucoBoard board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVectorInt_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorInt,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@)">CalibrateCameraCharuco(Std.VectorVectorPoint2f, Std.VectorVectorInt, Aruco.CharucoBoard, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, Aruco.CharucoBoard board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVectorInt_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Cv_Calib_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorInt,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Cv.Calib)">CalibrateCameraCharuco(Std.VectorVectorPoint2f, Std.VectorVectorInt, Aruco.CharucoBoard, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat, out Std.VectorMat, Cv.Calib)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, Aruco.CharucoBoard board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = (Cv.Calib)0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">tvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Calib.html">Cv.Calib</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_CalibrateCameraCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVectorInt_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Cv_Size_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Std_VectorMat__ArucoUnity_Plugin_Cv_Calib_ArucoUnity_Plugin_Cv_TermCriteria_" data-uid="ArucoUnity.Plugin.Aruco.CalibrateCameraCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVectorInt,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Cv.Size,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Std.VectorMat@,ArucoUnity.Plugin.Cv.Calib,ArucoUnity.Plugin.Cv.TermCriteria)">CalibrateCameraCharuco(Std.VectorVectorPoint2f, Std.VectorVectorInt, Aruco.CharucoBoard, Cv.Size, Cv.Mat, Cv.Mat, out Std.VectorMat, out Std.VectorMat, Cv.Calib, Cv.TermCriteria)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalibrateCameraCharuco(Std.VectorVectorPoint2f charucoCorners, Std.VectorVectorInt charucoIds, Aruco.CharucoBoard board, Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags, Cv.TermCriteria criteria)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Size.html">Cv.Size</a></td>
+        <td><span class="parametername">imageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a></td>
+        <td><span class="parametername">tvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Calib.html">Cv.Calib</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.TermCriteria.html">Cv.TermCriteria</a></td>
+        <td><span class="parametername">criteria</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_System_Single_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorVec4i__" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,System.Single,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorVec4i@)">DetectCharucoDiamond(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorInt, Single, out Std.VectorVectorPoint2f, out Std.VectorVec4i)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">squareMarkerLengthRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec4i.html">Std.VectorVec4i</a></td>
+        <td><span class="parametername">diamondIds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_System_Single_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorVec4i__ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,System.Single,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorVec4i@,ArucoUnity.Plugin.Cv.Mat)">DetectCharucoDiamond(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorInt, Single, out Std.VectorVectorPoint2f, out Std.VectorVec4i, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">squareMarkerLengthRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec4i.html">Std.VectorVec4i</a></td>
+        <td><span class="parametername">diamondIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectCharucoDiamond_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_System_Single_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorVec4i__ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.DetectCharucoDiamond(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,System.Single,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorVec4i@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat)">DetectCharucoDiamond(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorInt, Single, out Std.VectorVectorPoint2f, out Std.VectorVec4i, Cv.Mat, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectCharucoDiamond(Cv.Mat image, Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, float squareMarkerLengthRate, out Std.VectorVectorPoint2f diamondCorners, out Std.VectorVec4i diamondIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">squareMarkerLengthRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec4i.html">Std.VectorVec4i</a></td>
+        <td><span class="parametername">diamondIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@)">DetectMarkers(Cv.Mat, Aruco.Dictionary, out Std.VectorVectorPoint2f, out Std.VectorInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectMarkers(Cv.Mat image, Aruco.Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__ArucoUnity_Plugin_Aruco_DetectorParameters_" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@,ArucoUnity.Plugin.Aruco.DetectorParameters)">DetectMarkers(Cv.Mat, Aruco.Dictionary, out Std.VectorVectorPoint2f, out Std.VectorInt, Aruco.DetectorParameters)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectMarkers(Cv.Mat image, Aruco.Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids, Aruco.DetectorParameters parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.DetectorParameters.html">Aruco.DetectorParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DetectMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DetectMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Std_VectorVectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__ArucoUnity_Plugin_Aruco_DetectorParameters_ArucoUnity_Plugin_Std_VectorVectorPoint2f__" data-uid="ArucoUnity.Plugin.Aruco.DetectMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Std.VectorVectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@,ArucoUnity.Plugin.Aruco.DetectorParameters,ArucoUnity.Plugin.Std.VectorVectorPoint2f@)">DetectMarkers(Cv.Mat, Aruco.Dictionary, out Std.VectorVectorPoint2f, out Std.VectorInt, Aruco.DetectorParameters, out Std.VectorVectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DetectMarkers(Cv.Mat image, Aruco.Dictionary dictionary, out Std.VectorVectorPoint2f corners, out Std.VectorInt ids, Aruco.DetectorParameters parameters, out Std.VectorVectorPoint2f rejectedImgPoints)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.DetectorParameters.html">Aruco.DetectorParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedImgPoints</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawAxis_" data-uid="ArucoUnity.Plugin.Aruco.DrawAxis*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawAxis_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Vec3d_ArucoUnity_Plugin_Cv_Vec3d_System_Single_" data-uid="ArucoUnity.Plugin.Aruco.DrawAxis(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d,ArucoUnity.Plugin.Cv.Vec3d,System.Single)">DrawAxis(Cv.Mat, Cv.Mat, Cv.Mat, Cv.Vec3d, Cv.Vec3d, Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawAxis(Cv.Mat image, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, Cv.Vec3d rvec, Cv.Vec3d tvec, float length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">rvec</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">tvec</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawCharucoDiamond_" data-uid="ArucoUnity.Plugin.Aruco.DrawCharucoDiamond*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawCharucoDiamond_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Vec4i_System_Int32_System_Int32_ArucoUnity_Plugin_Cv_Mat__System_Int32_System_Int32_" data-uid="ArucoUnity.Plugin.Aruco.DrawCharucoDiamond(ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Vec4i,System.Int32,System.Int32,ArucoUnity.Plugin.Cv.Mat@,System.Int32,System.Int32)">DrawCharucoDiamond(Aruco.Dictionary, Cv.Vec4i, Int32, Int32, out Cv.Mat, Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawCharucoDiamond(Aruco.Dictionary dictionary, Cv.Vec4i ids, int squareLength, int markerLength, out Cv.Mat image, int marginSize = 0, int borderBits = 1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec4i.html">Cv.Vec4i</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">squareLength</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">markerLength</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">marginSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">borderBits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorPoint2f_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorPoint2f)">DrawDetectedCornersCharuco(Cv.Mat, Std.VectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorPoint2f,ArucoUnity.Plugin.Std.VectorInt)">DrawDetectedCornersCharuco(Cv.Mat, Std.VectorPoint2f, Std.VectorInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedCornersCharuco_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Cv_Scalar_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedCornersCharuco(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Cv.Scalar)">DrawDetectedCornersCharuco(Cv.Mat, Std.VectorPoint2f, Std.VectorInt, Cv.Scalar)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedCornersCharuco(Cv.Mat image, Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, Cv.Scalar cornerColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Scalar.html">Cv.Scalar</a></td>
+        <td><span class="parametername">cornerColor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f)">DrawDetectedDiamonds(Cv.Mat, Std.VectorVectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVec4i_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVec4i)">DrawDetectedDiamonds(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorVec4i)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec4i.html">Std.VectorVec4i</a></td>
+        <td><span class="parametername">diamondIds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedDiamonds_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorVec4i_ArucoUnity_Plugin_Cv_Scalar_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedDiamonds(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorVec4i,ArucoUnity.Plugin.Cv.Scalar)">DrawDetectedDiamonds(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorVec4i, Cv.Scalar)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedDiamonds(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorVec4i diamondIds, Cv.Scalar borderColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec4i.html">Std.VectorVec4i</a></td>
+        <td><span class="parametername">diamondIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Scalar.html">Cv.Scalar</a></td>
+        <td><span class="parametername">borderColor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f)">DrawDetectedMarkers(Cv.Mat, Std.VectorVectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt)">DrawDetectedMarkers(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f diamondCorners, Std.VectorInt ids)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">diamondCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_DrawDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Cv_Scalar_" data-uid="ArucoUnity.Plugin.Aruco.DrawDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Cv.Scalar)">DrawDetectedMarkers(Cv.Mat, Std.VectorVectorPoint2f, Std.VectorInt, Cv.Scalar)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDetectedMarkers(Cv.Mat image, Std.VectorVectorPoint2f corners, Std.VectorInt ids, Cv.Scalar borderColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Scalar.html">Cv.Scalar</a></td>
+        <td><span class="parametername">borderColor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_EstimatePoseBoard_" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseBoard*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_EstimatePoseBoard_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Vec3d__ArucoUnity_Plugin_Cv_Vec3d__" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseBoard(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@)">EstimatePoseBoard(Std.VectorVectorPoint2f, Std.VectorInt, Aruco.Board, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int EstimatePoseBoard(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Aruco.Board board, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Cv.Vec3d rvec, out Cv.Vec3d tvec)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">ids</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">rvec</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">tvec</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_EstimatePoseCharucoBoard_" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseCharucoBoard*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_EstimatePoseCharucoBoard_ArucoUnity_Plugin_Std_VectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Vec3d__ArucoUnity_Plugin_Cv_Vec3d__" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseCharucoBoard(ArucoUnity.Plugin.Std.VectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Vec3d@,ArucoUnity.Plugin.Cv.Vec3d@)">EstimatePoseCharucoBoard(Std.VectorPoint2f, Std.VectorInt, Aruco.CharucoBoard, Cv.Mat, Cv.Mat, out Cv.Vec3d, out Cv.Vec3d)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool EstimatePoseCharucoBoard(Std.VectorPoint2f charucoCorners, Std.VectorInt charucoIds, Aruco.CharucoBoard board, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Cv.Vec3d rvec, out Cv.Vec3d tvec)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">rvec</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Vec3d.html">Cv.Vec3d</a></td>
+        <td><span class="parametername">tvec</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_EstimatePoseSingleMarkers_" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseSingleMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_EstimatePoseSingleMarkers_ArucoUnity_Plugin_Std_VectorVectorPoint2f_System_Single_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Std_VectorVec3d__ArucoUnity_Plugin_Std_VectorVec3d__" data-uid="ArucoUnity.Plugin.Aruco.EstimatePoseSingleMarkers(ArucoUnity.Plugin.Std.VectorVectorPoint2f,System.Single,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Std.VectorVec3d@,ArucoUnity.Plugin.Std.VectorVec3d@)">EstimatePoseSingleMarkers(Std.VectorVectorPoint2f, Single, Cv.Mat, Cv.Mat, out Std.VectorVec3d, out Std.VectorVec3d)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EstimatePoseSingleMarkers(Std.VectorVectorPoint2f corners, float markerLength, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorVec3d rvecs, out Std.VectorVec3d tvecs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">corners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">markerLength</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a></td>
+        <td><span class="parametername">rvecs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a></td>
+        <td><span class="parametername">tvecs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_GenerateCustomDictionary_" data-uid="ArucoUnity.Plugin.Aruco.GenerateCustomDictionary*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_GenerateCustomDictionary_System_Int32_System_Int32_" data-uid="ArucoUnity.Plugin.Aruco.GenerateCustomDictionary(System.Int32,System.Int32)">GenerateCustomDictionary(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Aruco.Dictionary GenerateCustomDictionary(int nMarkers, int markerSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nMarkers</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">markerSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_GenerateCustomDictionary_" data-uid="ArucoUnity.Plugin.Aruco.GenerateCustomDictionary*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_GenerateCustomDictionary_System_Int32_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_" data-uid="ArucoUnity.Plugin.Aruco.GenerateCustomDictionary(System.Int32,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)">GenerateCustomDictionary(Int32, Int32, Aruco.Dictionary)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Aruco.Dictionary GenerateCustomDictionary(int nMarkers, int markerSize, Aruco.Dictionary baseDictionary)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nMarkers</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">markerSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td><span class="parametername">baseDictionary</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_GetBoardObjectAndImagePoints_" data-uid="ArucoUnity.Plugin.Aruco.GetBoardObjectAndImagePoints*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_GetBoardObjectAndImagePoints_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorPoint3f__ArucoUnity_Plugin_Std_VectorPoint2f__" data-uid="ArucoUnity.Plugin.Aruco.GetBoardObjectAndImagePoints(ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorPoint3f@,ArucoUnity.Plugin.Std.VectorPoint2f@)">GetBoardObjectAndImagePoints(Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, out Std.VectorPoint3f, out Std.VectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetBoardObjectAndImagePoints(Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, out Std.VectorPoint3f objPoints, out Std.VectorPoint2f imgPoints)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint3f.html">Std.VectorPoint3f</a></td>
+        <td><span class="parametername">objPoints</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">imgPoints</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_GetPredefinedDictionary_" data-uid="ArucoUnity.Plugin.Aruco.GetPredefinedDictionary*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_GetPredefinedDictionary_ArucoUnity_Plugin_Aruco_PredefinedDictionaryName_" data-uid="ArucoUnity.Plugin.Aruco.GetPredefinedDictionary(ArucoUnity.Plugin.Aruco.PredefinedDictionaryName)">GetPredefinedDictionary(Aruco.PredefinedDictionaryName)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Aruco.Dictionary GetPredefinedDictionary(Aruco.PredefinedDictionaryName name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.PredefinedDictionaryName.html">Aruco.PredefinedDictionaryName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Dictionary.html">Aruco.Dictionary</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Std_VectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Std.VectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@)">InterpolateCornersCharuco(Std.VectorVectorPoint2f, Std.VectorInt, Cv.Mat, Aruco.CharucoBoard, out Std.VectorPoint2f, out Std.VectorInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, Aruco.CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Std_VectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Std.VectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@,ArucoUnity.Plugin.Cv.Mat)">InterpolateCornersCharuco(Std.VectorVectorPoint2f, Std.VectorInt, Cv.Mat, Aruco.CharucoBoard, out Std.VectorPoint2f, out Std.VectorInt, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, Aruco.CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_InterpolateCornersCharuco_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_CharucoBoard_ArucoUnity_Plugin_Std_VectorPoint2f__ArucoUnity_Plugin_Std_VectorInt__ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.InterpolateCornersCharuco(ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.CharucoBoard,ArucoUnity.Plugin.Std.VectorPoint2f@,ArucoUnity.Plugin.Std.VectorInt@,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat)">InterpolateCornersCharuco(Std.VectorVectorPoint2f, Std.VectorInt, Cv.Mat, Aruco.CharucoBoard, out Std.VectorPoint2f, out Std.VectorInt, Cv.Mat, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int InterpolateCornersCharuco(Std.VectorVectorPoint2f markerCorners, Std.VectorInt markerIds, Cv.Mat image, Aruco.CharucoBoard board, out Std.VectorPoint2f charucoCorners, out Std.VectorInt charucoIds, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">markerCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">markerIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.CharucoBoard.html">Aruco.CharucoBoard</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorPoint2f.html">Std.VectorPoint2f</a></td>
+        <td><span class="parametername">charucoCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">charucoIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorVectorPoint2f_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorVectorPoint2f)">RefineDetectedMarkers(Cv.Mat, Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorVectorPoint2f)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefineDetectedMarkers(Cv.Mat image, Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, Std.VectorVectorPoint2f rejectedCorners)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedCorners</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Cv_Mat_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Mat)">RefineDetectedMarkers(Cv.Mat, Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorVectorPoint2f, Cv.Mat)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefineDetectedMarkers(Cv.Mat image, Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_System_Single_System_Single_System_Boolean_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,System.Single,System.Single,System.Boolean)">RefineDetectedMarkers(Cv.Mat, Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorVectorPoint2f, Cv.Mat, Cv.Mat, Single, Single, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefineDetectedMarkers(Cv.Mat image, Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance = 10F, float errorCorrectionRate = 3F, bool checkAllOrders = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">minRepDistance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">errorCorrectionRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkAllOrders</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_System_Single_System_Single_System_Boolean_ArucoUnity_Plugin_Std_VectorInt_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,System.Single,System.Single,System.Boolean,ArucoUnity.Plugin.Std.VectorInt)">RefineDetectedMarkers(Cv.Mat, Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorVectorPoint2f, Cv.Mat, Cv.Mat, Single, Single, Boolean, Std.VectorInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefineDetectedMarkers(Cv.Mat image, Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, Std.VectorInt recoveredIdxs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">minRepDistance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">errorCorrectionRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkAllOrders</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">recoveredIdxs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers*"></a>
+  <h4 id="ArucoUnity_Plugin_Aruco_RefineDetectedMarkers_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Aruco_Board_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Std_VectorVectorPoint2f_ArucoUnity_Plugin_Cv_Mat_ArucoUnity_Plugin_Cv_Mat_System_Single_System_Single_System_Boolean_ArucoUnity_Plugin_Std_VectorInt_ArucoUnity_Plugin_Aruco_DetectorParameters_" data-uid="ArucoUnity.Plugin.Aruco.RefineDetectedMarkers(ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Aruco.Board,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Std.VectorVectorPoint2f,ArucoUnity.Plugin.Cv.Mat,ArucoUnity.Plugin.Cv.Mat,System.Single,System.Single,System.Boolean,ArucoUnity.Plugin.Std.VectorInt,ArucoUnity.Plugin.Aruco.DetectorParameters)">RefineDetectedMarkers(Cv.Mat, Aruco.Board, Std.VectorVectorPoint2f, Std.VectorInt, Std.VectorVectorPoint2f, Cv.Mat, Cv.Mat, Single, Single, Boolean, Std.VectorInt, Aruco.DetectorParameters)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefineDetectedMarkers(Cv.Mat image, Aruco.Board board, Std.VectorVectorPoint2f detectedCorners, Std.VectorInt detectedIds, Std.VectorVectorPoint2f rejectedCorners, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, float minRepDistance, float errorCorrectionRate, bool checkAllOrders, Std.VectorInt recoveredIdxs, Aruco.DetectorParameters parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">image</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.Board.html">Aruco.Board</a></td>
+        <td><span class="parametername">board</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">detectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">detectedIds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a></td>
+        <td><span class="parametername">rejectedCorners</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">cameraMatrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="parametername">distCoeffs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">minRepDistance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">errorCorrectionRate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkAllOrders</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a></td>
+        <td><span class="parametername">recoveredIdxs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.DetectorParameters.html">Aruco.DetectorParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="https://github.com/NormandErwan/ArucoUnity">Aruco Unity</a> - <a href="https://twitter.com/NormandErwan">Erwan Normand</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
