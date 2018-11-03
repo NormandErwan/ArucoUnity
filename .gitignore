@@ -9,15 +9,7 @@
 # Documentation
 
 docfx/
-Documentation/api/
-Documentation/fonts/
-Documentation/styles/
-Documentation/favicon.ico
-Documentation/index.*
-Documentation/logo.svg
-Documentation/manifest.json
-Documentation/search-stopwords.json
-Documentation/xrefmap.yml
+_site/
 
 # OS and IDEs
 

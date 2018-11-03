@@ -20,24 +20,19 @@
     },
     "content": [
       {
-        "src": "api/",
-        "dest": "api/",
-        "files": [ "*.yml" ]
-      },
-      {
         "src": "manual/",
         "dest": "manual/",
         "files": [ "toc.yml", "*.md" ]
       },
       {
-        "files": [ "toc.yml", "index.md" ]
+        "files": [ "toc.yml", "index.md", "api/*.yml" ]
       }
     ],
-    "resources": [
+    "resource": [
       {
         "files": [ "images/*" ]
       }
     ],
-    "dest": "../Documentation"
+    "dest": "../_site"
   }
 }

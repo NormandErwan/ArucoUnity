@@ -15,7 +15,7 @@ build_script:
 
         git clone https://github.com/NormandErwan/ArucoUnity -b gh-pages gh-pages -q
         Remove-Item gh-pages\* -recurse
-        Copy-Item Documentation\* gh-pages -recurse
+        Copy-Item _site\* gh-pages -recurse
 
         git config --global credential.helper store
         Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:auth_token):x-oauth-basic@github.com`n"

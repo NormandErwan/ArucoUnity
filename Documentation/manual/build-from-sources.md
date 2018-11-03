@@ -57,10 +57,10 @@ Install the documentation generator [DocFX](http://dotnet.github.io/docfx/tutori
 Run the following commands:
 
 ```bash
-cd ArucoUnity/
+cd ArucoUnity
 cp README.md Documentation/index.md
 docfx Documentation/docfx.json
-docfx serve Documentation/
+docfx serve _site
 ```
 
 Open the generated website on [http://localhost:8080](http://localhost:8080).
