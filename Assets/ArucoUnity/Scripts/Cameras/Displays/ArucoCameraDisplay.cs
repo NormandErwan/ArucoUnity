@@ -171,7 +171,7 @@ namespace ArucoUnity.Cameras.Displays
       Vector2 focalLength = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraFocalLengths();
       Vector2 principalPoint = ArucoCameraUndistortion.RectifiedCameraMatrices[cameraId].GetCameraPrincipalPoint();
 
-      // Considering https://docs.opencv.org/3.3.0/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
+      // Considering https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html, we are looking for X=posX and Y=posY
       // with x=0.5*ImageWidth, y=0.5*ImageHeight (center of the camera projection) and w=Z=cameraBackgroundDistance 
       float localPositionX = (0.5f * imageWidth - principalPoint.x) / focalLength.x * cameraBackgroundDistance;
       float localPositionY = -(0.5f * imageHeight - principalPoint.y) / focalLength.y * cameraBackgroundDistance; // a minus because OpenCV camera coordinates origin is top - left, but bottom-left in Unity

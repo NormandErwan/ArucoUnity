@@ -10,7 +10,7 @@ namespace ArucoUnity.Cameras.Undistortions
   /// Manages the undistortion and rectification process for fisheye and omnidir <see cref="ArucoCamera"/>.
   /// 
   /// See the OpenCV's ccalib module documentation for more information:
-  /// http://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
+  /// http://docs.opencv.org/3.4/dd/d12/tutorial_omnidir_calib_main.html
   /// </summary>
   public abstract class OmnidirCameraUndistortionGeneric<T> : ArucoCameraUndistortionGeneric<T>
     where T : ArucoCamera
@@ -46,7 +46,7 @@ namespace ArucoUnity.Cameras.Undistortions
 
     /// <summary>
     /// Gets or sets the algorithm to use for the rectification of the images. See this tutorial for illustrated examples:
-    /// https://docs.opencv.org/3.3.0/dd/d12/tutorial_omnidir_calib_main.html
+    /// https://docs.opencv.org/3.4/dd/d12/tutorial_omnidir_calib_main.html
     /// </summary>
     public RectificationTypes RectificationType { get { return rectificationType; } set { rectificationType = value; } }
 

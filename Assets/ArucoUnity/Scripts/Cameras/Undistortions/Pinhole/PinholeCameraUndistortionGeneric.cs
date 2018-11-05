@@ -8,7 +8,7 @@ namespace ArucoUnity.Cameras.Undistortions
   /// Manages the undistortion and rectification process for pinhole cameras.
   /// 
   /// See the OpenCV's calibd module documentation for more information:
-  /// http://docs.opencv.org/3.3.0/d9/d0c/group__calib3d.html
+  /// http://docs.opencv.org/3.4/d9/d0c/group__calib3d.html
   /// </summary>
   public abstract class PinholeCameraUndistortionGeneric<T> : ArucoCameraUndistortionGeneric<T>
     where T : ArucoCamera

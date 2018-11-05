@@ -1,4 +1,4 @@
-﻿  using ArucoUnity.Cameras.Parameters;
+﻿using ArucoUnity.Cameras.Parameters;
 using ArucoUnity.Objects;
 using ArucoUnity.Objects.Trackers;
 using ArucoUnity.Plugin;
@@ -14,8 +14,8 @@ namespace ArucoUnity.Calibration
   /// fields.
   /// 
   /// See the OpenCV and the ArUco module documentations for more information about the calibration process:
-  /// http://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html and
-  /// https://docs.opencv.org/3.3.0/da/d13/tutorial_aruco_calibration.html
+  /// http://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html and
+  /// https://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html
   /// </summary>
   public abstract class ArucoCameraCalibration : ArucoObjectDetector
   {
