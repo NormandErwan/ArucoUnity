@@ -1,0 +1,21 @@
+* text=auto
+
+.gitignore text
+*.asset text eol=crlf
+*.cs text
+*.json text
+*.mat text eol=crlf
+*.md text
+*.meta text eol=crlf
+*.prefab text eol=crlf
+*.rsp text eol=crlf
+*.txt text
+*.xml text
+*.yml text
+
+Packages/** text eol=crlf
+
+*.gif binary
+*.jpg binary
+*.png binary
+*.unity binary
