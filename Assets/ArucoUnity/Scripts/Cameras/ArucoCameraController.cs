@@ -3,29 +3,29 @@ using System;
 
 namespace ArucoUnity.Cameras
 {
-  /// <summary>
-  /// Generic configurable controller using a <see cref="ArucoCamera"/> as starting dependency.
-  /// </summary>
-  public abstract class ArucoCameraController : ConfigurableController, IArucoCameraController
-  {
-    // IArucoCameraController properties
-
-    public IArucoCamera ArucoCamera { get; set; }
-
-    // ConfigurableController methods
-
     /// <summary>
-    /// Adds <see cref="ArucoCamera"/> as dependency.
+    /// Generic configurable controller using a <see cref="ArucoCamera"/> as starting dependency.
     /// </summary>
-    protected override void Configuring()
+    public abstract class ArucoCameraController : ConfigurableController, IArucoCameraController
     {
-      base.Configuring();
+        // IArucoCameraController properties
 
-      if (ArucoCamera == null)
-      {
-        throw new ArgumentNullException("ArucoCamera", "This property needs to be set for the configuration.");
-      }
-      AddDependency(ArucoCamera);
+        public IArucoCamera ArucoCamera { get; set; }
+
+        // ConfigurableController methods
+
+        /// <summary>
+        /// Adds <see cref="ArucoCamera"/> as dependency.
+        /// </summary>
+        protected override void Configuring()
+        {
+            base.Configuring();
+
+            if (ArucoCamera == null)
+            {
+                throw new ArgumentNullException("ArucoCamera", "This property needs to be set for the configuration.");
+            }
+            AddDependency(ArucoCamera);
+        }
     }
-  }
 }

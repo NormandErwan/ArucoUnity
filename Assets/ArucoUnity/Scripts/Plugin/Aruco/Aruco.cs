@@ -3,144 +3,144 @@ using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
-  public static partial class Aruco
-  {
-    // Enums
-
-    public enum PredefinedDictionaryName
+    public static partial class Aruco
     {
-      Dict4x4_50 = 0,
-      Dict4x4_100,
-      Dict4x4_250,
-      Dict4x4_1000,
-      Dict5x5_50,
-      Dict5x5_100,
-      Dict5x5_250,
-      Dict5x5_1000,
-      Dict6x6_50,
-      Dict6x6_100,
-      Dict6x6_250,
-      Dict6x6_1000,
-      Dict7x7_50,
-      Dict7x7_100,
-      Dict7x7_250,
-      Dict7x7_1000,
-      DictArucoOriginal
-    }
+        // Enums
 
-    public enum CornerRefineMethod
-    {
-      None, /// No corner refinement
-      Subpix, /// Refine the corners using subpix
-      Contour /// Refine the corners using the contour-points
-    }
+        public enum PredefinedDictionaryName
+        {
+            Dict4x4_50 = 0,
+            Dict4x4_100,
+            Dict4x4_250,
+            Dict4x4_1000,
+            Dict5x5_50,
+            Dict5x5_100,
+            Dict5x5_250,
+            Dict5x5_1000,
+            Dict6x6_50,
+            Dict6x6_100,
+            Dict6x6_250,
+            Dict6x6_1000,
+            Dict7x7_50,
+            Dict7x7_100,
+            Dict7x7_250,
+            Dict7x7_1000,
+            DictArucoOriginal
+        }
 
-    // Native functions
+        public enum CornerRefineMethod
+        {
+            None, /// No corner refinement
+            Subpix, /// Refine the corners using subpix
+            Contour /// Refine the corners using the contour-points
+        }
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern double au_calibrateCameraAruco(IntPtr corners, IntPtr ids, IntPtr counter, IntPtr board,
-    IntPtr imageSize, IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvecs, out IntPtr tvecs, int flags,
-    IntPtr criteria, IntPtr exception);
+        // Native functions
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern double au_calibrateCameraCharuco(IntPtr charucoCorners, IntPtr charucoIds, IntPtr board,
-      IntPtr imageSize, IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvecs, out IntPtr tvecs, int flags,
-      IntPtr criteria, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern double au_calibrateCameraAruco(IntPtr corners, IntPtr ids, IntPtr counter, IntPtr board,
+        IntPtr imageSize, IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvecs, out IntPtr tvecs, int flags,
+        IntPtr criteria, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_detectCharucoDiamond(IntPtr image, IntPtr markerCorners, IntPtr markerIds,
-      float squareMarkerLengthRate, out IntPtr diamondCorners, out IntPtr diamondIds, IntPtr cameraMatrix,
-      IntPtr distCoeffs, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern double au_calibrateCameraCharuco(IntPtr charucoCorners, IntPtr charucoIds, IntPtr board,
+            IntPtr imageSize, IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvecs, out IntPtr tvecs, int flags,
+            IntPtr criteria, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_detectMarkers(IntPtr image, IntPtr dictionary, out IntPtr corners, out IntPtr ids,
-      IntPtr parameters, out IntPtr rejectedImgPoints, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_detectCharucoDiamond(IntPtr image, IntPtr markerCorners, IntPtr markerIds,
+            float squareMarkerLengthRate, out IntPtr diamondCorners, out IntPtr diamondIds, IntPtr cameraMatrix,
+            IntPtr distCoeffs, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_drawAxis(IntPtr image, IntPtr cameraMatrix, IntPtr distCoeffs, IntPtr rvec,
-      IntPtr tvec, float length, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_detectMarkers(IntPtr image, IntPtr dictionary, out IntPtr corners, out IntPtr ids,
+            IntPtr parameters, out IntPtr rejectedImgPoints, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_drawCharucoDiamond(IntPtr dictionary, IntPtr ids, int squareLength, int markerLength,
-      out IntPtr img, int marginSize, int borderBits, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_drawAxis(IntPtr image, IntPtr cameraMatrix, IntPtr distCoeffs, IntPtr rvec,
+            IntPtr tvec, float length, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_drawDetectedCornersCharuco(IntPtr image, IntPtr charucoCorners, IntPtr charucoIds,
-      IntPtr cornerColor, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_drawCharucoDiamond(IntPtr dictionary, IntPtr ids, int squareLength, int markerLength,
+            out IntPtr img, int marginSize, int borderBits, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_drawDetectedDiamonds(IntPtr image, IntPtr diamondCorners, IntPtr diamondIds,
-      IntPtr borderColor, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_drawDetectedCornersCharuco(IntPtr image, IntPtr charucoCorners, IntPtr charucoIds,
+            IntPtr cornerColor, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_drawDetectedMarkers(IntPtr image, IntPtr corners, IntPtr ids, IntPtr borderColor,
-      IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_drawDetectedDiamonds(IntPtr image, IntPtr diamondCorners, IntPtr diamondIds,
+            IntPtr borderColor, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern int au_estimatePoseBoard(IntPtr corners, IntPtr ids, IntPtr board, IntPtr cameraMatrix,
-      IntPtr distCoeffs, out IntPtr rvec, out IntPtr tvec, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_drawDetectedMarkers(IntPtr image, IntPtr corners, IntPtr ids, IntPtr borderColor,
+            IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern bool au_estimatePoseCharucoBoard(IntPtr charucoCorners, IntPtr charucoIds, IntPtr board,
-      IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvec, out IntPtr tvec, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern int au_estimatePoseBoard(IntPtr corners, IntPtr ids, IntPtr board, IntPtr cameraMatrix,
+            IntPtr distCoeffs, out IntPtr rvec, out IntPtr tvec, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_estimatePoseSingleMarkers(IntPtr corners, float markerLength, IntPtr cameraMatrix, IntPtr distCoeffs,
-      out IntPtr rvecs, out IntPtr tvecs, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern bool au_estimatePoseCharucoBoard(IntPtr charucoCorners, IntPtr charucoIds, IntPtr board,
+            IntPtr cameraMatrix, IntPtr distCoeffs, out IntPtr rvec, out IntPtr tvec, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern IntPtr au_generateCustomDictionary(int nMarkers, int markerSize, IntPtr baseDictionary, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_estimatePoseSingleMarkers(IntPtr corners, float markerLength, IntPtr cameraMatrix, IntPtr distCoeffs,
+            out IntPtr rvecs, out IntPtr tvecs, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_getBoardObjectAndImagePoints(IntPtr board, IntPtr detectedCorners, IntPtr detectedIds,
-      out IntPtr objPoints, out IntPtr imgPoints, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern IntPtr au_generateCustomDictionary(int nMarkers, int markerSize, IntPtr baseDictionary, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern IntPtr au_getPredefinedDictionary(PredefinedDictionaryName name);
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_getBoardObjectAndImagePoints(IntPtr board, IntPtr detectedCorners, IntPtr detectedIds,
+            out IntPtr objPoints, out IntPtr imgPoints, IntPtr exception);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern int au_interpolateCornersCharuco(IntPtr markerCorners, IntPtr markerIds, IntPtr image, IntPtr board,
-      out IntPtr charucoCorners, out IntPtr charucoIds, IntPtr cameraMatrix, IntPtr distCoeffs,
-      IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern IntPtr au_getPredefinedDictionary(PredefinedDictionaryName name);
 
-    [DllImport("ArucoUnityPlugin")]
-    static extern void au_refineDetectedMarkers(IntPtr image, IntPtr board, IntPtr detectedCorners, IntPtr detectedIds,
-      IntPtr rejectedCorners, IntPtr cameraMatrix, IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate,
-      bool checkAllOrders, IntPtr recoveredIdxs, IntPtr parameters, IntPtr exception);
+        [DllImport("ArucoUnityPlugin")]
+        static extern int au_interpolateCornersCharuco(IntPtr markerCorners, IntPtr markerIds, IntPtr image, IntPtr board,
+            out IntPtr charucoCorners, out IntPtr charucoIds, IntPtr cameraMatrix, IntPtr distCoeffs,
+            IntPtr exception);
 
-    // Static methods
+        [DllImport("ArucoUnityPlugin")]
+        static extern void au_refineDetectedMarkers(IntPtr image, IntPtr board, IntPtr detectedCorners, IntPtr detectedIds,
+            IntPtr rejectedCorners, IntPtr cameraMatrix, IntPtr distCoeffs, float minRepDistance, float errorCorrectionRate,
+            bool checkAllOrders, IntPtr recoveredIdxs, IntPtr parameters, IntPtr exception);
 
-    public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-      Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags,
-      Cv.TermCriteria criteria)
-    {
-      Cv.Exception exception = new Cv.Exception();
-      IntPtr rvecsPtr, tvecsPtr;
+        // Static methods
 
-      double reProjectionError = au_calibrateCameraAruco(corners.CppPtr, ids.CppPtr, counter.CppPtr, board.CppPtr, imageSize.CppPtr,
-        cameraMatrix.CppPtr, distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
-      rvecs = new Std.VectorMat(rvecsPtr);
-      tvecs = new Std.VectorMat(tvecsPtr);
+        public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
+            Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags,
+            Cv.TermCriteria criteria)
+        {
+            Cv.Exception exception = new Cv.Exception();
+            IntPtr rvecsPtr, tvecsPtr;
 
-      exception.Check();
-      return reProjectionError;
-    }
+            double reProjectionError = au_calibrateCameraAruco(corners.CppPtr, ids.CppPtr, counter.CppPtr, board.CppPtr, imageSize.CppPtr,
+                cameraMatrix.CppPtr, distCoeffs.CppPtr, out rvecsPtr, out tvecsPtr, (int)flags, criteria.CppPtr, exception.CppPtr);
+            rvecs = new Std.VectorMat(rvecsPtr);
+            tvecs = new Std.VectorMat(tvecsPtr);
 
-    public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-      Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = 0)
-    {
-      Cv.TermCriteria criteria = new Cv.TermCriteria(Cv.TermCriteria.Type.Count | Cv.TermCriteria.Type.Eps, 30, Cv.EPSILON);
-      return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
-    }
+            exception.Check();
+            return reProjectionError;
+        }
 
-    public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
-      Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)
-    {
-      Std.VectorMat tvecs;
-      return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs);
-    }
+        public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
+            Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs, out Std.VectorMat tvecs, Cv.Calib flags = 0)
+        {
+            Cv.TermCriteria criteria = new Cv.TermCriteria(Cv.TermCriteria.Type.Count | Cv.TermCriteria.Type.Eps, 30, Cv.EPSILON);
+            return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs, flags, criteria);
+        }
 
-    public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
+        public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
+            Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs, out Std.VectorMat rvecs)
+        {
+            Std.VectorMat tvecs;
+            return CalibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, out rvecs, out tvecs);
+        }
+
+        public static double CalibrateCameraAruco(Std.VectorVectorPoint2f corners, Std.VectorInt ids, Std.VectorInt counter, Board board,
       Cv.Size imageSize, Cv.Mat cameraMatrix, Cv.Mat distCoeffs)
     {
       Std.VectorMat rvecs;
