@@ -1,0 +1,76 @@
+root = true
+
+[*]
+end_of_line = lf
+
+[*.{compute,cs,hlsl,xml}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.cs]
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#normalize_modifiers
+dotnet_style_require_accessibility_modifiers = always:warning
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:warning
+dotnet_style_readonly_field = true:warning
+
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#parentheses
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
+
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#expression_level
+dotnet_style_prefer_auto_properties = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#implicit-and-explicit-types
+csharp_style_var_for_built_in_types = false:warning
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#code_block
+csharp_prefer_braces = true:warning
+
+# See https://docs.microsoft.com/fr-fr/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#wrapping
+csharp_preserve_single_line_statements = false
+
+## Styles
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+dotnet_naming_style.interfaces_style.capitalization = pascal_case
+dotnet_naming_style.interfaces_style.required_prefix = I
+
+## Symbols
+# Suppress: EC114
+# The EditorConfig extension is not up to date
+dotnet_naming_symbols.pascal_case_symbols.applicable_kinds = namespace, class, struct, enum, property, method, event, delegate
+dotnet_naming_symbols.pascal_case_symbols.applicable_accessibilities = *
+
+dotnet_naming_symbols.const_static_fields.applicable_kinds = field
+dotnet_naming_symbols.const_static_fields.applicable_accessibilities = *
+dotnet_naming_symbols.const_static_fields.required_modifiers = const, static
+
+dotnet_naming_symbols.camel_case_symbols.applicable_kinds = field, parameter
+dotnet_naming_symbols.camel_case_symbols.applicable_accessibilities = *
+
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+dotnet_naming_symbols.interfaces.applicable_accessibilities = *
+
+## Rules
+dotnet_naming_rule.pascal_case_naming.symbols = pascal_case_symbols
+dotnet_naming_rule.pascal_case_naming.style = pascal_case_style
+dotnet_naming_rule.pascal_case_naming.severity = warning
+
+dotnet_naming_rule.static_fields_naming.symbols = const_static_fields
+dotnet_naming_rule.static_fields_naming.style = pascal_case_style
+dotnet_naming_rule.static_fields_naming.severity = warning
+
+dotnet_naming_rule.camel_case_naming.symbols = camel_case_symbols
+dotnet_naming_rule.camel_case_naming.style = camel_case_style
+dotnet_naming_rule.camel_case_naming.severity = warning
+
+dotnet_naming_rule.interfaces_naming.symbols = interfaces
+dotnet_naming_rule.interfaces_naming.style = interfaces_style
+dotnet_naming_rule.interfaces_naming.severity = warning
