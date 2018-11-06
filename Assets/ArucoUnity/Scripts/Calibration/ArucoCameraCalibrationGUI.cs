@@ -1,4 +1,5 @@
 ﻿using ArucoUnity.Utilities;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,7 +57,7 @@ namespace ArucoUnity.Calibration
             // Suscribe to ArucoCalibrator events
             if (arucoCameraCalibration.IsStarted)
             {
-                ConfigureUI(arucoCameraCalibration);
+                ConfigureUI(this, EventArgs.Empty);
             }
             arucoCameraCalibration.Started += ConfigureUI;
             arucoCameraCalibration.Calibrated += Calibrated;
@@ -74,7 +75,7 @@ namespace ArucoUnity.Calibration
         /// <summary>
         /// Configures the images display.
         /// </summary>
-        protected void ConfigureUI(IController controller)
+        protected void ConfigureUI(object sender, EventArgs e)
         {
             // Configure the buttons
             addImagesButton.enabled = true;

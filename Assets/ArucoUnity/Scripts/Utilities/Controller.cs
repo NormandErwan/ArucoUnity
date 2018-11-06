@@ -9,32 +9,22 @@ namespace ArucoUnity.Utilities
     /// </summary>
     public abstract class Controller : MonoBehaviour, IController
     {
-        // Editor fields
-
         [SerializeField]
         [Tooltip("Start automatically when the configuration is done. Call alternatively StartController().")]
         private bool autoStart = true;
 
-        // IConfigurableController events
-
-        public event Action<IController> Ready = delegate { };
-        public event Action<IController> Configured = delegate { };
-        public event Action<IController> Started = delegate { };
-        public event Action<IController> Stopped = delegate { };
-
-        // IConfigurableController properties
+        public event EventHandler Ready = delegate { };
+        public event EventHandler Configured = delegate { };
+        public event EventHandler Started = delegate { };
+        public event EventHandler Stopped = delegate { };
 
         public bool AutoStart { get { return autoStart; } set { SetAutoStart(value); } }
         public bool IsReady { get; private set; }
         public bool IsConfigured { get; private set; }
         public bool IsStarted { get; private set; }
 
-        // Variables
-
         private HashSet<IController> dependencies = new HashSet<IController>();
         private HashSet<IController> stoppedDependencies = new HashSet<IController>();
-
-        // MonoBehaviour methods
 
         /// <summary>
         /// Initializes the properties.
@@ -64,8 +54,6 @@ namespace ArucoUnity.Utilities
             }
         }
 
-        // IArucoCameraController methods
-
         public void AddDependency(IController dependency)
         {
             if (IsStarted)
@@ -79,8 +67,8 @@ namespace ArucoUnity.Utilities
                 stoppedDependencies.Add(dependency);
             }
 
-            dependency.Started += Dependency_Started;
-            dependency.Stopped += Dependency_Stopped;
+            dependency.Started += DependencyStarted;
+            dependency.Stopped += DependencyStopped;
         }
 
         public void RemoveDependency(IController dependency)
@@ -93,8 +81,8 @@ namespace ArucoUnity.Utilities
             dependencies.Remove(dependency);
             stoppedDependencies.Remove(dependency);
 
-            dependency.Started -= Dependency_Started;
-            dependency.Stopped -= Dependency_Stopped;
+            dependency.Started -= DependencyStarted;
+            dependency.Stopped -= DependencyStopped;
         }
 
         public List<IController> GetDependencies()
@@ -138,8 +126,6 @@ namespace ArucoUnity.Utilities
             OnStopped();
         }
 
-        // Methods
-
         protected virtual void Configuring()
         {
         }
@@ -151,7 +137,7 @@ namespace ArucoUnity.Utilities
         protected virtual void OnConfigured()
         {
             IsConfigured = true;
-            Configured(this);
+            Configured(this, EventArgs.Empty);
 
             if (stoppedDependencies.Count == 0)
             {
@@ -169,7 +155,7 @@ namespace ArucoUnity.Utilities
         protected virtual void OnStarted()
         {
             IsStarted = true;
-            Started(this);
+            Started(this, EventArgs.Empty);
         }
 
         protected virtual void Stopping()
@@ -182,7 +168,7 @@ namespace ArucoUnity.Utilities
         protected virtual void OnStopped()
         {
             IsStarted = false;
-            Stopped(this);
+            Stopped(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -200,9 +186,11 @@ namespace ArucoUnity.Utilities
         /// <summary>
         /// Calls <see cref="OnReady"/> if the controller is configured and all the dependencies are started.
         /// </summary>
-        private void Dependency_Started(IController dependency)
+        private void DependencyStarted(object sender, EventArgs e)
         {
+            var dependency = (IController)sender;
             stoppedDependencies.Remove(dependency);
+
             if (IsConfigured && stoppedDependencies.Count == 0)
             {
                 OnReady();
@@ -212,9 +200,11 @@ namespace ArucoUnity.Utilities
         /// <summary>
         /// Calls <see cref="StopController"/> if the controller is started.
         /// </summary>
-        private void Dependency_Stopped(IController dependency)
+        private void DependencyStopped(object sender, EventArgs e)
         {
+            var dependency = (IController)sender;
             stoppedDependencies.Add(dependency);
+
             if (IsStarted)
             {
                 StopController();
@@ -227,7 +217,7 @@ namespace ArucoUnity.Utilities
         private void OnReady()
         {
             IsReady = true;
-            Ready(this);
+            Ready(this, EventArgs.Empty);
 
             if (AutoStart)
             {

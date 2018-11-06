@@ -12,22 +12,22 @@ namespace ArucoUnity.Utilities
         /// <summary>
         /// Called when the controller is configured.
         /// </summary>
-        event Action<IController> Configured;
+        event EventHandler Configured;
 
         /// <summary>
         /// Called when the controller is configured and ready to be started, when all its dependencies started.
         /// </summary>
-        event Action<IController> Ready;
+        event EventHandler Ready;
 
         /// <summary>
         /// Called when the controller is started.
         /// </summary>
-        event Action<IController> Started;
+        event EventHandler Started;
 
         /// <summary>
         /// Called when the controller is stopped.
         /// </summary>
-        event Action<IController> Stopped;
+        event EventHandler Stopped;
 
         /// <summary>
         /// Gets or sets if configuring and starting automatically when when all dependencies started. Manually
