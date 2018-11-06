@@ -10,10 +10,10 @@ namespace ArucoUnity.Cameras
     /// </summary>
     /// <remarks>
     /// To add a new camera, you need to derive this class. See <see cref="ArucoWebcam"/> as example. You need to
-    /// implement <see cref="ConfigurableController.Configuring"/>, <see cref="ConfigurableController.Starting"/>,
+    /// implement <see cref="Controller.Configuring"/>, <see cref="Controller.Starting"/>,
     /// and <see cref="UpdatingImages"/>.
     /// </remarks>
-    public abstract class ArucoCamera : ConfigurableController, IArucoCamera
+    public abstract class ArucoCamera : Controller, IArucoCamera
     {
         // Constants
 

@@ -7,11 +7,7 @@ namespace ArucoUnity.Utilities
 {
     public class ArucoCameraSeparateThread
     {
-        // Constants
-
-        private const int buffersCount = 3;
-
-        // Constructor
+        private const int BuffersCount = 3;
 
         public ArucoCameraSeparateThread(IArucoCamera arucoCamera, Action<Cv.Mat[]> threadWork)
         {
@@ -19,7 +15,7 @@ namespace ArucoUnity.Utilities
             this.threadWork = threadWork;
             CopyBackImages = false;
 
-            for (int bufferId = 0; bufferId < buffersCount; bufferId++)
+            for (int bufferId = 0; bufferId < BuffersCount; bufferId++)
             {
                 imageBuffers[bufferId] = new Cv.Mat[arucoCamera.CameraNumber];
                 imageDataBuffers[bufferId] = new byte[arucoCamera.CameraNumber][];
@@ -35,27 +31,21 @@ namespace ArucoUnity.Utilities
             }
         }
 
-        // Properties
-
         public bool CopyBackImages { get; set; }
         public bool IsStarted { get; protected set; }
         public bool ImagesUpdated { get; protected set; }
-
-        // Variables
 
         protected IArucoCamera arucoCamera;
         protected Action<Cv.Mat[]> threadWork;
 
         protected uint currentBuffer = 0;
-        protected Cv.Mat[][] imageBuffers = new Cv.Mat[buffersCount][];
-        protected byte[][][] imageDataBuffers = new byte[buffersCount][][];
+        protected Cv.Mat[][] imageBuffers = new Cv.Mat[BuffersCount][];
+        protected byte[][][] imageDataBuffers = new byte[BuffersCount][][];
 
         protected Thread thread;
         protected Mutex mutex = new Mutex();
         protected Exception threadException, exception;
         protected bool threadUpdated, imagesUpdated;
-
-        // Methods
 
         public void Start()
         {
@@ -155,7 +145,7 @@ namespace ArucoUnity.Utilities
         /// </summary>
         protected uint NextBuffer()
         {
-            return (currentBuffer + 1) % buffersCount;
+            return (currentBuffer + 1) % BuffersCount;
         }
 
         /// <summary>
@@ -163,7 +153,7 @@ namespace ArucoUnity.Utilities
         /// </summary>
         protected uint PreviousBuffer()
         {
-            return (currentBuffer + buffersCount - 1) % buffersCount;
+            return (currentBuffer + BuffersCount - 1) % BuffersCount;
         }
     }
 }

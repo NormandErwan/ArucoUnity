@@ -8,7 +8,7 @@ namespace ArucoUnity.Cameras
     /// <summary>
     /// Captures images of a camera.
     /// </summary>
-    public interface IArucoCamera : IConfigurableController
+    public interface IArucoCamera : IController
     {
         // Events
 

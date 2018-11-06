@@ -7,35 +7,31 @@ namespace ArucoUnity.Utilities
     /// Configurable and startable controller. It can have other configurable controllers as dependencies. They must
     /// have started before starting this controller. They stop this controller when at least one of them stops.
     /// </summary>
-    public interface IConfigurableController
+    public interface IController
     {
-        // Events
-
         /// <summary>
         /// Called when the controller is configured.
         /// </summary>
-        event Action<IConfigurableController> Configured;
+        event Action<IController> Configured;
 
         /// <summary>
         /// Called when the controller is configured and ready to be started, when all its dependencies started.
         /// </summary>
-        event Action<IConfigurableController> Ready;
+        event Action<IController> Ready;
 
         /// <summary>
         /// Called when the controller is started.
         /// </summary>
-        event Action<IConfigurableController> Started;
+        event Action<IController> Started;
 
         /// <summary>
         /// Called when the controller is stopped.
         /// </summary>
-        event Action<IConfigurableController> Stopped;
-
-        // Properties
+        event Action<IController> Stopped;
 
         /// <summary>
         /// Gets or sets if configuring and starting automatically when when all dependencies started. Manually
-        /// configure and start by calling <see cref="ConfigureController"/> and <see cref="StartController"/>.
+        /// configure and start by calling <see cref="Configure"/> and <see cref="StartController"/>.
         /// </summary>
         bool AutoStart { get; set; }
 
@@ -54,28 +50,26 @@ namespace ArucoUnity.Utilities
         /// </summary>
         bool IsStarted { get; }
 
-        // Methods
-
         /// <summary>
         /// Add a new dependency. The controller must be stopped.
         /// </summary>
-        void AddDependency(IConfigurableController dependency);
+        void AddDependency(IController dependency);
 
         /// <summary>
         /// Remove a dependency. The controller must be stopped.
         /// </summary>
-        void RemoveDependency(IConfigurableController dependency);
+        void RemoveDependency(IController dependency);
 
         /// <summary>
         /// Gets the list of the dependencies.
         /// </summary>
-        List<IConfigurableController> GetDependencies();
+        List<IController> GetDependencies();
 
         /// <summary>
         /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the
         /// controller must be stopped.
         /// </summary>
-        void ConfigureController();
+        void Configure();
 
         /// <summary>
         /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and

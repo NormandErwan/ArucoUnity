@@ -74,7 +74,7 @@ namespace ArucoUnity.Calibration
         /// <summary>
         /// Configures the images display.
         /// </summary>
-        protected void ConfigureUI(IConfigurableController controller)
+        protected void ConfigureUI(IController controller)
         {
             // Configure the buttons
             addImagesButton.enabled = true;

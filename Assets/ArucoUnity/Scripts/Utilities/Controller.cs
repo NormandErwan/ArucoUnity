@@ -7,7 +7,7 @@ namespace ArucoUnity.Utilities
     /// <summary>
     /// Configurable and startable controller.
     /// </summary>
-    public abstract class ConfigurableController : MonoBehaviour, IConfigurableController
+    public abstract class Controller : MonoBehaviour, IController
     {
         // Editor fields
 
@@ -17,10 +17,10 @@ namespace ArucoUnity.Utilities
 
         // IConfigurableController events
 
-        public event Action<IConfigurableController> Ready = delegate { };
-        public event Action<IConfigurableController> Configured = delegate { };
-        public event Action<IConfigurableController> Started = delegate { };
-        public event Action<IConfigurableController> Stopped = delegate { };
+        public event Action<IController> Ready = delegate { };
+        public event Action<IController> Configured = delegate { };
+        public event Action<IController> Started = delegate { };
+        public event Action<IController> Stopped = delegate { };
 
         // IConfigurableController properties
 
@@ -31,8 +31,8 @@ namespace ArucoUnity.Utilities
 
         // Variables
 
-        private HashSet<IConfigurableController> dependencies = new HashSet<IConfigurableController>();
-        private HashSet<IConfigurableController> stoppedDependencies = new HashSet<IConfigurableController>();
+        private HashSet<IController> dependencies = new HashSet<IController>();
+        private HashSet<IController> stoppedDependencies = new HashSet<IController>();
 
         // MonoBehaviour methods
 
@@ -66,7 +66,7 @@ namespace ArucoUnity.Utilities
 
         // IArucoCameraController methods
 
-        public void AddDependency(IConfigurableController dependency)
+        public void AddDependency(IController dependency)
         {
             if (IsStarted)
             {
@@ -83,7 +83,7 @@ namespace ArucoUnity.Utilities
             dependency.Stopped += Dependency_Stopped;
         }
 
-        public void RemoveDependency(IConfigurableController dependency)
+        public void RemoveDependency(IController dependency)
         {
             if (IsStarted)
             {
@@ -97,12 +97,12 @@ namespace ArucoUnity.Utilities
             dependency.Stopped -= Dependency_Stopped;
         }
 
-        public List<IConfigurableController> GetDependencies()
+        public List<IController> GetDependencies()
         {
-            return new List<IConfigurableController>(dependencies);
+            return new List<IController>(dependencies);
         }
 
-        public void ConfigureController()
+        public void Configure()
         {
             if (IsStarted)
             {
@@ -186,21 +186,21 @@ namespace ArucoUnity.Utilities
         }
 
         /// <summary>
-        /// Calls <see cref="ConfigureController"/> if <see cref="AutoStart"/> is true.
+        /// Calls <see cref="Configure"/> if <see cref="AutoStart"/> is true.
         /// </summary>
         private void SetAutoStart(bool value)
         {
             autoStart = value;
             if (AutoStart)
             {
-                ConfigureController();
+                Configure();
             }
         }
 
         /// <summary>
         /// Calls <see cref="OnReady"/> if the controller is configured and all the dependencies are started.
         /// </summary>
-        private void Dependency_Started(IConfigurableController dependency)
+        private void Dependency_Started(IController dependency)
         {
             stoppedDependencies.Remove(dependency);
             if (IsConfigured && stoppedDependencies.Count == 0)
@@ -212,7 +212,7 @@ namespace ArucoUnity.Utilities
         /// <summary>
         /// Calls <see cref="StopController"/> if the controller is started.
         /// </summary>
-        private void Dependency_Stopped(IConfigurableController dependency)
+        private void Dependency_Stopped(IController dependency)
         {
             stoppedDependencies.Add(dependency);
             if (IsStarted)

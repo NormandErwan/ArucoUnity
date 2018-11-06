@@ -6,7 +6,7 @@ namespace ArucoUnity.Cameras
     /// <summary>
     /// Generic configurable controller using a <see cref="ArucoCamera"/> as starting dependency.
     /// </summary>
-    public abstract class ArucoCameraController : ConfigurableController, IArucoCameraController
+    public abstract class ArucoCameraController : Controller, IArucoCameraController
     {
         // IArucoCameraController properties
 
