@@ -1,6 +1,5 @@
 # ArucoUnity
 
-*.unitypackage
 **/Assets/ArucoUnity/Images*
 **/Assets/ArucoUnity/Calibrations*
 **/Assets/ArucoUnity/CameraParameters*
@@ -29,6 +28,8 @@ _site/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+UnityPackageManager/*
+Packages/*
 
 ## Visual Studio cache directory
 .vs/
