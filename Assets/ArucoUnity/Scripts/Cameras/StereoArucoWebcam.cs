@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArucoUnity.Utilities;
+using System;
 using UnityEngine;
 
 namespace ArucoUnity.Cameras

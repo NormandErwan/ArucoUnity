@@ -3,24 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArucoUnity.Cameras
+namespace ArucoUnity.Utilities
 {
     /// <summary>
-    /// Get images from multiple webcams. Based on: http://answers.unity3d.com/answers/1155328/view.html
+    /// Get images from multiple webcams.
     /// </summary>
+    /// <remarks>
+    /// Based on: http://answers.unity3d.com/answers/1155328/view.html
+    /// </remarks>
     public class WebcamController : MonoBehaviour
     {
-        // Events
-
         /// <summary>
         /// Called when the webcams started.
         /// </summary>
-        public Action<WebcamController> Started = delegate { };
-
-        // Properties
+        public event Action<WebcamController> Started = delegate { };
 
         /// <summary>
-        /// Gets or sets the ids of the webcams to use.
+        /// Gets the ids of the webcams to use.
         /// </summary>
         public List<int> Ids { get; private set; }
 
@@ -64,13 +63,9 @@ namespace ArucoUnity.Cameras
         /// </summary>
         public bool IsStarted { get; private set; }
 
-        // Variables
-
         protected bool starting = false;
         private List<Texture2D> textures2D = new List<Texture2D>();
         private TextureFormat textures2DFormat = TextureFormat.RGB24;
-
-        // MonoBehaviour methods
 
         /// <summary>
         /// Initializes the properties.
@@ -85,8 +80,6 @@ namespace ArucoUnity.Cameras
             Textures = new List<WebCamTexture>();
         }
 
-        // Methods
-
         /// <summary>
         /// Configures <see cref="Devices"/> and <see cref="Textures"/> from <see cref="Ids"/>.
         /// </summary>
@@ -99,7 +92,7 @@ namespace ArucoUnity.Cameras
             Textures.Clear();
             Textures2D.Clear();
 
-            foreach (var webcamId in Ids)
+            foreach (int webcamId in Ids)
             {
                 var webcamDevice = WebCamTexture.devices[webcamId];
                 Devices.Add(webcamDevice);
@@ -140,8 +133,6 @@ namespace ArucoUnity.Cameras
                 webcam.Stop();
             }
         }
-
-        // Methods
 
         /// <summary>
         /// Waits for Unity to start the webcams to set <see cref="Textures2D"/>, <see cref="Textures"/> and call
