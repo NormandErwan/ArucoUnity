@@ -1,6 +1,12 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: ArucoUnity
+  name: ArucoUnity
+  href: api/ArucoUnity.html
+  commentId: N:ArucoUnity
+  fullName: ArucoUnity
+  nameWithType: ArucoUnity
 - uid: ArucoUnity.Calibration
   name: ArucoUnity.Calibration
   href: api/ArucoUnity.Calibration.html
@@ -77,13 +83,13 @@ references:
   commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate()
   nameWithType: ArucoCameraCalibration.Calibrate()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
   nameWithType: ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*
@@ -443,12 +449,12 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
   nameWithType: ArucoCameraCalibrationGUI.Awake
-- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
-  name: ConfigureUI(IConfigurableController)
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html#ArucoUnity_Calibration_ArucoCameraCalibrationGUI_ConfigureUI_IConfigurableController_
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
-  nameWithType: ArucoCameraCalibrationGUI.ConfigureUI(IConfigurableController)
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,System.EventArgs)
+  name: ConfigureUI(Object, EventArgs)
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html#ArucoUnity_Calibration_ArucoCameraCalibrationGUI_ConfigureUI_System_Object_System_EventArgs_
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,System.EventArgs)
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object, System.EventArgs)
+  nameWithType: ArucoCameraCalibrationGUI.ConfigureUI(Object, EventArgs)
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI*
   name: ConfigureUI
   href: api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html#ArucoUnity_Calibration_ArucoCameraCalibrationGUI_ConfigureUI_
@@ -629,13 +635,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
   nameWithType: OmnidirCameraCalibration
-- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_OmnidirCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_OmnidirCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
   nameWithType: OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate*
@@ -787,13 +793,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
   nameWithType: StereoOmnidirCameraCalibration
-- uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_StereoOmnidirCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_StereoOmnidirCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
   nameWithType: StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate*
@@ -815,13 +821,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
   nameWithType: PinholeCameraCalibration
-- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
   nameWithType: PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate*
@@ -1064,13 +1070,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
   nameWithType: StereoPinholeCameraCalibration
-- uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_StereoPinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_StereoPinholeCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
   nameWithType: StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate*
@@ -1520,11 +1526,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController
   nameWithType: ArucoWebcam.WebcamController
-- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
   name: WebcamController_Started(WebcamController)
-  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_WebcamController_Started_ArucoUnity_Cameras_WebcamController_
-  commentId: M:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
-  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_WebcamController_Started_WebcamController_
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
   nameWithType: ArucoWebcam.WebcamController_Started(WebcamController)
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started*
   name: WebcamController_Started
@@ -2924,11 +2930,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController
   nameWithType: StereoArucoWebcam.WebcamController
-- uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+- uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
   name: WebcamController_Started(WebcamController)
-  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_WebcamController_Started_ArucoUnity_Cameras_WebcamController_
-  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
-  fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Cameras.WebcamController)
+  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_WebcamController_Started_WebcamController_
+  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
+  fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
   nameWithType: StereoArucoWebcam.WebcamController_Started(WebcamController)
 - uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started*
   name: WebcamController_Started
@@ -2975,13 +2981,13 @@ references:
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   nameWithType: ArucoCameraUndistortion
-- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[],System.Byte[][])
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[],System.Byte[][])
   name: ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])
-  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____
-  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[],System.Byte[][])
+  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_Cv_Mat___System_Byte_____
+  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[],System.Byte[][])
   name.vb: ArucoCamera_UndistortRectifyImages(Cv.Mat(), Byte()())
-  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[], System.Byte[][])
-  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat(), System.Byte()())
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], System.Byte[][])
+  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat(), System.Byte()())
   nameWithType: ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])
   nameWithType.vb: ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat(), Byte()())
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages*
@@ -3170,13 +3176,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
   nameWithType: ArucoCameraUndistortion.UndistortionRectificationMaps
-- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
   name: UndistortRectifyImages(Cv.Mat[])
-  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_Cv_Mat___
+  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
   name.vb: UndistortRectifyImages(Cv.Mat())
-  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
+  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat())
   nameWithType: ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
   nameWithType.vb: ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat())
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages*
@@ -3591,180 +3597,443 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.RectificationZeroDisparity
   nameWithType: StereoPinholeCameraUndistortion.RectificationZeroDisparity
-- uid: ArucoUnity.Cameras.WebcamController
-  name: WebcamController
-  href: api/ArucoUnity.Cameras.WebcamController.html
-  commentId: T:ArucoUnity.Cameras.WebcamController
-  fullName: ArucoUnity.Cameras.WebcamController
-  nameWithType: WebcamController
-- uid: ArucoUnity.Cameras.WebcamController.Awake
+- uid: ArucoUnity.Controller
+  name: Controller
+  href: api/ArucoUnity.Controller.html
+  commentId: T:ArucoUnity.Controller
+  fullName: ArucoUnity.Controller
+  nameWithType: Controller
+- uid: ArucoUnity.Controller.AddDependency(ArucoUnity.IController)
+  name: AddDependency(IController)
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_
+  commentId: M:ArucoUnity.Controller.AddDependency(ArucoUnity.IController)
+  fullName: ArucoUnity.Controller.AddDependency(ArucoUnity.IController)
+  nameWithType: Controller.AddDependency(IController)
+- uid: ArucoUnity.Controller.AddDependency*
+  name: AddDependency
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_
+  commentId: Overload:ArucoUnity.Controller.AddDependency
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.AddDependency
+  nameWithType: Controller.AddDependency
+- uid: ArucoUnity.Controller.AutoStart
+  name: AutoStart
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart
+  commentId: P:ArucoUnity.Controller.AutoStart
+  fullName: ArucoUnity.Controller.AutoStart
+  nameWithType: Controller.AutoStart
+- uid: ArucoUnity.Controller.AutoStart*
+  name: AutoStart
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart_
+  commentId: Overload:ArucoUnity.Controller.AutoStart
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.AutoStart
+  nameWithType: Controller.AutoStart
+- uid: ArucoUnity.Controller.Awake
   name: Awake()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Awake
-  commentId: M:ArucoUnity.Cameras.WebcamController.Awake
-  fullName: ArucoUnity.Cameras.WebcamController.Awake()
-  nameWithType: WebcamController.Awake()
-- uid: ArucoUnity.Cameras.WebcamController.Awake*
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Awake
+  commentId: M:ArucoUnity.Controller.Awake
+  fullName: ArucoUnity.Controller.Awake()
+  nameWithType: Controller.Awake()
+- uid: ArucoUnity.Controller.Awake*
   name: Awake
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Awake_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Awake
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Awake_
+  commentId: Overload:ArucoUnity.Controller.Awake
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Awake
-  nameWithType: WebcamController.Awake
-- uid: ArucoUnity.Cameras.WebcamController.Configure
+  fullName: ArucoUnity.Controller.Awake
+  nameWithType: Controller.Awake
+- uid: ArucoUnity.Controller.Configure
   name: Configure()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Configure
-  commentId: M:ArucoUnity.Cameras.WebcamController.Configure
-  fullName: ArucoUnity.Cameras.WebcamController.Configure()
-  nameWithType: WebcamController.Configure()
-- uid: ArucoUnity.Cameras.WebcamController.Configure*
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Configure
+  commentId: M:ArucoUnity.Controller.Configure
+  fullName: ArucoUnity.Controller.Configure()
+  nameWithType: Controller.Configure()
+- uid: ArucoUnity.Controller.Configure*
   name: Configure
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Configure_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Configure
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Configure_
+  commentId: Overload:ArucoUnity.Controller.Configure
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Configure
-  nameWithType: WebcamController.Configure
-- uid: ArucoUnity.Cameras.WebcamController.Devices
-  name: Devices
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Devices
-  commentId: P:ArucoUnity.Cameras.WebcamController.Devices
-  fullName: ArucoUnity.Cameras.WebcamController.Devices
-  nameWithType: WebcamController.Devices
-- uid: ArucoUnity.Cameras.WebcamController.Devices*
-  name: Devices
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Devices_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Devices
+  fullName: ArucoUnity.Controller.Configure
+  nameWithType: Controller.Configure
+- uid: ArucoUnity.Controller.Configured
+  name: Configured
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Configured
+  commentId: E:ArucoUnity.Controller.Configured
+  fullName: ArucoUnity.Controller.Configured
+  nameWithType: Controller.Configured
+- uid: ArucoUnity.Controller.Configuring
+  name: Configuring()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Configuring
+  commentId: M:ArucoUnity.Controller.Configuring
+  fullName: ArucoUnity.Controller.Configuring()
+  nameWithType: Controller.Configuring()
+- uid: ArucoUnity.Controller.Configuring*
+  name: Configuring
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Configuring_
+  commentId: Overload:ArucoUnity.Controller.Configuring
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Devices
-  nameWithType: WebcamController.Devices
-- uid: ArucoUnity.Cameras.WebcamController.Ids
-  name: Ids
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Ids
-  commentId: P:ArucoUnity.Cameras.WebcamController.Ids
-  fullName: ArucoUnity.Cameras.WebcamController.Ids
-  nameWithType: WebcamController.Ids
-- uid: ArucoUnity.Cameras.WebcamController.Ids*
-  name: Ids
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Ids_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Ids
+  fullName: ArucoUnity.Controller.Configuring
+  nameWithType: Controller.Configuring
+- uid: ArucoUnity.Controller.GetDependencies
+  name: GetDependencies()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies
+  commentId: M:ArucoUnity.Controller.GetDependencies
+  fullName: ArucoUnity.Controller.GetDependencies()
+  nameWithType: Controller.GetDependencies()
+- uid: ArucoUnity.Controller.GetDependencies*
+  name: GetDependencies
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies_
+  commentId: Overload:ArucoUnity.Controller.GetDependencies
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Ids
-  nameWithType: WebcamController.Ids
-- uid: ArucoUnity.Cameras.WebcamController.IsConfigured
+  fullName: ArucoUnity.Controller.GetDependencies
+  nameWithType: Controller.GetDependencies
+- uid: ArucoUnity.Controller.IsConfigured
   name: IsConfigured
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_IsConfigured
-  commentId: P:ArucoUnity.Cameras.WebcamController.IsConfigured
-  fullName: ArucoUnity.Cameras.WebcamController.IsConfigured
-  nameWithType: WebcamController.IsConfigured
-- uid: ArucoUnity.Cameras.WebcamController.IsConfigured*
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured
+  commentId: P:ArucoUnity.Controller.IsConfigured
+  fullName: ArucoUnity.Controller.IsConfigured
+  nameWithType: Controller.IsConfigured
+- uid: ArucoUnity.Controller.IsConfigured*
   name: IsConfigured
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_IsConfigured_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.IsConfigured
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured_
+  commentId: Overload:ArucoUnity.Controller.IsConfigured
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.IsConfigured
-  nameWithType: WebcamController.IsConfigured
-- uid: ArucoUnity.Cameras.WebcamController.IsStarted
-  name: IsStarted
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_IsStarted
-  commentId: P:ArucoUnity.Cameras.WebcamController.IsStarted
-  fullName: ArucoUnity.Cameras.WebcamController.IsStarted
-  nameWithType: WebcamController.IsStarted
-- uid: ArucoUnity.Cameras.WebcamController.IsStarted*
-  name: IsStarted
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_IsStarted_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.IsStarted
+  fullName: ArucoUnity.Controller.IsConfigured
+  nameWithType: Controller.IsConfigured
+- uid: ArucoUnity.Controller.IsReady
+  name: IsReady
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady
+  commentId: P:ArucoUnity.Controller.IsReady
+  fullName: ArucoUnity.Controller.IsReady
+  nameWithType: Controller.IsReady
+- uid: ArucoUnity.Controller.IsReady*
+  name: IsReady
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady_
+  commentId: Overload:ArucoUnity.Controller.IsReady
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.IsStarted
-  nameWithType: WebcamController.IsStarted
-- uid: ArucoUnity.Cameras.WebcamController.Started
+  fullName: ArucoUnity.Controller.IsReady
+  nameWithType: Controller.IsReady
+- uid: ArucoUnity.Controller.IsStarted
+  name: IsStarted
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted
+  commentId: P:ArucoUnity.Controller.IsStarted
+  fullName: ArucoUnity.Controller.IsStarted
+  nameWithType: Controller.IsStarted
+- uid: ArucoUnity.Controller.IsStarted*
+  name: IsStarted
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted_
+  commentId: Overload:ArucoUnity.Controller.IsStarted
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.IsStarted
+  nameWithType: Controller.IsStarted
+- uid: ArucoUnity.Controller.OnConfigured
+  name: OnConfigured()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured
+  commentId: M:ArucoUnity.Controller.OnConfigured
+  fullName: ArucoUnity.Controller.OnConfigured()
+  nameWithType: Controller.OnConfigured()
+- uid: ArucoUnity.Controller.OnConfigured*
+  name: OnConfigured
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured_
+  commentId: Overload:ArucoUnity.Controller.OnConfigured
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.OnConfigured
+  nameWithType: Controller.OnConfigured
+- uid: ArucoUnity.Controller.OnDestroy
+  name: OnDestroy()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy
+  commentId: M:ArucoUnity.Controller.OnDestroy
+  fullName: ArucoUnity.Controller.OnDestroy()
+  nameWithType: Controller.OnDestroy()
+- uid: ArucoUnity.Controller.OnDestroy*
+  name: OnDestroy
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy_
+  commentId: Overload:ArucoUnity.Controller.OnDestroy
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.OnDestroy
+  nameWithType: Controller.OnDestroy
+- uid: ArucoUnity.Controller.OnStarted
+  name: OnStarted()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted
+  commentId: M:ArucoUnity.Controller.OnStarted
+  fullName: ArucoUnity.Controller.OnStarted()
+  nameWithType: Controller.OnStarted()
+- uid: ArucoUnity.Controller.OnStarted*
+  name: OnStarted
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted_
+  commentId: Overload:ArucoUnity.Controller.OnStarted
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.OnStarted
+  nameWithType: Controller.OnStarted
+- uid: ArucoUnity.Controller.OnStopped
+  name: OnStopped()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped
+  commentId: M:ArucoUnity.Controller.OnStopped
+  fullName: ArucoUnity.Controller.OnStopped()
+  nameWithType: Controller.OnStopped()
+- uid: ArucoUnity.Controller.OnStopped*
+  name: OnStopped
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped_
+  commentId: Overload:ArucoUnity.Controller.OnStopped
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.OnStopped
+  nameWithType: Controller.OnStopped
+- uid: ArucoUnity.Controller.Ready
+  name: Ready
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Ready
+  commentId: E:ArucoUnity.Controller.Ready
+  fullName: ArucoUnity.Controller.Ready
+  nameWithType: Controller.Ready
+- uid: ArucoUnity.Controller.RemoveDependency(ArucoUnity.IController)
+  name: RemoveDependency(IController)
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_
+  commentId: M:ArucoUnity.Controller.RemoveDependency(ArucoUnity.IController)
+  fullName: ArucoUnity.Controller.RemoveDependency(ArucoUnity.IController)
+  nameWithType: Controller.RemoveDependency(IController)
+- uid: ArucoUnity.Controller.RemoveDependency*
+  name: RemoveDependency
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_
+  commentId: Overload:ArucoUnity.Controller.RemoveDependency
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.RemoveDependency
+  nameWithType: Controller.RemoveDependency
+- uid: ArucoUnity.Controller.Start
+  name: Start()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Start
+  commentId: M:ArucoUnity.Controller.Start
+  fullName: ArucoUnity.Controller.Start()
+  nameWithType: Controller.Start()
+- uid: ArucoUnity.Controller.Start*
+  name: Start
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Start_
+  commentId: Overload:ArucoUnity.Controller.Start
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.Start
+  nameWithType: Controller.Start
+- uid: ArucoUnity.Controller.StartController
+  name: StartController()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_StartController
+  commentId: M:ArucoUnity.Controller.StartController
+  fullName: ArucoUnity.Controller.StartController()
+  nameWithType: Controller.StartController()
+- uid: ArucoUnity.Controller.StartController*
+  name: StartController
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_StartController_
+  commentId: Overload:ArucoUnity.Controller.StartController
+  isSpec: "True"
+  fullName: ArucoUnity.Controller.StartController
+  nameWithType: Controller.StartController
+- uid: ArucoUnity.Controller.Started
   name: Started
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Started
-  commentId: F:ArucoUnity.Cameras.WebcamController.Started
-  fullName: ArucoUnity.Cameras.WebcamController.Started
-  nameWithType: WebcamController.Started
-- uid: ArucoUnity.Cameras.WebcamController.starting
-  name: starting
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_starting
-  commentId: F:ArucoUnity.Cameras.WebcamController.starting
-  fullName: ArucoUnity.Cameras.WebcamController.starting
-  nameWithType: WebcamController.starting
-- uid: ArucoUnity.Cameras.WebcamController.StartingAsync
-  name: StartingAsync()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StartingAsync
-  commentId: M:ArucoUnity.Cameras.WebcamController.StartingAsync
-  fullName: ArucoUnity.Cameras.WebcamController.StartingAsync()
-  nameWithType: WebcamController.StartingAsync()
-- uid: ArucoUnity.Cameras.WebcamController.StartingAsync*
-  name: StartingAsync
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StartingAsync_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.StartingAsync
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Started
+  commentId: E:ArucoUnity.Controller.Started
+  fullName: ArucoUnity.Controller.Started
+  nameWithType: Controller.Started
+- uid: ArucoUnity.Controller.Starting
+  name: Starting()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Starting
+  commentId: M:ArucoUnity.Controller.Starting
+  fullName: ArucoUnity.Controller.Starting()
+  nameWithType: Controller.Starting()
+- uid: ArucoUnity.Controller.Starting*
+  name: Starting
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Starting_
+  commentId: Overload:ArucoUnity.Controller.Starting
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.StartingAsync
-  nameWithType: WebcamController.StartingAsync
-- uid: ArucoUnity.Cameras.WebcamController.StartWebcams
-  name: StartWebcams()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StartWebcams
-  commentId: M:ArucoUnity.Cameras.WebcamController.StartWebcams
-  fullName: ArucoUnity.Cameras.WebcamController.StartWebcams()
-  nameWithType: WebcamController.StartWebcams()
-- uid: ArucoUnity.Cameras.WebcamController.StartWebcams*
-  name: StartWebcams
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StartWebcams_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.StartWebcams
+  fullName: ArucoUnity.Controller.Starting
+  nameWithType: Controller.Starting
+- uid: ArucoUnity.Controller.StopController
+  name: StopController()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_StopController
+  commentId: M:ArucoUnity.Controller.StopController
+  fullName: ArucoUnity.Controller.StopController()
+  nameWithType: Controller.StopController()
+- uid: ArucoUnity.Controller.StopController*
+  name: StopController
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_StopController_
+  commentId: Overload:ArucoUnity.Controller.StopController
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.StartWebcams
-  nameWithType: WebcamController.StartWebcams
-- uid: ArucoUnity.Cameras.WebcamController.StopWebcams
-  name: StopWebcams()
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StopWebcams
-  commentId: M:ArucoUnity.Cameras.WebcamController.StopWebcams
-  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams()
-  nameWithType: WebcamController.StopWebcams()
-- uid: ArucoUnity.Cameras.WebcamController.StopWebcams*
-  name: StopWebcams
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_StopWebcams_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.StopWebcams
+  fullName: ArucoUnity.Controller.StopController
+  nameWithType: Controller.StopController
+- uid: ArucoUnity.Controller.Stopped
+  name: Stopped
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped
+  commentId: E:ArucoUnity.Controller.Stopped
+  fullName: ArucoUnity.Controller.Stopped
+  nameWithType: Controller.Stopped
+- uid: ArucoUnity.Controller.Stopping
+  name: Stopping()
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Stopping
+  commentId: M:ArucoUnity.Controller.Stopping
+  fullName: ArucoUnity.Controller.Stopping()
+  nameWithType: Controller.Stopping()
+- uid: ArucoUnity.Controller.Stopping*
+  name: Stopping
+  href: api/ArucoUnity.Controller.html#ArucoUnity_Controller_Stopping_
+  commentId: Overload:ArucoUnity.Controller.Stopping
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.StopWebcams
-  nameWithType: WebcamController.StopWebcams
-- uid: ArucoUnity.Cameras.WebcamController.Textures
-  name: Textures
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures
-  commentId: P:ArucoUnity.Cameras.WebcamController.Textures
-  fullName: ArucoUnity.Cameras.WebcamController.Textures
-  nameWithType: WebcamController.Textures
-- uid: ArucoUnity.Cameras.WebcamController.Textures*
-  name: Textures
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures
+  fullName: ArucoUnity.Controller.Stopping
+  nameWithType: Controller.Stopping
+- uid: ArucoUnity.IController
+  name: IController
+  href: api/ArucoUnity.IController.html
+  commentId: T:ArucoUnity.IController
+  fullName: ArucoUnity.IController
+  nameWithType: IController
+- uid: ArucoUnity.IController.AddDependency(ArucoUnity.IController)
+  name: AddDependency(IController)
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_AddDependency_ArucoUnity_IController_
+  commentId: M:ArucoUnity.IController.AddDependency(ArucoUnity.IController)
+  fullName: ArucoUnity.IController.AddDependency(ArucoUnity.IController)
+  nameWithType: IController.AddDependency(IController)
+- uid: ArucoUnity.IController.AddDependency*
+  name: AddDependency
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_AddDependency_
+  commentId: Overload:ArucoUnity.IController.AddDependency
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Textures
-  nameWithType: WebcamController.Textures
-- uid: ArucoUnity.Cameras.WebcamController.Textures2D
-  name: Textures2D
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2D
-  commentId: P:ArucoUnity.Cameras.WebcamController.Textures2D
-  fullName: ArucoUnity.Cameras.WebcamController.Textures2D
-  nameWithType: WebcamController.Textures2D
-- uid: ArucoUnity.Cameras.WebcamController.Textures2D*
-  name: Textures2D
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2D_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2D
+  fullName: ArucoUnity.IController.AddDependency
+  nameWithType: IController.AddDependency
+- uid: ArucoUnity.IController.AutoStart
+  name: AutoStart
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_AutoStart
+  commentId: P:ArucoUnity.IController.AutoStart
+  fullName: ArucoUnity.IController.AutoStart
+  nameWithType: IController.AutoStart
+- uid: ArucoUnity.IController.AutoStart*
+  name: AutoStart
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_AutoStart_
+  commentId: Overload:ArucoUnity.IController.AutoStart
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Textures2D
-  nameWithType: WebcamController.Textures2D
-- uid: ArucoUnity.Cameras.WebcamController.Textures2DFormat
-  name: Textures2DFormat
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2DFormat
-  commentId: P:ArucoUnity.Cameras.WebcamController.Textures2DFormat
-  fullName: ArucoUnity.Cameras.WebcamController.Textures2DFormat
-  nameWithType: WebcamController.Textures2DFormat
-- uid: ArucoUnity.Cameras.WebcamController.Textures2DFormat*
-  name: Textures2DFormat
-  href: api/ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2DFormat_
-  commentId: Overload:ArucoUnity.Cameras.WebcamController.Textures2DFormat
+  fullName: ArucoUnity.IController.AutoStart
+  nameWithType: IController.AutoStart
+- uid: ArucoUnity.IController.Configure
+  name: Configure()
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Configure
+  commentId: M:ArucoUnity.IController.Configure
+  fullName: ArucoUnity.IController.Configure()
+  nameWithType: IController.Configure()
+- uid: ArucoUnity.IController.Configure*
+  name: Configure
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Configure_
+  commentId: Overload:ArucoUnity.IController.Configure
   isSpec: "True"
-  fullName: ArucoUnity.Cameras.WebcamController.Textures2DFormat
-  nameWithType: WebcamController.Textures2DFormat
+  fullName: ArucoUnity.IController.Configure
+  nameWithType: IController.Configure
+- uid: ArucoUnity.IController.Configured
+  name: Configured
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Configured
+  commentId: E:ArucoUnity.IController.Configured
+  fullName: ArucoUnity.IController.Configured
+  nameWithType: IController.Configured
+- uid: ArucoUnity.IController.GetDependencies
+  name: GetDependencies()
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_GetDependencies
+  commentId: M:ArucoUnity.IController.GetDependencies
+  fullName: ArucoUnity.IController.GetDependencies()
+  nameWithType: IController.GetDependencies()
+- uid: ArucoUnity.IController.GetDependencies*
+  name: GetDependencies
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_GetDependencies_
+  commentId: Overload:ArucoUnity.IController.GetDependencies
+  isSpec: "True"
+  fullName: ArucoUnity.IController.GetDependencies
+  nameWithType: IController.GetDependencies
+- uid: ArucoUnity.IController.IsConfigured
+  name: IsConfigured
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsConfigured
+  commentId: P:ArucoUnity.IController.IsConfigured
+  fullName: ArucoUnity.IController.IsConfigured
+  nameWithType: IController.IsConfigured
+- uid: ArucoUnity.IController.IsConfigured*
+  name: IsConfigured
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsConfigured_
+  commentId: Overload:ArucoUnity.IController.IsConfigured
+  isSpec: "True"
+  fullName: ArucoUnity.IController.IsConfigured
+  nameWithType: IController.IsConfigured
+- uid: ArucoUnity.IController.IsReady
+  name: IsReady
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsReady
+  commentId: P:ArucoUnity.IController.IsReady
+  fullName: ArucoUnity.IController.IsReady
+  nameWithType: IController.IsReady
+- uid: ArucoUnity.IController.IsReady*
+  name: IsReady
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsReady_
+  commentId: Overload:ArucoUnity.IController.IsReady
+  isSpec: "True"
+  fullName: ArucoUnity.IController.IsReady
+  nameWithType: IController.IsReady
+- uid: ArucoUnity.IController.IsStarted
+  name: IsStarted
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsStarted
+  commentId: P:ArucoUnity.IController.IsStarted
+  fullName: ArucoUnity.IController.IsStarted
+  nameWithType: IController.IsStarted
+- uid: ArucoUnity.IController.IsStarted*
+  name: IsStarted
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_IsStarted_
+  commentId: Overload:ArucoUnity.IController.IsStarted
+  isSpec: "True"
+  fullName: ArucoUnity.IController.IsStarted
+  nameWithType: IController.IsStarted
+- uid: ArucoUnity.IController.Ready
+  name: Ready
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Ready
+  commentId: E:ArucoUnity.IController.Ready
+  fullName: ArucoUnity.IController.Ready
+  nameWithType: IController.Ready
+- uid: ArucoUnity.IController.RemoveDependency(ArucoUnity.IController)
+  name: RemoveDependency(IController)
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_RemoveDependency_ArucoUnity_IController_
+  commentId: M:ArucoUnity.IController.RemoveDependency(ArucoUnity.IController)
+  fullName: ArucoUnity.IController.RemoveDependency(ArucoUnity.IController)
+  nameWithType: IController.RemoveDependency(IController)
+- uid: ArucoUnity.IController.RemoveDependency*
+  name: RemoveDependency
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_RemoveDependency_
+  commentId: Overload:ArucoUnity.IController.RemoveDependency
+  isSpec: "True"
+  fullName: ArucoUnity.IController.RemoveDependency
+  nameWithType: IController.RemoveDependency
+- uid: ArucoUnity.IController.StartController
+  name: StartController()
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_StartController
+  commentId: M:ArucoUnity.IController.StartController
+  fullName: ArucoUnity.IController.StartController()
+  nameWithType: IController.StartController()
+- uid: ArucoUnity.IController.StartController*
+  name: StartController
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_StartController_
+  commentId: Overload:ArucoUnity.IController.StartController
+  isSpec: "True"
+  fullName: ArucoUnity.IController.StartController
+  nameWithType: IController.StartController
+- uid: ArucoUnity.IController.Started
+  name: Started
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Started
+  commentId: E:ArucoUnity.IController.Started
+  fullName: ArucoUnity.IController.Started
+  nameWithType: IController.Started
+- uid: ArucoUnity.IController.StopController
+  name: StopController()
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_StopController
+  commentId: M:ArucoUnity.IController.StopController
+  fullName: ArucoUnity.IController.StopController()
+  nameWithType: IController.StopController()
+- uid: ArucoUnity.IController.StopController*
+  name: StopController
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_StopController_
+  commentId: Overload:ArucoUnity.IController.StopController
+  isSpec: "True"
+  fullName: ArucoUnity.IController.StopController
+  nameWithType: IController.StopController
+- uid: ArucoUnity.IController.Stopped
+  name: Stopped
+  href: api/ArucoUnity.IController.html#ArucoUnity_IController_Stopped
+  commentId: E:ArucoUnity.IController.Stopped
+  fullName: ArucoUnity.IController.Stopped
+  nameWithType: IController.Stopped
 - uid: ArucoUnity.Objects
   name: ArucoUnity.Objects
   href: api/ArucoUnity.Objects.html
@@ -4961,11 +5230,11 @@ references:
   commentId: T:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
   nameWithType: ArucoCharucoBoardTracker
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoCharucoBoardTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect*
   name: Detect
@@ -4974,11 +5243,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect
   nameWithType: ArucoCharucoBoardTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoCharucoBoardTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw*
   name: Draw
@@ -4987,11 +5256,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw
   nameWithType: ArucoCharucoBoardTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoCharucoBoardTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5000,11 +5269,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms
   nameWithType: ArucoCharucoBoardTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoCharucoBoardTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5032,11 +5301,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Activate
   nameWithType: ArucoDiamondTracker.Activate
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -5045,11 +5314,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -5071,11 +5340,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Deactivate
   nameWithType: ArucoDiamondTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoDiamondTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect*
   name: Detect
@@ -5155,11 +5424,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.DiamondTvecs
   nameWithType: ArucoDiamondTracker.DiamondTvecs
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoDiamondTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw*
   name: Draw
@@ -5180,11 +5449,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimatePoseSquareLength
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimatePoseSquareLength
   nameWithType: ArucoDiamondTracker.EstimatePoseSquareLength
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5193,13 +5462,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms
   nameWithType: ArucoDiamondTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
   name: TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, out ArucoDiamond)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_TryGetArucoDiamond_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_System_UInt32_ArucoUnity_Objects_ArucoDiamond__
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_TryGetArucoDiamond_System_Int32_Aruco_Dictionary_System_UInt32_ArucoUnity_Objects_ArucoDiamond__
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
   name.vb: TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, ByRef ArucoDiamond)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, System.UInt32, out ArucoUnity.Objects.ArucoDiamond)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, System.UInt32, ByRef ArucoUnity.Objects.ArucoDiamond)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, Aruco.Dictionary, System.UInt32, out ArucoUnity.Objects.ArucoDiamond)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, Aruco.Dictionary, System.UInt32, ByRef ArucoUnity.Objects.ArucoDiamond)
   nameWithType: ArucoDiamondTracker.TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, out ArucoDiamond)
   nameWithType.vb: ArucoDiamondTracker.TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, ByRef ArucoDiamond)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond*
@@ -5209,11 +5478,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond
   nameWithType: ArucoDiamondTracker.TryGetArucoDiamond
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5228,11 +5497,11 @@ references:
   commentId: T:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
   nameWithType: ArucoGridBoardTracker
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoGridBoardTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect*
   name: Detect
@@ -5241,11 +5510,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect
   nameWithType: ArucoGridBoardTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoGridBoardTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw*
   name: Draw
@@ -5254,11 +5523,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw
   nameWithType: ArucoGridBoardTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoGridBoardTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5267,11 +5536,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms
   nameWithType: ArucoGridBoardTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoGridBoardTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5299,11 +5568,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Activate
   nameWithType: ArucoMarkerTracker.Activate
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -5312,11 +5581,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -5338,11 +5607,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Deactivate
   nameWithType: ArucoMarkerTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoMarkerTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect*
   name: Detect
@@ -5364,11 +5633,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.DetectedMarkers
   nameWithType: ArucoMarkerTracker.DetectedMarkers
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoMarkerTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw*
   name: Draw
@@ -5383,11 +5652,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.estimatePoseMarkerLength
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.estimatePoseMarkerLength
   nameWithType: ArucoMarkerTracker.estimatePoseMarkerLength
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5467,11 +5736,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.rejectedMarkerCandidatesColor
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.rejectedMarkerCandidatesColor
   nameWithType: ArucoMarkerTracker.rejectedMarkerCandidatesColor
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5614,13 +5883,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects
   nameWithType: ArucoObjectsController.GetArucoObjects
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
   name: GetArucoObjects<U>(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html#ArucoUnity_Objects_Trackers_ArucoObjectsController_GetArucoObjects__1_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html#ArucoUnity_Objects_Trackers_ArucoObjectsController_GetArucoObjects__1_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
   name.vb: GetArucoObjects(Of U)(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
   nameWithType: ArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
   nameWithType.vb: ArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -5758,13 +6027,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect()
   nameWithType: ArucoObjectsTracker.Detect()
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
   name: Detect(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Detect_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Detect_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
   name.vb: Detect(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat())
   nameWithType: ArucoObjectsTracker.Detect(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.Detect(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect*
@@ -5780,13 +6049,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw()
   nameWithType: ArucoObjectsTracker.Draw()
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
   name: Draw(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Draw_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Draw_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
   name.vb: Draw(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat())
   nameWithType: ArucoObjectsTracker.Draw(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.Draw(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw*
@@ -5874,13 +6143,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
   nameWithType: ArucoObjectsTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,Aruco.Dictionary})
   name: ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_ExecuteOnActivatedTrackers_System_Action_ArucoUnity_Objects_Trackers_ArucoObjectTracker_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary__
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_ExecuteOnActivatedTrackers_System_Action_ArucoUnity_Objects_Trackers_ArucoObjectTracker_System_Int32_Aruco_Dictionary__
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,Aruco.Dictionary})
   name.vb: ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary>)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary))
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, Aruco.Dictionary>)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, Aruco.Dictionary))
   nameWithType: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
   nameWithType.vb: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers*
@@ -5942,13 +6211,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
   nameWithType: ArucoObjectsTracker.Stopping
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
   name: TrackArucoObjects(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_TrackArucoObjects_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_TrackArucoObjects_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
   name.vb: TrackArucoObjects(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat())
   nameWithType: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects*
@@ -6014,11 +6283,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   nameWithType: ArucoObjectTracker.arucoCameraUndistortion
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -6027,11 +6296,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -6059,17 +6328,17 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   nameWithType: ArucoObjectTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary)
   name: Detect(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.Detect(Int32, Aruco.Dictionary)
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoObjectTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect*
   name: Detect
@@ -6078,17 +6347,17 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect
   nameWithType: ArucoObjectTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary)
   name: Draw(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.Draw(Int32, Aruco.Dictionary)
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
   nameWithType: ArucoObjectTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw*
   name: Draw
@@ -6097,11 +6366,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw
   nameWithType: ArucoObjectTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -6123,11 +6392,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   nameWithType: ArucoObjectTracker.IsActivated
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -6231,13 +6500,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects
   nameWithType: IArucoObjectsController.GetArucoObjects
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
   name: GetArucoObjects<U>(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_GetArucoObjects__1_ArucoUnity_Plugin_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_GetArucoObjects__1_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
   name.vb: GetArucoObjects(Of U)(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects(Of U)(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
   nameWithType: IArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
   nameWithType.vb: IArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -6291,13 +6560,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect()
   nameWithType: IArucoObjectsTracker.Detect()
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
   name: Detect(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
   name.vb: Detect(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat())
   nameWithType: IArucoObjectsTracker.Detect(Cv.Mat[])
   nameWithType.vb: IArucoObjectsTracker.Detect(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect*
@@ -6313,13 +6582,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw()
   nameWithType: IArucoObjectsTracker.Draw()
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
   name: Draw(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_ArucoUnity_Plugin_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
   name.vb: Draw(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat())
   nameWithType: IArucoObjectsTracker.Draw(Cv.Mat[])
   nameWithType.vb: IArucoObjectsTracker.Draw(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw*
@@ -10744,13 +11013,13 @@ references:
   commentId: T:ArucoUnity.Utilities.ArucoCameraSeparateThread
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread
   nameWithType: ArucoCameraSeparateThread
-- uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{ArucoUnity.Plugin.Cv.Mat[]})
+- uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{Cv.Mat[]})
   name: ArucoCameraSeparateThread(IArucoCamera, Action<Cv.Mat[]>)
-  href: api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html#ArucoUnity_Utilities_ArucoCameraSeparateThread__ctor_IArucoCamera_System_Action_ArucoUnity_Plugin_Cv_Mat____
-  commentId: M:ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{ArucoUnity.Plugin.Cv.Mat[]})
+  href: api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html#ArucoUnity_Utilities_ArucoCameraSeparateThread__ctor_IArucoCamera_System_Action_Cv_Mat____
+  commentId: M:ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{Cv.Mat[]})
   name.vb: ArucoCameraSeparateThread(IArucoCamera, Action(Of Cv.Mat()))
-  fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action<ArucoUnity.Plugin.Cv.Mat[]>)
-  fullName.vb: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action(Of ArucoUnity.Plugin.Cv.Mat()))
+  fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action<Cv.Mat[]>)
+  fullName.vb: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action(Of Cv.Mat()))
   nameWithType: ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, Action<Cv.Mat[]>)
   nameWithType.vb: ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, Action(Of Cv.Mat()))
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor*
@@ -10933,294 +11202,17 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.Update
   nameWithType: ArucoCameraSeparateThread.Update
-- uid: ArucoUnity.Utilities.ConfigurableController
-  name: ConfigurableController
-  href: api/ArucoUnity.Utilities.ConfigurableController.html
-  commentId: T:ArucoUnity.Utilities.ConfigurableController
-  fullName: ArucoUnity.Utilities.ConfigurableController
-  nameWithType: ConfigurableController
-- uid: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  name: AddDependency(IConfigurableController)
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AddDependency_ArucoUnity_Utilities_IConfigurableController_
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  nameWithType: ConfigurableController.AddDependency(IConfigurableController)
-- uid: ArucoUnity.Utilities.ConfigurableController.AddDependency*
-  name: AddDependency
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AddDependency_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.AddDependency
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.AddDependency
-  nameWithType: ConfigurableController.AddDependency
-- uid: ArucoUnity.Utilities.ConfigurableController.AutoStart
-  name: AutoStart
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AutoStart
-  commentId: P:ArucoUnity.Utilities.ConfigurableController.AutoStart
-  fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
-  nameWithType: ConfigurableController.AutoStart
-- uid: ArucoUnity.Utilities.ConfigurableController.AutoStart*
-  name: AutoStart
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_AutoStart_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.AutoStart
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.AutoStart
-  nameWithType: ConfigurableController.AutoStart
-- uid: ArucoUnity.Utilities.ConfigurableController.Awake
-  name: Awake()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Awake
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Awake
-  fullName: ArucoUnity.Utilities.ConfigurableController.Awake()
-  nameWithType: ConfigurableController.Awake()
-- uid: ArucoUnity.Utilities.ConfigurableController.Awake*
-  name: Awake
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Awake_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Awake
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.Awake
-  nameWithType: ConfigurableController.Awake
-- uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController
-  name: ConfigureController()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_ConfigureController
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.ConfigureController
-  fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController()
-  nameWithType: ConfigurableController.ConfigureController()
-- uid: ArucoUnity.Utilities.ConfigurableController.ConfigureController*
-  name: ConfigureController
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_ConfigureController_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.ConfigureController
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.ConfigureController
-  nameWithType: ConfigurableController.ConfigureController
-- uid: ArucoUnity.Utilities.ConfigurableController.Configured
-  name: Configured
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Configured
-  commentId: E:ArucoUnity.Utilities.ConfigurableController.Configured
-  fullName: ArucoUnity.Utilities.ConfigurableController.Configured
-  nameWithType: ConfigurableController.Configured
-- uid: ArucoUnity.Utilities.ConfigurableController.Configuring
-  name: Configuring()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Configuring
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Configuring
-  fullName: ArucoUnity.Utilities.ConfigurableController.Configuring()
-  nameWithType: ConfigurableController.Configuring()
-- uid: ArucoUnity.Utilities.ConfigurableController.Configuring*
-  name: Configuring
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Configuring_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Configuring
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.Configuring
-  nameWithType: ConfigurableController.Configuring
-- uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies
-  name: GetDependencies()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_GetDependencies
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.GetDependencies
-  fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies()
-  nameWithType: ConfigurableController.GetDependencies()
-- uid: ArucoUnity.Utilities.ConfigurableController.GetDependencies*
-  name: GetDependencies
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_GetDependencies_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.GetDependencies
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.GetDependencies
-  nameWithType: ConfigurableController.GetDependencies
-- uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  name: IsConfigured
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsConfigured
-  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  nameWithType: ConfigurableController.IsConfigured
-- uid: ArucoUnity.Utilities.ConfigurableController.IsConfigured*
-  name: IsConfigured
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsConfigured_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsConfigured
-  nameWithType: ConfigurableController.IsConfigured
-- uid: ArucoUnity.Utilities.ConfigurableController.IsReady
-  name: IsReady
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsReady
-  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsReady
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
-  nameWithType: ConfigurableController.IsReady
-- uid: ArucoUnity.Utilities.ConfigurableController.IsReady*
-  name: IsReady
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsReady_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsReady
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsReady
-  nameWithType: ConfigurableController.IsReady
-- uid: ArucoUnity.Utilities.ConfigurableController.IsStarted
-  name: IsStarted
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsStarted
-  commentId: P:ArucoUnity.Utilities.ConfigurableController.IsStarted
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
-  nameWithType: ConfigurableController.IsStarted
-- uid: ArucoUnity.Utilities.ConfigurableController.IsStarted*
-  name: IsStarted
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_IsStarted_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.IsStarted
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.IsStarted
-  nameWithType: ConfigurableController.IsStarted
-- uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  name: OnConfigured()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnConfigured
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured()
-  nameWithType: ConfigurableController.OnConfigured()
-- uid: ArucoUnity.Utilities.ConfigurableController.OnConfigured*
-  name: OnConfigured
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnConfigured_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnConfigured
-  nameWithType: ConfigurableController.OnConfigured
-- uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy
-  name: OnDestroy()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnDestroy
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnDestroy
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy()
-  nameWithType: ConfigurableController.OnDestroy()
-- uid: ArucoUnity.Utilities.ConfigurableController.OnDestroy*
-  name: OnDestroy
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnDestroy_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnDestroy
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnDestroy
-  nameWithType: ConfigurableController.OnDestroy
-- uid: ArucoUnity.Utilities.ConfigurableController.OnStarted
-  name: OnStarted()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStarted
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStarted
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted()
-  nameWithType: ConfigurableController.OnStarted()
-- uid: ArucoUnity.Utilities.ConfigurableController.OnStarted*
-  name: OnStarted
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStarted_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnStarted
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnStarted
-  nameWithType: ConfigurableController.OnStarted
-- uid: ArucoUnity.Utilities.ConfigurableController.OnStopped
-  name: OnStopped()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStopped
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.OnStopped
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped()
-  nameWithType: ConfigurableController.OnStopped()
-- uid: ArucoUnity.Utilities.ConfigurableController.OnStopped*
-  name: OnStopped
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_OnStopped_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.OnStopped
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.OnStopped
-  nameWithType: ConfigurableController.OnStopped
-- uid: ArucoUnity.Utilities.ConfigurableController.Ready
-  name: Ready
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Ready
-  commentId: E:ArucoUnity.Utilities.ConfigurableController.Ready
-  fullName: ArucoUnity.Utilities.ConfigurableController.Ready
-  nameWithType: ConfigurableController.Ready
-- uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  name: RemoveDependency(IConfigurableController)
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_RemoveDependency_ArucoUnity_Utilities_IConfigurableController_
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  nameWithType: ConfigurableController.RemoveDependency(IConfigurableController)
-- uid: ArucoUnity.Utilities.ConfigurableController.RemoveDependency*
-  name: RemoveDependency
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_RemoveDependency_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.RemoveDependency
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.RemoveDependency
-  nameWithType: ConfigurableController.RemoveDependency
-- uid: ArucoUnity.Utilities.ConfigurableController.Start
-  name: Start()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Start
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Start
-  fullName: ArucoUnity.Utilities.ConfigurableController.Start()
-  nameWithType: ConfigurableController.Start()
-- uid: ArucoUnity.Utilities.ConfigurableController.Start*
-  name: Start
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Start_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Start
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.Start
-  nameWithType: ConfigurableController.Start
-- uid: ArucoUnity.Utilities.ConfigurableController.StartController
-  name: StartController()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StartController
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.StartController
-  fullName: ArucoUnity.Utilities.ConfigurableController.StartController()
-  nameWithType: ConfigurableController.StartController()
-- uid: ArucoUnity.Utilities.ConfigurableController.StartController*
-  name: StartController
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StartController_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.StartController
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.StartController
-  nameWithType: ConfigurableController.StartController
-- uid: ArucoUnity.Utilities.ConfigurableController.Started
-  name: Started
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Started
-  commentId: E:ArucoUnity.Utilities.ConfigurableController.Started
-  fullName: ArucoUnity.Utilities.ConfigurableController.Started
-  nameWithType: ConfigurableController.Started
-- uid: ArucoUnity.Utilities.ConfigurableController.Starting
-  name: Starting()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Starting
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Starting
-  fullName: ArucoUnity.Utilities.ConfigurableController.Starting()
-  nameWithType: ConfigurableController.Starting()
-- uid: ArucoUnity.Utilities.ConfigurableController.Starting*
-  name: Starting
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Starting_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Starting
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.Starting
-  nameWithType: ConfigurableController.Starting
-- uid: ArucoUnity.Utilities.ConfigurableController.StopController
-  name: StopController()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StopController
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.StopController
-  fullName: ArucoUnity.Utilities.ConfigurableController.StopController()
-  nameWithType: ConfigurableController.StopController()
-- uid: ArucoUnity.Utilities.ConfigurableController.StopController*
-  name: StopController
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_StopController_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.StopController
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.StopController
-  nameWithType: ConfigurableController.StopController
-- uid: ArucoUnity.Utilities.ConfigurableController.Stopped
-  name: Stopped
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopped
-  commentId: E:ArucoUnity.Utilities.ConfigurableController.Stopped
-  fullName: ArucoUnity.Utilities.ConfigurableController.Stopped
-  nameWithType: ConfigurableController.Stopped
-- uid: ArucoUnity.Utilities.ConfigurableController.Stopping
-  name: Stopping()
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopping
-  commentId: M:ArucoUnity.Utilities.ConfigurableController.Stopping
-  fullName: ArucoUnity.Utilities.ConfigurableController.Stopping()
-  nameWithType: ConfigurableController.Stopping()
-- uid: ArucoUnity.Utilities.ConfigurableController.Stopping*
-  name: Stopping
-  href: api/ArucoUnity.Utilities.ConfigurableController.html#ArucoUnity_Utilities_ConfigurableController_Stopping_
-  commentId: Overload:ArucoUnity.Utilities.ConfigurableController.Stopping
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.ConfigurableController.Stopping
-  nameWithType: ConfigurableController.Stopping
 - uid: ArucoUnity.Utilities.CvMatExtensions
   name: CvMatExtensions
   href: api/ArucoUnity.Utilities.CvMatExtensions.html
   commentId: T:ArucoUnity.Utilities.CvMatExtensions
   fullName: ArucoUnity.Utilities.CvMatExtensions
   nameWithType: CvMatExtensions
-- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
   name: GetCameraFocalLengths(Cv.Mat)
-  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraFocalLengths_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraFocalLengths_Cv_Mat_
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths*
   name: GetCameraFocalLengths
@@ -11229,11 +11221,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
   nameWithType: CvMatExtensions.GetCameraFocalLengths
-- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
   name: GetCameraPrincipalPoint(Cv.Mat)
-  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraPrincipalPoint_ArucoUnity_Plugin_Cv_Mat_
-  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
-  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraPrincipalPoint_Cv_Mat_
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint*
   name: GetCameraPrincipalPoint
@@ -11255,163 +11247,177 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Utilities.CvMatExtensions.ImageType
   nameWithType: CvMatExtensions.ImageType
-- uid: ArucoUnity.Utilities.IConfigurableController
-  name: IConfigurableController
-  href: api/ArucoUnity.Utilities.IConfigurableController.html
-  commentId: T:ArucoUnity.Utilities.IConfigurableController
-  fullName: ArucoUnity.Utilities.IConfigurableController
-  nameWithType: IConfigurableController
-- uid: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  name: AddDependency(IConfigurableController)
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_AddDependency_ArucoUnity_Utilities_IConfigurableController_
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)
-  nameWithType: IConfigurableController.AddDependency(IConfigurableController)
-- uid: ArucoUnity.Utilities.IConfigurableController.AddDependency*
-  name: AddDependency
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_AddDependency_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.AddDependency
+- uid: ArucoUnity.Utilities.WebcamController
+  name: WebcamController
+  href: api/ArucoUnity.Utilities.WebcamController.html
+  commentId: T:ArucoUnity.Utilities.WebcamController
+  fullName: ArucoUnity.Utilities.WebcamController
+  nameWithType: WebcamController
+- uid: ArucoUnity.Utilities.WebcamController.Awake
+  name: Awake()
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Awake
+  commentId: M:ArucoUnity.Utilities.WebcamController.Awake
+  fullName: ArucoUnity.Utilities.WebcamController.Awake()
+  nameWithType: WebcamController.Awake()
+- uid: ArucoUnity.Utilities.WebcamController.Awake*
+  name: Awake
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Awake_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Awake
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.AddDependency
-  nameWithType: IConfigurableController.AddDependency
-- uid: ArucoUnity.Utilities.IConfigurableController.AutoStart
-  name: AutoStart
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_AutoStart
-  commentId: P:ArucoUnity.Utilities.IConfigurableController.AutoStart
-  fullName: ArucoUnity.Utilities.IConfigurableController.AutoStart
-  nameWithType: IConfigurableController.AutoStart
-- uid: ArucoUnity.Utilities.IConfigurableController.AutoStart*
-  name: AutoStart
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_AutoStart_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.AutoStart
+  fullName: ArucoUnity.Utilities.WebcamController.Awake
+  nameWithType: WebcamController.Awake
+- uid: ArucoUnity.Utilities.WebcamController.Configure
+  name: Configure()
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Configure
+  commentId: M:ArucoUnity.Utilities.WebcamController.Configure
+  fullName: ArucoUnity.Utilities.WebcamController.Configure()
+  nameWithType: WebcamController.Configure()
+- uid: ArucoUnity.Utilities.WebcamController.Configure*
+  name: Configure
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Configure_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Configure
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.AutoStart
-  nameWithType: IConfigurableController.AutoStart
-- uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController
-  name: ConfigureController()
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_ConfigureController
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.ConfigureController
-  fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController()
-  nameWithType: IConfigurableController.ConfigureController()
-- uid: ArucoUnity.Utilities.IConfigurableController.ConfigureController*
-  name: ConfigureController
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_ConfigureController_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.ConfigureController
+  fullName: ArucoUnity.Utilities.WebcamController.Configure
+  nameWithType: WebcamController.Configure
+- uid: ArucoUnity.Utilities.WebcamController.Devices
+  name: Devices
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Devices
+  commentId: P:ArucoUnity.Utilities.WebcamController.Devices
+  fullName: ArucoUnity.Utilities.WebcamController.Devices
+  nameWithType: WebcamController.Devices
+- uid: ArucoUnity.Utilities.WebcamController.Devices*
+  name: Devices
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Devices_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Devices
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.ConfigureController
-  nameWithType: IConfigurableController.ConfigureController
-- uid: ArucoUnity.Utilities.IConfigurableController.Configured
-  name: Configured
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Configured
-  commentId: E:ArucoUnity.Utilities.IConfigurableController.Configured
-  fullName: ArucoUnity.Utilities.IConfigurableController.Configured
-  nameWithType: IConfigurableController.Configured
-- uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies
-  name: GetDependencies()
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_GetDependencies
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.GetDependencies
-  fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies()
-  nameWithType: IConfigurableController.GetDependencies()
-- uid: ArucoUnity.Utilities.IConfigurableController.GetDependencies*
-  name: GetDependencies
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_GetDependencies_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.GetDependencies
+  fullName: ArucoUnity.Utilities.WebcamController.Devices
+  nameWithType: WebcamController.Devices
+- uid: ArucoUnity.Utilities.WebcamController.Ids
+  name: Ids
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Ids
+  commentId: P:ArucoUnity.Utilities.WebcamController.Ids
+  fullName: ArucoUnity.Utilities.WebcamController.Ids
+  nameWithType: WebcamController.Ids
+- uid: ArucoUnity.Utilities.WebcamController.Ids*
+  name: Ids
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Ids_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Ids
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.GetDependencies
-  nameWithType: IConfigurableController.GetDependencies
-- uid: ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  fullName: ArucoUnity.Utilities.WebcamController.Ids
+  nameWithType: WebcamController.Ids
+- uid: ArucoUnity.Utilities.WebcamController.IsConfigured
   name: IsConfigured
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsConfigured
-  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsConfigured
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsConfigured
-  nameWithType: IConfigurableController.IsConfigured
-- uid: ArucoUnity.Utilities.IConfigurableController.IsConfigured*
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_IsConfigured
+  commentId: P:ArucoUnity.Utilities.WebcamController.IsConfigured
+  fullName: ArucoUnity.Utilities.WebcamController.IsConfigured
+  nameWithType: WebcamController.IsConfigured
+- uid: ArucoUnity.Utilities.WebcamController.IsConfigured*
   name: IsConfigured
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsConfigured_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.IsConfigured
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_IsConfigured_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.IsConfigured
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsConfigured
-  nameWithType: IConfigurableController.IsConfigured
-- uid: ArucoUnity.Utilities.IConfigurableController.IsReady
-  name: IsReady
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsReady
-  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsReady
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsReady
-  nameWithType: IConfigurableController.IsReady
-- uid: ArucoUnity.Utilities.IConfigurableController.IsReady*
-  name: IsReady
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsReady_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.IsReady
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsReady
-  nameWithType: IConfigurableController.IsReady
-- uid: ArucoUnity.Utilities.IConfigurableController.IsStarted
+  fullName: ArucoUnity.Utilities.WebcamController.IsConfigured
+  nameWithType: WebcamController.IsConfigured
+- uid: ArucoUnity.Utilities.WebcamController.IsStarted
   name: IsStarted
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsStarted
-  commentId: P:ArucoUnity.Utilities.IConfigurableController.IsStarted
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsStarted
-  nameWithType: IConfigurableController.IsStarted
-- uid: ArucoUnity.Utilities.IConfigurableController.IsStarted*
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_IsStarted
+  commentId: P:ArucoUnity.Utilities.WebcamController.IsStarted
+  fullName: ArucoUnity.Utilities.WebcamController.IsStarted
+  nameWithType: WebcamController.IsStarted
+- uid: ArucoUnity.Utilities.WebcamController.IsStarted*
   name: IsStarted
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_IsStarted_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.IsStarted
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_IsStarted_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.IsStarted
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.IsStarted
-  nameWithType: IConfigurableController.IsStarted
-- uid: ArucoUnity.Utilities.IConfigurableController.Ready
-  name: Ready
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Ready
-  commentId: E:ArucoUnity.Utilities.IConfigurableController.Ready
-  fullName: ArucoUnity.Utilities.IConfigurableController.Ready
-  nameWithType: IConfigurableController.Ready
-- uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  name: RemoveDependency(IConfigurableController)
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_RemoveDependency_ArucoUnity_Utilities_IConfigurableController_
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)
-  nameWithType: IConfigurableController.RemoveDependency(IConfigurableController)
-- uid: ArucoUnity.Utilities.IConfigurableController.RemoveDependency*
-  name: RemoveDependency
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_RemoveDependency_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.RemoveDependency
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.RemoveDependency
-  nameWithType: IConfigurableController.RemoveDependency
-- uid: ArucoUnity.Utilities.IConfigurableController.StartController
-  name: StartController()
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_StartController
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.StartController
-  fullName: ArucoUnity.Utilities.IConfigurableController.StartController()
-  nameWithType: IConfigurableController.StartController()
-- uid: ArucoUnity.Utilities.IConfigurableController.StartController*
-  name: StartController
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_StartController_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.StartController
-  isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.StartController
-  nameWithType: IConfigurableController.StartController
-- uid: ArucoUnity.Utilities.IConfigurableController.Started
+  fullName: ArucoUnity.Utilities.WebcamController.IsStarted
+  nameWithType: WebcamController.IsStarted
+- uid: ArucoUnity.Utilities.WebcamController.Started
   name: Started
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Started
-  commentId: E:ArucoUnity.Utilities.IConfigurableController.Started
-  fullName: ArucoUnity.Utilities.IConfigurableController.Started
-  nameWithType: IConfigurableController.Started
-- uid: ArucoUnity.Utilities.IConfigurableController.StopController
-  name: StopController()
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_StopController
-  commentId: M:ArucoUnity.Utilities.IConfigurableController.StopController
-  fullName: ArucoUnity.Utilities.IConfigurableController.StopController()
-  nameWithType: IConfigurableController.StopController()
-- uid: ArucoUnity.Utilities.IConfigurableController.StopController*
-  name: StopController
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_StopController_
-  commentId: Overload:ArucoUnity.Utilities.IConfigurableController.StopController
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Started
+  commentId: E:ArucoUnity.Utilities.WebcamController.Started
+  fullName: ArucoUnity.Utilities.WebcamController.Started
+  nameWithType: WebcamController.Started
+- uid: ArucoUnity.Utilities.WebcamController.starting
+  name: starting
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_starting
+  commentId: F:ArucoUnity.Utilities.WebcamController.starting
+  fullName: ArucoUnity.Utilities.WebcamController.starting
+  nameWithType: WebcamController.starting
+- uid: ArucoUnity.Utilities.WebcamController.StartingAsync
+  name: StartingAsync()
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StartingAsync
+  commentId: M:ArucoUnity.Utilities.WebcamController.StartingAsync
+  fullName: ArucoUnity.Utilities.WebcamController.StartingAsync()
+  nameWithType: WebcamController.StartingAsync()
+- uid: ArucoUnity.Utilities.WebcamController.StartingAsync*
+  name: StartingAsync
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StartingAsync_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.StartingAsync
   isSpec: "True"
-  fullName: ArucoUnity.Utilities.IConfigurableController.StopController
-  nameWithType: IConfigurableController.StopController
-- uid: ArucoUnity.Utilities.IConfigurableController.Stopped
-  name: Stopped
-  href: api/ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Stopped
-  commentId: E:ArucoUnity.Utilities.IConfigurableController.Stopped
-  fullName: ArucoUnity.Utilities.IConfigurableController.Stopped
-  nameWithType: IConfigurableController.Stopped
+  fullName: ArucoUnity.Utilities.WebcamController.StartingAsync
+  nameWithType: WebcamController.StartingAsync
+- uid: ArucoUnity.Utilities.WebcamController.StartWebcams
+  name: StartWebcams()
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StartWebcams
+  commentId: M:ArucoUnity.Utilities.WebcamController.StartWebcams
+  fullName: ArucoUnity.Utilities.WebcamController.StartWebcams()
+  nameWithType: WebcamController.StartWebcams()
+- uid: ArucoUnity.Utilities.WebcamController.StartWebcams*
+  name: StartWebcams
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StartWebcams_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.StartWebcams
+  isSpec: "True"
+  fullName: ArucoUnity.Utilities.WebcamController.StartWebcams
+  nameWithType: WebcamController.StartWebcams
+- uid: ArucoUnity.Utilities.WebcamController.StopWebcams
+  name: StopWebcams()
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StopWebcams
+  commentId: M:ArucoUnity.Utilities.WebcamController.StopWebcams
+  fullName: ArucoUnity.Utilities.WebcamController.StopWebcams()
+  nameWithType: WebcamController.StopWebcams()
+- uid: ArucoUnity.Utilities.WebcamController.StopWebcams*
+  name: StopWebcams
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_StopWebcams_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.StopWebcams
+  isSpec: "True"
+  fullName: ArucoUnity.Utilities.WebcamController.StopWebcams
+  nameWithType: WebcamController.StopWebcams
+- uid: ArucoUnity.Utilities.WebcamController.Textures
+  name: Textures
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures
+  commentId: P:ArucoUnity.Utilities.WebcamController.Textures
+  fullName: ArucoUnity.Utilities.WebcamController.Textures
+  nameWithType: WebcamController.Textures
+- uid: ArucoUnity.Utilities.WebcamController.Textures*
+  name: Textures
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Textures
+  isSpec: "True"
+  fullName: ArucoUnity.Utilities.WebcamController.Textures
+  nameWithType: WebcamController.Textures
+- uid: ArucoUnity.Utilities.WebcamController.Textures2D
+  name: Textures2D
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2D
+  commentId: P:ArucoUnity.Utilities.WebcamController.Textures2D
+  fullName: ArucoUnity.Utilities.WebcamController.Textures2D
+  nameWithType: WebcamController.Textures2D
+- uid: ArucoUnity.Utilities.WebcamController.Textures2D*
+  name: Textures2D
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2D_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Textures2D
+  isSpec: "True"
+  fullName: ArucoUnity.Utilities.WebcamController.Textures2D
+  nameWithType: WebcamController.Textures2D
+- uid: ArucoUnity.Utilities.WebcamController.Textures2DFormat
+  name: Textures2DFormat
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2DFormat
+  commentId: P:ArucoUnity.Utilities.WebcamController.Textures2DFormat
+  fullName: ArucoUnity.Utilities.WebcamController.Textures2DFormat
+  nameWithType: WebcamController.Textures2DFormat
+- uid: ArucoUnity.Utilities.WebcamController.Textures2DFormat*
+  name: Textures2DFormat
+  href: api/ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2DFormat_
+  commentId: Overload:ArucoUnity.Utilities.WebcamController.Textures2DFormat
+  isSpec: "True"
+  fullName: ArucoUnity.Utilities.WebcamController.Textures2DFormat
+  nameWithType: WebcamController.Textures2DFormat

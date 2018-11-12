@@ -89,24 +89,91 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ArucoCamera</span></div>
-      <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoWebcam.html">ArucoWebcam</a></div>
-      <div class="level2"><a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><span class="xref">ArucoCamera</span></div>
+      <div class="level3"><a class="xref" href="ArucoUnity.Cameras.ArucoWebcam.html">ArucoWebcam</a></div>
+      <div class="level3"><a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a></div>
-    <div><span class="xref">IConfigurableController</span></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Awake">Controller.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Start">Controller.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Starting">Controller.Starting()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopping">Controller.Stopping()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.html">ArucoUnity.Cameras</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Cameras_ArucoCamera_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ArucoCamera : ConfigurableController, IArucoCamera, IConfigurableController</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ArucoCamera : Controller, IArucoCamera, IController</code></pre>
   </div>
   <h5 id="ArucoUnity_Cameras_ArucoCamera_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>To add a new camera, you need to derive this class. See <a class="xref" href="ArucoUnity.Cameras.ArucoWebcam.html">ArucoWebcam</a> as example. You need to
-implement <see cref="!:ConfigurableController.Configuring"></see>, <see cref="!:ConfigurableController.Starting"></see>,
+implement <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configuring">Configuring()</a>, <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Starting">Starting()</a>,
 and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_UpdatingImages">UpdatingImages()</a>.</p>
 </div>
   <h3 id="fields">Fields
@@ -226,7 +293,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[][]</td>
+        <td><span class="xref">Cv.Mat</span>[][]</td>
         <td></td>
       </tr>
     </tbody>
@@ -322,7 +389,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -473,7 +540,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -548,7 +615,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -591,6 +658,8 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configuring">Controller.Configuring()</a></div>
   
   
   <a id="ArucoUnity_Cameras_ArucoCamera_OnImagesUpdated_" data-uid="ArucoUnity.Cameras.ArucoCamera.OnImagesUpdated*"></a>
@@ -617,6 +686,8 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void OnStarted()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a></div>
   
   
   <a id="ArucoUnity_Cameras_ArucoCamera_Update_" data-uid="ArucoUnity.Cameras.ArucoCamera.Update*"></a>
@@ -700,7 +771,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[], <span class="xref">System.Byte</span>[][]&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">Cv.Mat</span>[], <span class="xref">System.Byte</span>[][]&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -710,7 +781,7 @@ and <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras
       <a class="xref" href="ArucoUnity.Cameras.IArucoCamera.html">IArucoCamera</a>
   </div>
   <div>
-      <span class="xref">IConfigurableController</span>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
   </div>
 </article>
           </div>

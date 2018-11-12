@@ -84,22 +84,17 @@
   <h1 id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibrationBase_1" data-uid="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase`1" class="text-break">Class PinholeCameraCalibrationBase&lt;T&gt;
   </h1>
   <div class="markdown level0 summary"><p>Calibrates a <see cref="!:ArucoCamera"></see> using the pinhole camera model with a <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a> and
-saves the calibrated camera parameters in a file managed by <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html">ArucoCameraParametersController</a>.</p>
+saves the calibrated camera parameters in a file managed by <see cref="!:ArucoCameraParametersController"></see>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html">ArucoObjectDetector</a></div>
-    <div class="level2"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html">ArucoCameraCalibration</a></div>
-    <div class="level3"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric</a>&lt;T, <a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html">PinholeCameraCalibrationFlags</a>&gt;</div>
-    <div class="level4"><span class="xref">PinholeCameraCalibrationBase&lt;T&gt;</span></div>
-      <div class="level5"><a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html">PinholeCameraCalibration</a></div>
-      <div class="level5"><a class="xref" href="ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html">StereoPinholeCameraCalibration</a></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html">ArucoCameraCalibration</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric</a>&lt;T, <a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html">PinholeCameraCalibrationFlags</a>&gt;</div>
+    <div class="level3"><span class="xref">PinholeCameraCalibrationBase&lt;T&gt;</span></div>
+      <div class="level4"><a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html">PinholeCameraCalibration</a></div>
+      <div class="level4"><a class="xref" href="ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html">StereoPinholeCameraCalibration</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -200,17 +195,14 @@ saves the calibrated camera parameters in a file managed by <a class="xref" href
       <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_ArucoCamera_ImagesUpdated">ArucoCameraCalibration.ArucoCamera_ImagesUpdated()</a>
     </div>
     <div>
-      <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___">ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</a>
-    </div>
-    <div>
-      <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">ArucoObjectDetector.DetectorParameters</a>
+      <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___">ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Calibration.Pinhole.html">ArucoUnity.Calibration.Pinhole</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibrationBase_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class PinholeCameraCalibrationBase&lt;T&gt; : ArucoCameraCalibrationGeneric&lt;T, PinholeCameraCalibrationFlags&gt;, IHasDetectorParameter where T : ArucoCamera</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class PinholeCameraCalibrationBase&lt;T&gt; : ArucoCameraCalibrationGeneric&lt;T, PinholeCameraCalibrationFlags&gt; where T : ArucoCamera</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -241,10 +233,6 @@ saves the calibrated camera parameters in a file managed by <a class="xref" href
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters">ArucoCameraCalibration.InitializeCameraParameters()</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a>
-  </div>
 </article>
           </div>
           

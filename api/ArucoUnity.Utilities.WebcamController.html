@@ -78,12 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ArucoUnity.Cameras.WebcamController">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.Utilities.WebcamController">
   
   
-  <h1 id="ArucoUnity_Cameras_WebcamController" data-uid="ArucoUnity.Cameras.WebcamController" class="text-break">Class WebcamController
+  <h1 id="ArucoUnity_Utilities_WebcamController" data-uid="ArucoUnity.Utilities.WebcamController" class="text-break">Class WebcamController
   </h1>
-  <div class="markdown level0 summary"><p>Get images from multiple webcams. Based on: <a href="http://answers.unity3d.com/answers/1155328/view.html">http://answers.unity3d.com/answers/1155328/view.html</a></p>
+  <div class="markdown level0 summary"><p>Get images from multiple webcams.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -91,42 +91,20 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">WebcamController</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.html">ArucoUnity.Cameras</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Utilities.html">ArucoUnity.Utilities</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="ArucoUnity_Cameras_WebcamController_syntax">Syntax</h5>
+  <h5 id="ArucoUnity_Utilities_WebcamController_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class WebcamController : MonoBehaviour</code></pre>
   </div>
+  <h5 id="ArucoUnity_Utilities_WebcamController_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Based on: <a href="http://answers.unity3d.com/answers/1155328/view.html">http://answers.unity3d.com/answers/1155328/view.html</a></p>
+</div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="ArucoUnity_Cameras_WebcamController_Started" data-uid="ArucoUnity.Cameras.WebcamController.Started">Started</h4>
-  <div class="markdown level1 summary"><p>Called when the webcams started.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;WebcamController&gt; Started</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Cameras.WebcamController.html">WebcamController</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="ArucoUnity_Cameras_WebcamController_starting" data-uid="ArucoUnity.Cameras.WebcamController.starting">starting</h4>
+  <h4 id="ArucoUnity_Utilities_WebcamController_starting" data-uid="ArucoUnity.Utilities.WebcamController.starting">starting</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -152,8 +130,8 @@
   </h3>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Devices_" data-uid="ArucoUnity.Cameras.WebcamController.Devices*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Devices" data-uid="ArucoUnity.Cameras.WebcamController.Devices">Devices</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_Devices_" data-uid="ArucoUnity.Utilities.WebcamController.Devices*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Devices" data-uid="ArucoUnity.Utilities.WebcamController.Devices">Devices</h4>
   <div class="markdown level1 summary"><p>Gets the used webcams.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -171,16 +149,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">WebCamDevice</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">WebCamDevice</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Ids_" data-uid="ArucoUnity.Cameras.WebcamController.Ids*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Ids" data-uid="ArucoUnity.Cameras.WebcamController.Ids">Ids</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the ids of the webcams to use.</p>
+  <a id="ArucoUnity_Utilities_WebcamController_Ids_" data-uid="ArucoUnity.Utilities.WebcamController.Ids*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Ids" data-uid="ArucoUnity.Utilities.WebcamController.Ids">Ids</h4>
+  <div class="markdown level1 summary"><p>Gets the ids of the webcams to use.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -197,15 +175,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_IsConfigured_" data-uid="ArucoUnity.Cameras.WebcamController.IsConfigured*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_IsConfigured" data-uid="ArucoUnity.Cameras.WebcamController.IsConfigured">IsConfigured</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_IsConfigured_" data-uid="ArucoUnity.Utilities.WebcamController.IsConfigured*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_IsConfigured" data-uid="ArucoUnity.Utilities.WebcamController.IsConfigured">IsConfigured</h4>
   <div class="markdown level1 summary"><p>Gets if the controller is configured.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -230,8 +208,8 @@
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_IsStarted_" data-uid="ArucoUnity.Cameras.WebcamController.IsStarted*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_IsStarted" data-uid="ArucoUnity.Cameras.WebcamController.IsStarted">IsStarted</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_IsStarted_" data-uid="ArucoUnity.Utilities.WebcamController.IsStarted*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_IsStarted" data-uid="ArucoUnity.Utilities.WebcamController.IsStarted">IsStarted</h4>
   <div class="markdown level1 summary"><p>Gets if the webcams started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -256,8 +234,8 @@
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Textures_" data-uid="ArucoUnity.Cameras.WebcamController.Textures*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Textures" data-uid="ArucoUnity.Cameras.WebcamController.Textures">Textures</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_Textures_" data-uid="ArucoUnity.Utilities.WebcamController.Textures*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Textures" data-uid="ArucoUnity.Utilities.WebcamController.Textures">Textures</h4>
   <div class="markdown level1 summary"><p>Gets the textures of the used webcams.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -275,16 +253,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">WebCamTexture</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">WebCamTexture</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Textures2D_" data-uid="ArucoUnity.Cameras.WebcamController.Textures2D*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Textures2D" data-uid="ArucoUnity.Cameras.WebcamController.Textures2D">Textures2D</h4>
-  <div class="markdown level1 summary"><p>Gets <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures">Textures</a> converted in Texture2D.</p>
+  <a id="ArucoUnity_Utilities_WebcamController_Textures2D_" data-uid="ArucoUnity.Utilities.WebcamController.Textures2D*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Textures2D" data-uid="ArucoUnity.Utilities.WebcamController.Textures2D">Textures2D</h4>
+  <div class="markdown level1 summary"><p>Gets <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures">Textures</a> converted in Texture2D.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -301,16 +279,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Texture2D</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Textures2DFormat_" data-uid="ArucoUnity.Cameras.WebcamController.Textures2DFormat*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Textures2DFormat" data-uid="ArucoUnity.Cameras.WebcamController.Textures2DFormat">Textures2DFormat</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the format of <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2D">Textures2D</a>, by default <see cref="!:TextureFormat.RGB24"></see>.</p>
+  <a id="ArucoUnity_Utilities_WebcamController_Textures2DFormat_" data-uid="ArucoUnity.Utilities.WebcamController.Textures2DFormat*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Textures2DFormat" data-uid="ArucoUnity.Utilities.WebcamController.Textures2DFormat">Textures2DFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the format of <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2D">Textures2D</a>, by default <see cref="!:TextureFormat.RGB24"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -336,8 +314,8 @@
   </h3>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Awake_" data-uid="ArucoUnity.Cameras.WebcamController.Awake*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Awake" data-uid="ArucoUnity.Cameras.WebcamController.Awake">Awake()</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_Awake_" data-uid="ArucoUnity.Utilities.WebcamController.Awake*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Awake" data-uid="ArucoUnity.Utilities.WebcamController.Awake">Awake()</h4>
   <div class="markdown level1 summary"><p>Initializes the properties.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -347,9 +325,9 @@
   </div>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_Configure_" data-uid="ArucoUnity.Cameras.WebcamController.Configure*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_Configure" data-uid="ArucoUnity.Cameras.WebcamController.Configure">Configure()</h4>
-  <div class="markdown level1 summary"><p>Configures <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Devices">Devices</a> and <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures">Textures</a> from <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Ids">Ids</a>.</p>
+  <a id="ArucoUnity_Utilities_WebcamController_Configure_" data-uid="ArucoUnity.Utilities.WebcamController.Configure*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_Configure" data-uid="ArucoUnity.Utilities.WebcamController.Configure">Configure()</h4>
+  <div class="markdown level1 summary"><p>Configures <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Devices">Devices</a> and <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures">Textures</a> from <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Ids">Ids</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -358,9 +336,9 @@
   </div>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_StartingAsync_" data-uid="ArucoUnity.Cameras.WebcamController.StartingAsync*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_StartingAsync" data-uid="ArucoUnity.Cameras.WebcamController.StartingAsync">StartingAsync()</h4>
-  <div class="markdown level1 summary"><p>Waits for Unity to start the webcams to set <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures2D">Textures2D</a>, <a class="xref" href="ArucoUnity.Cameras.WebcamController.html#ArucoUnity_Cameras_WebcamController_Textures">Textures</a> and call
+  <a id="ArucoUnity_Utilities_WebcamController_StartingAsync_" data-uid="ArucoUnity.Utilities.WebcamController.StartingAsync*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_StartingAsync" data-uid="ArucoUnity.Utilities.WebcamController.StartingAsync">StartingAsync()</h4>
+  <div class="markdown level1 summary"><p>Waits for Unity to start the webcams to set <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures2D">Textures2D</a>, <a class="xref" href="ArucoUnity.Utilities.WebcamController.html#ArucoUnity_Utilities_WebcamController_Textures">Textures</a> and call
 <see cref="!:ConfigurableController.OnStarted"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -378,15 +356,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerator</span></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_StartWebcams_" data-uid="ArucoUnity.Cameras.WebcamController.StartWebcams*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_StartWebcams" data-uid="ArucoUnity.Cameras.WebcamController.StartWebcams">StartWebcams()</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_StartWebcams_" data-uid="ArucoUnity.Utilities.WebcamController.StartWebcams*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_StartWebcams" data-uid="ArucoUnity.Utilities.WebcamController.StartWebcams">StartWebcams()</h4>
   <div class="markdown level1 summary"><p>Starts the webcams.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -396,8 +374,8 @@
   </div>
   
   
-  <a id="ArucoUnity_Cameras_WebcamController_StopWebcams_" data-uid="ArucoUnity.Cameras.WebcamController.StopWebcams*"></a>
-  <h4 id="ArucoUnity_Cameras_WebcamController_StopWebcams" data-uid="ArucoUnity.Cameras.WebcamController.StopWebcams">StopWebcams()</h4>
+  <a id="ArucoUnity_Utilities_WebcamController_StopWebcams_" data-uid="ArucoUnity.Utilities.WebcamController.StopWebcams*"></a>
+  <h4 id="ArucoUnity_Utilities_WebcamController_StopWebcams" data-uid="ArucoUnity.Utilities.WebcamController.StopWebcams">StopWebcams()</h4>
   <div class="markdown level1 summary"><p>Stops the webcams.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -405,6 +383,33 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void StopWebcams()</code></pre>
   </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="ArucoUnity_Utilities_WebcamController_Started" data-uid="ArucoUnity.Utilities.WebcamController.Started">Started</h4>
+  <div class="markdown level1 summary"><p>Called when the webcams started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;WebcamController&gt; Started</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Utilities.WebcamController.html">WebcamController</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

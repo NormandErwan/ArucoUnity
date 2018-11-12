@@ -91,28 +91,86 @@ the 3D content. Base class to reference in editor fields.</p>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
-    <div class="level2"><span class="xref">ArucoCameraUndistortion</span></div>
-      <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html">ArucoCameraUndistortionGeneric&lt;T&gt;</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level3"><span class="xref">ArucoCameraUndistortion</span></div>
+      <div class="level4"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html">ArucoCameraUndistortionGeneric&lt;T&gt;</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html">IArucoCameraUndistortion</a></div>
     <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
-    <div><span class="xref">IConfigurableController</span></div>
-    <div><a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
+    <div><span class="xref">IHasArucoCameraParameters</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
     </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Awake">Controller.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.Undistortions.html">ArucoUnity.Cameras.Undistortions</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ArucoCameraUndistortion : ArucoCameraController, IArucoCameraUndistortion, IArucoCameraController, IConfigurableController, IHasArucoCameraParameters</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ArucoCameraUndistortion : ArucoCameraController, IArucoCameraUndistortion, IArucoCameraController, IController, IHasArucoCameraParameters</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -159,7 +217,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="xref">Cv.Mat</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -183,7 +241,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a></td>
+        <td><span class="xref">Cv.Mat</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -207,7 +265,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Rect.html">Cv.Rect</a></td>
+        <td><span class="xref">Cv.Rect</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -282,7 +340,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html">ArucoCameraParameters</a></td>
+        <td><span class="xref">ArucoCameraParameters</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -307,7 +365,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -332,7 +390,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -357,7 +415,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -382,7 +440,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[][]</td>
+        <td><span class="xref">Cv.Mat</span>[][]</td>
         <td></td>
       </tr>
     </tbody>
@@ -392,7 +450,7 @@ the 3D content. Base class to reference in editor fields.</p>
   
   
   <a id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages*"></a>
-  <h4 id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[],System.Byte[][])">ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</h4>
+  <h4 id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_Cv_Mat___System_Byte_____" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[],System.Byte[][])">ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</h4>
   <div class="markdown level1 summary"><p>Updates the undistortion thread with the <code data-dev-comment-type="paramref" class="paramref">images</code> and stops if there was an exception from this thread.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -411,7 +469,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td><span class="parametername">images</span></td>
         <td></td>
       </tr>
@@ -468,6 +526,8 @@ the 3D content. Base class to reference in editor fields.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Start()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Start">Controller.Start()</a></div>
   
   
   <a id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Starting_" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Starting*"></a>
@@ -480,6 +540,8 @@ the 3D content. Base class to reference in editor fields.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Starting()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Starting">Controller.Starting()</a></div>
   
   
   <a id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Stopping_" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.Stopping*"></a>
@@ -491,10 +553,12 @@ the 3D content. Base class to reference in editor fields.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Stopping()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopping">Controller.Stopping()</a></div>
   
   
   <a id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages*"></a>
-  <h4 id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])">UndistortRectifyImages(Cv.Mat[])</h4>
+  <h4 id="ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_Cv_Mat___" data-uid="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])">UndistortRectifyImages(Cv.Mat[])</h4>
   <div class="markdown level1 summary"><p>Undistorts and rectifies the <code data-dev-comment-type="paramref" class="paramref">images</code> using <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortionRectificationMaps">UndistortionRectificationMaps</a> on a separate thread.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -513,7 +577,7 @@ the 3D content. Base class to reference in editor fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Cv.Mat.html">Cv.Mat</a>[]</td>
+        <td><span class="xref">Cv.Mat</span>[]</td>
         <td><span class="parametername">images</span></td>
         <td></td>
       </tr>
@@ -527,10 +591,10 @@ the 3D content. Base class to reference in editor fields.</p>
       <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
   </div>
   <div>
-      <span class="xref">IConfigurableController</span>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
   </div>
   <div>
-      <a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a>
+      <span class="xref">IHasArucoCameraParameters</span>
   </div>
 </article>
           </div>

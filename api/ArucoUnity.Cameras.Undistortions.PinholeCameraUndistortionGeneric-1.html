@@ -91,19 +91,20 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
-    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a></div>
-    <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html">ArucoCameraUndistortionGeneric</a>&lt;T&gt;</div>
-    <div class="level4"><span class="xref">PinholeCameraUndistortionGeneric&lt;T&gt;</span></div>
-      <div class="level5"><a class="xref" href="ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.html">PinholeCameraUndistortion</a></div>
-      <div class="level5"><a class="xref" href="ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.html">StereoPinholeCameraUndistortion</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a></div>
+    <div class="level4"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortionGeneric-1.html">ArucoCameraUndistortionGeneric</a>&lt;T&gt;</div>
+    <div class="level5"><span class="xref">PinholeCameraUndistortionGeneric&lt;T&gt;</span></div>
+      <div class="level6"><a class="xref" href="ArucoUnity.Cameras.Undistortions.PinholeCameraUndistortion.html">PinholeCameraUndistortion</a></div>
+      <div class="level6"><a class="xref" href="ArucoUnity.Cameras.Undistortions.StereoPinholeCameraUndistortion.html">StereoPinholeCameraUndistortion</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html">IArucoCameraUndistortion</a></div>
     <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
-    <div><span class="xref">IConfigurableController</span></div>
-    <div><a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
+    <div><span class="xref">IHasArucoCameraParameters</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -156,10 +157,10 @@
       <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Stopping">ArucoCameraUndistortion.Stopping()</a>
     </div>
     <div>
-      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____">ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</a>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_Cv_Mat___System_Byte_____">ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</a>
     </div>
     <div>
-      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___">ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])</a>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_Cv_Mat___">ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])</a>
     </div>
     <div>
       <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_InitializeRectification">ArucoCameraUndistortion.InitializeRectification()</a>
@@ -167,12 +168,66 @@
     <div>
       <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
     </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.Undistortions.html">ArucoUnity.Cameras.Undistortions</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Cameras_Undistortions_PinholeCameraUndistortionGeneric_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class PinholeCameraUndistortionGeneric&lt;T&gt; : ArucoCameraUndistortionGeneric&lt;T&gt;, IArucoCameraUndistortion, IArucoCameraController, IConfigurableController, IHasArucoCameraParameters where T : ArucoCamera</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class PinholeCameraUndistortionGeneric&lt;T&gt; : ArucoCameraUndistortionGeneric&lt;T&gt;, IArucoCameraUndistortion, IArucoCameraController, IController, IHasArucoCameraParameters where T : ArucoCamera</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -240,10 +295,10 @@ areas after rectification), 1 to shift the images so that no source image pixels
       <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
   </div>
   <div>
-      <span class="xref">IConfigurableController</span>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
   </div>
   <div>
-      <a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a>
+      <span class="xref">IHasArucoCameraParameters</span>
   </div>
 </article>
           </div>

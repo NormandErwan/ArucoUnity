@@ -83,8 +83,8 @@
   
   <h1 id="ArucoUnity_Calibration_ArucoCameraCalibration" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration" class="text-break">Class ArucoCameraCalibration
   </h1>
-  <div class="markdown level0 summary"><p>Calibrates a <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a> with a <a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a> and saves the calibrated camera
-parameters in a file managed by <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html">ArucoCameraParametersController</a>. Base class to reference in editor
+  <div class="markdown level0 summary"><p>Calibrates a <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a> with a <see cref="!:ArucoBoard"></see> and saves the calibrated camera
+parameters in a file managed by <see cref="!:ArucoCameraParametersController"></see>. Base class to reference in editor
 fields.</p>
 <p>See the OpenCV and the ArUco module documentations for more information about the calibration process:
 <a href="http://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html">http://docs.opencv.org/3.4/da/d13/tutorial_aruco_calibration.html</a> and
@@ -94,25 +94,14 @@ fields.</p>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html">ArucoObjectDetector</a></div>
-    <div class="level2"><span class="xref">ArucoCameraCalibration</span></div>
-      <div class="level3"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric&lt;T, U&gt;</a></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">ArucoObjectDetector.DetectorParameters</a>
-    </div>
+    <div class="level1"><span class="xref">ArucoCameraCalibration</span></div>
+      <div class="level2"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric&lt;T, U&gt;</a></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Calibration.html">ArucoUnity.Calibration</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Calibration_ArucoCameraCalibration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ArucoCameraCalibration : ArucoObjectDetector, IHasDetectorParameter</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ArucoCameraCalibration : ArucoObjectDetector</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -183,7 +172,7 @@ fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Mutex</span></td>
+        <td><span class="xref">Mutex</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -207,7 +196,7 @@ fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Thread</span></td>
+        <td><span class="xref">Thread</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -235,7 +224,7 @@ fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html">Std.VectorVectorVectorPoint2f</a>[]</td>
+        <td><span class="xref">Std.VectorVectorVectorPoint2f</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -261,7 +250,7 @@ fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorInt.html">Std.VectorVectorInt</a>[]</td>
+        <td><span class="xref">Std.VectorVectorInt</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -287,7 +276,7 @@ fields.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Objects.ArucoBoard.html">ArucoBoard</a></td>
+        <td><span class="xref">ArucoBoard</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -366,7 +355,7 @@ Otherwise, the camera parameters file will be generated from the camera name and
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html">ArucoCameraParametersController</a></td>
+        <td><span class="xref">ArucoCameraParametersController</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -392,7 +381,7 @@ Otherwise, the camera parameters file will be generated from the camera name and
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorMat.html">Std.VectorMat</a>[]</td>
+        <td><span class="xref">Std.VectorMat</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -444,7 +433,7 @@ Otherwise, the camera parameters file will be generated from the camera name and
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a>[]</td>
+        <td><span class="xref">Std.VectorVectorPoint2f</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -470,7 +459,7 @@ Otherwise, the camera parameters file will be generated from the camera name and
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorInt.html">Std.VectorInt</a>[]</td>
+        <td><span class="xref">Std.VectorInt</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -523,7 +512,7 @@ the board layout.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a>[]</td>
+        <td><span class="xref">Std.VectorVec3d</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -549,7 +538,7 @@ the board layout.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVec3d.html">Std.VectorVec3d</a>[]</td>
+        <td><span class="xref">Std.VectorVec3d</span>[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -583,7 +572,7 @@ the board layout.</p>
   <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*"></a>
   <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate">Calibrate()</h4>
   <div class="markdown level1 summary"><p>Calibrates each mono camera in <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCamera</a> using the detected
-markers added with <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddImages">AddImages()</a>, the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html">ArucoCameraParameters</a>, the
+markers added with <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_AddImages">AddImages()</a>, the <see cref="!:ArucoCameraParameters"></see>, the
 <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a> and save the results on a calibration file. Stereo
 calibrations will be additionally executed on these results for every camera pair.</p>
 </div>
@@ -595,10 +584,10 @@ calibrations will be additionally executed on these results for every camera pai
   
   
   <a id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*"></a>
-  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])">Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</h4>
+  <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])">Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</h4>
   <div class="markdown level1 summary"><p>Applies a calibration to the <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCamera</a>, set the extrinsic camera
 parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Rvecs">Rvecs</a> and <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Tvecs">Tvecs</a> and saves the camera parameters in
-<a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>.</p>
+<see cref="!:ArucoCameraParametersController.CameraParameters"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -616,13 +605,13 @@ parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibratio
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a>[]</td>
+        <td><span class="xref">Std.VectorVectorPoint2f</span>[]</td>
         <td><span class="parametername">imagePoints</span></td>
         <td><p>The detected image points of each camera.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint3f.html">Std.VectorVectorPoint3f</a>[]</td>
+        <td><span class="xref">Std.VectorVectorPoint3f</span>[]</td>
         <td><span class="parametername">objectPoints</span></td>
         <td><p>The corresponding object points of each camera.</p>
 </td>
@@ -662,8 +651,6 @@ parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibratio
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_Configuring">ArucoObjectDetector.Configuring()</a></div>
   
   
   <a id="ArucoUnity_Calibration_ArucoCameraCalibration_DetectMarkers_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.DetectMarkers*"></a>
@@ -691,7 +678,7 @@ parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibratio
   
   <a id="ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters_" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters*"></a>
   <h4 id="ArucoUnity_Calibration_ArucoCameraCalibration_InitializeCameraParameters" data-uid="ArucoUnity.Calibration.ArucoCameraCalibration.InitializeCameraParameters">InitializeCameraParameters()</h4>
-  <div class="markdown level1 summary"><p>Initializes and configure the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>.</p>
+  <div class="markdown level1 summary"><p>Initializes and configure the <see cref="!:ArucoCameraParametersController.CameraParameters"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -769,10 +756,6 @@ parameters to <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibratio
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a>
-  </div>
 </article>
           </div>
           

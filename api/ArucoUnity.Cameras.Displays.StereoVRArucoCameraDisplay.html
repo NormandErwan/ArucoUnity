@@ -89,16 +89,17 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
-    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.Displays.ArucoCameraDisplay.html">ArucoCameraDisplay</a></div>
-    <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric-2.html">ArucoCameraDisplayGeneric</a>&lt;<a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a>, <span class="xref">ArucoCameraUndistortion</span>&gt;</div>
-    <div class="level4"><span class="xref">StereoVRArucoCameraDisplay</span></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Displays.ArucoCameraDisplay.html">ArucoCameraDisplay</a></div>
+    <div class="level4"><a class="xref" href="ArucoUnity.Cameras.Displays.ArucoCameraDisplayGeneric-2.html">ArucoCameraDisplayGeneric</a>&lt;<a class="xref" href="ArucoUnity.Cameras.StereoArucoCamera.html">StereoArucoCamera</a>, <span class="xref">ArucoCameraUndistortion</span>&gt;</div>
+    <div class="level5"><span class="xref">StereoVRArucoCameraDisplay</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="ArucoUnity.Cameras.Displays.IArucoCameraDisplay.html">IArucoCameraDisplay</a></div>
     <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
-    <div><span class="xref">IConfigurableController</span></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -138,12 +139,69 @@
     <div>
       <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
     </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Start">Controller.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.Displays.html">ArucoUnity.Cameras.Displays</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="ArucoUnity_Cameras_Displays_StereoVRArucoCameraDisplay_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StereoVRArucoCameraDisplay : ArucoCameraDisplayGeneric&lt;StereoArucoCamera, ArucoCameraUndistortion&gt;, IArucoCameraDisplay, IArucoCameraController, IConfigurableController</code></pre>
+    <pre><code class="lang-csharp hljs">public class StereoVRArucoCameraDisplay : ArucoCameraDisplayGeneric&lt;StereoArucoCamera, ArucoCameraUndistortion&gt;, IArucoCameraDisplay, IArucoCameraController, IController</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -362,7 +420,7 @@ and <see cref="!:ArucoCameraDisplayGeneric.Backgrounds"></see> from editor field
       <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
   </div>
   <div>
-      <span class="xref">IConfigurableController</span>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
   </div>
 </article>
           </div>

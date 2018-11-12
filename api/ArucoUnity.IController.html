@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IConfigurableController
+    <title>Interface IController
    | Aruco Unity documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IConfigurableController
+    <meta name="title" content="Interface IController
    | Aruco Unity documentation ">
     <meta name="generator" content="docfx 2.40.1.0">
     
@@ -78,29 +78,32 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ArucoUnity.Utilities.IConfigurableController">
+            <article class="content wrap" id="_content" data-uid="ArucoUnity.IController">
   
   
-  <h1 id="ArucoUnity_Utilities_IConfigurableController" data-uid="ArucoUnity.Utilities.IConfigurableController" class="text-break">Interface IConfigurableController
+  <h1 id="ArucoUnity_IController" data-uid="ArucoUnity.IController" class="text-break">Interface IController
   </h1>
-  <div class="markdown level0 summary"><p>Configurable and startable controller. It can have other configurable controllers as dependencies. They must
-have started before starting this controller. They stop this controller when at least one of them stops.</p>
+  <div class="markdown level0 summary"><p>Configurable and startable controller.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Utilities.html">ArucoUnity.Utilities</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.html">ArucoUnity</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="ArucoUnity_Utilities_IConfigurableController_syntax">Syntax</h5>
+  <h5 id="ArucoUnity_IController_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IConfigurableController</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IController</code></pre>
   </div>
+  <h5 id="ArucoUnity_IController_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>It can have other configurable controllers as dependencies. They must have started before starting this
+controller. They stop this controller when one of them stops.</p>
+</div>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_AutoStart_" data-uid="ArucoUnity.Utilities.IConfigurableController.AutoStart*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_AutoStart" data-uid="ArucoUnity.Utilities.IConfigurableController.AutoStart">AutoStart</h4>
+  <a id="ArucoUnity_IController_AutoStart_" data-uid="ArucoUnity.IController.AutoStart*"></a>
+  <h4 id="ArucoUnity_IController_AutoStart" data-uid="ArucoUnity.IController.AutoStart">AutoStart</h4>
   <div class="markdown level1 summary"><p>Gets or sets if configuring and starting automatically when when all dependencies started. Manually
-configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_ConfigureController">ConfigureController()</a> and <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_StartController">StartController()</a>.</p>
+configure and start by calling <a class="xref" href="ArucoUnity.IController.html#ArucoUnity_IController_Configure">Configure()</a> and <a class="xref" href="ArucoUnity.IController.html#ArucoUnity_IController_StartController">StartController()</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -124,8 +127,8 @@ configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfi
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_IsConfigured_" data-uid="ArucoUnity.Utilities.IConfigurableController.IsConfigured*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_IsConfigured" data-uid="ArucoUnity.Utilities.IConfigurableController.IsConfigured">IsConfigured</h4>
+  <a id="ArucoUnity_IController_IsConfigured_" data-uid="ArucoUnity.IController.IsConfigured*"></a>
+  <h4 id="ArucoUnity_IController_IsConfigured" data-uid="ArucoUnity.IController.IsConfigured">IsConfigured</h4>
   <div class="markdown level1 summary"><p>Gets if the controller is configured.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -150,8 +153,8 @@ configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfi
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_IsReady_" data-uid="ArucoUnity.Utilities.IConfigurableController.IsReady*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_IsReady" data-uid="ArucoUnity.Utilities.IConfigurableController.IsReady">IsReady</h4>
+  <a id="ArucoUnity_IController_IsReady_" data-uid="ArucoUnity.IController.IsReady*"></a>
+  <h4 id="ArucoUnity_IController_IsReady" data-uid="ArucoUnity.IController.IsReady">IsReady</h4>
   <div class="markdown level1 summary"><p>Gets if the controller is ready to be started when all dependencies have started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -176,8 +179,8 @@ configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfi
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_IsStarted_" data-uid="ArucoUnity.Utilities.IConfigurableController.IsStarted*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_IsStarted" data-uid="ArucoUnity.Utilities.IConfigurableController.IsStarted">IsStarted</h4>
+  <a id="ArucoUnity_IController_IsStarted_" data-uid="ArucoUnity.IController.IsStarted*"></a>
+  <h4 id="ArucoUnity_IController_IsStarted" data-uid="ArucoUnity.IController.IsStarted">IsStarted</h4>
   <div class="markdown level1 summary"><p>Gets if the controller is started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -204,14 +207,14 @@ configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfi
   </h3>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_AddDependency_" data-uid="ArucoUnity.Utilities.IConfigurableController.AddDependency*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_AddDependency_ArucoUnity_Utilities_IConfigurableController_" data-uid="ArucoUnity.Utilities.IConfigurableController.AddDependency(ArucoUnity.Utilities.IConfigurableController)">AddDependency(IConfigurableController)</h4>
+  <a id="ArucoUnity_IController_AddDependency_" data-uid="ArucoUnity.IController.AddDependency*"></a>
+  <h4 id="ArucoUnity_IController_AddDependency_ArucoUnity_IController_" data-uid="ArucoUnity.IController.AddDependency(ArucoUnity.IController)">AddDependency(IController)</h4>
   <div class="markdown level1 summary"><p>Add a new dependency. The controller must be stopped.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void AddDependency(IConfigurableController dependency)</code></pre>
+    <pre><code class="lang-csharp hljs">void AddDependency(IController dependency)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -224,34 +227,35 @@ configure and start by calling <a class="xref" href="ArucoUnity.Utilities.IConfi
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a></td>
+        <td><a class="xref" href="ArucoUnity.IController.html">IController</a></td>
         <td><span class="parametername">dependency</span></td>
-        <td></td>
+        <td><p>The dependency to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_ConfigureController_" data-uid="ArucoUnity.Utilities.IConfigurableController.ConfigureController*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_ConfigureController" data-uid="ArucoUnity.Utilities.IConfigurableController.ConfigureController">ConfigureController()</h4>
-  <div class="markdown level1 summary"><p>Configures the controller and calls the <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Configured">Configured</a> event. Properties must be set and the
+  <a id="ArucoUnity_IController_Configure_" data-uid="ArucoUnity.IController.Configure*"></a>
+  <h4 id="ArucoUnity_IController_Configure" data-uid="ArucoUnity.IController.Configure">Configure()</h4>
+  <div class="markdown level1 summary"><p>Configures the controller and calls the <a class="xref" href="ArucoUnity.IController.html#ArucoUnity_IController_Configured">Configured</a> event. Properties must be set and the
 controller must be stopped.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ConfigureController()</code></pre>
+    <pre><code class="lang-csharp hljs">void Configure()</code></pre>
   </div>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_GetDependencies_" data-uid="ArucoUnity.Utilities.IConfigurableController.GetDependencies*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_GetDependencies" data-uid="ArucoUnity.Utilities.IConfigurableController.GetDependencies">GetDependencies()</h4>
+  <a id="ArucoUnity_IController_GetDependencies_" data-uid="ArucoUnity.IController.GetDependencies*"></a>
+  <h4 id="ArucoUnity_IController_GetDependencies" data-uid="ArucoUnity.IController.GetDependencies">GetDependencies()</h4>
   <div class="markdown level1 summary"><p>Gets the list of the dependencies.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;IConfigurableController&gt; GetDependencies()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;IController&gt; GetDependencies()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -263,21 +267,22 @@ controller must be stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="ArucoUnity.IController.html">IController</a>&gt;</td>
+        <td><p>The list of the dependencies of this instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_RemoveDependency_" data-uid="ArucoUnity.Utilities.IConfigurableController.RemoveDependency*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_RemoveDependency_ArucoUnity_Utilities_IConfigurableController_" data-uid="ArucoUnity.Utilities.IConfigurableController.RemoveDependency(ArucoUnity.Utilities.IConfigurableController)">RemoveDependency(IConfigurableController)</h4>
+  <a id="ArucoUnity_IController_RemoveDependency_" data-uid="ArucoUnity.IController.RemoveDependency*"></a>
+  <h4 id="ArucoUnity_IController_RemoveDependency_ArucoUnity_IController_" data-uid="ArucoUnity.IController.RemoveDependency(ArucoUnity.IController)">RemoveDependency(IController)</h4>
   <div class="markdown level1 summary"><p>Remove a dependency. The controller must be stopped.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void RemoveDependency(IConfigurableController dependency)</code></pre>
+    <pre><code class="lang-csharp hljs">void RemoveDependency(IController dependency)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -290,17 +295,18 @@ controller must be stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a></td>
+        <td><a class="xref" href="ArucoUnity.IController.html">IController</a></td>
         <td><span class="parametername">dependency</span></td>
-        <td></td>
+        <td><p>The dependency to remove.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_StartController_" data-uid="ArucoUnity.Utilities.IConfigurableController.StartController*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_StartController" data-uid="ArucoUnity.Utilities.IConfigurableController.StartController">StartController()</h4>
-  <div class="markdown level1 summary"><p>Starts the controller and calls the <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Started">Started</a> event. The controller must be configured, ready and
+  <a id="ArucoUnity_IController_StartController_" data-uid="ArucoUnity.IController.StartController*"></a>
+  <h4 id="ArucoUnity_IController_StartController" data-uid="ArucoUnity.IController.StartController">StartController()</h4>
+  <div class="markdown level1 summary"><p>Starts the controller and calls the <a class="xref" href="ArucoUnity.IController.html#ArucoUnity_IController_Started">Started</a> event. The controller must be configured, ready and
 stopped.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -310,9 +316,9 @@ stopped.</p>
   </div>
   
   
-  <a id="ArucoUnity_Utilities_IConfigurableController_StopController_" data-uid="ArucoUnity.Utilities.IConfigurableController.StopController*"></a>
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_StopController" data-uid="ArucoUnity.Utilities.IConfigurableController.StopController">StopController()</h4>
-  <div class="markdown level1 summary"><p>Stops the controller and calls the <a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html#ArucoUnity_Utilities_IConfigurableController_Stopped">Stopped</a> event. The controller must be configured and started.</p>
+  <a id="ArucoUnity_IController_StopController_" data-uid="ArucoUnity.IController.StopController*"></a>
+  <h4 id="ArucoUnity_IController_StopController" data-uid="ArucoUnity.IController.StopController">StopController()</h4>
+  <div class="markdown level1 summary"><p>Stops the controller and calls the <a class="xref" href="ArucoUnity.IController.html#ArucoUnity_IController_Stopped">Stopped</a> event. The controller must be configured and started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -323,13 +329,13 @@ stopped.</p>
   </h3>
   
   
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_Configured" data-uid="ArucoUnity.Utilities.IConfigurableController.Configured">Configured</h4>
+  <h4 id="ArucoUnity_IController_Configured" data-uid="ArucoUnity.IController.Configured">Configured</h4>
   <div class="markdown level1 summary"><p>Called when the controller is configured.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">event Action&lt;IConfigurableController&gt; Configured</code></pre>
+    <pre><code class="lang-csharp hljs">event EventHandler Configured</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -341,20 +347,20 @@ stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_Ready" data-uid="ArucoUnity.Utilities.IConfigurableController.Ready">Ready</h4>
+  <h4 id="ArucoUnity_IController_Ready" data-uid="ArucoUnity.IController.Ready">Ready</h4>
   <div class="markdown level1 summary"><p>Called when the controller is configured and ready to be started, when all its dependencies started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">event Action&lt;IConfigurableController&gt; Ready</code></pre>
+    <pre><code class="lang-csharp hljs">event EventHandler Ready</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -366,20 +372,20 @@ stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_Started" data-uid="ArucoUnity.Utilities.IConfigurableController.Started">Started</h4>
+  <h4 id="ArucoUnity_IController_Started" data-uid="ArucoUnity.IController.Started">Started</h4>
   <div class="markdown level1 summary"><p>Called when the controller is started.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">event Action&lt;IConfigurableController&gt; Started</code></pre>
+    <pre><code class="lang-csharp hljs">event EventHandler Started</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -391,20 +397,20 @@ stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="ArucoUnity_Utilities_IConfigurableController_Stopped" data-uid="ArucoUnity.Utilities.IConfigurableController.Stopped">Stopped</h4>
+  <h4 id="ArucoUnity_IController_Stopped" data-uid="ArucoUnity.IController.Stopped">Stopped</h4>
   <div class="markdown level1 summary"><p>Called when the controller is stopped.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">event Action&lt;IConfigurableController&gt; Stopped</code></pre>
+    <pre><code class="lang-csharp hljs">event EventHandler Stopped</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -416,7 +422,7 @@ stopped.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="ArucoUnity.Utilities.IConfigurableController.html">IConfigurableController</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
