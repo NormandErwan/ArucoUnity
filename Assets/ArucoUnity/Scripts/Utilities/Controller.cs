@@ -7,20 +7,55 @@ namespace ArucoUnity.Utilities
     /// <summary>
     /// Configurable and startable controller.
     /// </summary>
+    /// <remarks>
+    /// It can have other configurable controllers as dependencies. They must have started before starting this
+    /// controller. They stop this controller when one of them stops.
+    /// </remarks>
     public abstract class Controller : MonoBehaviour, IController
     {
         [SerializeField]
         [Tooltip("Start automatically when the configuration is done. Call alternatively StartController().")]
         private bool autoStart = true;
 
-        public event EventHandler Ready = delegate { };
+        /// <summary>
+        /// Called when the controller is configured.
+        /// </summary>
         public event EventHandler Configured = delegate { };
+
+        /// <summary>
+        /// Called when the controller is configured and ready to be started, when all its dependencies started.
+        /// </summary>
+        public event EventHandler Ready = delegate { };
+
+        /// <summary>
+        /// Called when the controller is started.
+        /// </summary>
         public event EventHandler Started = delegate { };
+
+        /// <summary>
+        /// Called when the controller is stopped.
+        /// </summary>
         public event EventHandler Stopped = delegate { };
 
+        /// <summary>
+        /// Gets or sets if configuring and starting automatically when when all dependencies started. Manually
+        /// configure and start by calling <see cref="Configure"/> and <see cref="StartController"/>.
+        /// </summary>
         public bool AutoStart { get { return autoStart; } set { SetAutoStart(value); } }
-        public bool IsReady { get; private set; }
+
+        /// <summary>
+        /// Gets if the controller is configured.
+        /// </summary>
         public bool IsConfigured { get; private set; }
+
+        /// <summary>
+        /// Gets if the controller is ready to be started when all dependencies have started.
+        /// </summary>
+        public bool IsReady { get; private set; }
+
+        /// <summary>
+        /// Gets if the controller is started.
+        /// </summary>
         public bool IsStarted { get; private set; }
 
         private HashSet<IController> dependencies = new HashSet<IController>();
@@ -54,6 +89,10 @@ namespace ArucoUnity.Utilities
             }
         }
 
+        /// <summary>
+        /// Add a new dependency. The controller must be stopped.
+        /// </summary>
+        /// <param name="dependency">The dependency to add.</param>
         public void AddDependency(IController dependency)
         {
             if (IsStarted)
@@ -71,6 +110,10 @@ namespace ArucoUnity.Utilities
             dependency.Stopped += DependencyStopped;
         }
 
+        /// <summary>
+        /// Remove a dependency. The controller must be stopped.
+        /// </summary>
+        /// <param name="dependency">The dependency to remove.</param>
         public void RemoveDependency(IController dependency)
         {
             if (IsStarted)
@@ -85,11 +128,19 @@ namespace ArucoUnity.Utilities
             dependency.Stopped -= DependencyStopped;
         }
 
+        /// <summary>
+        /// Gets the list of the dependencies.
+        /// </summary>
+        /// <returns>The list of the dependencies of this instance.</returns>
         public List<IController> GetDependencies()
         {
             return new List<IController>(dependencies);
         }
 
+        /// <summary>
+        /// Configures the controller and calls the <see cref="Configured"/> event. Properties must be set and the
+        /// controller must be stopped.
+        /// </summary>
         public void Configure()
         {
             if (IsStarted)
@@ -104,6 +155,10 @@ namespace ArucoUnity.Utilities
             OnConfigured();
         }
 
+        /// <summary>
+        /// Starts the controller and calls the <see cref="Started"/> event. The controller must be configured, ready and
+        /// stopped.
+        /// </summary>
         public void StartController()
         {
             if (!IsConfigured || !IsReady || IsStarted)
@@ -115,6 +170,9 @@ namespace ArucoUnity.Utilities
             OnStarted();
         }
 
+        /// <summary>
+        /// Stops the controller and calls the <see cref="Stopped"/> event. The controller must be configured and started.
+        /// </summary>
         public void StopController()
         {
             if (!IsConfigured || !IsStarted)

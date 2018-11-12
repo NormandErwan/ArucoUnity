@@ -4,9 +4,12 @@ using System.Collections.Generic;
 namespace ArucoUnity.Utilities
 {
     /// <summary>
-    /// Configurable and startable controller. It can have other configurable controllers as dependencies. They must
-    /// have started before starting this controller. They stop this controller when at least one of them stops.
+    /// Configurable and startable controller.
     /// </summary>
+    /// <remarks>
+    /// It can have other configurable controllers as dependencies. They must have started before starting this
+    /// controller. They stop this controller when one of them stops.
+    /// </remarks>
     public interface IController
     {
         /// <summary>
@@ -53,16 +56,19 @@ namespace ArucoUnity.Utilities
         /// <summary>
         /// Add a new dependency. The controller must be stopped.
         /// </summary>
+        /// <param name="dependency">The dependency to add.</param>
         void AddDependency(IController dependency);
 
         /// <summary>
         /// Remove a dependency. The controller must be stopped.
         /// </summary>
+        /// <param name="dependency">The dependency to remove.</param>
         void RemoveDependency(IController dependency);
 
         /// <summary>
         /// Gets the list of the dependencies.
         /// </summary>
+        /// <returns>The list of the dependencies of this instance.</returns>
         List<IController> GetDependencies();
 
         /// <summary>
