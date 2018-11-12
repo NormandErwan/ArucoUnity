@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ArucoUnity.Utilities
+namespace ArucoUnity
 {
     /// <summary>
     /// Configurable and startable controller.
