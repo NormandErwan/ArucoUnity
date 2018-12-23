@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Std
   {
-    public class VectorMat : Utility.HandleCppPtr
+    public class VectorMat : HandleCppPtr
     {
       // Native functions
 
@@ -33,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorMat(IntPtr vectorMatPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorMat(IntPtr vectorMatPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vectorMatPtr, deleteResponsibility)
       {
       }
@@ -48,7 +48,7 @@ namespace ArucoUnity.Plugin
       public Cv.Mat At(uint pos)
       {
         Cv.Exception exception = new Cv.Exception();
-        Cv.Mat element = new Cv.Mat(au_std_vectorMat_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
+        Cv.Mat element = new Cv.Mat(au_std_vectorMat_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
         exception.Check();
         return element;
       }
@@ -61,7 +61,7 @@ namespace ArucoUnity.Plugin
         Cv.Mat[] data = new Cv.Mat[size];
         for (int i = 0; i < size; i++)
         {
-          data[i] = new Cv.Mat(dataPtr[i], Utility.DeleteResponsibility.False);
+          data[i] = new Cv.Mat(dataPtr[i], DeleteResponsibility.False);
         }
 
         return data;

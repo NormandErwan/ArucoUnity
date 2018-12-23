@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Std
   {
-    public class VectorVec3d : Utility.HandleCppPtr
+    public class VectorVec3d : HandleCppPtr
     {
       // Native functions
 
@@ -33,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorVec3d(IntPtr vectorVec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorVec3d(IntPtr vectorVec3dPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vectorVec3dPtr, deleteResponsibility)
       {
       }
@@ -48,7 +48,7 @@ namespace ArucoUnity.Plugin
       public Cv.Vec3d At(uint pos)
       {
         Cv.Exception exception = new Cv.Exception();
-        Cv.Vec3d element = new Cv.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
+        Cv.Vec3d element = new Cv.Vec3d(au_std_vectorVec3d_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
         exception.Check();
         return element;
       }
@@ -61,7 +61,7 @@ namespace ArucoUnity.Plugin
         Cv.Vec3d[] data = new Cv.Vec3d[size];
         for (int i = 0; i < size; i++)
         {
-          data[i] = new Cv.Vec3d(dataPtr[i], Utility.DeleteResponsibility.False);
+          data[i] = new Cv.Vec3d(dataPtr[i], DeleteResponsibility.False);
         }
 
         return data;

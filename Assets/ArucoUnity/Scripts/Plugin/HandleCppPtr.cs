@@ -3,8 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace ArucoUnity.Plugin
 {
-  public static partial class Utility
-  {
     public enum DeleteResponsibility
     {
       True,
@@ -53,5 +51,4 @@ namespace ArucoUnity.Plugin
 
       protected abstract void DeleteCppPtr();
     }
-  }
 }

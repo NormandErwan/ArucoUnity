@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Std
   {
-    public class VectorVec4i : Utility.HandleCppPtr
+    public class VectorVec4i : HandleCppPtr
     {
       // Native functions
 
@@ -33,7 +33,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorVec4i(IntPtr vectorVec4iPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorVec4i(IntPtr vectorVec4iPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vectorVec4iPtr, deleteResponsibility)
       {
       }
@@ -48,7 +48,7 @@ namespace ArucoUnity.Plugin
       public Cv.Vec4i At(uint pos)
       {
         Cv.Exception exception = new Cv.Exception();
-        Cv.Vec4i element = new Cv.Vec4i(au_std_vectorVec4i_at(CppPtr, pos, exception.CppPtr), Utility.DeleteResponsibility.False);
+        Cv.Vec4i element = new Cv.Vec4i(au_std_vectorVec4i_at(CppPtr, pos, exception.CppPtr), DeleteResponsibility.False);
         exception.Check();
         return element;
       }
@@ -61,7 +61,7 @@ namespace ArucoUnity.Plugin
         Cv.Vec4i[] data = new Cv.Vec4i[size];
         for (int i = 0; i < size; i++)
         {
-          data[i] = new Cv.Vec4i(dataPtr[i], Utility.DeleteResponsibility.False);
+          data[i] = new Cv.Vec4i(dataPtr[i], DeleteResponsibility.False);
         }
 
         return data;

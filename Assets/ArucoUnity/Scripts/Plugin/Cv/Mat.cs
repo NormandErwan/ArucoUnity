@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Mat : Utility.HandleCppPtr
+    public class Mat : HandleCppPtr
     {
       // Native functions
 
@@ -103,7 +103,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      internal Mat(IntPtr matPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal Mat(IntPtr matPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(matPtr, deleteResponsibility)
       {
       }

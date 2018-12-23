@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Std
   {
-    public class VectorVectorPoint2f : Utility.HandleCppPtr
+    public class VectorVectorPoint2f : HandleCppPtr
     {
       // Native functions
 
@@ -34,7 +34,7 @@ namespace ArucoUnity.Plugin
       }
 
       public VectorVectorPoint2f(IntPtr vectorVectorPoint2fPtr,
-        Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+        DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vectorVectorPoint2fPtr, deleteResponsibility)
       {
       }
@@ -50,7 +50,7 @@ namespace ArucoUnity.Plugin
       {
         Cv.Exception exception = new Cv.Exception();
         VectorPoint2f element = new VectorPoint2f(au_std_vectorVectorPoint2f_at(CppPtr, pos, exception.CppPtr),
-          Utility.DeleteResponsibility.False);
+          DeleteResponsibility.False);
         exception.Check();
         return element;
       }
@@ -63,7 +63,7 @@ namespace ArucoUnity.Plugin
         VectorPoint2f[] data = new VectorPoint2f[size];
         for (int i = 0; i < size; i++)
         {
-          data[i] = new VectorPoint2f(dataPtr[i], Utility.DeleteResponsibility.False);
+          data[i] = new VectorPoint2f(dataPtr[i], DeleteResponsibility.False);
         }
 
         return data;

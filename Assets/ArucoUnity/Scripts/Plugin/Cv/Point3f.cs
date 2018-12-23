@@ -6,7 +6,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Point3f : Utility.HandleCppPtr
+    public class Point3f : HandleCppPtr
     {
       // Native functions
 
@@ -40,7 +40,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Point3f(IntPtr point3fPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Point3f(IntPtr point3fPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(point3fPtr, deleteResponsibility)
       {
       }

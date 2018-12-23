@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class TermCriteria : Utility.HandleCppPtr
+    public class TermCriteria : HandleCppPtr
     {
       // Enums
 

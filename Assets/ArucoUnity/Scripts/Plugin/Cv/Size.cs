@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Size : Utility.HandleCppPtr
+    public class Size : HandleCppPtr
     {
       // Native functions
 
@@ -43,7 +43,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Size(IntPtr sizePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Size(IntPtr sizePtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(sizePtr, deleteResponsibility)
       {
       }

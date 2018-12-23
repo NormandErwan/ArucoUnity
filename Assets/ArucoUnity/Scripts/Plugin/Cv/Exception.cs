@@ -6,7 +6,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Exception : Utility.HandleCppPtr
+    public class Exception : HandleCppPtr
     {
       // Constants
 

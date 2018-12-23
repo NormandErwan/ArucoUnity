@@ -31,7 +31,7 @@ namespace ArucoUnity.Plugin
 
       // Constructors & destructor
 
-      internal GridBoard(IntPtr gridBoardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal GridBoard(IntPtr gridBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
           : base(gridBoardPtr, deleteResponsibility)
       {
       }

@@ -49,7 +49,7 @@ namespace ArucoUnity.Plugin
 
             // Constructors & destructor
 
-            internal CharucoBoard(IntPtr charucoBoardPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+            internal CharucoBoard(IntPtr charucoBoardPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
                     : base(charucoBoardPtr, deleteResponsibility)
             {
             }
@@ -63,19 +63,19 @@ namespace ArucoUnity.Plugin
 
             public Std.VectorPoint3f ChessboardCorners
             {
-                get { return new Std.VectorPoint3f(au_CharucoBoard_getChessboardCorners(CppPtr), Utility.DeleteResponsibility.False); }
+                get { return new Std.VectorPoint3f(au_CharucoBoard_getChessboardCorners(CppPtr), DeleteResponsibility.False); }
                 set { au_CharucoBoard_setChessboardCorners(CppPtr, value.CppPtr); }
             }
 
             public Std.VectorVectorInt MarkerCorners
             {
-                get { return new Std.VectorVectorInt(au_CharucoBoard_getNearestMarkerCorners(CppPtr), Utility.DeleteResponsibility.False); }
+                get { return new Std.VectorVectorInt(au_CharucoBoard_getNearestMarkerCorners(CppPtr), DeleteResponsibility.False); }
                 set { au_CharucoBoard_setNearestMarkerCorners(CppPtr, value.CppPtr); }
             }
 
             public Std.VectorVectorInt MarkerIdx
             {
-                get { return new Std.VectorVectorInt(au_CharucoBoard_getNearestMarkerIdx(CppPtr), Utility.DeleteResponsibility.False); }
+                get { return new Std.VectorVectorInt(au_CharucoBoard_getNearestMarkerIdx(CppPtr), DeleteResponsibility.False); }
                 set { au_CharucoBoard_setNearestMarkerIdx(CppPtr, value.CppPtr); }
             }
 

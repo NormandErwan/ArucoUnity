@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Aruco
   {
-    public class DetectorParameters : Utility.HandleCppPtr
+    public class DetectorParameters : HandleCppPtr
     {
       // Native functions
 

@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Rect : Utility.HandleCppPtr
+    public class Rect : HandleCppPtr
     {
       // Native functions
 
@@ -52,7 +52,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Rect(IntPtr RectPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Rect(IntPtr RectPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(RectPtr, deleteResponsibility)
       {
       }

@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Aruco
   {
-    public class Dictionary : Utility.HandleCppPtr
+    public class Dictionary : HandleCppPtr
     {
       // Native functions
 
@@ -66,7 +66,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      internal Dictionary(IntPtr dictionaryPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      internal Dictionary(IntPtr dictionaryPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(dictionaryPtr, deleteResponsibility)
       {
       }
@@ -80,7 +80,7 @@ namespace ArucoUnity.Plugin
 
       public Cv.Mat BytesList
       {
-        get { return new Cv.Mat(au_Dictionary_getBytesList(CppPtr), Utility.DeleteResponsibility.False); }
+        get { return new Cv.Mat(au_Dictionary_getBytesList(CppPtr), DeleteResponsibility.False); }
         set { au_Dictionary_setBytesList(CppPtr, value.CppPtr); }
       }
 

@@ -6,7 +6,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Vec3d : Utility.HandleCppPtr
+    public class Vec3d : HandleCppPtr
     {
       // Native functions
 
@@ -28,7 +28,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public Vec3d(IntPtr vec3dPtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public Vec3d(IntPtr vec3dPtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vec3dPtr, deleteResponsibility)
       {
       }

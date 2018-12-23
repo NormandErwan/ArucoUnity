@@ -6,7 +6,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Cv
   {
-    public class Scalar : Utility.HandleCppPtr
+    public class Scalar : HandleCppPtr
     {
       // Native functions
 

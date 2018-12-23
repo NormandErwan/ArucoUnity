@@ -5,7 +5,7 @@ namespace ArucoUnity.Plugin
 {
   public static partial class Std
   {
-    public class VectorDouble : Utility.HandleCppPtr
+    public class VectorDouble : HandleCppPtr
     {
       // Native functions
 
@@ -36,7 +36,7 @@ namespace ArucoUnity.Plugin
       {
       }
 
-      public VectorDouble(IntPtr vectorDoublePtr, Utility.DeleteResponsibility deleteResponsibility = Utility.DeleteResponsibility.True)
+      public VectorDouble(IntPtr vectorDoublePtr, DeleteResponsibility deleteResponsibility = DeleteResponsibility.True)
         : base(vectorDoublePtr, deleteResponsibility)
       {
       }
