@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace ArucoUnity.Utilities
 {
+    /// <summary>
+    /// Extensions methods for <see cref="ArucoUnity.Plugin.Cv"/>.
+    /// </summary>
     public static class CvMatExtensions
     {
         /// <summary>
         /// Gets the camera focal lengths in a camera matrix, expressed in pixels units. Equals to
-        /// <code>F = (AtDouble(0, 0), AtDouble(1, 1))</code>
+        /// <c>F = (AtDouble(0, 0), AtDouble(1, 1))</c>
         /// </summary>
         public static Vector2 GetCameraFocalLengths(this Cv.Mat mat)
         {
@@ -17,7 +20,7 @@ namespace ArucoUnity.Utilities
 
         /// <summary>
         /// Gets the camera principal point in a camera matrix, expressed in pixels units. Equals to
-        /// <code>C = (AtDouble(0, 2), AtDouble(1, 2))</code>
+        /// <c>C = (AtDouble(0, 2), AtDouble(1, 2))</c>
         /// </summary>
         public static Vector2 GetCameraPrincipalPoint(this Cv.Mat mat)
         {
@@ -43,7 +46,8 @@ namespace ArucoUnity.Utilities
                     type = Cv.Type.CV_8UC4;
                     break;
                 default:
-                    throw new ArgumentException("This type of texture is actually not supported: " + textureFormat + ".", "textureFormat");
+                    throw new ArgumentException("This type of texture is actually not supported: " + textureFormat
+                        + ".", "textureFormat");
             }
             return type;
         }
