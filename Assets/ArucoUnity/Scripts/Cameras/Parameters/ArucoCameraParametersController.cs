@@ -9,6 +9,13 @@ namespace ArucoUnity.Cameras.Parameters
     /// </summary>
     public class ArucoCameraParametersController : MonoBehaviour, IHasArucoCameraParameters
     {
+        // Constants
+
+        /// <summary>
+        /// The folder where to load and save the <see cref="CameraParameters"/> files.
+        /// </summary>
+        protected static readonly string cameraParametersFolderPath = Path.Combine(Application.streamingAssetsPath, "ArucoUnity");
+
         // Editor fields
 
         [SerializeField]
@@ -16,82 +23,44 @@ namespace ArucoUnity.Cameras.Parameters
         private bool autoLoadFile = true;
 
         [SerializeField]
-        [Tooltip("The folder of the camera parameters file, relative to the Application.persistentDataPath folder.")]
-        private string cameraParametersFolderPath = "ArucoUnity/CameraParameters/";
-
-        [SerializeField]
-        [Tooltip("The xml file where to load and save the camera parameters.")]
+        [Tooltip("The xml file where to load and save the camera parameters, relative to Streaming Assets.")]
         private string cameraParametersFilename;
 
-        // IHasCameraParameters properties
+        // IHasArucoCameraParameters properties
 
         /// <summary>
-        /// Gets or sets the camera parameters.
+        /// Gets or sets the <see cref="CameraParameters"/>.
         /// </summary>
         public ArucoCameraParameters CameraParameters { get; set; }
 
         // Properties
 
         /// <summary>
-        /// Gets or sets if automatically load the camera parameters file at start.
+        /// Gets or sets if automatically <see cref="Load"/> at <see cref="Awake"/>.
         /// </summary>
         public bool AutoLoadFile { get { return autoLoadFile; } set { autoLoadFile = value; } }
 
         /// <summary>
-        /// Gets or sets the folder of the camera parameters files, relative to the <see cref="Application.persistentDataPath"/> folder.
+        /// Gets or sets the xml file corresponding to the <see cref="CameraParameters"/>, relative to <see cref="cameraParametersFolderPath"/>.
         /// </summary>
-        public string CameraParametersFolderPath { get { return cameraParametersFolderPath; } set { SetCameraParametersFilePath(value, CameraParametersFilename); } }
-
-        /// <summary>
-        /// Gets or sets the xml file corresponding to the camera parameters, relative to <see cref="CameraParametersFolderPath"/> folder.
-        /// </summary>
-        public string CameraParametersFilename { get { return cameraParametersFilename; } set { SetCameraParametersFilePath(CameraParametersFolderPath, value); } }
-
-        /// <summary>
-        /// Gets the file path to the camera parameters.
-        /// </summary>
-        public string CameraParametersFilePath { get; protected set; }
+        public string CameraParametersFilename { get { return cameraParametersFilename; } set { cameraParametersFilename = value; } }
 
         // Variables
 
-        string dataPath;
-        string outputFolderPath;
+        string cameraParametersPath;
 
         // MonoBehaviour methods
 
         /// <summary>
-        /// Calls <see cref="SetCameraParametersFilePath"/> then <see cref="Load"/> if <see cref="CameraParametersFilePath"/> is set.
+        /// Calls <see cref="Load"/> if <see cref="AutoLoadFile"/> is <c>true</c>.
         /// </summary>
         protected virtual void Awake()
         {
-            dataPath = (Application.isEditor) ? Application.dataPath : Application.persistentDataPath;
+            cameraParametersPath = Path.Combine(cameraParametersFolderPath, cameraParametersFilename);
 
-            SetCameraParametersFilePath(CameraParametersFolderPath, CameraParametersFilename);
             if (AutoLoadFile)
             {
-                if (CameraParametersFilePath.Length == 0)
-                {
-                    throw new Exception("Cant't load the camera parameters file: CameraParametersFolderPath and CameraParametersFilename must be set.");
-                }
                 Load();
-            }
-        }
-
-        // MonoBehaviour methods
-
-        /// <summary>
-        /// Sets <see cref="CameraParametersFilePath"/> and tries to load <see cref="CameraParameters"/> from this file if
-        /// <see cref="CameraParametersFolderPath"/> and <see cref="CameraParametersFilename"/> are set, otherwise set
-        /// <see cref="CameraParametersFilePath"/> and <see cref="CameraParameters"/> to null.
-        /// </summary>
-        protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)
-        {
-            CameraParametersFilePath = "";
-            if (cameraParametersFolderPath != null && cameraParametersFolderPath.Length > 0
-                && cameraParametersFilename != null && cameraParametersFilename.Length > 0)
-            {
-                outputFolderPath = Path.Combine(dataPath, cameraParametersFolderPath);
-                CameraParametersFilePath = Path.Combine(outputFolderPath, cameraParametersFilename);
             }
         }
 
@@ -111,20 +80,20 @@ namespace ArucoUnity.Cameras.Parameters
         /// </summary>
         public virtual void Load()
         {
-            CameraParameters = ArucoCameraParameters.LoadFromXmlFile(CameraParametersFilePath);
+            CameraParameters = ArucoCameraParameters.LoadFromXmlFile(cameraParametersPath);
         }
 
         /// <summary>
-        /// Calls <see cref="ArucoCameraParameters.SaveToXmlFile(string)"/> with <see cref="CameraParametersFolderPath"/>. Also creates the
+        /// Calls <see cref="ArucoCameraParameters.SaveToXmlFile(string)"/>. Creates before the
         /// <see cref="CameraParametersFolderPath"/> folder before if necessary.
         /// </summary>
         public virtual void Save()
         {
-            if (!Directory.Exists(outputFolderPath))
+            if (!Directory.Exists(cameraParametersFolderPath))
             {
-                Directory.CreateDirectory(outputFolderPath);
+                Directory.CreateDirectory(cameraParametersFolderPath);
             }
-            CameraParameters.SaveToXmlFile(CameraParametersFilePath);
+            CameraParameters.SaveToXmlFile(cameraParametersPath);
         }
     }
 }
