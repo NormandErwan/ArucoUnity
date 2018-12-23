@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ArucoCameraParametersController
    | Aruco Unity documentation ">
-    <meta name="generator" content="docfx 2.40.1.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -101,13 +101,40 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class ArucoCameraParametersController : MonoBehaviour, IHasArucoCameraParameters</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_cameraParametersFolderPath" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath">cameraParametersFolderPath</h4>
+  <div class="markdown level1 summary"><p>The folder where to load and save the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a> files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static readonly string cameraParametersFolderPath</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   
   
   <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_AutoLoadFile_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.AutoLoadFile*"></a>
   <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_AutoLoadFile" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.AutoLoadFile">AutoLoadFile</h4>
-  <div class="markdown level1 summary"><p>Gets or sets if automatically load the camera parameters file at start.</p>
+  <div class="markdown level1 summary"><p>Gets or sets if automatically <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Load">Load()</a> at <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Awake">Awake()</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -133,7 +160,7 @@
   
   <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters*"></a>
   <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParameters">CameraParameters</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the camera parameters.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -159,64 +186,12 @@
   
   <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilename_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename*"></a>
   <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilename" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename">CameraParametersFilename</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the xml file corresponding to the camera parameters, relative to <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath">CameraParametersFolderPath</a> folder.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the xml file corresponding to the <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a>, relative to <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_cameraParametersFolderPath">cameraParametersFolderPath</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string CameraParametersFilename { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath*"></a>
-  <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath">CameraParametersFilePath</h4>
-  <div class="markdown level1 summary"><p>Gets the file path to the camera parameters.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string CameraParametersFilePath { get; protected set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath*"></a>
-  <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath">CameraParametersFolderPath</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the folder of the camera parameters files, relative to the <see cref="!:Application.persistentDataPath"></see> folder.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string CameraParametersFolderPath { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,7 +214,7 @@
   
   <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Awake_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Awake*"></a>
   <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Awake" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Awake">Awake()</h4>
-  <div class="markdown level1 summary"><p>Calls <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_SetCameraParametersFilePath_System_String_System_String_">SetCameraParametersFilePath(String, String)</a> then <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Load">Load()</a> if <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath">CameraParametersFilePath</a> is set.</p>
+  <div class="markdown level1 summary"><p>Calls <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Load">Load()</a> if <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_AutoLoadFile">AutoLoadFile</a> is <code>true</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -290,49 +265,14 @@
   
   <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Save_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save*"></a>
   <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Save" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save">Save()</h4>
-  <div class="markdown level1 summary"><p>Calls <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html#ArucoUnity_Cameras_Parameters_ArucoCameraParameters_SaveToXmlFile_System_String_">SaveToXmlFile(String)</a> with <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath">CameraParametersFolderPath</a>. Also creates the
-<a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath">CameraParametersFolderPath</a> folder before if necessary.</p>
+  <div class="markdown level1 summary"><p>Calls <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParameters.html#ArucoUnity_Cameras_Parameters_ArucoCameraParameters_SaveToXmlFile_System_String_">SaveToXmlFile(String)</a>. Creates before the
+<see cref="!:CameraParametersFolderPath"></see> folder before if necessary.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void Save()</code></pre>
   </div>
-  
-  
-  <a id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_SetCameraParametersFilePath_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath*"></a>
-  <h4 id="ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_SetCameraParametersFilePath_System_String_System_String_" data-uid="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String,System.String)">SetCameraParametersFilePath(String, String)</h4>
-  <div class="markdown level1 summary"><p>Sets <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath">CameraParametersFilePath</a> and tries to load <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a> from this file if
-<a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath">CameraParametersFolderPath</a> and <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilename">CameraParametersFilename</a> are set, otherwise set
-<a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath">CameraParametersFilePath</a> and <a class="xref" href="ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParameters">CameraParameters</a> to null.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void SetCameraParametersFilePath(string cameraParametersFolderPath, string cameraParametersFilename)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">cameraParametersFolderPath</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">cameraParametersFilename</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a>

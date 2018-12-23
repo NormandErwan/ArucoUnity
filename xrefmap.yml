@@ -2543,32 +2543,12 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
   nameWithType: ArucoCameraParametersController.CameraParametersFilename
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  name: CameraParametersFilePath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath
-  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  nameWithType: ArucoCameraParametersController.CameraParametersFilePath
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath*
-  name: CameraParametersFilePath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFilePath_
-  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilePath
-  nameWithType: ArucoCameraParametersController.CameraParametersFilePath
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  name: CameraParametersFolderPath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath
-  commentId: P:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  nameWithType: ArucoCameraParametersController.CameraParametersFolderPath
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath*
-  name: CameraParametersFolderPath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath_
-  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
-  nameWithType: ArucoCameraParametersController.CameraParametersFolderPath
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
+  name: cameraParametersFolderPath
+  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_cameraParametersFolderPath
+  commentId: F:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
+  nameWithType: ArucoCameraParametersController.cameraParametersFolderPath
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Initialize(System.Int32)
   name: Initialize(Int32)
   href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Initialize_System_Int32_
@@ -2608,19 +2588,6 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Save
   nameWithType: ArucoCameraParametersController.Save
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String,System.String)
-  name: SetCameraParametersFilePath(String, String)
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_SetCameraParametersFilePath_System_String_System_String_
-  commentId: M:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String,System.String)
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath(System.String, System.String)
-  nameWithType: ArucoCameraParametersController.SetCameraParametersFilePath(String, String)
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath*
-  name: SetCameraParametersFilePath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_SetCameraParametersFilePath_
-  commentId: Overload:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath
-  isSpec: "True"
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.SetCameraParametersFilePath
-  nameWithType: ArucoCameraParametersController.SetCameraParametersFilePath
 - uid: ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters
   name: IHasArucoCameraParameters
   href: api/ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html
@@ -8966,12 +8933,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor
   fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f()
   nameWithType: Cv.Point2f.Point2f()
-- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Point2f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Point2f.html#ArucoUnity_Plugin_Cv_Point2f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Point2f.Point2f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Point2f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Point2f.html#ArucoUnity_Plugin_Cv_Point2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Point2f.Point2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Point2f.#ctor*
   name: Point2f
   href: api/ArucoUnity.Plugin.Cv.Point2f.html#ArucoUnity_Plugin_Cv_Point2f__ctor_
@@ -9058,12 +9025,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor
   fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f()
   nameWithType: Cv.Point3f.Point3f()
-- uid: ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Point3f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Point3f.html#ArucoUnity_Plugin_Cv_Point3f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Point3f.Point3f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Point3f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Point3f.html#ArucoUnity_Plugin_Cv_Point3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Point3f.Point3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Point3f.#ctor*
   name: Point3f
   href: api/ArucoUnity.Plugin.Cv.Point3f.html#ArucoUnity_Plugin_Cv_Point3f__ctor_
@@ -9160,12 +9127,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
   fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.Int32, System.Int32, System.Int32, System.Int32)
   nameWithType: Cv.Rect.Rect(Int32, Int32, Int32, Int32)
-- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Rect(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Rect.Rect(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Rect(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Rect.Rect(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Rect.#ctor*
   name: Rect
   href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_
@@ -9351,12 +9318,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(System.Int32,System.Int32)
   fullName: ArucoUnity.Plugin.Cv.Size.Size(System.Int32, System.Int32)
   nameWithType: Cv.Size.Size(Int32, Int32)
-- uid: ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Size(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Size.Size(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Size.Size(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Size(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Size.Size(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Size.Size(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Size.#ctor*
   name: Size
   href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_
@@ -9730,12 +9697,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.Double,System.Double,System.Double)
   fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(System.Double, System.Double, System.Double)
   nameWithType: Cv.Vec3d.Vec3d(Double, Double, Double)
-- uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Vec3d(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Vec3d.Vec3d(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Vec3d(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Vec3d.Vec3d(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor*
   name: Vec3d
   href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_
@@ -9820,12 +9787,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor
   fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i()
   nameWithType: Cv.Vec4i.Vec4i()
-- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: Vec4i(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Vec4i.html#ArucoUnity_Plugin_Cv_Vec4i__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Cv.Vec4i.Vec4i(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Vec4i(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Vec4i.html#ArucoUnity_Plugin_Cv_Vec4i__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Vec4i.Vec4i(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
   name: Vec4i
   href: api/ArucoUnity.Plugin.Cv.Vec4i.html#ArucoUnity_Plugin_Cv_Vec4i__ctor_
@@ -9878,6 +9845,101 @@ references:
   commentId: F:ArucoUnity.Plugin.Cv.verticalFlipCode
   fullName: ArucoUnity.Plugin.Cv.verticalFlipCode
   nameWithType: Cv.verticalFlipCode
+- uid: ArucoUnity.Plugin.DeleteResponsibility
+  name: DeleteResponsibility
+  href: api/ArucoUnity.Plugin.DeleteResponsibility.html
+  commentId: T:ArucoUnity.Plugin.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.DeleteResponsibility
+  nameWithType: DeleteResponsibility
+- uid: ArucoUnity.Plugin.DeleteResponsibility.False
+  name: "False"
+  href: api/ArucoUnity.Plugin.DeleteResponsibility.html#ArucoUnity_Plugin_DeleteResponsibility_False
+  commentId: F:ArucoUnity.Plugin.DeleteResponsibility.False
+  fullName: ArucoUnity.Plugin.DeleteResponsibility.False
+  nameWithType: DeleteResponsibility.False
+- uid: ArucoUnity.Plugin.DeleteResponsibility.True
+  name: "True"
+  href: api/ArucoUnity.Plugin.DeleteResponsibility.html#ArucoUnity_Plugin_DeleteResponsibility_True
+  commentId: F:ArucoUnity.Plugin.DeleteResponsibility.True
+  fullName: ArucoUnity.Plugin.DeleteResponsibility.True
+  nameWithType: DeleteResponsibility.True
+- uid: ArucoUnity.Plugin.HandleCppPtr
+  name: HandleCppPtr
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html
+  commentId: T:ArucoUnity.Plugin.HandleCppPtr
+  fullName: ArucoUnity.Plugin.HandleCppPtr
+  nameWithType: HandleCppPtr
+- uid: ArucoUnity.Plugin.HandleCppPtr.#ctor(ArucoUnity.Plugin.DeleteResponsibility)
+  name: HandleCppPtr(DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr__ctor_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.HandleCppPtr.#ctor(ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr(ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: HandleCppPtr.HandleCppPtr(DeleteResponsibility)
+- uid: ArucoUnity.Plugin.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: HandleCppPtr(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: HandleCppPtr.HandleCppPtr(IntPtr, DeleteResponsibility)
+- uid: ArucoUnity.Plugin.HandleCppPtr.#ctor*
+  name: HandleCppPtr
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr__ctor_
+  commentId: Overload:ArucoUnity.Plugin.HandleCppPtr.#ctor
+  isSpec: "True"
+  fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr
+  nameWithType: HandleCppPtr.HandleCppPtr
+- uid: ArucoUnity.Plugin.HandleCppPtr.CppPtr
+  name: CppPtr
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_CppPtr
+  commentId: P:ArucoUnity.Plugin.HandleCppPtr.CppPtr
+  fullName: ArucoUnity.Plugin.HandleCppPtr.CppPtr
+  nameWithType: HandleCppPtr.CppPtr
+- uid: ArucoUnity.Plugin.HandleCppPtr.CppPtr*
+  name: CppPtr
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_CppPtr_
+  commentId: Overload:ArucoUnity.Plugin.HandleCppPtr.CppPtr
+  isSpec: "True"
+  fullName: ArucoUnity.Plugin.HandleCppPtr.CppPtr
+  nameWithType: HandleCppPtr.CppPtr
+- uid: ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr
+  name: DeleteCppPtr()
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_DeleteCppPtr
+  commentId: M:ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr
+  fullName: ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr()
+  nameWithType: HandleCppPtr.DeleteCppPtr()
+- uid: ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr*
+  name: DeleteCppPtr
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_DeleteCppPtr_
+  commentId: Overload:ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr
+  isSpec: "True"
+  fullName: ArucoUnity.Plugin.HandleCppPtr.DeleteCppPtr
+  nameWithType: HandleCppPtr.DeleteCppPtr
+- uid: ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility
+  name: DeleteResponsibility
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_DeleteResponsibility
+  commentId: P:ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility
+  fullName: ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility
+  nameWithType: HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility*
+  name: DeleteResponsibility
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_DeleteResponsibility_
+  commentId: Overload:ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility
+  isSpec: "True"
+  fullName: ArucoUnity.Plugin.HandleCppPtr.DeleteResponsibility
+  nameWithType: HandleCppPtr.DeleteResponsibility
+- uid: ArucoUnity.Plugin.HandleCppPtr.Finalize
+  name: Finalize()
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_Finalize
+  commentId: M:ArucoUnity.Plugin.HandleCppPtr.Finalize
+  fullName: ArucoUnity.Plugin.HandleCppPtr.Finalize()
+  nameWithType: HandleCppPtr.Finalize()
+- uid: ArucoUnity.Plugin.HandleCppPtr.Finalize*
+  name: Finalize
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr_Finalize_
+  commentId: Overload:ArucoUnity.Plugin.HandleCppPtr.Finalize
+  isSpec: "True"
+  fullName: ArucoUnity.Plugin.HandleCppPtr.Finalize
+  nameWithType: HandleCppPtr.Finalize
 - uid: ArucoUnity.Plugin.Std
   name: Std
   href: api/ArucoUnity.Plugin.Std.html
@@ -9896,12 +9958,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble()
   nameWithType: Std.VectorDouble.VectorDouble()
-- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorDouble(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorDouble.html#ArucoUnity_Plugin_Std_VectorDouble__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorDouble.VectorDouble(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorDouble(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorDouble.html#ArucoUnity_Plugin_Std_VectorDouble__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorDouble.VectorDouble(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor*
   name: VectorDouble
   href: api/ArucoUnity.Plugin.Std.VectorDouble.html#ArucoUnity_Plugin_Std_VectorDouble__ctor_
@@ -9999,12 +10061,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt()
   nameWithType: Std.VectorInt.VectorInt()
-- uid: ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorInt(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorInt.html#ArucoUnity_Plugin_Std_VectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorInt.VectorInt(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorInt(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorInt.html#ArucoUnity_Plugin_Std_VectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorInt.VectorInt(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorInt.#ctor*
   name: VectorInt
   href: api/ArucoUnity.Plugin.Std.VectorInt.html#ArucoUnity_Plugin_Std_VectorInt__ctor_
@@ -10102,12 +10164,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat()
   nameWithType: Std.VectorMat.VectorMat()
-- uid: ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorMat(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorMat.html#ArucoUnity_Plugin_Std_VectorMat__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorMat.VectorMat(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorMat(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorMat.html#ArucoUnity_Plugin_Std_VectorMat__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorMat.VectorMat(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorMat.#ctor*
   name: VectorMat
   href: api/ArucoUnity.Plugin.Std.VectorMat.html#ArucoUnity_Plugin_Std_VectorMat__ctor_
@@ -10192,12 +10254,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f()
   nameWithType: Std.VectorPoint2f.VectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorPoint2f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorPoint2f.html#ArucoUnity_Plugin_Std_VectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorPoint2f.VectorPoint2f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorPoint2f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorPoint2f.html#ArucoUnity_Plugin_Std_VectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorPoint2f.VectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor*
   name: VectorPoint2f
   href: api/ArucoUnity.Plugin.Std.VectorPoint2f.html#ArucoUnity_Plugin_Std_VectorPoint2f__ctor_
@@ -10282,12 +10344,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f()
   nameWithType: Std.VectorPoint3f.VectorPoint3f()
-- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorPoint3f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorPoint3f.html#ArucoUnity_Plugin_Std_VectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorPoint3f.VectorPoint3f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorPoint3f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorPoint3f.html#ArucoUnity_Plugin_Std_VectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorPoint3f.VectorPoint3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor*
   name: VectorPoint3f
   href: api/ArucoUnity.Plugin.Std.VectorPoint3f.html#ArucoUnity_Plugin_Std_VectorPoint3f__ctor_
@@ -10372,12 +10434,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d()
   nameWithType: Std.VectorVec3d.VectorVec3d()
-- uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVec3d(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVec3d.html#ArucoUnity_Plugin_Std_VectorVec3d__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVec3d.VectorVec3d(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVec3d(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVec3d.html#ArucoUnity_Plugin_Std_VectorVec3d__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVec3d.VectorVec3d(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor*
   name: VectorVec3d
   href: api/ArucoUnity.Plugin.Std.VectorVec3d.html#ArucoUnity_Plugin_Std_VectorVec3d__ctor_
@@ -10462,12 +10524,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i()
   nameWithType: Std.VectorVec4i.VectorVec4i()
-- uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVec4i(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVec4i.html#ArucoUnity_Plugin_Std_VectorVec4i__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVec4i.VectorVec4i(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVec4i(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVec4i.html#ArucoUnity_Plugin_Std_VectorVec4i__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVec4i.VectorVec4i(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor*
   name: VectorVec4i
   href: api/ArucoUnity.Plugin.Std.VectorVec4i.html#ArucoUnity_Plugin_Std_VectorVec4i__ctor_
@@ -10552,12 +10614,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt()
   nameWithType: Std.VectorVectorInt.VectorVectorInt()
-- uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVectorInt(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorInt.html#ArucoUnity_Plugin_Std_VectorVectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVectorInt.VectorVectorInt(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVectorInt(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorInt.html#ArucoUnity_Plugin_Std_VectorVectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVectorInt.VectorVectorInt(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor*
   name: VectorVectorInt
   href: api/ArucoUnity.Plugin.Std.VectorVectorInt.html#ArucoUnity_Plugin_Std_VectorVectorInt__ctor_
@@ -10642,12 +10704,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f()
   nameWithType: Std.VectorVectorPoint2f.VectorVectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVectorPoint2f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVectorPoint2f.VectorVectorPoint2f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVectorPoint2f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVectorPoint2f.VectorVectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor*
   name: VectorVectorPoint2f
   href: api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorPoint2f__ctor_
@@ -10732,12 +10794,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f()
   nameWithType: Std.VectorVectorPoint3f.VectorVectorPoint3f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVectorPoint3f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html#ArucoUnity_Plugin_Std_VectorVectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVectorPoint3f.VectorVectorPoint3f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVectorPoint3f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html#ArucoUnity_Plugin_Std_VectorVectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVectorPoint3f.VectorVectorPoint3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor*
   name: VectorVectorPoint3f
   href: api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html#ArucoUnity_Plugin_Std_VectorVectorPoint3f__ctor_
@@ -10822,12 +10884,12 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f()
   nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: VectorVectorVectorPoint2f(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(IntPtr, Utility.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: VectorVectorVectorPoint2f(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor*
   name: VectorVectorVectorPoint2f
   href: api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorVectorPoint2f__ctor_
@@ -10900,107 +10962,6 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.Size
   nameWithType: Std.VectorVectorVectorPoint2f.Size
-- uid: ArucoUnity.Plugin.Utility
-  name: Utility
-  href: api/ArucoUnity.Plugin.Utility.html
-  commentId: T:ArucoUnity.Plugin.Utility
-  fullName: ArucoUnity.Plugin.Utility
-  nameWithType: Utility
-- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility
-  name: Utility.DeleteResponsibility
-  href: api/ArucoUnity.Plugin.Utility.DeleteResponsibility.html
-  commentId: T:ArucoUnity.Plugin.Utility.DeleteResponsibility
-  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility
-  nameWithType: Utility.DeleteResponsibility
-- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility.False
-  name: "False"
-  href: api/ArucoUnity.Plugin.Utility.DeleteResponsibility.html#ArucoUnity_Plugin_Utility_DeleteResponsibility_False
-  commentId: F:ArucoUnity.Plugin.Utility.DeleteResponsibility.False
-  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility.False
-  nameWithType: Utility.DeleteResponsibility.False
-- uid: ArucoUnity.Plugin.Utility.DeleteResponsibility.True
-  name: "True"
-  href: api/ArucoUnity.Plugin.Utility.DeleteResponsibility.html#ArucoUnity_Plugin_Utility_DeleteResponsibility_True
-  commentId: F:ArucoUnity.Plugin.Utility.DeleteResponsibility.True
-  fullName: ArucoUnity.Plugin.Utility.DeleteResponsibility.True
-  nameWithType: Utility.DeleteResponsibility.True
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr
-  name: Utility.HandleCppPtr
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html
-  commentId: T:ArucoUnity.Plugin.Utility.HandleCppPtr
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr
-  nameWithType: Utility.HandleCppPtr
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: HandleCppPtr(Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr__ctor_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr(ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Utility.HandleCppPtr.HandleCppPtr(Utility.DeleteResponsibility)
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  name: HandleCppPtr(IntPtr, Utility.DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr__ctor_System_IntPtr_ArucoUnity_Plugin_Utility_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr(System.IntPtr, ArucoUnity.Plugin.Utility.DeleteResponsibility)
-  nameWithType: Utility.HandleCppPtr.HandleCppPtr(IntPtr, Utility.DeleteResponsibility)
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor*
-  name: HandleCppPtr
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr__ctor_
-  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.#ctor
-  isSpec: "True"
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.HandleCppPtr
-  nameWithType: Utility.HandleCppPtr.HandleCppPtr
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  name: CppPtr
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_CppPtr
-  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  nameWithType: Utility.HandleCppPtr.CppPtr
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr*
-  name: CppPtr
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_CppPtr_
-  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  isSpec: "True"
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.CppPtr
-  nameWithType: Utility.HandleCppPtr.CppPtr
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
-  name: DeleteCppPtr()
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_DeleteCppPtr
-  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr()
-  nameWithType: Utility.HandleCppPtr.DeleteCppPtr()
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr*
-  name: DeleteCppPtr
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_DeleteCppPtr_
-  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
-  isSpec: "True"
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteCppPtr
-  nameWithType: Utility.HandleCppPtr.DeleteCppPtr
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  name: DeleteResponsibility
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_DeleteResponsibility
-  commentId: P:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility*
-  name: DeleteResponsibility
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_DeleteResponsibility_
-  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  isSpec: "True"
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.DeleteResponsibility
-  nameWithType: Utility.HandleCppPtr.DeleteResponsibility
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
-  name: Finalize()
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_Finalize
-  commentId: M:ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize()
-  nameWithType: Utility.HandleCppPtr.Finalize()
-- uid: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize*
-  name: Finalize
-  href: api/ArucoUnity.Plugin.Utility.HandleCppPtr.html#ArucoUnity_Plugin_Utility_HandleCppPtr_Finalize_
-  commentId: Overload:ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
-  isSpec: "True"
-  fullName: ArucoUnity.Plugin.Utility.HandleCppPtr.Finalize
-  nameWithType: Utility.HandleCppPtr.Finalize
 - uid: ArucoUnity.Utilities
   name: ArucoUnity.Utilities
   href: api/ArucoUnity.Utilities.html
