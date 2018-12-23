@@ -1,0 +1,35 @@
+### YamlMime:XRefMap
+references:
+- uid: UnityEngine.Behaviour
+  name: Behaviour
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Behaviour.html
+- uid: UnityEngine.Color
+  name: Color
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Color.html
+- uid: UnityEngine.Component
+  name: Component
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Component.html
+- uid: UnityEngine.MonoBehaviour
+  name: MonoBehaviour
+  href: https://docs.unity3d.com/Documentation/ScriptReference/MonoBehaviour.html
+- uid: UnityEngine.Object
+  name: Object
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Object.html
+- uid: UnityEngine.ScriptableObject
+  name: Object
+  href: https://docs.unity3d.com/Documentation/ScriptReference/ScriptableObject.html
+- uid: UnityEngine.Texture2D
+  name: Texture2D
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Texture2D.html
+- uid: UnityEngine.TextureFormat
+  name: TextureFormat
+  href: https://docs.unity3d.com/Documentation/ScriptReference/TextureFormat.html
+- uid: UnityEngine.Vector2
+  name: Vector2
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Vector2.html
+- uid: UnityEngine.Vector2Int
+  name: Vector2Int
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Vector2Int.html
+- uid: UnityEngine.Vector3
+  name: Vector3
+  href: https://docs.unity3d.com/Documentation/ScriptReference/Vector3.html

@@ -18,6 +18,8 @@
       "_appFooter": "<a href=\"https://github.com/NormandErwan/ArucoUnity\">Aruco Unity</a> - <a href=\"https://twitter.com/NormandErwan\">Erwan Normand</a>",
       "_enableSearch": true
     },
+    "xref": [ "xrefmap.yml" ],
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
     "content": [
       {
         "src": "manual/",
