@@ -1,33 +1,30 @@
 ﻿using UnityEditor;
 
+/// <summary>
+/// Exports ArucoUnity as a Unity package.
+/// </summary>
 public static class ExportArucoUnityPackage
 {
-    [MenuItem("Aruco Unity/Export package")]
+    /// <summary>
+    /// Returns the assets list of ArucoUnity.
+    /// </summary>
+    private static string[] assets = new string[]
+    {
+        "Assets/ArucoUnity",
+        "Assets/StreamingAssets/ArucoUnity",
+        "Assets/csc.rsp",
+        "Assets/gmcs.rsp",
+        "Assets/mcs.rsp",
+        "Assets/smcs.rsp",
+        "ProjectSettings/TagManager.asset",
+    };
+
+    /// <summary>
+    /// Exports the ArucoUnity package.
+    /// </summary>
+    [MenuItem("ArucoUnity/Export package")]
     public static void ExportPackage()
     {
-        AssetDatabase.ExportPackage(ProjectContent(), "ArucoUnity.unitypackage", ExportPackageOptions.Interactive | ExportPackageOptions.Recurse);
-    }
-
-    public static void ExportPackageBatch()
-    {
-        AssetDatabase.ExportPackage(ProjectContent(), "ArucoUnity.unitypackage", ExportPackageOptions.Recurse);
-    }
-
-    private static string[] ProjectContent() {
-        return new string[]
-        {
-            "Assets/ArucoUnity/Materials",
-            "Assets/ArucoUnity/Plugins",
-            "Assets/ArucoUnity/Prefabs",
-            "Assets/ArucoUnity/Scenes",
-            "Assets/ArucoUnity/Scripts",
-            "Assets/ArucoUnity/Scenes",
-            "Assets/ArucoUnity/Textures",
-            "ProjectSettings/TagManager.asset",
-            "Assets/csc.rsp",
-            "Assets/gmcs.rsp",
-            "Assets/mcs.rsp",
-            "Assets/smcs.rsp"
-        };
+        AssetDatabase.ExportPackage(assets, "ArucoUnity.unitypackage", ExportPackageOptions.Interactive | ExportPackageOptions.Recurse);
     }
 }
