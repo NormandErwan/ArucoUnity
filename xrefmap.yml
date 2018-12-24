@@ -83,13 +83,13 @@ references:
   commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate
   fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate()
   nameWithType: ArucoCameraCalibration.Calibrate()
-- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
   nameWithType: ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.ArucoCameraCalibration.Calibrate*
@@ -449,11 +449,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.Awake
   nameWithType: ArucoCameraCalibrationGUI.Awake
-- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,System.EventArgs)
+- uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,EventArgs)
   name: ConfigureUI(Object, EventArgs)
-  href: api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html#ArucoUnity_Calibration_ArucoCameraCalibrationGUI_ConfigureUI_System_Object_System_EventArgs_
-  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,System.EventArgs)
-  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object, System.EventArgs)
+  href: api/ArucoUnity.Calibration.ArucoCameraCalibrationGUI.html#ArucoUnity_Calibration_ArucoCameraCalibrationGUI_ConfigureUI_System_Object_EventArgs_
+  commentId: M:ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object,EventArgs)
+  fullName: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI(System.Object, EventArgs)
   nameWithType: ArucoCameraCalibrationGUI.ConfigureUI(Object, EventArgs)
 - uid: ArucoUnity.Calibration.ArucoCameraCalibrationGUI.ConfigureUI*
   name: ConfigureUI
@@ -635,13 +635,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration
   nameWithType: OmnidirCameraCalibration
-- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_OmnidirCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_OmnidirCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
   nameWithType: OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: OmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Omnidir.OmnidirCameraCalibration.Calibrate*
@@ -793,13 +793,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
   fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration
   nameWithType: StereoOmnidirCameraCalibration
-- uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_StereoOmnidirCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.html#ArucoUnity_Calibration_Omnidir_StereoOmnidirCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
   nameWithType: StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: StereoOmnidirCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Omnidir.StereoOmnidirCameraCalibration.Calibrate*
@@ -821,13 +821,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration
   nameWithType: PinholeCameraCalibration
-- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
   nameWithType: PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate*
@@ -1070,13 +1070,13 @@ references:
   commentId: T:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
   fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration
   nameWithType: StereoPinholeCameraCalibration
-- uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+- uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name: Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  href: api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_StereoPinholeCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___
-  commentId: M:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])
+  href: api/ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.html#ArucoUnity_Calibration_Pinhole_StereoPinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___
+  commentId: M:ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
   name.vb: Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
-  fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
-  fullName.vb: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
+  fullName: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[], ArucoUnity.Plugin.Std.VectorVectorPoint3f[])
+  fullName.vb: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f(), ArucoUnity.Plugin.Std.VectorVectorPoint3f())
   nameWithType: StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])
   nameWithType.vb: StereoPinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f(), Std.VectorVectorPoint3f())
 - uid: ArucoUnity.Calibration.Pinhole.StereoPinholeCameraCalibration.Calibrate*
@@ -1526,11 +1526,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController
   nameWithType: ArucoWebcam.WebcamController
-- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
+- uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
   name: WebcamController_Started(WebcamController)
-  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_WebcamController_Started_WebcamController_
-  commentId: M:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
-  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(WebcamController)
+  href: api/ArucoUnity.Cameras.ArucoWebcam.html#ArucoUnity_Cameras_ArucoWebcam_WebcamController_Started_ArucoUnity_Utilities_WebcamController_
+  commentId: M:ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
+  fullName: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
   nameWithType: ArucoWebcam.WebcamController_Started(WebcamController)
 - uid: ArucoUnity.Cameras.ArucoWebcam.WebcamController_Started*
   name: WebcamController_Started
@@ -2897,11 +2897,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController
   nameWithType: StereoArucoWebcam.WebcamController
-- uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
+- uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
   name: WebcamController_Started(WebcamController)
-  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_WebcamController_Started_WebcamController_
-  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
-  fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(WebcamController)
+  href: api/ArucoUnity.Cameras.StereoArucoWebcam.html#ArucoUnity_Cameras_StereoArucoWebcam_WebcamController_Started_ArucoUnity_Utilities_WebcamController_
+  commentId: M:ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
+  fullName: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started(ArucoUnity.Utilities.WebcamController)
   nameWithType: StereoArucoWebcam.WebcamController_Started(WebcamController)
 - uid: ArucoUnity.Cameras.StereoArucoWebcam.WebcamController_Started*
   name: WebcamController_Started
@@ -2948,13 +2948,13 @@ references:
   commentId: T:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion
   nameWithType: ArucoCameraUndistortion
-- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[],System.Byte[][])
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[],System.Byte[][])
   name: ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])
-  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_Cv_Mat___System_Byte_____
-  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[],System.Byte[][])
+  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____
+  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[],System.Byte[][])
   name.vb: ArucoCamera_UndistortRectifyImages(Cv.Mat(), Byte()())
-  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], System.Byte[][])
-  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat(), System.Byte()())
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[], System.Byte[][])
+  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat(), System.Byte()())
   nameWithType: ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])
   nameWithType.vb: ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat(), Byte()())
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages*
@@ -3143,13 +3143,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortionRectificationMaps
   nameWithType: ArucoCameraUndistortion.UndistortionRectificationMaps
-- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
+- uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
   name: UndistortRectifyImages(Cv.Mat[])
-  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_Cv_Mat___
-  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
+  href: api/ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: UndistortRectifyImages(Cv.Mat())
-  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
-  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat())
+  fullName: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])
   nameWithType.vb: ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat())
 - uid: ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.UndistortRectifyImages*
@@ -5197,11 +5197,11 @@ references:
   commentId: T:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker
   nameWithType: ArucoCharucoBoardTracker
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoCharucoBoardTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect*
   name: Detect
@@ -5210,11 +5210,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Detect
   nameWithType: ArucoCharucoBoardTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoCharucoBoardTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw*
   name: Draw
@@ -5223,11 +5223,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.Draw
   nameWithType: ArucoCharucoBoardTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoCharucoBoardTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5236,11 +5236,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.EstimateTransforms
   nameWithType: ArucoCharucoBoardTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoCharucoBoardTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoCharucoBoardTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoCharucoBoardTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5268,11 +5268,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Activate
   nameWithType: ArucoDiamondTracker.Activate
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -5281,11 +5281,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -5307,11 +5307,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Deactivate
   nameWithType: ArucoDiamondTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoDiamondTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Detect*
   name: Detect
@@ -5391,11 +5391,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.DiamondTvecs
   nameWithType: ArucoDiamondTracker.DiamondTvecs
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoDiamondTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.Draw*
   name: Draw
@@ -5416,11 +5416,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimatePoseSquareLength
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimatePoseSquareLength
   nameWithType: ArucoDiamondTracker.EstimatePoseSquareLength
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5429,13 +5429,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.EstimateTransforms
   nameWithType: ArucoDiamondTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
   name: TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, out ArucoDiamond)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_TryGetArucoDiamond_System_Int32_Aruco_Dictionary_System_UInt32_ArucoUnity_Objects_ArucoDiamond__
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_TryGetArucoDiamond_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_System_UInt32_ArucoUnity_Objects_ArucoDiamond__
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,System.UInt32,ArucoUnity.Objects.ArucoDiamond@)
   name.vb: TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, ByRef ArucoDiamond)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, Aruco.Dictionary, System.UInt32, out ArucoUnity.Objects.ArucoDiamond)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, Aruco.Dictionary, System.UInt32, ByRef ArucoUnity.Objects.ArucoDiamond)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, System.UInt32, out ArucoUnity.Objects.ArucoDiamond)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, System.UInt32, ByRef ArucoUnity.Objects.ArucoDiamond)
   nameWithType: ArucoDiamondTracker.TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, out ArucoDiamond)
   nameWithType.vb: ArucoDiamondTracker.TryGetArucoDiamond(Int32, Aruco.Dictionary, UInt32, ByRef ArucoDiamond)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond*
@@ -5445,11 +5445,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.TryGetArucoDiamond
   nameWithType: ArucoDiamondTracker.TryGetArucoDiamond
-- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoDiamondTracker.html#ArucoUnity_Objects_Trackers_ArucoDiamondTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoDiamondTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoDiamondTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5464,11 +5464,11 @@ references:
   commentId: T:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker
   nameWithType: ArucoGridBoardTracker
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoGridBoardTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect*
   name: Detect
@@ -5477,11 +5477,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Detect
   nameWithType: ArucoGridBoardTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoGridBoardTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw*
   name: Draw
@@ -5490,11 +5490,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.Draw
   nameWithType: ArucoGridBoardTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoGridBoardTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5503,11 +5503,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.EstimateTransforms
   nameWithType: ArucoGridBoardTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.html#ArucoUnity_Objects_Trackers_ArucoGridBoardTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoGridBoardTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoGridBoardTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5535,11 +5535,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Activate
   nameWithType: ArucoMarkerTracker.Activate
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -5548,11 +5548,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -5574,11 +5574,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Deactivate
   nameWithType: ArucoMarkerTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoMarkerTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Detect*
   name: Detect
@@ -5600,11 +5600,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.DetectedMarkers
   nameWithType: ArucoMarkerTracker.DetectedMarkers
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoMarkerTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.Draw*
   name: Draw
@@ -5619,11 +5619,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.estimatePoseMarkerLength
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.estimatePoseMarkerLength
   nameWithType: ArucoMarkerTracker.estimatePoseMarkerLength
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -5703,11 +5703,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.rejectedMarkerCandidatesColor
   fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.rejectedMarkerCandidatesColor
   nameWithType: ArucoMarkerTracker.rejectedMarkerCandidatesColor
-- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoMarkerTracker.html#ArucoUnity_Objects_Trackers_ArucoMarkerTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoMarkerTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoMarkerTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -5850,13 +5850,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects
   nameWithType: ArucoObjectsController.GetArucoObjects
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   name: GetArucoObjects<U>(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html#ArucoUnity_Objects_Trackers_ArucoObjectsController_GetArucoObjects__1_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsController.html#ArucoUnity_Objects_Trackers_ArucoObjectsController_GetArucoObjects__1_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   name.vb: GetArucoObjects(Of U)(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsController.GetArucoObjects(Of U)(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
   nameWithType.vb: ArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -5994,13 +5994,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect()
   nameWithType: ArucoObjectsTracker.Detect()
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
   name: Detect(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Detect_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Detect_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: Detect(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: ArucoObjectsTracker.Detect(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.Detect(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Detect*
@@ -6016,13 +6016,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw()
   nameWithType: ArucoObjectsTracker.Draw()
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
   name: Draw(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Draw_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_Draw_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: Draw(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: ArucoObjectsTracker.Draw(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.Draw(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Draw*
@@ -6110,13 +6110,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.EstimateTransforms
   nameWithType: ArucoObjectsTracker.EstimateTransforms
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,Aruco.Dictionary})
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
   name: ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_ExecuteOnActivatedTrackers_System_Action_ArucoUnity_Objects_Trackers_ArucoObjectTracker_System_Int32_Aruco_Dictionary__
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,Aruco.Dictionary})
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_ExecuteOnActivatedTrackers_Action_ArucoUnity_Objects_Trackers_ArucoObjectTracker_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary__
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action{ArucoUnity.Objects.Trackers.ArucoObjectTracker,System.Int32,ArucoUnity.Plugin.Aruco.Dictionary})
   name.vb: ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, Aruco.Dictionary>)
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(System.Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, Aruco.Dictionary))
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action<ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary>)
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action(Of ArucoUnity.Objects.Trackers.ArucoObjectTracker, System.Int32, ArucoUnity.Plugin.Aruco.Dictionary))
   nameWithType: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action<ArucoObjectTracker, Int32, Aruco.Dictionary>)
   nameWithType.vb: ArucoObjectsTracker.ExecuteOnActivatedTrackers(Action(Of ArucoObjectTracker, Int32, Aruco.Dictionary))
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.ExecuteOnActivatedTrackers*
@@ -6178,13 +6178,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.Stopping
   nameWithType: ArucoObjectsTracker.Stopping
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
   name: TrackArucoObjects(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_TrackArucoObjects_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectsTracker_TrackArucoObjects_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: TrackArucoObjects(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat[])
   nameWithType.vb: ArucoObjectsTracker.TrackArucoObjects(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectsTracker.TrackArucoObjects*
@@ -6250,11 +6250,11 @@ references:
   commentId: F:ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.arucoCameraUndistortion
   nameWithType: ArucoObjectTracker.arucoCameraUndistortion
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryAdded_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryAdded_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded*
   name: ArucoObjectsController_DictionaryAdded
@@ -6263,11 +6263,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryAdded
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryAdded
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   name: ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryRemoved_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_ArucoObjectsController_DictionaryRemoved_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.ArucoObjectsController_DictionaryRemoved*
   name: ArucoObjectsController_DictionaryRemoved
@@ -6295,17 +6295,17 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Deactivate
   nameWithType: ArucoObjectTracker.Deactivate
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: Detect(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.Detect(Int32, Aruco.Dictionary)
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Detect(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Detect_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoObjectTracker.Detect(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect*
   name: Detect
@@ -6314,17 +6314,17 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Detect
   nameWithType: ArucoObjectTracker.Detect
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: Draw(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.Draw(Int32, Aruco.Dictionary)
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
   name: Draw(Int32, Aruco.Dictionary, Cv.Mat)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_Aruco_Dictionary_Cv_Mat_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,Aruco.Dictionary,Cv.Mat)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, Aruco.Dictionary, Cv.Mat)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_Draw_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary,ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary, ArucoUnity.Plugin.Cv.Mat)
   nameWithType: ArucoObjectTracker.Draw(Int32, Aruco.Dictionary, Cv.Mat)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw*
   name: Draw
@@ -6333,11 +6333,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.Draw
   nameWithType: ArucoObjectTracker.Draw
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: EstimateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_EstimateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_EstimateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.EstimateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.EstimateTransforms*
   name: EstimateTransforms
@@ -6359,11 +6359,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.IsActivated
   nameWithType: ArucoObjectTracker.IsActivated
-- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
   name: UpdateTransforms(Int32, Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_UpdateTransforms_System_Int32_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32, Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.ArucoObjectTracker.html#ArucoUnity_Objects_Trackers_ArucoObjectTracker_UpdateTransforms_System_Int32_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32,ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms(System.Int32, ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: ArucoObjectTracker.UpdateTransforms(Int32, Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.ArucoObjectTracker.UpdateTransforms*
   name: UpdateTransforms
@@ -6467,13 +6467,13 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects
   nameWithType: IArucoObjectsController.GetArucoObjects
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   name: GetArucoObjects<U>(Aruco.Dictionary)
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_GetArucoObjects__1_Aruco_Dictionary_
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(Aruco.Dictionary)
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsController.html#ArucoUnity_Objects_Trackers_IArucoObjectsController_GetArucoObjects__1_ArucoUnity_Plugin_Aruco_Dictionary_
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects``1(ArucoUnity.Plugin.Aruco.Dictionary)
   name.vb: GetArucoObjects(Of U)(Aruco.Dictionary)
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects<U>(ArucoUnity.Plugin.Aruco.Dictionary)
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsController.GetArucoObjects(Of U)(ArucoUnity.Plugin.Aruco.Dictionary)
   nameWithType: IArucoObjectsController.GetArucoObjects<U>(Aruco.Dictionary)
   nameWithType.vb: IArucoObjectsController.GetArucoObjects(Of U)(Aruco.Dictionary)
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsController.RemoveArucoObject(ArucoUnity.Objects.ArucoObject)
@@ -6527,13 +6527,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect()
   nameWithType: IArucoObjectsTracker.Detect()
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
   name: Detect(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Detect_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: Detect(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: IArucoObjectsTracker.Detect(Cv.Mat[])
   nameWithType.vb: IArucoObjectsTracker.Detect(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Detect*
@@ -6549,13 +6549,13 @@ references:
   commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw
   fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw()
   nameWithType: IArucoObjectsTracker.Draw()
-- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
+- uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
   name: Draw(Cv.Mat[])
-  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_Cv_Mat___
-  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
+  href: api/ArucoUnity.Objects.Trackers.IArucoObjectsTracker.html#ArucoUnity_Objects_Trackers_IArucoObjectsTracker_Draw_ArucoUnity_Plugin_Cv_Mat___
+  commentId: M:ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
   name.vb: Draw(Cv.Mat())
-  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat[])
-  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(Cv.Mat())
+  fullName: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat[])
+  fullName.vb: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw(ArucoUnity.Plugin.Cv.Mat())
   nameWithType: IArucoObjectsTracker.Draw(Cv.Mat[])
   nameWithType.vb: IArucoObjectsTracker.Draw(Cv.Mat())
 - uid: ArucoUnity.Objects.Trackers.IArucoObjectsTracker.Draw*
@@ -7434,11 +7434,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetBitsFromByteList
   nameWithType: Aruco.Dictionary.GetBitsFromByteList
-- uid: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(System.IntPtr)
+- uid: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(IntPtr)
   name: GetByteListFromBits(IntPtr)
-  href: api/ArucoUnity.Plugin.Aruco.Dictionary.html#ArucoUnity_Plugin_Aruco_Dictionary_GetByteListFromBits_System_IntPtr_
-  commentId: M:ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(System.IntPtr)
-  fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(System.IntPtr)
+  href: api/ArucoUnity.Plugin.Aruco.Dictionary.html#ArucoUnity_Plugin_Aruco_Dictionary_GetByteListFromBits_IntPtr_
+  commentId: M:ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(IntPtr)
+  fullName: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits(IntPtr)
   nameWithType: Aruco.Dictionary.GetByteListFromBits(IntPtr)
 - uid: ArucoUnity.Plugin.Aruco.Dictionary.GetByteListFromBits*
   name: GetByteListFromBits
@@ -8933,11 +8933,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor
   fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f()
   nameWithType: Cv.Point2f.Point2f()
-- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Point2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: Point2f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Point2f.html#ArucoUnity_Plugin_Cv_Point2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Point2f.html#ArucoUnity_Plugin_Cv_Point2f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Point2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Point2f.Point2f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Cv.Point2f.Point2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Point2f.#ctor*
   name: Point2f
@@ -9025,11 +9025,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor
   fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f()
   nameWithType: Cv.Point3f.Point3f()
-- uid: ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Point3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: Point3f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Point3f.html#ArucoUnity_Plugin_Cv_Point3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Point3f.html#ArucoUnity_Plugin_Cv_Point3f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Point3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Point3f.Point3f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Cv.Point3f.Point3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Point3f.#ctor*
   name: Point3f
@@ -9121,18 +9121,18 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor
   fullName: ArucoUnity.Plugin.Cv.Rect.Rect()
   nameWithType: Cv.Rect.Rect()
+- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Rect(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Rect.Rect(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
   name: Rect(Int32, Int32, Int32, Int32)
   href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_System_Int32_System_Int32_System_Int32_System_Int32_
   commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
   fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.Int32, System.Int32, System.Int32, System.Int32)
   nameWithType: Cv.Rect.Rect(Int32, Int32, Int32, Int32)
-- uid: ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  name: Rect(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Rect.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Rect.Rect(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
-  nameWithType: Cv.Rect.Rect(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Rect.#ctor*
   name: Rect
   href: api/ArucoUnity.Plugin.Cv.Rect.html#ArucoUnity_Plugin_Cv_Rect__ctor_
@@ -9312,18 +9312,18 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor
   fullName: ArucoUnity.Plugin.Cv.Size.Size()
   nameWithType: Cv.Size.Size()
+- uid: ArucoUnity.Plugin.Cv.Size.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Size(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Size.Size(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Size.Size(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Size.#ctor(System.Int32,System.Int32)
   name: Size(Int32, Int32)
   href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_System_Int32_System_Int32_
   commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(System.Int32,System.Int32)
   fullName: ArucoUnity.Plugin.Cv.Size.Size(System.Int32, System.Int32)
   nameWithType: Cv.Size.Size(Int32, Int32)
-- uid: ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  name: Size(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Size.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Size.Size(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
-  nameWithType: Cv.Size.Size(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Size.#ctor*
   name: Size
   href: api/ArucoUnity.Plugin.Cv.Size.html#ArucoUnity_Plugin_Cv_Size__ctor_
@@ -9691,18 +9691,18 @@ references:
   commentId: T:ArucoUnity.Plugin.Cv.Vec3d
   fullName: ArucoUnity.Plugin.Cv.Vec3d
   nameWithType: Cv.Vec3d
+- uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  name: Vec3d(IntPtr, DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  nameWithType: Cv.Vec3d.Vec3d(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.Double,System.Double,System.Double)
   name: Vec3d(Double, Double, Double)
   href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_System_Double_System_Double_System_Double_
   commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.Double,System.Double,System.Double)
   fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(System.Double, System.Double, System.Double)
   nameWithType: Cv.Vec3d.Vec3d(Double, Double, Double)
-- uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  name: Vec3d(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Vec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Vec3d.Vec3d(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
-  nameWithType: Cv.Vec3d.Vec3d(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Vec3d.#ctor*
   name: Vec3d
   href: api/ArucoUnity.Plugin.Cv.Vec3d.html#ArucoUnity_Plugin_Cv_Vec3d__ctor_
@@ -9787,11 +9787,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor
   fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i()
   nameWithType: Cv.Vec4i.Vec4i()
-- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: Vec4i(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Cv.Vec4i.html#ArucoUnity_Plugin_Cv_Vec4i__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Cv.Vec4i.html#ArucoUnity_Plugin_Cv_Vec4i__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Cv.Vec4i.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Cv.Vec4i.Vec4i(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Cv.Vec4i.Vec4i(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Cv.Vec4i.#ctor*
   name: Vec4i
@@ -9875,11 +9875,11 @@ references:
   commentId: M:ArucoUnity.Plugin.HandleCppPtr.#ctor(ArucoUnity.Plugin.DeleteResponsibility)
   fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr(ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: HandleCppPtr.HandleCppPtr(DeleteResponsibility)
-- uid: ArucoUnity.Plugin.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.HandleCppPtr.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: HandleCppPtr(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.HandleCppPtr.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.HandleCppPtr.html#ArucoUnity_Plugin_HandleCppPtr__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.HandleCppPtr.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.HandleCppPtr.HandleCppPtr(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: HandleCppPtr.HandleCppPtr(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.HandleCppPtr.#ctor*
   name: HandleCppPtr
@@ -9958,11 +9958,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble()
   nameWithType: Std.VectorDouble.VectorDouble()
-- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorDouble(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorDouble.html#ArucoUnity_Plugin_Std_VectorDouble__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorDouble.html#ArucoUnity_Plugin_Std_VectorDouble__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorDouble.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorDouble.VectorDouble(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorDouble.VectorDouble(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorDouble.#ctor*
   name: VectorDouble
@@ -10061,11 +10061,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt()
   nameWithType: Std.VectorInt.VectorInt()
-- uid: ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorInt.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorInt(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorInt.html#ArucoUnity_Plugin_Std_VectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorInt.html#ArucoUnity_Plugin_Std_VectorInt__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorInt.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorInt.VectorInt(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorInt.VectorInt(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorInt.#ctor*
   name: VectorInt
@@ -10164,11 +10164,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat()
   nameWithType: Std.VectorMat.VectorMat()
-- uid: ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorMat.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorMat(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorMat.html#ArucoUnity_Plugin_Std_VectorMat__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorMat.html#ArucoUnity_Plugin_Std_VectorMat__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorMat.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorMat.VectorMat(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorMat.VectorMat(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorMat.#ctor*
   name: VectorMat
@@ -10254,11 +10254,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f()
   nameWithType: Std.VectorPoint2f.VectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorPoint2f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorPoint2f.html#ArucoUnity_Plugin_Std_VectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorPoint2f.html#ArucoUnity_Plugin_Std_VectorPoint2f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint2f.VectorPoint2f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorPoint2f.VectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorPoint2f.#ctor*
   name: VectorPoint2f
@@ -10344,11 +10344,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f()
   nameWithType: Std.VectorPoint3f.VectorPoint3f()
-- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorPoint3f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorPoint3f.html#ArucoUnity_Plugin_Std_VectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorPoint3f.html#ArucoUnity_Plugin_Std_VectorPoint3f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorPoint3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorPoint3f.VectorPoint3f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorPoint3f.VectorPoint3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorPoint3f.#ctor*
   name: VectorPoint3f
@@ -10434,11 +10434,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d()
   nameWithType: Std.VectorVec3d.VectorVec3d()
-- uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVec3d(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVec3d.html#ArucoUnity_Plugin_Std_VectorVec3d__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVec3d.html#ArucoUnity_Plugin_Std_VectorVec3d__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVec3d.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVec3d.VectorVec3d(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVec3d.VectorVec3d(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVec3d.#ctor*
   name: VectorVec3d
@@ -10524,11 +10524,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i()
   nameWithType: Std.VectorVec4i.VectorVec4i()
-- uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVec4i(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVec4i.html#ArucoUnity_Plugin_Std_VectorVec4i__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVec4i.html#ArucoUnity_Plugin_Std_VectorVec4i__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVec4i.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVec4i.VectorVec4i(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVec4i.VectorVec4i(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVec4i.#ctor*
   name: VectorVec4i
@@ -10614,11 +10614,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt()
   nameWithType: Std.VectorVectorInt.VectorVectorInt()
-- uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVectorInt(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorInt.html#ArucoUnity_Plugin_Std_VectorVectorInt__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorInt.html#ArucoUnity_Plugin_Std_VectorVectorInt__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorInt.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorInt.VectorVectorInt(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVectorInt.VectorVectorInt(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorInt.#ctor*
   name: VectorVectorInt
@@ -10704,11 +10704,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f()
   nameWithType: Std.VectorVectorPoint2f.VectorVectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVectorPoint2f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorPoint2f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint2f.VectorVectorPoint2f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVectorPoint2f.VectorVectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint2f.#ctor*
   name: VectorVectorPoint2f
@@ -10794,11 +10794,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f()
   nameWithType: Std.VectorVectorPoint3f.VectorVectorPoint3f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVectorPoint3f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html#ArucoUnity_Plugin_Std_VectorVectorPoint3f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorPoint3f.html#ArucoUnity_Plugin_Std_VectorVectorPoint3f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorPoint3f.VectorVectorPoint3f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVectorPoint3f.VectorVectorPoint3f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorPoint3f.#ctor*
   name: VectorVectorPoint3f
@@ -10884,11 +10884,11 @@ references:
   commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor
   fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f()
   nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f()
-- uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+- uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
   name: VectorVectorVectorPoint2f(IntPtr, DeleteResponsibility)
-  href: api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorVectorPoint2f__ctor_System_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
-  commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(System.IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
-  fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(System.IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
+  href: api/ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.html#ArucoUnity_Plugin_Std_VectorVectorVectorPoint2f__ctor_IntPtr_ArucoUnity_Plugin_DeleteResponsibility_
+  commentId: M:ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor(IntPtr,ArucoUnity.Plugin.DeleteResponsibility)
+  fullName: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(IntPtr, ArucoUnity.Plugin.DeleteResponsibility)
   nameWithType: Std.VectorVectorVectorPoint2f.VectorVectorVectorPoint2f(IntPtr, DeleteResponsibility)
 - uid: ArucoUnity.Plugin.Std.VectorVectorVectorPoint2f.#ctor*
   name: VectorVectorVectorPoint2f
@@ -10974,13 +10974,13 @@ references:
   commentId: T:ArucoUnity.Utilities.ArucoCameraSeparateThread
   fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread
   nameWithType: ArucoCameraSeparateThread
-- uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{Cv.Mat[]})
+- uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(ArucoUnity.Cameras.IArucoCamera,Action{ArucoUnity.Plugin.Cv.Mat[]})
   name: ArucoCameraSeparateThread(IArucoCamera, Action<Cv.Mat[]>)
-  href: api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html#ArucoUnity_Utilities_ArucoCameraSeparateThread__ctor_IArucoCamera_System_Action_Cv_Mat____
-  commentId: M:ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(IArucoCamera,System.Action{Cv.Mat[]})
+  href: api/ArucoUnity.Utilities.ArucoCameraSeparateThread.html#ArucoUnity_Utilities_ArucoCameraSeparateThread__ctor_ArucoUnity_Cameras_IArucoCamera_Action_ArucoUnity_Plugin_Cv_Mat____
+  commentId: M:ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor(ArucoUnity.Cameras.IArucoCamera,Action{ArucoUnity.Plugin.Cv.Mat[]})
   name.vb: ArucoCameraSeparateThread(IArucoCamera, Action(Of Cv.Mat()))
-  fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action<Cv.Mat[]>)
-  fullName.vb: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, System.Action(Of Cv.Mat()))
+  fullName: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(ArucoUnity.Cameras.IArucoCamera, Action<ArucoUnity.Plugin.Cv.Mat[]>)
+  fullName.vb: ArucoUnity.Utilities.ArucoCameraSeparateThread.ArucoCameraSeparateThread(ArucoUnity.Cameras.IArucoCamera, Action(Of ArucoUnity.Plugin.Cv.Mat()))
   nameWithType: ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, Action<Cv.Mat[]>)
   nameWithType.vb: ArucoCameraSeparateThread.ArucoCameraSeparateThread(IArucoCamera, Action(Of Cv.Mat()))
 - uid: ArucoUnity.Utilities.ArucoCameraSeparateThread.#ctor*
@@ -11169,11 +11169,11 @@ references:
   commentId: T:ArucoUnity.Utilities.CvMatExtensions
   fullName: ArucoUnity.Utilities.CvMatExtensions
   nameWithType: CvMatExtensions
-- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
   name: GetCameraFocalLengths(Cv.Mat)
-  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraFocalLengths_Cv_Mat_
-  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
-  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
+  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraFocalLengths_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths(ArucoUnity.Plugin.Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraFocalLengths(Cv.Mat)
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths*
   name: GetCameraFocalLengths
@@ -11182,11 +11182,11 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraFocalLengths
   nameWithType: CvMatExtensions.GetCameraFocalLengths
-- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
+- uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
   name: GetCameraPrincipalPoint(Cv.Mat)
-  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraPrincipalPoint_Cv_Mat_
-  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
-  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
+  href: api/ArucoUnity.Utilities.CvMatExtensions.html#ArucoUnity_Utilities_CvMatExtensions_GetCameraPrincipalPoint_ArucoUnity_Plugin_Cv_Mat_
+  commentId: M:ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
+  fullName: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint(ArucoUnity.Plugin.Cv.Mat)
   nameWithType: CvMatExtensions.GetCameraPrincipalPoint(Cv.Mat)
 - uid: ArucoUnity.Utilities.CvMatExtensions.GetCameraPrincipalPoint*
   name: GetCameraPrincipalPoint

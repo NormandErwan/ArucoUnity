@@ -90,7 +90,7 @@
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
     <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
     <div class="level3"><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html">ArucoCameraUndistortion</a></div>
@@ -104,7 +104,7 @@
     <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.IArucoCameraUndistortion.html">IArucoCameraUndistortion</a></div>
     <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
     <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
-    <div><span class="xref">IHasArucoCameraParameters</span></div>
+    <div><a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -154,10 +154,10 @@
       <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Stopping">ArucoCameraUndistortion.Stopping()</a>
     </div>
     <div>
-      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_Cv_Mat___System_Byte_____">ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</a>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_ArucoCamera_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___System_Byte_____">ArucoCameraUndistortion.ArucoCamera_UndistortRectifyImages(Cv.Mat[], Byte[][])</a>
     </div>
     <div>
-      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_Cv_Mat___">ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])</a>
+      <a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_UndistortRectifyImages_ArucoUnity_Plugin_Cv_Mat___">ArucoCameraUndistortion.UndistortRectifyImages(Cv.Mat[])</a>
     </div>
     <div>
       <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
@@ -218,7 +218,7 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Cameras.Undistortions.html">ArucoUnity.Cameras.Undistortions</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class OmnidirCameraUndistortionGeneric&lt;T&gt; : ArucoCameraUndistortionGeneric&lt;T&gt;, IArucoCameraUndistortion, IArucoCameraController, IController, IHasArucoCameraParameters where T : ArucoCamera</code></pre>
@@ -240,14 +240,19 @@
   </table>
   <h3 id="fields">Fields
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_maxPerspectiveFov.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.maxPerspectiveFov%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L32">View Source</a>
+  </span>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_maxPerspectiveFov" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.maxPerspectiveFov">maxPerspectiveFov</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected const float maxPerspectiveFov = 179F</code></pre>
+    <pre><code class="lang-csharp hljs">protected const float maxPerspectiveFov = null</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,19 +264,24 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Single</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_minPerspectiveFov.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.minPerspectiveFov%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L31">View Source</a>
+  </span>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_minPerspectiveFov" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.minPerspectiveFov">minPerspectiveFov</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected const float minPerspectiveFov = 1F</code></pre>
+    <pre><code class="lang-csharp hljs">protected const float minPerspectiveFov = null</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -283,13 +293,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Single</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_rectifyFlags.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.rectifyFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L60">View Source</a>
+  </span>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_rectifyFlags" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.rectifyFlags">rectifyFlags</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -307,15 +322,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.RectificationTypes.html">OmnidirCameraUndistortionGeneric.RectificationTypes</a>&lt;&gt;, <span class="xref">Cv.Omnidir.Rectifify</span>&gt;</td>
+        <td><span class="xref">Dictionary</span>&lt;<a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.RectificationTypes.html">OmnidirCameraUndistortionGeneric.RectificationTypes</a>&lt;&gt;, <a class="xref" href="ArucoUnity.Plugin.Cv.Omnidir.Rectifify.html">Cv.Omnidir.Rectifify</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.PerspectiveFieldOfViews%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L56">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.PerspectiveFieldOfViews*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.PerspectiveFieldOfViews">PerspectiveFieldOfViews</h4>
   <div class="markdown level1 summary"><p>Gets or sets the desired field of view for the Unity cameras shooting the undistorted and rectified images.</p>
@@ -335,13 +355,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Single</span>[]</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a>[]</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_RectificationType.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.RectificationType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L51">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_RectificationType_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationType*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_RectificationType" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.RectificationType">RectificationType</h4>
   <div class="markdown level1 summary"><p>Gets or sets the algorithm to use for the rectification of the images. See this tutorial for illustrated examples:
@@ -369,8 +394,13 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_Configuring.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.Configuring%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L86">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_Configuring_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.Configuring*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_Configuring" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.Configuring">Configuring()</h4>
   <div class="markdown level1 summary"><p>Throw exception if <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews">PerspectiveFieldOfViews</a> length is different than <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_CameraNumber">CameraNumber</a>.</p>
@@ -382,8 +412,13 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_Configuring">ArucoCameraUndistortion.Configuring()</a></div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeRectification.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.InitializeRectification%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L103">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeRectification_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeRectification*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeRectification" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeRectification">InitializeRectification()</h4>
   <div class="markdown level1 summary"><p>Initializes the <see cref="!:RectifiedCameraMatrices"></see> using the <a class="xref" href="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric-1.html#ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_PerspectiveFieldOfViews">PerspectiveFieldOfViews</a> values for perspective rectification
@@ -397,8 +432,13 @@ or uses the recommended values: <a href="https://docs.opencv.org/3.3.1/dd/d12/tu
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_InitializeRectification">ArucoCameraUndistortion.InitializeRectification()</a></div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeUndistortionMaps.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.InitializeUndistortionMaps%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L133">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeUndistortionMaps_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeUndistortionMaps*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_InitializeUndistortionMaps" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.InitializeUndistortionMaps">InitializeUndistortionMaps()</h4>
   <div class="markdown level1 summary"></div>
@@ -409,8 +449,13 @@ or uses the recommended values: <a href="https://docs.opencv.org/3.3.1/dd/d12/tu
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="ArucoUnity.Cameras.Undistortions.ArucoCameraUndistortion.html#ArucoUnity_Cameras_Undistortions_ArucoCameraUndistortion_InitializeUndistortionMaps">ArucoCameraUndistortion.InitializeUndistortionMaps()</a></div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_OnValidate.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601.OnValidate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L73">View Source</a>
+  </span>
   <a id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_OnValidate_" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.OnValidate*"></a>
   <h4 id="ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1_OnValidate" data-uid="ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.OnValidate">OnValidate()</h4>
   <div class="markdown level1 summary"><p>Resizes the length of the <span class="xref">ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric`1.perspectiveFieldOfViews</span> editor field to <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html#ArucoUnity_Cameras_ArucoCamera_CameraNumber">CameraNumber</a> if different.</p>
@@ -431,7 +476,7 @@ or uses the recommended values: <a href="https://docs.opencv.org/3.3.1/dd/d12/tu
       <a class="xref" href="ArucoUnity.IController.html">IController</a>
   </div>
   <div>
-      <span class="xref">IHasArucoCameraParameters</span>
+      <a class="xref" href="ArucoUnity.Cameras.Parameters.IHasArucoCameraParameters.html">IHasArucoCameraParameters</a>
   </div>
 </article>
           </div>
@@ -440,6 +485,12 @@ or uses the recommended values: <a href="https://docs.opencv.org/3.3.1/dd/d12/tu
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Cameras_Undistortions_OmnidirCameraUndistortionGeneric_1.md&amp;value=---%0Auid%3A%20ArucoUnity.Cameras.Undistortions.OmnidirCameraUndistortionGeneric%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Cameras/Undistortions/Omnidir/OmnidirCameraUndistortionGeneric.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

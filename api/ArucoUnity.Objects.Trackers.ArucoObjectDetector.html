@@ -83,29 +83,111 @@
   
   <h1 id="ArucoUnity_Objects_Trackers_ArucoObjectDetector" data-uid="ArucoUnity.Objects.Trackers.ArucoObjectDetector" class="text-break">Class ArucoObjectDetector
   </h1>
-  <div class="markdown level0 summary"><p>Detects ArUco objects for a <see cref="!:ArucoCamera"></see> camera system according to <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">DetectorParameters</a>.</p>
+  <div class="markdown level0 summary"><p>Detects ArUco objects for a <a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a> camera system according to <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">DetectorParameters</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ArucoObjectDetector</span></div>
-      <div class="level2"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectsController.html">ArucoObjectsController</a></div>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level3"><span class="xref">ArucoObjectDetector</span></div>
+      <div class="level4"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html">ArucoCameraCalibration</a></div>
+      <div class="level4"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectsController.html">ArucoObjectsController</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
     <div><a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Awake">Controller.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Start">Controller.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Starting">Controller.Starting()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopping">Controller.Stopping()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Objects.Trackers.html">ArucoUnity.Objects.Trackers</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="ArucoUnity_Objects_Trackers_ArucoObjectDetector_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ArucoObjectDetector : ArucoCameraController, IHasDetectorParameter</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ArucoObjectDetector : ArucoCameraController, IArucoCameraController, IController, IHasDetectorParameter</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs/#L24">View Source</a>
+  </span>
   <a id="ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters_" data-uid="ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters*"></a>
   <h4 id="ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters" data-uid="ArucoUnity.Objects.Trackers.ArucoObjectDetector.DetectorParameters">DetectorParameters</h4>
   <div class="markdown level1 summary"><p>Gets or sets the parameters to use for the detection.</p>
@@ -125,15 +207,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Aruco.DetectorParameters</span></td>
+        <td><a class="xref" href="ArucoUnity.Plugin.Aruco.DetectorParameters.html">Aruco.DetectorParameters</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_Trackers_ArucoObjectDetector_Configuring.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs/#L31">View Source</a>
+  </span>
   <a id="ArucoUnity_Objects_Trackers_ArucoObjectDetector_Configuring_" data-uid="ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring*"></a>
   <h4 id="ArucoUnity_Objects_Trackers_ArucoObjectDetector_Configuring" data-uid="ArucoUnity.Objects.Trackers.ArucoObjectDetector.Configuring">Configuring()</h4>
   <div class="markdown level1 summary"><p>Checks if <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">DetectorParameters</a> is set.</p>
@@ -143,7 +230,15 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void Configuring()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_Configuring">ArucoCameraController.Configuring()</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
+  </div>
   <div>
       <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a>
   </div>
@@ -154,6 +249,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Objects_Trackers_ArucoObjectDetector.md&amp;value=---%0Auid%3A%20ArucoUnity.Objects.Trackers.ArucoObjectDetector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Objects/Trackers/ArucoObjectDetector.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

@@ -87,11 +87,20 @@
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html">ArucoCameraCalibration</a></div>
-    <div class="level2"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric</a>&lt;<span class="xref">ArucoCamera</span>, <a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html">PinholeCameraCalibrationFlags</a>&gt;</div>
-    <div class="level3"><a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase-1.html">PinholeCameraCalibrationBase</a>&lt;<span class="xref">ArucoCamera</span>&gt;</div>
-    <div class="level4"><span class="xref">PinholeCameraCalibration</span></div>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="ArucoUnity.Controller.html">Controller</a></div>
+    <div class="level2"><a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html">ArucoCameraController</a></div>
+    <div class="level3"><a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html">ArucoObjectDetector</a></div>
+    <div class="level4"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html">ArucoCameraCalibration</a></div>
+    <div class="level5"><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibrationGeneric-2.html">ArucoCameraCalibrationGeneric</a>&lt;<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a>, <a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationFlags.html">PinholeCameraCalibrationFlags</a>&gt;</div>
+    <div class="level6"><a class="xref" href="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibrationBase-1.html">PinholeCameraCalibrationBase</a>&lt;<a class="xref" href="ArucoUnity.Cameras.ArucoCamera.html">ArucoCamera</a>&gt;</div>
+    <div class="level7"><span class="xref">PinholeCameraCalibration</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a></div>
+    <div><a class="xref" href="ArucoUnity.IController.html">IController</a></div>
+    <div><a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -194,19 +203,90 @@
     <div>
       <a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_ArucoCamera_ImagesUpdated">ArucoCameraCalibration.ArucoCamera_ImagesUpdated()</a>
     </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.ArucoObjectDetector.html#ArucoUnity_Objects_Trackers_ArucoObjectDetector_DetectorParameters">ArucoObjectDetector.DetectorParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Cameras.ArucoCameraController.html#ArucoUnity_Cameras_ArucoCameraController_ArucoCamera">ArucoCameraController.ArucoCamera</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configured">Controller.Configured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Ready">Controller.Ready</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Started">Controller.Started</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Stopped">Controller.Stopped</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AutoStart">Controller.AutoStart</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsConfigured">Controller.IsConfigured</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsReady">Controller.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_IsStarted">Controller.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Awake">Controller.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Start">Controller.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnDestroy">Controller.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_AddDependency_ArucoUnity_IController_">Controller.AddDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_RemoveDependency_ArucoUnity_IController_">Controller.RemoveDependency(IController)</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_GetDependencies">Controller.GetDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_Configure">Controller.Configure()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StartController">Controller.StartController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_StopController">Controller.StopController()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnConfigured">Controller.OnConfigured()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStarted">Controller.OnStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="ArucoUnity.Controller.html#ArucoUnity_Controller_OnStopped">Controller.OnStopped()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="ArucoUnity.Calibration.Pinhole.html">ArucoUnity.Calibration.Pinhole</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PinholeCameraCalibration : PinholeCameraCalibrationBase&lt;ArucoCamera&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class PinholeCameraCalibration : PinholeCameraCalibrationBase&lt;ArucoCamera&gt;, IArucoCameraController, IController, IHasDetectorParameter</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f%5B%5D%2CArucoUnity.Plugin.Std.VectorVectorPoint3f%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibrations/Pinhole/PinholeCameraCalibration.cs/#L10">View Source</a>
+  </span>
   <a id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_" data-uid="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate*"></a>
-  <h4 id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___" data-uid="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(Std.VectorVectorPoint2f[],Std.VectorVectorPoint3f[])">Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</h4>
+  <h4 id="ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___" data-uid="ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration.Calibrate(ArucoUnity.Plugin.Std.VectorVectorPoint2f[],ArucoUnity.Plugin.Std.VectorVectorPoint3f[])">Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -224,19 +304,29 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Std.VectorVectorPoint2f</span>[]</td>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint2f.html">Std.VectorVectorPoint2f</a>[]</td>
         <td><span class="parametername">imagePoints</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Std.VectorVectorPoint3f</span>[]</td>
+        <td><a class="xref" href="ArucoUnity.Plugin.Std.VectorVectorPoint3f.html">Std.VectorVectorPoint3f</a>[]</td>
         <td><span class="parametername">objectPoints</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_Std_VectorVectorPoint2f___Std_VectorVectorPoint3f___">ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</a></div>
+  <div><a class="xref" href="ArucoUnity.Calibration.ArucoCameraCalibration.html#ArucoUnity_Calibration_ArucoCameraCalibration_Calibrate_ArucoUnity_Plugin_Std_VectorVectorPoint2f___ArucoUnity_Plugin_Std_VectorVectorPoint3f___">ArucoCameraCalibration.Calibrate(Std.VectorVectorPoint2f[], Std.VectorVectorPoint3f[])</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ArucoUnity.Cameras.IArucoCameraController.html">IArucoCameraController</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.IController.html">IController</a>
+  </div>
+  <div>
+      <a class="xref" href="ArucoUnity.Objects.Trackers.IHasDetectorParameter.html">IHasDetectorParameter</a>
+  </div>
 </article>
           </div>
           
@@ -244,6 +334,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/new/master/apiSpec/new?filename=ArucoUnity_Calibration_Pinhole_PinholeCameraCalibration.md&amp;value=---%0Auid%3A%20ArucoUnity.Calibration.Pinhole.PinholeCameraCalibration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/Assets/ArucoUnity/Scripts/Calibrations/Pinhole/PinholeCameraCalibration.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
