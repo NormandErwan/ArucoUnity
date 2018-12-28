@@ -72,45 +72,54 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="arucounity">ArucoUnity</h1>
 
-<p>Bring augmented reality to Unity by tracking <a href="https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html">ArUco markers</a> in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.</p>
-<p>It uses the OpenCV&#39;s <a href="http://docs.opencv.org/3.4/d9/d6a/group__aruco.html">ArUco</a> Marker Detection module and the OpenCV&#39;s camera calibration modules <a href="http://docs.opencv.org/3.4/d9/d0c/group__calib3d.html">calib3d</a> and <a href="http://docs.opencv.org/3.4/d3/ddc/group__ccalib.html">ccalib</a>.</p>
+<p>Bring augmented reality to Unity by tracking <a href="https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html">ArUco markers</a>
+in real time. Standard mono cameras, such as webcams, but also stereo cameras and fisheye lenses are supported.</p>
 <p><img src="https://normanderwan.github.io/ArucoUnity/images/ar_roll_a_ball.gif" alt="Demo 1">
 <img src="https://normanderwan.github.io/ArucoUnity/images/extended_phone_screen.gif" alt="Demo 2"></p>
-<p><em>Left: AR <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial">Roll a ball</a>. Right: The markers tracking allows to extend the phone&#39;s screen.</em></p>
-<h2 id="usage">Usage</h2>
+<p><em>Left: AR <a href="https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial">Roll a ball</a>. Right: The markers tracking</em>
+<em>allows to extend the phone&#39;s screen.</em></p>
+<h2 id="install">Install</h2>
 <p>Get ArucoUnity:</p>
-<ul>
-<li>Download the <a href="https://github.com/NormandErwan/ArucoUnity/releases">latest build release</a>.</li>
-<li>Or see the <a href="https://normanderwan.github.io/ArucoUnity/manual/build-from-sources.html">Build From Sources</a> documentation page.</li>
-</ul>
-<p>Then, import <code>ArucoUnity.package</code> in your Unity project.</p>
-<p>A typical workflow with ArucoUnity is:</p>
 <ol>
-<li><a href="https://normanderwan.github.io/ArucoUnity/manual/create-markers.html">Create Markers</a>, print and place them in the environment.</li>
-<li><a href="https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html">Calibrate a Camera</a> using a calibration board.</li>
+<li>Download the <a href="https://github.com/NormandErwan/ArucoUnity/releases">latest build release</a>. Or see the
+<a href="https://normanderwan.github.io/ArucoUnity/manual/build-from-sources.html">Build From Sources</a> documentation page.</li>
+<li>Import <code>ArucoUnity.package</code> in your Unity project.</li>
+</ol>
+<p>Get ArucoUnityPlugin (C bindings to OpenCV):</p>
+<ol>
+<li>Download the <a href="https://github.com/NormandErwan/ArucoUnityPlugin/releases">latest build release</a> corresponding to
+your platform. Windows and Linux x64 only are supported (see issue <a href="https://github.com/NormandErwan/ArucoUnity/issues/6">#6</a>).</li>
+<li>Copy the <code>Assets/</code> folder to your Unity project.</li>
+</ol>
+<h2 id="usage">Usage</h2>
+<ol>
+<li><a href="https://normanderwan.github.io/ArucoUnity/manual/create-markers.html">Create Markers</a>, print and place them in the
+environment.</li>
+<li><a href="https://normanderwan.github.io/ArucoUnity/manual/calibrate-a-camera.html">Calibrate a Camera</a> using a calibration
+board.</li>
 <li><a href="https://normanderwan.github.io/ArucoUnity/manual/track-markers.html">Track Markers</a>.</li>
 </ol>
 <p>See the documentation online for details: <a href="https://normanderwan.github.io/ArucoUnity">https://normanderwan.github.io/ArucoUnity/</a>.</p>
-<h2 id="contributions">Contributions</h2>
-<ul>
-<li>For any question or comment, please <a href="https://github.com/NormandErwan/ArucoUnity/issues/new">open a new issue</a>.</li>
-<li>If you&#39;d like to contribute, please <a href="https://github.com/NormandErwan/ArucoUnity/fork">fork the repository</a> and use a feature branch. Pull requests are warmly welcome.</li>
-</ul>
+<h2 id="contributing">Contributing</h2>
+<p>For any question or comment, please <a href="https://github.com/NormandErwan/ArucoUnity/issues/new">open a new issue</a>.</p>
+<p>If you&#39;d like to contribute, please <a href="https://github.com/NormandErwan/ArucoUnity/fork">fork the repository</a> and use a
+feature branch. Pull requests are warmly welcome.</p>
 <h2 id="support">Support</h2>
-<p>The first version of this project has been developed as part of the master thesis of <a href="https://linkedin.com/in/normanderwan">Erwan Normand</a> and was supported by the <a href="https://www.etsmtl.ca">ÉTS - École de Technologie Supérieure</a>.</p>
+<p>The first version of this project has been developed as part of the master thesis of
+<a href="https://linkedin.com/in/normanderwan">Erwan Normand</a> and was supported by the
+<a href="https://www.etsmtl.ca">ÉTS - École de Technologie Supérieure</a>.</p>
 <p>I&#39;m developing the second version on my own. If this project helped you, please consider buying me a coffee in return :)</p>
 <p><a href="https://www.buymeacoffee.com/h48VU3fny"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee"></a></p>
 <h2 id="licenses">Licenses</h2>
-<p>See the <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/LICENSE">LICENSE</a> file for license rights and limitations (3-clause BSD license).</p>
-<p>See <a href="https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty">https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty</a> for the OpenCV license. ArucoUnity uses the following modules: <a href="http://docs.opencv.org/3.4/d9/d6a/group__aruco.html">aruco</a>, <a href="http://docs.opencv.org/3.4/d9/d0c/group__calib3d.html">cablid3d</a>, <a href="http://docs.opencv.org/3.4/d3/ddc/group__ccalib.html">ccalib</a></p>
-<h2 id="references">References</h2>
-<p>The OpenCV&#39;s Aruco module implements this paper:</p>
-<blockquote><p>Garrido-Jurado, S., Muñoz-Salinas, R., Madrid-Cuevas, F. J., &amp; Marín-Jiménez, M. J. (2014). Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6), 2280-2292.</p>
-</blockquote>
-<p>The fisheye calibration operated with the OpenCV&#39;s ccalib module is based on these papers:</p>
-<blockquote><p>Mei, C., &amp; Rives, P. (2007, April). Single view point omnidirectional camera calibration from planar grids. In Robotics and Automation, 2007 IEEE International Conference on (pp. 3945-3950). IEEE.</p>
-<p>Li, B., Heng, L., Koser, K., &amp; Pollefeys, M. (2013, November). A multiple-camera system calibration toolbox using a feature descriptor-based calibration pattern. In Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on (pp. 1301-1307). IEEE.</p>
-</blockquote>
+<p>See the <a href="https://github.com/NormandErwan/ArucoUnity/blob/master/LICENSE">LICENSE</a> file for license rights and
+limitations (3-clause BSD license).</p>
+<p>See <a href="https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty">https://github.com/NormandErwan/ArucoUnityPlugin/tree/master/3rdparty</a>
+for the OpenCV license. ArucoUnity uses the following OpenCV modules:</p>
+<ul>
+<li><a href="http://docs.opencv.org/3.4/d9/d6a/group__aruco.html">ArUco marker detection (aruco)</a></li>
+<li><a href="http://docs.opencv.org/3.4/d9/d0c/group__calib3d.html">Camera Calibration and 3D Reconstruction (calib3d)</a></li>
+<li><a href="http://docs.opencv.org/3.4/d3/ddc/group__ccalib.html">Custom Calibration Pattern for 3D reconstruction (ccalib)</a></li>
+</ul>
 </article>
           </div>
           
