@@ -2543,12 +2543,18 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFilename
   nameWithType: ArucoCameraParametersController.CameraParametersFilename
-- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
-  name: cameraParametersFolderPath
-  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_cameraParametersFolderPath
-  commentId: F:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
-  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersFolderPath
-  nameWithType: ArucoCameraParametersController.cameraParametersFolderPath
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
+  name: CameraParametersFolderPath
+  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_CameraParametersFolderPath
+  commentId: F:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.CameraParametersFolderPath
+  nameWithType: ArucoCameraParametersController.CameraParametersFolderPath
+- uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersPath
+  name: cameraParametersPath
+  href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_cameraParametersPath
+  commentId: F:ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersPath
+  fullName: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.cameraParametersPath
+  nameWithType: ArucoCameraParametersController.cameraParametersPath
 - uid: ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.Initialize(System.Int32)
   name: Initialize(Int32)
   href: api/ArucoUnity.Cameras.Parameters.ArucoCameraParametersController.html#ArucoUnity_Cameras_Parameters_ArucoCameraParametersController_Initialize_System_Int32_
@@ -5094,6 +5100,12 @@ references:
   isSpec: "True"
   fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.InitializeImagePlane
   nameWithType: ArucoObjectDisplayer.InitializeImagePlane
+- uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  name: lastArucoObjectOnValidate
+  href: api/ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_lastArucoObjectOnValidate
+  commentId: F:ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  fullName: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.lastArucoObjectOnValidate
+  nameWithType: ArucoObjectDisplayer.lastArucoObjectOnValidate
 - uid: ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.OnDestroy
   name: OnDestroy()
   href: api/ArucoUnity.Objects.Displayers.ArucoObjectDisplayer.html#ArucoUnity_Objects_Displayers_ArucoObjectDisplayer_OnDestroy
