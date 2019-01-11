@@ -12,9 +12,10 @@ namespace ArucoUnity.Cameras.Parameters
         // Constants
 
         /// <summary>
-        /// The folder where to load and save the <see cref="CameraParameters"/> files.
+        /// The folder where to load and save the <see cref="CameraParameters"/> files, relative to
+        /// <see cref="Application.streamingAssetsPath"/>.
         /// </summary>
-        protected static readonly string cameraParametersFolderPath = Path.Combine(Application.streamingAssetsPath, "ArucoUnity");
+        protected const string CameraParametersFolderPath = "ArucoUnity";
 
         // Editor fields
 
@@ -41,13 +42,13 @@ namespace ArucoUnity.Cameras.Parameters
         public bool AutoLoadFile { get { return autoLoadFile; } set { autoLoadFile = value; } }
 
         /// <summary>
-        /// Gets or sets the xml file corresponding to the <see cref="CameraParameters"/>, relative to <see cref="cameraParametersFolderPath"/>.
+        /// Gets or sets the xml file corresponding to the <see cref="CameraParameters"/>, relative to <see cref="CameraParametersFolderPath"/>.
         /// </summary>
         public string CameraParametersFilename { get { return cameraParametersFilename; } set { cameraParametersFilename = value; } }
 
         // Variables
 
-        string cameraParametersPath;
+        protected string cameraParametersPath;
 
         // MonoBehaviour methods
 
@@ -56,7 +57,7 @@ namespace ArucoUnity.Cameras.Parameters
         /// </summary>
         protected virtual void Awake()
         {
-            cameraParametersPath = Path.Combine(cameraParametersFolderPath, cameraParametersFilename);
+            cameraParametersPath = Path.Combine(Application.streamingAssetsPath, CameraParametersFolderPath, cameraParametersFilename);
 
             if (AutoLoadFile)
             {
@@ -89,9 +90,9 @@ namespace ArucoUnity.Cameras.Parameters
         /// </summary>
         public virtual void Save()
         {
-            if (!Directory.Exists(cameraParametersFolderPath))
+            if (!Directory.Exists(CameraParametersFolderPath))
             {
-                Directory.CreateDirectory(cameraParametersFolderPath);
+                Directory.CreateDirectory(CameraParametersFolderPath);
             }
             CameraParameters.SaveToXmlFile(cameraParametersPath);
         }
