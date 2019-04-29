@@ -35,7 +35,7 @@ First, make sure Unity is closed during the installation, unless the plugin inst
 ```bash
 cd ArucoUnityPlugin/build/
 cmake -DCMAKE_INSTALL_PREFIX=.. -DOpenCV_DIR=build/opencv/install/ -DArucoUnity_DIR=../../ArucoUnity/ -G <generator_name> ..
-cmake --build . --config Release --target INSTALL
+cmake --build .. --config Release --target INSTALL
 ```
 
 The installation will copy the plugin into the `bin/` and `lib/` folders. It will also copy the plugin and the OpenCV libraries to the `ArucoUnity/Assets/Plugins/<platform>` folder.
