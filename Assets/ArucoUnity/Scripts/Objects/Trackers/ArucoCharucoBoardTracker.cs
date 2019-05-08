@@ -52,7 +52,7 @@ namespace ArucoUnity.Objects.Trackers
 
       foreach (var arucoCharucoBoard in arucoTracker.GetArucoObjects<ArucoCharucoBoard>(dictionary))
       {
-        if (arucoCharucoBoard.DetectedIds.Size() > 0)
+        if (arucoCharucoBoard.DetectedIds != null && arucoCharucoBoard.DetectedIds.Size() > 0)
         {
           if (arucoTracker.DrawDetectedCharucoMarkers)
           {
