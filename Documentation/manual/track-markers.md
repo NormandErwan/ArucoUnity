@@ -1,14 +1,17 @@
 # Track Markers
 
-First, make sure you have calibrated your camera: read the [Calibrate a Camera](calibrate-a-camera.md) page. You **need to have a calibration file** to track some aruco objects.
+First, make sure you have calibrated your camera: read the [Calibrate a Camera](calibrate-a-camera.md) page.
+You **need to have a calibration file** to track some aruco objects.
 
-Also, print and place in the environment the aruco objects you want to track. Read the [Create Markers](create-markers.md) page for details.
+Also, print and place in the environment the aruco objects you want to track. Read the
+[Create Markers](create-markers.md) page for details.
 
 To track your aruco objects:
 
 - Open the `Assets/ArucoUnity/Scenes/TrackMarkers.unity` scene.
 - Configure the camera:
-  1. For a webcam, use the `ArucoWebcamCalibrated` object already in the scene. Otherwise, drag the prefab corresponding to your camera : `Assets/ArucoUnity/Prefabs/Cameras/<CameraType>Calibrated.prefab`.
+  1. For a webcam, use the `ArucoWebcamCalibrated` object already in the scene. Otherwise, drag the prefab corresponding
+  to your camera : `Assets/ArucoUnity/Prefabs/Cameras/<CameraType>Calibrated.prefab`.
   2. Fill `CameraParametersFilename` with the camera parameters XML file from the calibration of the camera (*Fig.1*).
 
 ![Camera configuration](~/images/track_markers_camera.jpg)
@@ -22,7 +25,8 @@ To track your aruco objects:
 
 ![Marker configuration](~/images/track_markers_marker.jpg)
 
-*Fig.2: `ArucoMarker` configured to track a physical aruco marker with a 5.4 cm side length. The `ArucoObjectDisplayer` helps to visualize in the editor the physical object that will be tracked.*
+*Fig.2: `ArucoMarker` configured to track a physical aruco marker with a 5.4 cm side length. The `ArucoObjectDisplayer`
+helps to visualize in the editor the physical object that will be tracked.*
 
 - Configure the tracker `ArucoObjectsTracker`:
   1. Drag all the aruco objects to track in `ArucoObjects`.
@@ -32,10 +36,13 @@ To track your aruco objects:
 
 *Fig.3: `ArucoObjectsTracker` configured to track three objects for the `ArucoCameraCalibrated` we configured.*
 
-- Run the scene! The `ArucoTracker` will place (position, rotation, scale) any detected aruco object in the `ArucoObjects` list relative to the camera (*Fig.4*).
+- Run the scene! The `ArucoTracker` will place (position, rotation, scale) any detected aruco object in the
+`ArucoObjects` list relative to the camera (*Fig.4*).
 
 ![AR roll a ball](~/images/ar_roll_a_ball.gif)
 
-*Fig.4: [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial) set as child of an aruco board: the game follows the board movements.*
+*Fig.4: [Roll a ball](https://unity3d.com/fr/learn/tutorials/s/roll-ball-tutorial) set as child of an aruco board: the
+game follows the board movements.*
 
-To understand the algorithm used, read this tutorial: [Detection of ArUco Markers](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html).
+To understand the algorithm used, read this tutorial:
+[Detection of ArUco Markers](https://docs.opencv.org/3.4/d5/dae/tutorial_aruco_detection.html).

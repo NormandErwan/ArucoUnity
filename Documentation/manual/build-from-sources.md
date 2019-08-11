@@ -38,7 +38,8 @@ cmake -DCMAKE_INSTALL_PREFIX=.. -DOpenCV_DIR=build/opencv/install/ -DArucoUnity_
 cmake --build . --config Release --target INSTALL
 ```
 
-The installation will copy the plugin into the `bin/` and `lib/` folders. It will also copy the plugin and the OpenCV libraries to the `ArucoUnity/Assets/Plugins/<platform>` folder.
+The installation will copy the plugin into the `bin/` and `lib/` folders. It will also copy the plugin and the OpenCV
+libraries to the `ArucoUnity/Assets/Plugins/<platform>` folder.
 
 On Linux the correct path to the `-DOpenCV_DIR` option above may be set to `build/opencv/install/share/OpenCV/`.
 
