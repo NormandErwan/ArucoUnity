@@ -40,6 +40,12 @@
                 "files": [ "images/*" ]
             }
         ],
+        "overwrite": [
+            {
+                "src": "../",
+                "files": [ "Assets/Scripts/**/*.md" ]
+            }
+        ],
         "dest": "../_site"
     }
 }
