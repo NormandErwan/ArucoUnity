@@ -1,40 +1,45 @@
 {
-  "metadata": [
-    {
-      "src": [
+    "metadata": [
         {
-          "src": "../",
-          "files": [ "*.csproj" ]
+            "src": [
+                {
+                    "src": "..",
+                    "files": [ "*.csproj" ]
+                }
+            ],
+            "dest": "api",
+            "filter": "filterConfig.yml"
         }
-      ],
-      "dest": "api/",
-      "filter": "filterConfig.yml"
+    ],
+    "build": {
+        "globalMetadata":
+        {
+            "_appTitle": "Aruco Unity documentation",
+            "_appFooter": "<a href=\"https://github.com/NormandErwan/ArucoUnity\">Aruco Unity</a> - <a href=\"https://twitter.com/NormandErwan\">Erwan Normand</a>",
+            "_enableSearch": true
+        },
+        "xref": [ "xrefmap.yml" ],
+        "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
+        "content": [
+            {
+                "files": [ "toc.yml", "index.md" ]
+            },
+            {
+                "src": "api/",
+                "files": [ "*.yml" ],
+                "dest": "api/"
+            },
+            {
+                "src": "manual/",
+                "files": [ "toc.yml", "*.md" ],
+                "dest": "manual/"
+            }
+        ],
+        "resource": [
+            {
+                "files": [ "images/*" ]
+            }
+        ],
+        "dest": "../_site"
     }
-  ],
-  "build": {
-    "globalMetadata":
-    {
-      "_appTitle": "Aruco Unity documentation",
-      "_appFooter": "<a href=\"https://github.com/NormandErwan/ArucoUnity\">Aruco Unity</a> - <a href=\"https://twitter.com/NormandErwan\">Erwan Normand</a>",
-      "_enableSearch": true
-    },
-    "xref": [ "xrefmap.yml" ],
-    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
-    "content": [
-      {
-        "src": "manual/",
-        "dest": "manual/",
-        "files": [ "toc.yml", "*.md" ]
-      },
-      {
-        "files": [ "toc.yml", "index.md", "api/*.yml" ]
-      }
-    ],
-    "resource": [
-      {
-        "files": [ "images/*" ]
-      }
-    ],
-    "dest": "../_site"
-  }
 }
